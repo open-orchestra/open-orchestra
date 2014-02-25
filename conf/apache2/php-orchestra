@@ -1,12 +1,12 @@
 <VirtualHost *:8080>
 	ServerAdmin webmaster@localhost
 
-	DocumentRoot /home/php-orchestra/www/src/web
+	DocumentRoot /home/php-orchestra/www/src/symfony2/web
 	<Directory />
 		Options FollowSymLinks
 		AllowOverride None
 	</Directory>
-	<Directory /home/php-orchestra/www/src/web/>
+	<Directory /home/php-orchestra/www/src/symfony2/web/>
 		Options Indexes FollowSymLinks MultiViews
 		AllowOverride None
 		Order allow,deny
