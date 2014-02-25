@@ -1,0 +1,5 @@
+_assetic:
+    resource: .
+    type: assetic
+_app:
+    resource: /home/php-orchestra/www/2.3/app/config/routing_dev.yml
