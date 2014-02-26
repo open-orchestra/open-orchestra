@@ -1,12 +1,12 @@
 <VirtualHost *:8080>
 	ServerAdmin webmaster@localhost
 
-	DocumentRoot /home/php-orchestra/www/src/symfony2/web
+	DocumentRoot {PATH}/{TO}/{WWW}/src/symfony2/web
 	<Directory />
 		Options FollowSymLinks
 		AllowOverride None
 	</Directory>
-	<Directory /home/php-orchestra/www/src/symfony2/web/>
+	<Directory {PATH}/{TO}/{WWW}/src/symfony2/web/>
 		Options Indexes FollowSymLinks MultiViews
 		AllowOverride None
 		Order allow,deny
@@ -21,11 +21,11 @@
 		Allow from all
 	</Directory>
 
-	ErrorLog /home/php-orchestra/apache-logs/error.log
+	ErrorLog {PATH}/{TO}/{LOG}/error.log
 
 	# Possible values include: debug, info, notice, warn, error, crit,
 	# alert, emerg.
 	LogLevel warn
 
-	CustomLog /home/php-orchestra/apache-logs/access.log combined
+	CustomLog {PATH}/{TO}/{LOG}/access.log combined
 </VirtualHost>
