@@ -4,8 +4,8 @@
 /src/symfony2/app/cache/*
 #/src/symfony2/app/config/parameters.yml
 /src/symfony2/app/logs/*
-!/src/symfony2app/cache/.gitkeep
-!/src/symfony2app/logs/.gitkeep
+!/src/symfony2/app/cache/.gitkeep
+!/src/symfony2/app/logs/.gitkeep
 #/src/symfony2/build/
 #/src/symfony2/vendor/
 #/src/symfony2/bin/
@@ -13,5 +13,5 @@
 
 # Eclipse files
 .buildpath
-.settings/*
+.settings/
 .project
