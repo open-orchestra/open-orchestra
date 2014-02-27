@@ -67,3 +67,11 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+# Mandango Configuration
+mandango:
+    default_connection: local
+    connections:
+        local:
+            server:   mongodb://localhost:27017
+            database: symfony2_local_%kernel.environment%

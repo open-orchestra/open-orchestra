@@ -85,6 +85,7 @@ class appDevDebugProjectContainer extends Container
             'form.type.integer' => 'getForm_Type_IntegerService',
             'form.type.language' => 'getForm_Type_LanguageService',
             'form.type.locale' => 'getForm_Type_LocaleService',
+            'form.type.mandango_document' => 'getForm_Type_MandangoDocumentService',
             'form.type.money' => 'getForm_Type_MoneyService',
             'form.type.number' => 'getForm_Type_NumberService',
             'form.type.password' => 'getForm_Type_PasswordService',
@@ -106,6 +107,7 @@ class appDevDebugProjectContainer extends Container
             'form.type_extension.repeated.validator' => 'getForm_TypeExtension_Repeated_ValidatorService',
             'form.type_extension.submit.validator' => 'getForm_TypeExtension_Submit_ValidatorService',
             'form.type_guesser.doctrine' => 'getForm_TypeGuesser_DoctrineService',
+            'form.type_guesser.mandango' => 'getForm_TypeGuesser_MandangoService',
             'form.type_guesser.validator' => 'getForm_TypeGuesser_ValidatorService',
             'fragment.handler' => 'getFragment_HandlerService',
             'fragment.listener' => 'getFragment_ListenerService',
@@ -116,6 +118,16 @@ class appDevDebugProjectContainer extends Container
             'kernel' => 'getKernelService',
             'locale_listener' => 'getLocaleListenerService',
             'logger' => 'getLoggerService',
+            'mandango' => 'getMandangoService',
+            'mandango.cache.filesystem' => 'getMandango_Cache_FilesystemService',
+            'mandango.extension.bundles' => 'getMandango_Extension_BundlesService',
+            'mandango.extension.core' => 'getMandango_Extension_CoreService',
+            'mandango.extension.document_validation' => 'getMandango_Extension_DocumentValidationService',
+            'mandango.local_connection' => 'getMandango_LocalConnectionService',
+            'mandango.logger' => 'getMandango_LoggerService',
+            'mandango.metadata_factory' => 'getMandango_MetadataFactoryService',
+            'mandango.mondator' => 'getMandango_MondatorService',
+            'mandango.validator.unique_document' => 'getMandango_Validator_UniqueDocumentService',
             'monolog.handler.console' => 'getMonolog_Handler_ConsoleService',
             'monolog.handler.debug' => 'getMonolog_Handler_DebugService',
             'monolog.handler.main' => 'getMonolog_Handler_MainService',
@@ -717,7 +729,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getForm_RegistryService()
     {
-        return $this->services['form.registry'] = new \Symfony\Component\Form\FormRegistry(array(0 => new \Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension($this, array('form' => 'form.type.form', 'birthday' => 'form.type.birthday', 'checkbox' => 'form.type.checkbox', 'choice' => 'form.type.choice', 'collection' => 'form.type.collection', 'country' => 'form.type.country', 'date' => 'form.type.date', 'datetime' => 'form.type.datetime', 'email' => 'form.type.email', 'file' => 'form.type.file', 'hidden' => 'form.type.hidden', 'integer' => 'form.type.integer', 'language' => 'form.type.language', 'locale' => 'form.type.locale', 'money' => 'form.type.money', 'number' => 'form.type.number', 'password' => 'form.type.password', 'percent' => 'form.type.percent', 'radio' => 'form.type.radio', 'repeated' => 'form.type.repeated', 'search' => 'form.type.search', 'textarea' => 'form.type.textarea', 'text' => 'form.type.text', 'time' => 'form.type.time', 'timezone' => 'form.type.timezone', 'url' => 'form.type.url', 'button' => 'form.type.button', 'submit' => 'form.type.submit', 'reset' => 'form.type.reset', 'currency' => 'form.type.currency', 'entity' => 'form.type.entity'), array('form' => array(0 => 'form.type_extension.form.http_foundation', 1 => 'form.type_extension.form.validator', 2 => 'form.type_extension.csrf', 3 => 'form.type_extension.form.data_collector'), 'repeated' => array(0 => 'form.type_extension.repeated.validator'), 'submit' => array(0 => 'form.type_extension.submit.validator')), array(0 => 'form.type_guesser.validator', 1 => 'form.type_guesser.doctrine'))), $this->get('form.resolved_type_factory'));
+        return $this->services['form.registry'] = new \Symfony\Component\Form\FormRegistry(array(0 => new \Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension($this, array('form' => 'form.type.form', 'birthday' => 'form.type.birthday', 'checkbox' => 'form.type.checkbox', 'choice' => 'form.type.choice', 'collection' => 'form.type.collection', 'country' => 'form.type.country', 'date' => 'form.type.date', 'datetime' => 'form.type.datetime', 'email' => 'form.type.email', 'file' => 'form.type.file', 'hidden' => 'form.type.hidden', 'integer' => 'form.type.integer', 'language' => 'form.type.language', 'locale' => 'form.type.locale', 'money' => 'form.type.money', 'number' => 'form.type.number', 'password' => 'form.type.password', 'percent' => 'form.type.percent', 'radio' => 'form.type.radio', 'repeated' => 'form.type.repeated', 'search' => 'form.type.search', 'textarea' => 'form.type.textarea', 'text' => 'form.type.text', 'time' => 'form.type.time', 'timezone' => 'form.type.timezone', 'url' => 'form.type.url', 'button' => 'form.type.button', 'submit' => 'form.type.submit', 'reset' => 'form.type.reset', 'currency' => 'form.type.currency', 'entity' => 'form.type.entity', 'mandango_document' => 'form.type.mandango_document'), array('form' => array(0 => 'form.type_extension.form.http_foundation', 1 => 'form.type_extension.form.validator', 2 => 'form.type_extension.csrf', 3 => 'form.type_extension.form.data_collector'), 'repeated' => array(0 => 'form.type_extension.repeated.validator'), 'submit' => array(0 => 'form.type_extension.submit.validator')), array(0 => 'form.type_guesser.validator', 1 => 'form.type_guesser.doctrine', 2 => 'form.type_guesser.mandango'))), $this->get('form.resolved_type_factory'));
     }
 
     /**
@@ -952,6 +964,19 @@ class appDevDebugProjectContainer extends Container
     protected function getForm_Type_LocaleService()
     {
         return $this->services['form.type.locale'] = new \Symfony\Component\Form\Extension\Core\Type\LocaleType();
+    }
+
+    /**
+     * Gets the 'form.type.mandango_document' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return Mandango\MandangoBundle\Form\Type\MandangoDocumentType A Mandango\MandangoBundle\Form\Type\MandangoDocumentType instance.
+     */
+    protected function getForm_Type_MandangoDocumentService()
+    {
+        return $this->services['form.type.mandango_document'] = new \Mandango\MandangoBundle\Form\Type\MandangoDocumentType($this->get('mandango'));
     }
 
     /**
@@ -1228,6 +1253,19 @@ class appDevDebugProjectContainer extends Container
     }
 
     /**
+     * Gets the 'form.type_guesser.mandango' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return Mandango\MandangoBundle\Form\MandangoTypeGuesser A Mandango\MandangoBundle\Form\MandangoTypeGuesser instance.
+     */
+    protected function getForm_TypeGuesser_MandangoService()
+    {
+        return $this->services['form.type_guesser.mandango'] = new \Mandango\MandangoBundle\Form\MandangoTypeGuesser($this->get('mandango.metadata_factory'));
+    }
+
+    /**
      * Gets the 'form.type_guesser.validator' service.
      *
      * This service is shared.
@@ -1379,6 +1417,147 @@ class appDevDebugProjectContainer extends Container
         $instance->pushHandler($this->get('monolog.handler.debug'));
 
         return $instance;
+    }
+
+    /**
+     * Gets the 'mandango' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return Mandango\Mandango A Mandango\Mandango instance.
+     */
+    protected function getMandangoService()
+    {
+        $this->services['mandango'] = $instance = new \Mandango\Mandango($this->get('mandango.metadata_factory'), $this->get('mandango.cache.filesystem'), array(0 => $this->get('mandango.logger'), 1 => 'logQuery'));
+
+        $instance->setDefaultConnectionName('local');
+        $instance->setConnection('local', $this->get('mandango.local_connection'));
+
+        return $instance;
+    }
+
+    /**
+     * Gets the 'mandango.cache.filesystem' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return Mandango\Cache\FilesystemCache A Mandango\Cache\FilesystemCache instance.
+     */
+    protected function getMandango_Cache_FilesystemService()
+    {
+        return $this->services['mandango.cache.filesystem'] = new \Mandango\Cache\FilesystemCache('/media/sf_Orchestra/src/symfony2/app/cache/dev/mandango/cache');
+    }
+
+    /**
+     * Gets the 'mandango.extension.bundles' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return Mandango\MandangoBundle\Extension\Bundles A Mandango\MandangoBundle\Extension\Bundles instance.
+     */
+    protected function getMandango_Extension_BundlesService()
+    {
+        return $this->services['mandango.extension.bundles'] = new \Mandango\MandangoBundle\Extension\Bundles();
+    }
+
+    /**
+     * Gets the 'mandango.extension.core' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return Mandango\Extension\Core A Mandango\Extension\Core instance.
+     */
+    protected function getMandango_Extension_CoreService()
+    {
+        return $this->services['mandango.extension.core'] = new \Mandango\Extension\Core(array('metadata_factory_class' => 'MandangoMetadataFactory', 'metadata_factory_output' => '/media/sf_Orchestra/src/symfony2/app/'));
+    }
+
+    /**
+     * Gets the 'mandango.extension.document_validation' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return Mandango\MandangoBundle\Extension\DocumentValidation A Mandango\MandangoBundle\Extension\DocumentValidation instance.
+     */
+    protected function getMandango_Extension_DocumentValidationService()
+    {
+        return $this->services['mandango.extension.document_validation'] = new \Mandango\MandangoBundle\Extension\DocumentValidation();
+    }
+
+    /**
+     * Gets the 'mandango.local_connection' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return Mandango\Connection A Mandango\Connection instance.
+     */
+    protected function getMandango_LocalConnectionService()
+    {
+        return $this->services['mandango.local_connection'] = new \Mandango\Connection('mongodb://localhost:27017', 'symfony2_local_dev', array());
+    }
+
+    /**
+     * Gets the 'mandango.logger' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return Mandango\MandangoBundle\Logger\MandangoLogger A Mandango\MandangoBundle\Logger\MandangoLogger instance.
+     */
+    protected function getMandango_LoggerService()
+    {
+        return $this->services['mandango.logger'] = new \Mandango\MandangoBundle\Logger\MandangoLogger($this->get('logger', ContainerInterface::NULL_ON_INVALID_REFERENCE));
+    }
+
+    /**
+     * Gets the 'mandango.metadata_factory' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return MandangoMetadataFactory A MandangoMetadataFactory instance.
+     */
+    protected function getMandango_MetadataFactoryService()
+    {
+        return $this->services['mandango.metadata_factory'] = new \MandangoMetadataFactory();
+    }
+
+    /**
+     * Gets the 'mandango.mondator' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return Mandango\Mondator\Mondator A Mandango\Mondator\Mondator instance.
+     */
+    protected function getMandango_MondatorService()
+    {
+        $this->services['mandango.mondator'] = $instance = new \Mandango\Mondator\Mondator();
+
+        $instance->addExtension($this->get('mandango.extension.core'));
+        $instance->addExtension($this->get('mandango.extension.bundles'));
+        $instance->addExtension($this->get('mandango.extension.document_validation'));
+
+        return $instance;
+    }
+
+    /**
+     * Gets the 'mandango.validator.unique_document' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return Mandango\MandangoBundle\Validator\Constraint\UniqueDocumentValidator A Mandango\MandangoBundle\Validator\Constraint\UniqueDocumentValidator instance.
+     */
+    protected function getMandango_Validator_UniqueDocumentService()
+    {
+        return $this->services['mandango.validator.unique_document'] = new \Mandango\MandangoBundle\Validator\Constraint\UniqueDocumentValidator($this->get('mandango'));
     }
 
     /**
@@ -1626,6 +1805,7 @@ class appDevDebugProjectContainer extends Container
         $instance->add(new \Symfony\Bundle\SecurityBundle\DataCollector\SecurityDataCollector($this->get('security.context', ContainerInterface::NULL_ON_INVALID_REFERENCE)));
         $instance->add(new \Symfony\Bundle\SwiftmailerBundle\DataCollector\MessageDataCollector($this));
         $instance->add($d);
+        $instance->add(new \Mandango\MandangoBundle\DataCollector\MandangoDataCollector($this->get('mandango.logger')));
 
         return $instance;
     }
@@ -2928,6 +3108,7 @@ class appDevDebugProjectContainer extends Container
         $instance->addPath('/media/sf_Orchestra/src/symfony2/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views', 'Twig');
         $instance->addPath('/media/sf_Orchestra/src/symfony2/vendor/symfony/swiftmailer-bundle/Symfony/Bundle/SwiftmailerBundle/Resources/views', 'Swiftmailer');
         $instance->addPath('/media/sf_Orchestra/src/symfony2/vendor/doctrine/doctrine-bundle/Doctrine/Bundle/DoctrineBundle/Resources/views', 'Doctrine');
+        $instance->addPath('/media/sf_Orchestra/src/symfony2/vendor/analytik/mandango-bundle/Mandango/MandangoBundle/Resources/views', 'Mandango');
         $instance->addPath('/media/sf_Orchestra/src/symfony2/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views', 'WebProfiler');
         $instance->addPath('/media/sf_Orchestra/src/symfony2/vendor/sensio/distribution-bundle/Sensio/Bundle/DistributionBundle/Resources/views', 'SensioDistribution');
         $instance->addPath('/media/sf_Orchestra/src/symfony2/app/Resources/views');
@@ -2972,7 +3153,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getValidatorService()
     {
-        return $this->services['validator'] = new \Symfony\Component\Validator\Validator($this->get('validator.mapping.class_metadata_factory'), new \Symfony\Bundle\FrameworkBundle\Validator\ConstraintValidatorFactory($this, array('validator.expression' => 'validator.expression', 'security.validator.user_password' => 'security.validator.user_password', 'doctrine.orm.validator.unique' => 'doctrine.orm.validator.unique')), $this->get('translator'), 'validators', array(0 => $this->get('doctrine.orm.validator_initializer')));
+        return $this->services['validator'] = new \Symfony\Component\Validator\Validator($this->get('validator.mapping.class_metadata_factory'), new \Symfony\Bundle\FrameworkBundle\Validator\ConstraintValidatorFactory($this, array('validator.expression' => 'validator.expression', 'security.validator.user_password' => 'security.validator.user_password', 'doctrine.orm.validator.unique' => 'doctrine.orm.validator.unique', 'mandango.validator.unique_document' => 'mandango.validator.unique_document')), $this->get('translator'), 'validators', array(0 => $this->get('doctrine.orm.validator_initializer')));
     }
 
     /**
@@ -3011,7 +3192,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getWebProfiler_Controller_ProfilerService()
     {
-        return $this->services['web_profiler.controller.profiler'] = new \Symfony\Bundle\WebProfilerBundle\Controller\ProfilerController($this->get('router', ContainerInterface::NULL_ON_INVALID_REFERENCE), $this->get('profiler', ContainerInterface::NULL_ON_INVALID_REFERENCE), $this->get('twig'), array('data_collector.config' => array(0 => 'config', 1 => '@WebProfiler/Collector/config.html.twig'), 'data_collector.request' => array(0 => 'request', 1 => '@WebProfiler/Collector/request.html.twig'), 'data_collector.exception' => array(0 => 'exception', 1 => '@WebProfiler/Collector/exception.html.twig'), 'data_collector.events' => array(0 => 'events', 1 => '@WebProfiler/Collector/events.html.twig'), 'data_collector.logger' => array(0 => 'logger', 1 => '@WebProfiler/Collector/logger.html.twig'), 'data_collector.time' => array(0 => 'time', 1 => '@WebProfiler/Collector/time.html.twig'), 'data_collector.memory' => array(0 => 'memory', 1 => '@WebProfiler/Collector/memory.html.twig'), 'data_collector.router' => array(0 => 'router', 1 => '@WebProfiler/Collector/router.html.twig'), 'data_collector.form' => array(0 => 'form', 1 => '@WebProfiler/Collector/form.html.twig'), 'data_collector.security' => array(0 => 'security', 1 => '@Security/Collector/security.html.twig'), 'swiftmailer.data_collector' => array(0 => 'swiftmailer', 1 => '@Swiftmailer/Collector/swiftmailer.html.twig'), 'data_collector.doctrine' => array(0 => 'db', 1 => 'DoctrineBundle:Collector:db')), 'bottom');
+        return $this->services['web_profiler.controller.profiler'] = new \Symfony\Bundle\WebProfilerBundle\Controller\ProfilerController($this->get('router', ContainerInterface::NULL_ON_INVALID_REFERENCE), $this->get('profiler', ContainerInterface::NULL_ON_INVALID_REFERENCE), $this->get('twig'), array('data_collector.config' => array(0 => 'config', 1 => '@WebProfiler/Collector/config.html.twig'), 'data_collector.request' => array(0 => 'request', 1 => '@WebProfiler/Collector/request.html.twig'), 'data_collector.exception' => array(0 => 'exception', 1 => '@WebProfiler/Collector/exception.html.twig'), 'data_collector.events' => array(0 => 'events', 1 => '@WebProfiler/Collector/events.html.twig'), 'data_collector.logger' => array(0 => 'logger', 1 => '@WebProfiler/Collector/logger.html.twig'), 'data_collector.time' => array(0 => 'time', 1 => '@WebProfiler/Collector/time.html.twig'), 'data_collector.memory' => array(0 => 'memory', 1 => '@WebProfiler/Collector/memory.html.twig'), 'data_collector.router' => array(0 => 'router', 1 => '@WebProfiler/Collector/router.html.twig'), 'data_collector.form' => array(0 => 'form', 1 => '@WebProfiler/Collector/form.html.twig'), 'data_collector.security' => array(0 => 'security', 1 => '@Security/Collector/security.html.twig'), 'swiftmailer.data_collector' => array(0 => 'swiftmailer', 1 => '@Swiftmailer/Collector/swiftmailer.html.twig'), 'data_collector.doctrine' => array(0 => 'db', 1 => 'DoctrineBundle:Collector:db'), 'mandango.data_collector' => array(0 => 'mandango', 1 => 'MandangoBundle:Collector:mandango')), 'bottom');
     }
 
     /**
@@ -3394,6 +3575,7 @@ class appDevDebugProjectContainer extends Container
                 'AsseticBundle' => 'Symfony\\Bundle\\AsseticBundle\\AsseticBundle',
                 'DoctrineBundle' => 'Doctrine\\Bundle\\DoctrineBundle\\DoctrineBundle',
                 'SensioFrameworkExtraBundle' => 'Sensio\\Bundle\\FrameworkExtraBundle\\SensioFrameworkExtraBundle',
+                'MandangoBundle' => 'Mandango\\MandangoBundle\\MandangoBundle',
                 'WebProfilerBundle' => 'Symfony\\Bundle\\WebProfilerBundle\\WebProfilerBundle',
                 'SensioDistributionBundle' => 'Sensio\\Bundle\\DistributionBundle\\SensioDistributionBundle',
                 'SensioGeneratorBundle' => 'Sensio\\Bundle\\GeneratorBundle\\SensioGeneratorBundle',
@@ -3907,6 +4089,21 @@ class appDevDebugProjectContainer extends Container
             'sensio_framework_extra.converter.doctrine.class' => 'Sensio\\Bundle\\FrameworkExtraBundle\\Request\\ParamConverter\\DoctrineParamConverter',
             'sensio_framework_extra.converter.datetime.class' => 'Sensio\\Bundle\\FrameworkExtraBundle\\Request\\ParamConverter\\DateTimeParamConverter',
             'sensio_framework_extra.view.listener.class' => 'Sensio\\Bundle\\FrameworkExtraBundle\\EventListener\\TemplateListener',
+            'mandango.class' => 'Mandango\\Mandango',
+            'mandango.metadata_factory.class' => 'MandangoMetadataFactory',
+            'mandango.model_dir' => '/media/sf_Orchestra/src/symfony2/app/',
+            'mandango.metadata_factory.output' => '/media/sf_Orchestra/src/symfony2/app/',
+            'mandango.cache.filesystem_cache.class' => 'Mandango\\Cache\\FilesystemCache',
+            'mandango.cache.filesystem_cache.dir' => '/media/sf_Orchestra/src/symfony2/app/cache/dev/mandango/cache',
+            'mandango.mondator.class' => 'Mandango\\Mondator\\Mondator',
+            'mandango.logger.class' => 'Mandango\\MandangoBundle\\Logger\\MandangoLogger',
+            'mandango.data_collector.class' => 'Mandango\\MandangoBundle\\DataCollector\\MandangoDataCollector',
+            'form.type.mandango_document.class' => 'Mandango\\MandangoBundle\\Form\\Type\\MandangoDocumentType',
+            'form.type_guesser.mandango.class' => 'Mandango\\MandangoBundle\\Form\\MandangoTypeGuesser',
+            'mandango.validator.unique_document.class' => 'Mandango\\MandangoBundle\\Validator\\Constraint\\UniqueDocumentValidator',
+            'mandango.extra_config_classes_dirs' => array(
+
+            ),
             'web_profiler.controller.profiler.class' => 'Symfony\\Bundle\\WebProfilerBundle\\Controller\\ProfilerController',
             'web_profiler.controller.router.class' => 'Symfony\\Bundle\\WebProfilerBundle\\Controller\\RouterController',
             'web_profiler.controller.exception.class' => 'Symfony\\Bundle\\WebProfilerBundle\\Controller\\ExceptionController',
@@ -3963,6 +4160,10 @@ class appDevDebugProjectContainer extends Container
                 'data_collector.doctrine' => array(
                     0 => 'db',
                     1 => 'DoctrineBundle:Collector:db',
+                ),
+                'mandango.data_collector' => array(
+                    0 => 'mandango',
+                    1 => 'MandangoBundle:Collector:mandango',
                 ),
             ),
             'console.command.ids' => array(

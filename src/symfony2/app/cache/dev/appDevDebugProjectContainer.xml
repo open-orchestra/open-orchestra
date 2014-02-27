@@ -16,6 +16,7 @@
       <parameter key="AsseticBundle">Symfony\Bundle\AsseticBundle\AsseticBundle</parameter>
       <parameter key="DoctrineBundle">Doctrine\Bundle\DoctrineBundle\DoctrineBundle</parameter>
       <parameter key="SensioFrameworkExtraBundle">Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle</parameter>
+      <parameter key="MandangoBundle">Mandango\MandangoBundle\MandangoBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
       <parameter key="SensioGeneratorBundle">Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle</parameter>
@@ -507,6 +508,19 @@
     <parameter key="sensio_framework_extra.converter.doctrine.class">Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\DoctrineParamConverter</parameter>
     <parameter key="sensio_framework_extra.converter.datetime.class">Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\DateTimeParamConverter</parameter>
     <parameter key="sensio_framework_extra.view.listener.class">Sensio\Bundle\FrameworkExtraBundle\EventListener\TemplateListener</parameter>
+    <parameter key="mandango.class">Mandango\Mandango</parameter>
+    <parameter key="mandango.metadata_factory.class">MandangoMetadataFactory</parameter>
+    <parameter key="mandango.model_dir">/media/sf_Orchestra/src/symfony2/app/</parameter>
+    <parameter key="mandango.metadata_factory.output">/media/sf_Orchestra/src/symfony2/app/</parameter>
+    <parameter key="mandango.cache.filesystem_cache.class">Mandango\Cache\FilesystemCache</parameter>
+    <parameter key="mandango.cache.filesystem_cache.dir">/media/sf_Orchestra/src/symfony2/app/cache/dev/mandango/cache</parameter>
+    <parameter key="mandango.mondator.class">Mandango\Mondator\Mondator</parameter>
+    <parameter key="mandango.logger.class">Mandango\MandangoBundle\Logger\MandangoLogger</parameter>
+    <parameter key="mandango.data_collector.class">Mandango\MandangoBundle\DataCollector\MandangoDataCollector</parameter>
+    <parameter key="form.type.mandango_document.class">Mandango\MandangoBundle\Form\Type\MandangoDocumentType</parameter>
+    <parameter key="form.type_guesser.mandango.class">Mandango\MandangoBundle\Form\MandangoTypeGuesser</parameter>
+    <parameter key="mandango.validator.unique_document.class">Mandango\MandangoBundle\Validator\Constraint\UniqueDocumentValidator</parameter>
+    <parameter key="mandango.extra_config_classes_dirs" type="collection"/>
     <parameter key="web_profiler.controller.profiler.class">Symfony\Bundle\WebProfilerBundle\Controller\ProfilerController</parameter>
     <parameter key="web_profiler.controller.router.class">Symfony\Bundle\WebProfilerBundle\Controller\RouterController</parameter>
     <parameter key="web_profiler.controller.exception.class">Symfony\Bundle\WebProfilerBundle\Controller\ExceptionController</parameter>
@@ -563,6 +577,10 @@
       <parameter key="data_collector.doctrine" type="collection">
         <parameter>db</parameter>
         <parameter>DoctrineBundle:Collector:db</parameter>
+      </parameter>
+      <parameter key="mandango.data_collector" type="collection">
+        <parameter>mandango</parameter>
+        <parameter>MandangoBundle:Collector:mandango</parameter>
       </parameter>
     </parameter>
     <parameter key="console.command.ids" type="collection"/>
@@ -1118,6 +1136,7 @@
               <argument key="reset">form.type.reset</argument>
               <argument key="currency">form.type.currency</argument>
               <argument key="entity">form.type.entity</argument>
+              <argument key="mandango_document">form.type.mandango_document</argument>
             </argument>
             <argument type="collection">
               <argument key="form" type="collection">
@@ -1136,6 +1155,7 @@
             <argument type="collection">
               <argument>form.type_guesser.validator</argument>
               <argument>form.type_guesser.doctrine</argument>
+              <argument>form.type_guesser.mandango</argument>
             </argument>
           </service>
         </argument>
@@ -1360,6 +1380,7 @@
             <argument key="validator.expression">validator.expression</argument>
             <argument key="security.validator.user_password">security.validator.user_password</argument>
             <argument key="doctrine.orm.validator.unique">doctrine.orm.validator.unique</argument>
+            <argument key="mandango.validator.unique_document">mandango.validator.unique_document</argument>
           </argument>
         </service>
       </argument>
@@ -1506,6 +1527,14 @@
               <argument>default</argument>
               <argument type="service" id="doctrine.dbal.logger.profiling.default"/>
             </call>
+          </service>
+        </argument>
+      </call>
+      <call method="add">
+        <argument type="service">
+          <service class="Mandango\MandangoBundle\DataCollector\MandangoDataCollector" public="false">
+            <tag name="data_collector" template="MandangoBundle:Collector:mandango" id="mandango"/>
+            <argument type="service" id="mandango.logger"/>
           </service>
         </argument>
       </call>
@@ -2399,6 +2428,56 @@
       <argument type="service" id="security.authentication.trust_resolver" on-invalid="null"/>
       <argument type="service" id="security.role_hierarchy" on-invalid="null"/>
     </service>
+    <service id="mandango" class="Mandango\Mandango">
+      <argument type="service" id="mandango.metadata_factory"/>
+      <argument type="service" id="mandango.cache.filesystem"/>
+      <argument type="collection">
+        <argument type="service" id="mandango.logger"/>
+        <argument>logQuery</argument>
+      </argument>
+      <call method="setDefaultConnectionName">
+        <argument>local</argument>
+      </call>
+      <call method="setConnection">
+        <argument>local</argument>
+        <argument type="service" id="mandango.local_connection"/>
+      </call>
+    </service>
+    <service id="mandango.metadata_factory" class="MandangoMetadataFactory"/>
+    <service id="mandango.cache.filesystem" class="Mandango\Cache\FilesystemCache">
+      <argument>/media/sf_Orchestra/src/symfony2/app/cache/dev/mandango/cache</argument>
+    </service>
+    <service id="mandango.mondator" class="Mandango\Mondator\Mondator">
+      <call method="addExtension">
+        <argument type="service" id="mandango.extension.core"/>
+      </call>
+      <call method="addExtension">
+        <argument type="service" id="mandango.extension.bundles"/>
+      </call>
+      <call method="addExtension">
+        <argument type="service" id="mandango.extension.document_validation"/>
+      </call>
+    </service>
+    <service id="mandango.logger" class="Mandango\MandangoBundle\Logger\MandangoLogger">
+      <argument type="service" id="logger" on-invalid="null"/>
+    </service>
+    <service id="form.type.mandango_document" class="Mandango\MandangoBundle\Form\Type\MandangoDocumentType">
+      <tag name="form.type" alias="mandango_document"/>
+      <argument type="service" id="mandango"/>
+    </service>
+    <service id="form.type_guesser.mandango" class="Mandango\MandangoBundle\Form\MandangoTypeGuesser">
+      <tag name="form.type_guesser"/>
+      <argument type="service" id="mandango.metadata_factory"/>
+    </service>
+    <service id="mandango.validator.unique_document" class="Mandango\MandangoBundle\Validator\Constraint\UniqueDocumentValidator">
+      <tag name="validator.constraint_validator" alias="mandango.validator.unique_document"/>
+      <argument type="service" id="mandango"/>
+    </service>
+    <service id="mandango.local_connection" class="Mandango\Connection">
+      <argument>mongodb://localhost:27017</argument>
+      <argument>symfony2_local_dev</argument>
+      <argument type="collection"/>
+    </service>
     <service id="web_profiler.controller.profiler" class="Symfony\Bundle\WebProfilerBundle\Controller\ProfilerController">
       <argument type="service" id="router" on-invalid="null"/>
       <argument type="service" id="profiler" on-invalid="null"/>
@@ -2451,6 +2530,10 @@
         <argument key="data_collector.doctrine" type="collection">
           <argument>db</argument>
           <argument>DoctrineBundle:Collector:db</argument>
+        </argument>
+        <argument key="mandango.data_collector" type="collection">
+          <argument>mandango</argument>
+          <argument>MandangoBundle:Collector:mandango</argument>
         </argument>
       </argument>
       <argument>bottom</argument>
@@ -2588,6 +2671,14 @@
       <argument>100</argument>
       <argument>true</argument>
     </service>
+    <service id="mandango.extension.core" class="Mandango\Extension\Core">
+      <argument type="collection">
+        <argument key="metadata_factory_class">MandangoMetadataFactory</argument>
+        <argument key="metadata_factory_output">/media/sf_Orchestra/src/symfony2/app/</argument>
+      </argument>
+    </service>
+    <service id="mandango.extension.bundles" class="Mandango\MandangoBundle\Extension\Bundles"/>
+    <service id="mandango.extension.document_validation" class="Mandango\MandangoBundle\Extension\DocumentValidation"/>
     <service id="session.storage.filesystem" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage">
       <argument>/media/sf_Orchestra/src/symfony2/app/cache/dev/sessions</argument>
       <argument>MOCKSESSID</argument>
@@ -2693,6 +2784,10 @@
       <call method="addPath">
         <argument>/media/sf_Orchestra/src/symfony2/vendor/doctrine/doctrine-bundle/Doctrine/Bundle/DoctrineBundle/Resources/views</argument>
         <argument>Doctrine</argument>
+      </call>
+      <call method="addPath">
+        <argument>/media/sf_Orchestra/src/symfony2/vendor/analytik/mandango-bundle/Mandango/MandangoBundle/Resources/views</argument>
+        <argument>Mandango</argument>
       </call>
       <call method="addPath">
         <argument>/media/sf_Orchestra/src/symfony2/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views</argument>
