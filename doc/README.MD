@@ -11,3 +11,6 @@ Steps list to create the environnement :
 8/ Install git and clone project from github (https://github.com/itkg/phporchestra.git)
 9/ Configure Apache Vhost (see conf/apache2/php-orchestra for vhost file)
    /!\ CHANGE PATH IN VHOST + CREATE LOG DIR
+   
+Additional info :
+The secret token chosen during the symfony installation procss is $php-orchestra$
