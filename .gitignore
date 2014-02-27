@@ -1,15 +1,15 @@
 # Symfony directories
-#/web/bundles/
-/app/bootstrap.php.cache
-/app/cache/*
-#/app/config/parameters.yml
-/app/logs/*
-!app/cache/.gitkeep
-!app/logs/.gitkeep
-#/build/
-#/vendor/
-#/bin/
-#/composer.phar
+#/src/symfony2/web/bundles/
+/src/symfony2/app/bootstrap.php.cache
+/src/symfony2/app/cache/*
+#/src/symfony2/app/config/parameters.yml
+/src/symfony2/app/logs/*
+!/src/symfony2app/cache/.gitkeep
+!/src/symfony2app/logs/.gitkeep
+#/src/symfony2/build/
+#/src/symfony2/vendor/
+#/src/symfony2/bin/
+#/src/symfony2/composer.phar
 
 # Eclipse files
 .buildpath
