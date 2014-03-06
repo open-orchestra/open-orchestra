@@ -108,7 +108,7 @@ La base de données principale sera en MongoDB
 
 ```json
 {
-  "_id": 1,
+  "id": 1,
   "domain": "www.example.org",
   "language": "en"
 }
@@ -118,12 +118,12 @@ La base de données principale sera en MongoDB
 
 ```json
 {
-    "_id": 1,
+    "id": 1,
     "site_id": 1,
     "parent_id": null,
     "path": "/1",
     "name": "home",
-    "version": 4
+    "version": 4,
     "language": "fr",
     "status": "published",
     "template_id": 42,
@@ -177,4 +177,45 @@ La base de données principale sera en MongoDB
 
 #### 4.2.3 Collection content
 
+```json
+{
+    "id": 1,
+    "type": "news", // news, comment, article, etc.
+    "version": 1,
+    "status": "published",
+    "attributes":
+    {
+        "custom_attribute": "value",
+        "custom_attribute": "value",
+        "custom_attribute": "value",
+        "custom_attribute": "value"
+        //, etc.
+    }
+}
+```
+
 #### 4.2.4 Collection user
+
+```json
+{
+    "id": 1,
+    "login": "jdupond",
+    "hash": "0123456789abcde",
+    "salt": "1337",
+    "first_name": "Jean",
+    "last_name": "Dupond",
+    "email": "jean.dupond@example.org",
+    "addresses":
+    {
+        "default":
+        {
+            "street1": "1000 Jefferson Blvd",
+            "zipcode": "ZIP001",
+            "city": "City",
+            "country": "Country"
+        }
+        //, etc.
+    }
+}
+```
+
