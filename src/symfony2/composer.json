@@ -4,7 +4,10 @@
     "type": "project",
     "description": "The \"Symfony Standard Edition\" distribution",
     "autoload": {
-        "psr-0": { "": "src/" }
+        "psr-0": {
+            "": "src/",
+            "PHPOrchestra\\CMSBundle": "vendor/php-orchestra/cms-bundle/"
+        }
     },
     "minimum-stability": "dev",
     "prefer-stable": true,

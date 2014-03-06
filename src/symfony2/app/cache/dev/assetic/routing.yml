@@ -2,4 +2,4 @@ _assetic:
     resource: .
     type: assetic
 _app:
-    resource: /media/sf_Orchestra/src/symfony2/app/config/routing_dev.yml
+    resource: 'D:/workspace-php/Orchestra/src/symfony2/app/config/routing_dev.yml'

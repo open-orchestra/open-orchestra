@@ -17,6 +17,7 @@ return array(
     'Sensio\\Bundle\\FrameworkExtraBundle' => array($vendorDir . '/sensio/framework-extra-bundle'),
     'Sensio\\Bundle\\DistributionBundle' => array($vendorDir . '/sensio/distribution-bundle'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log'),
+    'PHPOrchestra\\CMSBundle' => array($vendorDir . '/php-orchestra/cms-bundle'),
     'Monolog' => array($vendorDir . '/monolog/monolog/src'),
     'Mandango\\Mondator\\' => array($vendorDir . '/mandango/mondator/src'),
     'Mandango\\MandangoBundle' => array($vendorDir . '/analytik/mandango-bundle'),
