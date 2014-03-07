@@ -1,0 +1,34 @@
+Model\PHPOrchestraCMSBundle\Site:
+    fields:
+        domain: string
+        language: string
+        
+Model\PHPOrchestraCMSBundle\Node:
+    fields:
+        site_id: integer
+        parent_id: integer
+        path: string
+        name: string
+        version: integer
+        language: string
+        status: string
+        template_id: integer
+        blocks: string
+        area: string
+        
+Model\PHPOrchestraCMSBundle\Content:
+    fields:
+        type: string
+        version: integer
+        status: string
+        attributes: string
+        
+Model\PHPOrchestraCMSBundle\User:
+    fields:
+        login: string
+        hash: string
+        salt: string
+        first_name: string
+        last_name: string
+        email: string
+        addresses: string
