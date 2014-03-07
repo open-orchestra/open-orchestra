@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "2bd9df2372c9ca9dcc999966f8f0d8e5",
+    "hash": "8d23e8cf7d1623e9a923af41c947cb91",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -798,6 +798,149 @@
             "time": "2013-07-19 00:03:27"
         },
         {
+            "name": "mandango/mandango",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mandango/mandango.git",
+                "reference": "565bdca740a736e9bdf8ceef7f03b6724bfc730e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mandango/mandango/zipball/565bdca740a736e9bdf8ceef7f03b6724bfc730e",
+                "reference": "565bdca740a736e9bdf8ceef7f03b6724bfc730e",
+                "shasum": ""
+            },
+            "require": {
+                "mandango/mondator": "1.0.*@dev",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~3.7"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Mandango\\": "src/"
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pablo Díez",
+                    "email": "pablodip@gmail.com",
+                    "homepage": "http://github.com/pablodip"
+                }
+            ],
+            "description": "Simple, poweful and ultrafast Object Document Mapper (ODM) for PHP and MongoDB",
+            "homepage": "http://mandango.org",
+            "keywords": [
+                "mongodb",
+                "odm"
+            ],
+            "time": "2013-11-02 17:17:14"
+        },
+        {
+            "name": "mandango/mandango-bundle",
+            "version": "dev-master",
+            "target-dir": "Mandango/MandangoBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mandango/MandangoBundle.git",
+                "reference": "36e2ff4cc43989abbb3bd2f84cd7909c0f39d5b9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mandango/MandangoBundle/zipball/36e2ff4cc43989abbb3bd2f84cd7909c0f39d5b9",
+                "reference": "36e2ff4cc43989abbb3bd2f84cd7909c0f39d5b9",
+                "shasum": ""
+            },
+            "require": {
+                "mandango/mandango": "dev-master",
+                "symfony/framework-bundle": "2.*"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-0": {
+                    "Mandango\\MandangoBundle": ""
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pablo Díez",
+                    "email": "pablodip@gmail.com",
+                    "homepage": "http://github.com/pablodip"
+                }
+            ],
+            "description": "Bundle to use Mandango with Symfony2",
+            "keywords": [
+                "mandango",
+                "mongodb"
+            ],
+            "time": "2012-09-18 08:45:09"
+        },
+        {
+            "name": "mandango/mondator",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mandango/mondator.git",
+                "reference": "f4fdddc37e22b2fc2ffcc1d5ce5ff3327982e538"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mandango/mondator/zipball/f4fdddc37e22b2fc2ffcc1d5ce5ff3327982e538",
+                "reference": "f4fdddc37e22b2fc2ffcc1d5ce5ff3327982e538",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "twig/twig": "~1.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~3.7"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Mandango\\Mondator\\": "src/"
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pablo Díez",
+                    "email": "pablodip@gmail.com",
+                    "homepage": "http://github.com/pablodip"
+                }
+            ],
+            "description": "Easy and flexible class generator for PHP",
+            "keywords": [
+                "class-generator"
+            ],
+            "time": "2013-11-02 17:10:18"
+        },
+        {
             "name": "monolog/monolog",
             "version": "1.7.0",
             "source": {
@@ -1566,9 +1709,9 @@
 
     ],
     "minimum-stability": "dev",
-    "stability-flags": [
-
-    ],
+    "stability-flags": {
+        "mandango/mandango-bundle": 20
+    },
     "platform": {
         "php": ">=5.3.3"
     },
