@@ -28,6 +28,15 @@ Once install is done, restart Apache with :
 
     service apache2 restart
 
+In addition, mongo driver for php has to be installed :
+
+    pecl install mongo
+
+Finally, to activate the extension edite /etc/ph5/apache2/php.ini and add the following line :
+
+    extension=mongo.so
+
+
 ##### 5. Install Varnish
 To install the last version of Varnish you should begin with updating your sources.list to check packages on Varnish repisotories instead of Debian ones.
 
