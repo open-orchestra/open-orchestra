@@ -35,7 +35,7 @@ abstract class Block extends \Mandango\Document\EmbeddedDocument
             $this->data['fields']['component'] = null;
         }
         if (isset($data['attributes'])) {
-            $this->data['fields']['attributes'] = unserialize($data['attributes']);
+            $this->data['fields']['attributes'] = $data['attributes'];
         } elseif (isset($data['_fields']['attributes'])) {
             $this->data['fields']['attributes'] = null;
         }
@@ -188,7 +188,7 @@ abstract class Block extends \Mandango\Document\EmbeddedDocument
                     $data = $data[$key];
                 }
                 if (null !== $data) {
-                    $this->data['fields']['attributes'] = unserialize($data);
+                    $this->data['fields']['attributes'] = $data;
                 }
             }
             if (!isset($this->data['fields']['attributes'])) {
@@ -352,7 +352,7 @@ abstract class Block extends \Mandango\Document\EmbeddedDocument
                     $query['component'] = (string) $this->data['fields']['component'];
                 }
                 if (isset($this->data['fields']['attributes'])) {
-                    $query['attributes'] = serialize($this->data['fields']['attributes']);
+                    $query['attributes'] = $this->data['fields']['attributes'];
                 }
                 unset($query);
                 $query = $rootQuery;
@@ -375,7 +375,7 @@ abstract class Block extends \Mandango\Document\EmbeddedDocument
                     $originalValue = $this->getOriginalFieldValue('attributes');
                     if ($value !== $originalValue) {
                         if (null !== $value) {
-                            $query['$set'][$documentPath.'.attributes'] = serialize($this->data['fields']['attributes']);
+                            $query['$set'][$documentPath.'.attributes'] = $this->data['fields']['attributes'];
                         } else {
                             $query['$unset'][$documentPath.'.attributes'] = 1;
                         }

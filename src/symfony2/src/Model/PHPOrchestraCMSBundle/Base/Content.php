@@ -57,7 +57,7 @@ abstract class Content extends \Mandango\Document\Document
             $this->data['fields']['status'] = null;
         }
         if (isset($data['attributes'])) {
-            $this->data['fields']['attributes'] = unserialize($data['attributes']);
+            $this->data['fields']['attributes'] = $data['attributes'];
         } elseif (isset($data['_fields']['attributes'])) {
             $this->data['fields']['attributes'] = null;
         }
@@ -365,7 +365,7 @@ abstract class Content extends \Mandango\Document\Document
                 $this->addFieldCache('attributes');
                 $data = $this->getRepository()->getCollection()->findOne(array('_id' => $this->getId()), array('attributes' => 1));
                 if (isset($data['attributes'])) {
-                    $this->data['fields']['attributes'] = unserialize($data['attributes']);
+                    $this->data['fields']['attributes'] = $data['attributes'];
                 } else {
                     $this->data['fields']['attributes'] = null;
                 }
@@ -555,7 +555,7 @@ abstract class Content extends \Mandango\Document\Document
                     $query['status'] = (string) $this->data['fields']['status'];
                 }
                 if (isset($this->data['fields']['attributes'])) {
-                    $query['attributes'] = serialize($this->data['fields']['attributes']);
+                    $query['attributes'] = $this->data['fields']['attributes'];
                 }
             } else {
                 if (isset($this->data['fields']['content_id']) || array_key_exists('content_id', $this->data['fields'])) {
@@ -607,7 +607,7 @@ abstract class Content extends \Mandango\Document\Document
                     $originalValue = $this->getOriginalFieldValue('attributes');
                     if ($value !== $originalValue) {
                         if (null !== $value) {
-                            $query['$set']['attributes'] = serialize($this->data['fields']['attributes']);
+                            $query['$set']['attributes'] = $this->data['fields']['attributes'];
                         } else {
                             $query['$unset']['attributes'] = 1;
                         }

@@ -6,12 +6,12 @@ Model\PHPOrchestraCMSBundle\Site:
         language: string
 
 
-Model\PHPOrchestraCMSBundle\BlockReference:
-    collection: node
-    isEmbedded: true
-    fields:
-        node_id: integer
-        block_id: integer
+#Model\PHPOrchestraCMSBundle\BlockReference:
+#    collection: node
+#    isEmbedded: true
+#    fields:
+#        node_id: integer
+#        block_id: integer
 
 
 Model\PHPOrchestraCMSBundle\Block:
@@ -19,18 +19,18 @@ Model\PHPOrchestraCMSBundle\Block:
     isEmbedded: true
     fields:
         component: string
-        attributes: serialized
+        attributes: raw
 
 
-Model\PHPOrchestraCMSBundle\Area:
-    collection: node
-    isEmbedded: true
-    fields:
-        area_id: string
-        classes: serialized
-    embeddedsMany:
-        #sub_areas: {class: Model\PHPOrchestraCMSBundle\Area}
-        blocks: {class: Model\PHPOrchestraCMSBundle\BlockReference}
+#Model\PHPOrchestraCMSBundle\Area:
+#    collection: node
+#    isEmbedded: true
+#    fields:
+#        area_id: string
+#        classes: raw
+#        sub_areas: raw
+#    embeddedsMany:
+#        blocks: {class: Model\PHPOrchestraCMSBundle\BlockReference}
 
 
 Model\PHPOrchestraCMSBundle\Node:
@@ -45,9 +45,9 @@ Model\PHPOrchestraCMSBundle\Node:
         language: string
         status: string
         template_id: integer
+        areas: raw
     embeddedsMany:
         blocks: {class: Model\PHPOrchestraCMSBundle\Block}
-        area: {class: Model\PHPOrchestraCMSBundle\Area}
 
 
 Model\PHPOrchestraCMSBundle\Content:
@@ -57,7 +57,7 @@ Model\PHPOrchestraCMSBundle\Content:
         type: string
         version: integer
         status: string
-        attributes: serialized
+        attributes: raw
 
         
 Model\PHPOrchestraCMSBundle\User:

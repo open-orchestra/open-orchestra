@@ -61,44 +61,6 @@ class MetadataFactoryInfo
         );
     }
 
-    public function getModelPHPOrchestraCMSBundleBlockReferenceClass()
-    {
-        return array(
-            'isEmbedded' => true,
-            'inheritable' => false,
-            'inheritance' => false,
-            'fields' => array(
-                'node_id' => array(
-                    'type' => 'integer',
-                    'dbName' => 'node_id',
-                ),
-                'block_id' => array(
-                    'type' => 'integer',
-                    'dbName' => 'block_id',
-                ),
-            ),
-            '_has_references' => false,
-            'referencesOne' => array(
-
-            ),
-            'referencesMany' => array(
-
-            ),
-            'embeddedsOne' => array(
-
-            ),
-            'embeddedsMany' => array(
-
-            ),
-            'indexes' => array(
-
-            ),
-            '_indexes' => array(
-
-            ),
-        );
-    }
-
     public function getModelPHPOrchestraCMSBundleBlockClass()
     {
         return array(
@@ -111,7 +73,7 @@ class MetadataFactoryInfo
                     'dbName' => 'component',
                 ),
                 'attributes' => array(
-                    'type' => 'serialized',
+                    'type' => 'raw',
                     'dbName' => 'attributes',
                 ),
             ),
@@ -127,49 +89,6 @@ class MetadataFactoryInfo
             ),
             'embeddedsMany' => array(
 
-            ),
-            'indexes' => array(
-
-            ),
-            '_indexes' => array(
-
-            ),
-        );
-    }
-
-    public function getModelPHPOrchestraCMSBundleAreaClass()
-    {
-        return array(
-            'isEmbedded' => true,
-            'inheritable' => false,
-            'inheritance' => false,
-            'fields' => array(
-                'area_id' => array(
-                    'type' => 'string',
-                    'dbName' => 'area_id',
-                ),
-                'classes' => array(
-                    'type' => 'serialized',
-                    'dbName' => 'classes',
-                ),
-            ),
-            '_has_references' => false,
-            'referencesOne' => array(
-
-            ),
-            'referencesMany' => array(
-
-            ),
-            'embeddedsOne' => array(
-
-            ),
-            'embeddedsMany' => array(
-                'blocks' => array(
-                    'class' => 'Model\\PHPOrchestraCMSBundle\\BlockReference',
-                ),
-                'sub_areas' => array(
-                    'class' => 'Model\\PHPOrchestraCMSBundle\\Area',
-                ),
             ),
             'indexes' => array(
 
@@ -226,6 +145,10 @@ class MetadataFactoryInfo
                     'type' => 'integer',
                     'dbName' => 'template_id',
                 ),
+                'areas' => array(
+                    'type' => 'raw',
+                    'dbName' => 'areas',
+                ),
             ),
             '_has_references' => false,
             'referencesOne' => array(
@@ -240,9 +163,6 @@ class MetadataFactoryInfo
             'embeddedsMany' => array(
                 'blocks' => array(
                     'class' => 'Model\\PHPOrchestraCMSBundle\\Block',
-                ),
-                'area' => array(
-                    'class' => 'Model\\PHPOrchestraCMSBundle\\Area',
                 ),
             ),
             'relationsOne' => array(
@@ -293,7 +213,7 @@ class MetadataFactoryInfo
                     'dbName' => 'status',
                 ),
                 'attributes' => array(
-                    'type' => 'serialized',
+                    'type' => 'raw',
                     'dbName' => 'attributes',
                 ),
             ),

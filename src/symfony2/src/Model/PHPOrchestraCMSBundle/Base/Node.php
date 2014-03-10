@@ -81,17 +81,16 @@ abstract class Node extends \Mandango\Document\Document
         } elseif (isset($data['_fields']['template_id'])) {
             $this->data['fields']['template_id'] = null;
         }
+        if (isset($data['areas'])) {
+            $this->data['fields']['areas'] = $data['areas'];
+        } elseif (isset($data['_fields']['areas'])) {
+            $this->data['fields']['areas'] = null;
+        }
         if (isset($data['blocks'])) {
             $embedded = new \Mandango\Group\EmbeddedGroup('Model\PHPOrchestraCMSBundle\Block');
             $embedded->setRootAndPath($this, 'blocks');
             $embedded->setSavedData($data['blocks']);
             $this->data['embeddedsMany']['blocks'] = $embedded;
-        }
-        if (isset($data['area'])) {
-            $embedded = new \Mandango\Group\EmbeddedGroup('Model\PHPOrchestraCMSBundle\Area');
-            $embedded->setRootAndPath($this, 'area');
-            $embedded->setSavedData($data['area']);
-            $this->data['embeddedsMany']['area'] = $embedded;
         }
 
         return $this;
@@ -655,6 +654,68 @@ abstract class Node extends \Mandango\Document\Document
         return $this->data['fields']['template_id'];
     }
 
+    /**
+     * Set the "areas" field.
+     *
+     * @param mixed $value The value.
+     *
+     * @return \Model\PHPOrchestraCMSBundle\Node The document (fluent interface).
+     */
+    public function setAreas($value)
+    {
+        if (!isset($this->data['fields']['areas'])) {
+            if (!$this->isNew()) {
+                $this->getAreas();
+                if ($this->isFieldEqualTo('areas', $value)) {
+                    return $this;
+                }
+            } else {
+                if (null === $value) {
+                    return $this;
+                }
+                $this->fieldsModified['areas'] = null;
+                $this->data['fields']['areas'] = $value;
+                return $this;
+            }
+        } elseif ($this->isFieldEqualTo('areas', $value)) {
+            return $this;
+        }
+
+        if (!isset($this->fieldsModified['areas']) && !array_key_exists('areas', $this->fieldsModified)) {
+            $this->fieldsModified['areas'] = $this->data['fields']['areas'];
+        } elseif ($this->isFieldModifiedEqualTo('areas', $value)) {
+            unset($this->fieldsModified['areas']);
+        }
+
+        $this->data['fields']['areas'] = $value;
+
+        return $this;
+    }
+
+    /**
+     * Returns the "areas" field.
+     *
+     * @return mixed The $name field.
+     */
+    public function getAreas()
+    {
+        if (!isset($this->data['fields']['areas'])) {
+            if ($this->isNew()) {
+                $this->data['fields']['areas'] = null;
+            } elseif (!isset($this->data['fields']) || !array_key_exists('areas', $this->data['fields'])) {
+                $this->addFieldCache('areas');
+                $data = $this->getRepository()->getCollection()->findOne(array('_id' => $this->getId()), array('areas' => 1));
+                if (isset($data['areas'])) {
+                    $this->data['fields']['areas'] = $data['areas'];
+                } else {
+                    $this->data['fields']['areas'] = null;
+                }
+            }
+        }
+
+        return $this->data['fields']['areas'];
+    }
+
     private function isFieldEqualTo($field, $otherValue)
     {
         $value = $this->data['fields'][$field];
@@ -743,67 +804,12 @@ abstract class Node extends \Mandango\Document\Document
     }
 
     /**
-     * Returns the "area" embedded many.
-     *
-     * @return \Mandango\Group\EmbeddedGroup The "area" embedded many.
-     */
-    public function getArea()
-    {
-        if (!isset($this->data['embeddedsMany']['area'])) {
-            $this->data['embeddedsMany']['area'] = $embedded = new \Mandango\Group\EmbeddedGroup('Model\PHPOrchestraCMSBundle\Area');
-            $embedded->setRootAndPath($this, 'area');
-        }
-
-        return $this->data['embeddedsMany']['area'];
-    }
-
-    /**
-     * Adds documents to the "area" embeddeds many.
-     *
-     * @param mixed $documents A document or an array or documents.
-     *
-     * @return \Model\PHPOrchestraCMSBundle\Node The document (fluent interface).
-     */
-    public function addArea($documents)
-    {
-        $this->getArea()->add($documents);
-
-        return $this;
-    }
-
-    /**
-     * Removes documents to the "area" embeddeds many.
-     *
-     * @param mixed $documents A document or an array or documents.
-     *
-     * @return \Model\PHPOrchestraCMSBundle\Node The document (fluent interface).
-     */
-    public function removeArea($documents)
-    {
-        $this->getArea()->remove($documents);
-
-        return $this;
-    }
-
-    /**
      * Resets the groups of the document.
      */
     public function resetGroups()
     {
         if (isset($this->data['embeddedsMany']['blocks'])) {
             $this->data['embeddedsMany']['blocks']->reset();
-        }
-        if (isset($this->data['embeddedsMany']['area'])) {
-            $group = $this->data['embeddedsMany']['area'];
-            foreach (array_merge($group->getAdd(), $group->getRemove()) as $document) {
-                $document->resetGroups();
-            }
-            if ($group->isSavedInitialized()) {
-                foreach ($group->getSaved() as $document) {
-                    $document->resetGroups();
-                }
-            }
-            $group->reset();
         }
     }
 
@@ -845,6 +851,9 @@ abstract class Node extends \Mandango\Document\Document
         }
         if ('template_id' == $name) {
             return $this->setTemplate_id($value);
+        }
+        if ('areas' == $name) {
+            return $this->setAreas($value);
         }
 
         throw new \InvalidArgumentException(sprintf('The document data "%s" is not valid.', $name));
@@ -888,11 +897,11 @@ abstract class Node extends \Mandango\Document\Document
         if ('template_id' == $name) {
             return $this->getTemplate_id();
         }
+        if ('areas' == $name) {
+            return $this->getAreas();
+        }
         if ('blocks' == $name) {
             return $this->getBlocks();
-        }
-        if ('area' == $name) {
-            return $this->getArea();
         }
 
         throw new \InvalidArgumentException(sprintf('The document data "%s" is not valid.', $name));
@@ -937,6 +946,9 @@ abstract class Node extends \Mandango\Document\Document
         if (isset($array['template_id'])) {
             $this->setTemplate_id($array['template_id']);
         }
+        if (isset($array['areas'])) {
+            $this->setAreas($array['areas']);
+        }
         if (isset($array['blocks'])) {
             $embeddeds = array();
             foreach ($array['blocks'] as $documentData) {
@@ -944,14 +956,6 @@ abstract class Node extends \Mandango\Document\Document
                 $embedded->setDocumentData($documentData);
             }
             $this->getBlocks()->replace($embeddeds);
-        }
-        if (isset($array['area'])) {
-            $embeddeds = array();
-            foreach ($array['area'] as $documentData) {
-                $embeddeds[] = $embedded = new \Model\PHPOrchestraCMSBundle\Area($this->getMandango());
-                $embedded->setDocumentData($documentData);
-            }
-            $this->getArea()->replace($embeddeds);
         }
 
         return $this;
@@ -977,6 +981,7 @@ abstract class Node extends \Mandango\Document\Document
         $array['language'] = $this->getLanguage();
         $array['status'] = $this->getStatus();
         $array['template_id'] = $this->getTemplate_id();
+        $array['areas'] = $this->getAreas();
 
         return $array;
     }
@@ -1018,6 +1023,9 @@ abstract class Node extends \Mandango\Document\Document
                 }
                 if (isset($this->data['fields']['template_id'])) {
                     $query['template_id'] = (int) $this->data['fields']['template_id'];
+                }
+                if (isset($this->data['fields']['areas'])) {
+                    $query['areas'] = $this->data['fields']['areas'];
                 }
             } else {
                 if (isset($this->data['fields']['node_id']) || array_key_exists('node_id', $this->data['fields'])) {
@@ -1119,6 +1127,17 @@ abstract class Node extends \Mandango\Document\Document
                         }
                     }
                 }
+                if (isset($this->data['fields']['areas']) || array_key_exists('areas', $this->data['fields'])) {
+                    $value = $this->data['fields']['areas'];
+                    $originalValue = $this->getOriginalFieldValue('areas');
+                    if ($value !== $originalValue) {
+                        if (null !== $value) {
+                            $query['$set']['areas'] = $this->data['fields']['areas'];
+                        } else {
+                            $query['$unset']['areas'] = 1;
+                        }
+                    }
+                }
             }
         }
         if (true === $reset) {
@@ -1131,36 +1150,9 @@ abstract class Node extends \Mandango\Document\Document
                         $query = $document->queryForSave($query, $isNew);
                     }
                 }
-                if (isset($this->data['embeddedsMany']['area'])) {
-                    foreach ($this->data['embeddedsMany']['area']->getAdd() as $document) {
-                        $query = $document->queryForSave($query, $isNew);
-                    }
-                }
             } else {
                 if (isset($this->data['embeddedsMany']['blocks'])) {
                     $group = $this->data['embeddedsMany']['blocks'];
-                    foreach ($group->getSaved() as $document) {
-                        $query = $document->queryForSave($query, $isNew);
-                    }
-                    $groupRap = $group->getRootAndPath();
-                    foreach ($group->getAdd() as $document) {
-                        $q = $document->queryForSave(array(), true);
-                        $rap = $document->getRootAndPath();
-                        foreach (explode('.', $rap['path']) as $name) {
-                            if (0 === strpos($name, '_add')) {
-                                $name = substr($name, 4);
-                            }
-                            $q = $q[$name];
-                        }
-                        $query['$pushAll'][$groupRap['path']][] = $q;
-                    }
-                    foreach ($group->getRemove() as $document) {
-                        $rap = $document->getRootAndPath();
-                        $query['$unset'][$rap['path']] = 1;
-                    }
-                }
-                if (isset($this->data['embeddedsMany']['area'])) {
-                    $group = $this->data['embeddedsMany']['area'];
                     foreach ($group->getSaved() as $document) {
                         $query = $document->queryForSave($query, $isNew);
                     }
