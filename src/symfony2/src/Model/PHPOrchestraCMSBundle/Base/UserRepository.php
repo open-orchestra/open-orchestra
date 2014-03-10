@@ -14,7 +14,7 @@ abstract class UserRepository extends \Mandango\Repository
     {
         $this->documentClass = 'Model\PHPOrchestraCMSBundle\User';
         $this->isFile = false;
-        $this->collectionName = 'model_phporchestracmsbundle_user';
+        $this->collectionName = 'user';
 
         parent::__construct($mandango);
     }

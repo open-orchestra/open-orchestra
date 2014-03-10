@@ -14,7 +14,7 @@ abstract class NodeRepository extends \Mandango\Repository
     {
         $this->documentClass = 'Model\PHPOrchestraCMSBundle\Node';
         $this->isFile = false;
-        $this->collectionName = 'model_phporchestracmsbundle_node';
+        $this->collectionName = 'node';
 
         parent::__construct($mandango);
     }
@@ -72,6 +72,7 @@ abstract class NodeRepository extends \Mandango\Repository
                 $document->clearModified();
                 $identityMap[(string) $data['_id']] = $document;
 
+                $document->resetGroups();
             }
         }
 
@@ -81,6 +82,7 @@ abstract class NodeRepository extends \Mandango\Repository
                 $query = $document->queryForSave();
                 $collection->update(array('_id' => $this->idToMongo($document->getId())), $query, $updateOptions);
                 $document->clearModified();
+                $document->resetGroups();
             }
         }
     }

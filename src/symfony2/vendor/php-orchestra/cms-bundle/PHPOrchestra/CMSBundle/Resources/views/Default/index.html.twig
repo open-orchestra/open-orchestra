@@ -1,1 +1,15 @@
-Hello {{ name }}!
+{% for node in nodes %}
+<fieldset>
+    <legend>{{ node.getName }}</legend>
+    <ul>
+        <li>node_id : {{ node.node_id }}</li>
+        <li>site_id : {{ node.site_id }}</li>
+        <li>name : {{ node.name }}</li>
+        <li>version : {{ node.version }}</li>
+        <li>language : {{ node.language }}</li>
+    {% for block in node.blocks %}
+        <li>Component : {{ block.component }}</li>            
+    {% endfor %}
+    </ul>
+</fieldset>
+{% endfor %}

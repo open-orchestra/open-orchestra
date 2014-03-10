@@ -10,10 +10,14 @@ class MetadataFactoryInfo
             'isEmbedded' => false,
             'mandango' => null,
             'connection' => '',
-            'collection' => 'model_phporchestracmsbundle_site',
+            'collection' => 'site',
             'inheritable' => false,
             'inheritance' => false,
             'fields' => array(
+                'site_id' => array(
+                    'type' => 'integer',
+                    'dbName' => 'site_id',
+                ),
                 'domain' => array(
                     'type' => 'string',
                     'dbName' => 'domain',
@@ -57,16 +61,139 @@ class MetadataFactoryInfo
         );
     }
 
+    public function getModelPHPOrchestraCMSBundleBlockReferenceClass()
+    {
+        return array(
+            'isEmbedded' => true,
+            'inheritable' => false,
+            'inheritance' => false,
+            'fields' => array(
+                'node_id' => array(
+                    'type' => 'integer',
+                    'dbName' => 'node_id',
+                ),
+                'block_id' => array(
+                    'type' => 'integer',
+                    'dbName' => 'block_id',
+                ),
+            ),
+            '_has_references' => false,
+            'referencesOne' => array(
+
+            ),
+            'referencesMany' => array(
+
+            ),
+            'embeddedsOne' => array(
+
+            ),
+            'embeddedsMany' => array(
+
+            ),
+            'indexes' => array(
+
+            ),
+            '_indexes' => array(
+
+            ),
+        );
+    }
+
+    public function getModelPHPOrchestraCMSBundleBlockClass()
+    {
+        return array(
+            'isEmbedded' => true,
+            'inheritable' => false,
+            'inheritance' => false,
+            'fields' => array(
+                'component' => array(
+                    'type' => 'string',
+                    'dbName' => 'component',
+                ),
+                'attributes' => array(
+                    'type' => 'serialized',
+                    'dbName' => 'attributes',
+                ),
+            ),
+            '_has_references' => false,
+            'referencesOne' => array(
+
+            ),
+            'referencesMany' => array(
+
+            ),
+            'embeddedsOne' => array(
+
+            ),
+            'embeddedsMany' => array(
+
+            ),
+            'indexes' => array(
+
+            ),
+            '_indexes' => array(
+
+            ),
+        );
+    }
+
+    public function getModelPHPOrchestraCMSBundleAreaClass()
+    {
+        return array(
+            'isEmbedded' => true,
+            'inheritable' => false,
+            'inheritance' => false,
+            'fields' => array(
+                'area_id' => array(
+                    'type' => 'string',
+                    'dbName' => 'area_id',
+                ),
+                'classes' => array(
+                    'type' => 'serialized',
+                    'dbName' => 'classes',
+                ),
+            ),
+            '_has_references' => false,
+            'referencesOne' => array(
+
+            ),
+            'referencesMany' => array(
+
+            ),
+            'embeddedsOne' => array(
+
+            ),
+            'embeddedsMany' => array(
+                'blocks' => array(
+                    'class' => 'Model\\PHPOrchestraCMSBundle\\BlockReference',
+                ),
+                'sub_areas' => array(
+                    'class' => 'Model\\PHPOrchestraCMSBundle\\Area',
+                ),
+            ),
+            'indexes' => array(
+
+            ),
+            '_indexes' => array(
+
+            ),
+        );
+    }
+
     public function getModelPHPOrchestraCMSBundleNodeClass()
     {
         return array(
             'isEmbedded' => false,
             'mandango' => null,
             'connection' => '',
-            'collection' => 'model_phporchestracmsbundle_node',
+            'collection' => 'node',
             'inheritable' => false,
             'inheritance' => false,
             'fields' => array(
+                'node_id' => array(
+                    'type' => 'integer',
+                    'dbName' => 'node_id',
+                ),
                 'site_id' => array(
                     'type' => 'integer',
                     'dbName' => 'site_id',
@@ -99,14 +226,6 @@ class MetadataFactoryInfo
                     'type' => 'integer',
                     'dbName' => 'template_id',
                 ),
-                'blocks' => array(
-                    'type' => 'string',
-                    'dbName' => 'blocks',
-                ),
-                'area' => array(
-                    'type' => 'string',
-                    'dbName' => 'area',
-                ),
             ),
             '_has_references' => false,
             'referencesOne' => array(
@@ -119,7 +238,12 @@ class MetadataFactoryInfo
 
             ),
             'embeddedsMany' => array(
-
+                'blocks' => array(
+                    'class' => 'Model\\PHPOrchestraCMSBundle\\Block',
+                ),
+                'area' => array(
+                    'class' => 'Model\\PHPOrchestraCMSBundle\\Area',
+                ),
             ),
             'relationsOne' => array(
 
@@ -148,10 +272,14 @@ class MetadataFactoryInfo
             'isEmbedded' => false,
             'mandango' => null,
             'connection' => '',
-            'collection' => 'model_phporchestracmsbundle_content',
+            'collection' => 'content',
             'inheritable' => false,
             'inheritance' => false,
             'fields' => array(
+                'content_id' => array(
+                    'type' => 'integer',
+                    'dbName' => 'content_id',
+                ),
                 'type' => array(
                     'type' => 'string',
                     'dbName' => 'type',
@@ -165,7 +293,7 @@ class MetadataFactoryInfo
                     'dbName' => 'status',
                 ),
                 'attributes' => array(
-                    'type' => 'string',
+                    'type' => 'serialized',
                     'dbName' => 'attributes',
                 ),
             ),
@@ -209,7 +337,7 @@ class MetadataFactoryInfo
             'isEmbedded' => false,
             'mandango' => null,
             'connection' => '',
-            'collection' => 'model_phporchestracmsbundle_user',
+            'collection' => 'user',
             'inheritable' => false,
             'inheritance' => false,
             'fields' => array(

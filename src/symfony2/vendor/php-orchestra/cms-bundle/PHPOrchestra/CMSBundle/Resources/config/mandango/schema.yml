@@ -1,10 +1,42 @@
 Model\PHPOrchestraCMSBundle\Site:
+    collection: site
     fields:
+        site_id: integer
         domain: string
         language: string
-        
-Model\PHPOrchestraCMSBundle\Node:
+
+
+Model\PHPOrchestraCMSBundle\BlockReference:
+    collection: node
+    isEmbedded: true
     fields:
+        node_id: integer
+        block_id: integer
+
+
+Model\PHPOrchestraCMSBundle\Block:
+    collection: node
+    isEmbedded: true
+    fields:
+        component: string
+        attributes: serialized
+
+
+Model\PHPOrchestraCMSBundle\Area:
+    collection: node
+    isEmbedded: true
+    fields:
+        area_id: string
+        classes: serialized
+    embeddedsMany:
+        #sub_areas: {class: Model\PHPOrchestraCMSBundle\Area}
+        blocks: {class: Model\PHPOrchestraCMSBundle\BlockReference}
+
+
+Model\PHPOrchestraCMSBundle\Node:
+    collection: node
+    fields:
+        node_id: integer
         site_id: integer
         parent_id: integer
         path: string
@@ -13,17 +45,23 @@ Model\PHPOrchestraCMSBundle\Node:
         language: string
         status: string
         template_id: integer
-        blocks: string
-        area: string
-        
+    embeddedsMany:
+        blocks: {class: Model\PHPOrchestraCMSBundle\Block}
+        area: {class: Model\PHPOrchestraCMSBundle\Area}
+
+
 Model\PHPOrchestraCMSBundle\Content:
+    collection: content
     fields:
+        content_id: integer
         type: string
         version: integer
         status: string
-        attributes: string
+        attributes: serialized
+
         
 Model\PHPOrchestraCMSBundle\User:
+    collection: user
     fields:
         login: string
         hash: string

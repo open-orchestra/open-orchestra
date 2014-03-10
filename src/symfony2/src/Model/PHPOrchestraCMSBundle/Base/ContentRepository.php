@@ -14,7 +14,7 @@ abstract class ContentRepository extends \Mandango\Repository
     {
         $this->documentClass = 'Model\PHPOrchestraCMSBundle\Content';
         $this->isFile = false;
-        $this->collectionName = 'model_phporchestracmsbundle_content';
+        $this->collectionName = 'content';
 
         parent::__construct($mandango);
     }

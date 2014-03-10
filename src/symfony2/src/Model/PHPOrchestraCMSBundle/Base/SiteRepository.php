@@ -14,7 +14,7 @@ abstract class SiteRepository extends \Mandango\Repository
     {
         $this->documentClass = 'Model\PHPOrchestraCMSBundle\Site';
         $this->isFile = false;
-        $this->collectionName = 'model_phporchestracmsbundle_site';
+        $this->collectionName = 'site';
 
         parent::__construct($mandango);
     }
