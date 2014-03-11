@@ -7,7 +7,7 @@ use PHPOrchestra\CMSBundle\Classes\Area;
 
 class NodesController extends Controller
 {
-    public function indexAction()
+    public function addAction()
     {
     	$mandango = $this->container->get('mandango');
 

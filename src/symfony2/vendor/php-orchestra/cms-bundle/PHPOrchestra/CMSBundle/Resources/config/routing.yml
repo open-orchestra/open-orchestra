@@ -1,6 +1,6 @@
-php_orchestra_cms_nodes:
-    pattern:  /nodes
-    defaults: { _controller: PHPOrchestraCMSBundle:Nodes:index }
+php_orchestra_cms_addnodes:
+    pattern:  /nodes/addsamples
+    defaults: { _controller: PHPOrchestraCMSBundle:Nodes:add }
     
 php_orchestra_cms_node:
     pattern:  /node/{nodeId}
