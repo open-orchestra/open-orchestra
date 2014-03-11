@@ -1,0 +1,21 @@
+#orchestra-main div {
+    border: 1px solid #000000;
+    background-color: #CCCCCC;
+    margin: 5px;
+    padding: 5px;
+}
+
+#left_menu {
+    width:20%;
+    float:left;
+}
+
+#content {
+	width:50%;
+    float:left;
+}
+
+#skycrapper {
+    width:20%;
+    float:left;
+}

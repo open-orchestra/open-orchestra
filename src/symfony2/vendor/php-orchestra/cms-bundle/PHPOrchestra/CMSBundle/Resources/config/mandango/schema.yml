@@ -6,31 +6,12 @@ Model\PHPOrchestraCMSBundle\Site:
         language: string
 
 
-#Model\PHPOrchestraCMSBundle\BlockReference:
-#    collection: node
-#    isEmbedded: true
-#    fields:
-#        node_id: integer
-#        block_id: integer
-
-
 Model\PHPOrchestraCMSBundle\Block:
     collection: node
     isEmbedded: true
     fields:
         component: string
         attributes: raw
-
-
-#Model\PHPOrchestraCMSBundle\Area:
-#    collection: node
-#    isEmbedded: true
-#    fields:
-#        area_id: string
-#        classes: raw
-#        sub_areas: raw
-#    embeddedsMany:
-#        blocks: {class: Model\PHPOrchestraCMSBundle\BlockReference}
 
 
 Model\PHPOrchestraCMSBundle\Node:

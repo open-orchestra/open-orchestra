@@ -9,6 +9,11 @@ class Area
 	private $subAreas = array();
 	private $blockReferences = array();
 	
+	public function __construct()
+	{
+		return $this;
+	}
+	
     public function setId($id)
     {
         $this->id = $id;

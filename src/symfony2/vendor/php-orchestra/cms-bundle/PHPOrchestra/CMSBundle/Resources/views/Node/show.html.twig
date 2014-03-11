@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <title>{{ node.name }}</title>
+        <link rel="stylesheet" href="{{ asset('bundles/phporchestracms/css/main.css') }}">
+    </head>
+    <body>
+        <div id="orchestra-main">
+    {% for area in node.areas %}
+        {% include "PHPOrchestraCMSBundle:Node:area.html.twig" with {"area": area, "blocks": node.blocks} only %}
+    {% endfor %}
+        </div>
+    </body>
+</html>
