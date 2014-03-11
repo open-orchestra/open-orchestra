@@ -1,3 +1,5 @@
 <div>
-{{ block.content }}
+{% for key, value in block %}
+    {{ key }} : {{ value }}<br />
+{% endfor %}
 </div>
