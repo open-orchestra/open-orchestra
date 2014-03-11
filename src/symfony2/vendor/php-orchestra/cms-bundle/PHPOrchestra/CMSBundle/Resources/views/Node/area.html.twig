@@ -4,6 +4,7 @@
     {% include "PHPOrchestraCMSBundle:Node:area.html.twig" with {"area": sub_area, "blocks" : blocks} only %}
 {% endfor %}
 {% for block_reference in area.blocks %}
-    {% include "PHPOrchestraCMSBundle:Node:block.html.twig" with {"block": blocks.iterator[block_reference.block_id - 1]} only %}
+    {% set block = blocks.iterator[block_reference.block_id] %}
+    {{ render(controller(block.component, {'block': block.attributes})) }}
 {% endfor %}
 </fieldset>

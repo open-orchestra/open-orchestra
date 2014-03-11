@@ -1,5 +1,12 @@
 <?php
 
+/*
+ * Noël Gilain <noel.gilain@businessdecision.com>
+ *
+ * This class is the model class used to store areas and subareas in mandango Node objects
+ * 
+ */
+
 namespace PHPOrchestra\CMSBundle\Classes;
 
 class Area
@@ -58,6 +65,10 @@ class Area
         return $this->blockReferences;
     }
     
+
+    /**
+     * Adapt area object to Areas attribute of mandango Node object
+     */
     public function toArray()
     {
     	$formattedSubAreas = array();
