@@ -1,7 +1,7 @@
 Model\PHPOrchestraCMSBundle\Site:
     collection: site
     fields:
-        site_id: integer
+        siteId: integer
         domain: string
         language: string
 
@@ -17,15 +17,15 @@ Model\PHPOrchestraCMSBundle\Block:
 Model\PHPOrchestraCMSBundle\Node:
     collection: node
     fields:
-        node_id: integer
-        site_id: integer
-        parent_id: integer
+        nodeId: integer
+        siteId: integer
+        parentId: integer
         path: string
         name: string
         version: integer
         language: string
         status: string
-        template_id: integer
+        templateId: integer
         areas: raw
     embeddedsMany:
         blocks: {class: Model\PHPOrchestraCMSBundle\Block}
@@ -34,7 +34,7 @@ Model\PHPOrchestraCMSBundle\Node:
 Model\PHPOrchestraCMSBundle\Content:
     collection: content
     fields:
-        content_id: integer
+        contentId: integer
         type: string
         version: integer
         status: string
@@ -47,7 +47,7 @@ Model\PHPOrchestraCMSBundle\User:
         login: string
         hash: string
         salt: string
-        first_name: string
-        last_name: string
+        firstName: string
+        lastName: string
         email: string
         addresses: string

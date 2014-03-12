@@ -1,8 +1,8 @@
 {% for node in nodes %}
 <fieldset>
     <legend>{{ node.name }}</legend>
-    &nbsp;node_id : {{ node.node_id }}<br/>
-    &nbsp;site_id : {{ node.site_id }}<br/>
+    &nbsp;nodeId : {{ node.nodeId }}<br/>
+    &nbsp;siteId : {{ node.siteId }}<br/>
     &nbsp;name : {{ node.name }}<br/>
     &nbsp;version : {{ node.version }}<br/>
     &nbsp;language : {{ node.language }}<br/>
@@ -12,15 +12,15 @@
     {% endfor %}
     &nbsp;Areas :<br/>
     {% for area in node.areas %}
-        &nbsp;&nbsp;* Area area_id : {{ area.area_id }}<br/>
+        &nbsp;&nbsp;* Area areaId : {{ area.areaId }}<br/>
         &nbsp;&nbsp;* Area classes :
         {% for class in area.classes %}
             {{ class }}
         {% endfor %}
         <br/>
         &nbsp;&nbsp;* SubAreas :<br/>
-        {% for subArea in area.sub_areas %}
-            &nbsp;&nbsp;&nbsp;&nbsp;. subArea area_id : {{ subArea.area_id }}<br/>            
+        {% for subArea in area.subAreas %}
+            &nbsp;&nbsp;&nbsp;&nbsp;. subArea areaId : {{ subArea.areaId }}<br/>            
         {% endfor %}
     {% endfor %}
 

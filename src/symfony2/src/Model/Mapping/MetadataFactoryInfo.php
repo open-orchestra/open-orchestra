@@ -14,9 +14,9 @@ class MetadataFactoryInfo
             'inheritable' => false,
             'inheritance' => false,
             'fields' => array(
-                'site_id' => array(
+                'siteId' => array(
                     'type' => 'integer',
-                    'dbName' => 'site_id',
+                    'dbName' => 'siteId',
                 ),
                 'domain' => array(
                     'type' => 'string',
@@ -109,17 +109,17 @@ class MetadataFactoryInfo
             'inheritable' => false,
             'inheritance' => false,
             'fields' => array(
-                'node_id' => array(
+                'nodeId' => array(
                     'type' => 'integer',
-                    'dbName' => 'node_id',
+                    'dbName' => 'nodeId',
                 ),
-                'site_id' => array(
+                'siteId' => array(
                     'type' => 'integer',
-                    'dbName' => 'site_id',
+                    'dbName' => 'siteId',
                 ),
-                'parent_id' => array(
+                'parentId' => array(
                     'type' => 'integer',
-                    'dbName' => 'parent_id',
+                    'dbName' => 'parentId',
                 ),
                 'path' => array(
                     'type' => 'string',
@@ -141,9 +141,9 @@ class MetadataFactoryInfo
                     'type' => 'string',
                     'dbName' => 'status',
                 ),
-                'template_id' => array(
+                'templateId' => array(
                     'type' => 'integer',
-                    'dbName' => 'template_id',
+                    'dbName' => 'templateId',
                 ),
                 'areas' => array(
                     'type' => 'raw',
@@ -196,9 +196,9 @@ class MetadataFactoryInfo
             'inheritable' => false,
             'inheritance' => false,
             'fields' => array(
-                'content_id' => array(
+                'contentId' => array(
                     'type' => 'integer',
-                    'dbName' => 'content_id',
+                    'dbName' => 'contentId',
                 ),
                 'type' => array(
                     'type' => 'string',
@@ -273,13 +273,13 @@ class MetadataFactoryInfo
                     'type' => 'string',
                     'dbName' => 'salt',
                 ),
-                'first_name' => array(
+                'firstName' => array(
                     'type' => 'string',
-                    'dbName' => 'first_name',
+                    'dbName' => 'firstName',
                 ),
-                'last_name' => array(
+                'lastName' => array(
                     'type' => 'string',
-                    'dbName' => 'last_name',
+                    'dbName' => 'lastName',
                 ),
                 'email' => array(
                     'type' => 'string',

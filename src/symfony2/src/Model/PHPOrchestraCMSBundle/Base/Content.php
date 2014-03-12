@@ -36,10 +36,10 @@ abstract class Content extends \Mandango\Document\Document
             $this->setId($data['_id']);
             $this->setIsNew(false);
         }
-        if (isset($data['content_id'])) {
-            $this->data['fields']['content_id'] = (int) $data['content_id'];
-        } elseif (isset($data['_fields']['content_id'])) {
-            $this->data['fields']['content_id'] = null;
+        if (isset($data['contentId'])) {
+            $this->data['fields']['contentId'] = (int) $data['contentId'];
+        } elseif (isset($data['_fields']['contentId'])) {
+            $this->data['fields']['contentId'] = null;
         }
         if (isset($data['type'])) {
             $this->data['fields']['type'] = (string) $data['type'];
@@ -66,65 +66,65 @@ abstract class Content extends \Mandango\Document\Document
     }
 
     /**
-     * Set the "content_id" field.
+     * Set the "contentId" field.
      *
      * @param mixed $value The value.
      *
      * @return \Model\PHPOrchestraCMSBundle\Content The document (fluent interface).
      */
-    public function setContent_id($value)
+    public function setContentId($value)
     {
-        if (!isset($this->data['fields']['content_id'])) {
+        if (!isset($this->data['fields']['contentId'])) {
             if (!$this->isNew()) {
-                $this->getContent_id();
-                if ($this->isFieldEqualTo('content_id', $value)) {
+                $this->getContentId();
+                if ($this->isFieldEqualTo('contentId', $value)) {
                     return $this;
                 }
             } else {
                 if (null === $value) {
                     return $this;
                 }
-                $this->fieldsModified['content_id'] = null;
-                $this->data['fields']['content_id'] = $value;
+                $this->fieldsModified['contentId'] = null;
+                $this->data['fields']['contentId'] = $value;
                 return $this;
             }
-        } elseif ($this->isFieldEqualTo('content_id', $value)) {
+        } elseif ($this->isFieldEqualTo('contentId', $value)) {
             return $this;
         }
 
-        if (!isset($this->fieldsModified['content_id']) && !array_key_exists('content_id', $this->fieldsModified)) {
-            $this->fieldsModified['content_id'] = $this->data['fields']['content_id'];
-        } elseif ($this->isFieldModifiedEqualTo('content_id', $value)) {
-            unset($this->fieldsModified['content_id']);
+        if (!isset($this->fieldsModified['contentId']) && !array_key_exists('contentId', $this->fieldsModified)) {
+            $this->fieldsModified['contentId'] = $this->data['fields']['contentId'];
+        } elseif ($this->isFieldModifiedEqualTo('contentId', $value)) {
+            unset($this->fieldsModified['contentId']);
         }
 
-        $this->data['fields']['content_id'] = $value;
+        $this->data['fields']['contentId'] = $value;
 
         return $this;
     }
 
     /**
-     * Returns the "content_id" field.
+     * Returns the "contentId" field.
      *
      * @return mixed The $name field.
      */
-    public function getContent_id()
+    public function getContentId()
     {
-        if (!isset($this->data['fields']['content_id'])) {
+        if (!isset($this->data['fields']['contentId'])) {
             if ($this->isNew()) {
-                $this->data['fields']['content_id'] = null;
-            } elseif (!isset($this->data['fields']) || !array_key_exists('content_id', $this->data['fields'])) {
-                $this->addFieldCache('content_id');
-                $data = $this->getRepository()->getCollection()->findOne(array('_id' => $this->getId()), array('content_id' => 1));
-                if (isset($data['content_id'])) {
-                    $this->data['fields']['content_id'] = (int) $data['content_id'];
+                $this->data['fields']['contentId'] = null;
+            } elseif (!isset($this->data['fields']) || !array_key_exists('contentId', $this->data['fields'])) {
+                $this->addFieldCache('contentId');
+                $data = $this->getRepository()->getCollection()->findOne(array('_id' => $this->getId()), array('contentId' => 1));
+                if (isset($data['contentId'])) {
+                    $this->data['fields']['contentId'] = (int) $data['contentId'];
                 } else {
-                    $this->data['fields']['content_id'] = null;
+                    $this->data['fields']['contentId'] = null;
                 }
             }
         }
 
-        return $this->data['fields']['content_id'];
+        return $this->data['fields']['contentId'];
     }
 
     /**
@@ -431,8 +431,8 @@ abstract class Content extends \Mandango\Document\Document
      */
     public function set($name, $value)
     {
-        if ('content_id' == $name) {
-            return $this->setContent_id($value);
+        if ('contentId' == $name) {
+            return $this->setContentId($value);
         }
         if ('type' == $name) {
             return $this->setType($value);
@@ -461,8 +461,8 @@ abstract class Content extends \Mandango\Document\Document
      */
     public function get($name)
     {
-        if ('content_id' == $name) {
-            return $this->getContent_id();
+        if ('contentId' == $name) {
+            return $this->getContentId();
         }
         if ('type' == $name) {
             return $this->getType();
@@ -492,8 +492,8 @@ abstract class Content extends \Mandango\Document\Document
         if (isset($array['id'])) {
             $this->setId($array['id']);
         }
-        if (isset($array['content_id'])) {
-            $this->setContent_id($array['content_id']);
+        if (isset($array['contentId'])) {
+            $this->setContentId($array['contentId']);
         }
         if (isset($array['type'])) {
             $this->setType($array['type']);
@@ -522,7 +522,7 @@ abstract class Content extends \Mandango\Document\Document
     {
         $array = array('id' => $this->getId());
 
-        $array['content_id'] = $this->getContent_id();
+        $array['contentId'] = $this->getContentId();
         $array['type'] = $this->getType();
         $array['version'] = $this->getVersion();
         $array['status'] = $this->getStatus();
@@ -542,8 +542,8 @@ abstract class Content extends \Mandango\Document\Document
 
         if (isset($this->data['fields'])) {
             if ($isNew || $reset) {
-                if (isset($this->data['fields']['content_id'])) {
-                    $query['content_id'] = (int) $this->data['fields']['content_id'];
+                if (isset($this->data['fields']['contentId'])) {
+                    $query['contentId'] = (int) $this->data['fields']['contentId'];
                 }
                 if (isset($this->data['fields']['type'])) {
                     $query['type'] = (string) $this->data['fields']['type'];
@@ -558,14 +558,14 @@ abstract class Content extends \Mandango\Document\Document
                     $query['attributes'] = $this->data['fields']['attributes'];
                 }
             } else {
-                if (isset($this->data['fields']['content_id']) || array_key_exists('content_id', $this->data['fields'])) {
-                    $value = $this->data['fields']['content_id'];
-                    $originalValue = $this->getOriginalFieldValue('content_id');
+                if (isset($this->data['fields']['contentId']) || array_key_exists('contentId', $this->data['fields'])) {
+                    $value = $this->data['fields']['contentId'];
+                    $originalValue = $this->getOriginalFieldValue('contentId');
                     if ($value !== $originalValue) {
                         if (null !== $value) {
-                            $query['$set']['content_id'] = (int) $this->data['fields']['content_id'];
+                            $query['$set']['contentId'] = (int) $this->data['fields']['contentId'];
                         } else {
-                            $query['$unset']['content_id'] = 1;
+                            $query['$unset']['contentId'] = 1;
                         }
                     }
                 }

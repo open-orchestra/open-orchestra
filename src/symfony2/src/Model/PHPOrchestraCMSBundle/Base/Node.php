@@ -36,20 +36,20 @@ abstract class Node extends \Mandango\Document\Document
             $this->setId($data['_id']);
             $this->setIsNew(false);
         }
-        if (isset($data['node_id'])) {
-            $this->data['fields']['node_id'] = (int) $data['node_id'];
-        } elseif (isset($data['_fields']['node_id'])) {
-            $this->data['fields']['node_id'] = null;
+        if (isset($data['nodeId'])) {
+            $this->data['fields']['nodeId'] = (int) $data['nodeId'];
+        } elseif (isset($data['_fields']['nodeId'])) {
+            $this->data['fields']['nodeId'] = null;
         }
-        if (isset($data['site_id'])) {
-            $this->data['fields']['site_id'] = (int) $data['site_id'];
-        } elseif (isset($data['_fields']['site_id'])) {
-            $this->data['fields']['site_id'] = null;
+        if (isset($data['siteId'])) {
+            $this->data['fields']['siteId'] = (int) $data['siteId'];
+        } elseif (isset($data['_fields']['siteId'])) {
+            $this->data['fields']['siteId'] = null;
         }
-        if (isset($data['parent_id'])) {
-            $this->data['fields']['parent_id'] = (int) $data['parent_id'];
-        } elseif (isset($data['_fields']['parent_id'])) {
-            $this->data['fields']['parent_id'] = null;
+        if (isset($data['parentId'])) {
+            $this->data['fields']['parentId'] = (int) $data['parentId'];
+        } elseif (isset($data['_fields']['parentId'])) {
+            $this->data['fields']['parentId'] = null;
         }
         if (isset($data['path'])) {
             $this->data['fields']['path'] = (string) $data['path'];
@@ -76,10 +76,10 @@ abstract class Node extends \Mandango\Document\Document
         } elseif (isset($data['_fields']['status'])) {
             $this->data['fields']['status'] = null;
         }
-        if (isset($data['template_id'])) {
-            $this->data['fields']['template_id'] = (int) $data['template_id'];
-        } elseif (isset($data['_fields']['template_id'])) {
-            $this->data['fields']['template_id'] = null;
+        if (isset($data['templateId'])) {
+            $this->data['fields']['templateId'] = (int) $data['templateId'];
+        } elseif (isset($data['_fields']['templateId'])) {
+            $this->data['fields']['templateId'] = null;
         }
         if (isset($data['areas'])) {
             $this->data['fields']['areas'] = $data['areas'];
@@ -97,189 +97,189 @@ abstract class Node extends \Mandango\Document\Document
     }
 
     /**
-     * Set the "node_id" field.
+     * Set the "nodeId" field.
      *
      * @param mixed $value The value.
      *
      * @return \Model\PHPOrchestraCMSBundle\Node The document (fluent interface).
      */
-    public function setNode_id($value)
+    public function setNodeId($value)
     {
-        if (!isset($this->data['fields']['node_id'])) {
+        if (!isset($this->data['fields']['nodeId'])) {
             if (!$this->isNew()) {
-                $this->getNode_id();
-                if ($this->isFieldEqualTo('node_id', $value)) {
+                $this->getNodeId();
+                if ($this->isFieldEqualTo('nodeId', $value)) {
                     return $this;
                 }
             } else {
                 if (null === $value) {
                     return $this;
                 }
-                $this->fieldsModified['node_id'] = null;
-                $this->data['fields']['node_id'] = $value;
+                $this->fieldsModified['nodeId'] = null;
+                $this->data['fields']['nodeId'] = $value;
                 return $this;
             }
-        } elseif ($this->isFieldEqualTo('node_id', $value)) {
+        } elseif ($this->isFieldEqualTo('nodeId', $value)) {
             return $this;
         }
 
-        if (!isset($this->fieldsModified['node_id']) && !array_key_exists('node_id', $this->fieldsModified)) {
-            $this->fieldsModified['node_id'] = $this->data['fields']['node_id'];
-        } elseif ($this->isFieldModifiedEqualTo('node_id', $value)) {
-            unset($this->fieldsModified['node_id']);
+        if (!isset($this->fieldsModified['nodeId']) && !array_key_exists('nodeId', $this->fieldsModified)) {
+            $this->fieldsModified['nodeId'] = $this->data['fields']['nodeId'];
+        } elseif ($this->isFieldModifiedEqualTo('nodeId', $value)) {
+            unset($this->fieldsModified['nodeId']);
         }
 
-        $this->data['fields']['node_id'] = $value;
+        $this->data['fields']['nodeId'] = $value;
 
         return $this;
     }
 
     /**
-     * Returns the "node_id" field.
+     * Returns the "nodeId" field.
      *
      * @return mixed The $name field.
      */
-    public function getNode_id()
+    public function getNodeId()
     {
-        if (!isset($this->data['fields']['node_id'])) {
+        if (!isset($this->data['fields']['nodeId'])) {
             if ($this->isNew()) {
-                $this->data['fields']['node_id'] = null;
-            } elseif (!isset($this->data['fields']) || !array_key_exists('node_id', $this->data['fields'])) {
-                $this->addFieldCache('node_id');
-                $data = $this->getRepository()->getCollection()->findOne(array('_id' => $this->getId()), array('node_id' => 1));
-                if (isset($data['node_id'])) {
-                    $this->data['fields']['node_id'] = (int) $data['node_id'];
+                $this->data['fields']['nodeId'] = null;
+            } elseif (!isset($this->data['fields']) || !array_key_exists('nodeId', $this->data['fields'])) {
+                $this->addFieldCache('nodeId');
+                $data = $this->getRepository()->getCollection()->findOne(array('_id' => $this->getId()), array('nodeId' => 1));
+                if (isset($data['nodeId'])) {
+                    $this->data['fields']['nodeId'] = (int) $data['nodeId'];
                 } else {
-                    $this->data['fields']['node_id'] = null;
+                    $this->data['fields']['nodeId'] = null;
                 }
             }
         }
 
-        return $this->data['fields']['node_id'];
+        return $this->data['fields']['nodeId'];
     }
 
     /**
-     * Set the "site_id" field.
+     * Set the "siteId" field.
      *
      * @param mixed $value The value.
      *
      * @return \Model\PHPOrchestraCMSBundle\Node The document (fluent interface).
      */
-    public function setSite_id($value)
+    public function setSiteId($value)
     {
-        if (!isset($this->data['fields']['site_id'])) {
+        if (!isset($this->data['fields']['siteId'])) {
             if (!$this->isNew()) {
-                $this->getSite_id();
-                if ($this->isFieldEqualTo('site_id', $value)) {
+                $this->getSiteId();
+                if ($this->isFieldEqualTo('siteId', $value)) {
                     return $this;
                 }
             } else {
                 if (null === $value) {
                     return $this;
                 }
-                $this->fieldsModified['site_id'] = null;
-                $this->data['fields']['site_id'] = $value;
+                $this->fieldsModified['siteId'] = null;
+                $this->data['fields']['siteId'] = $value;
                 return $this;
             }
-        } elseif ($this->isFieldEqualTo('site_id', $value)) {
+        } elseif ($this->isFieldEqualTo('siteId', $value)) {
             return $this;
         }
 
-        if (!isset($this->fieldsModified['site_id']) && !array_key_exists('site_id', $this->fieldsModified)) {
-            $this->fieldsModified['site_id'] = $this->data['fields']['site_id'];
-        } elseif ($this->isFieldModifiedEqualTo('site_id', $value)) {
-            unset($this->fieldsModified['site_id']);
+        if (!isset($this->fieldsModified['siteId']) && !array_key_exists('siteId', $this->fieldsModified)) {
+            $this->fieldsModified['siteId'] = $this->data['fields']['siteId'];
+        } elseif ($this->isFieldModifiedEqualTo('siteId', $value)) {
+            unset($this->fieldsModified['siteId']);
         }
 
-        $this->data['fields']['site_id'] = $value;
+        $this->data['fields']['siteId'] = $value;
 
         return $this;
     }
 
     /**
-     * Returns the "site_id" field.
+     * Returns the "siteId" field.
      *
      * @return mixed The $name field.
      */
-    public function getSite_id()
+    public function getSiteId()
     {
-        if (!isset($this->data['fields']['site_id'])) {
+        if (!isset($this->data['fields']['siteId'])) {
             if ($this->isNew()) {
-                $this->data['fields']['site_id'] = null;
-            } elseif (!isset($this->data['fields']) || !array_key_exists('site_id', $this->data['fields'])) {
-                $this->addFieldCache('site_id');
-                $data = $this->getRepository()->getCollection()->findOne(array('_id' => $this->getId()), array('site_id' => 1));
-                if (isset($data['site_id'])) {
-                    $this->data['fields']['site_id'] = (int) $data['site_id'];
+                $this->data['fields']['siteId'] = null;
+            } elseif (!isset($this->data['fields']) || !array_key_exists('siteId', $this->data['fields'])) {
+                $this->addFieldCache('siteId');
+                $data = $this->getRepository()->getCollection()->findOne(array('_id' => $this->getId()), array('siteId' => 1));
+                if (isset($data['siteId'])) {
+                    $this->data['fields']['siteId'] = (int) $data['siteId'];
                 } else {
-                    $this->data['fields']['site_id'] = null;
+                    $this->data['fields']['siteId'] = null;
                 }
             }
         }
 
-        return $this->data['fields']['site_id'];
+        return $this->data['fields']['siteId'];
     }
 
     /**
-     * Set the "parent_id" field.
+     * Set the "parentId" field.
      *
      * @param mixed $value The value.
      *
      * @return \Model\PHPOrchestraCMSBundle\Node The document (fluent interface).
      */
-    public function setParent_id($value)
+    public function setParentId($value)
     {
-        if (!isset($this->data['fields']['parent_id'])) {
+        if (!isset($this->data['fields']['parentId'])) {
             if (!$this->isNew()) {
-                $this->getParent_id();
-                if ($this->isFieldEqualTo('parent_id', $value)) {
+                $this->getParentId();
+                if ($this->isFieldEqualTo('parentId', $value)) {
                     return $this;
                 }
             } else {
                 if (null === $value) {
                     return $this;
                 }
-                $this->fieldsModified['parent_id'] = null;
-                $this->data['fields']['parent_id'] = $value;
+                $this->fieldsModified['parentId'] = null;
+                $this->data['fields']['parentId'] = $value;
                 return $this;
             }
-        } elseif ($this->isFieldEqualTo('parent_id', $value)) {
+        } elseif ($this->isFieldEqualTo('parentId', $value)) {
             return $this;
         }
 
-        if (!isset($this->fieldsModified['parent_id']) && !array_key_exists('parent_id', $this->fieldsModified)) {
-            $this->fieldsModified['parent_id'] = $this->data['fields']['parent_id'];
-        } elseif ($this->isFieldModifiedEqualTo('parent_id', $value)) {
-            unset($this->fieldsModified['parent_id']);
+        if (!isset($this->fieldsModified['parentId']) && !array_key_exists('parentId', $this->fieldsModified)) {
+            $this->fieldsModified['parentId'] = $this->data['fields']['parentId'];
+        } elseif ($this->isFieldModifiedEqualTo('parentId', $value)) {
+            unset($this->fieldsModified['parentId']);
         }
 
-        $this->data['fields']['parent_id'] = $value;
+        $this->data['fields']['parentId'] = $value;
 
         return $this;
     }
 
     /**
-     * Returns the "parent_id" field.
+     * Returns the "parentId" field.
      *
      * @return mixed The $name field.
      */
-    public function getParent_id()
+    public function getParentId()
     {
-        if (!isset($this->data['fields']['parent_id'])) {
+        if (!isset($this->data['fields']['parentId'])) {
             if ($this->isNew()) {
-                $this->data['fields']['parent_id'] = null;
-            } elseif (!isset($this->data['fields']) || !array_key_exists('parent_id', $this->data['fields'])) {
-                $this->addFieldCache('parent_id');
-                $data = $this->getRepository()->getCollection()->findOne(array('_id' => $this->getId()), array('parent_id' => 1));
-                if (isset($data['parent_id'])) {
-                    $this->data['fields']['parent_id'] = (int) $data['parent_id'];
+                $this->data['fields']['parentId'] = null;
+            } elseif (!isset($this->data['fields']) || !array_key_exists('parentId', $this->data['fields'])) {
+                $this->addFieldCache('parentId');
+                $data = $this->getRepository()->getCollection()->findOne(array('_id' => $this->getId()), array('parentId' => 1));
+                if (isset($data['parentId'])) {
+                    $this->data['fields']['parentId'] = (int) $data['parentId'];
                 } else {
-                    $this->data['fields']['parent_id'] = null;
+                    $this->data['fields']['parentId'] = null;
                 }
             }
         }
 
-        return $this->data['fields']['parent_id'];
+        return $this->data['fields']['parentId'];
     }
 
     /**
@@ -593,65 +593,65 @@ abstract class Node extends \Mandango\Document\Document
     }
 
     /**
-     * Set the "template_id" field.
+     * Set the "templateId" field.
      *
      * @param mixed $value The value.
      *
      * @return \Model\PHPOrchestraCMSBundle\Node The document (fluent interface).
      */
-    public function setTemplate_id($value)
+    public function setTemplateId($value)
     {
-        if (!isset($this->data['fields']['template_id'])) {
+        if (!isset($this->data['fields']['templateId'])) {
             if (!$this->isNew()) {
-                $this->getTemplate_id();
-                if ($this->isFieldEqualTo('template_id', $value)) {
+                $this->getTemplateId();
+                if ($this->isFieldEqualTo('templateId', $value)) {
                     return $this;
                 }
             } else {
                 if (null === $value) {
                     return $this;
                 }
-                $this->fieldsModified['template_id'] = null;
-                $this->data['fields']['template_id'] = $value;
+                $this->fieldsModified['templateId'] = null;
+                $this->data['fields']['templateId'] = $value;
                 return $this;
             }
-        } elseif ($this->isFieldEqualTo('template_id', $value)) {
+        } elseif ($this->isFieldEqualTo('templateId', $value)) {
             return $this;
         }
 
-        if (!isset($this->fieldsModified['template_id']) && !array_key_exists('template_id', $this->fieldsModified)) {
-            $this->fieldsModified['template_id'] = $this->data['fields']['template_id'];
-        } elseif ($this->isFieldModifiedEqualTo('template_id', $value)) {
-            unset($this->fieldsModified['template_id']);
+        if (!isset($this->fieldsModified['templateId']) && !array_key_exists('templateId', $this->fieldsModified)) {
+            $this->fieldsModified['templateId'] = $this->data['fields']['templateId'];
+        } elseif ($this->isFieldModifiedEqualTo('templateId', $value)) {
+            unset($this->fieldsModified['templateId']);
         }
 
-        $this->data['fields']['template_id'] = $value;
+        $this->data['fields']['templateId'] = $value;
 
         return $this;
     }
 
     /**
-     * Returns the "template_id" field.
+     * Returns the "templateId" field.
      *
      * @return mixed The $name field.
      */
-    public function getTemplate_id()
+    public function getTemplateId()
     {
-        if (!isset($this->data['fields']['template_id'])) {
+        if (!isset($this->data['fields']['templateId'])) {
             if ($this->isNew()) {
-                $this->data['fields']['template_id'] = null;
-            } elseif (!isset($this->data['fields']) || !array_key_exists('template_id', $this->data['fields'])) {
-                $this->addFieldCache('template_id');
-                $data = $this->getRepository()->getCollection()->findOne(array('_id' => $this->getId()), array('template_id' => 1));
-                if (isset($data['template_id'])) {
-                    $this->data['fields']['template_id'] = (int) $data['template_id'];
+                $this->data['fields']['templateId'] = null;
+            } elseif (!isset($this->data['fields']) || !array_key_exists('templateId', $this->data['fields'])) {
+                $this->addFieldCache('templateId');
+                $data = $this->getRepository()->getCollection()->findOne(array('_id' => $this->getId()), array('templateId' => 1));
+                if (isset($data['templateId'])) {
+                    $this->data['fields']['templateId'] = (int) $data['templateId'];
                 } else {
-                    $this->data['fields']['template_id'] = null;
+                    $this->data['fields']['templateId'] = null;
                 }
             }
         }
 
-        return $this->data['fields']['template_id'];
+        return $this->data['fields']['templateId'];
     }
 
     /**
@@ -825,14 +825,14 @@ abstract class Node extends \Mandango\Document\Document
      */
     public function set($name, $value)
     {
-        if ('node_id' == $name) {
-            return $this->setNode_id($value);
+        if ('nodeId' == $name) {
+            return $this->setNodeId($value);
         }
-        if ('site_id' == $name) {
-            return $this->setSite_id($value);
+        if ('siteId' == $name) {
+            return $this->setSiteId($value);
         }
-        if ('parent_id' == $name) {
-            return $this->setParent_id($value);
+        if ('parentId' == $name) {
+            return $this->setParentId($value);
         }
         if ('path' == $name) {
             return $this->setPath($value);
@@ -849,8 +849,8 @@ abstract class Node extends \Mandango\Document\Document
         if ('status' == $name) {
             return $this->setStatus($value);
         }
-        if ('template_id' == $name) {
-            return $this->setTemplate_id($value);
+        if ('templateId' == $name) {
+            return $this->setTemplateId($value);
         }
         if ('areas' == $name) {
             return $this->setAreas($value);
@@ -870,14 +870,14 @@ abstract class Node extends \Mandango\Document\Document
      */
     public function get($name)
     {
-        if ('node_id' == $name) {
-            return $this->getNode_id();
+        if ('nodeId' == $name) {
+            return $this->getNodeId();
         }
-        if ('site_id' == $name) {
-            return $this->getSite_id();
+        if ('siteId' == $name) {
+            return $this->getSiteId();
         }
-        if ('parent_id' == $name) {
-            return $this->getParent_id();
+        if ('parentId' == $name) {
+            return $this->getParentId();
         }
         if ('path' == $name) {
             return $this->getPath();
@@ -894,8 +894,8 @@ abstract class Node extends \Mandango\Document\Document
         if ('status' == $name) {
             return $this->getStatus();
         }
-        if ('template_id' == $name) {
-            return $this->getTemplate_id();
+        if ('templateId' == $name) {
+            return $this->getTemplateId();
         }
         if ('areas' == $name) {
             return $this->getAreas();
@@ -919,14 +919,14 @@ abstract class Node extends \Mandango\Document\Document
         if (isset($array['id'])) {
             $this->setId($array['id']);
         }
-        if (isset($array['node_id'])) {
-            $this->setNode_id($array['node_id']);
+        if (isset($array['nodeId'])) {
+            $this->setNodeId($array['nodeId']);
         }
-        if (isset($array['site_id'])) {
-            $this->setSite_id($array['site_id']);
+        if (isset($array['siteId'])) {
+            $this->setSiteId($array['siteId']);
         }
-        if (isset($array['parent_id'])) {
-            $this->setParent_id($array['parent_id']);
+        if (isset($array['parentId'])) {
+            $this->setParentId($array['parentId']);
         }
         if (isset($array['path'])) {
             $this->setPath($array['path']);
@@ -943,8 +943,8 @@ abstract class Node extends \Mandango\Document\Document
         if (isset($array['status'])) {
             $this->setStatus($array['status']);
         }
-        if (isset($array['template_id'])) {
-            $this->setTemplate_id($array['template_id']);
+        if (isset($array['templateId'])) {
+            $this->setTemplateId($array['templateId']);
         }
         if (isset($array['areas'])) {
             $this->setAreas($array['areas']);
@@ -972,15 +972,15 @@ abstract class Node extends \Mandango\Document\Document
     {
         $array = array('id' => $this->getId());
 
-        $array['node_id'] = $this->getNode_id();
-        $array['site_id'] = $this->getSite_id();
-        $array['parent_id'] = $this->getParent_id();
+        $array['nodeId'] = $this->getNodeId();
+        $array['siteId'] = $this->getSiteId();
+        $array['parentId'] = $this->getParentId();
         $array['path'] = $this->getPath();
         $array['name'] = $this->getName();
         $array['version'] = $this->getVersion();
         $array['language'] = $this->getLanguage();
         $array['status'] = $this->getStatus();
-        $array['template_id'] = $this->getTemplate_id();
+        $array['templateId'] = $this->getTemplateId();
         $array['areas'] = $this->getAreas();
 
         return $array;
@@ -997,14 +997,14 @@ abstract class Node extends \Mandango\Document\Document
 
         if (isset($this->data['fields'])) {
             if ($isNew || $reset) {
-                if (isset($this->data['fields']['node_id'])) {
-                    $query['node_id'] = (int) $this->data['fields']['node_id'];
+                if (isset($this->data['fields']['nodeId'])) {
+                    $query['nodeId'] = (int) $this->data['fields']['nodeId'];
                 }
-                if (isset($this->data['fields']['site_id'])) {
-                    $query['site_id'] = (int) $this->data['fields']['site_id'];
+                if (isset($this->data['fields']['siteId'])) {
+                    $query['siteId'] = (int) $this->data['fields']['siteId'];
                 }
-                if (isset($this->data['fields']['parent_id'])) {
-                    $query['parent_id'] = (int) $this->data['fields']['parent_id'];
+                if (isset($this->data['fields']['parentId'])) {
+                    $query['parentId'] = (int) $this->data['fields']['parentId'];
                 }
                 if (isset($this->data['fields']['path'])) {
                     $query['path'] = (string) $this->data['fields']['path'];
@@ -1021,43 +1021,43 @@ abstract class Node extends \Mandango\Document\Document
                 if (isset($this->data['fields']['status'])) {
                     $query['status'] = (string) $this->data['fields']['status'];
                 }
-                if (isset($this->data['fields']['template_id'])) {
-                    $query['template_id'] = (int) $this->data['fields']['template_id'];
+                if (isset($this->data['fields']['templateId'])) {
+                    $query['templateId'] = (int) $this->data['fields']['templateId'];
                 }
                 if (isset($this->data['fields']['areas'])) {
                     $query['areas'] = $this->data['fields']['areas'];
                 }
             } else {
-                if (isset($this->data['fields']['node_id']) || array_key_exists('node_id', $this->data['fields'])) {
-                    $value = $this->data['fields']['node_id'];
-                    $originalValue = $this->getOriginalFieldValue('node_id');
+                if (isset($this->data['fields']['nodeId']) || array_key_exists('nodeId', $this->data['fields'])) {
+                    $value = $this->data['fields']['nodeId'];
+                    $originalValue = $this->getOriginalFieldValue('nodeId');
                     if ($value !== $originalValue) {
                         if (null !== $value) {
-                            $query['$set']['node_id'] = (int) $this->data['fields']['node_id'];
+                            $query['$set']['nodeId'] = (int) $this->data['fields']['nodeId'];
                         } else {
-                            $query['$unset']['node_id'] = 1;
+                            $query['$unset']['nodeId'] = 1;
                         }
                     }
                 }
-                if (isset($this->data['fields']['site_id']) || array_key_exists('site_id', $this->data['fields'])) {
-                    $value = $this->data['fields']['site_id'];
-                    $originalValue = $this->getOriginalFieldValue('site_id');
+                if (isset($this->data['fields']['siteId']) || array_key_exists('siteId', $this->data['fields'])) {
+                    $value = $this->data['fields']['siteId'];
+                    $originalValue = $this->getOriginalFieldValue('siteId');
                     if ($value !== $originalValue) {
                         if (null !== $value) {
-                            $query['$set']['site_id'] = (int) $this->data['fields']['site_id'];
+                            $query['$set']['siteId'] = (int) $this->data['fields']['siteId'];
                         } else {
-                            $query['$unset']['site_id'] = 1;
+                            $query['$unset']['siteId'] = 1;
                         }
                     }
                 }
-                if (isset($this->data['fields']['parent_id']) || array_key_exists('parent_id', $this->data['fields'])) {
-                    $value = $this->data['fields']['parent_id'];
-                    $originalValue = $this->getOriginalFieldValue('parent_id');
+                if (isset($this->data['fields']['parentId']) || array_key_exists('parentId', $this->data['fields'])) {
+                    $value = $this->data['fields']['parentId'];
+                    $originalValue = $this->getOriginalFieldValue('parentId');
                     if ($value !== $originalValue) {
                         if (null !== $value) {
-                            $query['$set']['parent_id'] = (int) $this->data['fields']['parent_id'];
+                            $query['$set']['parentId'] = (int) $this->data['fields']['parentId'];
                         } else {
-                            $query['$unset']['parent_id'] = 1;
+                            $query['$unset']['parentId'] = 1;
                         }
                     }
                 }
@@ -1116,14 +1116,14 @@ abstract class Node extends \Mandango\Document\Document
                         }
                     }
                 }
-                if (isset($this->data['fields']['template_id']) || array_key_exists('template_id', $this->data['fields'])) {
-                    $value = $this->data['fields']['template_id'];
-                    $originalValue = $this->getOriginalFieldValue('template_id');
+                if (isset($this->data['fields']['templateId']) || array_key_exists('templateId', $this->data['fields'])) {
+                    $value = $this->data['fields']['templateId'];
+                    $originalValue = $this->getOriginalFieldValue('templateId');
                     if ($value !== $originalValue) {
                         if (null !== $value) {
-                            $query['$set']['template_id'] = (int) $this->data['fields']['template_id'];
+                            $query['$set']['templateId'] = (int) $this->data['fields']['templateId'];
                         } else {
-                            $query['$unset']['template_id'] = 1;
+                            $query['$unset']['templateId'] = 1;
                         }
                     }
                 }

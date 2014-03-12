@@ -108,7 +108,7 @@ La base de données principale sera en MongoDB
 
 ```json
 {
-  "id": 1,
+  "siteId": 1,
   "domain": "www.example.org",
   "language": "en"
 }
@@ -118,15 +118,15 @@ La base de données principale sera en MongoDB
 
 ```json
 {
-    "id": 1,
-    "site_id": 1,
-    "parent_id": null,
+    "nodeId": 1,
+    "siteId": 1,
+    "parentId": null,
     "path": "/1",
     "name": "home",
     "version": 4,
     "language": "fr",
     "status": "published",
-    "template_id": 42,
+    "templateId": 42,
     "blocks":
     {
         "1":
@@ -145,12 +145,12 @@ La base de données principale sera en MongoDB
     },
     "area":
     {
-        "id": "html_id", // HTML identifier like "container", "header", "footer"
+        "areaId": "html_id", // HTML identifier like "container", "header", "footer"
         "classes" : ["class1"/*, etc. */], // Additional HTML classes
-        "sub_areas":
+        "subAreas":
         [
             {
-                "id": "html_id",
+                "areaId": "html_id",
                 "classes": ["classN"],
 
                 // Usually blocks are in area leaves, so you *should* find
@@ -158,13 +158,13 @@ La base de données principale sera en MongoDB
                 "blocks":
                 [
                     {
-                        "node_id": null, // null = current node
-                        "block_id": "1"
+                        "nodeId": null, // null = current node
+                        "blockId": "1"
                     }
                     //, etc.
                 ],
 
-                "sub_areas":
+                "subAreas":
                 [
                     // etc. Unlimited level of recursive areas
                 ]
@@ -179,7 +179,7 @@ La base de données principale sera en MongoDB
 
 ```json
 {
-    "id": 1,
+    "contentId": 1,
     "type": "news", // news, comment, article, etc.
     "version": 1,
     "status": "published",
@@ -202,8 +202,8 @@ La base de données principale sera en MongoDB
     "login": "jdupond",
     "hash": "0123456789abcde",
     "salt": "1337",
-    "first_name": "Jean",
-    "last_name": "Dupond",
+    "firstName": "Jean",
+    "lastName": "Dupond",
     "email": "jean.dupond@example.org",
     "addresses":
     {

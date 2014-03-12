@@ -3,10 +3,51 @@
 namespace PHPOrchestra\CMSBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
+
 use PHPOrchestra\CMSBundle\Classes\Area;
 
 class NodesController extends Controller
 {
+	
+	public function formAction(Request $request)
+	{
+        $mandango = $this->container->get('mandango');
+        $nodesRepo = $mandango->getRepository('Model\PHPOrchestraCMSBundle\Node');
+        
+        $node = $mandango->create('Model\PHPOrchestraCMSBundle\Node')
+            ->setNodeId(100)
+            ->setSiteId(1)
+            ->setName('Home avec controllers de bloc')
+            ->setVersion(1)
+            ->setLanguage('fr');
+        
+        $form = $this->createFormBuilder($node)
+            ->add('nodeId', 'text')
+            ->add('siteId', 'text')
+            ->add('name', 'text')
+            ->add('version', 'text')
+            ->add('language', 'text')
+            ->add('save', 'submit')
+            ->getForm();
+
+		$form->handleRequest($request);
+	
+	    if ($form->isValid())
+	    {
+            $node->save();
+            
+            return $this->redirect($this->generateUrl('php_orchestra_cms_node', array('nodeId' => $node->getNodeId())));
+	   	}    
+            
+            
+        return $this->render('PHPOrchestraCMSBundle:Node:form.html.twig', array(
+            'form' => $form->createView(),
+        ));    
+	}
+	
+	
+	
     public function addAction()
     {
     	$mandango = $this->container->get('mandango');
@@ -89,8 +130,8 @@ class NodesController extends Controller
             
 // Node
         $node = $mandango->create('Model\PHPOrchestraCMSBundle\Node')
-            ->setNode_id(1)
-            ->setSite_id(1)
+            ->setNodeId(1)
+            ->setSiteId(1)
             ->setName('Home avec controllers de bloc')
             ->setVersion(1)
             ->setLanguage('fr')

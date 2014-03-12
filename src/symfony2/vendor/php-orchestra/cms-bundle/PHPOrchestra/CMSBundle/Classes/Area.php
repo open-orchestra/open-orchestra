@@ -56,7 +56,7 @@ class Area
     
     public function addBlockReferences($nodeId, $blockId)
     {
-    	$this->blockReferences[] = array('node_id' => $nodeId, 'block_id' => $blockId);
+    	$this->blockReferences[] = array('nodeId' => $nodeId, 'blockId' => $blockId);
     	return $this;
     }
 
@@ -77,9 +77,9 @@ class Area
         	$formattedSubAreas[] = $area->toArray();
 
         return array(
-    	           'area_id' => $this->getId(),
+    	           'areaId' => $this->getId(),
     	           'classes' => $this->getClasses(),
-    	           'sub_areas' => $formattedSubAreas,
+    	           'subAreas' => $formattedSubAreas,
     	           'blocks' => $this->getBlockReferences()
     	);
     }

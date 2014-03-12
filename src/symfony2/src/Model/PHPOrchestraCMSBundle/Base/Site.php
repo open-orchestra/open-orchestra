@@ -36,10 +36,10 @@ abstract class Site extends \Mandango\Document\Document
             $this->setId($data['_id']);
             $this->setIsNew(false);
         }
-        if (isset($data['site_id'])) {
-            $this->data['fields']['site_id'] = (int) $data['site_id'];
-        } elseif (isset($data['_fields']['site_id'])) {
-            $this->data['fields']['site_id'] = null;
+        if (isset($data['siteId'])) {
+            $this->data['fields']['siteId'] = (int) $data['siteId'];
+        } elseif (isset($data['_fields']['siteId'])) {
+            $this->data['fields']['siteId'] = null;
         }
         if (isset($data['domain'])) {
             $this->data['fields']['domain'] = (string) $data['domain'];
@@ -56,65 +56,65 @@ abstract class Site extends \Mandango\Document\Document
     }
 
     /**
-     * Set the "site_id" field.
+     * Set the "siteId" field.
      *
      * @param mixed $value The value.
      *
      * @return \Model\PHPOrchestraCMSBundle\Site The document (fluent interface).
      */
-    public function setSite_id($value)
+    public function setSiteId($value)
     {
-        if (!isset($this->data['fields']['site_id'])) {
+        if (!isset($this->data['fields']['siteId'])) {
             if (!$this->isNew()) {
-                $this->getSite_id();
-                if ($this->isFieldEqualTo('site_id', $value)) {
+                $this->getSiteId();
+                if ($this->isFieldEqualTo('siteId', $value)) {
                     return $this;
                 }
             } else {
                 if (null === $value) {
                     return $this;
                 }
-                $this->fieldsModified['site_id'] = null;
-                $this->data['fields']['site_id'] = $value;
+                $this->fieldsModified['siteId'] = null;
+                $this->data['fields']['siteId'] = $value;
                 return $this;
             }
-        } elseif ($this->isFieldEqualTo('site_id', $value)) {
+        } elseif ($this->isFieldEqualTo('siteId', $value)) {
             return $this;
         }
 
-        if (!isset($this->fieldsModified['site_id']) && !array_key_exists('site_id', $this->fieldsModified)) {
-            $this->fieldsModified['site_id'] = $this->data['fields']['site_id'];
-        } elseif ($this->isFieldModifiedEqualTo('site_id', $value)) {
-            unset($this->fieldsModified['site_id']);
+        if (!isset($this->fieldsModified['siteId']) && !array_key_exists('siteId', $this->fieldsModified)) {
+            $this->fieldsModified['siteId'] = $this->data['fields']['siteId'];
+        } elseif ($this->isFieldModifiedEqualTo('siteId', $value)) {
+            unset($this->fieldsModified['siteId']);
         }
 
-        $this->data['fields']['site_id'] = $value;
+        $this->data['fields']['siteId'] = $value;
 
         return $this;
     }
 
     /**
-     * Returns the "site_id" field.
+     * Returns the "siteId" field.
      *
      * @return mixed The $name field.
      */
-    public function getSite_id()
+    public function getSiteId()
     {
-        if (!isset($this->data['fields']['site_id'])) {
+        if (!isset($this->data['fields']['siteId'])) {
             if ($this->isNew()) {
-                $this->data['fields']['site_id'] = null;
-            } elseif (!isset($this->data['fields']) || !array_key_exists('site_id', $this->data['fields'])) {
-                $this->addFieldCache('site_id');
-                $data = $this->getRepository()->getCollection()->findOne(array('_id' => $this->getId()), array('site_id' => 1));
-                if (isset($data['site_id'])) {
-                    $this->data['fields']['site_id'] = (int) $data['site_id'];
+                $this->data['fields']['siteId'] = null;
+            } elseif (!isset($this->data['fields']) || !array_key_exists('siteId', $this->data['fields'])) {
+                $this->addFieldCache('siteId');
+                $data = $this->getRepository()->getCollection()->findOne(array('_id' => $this->getId()), array('siteId' => 1));
+                if (isset($data['siteId'])) {
+                    $this->data['fields']['siteId'] = (int) $data['siteId'];
                 } else {
-                    $this->data['fields']['site_id'] = null;
+                    $this->data['fields']['siteId'] = null;
                 }
             }
         }
 
-        return $this->data['fields']['site_id'];
+        return $this->data['fields']['siteId'];
     }
 
     /**
@@ -297,8 +297,8 @@ abstract class Site extends \Mandango\Document\Document
      */
     public function set($name, $value)
     {
-        if ('site_id' == $name) {
-            return $this->setSite_id($value);
+        if ('siteId' == $name) {
+            return $this->setSiteId($value);
         }
         if ('domain' == $name) {
             return $this->setDomain($value);
@@ -321,8 +321,8 @@ abstract class Site extends \Mandango\Document\Document
      */
     public function get($name)
     {
-        if ('site_id' == $name) {
-            return $this->getSite_id();
+        if ('siteId' == $name) {
+            return $this->getSiteId();
         }
         if ('domain' == $name) {
             return $this->getDomain();
@@ -346,8 +346,8 @@ abstract class Site extends \Mandango\Document\Document
         if (isset($array['id'])) {
             $this->setId($array['id']);
         }
-        if (isset($array['site_id'])) {
-            $this->setSite_id($array['site_id']);
+        if (isset($array['siteId'])) {
+            $this->setSiteId($array['siteId']);
         }
         if (isset($array['domain'])) {
             $this->setDomain($array['domain']);
@@ -370,7 +370,7 @@ abstract class Site extends \Mandango\Document\Document
     {
         $array = array('id' => $this->getId());
 
-        $array['site_id'] = $this->getSite_id();
+        $array['siteId'] = $this->getSiteId();
         $array['domain'] = $this->getDomain();
         $array['language'] = $this->getLanguage();
 
@@ -388,8 +388,8 @@ abstract class Site extends \Mandango\Document\Document
 
         if (isset($this->data['fields'])) {
             if ($isNew || $reset) {
-                if (isset($this->data['fields']['site_id'])) {
-                    $query['site_id'] = (int) $this->data['fields']['site_id'];
+                if (isset($this->data['fields']['siteId'])) {
+                    $query['siteId'] = (int) $this->data['fields']['siteId'];
                 }
                 if (isset($this->data['fields']['domain'])) {
                     $query['domain'] = (string) $this->data['fields']['domain'];
@@ -398,14 +398,14 @@ abstract class Site extends \Mandango\Document\Document
                     $query['language'] = (string) $this->data['fields']['language'];
                 }
             } else {
-                if (isset($this->data['fields']['site_id']) || array_key_exists('site_id', $this->data['fields'])) {
-                    $value = $this->data['fields']['site_id'];
-                    $originalValue = $this->getOriginalFieldValue('site_id');
+                if (isset($this->data['fields']['siteId']) || array_key_exists('siteId', $this->data['fields'])) {
+                    $value = $this->data['fields']['siteId'];
+                    $originalValue = $this->getOriginalFieldValue('siteId');
                     if ($value !== $originalValue) {
                         if (null !== $value) {
-                            $query['$set']['site_id'] = (int) $this->data['fields']['site_id'];
+                            $query['$set']['siteId'] = (int) $this->data['fields']['siteId'];
                         } else {
-                            $query['$unset']['site_id'] = 1;
+                            $query['$unset']['siteId'] = 1;
                         }
                     }
                 }

@@ -51,15 +51,15 @@ abstract class User extends \Mandango\Document\Document
         } elseif (isset($data['_fields']['salt'])) {
             $this->data['fields']['salt'] = null;
         }
-        if (isset($data['first_name'])) {
-            $this->data['fields']['first_name'] = (string) $data['first_name'];
-        } elseif (isset($data['_fields']['first_name'])) {
-            $this->data['fields']['first_name'] = null;
+        if (isset($data['firstName'])) {
+            $this->data['fields']['firstName'] = (string) $data['firstName'];
+        } elseif (isset($data['_fields']['firstName'])) {
+            $this->data['fields']['firstName'] = null;
         }
-        if (isset($data['last_name'])) {
-            $this->data['fields']['last_name'] = (string) $data['last_name'];
-        } elseif (isset($data['_fields']['last_name'])) {
-            $this->data['fields']['last_name'] = null;
+        if (isset($data['lastName'])) {
+            $this->data['fields']['lastName'] = (string) $data['lastName'];
+        } elseif (isset($data['_fields']['lastName'])) {
+            $this->data['fields']['lastName'] = null;
         }
         if (isset($data['email'])) {
             $this->data['fields']['email'] = (string) $data['email'];
@@ -262,127 +262,127 @@ abstract class User extends \Mandango\Document\Document
     }
 
     /**
-     * Set the "first_name" field.
+     * Set the "firstName" field.
      *
      * @param mixed $value The value.
      *
      * @return \Model\PHPOrchestraCMSBundle\User The document (fluent interface).
      */
-    public function setFirst_name($value)
+    public function setFirstName($value)
     {
-        if (!isset($this->data['fields']['first_name'])) {
+        if (!isset($this->data['fields']['firstName'])) {
             if (!$this->isNew()) {
-                $this->getFirst_name();
-                if ($this->isFieldEqualTo('first_name', $value)) {
+                $this->getFirstName();
+                if ($this->isFieldEqualTo('firstName', $value)) {
                     return $this;
                 }
             } else {
                 if (null === $value) {
                     return $this;
                 }
-                $this->fieldsModified['first_name'] = null;
-                $this->data['fields']['first_name'] = $value;
+                $this->fieldsModified['firstName'] = null;
+                $this->data['fields']['firstName'] = $value;
                 return $this;
             }
-        } elseif ($this->isFieldEqualTo('first_name', $value)) {
+        } elseif ($this->isFieldEqualTo('firstName', $value)) {
             return $this;
         }
 
-        if (!isset($this->fieldsModified['first_name']) && !array_key_exists('first_name', $this->fieldsModified)) {
-            $this->fieldsModified['first_name'] = $this->data['fields']['first_name'];
-        } elseif ($this->isFieldModifiedEqualTo('first_name', $value)) {
-            unset($this->fieldsModified['first_name']);
+        if (!isset($this->fieldsModified['firstName']) && !array_key_exists('firstName', $this->fieldsModified)) {
+            $this->fieldsModified['firstName'] = $this->data['fields']['firstName'];
+        } elseif ($this->isFieldModifiedEqualTo('firstName', $value)) {
+            unset($this->fieldsModified['firstName']);
         }
 
-        $this->data['fields']['first_name'] = $value;
+        $this->data['fields']['firstName'] = $value;
 
         return $this;
     }
 
     /**
-     * Returns the "first_name" field.
+     * Returns the "firstName" field.
      *
      * @return mixed The $name field.
      */
-    public function getFirst_name()
+    public function getFirstName()
     {
-        if (!isset($this->data['fields']['first_name'])) {
+        if (!isset($this->data['fields']['firstName'])) {
             if ($this->isNew()) {
-                $this->data['fields']['first_name'] = null;
-            } elseif (!isset($this->data['fields']) || !array_key_exists('first_name', $this->data['fields'])) {
-                $this->addFieldCache('first_name');
-                $data = $this->getRepository()->getCollection()->findOne(array('_id' => $this->getId()), array('first_name' => 1));
-                if (isset($data['first_name'])) {
-                    $this->data['fields']['first_name'] = (string) $data['first_name'];
+                $this->data['fields']['firstName'] = null;
+            } elseif (!isset($this->data['fields']) || !array_key_exists('firstName', $this->data['fields'])) {
+                $this->addFieldCache('firstName');
+                $data = $this->getRepository()->getCollection()->findOne(array('_id' => $this->getId()), array('firstName' => 1));
+                if (isset($data['firstName'])) {
+                    $this->data['fields']['firstName'] = (string) $data['firstName'];
                 } else {
-                    $this->data['fields']['first_name'] = null;
+                    $this->data['fields']['firstName'] = null;
                 }
             }
         }
 
-        return $this->data['fields']['first_name'];
+        return $this->data['fields']['firstName'];
     }
 
     /**
-     * Set the "last_name" field.
+     * Set the "lastName" field.
      *
      * @param mixed $value The value.
      *
      * @return \Model\PHPOrchestraCMSBundle\User The document (fluent interface).
      */
-    public function setLast_name($value)
+    public function setLastName($value)
     {
-        if (!isset($this->data['fields']['last_name'])) {
+        if (!isset($this->data['fields']['lastName'])) {
             if (!$this->isNew()) {
-                $this->getLast_name();
-                if ($this->isFieldEqualTo('last_name', $value)) {
+                $this->getLastName();
+                if ($this->isFieldEqualTo('lastName', $value)) {
                     return $this;
                 }
             } else {
                 if (null === $value) {
                     return $this;
                 }
-                $this->fieldsModified['last_name'] = null;
-                $this->data['fields']['last_name'] = $value;
+                $this->fieldsModified['lastName'] = null;
+                $this->data['fields']['lastName'] = $value;
                 return $this;
             }
-        } elseif ($this->isFieldEqualTo('last_name', $value)) {
+        } elseif ($this->isFieldEqualTo('lastName', $value)) {
             return $this;
         }
 
-        if (!isset($this->fieldsModified['last_name']) && !array_key_exists('last_name', $this->fieldsModified)) {
-            $this->fieldsModified['last_name'] = $this->data['fields']['last_name'];
-        } elseif ($this->isFieldModifiedEqualTo('last_name', $value)) {
-            unset($this->fieldsModified['last_name']);
+        if (!isset($this->fieldsModified['lastName']) && !array_key_exists('lastName', $this->fieldsModified)) {
+            $this->fieldsModified['lastName'] = $this->data['fields']['lastName'];
+        } elseif ($this->isFieldModifiedEqualTo('lastName', $value)) {
+            unset($this->fieldsModified['lastName']);
         }
 
-        $this->data['fields']['last_name'] = $value;
+        $this->data['fields']['lastName'] = $value;
 
         return $this;
     }
 
     /**
-     * Returns the "last_name" field.
+     * Returns the "lastName" field.
      *
      * @return mixed The $name field.
      */
-    public function getLast_name()
+    public function getLastName()
     {
-        if (!isset($this->data['fields']['last_name'])) {
+        if (!isset($this->data['fields']['lastName'])) {
             if ($this->isNew()) {
-                $this->data['fields']['last_name'] = null;
-            } elseif (!isset($this->data['fields']) || !array_key_exists('last_name', $this->data['fields'])) {
-                $this->addFieldCache('last_name');
-                $data = $this->getRepository()->getCollection()->findOne(array('_id' => $this->getId()), array('last_name' => 1));
-                if (isset($data['last_name'])) {
-                    $this->data['fields']['last_name'] = (string) $data['last_name'];
+                $this->data['fields']['lastName'] = null;
+            } elseif (!isset($this->data['fields']) || !array_key_exists('lastName', $this->data['fields'])) {
+                $this->addFieldCache('lastName');
+                $data = $this->getRepository()->getCollection()->findOne(array('_id' => $this->getId()), array('lastName' => 1));
+                if (isset($data['lastName'])) {
+                    $this->data['fields']['lastName'] = (string) $data['lastName'];
                 } else {
-                    $this->data['fields']['last_name'] = null;
+                    $this->data['fields']['lastName'] = null;
                 }
             }
         }
 
-        return $this->data['fields']['last_name'];
+        return $this->data['fields']['lastName'];
     }
 
     /**
@@ -574,11 +574,11 @@ abstract class User extends \Mandango\Document\Document
         if ('salt' == $name) {
             return $this->setSalt($value);
         }
-        if ('first_name' == $name) {
-            return $this->setFirst_name($value);
+        if ('firstName' == $name) {
+            return $this->setFirstName($value);
         }
-        if ('last_name' == $name) {
-            return $this->setLast_name($value);
+        if ('lastName' == $name) {
+            return $this->setLastName($value);
         }
         if ('email' == $name) {
             return $this->setEmail($value);
@@ -610,11 +610,11 @@ abstract class User extends \Mandango\Document\Document
         if ('salt' == $name) {
             return $this->getSalt();
         }
-        if ('first_name' == $name) {
-            return $this->getFirst_name();
+        if ('firstName' == $name) {
+            return $this->getFirstName();
         }
-        if ('last_name' == $name) {
-            return $this->getLast_name();
+        if ('lastName' == $name) {
+            return $this->getLastName();
         }
         if ('email' == $name) {
             return $this->getEmail();
@@ -647,11 +647,11 @@ abstract class User extends \Mandango\Document\Document
         if (isset($array['salt'])) {
             $this->setSalt($array['salt']);
         }
-        if (isset($array['first_name'])) {
-            $this->setFirst_name($array['first_name']);
+        if (isset($array['firstName'])) {
+            $this->setFirstName($array['firstName']);
         }
-        if (isset($array['last_name'])) {
-            $this->setLast_name($array['last_name']);
+        if (isset($array['lastName'])) {
+            $this->setLastName($array['lastName']);
         }
         if (isset($array['email'])) {
             $this->setEmail($array['email']);
@@ -677,8 +677,8 @@ abstract class User extends \Mandango\Document\Document
         $array['login'] = $this->getLogin();
         $array['hash'] = $this->getHash();
         $array['salt'] = $this->getSalt();
-        $array['first_name'] = $this->getFirst_name();
-        $array['last_name'] = $this->getLast_name();
+        $array['firstName'] = $this->getFirstName();
+        $array['lastName'] = $this->getLastName();
         $array['email'] = $this->getEmail();
         $array['addresses'] = $this->getAddresses();
 
@@ -705,11 +705,11 @@ abstract class User extends \Mandango\Document\Document
                 if (isset($this->data['fields']['salt'])) {
                     $query['salt'] = (string) $this->data['fields']['salt'];
                 }
-                if (isset($this->data['fields']['first_name'])) {
-                    $query['first_name'] = (string) $this->data['fields']['first_name'];
+                if (isset($this->data['fields']['firstName'])) {
+                    $query['firstName'] = (string) $this->data['fields']['firstName'];
                 }
-                if (isset($this->data['fields']['last_name'])) {
-                    $query['last_name'] = (string) $this->data['fields']['last_name'];
+                if (isset($this->data['fields']['lastName'])) {
+                    $query['lastName'] = (string) $this->data['fields']['lastName'];
                 }
                 if (isset($this->data['fields']['email'])) {
                     $query['email'] = (string) $this->data['fields']['email'];
@@ -751,25 +751,25 @@ abstract class User extends \Mandango\Document\Document
                         }
                     }
                 }
-                if (isset($this->data['fields']['first_name']) || array_key_exists('first_name', $this->data['fields'])) {
-                    $value = $this->data['fields']['first_name'];
-                    $originalValue = $this->getOriginalFieldValue('first_name');
+                if (isset($this->data['fields']['firstName']) || array_key_exists('firstName', $this->data['fields'])) {
+                    $value = $this->data['fields']['firstName'];
+                    $originalValue = $this->getOriginalFieldValue('firstName');
                     if ($value !== $originalValue) {
                         if (null !== $value) {
-                            $query['$set']['first_name'] = (string) $this->data['fields']['first_name'];
+                            $query['$set']['firstName'] = (string) $this->data['fields']['firstName'];
                         } else {
-                            $query['$unset']['first_name'] = 1;
+                            $query['$unset']['firstName'] = 1;
                         }
                     }
                 }
-                if (isset($this->data['fields']['last_name']) || array_key_exists('last_name', $this->data['fields'])) {
-                    $value = $this->data['fields']['last_name'];
-                    $originalValue = $this->getOriginalFieldValue('last_name');
+                if (isset($this->data['fields']['lastName']) || array_key_exists('lastName', $this->data['fields'])) {
+                    $value = $this->data['fields']['lastName'];
+                    $originalValue = $this->getOriginalFieldValue('lastName');
                     if ($value !== $originalValue) {
                         if (null !== $value) {
-                            $query['$set']['last_name'] = (string) $this->data['fields']['last_name'];
+                            $query['$set']['lastName'] = (string) $this->data['fields']['lastName'];
                         } else {
-                            $query['$unset']['last_name'] = 1;
+                            $query['$unset']['lastName'] = 1;
                         }
                     }
                 }
