@@ -5,7 +5,8 @@ namespace PHPOrchestra\CMSBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
-use PHPOrchestra\CMSBundle\Classes\Area;
+//use PHPOrchestra\CMSBundle\Classes\Area;
+use PHPOrchestra\CMSBundle\Form\Type\NodeType;
 
 class NodesController extends Controller
 {
@@ -22,24 +23,15 @@ class NodesController extends Controller
             ->setVersion(1)
             ->setLanguage('fr');
         
-        $form = $this->createFormBuilder($node)
-            ->add('nodeId', 'text')
-            ->add('siteId', 'text')
-            ->add('name', 'text')
-            ->add('version', 'text')
-            ->add('language', 'text')
-            ->add('save', 'submit')
-            ->getForm();
+        $form = $this->createForm(new NodeType(), $node);
 
 		$form->handleRequest($request);
 	
 	    if ($form->isValid())
 	    {
             $node->save();
-            
             return $this->redirect($this->generateUrl('php_orchestra_cms_node', array('nodeId' => $node->getNodeId())));
-	   	}    
-            
+	   	}
             
         return $this->render('PHPOrchestraCMSBundle:Node:form.html.twig', array(
             'form' => $form->createView(),
