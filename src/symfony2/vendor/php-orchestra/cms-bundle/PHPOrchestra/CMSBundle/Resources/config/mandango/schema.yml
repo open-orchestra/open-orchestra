@@ -31,6 +31,20 @@ Model\PHPOrchestraCMSBundle\Node:
         blocks: {class: Model\PHPOrchestraCMSBundle\Block}
 
 
+Model\PHPOrchestraCMSBundle\Template:
+    collection: template
+    fields:
+        templateId: integer
+        siteId: integer
+        name: string
+        version: integer
+        language: string
+        status: string
+        areas: raw
+    embeddedsMany:
+        blocks: {class: Model\PHPOrchestraCMSBundle\Block}
+
+
 Model\PHPOrchestraCMSBundle\Content:
     collection: content
     fields:

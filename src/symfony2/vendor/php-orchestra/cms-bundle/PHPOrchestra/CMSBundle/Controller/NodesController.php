@@ -29,6 +29,12 @@ class NodesController extends Controller
 	
 	    if ($form->isValid())
 	    {
+             // recuperation des blocs et ajout manuel au $node
+//           $node->addBlocks(array($block1, $block2));
+
+           // recuperation des zones et ajout manuel au $node
+//           $node->setAreas(array($area1->toArray(), $area2->toArray()));
+	    	
             $node->save();
             return $this->redirect($this->generateUrl('php_orchestra_cms_node', array('nodeId' => $node->getNodeId())));
 	   	}

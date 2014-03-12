@@ -186,6 +186,81 @@ class MetadataFactoryInfo
         );
     }
 
+    public function getModelPHPOrchestraCMSBundleTemplateClass()
+    {
+        return array(
+            'isEmbedded' => false,
+            'mandango' => null,
+            'connection' => '',
+            'collection' => 'template',
+            'inheritable' => false,
+            'inheritance' => false,
+            'fields' => array(
+                'templateId' => array(
+                    'type' => 'integer',
+                    'dbName' => 'templateId',
+                ),
+                'siteId' => array(
+                    'type' => 'integer',
+                    'dbName' => 'siteId',
+                ),
+                'name' => array(
+                    'type' => 'string',
+                    'dbName' => 'name',
+                ),
+                'version' => array(
+                    'type' => 'integer',
+                    'dbName' => 'version',
+                ),
+                'language' => array(
+                    'type' => 'string',
+                    'dbName' => 'language',
+                ),
+                'status' => array(
+                    'type' => 'string',
+                    'dbName' => 'status',
+                ),
+                'areas' => array(
+                    'type' => 'raw',
+                    'dbName' => 'areas',
+                ),
+            ),
+            '_has_references' => false,
+            'referencesOne' => array(
+
+            ),
+            'referencesMany' => array(
+
+            ),
+            'embeddedsOne' => array(
+
+            ),
+            'embeddedsMany' => array(
+                'blocks' => array(
+                    'class' => 'Model\\PHPOrchestraCMSBundle\\Block',
+                ),
+            ),
+            'relationsOne' => array(
+
+            ),
+            'relationsManyOne' => array(
+
+            ),
+            'relationsManyMany' => array(
+
+            ),
+            'relationsManyThrough' => array(
+
+            ),
+            'indexes' => array(
+
+            ),
+            '_indexes' => array(
+
+            ),
+        );
+    }
+
     public function getModelPHPOrchestraCMSBundleContentClass()
     {
         return array(

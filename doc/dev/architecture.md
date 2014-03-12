@@ -143,35 +143,37 @@ La base de données principale sera en MongoDB
         }
         //, etc.
     },
-    "area":
-    {
-        "areaId": "html_id", // HTML identifier like "container", "header", "footer"
-        "classes" : ["class1"/*, etc. */], // Additional HTML classes
-        "subAreas":
-        [
-            {
-                "areaId": "html_id",
-                "classes": ["classN"],
-
-                // Usually blocks are in area leaves, so you *should* find
-                // either blocks or sub_areas, but not both
-                "blocks":
-                [
-                    {
-                        "nodeId": null, // null = current node
-                        "blockId": "1"
-                    }
-                    //, etc.
-                ],
-
-                "subAreas":
-                [
-                    // etc. Unlimited level of recursive areas
-                ]
-            }
-            //, etc. Unlimited number of areas
-        ]
-    }
+    "areas":
+    [
+        {
+            "areaId": "html_id", // HTML identifier like "container", "header", "footer"
+            "classes" : ["class1"/*, etc. */], // Additional HTML classes
+            "subAreas":
+            [
+                {
+                    "areaId": "html_id",
+                    "classes": ["classN"],
+    
+                    // Usually blocks are in area leaves, so you *should* find
+                    // either blocks or sub_areas, but not both
+                    "blocks":
+                    [
+                        {
+                            "nodeId": null, // null = current node
+                            "blockId": "1"
+                        }
+                        //, etc.
+                    ],
+    
+                    "subAreas":
+                    [
+                        // etc. Unlimited level of recursive areas
+                    ]
+                }
+                //, etc. Unlimited number of areas
+            ]
+        }
+    ]
 }
 ```
 
