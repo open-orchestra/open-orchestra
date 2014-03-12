@@ -16,8 +16,23 @@ class Area
 	private $subAreas = array();
 	private $blockReferences = array();
 	
-	public function __construct()
+	public function __construct($importArray = array())
 	{
+        if (is_array($importArray))
+        {
+           if (isset($importArray['areaId']))
+                $this->id = $importArray['areaId'];
+           
+           if (isset($importArray['classes']) && is_array($importArray['classes']))
+                 $this->classes = $importArray['classes'];
+           
+           if (isset($importArray['subAreas']) && is_array($importArray['subAreas']))
+           	    foreach($importArray['subAreas'] as $subArea)
+           	        $this->subAreas[] = new Area($subArea);
+                 
+           if (isset($importArray['blocks']) && is_array($importArray['blocks']))
+                 $this->blockReferences = $importArray['blocks'];                 
+		}
 		return $this;
 	}
 	
@@ -83,4 +98,5 @@ class Area
     	           'blocks' => $this->getBlockReferences()
     	);
     }
+
 }

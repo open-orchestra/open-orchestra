@@ -1,10 +1,15 @@
 <fieldset id="{{ area.areaId }}">
     <legend>{{ area.areaId }}</legend>
 {% for subArea in area.subAreas %}
-    {% include "PHPOrchestraCMSBundle:Node:area.html.twig" with {"area": subArea, "blocks" : blocks} only %}
+    {% include "PHPOrchestraCMSBundle:Node:area.html.twig" with {"area" : subArea, "blocks" : blocks, "relatedNodes" : relatedNodes} only %}
 {% endfor %}
 {% for blockReference in area.blocks %}
-    {% set block = blocks.iterator[blockReference.blockId] %}
+    {% if blockReference.nodeId == 0 %}
+        {% set block = blocks.iterator[blockReference.blockId] %}
+    {% else %}
+        {% set block = relatedNodes[blockReference.nodeId].iterator[blockReference.blockId] %}
+    {% endif %}
+    ref : {{ blockReference.nodeId }} <br/>
     {{ render(controller(block.component, {'block': block.attributes})) }}
 {% endfor %}
 </fieldset>

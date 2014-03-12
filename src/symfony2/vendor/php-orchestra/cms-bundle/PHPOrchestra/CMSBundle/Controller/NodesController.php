@@ -5,7 +5,7 @@ namespace PHPOrchestra\CMSBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
-//use PHPOrchestra\CMSBundle\Classes\Area;
+use PHPOrchestra\CMSBundle\Classes\Area;
 use PHPOrchestra\CMSBundle\Form\Type\NodeType;
 
 class NodesController extends Controller
@@ -51,7 +51,7 @@ class NodesController extends Controller
     	$mandango = $this->container->get('mandango');
 
     	$nodesRepo = $mandango->getRepository('Model\PHPOrchestraCMSBundle\Node');
-    	$nodesRepo->remove();
+//    	$nodesRepo->remove();
 
 // Block #1 : Site Menu
         $block1 = $mandango->create('Model\PHPOrchestraCMSBundle\Block')
@@ -97,21 +97,21 @@ class NodesController extends Controller
         $area21 = new area();
         $area21
             ->setId('left_menu')
-            ->addBlockReferences(0, 1);
+            ->addBlockReferences(200, 1);
         
 // Area 2-2 : Content
         $area22 = new area();
         $area22
             ->setId('content')
-            ->addBlockReferences(0, 2)
-            ->addBlockReferences(0, 3)
-            ->addBlockReferences(0, 4);
+            ->addBlockReferences(10, 2)
+            ->addBlockReferences(200, 3)
+            ->addBlockReferences(10, 4);
 
 // Area 2-3 : Skycrapper
         $area23 = new area();
         $area23
             ->setId('skycrapper')
-            ->addBlockReferences(0, 5);
+            ->addBlockReferences(10, 5);
             
 // Area 2 : Main
         $area2 = new area();
@@ -124,13 +124,13 @@ class NodesController extends Controller
 // Area 3 : Header
         $area3 = new area();
         $area3->setId('footer')
-            ->addBlockReferences(0, 6);
+            ->addBlockReferences(10, 6);
             
 // Node
         $node = $mandango->create('Model\PHPOrchestraCMSBundle\Node')
-            ->setNodeId(1)
+            ->setNodeId(300)
             ->setSiteId(1)
-            ->setName('Home avec controllers de bloc')
+            ->setName('Home site avec ref Repo 0')
             ->setVersion(1)
             ->setLanguage('fr')
             ->addBlocks(array($block1, $block2, $block3, $block4, $block5, $block6, $block7))
@@ -139,9 +139,6 @@ class NodesController extends Controller
         $node->save();
         
         $nodes = $mandango->getRepository('Model\PHPOrchestraCMSBundle\Node')->createQuery();
-        
-     //   echo '<pre>'; print_r($nodes);echo '</pre>';
-        
         
         return $this->render('PHPOrchestraCMSBundle:Default:index.html.twig', array('nodes' => $nodes));
     }
