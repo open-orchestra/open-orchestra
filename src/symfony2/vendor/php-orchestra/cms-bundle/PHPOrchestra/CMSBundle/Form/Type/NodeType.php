@@ -32,8 +32,7 @@ class NodeType extends AbstractType
             ->add('status', 'text')
             ->add('templateId', 'integer')
             ->add('areas', 'textarea', array("mapped" => false))
-            //            ->add('areas', 'orchestraAreas')
-//            ->add('blocks', 'orchestraBlocks')
+            ->add('blocks', 'textarea', array("mapped" => false))
             ->add('save', 'submit');
     }
     
