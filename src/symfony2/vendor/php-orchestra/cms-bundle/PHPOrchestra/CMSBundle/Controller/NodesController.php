@@ -1,16 +1,26 @@
 <?php
+/**
+ * This file is part of the PHPOrchestra\CMSBundle.
+ *
+ * @author Noël Gilain <noel.gilain@businessdecision.com>
+ */
 
 namespace PHPOrchestra\CMSBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-
 use PHPOrchestra\CMSBundle\Classes\Area;
 use PHPOrchestra\CMSBundle\Form\Type\NodeType;
 
 class NodesController extends Controller
 {
 	
+	/**
+	 * 
+	 * Test : render a basic Node form
+	 * @param Request $request
+     * @return Response
+	 */
 	public function formAction(Request $request)
 	{
         $mandango = $this->container->get('mandango');
@@ -45,7 +55,11 @@ class NodesController extends Controller
 	}
 	
 	
-	
+	/**
+	 * 
+	 * Test : inject a sample Node in MongoDB
+     * @return Response
+	 */
     public function addAction()
     {
     	$mandango = $this->container->get('mandango');
@@ -128,7 +142,7 @@ class NodesController extends Controller
             
 // Node
         $node = $mandango->create('Model\PHPOrchestraCMSBundle\Node')
-            ->setNodeId(300)
+            ->setNodeId(400)
             ->setSiteId(1)
             ->setName('Home site avec ref Repo 0')
             ->setVersion(1)

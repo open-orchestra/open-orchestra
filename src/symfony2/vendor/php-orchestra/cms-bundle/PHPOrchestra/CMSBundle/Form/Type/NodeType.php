@@ -1,4 +1,9 @@
 <?php
+/**
+ * This file is part of the PHPOrchestra\CMSBundle.
+ *
+ * @author Noël Gilain <noel.gilain@businessdecision.com>
+ */
 
 namespace PHPOrchestra\CMSBundle\Form\Type;
 
@@ -7,7 +12,13 @@ use Symfony\Component\Form\FormBuilderInterface;
 
 class NodeType extends AbstractType
 {
-    public function buildForm(FormBuilderInterface $builder, array $options)
+	
+    /**
+     * Build Node form
+     * @param FormBuilderInterface $builder
+     * @param  array $options
+     */
+	public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
             ->add('nodeId', 'integer')
@@ -24,7 +35,11 @@ class NodeType extends AbstractType
 //            ->add('blocks', 'orchestraBlocks')
             ->add('save', 'submit');
     }
-
+    
+    /**
+     * 
+     * @param array $options
+     */
     public function getDefaultOptions(array $options)
     {
         return array(
@@ -32,6 +47,12 @@ class NodeType extends AbstractType
         );
     }
     
+    /**
+     * Build Node form
+     * @param FormBuilderInterface $builder
+     * @param  array $options
+     * @return string
+     */
     public function getName()
     {
         return 'node';

@@ -1,44 +1,68 @@
 <?php
+/**
+ * This file is part of the PHPOrchestra\CMSBundle.
+ *
+ * @author Noël Gilain <noel.gilain@businessdecision.com>
+ */
 
 namespace PHPOrchestra\CMSBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use PHPOrchestra\CMSBundle\Classes\DocumentLoader;
 use PHPOrchestra\CMSBundle\Classes\Area;
 
 class NodeController extends Controller
 {
+	
+	/**
+	 * Cache containing blocks defined in external Nodes
+	 * @var Mandango\Group\EmbeddedGroup[]
+	 */
+	private $externalBlocks = array();
+	
+
+    /**
+     * Render Node
+     * @param int $nodeId
+     * @return Response
+     */
     public function showAction($nodeId)
     { 
-        $node = $this->getNode($nodeId);
-        $areas = $node->getAreas();
-        $cacheRelatedNodes = array();
+        $node = DocumentLoader::getDocument('Node', array('nodeId' => (int)$nodeId), $this->container->get('mandango'));
+    	$areas = $node->getAreas();
+        $this->externalBlocks = array();
         
-        if (count($areas) > 0)
+        if (is_array($areas))
             foreach ($areas as $area)
-                $cacheRelatedNodes = $this->getRelatedNodes(new Area($area), $cacheRelatedNodes);
+                $this->getExternalBlocks(new Area($area));
         
-        return $this->render('PHPOrchestraCMSBundle:Node:show.html.twig', array('node' => $node, 'relatedNodes' => $cacheRelatedNodes));
+        return $this->render('PHPOrchestraCMSBundle:Node:show.html.twig', array('node' => $node, 'relatedNodes' => $this->externalBlocks));
     }
     
-    private function getNode($nodeId)
-    {
-        $mandango = $this->container->get('mandango');
-        $repository = $mandango->getRepository('Model\PHPOrchestraCMSBundle\Node');
-        $query = $repository->createQuery();
-        $query->criteria(array('nodeId' => (int)$nodeId));
-        return $query->one();
-    }
     
-    private function getRelatedNodes($area, $cache)
+    /** 
+     * Cache blocks from external Nodes referenced in an area
+     * @param Area $area
+     */
+    private function getExternalBlocks(Area $area)
     {
     	foreach ($area->getBlockReferences() as $blockReference)
-    		if ($blockReference['nodeId'] != 0 && !(isset($cache[$blockReference['nodeId']])))
-    		    $cache[$blockReference['nodeId']] = $this->getNode($blockReference['nodeId'])->getBlocks();
-
+    	   if ($blockReference['nodeId'] != 0 && !(isset($this->cacheRelatedNodes[$blockReference['nodeId']])))
+    	       $this->getBlocksFromNode($blockReference['nodeId']);
+    		
         foreach ($area->getSubAreas() as $subArea)
-            $cache = $this->getRelatedNodes($subArea, $cache);
-            
-    	return $cache;
+            $this->getExternalBlocks($subArea);
+    }
+    
+    
+    /**
+     * Cache blocks from specific Node
+     * @param int $nodeId
+     */
+    private function getBlocksFromNode($nodeId)
+    {
+		$node = DocumentLoader::getDocument('Node', array('nodeId' => $nodeId), $this->container->get('mandango'));
+		$this->externalBlocks[$nodeId] = $node->getBlocks();
     }
     
 }
