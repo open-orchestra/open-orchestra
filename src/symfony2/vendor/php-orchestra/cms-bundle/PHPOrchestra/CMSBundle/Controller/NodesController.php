@@ -26,12 +26,7 @@ class NodesController extends Controller
         $mandango = $this->container->get('mandango');
         $nodesRepo = $mandango->getRepository('Model\PHPOrchestraCMSBundle\Node');
         
-        $node = $mandango->create('Model\PHPOrchestraCMSBundle\Node')
-            ->setNodeId(100)
-            ->setSiteId(1)
-            ->setName('Home avec controllers de bloc')
-            ->setVersion(1)
-            ->setLanguage('fr');
+        $node = $mandango->create('Model\PHPOrchestraCMSBundle\Node');
         
         $form = $this->createForm(new NodeType(), $node);
 
@@ -43,7 +38,16 @@ class NodesController extends Controller
 //           $node->addBlocks(array($block1, $block2));
 
            // recuperation des zones et ajout manuel au $node
-//           $node->setAreas(array($area1->toArray(), $area2->toArray()));
+            $areas = $form->get('areas')->getData();
+            $areas = json_decode($areas, true);            
+            
+            $nodeAreas = array();
+            if (is_array($areas))
+                foreach($areas as $area) {
+                    $area = new Area($area);
+                    $nodeAreas[] = $area->toArray();
+                }
+            $node->setAreas($nodeAreas);
 	    	
             $node->save();
             return $this->redirect($this->generateUrl('php_orchestra_cms_node', array('nodeId' => $node->getNodeId())));
@@ -53,7 +57,7 @@ class NodesController extends Controller
             'form' => $form->createView(),
         ));    
 	}
-	
+		
 	
 	/**
 	 * Test : inject a sample Node in MongoDB
@@ -65,7 +69,7 @@ class NodesController extends Controller
     	$mandango = $this->container->get('mandango');
 
     	$nodesRepo = $mandango->getRepository('Model\PHPOrchestraCMSBundle\Node');
-//    	$nodesRepo->remove();
+    	$nodesRepo->remove();
 
 // Block #1 : Site Menu
         $block1 = $mandango->create('Model\PHPOrchestraCMSBundle\Block')
@@ -142,7 +146,7 @@ class NodesController extends Controller
             
 // Node
         $node = $mandango->create('Model\PHPOrchestraCMSBundle\Node')
-            ->setNodeId(400)
+            ->setNodeId(1)
             ->setSiteId(1)
             ->setName('Home site avec ref Repo 0')
             ->setVersion(1)

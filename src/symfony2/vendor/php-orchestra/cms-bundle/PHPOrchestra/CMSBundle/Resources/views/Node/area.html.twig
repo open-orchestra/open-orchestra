@@ -10,12 +10,19 @@
     {% include "PHPOrchestraCMSBundle:Node:area.html.twig" with {"area" : subArea, "blocks" : blocks, "relatedNodes" : relatedNodes} only %}
 {% endfor %}
 {% for blockReference in area.blocks %}
+    {% set block = false %}
     {% if blockReference.nodeId == 0 %}
-        {% set block = blocks.iterator[blockReference.blockId] %}
+        {% if blocks.iterator[blockReference.blockId] is defined %}
+            {% set block = blocks.iterator[blockReference.blockId] %}
+        {% endif %}
     {% else %}
-        {% set block = relatedNodes[blockReference.nodeId].iterator[blockReference.blockId] %}
+        {% if relatedNodes[blockReference.nodeId].iterator[blockReference.blockId] is defined %}
+            {% set block = relatedNodes[blockReference.nodeId].iterator[blockReference.blockId] %}
+        {% endif %}
     {% endif %}
-    ref : {{ blockReference.nodeId }} <br/>
-    {{ render(controller(block.component, {'block': block.attributes})) }}
+    BlockId : {{ blockReference.blockId }} / NodeId : {{ blockReference.nodeId }} <br/>
+    {% if block %}
+        {{ render(controller(block.component, {'block': block.attributes})) }}
+    {% endif %}
 {% endfor %}
 </fieldset>
