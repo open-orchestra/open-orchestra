@@ -159,7 +159,7 @@ La base de données principale sera en MongoDB
                     "blocks":
                     [
                         {
-                            "nodeId": null, // null = current node
+                            "nodeId": 0, // 0 = current node
                             "blockId": "1"
                         }
                         //, etc.

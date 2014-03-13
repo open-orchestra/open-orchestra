@@ -16,6 +16,7 @@ class NodeController extends Controller
 	
 	/**
 	 * Cache containing blocks defined in external Nodes
+	 * 
 	 * @var Mandango\Group\EmbeddedGroup[]
 	 */
 	private $externalBlocks = array();
@@ -23,6 +24,7 @@ class NodeController extends Controller
 
     /**
      * Render Node
+     * 
      * @param int $nodeId
      * @return Response
      */
@@ -42,6 +44,7 @@ class NodeController extends Controller
     
     /** 
      * Cache blocks from external Nodes referenced in an area
+     * 
      * @param Area $area
      */
     private function getExternalBlocks(Area $area)
@@ -57,6 +60,7 @@ class NodeController extends Controller
     
     /**
      * Cache blocks from specific Node
+     * 
      * @param int $nodeId
      */
     private function getBlocksFromNode($nodeId)

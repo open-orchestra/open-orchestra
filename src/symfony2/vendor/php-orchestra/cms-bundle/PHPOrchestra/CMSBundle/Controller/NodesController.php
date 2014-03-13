@@ -16,8 +16,8 @@ class NodesController extends Controller
 {
 	
 	/**
-	 * 
 	 * Test : render a basic Node form
+	 * 
 	 * @param Request $request
      * @return Response
 	 */
@@ -56,8 +56,8 @@ class NodesController extends Controller
 	
 	
 	/**
-	 * 
 	 * Test : inject a sample Node in MongoDB
+	 * 
      * @return Response
 	 */
     public function addAction()

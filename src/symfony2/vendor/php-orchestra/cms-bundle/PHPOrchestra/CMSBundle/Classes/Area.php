@@ -10,37 +10,37 @@ namespace PHPOrchestra\CMSBundle\Classes;
 class Area
 {
 	/**
-	 * 
 	 * html identifier
+	 * 
 	 * @var string
 	 */
 	private $id = null;
 	
 	/**
-	 * 
 	 * html classes
+	 * 
 	 * @var string[]
 	 */
 	private $classes = array();
 	
 	/**
-	 * 
 	 * sub areas
+	 * 
 	 * @var Area[]
 	 */
 	private $subAreas = array();
 	
 	/**
-	 * 
 	 * References array to blocks defined in external nodes  
+	 * 
 	 * @var array
 	 */
 	private $blockReferences = array();
 	
 	
 	/**
-	 * 
 	 * Constructor
+	 * 
 	 * @param array $importArray
 	 */
 	public function __construct(array $importArray = array())
@@ -62,8 +62,8 @@ class Area
 	}
 	
     /**
-     * 
      * Set id
+     * 
      * @param string $id
      */
 	public function setId($id)
@@ -73,7 +73,6 @@ class Area
     }
 
     /**
-     * 
      * Get id
      */
     public function getId()
@@ -82,8 +81,8 @@ class Area
     }
     
     /**
-     * 
      * Add a html class
+     * 
      * @param string $class
      */
     public function addClass($class)
@@ -93,7 +92,6 @@ class Area
     }
     
     /**
-     * 
      * Get html classes
      */
     public function getClasses()
@@ -102,8 +100,8 @@ class Area
     }
     
     /**
-     * 
      * Add a sub area
+     * 
      * @param Area $area
      */
     public function addSubArea(Area $area)
@@ -113,7 +111,6 @@ class Area
     }
     
     /**
-     * 
      * Get sub areas
      */
     public function getSubAreas()
@@ -122,8 +119,8 @@ class Area
     }
     
     /**
-     * 
      * Add an external block reference
+     * 
      * @param int $nodeId
      * @param int $blockId
      */
@@ -134,7 +131,6 @@ class Area
     }
     
     /**
-     * 
      * get block references
      */
     public function getBlockReferences()
@@ -144,7 +140,6 @@ class Area
     
 
     /**
-     * 
      * Adapt area from object to array
      */
     public function toArray()

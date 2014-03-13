@@ -15,6 +15,7 @@ class NodeType extends AbstractType
 	
     /**
      * Build Node form
+     * 
      * @param FormBuilderInterface $builder
      * @param  array $options
      */
@@ -37,7 +38,6 @@ class NodeType extends AbstractType
     }
     
     /**
-     * 
      * @param array $options
      */
     public function getDefaultOptions(array $options)
@@ -48,9 +48,6 @@ class NodeType extends AbstractType
     }
     
     /**
-     * Build Node form
-     * @param FormBuilderInterface $builder
-     * @param  array $options
      * @return string
      */
     public function getName()
