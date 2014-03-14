@@ -34,10 +34,13 @@ class DocumentLoader
     	$documentNamespace = '';
     	switch($documentType)
     	{
-    		case 'Node':
-    			$documentNamespace = 'Model\PHPOrchestraCMSBundle\Node';
-    			break;
-    		default:
+            case 'Node':
+                $documentNamespace = 'Model\PHPOrchestraCMSBundle\Node';
+                break;
+          case 'Template':
+                $documentNamespace = 'Model\PHPOrchestraCMSBundle\Template';
+                break;
+          default:
     			break;
     	}
     	return $documentNamespace;
