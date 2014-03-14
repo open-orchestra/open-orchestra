@@ -1,0 +1,38 @@
+body{
+    padding:0px;
+    margin:0px;
+}
+.ui-widget-model {
+    position:relative;
+    float:left;
+}
+.ui-widget-model-node{
+    position:absolute;
+}
+.ui-widget-model-fieldset{
+    border: 1px #000000 solid;
+    border-radius: 8px;
+    position: absolute;
+}
+.ui-widget-model-fieldset h1{
+    position : relative;
+    margin: 0px 0px -40px 5px;
+    padding:0;
+    font:12px arial,sans-serif;
+}
+.ui-widget-model-areas .ui-widget-model-fieldset, .ui-widget-model-subAreas .ui-widget-model-fieldset{
+    border: 1px #0000ff solid;
+}
+.ui-widget-model-blocks .ui-widget-model-fieldset{
+    border: 1px #00ff00 solid;
+}
+.ui-widget-model-fieldset.over {
+    border: 1px #ff0000 solid;
+}
+.ui-dialog-content label {
+    display:inline-block;
+    width:230px;
+}
+html body form{
+	display:none;
+}

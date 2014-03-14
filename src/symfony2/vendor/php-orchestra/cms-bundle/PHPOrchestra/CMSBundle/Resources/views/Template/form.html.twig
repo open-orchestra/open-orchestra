@@ -1,0 +1,25 @@
+{##
+ # This file is part of the PHPOrchestra\CMSBundle.
+ #
+ # @author Nicolas ANNE <nicolas.anne@businessdecision.com>
+ ##}
+
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+        <link rel="stylesheet" href="{{ asset('bundles/phporchestracms/css/template.css') }}">
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        <script src="{{ asset('bundles/phporchestracms/js/template.js') }}"></script>
+        <script>
+        $(document).ready(function(){
+            $('#template-model').parseTemplate({"values" : {"templateId": {{ form.vars.value.templateId }}, "siteId": {{ form.vars.value.siteId }}, "name": "{{ form.vars.value.name }}", "version": {{ form.vars.value.version }}, "language": "{{ form.vars.value.language }}", "status": "{{ form.vars.value.status }}", "areas": [{{ form.areas.vars.value|raw }}]}});
+        });
+        </script>
+    </head>
+    <body>
+      {{ form(form) }}
+    <div id="template-model"></div>
+    </body>
+</html>
