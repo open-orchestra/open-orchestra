@@ -9,6 +9,7 @@ namespace PHPOrchestra\CMSBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use PHPOrchestra\CMSBundle\Classes\DocumentLoader;
 use PHPOrchestra\CMSBundle\Classes\Area;
 use PHPOrchestra\CMSBundle\Form\Type\NodeType;
 
@@ -21,18 +22,21 @@ class NodesController extends Controller
 	 * @param Request $request
      * @return Response
 	 */
-	public function formAction(Request $request)
+	public function formAction($nodeId, Request $request)
 	{
-        $mandango = $this->container->get('mandango');       
-        $node = $mandango->create('Model\PHPOrchestraCMSBundle\Node');
-        
+        $mandango = $this->container->get('mandango'); 
+
+        if ($nodeId == 0)
+            $node = $mandango->create('Model\PHPOrchestraCMSBundle\Node');
+        else
+            $node = DocumentLoader::getDocument('Node', array('nodeId' => (int)$nodeId), $this->container->get('mandango'));
+                
         $form = $this->createForm(new NodeType(), $node);
 		$form->handleRequest($request);
 		
 	    if ($form->isValid())
 	    {
 	    	$node = $this->setBlocks($form->get('blocks')->getData(), $node);
-	    	$node = $this->setAreas($form->get('areas')->getData(), $node);   
 
             $node->save();
             
@@ -64,21 +68,6 @@ class NodesController extends Controller
 		return $node;
 	}
 	
-	
-	private function setAreas($areas, $node)
-	{
-        $areas = json_decode($areas, true);            
-            
-        $nodeAreas = array();
-        if (is_array($areas))
-            foreach($areas as $area) {
-                $area = new Area($area);
-                $nodeAreas[] = $area->toArray();
-            }
-        $node->setAreas($nodeAreas);
-            
-		return $node;
-	}
 	
 	/**
 	 * Test : inject a sample Node in MongoDB

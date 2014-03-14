@@ -37,10 +37,10 @@ class DocumentLoader
             case 'Node':
                 $documentNamespace = 'Model\PHPOrchestraCMSBundle\Node';
                 break;
-          case 'Template':
+            case 'Template':
                 $documentNamespace = 'Model\PHPOrchestraCMSBundle\Template';
                 break;
-          default:
+            default:
     			break;
     	}
     	return $documentNamespace;

@@ -1,7 +1,5 @@
-parameters:
-#    php_orchestra_cms.example.class: PHPOrchestra\CMSBundle\Example
-
 services:
-#    php_orchestra_cms.example:
-#        class: %php_orchestra_cms.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    php_orchestra_cms.type.phporchestra_areas:
+        class: PHPOrchestra\CMSBundle\Form\Type\AreasType
+        tags:
+            - { name: form.type, alias: phporchestra_areas }

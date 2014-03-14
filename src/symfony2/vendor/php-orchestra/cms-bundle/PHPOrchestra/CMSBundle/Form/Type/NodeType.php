@@ -21,6 +21,7 @@ class NodeType extends AbstractType
      */
 	public function buildForm(FormBuilderInterface $builder, array $options)
     {
+    	
         $builder
             ->add('nodeId', 'integer')
             ->add('siteId', 'integer')
@@ -31,7 +32,7 @@ class NodeType extends AbstractType
             ->add('language', 'text')
             ->add('status', 'text')
             ->add('templateId', 'integer')
-            ->add('areas', 'textarea', array("mapped" => false))
+            ->add('areas', 'phporchestra_areas')
             ->add('blocks', 'textarea', array("mapped" => false))
             ->add('save', 'submit');
     }
