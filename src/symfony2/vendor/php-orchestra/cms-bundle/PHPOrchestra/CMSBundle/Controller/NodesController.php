@@ -32,7 +32,6 @@ class NodesController extends Controller
 	    if ($form->isValid())
 	    {
 	    	$node = $this->setBlocks($form->get('blocks')->getData(), $node);
-//            print_r($node);exit();
 	    	$node = $this->setAreas($form->get('areas')->getData(), $node);   
 
             $node->save();

@@ -38,8 +38,6 @@ class NodeController extends Controller
             foreach ($areas as $area)
                 $this->getExternalBlocks(new Area($area));
 
-//        print_r($node);exit();
-        
         return $this->render('PHPOrchestraCMSBundle:Node:show.html.twig', array('node' => $node, 'relatedNodes' => $this->externalBlocks));
     }
     

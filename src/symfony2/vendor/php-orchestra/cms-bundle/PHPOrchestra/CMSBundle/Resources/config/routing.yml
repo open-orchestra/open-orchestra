@@ -1,3 +1,7 @@
+php_orchestra_cms_templateform:
+    pattern:  /template/form
+    defaults: { _controller: PHPOrchestraCMSBundle:Template:form }
+    
 php_orchestra_cms_formnodes:
     pattern:  /node/form
     defaults: { _controller: PHPOrchestraCMSBundle:Nodes:form }
