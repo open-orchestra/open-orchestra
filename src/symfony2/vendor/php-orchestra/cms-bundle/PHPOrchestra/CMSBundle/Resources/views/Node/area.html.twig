@@ -22,7 +22,7 @@
     {% endif %}
     BlockId : {{ blockReference.blockId }} / NodeId : {{ blockReference.nodeId }} <br/>
     {% if block %}
-        {{ render(controller(block.component, {'block': block.attributes})) }}
+        {{ render_block(controller(block.component, {'block': block.attributes})) }}
     {% endif %}
 {% endfor %}
 </fieldset>
