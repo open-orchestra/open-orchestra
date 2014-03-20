@@ -1,32 +1,43 @@
-body{
+ul.ui-widget-model, li.ui-widget-model{
     padding:0px;
     margin:0px;
 }
-.ui-widget-model {
+ul.ui-widget-model{
+	display:block;
+	width:100%;
+	height:100%;
+}
+li.ui-widget-model{
     position:relative;
-    float:left;
+    display:block;
+    width:100%;
+    height:100%;
 }
-.ui-widget-model-node{
-    position:absolute;
-}
-.ui-widget-model-fieldset{
-    border: 1px #000000 solid;
-    border-radius: 8px;
-    position: absolute;
-}
-.ui-widget-model-fieldset h1{
-    position : relative;
-    margin: 0px 0px -40px 5px;
-    padding:0;
+span.ui-widget-model{
+    position:relative;
+    display:block;
+    margin-top:-20px;
     font:12px arial,sans-serif;
+    line-height:20px;
 }
-.ui-widget-model-areas .ui-widget-model-fieldset, .ui-widget-model-subAreas .ui-widget-model-fieldset{
+div.ui-widget-model{
+    position:absolute;
+    border-radius: 8px;
+    top:0px;
+    left:0px;
+    padding-top:20px;
+    padding-left:20px;
+    bottom:20px;
+    right:20px;
+    border:1px #000000 solid;
+}
+.ui-widget-model-areas div.ui-widget-model{
     border: 1px #0000ff solid;
 }
-.ui-widget-model-blocks .ui-widget-model-fieldset{
+.ui-widget-model-blocks div.ui-widget-model{
     border: 1px #00ff00 solid;
 }
-.ui-widget-model-fieldset.over {
+div.ui-widget-model.over{
     border: 1px #ff0000 solid;
 }
 .ui-dialog-content label {
