@@ -16,5 +16,7 @@ abstract class Node extends \Model\PHPOrchestraCMSBundle\Base\Node
     public function setBlocks($documents)
     {
         $this->addBlocks($documents);
+        
+        return $this;
     }
 }

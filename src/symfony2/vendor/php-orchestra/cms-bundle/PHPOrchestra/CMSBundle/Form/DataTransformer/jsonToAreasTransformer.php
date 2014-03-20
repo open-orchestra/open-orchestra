@@ -21,9 +21,11 @@ class jsonToAreasTransformer implements DataTransformerInterface
      */
     public function transform($areas)
     {
-    	$json = "";
-    	if (isset($areas))
+        $json = "[]";
+        
+        if (isset($areas))
             $json = json_encode($areas);
+        
         return $json;
     }
 
