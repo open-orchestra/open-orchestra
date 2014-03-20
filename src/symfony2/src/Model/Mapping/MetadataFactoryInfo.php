@@ -110,7 +110,7 @@ class MetadataFactoryInfo
             'inheritance' => false,
             'fields' => array(
                 'nodeId' => array(
-                    'type' => 'integer',
+                    'type' => 'string',
                     'dbName' => 'nodeId',
                 ),
                 'siteId' => array(
@@ -197,7 +197,7 @@ class MetadataFactoryInfo
             'inheritance' => false,
             'fields' => array(
                 'templateId' => array(
-                    'type' => 'integer',
+                    'type' => 'string',
                     'dbName' => 'templateId',
                 ),
                 'siteId' => array(

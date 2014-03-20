@@ -17,7 +17,7 @@ Model\PHPOrchestraCMSBundle\Block:
 Model\PHPOrchestraCMSBundle\Node:
     collection: node
     fields:
-        nodeId: integer
+        nodeId: string
         siteId: integer
         parentId: integer
         path: string
@@ -34,7 +34,7 @@ Model\PHPOrchestraCMSBundle\Node:
 Model\PHPOrchestraCMSBundle\Template:
     collection: template
     fields:
-        templateId: integer
+        templateId: string
         siteId: integer
         name: string
         version: integer

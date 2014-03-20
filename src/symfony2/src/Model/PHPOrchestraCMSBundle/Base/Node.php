@@ -37,7 +37,7 @@ abstract class Node extends \Mandango\Document\Document
             $this->setIsNew(false);
         }
         if (isset($data['nodeId'])) {
-            $this->data['fields']['nodeId'] = (int) $data['nodeId'];
+            $this->data['fields']['nodeId'] = (string) $data['nodeId'];
         } elseif (isset($data['_fields']['nodeId'])) {
             $this->data['fields']['nodeId'] = null;
         }
@@ -148,7 +148,7 @@ abstract class Node extends \Mandango\Document\Document
                 $this->addFieldCache('nodeId');
                 $data = $this->getRepository()->getCollection()->findOne(array('_id' => $this->getId()), array('nodeId' => 1));
                 if (isset($data['nodeId'])) {
-                    $this->data['fields']['nodeId'] = (int) $data['nodeId'];
+                    $this->data['fields']['nodeId'] = (string) $data['nodeId'];
                 } else {
                     $this->data['fields']['nodeId'] = null;
                 }
@@ -998,7 +998,7 @@ abstract class Node extends \Mandango\Document\Document
         if (isset($this->data['fields'])) {
             if ($isNew || $reset) {
                 if (isset($this->data['fields']['nodeId'])) {
-                    $query['nodeId'] = (int) $this->data['fields']['nodeId'];
+                    $query['nodeId'] = (string) $this->data['fields']['nodeId'];
                 }
                 if (isset($this->data['fields']['siteId'])) {
                     $query['siteId'] = (int) $this->data['fields']['siteId'];
@@ -1033,7 +1033,7 @@ abstract class Node extends \Mandango\Document\Document
                     $originalValue = $this->getOriginalFieldValue('nodeId');
                     if ($value !== $originalValue) {
                         if (null !== $value) {
-                            $query['$set']['nodeId'] = (int) $this->data['fields']['nodeId'];
+                            $query['$set']['nodeId'] = (string) $this->data['fields']['nodeId'];
                         } else {
                             $query['$unset']['nodeId'] = 1;
                         }

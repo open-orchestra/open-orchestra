@@ -22,7 +22,7 @@ class TemplateType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('siteId', 'integer')
+            ->add('siteId', 'text')
             ->add('name', 'text')
             ->add('version', 'integer')
             ->add('language', 'text')
