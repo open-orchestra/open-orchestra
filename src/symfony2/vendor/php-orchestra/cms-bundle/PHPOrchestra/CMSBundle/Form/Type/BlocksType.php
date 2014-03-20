@@ -9,14 +9,20 @@ namespace PHPOrchestra\CMSBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use PHPOrchestra\CMSBundle\Form\DataTransformer\jsonToAreasTransformer;
+use PHPOrchestra\CMSBundle\Form\DataTransformer\jsonToBlocksTransformer;
 
-class AreasType extends AbstractType
+class BlocksType extends AbstractType
 {
+    var $mandango = null;
 
+    public function __construct($mandango = null)
+    {
+        $this->mandango = $mandango;
+    }
+    
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $transformer = new jsonToAreasTransformer();
+        $transformer = new jsonToBlocksTransformer($this->mandango);
     	$builder->addModelTransformer($transformer);
     }
 	
@@ -27,7 +33,7 @@ class AreasType extends AbstractType
 
     public function getName()
     {
-        return 'orchestra_areas';
+        return 'orchestra_blocks';
     }
-    
+
 }

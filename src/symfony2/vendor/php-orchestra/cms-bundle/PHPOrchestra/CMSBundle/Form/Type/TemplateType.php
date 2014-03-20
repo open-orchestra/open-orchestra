@@ -28,7 +28,7 @@ class TemplateType extends AbstractType
             ->add('language', 'text')
             ->add('status', 'text')
             ->add('templateId', 'integer')
-            ->add('areas', 'phporchestra_areas')
+            ->add('areas', 'orchestra_areas')
             ->add('blocks', 'textarea', array("mapped" => false))
             ->add('save', 'submit');
     }

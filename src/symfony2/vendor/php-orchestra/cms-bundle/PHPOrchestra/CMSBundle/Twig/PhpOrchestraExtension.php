@@ -39,7 +39,7 @@ class PhpOrchestraExtension extends \Twig_Extension
 
         list($class, $method) = explode('::', $controller, 2);
 
-$class = "PHPOrchestraCMSBundle\BlockController";
+$class = "@PHPOrchestraCMSBundle\BlockController";
 $method = "showAction";
         
         if ((class_exists($class)) && is_callable(array($class, $method)))
@@ -50,6 +50,6 @@ $method = "showAction";
     
     public function getName()
     {
-        return 'phporchestra_extension';
+        return 'orchestra_extension';
     }
 }

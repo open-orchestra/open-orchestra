@@ -1,9 +1,20 @@
 services:
-    php_orchestra_cms.type.phporchestra_areas:
+
+# Areas form field type
+    php_orchestra_cms.type.areas:
         class: PHPOrchestra\CMSBundle\Form\Type\AreasType
         tags:
-            - { name: form.type, alias: phporchestra_areas }
-    php_orchestra_cms.phporchestra_extension:
+            - { name: form.type, alias: orchestra_areas }
+
+# Blocks form field type
+    php_orchestra_cms.type.blocks:
+        class: PHPOrchestra\CMSBundle\Form\Type\BlocksType
+        arguments: [@mandango]
+        tags:
+            - { name: form.type, alias: orchestra_blocks }
+
+# Twig extension
+    php_orchestra_cms.orchestra_extension:
         class: PHPOrchestra\CMSBundle\Twig\PhpOrchestraExtension
         arguments: [@service_container]
         tags:

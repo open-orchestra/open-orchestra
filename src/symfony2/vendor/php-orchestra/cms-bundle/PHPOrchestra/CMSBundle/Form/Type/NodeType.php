@@ -32,8 +32,8 @@ class NodeType extends AbstractType
             ->add('language', 'text')
             ->add('status', 'text')
             ->add('templateId', 'integer')
-            ->add('areas', 'phporchestra_areas')
-            ->add('blocks', 'textarea', array("mapped" => false))
+            ->add('areas', 'orchestra_areas')
+            ->add('blocks', 'orchestra_blocks')
             ->add('save', 'submit');
     }
     
