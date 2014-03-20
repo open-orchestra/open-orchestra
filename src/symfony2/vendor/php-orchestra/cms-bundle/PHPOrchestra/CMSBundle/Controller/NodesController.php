@@ -83,37 +83,38 @@ class NodesController extends Controller
 
 // Block #1 : Site Menu
         $block1 = $mandango->create('Model\PHPOrchestraCMSBundle\Block')
-            ->setComponent('PHPOrchestraCMSBundle:Block:show')  
+//            ->setComponent('PHPOrchestraCMSBundle:Block:show')
+            ->setComponent('PHPOrchestra\CMSBundle\Controller\BlockController::showAction')  
             ->setAttributes(array('rubrique A' => 'Qui sommes-nous ?', 'rubrique B' => 'pourquoi nous choisir ?', 'rubrique C' => 'Nos agences'));
         
 // Block #2 : Left Menu
         $block2 = $mandango->create('Model\PHPOrchestraCMSBundle\Block')
-            ->setComponent('PHPOrchestraCMSBundle:Block:show')  
+            ->setComponent('PHPOrchestra\CMSBundle\Controller\BlockController::fakeAction')  
             ->setAttributes(array('lien 1' => 'http://www.google.fr', 'lien 2' => 'http://www.yahoo.fr', 'lien 3' => 'http://altavista.box.co.uk'));
         
 // Block #3 : News #1
         $block3 = $mandango->create('Model\PHPOrchestraCMSBundle\Block')
-            ->setComponent('PHPOrchestraCMSBundle:Block:show')  
+            ->setComponent('PHPOrchestra\CMSBundle\Controller\BlockController::fakeAction')  
             ->setAttributes(array('title' => 'News 1', 'content' => 'Donec bibendum at nibh eget imperdiet. Mauris eget justo augue. Fusce fermentum iaculis erat, sollicitudin elementum enim sodales eu. Donec a ante tortor. Suspendisse a.'));
         
 // Block #4 : News #2
         $block4 = $mandango->create('Model\PHPOrchestraCMSBundle\Block')
-            ->setComponent('PHPOrchestraCMSBundle:Block:show')  
+            ->setComponent('PHPOrchestra\CMSBundle\Controller\BlockController::fakeAction')  
             ->setAttributes(array('title' => 'News #2', 'content' => 'Aliquam convallis facilisis nulla, id ultricies ipsum cursus eu. Proin augue quam, iaculis id nisi ac, rutrum blandit leo. In leo ante, scelerisque tempus lacinia in, sollicitudin quis justo. Vestibulum.'));
         
 // Block #5 : News #3
         $block5 = $mandango->create('Model\PHPOrchestraCMSBundle\Block')
-            ->setComponent('PHPOrchestraCMSBundle:Block:show')  
+            ->setComponent('PHPOrchestra\CMSBundle\Controller\BlockController::showAction')  
             ->setAttributes(array('content' => 'News #3', 'content' => 'Phasellus condimentum diam placerat varius iaculis. Aenean dictum, libero in sollicitudin hendrerit, nulla mi elementum massa, eget mattis lorem enim vel magna. Fusce suscipit orci vitae vestibulum.'));
         
 // Block #6 : Pub
         $block6 = $mandango->create('Model\PHPOrchestraCMSBundle\Block')
-            ->setComponent('PHPOrchestraCMSBundle:Block:show')  
+            ->setComponent('PHPOrchestra\CMSBundle\Controller\BlockController::showAction')  
             ->setAttributes(array('image' => 'mapub.jpg'));
 
 // Block #7 : Legal mentions
         $block7 = $mandango->create('Model\PHPOrchestraCMSBundle\Block')
-            ->setComponent('PHPOrchestraCMSBundle:Block:show')  
+            ->setComponent('PHPOrchestra\CMSBundle\Controller\BlockController::showAction')  
             ->setAttributes(array('Lien A' => 'Mentions légales', 'Lien B' => 'Nous contacter'));
             
 // Area 1 : Header
@@ -132,7 +133,7 @@ class NodesController extends Controller
         $area22
             ->setId('content')
             ->addBlockReferences(10, 2)
-            ->addBlockReferences(200, 3)
+            ->addBlockReferences(0, 3)
             ->addBlockReferences(10, 4);
 
 // Area 2-3 : Skycrapper

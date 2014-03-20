@@ -66,7 +66,8 @@ class NodeController extends Controller
     private function getBlocksFromNode($nodeId)
     {
 		$node = DocumentLoader::getDocument('Node', array('nodeId' => $nodeId), $this->container->get('mandango'));
-		$this->externalBlocks[$nodeId] = $node->getBlocks();
+		if ($node)
+    		$this->externalBlocks[$nodeId] = $node->getBlocks();
     }
     
 }
