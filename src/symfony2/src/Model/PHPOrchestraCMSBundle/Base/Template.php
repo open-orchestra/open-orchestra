@@ -37,7 +37,7 @@ abstract class Template extends \Mandango\Document\Document
             $this->setIsNew(false);
         }
         if (isset($data['templateId'])) {
-            $this->data['fields']['templateId'] = (int) $data['templateId'];
+            $this->data['fields']['templateId'] = (string) $data['templateId'];
         } elseif (isset($data['_fields']['templateId'])) {
             $this->data['fields']['templateId'] = null;
         }
@@ -133,7 +133,7 @@ abstract class Template extends \Mandango\Document\Document
                 $this->addFieldCache('templateId');
                 $data = $this->getRepository()->getCollection()->findOne(array('_id' => $this->getId()), array('templateId' => 1));
                 if (isset($data['templateId'])) {
-                    $this->data['fields']['templateId'] = (int) $data['templateId'];
+                    $this->data['fields']['templateId'] = (string) $data['templateId'];
                 } else {
                     $this->data['fields']['templateId'] = null;
                 }
@@ -767,7 +767,7 @@ abstract class Template extends \Mandango\Document\Document
         if (isset($this->data['fields'])) {
             if ($isNew || $reset) {
                 if (isset($this->data['fields']['templateId'])) {
-                    $query['templateId'] = (int) $this->data['fields']['templateId'];
+                    $query['templateId'] = (string) $this->data['fields']['templateId'];
                 }
                 if (isset($this->data['fields']['siteId'])) {
                     $query['siteId'] = (int) $this->data['fields']['siteId'];
@@ -793,7 +793,7 @@ abstract class Template extends \Mandango\Document\Document
                     $originalValue = $this->getOriginalFieldValue('templateId');
                     if ($value !== $originalValue) {
                         if (null !== $value) {
-                            $query['$set']['templateId'] = (int) $this->data['fields']['templateId'];
+                            $query['$set']['templateId'] = (string) $this->data['fields']['templateId'];
                         } else {
                             $query['$unset']['templateId'] = 1;
                         }

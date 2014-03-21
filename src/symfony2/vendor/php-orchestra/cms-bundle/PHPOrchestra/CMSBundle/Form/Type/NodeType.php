@@ -23,7 +23,7 @@ class NodeType extends AbstractType
     {
     	
         $builder
-            ->add('nodeId', 'integer')
+            ->add('nodeId', 'text')
             ->add('siteId', 'integer')
             ->add('parentId', 'integer')
             ->add('path', 'text')
