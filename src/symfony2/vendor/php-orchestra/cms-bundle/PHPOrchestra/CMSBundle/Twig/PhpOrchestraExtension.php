@@ -1,20 +1,38 @@
 <?php
+/**
+ * This file is part of the PHPOrchestra\CMSBundle.
+ *
+ * @author Noël Gilain <noel.gilain@businessdecision.com>
+ */
 
 namespace PHPOrchestra\CMSBundle\Twig;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
-//use Symfony\Component\HttpKernel;
 use Symfony\Component\HttpKernel\Controller\ControllerReference;
 
 class PhpOrchestraExtension extends \Twig_Extension
 {
-	private $container = null;
-	
-    public function __construct(ContainerInterface $container = null)
+
+    /**
+     * Services container
+     * @var ContainerInterface
+     */
+    private $container = null;
+    
+    /**
+     * Extension constructor requires service container
+     * 
+     * @param ContainerInterface $container
+     */
+    public function __construct(ContainerInterface $container)
     {
-        $this->container = $container;
+    	$this->container = $container;
     }
     
+    /**
+     * (non-PHPdoc)
+     * @see src/symfony2/vendor/twig/twig/lib/Twig/Twig_Extension::getFunctions()
+     */
     public function getFunctions()
     {
         return array(
@@ -22,32 +40,42 @@ class PhpOrchestraExtension extends \Twig_Extension
         );
     }
     
+    /**
+     * This twig function render a controller action, only if it is callable
+     * 
+     * @param ControllerReference $controllerReference
+     */
     public function renderBlock(ControllerReference $controllerReference)
     {
         if ($this->is_callable($controllerReference->controller))
-            echo $this->container->get('fragment.handler')->render($controllerReference);
+            return $this->container->get('fragment.handler')->render($controllerReference);
         else
-            echo '<span style="background-color:#FF0000">Controller non valide</span><br/>';
+            return '<span style="background-color:#FF0000">Controller non valide</span><br/>';
     }
 
-    private function is_callable($controller)
+    /**
+     * Check if an action of a controller is callable
+     * 
+     * @param string $actionLogicalName
+     */
+    private function is_callable($actionLogicalName)
     {
-    // $controller = 'Bundle:Controller:Action'
-    // $class = Bundle\Controller.'Controller'
-    // $method = Action . 'Action'
         $status = false;
-
-        list($class, $method) = explode('::', $controller, 2);
-
-$class = "@PHPOrchestraCMSBundle\BlockController";
-$method = "showAction";
+        list($bundleName, $controllerName, $actionName) = explode(':', $actionLogicalName, 3);
         
-        if ((class_exists($class)) && is_callable(array($class, $method)))
+        $bundle = $this->container->get('kernel')->getBundle($bundleName);
+        $class = $bundle->getNamespace() . '\\Controller\\'. $controllerName . 'Controller';
+        
+        if ((class_exists($class)) && is_callable(array($class, $actionName . 'Action')))
             $status = true;
-            
-    	return $status;
+        
+        return $status;
     }
     
+    /**
+     * (non-PHPdoc)
+     * @see src/symfony2/vendor/twig/twig/lib/Twig/Twig_ExtensionInterface::getName()
+     */
     public function getName()
     {
         return 'orchestra_extension';
