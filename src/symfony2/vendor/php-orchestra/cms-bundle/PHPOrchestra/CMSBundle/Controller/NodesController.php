@@ -29,15 +29,13 @@ class NodesController extends Controller
         if ($nodeId == 0)
             $node = $mandango->create('Model\PHPOrchestraCMSBundle\Node');
         else
-            $node = DocumentLoader::getDocument('Node', array('nodeId' => (int)$nodeId), $this->container->get('mandango'));
+            $node = DocumentLoader::getDocument('Node', array('nodeId' => $nodeId), $this->container->get('mandango'));
                 
         $form = $this->createForm(new NodeType(), $node);
 		$form->handleRequest($request);
 		
 	    if ($form->isValid())
 	    {
-//	    	$node = $this->setBlocks($form->get('blocks')->getData(), $node);
-
             $node->save();
             
             return $this->redirect($this->generateUrl('php_orchestra_cms_node', array('nodeId' => $node->getNodeId())));

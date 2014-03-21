@@ -10,6 +10,7 @@ namespace PHPOrchestra\CMSBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use PHPOrchestra\CMSBundle\Classes\DocumentLoader;
 use PHPOrchestra\CMSBundle\Classes\Area;
+use PHPOrchestra\CMSBundle\Exception\NonExistingDocumentException;
 
 class NodeController extends Controller
 {
@@ -30,8 +31,10 @@ class NodeController extends Controller
      */
     public function showAction($nodeId)
     { 
-        $node = DocumentLoader::getDocument('Node', array('nodeId' => (int)$nodeId), $this->container->get('mandango'));
-    	$areas = $node->getAreas();
+        $node = DocumentLoader::getDocument('Node', array('nodeId' => $nodeId), $this->container->get('mandango'));
+        if (is_null($node))
+            throw new NonExistingDocumentException("Node not found");
+        $areas = $node->getAreas();
         $this->externalBlocks = array();
         
         if (is_array($areas))
