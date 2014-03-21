@@ -95,12 +95,11 @@ class TemplateController extends Controller
             $template->setStatus('Draft');
         }
         
-        $form = $this->createForm(new TemplateType(), $template);
+        $form = $this->createForm(new TemplateType(), $template, array('dialog' => true));
         $form->handleRequest($request);
         
         if ($form->isValid())
         {
-            $template = $this->setBlocks($form->get('blocks')->getData(), $template);
 
             $template->save();
             
@@ -110,27 +109,5 @@ class TemplateController extends Controller
         return $this->render('PHPOrchestraCMSBundle:Template:form.html.twig', array(
             'form' => $form->createView(),
         ));    
-    }
-    
-
-    
-    private function setBlocks($blocks, $template)
-    {
-        $blocks = json_decode($blocks, true);    
-            
-        if (is_array($blocks))
-        {
-            $mandango = $this->container->get('mandango'); 
-                  
-            foreach($blocks as $block) {
-                $block = $mandango->create('Model\PHPOrchestraCMSBundle\Block')
-                    ->setComponent($block['component'])  
-                    ->setAttributes($block['attributes']);
-                $template->addBlocks($block);
-            }
-        }
-        
-        return $template;
-    }
-        
+    }       
 }

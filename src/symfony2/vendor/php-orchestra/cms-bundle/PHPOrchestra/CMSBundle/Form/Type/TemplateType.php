@@ -9,6 +9,7 @@ namespace PHPOrchestra\CMSBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class TemplateType extends AbstractType
 {
@@ -28,19 +29,19 @@ class TemplateType extends AbstractType
             ->add('language', 'text')
             ->add('status', 'text')
             ->add('templateId', 'integer')
-            ->add('areas', 'orchestra_areas')
-            ->add('blocks', 'textarea', array("mapped" => false))
+            ->add('areas', 'orchestra_areas', array('dialog' => $options['dialog']))
+            ->add('blocks', 'orchestra_blocks')
             ->add('save', 'submit');
     }
     
     /**
-     * @param array $options
+     * 
      */
-    public function getDefaultOptions(array $options)
+    public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
-        return array(
-            'data_class' => 'Model\PHPOrchestraCMSBundle\Template',
-        );
+        $resolver->setDefaults(array(
+            'dialog' => false
+        ));
     }
     
     /**

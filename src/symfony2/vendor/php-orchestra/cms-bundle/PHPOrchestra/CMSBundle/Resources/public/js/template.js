@@ -191,6 +191,7 @@
 						$(this).dialog( "close" );
 					},
 					"Send": function() {
+						console.log('Done');
 						functions.send($(this), settings, this_values);
 						$(this).dialog( "close" );
 					},

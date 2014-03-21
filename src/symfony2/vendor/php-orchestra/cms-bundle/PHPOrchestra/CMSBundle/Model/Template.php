@@ -7,4 +7,14 @@ namespace PHPOrchestra\CMSBundle\Model;
  */
 abstract class Template extends \Model\PHPOrchestraCMSBundle\Base\Template
 {
+	
+    /**
+     * Alias to addBlocks as used by symfony standard forms
+     * 
+     * @param document | document[] $documents
+     */
+    public function setBlocks($documents)
+    {
+        return $this->addBlocks($documents);
+    }
 }
