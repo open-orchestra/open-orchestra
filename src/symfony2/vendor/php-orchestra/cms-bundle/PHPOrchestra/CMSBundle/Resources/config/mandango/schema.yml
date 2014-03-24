@@ -25,7 +25,7 @@ Model\PHPOrchestraCMSBundle\Node:
         version: integer
         language: string
         status: string
-        templateId: integer
+        templateId: string
         areas: raw
     embeddedsMany:
         blocks: {class: Model\PHPOrchestraCMSBundle\Block}

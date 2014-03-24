@@ -142,7 +142,7 @@ class MetadataFactoryInfo
                     'dbName' => 'status',
                 ),
                 'templateId' => array(
-                    'type' => 'integer',
+                    'type' => 'string',
                     'dbName' => 'templateId',
                 ),
                 'areas' => array(
