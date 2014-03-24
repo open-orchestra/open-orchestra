@@ -47,7 +47,7 @@ class NodesController extends Controller
 	}
 
 	
-	private function setBlocks($blocks, $node)
+	protected function setBlocks($blocks, $node)
 	{
 		$blocks = json_decode($blocks, true);    
             

@@ -50,7 +50,7 @@ class TemplateController extends Controller
      * 
      * @param Area $area
      */
-    private function getExternalBlocks(Area $area)
+    protected function getExternalBlocks(Area $area)
     {
         foreach ($area->getBlockReferences() as $blockReference)
            if ($blockReference['nodeId'] != 0 && !(isset($this->cacheRelatedNodes[$blockReference['nodeId']])))
@@ -66,7 +66,7 @@ class TemplateController extends Controller
      * 
      * @param int $templateId
      */
-    private function getBlocksFromNode($nodeId)
+    protected function getBlocksFromNode($nodeId)
     {
         $node = DocumentLoader::getDocument('Node', array('nodeId' => $nodeId), $this->container->get('mandango'));
         $this->externalBlocks[$nodeId] = $nodes->getBlocks();
