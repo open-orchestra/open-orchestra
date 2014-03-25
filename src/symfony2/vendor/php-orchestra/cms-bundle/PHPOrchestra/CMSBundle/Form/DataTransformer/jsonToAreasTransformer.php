@@ -8,7 +8,7 @@
 namespace PHPOrchestra\CMSBundle\Form\DataTransformer;
 
 use Symfony\Component\Form\DataTransformerInterface;
-use PHPOrchestra\CMSBundle\Classes\Area;
+use PHPOrchestra\CMSBundle\Model\Area;
 
 class jsonToAreasTransformer implements DataTransformerInterface
 {

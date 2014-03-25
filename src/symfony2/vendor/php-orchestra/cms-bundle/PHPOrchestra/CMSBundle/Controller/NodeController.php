@@ -9,7 +9,7 @@ namespace PHPOrchestra\CMSBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use PHPOrchestra\CMSBundle\Classes\DocumentLoader;
-use PHPOrchestra\CMSBundle\Classes\Area;
+use PHPOrchestra\CMSBundle\Model\Area;
 use PHPOrchestra\CMSBundle\Exception\NonExistingDocumentException;
 use Symfony\Component\HttpFoundation\Request;
 use PHPOrchestra\CMSBundle\Form\Type\NodeType;
