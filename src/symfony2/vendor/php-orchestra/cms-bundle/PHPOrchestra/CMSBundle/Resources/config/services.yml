@@ -13,6 +13,22 @@ services:
         tags:
             - { name: form.type, alias: orchestra_blocks }
 
+# Status form field type
+    php_orchestra_cms.type.status:
+        class: PHPOrchestra\CMSBundle\Form\Type\StatusType
+        arguments: 
+            - "%status%"
+        tags:
+            - { name: form.type, alias: orchestra_status }
+
+# Status form field type
+    php_orchestra_cms.type.language:
+        class: PHPOrchestra\CMSBundle\Form\Type\LanguageType
+        arguments: 
+            - "%language%"
+        tags:
+            - { name: form.type, alias: orchestra_language }
+
 # Twig extension
     php_orchestra_cms.orchestra_extension:
         class: PHPOrchestra\CMSBundle\Twig\PhpOrchestraExtension

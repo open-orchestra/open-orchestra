@@ -9,8 +9,8 @@ namespace PHPOrchestra\CMSBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\FormView;
+use Symfony\Component\Form\FormInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use PHPOrchestra\CMSBundle\Form\DataTransformer\jsonToAreasTransformer;
 
@@ -22,22 +22,30 @@ class AreasType extends AbstractType
         $transformer = new jsonToAreasTransformer();
     	$builder->addModelTransformer($transformer);
     }
-
-	public function buildView(FormView $view, FormInterface $form, array $options)
-	{
-		$view->vars['dialog'] = $options['dialog'];
-	}
     
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'dialog' => false
+            'showDialog' => false
         ));
+    }
+    
+    public function buildView(FormView $view, FormInterface $form, array $options)
+    {
+        if($options['showDialog']){
+	        $view->vars['dialog'] = '
+	        <div class="dialog-areas" style="display:none;" title="Area">
+	            <label for="areaId">Area id : </label><input type="text" name="areaId" id="areaId" value=""><br />
+	            <label for="classes">Classes : </label><input type="text" name="classes" id="classes" value=""><br />
+	            <label for="direction">Direction : </label><select name="direction" id="direction"><option value="h">horizontal</option><option value="v">vertical</option></select>
+	        </div>
+	        ';
+        }
     }
     
     public function getParent()
     {
-        return 'textarea';
+        return 'hidden';
     }
 
     public function getName()

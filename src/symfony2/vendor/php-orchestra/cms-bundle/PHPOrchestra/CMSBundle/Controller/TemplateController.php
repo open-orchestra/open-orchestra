@@ -84,26 +84,25 @@ class TemplateController extends Controller
         $mandango = $this->container->get('mandango');       
         if($templateId != 0){
             $template = DocumentLoader::getDocument('Template', array('templateId' => (int)$templateId), $this->container->get('mandango'));
+            $template->setVersion($template->getVersion() + 1);
         }
         else{
             $template = $mandango->create('Model\PHPOrchestraCMSBundle\Template');
-            $template->setTemplateId(time());
             $template->setSiteId(1);
-            $template->setName('');
-            $template->setVersion(1);
             $template->setLanguage('fr');
-            $template->setStatus('Draft');
         }
         
-        $form = $this->createForm(new TemplateType(), $template, array('dialog' => true));
+        $form = $this->createForm(new TemplateType(), $template, array('showDialog' => true));
         $form->handleRequest($request);
-        
         if ($form->isValid())
         {
-
             $template->save();
-            
             return $this->redirect($this->generateUrl('php_orchestra_cms_templateform', array('templateId' => $template->getTemplateId())));
+        }
+        else{
+        	var_dump($form->getErrors());
+        	//var_dump($request);
+        	//var_dump('failed');
         }
         
         return $this->render('PHPOrchestraCMSBundle:Template:form.html.twig', array(

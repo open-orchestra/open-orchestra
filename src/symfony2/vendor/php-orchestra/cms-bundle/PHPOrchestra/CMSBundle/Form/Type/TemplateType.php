@@ -9,6 +9,8 @@ namespace PHPOrchestra\CMSBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\FormInterface;
+use Symfony\Component\Form\FormView;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class TemplateType extends AbstractType
@@ -23,15 +25,19 @@ class TemplateType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('siteId', 'text')
+            ->add('siteId', 'hidden')
             ->add('name', 'text')
-            ->add('version', 'integer')
-            ->add('language', 'text')
-            ->add('status', 'text')
-            ->add('templateId', 'integer')
-            ->add('areas', 'orchestra_areas', array('dialog' => $options['dialog']))
-            ->add('blocks', 'orchestra_blocks')
-            ->add('save', 'submit');
+            ->add('version', 'hidden')
+            ->add('language', 'orchestra_language')
+            ->add('status', 'orchestra_status')
+            ->add('templateId', 'hidden')
+            ->add('areas', 'orchestra_areas', array('showDialog' => $options['showDialog']))
+            ->add('blocks', 'orchestra_blocks', array('showDialog' => $options['showDialog']));
+    }
+    
+    public function buildView(FormView $view, FormInterface $form, array $options)
+    {
+        $view->vars['showDialog'] = $options['showDialog'];
     }
     
     /**
@@ -40,7 +46,7 @@ class TemplateType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'dialog' => false
+            'showDialog' => false
         ));
     }
     

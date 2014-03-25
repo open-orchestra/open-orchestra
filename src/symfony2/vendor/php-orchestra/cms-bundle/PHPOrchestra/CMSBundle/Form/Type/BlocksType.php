@@ -9,6 +9,9 @@ namespace PHPOrchestra\CMSBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\FormInterface;
+use Symfony\Component\Form\FormView;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use PHPOrchestra\CMSBundle\Form\DataTransformer\jsonToBlocksTransformer;
 use Mandango;
 
@@ -44,12 +47,32 @@ class BlocksType extends AbstractType
     	$builder->addModelTransformer($transformer);
     }
 	
+    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    {
+        $resolver->setDefaults(array(
+            'showDialog' => false
+        ));
+    }
+    
+    public function buildView(FormView $view, FormInterface $form, array $options)
+    {
+    	if($options['showDialog']){
+	        $view->vars['dialog'] = '
+		    <div class="dialog-blocks" style="display:none;" title="Block">
+		        <label for="component">Component : </label><input type="text" name="component" id="component" value=""><br />
+		        <label for="customAttribute">Custom Attributes : </label><input type="text" name="customAttributes" id="customAttributes" value=""><br />
+		    </div>
+	        ';
+    	}
+    }
+    
+    
     /**
      * Extends textarea type
      */
     public function getParent()
     {
-        return 'textarea';
+        return 'hidden';
     }
 
     /**

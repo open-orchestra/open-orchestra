@@ -19,31 +19,8 @@
 
         <script src="{{ asset('bundles/phporchestracms/js/template.js') }}"></script>
 
-        <script>
-        $(document).ready(function(){
-            $('#template-model').parseTemplate({"values" : {"templateId": {{ form.vars.value.templateId }}, "siteId": {{ form.vars.value.siteId }}, "name": "{{ form.vars.value.name }}", "version": {{ form.vars.value.version }}, "language": "{{ form.vars.value.language }}", "status": "{{ form.vars.value.status }}", "areas": [{{ form.areas.vars.value|raw }}], "blocks": []}});
-        });
-        </script>
     </head>
     <body>
-        {% form_theme form 'PHPOrchestraCMSBundle:Form:orchestra_areas.html.twig' %}
         {{ form(form) }}
-        <div id="template-model">
-        </div>
-        <div class="dialog-node" style="display:none;" title="Node">
-            <label for="siteId">Site id : </label><input type="text" name="siteId" id="siteId" value=""><br />
-            <label for="name">Name : </label><input type="text" name="name" id="name" value=""><br />
-            <label for="language">Language : </label><input type="text" name="language" id="language" value=""><br />
-            <label for="direction">Direction : </label><select name="direction" id="direction"><option value="h">horizontal</option><option value="v">vertical</option></select>
-        </div>
-        <div class="dialog-areas" style="display:none;" title="Area">
-            <label for="areaId">Area id : </label><input type="text" name="areaId" id="areaId" value=""><br />
-            <label for="classes">Name : </label><input type="text" name="classes" id="classes" value=""><br />
-            <label for="direction">Direction : </label><select name="direction" id="direction"><option value="h">horizontal</option><option value="v">vertical</option></select>
-        </div>
-        <div class="dialog-blocks" style="display:none;" title="Block">
-            <label for="component">Component : </label><input type="text" name="component" id="component" value=""><br />
-            <label for="customAttribute">Custom Attributes : </label><input type="text" name="customAttributes" id="customAttributes" value=""><br />
-        </div>
     </body>
 </html>

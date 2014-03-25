@@ -8,14 +8,24 @@
 				}
 		functions['save'] = function(obj, settings, this_values){
 			obj.find(":input").each(function(){
-				var name = $(this).attr('name');
-				this_values[name] = $(this).val();
+				var name = $(this).attr('id').replace(settings.form_name + '_', '');
+				if(!Array.isArray(this_values[name])){
+					this_values[name] = $(this).val();
+				}
+				else if($(this).is(':visible')){
+					this_values[name] = $(this).val().split(',');
+				}
 			});
 		}
 		functions['open'] = function(obj, settings, this_values){
 			obj.find(":input").each(function(){
-				var name = $(this).attr('name');
-				$(this).val(this_values[name]);
+				var name = $(this).attr('id').replace(settings.form_name + '_', '');
+				if(!Array.isArray(this_values[name])){
+					$(this).val(this_values[name]);
+				}
+				else if($(this).is(':visible')){
+					$(this).val(this_values[name].join(','));
+				}
 			});
 		}
 		if(type == "node"){
@@ -42,12 +52,6 @@
 			this_values.areas.push(empty_area);
 		}
 		var send = function(obj, settings, this_values){
-			$("#template_siteId").val(settings.values.siteId);
-			$("#template_name").val(settings.values.name);
-			$("#template_version").val(settings.values.version);
-			$("#template_language").val(settings.values.language);
-			$("#template_status").val(settings.values.status);
-			$("#template_templateId").val(settings.values.templateId);
 			$("#template_areas").val(JSON.stringify(settings.values.areas));
 			$("#template_blocks").val(JSON.stringify(settings.values.blocks));
 			$("form[name='template']").submit();
@@ -62,7 +66,7 @@
 		var empty_block = {"component": "No Controller", "attributes": []};
 		var create = function(obj, settings, this_values){
 			var buttons = obj.dialog( "option", "buttons" );
-			delete buttons['Send'];
+			delete buttons['Save'];
 			if(this_values.blocks.length > 0 || this_values.subAreas.length > 0){
 				delete buttons['Add Blocks'];
 				delete buttons['Add Areas'];
@@ -90,13 +94,12 @@
 	$.generateBlockFunction = function(settings, this_values){
 		var create = function(obj, settings, this_values){
 			var buttons = obj.dialog( "option", "buttons" );
-			delete buttons['Send'];
+			delete buttons['Save'];
 			delete buttons['Add'];
 			delete buttons['Add Blocks'];
 			delete buttons['Add Areas'];
 			obj.dialog( "option", "buttons", buttons);
 		}
-
 		var save = function(obj, settings, this_values){
 			settings.values.blocks[this_values.blockId].component = obj.find("input[name=\'component\']").val();
 			settings.values.blocks[this_values.blockId].attributes = obj.find("input[name=\'customAttributes\']").val().split(',');
@@ -114,6 +117,7 @@
 		var values = eval('settings.' + settings.path);
 		var tab = eval('settings.' + settings.path + '.' + type);
 		var path = settings.path + '.' + type;
+		values.direction = (values.direction) ? values.direction : 'h';
 		if(tab.length > 0){
 			for(var i in tab){
 				$(target).parseTemplate({"values": settings.values,
@@ -122,25 +126,24 @@
 									"style" : {"display": (values.direction == 'v') ? "inline-block" : "block", "width": (values.direction == 'v') ? 100 / (tab.length) + '%' : '100%', "height": (values.direction == 'h') ? 100 / (tab.length) + '%' : '100%'},
 									"index": settings.index + 1,
 									"type": type,
-									"element": settings.element}).appendTo(target);
+									"element": settings.element,
+									"form_name": settings.form_name}).appendTo(target);
 			}
 		}
 	}
 	$.fn.parseTemplate = function(options)
 	{
-		var empty_node = {"templateId": 0, "siteId": 0, "version": 1, "language": "fr", "status": "draft", "blocks": [], "areas": []};
 		var settings = $.extend({
-			"values": empty_node,
-			"path": null,
+			"values": $(this).data(),
 			"css": "ui-widget-model",
-			"style": {"top": "0px", "left": "0px", "bottom": "0px", "right": "0px"},
-			"type": "node",
-			"element": null
+			"form_name": ''
 		}, options || {});
 
 		if(settings.path == null){
 			settings.element = this;
 			settings.path = "values";
+			settings.type = "node";
+			settings.style = '';
 			settings.element.html('');
 		}
 		
@@ -186,12 +189,11 @@
 					functions.create($(this), settings, this_values);
 				},
 				buttons: {
-					"Save": function() {
+					"Apply": function() {
 						functions.save($(this), settings, this_values);
 						$(this).dialog( "close" );
 					},
-					"Send": function() {
-						console.log('Done');
+					"Save": function() {
 						functions.send($(this), settings, this_values);
 						$(this).dialog( "close" );
 					},
@@ -210,7 +212,7 @@
 				},
 				close: function ( event, ui) {
 					$(this).dialog( "destroy" );
-					settings.element.parseTemplate({'values': settings.values});
+					settings.element.parseTemplate($.extend(settings, {"path": null}));
 				}
 			});
 			event.stopPropagation();
@@ -263,7 +265,7 @@
 					var pattern = new RegExp('^(.*)\\[(\\d*)]$');
 					var path = 'settings.' + ui.draggable.data('path');
 					eval(path.replace(pattern, '$1.splice($2, 1);'));
-					settings.element.parseTemplate({'values': settings.values});
+					settings.element.parseTemplate($.extend(settings, {"path": null}));
 				},
 				deactivate : function(){
 				}
