@@ -232,6 +232,10 @@ class MetadataFactoryInfo
                     'type' => 'raw',
                     'dbName' => 'areas',
                 ),
+                'boDirection' => array(
+                    'type' => 'string',
+                    'dbName' => 'boDirection',
+                ),
             ),
             '_has_references' => false,
             'referencesOne' => array(

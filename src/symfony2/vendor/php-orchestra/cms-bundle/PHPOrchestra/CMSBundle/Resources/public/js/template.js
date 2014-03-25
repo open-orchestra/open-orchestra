@@ -48,7 +48,7 @@
 			obj.dialog( "option", "buttons", buttons);
 		}
 		var add = function(obj, settings, this_values){
-			this_values.direction = obj.find("select[name=\'direction\']").val();
+			this_values.boDirection = obj.find("select[name=\'boDirection\']").val();
 			this_values.areas.push(empty_area);
 		}
 		var send = function(obj, settings, this_values){
@@ -77,7 +77,7 @@
 			obj.dialog( "option", "buttons", buttons);
 		}
 		var add = function(obj, settings, this_values, type){
-			this_values.direction = obj.find("select[name=\'direction\']").val();
+			this_values.boDirection = obj.find("select[name=\'boDirection\']").val();
 			if(this_values.blocks.length > 0 || type == 'block'){
 				var length = settings.values.blocks.length;
 				settings.values.blocks[length] = empty_block;
@@ -117,13 +117,13 @@
 		var values = eval('settings.' + settings.path);
 		var tab = eval('settings.' + settings.path + '.' + type);
 		var path = settings.path + '.' + type;
-		values.direction = (values.direction) ? values.direction : 'h';
+		values.boDirection = (values.boDirection) ? values.boDirection : 'h';
 		if(tab.length > 0){
 			for(var i in tab){
 				$(target).parseTemplate({"values": settings.values,
 									"path": path + '[' + i + ']',
 									"css": settings.css,
-									"style" : {"display": (values.direction == 'v') ? "inline-block" : "block", "width": (values.direction == 'v') ? 100 / (tab.length) + '%' : '100%', "height": (values.direction == 'h') ? 100 / (tab.length) + '%' : '100%'},
+									"style" : {"display": (values.boDirection == 'v') ? "inline-block" : "block", "width": (values.boDirection == 'v') ? 100 / (tab.length) + '%' : '100%', "height": (values.boDirection == 'h') ? 100 / (tab.length) + '%' : '100%'},
 									"index": settings.index + 1,
 									"type": type,
 									"element": settings.element,

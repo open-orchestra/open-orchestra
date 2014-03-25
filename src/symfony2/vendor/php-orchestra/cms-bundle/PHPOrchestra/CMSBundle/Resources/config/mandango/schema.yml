@@ -43,6 +43,7 @@ Model\PHPOrchestraCMSBundle\Template:
         language: string
         status: string
         areas: raw
+        boDirection: string
     embeddedsMany:
         blocks: {class: Model\PHPOrchestraCMSBundle\Block}
 

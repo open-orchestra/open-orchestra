@@ -37,7 +37,7 @@ class AreasType extends AbstractType
 	        <div class="dialog-areas" style="display:none;" title="Area">
 	            <label for="areaId">Area id : </label><input type="text" name="areaId" id="areaId" value=""><br />
 	            <label for="classes">Classes : </label><input type="text" name="classes" id="classes" value=""><br />
-	            <label for="direction">Direction : </label><select name="direction" id="direction"><option value="h">horizontal</option><option value="v">vertical</option></select>
+	            <label for="direction">Direction : </label><select name="boDirection" id="direction"><option value="h">horizontal</option><option value="v">vertical</option></select>
 	        </div>
 	        ';
         }

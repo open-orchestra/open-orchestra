@@ -13,12 +13,12 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use PHPOrchestra\CMSBundle\Form\DataTransformer\jsonToAreasTransformer;
 use PHPOrchestra\CMSBundle\Form\Type\OrchestraChoiceType;
 
-class StatusType extends OrchestraChoiceType
+class DirectionType extends OrchestraChoiceType
 {
 
     public function getName()
     {
-        return 'orchestra_status';
+        return 'orchestra_direction';
     }
     
 }

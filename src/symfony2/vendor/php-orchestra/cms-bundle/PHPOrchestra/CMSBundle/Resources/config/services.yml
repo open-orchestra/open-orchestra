@@ -28,3 +28,11 @@ services:
             - "%language%"
         tags:
             - { name: form.type, alias: orchestra_language }
+
+# Direction form field type
+    php_orchestra_cms.type.direction:
+        class: PHPOrchestra\CMSBundle\Form\Type\DirectionType
+        arguments: 
+            - "%direction%"
+        tags:
+            - { name: form.type, alias: orchestra_direction }

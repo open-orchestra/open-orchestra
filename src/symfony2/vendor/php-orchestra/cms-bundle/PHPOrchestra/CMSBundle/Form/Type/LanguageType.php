@@ -11,28 +11,10 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use PHPOrchestra\CMSBundle\Form\DataTransformer\jsonToAreasTransformer;
+use PHPOrchestra\CMSBundle\Form\Type\OrchestraChoiceType;
 
-class LanguageType extends AbstractType
+class LanguageType extends OrchestraChoiceType
 {
-
-    private $languageChoices;
-    
-    public function __construct(array $languageChoices)
-    {
-        $this->languageChoices = $languageChoices;
-    }
-
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
-    {
-        $resolver->setDefaults(array(
-            'choices' => $this->languageChoices,
-        ));
-    }
-    
-    public function getParent()
-    {
-        return 'choice';
-    }
 
     public function getName()
     {

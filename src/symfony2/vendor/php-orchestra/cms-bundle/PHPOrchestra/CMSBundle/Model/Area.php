@@ -16,6 +16,13 @@ class Area
 	 */
 	private $id = null;
 	
+    /**
+     * bo direction (horizontal, vertical)
+     * 
+     * @var string
+     */
+    private $boDirection = null;
+	
 	/**
 	 * html classes
 	 * 
@@ -48,7 +55,10 @@ class Area
 		if (isset($importArray['areaId']))
 		  $this->id = $importArray['areaId'];
 		           
-		if (isset($importArray['classes']) && is_array($importArray['classes']))
+        if (isset($importArray['boDirection']))
+          $this->boDirection = $importArray['boDirection'];
+		  
+        if (isset($importArray['classes']) && is_array($importArray['classes']))
 		  $this->classes = $importArray['classes'];
 		           
 		if (isset($importArray['subAreas']) && is_array($importArray['subAreas']))
@@ -78,6 +88,25 @@ class Area
     public function getId()
     {
         return $this->id;
+    }
+    
+    /**
+     * Set boDirection
+     * 
+     * @param string $boDirection
+     */
+    public function setBoDirection($boDirection)
+    {
+        $this->boDirection = $boDirection;
+        return $this;
+    }
+
+    /**
+     * Get id
+     */
+    public function getBoDirection()
+    {
+        return $this->boDirection;
     }
     
     /**
@@ -151,6 +180,7 @@ class Area
 
         return array(
     	           'areaId' => $this->getId(),
+                   'boDirection' => $this->getBoDirection(),
     	           'classes' => $this->getClasses(),
     	           'subAreas' => $formattedSubAreas,
     	           'blocks' => $this->getBlockReferences()

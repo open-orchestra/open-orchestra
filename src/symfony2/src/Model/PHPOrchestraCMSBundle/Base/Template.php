@@ -71,6 +71,11 @@ abstract class Template extends \Mandango\Document\Document
         } elseif (isset($data['_fields']['areas'])) {
             $this->data['fields']['areas'] = null;
         }
+        if (isset($data['boDirection'])) {
+            $this->data['fields']['boDirection'] = (string) $data['boDirection'];
+        } elseif (isset($data['_fields']['boDirection'])) {
+            $this->data['fields']['boDirection'] = null;
+        }
         if (isset($data['blocks'])) {
             $embedded = new \Mandango\Group\EmbeddedGroup('Model\PHPOrchestraCMSBundle\Block');
             $embedded->setRootAndPath($this, 'blocks');
@@ -515,6 +520,68 @@ abstract class Template extends \Mandango\Document\Document
         return $this->data['fields']['areas'];
     }
 
+    /**
+     * Set the "boDirection" field.
+     *
+     * @param mixed $value The value.
+     *
+     * @return \Model\PHPOrchestraCMSBundle\Template The document (fluent interface).
+     */
+    public function setBoDirection($value)
+    {
+        if (!isset($this->data['fields']['boDirection'])) {
+            if (!$this->isNew()) {
+                $this->getBoDirection();
+                if ($this->isFieldEqualTo('boDirection', $value)) {
+                    return $this;
+                }
+            } else {
+                if (null === $value) {
+                    return $this;
+                }
+                $this->fieldsModified['boDirection'] = null;
+                $this->data['fields']['boDirection'] = $value;
+                return $this;
+            }
+        } elseif ($this->isFieldEqualTo('boDirection', $value)) {
+            return $this;
+        }
+
+        if (!isset($this->fieldsModified['boDirection']) && !array_key_exists('boDirection', $this->fieldsModified)) {
+            $this->fieldsModified['boDirection'] = $this->data['fields']['boDirection'];
+        } elseif ($this->isFieldModifiedEqualTo('boDirection', $value)) {
+            unset($this->fieldsModified['boDirection']);
+        }
+
+        $this->data['fields']['boDirection'] = $value;
+
+        return $this;
+    }
+
+    /**
+     * Returns the "boDirection" field.
+     *
+     * @return mixed The $name field.
+     */
+    public function getBoDirection()
+    {
+        if (!isset($this->data['fields']['boDirection'])) {
+            if ($this->isNew()) {
+                $this->data['fields']['boDirection'] = null;
+            } elseif (!isset($this->data['fields']) || !array_key_exists('boDirection', $this->data['fields'])) {
+                $this->addFieldCache('boDirection');
+                $data = $this->getRepository()->getCollection()->findOne(array('_id' => $this->getId()), array('boDirection' => 1));
+                if (isset($data['boDirection'])) {
+                    $this->data['fields']['boDirection'] = (string) $data['boDirection'];
+                } else {
+                    $this->data['fields']['boDirection'] = null;
+                }
+            }
+        }
+
+        return $this->data['fields']['boDirection'];
+    }
+
     private function isFieldEqualTo($field, $otherValue)
     {
         $value = $this->data['fields'][$field];
@@ -645,6 +712,9 @@ abstract class Template extends \Mandango\Document\Document
         if ('areas' == $name) {
             return $this->setAreas($value);
         }
+        if ('boDirection' == $name) {
+            return $this->setBoDirection($value);
+        }
 
         throw new \InvalidArgumentException(sprintf('The document data "%s" is not valid.', $name));
     }
@@ -680,6 +750,9 @@ abstract class Template extends \Mandango\Document\Document
         }
         if ('areas' == $name) {
             return $this->getAreas();
+        }
+        if ('boDirection' == $name) {
+            return $this->getBoDirection();
         }
         if ('blocks' == $name) {
             return $this->getBlocks();
@@ -721,6 +794,9 @@ abstract class Template extends \Mandango\Document\Document
         if (isset($array['areas'])) {
             $this->setAreas($array['areas']);
         }
+        if (isset($array['boDirection'])) {
+            $this->setBoDirection($array['boDirection']);
+        }
         if (isset($array['blocks'])) {
             $embeddeds = array();
             foreach ($array['blocks'] as $documentData) {
@@ -751,6 +827,7 @@ abstract class Template extends \Mandango\Document\Document
         $array['language'] = $this->getLanguage();
         $array['status'] = $this->getStatus();
         $array['areas'] = $this->getAreas();
+        $array['boDirection'] = $this->getBoDirection();
 
         return $array;
     }
@@ -786,6 +863,9 @@ abstract class Template extends \Mandango\Document\Document
                 }
                 if (isset($this->data['fields']['areas'])) {
                     $query['areas'] = $this->data['fields']['areas'];
+                }
+                if (isset($this->data['fields']['boDirection'])) {
+                    $query['boDirection'] = (string) $this->data['fields']['boDirection'];
                 }
             } else {
                 if (isset($this->data['fields']['templateId']) || array_key_exists('templateId', $this->data['fields'])) {
@@ -862,6 +942,17 @@ abstract class Template extends \Mandango\Document\Document
                             $query['$set']['areas'] = $this->data['fields']['areas'];
                         } else {
                             $query['$unset']['areas'] = 1;
+                        }
+                    }
+                }
+                if (isset($this->data['fields']['boDirection']) || array_key_exists('boDirection', $this->data['fields'])) {
+                    $value = $this->data['fields']['boDirection'];
+                    $originalValue = $this->getOriginalFieldValue('boDirection');
+                    if ($value !== $originalValue) {
+                        if (null !== $value) {
+                            $query['$set']['boDirection'] = (string) $this->data['fields']['boDirection'];
+                        } else {
+                            $query['$unset']['boDirection'] = 1;
                         }
                     }
                 }

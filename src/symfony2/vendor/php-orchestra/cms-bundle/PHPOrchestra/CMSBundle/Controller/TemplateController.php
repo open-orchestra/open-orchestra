@@ -83,7 +83,7 @@ class TemplateController extends Controller
     {
         $mandango = $this->container->get('mandango');       
         if($templateId != 0){
-            $template = DocumentLoader::getDocument('Template', array('templateId' => (int)$templateId), $this->container->get('mandango'));
+            $template = DocumentLoader::getDocument('Template', array('templateId' => $templateId), $this->container->get('mandango'));
             $template->setVersion($template->getVersion() + 1);
         }
         else{
@@ -98,11 +98,6 @@ class TemplateController extends Controller
         {
             $template->save();
             return $this->redirect($this->generateUrl('php_orchestra_cms_templateform', array('templateId' => $template->getTemplateId())));
-        }
-        else{
-        	var_dump($form->getErrors());
-        	//var_dump($request);
-        	//var_dump('failed');
         }
         
         return $this->render('PHPOrchestraCMSBundle:Template:form.html.twig', array(

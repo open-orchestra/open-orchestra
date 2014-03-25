@@ -30,6 +30,7 @@ class TemplateType extends AbstractType
             ->add('version', 'hidden')
             ->add('language', 'orchestra_language')
             ->add('status', 'orchestra_status')
+            ->add('boDirection', 'orchestra_direction')
             ->add('templateId', 'hidden')
             ->add('areas', 'orchestra_areas', array('showDialog' => $options['showDialog']))
             ->add('blocks', 'orchestra_blocks', array('showDialog' => $options['showDialog']));
