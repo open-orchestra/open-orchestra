@@ -11,6 +11,9 @@ abstract class Node extends \Model\PHPOrchestraCMSBundle\Base\Node
     const STATUS_PENDING = 'pending';
     const STATUS_PUBLISHED = 'published';
     
+    const TYPE_DEFAULT = 'page';
+    
+    
     /**
      * Initializes the document defaults.
      */
@@ -18,10 +21,14 @@ abstract class Node extends \Model\PHPOrchestraCMSBundle\Base\Node
     {
         if ($this->getNodeId() == '')
             $this->setNodeId(uniqid('', true));
+        if ($this->getNodeType() == '')
+            $this->setNodeType(self::TYPE_DEFAULT);
         if ($this->getVersion() == '')
             $this->setVersion(1);
         if ($this->getStatus() == '')
             $this->setStatus(self::STATUS_DRAFT);
+        if ($this->getLanguage() == '')
+            $this->setLanguage('fr');
     }
 	
     /**

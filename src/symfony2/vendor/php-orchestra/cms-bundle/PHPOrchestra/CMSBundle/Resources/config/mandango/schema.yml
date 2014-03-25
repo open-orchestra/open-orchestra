@@ -18,9 +18,11 @@ Model\PHPOrchestraCMSBundle\Node:
     collection: node
     fields:
         nodeId: string
+        nodeType: string
         siteId: integer
         parentId: integer
         path: string
+        alias: string
         name: string
         version: integer
         language: string

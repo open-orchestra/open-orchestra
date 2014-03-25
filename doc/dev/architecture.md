@@ -119,10 +119,12 @@ La base de données principale sera en MongoDB
 ```json
 {
     "nodeId": 1,
+    "nodeType": "page"
     "siteId": 1,
     "parentId": null,
     "path": "/1",
-    "name": "home",
+    "alias": "home"
+    "name": "Accueil",
     "version": 4,
     "language": "fr",
     "status": "published",
