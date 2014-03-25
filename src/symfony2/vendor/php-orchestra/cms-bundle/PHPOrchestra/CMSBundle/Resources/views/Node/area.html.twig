@@ -4,8 +4,8 @@
  # @author Noël Gilain <noel.gilain@businessdecision.com>
  ##}
 
-<fieldset id="{{ area.areaId }}" style="background-color:#98BDE2;border-color:#000000;">
-    <legend style="background-color:#98BDE2;border:1px solid #000000;">AREA | {{ area.areaId }}</legend>
+<fieldset id="{{ area.areaId }}" style="background-color:#98BDE2;border-color:#000000;margin-top:8px;">
+    <legend style="background-color:#BADFF4;border:1px solid #000000;">AREA | {{ area.areaId }}</legend>
 {% for subArea in area.subAreas %}
     {% include "PHPOrchestraCMSBundle:Node:area.html.twig" with {"area" : subArea, "blocks" : blocks, "relatedNodes" : relatedNodes} only %}
 {% endfor %}
@@ -20,14 +20,14 @@
             {% set block = relatedNodes[blockReference.nodeId].iterator[blockReference.blockId] %}
         {% endif %}
     {% endif %}
-        <fieldset style="background-color:#3B6691;border-color:#000000;">
-    <legend style="background-color:#3B6691;border:1px solid #000000;">
+        <fieldset style="background-color:#3B6691;border-color:#000000;margin-top:8px;">
+    <legend style="background-color:#5D88B3;border:1px solid #000000;">
         BLOCK | NodeId : {{ blockReference.nodeId }} / 
         BlockId : {{ blockReference.blockId }}
-        {% if block %} / {{ block.component }}{% endif %}
+        {% if block %} / <span style="color:#FF0000;">{{ block.component }}</span>{% endif %}
     </legend>
     {% if block %}
-        {{ render_block(controller(block.component, {'block': block.attributes})) | raw }}
+        {{ render(controller(block.component, {'block': block.attributes}), {'ignore_errors' : true} ) }}
     {% endif %}
         </fieldset>
 {% endfor %}

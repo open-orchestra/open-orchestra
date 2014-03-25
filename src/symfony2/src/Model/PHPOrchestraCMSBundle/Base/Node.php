@@ -41,6 +41,11 @@ abstract class Node extends \Mandango\Document\Document
         } elseif (isset($data['_fields']['nodeId'])) {
             $this->data['fields']['nodeId'] = null;
         }
+        if (isset($data['nodeType'])) {
+            $this->data['fields']['nodeType'] = (string) $data['nodeType'];
+        } elseif (isset($data['_fields']['nodeType'])) {
+            $this->data['fields']['nodeType'] = null;
+        }
         if (isset($data['siteId'])) {
             $this->data['fields']['siteId'] = (int) $data['siteId'];
         } elseif (isset($data['_fields']['siteId'])) {
@@ -55,6 +60,11 @@ abstract class Node extends \Mandango\Document\Document
             $this->data['fields']['path'] = (string) $data['path'];
         } elseif (isset($data['_fields']['path'])) {
             $this->data['fields']['path'] = null;
+        }
+        if (isset($data['alias'])) {
+            $this->data['fields']['alias'] = (string) $data['alias'];
+        } elseif (isset($data['_fields']['alias'])) {
+            $this->data['fields']['alias'] = null;
         }
         if (isset($data['name'])) {
             $this->data['fields']['name'] = (string) $data['name'];
@@ -77,7 +87,7 @@ abstract class Node extends \Mandango\Document\Document
             $this->data['fields']['status'] = null;
         }
         if (isset($data['templateId'])) {
-            $this->data['fields']['templateId'] = (int) $data['templateId'];
+            $this->data['fields']['templateId'] = (string) $data['templateId'];
         } elseif (isset($data['_fields']['templateId'])) {
             $this->data['fields']['templateId'] = null;
         }
@@ -156,6 +166,68 @@ abstract class Node extends \Mandango\Document\Document
         }
 
         return $this->data['fields']['nodeId'];
+    }
+
+    /**
+     * Set the "nodeType" field.
+     *
+     * @param mixed $value The value.
+     *
+     * @return \Model\PHPOrchestraCMSBundle\Node The document (fluent interface).
+     */
+    public function setNodeType($value)
+    {
+        if (!isset($this->data['fields']['nodeType'])) {
+            if (!$this->isNew()) {
+                $this->getNodeType();
+                if ($this->isFieldEqualTo('nodeType', $value)) {
+                    return $this;
+                }
+            } else {
+                if (null === $value) {
+                    return $this;
+                }
+                $this->fieldsModified['nodeType'] = null;
+                $this->data['fields']['nodeType'] = $value;
+                return $this;
+            }
+        } elseif ($this->isFieldEqualTo('nodeType', $value)) {
+            return $this;
+        }
+
+        if (!isset($this->fieldsModified['nodeType']) && !array_key_exists('nodeType', $this->fieldsModified)) {
+            $this->fieldsModified['nodeType'] = $this->data['fields']['nodeType'];
+        } elseif ($this->isFieldModifiedEqualTo('nodeType', $value)) {
+            unset($this->fieldsModified['nodeType']);
+        }
+
+        $this->data['fields']['nodeType'] = $value;
+
+        return $this;
+    }
+
+    /**
+     * Returns the "nodeType" field.
+     *
+     * @return mixed The $name field.
+     */
+    public function getNodeType()
+    {
+        if (!isset($this->data['fields']['nodeType'])) {
+            if ($this->isNew()) {
+                $this->data['fields']['nodeType'] = null;
+            } elseif (!isset($this->data['fields']) || !array_key_exists('nodeType', $this->data['fields'])) {
+                $this->addFieldCache('nodeType');
+                $data = $this->getRepository()->getCollection()->findOne(array('_id' => $this->getId()), array('nodeType' => 1));
+                if (isset($data['nodeType'])) {
+                    $this->data['fields']['nodeType'] = (string) $data['nodeType'];
+                } else {
+                    $this->data['fields']['nodeType'] = null;
+                }
+            }
+        }
+
+        return $this->data['fields']['nodeType'];
     }
 
     /**
@@ -342,6 +414,68 @@ abstract class Node extends \Mandango\Document\Document
         }
 
         return $this->data['fields']['path'];
+    }
+
+    /**
+     * Set the "alias" field.
+     *
+     * @param mixed $value The value.
+     *
+     * @return \Model\PHPOrchestraCMSBundle\Node The document (fluent interface).
+     */
+    public function setAlias($value)
+    {
+        if (!isset($this->data['fields']['alias'])) {
+            if (!$this->isNew()) {
+                $this->getAlias();
+                if ($this->isFieldEqualTo('alias', $value)) {
+                    return $this;
+                }
+            } else {
+                if (null === $value) {
+                    return $this;
+                }
+                $this->fieldsModified['alias'] = null;
+                $this->data['fields']['alias'] = $value;
+                return $this;
+            }
+        } elseif ($this->isFieldEqualTo('alias', $value)) {
+            return $this;
+        }
+
+        if (!isset($this->fieldsModified['alias']) && !array_key_exists('alias', $this->fieldsModified)) {
+            $this->fieldsModified['alias'] = $this->data['fields']['alias'];
+        } elseif ($this->isFieldModifiedEqualTo('alias', $value)) {
+            unset($this->fieldsModified['alias']);
+        }
+
+        $this->data['fields']['alias'] = $value;
+
+        return $this;
+    }
+
+    /**
+     * Returns the "alias" field.
+     *
+     * @return mixed The $name field.
+     */
+    public function getAlias()
+    {
+        if (!isset($this->data['fields']['alias'])) {
+            if ($this->isNew()) {
+                $this->data['fields']['alias'] = null;
+            } elseif (!isset($this->data['fields']) || !array_key_exists('alias', $this->data['fields'])) {
+                $this->addFieldCache('alias');
+                $data = $this->getRepository()->getCollection()->findOne(array('_id' => $this->getId()), array('alias' => 1));
+                if (isset($data['alias'])) {
+                    $this->data['fields']['alias'] = (string) $data['alias'];
+                } else {
+                    $this->data['fields']['alias'] = null;
+                }
+            }
+        }
+
+        return $this->data['fields']['alias'];
     }
 
     /**
@@ -644,7 +778,7 @@ abstract class Node extends \Mandango\Document\Document
                 $this->addFieldCache('templateId');
                 $data = $this->getRepository()->getCollection()->findOne(array('_id' => $this->getId()), array('templateId' => 1));
                 if (isset($data['templateId'])) {
-                    $this->data['fields']['templateId'] = (int) $data['templateId'];
+                    $this->data['fields']['templateId'] = (string) $data['templateId'];
                 } else {
                     $this->data['fields']['templateId'] = null;
                 }
@@ -828,6 +962,9 @@ abstract class Node extends \Mandango\Document\Document
         if ('nodeId' == $name) {
             return $this->setNodeId($value);
         }
+        if ('nodeType' == $name) {
+            return $this->setNodeType($value);
+        }
         if ('siteId' == $name) {
             return $this->setSiteId($value);
         }
@@ -836,6 +973,9 @@ abstract class Node extends \Mandango\Document\Document
         }
         if ('path' == $name) {
             return $this->setPath($value);
+        }
+        if ('alias' == $name) {
+            return $this->setAlias($value);
         }
         if ('name' == $name) {
             return $this->setName($value);
@@ -873,6 +1013,9 @@ abstract class Node extends \Mandango\Document\Document
         if ('nodeId' == $name) {
             return $this->getNodeId();
         }
+        if ('nodeType' == $name) {
+            return $this->getNodeType();
+        }
         if ('siteId' == $name) {
             return $this->getSiteId();
         }
@@ -881,6 +1024,9 @@ abstract class Node extends \Mandango\Document\Document
         }
         if ('path' == $name) {
             return $this->getPath();
+        }
+        if ('alias' == $name) {
+            return $this->getAlias();
         }
         if ('name' == $name) {
             return $this->getName();
@@ -922,6 +1068,9 @@ abstract class Node extends \Mandango\Document\Document
         if (isset($array['nodeId'])) {
             $this->setNodeId($array['nodeId']);
         }
+        if (isset($array['nodeType'])) {
+            $this->setNodeType($array['nodeType']);
+        }
         if (isset($array['siteId'])) {
             $this->setSiteId($array['siteId']);
         }
@@ -930,6 +1079,9 @@ abstract class Node extends \Mandango\Document\Document
         }
         if (isset($array['path'])) {
             $this->setPath($array['path']);
+        }
+        if (isset($array['alias'])) {
+            $this->setAlias($array['alias']);
         }
         if (isset($array['name'])) {
             $this->setName($array['name']);
@@ -973,9 +1125,11 @@ abstract class Node extends \Mandango\Document\Document
         $array = array('id' => $this->getId());
 
         $array['nodeId'] = $this->getNodeId();
+        $array['nodeType'] = $this->getNodeType();
         $array['siteId'] = $this->getSiteId();
         $array['parentId'] = $this->getParentId();
         $array['path'] = $this->getPath();
+        $array['alias'] = $this->getAlias();
         $array['name'] = $this->getName();
         $array['version'] = $this->getVersion();
         $array['language'] = $this->getLanguage();
@@ -1000,6 +1154,9 @@ abstract class Node extends \Mandango\Document\Document
                 if (isset($this->data['fields']['nodeId'])) {
                     $query['nodeId'] = (string) $this->data['fields']['nodeId'];
                 }
+                if (isset($this->data['fields']['nodeType'])) {
+                    $query['nodeType'] = (string) $this->data['fields']['nodeType'];
+                }
                 if (isset($this->data['fields']['siteId'])) {
                     $query['siteId'] = (int) $this->data['fields']['siteId'];
                 }
@@ -1008,6 +1165,9 @@ abstract class Node extends \Mandango\Document\Document
                 }
                 if (isset($this->data['fields']['path'])) {
                     $query['path'] = (string) $this->data['fields']['path'];
+                }
+                if (isset($this->data['fields']['alias'])) {
+                    $query['alias'] = (string) $this->data['fields']['alias'];
                 }
                 if (isset($this->data['fields']['name'])) {
                     $query['name'] = (string) $this->data['fields']['name'];
@@ -1022,7 +1182,7 @@ abstract class Node extends \Mandango\Document\Document
                     $query['status'] = (string) $this->data['fields']['status'];
                 }
                 if (isset($this->data['fields']['templateId'])) {
-                    $query['templateId'] = (int) $this->data['fields']['templateId'];
+                    $query['templateId'] = (string) $this->data['fields']['templateId'];
                 }
                 if (isset($this->data['fields']['areas'])) {
                     $query['areas'] = $this->data['fields']['areas'];
@@ -1036,6 +1196,17 @@ abstract class Node extends \Mandango\Document\Document
                             $query['$set']['nodeId'] = (string) $this->data['fields']['nodeId'];
                         } else {
                             $query['$unset']['nodeId'] = 1;
+                        }
+                    }
+                }
+                if (isset($this->data['fields']['nodeType']) || array_key_exists('nodeType', $this->data['fields'])) {
+                    $value = $this->data['fields']['nodeType'];
+                    $originalValue = $this->getOriginalFieldValue('nodeType');
+                    if ($value !== $originalValue) {
+                        if (null !== $value) {
+                            $query['$set']['nodeType'] = (string) $this->data['fields']['nodeType'];
+                        } else {
+                            $query['$unset']['nodeType'] = 1;
                         }
                     }
                 }
@@ -1069,6 +1240,17 @@ abstract class Node extends \Mandango\Document\Document
                             $query['$set']['path'] = (string) $this->data['fields']['path'];
                         } else {
                             $query['$unset']['path'] = 1;
+                        }
+                    }
+                }
+                if (isset($this->data['fields']['alias']) || array_key_exists('alias', $this->data['fields'])) {
+                    $value = $this->data['fields']['alias'];
+                    $originalValue = $this->getOriginalFieldValue('alias');
+                    if ($value !== $originalValue) {
+                        if (null !== $value) {
+                            $query['$set']['alias'] = (string) $this->data['fields']['alias'];
+                        } else {
+                            $query['$unset']['alias'] = 1;
                         }
                     }
                 }
@@ -1121,7 +1303,7 @@ abstract class Node extends \Mandango\Document\Document
                     $originalValue = $this->getOriginalFieldValue('templateId');
                     if ($value !== $originalValue) {
                         if (null !== $value) {
-                            $query['$set']['templateId'] = (int) $this->data['fields']['templateId'];
+                            $query['$set']['templateId'] = (string) $this->data['fields']['templateId'];
                         } else {
                             $query['$unset']['templateId'] = 1;
                         }

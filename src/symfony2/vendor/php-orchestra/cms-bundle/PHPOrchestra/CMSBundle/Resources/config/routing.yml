@@ -1,21 +1,22 @@
 php_orchestra_cms_templateform:
     pattern:  /template/form/{templateId}
     defaults: { _controller: PHPOrchestraCMSBundle:Template:form, templateId: 0 }
-    requirements:
-        templateId: \w+
+#    requirements:
+#        templateId: \w+
 
-php_orchestra_cms_formnodes:
+php_orchestra_cms_addsamplenode:
+    pattern:  /node/addsample
+    defaults: { _controller: PHPOrchestraCMSBundle:Node:addSample }
+
+php_orchestra_cms_formnode:
     pattern:  /node/form/{nodeId}
-    defaults: { _controller: PHPOrchestraCMSBundle:Nodes:form, nodeId: 0 }
-    requirements:
-        nodeId: \w+
-
-php_orchestra_cms_addnodes:
-    pattern:  /nodes/addsamples
-    defaults: { _controller: PHPOrchestraCMSBundle:Nodes:add }
+    defaults: { _controller: PHPOrchestraCMSBundle:Node:form, nodeId: 0 }
+#    requirements:
+#        nodeId: \w+
 
 php_orchestra_cms_node:
     pattern:  /node/{nodeId}
     defaults: { _controller: PHPOrchestraCMSBundle:Node:show }
-    requirements:
-        nodeId: \w+
+#    requirements:
+#        nodeId: \w+
+

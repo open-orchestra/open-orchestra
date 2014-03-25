@@ -74,3 +74,17 @@ mandango:
         local:
             server:   mongodb://localhost:27017
             database: symfony2_local_%kernel.environment%
+            
+            
+twig:
+    form:
+        resources:
+            - 'PHPOrchestraCMSBundle:Form:orchestra_model.html.twig'
+parameters:
+    status:
+        STATUS_DRAFT: draft
+        STATUS_PENDING: pending
+        STATUS_PUBLISHED: published
+    language:
+        fr: Français
+        en: English

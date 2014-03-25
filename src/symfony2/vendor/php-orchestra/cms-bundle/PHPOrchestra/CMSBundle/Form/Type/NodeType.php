@@ -24,14 +24,16 @@ class NodeType extends AbstractType
     	
         $builder
             ->add('nodeId', 'text')
+            ->add('nodeType', 'text')
             ->add('siteId', 'integer')
             ->add('parentId', 'integer')
             ->add('path', 'text')
+            ->add('alias', 'text')
             ->add('name', 'text')
             ->add('version', 'integer')
             ->add('language', 'text')
             ->add('status', 'text')
-            ->add('templateId', 'integer')
+            ->add('templateId', 'text')
             ->add('areas', 'orchestra_areas')
             ->add('blocks', 'orchestra_blocks')
             ->add('save', 'submit');

@@ -113,6 +113,10 @@ class MetadataFactoryInfo
                     'type' => 'string',
                     'dbName' => 'nodeId',
                 ),
+                'nodeType' => array(
+                    'type' => 'string',
+                    'dbName' => 'nodeType',
+                ),
                 'siteId' => array(
                     'type' => 'integer',
                     'dbName' => 'siteId',
@@ -124,6 +128,10 @@ class MetadataFactoryInfo
                 'path' => array(
                     'type' => 'string',
                     'dbName' => 'path',
+                ),
+                'alias' => array(
+                    'type' => 'string',
+                    'dbName' => 'alias',
                 ),
                 'name' => array(
                     'type' => 'string',
@@ -142,7 +150,7 @@ class MetadataFactoryInfo
                     'dbName' => 'status',
                 ),
                 'templateId' => array(
-                    'type' => 'integer',
+                    'type' => 'string',
                     'dbName' => 'templateId',
                 ),
                 'areas' => array(

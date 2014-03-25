@@ -18,14 +18,16 @@ Model\PHPOrchestraCMSBundle\Node:
     collection: node
     fields:
         nodeId: string
+        nodeType: string
         siteId: integer
         parentId: integer
         path: string
+        alias: string
         name: string
         version: integer
         language: string
         status: string
-        templateId: integer
+        templateId: string
         areas: raw
     embeddedsMany:
         blocks: {class: Model\PHPOrchestraCMSBundle\Block}
