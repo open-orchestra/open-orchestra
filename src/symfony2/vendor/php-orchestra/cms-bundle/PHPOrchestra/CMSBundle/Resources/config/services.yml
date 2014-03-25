@@ -12,10 +12,3 @@ services:
         arguments: [@mandango]
         tags:
             - { name: form.type, alias: orchestra_blocks }
-
-# Twig extension
-    php_orchestra_cms.orchestra_extension:
-        class: PHPOrchestra\CMSBundle\Twig\PhpOrchestraExtension
-        arguments: [@service_container]
-        tags:
-            - {name: twig.extension}

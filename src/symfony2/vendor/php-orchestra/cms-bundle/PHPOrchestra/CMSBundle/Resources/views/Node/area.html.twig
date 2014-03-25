@@ -27,7 +27,7 @@
         {% if block %} / {{ block.component }}{% endif %}
     </legend>
     {% if block %}
-        {{ render_block(controller(block.component, {'block': block.attributes})) }}
+        {{ render(controller(block.component, {'block': block.attributes}), {'ignore_errors' : true} ) }}
     {% endif %}
         </fieldset>
 {% endfor %}
