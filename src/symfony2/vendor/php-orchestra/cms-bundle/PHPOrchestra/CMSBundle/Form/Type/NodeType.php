@@ -21,7 +21,7 @@ class NodeType extends AbstractType
      */
 	public function buildForm(FormBuilderInterface $builder, array $options)
     {
-    	
+        
         $builder
             ->add('nodeId', 'text')
             ->add('nodeType', 'text')
@@ -30,7 +30,6 @@ class NodeType extends AbstractType
             ->add('path', 'text')
             ->add('alias', 'text')
             ->add('name', 'text')
-            ->add('version', 'integer')
             ->add('language', 'text')
             ->add('status', 'text')
             ->add('templateId', 'text')

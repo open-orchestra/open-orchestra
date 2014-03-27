@@ -63,7 +63,7 @@ class DocumentLoader
         {
             case 'Node':
             case 'Template':
-                $sort = array('version', -1);
+                $sort = array('version' => -1);
                 break;
             default:
                 throw new UnrecognizedDocumentTypeException('Unrecognized document type : ' . $documentType);
