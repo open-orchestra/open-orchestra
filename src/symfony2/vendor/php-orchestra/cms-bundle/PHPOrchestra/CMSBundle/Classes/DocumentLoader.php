@@ -23,15 +23,17 @@ class DocumentLoader
         $repository = $mandangoService->getRepository(self::getDocumentNamespace($documentType));
         $query = $repository->createQuery();
         $query->criteria($criteria);
+        $query->sort(self::getDefaultSort($documentType));
         return $query->one();
     }
+    
     
     /**
      * Get documentType model namespace
      * 
      * @param string $documentType
      */
-    private static function getDocumentNamespace($documentType)
+    protected static function getDocumentNamespace($documentType)
     {
         $documentNamespace = '';
         switch($documentType)
@@ -47,5 +49,26 @@ class DocumentLoader
                 break;
         }
         return $documentNamespace;
+    }
+    
+    
+    /**
+     * Get default sort filter for given document type
+     * @param string $documentType
+     */
+    protected static function getDefaultSort($documentType)
+    {
+        $sort = array();
+        switch($documentType)
+        {
+            case 'Node':
+            case 'Template':
+                $sort = array('version', -1);
+                break;
+            default:
+                throw new UnrecognizedDocumentTypeException('Unrecognized document type : ' . $documentType);
+                break;
+        }
+        return $sort;
     }
 }
