@@ -24,7 +24,8 @@ class PhpOrchestraUrlMatcher extends RedirectableUrlMatcher
      * @var unknown_type
      */
     protected $mandango = null;
-
+    
+    
     /**
      * Constructor
      * 
@@ -39,6 +40,7 @@ class PhpOrchestraUrlMatcher extends RedirectableUrlMatcher
         $this->mandango = $mandangoService;
     }
     
+    
     /**
      * Find a route for a given url
      * Check first with symfony basic behavior
@@ -50,13 +52,41 @@ class PhpOrchestraUrlMatcher extends RedirectableUrlMatcher
     {
         try {
             $parameters = parent::match($pathinfo);
-        } catch (ResourceNotFoundException $e) {
-            $this->getNode('/', 0);
-            die('Pas trouvé dans le parent');
+        } catch (ResourceNotFoundException $e) {            
+            $parameters = $this->dynamicMatch($pathinfo);
         }
         
         return $parameters;
     }
+    
+    
+    /**
+     * try to find the node via its path
+     * 
+     * @param string $pathinfo
+     * @throws ResourceNotFoundException
+     */
+    protected function dynamicMatch($pathinfo)
+    {
+        $slugs = explode('/', $pathinfo);
+        $nodeId = 0;
+        
+        foreach ($slugs as $slug) {
+            if ($slug != '') {
+                $nodeId = $this->getNode($slug, $nodeId);
+                
+                if (!$nodeId)
+                    throw new ResourceNotFoundException();
+            }
+        }
+        
+        return array(
+                "_controller" => 'PHPOrchestra\CMSBundle\Controller\NodeController::showAction',
+                "nodeId" => $nodeId,
+                "_route" => "php_orchestra_cms_node"
+                );
+    }
+    
     
     /**
      * Return the nodeId matching slug and parent nodeId
@@ -66,7 +96,17 @@ class PhpOrchestraUrlMatcher extends RedirectableUrlMatcher
      */
     protected function getNode($slug, $parentId)
     {
-        $node = DocumentLoader::getDocument('Node', array(), $this->mandango);
-        return '';
+        $nodeId = false;
+        $criteria = array(
+                        'parentId' => $parentId,
+                        'alias' => $slug
+                        );
+
+        $node = DocumentLoader::getDocument('Node', $criteria, $this->mandango);
+        
+        if (!is_null($node))
+            $nodeId = $node->getNodeId();
+        
+        return $nodeId;
     }
 }

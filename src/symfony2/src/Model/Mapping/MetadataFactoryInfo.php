@@ -122,7 +122,7 @@ class MetadataFactoryInfo
                     'dbName' => 'siteId',
                 ),
                 'parentId' => array(
-                    'type' => 'integer',
+                    'type' => 'string',
                     'dbName' => 'parentId',
                 ),
                 'path' => array(
