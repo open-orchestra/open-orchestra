@@ -21,6 +21,17 @@
 
     </head>
     <body>
+    {% if form.vars.showDialog %}
+        {% form_theme form 'PHPOrchestraCMSBundle:Form:orchestra_model.html.twig' %}
+        {% include 'PHPOrchestraCMSBundle:Template:dialog.html.twig' %}
+        <div id="{{ form.vars.name }}-model"></div>
+        <script>
+        $(document).ready(function(){
+            $('#{{ form.vars.name }}-model').parseTemplate();
+        });
+        </script>
+    {% else %}
         {{ form(form) }}
+    {% endif %}
     </body>
 </html>

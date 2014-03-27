@@ -1,86 +1,23 @@
-{% extends 'form_div_layout.html.twig' %}
-{% block form %}
+{% block orchestra_areas_widget %}
     {% if form.vars.showDialog %}
-            <div id="{{ form.vars.name }}-model"></div>
-            {% for child in form %}
-                {{ form_widget(child) }}
-            {% endfor %}
-            <div class="dialog-node" style="display:none;" title="Node">
-            {{ form_start(form) }}
-            {{ form_end(form) }}
-            </div>
+        {% include dialog %}
         <script>
         $(document).ready(function(){
-            $('#{{ form.vars.name }}-model').parseTemplate({"form_name" : "{{ form.vars.name }}"});
+            $('#{{ form.parent.vars.name }}-model').data({"{{ form.vars.name }}": {{ value|raw }}});
         });
         </script>
-    {% else %}
-        {{ parent() }}
     {% endif %}
-{% endblock %}
-
-{% block extended_form %}
-    {% if not hidden %}
-        {% set label = form_label(form) %}
-    {% endif %}
-    {% if not js_value %}
-        {% set js_value = '"' ~ value ~ '"' %}
-    {% endif %}
-    {% set name = id|replace({(form.parent.vars.name ~ '_'): ""}) %}
-    <script>
-    $(document).ready(function(){
-        $('#{{ form.parent.vars.name }}-model').data({"{{ form.vars.name }}": {{ js_value|raw }}});
-        $('.dialog-node form').append('{{ label|raw }}{{ parent|raw }}')
-    });
-    </script>
-    {{ dialog|raw }}   
-{% endblock %}
-
-
-{% block choice_widget %}
-    {% if form.parent.vars.showDialog %}
-        {% set parent = parent() %}
-        {{ block('extended_form') }}
-    {% else %}
-        {{ parent() }}
-    {% endif %}
-{% endblock %}
-
-{% block form_widget %}
-    {% if form.parent.vars.showDialog %}
-        {% set parent = parent() %}
-        {{ block('extended_form') }}
-    {% else %}
-        {{ parent() }}
-    {% endif %}
-{% endblock %}
-
-{% block hidden_widget %}
-    {% if form.parent.vars.showDialog %}
-        {% set parent = parent() %}
-        {% set hidden = true %}
-        {{ block('extended_form') }}
-    {% else %}
-        {{ parent() }}
-    {% endif %}
-{% endblock %}
-
-{% block orchestra_areas_widget %}
-    {% if form.parent.vars.showDialog %}
-        {% set js_value = value|raw %}
-        {% set dialog = form.vars.dialog %}
-        {{ block('hidden_widget') }}
-    {% else %}
-        {{ parent() }}
-    {% endif %}
+    {{ form_widget(form) }}
 {% endblock %}
 
 {% block orchestra_blocks_widget %}
-    {% if form.parent.vars.showDialog %}
-        {% set js_value = value|raw %}
-        {% set dialog = form.vars.dialog %}
-        {{ block('hidden_widget') }}
-    {% else %}
-        {{ parent() }}
+    {% if form.vars.showDialog %}
+        {% include dialog %}
+        <script>
+        $(document).ready(function(){
+            $('#{{ form.parent.vars.name }}-model').data({"{{ form.vars.name }}": {{ value|raw }}});
+        });
+        </script>
     {% endif %}
+    {{ form_widget(form) }}
 {% endblock %}

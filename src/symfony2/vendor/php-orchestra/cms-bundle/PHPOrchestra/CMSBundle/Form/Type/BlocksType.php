@@ -56,13 +56,9 @@ class BlocksType extends AbstractType
     
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
+    	$view->vars['showDialog'] = $options['showDialog'];
     	if($options['showDialog']){
-	        $view->vars['dialog'] = '
-		    <div class="dialog-blocks" style="display:none;" title="Block">
-		        <label for="component">Component : </label><input type="text" name="component" id="component" value=""><br />
-		        <label for="customAttribute">Custom Attributes : </label><input type="text" name="customAttributes" id="customAttributes" value=""><br />
-		    </div>
-	        ';
+            $view->vars['dialog'] = 'PHPOrchestraCMSBundle:Block:dialog.html.twig';
     	}
     }
     

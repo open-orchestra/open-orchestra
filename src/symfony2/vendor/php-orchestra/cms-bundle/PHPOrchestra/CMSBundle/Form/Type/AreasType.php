@@ -32,14 +32,9 @@ class AreasType extends AbstractType
     
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
+    	$view->vars['showDialog'] = $options['showDialog'];
         if($options['showDialog']){
-	        $view->vars['dialog'] = '
-	        <div class="dialog-areas" style="display:none;" title="Area">
-	            <label for="areaId">Area id : </label><input type="text" name="areaId" id="areaId" value=""><br />
-	            <label for="classes">Classes : </label><input type="text" name="classes" id="classes" value=""><br />
-	            <label for="direction">Direction : </label><select name="boDirection" id="direction"><option value="h">horizontal</option><option value="v">vertical</option></select>
-	        </div>
-	        ';
+	        $view->vars['dialog'] = 'PHPOrchestraCMSBundle:Area:dialog.html.twig';
         }
     }
     

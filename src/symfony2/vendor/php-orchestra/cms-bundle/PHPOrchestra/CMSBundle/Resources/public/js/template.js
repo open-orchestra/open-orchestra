@@ -1,119 +1,67 @@
+var dialog_parameter = {
+        resizable: false,
+        width:530,
+        modal: true,
+        autoOpen: false,
+        open: function ( event, ui) {
+            var data = $(this).data();
+            var found = false;
+            var buttons = $(this).dialog("option", "allbuttons");
+            var addArray = $(this).dialog("option", "addArray");
+            for(var i in addArray){
+                if(addArray[i] in data.this_values){
+                    found = true;
+                    buttons["Add " + addArray[i].charAt(0).toUpperCase() + addArray[i].slice(1)] = (function (name){
+	                	return function(){
+	                        data.this_values[name].push({});
+	                        $(this).dialog( "close" );
+	                	}
+	                })(addArray[i]);
+                }
+            }
+            if(!found){
+	            for(var i in addArray){
+	                buttons["Add " + addArray[i].charAt(0).toUpperCase() + addArray[i].slice(1)] = (function (name){
+	                	return function(){
+	                        data.this_values[name] = new Array();
+	                        data.this_values[name].push({});
+	                        $(this).dialog( "close" );
+	                	}
+	                })(addArray[i]);
+	            }
+            }
+            $(this).find("[type='submit']").each(function(){
+            	$(this).hide();
+            	buttons["Send"] = function(){
+	                if('areas' in data.settings.values){
+	                    $("#template_areas").val(JSON.stringify(data.settings.values.areas));
+	                }
+	                if('blocks' in data.settings.values){
+	                    $("#template_blocks").val(JSON.stringify(data.settings.values.blocks));
+	                }
+	                $("form[name='template']").submit();
+	                $(this).dialog( "close" );
+	           }
+            });
+            $(this).dialog("option", "buttons", buttons);
+            $(this).find(":input").setValue(data.this_values);
+        },
+        allbuttons: {
+            "Apply": function() {
+                var data = $(this).data();
+                $(this).find(":input").getValue(data.this_values);
+                $(this).dialog( "close" );
+            }
+        },
+        close: function ( event, ui) {
+            var data = $(this).data();
+            data.settings.element.parseTemplate($.extend(data.settings, {"path": null}));
+        }
+    };
+
+
 (function($){
-	$.generateFunction = function(type){
-		var functions = {'create': function(){return false;},
-				'add': function(){return false;},
-				'save': function(){return false;},
-				'open': function(){return false;},
-				'send': function(){return false;}
-				}
-		functions['save'] = function(obj, settings, this_values){
-			obj.find(":input").each(function(){
-				var name = $(this).attr('id').replace(settings.form_name + '_', '');
-				if(!Array.isArray(this_values[name])){
-					this_values[name] = $(this).val();
-				}
-				else if($(this).is(':visible')){
-					this_values[name] = $(this).val().split(',');
-				}
-			});
-		}
-		functions['open'] = function(obj, settings, this_values){
-			obj.find(":input").each(function(){
-				var name = $(this).attr('id').replace(settings.form_name + '_', '');
-				if(!Array.isArray(this_values[name])){
-					$(this).val(this_values[name]);
-				}
-				else if($(this).is(':visible')){
-					$(this).val(this_values[name].join(','));
-				}
-			});
-		}
-		if(type == "node"){
-			functions = $.extend(functions, $.generateNodeFunction());
-		}
-		else if(type == "areas" || type == "subAreas"){
-			functions = $.extend(functions, $.generateAreaFunction());
-		}
-		else if(type == "blocks"){
-			functions = $.extend(functions, $.generateBlockFunction());
-		}
-		return functions;
-	}
-	$.generateNodeFunction = function(){
-		var empty_area = {"classes": [], "subAreas": [], "blocks": []};
-		var create = function(obj, settings, this_values){
-			var buttons = obj.dialog( "option", "buttons" );
-			delete buttons['Add Blocks'];
-			delete buttons['Add Areas'];
-			obj.dialog( "option", "buttons", buttons);
-		}
-		var add = function(obj, settings, this_values){
-			this_values.boDirection = obj.find("select[name=\'boDirection\']").val();
-			this_values.areas.push(empty_area);
-		}
-		var send = function(obj, settings, this_values){
-			$("#template_areas").val(JSON.stringify(settings.values.areas));
-			$("#template_blocks").val(JSON.stringify(settings.values.blocks));
-			$("form[name='template']").submit();
-		}
-		return {'create': create,
-				'add': add,
-				'send': send
-			};
-	}
-	$.generateAreaFunction = function(settings, this_values){
-		var empty_area = {"classes": [], "subAreas": [], "blocks": []};
-		var empty_block = {"component": "No Controller", "attributes": []};
-		var create = function(obj, settings, this_values){
-			var buttons = obj.dialog( "option", "buttons" );
-			delete buttons['Save'];
-			if(this_values.blocks.length > 0 || this_values.subAreas.length > 0){
-				delete buttons['Add Blocks'];
-				delete buttons['Add Areas'];
-			}
-			else{
-				delete buttons['Add'];
-			}
-			obj.dialog( "option", "buttons", buttons);
-		}
-		var add = function(obj, settings, this_values, type){
-			this_values.boDirection = obj.find("select[name=\'boDirection\']").val();
-			if(this_values.blocks.length > 0 || type == 'block'){
-				var length = settings.values.blocks.length;
-				settings.values.blocks[length] = empty_block;
-				this_values.blocks.push({"nodeId": 0, "blockId": length});
-			}
-			else{
-				this_values.subAreas.push(empty_area);
-			}
-		}
-		return {'create': create,
-			'add': add
-		};
-	}
-	$.generateBlockFunction = function(settings, this_values){
-		var create = function(obj, settings, this_values){
-			var buttons = obj.dialog( "option", "buttons" );
-			delete buttons['Save'];
-			delete buttons['Add'];
-			delete buttons['Add Blocks'];
-			delete buttons['Add Areas'];
-			obj.dialog( "option", "buttons", buttons);
-		}
-		var save = function(obj, settings, this_values){
-			settings.values.blocks[this_values.blockId].component = obj.find("input[name=\'component\']").val();
-			settings.values.blocks[this_values.blockId].attributes = obj.find("input[name=\'customAttributes\']").val().split(',');
-		}
-		var open = function(obj, settings, this_values){
-			obj.find("input[name='component']").val(settings.values.blocks[this_values.blockId].component);
-			obj.find("input[name='customAttributes']").val(settings.values.blocks[this_values.blockId].attributes.join(','));
-		}
-		return {'create': create,
-			'save': save,
-			'open': open
-			};
-	}
-	$.createSubTemplate = function(settings, type, target){
+    $.createSubTemplate = function(settings, type, target){
 		var values = eval('settings.' + settings.path);
 		var tab = eval('settings.' + settings.path + '.' + type);
 		var path = settings.path + '.' + type;
@@ -126,8 +74,7 @@
 									"style" : {"display": (values.boDirection == 'v') ? "inline-block" : "block", "width": (values.boDirection == 'v') ? 100 / (tab.length) + '%' : '100%', "height": (values.boDirection == 'h') ? 100 / (tab.length) + '%' : '100%'},
 									"index": settings.index + 1,
 									"type": type,
-									"element": settings.element,
-									"form_name": settings.form_name}).appendTo(target);
+									"element": settings.element}).appendTo(target);
 			}
 		}
 	}
@@ -135,8 +82,7 @@
 	{
 		var settings = $.extend({
 			"values": $(this).data(),
-			"css": "ui-widget-model",
-			"form_name": ''
+			"css": "ui-widget-model"
 		}, options || {});
 
 		if(settings.path == null){
@@ -150,13 +96,14 @@
 		var this_values = eval('settings.' + settings.path);
 		var title = '';
 		if(settings.type == "node"){
-			title = ((this_values.name) ? this_values.name : 'No Template Name');
+		    $( ".dialog-node" ).find(":input").getValue(this_values);
+			title = (this_values.name) ? this_values.name : 'No Template Name';
 		}
-		else if(settings.type == "areas" || settings.type == "subAreas"){
-			title = ((this_values.areaId) ? this_values.areaId : 'No HTML ID');
+		else if(settings.type == "areas"){
+			title = (this_values.areaId) ? this_values.areaId : 'No HTML ID';
 		}
 		else if(settings.type == "blocks"){
-			title = ((settings.values.blocks[this_values.blockId].component) ? settings.values.blocks[this_values.blockId].component : 'No Controller');
+			title = (this_values.component) ? this_values.component : 'No Controller';
 		}
 		var span = $( "<span/>", {"class": settings.css, "text": title});
 		var div = $( "<div/>", {"class": settings.css});
@@ -173,74 +120,25 @@
 			$(this).removeClass('over');
 		});
 		div.click(function(event){
-			var type = settings.type;
-			if(settings.type == "subAreas"){
-				type = "areas";
-			}
-			var functions = $.generateFunction(type);
-			$( ".dialog-" + type ).dialog({
-				resizable: false,
-				width:530,
-				modal: true,
-				open: function ( event, ui) {
-					functions.open($(this), settings, this_values);
-				},
-				create: function ( event, ui) {
-					functions.create($(this), settings, this_values);
-				},
-				buttons: {
-					"Apply": function() {
-						functions.save($(this), settings, this_values);
-						$(this).dialog( "close" );
-					},
-					"Save": function() {
-						functions.send($(this), settings, this_values);
-						$(this).dialog( "close" );
-					},
-					"Add": function() {
-						functions.add($(this), settings, this_values);
-						$(this).dialog( "close" );
-					},
-					"Add Blocks": function() {
-						functions.add($(this), settings, this_values, 'block');
-						$(this).dialog( "close" );
-					},
-					"Add Areas": function() {
-						functions.add($(this), settings, this_values, 'area');
-						$(this).dialog( "close" );
-					}
-				},
-				close: function ( event, ui) {
-					$(this).dialog( "destroy" );
-					settings.element.parseTemplate($.extend(settings, {"path": null}));
-				}
-			});
 			event.stopPropagation();
+			var type = settings.type;
+			$( ".dialog-" + type ).data("settings", settings);
+			$( ".dialog-" + type ).data("this_values", this_values);
+			$( ".dialog-" + type ).dialog( "open" );
 		});
-		if(this_values.areas){
-			ul.addClass(settings.css + '-' + 'areas');
-			$.createSubTemplate(settings, 'areas', ul);
-			ul.children().addClass(settings.css + '-' + 'areas');
+		ul.addClass(settings.css + '-' + 'none');
+		for(var i in this_values){
+			if(Array.isArray(this_values[i]) && this_values[i].length > 0){
+				ul.addClass(settings.css + '-' + i);
+				$.createSubTemplate(settings, i, ul);
+				ul.children().addClass(settings.css + '-' + i);
+				ul.removeClass(settings.css + '-' + 'none');
+			}
 		}
-		else if(this_values.blocks && this_values.blocks.length > 0){
-			ul.addClass(settings.css + '-' + 'blocks');
-			$.createSubTemplate(settings, 'blocks', ul);
-			ul.children().addClass(settings.css + '-' + 'blocks');
-		}
-		else if(this_values.subAreas && this_values.subAreas.length > 0){
-			ul.addClass(settings.css + '-' + 'areas');
-			$.createSubTemplate(settings, 'subAreas', ul);
-			ul.children().addClass(settings.css + '-' + 'areas');
-		}
-		else{
-			ul.addClass(settings.css + '-' + 'none');
-		}
-		if(settings.type != 'blocks'){
-			ul.appendTo(div);
-		}
+		ul.appendTo(div);
 		ul.data('path', settings.path);
 		if(settings.path == "values"){
-			ul = $( "<ul/>", {"class": settings.css + ' ' + settings.css + '-' + 'nodes',
+			ul = $( "<ul/>", {"class": settings.css + ' ' + settings.css + '-' + 'node',
 				"css": {"display": settings.style}});
 			li.appendTo(ul);
 			ul.appendTo(this);
@@ -255,12 +153,7 @@
 						this_values.blocks.push(move);
 					}
 					else{
-						if("subAreas" in this_values){
-							this_values.subAreas.push(move);
-						}
-						else{
-							this_values.areas.push(move);
-						}
+						this_values.areas.push(move);
 					}
 					var pattern = new RegExp('^(.*)\\[(\\d*)]$');
 					var path = 'settings.' + ui.draggable.data('path');
@@ -293,4 +186,31 @@
 		}
 		return li;
 	}
+    $.fn.getValue = function(values, pre){
+    	if($(this).length > 1){
+            var pre = ($(this).parents("form").length) ? $(this).parents("form").attr("name") + '_' : '';
+	    	$(this).each(function(){
+	    		$(this).getValue(values, pre);
+	    	});
+    	}
+    	else{
+	        var id = $(this).attr( "id" ).replace(pre, '');
+	        values[id] = $(this).val();
+    	}
+    }
+    $.fn.setValue = function(values, pre){
+    	if($(this).length > 1){
+            var pre = ($(this).parents("form").length) ? $(this).parents("form").attr("name") + '_' : '';
+	    	$(this).each(function(){
+	    		$(this).setValue(values, pre);
+	    	});
+    	}
+    	else{
+	        var id = $(this).attr( "id" ).replace(pre, '');
+	        $(this).val('');
+	        if(id in values){
+	            $(this).val(values[id]);
+	        }
+    	}
+    }
 })(jQuery);

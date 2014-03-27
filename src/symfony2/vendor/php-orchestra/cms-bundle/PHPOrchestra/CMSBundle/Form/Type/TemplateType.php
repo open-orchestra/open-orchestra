@@ -33,7 +33,9 @@ class TemplateType extends AbstractType
             ->add('boDirection', 'orchestra_direction')
             ->add('templateId', 'hidden')
             ->add('areas', 'orchestra_areas', array('showDialog' => $options['showDialog']))
-            ->add('blocks', 'orchestra_blocks', array('showDialog' => $options['showDialog']));
+            ->add('blocks', 'orchestra_blocks', array('showDialog' => $options['showDialog']))
+            ->add('save', 'submit');
+            ;
     }
     
     public function buildView(FormView $view, FormInterface $form, array $options)
