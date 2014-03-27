@@ -14,10 +14,24 @@ use PHPOrchestra\CMSBundle\Exception\UnrecognizedDocumentTypeException;
 use Symfony\Component\Routing\RouteCollection;
 use Symfony\Component\Routing\RequestContext;
 
+/**
+ * Dynamic routing based on url
+ */
 class PhpOrchestraUrlMatcher extends RedirectableUrlMatcher
 {
+    /**
+     * Mandango service
+     * @var unknown_type
+     */
     protected $mandango = null;
 
+    /**
+     * Constructor
+     * 
+     * @param RouteCollection $routes
+     * @param RequestContext $context
+     * @param unknown_type $mandangoService
+     */
     public function __construct(RouteCollection $routes, RequestContext $context, $mandangoService)
     {
         $this->routes = $routes;
@@ -25,10 +39,15 @@ class PhpOrchestraUrlMatcher extends RedirectableUrlMatcher
         $this->mandango = $mandangoService;
     }
     
-    
+    /**
+     * Find a route for a given url
+     * Check first with symfony basic behavior
+     * Then if no route found, check with PhpOrchestra logic
+     * 
+     * @param string $pathinfo
+     */
     public function match($pathinfo)
     {
-        
         try {
             $parameters = parent::match($pathinfo);
         } catch (ResourceNotFoundException $e) {
@@ -39,15 +58,12 @@ class PhpOrchestraUrlMatcher extends RedirectableUrlMatcher
         return $parameters;
     }
     
-//    public function matchRequest(Request $request)
-//    {
-//        return array(
-//                   "_controller" => "match2\CMSBundle\Controller\NodeController::showAction",
-//                   "nodeId" => "1",
-//                   "_route" => "php_orchestra_cms_node"
-//        );
-//    }
-    
+    /**
+     * Return the nodeId matching slug and parent nodeId
+     * 
+     * @param string $slug
+     * @param string $parentId
+     */
     protected function getNode($slug, $parentId)
     {
         $node = DocumentLoader::getDocument('Node', array(), $this->mandango);
