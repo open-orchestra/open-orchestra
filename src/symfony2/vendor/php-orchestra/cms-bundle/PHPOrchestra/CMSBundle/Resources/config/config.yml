@@ -1,5 +1,6 @@
 parameters:
-    # Override symfony 2 full stack urlMatcher
-    router.options.matcher_class : 'PHPOrchestra\CMSBundle\Classes\PhpOrchestraUrlMatcher'
-    router.options.matcher_base_class : 'PHPOrchestra\CMSBundle\Classes\PhpOrchestraUrlMatcher'
+    # Extend symfony 2 Framework routing
+    router.class : 'PHPOrchestra\CMSBundle\Routing\PhpOrchestraRouter'
+    router.options.matcher_class : 'PHPOrchestra\CMSBundle\Routing\PhpOrchestraUrlMatcher'
+    router.options.matcher_base_class : 'PHPOrchestra\CMSBundle\Routing\PhpOrchestraUrlMatcher'
     router.options.matcher.cache_class : null
