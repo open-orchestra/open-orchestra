@@ -52,7 +52,7 @@ abstract class Node extends \Mandango\Document\Document
             $this->data['fields']['siteId'] = null;
         }
         if (isset($data['parentId'])) {
-            $this->data['fields']['parentId'] = (int) $data['parentId'];
+            $this->data['fields']['parentId'] = (string) $data['parentId'];
         } elseif (isset($data['_fields']['parentId'])) {
             $this->data['fields']['parentId'] = null;
         }
@@ -344,7 +344,7 @@ abstract class Node extends \Mandango\Document\Document
                 $this->addFieldCache('parentId');
                 $data = $this->getRepository()->getCollection()->findOne(array('_id' => $this->getId()), array('parentId' => 1));
                 if (isset($data['parentId'])) {
-                    $this->data['fields']['parentId'] = (int) $data['parentId'];
+                    $this->data['fields']['parentId'] = (string) $data['parentId'];
                 } else {
                     $this->data['fields']['parentId'] = null;
                 }
@@ -1161,7 +1161,7 @@ abstract class Node extends \Mandango\Document\Document
                     $query['siteId'] = (int) $this->data['fields']['siteId'];
                 }
                 if (isset($this->data['fields']['parentId'])) {
-                    $query['parentId'] = (int) $this->data['fields']['parentId'];
+                    $query['parentId'] = (string) $this->data['fields']['parentId'];
                 }
                 if (isset($this->data['fields']['path'])) {
                     $query['path'] = (string) $this->data['fields']['path'];
@@ -1226,7 +1226,7 @@ abstract class Node extends \Mandango\Document\Document
                     $originalValue = $this->getOriginalFieldValue('parentId');
                     if ($value !== $originalValue) {
                         if (null !== $value) {
-                            $query['$set']['parentId'] = (int) $this->data['fields']['parentId'];
+                            $query['$set']['parentId'] = (string) $this->data['fields']['parentId'];
                         } else {
                             $query['$unset']['parentId'] = 1;
                         }

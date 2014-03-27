@@ -8,9 +8,9 @@
 namespace PHPOrchestra\CMSBundle\Exception;
 
 /**
- * Exception raised when a require mandango document doesn't exist
+ * Exception raised when the documentLoader is invoqued on an unrecognized document type
  */
-class NonExistingDocumentException extends \Exception
+class UnrecognizedDocumentTypeException extends \Exception
 {
 
 }

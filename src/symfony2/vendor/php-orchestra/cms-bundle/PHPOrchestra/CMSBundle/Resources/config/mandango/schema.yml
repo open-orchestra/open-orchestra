@@ -20,7 +20,7 @@ Model\PHPOrchestraCMSBundle\Node:
         nodeId: string
         nodeType: string
         siteId: integer
-        parentId: integer
+        parentId: string
         path: string
         alias: string
         name: string

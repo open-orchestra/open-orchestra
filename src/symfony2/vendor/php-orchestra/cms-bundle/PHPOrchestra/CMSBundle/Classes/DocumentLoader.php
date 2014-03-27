@@ -7,6 +7,8 @@
 
 namespace PHPOrchestra\CMSBundle\Classes;
 
+use PHPOrchestra\CMSBundle\Exception\UnrecognizedDocumentTypeException;
+
 class DocumentLoader
 {
     /** 
@@ -31,9 +33,9 @@ class DocumentLoader
      */
     private static function getDocumentNamespace($documentType)
     {
-    	$documentNamespace = '';
-    	switch($documentType)
-    	{
+        $documentNamespace = '';
+        switch($documentType)
+        {
             case 'Node':
                 $documentNamespace = 'Model\PHPOrchestraCMSBundle\Node';
                 break;
@@ -41,8 +43,9 @@ class DocumentLoader
                 $documentNamespace = 'Model\PHPOrchestraCMSBundle\Template';
                 break;
             default:
-    			break;
-    	}
-    	return $documentNamespace;
+                throw new UnrecognizedDocumentTypeException('Unrecognized document type : ' . $documentType);
+                break;
+        }
+        return $documentNamespace;
     }
 }
