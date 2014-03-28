@@ -13,6 +13,7 @@ use PHPOrchestra\CMSBundle\Classes\DocumentLoader;
 use PHPOrchestra\CMSBundle\Exception\UnrecognizedDocumentTypeException;
 use Symfony\Component\Routing\RouteCollection;
 use Symfony\Component\Routing\RequestContext;
+use Model\PHPOrchestraCMSBundle\Node;
 
 /**
  * Dynamic routing based on url
@@ -70,43 +71,85 @@ class PhpOrchestraUrlMatcher extends RedirectableUrlMatcher
     {
         $slugs = explode('/', $pathinfo);
         $nodeId = 0;
+        $moduleId = false;
         
         foreach ($slugs as $slug) {
             if ($slug != '') {
-                $nodeId = $this->getNode($slug, $nodeId);
+                $node = $this->getNode($slug, $nodeId);
                 
-                if (!$nodeId)
-                    throw new ResourceNotFoundException();
+                if (!$node) {
+                    if (!$moduleId)
+                        throw new ResourceNotFoundException();
+                    else
+                        return $this->getModuleRoute($moduleId);
+                }
+                else {
+                    $nodeId = $node['id'];
+                    
+                    if ($node['type'] != Node::TYPE_DEFAULT)
+                        $moduleId = $node['id'];
+                }
             }
         }
         
-        return array(
-                "_controller" => 'PHPOrchestra\CMSBundle\Controller\NodeController::showAction',
-                "nodeId" => $nodeId,
-                "_route" => "php_orchestra_cms_node"
-                );
+        return $this->getPageRoute($nodeId);
     }
     
     
     /**
-     * Return the nodeId matching slug and parent nodeId
+     * Route for standard page
+     * 
+     * @param $nodeId
+     */
+    protected function getPageRoute($nodeId)
+    {
+        return array(
+                        "_controller" => 'PHPOrchestra\CMSBundle\Controller\NodeController::showAction',
+                        "nodeId" => $nodeId,
+                        "_route" => "php_orchestra_cms_node"
+                    );
+    }
+    
+    
+    /**
+     * Route for module page
+     * ie with customs parameters at the end of url
+     * 
+     * @param $moduleId
+     */
+    protected function getModuleRoute($moduleId)
+    {
+        return array(
+                        "_controller" => 'PHPOrchestra\CMSBundle\Controller\NodeController::showAction',
+                        "nodeId" => $moduleId,
+                        "_route" => "php_orchestra_cms_module"
+                    );
+    }
+    
+    
+    /**
+     * Return node info related to node matching slug and parent nodeId
+     * Info returned are nodeId and NodeType
      * 
      * @param string $slug
      * @param string $parentId
      */
     protected function getNode($slug, $parentId)
     {
-        $nodeId = false;
+        $nodeInfo = false;
         $criteria = array(
-                        'parentId' => $parentId,
-                        'alias' => $slug
-                        );
-
+                            'parentId' => $parentId,
+                            'alias' => $slug
+                         );
+        
         $node = DocumentLoader::getDocument('Node', $criteria, $this->mandango);
         
         if (!is_null($node))
-            $nodeId = $node->getNodeId();
+            $nodeInfo = array(
+                                'id' => $node->getNodeId(),
+                                'type' => $node->getNodeType()
+                             );
         
-        return $nodeId;
+        return $nodeInfo;
     }
 }
