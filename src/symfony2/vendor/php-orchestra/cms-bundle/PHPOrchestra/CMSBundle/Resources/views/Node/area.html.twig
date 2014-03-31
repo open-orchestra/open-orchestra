@@ -7,28 +7,21 @@
 <fieldset id="{{ area.areaId }}" style="background-color:#98BDE2;border-color:#000000;margin-top:8px;">
     <legend style="background-color:#BADFF4;border:1px solid #000000;">AREA | {{ area.areaId }}</legend>
 {% for subArea in area.subAreas %}
-    {% include "PHPOrchestraCMSBundle:Node:area.html.twig" with {"area" : subArea, "blocks" : blocks, "relatedNodes" : relatedNodes} only %}
+    {% include "PHPOrchestraCMSBundle:Node:area.html.twig" with {"area" : subArea, "blocks" : blocks} only %}
 {% endfor %}
 {% for blockReference in area.blocks %}
     {% set block = false %}
-    {% if blockReference.nodeId == 0 %}
-        {% if blocks.iterator[blockReference.blockId] is defined %}
-            {% set block = blocks.iterator[blockReference.blockId] %}
-        {% endif %}
-    {% else %}
-        {% if relatedNodes[blockReference.nodeId].iterator[blockReference.blockId] is defined %}
-            {% set block = relatedNodes[blockReference.nodeId].iterator[blockReference.blockId] %}
-        {% endif %}
+    {% if blocks[blockReference.nodeId][blockReference.blockId] is defined %}
+        {% set block = blocks[blockReference.nodeId][blockReference.blockId] %}
     {% endif %}
-        <fieldset style="background-color:#3B6691;border-color:#000000;margin-top:8px;">
-    <legend style="background-color:#5D88B3;border:1px solid #000000;">
-        BLOCK | NodeId : {{ blockReference.nodeId }} / 
-        BlockId : {{ blockReference.blockId }}
+    <fieldset style="background-color:#3B6691;border-color:#000000;margin-top:8px;">
+        <legend style="background-color:#5D88B3;border:1px solid #000000;">
+            NodeId : {{ blockReference.nodeId }} BlockId : {{ blockReference.blockId }}
         {% if block %} / <span style="color:#FF0000;">{{ block.component }}</span>{% endif %}
-    </legend>
+        </legend>
     {% if block %}
-        {{ render(controller(block.component, {'block': block.attributes}), {'ignore_errors' : true} ) }}
+        {{ render(controller(block.component, {block : block.attributes}), {'ignore_errors' : true} ) }}
     {% endif %}
-        </fieldset>
+    </fieldset>
 {% endfor %}
 </fieldset>

@@ -18,12 +18,24 @@ class NodeController extends Controller
 {
     
     /**
-     * Cache containing blocks relative to current node
-     * but defined in external Nodes
+     * Cache containing blocks potentially used in current node.
+     * This cache contains all blocks defined in nodes that are mentionned
+     * in block references of the current node.
+     * This is to prevent multiple loading of the same node document
+     * when same external node is linked several times in the current node
      * 
-     * @var Mandango\Group\EmbeddedGroup[]
+     * @var Array
      */
     private $externalBlocks = array();
+    
+    
+    /**
+     * Contains blocks used in the current node,
+     * either defined in current or external node
+     * 
+     * @var Array
+     */
+    private $blocks = array();
     
     
     /**
@@ -42,25 +54,48 @@ class NodeController extends Controller
         
         if (is_array($areas))
             foreach ($areas as $area)
-                $this->getExternalBlocks(new Area($area));
+                $this->getBlocks(new Area($area), $nodeId);
         
-        return $this->render('PHPOrchestraCMSBundle:Node:show.html.twig', array('node' => $node, 'relatedNodes' => $this->externalBlocks));
+        return $this->render('PHPOrchestraCMSBundle:Node:show.html.twig', array('node' => $node, 'blocks' => $this->blocks));
     }
     
     
     /** 
-     * Cache blocks from external Nodes referenced in an area
+     * Get blocks referenced in an area and its subareas
      * 
      * @param Area $area
+     * @param string $currentNodeId
      */
-    protected function getExternalBlocks(Area $area)
+    protected function getBlocks(Area $area, $currentNodeId)
     {
         foreach ($area->getBlockReferences() as $blockReference)
-           if ($blockReference['nodeId'] != 0 && !(isset($this->cacheRelatedNodes[$blockReference['nodeId']])))
-               $this->getBlocksFromNode($blockReference['nodeId']);
+            $this->getBlockWithReference($blockReference, $currentNodeId);
         
         foreach ($area->getSubAreas() as $subArea)
-            $this->getExternalBlocks($subArea);
+            $this->getBlocks($subArea, $currentNodeId);
+    }
+    
+    
+    /**
+     * Get block with matching nodeId/blockId
+     * and set it in the controller
+     * 
+     * @param Array $blockReference
+     * @param string $currentNodeId
+     */
+    protected function getBlockWithReference($blockReference, $currentNodeId)
+    {
+        $realNodeId = $blockReference['nodeId'];
+        if ($realNodeId == 0)
+            $realNodeId = $currentNodeId;
+            
+        if (!(isset($this->externalBlocks[$realNodeId])))
+            $this->getBlocksFromNode($realNodeId);
+        
+        if (isset($this->externalBlocks[$realNodeId][$blockReference['blockId']])) {
+            $this->blocks[$blockReference['nodeId']][$blockReference['blockId']] = $this->externalBlocks[$realNodeId][$blockReference['blockId']];
+            $this->blocks[$blockReference['nodeId']][$blockReference['blockId']]['attributes']['query'] = $this->container->get('request')->query;
+        }
     }
     
     
@@ -71,9 +106,17 @@ class NodeController extends Controller
      */
     protected function getBlocksFromNode($nodeId)
     {
+        $this->externalBlocks[$nodeId] = array();
         $node = DocumentLoader::getDocument('Node', array('nodeId' => $nodeId), $this->container->get('mandango'));
-        if ($node)
-            $this->externalBlocks[$nodeId] = $node->getBlocks();
+        
+        if ($node) {
+            $blocks = $node->getBlocks();
+            if (!is_null($blocks))
+                foreach ($blocks as $key => $block) {
+                    $this->externalBlocks[$nodeId][$key]['component'] = $block->getComponent();
+                    $this->externalBlocks[$nodeId][$key]['attributes'] = $block->getAttributes();
+                }
+        }
     }
     
     
@@ -87,9 +130,9 @@ class NodeController extends Controller
     {
         $mandango = $this->container->get('mandango'); 
         
-        if ($nodeId == 0) {
+        if ($nodeId == 0)
             $node = $mandango->create('Model\PHPOrchestraCMSBundle\Node');
-        } 
+        
         else {
             $node = DocumentLoader::getDocument('Node', array('nodeId' => $nodeId), $this->container->get('mandango'));
             $node->setVersion($node->getVersion() + 1);
@@ -98,8 +141,7 @@ class NodeController extends Controller
         $form = $this->createForm(new NodeType(), $node);
         $form->handleRequest($request);
         
-        if ($form->isValid())
-        {
+        if ($form->isValid()) {
             $node->setId(null);
             $node->setIsNew(true);
             
@@ -123,7 +165,7 @@ class NodeController extends Controller
         $mandango = $this->container->get('mandango');
 
         $nodesRepo = $mandango->getRepository('Model\PHPOrchestraCMSBundle\Node');
-        $nodesRepo->remove();
+//        $nodesRepo->remove();
 
 // Block #1 : Site Menu
         $block1 = $mandango->create('Model\PHPOrchestraCMSBundle\Block')
@@ -201,9 +243,9 @@ class NodeController extends Controller
             
 // Node
         $node = $mandango->create('Model\PHPOrchestraCMSBundle\Node')
-            ->setNodeId(1)
+            ->setNodeId('sample')
             ->setSiteId(1)
-            ->setName('Home site avec ref Repo 0')
+            ->setName('Home site avec ref Repo 0 v10')
             ->setVersion(1)
             ->setLanguage('fr')
             ->addBlocks(array($block1, $block2, $block3, $block4, $block5, $block6, $block7))

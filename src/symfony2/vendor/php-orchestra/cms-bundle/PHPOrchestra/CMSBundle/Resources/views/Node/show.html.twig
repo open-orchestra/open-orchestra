@@ -12,7 +12,7 @@
     <body>
         <div id="orchestra-main">
     {% for area in node.areas %}
-        {% include "PHPOrchestraCMSBundle:Node:area.html.twig" with {"area": area, "blocks": node.blocks, "relatedNodes": relatedNodes} only %}
+        {% include "PHPOrchestraCMSBundle:Node:area.html.twig" with {"area": area, "blocks": blocks} only %}
     {% endfor %}
         </div>
     </body>
