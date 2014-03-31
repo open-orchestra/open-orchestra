@@ -13,6 +13,10 @@ use PHPOrchestra\CMSBundle\Model\Area;
 class jsonToAreasTransformer implements DataTransformerInterface
 {
 
+    const JSON_AREA_TAG = 'area';
+    const PHP_AREA_TAG = 'subAreas';
+    const CLASSES_TAG = 'classes';
+    
     /**
      * Transforms an array of areas to a json string.
      *
@@ -39,13 +43,13 @@ class jsonToAreasTransformer implements DataTransformerInterface
      */
     protected function adaptArea($area)
     {
-        $area['classes'] = implode(',', $area['classes']);
+        $area[self::CLASSES_TAG] = implode(',', $area[self::CLASSES_TAG]);
         
-        if (isset($area['subAreas']))
-            foreach ($area['subAreas'] as $key => $subAreas)
-                $area['area'][$key] = $this->adaptArea($subAreas);
+        if (isset($area[self::PHP_AREA_TAG]))
+            foreach ($area[self::PHP_AREA_TAG] as $key => $subAreas)
+                $area[self::JSON_AREA_TAG][$key] = $this->adaptArea($subAreas);
         
-        unset($area['subAreas']);
+        unset($area[self::PHP_AREA_TAG]);
         
         return $area;
     }
@@ -78,13 +82,13 @@ class jsonToAreasTransformer implements DataTransformerInterface
      */
     protected function reverseAdaptArea($area)
     {
-        $area['classes'] = explode(',', $area['classes']);
+        $area[self::CLASSES_TAG] = explode(',', $area[self::CLASSES_TAG]);
         
-        if (isset($area['area']))
-            foreach ($area['area'] as $key => $subAreas)
-                $area['subAreas'][$key] = $this->reverseAdaptArea($subAreas);
+        if (isset($area[self::JSON_AREA_TAG]))
+            foreach ($area[self::JSON_AREA_TAG] as $key => $subAreas)
+                $area[self::PHP_AREA_TAG][$key] = $this->reverseAdaptArea($subAreas);
         
-        unset($area['area']);
+        unset($area[self::JSON_AREA_TAG]);
         
         return $area;
     }
