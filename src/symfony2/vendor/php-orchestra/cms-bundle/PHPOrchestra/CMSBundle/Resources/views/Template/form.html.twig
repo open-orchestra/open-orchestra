@@ -21,9 +21,9 @@
 
     </head>
     <body>
-    {% if form.vars.showDialog %}
-        {% form_theme form 'PHPOrchestraCMSBundle:Form:orchestra_model.html.twig' %}
-        {% include 'PHPOrchestraCMSBundle:Template:dialog.html.twig' %}
+    {% if form.vars.dialogPath != '' %}
+        {% form_theme form 'PHPOrchestraCMSBundle:Template:Form/extend.html.twig' %}
+        {% include 'PHPOrchestraCMSBundle:Template:Dialog/template.html.twig' %}
         <div id="{{ form.vars.name }}-model"></div>
         <script>
         $(document).ready(function(){

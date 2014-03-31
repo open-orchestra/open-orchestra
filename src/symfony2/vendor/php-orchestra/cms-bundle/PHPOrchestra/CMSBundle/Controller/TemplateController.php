@@ -15,62 +15,6 @@ use PHPOrchestra\CMSBundle\Classes\DocumentLoader;
 
 class TemplateController extends Controller
 {
-
-    
-    /**
-     * Cache containing blocks defined in external Nodes
-     * 
-     * @var Mandango\Group\EmbeddedGroup[]
-     */
-    private $externalBlocks = array();
-    
-    
-    /**
-     * Render Template
-     * 
-     * @param int $templateId
-     * @return Response
-     */
-    public function showAction($templateId)
-    { 
-        $template = DocumentLoader::getDocument('Template', array('templateId' => (int)$templateId), $this->container->get('mandango'));
-        $areas = $template->getAreas();
-        $this->externalBlocks = array();
-        
-        if (is_array($areas))
-            foreach ($areas as $area)
-                $this->getExternalBlocks(new Area($area));
-        
-        return $this->render('PHPOrchestraCMSBundle:Template:show.html.twig', array('template' => $template, 'relatedNodes' => $this->externalBlocks));
-    }
-    
-    
-    /** 
-     * Cache blocks from external Nodes referenced in an area
-     * 
-     * @param Area $area
-     */
-    protected function getExternalBlocks(Area $area)
-    {
-        foreach ($area->getBlockReferences() as $blockReference)
-           if ($blockReference['nodeId'] != 0 && !(isset($this->cacheRelatedNodes[$blockReference['nodeId']])))
-               $this->getBlocksFromNode($blockReference['nodeId']);
-            
-        foreach ($area->getSubAreas() as $subArea)
-            $this->getExternalBlocks($subArea);
-    }
-    
-    
-    /**
-     * Cache blocks from specific Node
-     * 
-     * @param int $templateId
-     */
-    protected function getBlocksFromNode($nodeId)
-    {
-        $node = DocumentLoader::getDocument('Node', array('nodeId' => $nodeId), $this->container->get('mandango'));
-        $this->externalBlocks[$nodeId] = $nodes->getBlocks();
-    }
 	
     /**
      * 
@@ -92,7 +36,7 @@ class TemplateController extends Controller
             $template->setLanguage('fr');
         }
         
-        $form = $this->createForm(new TemplateType(), $template, array('showDialog' => true));
+        $form = $this->createForm(new TemplateType(), $template, array('dialogPath' => 'PHPOrchestraCMSBundle:Template:Dialog'));
         $form->handleRequest($request);
         if ($form->isValid())
         {

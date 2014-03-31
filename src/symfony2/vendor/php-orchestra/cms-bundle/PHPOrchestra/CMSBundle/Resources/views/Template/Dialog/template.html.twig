@@ -1,0 +1,6 @@
+<div class="dialog-node" style="display:none;" title="Node">
+    {{ form(form) }}
+</div>
+<script>
+    $( ".dialog-node" ).dialog($.extend(dialog_parameter, {"addArray" : ['areas'], 'label' : '$(this).find("#template_name").val()'}));
+</script>

@@ -32,15 +32,15 @@ class TemplateType extends AbstractType
             ->add('status', 'orchestra_status')
             ->add('boDirection', 'orchestra_direction')
             ->add('templateId', 'hidden')
-            ->add('areas', 'orchestra_areas', array('showDialog' => $options['showDialog']))
-            ->add('blocks', 'orchestra_blocks', array('showDialog' => $options['showDialog']))
+            ->add('areas', 'orchestra_areas', array('dialogPath' => $options['dialogPath'], 'attr' => array('class' => 'not-mapped')))
+            ->add('blocks', 'orchestra_blocks', array('dialogPath' => $options['dialogPath'], 'attr' => array('class' => 'not-mapped')))
             ->add('save', 'submit');
             ;
     }
     
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
-        $view->vars['showDialog'] = $options['showDialog'];
+        $view->vars['dialogPath'] = $options['dialogPath'];
     }
     
     /**
@@ -49,7 +49,7 @@ class TemplateType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'showDialog' => false
+            'dialogPath' => ''
         ));
     }
     

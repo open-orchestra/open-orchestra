@@ -1,3 +1,69 @@
+function formatForSubmit(settings){
+	if(!('blocks' in settings.values)){
+		settings.values.blocks = [];
+	}
+	treeFormatForSubmit(settings, settings.values);
+	if('areas' in settings.values){
+        $("#template_areas").val(JSON.stringify(settings.values.areas));
+    }
+    if('blocks' in settings.values){
+        $("#template_blocks").val(JSON.stringify(settings.values.blocks));
+    }
+}
+function treeFormatForSubmit(settings, values){
+	if('blocks' in values){
+		for(var i in values.blocks){
+			delete values.blocks[i].method;
+			delete values.blocks[i].label;
+			if(!('nodeId' in values.blocks[i])){
+				if('component' in values.blocks[i]){
+					var newBlock = {'component': values.blocks[i].component};
+					delete values.blocks[i].component;
+					newBlock.attributes = values.blocks[i];
+					settings.values.blocks.push(newBlock);
+					values.blocks[i] = {'nodeId': 0, 'blockId': settings.values.blocks.length - 1};
+				}
+			}
+		}
+	}
+	else if('areas' in values){
+		for(var i in values.areas){
+			treeFormatForSubmit(settings, values.areas[i]);
+		}
+	}
+}
+
+function formatForLoad(settings){
+	settings.values.areas = eval($("#template_areas").val());
+	settings.values.blocks = eval($("#template_blocks").val());
+	treeFormatForLoad(settings, settings.values);
+	delete settings.values.blocks;
+}
+function treeFormatForLoad(settings, values){
+	if('blocks' in values){
+		for(var i in values.blocks){
+			if(values.blocks[i].nodeId == 0){
+				var refBlock = settings.blocks[values.blocks[i].blockId];
+				values.blocks[i] = $.extend({
+						'method': 'create',
+						'label': 'Hummm...',
+						'component': refBlock.component}, refBlock.attributes);
+				delete refBlock;
+			}
+			else{
+				values.blocks[i] = $.extend({
+					'method': 'load',
+					'label': 'Hummm...'}, values.blocks[i]);
+			}
+		}
+	}
+	else if('areas' in values){
+		for(var i in values.areas){
+			treeFormatForLoad(settings, values.areas[i]);
+		}
+	}
+}
+
 var dialog_parameter = {
         resizable: false,
         width:530,
@@ -6,7 +72,7 @@ var dialog_parameter = {
         open: function ( event, ui) {
             var data = $(this).data();
             var found = false;
-            var buttons = $(this).dialog("option", "allbuttons");
+            var buttons = $.extend({}, $(this).dialog("option", "allbuttons"));
             var addArray = $(this).dialog("option", "addArray");
             for(var i in addArray){
                 if(addArray[i] in data.this_values){
@@ -33,12 +99,7 @@ var dialog_parameter = {
             $(this).find("[type='submit']").each(function(){
             	$(this).hide();
             	buttons["Send"] = function(){
-	                if('area' in data.settings.values){
-	                    $("#template_areas").val(JSON.stringify(data.settings.values.area));
-	                }
-	                if('block' in data.settings.values){
-	                    $("#template_blocks").val(JSON.stringify(data.settings.values.block));
-	                }
+	                formatForSubmit(data.settings);
 	                $("form[name='template']").submit();
 	                $(this).dialog( "close" );
 	           }
@@ -98,8 +159,7 @@ var dialog_parameter = {
 		var this_values = eval('settings.' + settings.path);
 		if(settings.init){
 		    $( ".dialog-node" ).find(":input").getValue(this_values);
-		    this_values.area = eval(this_values.areas);
-		    this_values.block = eval(this_values.blocks);
+		    formatForLoad(settings);
 		    delete settings.init;
 		}
 		var span = $( "<span/>", {"class": settings.css, "text": (this_values.label) ? this_values.label : 'No Record'});
@@ -217,7 +277,9 @@ var dialog_parameter = {
     	}
     	else if($(this).length == 1){
 	        var id = $(this).attr( "id" ).replace(pre, '');
-	        values[id] = $(this).val();
+	        if(!$(this).hasClass('not-mapped')){
+	        	values[id] = $(this).val();
+	        }
     	}
     }
     $.fn.setValue = function(values, pre){
@@ -228,7 +290,7 @@ var dialog_parameter = {
     	});
         for(var id in values){
         	var obj = $(this).find('#' + pre + id);
-        	if(obj.length){
+        	if(obj.length && !obj.hasClass('not-mapped')){
         		obj.val(values[id]);
         		obj.change();
         	}

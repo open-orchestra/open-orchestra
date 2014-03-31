@@ -1,0 +1,13 @@
+{% block orchestra_areas_widget %}
+    {% if form.vars.dialogPath != '' %}
+        {% include form.vars.dialogPath %}
+    {% endif %}
+    {{ form_widget(form) }}
+{% endblock %}
+
+{% block orchestra_blocks_widget %}
+    {% if form.vars.dialogPath %}
+        {% include form.vars.dialogPath %}
+    {% endif %}
+    {{ form_widget(form) }}
+{% endblock %}

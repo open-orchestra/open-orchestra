@@ -50,15 +50,14 @@ class BlocksType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'showDialog' => false
+            'dialogPath' => false
         ));
     }
     
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
-    	$view->vars['showDialog'] = $options['showDialog'];
-    	if($options['showDialog']){
-            $view->vars['dialog'] = 'PHPOrchestraCMSBundle:Block:dialog.html.twig';
+    	if($options['dialogPath'] != ''){
+            $view->vars['dialogPath'] = $options['dialogPath'].'/block.html.twig';
     	}
     }
     
