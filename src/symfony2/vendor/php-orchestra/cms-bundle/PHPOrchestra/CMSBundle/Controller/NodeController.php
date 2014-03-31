@@ -53,10 +53,9 @@ class NodeController extends Controller
         $this->externalBlocks = array();
         
         if (is_array($areas))
-            foreach ($areas as $area) {
-print_r($area);
-            	$this->getBlocks(new Area($area), $nodeId);
-            }
+            foreach ($areas as $area)
+                $this->getBlocks(new Area($area), $nodeId);
+        
         return $this->render('PHPOrchestraCMSBundle:Node:show.html.twig', array('node' => $node, 'blocks' => $this->blocks));
     }
     
