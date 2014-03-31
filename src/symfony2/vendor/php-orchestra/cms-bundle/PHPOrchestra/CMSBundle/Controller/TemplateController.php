@@ -24,7 +24,7 @@ class TemplateController extends Controller
      */
     private $externalBlocks = array();
     
-
+    
     /**
      * Render Template
      * 
@@ -40,7 +40,7 @@ class TemplateController extends Controller
         if (is_array($areas))
             foreach ($areas as $area)
                 $this->getExternalBlocks(new Area($area));
-
+        
         return $this->render('PHPOrchestraCMSBundle:Template:show.html.twig', array('template' => $template, 'relatedNodes' => $this->externalBlocks));
     }
     
@@ -96,6 +96,9 @@ class TemplateController extends Controller
         $form->handleRequest($request);
         if ($form->isValid())
         {
+            $template->setId(null);
+            $template->setIsNew(true);
+            
             $template->save();
             return $this->redirect($this->generateUrl('php_orchestra_cms_templateform', array('templateId' => $template->getTemplateId())));
         }

@@ -86,17 +86,23 @@ class NodeController extends Controller
     public function formAction($nodeId, Request $request)
     {
         $mandango = $this->container->get('mandango'); 
-
-        if ($nodeId == 0)
+        
+        if ($nodeId == 0) {
             $node = $mandango->create('Model\PHPOrchestraCMSBundle\Node');
-        else
+        } 
+        else {
             $node = DocumentLoader::getDocument('Node', array('nodeId' => $nodeId), $this->container->get('mandango'));
-                
+            $node->setVersion($node->getVersion() + 1);
+        }
+            
         $form = $this->createForm(new NodeType(), $node);
         $form->handleRequest($request);
         
         if ($form->isValid())
         {
+            $node->setId(null);
+            $node->setIsNew(true);
+            
             $node->save();
             
             return $this->redirect($this->generateUrl('php_orchestra_cms_node', array('nodeId' => $node->getNodeId())));
