@@ -20,3 +20,10 @@ php_orchestra_cms_node:
 #    requirements:
 #        nodeId: \w+
 
+php_orchestra_ajax_show_all_nodes:
+  pattern:  /nodes/
+  defaults: { _controller: PHPOrchestraCMSBundle:Blocks:showAllNodes }
+  
+php_orchestra_ajax_show_blocks_from_node:
+  pattern:  /nodeblocks
+  defaults: { _controller: PHPOrchestraCMSBundle:Blocks:showBlocksFromNode }

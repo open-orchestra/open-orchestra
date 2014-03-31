@@ -1,7 +1,63 @@
-<div class="dialog-blocks" style="display:none;" title="Block">
-    <label for="component">Component : </label><input type="text" name="component" id="component" value=""><br />
-    <label for="customAttribute">Custom Attributes : </label><input type="text" name="customAttributes" id="customAttributes" value=""><br />
+<div class="dialog-block" style="display:none;" title="Block">
+    <label for"method">Choose a method</label>
+    <select name="method" id="method">
+        <option value="">-----</option>
+        <option value="create">Create New</option>
+        <option value="load">Load Existing</option>
+    </select>
+    <div class="dialog-form"></div>
 </div>
 <script>
-    $( ".dialog-blocks" ).dialog($.extend(dialog_parameter, {"addArray" : []}));
+    function refreshForm(obj){
+        var container =  $('.dialog-block .dialog-form');
+        container.html('');
+        if(obj.val() == 'create'){
+            var blocks = {{ render(controller('PHPOrchestraCMSBundle:Blocks:showAllBlocks')) }};
+            var div = $( "<div/>", {"id": "subForm"});
+            var select = container.createSelect("Choose a block", "component", blocks, "action", "alias");
+            $( ".dialog-block" ).dialog({'label' : '$(this).find("#component :selected").text()'});
+            div.appendTo(container);
+            select.change(function(){
+                if($(this).val()){
+                    for(var i in blocks){
+                        if($(this).val() == blocks[i].action){
+                            div.html(blocks[i].form)
+                        }
+                    }
+                }
+            });
+        }
+        else if(obj.val() == 'load'){
+            $.ajax({
+                'type': 'POST',
+                'url': '{{path('php_orchestra_ajax_show_all_nodes')}}',
+                'success': function(response){
+                    var select = container.createSelect("Choose a node", "nodeId", response.data, "nodeId", "name");
+                    select.change(function(){
+                        if($(this).val()){
+                            $.ajax({
+                                'type': 'POST',
+                                'url': '{{path('php_orchestra_ajax_show_blocks_from_node')}}',
+                                'success': function(response){
+                                    var select = container.createSelect("Choose a block", "blockId", response.data, "blockId", "name");
+                                    $( ".dialog-block" ).dialog({'label' : '$(this).find("#blockId :selected").text()'});
+                                },
+                                'data': {'nodeId' : $(this).val()},
+                                'dataType': 'json',
+                                'async': false
+                            });
+                        }
+                    });
+                },
+                'dataType': 'json',
+                'async': false
+            });
+        }
+    }
+    $( ".dialog-block" ).dialog($.extend(dialog_parameter, {"addArray" : []}));
+    $(document).ready(function() {
+        $(".dialog-block select[name='method']").change(function(){
+            refreshForm($(this));
+        });
+    });
 </script>

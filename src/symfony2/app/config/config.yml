@@ -74,16 +74,3 @@ mandango:
         local:
             server:   mongodb://localhost:27017
             database: symfony2_local_%kernel.environment%
-
-parameters:
-    status:
-        STATUS_DRAFT: draft
-        STATUS_PENDING: pending
-        STATUS_PUBLISHED: published
-    language:
-        fr: Français
-        en: English
-    direction:
-        h: Horizontal
-        v: Vertical
-        

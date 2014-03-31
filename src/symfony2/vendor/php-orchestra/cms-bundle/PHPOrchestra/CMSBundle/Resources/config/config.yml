@@ -4,3 +4,21 @@ parameters:
     router.options.matcher_class : 'PHPOrchestra\CMSBundle\Routing\PhpOrchestraUrlMatcher'
     router.options.matcher_base_class : 'PHPOrchestra\CMSBundle\Routing\PhpOrchestraUrlMatcher'
     router.options.matcher.cache_class : null
+    
+    php_orchestra.orchestra_choice.status:
+        STATUS_DRAFT: draft
+        STATUS_PENDING: pending
+        STATUS_PUBLISHED: published
+    php_orchestra.orchestra_choice.language:
+        fr: Français
+        en: English
+    php_orchestra.orchestra_choice.direction:
+        h: Horizontal
+        v: Vertical
+    php_orchestra.blocks:
+        show0 BlockExample: 
+            action: "PHPOrchestraCMSBundle:BlockExample:show0"
+            form: "PHPOrchestraCMSBundle:BlockExample:form0"
+        show1 BlockExample: 
+            action: "PHPOrchestraCMSBundle:BlockExample:show1"
+            form: "PHPOrchestraCMSBundle:BlockExample:form1"

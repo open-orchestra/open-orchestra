@@ -58,8 +58,8 @@ class Area
         if (isset($importArray['boDirection']))
           $this->boDirection = $importArray['boDirection'];
 		  
-        if (isset($importArray['classes']) && is_array($importArray['classes']))
-		  $this->classes = $importArray['classes'];
+        if (isset($importArray['classes']))
+		  $this->classes = explode(',', $importArray['classes']);
 		           
 		if (isset($importArray['subAreas']) && is_array($importArray['subAreas']))
 		  foreach($importArray['subAreas'] as $subArea)
@@ -125,7 +125,7 @@ class Area
      */
     public function getClasses()
     {
-    	return $this->classes;
+    	return implode(',', $this->classes);
     }
     
     /**

@@ -26,6 +26,21 @@ class DocumentLoader
         return $query->one();
     }
     
+    /** 
+    * Get MongoDB documents giving their type and search citerias
+    * 
+    * @param string $documentType
+    * @param array $criteria
+    * @param Mandango $mandangoService
+    */
+    static function getDocuments($documentType, array $criteria, $mandangoService)
+    {
+        $repository = $mandangoService->getRepository(self::getDocumentNamespace($documentType));
+        $query = $repository->createQuery();
+        $query->criteria($criteria);
+        return $query->all();
+    }
+    
     /**
      * Get documentType model namespace
      * 

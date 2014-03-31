@@ -1,11 +1,6 @@
 {% block orchestra_areas_widget %}
     {% if form.vars.showDialog %}
         {% include dialog %}
-        <script>
-        $(document).ready(function(){
-            $('#{{ form.parent.vars.name }}-model').data({"{{ form.vars.name }}": {{ value|raw }}});
-        });
-        </script>
     {% endif %}
     {{ form_widget(form) }}
 {% endblock %}
@@ -13,11 +8,6 @@
 {% block orchestra_blocks_widget %}
     {% if form.vars.showDialog %}
         {% include dialog %}
-        <script>
-        $(document).ready(function(){
-            $('#{{ form.parent.vars.name }}-model').data({"{{ form.vars.name }}": {{ value|raw }}});
-        });
-        </script>
     {% endif %}
     {{ form_widget(form) }}
 {% endblock %}

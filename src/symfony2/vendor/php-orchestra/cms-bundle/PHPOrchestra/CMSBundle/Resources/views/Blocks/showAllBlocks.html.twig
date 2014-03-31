@@ -1,0 +1,8 @@
+[
+{% for alias,parameter in blocks %}
+{% set arr = {'alias': alias,
+                        'form': render(controller(parameter.form, { 'type' : 'form'})), 
+                        'action':  parameter.action} %}
+{{ arr|json_encode()|raw }},                        
+{% endfor %}
+]

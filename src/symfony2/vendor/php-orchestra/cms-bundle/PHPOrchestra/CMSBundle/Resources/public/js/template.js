@@ -33,25 +33,26 @@ var dialog_parameter = {
             $(this).find("[type='submit']").each(function(){
             	$(this).hide();
             	buttons["Send"] = function(){
-	                if('areas' in data.settings.values){
-	                    $("#template_areas").val(JSON.stringify(data.settings.values.areas));
+	                if('area' in data.settings.values){
+	                    $("#template_areas").val(JSON.stringify(data.settings.values.area));
 	                }
-	                if('blocks' in data.settings.values){
-	                    $("#template_blocks").val(JSON.stringify(data.settings.values.blocks));
+	                if('block' in data.settings.values){
+	                    $("#template_blocks").val(JSON.stringify(data.settings.values.block));
 	                }
 	                $("form[name='template']").submit();
 	                $(this).dialog( "close" );
 	           }
             });
             $(this).dialog("option", "buttons", buttons);
-            $(this).find(":input").setValue(data.this_values);
+            $(this).setValue(data.this_values);
         },
         allbuttons: {
             "Apply": function() {
                 var data = $(this).data();
-                $(this).find(":input").getValue(data.this_values);
+                $(this).find(":input").not('button').getValue(data.this_values);
+                data.this_values.label = eval($(this).dialog("option", "label"));
                 $(this).dialog( "close" );
-            }
+            },
         },
         close: function ( event, ui) {
             var data = $(this).data();
@@ -85,27 +86,53 @@ var dialog_parameter = {
 			"css": "ui-widget-model"
 		}, options || {});
 
+		var actions = ['delete', 'movedown', 'moveup'];
 		if(settings.path == null){
 			settings.element = this;
 			settings.path = "values";
 			settings.type = "node";
 			settings.style = '';
 			settings.element.html('');
+			actions = [];
 		}
-		
 		var this_values = eval('settings.' + settings.path);
-		var title = '';
-		if(settings.type == "node"){
+		if(settings.init){
 		    $( ".dialog-node" ).find(":input").getValue(this_values);
-			title = (this_values.name) ? this_values.name : 'No Template Name';
+		    this_values.area = eval(this_values.areas);
+		    this_values.block = eval(this_values.blocks);
+		    delete settings.init;
 		}
-		else if(settings.type == "areas"){
-			title = (this_values.areaId) ? this_values.areaId : 'No HTML ID';
+		var span = $( "<span/>", {"class": settings.css, "text": (this_values.label) ? this_values.label : 'No Record'});
+		for(var i in actions){
+			var action = $( "<span/>", {"class": "action " + actions[i], "text": actions[i]});
+			action.appendTo(span);
+			action.click(function(event){
+				event.stopPropagation();
+				var pattern = new RegExp('^(.*)\\.(.*?)\\[(\\d*)]$');
+				var source = null;
+				eval(settings.path.replace(pattern, 'source = {"path" : "$1", "type" : "$2", "index" : $3};'));
+				if($(this).attr("class").indexOf("delete") >= 0){
+					eval('settings.' + source.path + '.' + source.type + '.splice(' + source.index + ', 1)');
+				}
+				else if($(this).attr("class").indexOf("moveup") >= 0){
+					eval('var tab = settings.' + source.path + '.' + source.type);
+					if(source.index > 0){
+						var tmp = tab[source.index - 1];
+						tab[source.index - 1] = tab[source.index];
+						tab[source.index] = tmp;
+					}
+				}
+				else if($(this).attr("class").indexOf("movedow") >= 0){
+					eval('var tab = settings.' + source.path + '.' + source.type);
+					if(source.index < tab.length - 1){
+						var tmp = tab[source.index + 1];
+						tab[source.index + 1] = tab[source.index];
+						tab[source.index] = tmp;
+					}
+				}
+				settings.element.parseTemplate($.extend(settings, {"path": null}));
+			});
 		}
-		else if(settings.type == "blocks"){
-			title = (this_values.component) ? this_values.component : 'No Controller';
-		}
-		var span = $( "<span/>", {"class": settings.css, "text": title});
 		var div = $( "<div/>", {"class": settings.css});
 		var li = $( "<li/>", {"class": settings.css, "css": settings.style});
 		var ul = $( "<ul/>", {"class": settings.css});
@@ -113,69 +140,56 @@ var dialog_parameter = {
 		div.appendTo(li);
 
 		div.mouseover(function(event){
-			$(this).addClass('over');
 			event.stopPropagation();
+			$(this).addClass('over');
 		});
 		div.mouseout(function(){
 			$(this).removeClass('over');
 		});
 		div.click(function(event){
 			event.stopPropagation();
-			var type = settings.type;
-			$( ".dialog-" + type ).data("settings", settings);
-			$( ".dialog-" + type ).data("this_values", this_values);
-			$( ".dialog-" + type ).dialog( "open" );
+			$( ".dialog-" + settings.type ).data("settings", settings);
+			$( ".dialog-" + settings.type ).data("this_values", this_values);
+			$( ".dialog-" + settings.type ).dialog( "open" );
 		});
-		ul.addClass(settings.css + '-' + 'none');
 		for(var i in this_values){
 			if(Array.isArray(this_values[i]) && this_values[i].length > 0){
 				ul.addClass(settings.css + '-' + i);
 				$.createSubTemplate(settings, i, ul);
 				ul.children().addClass(settings.css + '-' + i);
-				ul.removeClass(settings.css + '-' + 'none');
 			}
 		}
-		ul.appendTo(div);
-		ul.data('path', settings.path);
+		if($( ".dialog-" + settings.type ).dialog("option", "addArray").length){
+			ul.appendTo(div);
+			ul.data('path', settings.path);
+		}
 		if(settings.path == "values"){
 			ul = $( "<ul/>", {"class": settings.css + ' ' + settings.css + '-' + 'node',
 				"css": {"display": settings.style}});
 			li.appendTo(ul);
-			ul.appendTo(this);
-			$('ul.' + settings.css + '-' + 'areas, ul.' + settings.css + '-' + 'blocks, ul.' + settings.css + '-' + 'none').parent().droppable({
+			ul.appendTo($(this));
+			$('ul.' + settings.css).parent().droppable({
 				greedy: true,
 				tolerance: "pointer",
 				hoverClass: 'over',
 				drop : function(event, ui){
-					var this_values = eval('settings.' + $(this).find('ul').data('path'));
-					var move = eval('settings.' + ui.draggable.data('path'));
-					if("blockId" in move){
-						this_values.blocks.push(move);
-					}
-					else{
-						this_values.areas.push(move);
-					}
-					var pattern = new RegExp('^(.*)\\[(\\d*)]$');
+					var pattern = new RegExp('^(.*)\\.(.*?)\\[(\\d*)]$');
+					var target = eval('settings.' + $(this).find('ul').data('path'));
 					var path = 'settings.' + ui.draggable.data('path');
-					eval(path.replace(pattern, '$1.splice($2, 1);'));
+					var source = null;
+					eval(path.replace(pattern, 'source = {"path" : "$1", "type" : "$2", "index" : $3};'));
+					if(!(source.type in target)){
+						target[source.type] = new Array();
+					}
+					target[source.type].push(eval(path));
+					eval(source.path + '.' + source.type + '.splice(' + source.index + ', 1)');
 					settings.element.parseTemplate($.extend(settings, {"path": null}));
 				},
-				deactivate : function(){
+				accept: function(event){
+					return event.attr("class").indexOf($(this).children('ul').attr("class")) >= 0;
 				}
 			});
-			$('ul.' + settings.css + '-' + 'areas').parent().droppable({
-				accept: 'li.' + settings.css + '-' + 'areas',
-			});
-			$('ul.' + settings.css + '-' + 'none').parent().droppable({
-				accept: 'li.' + settings.css + '-' + 'areas, li.' + settings.css + '-' + 'blocks',
-			});
-			$('ul.' + settings.css + '-' + 'blocks').parent().droppable({
-				accept: 'li.' + settings.css + '-' + 'blocks',
-			});
-		}
-		else{
-			li.data('path', settings.path);
-			li.draggable({
+			$('li.' + settings.css).draggable({
 				opacity: 0.5,
 				containment: settings.element,
 				drag: function(event, ui){
@@ -184,33 +198,51 @@ var dialog_parameter = {
 				}
 			});
 		}
+		else{
+			li.data('path', settings.path);
+		}
 		return li;
 	}
     $.fn.getValue = function(values, pre){
     	if($(this).length > 1){
             var pre = ($(this).parents("form").length) ? $(this).parents("form").attr("name") + '_' : '';
+            for(var i in values){
+            	if(typeof values[i] != 'object'){
+            		delete values[i];
+            	}
+            }
 	    	$(this).each(function(){
 	    		$(this).getValue(values, pre);
 	    	});
     	}
-    	else{
+    	else if($(this).length == 1){
 	        var id = $(this).attr( "id" ).replace(pre, '');
 	        values[id] = $(this).val();
     	}
     }
     $.fn.setValue = function(values, pre){
-    	if($(this).length > 1){
-            var pre = ($(this).parents("form").length) ? $(this).parents("form").attr("name") + '_' : '';
-	    	$(this).each(function(){
-	    		$(this).setValue(values, pre);
-	    	});
-    	}
-    	else{
-	        var id = $(this).attr( "id" ).replace(pre, '');
-	        $(this).val('');
-	        if(id in values){
-	            $(this).val(values[id]);
-	        }
-    	}
+        var pre = ($(this).find("form").length) ? $(this).find("form").attr("name") + '_' : '';
+        $(this).find(":input").each(function(){
+    		$(this).val('');
+    		$(this).change();
+    	});
+        for(var id in values){
+        	var obj = $(this).find('#' + pre + id);
+        	if(obj.length){
+        		obj.val(values[id]);
+        		obj.change();
+        	}
+        }
     }
+    $.fn.createSelect = function(label, id, values, value_key, value_label){
+        var select = $( "<select/>", {"id": id});
+        $( "<option/>", {"value": "", "text": "--------"}).appendTo(select);
+        for(var i in values){
+            $( "<option/>", {"value": values[i][value_key], "text": values[i][value_label]}).appendTo(select);
+        }
+        $( "<label/>", {"text": label}).appendTo($(this));
+        select.appendTo($(this));
+        return select;
+    }
+
 })(jQuery);

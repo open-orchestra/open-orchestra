@@ -20,6 +20,24 @@ span.ui-widget-model{
     font:12px arial,sans-serif;
     line-height:20px;
 }
+.ui-widget-model span.action{
+	float:right;
+	display:block;
+	width:20px;
+	height:20px;
+	overflow:hidden;
+	line-height:100px;
+	cursor:pointer;
+}
+.ui-widget-model span.action.moveup{
+	background:url('../images/moveup.png') no-repeat center center;
+}
+.ui-widget-model span.action.movedown{
+    background:url('../images/movedown.png') no-repeat center center;
+}
+.ui-widget-model span.action.delete{
+    background:url('../images/delete.png') no-repeat center center;
+}
 div.ui-widget-model{
     position:absolute;
     border-radius: 8px;
@@ -31,10 +49,10 @@ div.ui-widget-model{
     right:20px;
     border:1px #000000 solid;
 }
-.ui-widget-model-areas div.ui-widget-model{
+.ui-widget-model-area div.ui-widget-model{
     border: 1px #0000ff solid;
 }
-.ui-widget-model-blocks div.ui-widget-model{
+.ui-widget-model-block div.ui-widget-model{
     border: 1px #00ff00 solid;
 }
 div.ui-widget-model.over{

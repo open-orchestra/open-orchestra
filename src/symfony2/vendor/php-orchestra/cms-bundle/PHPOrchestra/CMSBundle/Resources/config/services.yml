@@ -17,7 +17,7 @@ services:
     php_orchestra_cms.type.status:
         class: PHPOrchestra\CMSBundle\Form\Type\StatusType
         arguments: 
-            - "%status%"
+            - "%php_orchestra.orchestra_choice.status%"
         tags:
             - { name: form.type, alias: orchestra_status }
 
@@ -25,7 +25,7 @@ services:
     php_orchestra_cms.type.language:
         class: PHPOrchestra\CMSBundle\Form\Type\LanguageType
         arguments: 
-            - "%language%"
+            - "%php_orchestra.orchestra_choice.language%"
         tags:
             - { name: form.type, alias: orchestra_language }
 
@@ -33,6 +33,6 @@ services:
     php_orchestra_cms.type.direction:
         class: PHPOrchestra\CMSBundle\Form\Type\DirectionType
         arguments: 
-            - "%direction%"
+            - "%php_orchestra.orchestra_choice.direction%"
         tags:
             - { name: form.type, alias: orchestra_direction }
