@@ -51,9 +51,12 @@ class PhpOrchestraUrlMatcher extends RedirectableUrlMatcher
      */
     public function match($pathinfo)
     {
-        try {
+        try
+        {
             $parameters = parent::match($pathinfo);
-        } catch (ResourceNotFoundException $e) {            
+        }
+        catch (ResourceNotFoundException $e)
+        {            
             $parameters = $this->dynamicMatch($pathinfo);
         }
         
@@ -74,6 +77,7 @@ class PhpOrchestraUrlMatcher extends RedirectableUrlMatcher
         $moduleId = false;
         
         foreach ($slugs as $slug) {
+            
             if ($slug != '') {
                 $node = $this->getNode($slug, $nodeId);
                 
@@ -138,7 +142,7 @@ class PhpOrchestraUrlMatcher extends RedirectableUrlMatcher
     {
         $nodeInfo = false;
         $criteria = array(
-                            'parentId' => $parentId,
+                            'parentId' => (string)$parentId,
                             'alias' => $slug
                          );
         

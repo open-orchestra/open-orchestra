@@ -9,74 +9,74 @@ namespace PHPOrchestra\CMSBundle\Model;
 
 class Area
 {
-	/**
-	 * html identifier
-	 * 
-	 * @var string
-	 */
-	private $id = null;
-	
+    /**
+     * html identifier
+     * 
+     * @var string
+     */
+    private $id = null;
+    
     /**
      * bo direction (horizontal, vertical)
      * 
      * @var string
      */
     private $boDirection = null;
-	
-	/**
-	 * html classes
-	 * 
-	 * @var string[]
-	 */
-	private $classes = array();
-	
-	/**
-	 * sub areas
-	 * 
-	 * @var Area[]
-	 */
-	private $subAreas = array();
-	
-	/**
-	 * References array to blocks defined in external nodes  
-	 * 
-	 * @var array
-	 */
-	private $blockReferences = array();
-	
-	
-	/**
-	 * Constructor
-	 * 
-	 * @param array $importArray
-	 */
-	public function __construct(array $importArray = array())
-	{
-		if (isset($importArray['areaId']))
-		  $this->id = $importArray['areaId'];
-		           
+    
+    /**
+     * html classes
+     * 
+     * @var string[]
+     */
+    private $classes = array();
+    
+    /**
+     * sub areas
+     * 
+     * @var Area[]
+     */
+    private $subAreas = array();
+    
+    /**
+     * References array to blocks defined in external nodes
+     * 
+     * @var array
+     */
+    private $blockReferences = array();
+    
+    
+    /**
+     * Constructor
+     * 
+     * @param array $importArray
+     */
+    public function __construct(array $importArray = array())
+    {
+        if (isset($importArray['areaId']))
+            $this->id = $importArray['areaId'];
+        
         if (isset($importArray['boDirection']))
-          $this->boDirection = $importArray['boDirection'];
-		  
+            $this->boDirection = $importArray['boDirection'];
+        
         if (isset($importArray['classes']))
-		  $this->classes = explode(',', $importArray['classes']);
-		           
-		if (isset($importArray['subAreas']) && is_array($importArray['subAreas']))
-		  foreach($importArray['subAreas'] as $subArea)
-		      $this->subAreas[] = new Area($subArea);
-		                 
-		if (isset($importArray['blocks']) && is_array($importArray['blocks']))
-		  $this->blockReferences = $importArray['blocks'];                 
-		
-		return $this;
-	}
-	
+            $this->classes = $importArray['classes'];
+        
+        if (isset($importArray['subAreas']) && is_array($importArray['subAreas']))
+            foreach($importArray['subAreas'] as $subArea)
+                $this->subAreas[] = new Area($subArea);
+        
+        if (isset($importArray['blocks']) && is_array($importArray['blocks']))
+            $this->blockReferences = $importArray['blocks'];                 
+        
+        return $this;
+    }
+    
     /**
      * Set id
      * 
      * @param string $id
      */
-	public function setId($id)
+    public function setId($id)
     {
         $this->id = $id;
         return $this;
@@ -121,22 +121,14 @@ class Area
     }
     
     /**
-     * Get html classes
-     */
-    public function getClasses()
-    {
-    	return implode(',', $this->classes);
-    }
-    
-    /**
      * Add a sub area
      * 
      * @param Area $area
      */
     public function addSubArea(Area $area)
     {
-    	$this->subAreas[] = $area;
-    	return $this;
+        $this->subAreas[] = $area;
+        return $this;
     }
     
     /**
@@ -155,8 +147,8 @@ class Area
      */
     public function addBlockReferences($nodeId, $blockId)
     {
-    	$this->blockReferences[] = array('nodeId' => $nodeId, 'blockId' => $blockId);
-    	return $this;
+        $this->blockReferences[] = array('nodeId' => $nodeId, 'blockId' => $blockId);
+        return $this;
     }
     
     /**
@@ -173,18 +165,18 @@ class Area
      */
     public function toArray()
     {
-    	$formattedSubAreas = array();
-    	
+        $formattedSubAreas = array();
+        
         foreach ($this->getSubAreas() as $area)
-        	$formattedSubAreas[] = $area->toArray();
-
+            $formattedSubAreas[] = $area->toArray();
+        
         return array(
-    	           'areaId' => $this->getId(),
+                   'areaId' => $this->getId(),
                    'boDirection' => $this->getBoDirection(),
-    	           'classes' => $this->getClasses(),
-    	           'subAreas' => $formattedSubAreas,
-    	           'blocks' => $this->getBlockReferences()
-    	);
+                   'classes' => $this->classes,
+                   'subAreas' => $formattedSubAreas,
+                   'blocks' => $this->getBlockReferences()
+        );
     }
 
 }

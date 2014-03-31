@@ -53,9 +53,10 @@ class NodeController extends Controller
         $this->externalBlocks = array();
         
         if (is_array($areas))
-            foreach ($areas as $area)
-                $this->getBlocks(new Area($area), $nodeId);
-        
+            foreach ($areas as $area) {
+print_r($area);
+            	$this->getBlocks(new Area($area), $nodeId);
+            }
         return $this->render('PHPOrchestraCMSBundle:Node:show.html.twig', array('node' => $node, 'blocks' => $this->blocks));
     }
     
@@ -220,7 +221,7 @@ class NodeController extends Controller
             ->setId('content')
             ->addBlockReferences(10, 2)
             ->addBlockReferences(0, 3)
-            ->addBlockReferences(10, 4);
+            ->addBlockReferences(0, 5);
 
 // Area 2-3 : Skycrapper
         $area23 = new area();
@@ -246,7 +247,7 @@ class NodeController extends Controller
             ->setNodeId('sample')
             ->setSiteId(1)
             ->setName('Home site avec ref Repo 0 v10')
-            ->setVersion(1)
+            ->setVersion(2)
             ->setLanguage('fr')
             ->addBlocks(array($block1, $block2, $block3, $block4, $block5, $block6, $block7))
             ->setAreas(array($area1->toArray(), $area2->toArray(), $area3->toArray()));

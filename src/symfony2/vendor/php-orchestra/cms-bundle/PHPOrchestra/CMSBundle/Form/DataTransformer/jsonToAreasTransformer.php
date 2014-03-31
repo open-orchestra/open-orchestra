@@ -23,29 +23,69 @@ class jsonToAreasTransformer implements DataTransformerInterface
     {
         $json = "[]";
         
-        if (isset($areas))
+        if (isset($areas)) {
+            foreach($areas as $key => $area)
+                $areas[$key] = $this->adaptArea($area);
             $json = json_encode($areas);
+        }
         
         return $json;
     }
 
     /**
-     * Transforms a json string to an array of Areas objects.
+     * Adapt a Php array to be exported to json
+     * 
+     * @param Array $area
+     */
+    protected function adaptArea($area)
+    {
+        $area['classes'] = implode(',', $area['classes']);
+        
+        if (isset($area['subAreas']))
+            foreach ($area['subAreas'] as $key => $subAreas)
+                $area['area'][$key] = $this->adaptArea($subAreas);
+        
+        unset($area['subAreas']);
+        
+        return $area;
+    }
+    
+    /**
+     * Transforms a json string to an array of Areas array.
      *
      * @param  string $json
      * @return Area[]
      */
     public function reverseTransform($json)
     {
-        $areas = json_decode($json, true);            
-            
+        $areas = json_decode($json, true);
+        
         $nodeAreas = array();
         if (is_array($areas))
             foreach($areas as $area) {
+                $area = $this->reverseAdaptArea($area);
                 $area = new Area($area);
                 $nodeAreas[] = $area->toArray();
             }
-               	
+        
         return $nodeAreas;
+    }
+
+    /**
+     * Adapt a Php array extracted from json
+     * 
+     * @param Array $area
+     */
+    protected function reverseAdaptArea($area)
+    {
+        $area['classes'] = explode(',', $area['classes']);
+        
+        if (isset($area['area']))
+            foreach ($area['area'] as $key => $subAreas)
+                $area['subAreas'][$key] = $this->reverseAdaptArea($subAreas);
+        
+        unset($area['area']);
+        
+        return $area;
     }
 }
