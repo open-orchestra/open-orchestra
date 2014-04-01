@@ -60,16 +60,41 @@ To configure Varnish to listen on port 80, edit file **/etc/default/varnish** an
     # fixed-size cache file.
     # DAEMON_OPTS="-a :80 \
               -T localhost:6082 \
-              -f /etc/varnish/default.vcl \
+              -f /etc/varnish/phporchestra.vcl \
               -S /etc/varnish/secret \
               -s malloc,256m"
 
-To make Varnish request Apache on port 8080 edit file **/etc/varnish/default.vcl** and change those line :
+To make Varnish request Apache on port 8080, first create a specific varnish conf file for phporchestra located at **/etc/varnish/phporchestra.vcl**. Then edit that file and copy that lines :
 
     backend default {
      .host = "127.0.0.1";
      .port = "8080";
     }
+
+    sub vcl_recv {
+        set req.http.Surrogate-Capability = "abc=ESI/1.0";
+    }
+
+    sub vcl_fetch {
+        if (beresp.http.Surrogate-Control ~ "ESI/1.0") {
+            unset beresp.http.Surrogate-Control;
+            set beresp.do_esi = true;
+        }
+    }
+
+    sub vcl_hit {
+        if (req.request == "PURGE") {
+            set obj.ttl = 0s;
+            error 200 "Purged";
+        }
+    }
+
+    sub vcl_miss {
+        if (req.request == "PURGE") {
+            error 404 "Not purged";
+        }
+    }
+
 
 Next, you have to configure Apache to listen on port 8080. To do this, edit **/etc/apache2/sites-available/YOUR-VHOST-CONF-FILE**
 

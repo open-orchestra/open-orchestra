@@ -8,6 +8,32 @@ backend default {
     .host = "127.0.0.1";
     .port = "8080";
 }
+
+
+sub vcl_recv {
+    set req.http.Surrogate-Capability = "abc=ESI/1.0";
+}
+
+sub vcl_fetch {
+	if (beresp.http.Surrogate-Control ~ "ESI/1.0") {
+		unset beresp.http.Surrogate-Control;
+		set beresp.do_esi = true;
+	}
+}
+
+sub vcl_hit {
+	if (req.request == "PURGE") {
+		set obj.ttl = 0s;
+		error 200 "Purged";
+	}
+}
+
+sub vcl_miss {
+	if (req.request == "PURGE") {
+		error 404 "Not purged";
+	}
+}
+
 # 
 # Below is a commented-out copy of the default VCL logic.  If you
 # redefine any of these subroutines, the built-in logic will be
