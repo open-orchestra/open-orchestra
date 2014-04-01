@@ -56,7 +56,13 @@ class NodeController extends Controller
             foreach ($areas as $area)
                 $this->getBlocks(new Area($area), $nodeId);
         
-        return $this->render('PHPOrchestraCMSBundle:Node:show.html.twig', array('node' => $node, 'blocks' => $this->blocks));
+        $response = $this->render('PHPOrchestraCMSBundle:Node:show.html.twig', array('node' => $node, 'blocks' => $this->blocks, 'datetime' => time()));
+        
+        $response->setPublic();
+        $response->setSharedMaxAge(15);
+        $response->headers->addCacheControlDirective('must-revalidate', true);
+        
+        return $response;
     }
     
     
@@ -94,7 +100,7 @@ class NodeController extends Controller
         
         if (isset($this->externalBlocks[$realNodeId][$blockReference['blockId']])) {
             $this->blocks[$blockReference['nodeId']][$blockReference['blockId']] = $this->externalBlocks[$realNodeId][$blockReference['blockId']];
-            $this->blocks[$blockReference['nodeId']][$blockReference['blockId']]['attributes']['query'] = $this->container->get('request')->query;
+            $this->blocks[$blockReference['nodeId']][$blockReference['blockId']]['attributes']['_page_parameters'] = $this->container->get('request')->attributes->get('module_parameters');
         }
     }
     
@@ -169,8 +175,7 @@ class NodeController extends Controller
 
 // Block #1 : Site Menu
         $block1 = $mandango->create('Model\PHPOrchestraCMSBundle\Block')
-//            ->setComponent('PHPOrchestraCMSBundle:Block:show')
-            ->setComponent('PHPOrchestraCMSBundle:BlockExample:show0')  
+            ->setComponent('PHPOrchestraCMSBundle:Block:show')  
             ->setAttributes(array('rubrique A' => 'Qui sommes-nous ?', 'rubrique B' => 'pourquoi nous choisir ?', 'rubrique C' => 'Nos agences'));
         
 // Block #2 : Left Menu
@@ -243,11 +248,14 @@ class NodeController extends Controller
             
 // Node
         $node = $mandango->create('Model\PHPOrchestraCMSBundle\Node')
-            ->setNodeId('sample')
+            ->setNodeId('sample_module')
             ->setSiteId(1)
-            ->setName('Home site avec ref Repo 0 v10')
+            ->setName('Module v2')
             ->setVersion(2)
+            ->setparentId(0)
+            ->setAlias('sample-module')
             ->setLanguage('fr')
+            ->setNodeType('module')
             ->addBlocks(array($block1, $block2, $block3, $block4, $block5, $block6, $block7))
             ->setAreas(array($area1->toArray(), $area2->toArray(), $area3->toArray()));
             

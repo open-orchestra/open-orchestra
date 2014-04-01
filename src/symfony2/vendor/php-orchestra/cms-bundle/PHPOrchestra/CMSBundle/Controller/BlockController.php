@@ -18,6 +18,14 @@ class BlockController extends Controller
      */
     public function showAction($block)
     {
-        return $this->render('PHPOrchestraCMSBundle:Block:show.html.twig', array('block' => $block));
+        $datetime = time();
+        
+        $response = $this->render('PHPOrchestraCMSBundle:Block:show.html.twig', array('block' => $block, 'datetime' => $datetime));
+        
+        $response->setPublic();
+        $response->setSharedMaxAge(60);
+        $response->headers->addCacheControlDirective('must-revalidate', true);
+                
+        return $response;
     }
 }

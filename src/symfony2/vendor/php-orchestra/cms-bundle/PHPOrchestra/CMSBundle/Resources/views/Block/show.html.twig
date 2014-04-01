@@ -5,7 +5,8 @@
  ##}
 
 <div>
+    datetime : {{ datetime }} <br />
 {% for key, value in block %}
-    {{ key }} : {% if key != 'query' %}{{ value }}{% else %}{{ dump(value) }}{% endif %}<br />
+    {{ key }} : {% if key != '_page_parameters' %}{{ value }}{% else %}{{ dump(value) }}{% endif %}<br />
 {% endfor %}
 </div>

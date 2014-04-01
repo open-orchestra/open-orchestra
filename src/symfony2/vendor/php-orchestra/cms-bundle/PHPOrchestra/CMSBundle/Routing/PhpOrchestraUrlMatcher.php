@@ -75,42 +75,50 @@ class PhpOrchestraUrlMatcher extends RedirectableUrlMatcher
         $slugs = explode('/', $pathinfo);
         $nodeId = 0;
         $moduleId = false;
+        $parameters = array();
         
-        foreach ($slugs as $slug) {
+        foreach ($slugs as $position => $slug) {
             
             if ($slug != '') {
                 $node = $this->getNode($slug, $nodeId);
                 
-                if (!$node) {
-                    if (!$moduleId)
-                        throw new ResourceNotFoundException();
-                    else
-                        return $this->getModuleRoute($moduleId);
-                }
-                else {
+                if ($node) {
                     $nodeId = $node['id'];
                     
-                    if ($node['type'] != Node::TYPE_DEFAULT)
+                    if ($node['type'] != Node::TYPE_DEFAULT) {
                         $moduleId = $node['id'];
+                        $parameters = array_slice($slugs, $position + 1);
+                    }
+                    else
+                        $moduleId = false;
+                }
+                else {
+                    if ($moduleId)
+                        return $this->getModuleRoute($moduleId, $parameters);
+                    else
+                        throw new ResourceNotFoundException();
                 }
             }
         }
         
-        return $this->getPageRoute($nodeId);
+        if ($nodeId == $moduleId)
+            return $this->getModuleRoute($moduleId);
+        else
+            return $this->getPageRoute($nodeId);
     }
     
     
     /**
      * Route for standard page
      * 
-     * @param $nodeId
+     * @param string $nodeId
      */
     protected function getPageRoute($nodeId)
     {
         return array(
+                        "_route" => "phporchestra_cms_node",
                         "_controller" => 'PHPOrchestra\CMSBundle\Controller\NodeController::showAction',
-                        "nodeId" => $nodeId,
-                        "_route" => "php_orchestra_cms_node"
+                        "nodeId" => $nodeId
                     );
     }
     
@@ -119,14 +127,16 @@ class PhpOrchestraUrlMatcher extends RedirectableUrlMatcher
      * Route for module page
      * ie with customs parameters at the end of url
      * 
-     * @param $moduleId
+     * @param string $moduleId
+     * @param string[] $moduleId
      */
-    protected function getModuleRoute($moduleId)
+    protected function getModuleRoute($moduleId, $parameters = array())
     {
         return array(
+                        "_route" => "phporchestra_cms_module",
                         "_controller" => 'PHPOrchestra\CMSBundle\Controller\NodeController::showAction',
                         "nodeId" => $moduleId,
-                        "_route" => "php_orchestra_cms_module"
+                        "module_parameters" => $parameters
                     );
     }
     
