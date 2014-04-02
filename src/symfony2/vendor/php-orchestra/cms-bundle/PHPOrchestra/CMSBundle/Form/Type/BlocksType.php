@@ -49,9 +49,10 @@ class BlocksType extends AbstractType
 	
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
+    	
         $resolver->setDefaults(array(
             'dialogPath' => '',
-            'js' => 'blocks.js',
+            'js' => array(),
             'objects' => array(),
             'attr' => array('class' => 'not-mapped')
         ));

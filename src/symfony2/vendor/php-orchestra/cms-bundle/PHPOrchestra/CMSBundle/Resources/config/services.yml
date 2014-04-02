@@ -12,6 +12,12 @@ services:
         arguments: [@mandango]
         tags:
             - { name: form.type, alias: orchestra_blocks }
+# Template  select form field type
+    php_orchestra_cms.type.template_choice:
+        class: PHPOrchestra\CMSBundle\Form\Type\TemplateChoiceType
+        arguments: [@mandango]
+        tags:
+            - { name: form.type, alias: orchestra_template }
 
 # Status form field type
     php_orchestra_cms.type.status:
@@ -36,3 +42,17 @@ services:
             - "%php_orchestra.orchestra_choice.direction%"
         tags:
             - { name: form.type, alias: orchestra_direction }
+            
+# Template form type
+    php_orchestra_cms.type.template:
+        class: PHPOrchestra\CMSBundle\Form\Type\TemplateType
+        arguments: [@router, %php_orchestra.blocks%]
+        tags:
+            - { name: form.type, alias: template}            
+# Node form type
+    php_orchestra_cms.type.node:
+        class: PHPOrchestra\CMSBundle\Form\Type\NodeType
+        arguments: [@router, %php_orchestra.blocks%]
+        tags:
+            - { name: form.type, alias: node}            
+            

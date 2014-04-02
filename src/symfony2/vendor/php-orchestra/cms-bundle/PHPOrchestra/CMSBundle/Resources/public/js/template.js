@@ -4,10 +4,10 @@ function formatForSubmit(settings){
 	}
 	treeFormatForSubmit(settings, settings.values);
 	if('areas' in settings.values){
-        $("#template_areas").val(JSON.stringify(settings.values.areas));
+        $("#" + settings.type + "_areas").val(JSON.stringify(settings.values.areas));
     }
     if('blocks' in settings.values){
-        $("#template_blocks").val(JSON.stringify(settings.values.blocks));
+        $("#" + settings.type + "_blocks").val(JSON.stringify(settings.values.blocks));
     }
 }
 function treeFormatForSubmit(settings, values){
@@ -34,9 +34,9 @@ function treeFormatForSubmit(settings, values){
 }
 
 function formatForLoad(settings){
-	$( "#dialog-template" ).getValue(settings.values);
-	settings.values.areas = eval($("#template_areas").val());
-	settings.blocks = eval($("#template_blocks").val());
+	$( "#dialog-" + settings.type ).getValue(settings.values);
+	settings.values.areas = eval($("#" + settings.type + "_areas").val());
+	settings.blocks = eval($("#" + settings.type + "_blocks").val());
 	delete settings.values.blocks;
 	treeFormatForLoad(settings, settings.values);
 	delete settings.blocks;
@@ -100,7 +100,7 @@ var dialog_parameter = {
             	$(this).hide();
             	buttons["Send"] = function(){
 	                formatForSubmit(data.settings);
-	                $("form[name='template']").submit();
+	                $(this).find('form').submit();
 	                $(this).dialog( "close" );
 	           }
             });
@@ -150,7 +150,7 @@ var dialog_parameter = {
 		if(settings.path == null){
 			settings.element = this;
 			settings.path = "values";
-			settings.type = "template";
+			settings.type = $(this).attr('id').replace('-model', '');
 			settings.style = '';
 			settings.element.html('');
 			actions = [];
@@ -212,19 +212,19 @@ var dialog_parameter = {
 			$( "#dialog-" + settings.type ).dialog( "open" );
 		});
 		for(var i in this_values){
-			if(Array.isArray(this_values[i]) && this_values[i].length > 0){
+			if(Array.isArray(this_values[i]) && this_values[i].length > 0 && (i == 'areas' || i == 'blocks')){
 				ul.addClass(settings.css + '-' + i);
 				ul.createSubTemplate(settings, i);
 				ul.children().addClass(settings.css + '-' + i);
 			}
 		}
 		
-		if($( "#dialog-" + settings.type ).dialog("option", "addArray").length){
+		//if($( "#dialog-" + settings.type ).dialog("option", "addArray").length){
 			ul.appendTo(div);
 			ul.data('path', settings.path);
-		}
+		//}
 		if(settings.path == "values"){
-			ul = $( "<ul/>", {"class": settings.css + ' ' + settings.css + '-' + 'template',
+			ul = $( "<ul/>", {"class": settings.css + ' ' + settings.css + '-' + settings.type,
 				"css": {"display": settings.style}});
 			li.appendTo(ul);
 			ul.appendTo($(this));
@@ -297,4 +297,24 @@ var dialog_parameter = {
         	}
         }
     }
+	$.fn.createSelect = function(label, id, values, value_key, value_label){
+        var select = $( "<select/>", {"id": id, "name": id});
+        $( "<option/>", {"value": "", "text": "--------"}).appendTo(select);
+        for(var i in values){
+            $( "<option/>", {"value": values[i][value_key], "text": values[i][value_label]}).appendTo(select);
+        }
+        $( "<label/>", {"text": label, "for": id}).appendTo($(this));
+        select.appendTo($(this));
+        return select;
+    }
+	$.fn.addSpan = function(name){
+	    var span =  $(this).children('span.' + name);
+	    if(span.length == 0){
+			span = $( "<span/>", {"class": name}).appendTo($(this));
+	    }
+	    else{
+	    	span.html('');
+	    }
+	    return span;
+	}
 })(jQuery);

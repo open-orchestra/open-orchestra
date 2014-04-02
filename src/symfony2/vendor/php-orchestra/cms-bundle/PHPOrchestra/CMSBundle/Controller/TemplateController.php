@@ -12,6 +12,8 @@ use Symfony\Component\HttpFoundation\Request;
 use PHPOrchestra\CMSBundle\Model\Area;
 use PHPOrchestra\CMSBundle\Form\Type\TemplateType;
 use PHPOrchestra\CMSBundle\Classes\DocumentLoader;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use PHPOrchestra\CMSBundle\Helper\TemplateHelper;
 
 class TemplateController extends Controller
 {
@@ -26,17 +28,17 @@ class TemplateController extends Controller
     public function formAction($templateId, Request $request)
     {
         $mandango = $this->container->get('mandango');       
-        if($templateId != 0){
-            $template = DocumentLoader::getDocument('Template', array('templateId' => $templateId), $this->container->get('mandango'));
-            $template->setVersion($template->getVersion() + 1);
-        }
-        else{
+        if($templateId == 0){
             $template = $mandango->create('Model\PHPOrchestraCMSBundle\Template');
             $template->setSiteId(1);
             $template->setLanguage('fr');
         }
+        else{
+            $template = DocumentLoader::getDocument('Template', array('templateId' => $templateId), $this->container->get('mandango'));
+            $template->setVersion($template->getVersion() + 1);
+        }
         
-        $form = $this->createForm(new TemplateType(), $template);
+        $form = $this->createForm('templateForm', $template);
         $form->handleRequest($request);
         if ($form->isValid())
         {
@@ -50,5 +52,19 @@ class TemplateController extends Controller
         return $this->render('PHPOrchestraCMSBundle:Template:form.html.twig', array(
             'form' => $form->createView(),
         ));    
-    }       
+    }
+    
+    /**
+     * send template cutting
+     * 
+     */
+    public function showCuttingAction(Request $request)
+    {
+    	$template = DocumentLoader::getDocument('Template', array('templateId' => $request->get('templateId')), $this->container->get('mandango'));
+        return new JsonResponse(array(
+            'success' => true,
+            'data' => TemplateHelper::formatTemplate($template)
+        ));
+    }
+    
 }

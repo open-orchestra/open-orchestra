@@ -14,6 +14,10 @@ php_orchestra_cms_formnode:
 #    requirements:
 #        nodeId: \w+
 
+php_orchestra_ajax_show_blocks_from_node:
+  pattern:  /node/blocks
+  defaults: { _controller: PHPOrchestraCMSBundle:Node:showBlocksFromNode }
+
 php_orchestra_cms_node:
     pattern:  /node/{nodeId}
     defaults: { _controller: PHPOrchestraCMSBundle:Node:show }
@@ -22,8 +26,8 @@ php_orchestra_cms_node:
 
 php_orchestra_ajax_show_all_nodes:
   pattern:  /nodes/
-  defaults: { _controller: PHPOrchestraCMSBundle:Blocks:showAllNodes }
+  defaults: { _controller: PHPOrchestraCMSBundle:Nodes:showAllNodes }
   
-php_orchestra_ajax_show_blocks_from_node:
-  pattern:  /nodeblocks
-  defaults: { _controller: PHPOrchestraCMSBundle:Blocks:showBlocksFromNode }
+php_orchestra_ajax_show_template:
+  pattern:  /template/
+  defaults: { _controller: PHPOrchestraCMSBundle:Template:showCutting }

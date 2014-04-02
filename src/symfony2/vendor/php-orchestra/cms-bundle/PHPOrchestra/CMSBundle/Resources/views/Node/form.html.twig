@@ -1,7 +1,29 @@
 {##
  # This file is part of the PHPOrchestra\CMSBundle.
  #
- # @author Noël Gilain <noel.gilain@businessdecision.com>
+ # @author Nicolas ANNE <nicolas.anne@businessdecision.com>
  ##}
 
-{{ form(form) }}
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+
+        <!--<link rel="stylesheet" href="{{ asset('bundles/phporchestracms/css/jquery-ui.css') }}">-->
+        <link rel="stylesheet" href="{{ asset('bundles/phporchestracms/css/template.css') }}">
+
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        <!--<script src="{{ asset('bundles/phporchestracms/js/jquery-1.9.1.js') }}"></script>
+        <script src="{{ asset('bundles/phporchestracms/js/jquery-ui.js') }}"></script>-->
+
+        <script src="{{ asset('bundles/phporchestracms/js/template.js') }}"></script>
+
+    </head>
+    <body>
+    {% if form.vars.showDialog %}
+        {% form_theme form 'PHPOrchestraCMSBundle:Form:extend.html.twig' %}
+    {% endif %}
+    {{ form(form) }}
+    </body>
+</html>

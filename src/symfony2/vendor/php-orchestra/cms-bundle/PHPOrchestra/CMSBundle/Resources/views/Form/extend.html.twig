@@ -1,0 +1,60 @@
+{# allow to load js scripts, to load parameters (direct or rendered) and create the dialog box #}
+{% block generic_behavior %}
+    {% if form.vars.js is defined and form.vars.js|length > 0 %}
+        <script>
+            var parameter = {};
+        {% if form.vars.js.parameter is defined and form.vars.js.parameter|length > 0 %}
+            {% for key, parameter in form.vars.js.parameter %}
+                parameter.{{ key }} = '{{ parameter}}';
+            {% endfor %}
+        {% endif %}
+        {% if form.vars.js.render is defined and form.vars.js.render|length > 0 %}
+            {% for key, parameters in form.vars.js.render %}
+                parameter.{{ key }} = {% include parameters.twig with parameters.parameter only %};
+            {% endfor %}
+        {% endif %}
+        </script>
+        <script src="{{ asset('bundles/phporchestracms/js/' ~ form.vars.js.script) }}"></script>
+        <script>
+            init(parameter);
+        </script>
+    {% endif %}
+    <script>
+        $( "#dialog-{{ form.vars.name }}" ).dialog($.extend(dialog_parameter, {"addArray" : {{ form.vars.objects|json_encode|raw }}}));
+    </script>
+{% endblock %}
+
+
+{# factorization of archestra_areas and archestra_blocks behavior #}
+{% block orchestra_widget %}
+    <div id="dialog-{{ form.vars.name }}" style="display:none;" title="{{ form.vars.name }}">
+        {% if form.vars.dialogPath != '' %}
+            {% include form.vars.dialogPath %}
+        {% endif %}
+    </div>
+    {{ block('generic_behavior') }}
+    {{ form_widget(form) }}
+
+{% endblock %}
+
+{% block orchestra_areas_widget %}
+    {{ block('orchestra_widget') }}
+{% endblock %}
+
+{% block orchestra_blocks_widget %}
+    {{ block('orchestra_widget') }}
+{% endblock %}
+
+{% extends "form_div_layout.html.twig" %}
+{% block form %}
+    <div id="dialog-{{ form.vars.name }}" style="display:none;" title="{{ form.vars.name }}">
+        {{ parent() }}
+    </div>
+    <div id="{{ form.vars.name }}-model"></div>
+    {{ block('generic_behavior') }}
+    <script>
+        $(document).ready(function(){
+            $('#{{ form.vars.name }}-model').parseTemplate({"init" : true});
+        });
+    </script>
+{% endblock %}

@@ -27,7 +27,7 @@ class AreasType extends AbstractType
     {
         $resolver->setDefaults(array(
             'dialogPath' => '',
-            'js' => '',
+            'js' => array(),
             'objects' => array(),
             'attr' => array('class' => 'not-mapped')
         ));

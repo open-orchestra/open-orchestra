@@ -13,6 +13,8 @@ use PHPOrchestra\CMSBundle\Model\Area;
 use PHPOrchestra\CMSBundle\Exception\NonExistingDocumentException;
 use Symfony\Component\HttpFoundation\Request;
 use PHPOrchestra\CMSBundle\Form\Type\NodeType;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use PHPOrchestra\CMSBundle\Helper\NodeHelper;
 
 class NodeController extends Controller
 {
@@ -136,15 +138,17 @@ class NodeController extends Controller
     {
         $mandango = $this->container->get('mandango'); 
         
-        if ($nodeId == 0)
+        if ($nodeId == 0){
             $node = $mandango->create('Model\PHPOrchestraCMSBundle\Node');
-        
+            $node->setSiteId(1);
+            $node->setLanguage('fr');
+        }
         else {
             $node = DocumentLoader::getDocument('Node', array('nodeId' => $nodeId), $this->container->get('mandango'));
             $node->setVersion($node->getVersion() + 1);
         }
             
-        $form = $this->createForm(new NodeType(), $node);
+        $form = $this->createForm('node', $node);
         $form->handleRequest($request);
         
         if ($form->isValid()) {
@@ -161,4 +165,17 @@ class NodeController extends Controller
         ));    
     }
 
+    /**
+     * List blocks from node filtered by those contained in config.yml
+     * 
+     */
+    public function showBlocksFromNodeAction(Request $request)
+    {
+        $node = DocumentLoader::getDocument('Node', array('nodeId' => $request->get('nodeId')), $this->container->get('mandango'));
+        return new JsonResponse(array(
+            'success' => true,
+            'data' => NodeHelper::filterBlocks($node, $this->container->getParameter('php_orchestra.blocks'))
+        ));
+    }
+    
 }
