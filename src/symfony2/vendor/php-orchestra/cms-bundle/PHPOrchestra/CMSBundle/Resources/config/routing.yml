@@ -6,7 +6,7 @@ php_orchestra_cms_templateform:
 
 php_orchestra_cms_addsamplenode:
     pattern:  /node/addsample
-    defaults: { _controller: PHPOrchestraCMSBundle:Node:addSample }
+    defaults: { _controller: PHPOrchestraCMSBundle:Samples:addSample }
 
 php_orchestra_cms_formnode:
     pattern:  /node/form/{nodeId}
