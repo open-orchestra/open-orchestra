@@ -13,7 +13,7 @@ use PHPOrchestra\CMSBundle\Model\Area;
 class jsonToAreasTransformer implements DataTransformerInterface
 {
 
-    const JSON_AREA_TAG = 'area';
+    const JSON_AREA_TAG = 'areas';
     const PHP_AREA_TAG = 'subAreas';
     const CLASSES_TAG = 'classes';
     

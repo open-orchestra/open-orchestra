@@ -50,15 +50,18 @@ class BlocksType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'dialogPath' => false
+            'dialogPath' => '',
+            'js' => 'blocks.js',
+            'objects' => array(),
+            'attr' => array('class' => 'not-mapped')
         ));
     }
     
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
-    	if($options['dialogPath'] != ''){
-            $view->vars['dialogPath'] = $options['dialogPath'].'/block.html.twig';
-    	}
+        $view->vars['dialogPath'] = $options['dialogPath'];
+        $view->vars['js'] = $options['js'];
+        $view->vars['objects'] = $options['objects'];
     }
     
     

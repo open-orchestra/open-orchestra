@@ -19,9 +19,9 @@ class BlocksController extends Controller
      * List all blocks contained in config.yml
      * 
      */
-    public function showAllBlocksAction()
+    public function showAllBlocksAction($prefix)
     {
-        return $this->render('PHPOrchestraCMSBundle:Blocks:showAllBlocks.html.twig', array('blocks' => $this->container->getParameter('php_orchestra.blocks')));
+        return $this->render('PHPOrchestraCMSBundle:Blocks:showAllBlocks.html.twig', array('blocks' => $this->container->getParameter('php_orchestra.blocks'), 'prefix' => $prefix));
     }
 	
     /**

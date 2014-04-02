@@ -1,8 +1,0 @@
-<div class="dialog-area" style="display:none;" title="Area">
-    <label for="areaId">HTML id : </label><input type="text" name="areaId" id="areaId" value=""><br />
-    <label for="classes">Classes : </label><input type="text" name="classes" id="classes" value=""><br />
-    <label for="direction">Direction : </label><select name="boDirection" id="boDirection"><option value="h">horizontal</option><option value="v">vertical</option></select>
-</div>
-<script>
-    $( ".dialog-area" ).dialog($.extend(dialog_parameter, {"addArray" : ['area', 'block'], 'label' : '$(this).find("#areaId").val()'}));
-</script>

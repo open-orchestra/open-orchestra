@@ -26,15 +26,18 @@ class AreasType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'dialogPath' => ''
+            'dialogPath' => '',
+            'js' => '',
+            'objects' => array(),
+            'attr' => array('class' => 'not-mapped')
         ));
     }
     
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
-        if($options['dialogPath'] != ''){
-	        $view->vars['dialogPath'] = $options['dialogPath'].'/area.html.twig';
-        }
+        $view->vars['dialogPath'] = $options['dialogPath'];
+        $view->vars['js'] = $options['js'];
+        $view->vars['objects'] = $options['objects'];
     }
     
     public function getParent()

@@ -36,7 +36,7 @@ class TemplateController extends Controller
             $template->setLanguage('fr');
         }
         
-        $form = $this->createForm(new TemplateType(), $template, array('dialogPath' => 'PHPOrchestraCMSBundle:Template:Dialog'));
+        $form = $this->createForm(new TemplateType(), $template);
         $form->handleRequest($request);
         if ($form->isValid())
         {

@@ -26,21 +26,22 @@ class TemplateType extends AbstractType
     {
         $builder
             ->add('siteId', 'hidden')
-            ->add('name', 'text')
+            ->add('name', 'text', array('attr' => array('class' => 'used-as-label')))
             ->add('version', 'hidden')
             ->add('language', 'orchestra_language')
             ->add('status', 'orchestra_status')
             ->add('boDirection', 'orchestra_direction')
             ->add('templateId', 'hidden')
-            ->add('areas', 'orchestra_areas', array('dialogPath' => $options['dialogPath'], 'attr' => array('class' => 'not-mapped')))
-            ->add('blocks', 'orchestra_blocks', array('dialogPath' => $options['dialogPath'], 'attr' => array('class' => 'not-mapped')))
+            ->add('areas', 'orchestra_areas', array('dialogPath' => 'PHPOrchestraCMSBundle:Form:area.html.twig', 'objects' => array('areas', 'blocks')))
+            ->add('blocks', 'orchestra_blocks', array('dialogPath' => 'PHPOrchestraCMSBundle:Form:block.html.twig'))
             ->add('save', 'submit');
             ;
     }
-    
+        
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
-        $view->vars['dialogPath'] = $options['dialogPath'];
+        $view->vars['showDialog'] = $options['showDialog'];
+        $view->vars['objects'] = $options['objects'];
     }
     
     /**
@@ -49,9 +50,11 @@ class TemplateType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'dialogPath' => ''
+            'showDialog' => true,
+            'objects' => array('areas')
         ));
     }
+    
     
     /**
      * @return string
