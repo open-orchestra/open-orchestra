@@ -143,7 +143,7 @@ class NodeController extends Controller
             $node = DocumentLoader::getDocument('Node', array('nodeId' => $nodeId), $this->container->get('mandango'));
             $node->setVersion($node->getVersion() + 1);
         }
-            
+        
         $form = $this->createForm(new NodeType(), $node);
         $form->handleRequest($request);
         
