@@ -14,6 +14,25 @@ class SamplesController extends Controller
 {
     
     /**
+     * Render a sampleblock
+     * 
+     * @param String[] $block array containing custom attributes
+     */
+    public function sampleShowAction($rubA, $rubB, $rubC, $_page_parameters)
+    {
+        $datetime = time();
+        
+        $response = $this->render('PHPOrchestraCMSBundle:Samples:blocSample.html.twig', array('rubA' => $rubA, 'rubB' => $rubB, 'rubC' => $rubC, 'parameters' => $_page_parameters, 'datetime' => $datetime));
+        
+        $response->setPublic();
+        $response->setSharedMaxAge(60);
+        $response->headers->addCacheControlDirective('must-revalidate', true);
+                
+        return $response;
+    }
+    
+    
+    /**
      * Test purpose : inject a sample Node in MongoDB
      * 
      * @return Response
@@ -27,8 +46,8 @@ class SamplesController extends Controller
 
 // Block #1 : Site Menu
         $block1 = $mandango->create('Model\PHPOrchestraCMSBundle\Block')
-            ->setComponent('PHPOrchestraCMSBundle:Block:show')  
-            ->setAttributes(array('rubrique A' => 'Qui sommes-nous ?', 'rubrique B' => 'pourquoi nous choisir ?', 'rubrique C' => 'Nos agences'));
+            ->setComponent('PHPOrchestraCMSBundle:Samples:sampleShow')  
+            ->setAttributes(array('rubA' => 'Qui sommes-nous ?', 'rubB' => 'pourquoi nous choisir ?', 'rubC' => 'Nos agences'));
         
 // Block #2 : Left Menu
         $block2 = $mandango->create('Model\PHPOrchestraCMSBundle\Block')
@@ -100,12 +119,12 @@ class SamplesController extends Controller
             
 // Node
         $node = $mandango->create('Model\PHPOrchestraCMSBundle\Node')
-            ->setNodeId('sample_module')
+            ->setNodeId('move_sample')
             ->setSiteId(1)
-            ->setName('Module v3')
-            ->setVersion(3)
+            ->setName('Move sample')
+            ->setVersion(1)
             ->setparentId(0)
-            ->setAlias('sample-module')
+            ->setAlias('sampleblock')
             ->setLanguage('fr')
             ->setNodeType('module')
             ->addBlocks(array($block1, $block2, $block3, $block4, $block5, $block6, $block7))
@@ -115,7 +134,7 @@ class SamplesController extends Controller
         
         $nodes = $mandango->getRepository('Model\PHPOrchestraCMSBundle\Node')->createQuery();
         
-        return $this->render('PHPOrchestraCMSBundle:Default:index.html.twig', array('nodes' => $nodes));
+        return $this->render('PHPOrchestraCMSBundle:Samples:show.html.twig', array('nodes' => $nodes));
     }
     
 }

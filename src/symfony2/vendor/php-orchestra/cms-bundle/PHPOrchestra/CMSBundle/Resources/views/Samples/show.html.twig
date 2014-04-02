@@ -1,8 +1,8 @@
 {##
- # This file is part of the PHPOrchestra\CMSBundle.
- #
- # @author Noël Gilain <noel.gilain@businessdecision.com>
- ##}
+# This file is part of the PHPOrchestra\CMSBundle.
+#
+# @author Noël Gilain <noel.gilain@businessdecision.com>
+##}
 
 {% for node in nodes %}
 <fieldset>
@@ -14,7 +14,7 @@
     &nbsp;language : {{ node.language }}<br/>
     &nbsp;Blocks :<br/>
     {% for block in node.blocks %}
-        &nbsp;&nbsp;* Block component : {{ block.component }}<br/>            
+        &nbsp;&nbsp;* Block component : {{ block.component }}<br/>
     {% endfor %}
     &nbsp;Areas :<br/>
     {% for area in node.areas %}
@@ -26,7 +26,7 @@
         <br/>
         &nbsp;&nbsp;* SubAreas :<br/>
         {% for subArea in area.subAreas %}
-            &nbsp;&nbsp;&nbsp;&nbsp;. subArea areaId : {{ subArea.areaId }}<br/>            
+            &nbsp;&nbsp;&nbsp;&nbsp;. subArea areaId : {{ subArea.areaId }}<br/>
         {% endfor %}
     {% endfor %}
 

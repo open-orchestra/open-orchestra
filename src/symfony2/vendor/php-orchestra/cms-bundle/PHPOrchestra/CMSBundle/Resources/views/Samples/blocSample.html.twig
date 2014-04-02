@@ -6,7 +6,8 @@
 
 <div>
     datetime : {{ datetime }} <br />
-{% for key, value in block %}
-    {{ key }} : {% if key != '_page_parameters' %}{{ value }}{% else %}{{ dump(value) }}{% endif %}<br />
-{% endfor %}
+    Rubrique A : {{ rubA }} <br />
+    Rubrique B : {{ rubB }} <br />
+    Rubrique C : {{ rubC }} <br />
+    parameters : {{ dump(parameters) }}
 </div>
