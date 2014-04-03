@@ -13,12 +13,13 @@ function formatForSubmit(settings){
 function treeFormatForSubmit(settings, values){
 	if('blocks' in values){
 		for(var i in values.blocks){
-			delete values.blocks[i].method;
-			delete values.blocks[i].label;
 			if(!('nodeId' in values.blocks[i])){
 				if('component' in values.blocks[i]){
 					var newBlock = {'component': values.blocks[i].component};
 					delete values.blocks[i].component;
+					delete values.blocks[i].method;
+					delete values.blocks[i].label;
+					delete values.blocks[i].is_recursive;
 					newBlock.attributes = values.blocks[i];
 					settings.values.blocks.push(newBlock);
 					values.blocks[i] = {'nodeId': 0, 'blockId': settings.values.blocks.length - 1};
@@ -46,10 +47,10 @@ function treeFormatForLoad(settings, values){
 		for(var i in values.blocks){
 			if(values.blocks[i].nodeId == 0){
 				var refBlock = settings.blocks[values.blocks[i].blockId];
-				values.blocks[i] = $.extend({'method': 'create', 'component': refBlock.component}, refBlock.attributes);
+				values.blocks[i] = $.extend({'is_recursive' : true, 'method': 'create', 'component': refBlock.component}, refBlock.attributes);
 			}
 			else{
-				values.blocks[i] = $.extend({'method': 'load'}, values.blocks[i]);
+				values.blocks[i] = $.extend({'is_recursive' : true, 'method': 'load'}, values.blocks[i]);
 			}
 			$( "#dialog-blocks" ).setValue(values.blocks[i]);
 			$( "#dialog-blocks" ).getValue(values.blocks[i]);
@@ -57,6 +58,7 @@ function treeFormatForLoad(settings, values){
 	}
 	if('areas' in values){
 		for(var i in values.areas){
+			values.areas[i].is_recursive = true;
 			$( "#dialog-areas" ).setValue(values.areas[i]);
 			$( "#dialog-areas" ).getValue(values.areas[i]);
 			treeFormatForLoad(settings, values.areas[i]);
@@ -79,7 +81,7 @@ var dialog_parameter = {
                     found = true;
                     buttons["Add " + addArray[i].charAt(0).toUpperCase() + addArray[i].slice(1)] = (function (name){
 	                	return function(){
-	                        data.this_values[name].push({});
+	                        data.this_values[name].push({'is_recursive' : true});
 	                        $(this).dialog( "close" );
 	                	}
 	                })(addArray[i]);
@@ -90,7 +92,7 @@ var dialog_parameter = {
 	                buttons["Add " + addArray[i].charAt(0).toUpperCase() + addArray[i].slice(1)] = (function (name){
 	                	return function(){
 	                        data.this_values[name] = new Array();
-	                        data.this_values[name].push({});
+	                        data.this_values[name].push({'is_recursive' : true});
 	                        $(this).dialog( "close" );
 	                	}
 	                })(addArray[i]);
@@ -211,23 +213,31 @@ var dialog_parameter = {
 			$( "#dialog-" + settings.type ).data("this_values", this_values);
 			$( "#dialog-" + settings.type ).dialog( "open" );
 		});
+		var found = false;
 		for(var i in this_values){
-			if(Array.isArray(this_values[i]) && this_values[i].length > 0 && (i == 'areas' || i == 'blocks')){
-				ul.addClass(settings.css + '-' + i);
-				ul.createSubTemplate(settings, i);
-				ul.children().addClass(settings.css + '-' + i);
+			try{
+				if('is_recursive' in this_values[i][0]){
+					found = true;
+					ul.addClass(settings.css + '-' + i);
+					ul.createSubTemplate(settings, i);
+					ul.children().addClass(settings.css + '-' + i);
+				}
 			}
+			catch (e){}
 		}
 		
-		//if($( "#dialog-" + settings.type ).dialog("option", "addArray").length){
+		if(found || $( "#dialog-" + settings.type ).dialog("option", "addArray").length){
 			ul.appendTo(div);
 			ul.data('path', settings.path);
-		//}
+		}
 		if(settings.path == "values"){
 			ul = $( "<ul/>", {"class": settings.css + ' ' + settings.css + '-' + settings.type,
 				"css": {"display": settings.style}});
 			li.appendTo(ul);
 			ul.appendTo($(this));
+			
+			
+			
 			$('ul.' + settings.css).parent().droppable({
 				greedy: true,
 				tolerance: "pointer",
@@ -257,6 +267,9 @@ var dialog_parameter = {
 					settings.element.find('div').unbind('mouseout');
 				}
 			});
+			
+			
+			
 		}
 		else{
 			li.data('path', settings.path);
@@ -266,9 +279,12 @@ var dialog_parameter = {
     $.fn.getValue = function(values){
         var pre = $(this).attr('id').replace('dialog-', '') + '_';
         for(var i in values){
-        	if(typeof values[i] != 'object'){
-        		delete values[i];
-        	}
+			try{
+	        	if(!('is_recursive' in values[i][0])){
+	        		delete values[i];
+	        	}
+			}
+			catch(e){}
         }
         $(this).find(":input").not('button').each(function(){
 	        var id = $(this).attr( "id" ).replace(pre, '');
@@ -285,17 +301,24 @@ var dialog_parameter = {
     }
     $.fn.setValue = function(values){
     	var pre = $(this).attr('id').replace('dialog-', '') + '_';
-        $(this).find(":input").each(function(){
-    		$(this).val('');
-    		$(this).change();
-    	});
-        for(var id in values){
-        	var obj = $(this).find('#' + pre + id);
-        	if(obj.length && !obj.hasClass('not-mapped')){
-        		obj.val(values[id]);
-        		obj.change();
+    	var ref = $(this);
+        ref.find(":input").each(function(){
+        	var id = $(this).attr("id").replace(pre, '');
+        	var value = '';
+        	if(id in values){
+        		value = values[id]
         	}
-        }
+        	if(value != $(this).val()){
+	    		$(this).val(value);
+	        	try{
+		        	if('change' in $._data($(this)[0], 'events')){
+		        		$(this).change();
+		        		ref.setValue(values);
+		        	}
+	        	}
+	        	catch(e){}
+        	}
+    	});
     }
 	$.fn.createSelect = function(label, id, values, value_key, value_label){
         var select = $( "<select/>", {"id": id, "name": id});

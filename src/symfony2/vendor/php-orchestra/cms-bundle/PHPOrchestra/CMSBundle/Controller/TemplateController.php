@@ -14,6 +14,7 @@ use PHPOrchestra\CMSBundle\Form\Type\TemplateType;
 use PHPOrchestra\CMSBundle\Classes\DocumentLoader;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use PHPOrchestra\CMSBundle\Helper\TemplateHelper;
+use Mandango;
 
 class TemplateController extends Controller
 {
@@ -38,7 +39,7 @@ class TemplateController extends Controller
             $template->setVersion($template->getVersion() + 1);
         }
         
-        $form = $this->createForm('templateForm', $template);
+        $form = $this->createForm('template', $template);
         $form->handleRequest($request);
         if ($form->isValid())
         {
@@ -63,7 +64,7 @@ class TemplateController extends Controller
     	$template = DocumentLoader::getDocument('Template', array('templateId' => $request->get('templateId')), $this->container->get('mandango'));
         return new JsonResponse(array(
             'success' => true,
-            'data' => TemplateHelper::formatTemplate($template)
+            'data' => TemplateHelper::formatTemplate($template, $this->container->get('mandango'))
         ));
     }
     

@@ -9,12 +9,17 @@ namespace PHPOrchestra\CMSBundle\Helper;
 
 use Model\PHPOrchestraCMSBundle\Template;
 use PHPOrchestra\CMSBundle\Form\DataTransformer\jsonToAreasTransformer;
+use PHPOrchestra\CMSBundle\Form\DataTransformer\jsonToBlocksTransformer;
+use Mandango;
 
 class TemplateHelper
 {
-    public static function formatTemplate(Template $template)
+    public static function formatTemplate(Template $template, Mandango\Mandango $mandango)
     {
-    	$transformer = new jsonToAreasTransformer();
-        return $transformer->transform($template->getAreas());
+    	$areaTransformer = new jsonToAreasTransformer();
+    	$blockTransformer = new jsonToBlocksTransformer($mandango);
+    	
+        return array('areas' => $areaTransformer->transform($template->getAreas()),
+            'blocks' => $blockTransformer->transform($template->getBlocks()));
     }
 }
