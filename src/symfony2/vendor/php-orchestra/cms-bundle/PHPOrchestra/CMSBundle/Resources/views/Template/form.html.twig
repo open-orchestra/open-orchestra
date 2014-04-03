@@ -4,26 +4,32 @@
  # @author Nicolas ANNE <nicolas.anne@businessdecision.com>
  ##}
 
-<html>
-    <head>
-        <title></title>
-        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+{% extends 'PHPOrchestraCMSBundle:BackOffice:layout.html.twig' %}
 
-        <!--<link rel="stylesheet" href="{{ asset('bundles/phporchestracms/css/jquery-ui.css') }}">-->
-        <link rel="stylesheet" href="{{ asset('bundles/phporchestracms/css/template.css') }}">
+{% block title %}{{ parent() }} : Template edition{% endblock %}
 
-        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-        <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-        <!--<script src="{{ asset('bundles/phporchestracms/js/jquery-1.9.1.js') }}"></script>
-        <script src="{{ asset('bundles/phporchestracms/js/jquery-ui.js') }}"></script>-->
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+    <!--<link rel="stylesheet" href="{{ asset('bundles/phporchestracms/css/jquery-ui.css') }}">-->
+    <link rel="stylesheet" href="{{ asset('bundles/phporchestracms/css/template.css') }}">
+{% endblock %}
 
-        <script src="{{ asset('bundles/phporchestracms/js/template.js') }}"></script>
 
-    </head>
-    <body>
+{% block javascripts %}
+    {{ parent() }}
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <!--<script src="{{ asset('bundles/phporchestracms/js/jquery-1.9.1.js') }}"></script>
+    <script src="{{ asset('bundles/phporchestracms/js/jquery-ui.js') }}"></script>-->
+    
+    <script src="{{ asset('bundles/phporchestracms/js/template.js') }}"></script>
+{% endblock %}
+
+
+{% block custom %}
     {% if form.vars.showDialog %}
         {% form_theme form 'PHPOrchestraCMSBundle:Form:extend.html.twig' %}
     {% endif %}
     {{ form(form) }}
-    </body>
-</html>
+{% endblock %}
