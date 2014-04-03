@@ -25,4 +25,12 @@ class IcuLanguageBundle extends LanguageBundle
     {
         parent::__construct(realpath(IcuData::getResourceDirectory() . '/lang'), $reader);
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getLocales()
+    {
+        return array('en');
+    }
 }

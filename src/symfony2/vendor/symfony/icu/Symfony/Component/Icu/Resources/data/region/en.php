@@ -134,6 +134,7 @@ return array(
         'KZ' => 'Kazakhstan',
         'KE' => 'Kenya',
         'KI' => 'Kiribati',
+        'XK' => 'Kosovo',
         'KW' => 'Kuwait',
         'KG' => 'Kyrgyzstan',
         'LA' => 'Laos',
