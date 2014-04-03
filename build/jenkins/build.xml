@@ -1,182 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--***********************************************************-->
-<!--*******                build.xml                ***********-->
-<!--*** generation des outils de diagnostic sur un  ***********-->
-<!--*** projet PHP donne, lance par Ant via Jenkins ***********-->
-<!--*** date : 10/04/2012                           ***********-->
-<!--*** auteur : Business&Decision                  ***********-->
-<!--***********************************************************-->
-<project name="php-orchestra" default="build">
+<!-- Continuous integration build.xml -->
+<project name="php-orchestra" default="build" basedir="../..">
 
-    <!--***********************************************************-->
-    <!--*******                Proprietes        ******************-->
-    <!--***********************************************************-->
+    <!-- Properties -->
+    <property name="appli.src.project.path" value="src/symfony2" />
 
-    <!--chemin du projet à utiliser dans Jenkins/Hudson (a renseigner dans les parametres de Jenkins) /-->  
-    <!--property name="appli.src.project.path" value="application/modules/sso" /-->
-    
-    <!-- par defaut, tous les tests sont lances, mais on peut surcharger ces variables pour desactiver certains tests-->
-    <!-- desactive les tests de qualité de code phpmd -->
-    <!-- appli.disable.phpmd -->
-    <!-- desactive les tests checkstyle -->
-    <!-- appli.disable.phpcs -->
-    <!-- desactive les tests de duplication de code -->
-    <!-- appli.disable.phpcpd" -->
-    <!-- desactive la génération de la doc PHP -->
-    <!-- appli.disable.phpdoc" -->
-    <!-- desactive les tests unitaires -->
-    <!-- appli.disable.phpunit" -->
-    
-    <!--configuration de JMeter-->
-    <property name="jmeter-home" location="/usr/local/jmeter" />
-    <path id="ant.jmeter.classpath">
-        <fileset dir="${jmeter-home}/extras">
-            <include name="ant-jmeter*.jar" />
-        </fileset>
-    </path>
+    <!-- Default target: build -->
+    <target name="build" depends="prepare,lint,phploc,pdepend,phpmd-ci,phpcs-ci,phpcpd,phpunit,phpcb" />
 
-    <!-- Use xalan copy from JMeter lib directory to ensure consistent processing with Java 1.4+ -->
-    <path id="xslt.classpath">
-        <fileset dir="${jmeter-home}/lib" includes="xalan*.jar" />
-        <fileset dir="${jmeter-home}/lib" includes="serializer*.jar" />
-    </path>
-    <taskdef name="jmeter" classname="org.programmerplanet.ant.taskdefs.jmeter.JMeterTask" classpathref="ant.jmeter.classpath" />
-
-    <!--pour les conditions if dans le build.xml, necessite la librairie antlib-->
-    <taskdef resource="net/sf/antcontrib/antlib.xml">
-       <classpath>
-         <pathelement location="/usr/share/ant/lib/ant-contrib-1.0b3.jar"/>
-       </classpath>
-    </taskdef>
-
-    <!--***********************************************************-->
-    <!--******* tache de build complet du projet ******************-->
-    <!--***********************************************************-->
-    <target name="build" depends="prepare,lint,jmeter,phploc,pdepend,phpmd-ci,phpcs-ci,phpcpd,phpunit,phpcb,phpdoc" />
-
-    <!--***********************************************************-->
-    <!--******* tache de build complet en parrallele du projet ****-->
-    <!--******* Non utilise                                    ****-->
-    <!--***********************************************************-->
-    <target name="build-parallel" depends="prepare,lint,tools-parallel,phpunit,phpcb" />
-
-    <target name="tools-parallel" description="Run tools in parallel">
-        <parallel threadCount="2">
-            <sequential>
-                <antcall target="pdepend" />
-                <antcall target="phpmd-ci" />
-            </sequential>
-            <antcall target="phpcpd" />
-            <antcall target="phpcs-ci" />
-            <antcall target="phpdoc" />
-            <antcall target="phploc" />
-        </parallel>
-    </target>
-
-    <!--***********************************************************-->
-    <!--******* Supprime tous les fichiers générés par le build****-->
-    <!--***********************************************************-->
+    <!-- Cleanup task -->
     <target name="clean" description="Cleanup build artifacts">
         <delete dir="${basedir}/build/api" />
         <delete dir="${basedir}/build/code-browser" />
         <delete dir="${basedir}/build/coverage" />
         <delete dir="${basedir}/build/logs" />
         <delete dir="${basedir}/build/pdepend" />
-        <!--clean des repertoires jmeter-->
-        <delete dir="${basedir}/build/results-jmeter" />
-        <delete file="${basedir}/build/jmeter.log" />
-        <delete dir="${basedir}/var/unittests" />
-
     </target>
 
-    <!--***********************************************************-->
-    <!--******* Cree les repertoires necessaires au build      ****-->
-    <!--***********************************************************-->
-    <target name="prepare" depends="clean,phpab" description="Prepare for build">
+    <!-- Create build results directories -->
+    <target name="prepare" depends="clean" description="Prepare for build">
         <mkdir dir="${basedir}/build/api" />
         <mkdir dir="${basedir}/build/code-browser" />
         <mkdir dir="${basedir}/build/coverage" />
         <mkdir dir="${basedir}/build/logs" />
         <mkdir dir="${basedir}/build/pdepend" />
-        <mkdir dir="${basedir}/build/results-jmeter/jtl" />
-        <mkdir dir="${basedir}/build/results-jmeter/html" />
-        <touch file="${basedir}/build/jmeter.log" />
-        <mkdir dir="${basedir}/var" />
-        <mkdir dir="${basedir}/var/unittests" />
-        <available property="isJMETER" file="${basedir}/tests/jmeter/${appli.src.project.path}" />
     </target>
 
-  
-    <!--***********************************************************-->
-    <!--******* genere les tests JMETER                        ****-->
-    <!--***********************************************************-->
-    <target name="jmeter" description="génère les tests JMETER" if="isJMETER" depends="prepare">
-        <if>
-        <isset property="proxyhost" />
-        <then>
-            <jmeter jmeterhome="${jmeter-home}" resultlogdir="${basedir}/build/results-jmeter/jtl"
-        proxyhost="${proxyhost}" proxyport="${proxyport}" proxyuser="${proxyuser}" proxypass="${proxypass}">
-                <testplans dir="${basedir}/tests/jmeter/${appli.src.project.path}" includes="*.jmx" />
-                <property name="pass.env" value="${pass.env}" />
-                <property name="proxyhost" value="${proxyhost}" />
-                <property name="proxyport" value="${proxyport}" />
-                <property name="proxyuser" value="${proxyuser}" />
-                <property name="proxypass" value="${proxypass}" />
-          </jmeter>
-        </then>
-        <else>
-            <jmeter jmeterhome="${jmeter-home}" resultlogdir="${basedir}/build/results-jmeter/jtl">
-                <testplans dir="${basedir}/tests/jmeter/${appli.src.project.path}" includes="*.jmx" />
-                <property name="pass.env" value="${pass.env}" />
-            </jmeter>
-        </else>
-        </if>
-        <xslt classpathref="xslt.classpath" basedir="${basedir}/build/results-jmeter/jtl" destdir="${basedir}/build/results-jmeter/html" includes="*.jtl" style="${jmeter-home}/extras/jmeter-results-detail-report_21.xsl">
-                <param name="showData" expression="y" />
-        </xslt>
-        <!-- ajout des images pour le rapport Jmeter -->
-        <copy file="${jmeter-home}/extras/expand.jpg" tofile="${basedir}/build/results-jmeter/html/expand.jpg" />
-        <copy file="${jmeter-home}/extras/collapse.jpg" tofile="${basedir}/build/results-jmeter/html/collapse.jpg" />
-    </target>
-
-    <!--***********************************************************-->
-    <!--******* tache de generation des autoloader ****************-->
-    <!--***********************************************************-->
-    <target name="phpab" description="Generate autoloader scripts">
-        <!--exec executable="phpab">
-            <arg value="-output" />
-            <arg path="${basedir}/${appli.src.project.path}/autoload.php" />
-            <arg value="-template" />
-            <arg path="${basedir}/build/src_autoload.php.in" />
-            <arg path="${basedir}/${appli.src.project.path}" />
-        </exec-->
-        <exec executable="phpab">
-            <arg value="--output" />
-            <arg path="${basedir}/tests/autoload.php" />
-            <arg value="--template" />
-            <arg path="${basedir}/build/tests_autoload.php.in" />
-            <arg path="${basedir}/tests" />
-        </exec>
-    </target>
-
-    <!--***********************************************************-->
-    <!--******* lance lint sur le projet                       ****-->
-    <!--***********************************************************-->
+    <!-- Check PHP files syntax -->
     <target name="lint">
         <apply executable="php" failonerror="true">
             <arg value="-l" />
             <fileset dir="${basedir}/${appli.src.project.path}">
                 <include name="**/*.php" />
             </fileset>
-            <fileset dir="${basedir}/tests">
-                <include name="**/*.php" />
-            </fileset>
         </apply>
     </target>
 
-    <!--***********************************************************-->
-    <!--******* Statistiques de volumetrie via l'outil PHP     ****-->
-    <!--***********************************************************-->
+    <!-- Project size stats -->
     <target name="phploc" description="Measure project size using PHPLOC">
         <exec executable="phploc">
             <arg value="--log-csv" />
@@ -185,9 +45,7 @@
         </exec>
     </target>
 
-    <!--***********************************************************-->
-    <!--******* Calcul des dependances du projet PHP_Depend    ****-->
-    <!--***********************************************************-->
+    <!-- PHP Depend -->
     <target name="pdepend" description="Calculate software metrics using PHP_Depend">
         <exec executable="pdepend">
             <arg value="--jdepend-xml=${basedir}/build/logs/jdepend.xml" />
@@ -197,9 +55,7 @@
         </exec>
     </target>
 
-    <!--***********************************************************-->
-    <!--******* Calcul du code incorrect avec l'outil PHPMD    ****-->
-    <!--***********************************************************-->
+    <!-- PHP Mess Detector -->
     <target name="phpmd" description="Perform project mess detection using PHPMD" unless="appli.disable.phpmd">
         <exec executable="phpmd">
             <arg path="${basedir}/${appli.src.project.path}" />
@@ -208,9 +64,7 @@
         </exec>
     </target>
 
-    <!--***********************************************************-->
-    <!--******* Calcul du code incorrect avec l'outil PHPMD    ****-->
-    <!--***********************************************************-->
+    <!-- PHP Mess Detector for CI (generate report file) -->
     <target name="phpmd-ci" description="Perform project mess detection using PHPMD" unless="appli.disable.phpmd">
         <exec executable="phpmd">
             <arg path="${basedir}/${appli.src.project.path}" />
@@ -221,9 +75,7 @@
         </exec>
     </target>
 
-    <!--***********************************************************-->
-    <!--** Verification des Normes de codage via PHP_CodeSniffer **-->
-    <!--***********************************************************-->
+    <!-- Code Sniffer -->
     <target name="phpcs" description="Find coding standard violations using PHP_CodeSniffer" unless="appli.disable.phpcs">
         <exec executable="phpcs">
             <arg value="--standard=Symfony2" />
@@ -231,9 +83,7 @@
         </exec>
     </target>
 
-    <!--***********************************************************-->
-    <!--** Verification des Normes de codage via PHP_CodeSniffer **-->
-    <!--***********************************************************-->
+    <!-- Code Sniffer for CI (generate report file) -->
     <target name="phpcs-ci" description="Find coding standard violations using PHP_CodeSniffer" unless="appli.disable.phpcs">
         <exec executable="phpcs" output="/dev/null">
             <arg value="--report=checkstyle" />
@@ -243,9 +93,7 @@
         </exec>
     </target>
 
-    <!--***********************************************************-->
-    <!--** Trouve le code duplique via PHPCPD                    **-->
-    <!--***********************************************************-->
+    <!-- PHP Copy Paste Detector -->
     <target name="phpcpd" description="Find duplicate code using PHPCPD" unless="appli.disable.phpcpd">
         <exec executable="phpcpd">
             <arg value="--log-pmd" />
@@ -254,38 +102,15 @@
         </exec>
     </target>
 
-
-
-    <!--***********************************************************-->
-    <!--** Lancement des tests unitaires PHPUnit                 **-->
-    <!--***********************************************************-->
+    <!-- PHP Unit -->
     <target name="phpunit" description="Run unit tests with PHPUnit" unless="appli.disable.phpunit">
-        <copy file="build/phpunit.xml" tofile="build/phpunit.temp.xml" overwrite="true" />
-        <replace file="build/phpunit.temp.xml" value="${appli.src.project.path}" token="@appli.src.project.path@" />
         <exec executable="phpunit" failonerror="false">
             <arg value="--configuration" />
-            <arg path="build/phpunit.temp.xml" />
+            <arg path="build/phpunit.xml" />
         </exec>
-        <delete file="build/phpunit.temp.xml" />
-        <!--   dir="tests/${appli.src.project.path}">
-            <arg value="-no-configuration" />
-            <arg value="-strict" />
-            <arg value="-verbose" />
-            <arg value="-bootstrap" />
-            <arg path="tests/autoload.php" />
-            <arg value="-log-junit" />
-            <arg path="build/logs/junit.xml" />
-            <arg value="-coverage-html" />
-            <arg path="build/coverage" />
-            <arg value="-coverage-clover" />
-            <arg path="build/logs/clover.xml" />
-            <arg path="tests/${appli.src.project.path}" /-->
-
     </target>
 
-    <!--***********************************************************-->
-    <!--** Aggrege les resultats via PHP_CodeBrowser             **-->
-    <!--***********************************************************-->
+    <!-- PHP Code Browser -->
     <target name="phpcb" description="Aggregate tool output with PHP_CodeBrowser">
         <exec executable="phpcb">
             <arg value="--log" />
@@ -297,9 +122,7 @@
         </exec>
     </target>
 
-    <!--***********************************************************-->
-    <!--** Genere la documentation de l'API via PHPDocumentor    **-->
-    <!--***********************************************************-->
+    <!-- PHP Documentor -->
     <target name="phpdoc" description="Generate API documentation using PHPDocumentor" unless="appli.disable.phpdoc">
         <exec executable="phpdoc">
             <arg value="--directory" />
