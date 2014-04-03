@@ -8,7 +8,7 @@
 namespace PHPOrchestra\CMSBundle\Exception;
 
 /**
- * Exception raised when a require mandango document doesn't exist
+ * Exception raised when a require document doesn't exist
  */
 class NonExistingDocumentException extends \Exception
 {

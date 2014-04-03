@@ -8,25 +8,24 @@
 namespace PHPOrchestra\CMSBundle\Form\DataTransformer;
 
 use Symfony\Component\Form\DataTransformerInterface;
-use Mandango;
 
 class jsonToBlocksTransformer implements DataTransformerInterface
 {
     /**
-     * Mandango service
-     * @var Mandango\Mandango
+     * Documents service
+     * @var unknown
      */
-    var $mandango = null;
+    var $documentsService = null;
     
     
     /**
-     * Constructor, require mandango service
+     * Constructor, require documents service
      * 
-     * @param Mandango\Mandango $mandango
+     * @param unknown $documentsService
      */
-    public function __construct(Mandango\Mandango $mandango)
+    public function __construct($documentsService)
     {
-        $this->mandango = $mandango;
+        $this->documentsService = $documentsService;
     }
 
     /**
@@ -66,7 +65,7 @@ class jsonToBlocksTransformer implements DataTransformerInterface
         
         if (is_array($blocks)) {
             foreach($blocks as $block) {
-                $blockDoc = $this->mandango->create('Model\PHPOrchestraCMSBundle\Block')
+                $blockDoc = $this->documentsService->create('Model\PHPOrchestraCMSBundle\Block')
                     ->setComponent($block['component'])
                     ->setAttributes($block['attributes']);
                 $docsArray[] = $blockDoc;
