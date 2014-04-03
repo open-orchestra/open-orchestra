@@ -8,7 +8,7 @@ php_orchestra_cms_addsamplenode:
     pattern:  /node/addsample
     defaults: { _controller: PHPOrchestraCMSBundle:Samples:addSample }
 
-php_orchestra_cms_formnode:
+php_orchestra_cms_nodeform:
     pattern:  /node/form/{nodeId}
     defaults: { _controller: PHPOrchestraCMSBundle:Node:form, nodeId: 0 }
 #    requirements:

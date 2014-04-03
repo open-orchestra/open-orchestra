@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Continuous integration build.xml -->
+<project name="php-orchestra" default="build" basedir="../..">
+
+    <!-- Properties -->
+    <property name="appli.src.project.path" value="src/symfony2" />
+
+    <!-- Default target: build -->
+    <target name="build" depends="prepare,lint,phploc,pdepend,phpmd-ci,phpcs-ci,phpcpd,phpunit,phpcb" />
+
+    <!-- Cleanup task -->
+    <target name="clean" description="Cleanup build artifacts">
+        <delete dir="${basedir}/build/api" />
+        <delete dir="${basedir}/build/code-browser" />
+        <delete dir="${basedir}/build/coverage" />
+        <delete dir="${basedir}/build/logs" />
+        <delete dir="${basedir}/build/pdepend" />
+    </target>
+
+    <!-- Create build results directories -->
+    <target name="prepare" depends="clean" description="Prepare for build">
+        <mkdir dir="${basedir}/build/api" />
+        <mkdir dir="${basedir}/build/code-browser" />
+        <mkdir dir="${basedir}/build/coverage" />
+        <mkdir dir="${basedir}/build/logs" />
+        <mkdir dir="${basedir}/build/pdepend" />
+    </target>
+
+    <!-- Check PHP files syntax -->
+    <target name="lint">
+        <apply executable="php" failonerror="true">
+            <arg value="-l" />
+            <fileset dir="${basedir}/${appli.src.project.path}">
+                <include name="**/*.php" />
+            </fileset>
+        </apply>
+    </target>
+
+    <!-- Project size stats -->
+    <target name="phploc" description="Measure project size using PHPLOC">
+        <exec executable="phploc">
+            <arg value="--log-csv" />
+            <arg value="${basedir}/build/logs/phploc.csv" />
+            <arg path="${basedir}/${appli.src.project.path}" />
+        </exec>
+    </target>
+
+    <!-- PHP Depend -->
+    <target name="pdepend" description="Calculate software metrics using PHP_Depend">
+        <exec executable="pdepend">
+            <arg value="--jdepend-xml=${basedir}/build/logs/jdepend.xml" />
+            <arg value="--jdepend-chart=${basedir}/build/pdepend/dependencies.svg" />
+            <arg value="--overview-pyramid=${basedir}/build/pdepend/overview-pyramid.svg" />
+            <arg path="${basedir}/${appli.src.project.path}" />
+        </exec>
+    </target>
+
+    <!-- PHP Mess Detector -->
+    <target name="phpmd" description="Perform project mess detection using PHPMD" unless="appli.disable.phpmd">
+        <exec executable="phpmd">
+            <arg path="${basedir}/${appli.src.project.path}" />
+            <arg value="text" />
+            <arg value="${basedir}/build/jenkins/phpmd.xml" />
+        </exec>
+    </target>
+
+    <!-- PHP Mess Detector for CI (generate report file) -->
+    <target name="phpmd-ci" description="Perform project mess detection using PHPMD" unless="appli.disable.phpmd">
+        <exec executable="phpmd">
+            <arg path="${basedir}/${appli.src.project.path}" />
+            <arg value="xml" />
+            <arg value="${basedir}/build/phpmd.xml" />
+            <arg value="--reportfile" />
+            <arg value="${basedir}/build/logs/pmd.xml" />
+        </exec>
+    </target>
+
+    <!-- Code Sniffer -->
+    <target name="phpcs" description="Find coding standard violations using PHP_CodeSniffer" unless="appli.disable.phpcs">
+        <exec executable="phpcs">
+            <arg value="--standard=Symfony2" />
+            <arg path="${basedir}/${appli.src.project.path}" />
+        </exec>
+    </target>
+
+    <!-- Code Sniffer for CI (generate report file) -->
+    <target name="phpcs-ci" description="Find coding standard violations using PHP_CodeSniffer" unless="appli.disable.phpcs">
+        <exec executable="phpcs" output="/dev/null">
+            <arg value="--report=checkstyle" />
+            <arg value="--report-file=${basedir}/build/logs/checkstyle.xml" />
+            <arg value="--standard=Symfony2" />
+            <arg path="${basedir}/${appli.src.project.path}" />
+        </exec>
+    </target>
+
+    <!-- PHP Copy Paste Detector -->
+    <target name="phpcpd" description="Find duplicate code using PHPCPD" unless="appli.disable.phpcpd">
+        <exec executable="phpcpd">
+            <arg value="--log-pmd" />
+            <arg value="${basedir}/build/logs/pmd-cpd.xml" />
+            <arg path="${basedir}/${appli.src.project.path}" />
+        </exec>
+    </target>
+
+    <!-- PHP Unit -->
+    <target name="phpunit" description="Run unit tests with PHPUnit" unless="appli.disable.phpunit">
+        <exec executable="phpunit" failonerror="false">
+            <arg value="--configuration" />
+            <arg path="build/phpunit.xml" />
+        </exec>
+    </target>
+
+    <!-- PHP Code Browser -->
+    <target name="phpcb" description="Aggregate tool output with PHP_CodeBrowser">
+        <exec executable="phpcb">
+            <arg value="--log" />
+            <arg path="${basedir}/build/logs" />
+            <arg value="--source" />
+            <arg path="${basedir}/${appli.src.project.path}" />
+            <arg value="--output" />
+            <arg path="${basedir}/build/code-browser" />
+        </exec>
+    </target>
+
+    <!-- PHP Documentor -->
+    <target name="phpdoc" description="Generate API documentation using PHPDocumentor" unless="appli.disable.phpdoc">
+        <exec executable="phpdoc">
+            <arg value="--directory" />
+            <arg path="${basedir}/${appli.src.project.path}" />
+            <arg value="--target" />
+            <arg path="${basedir}/build/api" />
+        </exec>
+    </target>
+</project>
