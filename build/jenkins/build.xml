@@ -6,7 +6,7 @@
     <property name="appli.src.project.path" value="src/symfony2" />
 
     <!-- Default target: build -->
-    <target name="build" depends="prepare,lint,phploc,pdepend,phpmd-ci,phpcs-ci,phpcpd,phpunit,phpcb" />
+    <target name="build" depends="prepare,lint,phploc,pdepend,phpmd-ci,phpcs-ci,phpcpd,phpunit,phpcb,phpdoc" />
 
     <!-- Cleanup task -->
     <target name="clean" description="Cleanup build artifacts">
