@@ -24,5 +24,12 @@
         <log type="coverage-html" target="../../build/coverage"  />
         <log type="junit" target="../../build/logs/junit.xml" />
     </logging>
+
+    <filter>
+        <whitelist>
+            <directory>../../src/symfony2/vendor/php-orchestra</directory>
+        </whitelist>
+    </filter>
+
 </phpunit>
 
