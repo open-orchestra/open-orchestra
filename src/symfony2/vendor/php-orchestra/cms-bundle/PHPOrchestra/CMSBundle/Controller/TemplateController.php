@@ -38,7 +38,7 @@ class TemplateController extends Controller
             $template->setVersion($template->getVersion() + 1);
         }
         
-        $form = $this->createForm('templateForm', $template);
+        $form = $this->createForm('template', $template);
         $form->handleRequest($request);
         if ($form->isValid())
         {
