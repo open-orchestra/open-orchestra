@@ -87,7 +87,7 @@
 
     <!-- Code Sniffer for CI (generate report file) -->
     <target name="phpcs-ci" description="Find coding standard violations using PHP_CodeSniffer" unless="appli.disable.phpcs">
-        <exec executable="phpcs" output="/dev/null">
+        <exec executable="phpcs">
             <arg value="--report=checkstyle" />
             <arg value="--report-file=${basedir}/build/logs/checkstyle.xml" />
             <arg value="--standard=PSR1,PSR2" />
