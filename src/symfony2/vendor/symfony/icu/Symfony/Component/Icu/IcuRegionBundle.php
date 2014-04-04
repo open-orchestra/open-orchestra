@@ -25,4 +25,12 @@ class IcuRegionBundle extends RegionBundle
     {
         parent::__construct(realpath(IcuData::getResourceDirectory() . '/region'), $reader);
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getLocales()
+    {
+        return array('en');
+    }
 }

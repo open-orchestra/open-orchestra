@@ -21,10 +21,10 @@ use Model\PHPOrchestraCMSBundle\Node;
 class PhpOrchestraUrlMatcher extends RedirectableUrlMatcher
 {
     /**
-     * Mandango service
+     * Documents service
      * @var unknown_type
      */
-    protected $mandango = null;
+    protected $documentsService = null;
     
     
     /**
@@ -32,13 +32,13 @@ class PhpOrchestraUrlMatcher extends RedirectableUrlMatcher
      * 
      * @param RouteCollection $routes
      * @param RequestContext $context
-     * @param unknown_type $mandangoService
+     * @param unknown_type $documentsService
      */
-    public function __construct(RouteCollection $routes, RequestContext $context, $mandangoService)
+    public function __construct(RouteCollection $routes, RequestContext $context, $documentsService)
     {
         $this->routes = $routes;
         $this->context = $context;
-        $this->mandango = $mandangoService;
+        $this->documentsService = $documentsService;
     }
     
     
@@ -156,7 +156,7 @@ class PhpOrchestraUrlMatcher extends RedirectableUrlMatcher
                             'alias' => $slug
                          );
         
-        $node = DocumentLoader::getDocument('Node', $criteria, $this->mandango);
+        $node = DocumentLoader::getDocument('Node', $criteria, $this->documentsService);
         
         if (!is_null($node))
             $nodeInfo = array(

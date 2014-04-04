@@ -25,4 +25,12 @@ class IcuCurrencyBundle extends CurrencyBundle
     {
         parent::__construct(realpath(IcuData::getResourceDirectory() . '/curr'), $reader);
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getLocales()
+    {
+        return array('en');
+    }
 }

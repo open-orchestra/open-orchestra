@@ -12,20 +12,20 @@ use Symfony\Component\Routing\RequestContext;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * The FrameworkBundle router is extended to inject mandango service
+ * The FrameworkBundle router is extended to inject documents service
  * in PhpOrchestraUrlMatcher
  */
 class PhpOrchestraRouter extends Router
 {
     /**
-     * Mandango service
+     * Documents service
      * 
      * @var unknown_type
      */
-    protected $mandango = null;
+    protected $documentsService = null;
     
     /**
-     * Extends parent constructor to get mandango service
+     * Extends parent constructor to get documents service
      * as $container is private in parent class
      *  
      * @param $container
@@ -37,11 +37,11 @@ class PhpOrchestraRouter extends Router
     {
         parent::__construct($container, $resource, $options, $context);
         
-        $this->mandango = $container->get('mandango');
+        $this->documentsService = $container->get('mandango');
     }
     
     /**
-     * Override parent getMatcher to inject mandango service
+     * Override parent getMatcher to inject documents service
      * in PhpOrchestraUrlMatcher
      */
     public function getMatcher()
@@ -50,7 +50,7 @@ class PhpOrchestraRouter extends Router
             return $this->matcher;
         }
         
-        return $this->matcher = new $this->options['matcher_class']($this->getRouteCollection(), $this->context, $this->mandango);
+        return $this->matcher = new $this->options['matcher_class']($this->getRouteCollection(), $this->context, $this->documentsService);
     }
 
 }

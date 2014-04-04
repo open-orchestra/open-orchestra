@@ -30,6 +30,7 @@ class IcuIntegrationTest extends \PHPUnit_Framework_TestCase
         $bundle = new IcuCurrencyBundle(new StructuredBundleReader(new PhpBundleReader()));
 
         $this->assertSame('€', $bundle->getCurrencySymbol('EUR', 'en'));
+        $this->assertSame(array('en'), $bundle->getLocales());
     }
 
     public function testLanguageBundle()
@@ -37,6 +38,7 @@ class IcuIntegrationTest extends \PHPUnit_Framework_TestCase
         $bundle = new IcuLanguageBundle(new StructuredBundleReader(new PhpBundleReader()));
 
         $this->assertSame('German', $bundle->getLanguageName('de', null, 'en'));
+        $this->assertSame(array('en'), $bundle->getLocales());
     }
 
     public function testLocaleBundle()
@@ -44,6 +46,7 @@ class IcuIntegrationTest extends \PHPUnit_Framework_TestCase
         $bundle = new IcuLocaleBundle(new StructuredBundleReader(new PhpBundleReader()));
 
         $this->assertSame('Azerbaijani', $bundle->getLocaleName('az', 'en'));
+        $this->assertSame(array('en'), $bundle->getLocales());
     }
 
     public function testRegionBundle()
@@ -51,5 +54,6 @@ class IcuIntegrationTest extends \PHPUnit_Framework_TestCase
         $bundle = new IcuRegionBundle(new StructuredBundleReader(new PhpBundleReader()));
 
         $this->assertSame('United Kingdom', $bundle->getCountryName('GB', 'en'));
+        $this->assertSame(array('en'), $bundle->getLocales());
     }
 }

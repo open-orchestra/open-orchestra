@@ -1509,7 +1509,7 @@ return array(
             0 => 'Swiss Franc',
             1 => 'CHF',
             2 => 2,
-            3 => 5,
+            3 => 0,
         ),
         'SYP' => array(
             0 => 'Syrian Pound',
@@ -1763,8 +1763,14 @@ return array(
             2 => 2,
             3 => 0,
         ),
-        'ZMK' => array(
+        'ZMW' => array(
             0 => 'Zambian Kwacha',
+            1 => 'ZMW',
+            2 => 2,
+            3 => 0,
+        ),
+        'ZMK' => array(
+            0 => 'Zambian Kwacha (1968-2012)',
             1 => 'ZMK',
             2 => 0,
             3 => 0,

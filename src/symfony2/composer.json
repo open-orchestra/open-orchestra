@@ -24,7 +24,8 @@
         "sensio/framework-extra-bundle": "~3.0",
         "sensio/generator-bundle": "~2.3",
         "incenteev/composer-parameter-handler": "~2.0",
-        "mandango/mandango-bundle": "dev-master"
+        "mandango/mandango-bundle": "dev-master",
+        "snc/redis-bundle": "1.1.x-dev"
     },
     "scripts": {
         "post-install-cmd": [

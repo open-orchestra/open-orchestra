@@ -16,11 +16,11 @@ class DocumentLoader
     * 
     * @param string $documentType
     * @param array $criteria
-    * @param Mandango $mandangoService
+    * @param unknown $documentsService
     */
-    static function getDocument($documentType, array $criteria, $mandangoService)
+    static function getDocument($documentType, array $criteria, $documentsService)
     {
-        $repository = $mandangoService->getRepository(self::getDocumentNamespace($documentType));
+        $repository = $documentsService->getRepository(self::getDocumentNamespace($documentType));
         $query = $repository->createQuery();
         $query->criteria($criteria);
         $query->sort(self::getDefaultSort($documentType));
@@ -32,11 +32,11 @@ class DocumentLoader
     * 
     * @param string $documentType
     * @param array $criteria
-    * @param Mandango $mandangoService
+    * @param unknown $documentsService
     */
-    static function getDocuments($documentType, array $criteria, $mandangoService)
+    static function getDocuments($documentType, array $criteria, $documentsService)
     {
-        $repository = $mandangoService->getRepository(self::getDocumentNamespace($documentType));
+        $repository = $documentsService->getRepository(self::getDocumentNamespace($documentType));
         $query = $repository->createQuery();
         $query->criteria($criteria);
         return $query->all();

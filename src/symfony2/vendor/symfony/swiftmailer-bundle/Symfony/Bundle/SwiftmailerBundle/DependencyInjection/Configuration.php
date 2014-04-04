@@ -49,7 +49,7 @@ class Configuration implements ConfigurationInterface
         $rootNode
             ->beforeNormalization()
                 ->ifTrue(function ($v) { return is_array($v) && !array_key_exists('mailers', $v) && !array_key_exists('mailer', $v); })
-                ->then(function($v) {
+                ->then(function ($v) {
                     $mailer = array();
                     foreach ($v as $key => $value) {
                         if ('default_mailer' == $key) {
@@ -93,7 +93,7 @@ class Configuration implements ConfigurationInterface
                 ->scalarNode('username')->defaultNull()->end()
                 ->scalarNode('password')->defaultNull()->end()
                 ->scalarNode('host')->defaultValue('localhost')->end()
-                ->scalarNode('port')->defaultFalse()->end()
+                ->scalarNode('port')->defaultNull()->end()
                 ->scalarNode('timeout')->defaultValue(30)->end()
                 ->scalarNode('source_ip')->defaultNull()->end()
                 ->scalarNode('encryption')
