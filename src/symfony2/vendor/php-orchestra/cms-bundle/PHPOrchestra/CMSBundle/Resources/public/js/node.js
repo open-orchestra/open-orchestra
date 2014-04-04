@@ -20,7 +20,7 @@ function init(parameter){
 	    	else{
 	    		data.this_values.areas = tempArea;
 	    	}
-	    	//data.settings.element.parseTemplate($.extend(data.settings, {"path": null}));
+	    	data.settings.element.parseTemplate($.extend(data.settings, {"path": null}));
 	    });
 	});
 }

@@ -4,27 +4,3 @@
  * @author Noël GILAIN <noel.gilain@businessdecision.com>
  */
 
-header {
-    height:80px;
-    
-    background-color:#FFFF00;
-}
-
-
-aside {
-    width:200px;
-    min-height:500px;
-    
-    background-color:#00FFFF;
-}
-
-#main {
-    position:absolute;
-    left:210px;
-    top:90px;
-    
-    width:1000px;
-    height:500px;
-    
-    background-color:#FF0000;
-}

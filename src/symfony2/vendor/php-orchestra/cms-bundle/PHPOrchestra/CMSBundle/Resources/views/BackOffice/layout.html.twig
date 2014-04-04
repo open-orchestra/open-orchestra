@@ -13,14 +13,19 @@
         {% endblock %}
         {% block javascripts %}{% endblock %}
     </head>
-    <body>
+    <body class="fixed-header fixed-ribbon fixed-navigation">
         <header>Header</header>
-        <aside id="left-menu">
+        <aside id="left-panel">
             <ul>
                 <li><a href="{{ path('php_orchestra_cms_nodeform') }}">Edition de noeud</a></li>
                 <li><a href="{{ path('php_orchestra_cms_templateform') }}">Edition de template</a></li>
             </ul>
         </aside>
-        <div id="main">{% block content %}{% endblock %}</div>
+        <div id="main" role="main">
+            <div id="ribbon"></div>
+            <div id="content" style="opacity: 1;height:500px;">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
     </body>
 </html>

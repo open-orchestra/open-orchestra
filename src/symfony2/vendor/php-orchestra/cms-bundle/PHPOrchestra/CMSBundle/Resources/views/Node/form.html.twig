@@ -4,26 +4,38 @@
  # @author Nicolas ANNE <nicolas.anne@businessdecision.com>
  ##}
 
-<html>
-    <head>
-        <title></title>
-        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+{% extends 'PHPOrchestraCMSBundle:BackOffice:layout.html.twig' %}
 
-        <!--<link rel="stylesheet" href="{{ asset('bundles/phporchestracms/css/jquery-ui.css') }}">-->
-        <link rel="stylesheet" href="{{ asset('bundles/phporchestracms/css/template.css') }}">
+{% block title %}{{ parent() }} : Template edition{% endblock %}
 
-        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-        <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-        <!--<script src="{{ asset('bundles/phporchestracms/js/jquery-1.9.1.js') }}"></script>
-        <script src="{{ asset('bundles/phporchestracms/js/jquery-ui.js') }}"></script>-->
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('bundles/phporchestracms/css/jquery-ui.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/phporchestracms/css/template.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/phporchestracms/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/phporchestracms/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/phporchestracms/css/smartadmin-production.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/phporchestracms/css/smartadmin-skins.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/phporchestracms/css/ribbon.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/phporchestracms/css/phpfactory.css') }}">
 
-        <script src="{{ asset('bundles/phporchestracms/js/template.js') }}"></script>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700"" media="screen" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="http://phpfactory-bo.interakting.com/img/favicon/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="http://phpfactory-bo.interakting.com/img/favicon/favicon.ico" type="image/x-icon" />
+{% endblock %}
 
-    </head>
-    <body>
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('bundles/phporchestracms/js/jquery-1.9.1.js') }}"></script>
+    <script src="{{ asset('bundles/phporchestracms/js/jquery-ui.js') }}"></script>
+    <script src="{{ asset('bundles/phporchestracms/js/template.js') }}"></script>
+{% endblock %}
+
+
+{% block content %}
     {% if form.vars.showDialog %}
         {% form_theme form 'PHPOrchestraCMSBundle:Form:extend.html.twig' %}
     {% endif %}
     {{ form(form) }}
-    </body>
-</html>
+{% endblock %}

@@ -165,7 +165,8 @@ var dialog_parameter = {
 		}
 		var span = $( "<span/>", {"class": settings.css, "text": (this_values.label) ? this_values.label : 'No Record'});
 		for(var i in actions){
-			var action = $( "<span/>", {"class": "action " + actions[i], "text": actions[i]});
+			var action = $( "<span/>", {"class": "action"});
+			$("<i/>", {"class": 'fa ' + actions[i]}).appendTo(action);
 			action.appendTo(span);
 			action.click(function(event){
 				event.stopPropagation();
