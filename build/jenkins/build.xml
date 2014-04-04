@@ -108,7 +108,7 @@
 
     <!-- PHP Unit -->
     <target name="phpunit" description="Run unit tests with PHPUnit" unless="appli.disable.phpunit">
-        <exec executable="phpunit" failonerror="false">
+        <exec executable="${basedir}/${appli.src.project.path}/bin/phpunit" failonerror="false">
             <arg value="--configuration" />
             <arg path="build/jenkins/phpunit.xml" />
         </exec>
