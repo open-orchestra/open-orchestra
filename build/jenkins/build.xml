@@ -79,7 +79,7 @@
     <!-- Code Sniffer -->
     <target name="phpcs" description="Find coding standard violations using PHP_CodeSniffer" unless="appli.disable.phpcs">
         <exec executable="phpcs">
-            <arg value="--standard=PSR1,PSR2" />
+            <arg value="--standard=PSR2" />
             <arg path="${basedir}/${appli.src.project.path}/vendor/php-orchestra" />
             <arg path="${basedir}/${appli.src.project.path}/src" />
         </exec>
@@ -90,7 +90,7 @@
         <exec executable="phpcs">
             <arg value="--report=checkstyle" />
             <arg value="--report-file=${basedir}/build/logs/checkstyle.xml" />
-            <arg value="--standard=PSR1,PSR2" />
+            <arg value="--standard=PSR2" />
             <arg path="${basedir}/${appli.src.project.path}/vendor/php-orchestra" />
             <arg path="${basedir}/${appli.src.project.path}/src" />
         </exec>
