@@ -51,10 +51,10 @@ class NodeType extends AbstractType
             ->add('nodeId', 'hidden')
             ->add('siteId', 'hidden')
             
-            ->add('templateId', 'orchestra_template')
+            ->add('templateId', 'orchestra_template_choice')
             ->add('name', 'text', array('attr' => array('class' => 'used-as-label')))
             ->add('nodeType', 'text')
-            ->add('parentId', 'text')
+            ->add('parentId', 'orchestra_node_choice')
             
             ->add('path', 'text')
             ->add('alias', 'text')

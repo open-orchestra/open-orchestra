@@ -10,10 +10,11 @@ namespace PHPOrchestra\CMSBundle\Form\Type;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use PHPOrchestra\CMSBundle\Form\DataTransformer\jsonToAreasTransformer;
 use PHPOrchestra\CMSBundle\Classes\DocumentLoader;
 use mandango;
 
-class TemplateChoiceType extends AbstractType
+class NodeChoiceType extends AbstractType
 {
 
     var $choices = null;
@@ -25,13 +26,13 @@ class TemplateChoiceType extends AbstractType
      */
     public function __construct(Mandango\Mandango $mandango = null)
     {
-    	$templates = DocumentLoader::getDocuments('Template', array(), $mandango);
-    	$this->choices[''] = '--------';
-        foreach($templates as $key => $template){
-            $this->choices[$template->getTemplateId()] = $template->getName();
+        $nodes = DocumentLoader::getDocuments('Node', array(), $mandango);
+        $this->choices[''] = '--------';
+        foreach($nodes as $key => $node){
+            $this->choices[$node->getNodeId()] = $node->getName();
         }
     }
-	
+    
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
@@ -46,7 +47,7 @@ class TemplateChoiceType extends AbstractType
 
     public function getName()
     {
-        return 'orchestra_template_choice';
+        return 'orchestra_node_choice';
     }
     
 }

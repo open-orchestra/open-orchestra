@@ -1,0 +1,6 @@
+{% for child in form %}
+    {% if child.vars.name != '_token' %}
+        {{ form_label(child) }}
+        {{ form_widget(child) }}
+    {% endif %}
+{% endfor %}

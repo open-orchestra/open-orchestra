@@ -15,6 +15,7 @@ use Symfony\Component\HttpFoundation\Request;
 use PHPOrchestra\CMSBundle\Form\Type\NodeType;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use PHPOrchestra\CMSBundle\Helper\NodeHelper;
+use PHPOrchestra\CMSBundle\Form\Type\BlockChoiceType;
 
 class NodeController extends Controller
 {
@@ -170,10 +171,18 @@ class NodeController extends Controller
      */
     public function showBlocksFromNodeAction(Request $request)
     {
-        $node = DocumentLoader::getDocument('Node', array('nodeId' => $request->get('nodeId')), $this->container->get('mandango'));
+        $form = $this->get('form.factory')->createNamedBuilder($request->get('form'), 'form')
+            ->add('blockId', 
+                new BlockChoiceType($this->container->get('mandango'),
+                        $request->get('nodeId'),
+                        $this->container->getParameter('php_orchestra.blocks')))
+            ->getForm();
+        $render = $this->render('PHPOrchestraCMSBundle:Form:input.html.twig', array(
+            'form' => $form->createView()
+        ));
         return new JsonResponse(array(
             'success' => true,
-            'data' => NodeHelper::filterBlocks($node, $this->container->getParameter('php_orchestra.blocks'))
+            'data' => $render->getContent()
         ));
     }
     

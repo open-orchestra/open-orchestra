@@ -10,10 +10,11 @@ namespace PHPOrchestra\CMSBundle\Form\Type;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use PHPOrchestra\CMSBundle\Form\DataTransformer\jsonToAreasTransformer;
 use PHPOrchestra\CMSBundle\Classes\DocumentLoader;
 use mandango;
 
-class TemplateChoiceType extends AbstractType
+class BlockChoiceType extends AbstractType
 {
 
     var $choices = null;
@@ -23,15 +24,26 @@ class TemplateChoiceType extends AbstractType
      * 
      * @param Mandango\Mandango $mandango
      */
-    public function __construct(Mandango\Mandango $mandango = null)
+    public function __construct(Mandango\Mandango $mandango = null, $nodeId, $filter = array())
     {
-    	$templates = DocumentLoader::getDocuments('Template', array(), $mandango);
-    	$this->choices[''] = '--------';
-        foreach($templates as $key => $template){
-            $this->choices[$template->getTemplateId()] = $template->getName();
+        $node = DocumentLoader::getDocument('Node', array('nodeId' => $nodeId), $mandango);
+        $this->choices[''] = '--------';
+    	
+        foreach($filter as $key => $configBlock){
+            $filter[$key] = $configBlock['action'];
+        }
+        $filter = array_flip($filter);
+        $blocks = $node->getBlocks();
+        $intRank = 1;
+        foreach($blocks as $block){
+            $component = $block->getComponent();
+            if(array_key_exists($component, $filter)){
+               $this->choices[$intRank] = $filter[$component];
+               $intRank++;
+            }
         }
     }
-	
+    
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
@@ -46,7 +58,7 @@ class TemplateChoiceType extends AbstractType
 
     public function getName()
     {
-        return 'orchestra_template_choice';
+        return 'orchestra_block_choice';
     }
     
 }

@@ -66,6 +66,23 @@ function treeFormatForLoad(settings, values){
 	}
 }
 
+function moveFromTo(settings, source, destination){
+	var pattern = new RegExp('^(.*)\\.(.*?)\\[(\\d*)]$');
+	var copy = eval('$.extend(true, {}, '+ source + ');');
+	eval(source.replace(pattern, 'source = {"path" : "$1", "type" : "$2", "index" : $3};'));
+	if(destination){
+		if(isNaN(destination)){
+			eval(destination + ' = $.extend({}, {"' + source.type + '" : []}, ' + destination + ');');
+			eval(destination + '.' + source.type + '.push(copy);');
+		}
+		else{
+			eval(source.path + '.' + source.type + '.splice(' + (source.index + destination) +  ', 0, copy)');
+		}
+	}
+	eval(source.path + '.' + source.type + '.splice(' + source.index + ', 1)');
+	settings.element.parseTemplate($.extend(settings, {"path": null}));
+}
+
 var dialog_parameter = {
         resizable: false,
         width:530,
@@ -125,8 +142,8 @@ var dialog_parameter = {
 
 (function($){
     $.fn.createSubTemplate = function(settings, type){
-		var values = eval('settings.' + settings.path);
-		var tab = eval('settings.' + settings.path + '.' + type);
+		var values = eval(settings.path);
+		var tab = eval(settings.path + '.' + type);
 		var path = settings.path + '.' + type;
 		values.boDirection = (values.boDirection) ? values.boDirection : 'h';
 		if(tab.length > 0){
@@ -151,13 +168,13 @@ var dialog_parameter = {
 		var actions = ['delete', 'movedown', 'moveup'];
 		if(settings.path == null){
 			settings.element = this;
-			settings.path = "values";
+			settings.path = "settings.values";
 			settings.type = $(this).attr('id').replace('-model', '');
 			settings.style = '';
 			settings.element.html('');
 			actions = [];
 		}
-		var this_values = eval('settings.' + settings.path);
+		var this_values = eval(settings.path);
 
 		if(settings.init){
 		    formatForLoad(settings);
@@ -165,32 +182,21 @@ var dialog_parameter = {
 		}
 		var span = $( "<span/>", {"class": settings.css, "text": (this_values.label) ? this_values.label : 'No Record'});
 		for(var i in actions){
-			var action = $( "<span/>", {"class": "action"});
-			$("<i/>", {"class": 'fa ' + actions[i]}).appendTo(action);
+			var action = $( "<span/>", {"class": "fa action"});
+			$("<span/>", {"class": '' + actions[i]}).appendTo(action);
 			action.appendTo(span);
 			action.click(function(event){
 				event.stopPropagation();
-				var pattern = new RegExp('^(.*)\\.(.*?)\\[(\\d*)]$');
-				var source = null;
-				eval(settings.path.replace(pattern, 'source = {"path" : "$1", "type" : "$2", "index" : $3};'));
-				if($(this).attr("class").indexOf("delete") >= 0){
-					eval('settings.' + source.path + '.' + source.type + '.splice(' + source.index + ', 1)');
-				}
-				else if($(this).attr("class").indexOf("moveup") >= 0){
-					eval('var tab = settings.' + source.path + '.' + source.type);
-					if(source.index > 0){
-						var tmp = tab[source.index - 1];
-						tab[source.index - 1] = tab[source.index];
-						tab[source.index] = tmp;
-					}
-				}
-				else if($(this).attr("class").indexOf("movedow") >= 0){
-					eval('var tab = settings.' + source.path + '.' + source.type);
-					if(source.index < tab.length - 1){
-						var tmp = tab[source.index + 1];
-						tab[source.index + 1] = tab[source.index];
-						tab[source.index] = tmp;
-					}
+				switch($(this).children().eq(0).attr("class")){
+					case 'delete' :
+						moveFromTo(settings, settings.path);
+						break;
+					case 'moveup' :
+						moveFromTo(settings, settings.path, -1);
+						break;
+					case 'movedown' :
+						moveFromTo(settings, settings.path, +1);
+						break;
 				}
 				settings.element.parseTemplate($.extend(settings, {"path": null}));
 			});
@@ -231,46 +237,34 @@ var dialog_parameter = {
 			ul.appendTo(div);
 			ul.data('path', settings.path);
 		}
-		if(settings.path == "values"){
+		if(settings.path == "settings.values"){
 			ul = $( "<ul/>", {"class": settings.css + ' ' + settings.css + '-' + settings.type,
 				"css": {"display": settings.style}});
 			li.appendTo(ul);
 			ul.appendTo($(this));
 			
-			
-			
-			$('ul.' + settings.css).parent().droppable({
-				greedy: true,
-				tolerance: "pointer",
-				hoverClass: 'over',
-				drop : function(event, ui){
-					var pattern = new RegExp('^(.*)\\.(.*?)\\[(\\d*)]$');
-					var target = eval('settings.' + $(this).find('ul').data('path'));
-					var path = 'settings.' + ui.draggable.data('path');
-					var source = null;
-					eval(path.replace(pattern, 'source = {"path" : "$1", "type" : "$2", "index" : $3};'));
-					if(!(source.type in target)){
-						target[source.type] = new Array();
+			if($( "#dialog-" + settings.type ).dialog("option", "addArray").length){
+				$('ul.' + settings.css).parent().droppable({
+					greedy: true,
+					tolerance: "pointer",
+					hoverClass: 'over',
+					drop : function(event, ui){
+						moveFromTo(settings, ui.draggable.data('path'), $(this).find('ul').data('path'));
+					},
+					accept: function(event){
+						return event.attr("class").indexOf($(this).children('ul').attr("class")) >= 0;
 					}
-					target[source.type].push(eval(path));
-					eval(source.path + '.' + source.type + '.splice(' + source.index + ', 1)');
-					settings.element.parseTemplate($.extend(settings, {"path": null}));
-				},
-				accept: function(event){
-					return event.attr("class").indexOf($(this).children('ul').attr("class")) >= 0;
-				}
-			});
-			$('li.' + settings.css).draggable({
-				opacity: 0.5,
-				containment: settings.element,
-				drag: function(event, ui){
-					settings.element.find('div').unbind('mouseover');
-					settings.element.find('div').unbind('mouseout');
-				}
-			});
-			
-			
-			
+				});
+				$('li.' + settings.css).draggable({
+					opacity: 0.5,
+					containment: settings.element,
+					zIndex: 100,
+					drag: function(event, ui){
+						settings.element.find('div').unbind('mouseover');
+						settings.element.find('div').unbind('mouseout');
+					}
+				});
+			}
 		}
 		else{
 			li.data('path', settings.path);

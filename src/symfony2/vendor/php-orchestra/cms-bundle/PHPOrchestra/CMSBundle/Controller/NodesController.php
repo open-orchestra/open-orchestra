@@ -22,10 +22,15 @@ class NodesController extends Controller
      */
     public function showAllNodesAction(Request $request)
     {
-        $nodes = DocumentLoader::getDocuments('Node', array(), $this->container->get('mandango'));
+        $form = $this->get('form.factory')->createNamedBuilder($request->get('form'), 'form')
+            ->add('nodeId', 'orchestra_node_choice')
+            ->getForm();
+        $render = $this->render('PHPOrchestraCMSBundle:Form:input.html.twig', array(
+            'form' => $form->createView()
+        ));
         return new JsonResponse(array(
             'success' => true,
-            'data' => NodesHelper::formatNodes($nodes)
+            'data' => $render->getContent()
         ));
     }
 }
