@@ -17,8 +17,9 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Mandango\MandangoBundle\MandangoBundle(),
+            new Snc\RedisBundle\SncRedisBundle(),
             new PHPOrchestra\CMSBundle\PHPOrchestraCMSBundle(),
-        );
+            );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();

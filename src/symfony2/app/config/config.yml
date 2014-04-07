@@ -74,3 +74,11 @@ mandango:
         local:
             server:   mongodb://localhost:27017
             database: symfony2_local_%kernel.environment%
+            
+snc_redis:
+    clients:
+        default:
+            type: predis
+            alias: default
+            dsn: redis://localhost
+            logging: %kernel.debug%

@@ -38,6 +38,11 @@ class PhpOrchestraRouter extends Router
         parent::__construct($container, $resource, $options, $context);
         
         $this->documentsService = $container->get('mandango');
+        
+        
+//        $redis = $container->get('snc_redis.default');
+//        $val = $redis->incr('foo:bar');
+        
     }
     
     /**
