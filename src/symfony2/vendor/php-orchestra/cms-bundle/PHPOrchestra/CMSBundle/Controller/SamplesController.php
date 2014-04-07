@@ -41,7 +41,7 @@ class SamplesController extends Controller
     {
         $mandango = $this->container->get('mandango');
 
-        $nodesRepo = $mandango->getRepository('Model\PHPOrchestraCMSBundle\Node');
+//        $nodesRepo = $mandango->getRepository('Model\PHPOrchestraCMSBundle\Node');
 //        $nodesRepo->remove();
 
 // Block #1 : Site Menu

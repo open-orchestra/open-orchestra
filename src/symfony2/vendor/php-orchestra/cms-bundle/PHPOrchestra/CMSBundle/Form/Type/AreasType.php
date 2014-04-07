@@ -20,9 +20,9 @@ class AreasType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $transformer = new jsonToAreasTransformer();
-    	$builder->addModelTransformer($transformer);
+        $builder->addModelTransformer($transformer);
     }
-    
+
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
@@ -32,7 +32,7 @@ class AreasType extends AbstractType
             'attr' => array('class' => 'not-mapped')
         ));
     }
-    
+
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
         $view->vars['dialogPath'] = $options['dialogPath'];
