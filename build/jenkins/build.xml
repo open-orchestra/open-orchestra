@@ -28,13 +28,10 @@
 
     <!-- Check PHP files syntax -->
     <target name="lint">
-        <apply executable="php" failonerror="true">
-            <arg value="-l" />
-            <fileset dir="${basedir}/${appli.src.project.path}">
-                <include name="src/**/*.php" />
-                <include name="vendor/php-orchestra/**/*.php" />
-            </fileset>
-        </apply>
+        <exec executable="bash" failonerror="true">
+            <arg value="-c" />
+            <arg value="find -L ${basedir}/${appli.src.project.path}/src ${basedir}/${appli.src.project.path}/vendor/php-orchestra -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l" />
+        </exec>
     </target>
 
     <!-- Project size stats -->
