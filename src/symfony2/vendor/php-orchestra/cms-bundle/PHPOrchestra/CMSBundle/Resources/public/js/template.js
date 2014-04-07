@@ -70,6 +70,7 @@ function moveFromTo(settings, source, destination){
 	var pattern = new RegExp('^(.*)\\.(.*?)\\[(\\d*)]$');
 	var copy = eval('$.extend(true, {}, '+ source + ');');
 	eval(source.replace(pattern, 'source = {"path" : "$1", "type" : "$2", "index" : $3};'));
+	eval(source.path + '.' + source.type + '.splice(' + source.index + ', 1)');
 	if(destination){
 		if(isNaN(destination)){
 			eval(destination + ' = $.extend({}, {"' + source.type + '" : []}, ' + destination + ');');
@@ -79,7 +80,6 @@ function moveFromTo(settings, source, destination){
 			eval(source.path + '.' + source.type + '.splice(' + (source.index + destination) +  ', 0, copy)');
 		}
 	}
-	eval(source.path + '.' + source.type + '.splice(' + source.index + ', 1)');
 	settings.element.parseTemplate($.extend(settings, {"path": null}));
 }
 

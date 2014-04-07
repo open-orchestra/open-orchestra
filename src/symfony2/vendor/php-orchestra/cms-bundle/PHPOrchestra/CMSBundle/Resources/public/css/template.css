@@ -99,3 +99,6 @@ div.ui-widget-model.over{
 	   width:100%;
 	   height:100%;
 }
+.no-label label{
+	display:none;
+}

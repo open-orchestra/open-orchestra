@@ -14,6 +14,7 @@ use PHPOrchestra\CMSBundle\Exception\NonExistingDocumentException;
 use Symfony\Component\HttpFoundation\Request;
 use PHPOrchestra\CMSBundle\Form\Type\NodeType;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Response;
 use PHPOrchestra\CMSBundle\Helper\NodeHelper;
 use PHPOrchestra\CMSBundle\Form\Type\BlockChoiceType;
 
@@ -159,9 +160,9 @@ class NodeController extends Controller
             
             return $this->redirect($this->generateUrl('php_orchestra_cms_node', array('nodeId' => $node->getNodeId())));
         }
-            
         return $this->render('PHPOrchestraCMSBundle:Node:form.html.twig', array(
             'form' => $form->createView(),
+            'ajax' => $request->isXmlHttpRequest()
         ));    
     }
 
@@ -180,10 +181,15 @@ class NodeController extends Controller
         $render = $this->render('PHPOrchestraCMSBundle:Form:input.html.twig', array(
             'form' => $form->createView()
         ));
-        return new JsonResponse(array(
-            'success' => true,
-            'data' => $render->getContent()
-        ));
+        if($request->isXmlHttpRequest()){
+	        return new JsonResponse(array(
+	            'success' => true,
+	            'data' => $render->getContent()
+	        ));
+        }
+        else{
+            return new Response($render->getContent());
+        }
     }
     
 }

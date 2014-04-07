@@ -9,16 +9,38 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <title>{% block title %}PHPOrchestra{% endblock %}</title>
         {% block stylesheets %}
-        <link rel="stylesheet" href="{{ asset('bundles/phporchestracms/css/backoffice.css') }}">
+            <link rel="stylesheet" href="{{ asset('bundles/phporchestracms/css/backoffice.css') }}">
+            <link rel="stylesheet" href="{{ asset('bundles/phporchestracms/css/jquery-ui.css') }}">
+            <link rel="stylesheet" href="{{ asset('bundles/phporchestracms/css/bootstrap.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('bundles/phporchestracms/css/font-awesome.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('bundles/phporchestracms/css/smartadmin-production.css') }}">
+            <link rel="stylesheet" href="{{ asset('bundles/phporchestracms/css/smartadmin-skins.css') }}">
+            <link rel="stylesheet" href="{{ asset('bundles/phporchestracms/css/ribbon.css') }}">
+            <link rel="stylesheet" href="{{ asset('bundles/phporchestracms/css/phpfactory.css') }}">
+
+            <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700" media="screen" rel="stylesheet" type="text/css" />
+            <link rel="shortcut icon" href="http://phpfactory-bo.interakting.com/img/favicon/favicon.ico" type="image/x-icon" />
+            <link rel="icon" href="http://phpfactory-bo.interakting.com/img/favicon/favicon.ico" type="image/x-icon" />
         {% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+            <script src="{{ asset('bundles/phporchestracms/js/jquery-1.9.1.js') }}"></script>
+            <script src="{{ asset('bundles/phporchestracms/js/jquery-ui.js') }}"></script>
+            <script src="{{ asset('bundles/phporchestracms/js/tools.js') }}"></script>
+        {% endblock %}
     </head>
     <body class="fixed-header fixed-ribbon fixed-navigation">
         <header>Header</header>
         <aside id="left-panel">
             <ul>
-                <li><a href="{{ path('php_orchestra_cms_nodeform') }}">Edition de noeud</a></li>
-                <li><a href="{{ path('php_orchestra_cms_templateform') }}">Edition de template</a></li>
+            
+                <li class="no-label">
+                    <a href="{{ path('php_orchestra_cms_nodeform') }}">Edition de noeud</a><br />
+                    {{ render(controller('PHPOrchestraCMSBundle:Nodes:showAllNodes')) }}
+                </li>
+                <li class="no-label">
+                    <a href="{{ path('php_orchestra_cms_templateform') }}">Edition de template</a><br />
+                    {{ render(controller('PHPOrchestraCMSBundle:Templates:showAllTemplates')) }}
+                </li>
             </ul>
         </aside>
         <div id="main" role="main">

@@ -14,26 +14,26 @@ use PHPOrchestra\CMSBundle\Classes\DocumentLoader;
 use Symfony\Component\HttpFoundation\Request;
 use PHPOrchestra\CMSBundle\Helper\NodesHelper;
 
-class NodesController extends Controller
+class TemplatesController extends Controller
 {
 
     /**
      * List all nodes
      * 
      */
-    public function showAllNodesAction(Request $request)
+    public function showAllTemplatesAction(Request $request)
     {
         $form = $this->get('form.factory')->createNamedBuilder($request->get('form'), 'form')
-            ->add('nodeId', 'orchestra_node_choice')
+            ->add('templateId', 'orchestra_template_choice')
             ->getForm();
         $render = $this->render('PHPOrchestraCMSBundle:Form:input.html.twig', array(
             'form' => $form->createView()
         ));
         if($request->isXmlHttpRequest()){
-	        return new JsonResponse(array(
-	            'success' => true,
-	            'data' => $render->getContent()
-	        ));
+            return new JsonResponse(array(
+                'success' => true,
+                'data' => $render->getContent()
+            ));
         }
         else{
             return new Response($render->getContent());

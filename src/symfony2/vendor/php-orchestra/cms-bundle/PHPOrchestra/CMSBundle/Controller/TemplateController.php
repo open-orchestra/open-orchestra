@@ -13,6 +13,7 @@ use PHPOrchestra\CMSBundle\Model\Area;
 use PHPOrchestra\CMSBundle\Form\Type\TemplateType;
 use PHPOrchestra\CMSBundle\Classes\DocumentLoader;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Response;
 use PHPOrchestra\CMSBundle\Helper\TemplateHelper;
 use Mandango;
 
@@ -47,11 +48,12 @@ class TemplateController extends Controller
             $template->setIsNew(true);
             
             $template->save();
-            return $this->redirect($this->generateUrl('php_orchestra_cms_templateform', array('templateId' => $template->getTemplateId())));
+            return $this->redirect($this->generateUrl('php_orchestra_cms_templateform', array('templateId' => $template->getTemplateId(), 'ajax' => $request->isXmlHttpRequest())));
         }
         
         return $this->render('PHPOrchestraCMSBundle:Template:form.html.twig', array(
             'form' => $form->createView(),
+            'ajax' => $request->isXmlHttpRequest()
         ));    
     }
     
@@ -62,10 +64,15 @@ class TemplateController extends Controller
     public function showCuttingAction(Request $request)
     {
     	$template = DocumentLoader::getDocument('Template', array('templateId' => $request->get('templateId')), $this->container->get('mandango'));
-        return new JsonResponse(array(
-            'success' => true,
-            'data' => TemplateHelper::formatTemplate($template, $this->container->get('mandango'))
-        ));
+        if($request->isXmlHttpRequest()){
+	        return new JsonResponse(array(
+	            'success' => true,
+	            'data' => TemplateHelper::formatTemplate($template, $this->container->get('mandango'))
+	        ));
+        }
+        else{
+            return new Response($render->getContent());
+        }
     }
     
 }
