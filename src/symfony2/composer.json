@@ -28,7 +28,8 @@
         "snc/redis-bundle": "1.1.x-dev"
     },
     "require-dev": {
-        "phpunit/phpunit": "4.0.14"
+        "phpunit/phpunit": "4.0.14",
+        "phpdocumentor/phpdocumentor": "2.*"
     },
     "scripts": {
         "post-install-cmd": [
