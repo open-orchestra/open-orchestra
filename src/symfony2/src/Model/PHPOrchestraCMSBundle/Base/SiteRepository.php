@@ -130,4 +130,3 @@ abstract class SiteRepository extends \Mandango\Repository
     {
     }
 }
-

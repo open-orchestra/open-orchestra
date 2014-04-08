@@ -408,14 +408,13 @@ abstract class Block extends \Mandango\Document\EmbeddedDocument
             ),
         );
 
-        foreach (\Mandango\MandangoBundle\Extension\DocumentValidation::parseNodes($validation['constraints'])
-            as $constraint) {
+        foreach (\Mandango\MandangoBundle\Extension\DocumentValidation
+            ::parseNodes($validation['constraints']) as $constraint) {
             $metadata->addConstraint($constraint);
         }
 
         foreach ($validation['getters'] as $getter => $constraints) {
-            foreach (\Mandango\MandangoBundle\Extension\DocumentValidation::parseNodes($constraints)
-                as $constraint) {
+            foreach (\Mandango\MandangoBundle\Extension\DocumentValidation::parseNodes($constraints) as $constraint) {
                 $metadata->addGetterConstraint($getter, $constraint);
             }
         }
@@ -423,4 +422,3 @@ abstract class Block extends \Mandango\Document\EmbeddedDocument
         return true;
     }
 }
-

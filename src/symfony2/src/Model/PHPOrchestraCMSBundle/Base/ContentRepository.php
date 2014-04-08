@@ -130,4 +130,3 @@ abstract class ContentRepository extends \Mandango\Repository
     {
     }
 }
-

@@ -157,7 +157,9 @@ abstract class Node extends \Mandango\Document\Document
             } elseif (!isset($this->data['fields']) || !array_key_exists('nodeId', $this->data['fields'])) {
                 $this->addFieldCache('nodeId');
                 $data = $this->getRepository()->getCollection()->findOne(
-                    array('_id' => $this->getId()), array('nodeId' => 1));
+                    array('_id' => $this->getId()),
+                    array('nodeId' => 1)
+                );
                 if (isset($data['nodeId'])) {
                     $this->data['fields']['nodeId'] = (string) $data['nodeId'];
                 } else {
@@ -220,7 +222,9 @@ abstract class Node extends \Mandango\Document\Document
             } elseif (!isset($this->data['fields']) || !array_key_exists('nodeType', $this->data['fields'])) {
                 $this->addFieldCache('nodeType');
                 $data = $this->getRepository()->getCollection()->findOne(
-                    array('_id' => $this->getId()), array('nodeType' => 1));
+                    array('_id' => $this->getId()),
+                    array('nodeType' => 1)
+                );
                 if (isset($data['nodeType'])) {
                     $this->data['fields']['nodeType'] = (string) $data['nodeType'];
                 } else {
@@ -283,7 +287,9 @@ abstract class Node extends \Mandango\Document\Document
             } elseif (!isset($this->data['fields']) || !array_key_exists('siteId', $this->data['fields'])) {
                 $this->addFieldCache('siteId');
                 $data = $this->getRepository()->getCollection()->findOne(
-                    array('_id' => $this->getId()), array('siteId' => 1));
+                    array('_id' => $this->getId()),
+                    array('siteId' => 1)
+                );
                 if (isset($data['siteId'])) {
                     $this->data['fields']['siteId'] = (int) $data['siteId'];
                 } else {
@@ -346,7 +352,9 @@ abstract class Node extends \Mandango\Document\Document
             } elseif (!isset($this->data['fields']) || !array_key_exists('parentId', $this->data['fields'])) {
                 $this->addFieldCache('parentId');
                 $data = $this->getRepository()->getCollection()->findOne(
-                    array('_id' => $this->getId()), array('parentId' => 1));
+                    array('_id' => $this->getId()),
+                    array('parentId' => 1)
+                );
                 if (isset($data['parentId'])) {
                     $this->data['fields']['parentId'] = (string) $data['parentId'];
                 } else {
@@ -409,7 +417,9 @@ abstract class Node extends \Mandango\Document\Document
             } elseif (!isset($this->data['fields']) || !array_key_exists('path', $this->data['fields'])) {
                 $this->addFieldCache('path');
                 $data = $this->getRepository()->getCollection()->findOne(
-                    array('_id' => $this->getId()), array('path' => 1));
+                    array('_id' => $this->getId()),
+                    array('path' => 1)
+                );
                 if (isset($data['path'])) {
                     $this->data['fields']['path'] = (string) $data['path'];
                 } else {
@@ -472,7 +482,9 @@ abstract class Node extends \Mandango\Document\Document
             } elseif (!isset($this->data['fields']) || !array_key_exists('alias', $this->data['fields'])) {
                 $this->addFieldCache('alias');
                 $data = $this->getRepository()->getCollection()->findOne(
-                    array('_id' => $this->getId()), array('alias' => 1));
+                    array('_id' => $this->getId()),
+                    array('alias' => 1)
+                );
                 if (isset($data['alias'])) {
                     $this->data['fields']['alias'] = (string) $data['alias'];
                 } else {
@@ -535,7 +547,9 @@ abstract class Node extends \Mandango\Document\Document
             } elseif (!isset($this->data['fields']) || !array_key_exists('name', $this->data['fields'])) {
                 $this->addFieldCache('name');
                 $data = $this->getRepository()->getCollection()->findOne(
-                    array('_id' => $this->getId()), array('name' => 1));
+                    array('_id' => $this->getId()),
+                    array('name' => 1)
+                );
                 if (isset($data['name'])) {
                     $this->data['fields']['name'] = (string) $data['name'];
                 } else {
@@ -598,7 +612,9 @@ abstract class Node extends \Mandango\Document\Document
             } elseif (!isset($this->data['fields']) || !array_key_exists('version', $this->data['fields'])) {
                 $this->addFieldCache('version');
                 $data = $this->getRepository()->getCollection()->findOne(
-                    array('_id' => $this->getId()), array('version' => 1));
+                    array('_id' => $this->getId()),
+                    array('version' => 1)
+                );
                 if (isset($data['version'])) {
                     $this->data['fields']['version'] = (int) $data['version'];
                 } else {
@@ -661,7 +677,9 @@ abstract class Node extends \Mandango\Document\Document
             } elseif (!isset($this->data['fields']) || !array_key_exists('language', $this->data['fields'])) {
                 $this->addFieldCache('language');
                 $data = $this->getRepository()->getCollection()->findOne(
-                    array('_id' => $this->getId()), array('language' => 1));
+                    array('_id' => $this->getId()),
+                    array('language' => 1)
+                );
                 if (isset($data['language'])) {
                     $this->data['fields']['language'] = (string) $data['language'];
                 } else {
@@ -724,7 +742,9 @@ abstract class Node extends \Mandango\Document\Document
             } elseif (!isset($this->data['fields']) || !array_key_exists('status', $this->data['fields'])) {
                 $this->addFieldCache('status');
                 $data = $this->getRepository()->getCollection()->findOne(
-                    array('_id' => $this->getId()), array('status' => 1));
+                    array('_id' => $this->getId()),
+                    array('status' => 1)
+                );
                 if (isset($data['status'])) {
                     $this->data['fields']['status'] = (string) $data['status'];
                 } else {
@@ -787,7 +807,9 @@ abstract class Node extends \Mandango\Document\Document
             } elseif (!isset($this->data['fields']) || !array_key_exists('templateId', $this->data['fields'])) {
                 $this->addFieldCache('templateId');
                 $data = $this->getRepository()->getCollection()->findOne(
-                    array('_id' => $this->getId()), array('templateId' => 1));
+                    array('_id' => $this->getId()),
+                    array('templateId' => 1)
+                );
                 if (isset($data['templateId'])) {
                     $this->data['fields']['templateId'] = (string) $data['templateId'];
                 } else {
@@ -850,7 +872,9 @@ abstract class Node extends \Mandango\Document\Document
             } elseif (!isset($this->data['fields']) || !array_key_exists('areas', $this->data['fields'])) {
                 $this->addFieldCache('areas');
                 $data = $this->getRepository()->getCollection()->findOne(
-                    array('_id' => $this->getId()), array('areas' => 1));
+                    array('_id' => $this->getId()),
+                    array('areas' => 1)
+                );
                 if (isset($data['areas'])) {
                     $this->data['fields']['areas'] = $data['areas'];
                 } else {
@@ -1391,14 +1415,14 @@ abstract class Node extends \Mandango\Document\Document
             ),
         );
 
-        foreach (\Mandango\MandangoBundle\Extension\DocumentValidation::parseNodes($validation['constraints'])
-            as $constraint) {
+        foreach (\Mandango\MandangoBundle\Extension\DocumentValidation
+            ::parseNodes($validation['constraints']) as $constraint) {
             $metadata->addConstraint($constraint);
         }
 
         foreach ($validation['getters'] as $getter => $constraints) {
-            foreach (\Mandango\MandangoBundle\Extension\DocumentValidation::parseNodes($constraints)
-                as $constraint) {
+            foreach (\Mandango\MandangoBundle\Extension\DocumentValidation
+                ::parseNodes($constraints) as $constraint) {
                 $metadata->addGetterConstraint($getter, $constraint);
             }
         }
@@ -1406,4 +1430,3 @@ abstract class Node extends \Mandango\Document\Document
         return true;
     }
 }
-
