@@ -18,25 +18,25 @@ use Symfony\Component\Routing\Router;
 class TemplateType extends AbstractType
 {
     
-	/**
-	 * @var Router
-	 */
-	private $router;
-	
+    /**
+     * @var Router
+     */
+    private $router;
+    
     /**
      * @var Blocks
      */
     private $blocks;
-	
-	
-	/**
-	 * @param Router
-	 */
-	public function __construct(Router $router, $blocks){
-		$this->router = $router;
-		$this->blocks = $blocks;
-	}
-	
+    
+    
+    /**
+     * @param Router
+     */
+    public function __construct(Router $router, $blocks){
+        $this->router = $router;
+        $this->blocks = $blocks;
+    }
+    
     /**
      * Build Template form
      * 
@@ -45,9 +45,9 @@ class TemplateType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-    	
-    	$nameBlocks = 'blocks';
-    	
+        
+        $nameBlocks = 'blocks';
+        
         $builder
             ->add('templateId', 'hidden')
             ->add('siteId', 'hidden')
@@ -67,12 +67,12 @@ class TemplateType extends AbstractType
                     ),
                     'render' => array(
                         'blocks' => array(
-	                        'twig' => 'PHPOrchestraCMSBundle:Blocks:showAllBlocks.html.twig',
-	                        'parameter' => array('blocks' => $this->blocks, 'prefix' => $nameBlocks.'_')
-	                    )
-	                )
-	            )
-	        ))
+                            'twig' => 'PHPOrchestraCMSBundle:Blocks:showAllBlocks.html.twig',
+                            'parameter' => array('blocks' => $this->blocks, 'prefix' => $nameBlocks.'_')
+                        )
+                    )
+                )
+            ))
             ->add('save', 'submit');
             ;
     }

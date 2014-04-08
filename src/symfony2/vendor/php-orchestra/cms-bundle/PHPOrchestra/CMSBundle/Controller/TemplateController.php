@@ -19,7 +19,7 @@ use Mandango;
 
 class TemplateController extends Controller
 {
-	
+    
     /**
      * 
      * Render the templates form
@@ -63,12 +63,12 @@ class TemplateController extends Controller
      */
     public function showCuttingAction(Request $request)
     {
-    	$template = DocumentLoader::getDocument('Template', array('templateId' => $request->get('templateId')), $this->container->get('mandango'));
+        $template = DocumentLoader::getDocument('Template', array('templateId' => $request->get('templateId')), $this->container->get('mandango'));
         if($request->isXmlHttpRequest()){
-	        return new JsonResponse(array(
-	            'success' => true,
-	            'data' => TemplateHelper::formatTemplate($template, $this->container->get('mandango'))
-	        ));
+            return new JsonResponse(array(
+                'success' => true,
+                'data' => TemplateHelper::formatTemplate($template, $this->container->get('mandango'))
+            ));
         }
         else{
             return new Response($render->getContent());

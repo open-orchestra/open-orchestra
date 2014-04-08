@@ -16,7 +16,7 @@ use mandango;
 class TemplateChoiceType extends AbstractType
 {
 
-    var $choices = null;
+    public $choices = null;
 
     /**
      * Constructor, require mandango service
@@ -25,13 +25,13 @@ class TemplateChoiceType extends AbstractType
      */
     public function __construct(Mandango\Mandango $mandango = null)
     {
-    	$templates = DocumentLoader::getDocuments('Template', array(), $mandango);
-    	$this->choices[''] = '--------';
-        foreach($templates as $key => $template){
+        $templates = DocumentLoader::getDocuments('Template', array(), $mandango);
+        $this->choices[''] = '--------';
+        foreach ($templates as $key => $template) {
             $this->choices[$template->getTemplateId()] = $template->getName();
         }
     }
-	
+    
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
@@ -48,5 +48,4 @@ class TemplateChoiceType extends AbstractType
     {
         return 'orchestra_template_choice';
     }
-    
 }

@@ -182,10 +182,10 @@ class NodeController extends Controller
             'form' => $form->createView()
         ));
         if($request->isXmlHttpRequest()){
-	        return new JsonResponse(array(
-	            'success' => true,
-	            'data' => $render->getContent()
-	        ));
+            return new JsonResponse(array(
+                'success' => true,
+                'data' => $render->getContent()
+            ));
         }
         else{
             return new Response($render->getContent());

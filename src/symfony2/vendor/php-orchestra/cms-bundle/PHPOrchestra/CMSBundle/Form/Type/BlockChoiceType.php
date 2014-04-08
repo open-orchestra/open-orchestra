@@ -28,7 +28,7 @@ class BlockChoiceType extends AbstractType
     {
         $node = DocumentLoader::getDocument('Node', array('nodeId' => $nodeId), $mandango);
         $this->choices[''] = '--------';
-    	
+        
         foreach($filter as $key => $configBlock){
             $filter[$key] = $configBlock['action'];
         }

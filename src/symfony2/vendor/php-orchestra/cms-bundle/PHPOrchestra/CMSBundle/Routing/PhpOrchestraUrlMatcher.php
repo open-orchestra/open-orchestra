@@ -67,14 +67,12 @@ class PhpOrchestraUrlMatcher extends RedirectableUrlMatcher
      */
     public function match($pathinfo)
     {
-        if ($this->getFromCache($pathinfo))
+        if ($this->getFromCache($pathinfo)) {
             $parameters = $this->getFromCache($pathinfo);
-        
-        else {
+        } else {
             try {
                 $parameters = parent::match($pathinfo);
-            }
-            catch (ResourceNotFoundException $e) {
+            } catch (ResourceNotFoundException $e) {
                 $parameters = $this->dynamicMatch($pathinfo);
             }
             
@@ -109,23 +107,24 @@ class PhpOrchestraUrlMatcher extends RedirectableUrlMatcher
                     if ($node['type'] != Node::TYPE_DEFAULT) {
                         $moduleId = $node['id'];
                         $parameters = array_slice($slugs, $position + 1);
-                    }
-                    else
+                    } else {
                         $moduleId = false;
-                }
-                else {
-                    if ($moduleId)
+                    }
+                } else {
+                    if ($moduleId) {
                         return $this->getModuleRoute($pathinfo, $moduleId, $parameters);
-                    else
+                    } else {
                         throw new ResourceNotFoundException();
+                    }
                 }
             }
         }
         
-        if ($nodeId == $moduleId)
+        if ($nodeId == $moduleId) {
             return $this->getModuleRoute($pathinfo, $moduleId);
-        else
+        } else {
             return $this->getPageRoute($pathinfo, $nodeId);
+        }
     }
     
     
@@ -196,17 +195,18 @@ class PhpOrchestraUrlMatcher extends RedirectableUrlMatcher
     {
         $nodeInfo = false;
         $criteria = array(
-                            'parentId' => (string)$parentId,
-                            'alias' => $slug
-                         );
+            'parentId' => (string)$parentId,
+            'alias' => $slug
+        );
         
         $node = DocumentLoader::getDocument('Node', $criteria, $this->documentsService);
         
-        if (!is_null($node))
+        if (!is_null($node)) {
             $nodeInfo = array(
-                                'id' => $node->getNodeId(),
-                                'type' => $node->getNodeType()
-                             );
+                'id' => $node->getNodeId(),
+                'type' => $node->getNodeType()
+            );
+        }
         
         return $nodeInfo;
     }

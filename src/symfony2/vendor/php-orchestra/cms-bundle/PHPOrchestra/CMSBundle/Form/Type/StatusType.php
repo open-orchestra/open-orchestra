@@ -20,5 +20,4 @@ class StatusType extends OrchestraChoiceType
     {
         return 'orchestra_status';
     }
-    
 }

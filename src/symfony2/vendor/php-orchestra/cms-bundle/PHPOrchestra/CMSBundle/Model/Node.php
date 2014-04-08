@@ -30,7 +30,7 @@ abstract class Node extends \Model\PHPOrchestraCMSBundle\Base\Node
         if ($this->getLanguage() == '')
             $this->setLanguage('fr');
     }
-	
+    
     /**
      * Alias to addBlocks as used by symfony standard forms
      * 

@@ -17,7 +17,7 @@ use mandango;
 class NodeChoiceType extends AbstractType
 {
 
-    var $choices = null;
+    public $choices = null;
 
     /**
      * Constructor, require mandango service
@@ -28,7 +28,7 @@ class NodeChoiceType extends AbstractType
     {
         $nodes = DocumentLoader::getDocuments('Node', array(), $mandango);
         $this->choices[''] = '--------';
-        foreach($nodes as $key => $node){
+        foreach ($nodes as $key => $node) {
             $this->choices[$node->getNodeId()] = $node->getName();
         }
     }
@@ -49,5 +49,4 @@ class NodeChoiceType extends AbstractType
     {
         return 'orchestra_node_choice';
     }
-    
 }

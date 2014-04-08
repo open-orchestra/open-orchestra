@@ -20,5 +20,4 @@ class LanguageType extends OrchestraChoiceType
     {
         return 'orchestra_language';
     }
-    
 }

@@ -49,5 +49,4 @@ class AreasType extends AbstractType
     {
         return 'orchestra_areas';
     }
-    
 }
