@@ -78,7 +78,7 @@ mandango:
 snc_redis:
     clients:
         default:
-            type: predis
+            type: phpredis
             alias: default
             dsn: redis://localhost
             logging: %kernel.debug%

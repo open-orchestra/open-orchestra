@@ -25,6 +25,13 @@ class PhpOrchestraRouter extends Router
     protected $documentsService = null;
     
     /**
+     * Cache service
+     * 
+     * @var unknown_type
+     */
+    protected $cacheService = null;
+    
+    /**
      * Extends parent constructor to get documents service
      * as $container is private in parent class
      *  
@@ -38,11 +45,7 @@ class PhpOrchestraRouter extends Router
         parent::__construct($container, $resource, $options, $context);
         
         $this->documentsService = $container->get('mandango');
-        
-        
-//        $redis = $container->get('snc_redis.default');
-//        $val = $redis->incr('foo:bar');
-        
+        $this->cacheService = $container->get('phporchestra_cms.cachemanager');
     }
     
     /**
@@ -55,7 +58,7 @@ class PhpOrchestraRouter extends Router
             return $this->matcher;
         }
         
-        return $this->matcher = new $this->options['matcher_class']($this->getRouteCollection(), $this->context, $this->documentsService);
+        return $this->matcher = new $this->options['matcher_class']($this->getRouteCollection(), $this->context, $this->documentsService, $this->cacheService);
     }
 
 }
