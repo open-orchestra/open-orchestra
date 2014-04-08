@@ -10,11 +10,13 @@
         <link rel="stylesheet" href="{{ asset('bundles/phporchestracms/css/sample/fo.css') }}">
     </head>
     <body>
-        date : {{ datetime }}
-        <div id="orchestra-main">
-    {% for area in node.areas %}
-        {% include "PHPOrchestraCMSBundle:Node:area.html.twig" with {"area": area, "blocks": blocks} only %}
-    {% endfor %}
+        <div id="orchestra">
+            <span>datetime : {{ datetime }}</span>
+            <div id="orchestra-main">
+        {% for area in node.areas %}
+            {% include "PHPOrchestraCMSBundle:Node:area.html.twig" with {"area": area, "blocks": blocks} only %}
+        {% endfor %}
+            </div>
         </div>
     </body>
 </html>

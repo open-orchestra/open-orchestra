@@ -18,20 +18,11 @@ class SamplesController extends Controller
      * 
      * @param String[] $block array containing custom attributes
      */
-    public function sampleShowAction($rubA, $rubB, $rubC, $_page_parameters)
+    public function sampleShowAction($elementsList, $_page_parameters)
     {
         $datetime = time();
         
-        $response = $this->render(
-            'PHPOrchestraCMSBundle:Samples:blocSample.html.twig',
-            array(
-                'rubA' => $rubA,
-                'rubB' => $rubB,
-                'rubC' => $rubC,
-                'parameters' => $_page_parameters,
-                'datetime' => $datetime
-            )
-        );
+        $response = $this->render('PHPOrchestraCMSBundle:Samples:blocSample.html.twig', array('elementsList' => $elementsList, 'parameters' => $_page_parameters, 'datetime' => $datetime));
         
         $response->setPublic();
         $response->setSharedMaxAge(60);
