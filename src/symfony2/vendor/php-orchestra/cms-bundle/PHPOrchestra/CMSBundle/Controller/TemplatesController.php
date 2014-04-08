@@ -12,7 +12,6 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use PHPOrchestra\CMSBundle\Classes\DocumentLoader;
 use Symfony\Component\HttpFoundation\Request;
-use PHPOrchestra\CMSBundle\Helper\NodesHelper;
 
 class TemplatesController extends Controller
 {
@@ -38,5 +37,25 @@ class TemplatesController extends Controller
         else{
             return new Response($render->getContent());
         }
+    }
+
+    /**
+     * List all nodes for tree
+     * 
+     */
+    public function showTreeTemplatesAction(Request $request)
+    {
+    	
+        $templates = DocumentLoader::getDocuments('Template', array(), $this->container->get('mandango'));
+        $links = array();
+        foreach($templates as $key => $template){
+        	$links[] = array('id' => $template->getTemplateId(), 'class' =>'', 'text' => $template->getName());
+        }
+    	return $this->render('PHPOrchestraCMSBundle:Tree:tree.html.twig', array(
+            'name' => 'template',
+            'path' => 'php_orchestra_cms_templateform',
+    	    'refresh' => 'rightbox-content',
+            'links' => $links
+        ));
     }
 }

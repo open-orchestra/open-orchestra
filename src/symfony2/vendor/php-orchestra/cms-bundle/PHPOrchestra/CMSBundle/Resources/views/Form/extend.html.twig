@@ -53,7 +53,7 @@
     <div id="{{ form.vars.name }}-model" class="template-model"></div>
     {{ block('generic_behavior') }}
     <script>
-        $(document).ready(function(){
+        $(function(){
             $('#{{ form.vars.name }}-model').parseTemplate({"init" : true});
         });
     </script>

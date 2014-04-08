@@ -82,64 +82,6 @@ function moveFromTo(settings, source, destination){
 	}
 	settings.element.parseTemplate($.extend(settings, {"path": null}));
 }
-
-var dialog_parameter = {
-        resizable: false,
-        width:530,
-        modal: true,
-        autoOpen: false,
-        open: function ( event, ui) {
-            var data = $(this).data();
-            var found = false;
-            var buttons = $.extend({}, $(this).dialog("option", "allbuttons"));
-            var addArray = $(this).dialog("option", "addArray");
-            for(var i in addArray){
-                if(addArray[i] in data.this_values){
-                    found = true;
-                    buttons["Add " + addArray[i].charAt(0).toUpperCase() + addArray[i].slice(1)] = (function (name){
-	                	return function(){
-	                        data.this_values[name].push({'is_recursive' : true});
-	                        $(this).dialog( "close" );
-	                	}
-	                })(addArray[i]);
-                }
-            }
-            if(!found){
-	            for(var i in addArray){
-	                buttons["Add " + addArray[i].charAt(0).toUpperCase() + addArray[i].slice(1)] = (function (name){
-	                	return function(){
-	                        data.this_values[name] = new Array();
-	                        data.this_values[name].push({'is_recursive' : true});
-	                        $(this).dialog( "close" );
-	                	}
-	                })(addArray[i]);
-	            }
-            }
-            $(this).find("[type='submit']").each(function(){
-            	$(this).hide();
-            	buttons["Send"] = function(){
-	                formatForSubmit(data.settings);
-	                $(this).find('form').submit();
-	                $(this).dialog( "close" );
-	           }
-            });
-            $(this).dialog("option", "buttons", buttons);
-            $(this).setValue(data.this_values);
-        },
-        allbuttons: {
-            "Apply": function() {
-                var data = $(this).data();
-                $(this).getValue(data.this_values);
-                $(this).dialog( "close" );
-            },
-        },
-        close: function ( event, ui) {
-            var data = $(this).data();
-            data.settings.element.parseTemplate($.extend(data.settings, {"path": null}));
-        }
-    };
-
-
 (function($){
     $.fn.createSubTemplate = function(settings, type){
 		var values = eval(settings.path);
@@ -165,61 +107,65 @@ var dialog_parameter = {
 			"css": "ui-widget-model"
 		}, options || {});
 
-		var actions = ['delete', 'movedown', 'moveup'];
+		var actions;
 		if(settings.path == null){
 			settings.element = this;
 			settings.path = "settings.values";
 			settings.type = $(this).attr('id').replace('-model', '');
 			settings.style = '';
 			settings.element.html('');
-			actions = [];
+			actions = {
+					'fa fa-cog' : [
+					   	'$( "#dialog-" + settings.type ).data("settings", settings);',
+						'$( "#dialog-" + settings.type ).data("this_values", this_values);',
+						'$( "#dialog-" + settings.type ).dialog( "open" );'
+				    ]
+				};
+		}
+		else{
+			actions = {
+					'fa fa-trash-o' : [
+					    'moveFromTo(settings, settings.path);',
+						'settings.element.parseTemplate($.extend(settings, {"path": null}));'
+					],
+					'fa fa-cog' : [
+					   	'$( "#dialog-" + settings.type ).data("settings", settings);',
+						'$( "#dialog-" + settings.type ).data("this_values", this_values);',
+						'$( "#dialog-" + settings.type ).dialog( "open" );'
+					],
+					'fa fa-plus-circle' : [
+						'moveFromTo(settings, settings.path, +1);',
+						'settings.element.parseTemplate($.extend(settings, {"path": null}));'
+						],
+					'fa fa-minus-circle' : [
+						'moveFromTo(settings, settings.path, -1);',
+						'settings.element.parseTemplate($.extend(settings, {"path": null}));'
+						]
+				};
 		}
 		var this_values = eval(settings.path);
+		var span = $( "<span/>", {"class": settings.css, "text": (this_values.label) ? this_values.label : 'No Record'});
+		var div = $( "<div/>", {"class": settings.css});
+		var li = $( "<li/>", {"class": settings.css, "css": settings.style});
+		var ul = $( "<ul/>", {"class": settings.css});
 
 		if(settings.init){
 		    formatForLoad(settings);
 		    delete settings.init;
 		}
-		var span = $( "<span/>", {"class": settings.css, "text": (this_values.label) ? this_values.label : 'No Record'});
 		for(var i in actions){
-			var action = $( "<span/>", {"class": "fa action"});
-			$("<span/>", {"class": '' + actions[i]}).appendTo(action);
+			var action = $( "<span/>", {"class": "action"});
+			$("<i/>", {"class": i}).appendTo(action);
 			action.appendTo(span);
-			action.click(function(event){
+			action.click({'js': actions[i].join('')}, function(event){
 				event.stopPropagation();
-				switch($(this).children().eq(0).attr("class")){
-					case 'delete' :
-						moveFromTo(settings, settings.path);
-						break;
-					case 'moveup' :
-						moveFromTo(settings, settings.path, -1);
-						break;
-					case 'movedown' :
-						moveFromTo(settings, settings.path, +1);
-						break;
-				}
-				settings.element.parseTemplate($.extend(settings, {"path": null}));
+				eval(event.data.js);
 			});
 		}
-		var div = $( "<div/>", {"class": settings.css});
-		var li = $( "<li/>", {"class": settings.css, "css": settings.style});
-		var ul = $( "<ul/>", {"class": settings.css});
+
 		span.appendTo(div);
 		div.appendTo(li);
 
-		div.mouseover(function(event){
-			event.stopPropagation();
-			$(this).addClass('over');
-		});
-		div.mouseout(function(){
-			$(this).removeClass('over');
-		});
-		div.click(function(event){
-			event.stopPropagation();
-			$( "#dialog-" + settings.type ).data("settings", settings);
-			$( "#dialog-" + settings.type ).data("this_values", this_values);
-			$( "#dialog-" + settings.type ).dialog( "open" );
-		});
 		var found = false;
 		for(var i in this_values){
 			try{
@@ -336,3 +282,81 @@ var dialog_parameter = {
 	    return span;
 	}
 })(jQuery);
+
+var dialog_parameter = {
+    resizable: false,
+    width:530,
+    modal: true,
+    autoOpen: false,
+    open: function ( event, ui) {
+        var data = $(this).data();
+        var found = false;
+        var buttons = $.extend({}, $(this).dialog("option", "allbuttons"));
+        var addArray = $(this).dialog("option", "addArray");
+        for(var i in addArray){
+            if(addArray[i] in data.this_values){
+                found = true;
+                buttons["Add " + addArray[i].charAt(0).toUpperCase() + addArray[i].slice(1)] = (function (name){
+                	return function(){
+                        data.this_values[name].push({'is_recursive' : true});
+                        $(this).dialog( "close" );
+                	}
+                })(addArray[i]);
+            }
+        }
+        if(!found){
+            for(var i in addArray){
+                buttons["Add " + addArray[i].charAt(0).toUpperCase() + addArray[i].slice(1)] = (function (name){
+                	return function(){
+                        data.this_values[name] = new Array();
+                        data.this_values[name].push({'is_recursive' : true});
+                        $(this).dialog( "close" );
+                	}
+                })(addArray[i]);
+            }
+        }
+        $(this).find("[type='submit']").each(function(){
+        	$(this).hide();
+        	buttons["Send"] = function(){
+                formatForSubmit(data.settings);
+                $(this).find('form').submit();
+                $(this).dialog( "close" );
+           }
+        });
+        $(this).dialog("option", "buttons", buttons);
+        $(this).setValue(data.this_values);
+    },
+    allbuttons: {
+        "Apply": function() {
+            var data = $(this).data();
+            $(this).getValue(data.this_values);
+            $(this).dialog( "close" );
+        },
+    },
+    close: function ( event, ui) {
+        var data = $(this).data();
+        data.settings.element.parseTemplate($.extend(data.settings, {"path": null}));
+    }
+};
+
+var tree_parameter = {
+	extensions: ["glyph", "edit"],
+	checkbox: false,
+	selectMode: 2,
+	glyph: {
+		map: {
+			doc: "glyphicon glyphicon-file",
+			docOpen: "glyphicon glyphicon-file",
+			checkbox: "glyphicon glyphicon-unchecked",
+			checkboxSelected: "glyphicon glyphicon-check",
+			checkboxUnknown: "glyphicon glyphicon-share",
+			error: "glyphicon glyphicon-warning-sign",
+			expanderClosed: "glyphicon glyphicon-plus-sign",
+			expanderLazy: "glyphicon glyphicon-plus-sign",
+			expanderOpen: "glyphicon glyphicon-minus-sign",
+			folder: "glyphicon glyphicon-folder-close",
+			folderOpen: "glyphicon glyphicon-folder-open",
+			loading: "glyphicon glyphicon-refresh"
+		}
+	}
+};

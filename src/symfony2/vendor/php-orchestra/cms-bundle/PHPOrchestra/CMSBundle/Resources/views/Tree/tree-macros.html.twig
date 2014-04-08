@@ -1,0 +1,11 @@
+{% macro menu_links(links, name) %}
+    <ul>
+    {% for link in links %}
+        <li id="tree-{{ name }}-{{ link.id }}" class="{{ link.class }}">{{ link.text }}
+            {% if 'sublinks' in link|keys %}
+                {{ _self.menu_links(link.sublinks, name) }}
+            {% endif %}
+        </li>
+    {% endfor %}
+    </ul>
+{% endmacro %}

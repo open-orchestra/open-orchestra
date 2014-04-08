@@ -39,4 +39,21 @@ class NodesController extends Controller
             return new Response($render->getContent());
         }
     }
+    
+    /**
+     * List all nodes
+     * 
+     */
+    public function showTreeNodesAction(Request $request)
+    {
+        $nodes = DocumentLoader::getDocuments('Node', array(), $this->container->get('mandango'));
+
+        return $this->render('PHPOrchestraCMSBundle:Tree:tree.html.twig', array(
+            'name' => 'node',
+            'path' => 'php_orchestra_cms_nodeform',
+            'refresh' => 'rightbox-content',
+            'links' => NodesHelper::createTree($nodes)
+        ));
+    }
+    
 }

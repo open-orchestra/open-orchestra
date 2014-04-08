@@ -1,0 +1,27 @@
+{% import "PHPOrchestraCMSBundle:Tree:tree-macros.html.twig" as macros %}
+
+<div id="tree-{{ name }}">
+    <h4>{{ name }}</h4>
+    {{ macros.menu_links(links, name) }}
+</div>
+
+<script>
+    $(function(){
+        $( "#tree-{{ name }}" ).fancytree($.extend(
+            tree_parameter,
+            {'click' : function(event, data){
+                var url = '{{ path(path) }}/' + data.node.key.replace('tree-{{ name }}-', '');
+                $.ajax({
+                    'type': 'POST',
+                    'url': url,
+                    'success': function(response){
+                        $('[id^="dialog-"]').dialog("destroy");
+                        $('#{{ refresh }}').html(response['{{ refresh|replace({'-': '_'}) }}']);
+                    },
+                    'dataType': 'json'
+                });
+                }
+            }
+        ));
+    });
+</script>

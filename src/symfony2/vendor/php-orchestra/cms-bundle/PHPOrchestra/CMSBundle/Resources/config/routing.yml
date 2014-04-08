@@ -31,3 +31,7 @@ php_orchestra_ajax_show_all_nodes:
 php_orchestra_ajax_show_template:
   pattern:  /template/
   defaults: { _controller: PHPOrchestraCMSBundle:Template:showCutting }
+  
+php_orchestra_tree:
+  pattern:  /tree/
+  defaults: { _controller: PHPOrchestraCMSBundle:BlockExample:show0 }

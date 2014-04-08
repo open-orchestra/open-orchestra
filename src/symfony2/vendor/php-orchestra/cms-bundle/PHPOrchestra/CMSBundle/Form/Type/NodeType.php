@@ -65,7 +65,7 @@ class NodeType extends AbstractType
             ->add($nameBlocks, 'orchestra_blocks', array(
                 'dialogPath' => 'PHPOrchestraCMSBundle:Form:block.html.twig',
                 'js' => array(
-                    'script' => 'blocks.js',
+                    'script' => 'local/blocks.js',
                     'parameter' => array(
                         'name' => $nameBlocks,
                         'urlNode' => $this->router->generate('php_orchestra_ajax_show_all_nodes'),
@@ -104,7 +104,7 @@ class NodeType extends AbstractType
         $resolver->setDefaults(array(
             'showDialog' => true,
             'js' => array(
-                'script' => 'node.js',
+                'script' => 'local/node.js',
                 'parameter' => array(
                     'name' => $this->getName(),
                     'urlTemplate' => $this->router->generate('php_orchestra_ajax_show_template')

@@ -59,7 +59,7 @@ class TemplateType extends AbstractType
             ->add('areas', 'orchestra_areas', array('dialogPath' => 'PHPOrchestraCMSBundle:Form:area.html.twig', 'objects' => array('areas', 'blocks')))
             ->add($nameBlocks, 'orchestra_blocks', array(
                 'js' => array(
-                    'script' => 'blocks_template.js',
+                    'script' => 'local/blocks_template.js',
                     'parameter' => array(
                         'name' => $nameBlocks,
                         'urlNode' => $this->router->generate('php_orchestra_ajax_show_all_nodes'),

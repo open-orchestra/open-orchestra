@@ -16,7 +16,7 @@ class BlockExampleController extends Controller
      * 
      * @param 
      */
-    public function show0Action($id)
+    public function show0Action()
     {
         return $this->render('PHPOrchestraCMSBundle:BlockExample:show0.html.twig', array());
     }
