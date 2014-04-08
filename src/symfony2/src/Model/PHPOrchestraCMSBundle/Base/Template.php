@@ -136,7 +136,8 @@ abstract class Template extends \Mandango\Document\Document
                 $this->data['fields']['templateId'] = null;
             } elseif (!isset($this->data['fields']) || !array_key_exists('templateId', $this->data['fields'])) {
                 $this->addFieldCache('templateId');
-                $data = $this->getRepository()->getCollection()->findOne(array('_id' => $this->getId()), array('templateId' => 1));
+                $data = $this->getRepository()->getCollection()->findOne(
+                    array('_id' => $this->getId()), array('templateId' => 1));
                 if (isset($data['templateId'])) {
                     $this->data['fields']['templateId'] = (string) $data['templateId'];
                 } else {
@@ -198,7 +199,8 @@ abstract class Template extends \Mandango\Document\Document
                 $this->data['fields']['siteId'] = null;
             } elseif (!isset($this->data['fields']) || !array_key_exists('siteId', $this->data['fields'])) {
                 $this->addFieldCache('siteId');
-                $data = $this->getRepository()->getCollection()->findOne(array('_id' => $this->getId()), array('siteId' => 1));
+                $data = $this->getRepository()->getCollection()->findOne(
+                    array('_id' => $this->getId()), array('siteId' => 1));
                 if (isset($data['siteId'])) {
                     $this->data['fields']['siteId'] = (int) $data['siteId'];
                 } else {
@@ -260,7 +262,8 @@ abstract class Template extends \Mandango\Document\Document
                 $this->data['fields']['name'] = null;
             } elseif (!isset($this->data['fields']) || !array_key_exists('name', $this->data['fields'])) {
                 $this->addFieldCache('name');
-                $data = $this->getRepository()->getCollection()->findOne(array('_id' => $this->getId()), array('name' => 1));
+                $data = $this->getRepository()->getCollection()->findOne(
+                    array('_id' => $this->getId()), array('name' => 1));
                 if (isset($data['name'])) {
                     $this->data['fields']['name'] = (string) $data['name'];
                 } else {
@@ -322,7 +325,8 @@ abstract class Template extends \Mandango\Document\Document
                 $this->data['fields']['version'] = null;
             } elseif (!isset($this->data['fields']) || !array_key_exists('version', $this->data['fields'])) {
                 $this->addFieldCache('version');
-                $data = $this->getRepository()->getCollection()->findOne(array('_id' => $this->getId()), array('version' => 1));
+                $data = $this->getRepository()->getCollection()->findOne(
+                    array('_id' => $this->getId()), array('version' => 1));
                 if (isset($data['version'])) {
                     $this->data['fields']['version'] = (int) $data['version'];
                 } else {
@@ -384,7 +388,8 @@ abstract class Template extends \Mandango\Document\Document
                 $this->data['fields']['language'] = null;
             } elseif (!isset($this->data['fields']) || !array_key_exists('language', $this->data['fields'])) {
                 $this->addFieldCache('language');
-                $data = $this->getRepository()->getCollection()->findOne(array('_id' => $this->getId()), array('language' => 1));
+                $data = $this->getRepository()->getCollection()->findOne(
+                    array('_id' => $this->getId()), array('language' => 1));
                 if (isset($data['language'])) {
                     $this->data['fields']['language'] = (string) $data['language'];
                 } else {
@@ -446,7 +451,8 @@ abstract class Template extends \Mandango\Document\Document
                 $this->data['fields']['status'] = null;
             } elseif (!isset($this->data['fields']) || !array_key_exists('status', $this->data['fields'])) {
                 $this->addFieldCache('status');
-                $data = $this->getRepository()->getCollection()->findOne(array('_id' => $this->getId()), array('status' => 1));
+                $data = $this->getRepository()->getCollection()->findOne(
+                    array('_id' => $this->getId()), array('status' => 1));
                 if (isset($data['status'])) {
                     $this->data['fields']['status'] = (string) $data['status'];
                 } else {
@@ -508,7 +514,8 @@ abstract class Template extends \Mandango\Document\Document
                 $this->data['fields']['areas'] = null;
             } elseif (!isset($this->data['fields']) || !array_key_exists('areas', $this->data['fields'])) {
                 $this->addFieldCache('areas');
-                $data = $this->getRepository()->getCollection()->findOne(array('_id' => $this->getId()), array('areas' => 1));
+                $data = $this->getRepository()->getCollection()->findOne(
+                    array('_id' => $this->getId()), array('areas' => 1));
                 if (isset($data['areas'])) {
                     $this->data['fields']['areas'] = $data['areas'];
                 } else {
@@ -570,7 +577,8 @@ abstract class Template extends \Mandango\Document\Document
                 $this->data['fields']['boDirection'] = null;
             } elseif (!isset($this->data['fields']) || !array_key_exists('boDirection', $this->data['fields'])) {
                 $this->addFieldCache('boDirection');
-                $data = $this->getRepository()->getCollection()->findOne(array('_id' => $this->getId()), array('boDirection' => 1));
+                $data = $this->getRepository()->getCollection()->findOne(
+                    array('_id' => $this->getId()), array('boDirection' => 1));
                 if (isset($data['boDirection'])) {
                     $this->data['fields']['boDirection'] = (string) $data['boDirection'];
                 } else {
@@ -1002,7 +1010,7 @@ abstract class Template extends \Mandango\Document\Document
      *
      * @param \Symfony\Component\Validator\Mapping\ClassMetadata $metadata The metadata class.
      */
-    static public function loadValidatorMetadata(\Symfony\Component\Validator\Mapping\ClassMetadata $metadata)
+    public static function loadValidatorMetadata(\Symfony\Component\Validator\Mapping\ClassMetadata $metadata)
     {
         $validation = array(
             'constraints' => array(
@@ -1013,7 +1021,8 @@ abstract class Template extends \Mandango\Document\Document
             ),
         );
 
-        foreach (\Mandango\MandangoBundle\Extension\DocumentValidation::parseNodes($validation['constraints']) as $constraint) {
+        foreach (\Mandango\MandangoBundle\Extension\DocumentValidation::parseNodes($validation['constraints'])
+            as $constraint) {
             $metadata->addConstraint($constraint);
         }
 
@@ -1026,3 +1035,4 @@ abstract class Template extends \Mandango\Document\Document
         return true;
     }
 }
+

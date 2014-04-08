@@ -132,3 +132,4 @@ abstract class TemplateRepository extends \Mandango\Repository
     {
     }
 }
+

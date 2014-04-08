@@ -130,3 +130,4 @@ abstract class UserRepository extends \Mandango\Repository
     {
     }
 }
+
