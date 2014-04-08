@@ -18,7 +18,7 @@ class DocumentLoader
     * @param array $criteria
     * @param unknown $documentsService
     */
-    static function getDocument($documentType, array $criteria, $documentsService)
+    public static function getDocument($documentType, array $criteria, $documentsService)
     {
         $repository = $documentsService->getRepository(self::getDocumentNamespace($documentType));
         $query = $repository->createQuery();
@@ -34,7 +34,7 @@ class DocumentLoader
     * @param array $criteria
     * @param unknown $documentsService
     */
-    static function getDocuments($documentType, array $criteria, $documentsService)
+    public static function getDocuments($documentType, array $criteria, $documentsService)
     {
         $repository = $documentsService->getRepository(self::getDocumentNamespace($documentType));
         $query = $repository->createQuery();

@@ -1,32 +1,42 @@
 services:
 
-# Areas form field type
+#--[STANDARD SERVICES]----------#
+
+    # Cache service
+    phporchestra_cms.cachemanager:
+        class: PHPOrchestra\CMSBundle\Classes\Cachemanager
+        arguments: [@snc_redis.default]
+
+#--[FORM FIELDS]----------------#
+
+    # Areas form field type
     php_orchestra_cms.type.areas:
         class: PHPOrchestra\CMSBundle\Form\Type\AreasType
         tags:
             - { name: form.type, alias: orchestra_areas }
 
-# Blocks form field type
+    # Blocks form field type
     php_orchestra_cms.type.blocks:
         class: PHPOrchestra\CMSBundle\Form\Type\BlocksType
         arguments: [@mandango]
         tags:
             - { name: form.type, alias: orchestra_blocks }
-# Templates select form field type
+
+    # Templates select form field type
     php_orchestra_cms.type.template_choice:
         class: PHPOrchestra\CMSBundle\Form\Type\TemplateChoiceType
         arguments: [@mandango]
         tags:
             - { name: form.type, alias: orchestra_template_choice }
 
-# Nodes select form field type
+    # Nodes select form field type
     php_orchestra_cms.type.node_choice:
         class: PHPOrchestra\CMSBundle\Form\Type\NodeChoiceType
         arguments: [@mandango]
         tags:
             - { name: form.type, alias: orchestra_node_choice }
 
-# Status form field type
+    # Status form field type
     php_orchestra_cms.type.status:
         class: PHPOrchestra\CMSBundle\Form\Type\StatusType
         arguments: 
@@ -34,7 +44,7 @@ services:
         tags:
             - { name: form.type, alias: orchestra_status }
 
-# Language form field type
+    # Language form field type
     php_orchestra_cms.type.language:
         class: PHPOrchestra\CMSBundle\Form\Type\LanguageType
         arguments: 
@@ -42,24 +52,26 @@ services:
         tags:
             - { name: form.type, alias: orchestra_language }
 
-# Direction form field type
+    # Direction form field type
     php_orchestra_cms.type.direction:
         class: PHPOrchestra\CMSBundle\Form\Type\DirectionType
         arguments: 
             - "%php_orchestra.orchestra_choice.direction%"
         tags:
             - { name: form.type, alias: orchestra_direction }
-            
-# Template form type
+
+#--[FORM]-----------------------#
+
+    # Template form type
     php_orchestra_cms.type.template:
         class: PHPOrchestra\CMSBundle\Form\Type\TemplateType
         arguments: [@router, %php_orchestra.blocks%]
         tags:
-            - { name: form.type, alias: template}            
-# Node form type
+            - { name: form.type, alias: template}
+
+    # Node form type
     php_orchestra_cms.type.node:
         class: PHPOrchestra\CMSBundle\Form\Type\NodeType
         arguments: [@router, %php_orchestra.blocks%]
         tags:
-            - { name: form.type, alias: node}            
-            
+            - { name: form.type, alias: node}

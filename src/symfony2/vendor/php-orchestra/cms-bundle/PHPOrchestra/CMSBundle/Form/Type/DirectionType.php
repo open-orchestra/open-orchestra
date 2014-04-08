@@ -20,5 +20,4 @@ class DirectionType extends OrchestraChoiceType
     {
         return 'orchestra_direction';
     }
-    
 }

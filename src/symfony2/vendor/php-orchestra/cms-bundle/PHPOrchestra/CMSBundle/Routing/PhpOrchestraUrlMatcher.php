@@ -21,10 +21,22 @@ use Model\PHPOrchestraCMSBundle\Node;
 class PhpOrchestraUrlMatcher extends RedirectableUrlMatcher
 {
     /**
+     * Prefix for pathinfo cache key
+     * @var string
+     */
+    const PATH_PREFIX = 'router_pathinfo:';
+    
+    /**
      * Documents service
      * @var unknown_type
      */
     protected $documentsService = null;
+    
+    /**
+     * Cache service
+     * @var unknown_type
+     */
+    protected $cacheService = null;
     
     
     /**
@@ -33,31 +45,38 @@ class PhpOrchestraUrlMatcher extends RedirectableUrlMatcher
      * @param RouteCollection $routes
      * @param RequestContext $context
      * @param unknown_type $documentsService
+     * @param unknown_type $cacheService
      */
-    public function __construct(RouteCollection $routes, RequestContext $context, $documentsService)
+    public function __construct(RouteCollection $routes, RequestContext $context, $documentsService, $cacheService)
     {
         $this->routes = $routes;
         $this->context = $context;
         $this->documentsService = $documentsService;
+        $this->cacheService = $cacheService;
     }
     
     
     /**
      * Find a route for a given url
-     * Check first with symfony basic behavior
-     * Then if no route found, check with PhpOrchestra logic
+     * 
+     * Check first in cache,
+     * Then with symfony basic behavior,
+     * and finally with PhpOrchestra logic
      * 
      * @param string $pathinfo
      */
     public function match($pathinfo)
     {
-        try
-        {
-            $parameters = parent::match($pathinfo);
-        }
-        catch (ResourceNotFoundException $e)
-        {            
-            $parameters = $this->dynamicMatch($pathinfo);
+        if ($this->getFromCache($pathinfo)) {
+            $parameters = $this->getFromCache($pathinfo);
+        } else {
+            try {
+                $parameters = parent::match($pathinfo);
+            } catch (ResourceNotFoundException $e) {
+                $parameters = $this->dynamicMatch($pathinfo);
+            }
+            
+            $this->setToCache($pathinfo, $parameters);
         }
         
         return $parameters;
@@ -88,55 +107,79 @@ class PhpOrchestraUrlMatcher extends RedirectableUrlMatcher
                     if ($node['type'] != Node::TYPE_DEFAULT) {
                         $moduleId = $node['id'];
                         $parameters = array_slice($slugs, $position + 1);
-                    }
-                    else
+                    } else {
                         $moduleId = false;
-                }
-                else {
-                    if ($moduleId)
-                        return $this->getModuleRoute($moduleId, $parameters);
-                    else
+                    }
+                } else {
+                    if ($moduleId) {
+                        return $this->getModuleRoute($pathinfo, $moduleId, $parameters);
+                    } else {
                         throw new ResourceNotFoundException();
+                    }
                 }
             }
         }
         
-        if ($nodeId == $moduleId)
-            return $this->getModuleRoute($moduleId);
-        else
-            return $this->getPageRoute($nodeId);
+        if ($nodeId == $moduleId) {
+            return $this->getModuleRoute($pathinfo, $moduleId);
+        } else {
+            return $this->getPageRoute($pathinfo, $nodeId);
+        }
     }
     
     
     /**
-     * Route for standard page
+     * Get the route parameters from cache if already set
+     * 
+     * @param string $pathinfo
+     */
+    protected function getFromCache($pathinfo)
+    {
+        return $this->cacheService->hashGet(self::PATH_PREFIX . $pathinfo);
+    }
+    
+    
+    /**
+     * Set route parameters to cache for pathinfo
+     * 
+     * @param string $pathinfo
+     * @param string[] $routeParameters
+     */
+    protected function setToCache($pathinfo, $routeParameters)
+    {
+        return $this->cacheService->hashSet(self::PATH_PREFIX . $pathinfo, $routeParameters);
+    }
+    
+    
+    /**
+     * Route parameters for standard page
      * 
      * @param string $nodeId
      */
-    protected function getPageRoute($nodeId)
+    protected function getPageRoute($pathinfo, $nodeId)
     {
         return array(
-                        "_route" => "phporchestra_cms_node",
-                        "_controller" => 'PHPOrchestra\CMSBundle\Controller\NodeController::showAction',
-                        "nodeId" => $nodeId
+                     "_route" => "phporchestra_cms_node",
+                     "_controller" => 'PHPOrchestra\CMSBundle\Controller\NodeController::showAction',
+                     "nodeId" => $nodeId
                     );
     }
     
     
     /**
-     * Route for module page
+     * Route parameters for module page
      * ie with customs parameters at the end of url
      * 
      * @param string $moduleId
      * @param string[] $moduleId
      */
-    protected function getModuleRoute($moduleId, $parameters = array())
+    protected function getModuleRoute($pathinfo, $moduleId, $parameters = array())
     {
         return array(
-                        "_route" => "phporchestra_cms_module",
-                        "_controller" => 'PHPOrchestra\CMSBundle\Controller\NodeController::showAction',
-                        "nodeId" => $moduleId,
-                        "module_parameters" => $parameters
+                     "_route" => "phporchestra_cms_module",
+                     "_controller" => 'PHPOrchestra\CMSBundle\Controller\NodeController::showAction',
+                     "nodeId" => $moduleId,
+                     "module_parameters" => $parameters
                     );
     }
     
@@ -152,17 +195,18 @@ class PhpOrchestraUrlMatcher extends RedirectableUrlMatcher
     {
         $nodeInfo = false;
         $criteria = array(
-                            'parentId' => (string)$parentId,
-                            'alias' => $slug
-                         );
+            'parentId' => (string)$parentId,
+            'alias' => $slug
+        );
         
         $node = DocumentLoader::getDocument('Node', $criteria, $this->documentsService);
         
-        if (!is_null($node))
+        if (!is_null($node)) {
             $nodeInfo = array(
-                                'id' => $node->getNodeId(),
-                                'type' => $node->getNodeType()
-                             );
+                'id' => $node->getNodeId(),
+                'type' => $node->getNodeType()
+            );
+        }
         
         return $nodeInfo;
     }

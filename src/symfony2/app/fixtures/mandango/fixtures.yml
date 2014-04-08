@@ -1,0 +1,146 @@
+Model\PHPOrchestraCMSBundle\Node:
+    node_full:
+        nodeId: fixture_full
+        nodeType: page
+        siteId: 1
+        parentId: 0
+        path: -
+        alias: fixture-full
+        name: Fixture full sample
+        version: 1
+        language: fr
+        status: published
+        templateId: 0
+        areas: [{"areaId":"header","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":0}]},{"areaId":"main","classes":[],"subAreas":[{"areaId":"left_menu","classes":[],"subAreas":[],"blocks":[{"nodeId":200,"blockId":1}]},{"areaId":"content","classes":[],"subAreas":[],"blocks":[{"nodeId":10,"blockId":2},{"nodeId":0,"blockId":3},{"nodeId":10,"blockId":4}]},{"areaId":"skycrapper","classes":[],"subAreas":[],"blocks":[{"nodeId":10,"blockId":5}]}],"blocks":[]},{"areaId":"footer","classes":[],"subAreas":[],"blocks":[{"nodeId":10,"blockId":6}]}]
+        blocks:
+            -
+                component: "PHPOrchestraCMSBundle:Samples:sampleShow"
+                attributes: {"rubA":"Qui sommes-nous ?", "rubB":"pourquoi nous choisir ?", "rubC":"Nos agences"}
+            -
+                component: "PHPOrchestraCMSBundle:Samples:sampleShow"
+                attributes: {"rubA":"Qui sommes-nous ?", "rubB":"pourquoi nous choisir ?", "rubC":"Nos agences"}
+            -
+                component: "PHPOrchestraCMSBundle:Samples:sampleShow"
+                attributes: {"rubA":"Qui sommes-nous ?", "rubB":"pourquoi nous choisir ?", "rubC":"Nos agences"}
+            -
+                component: "PHPOrchestraCMSBundle:Samples:sampleShow"
+                attributes: {"rubA":"Qui sommes-nous ?", "rubB":"pourquoi nous choisir ?", "rubC":"Nos agences"}
+            -
+                component: "PHPOrchestraCMSBundle:Samples:sampleShow"
+                attributes: {"rubA":"Qui sommes-nous ?", "rubB":"pourquoi nous choisir ?", "rubC":"Nos agences"}
+            -
+                component: "PHPOrchestraCMSBundle:Samples:sampleShow"
+                attributes: {"rubA":"Qui sommes-nous ?", "rubB":"pourquoi nous choisir ?", "rubC":"Nos agences"}
+            -
+                component: "PHPOrchestraCMSBundle:Samples:sampleShow"
+                attributes: {"rubA":"Qui sommes-nous ?", "rubB":"pourquoi nous choisir ?", "rubC":"Nos agences"}
+    
+    node_home:
+        nodeId: fixture_home
+        nodeType: page
+        siteId: 1
+        parentId: 0
+        path: -
+        alias: accueil
+        name: Fixture Home
+        version: 1
+        language: fr
+        status: published
+        templateId: 0
+        areas: [{"areaId":"main","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":0}]}]
+        blocks:
+            -
+                component: "PHPOrchestraCMSBundle:Samples:sampleShow"
+                attributes: {"rubA":"Qui sommes-nous ?", "rubB":"pourquoi nous choisir ?", "rubC":"Nos agences"}
+                
+    node_about_us:
+        nodeId: fixture_about_us
+        nodeType: page
+        siteId: 1
+        parentId: fixture_home
+        path: -
+        alias: qui-sommes-nous
+        name: Fixture About Us
+        version: 1
+        language: fr
+        status: published
+        templateId: 0
+        areas: [{"areaId":"main","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":0}]}]
+        blocks:
+            -
+                component: "PHPOrchestraCMSBundle:Samples:sampleShow"
+                attributes: {"rubA":"Qui sommes-nous ?", "rubB":"pourquoi nous choisir ?", "rubC":"Nos agences"}
+                
+    node_bd:
+        nodeId: fixture_bd
+        nodeType: page
+        siteId: 1
+        parentId: fixture_about_us
+        path: -
+        alias: b-et-d
+        name: Fixture B&D
+        version: 1
+        language: fr
+        status: published
+        templateId: 0
+        areas: [{"areaId":"main","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":0}]}]
+        blocks:
+            -
+                component: "PHPOrchestraCMSBundle:Samples:sampleShow"
+                attributes: {"rubA":"Qui sommes-nous ?", "rubB":"pourquoi nous choisir ?", "rubC":"Nos agences"}
+                
+    node_interakting:
+        nodeId: fixture_interakting
+        nodeType: page
+        siteId: 1
+        parentId: fixture_about_us
+        path: -
+        alias: interakting
+        name: Fixture Interakting
+        version: 1
+        language: fr
+        status: published
+        templateId: 0
+        areas: [{"areaId":"main","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":0}]}]
+        blocks:
+            -
+                component: "PHPOrchestraCMSBundle:Samples:sampleShow"
+                attributes: {"rubA":"Qui sommes-nous ?", "rubB":"pourquoi nous choisir ?", "rubC":"Nos agences"}
+                
+    node_contact_us:
+        nodeId: fixture_contact_us
+        nodeType: page
+        siteId: 1
+        parentId: fixture_home
+        path: -
+        alias: nous-contacter
+        name: Fixture Contact Us
+        version: 1
+        language: fr
+        status: published
+        templateId: 0
+        areas: [{"areaId":"main","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":0}]}]
+        blocks:
+            -
+                component: "PHPOrchestraCMSBundle:Samples:sampleShow"
+                attributes: {"rubA":"Qui sommes-nous ?", "rubB":"pourquoi nous choisir ?", "rubC":"Nos agences"}
+                
+    node_directory:
+        nodeId: fixture_directory
+        nodeType: directory
+        siteId: 1
+        parentId: fixture_contact_us
+        path: -
+        alias: annuaire
+        name: Fixture Directory
+        version: 1
+        language: fr
+        status: published
+        templateId: 0
+        areas: [{"areaId":"main","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":0}]}]
+        blocks:
+            -
+                component: "PHPOrchestraCMSBundle:Samples:sampleShow"
+                attributes: {"rubA":"Qui sommes-nous ?", "rubB":"pourquoi nous choisir ?", "rubC":"Nos agences"}
+                
+                

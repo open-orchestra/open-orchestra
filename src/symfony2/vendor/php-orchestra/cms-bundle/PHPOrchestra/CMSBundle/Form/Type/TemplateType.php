@@ -14,29 +14,29 @@ use Symfony\Component\Form\FormView;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Symfony\Component\Routing\Router;
 
-
 class TemplateType extends AbstractType
 {
     
-	/**
-	 * @var Router
-	 */
-	private $router;
-	
+    /**
+     * @var Router
+     */
+    private $router;
+    
     /**
      * @var Blocks
      */
     private $blocks;
-	
-	
-	/**
-	 * @param Router
-	 */
-	public function __construct(Router $router, $blocks){
-		$this->router = $router;
-		$this->blocks = $blocks;
-	}
-	
+    
+    
+    /**
+     * @param Router
+     */
+    public function __construct(Router $router, $blocks)
+    {
+        $this->router = $router;
+        $this->blocks = $blocks;
+    }
+    
     /**
      * Build Template form
      * 
@@ -45,9 +45,9 @@ class TemplateType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-    	
-    	$nameBlocks = 'blocks';
-    	
+        
+        $nameBlocks = 'blocks';
+        
         $builder
             ->add('templateId', 'hidden')
             ->add('siteId', 'hidden')
@@ -56,7 +56,10 @@ class TemplateType extends AbstractType
             ->add('language', 'orchestra_language')
             ->add('status', 'orchestra_status')
             ->add('boDirection', 'orchestra_direction')
-            ->add('areas', 'orchestra_areas', array('dialogPath' => 'PHPOrchestraCMSBundle:Form:area.html.twig', 'objects' => array('areas', 'blocks')))
+            ->add('areas', 'orchestra_areas', array(
+                'dialogPath' => 'PHPOrchestraCMSBundle:Form:area.html.twig',
+                'objects' => array('areas', 'blocks')
+            ))
             ->add($nameBlocks, 'orchestra_blocks', array(
                 'js' => array(
                     'script' => 'local/blocks_template.js',
@@ -67,12 +70,12 @@ class TemplateType extends AbstractType
                     ),
                     'render' => array(
                         'blocks' => array(
-	                        'twig' => 'PHPOrchestraCMSBundle:Blocks:showAllBlocks.html.twig',
-	                        'parameter' => array('blocks' => $this->blocks, 'prefix' => $nameBlocks.'_')
-	                    )
-	                )
-	            )
-	        ))
+                            'twig' => 'PHPOrchestraCMSBundle:Blocks:showAllBlocks.html.twig',
+                            'parameter' => array('blocks' => $this->blocks, 'prefix' => $nameBlocks.'_')
+                        )
+                    )
+                )
+            ))
             ->add('save', 'submit');
             ;
     }

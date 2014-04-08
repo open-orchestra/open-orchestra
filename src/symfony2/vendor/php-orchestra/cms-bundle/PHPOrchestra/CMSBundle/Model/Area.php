@@ -14,7 +14,7 @@ class Area
      * 
      * @var string
      */
-    private $id = null;
+    private $htmlId = null;
     
     /**
      * bo direction (horizontal, vertical)
@@ -53,7 +53,7 @@ class Area
     public function __construct(array $importArray = array())
     {
         if (isset($importArray['areaId']))
-            $this->id = $importArray['areaId'];
+            $this->htmlId = $importArray['areaId'];
         
         if (isset($importArray['boDirection']))
             $this->boDirection = $importArray['boDirection'];
@@ -72,22 +72,22 @@ class Area
     }
     
     /**
-     * Set id
+     * Set htmlId
      * 
-     * @param string $id
+     * @param string $htmlId
      */
-    public function setId($id)
+    public function setHtmlId($htmlId)
     {
-        $this->id = $id;
+        $this->htmlId = $htmlId;
         return $this;
     }
 
     /**
-     * Get id
+     * Get htmlId
      */
-    public function getId()
+    public function getHtmlId()
     {
-        return $this->id;
+        return $this->htmlId;
     }
     
     /**
@@ -102,7 +102,7 @@ class Area
     }
 
     /**
-     * Get id
+     * Get BoDirection
      */
     public function getBoDirection()
     {
@@ -171,7 +171,7 @@ class Area
             $formattedSubAreas[] = $area->toArray();
         
         return array(
-                   'areaId' => $this->getId(),
+                   'areaId' => $this->getHtmlId(),
                    'boDirection' => $this->getBoDirection(),
                    'classes' => $this->classes,
                    'subAreas' => $formattedSubAreas,

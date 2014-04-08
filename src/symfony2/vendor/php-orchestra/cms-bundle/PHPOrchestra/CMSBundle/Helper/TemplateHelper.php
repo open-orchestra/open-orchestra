@@ -16,10 +16,12 @@ class TemplateHelper
 {
     public static function formatTemplate(Template $template, Mandango\Mandango $mandango)
     {
-    	$areaTransformer = new jsonToAreasTransformer();
-    	$blockTransformer = new jsonToBlocksTransformer($mandango);
-    	
-        return array('areas' => $areaTransformer->transform($template->getAreas()),
-            'blocks' => $blockTransformer->transform($template->getBlocks()));
+        $areaTransformer = new jsonToAreasTransformer();
+        $blockTransformer = new jsonToBlocksTransformer($mandango);
+
+        return array(
+            'areas' => $areaTransformer->transform($template->getAreas()),
+            'blocks' => $blockTransformer->transform($template->getBlocks())
+        );
     }
 }

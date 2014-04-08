@@ -28,13 +28,10 @@
 
     <!-- Check PHP files syntax -->
     <target name="lint">
-        <apply executable="php" failonerror="true">
-            <arg value="-l" />
-            <fileset dir="${basedir}/${appli.src.project.path}">
-                <include name="src/**/*.php" />
-                <include name="vendor/php-orchestra/**/*.php" />
-            </fileset>
-        </apply>
+        <exec executable="bash" failonerror="true">
+            <arg value="-c" />
+            <arg value="find -L ${basedir}/${appli.src.project.path}/src ${basedir}/${appli.src.project.path}/vendor/php-orchestra -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l" />
+        </exec>
     </target>
 
     <!-- Project size stats -->
@@ -80,6 +77,7 @@
     <target name="phpcs" description="Find coding standard violations using PHP_CodeSniffer" unless="appli.disable.phpcs">
         <exec executable="phpcs">
             <arg value="--standard=PSR2" />
+            <arg value="--extensions=php" />
             <arg path="${basedir}/${appli.src.project.path}/vendor/php-orchestra" />
             <arg path="${basedir}/${appli.src.project.path}/src" />
         </exec>
@@ -91,6 +89,7 @@
             <arg value="--report=checkstyle" />
             <arg value="--report-file=${basedir}/build/logs/checkstyle.xml" />
             <arg value="--standard=PSR2" />
+            <arg value="--extensions=php" />
             <arg path="${basedir}/${appli.src.project.path}/vendor/php-orchestra" />
             <arg path="${basedir}/${appli.src.project.path}/src" />
         </exec>
@@ -119,8 +118,6 @@
         <exec executable="phpcb">
             <arg value="--log" />
             <arg path="${basedir}/build/logs" />
-            <arg value="--source" />
-            <arg path="${basedir}/${appli.src.project.path}/vendor/php-orchestra" />
             <arg value="--output" />
             <arg path="${basedir}/build/code-browser" />
         </exec>
@@ -128,7 +125,8 @@
 
     <!-- PHP Documentor -->
     <target name="phpdoc" description="Generate API documentation using PHPDocumentor" unless="appli.disable.phpdoc">
-        <exec executable="phpdoc">
+        <exec executable="${basedir}/${appli.src.project.path}/bin/phpdoc.php">
+            <arg value="--extensions=php" />
             <arg value="--directory" />
             <arg path="${basedir}/${appli.src.project.path}/vendor/php-orchestra" />
             <arg value="--target" />

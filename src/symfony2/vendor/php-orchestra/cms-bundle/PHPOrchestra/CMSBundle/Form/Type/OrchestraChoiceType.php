@@ -38,5 +38,4 @@ class OrchestraChoiceType extends AbstractType
     {
         return 'orchestra_choice';
     }
-    
 }

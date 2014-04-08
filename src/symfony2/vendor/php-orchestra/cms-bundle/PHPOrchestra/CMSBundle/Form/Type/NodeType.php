@@ -31,37 +31,37 @@ class NodeType extends AbstractType
     /**
      * @param Router
      */
-    public function __construct(Router $router, $blocks){
+    public function __construct(Router $router, $blocks)
+    {
         $this->router = $router;
         $this->blocks = $blocks;
     }
-			
-	/**
+            
+    /**
      * Build Node form
      * 
      * @param FormBuilderInterface $builder
      * @param  array $options
      */
-	public function buildForm(FormBuilderInterface $builder, array $options)
+    public function buildForm(FormBuilderInterface $builder, array $options)
     {
 
-    	$nameBlocks = 'blocks';
-    	
+        $nameBlocks = 'blocks';
+        
         $builder
             ->add('nodeId', 'hidden')
             ->add('siteId', 'hidden')
-            
             ->add('templateId', 'orchestra_template_choice')
             ->add('name', 'text', array('attr' => array('class' => 'used-as-label')))
             ->add('nodeType', 'text')
             ->add('parentId', 'orchestra_node_choice')
-            
             ->add('path', 'text')
             ->add('alias', 'text')
             ->add('language', 'orchestra_language')
             ->add('status', 'orchestra_status')
-
-            ->add('areas', 'orchestra_areas', array('dialogPath' => 'PHPOrchestraCMSBundle:Form:area.html.twig', 'objects' => array('blocks')))
+            ->add('areas', 'orchestra_areas', array(
+                'dialogPath' => 'PHPOrchestraCMSBundle:Form:area.html.twig', 'objects' => array('blocks')
+            ))
             ->add($nameBlocks, 'orchestra_blocks', array(
                 'dialogPath' => 'PHPOrchestraCMSBundle:Form:block.html.twig',
                 'js' => array(

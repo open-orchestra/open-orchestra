@@ -21,7 +21,7 @@ class BlocksType extends AbstractType
      * Mandango service
      * @var Mandango\Mandango
      */
-    var $mandango = null;
+    public $mandango = null;
 
     
     /**
@@ -44,12 +44,11 @@ class BlocksType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $transformer = new jsonToBlocksTransformer($this->mandango);
-    	$builder->addModelTransformer($transformer);
+        $builder->addModelTransformer($transformer);
     }
-	
+
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
-    	
         $resolver->setDefaults(array(
             'dialogPath' => '',
             'js' => array(),
@@ -81,5 +80,4 @@ class BlocksType extends AbstractType
     {
         return 'orchestra_blocks';
     }
-
 }
