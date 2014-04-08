@@ -15,7 +15,7 @@ class jsonToBlocksTransformer implements DataTransformerInterface
      * Documents service
      * @var unknown
      */
-    var $documentsService = null;
+    public $documentsService = null;
     
     
     /**
@@ -36,18 +36,20 @@ class jsonToBlocksTransformer implements DataTransformerInterface
      */
     public function transform($blocks)
     {
-        if (isset($blocks))
+        if (isset($blocks)) {
             $blocks = $blocks->getSaved();
-        else
+        } else {
             $blocks = array();
+        }
             
         $blocksArray = array();
         
-        foreach ($blocks as $block)
+        foreach ($blocks as $block) {
             $blocksArray[] = array(
                             'component' => $block->getComponent(),
                             'attributes' => $block->getAttributes()
-                         );
+                        );
+        }
 
         return json_encode($blocksArray);
     }
@@ -64,7 +66,7 @@ class jsonToBlocksTransformer implements DataTransformerInterface
         $docsArray = array();
         
         if (is_array($blocks)) {
-            foreach($blocks as $block) {
+            foreach ($blocks as $block) {
                 $blockDoc = $this->documentsService->create('Model\PHPOrchestraCMSBundle\Block')
                     ->setComponent($block['component'])
                     ->setAttributes($block['attributes']);

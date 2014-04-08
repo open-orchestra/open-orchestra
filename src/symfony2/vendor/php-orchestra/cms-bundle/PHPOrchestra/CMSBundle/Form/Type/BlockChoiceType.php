@@ -17,29 +17,29 @@ use mandango;
 class BlockChoiceType extends AbstractType
 {
 
-    var $choices = null;
+    public $choices = null;
 
     /**
      * Constructor, require mandango service
      * 
      * @param Mandango\Mandango $mandango
      */
-    public function __construct(Mandango\Mandango $mandango = null, $nodeId, $filter = array())
+    public function __construct(Mandango\Mandango $mandango, $nodeId, $filter = array())
     {
         $node = DocumentLoader::getDocument('Node', array('nodeId' => $nodeId), $mandango);
         $this->choices[''] = '--------';
         
-        foreach($filter as $key => $configBlock){
+        foreach ($filter as $key => $configBlock) {
             $filter[$key] = $configBlock['action'];
         }
         $filter = array_flip($filter);
         $blocks = $node->getBlocks();
         $intRank = 1;
-        foreach($blocks as $block){
+        foreach ($blocks as $block) {
             $component = $block->getComponent();
-            if(array_key_exists($component, $filter)){
-               $this->choices[$intRank] = $filter[$component];
-               $intRank++;
+            if (array_key_exists($component, $filter)) {
+                $this->choices[$intRank] = $filter[$component];
+                $intRank++;
             }
         }
     }
@@ -60,5 +60,4 @@ class BlockChoiceType extends AbstractType
     {
         return 'orchestra_block_choice';
     }
-    
 }

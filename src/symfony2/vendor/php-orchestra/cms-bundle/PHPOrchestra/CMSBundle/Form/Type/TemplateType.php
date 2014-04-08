@@ -14,7 +14,6 @@ use Symfony\Component\Form\FormView;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Symfony\Component\Routing\Router;
 
-
 class TemplateType extends AbstractType
 {
     
@@ -32,7 +31,8 @@ class TemplateType extends AbstractType
     /**
      * @param Router
      */
-    public function __construct(Router $router, $blocks){
+    public function __construct(Router $router, $blocks)
+    {
         $this->router = $router;
         $this->blocks = $blocks;
     }
@@ -56,7 +56,10 @@ class TemplateType extends AbstractType
             ->add('language', 'orchestra_language')
             ->add('status', 'orchestra_status')
             ->add('boDirection', 'orchestra_direction')
-            ->add('areas', 'orchestra_areas', array('dialogPath' => 'PHPOrchestraCMSBundle:Form:area.html.twig', 'objects' => array('areas', 'blocks')))
+            ->add('areas', 'orchestra_areas', array(
+                'dialogPath' => 'PHPOrchestraCMSBundle:Form:area.html.twig',
+                'objects' => array('areas', 'blocks')
+            ))
             ->add($nameBlocks, 'orchestra_blocks', array(
                 'js' => array(
                     'script' => 'blocks_template.js',
