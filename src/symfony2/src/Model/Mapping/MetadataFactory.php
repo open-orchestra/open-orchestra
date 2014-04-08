@@ -13,3 +13,4 @@ class MetadataFactory extends \Mandango\MetadataFactory
         'Model\\PHPOrchestraCMSBundle\\User' => false,
     );
 }
+
