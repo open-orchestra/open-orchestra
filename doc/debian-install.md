@@ -121,7 +121,7 @@ Finally activate the php extension by adding in the php.ini the line :
 	extension=mongo.so
 
 ##### 8. Install Redis
-To install Redis Server, update the sources list by editing /etc/apt/sources.list and add the following lines :
+To install Redis Server, update the sources list by editing **/etc/apt/sources.list** and add the following lines :
 	
 	deb http://packages.dotdeb.org wheezy all
 	deb-src http://packages.dotdeb.org wheezy all

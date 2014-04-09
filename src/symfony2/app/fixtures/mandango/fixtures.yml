@@ -51,7 +51,7 @@ Model\PHPOrchestraCMSBundle\Node:
         blocks:
             -
                 component: "PHPOrchestraCMSBundle:Samples:sampleShow"
-                attributes: {"elementsList":{"rubA":"Qui sommes-nous ?", "rubB":"pourquoi nous choisir ?", "rubC":"Nos agences"}}
+                attributes: {"elementsList":{"title":"Accueil", "texte":"Bienvenu sur le site de démo issu des fixtures."}}
                 
     node_about_us:
         nodeId: fixture_about_us
@@ -69,7 +69,7 @@ Model\PHPOrchestraCMSBundle\Node:
         blocks:
             -
                 component: "PHPOrchestraCMSBundle:Samples:sampleShow"
-                attributes: {"elementsList":{"rubA":"Qui sommes-nous ?", "rubB":"pourquoi nous choisir ?", "rubC":"Nos agences"}}
+                attributes: {"elementsList":{"title":"Qui sommes-nous ?", "Text":"Pour tout savoir sur notre entreprise."}}
                 
     node_bd:
         nodeId: fixture_bd
@@ -87,7 +87,7 @@ Model\PHPOrchestraCMSBundle\Node:
         blocks:
             -
                 component: "PHPOrchestraCMSBundle:Samples:sampleShow"
-                attributes: {"elementsList":{"rubA":"Qui sommes-nous ?", "rubB":"pourquoi nous choisir ?", "rubC":"Nos agences"}}
+                attributes: {"elementsList":{"title":"B&D", "texte":"Tout sur B&D"}}
                 
     node_interakting:
         nodeId: fixture_interakting
@@ -105,7 +105,7 @@ Model\PHPOrchestraCMSBundle\Node:
         blocks:
             -
                 component: "PHPOrchestraCMSBundle:Samples:sampleShow"
-                attributes: {"elementsList":{"rubA":"Qui sommes-nous ?", "rubB":"pourquoi nous choisir ?", "rubC":"Nos agences"}}
+                attributes: {"elementsList":{"title":"Interakting", "text":"Des trucs sur Interakting (non versionnés)"}}
                 
     node_contact_us:
         nodeId: fixture_contact_us
@@ -123,7 +123,7 @@ Model\PHPOrchestraCMSBundle\Node:
         blocks:
             -
                 component: "PHPOrchestraCMSBundle:Samples:sampleShow"
-                attributes: {"elementsList":{"rubA":"Qui sommes-nous ?", "rubB":"pourquoi nous choisir ?", "rubC":"Nos agences"}}
+                attributes: {"elementsList":{"title":"Nous contacter", "text":"Comment nous contacter"}}
                 
     node_directory:
         nodeId: fixture_directory
@@ -141,6 +141,6 @@ Model\PHPOrchestraCMSBundle\Node:
         blocks:
             -
                 component: "PHPOrchestraCMSBundle:Samples:sampleShow"
-                attributes: {"elementsList":{"rubA":"Qui sommes-nous ?", "rubB":"pourquoi nous choisir ?", "rubC":"Nos agences"}}
+                attributes: {"elementsList":{"title":"Annuaire", "text":"Le bottin mondain"}}
                 
                 
