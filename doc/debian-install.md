@@ -116,10 +116,34 @@ Then install mongoDB :
 
     apt-get install mongodb-10gen=2.2.3
 
-##### 8. Clone project
+Finally activate the php extension by adding in the php.ini the line :
+
+	extension=mongo.so
+
+##### 8. Install Redis
+To install Redis Server, update the sources list by editing /etc/apt/sources.list and add the following lines :
+	
+	deb http://packages.dotdeb.org wheezy all
+	deb-src http://packages.dotdeb.org wheezy all
+
+Then get the repo public key :
+
+	wget -q -O - http://www.dotdeb.org/dotdeb.gpg | sudo apt-key add -
+
+Update the apt cache and install redis and phpredis :
+
+	apt-get update
+    apt-get install redis-server
+	apt-get install php5-redis
+
+Finally activate the extension in php.ini by adding this :
+
+	extension=redis.so
+
+##### 9. Clone project
 Install git and clone project from github : [https://github.com/itkg/phporchestra.git](https://github.com/itkg/phporchestra.git)
 
-##### 9. Configure Apache Vhost
+##### 10. Configure Apache Vhost
 You can see **conf/apache2/php-orchestra** for a vhost sample  
 **/!\ CHANGE PATH IN VHOST + CREATE LOG DIR**
 
