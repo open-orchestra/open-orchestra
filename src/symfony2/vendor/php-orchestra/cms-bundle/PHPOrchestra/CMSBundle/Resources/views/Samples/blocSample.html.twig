@@ -5,9 +5,11 @@
  ##}
 
 <div>
-    datetime : {{ datetime }} <br />
-    Rubrique A : {{ rubA }} <br />
-    Rubrique B : {{ rubB }} <br />
-    Rubrique C : {{ rubC }} <br />
+    <span>datetime : {{ datetime }} </span><br />
+    {% for elementLabel, elementValue in elementsList %}
+    {{ elementLabel }} : {{ elementValue }} <br />
+    {% endfor %}
+    {% if parameters %}
     parameters : {{ dump(parameters) }}
+    {% endif %}
 </div>

@@ -17,7 +17,7 @@
     <fieldset style="background-color:#3B6691;border-color:#000000;margin-top:8px;">
         <legend style="background-color:#5D88B3;border:1px solid #000000;">
             NodeId : {{ blockReference.nodeId }} BlockId : {{ blockReference.blockId }}
-        {% if block %} / <span style="color:#FF0000;">{{ block.component }}</span>{% endif %}
+        {% if block %} <span>{{ block.component }}</span>{% endif %}
         </legend>
     {% if block %}
         {{ render_esi(controller(block.component, block.attributes), {'ignore_errors' : true} ) }}

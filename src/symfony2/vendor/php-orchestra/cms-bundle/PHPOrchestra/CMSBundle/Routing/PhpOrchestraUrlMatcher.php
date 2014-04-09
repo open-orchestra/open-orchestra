@@ -135,7 +135,12 @@ class PhpOrchestraUrlMatcher extends RedirectableUrlMatcher
      */
     protected function getFromCache($pathinfo)
     {
-        return $this->cacheService->hashGet(self::PATH_PREFIX . $pathinfo);
+        $parameters = $this->cacheService->hashGet(self::PATH_PREFIX . $pathinfo);
+        
+        if (isset($parameters['module_parameters']))
+            $parameters['module_parameters'] = unserialize($parameters['module_parameters']);
+        
+        return $parameters;
     }
     
     
@@ -147,6 +152,9 @@ class PhpOrchestraUrlMatcher extends RedirectableUrlMatcher
      */
     protected function setToCache($pathinfo, $routeParameters)
     {
+        if (isset($routeParameters['module_parameters']))
+            $routeParameters['module_parameters'] = serialize($routeParameters['module_parameters']);
+        
         return $this->cacheService->hashSet(self::PATH_PREFIX . $pathinfo, $routeParameters);
     }
     

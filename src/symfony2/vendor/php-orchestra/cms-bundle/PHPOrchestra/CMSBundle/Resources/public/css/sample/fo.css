@@ -17,11 +17,17 @@
 }
 
 #content {
-	width:50%;
+    width:40%;
     float:left;
 }
 
 #skycrapper {
     width:20%;
     float:left;
+}
+
+#orchestra span {
+    font-style: italic;
+    background-color: #759E1A;
+    color:#FFFFFF;
 }
