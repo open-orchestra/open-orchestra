@@ -13,6 +13,25 @@ li.ui-widget-model{
     display:block;
     width:100%;
     height:100%;
+    z-index : 1;
+}
+.ui-widget-model li.separator-h{
+    display: block;
+    background-color: #000000;
+    height: 1px;
+    margin: -10px 0 9px -10px;
+    width: 100%;
+    cursor:ns-resize;
+    z-index : 2;
+}
+.ui-widget-model li.separator-v{
+    display: inline-block;
+    height:100%;
+    width:1px;
+    margin: -10px 9px 10px -10px;
+    background-color:#000000;
+    cursor:ew-resize;
+    z-index : 2;
 }
 span.ui-widget-model{
     position:relative;

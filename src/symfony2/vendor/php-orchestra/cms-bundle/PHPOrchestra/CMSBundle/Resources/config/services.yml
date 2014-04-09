@@ -4,7 +4,7 @@ services:
 
     # Cache service
     phporchestra_cms.cachemanager:
-        class: PHPOrchestra\CMSBundle\Classes\Cachemanager
+        class: PHPOrchestra\CMSBundle\Classes\CacheManager
         arguments: [@snc_redis.default]
 
 #--[FORM FIELDS]----------------#

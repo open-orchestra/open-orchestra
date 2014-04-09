@@ -93,10 +93,14 @@ function moveFromTo(settings, source, destination){
 				$(this).parseTemplate({"values": settings.values,
 									"path": path + '[' + i + ']',
 									"css": settings.css,
-									"style" : {"display": (values.boDirection == 'v') ? "inline-block" : "block", "width": (values.boDirection == 'v') ? 100 / (tab.length) + '%' : '100%', "height": (values.boDirection == 'h') ? 100 / (tab.length) + '%' : '100%'},
-									"index": settings.index + 1,
+									"style" : {"display": (values.boDirection == 'v') ? "inline-block" : "block",
+											"width": (values.boDirection == 'v') ? 100 / (tab.length) + '%' : '100%',
+											"height": (values.boDirection == 'h') ? 100 / (tab.length) + '%' : '100%'},
 									"type": type,
 									"element": settings.element}).appendTo($(this));
+				if(i != tab.length - 1){
+					$('<li/>', {"class": settings.css + ((values.boDirection == 'h') ? ' separator-h' : ' separator-v')}).appendTo($(this))
+				}
 			}
 		}
 	}
