@@ -75,12 +75,14 @@ class DocumentValidation extends Extension
         $method = new Method('public', 'loadValidatorMetadata', '\Symfony\Component\Validator\Mapping\ClassMetadata $metadata', <<<EOF
         \$validation = $validation;
 
-        foreach (\Mandango\MandangoBundle\Extension\DocumentValidation::parseNodes(\$validation['constraints']) as \$constraint) {
+        foreach (\Mandango\MandangoBundle\Extension\DocumentValidation
+            ::parseNodes(\$validation['constraints']) as \$constraint) {
             \$metadata->addConstraint(\$constraint);
         }
 
         foreach (\$validation['getters'] as \$getter => \$constraints) {
-            foreach (\Mandango\MandangoBundle\Extension\DocumentValidation::parseNodes(\$constraints) as \$constraint) {
+            foreach (\Mandango\MandangoBundle\Extension\DocumentValidation
+            ::parseNodes(\$constraints) as \$constraint) {
                 \$metadata->addGetterConstraint(\$getter, \$constraint);
             }
         }
