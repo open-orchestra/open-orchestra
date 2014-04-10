@@ -173,10 +173,13 @@ class NodeController extends Controller
             return $this->redirect($this->generateUrl('php_orchestra_cms_node', array('nodeId' => $node->getNodeId())));
         }
 
-        return $this->render('PHPOrchestraCMSBundle:Node:form.html.twig', array(
-            'form' => $form->createView(),
-            'ajax' => $request->isXmlHttpRequest()
-        ));
+        return $this->render(
+            'PHPOrchestraCMSBundle:Node:form.html.twig',
+            array(
+                'form' => $form->createView(),
+                'ajax' => $request->isXmlHttpRequest()
+            )
+        );
     }
 
     /**
@@ -197,15 +200,20 @@ class NodeController extends Controller
             )
             ->getForm();
 
-        $render = $this->render('PHPOrchestraCMSBundle:Form:input.html.twig', array(
-            'form' => $form->createView()
-        ));
+        $render = $this->render(
+            'PHPOrchestraCMSBundle:Form:input.html.twig',
+            array(
+                'form' => $form->createView()
+            )
+        );
 
         if ($request->isXmlHttpRequest()) {
-            return new JsonResponse(array(
-                'success' => true,
-                'data' => $render->getContent()
-            ));
+            return new JsonResponse(
+                array(
+                    'success' => true,
+                    'data' => $render->getContent()
+                )
+            );
         } else {
             return new Response($render->getContent());
         }

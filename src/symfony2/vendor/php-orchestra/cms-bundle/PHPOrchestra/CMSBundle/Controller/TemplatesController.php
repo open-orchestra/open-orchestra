@@ -22,17 +22,24 @@ class TemplatesController extends Controller
      */
     public function showAllTemplatesAction(Request $request)
     {
-        $form = $this->get('form.factory')->createNamedBuilder($request->get('form'), 'form')
+        $form = $this->get('form.factory')
+            ->createNamedBuilder($request->get('form'), 'form')
             ->add('templateId', 'orchestra_template_choice')
             ->getForm();
-        $render = $this->render('PHPOrchestraCMSBundle:Form:input.html.twig', array(
-            'form' => $form->createView()
-        ));
+
+        $render = $this->render(
+            'PHPOrchestraCMSBundle:Form:input.html.twig',
+            array(
+                'form' => $form->createView()
+            )
+        );
         if ($request->isXmlHttpRequest()) {
-            return new JsonResponse(array(
-                'success' => true,
-                'data' => $render->getContent()
-            ));
+            return new JsonResponse(
+                array(
+                    'success' => true,
+                    'data' => $render->getContent()
+                )
+            );
         } else {
             return new Response($render->getContent());
         }
@@ -49,11 +56,14 @@ class TemplatesController extends Controller
         foreach ($templates as $key => $template) {
             $links[] = array('id' => $template->getTemplateId(), 'class' =>'', 'text' => $template->getName());
         }
-        return $this->render('PHPOrchestraCMSBundle:Tree:tree.html.twig', array(
-            'name' => 'template',
-            'path' => 'php_orchestra_cms_templateform',
-            'refresh' => 'rightbox-content',
-            'links' => $links
-        ));
+        return $this->render(
+            'PHPOrchestraCMSBundle:Tree:tree.html.twig',
+            array(
+                'name' => 'template',
+                'path' => 'php_orchestra_cms_templateform',
+                'refresh' => 'rightbox-content',
+                'links' => $links
+            )
+        );
     }
 }

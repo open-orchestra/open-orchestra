@@ -23,17 +23,23 @@ class NodesController extends Controller
      */
     public function showAllNodesAction(Request $request)
     {
-        $form = $this->get('form.factory')->createNamedBuilder($request->get('form'), 'form')
+        $form = $this->get('form.factory')
+            ->createNamedBuilder($request->get('form'), 'form')
             ->add('nodeId', 'orchestra_node_choice')
             ->getForm();
-        $render = $this->render('PHPOrchestraCMSBundle:Form:input.html.twig', array(
-            'form' => $form->createView()
-        ));
+        $render = $this->render(
+            'PHPOrchestraCMSBundle:Form:input.html.twig',
+            array(
+                'form' => $form->createView()
+            )
+        );
         if ($request->isXmlHttpRequest()) {
-            return new JsonResponse(array(
-                'success' => true,
-                'data' => $render->getContent()
-            ));
+            return new JsonResponse(
+                array(
+                    'success' => true,
+                    'data' => $render->getContent()
+                )
+            );
         } else {
             return new Response($render->getContent());
         }
@@ -47,11 +53,14 @@ class NodesController extends Controller
     {
         $nodes = DocumentLoader::getDocuments('Node', array(), $this->container->get('mandango'));
 
-        return $this->render('PHPOrchestraCMSBundle:Tree:tree.html.twig', array(
-            'name' => 'node',
-            'path' => 'php_orchestra_cms_nodeform',
-            'refresh' => 'rightbox-content',
-            'links' => NodesHelper::createTree($nodes)
-        ));
+        return $this->render(
+            'PHPOrchestraCMSBundle:Tree:tree.html.twig',
+            array(
+                'name' => 'node',
+                'path' => 'php_orchestra_cms_nodeform',
+                'refresh' => 'rightbox-content',
+                'links' => NodesHelper::createTree($nodes)
+            )
+        );
     }
 }
