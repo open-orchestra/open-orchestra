@@ -7,14 +7,14 @@ services:
         class: PHPOrchestra\CMSBundle\Classes\CacheManager
         arguments: [@snc_redis.default]
 
-#--[TWIG EXTENSION]-------------#
+#--[TWIG EXTENSIONS]-------------#
 
     phporchestra_cms.twig.phporchestra_extension:
         class: PHPOrchestra\CMSBundle\Twig\PHPOrchestraExtension
-        arguments: [ @service_container ]
+        arguments: [@service_container]
         tags:
             - { name: twig.extension }
-    
+
     phporchestra_cms.event.listener.assetpackage:
         class: PHPOrchestra\CMSBundle\Event\Listener\HttpKernel\AssetPackageInjector
         tags:

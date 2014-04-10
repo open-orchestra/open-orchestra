@@ -11,13 +11,20 @@ class PHPOrchestraExtension extends \Twig_Extension
 {
     private $container;
 
-
+    /**
+     * Constructor
+     * 
+     * @param $container
+     */
     public function __construct($container)
     {
         $this->container = $container;
     }
 
-
+    /**
+     * (non-PHPdoc)
+     * @see src/symfony2/vendor/twig/twig/lib/Twig/Twig_Extension::getFunctions()
+     */
     public function getFunctions()
     {
         return array(
@@ -26,7 +33,11 @@ class PHPOrchestraExtension extends \Twig_Extension
                     );
     }
 
-
+    /**
+     * Return the html tags including the css and js from the theme
+     * 
+     * @param string $theme (bundleName:themeName)
+     */
     public function phpOrchestraTheme($theme)
     {
         $theme = explode(':', $theme);
@@ -41,13 +52,20 @@ class PHPOrchestraExtension extends \Twig_Extension
         return $tags;
     }
 
-
+    /**
+     * Return the css tag for the master css files located at $path
+     * 
+     * @param string $path
+     */
     protected function getCssTags($path)
     {
         return '<link type="text/css" rel="stylesheet" href="' . $path . DIRECTORY_SEPARATOR . 'master.css">' . PHP_EOL;
     }
 
-
+    /**
+     * Return the js tags for all css files located at $path
+     * @param $path
+     */
     protected function getJsTags($path)
     {
         $tags = '';
@@ -59,7 +77,10 @@ class PHPOrchestraExtension extends \Twig_Extension
         return $tags;
     }
 
-
+    /**
+     * (non-PHPdoc)
+     * @see src/symfony2/vendor/twig/twig/lib/Twig/Twig_ExtensionInterface::getName()
+     */
     public function getName()
     {
         return 'phporchestra_extension';

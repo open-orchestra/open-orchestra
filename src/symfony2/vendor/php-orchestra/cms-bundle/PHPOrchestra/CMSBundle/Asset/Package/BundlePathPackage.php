@@ -11,10 +11,25 @@ namespace PHPOrchestra\CMSBundle\Asset\Package;
 
 use Symfony\Component\Templating\Asset\PathPackage;
 
+/**
+ * Alternative package for assets
+ * Give the location of an asset from a bundle
+ * 
+ * @author Noël
+ */
 class BundlePathPackage extends PathPackage
 {
+    /**
+     * Bundle assets web directory
+     *
+     * @var string
+     */
     private $bundleDir;
 
+    /**
+     * (non-PHPdoc)
+     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Templating/Asset/Symfony\Component\Templating\Asset.PathPackage::getUrl()
+     */
     public function getUrl($path)
     {
         if (isset($this->bundleDir))
@@ -23,6 +38,11 @@ class BundlePathPackage extends PathPackage
         return parent::getUrl($path);
     }
 
+    /**
+     * Set the bundle assets web path according to the bundle name
+     * 
+     * @param string $bundleName
+     */
     public function setBundlePath($bundleName)
     {
         $this->bundleDir = 'bundles/' . strtolower(str_replace('Bundle', '', $bundleName));
