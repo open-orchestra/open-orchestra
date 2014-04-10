@@ -19,16 +19,21 @@ abstract class Node extends \Model\PHPOrchestraCMSBundle\Base\Node
      */
     public function initializeDefaults()
     {
-        if ($this->getNodeId() == '')
+        if ($this->getNodeId() == '') {
             $this->setNodeId(uniqid('', true));
-        if ($this->getNodeType() == '')
+        }
+        if ($this->getNodeType() == '') {
             $this->setNodeType(self::TYPE_DEFAULT);
-        if ($this->getVersion() == '')
+        }
+        if ($this->getVersion() == '') {
             $this->setVersion(1);
-        if ($this->getStatus() == '')
+        }
+        if ($this->getStatus() == '') {
             $this->setStatus(self::STATUS_DRAFT);
-        if ($this->getLanguage() == '')
+        }
+        if ($this->getLanguage() == '') {
             $this->setLanguage('fr');
+        }
     }
     
     /**

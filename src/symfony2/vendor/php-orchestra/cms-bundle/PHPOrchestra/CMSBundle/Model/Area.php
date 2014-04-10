@@ -52,21 +52,27 @@ class Area
      */
     public function __construct(array $importArray = array())
     {
-        if (isset($importArray['areaId']))
+        if (isset($importArray['areaId'])) {
             $this->htmlId = $importArray['areaId'];
+        }
         
-        if (isset($importArray['boDirection']))
+        if (isset($importArray['boDirection'])) {
             $this->boDirection = $importArray['boDirection'];
+        }
         
-        if (isset($importArray['classes']))
+        if (isset($importArray['classes'])) {
             $this->classes = $importArray['classes'];
+        }
         
-        if (isset($importArray['subAreas']) && is_array($importArray['subAreas']))
-            foreach($importArray['subAreas'] as $subArea)
+        if (isset($importArray['subAreas']) && is_array($importArray['subAreas'])) {
+            foreach ($importArray['subAreas'] as $subArea) {
                 $this->subAreas[] = new Area($subArea);
+            }
+        }
         
-        if (isset($importArray['blocks']) && is_array($importArray['blocks']))
-            $this->blockReferences = $importArray['blocks'];                 
+        if (isset($importArray['blocks']) && is_array($importArray['blocks'])) {
+            $this->blockReferences = $importArray['blocks'];
+        }
         
         return $this;
     }
@@ -167,16 +173,16 @@ class Area
     {
         $formattedSubAreas = array();
         
-        foreach ($this->getSubAreas() as $area)
+        foreach ($this->getSubAreas() as $area) {
             $formattedSubAreas[] = $area->toArray();
+        }
         
         return array(
-                   'areaId' => $this->getHtmlId(),
-                   'boDirection' => $this->getBoDirection(),
-                   'classes' => $this->classes,
-                   'subAreas' => $formattedSubAreas,
-                   'blocks' => $this->getBlockReferences()
+            'areaId' => $this->getHtmlId(),
+            'boDirection' => $this->getBoDirection(),
+            'classes' => $this->classes,
+            'subAreas' => $formattedSubAreas,
+            'blocks' => $this->getBlockReferences()
         );
     }
-
 }

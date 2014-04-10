@@ -27,19 +27,21 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
 
 if (!empty($_POST)) {
     foreach ($_POST as $key => $value) {
-        if ( ( !is_string($value) && !is_numeric($value) ) || !is_string($key) )
+        if ((!is_string($value) && !is_numeric($value)) || !is_string($key)) {
             continue;
+        }
 
-        if ( get_magic_quotes_gpc() )
-            $value = htmlspecialchars( stripslashes((string) $value) );
-        else
-            $value = htmlspecialchars( (string) $value );
-?>
+        if (get_magic_quotes_gpc()) {
+            $value = htmlspecialchars(stripslashes((string) $value));
+        } else {
+            $value = htmlspecialchars((string) $value);
+        }
+        ?>
         <tr>
-            <th style="vertical-align: top"><?php echo htmlspecialchars( (string) $key ); ?></th>
+            <th style="vertical-align: top"><?php echo htmlspecialchars((string) $key); ?></th>
             <td><pre class="samples"><?php echo $value; ?></pre></td>
         </tr>
-    <?php
+        <?php
     }
 }
 ?>
@@ -47,10 +49,12 @@ if (!empty($_POST)) {
     <div id="footer">
         <hr>
         <p>
-            CKEditor - The text editor for the Internet - <a class="samples" href="http://ckeditor.com/">http://ckeditor.com</a>
+            CKEditor - The text editor for the Internet -
+            <a class="samples" href="http://ckeditor.com/">http://ckeditor.com</a>
         </p>
         <p id="copy">
-            Copyright &copy; 2003-2013, <a class="samples" href="http://cksource.com/">CKSource</a> - Frederico Knabben. All rights reserved.
+            Copyright &copy; 2003-2013, <a class="samples" href="http://cksource.com/">CKSource</a>
+            - Frederico Knabben. All rights reserved.
         </p>
     </div>
 </body>

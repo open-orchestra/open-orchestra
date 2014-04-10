@@ -16,12 +16,15 @@ abstract class Template extends \Model\PHPOrchestraCMSBundle\Base\Template
      */
     public function initializeDefaults()
     {
-        if ($this->getTemplateId() == '')
+        if ($this->getTemplateId() == '') {
             $this->setTemplateId(uniqid('', true));
-        if ($this->getVersion() == '')
+        }
+        if ($this->getVersion() == '') {
             $this->setVersion(1);
-        if ($this->getStatus() == '')
+        }
+        if ($this->getStatus() == '') {
             $this->setStatus(self::STATUS_DRAFT);
+        }
     }
     
     /**
