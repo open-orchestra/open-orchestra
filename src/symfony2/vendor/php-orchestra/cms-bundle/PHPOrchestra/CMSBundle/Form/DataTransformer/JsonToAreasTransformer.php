@@ -10,7 +10,7 @@ namespace PHPOrchestra\CMSBundle\Form\DataTransformer;
 use Symfony\Component\Form\DataTransformerInterface;
 use PHPOrchestra\CMSBundle\Model\Area;
 
-class jsonToAreasTransformer implements DataTransformerInterface
+class JsonToAreasTransformer implements DataTransformerInterface
 {
 
     const JSON_AREA_TAG = 'areas';

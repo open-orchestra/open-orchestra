@@ -10,7 +10,7 @@ namespace PHPOrchestra\CMSBundle\Form\Type;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
-use PHPOrchestra\CMSBundle\Form\DataTransformer\jsonToAreasTransformer;
+use PHPOrchestra\CMSBundle\Form\DataTransformer\JsonToAreasTransformer;
 use PHPOrchestra\CMSBundle\Form\Type\OrchestraChoiceType;
 
 class StatusType extends OrchestraChoiceType
