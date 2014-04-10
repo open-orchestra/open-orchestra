@@ -28,13 +28,12 @@ class TemplatesController extends Controller
         $render = $this->render('PHPOrchestraCMSBundle:Form:input.html.twig', array(
             'form' => $form->createView()
         ));
-        if($request->isXmlHttpRequest()){
+        if ($request->isXmlHttpRequest()) {
             return new JsonResponse(array(
                 'success' => true,
                 'data' => $render->getContent()
             ));
-        }
-        else{
+        } else {
             return new Response($render->getContent());
         }
     }
@@ -45,16 +44,15 @@ class TemplatesController extends Controller
      */
     public function showTreeTemplatesAction(Request $request)
     {
-    	
         $templates = DocumentLoader::getDocuments('Template', array(), $this->container->get('mandango'));
         $links = array();
-        foreach($templates as $key => $template){
-        	$links[] = array('id' => $template->getTemplateId(), 'class' =>'', 'text' => $template->getName());
+        foreach ($templates as $key => $template) {
+            $links[] = array('id' => $template->getTemplateId(), 'class' =>'', 'text' => $template->getName());
         }
-    	return $this->render('PHPOrchestraCMSBundle:Tree:tree.html.twig', array(
+        return $this->render('PHPOrchestraCMSBundle:Tree:tree.html.twig', array(
             'name' => 'template',
             'path' => 'php_orchestra_cms_templateform',
-    	    'refresh' => 'rightbox-content',
+            'refresh' => 'rightbox-content',
             'links' => $links
         ));
     }

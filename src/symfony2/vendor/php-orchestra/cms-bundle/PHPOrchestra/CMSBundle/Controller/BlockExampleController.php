@@ -49,5 +49,4 @@ class BlockExampleController extends Controller
     {
         return $this->render('PHPOrchestraCMSBundle:BlockExample:form1.html.twig', array('prefix' => $prefix));
     }
-    
 }

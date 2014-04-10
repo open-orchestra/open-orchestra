@@ -29,13 +29,12 @@ class NodesController extends Controller
         $render = $this->render('PHPOrchestraCMSBundle:Form:input.html.twig', array(
             'form' => $form->createView()
         ));
-        if($request->isXmlHttpRequest()){
+        if ($request->isXmlHttpRequest()) {
             return new JsonResponse(array(
                 'success' => true,
                 'data' => $render->getContent()
             ));
-        }
-        else{
+        } else {
             return new Response($render->getContent());
         }
     }
@@ -55,5 +54,4 @@ class NodesController extends Controller
             'links' => NodesHelper::createTree($nodes)
         ));
     }
-    
 }

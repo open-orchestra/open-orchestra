@@ -71,5 +71,4 @@ class CacheManager
     {
         return $this->keystoreService->hmSet($key, $hash);
     }
-
 }

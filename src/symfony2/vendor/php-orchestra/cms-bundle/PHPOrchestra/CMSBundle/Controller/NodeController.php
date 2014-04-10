@@ -49,18 +49,24 @@ class NodeController extends Controller
      * @return Response
      */
     public function showAction($nodeId)
-    { 
+    {
         $node = DocumentLoader::getDocument('Node', array('nodeId' => $nodeId), $this->container->get('mandango'));
-        if (is_null($node))
+        if (is_null($node)) {
             throw new NonExistingDocumentException("Node not found");
+        }
         $areas = $node->getAreas();
         $this->externalBlocks = array();
         
-        if (is_array($areas))
-            foreach ($areas as $area)
+        if (is_array($areas)) {
+            foreach ($areas as $area) {
                 $this->getBlocks(new Area($area), $nodeId);
+            }
+        }
         
-        $response = $this->render('PHPOrchestraCMSBundle:Node:show.html.twig', array('node' => $node, 'blocks' => $this->blocks, 'datetime' => time()));
+        $response = $this->render(
+            'PHPOrchestraCMSBundle:Node:show.html.twig',
+            array('node' => $node, 'blocks' => $this->blocks, 'datetime' => time())
+        );
         
         $response->setPublic();
         $response->setSharedMaxAge(15);
@@ -78,11 +84,13 @@ class NodeController extends Controller
      */
     protected function getBlocks(Area $area, $currentNodeId)
     {
-        foreach ($area->getBlockReferences() as $blockReference)
+        foreach ($area->getBlockReferences() as $blockReference) {
             $this->getBlockWithReference($blockReference, $currentNodeId);
+        }
         
-        foreach ($area->getSubAreas() as $subArea)
+        foreach ($area->getSubAreas() as $subArea) {
             $this->getBlocks($subArea, $currentNodeId);
+        }
     }
     
     
@@ -96,15 +104,19 @@ class NodeController extends Controller
     protected function getBlockWithReference($blockReference, $currentNodeId)
     {
         $realNodeId = $blockReference['nodeId'];
-        if ($realNodeId == 0)
+        if ($realNodeId == 0) {
             $realNodeId = $currentNodeId;
+        }
             
-        if (!(isset($this->externalBlocks[$realNodeId])))
+        if (!(isset($this->externalBlocks[$realNodeId]))) {
             $this->getBlocksFromNode($realNodeId);
+        }
         
         if (isset($this->externalBlocks[$realNodeId][$blockReference['blockId']])) {
-            $this->blocks[$blockReference['nodeId']][$blockReference['blockId']] = $this->externalBlocks[$realNodeId][$blockReference['blockId']];
-            $this->blocks[$blockReference['nodeId']][$blockReference['blockId']]['attributes']['_page_parameters'] = $this->container->get('request')->attributes->get('module_parameters');
+            $this->blocks[$blockReference['nodeId']][$blockReference['blockId']] =
+                $this->externalBlocks[$realNodeId][$blockReference['blockId']];
+            $this->blocks[$blockReference['nodeId']][$blockReference['blockId']]['attributes']['_page_parameters'] =
+                $this->container->get('request')->attributes->get('module_parameters');
         }
     }
     
@@ -121,11 +133,12 @@ class NodeController extends Controller
         
         if ($node) {
             $blocks = $node->getBlocks();
-            if (!is_null($blocks))
+            if (!is_null($blocks)) {
                 foreach ($blocks as $key => $block) {
                     $this->externalBlocks[$nodeId][$key]['component'] = $block->getComponent();
                     $this->externalBlocks[$nodeId][$key]['attributes'] = $block->getAttributes();
                 }
+            }
         }
     }
     
@@ -138,17 +151,17 @@ class NodeController extends Controller
      */
     public function formAction($nodeId, Request $request)
     {
-        $mandango = $this->container->get('mandango'); 
+        $mandango = $this->container->get('mandango');
         
-        if ($nodeId == 0){
+        if ($nodeId == 0) {
             $node = $mandango->create('Model\PHPOrchestraCMSBundle\Node');
             $node->setSiteId(1);
             $node->setLanguage('fr');
-        }
-        else {
+        } else {
             $node = DocumentLoader::getDocument('Node', array('nodeId' => $nodeId), $this->container->get('mandango'));
             $node->setVersion($node->getVersion() + 1);
         }
+
         $form = $this->createForm('node', $node);
         $form->handleRequest($request);
         
@@ -159,10 +172,11 @@ class NodeController extends Controller
             $node->save();
             return $this->redirect($this->generateUrl('php_orchestra_cms_node', array('nodeId' => $node->getNodeId())));
         }
+
         return $this->render('PHPOrchestraCMSBundle:Node:form.html.twig', array(
             'form' => $form->createView(),
             'ajax' => $request->isXmlHttpRequest()
-        ));    
+        ));
     }
 
     /**
@@ -171,24 +185,29 @@ class NodeController extends Controller
      */
     public function showBlocksFromNodeAction(Request $request)
     {
-        $form = $this->get('form.factory')->createNamedBuilder($request->get('form'), 'form')
-            ->add('blockId', 
-                new BlockChoiceType($this->container->get('mandango'),
-                        $request->get('nodeId'),
-                        $this->container->getParameter('php_orchestra.blocks')))
+        $form = $this->get('form.factory')
+            ->createNamedBuilder($request->get('form'), 'form')
+            ->add(
+                'blockId',
+                new BlockChoiceType(
+                    $this->container->get('mandango'),
+                    $request->get('nodeId'),
+                    $this->container->getParameter('php_orchestra.blocks')
+                )
+            )
             ->getForm();
+
         $render = $this->render('PHPOrchestraCMSBundle:Form:input.html.twig', array(
             'form' => $form->createView()
         ));
-        if($request->isXmlHttpRequest()){
+
+        if ($request->isXmlHttpRequest()) {
             return new JsonResponse(array(
                 'success' => true,
                 'data' => $render->getContent()
             ));
-        }
-        else{
+        } else {
             return new Response($render->getContent());
         }
     }
-    
 }

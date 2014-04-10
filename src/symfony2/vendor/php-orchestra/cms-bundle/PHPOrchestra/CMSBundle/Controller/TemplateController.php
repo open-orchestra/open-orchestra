@@ -29,32 +29,42 @@ class TemplateController extends Controller
      */
     public function formAction($templateId, Request $request)
     {
-        $mandango = $this->container->get('mandango');       
-        if($templateId == 0){
+        $mandango = $this->container->get('mandango');
+        if ($templateId == 0) {
             $template = $mandango->create('Model\PHPOrchestraCMSBundle\Template');
             $template->setSiteId(1);
             $template->setLanguage('fr');
-        }
-        else{
-            $template = DocumentLoader::getDocument('Template', array('templateId' => $templateId), $this->container->get('mandango'));
+        } else {
+            $template = DocumentLoader::getDocument(
+                'Template',
+                array('templateId' => $templateId),
+                $this->container->get('mandango')
+            );
             $template->setVersion($template->getVersion() + 1);
         }
         
         $form = $this->createForm('template', $template);
         $form->handleRequest($request);
-        if ($form->isValid())
-        {
+        if ($form->isValid()) {
             $template->setId(null);
             $template->setIsNew(true);
             
             $template->save();
-            return $this->redirect($this->generateUrl('php_orchestra_cms_templateform', array('templateId' => $template->getTemplateId(), 'ajax' => $request->isXmlHttpRequest())));
+            return $this->redirect(
+                $this->generateUrl(
+                    'php_orchestra_cms_templateform',
+                    array('templateId' => $template->getTemplateId(), 'ajax' => $request->isXmlHttpRequest())
+                )
+            );
         }
         
-        return $this->render('PHPOrchestraCMSBundle:Template:form.html.twig', array(
-            'form' => $form->createView(),
-            'ajax' => $request->isXmlHttpRequest()
-        ));    
+        return $this->render(
+            'PHPOrchestraCMSBundle:Template:form.html.twig',
+            array(
+                'form' => $form->createView(),
+                'ajax' => $request->isXmlHttpRequest()
+            )
+        );
     }
     
     /**
@@ -63,16 +73,20 @@ class TemplateController extends Controller
      */
     public function showCuttingAction(Request $request)
     {
-        $template = DocumentLoader::getDocument('Template', array('templateId' => $request->get('templateId')), $this->container->get('mandango'));
-        if($request->isXmlHttpRequest()){
-            return new JsonResponse(array(
-                'success' => true,
-                'data' => TemplateHelper::formatTemplate($template, $this->container->get('mandango'))
-            ));
-        }
-        else{
+        $template = DocumentLoader::getDocument(
+            'Template',
+            array('templateId' => $request->get('templateId')),
+            $this->container->get('mandango')
+        );
+        if ($request->isXmlHttpRequest()) {
+            return new JsonResponse(
+                array(
+                    'success' => true,
+                    'data' => TemplateHelper::formatTemplate($template, $this->container->get('mandango'))
+                )
+            );
+        } else {
             return new Response($render->getContent());
         }
     }
-    
 }

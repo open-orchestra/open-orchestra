@@ -22,7 +22,10 @@ class SamplesController extends Controller
     {
         $datetime = time();
         
-        $response = $this->render('PHPOrchestraCMSBundle:Samples:blocSample.html.twig', array('elementsList' => $elementsList, 'parameters' => $_page_parameters, 'datetime' => $datetime));
+        $response = $this->render(
+            'PHPOrchestraCMSBundle:Samples:blocSample.html.twig',
+            array('elementsList' => $elementsList, 'parameters' => $_page_parameters, 'datetime' => $datetime)
+        );
         
         $response->setPublic();
         $response->setSharedMaxAge(60);
@@ -46,14 +49,14 @@ class SamplesController extends Controller
 
 // Block #1 : Site Menu
         $block1 = $mandango->create('Model\PHPOrchestraCMSBundle\Block')
-            ->setComponent('PHPOrchestraCMSBundle:Samples:sampleShow')  
+            ->setComponent('PHPOrchestraCMSBundle:Samples:sampleShow')
             ->setAttributes(
                 array('rubA' => 'Qui sommes-nous ?', 'rubB' => 'pourquoi nous choisir ?', 'rubC' => 'Nos agences')
             );
         
 // Block #2 : Left Menu
         $block2 = $mandango->create('Model\PHPOrchestraCMSBundle\Block')
-            ->setComponent('PHPOrchestraCMSBundle:BlockExample:show1')  
+            ->setComponent('PHPOrchestraCMSBundle:BlockExample:show1')
             ->setAttributes(
                 array(
                     'lien 1' => 'http://www.google.fr',
@@ -64,7 +67,7 @@ class SamplesController extends Controller
         
 // Block #3 : News #1
         $block3 = $mandango->create('Model\PHPOrchestraCMSBundle\Block')
-            ->setComponent('PHPOrchestraCMSBundle:BlockExample:show1')  
+            ->setComponent('PHPOrchestraCMSBundle:BlockExample:show1')
             ->setAttributes(
                 array(
                     'title' => 'News 1',
@@ -74,20 +77,21 @@ class SamplesController extends Controller
             );
         
 // Block #4 : News #2
-        $block4 = $mandango->create('Model\PHPOrchestraCMSBundle\Block')
-            ->setComponent('PHPOrchestraCMSBundle:BlockExample:show1')  
+        $block4 = $mandango
+            ->create('Model\PHPOrchestraCMSBundle\Block')
+            ->setComponent('PHPOrchestraCMSBundle:BlockExample:show1')
             ->setAttributes(
                 array(
                     'title' => 'News #2',
                     'content' => 'Aliquam convallis facilisis nulla, id ultricies ipsum cursus eu. Proin augue quam, '
-                    .'iaculis id nisi ac, rutrum blandit leo. In leo ante, scelerisque tempus lacinia in, sollicitudin '
-                    .'quis justo. Vestibulum.'
-            )
-        );
+                        .'iaculis id nisi ac, rutrum blandit leo. In leo ante, scelerisque tempus lacinia in, '
+                        .'sollicitudin quis justo. Vestibulum.'
+                )
+            );
         
 // Block #5 : News #3
         $block5 = $mandango->create('Model\PHPOrchestraCMSBundle\Block')
-            ->setComponent('PHPOrchestraCMSBundle:BlockExample:show0')  
+            ->setComponent('PHPOrchestraCMSBundle:BlockExample:show0')
             ->setAttributes(
                 array(
                     'content' => 'News #3',
@@ -99,12 +103,12 @@ class SamplesController extends Controller
         
 // Block #6 : Pub
         $block6 = $mandango->create('Model\PHPOrchestraCMSBundle\Block')
-            ->setComponent('PHPOrchestraCMSBundle:BlockExample:show0')  
+            ->setComponent('PHPOrchestraCMSBundle:BlockExample:show0')
             ->setAttributes(array('image' => 'mapub.jpg'));
 
 // Block #7 : Legal mentions
         $block7 = $mandango->create('Model\PHPOrchestraCMSBundle\Block')
-            ->setComponent('PHPOrchestraCMSBundle:BlockExample:show0')  
+            ->setComponent('PHPOrchestraCMSBundle:BlockExample:show0')
             ->setAttributes(array('Lien A' => 'Mentions légales', 'Lien B' => 'Nous contacter'));
             
 // Area 1 : Header
