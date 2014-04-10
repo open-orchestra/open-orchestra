@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+
+<container
+    xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services
+    http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="snc_redis.logger" class="%snc_redis.logger.class%">
+            <tag name="monolog.logger" channel="snc_redis" />
+            <argument type="service" id="logger" on-invalid="null" />
+        </service>
+
+        <service id="snc_redis.data_collector" class="%snc_redis.data_collector.class%" public="false">
+            <tag name="data_collector" template="SncRedisBundle:Collector:redis" id="redis" />
+            <argument type="service" id="snc_redis.logger" />
+        </service>
+    </services>
+
+</container>

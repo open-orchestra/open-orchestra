@@ -1,0 +1,83 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+      <!-- mandango -->
+      <parameter key="mandango.class">Mandango\Mandango</parameter>
+      <parameter key="mandango.metadata_factory.class">Model\Mapping\MetadataFactory</parameter>
+
+      <parameter key="mandango.model_dir">%kernel.root_dir%/../src/Model</parameter>
+      <parameter key="mandango.metadata_factory.output">%mandango.model_dir%/Mapping</parameter>
+
+      <!-- cache -->
+      <parameter key="mandango.cache.filesystem_cache.class">Mandango\Cache\FilesystemCache</parameter>
+      <parameter key="mandango.cache.filesystem_cache.dir">%kernel.cache_dir%/mandango/cache</parameter>
+
+      <!-- mondator -->
+      <parameter key="mandango.mondator.class">Mandango\Mondator\Mondator</parameter>
+
+      <!-- logger -->
+      <parameter key="mandango.logger.class">Mandango\MandangoBundle\Logger\MandangoLogger</parameter>
+
+      <!-- data collector -->
+      <parameter key="mandango.data_collector.class">Mandango\MandangoBundle\DataCollector\MandangoDataCollector</parameter>
+
+      <!-- form -->
+      <parameter key="form.type.mandango_document.class">Mandango\MandangoBundle\Form\Type\MandangoDocumentType</parameter>
+      <parameter key="form.type_guesser.mandango.class">Mandango\MandangoBundle\Form\MandangoTypeGuesser</parameter>
+
+      <!-- validator -->
+      <parameter key="mandango.validator.unique_document.class">Mandango\MandangoBundle\Validator\Constraint\UniqueDocumentValidator</parameter>
+    </parameters>
+
+    <services>
+        <!-- mandango -->
+        <service id="mandango" class="%mandango.class%">
+            <argument type="service" id="mandango.metadata_factory" />
+            <argument type="service" id="mandango.cache.filesystem" />
+        </service>
+
+        <service id="mandango.metadata_factory" class="%mandango.metadata_factory.class%">
+        </service>
+
+        <!-- cache -->
+        <service id="mandango.cache.filesystem" class="%mandango.cache.filesystem_cache.class%">
+            <argument>%mandango.cache.filesystem_cache.dir%</argument>
+        </service>
+
+        <!-- mondator -->
+        <service id="mandango.mondator" class="%mandango.mondator.class%">
+        </service>
+
+        <!-- logger -->
+        <service id="mandango.logger" class="%mandango.logger.class%">
+            <argument type="service" id="logger" on-invalid="null" />
+        </service>
+
+        <!-- data collector -->
+        <service id="mandango.data_collector" class="%mandango.data_collector.class%" public="false">
+            <tag name="data_collector" template="MandangoBundle:Collector:mandango" id="mandango" />
+            <argument type="service" id="mandango.logger" />
+        </service>
+
+        <!-- form -->
+        <service id="form.type.mandango_document" class="%form.type.mandango_document.class%">
+            <tag name="form.type" alias="mandango_document" />
+            <argument type="service" id="mandango" />
+        </service>
+
+        <service id="form.type_guesser.mandango" class="%form.type_guesser.mandango.class%">
+            <tag name="form.type_guesser" />
+            <argument type="service" id="mandango.metadata_factory" />
+        </service>
+
+        <!-- validator -->
+        <service id="mandango.validator.unique_document" class="%mandango.validator.unique_document.class%">
+            <tag name="validator.constraint_validator" alias="mandango.validator.unique_document" />
+            <argument type="service" id="mandango" />
+        </service>
+    </services>
+</container>
