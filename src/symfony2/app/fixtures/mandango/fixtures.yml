@@ -1,4 +1,49 @@
+Model\PHPOrchestraCMSBundle\Template:
+    template_generic:
+        templateId: template_generic
+        siteId: 1
+        version: 1
+        name: Generic Template
+        language: fr
+        status: published
+        boDirection: h
+        areas: [{"areaId":"Generic Area","classes":[],"subAreas":[],"blocks":[]}]
+
+    template_full:
+        templateId: template_full
+        siteId: 1
+        version: 1
+        name: Full Template
+        language: fr
+        status: published
+        boDirection: h
+        areas: [{"areaId":"header","classes":[],"subAreas":[],"blocks":[]},{"areaId":"main","classes":[],"boDirection":"v","subAreas":[{"areaId":"left_menu","classes":[],"subAreas":[],"blocks":[]},{"areaId":"content","classes":[],"subAreas":[],"blocks":[]},{"areaId":"skycrapper","classes":[],"subAreas":[],"blocks":[]}],"blocks":[]},{"areaId":"footer","classes":[],"subAreas":[],"blocks":[]}]
+
+    template_main:
+        templateId: template_main
+        siteId: 1
+        version: 1
+        name: Generic Main
+        language: fr
+        status: published
+        boDirection: h
+        areas: [{"areaId":"main","classes":[],"subAreas":[],"blocks":[{}]}]
+
 Model\PHPOrchestraCMSBundle\Node:
+    node_generic:
+        nodeId: fixture_generic
+        nodeType: page
+        siteId: 1
+        parentId: 0
+        path: -
+        alias: fixture-generic
+        name: Generic Node
+        version: 1
+        language: fr
+        status: published
+        templateId: template_generic
+        areas: [{"areaId":"Generic Area","classes":[],"subAreas":[],"blocks":[]}]
+
     node_full:
         nodeId: fixture_full
         nodeType: page
@@ -10,8 +55,8 @@ Model\PHPOrchestraCMSBundle\Node:
         version: 1
         language: fr
         status: published
-        templateId: 0
-        areas: [{"areaId":"header","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":0}]},{"areaId":"main","classes":[],"subAreas":[{"areaId":"left_menu","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":1}]},{"areaId":"content","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":2},{"nodeId":0,"blockId":3},{"nodeId":0,"blockId":4}]},{"areaId":"skycrapper","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":5}]}],"blocks":[]},{"areaId":"footer","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":6}]}]
+        templateId: template_full
+        areas: [{"areaId":"header","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":0}]},{"areaId":"main","classes":[],"boDirection":"v","subAreas":[{"areaId":"left_menu","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":1}]},{"areaId":"content","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":2},{"nodeId":0,"blockId":3},{"nodeId":0,"blockId":4}]},{"areaId":"skycrapper","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":5}]}],"blocks":[]},{"areaId":"footer","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":6}]}]
         blocks:
             -
                 component: "PHPOrchestraCMSBundle:Samples:sampleShow"
@@ -46,7 +91,7 @@ Model\PHPOrchestraCMSBundle\Node:
         version: 1
         language: fr
         status: published
-        templateId: 0
+        templateId: template_main
         areas: [{"areaId":"main","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":0}]}]
         blocks:
             -
@@ -64,7 +109,7 @@ Model\PHPOrchestraCMSBundle\Node:
         version: 1
         language: fr
         status: published
-        templateId: 0
+        templateId: template_main
         areas: [{"areaId":"main","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":0}]}]
         blocks:
             -
@@ -82,7 +127,7 @@ Model\PHPOrchestraCMSBundle\Node:
         version: 1
         language: fr
         status: published
-        templateId: 0
+        templateId: template_main
         areas: [{"areaId":"main","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":0}]}]
         blocks:
             -
@@ -100,7 +145,7 @@ Model\PHPOrchestraCMSBundle\Node:
         version: 1
         language: fr
         status: published
-        templateId: 0
+        templateId: template_main
         areas: [{"areaId":"main","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":0}]}]
         blocks:
             -
@@ -118,7 +163,7 @@ Model\PHPOrchestraCMSBundle\Node:
         version: 1
         language: fr
         status: published
-        templateId: 0
+        templateId: template_main
         areas: [{"areaId":"main","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":0}]}]
         blocks:
             -
@@ -136,7 +181,7 @@ Model\PHPOrchestraCMSBundle\Node:
         version: 1
         language: fr
         status: published
-        templateId: 0
+        templateId: template_main
         areas: [{"areaId":"main","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":0}]}]
         blocks:
             -

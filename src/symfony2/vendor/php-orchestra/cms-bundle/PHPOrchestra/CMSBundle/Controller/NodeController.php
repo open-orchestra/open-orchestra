@@ -140,7 +140,7 @@ class NodeController extends Controller
     {
         $mandango = $this->container->get('mandango'); 
         
-        if ($nodeId == 0){
+        if (empty($nodeId)){
             $node = $mandango->create('Model\PHPOrchestraCMSBundle\Node');
             $node->setSiteId(1);
             $node->setLanguage('fr');

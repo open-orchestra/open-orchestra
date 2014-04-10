@@ -58,10 +58,10 @@ function treeFormatForLoad(settings, values){
 	}
 	if('areas' in values){
 		for(var i in values.areas){
+			treeFormatForLoad(settings, values.areas[i]);
 			values.areas[i].is_recursive = true;
 			$( "#dialog-areas" ).setValue(values.areas[i]);
 			$( "#dialog-areas" ).getValue(values.areas[i]);
-			treeFormatForLoad(settings, values.areas[i]);
 		}
 	}
 }
@@ -90,16 +90,19 @@ function moveFromTo(settings, source, destination){
 		values.boDirection = (values.boDirection) ? values.boDirection : 'h';
 		if(tab.length > 0){
 			for(var i in tab){
+				var style = {};
+				tab[i].percent = (!("percent" in tab[i])) ? 100 / (tab.length) : tab[i].percent;
+				style.width = (values.boDirection == 'v') ? tab[i].percent + '%' : '100%';
+				style.height = (values.boDirection == 'h') ? tab[i].percent + '%' : '100%';
 				$(this).parseTemplate({"values": settings.values,
 									"path": path + '[' + i + ']',
 									"css": settings.css,
-									"style" : {"display": (values.boDirection == 'v') ? "inline-block" : "block",
-											"width": (values.boDirection == 'v') ? 100 / (tab.length) + '%' : '100%',
-											"height": (values.boDirection == 'h') ? 100 / (tab.length) + '%' : '100%'},
+									"style" : style,
 									"type": type,
 									"element": settings.element}).appendTo($(this));
-				if(i != tab.length - 1){
-					$('<li/>', {"class": settings.css + ((values.boDirection == 'h') ? ' separator-h' : ' separator-v')}).appendTo($(this))
+				if(i != tab.length -1){
+					console.log(settings.css + ' ' + ((values.boDirection == 'h') ? 'separator-h' : 'separator-v'));
+					$('<li/>', {"class": settings.css + ' ' + ((values.boDirection == 'h') ? 'separator-h' : 'separator-v')}).appendTo($(this));
 				}
 			}
 		}
@@ -152,23 +155,21 @@ function moveFromTo(settings, source, destination){
 		var div = $( "<div/>", {"class": settings.css});
 		var li = $( "<li/>", {"class": settings.css, "css": settings.style});
 		var ul = $( "<ul/>", {"class": settings.css});
+		var action = $( "<span/>", {"class": "action"});
+		span.appendTo(div);
+		action.appendTo(div);
+		div.appendTo(li);
 
 		if(settings.init){
 		    formatForLoad(settings);
 		    delete settings.init;
 		}
 		for(var i in actions){
-			var action = $( "<span/>", {"class": "action"});
-			$("<i/>", {"class": i}).appendTo(action);
-			action.appendTo(span);
-			action.click({'js': actions[i].join('')}, function(event){
+			$("<i/>", {"class": i}).click({'js': actions[i].join('')}, function(event){
 				event.stopPropagation();
 				eval(event.data.js);
-			});
+			}).appendTo(action);
 		}
-
-		span.appendTo(div);
-		div.appendTo(li);
 
 		var found = false;
 		for(var i in this_values){
@@ -177,6 +178,13 @@ function moveFromTo(settings, source, destination){
 					found = true;
 					ul.addClass(settings.css + '-' + i);
 					ul.createSubTemplate(settings, i);
+					if(this_values.boDirection == 'v'){
+						ul.children().css('display', 'inline-block');
+						ul.children().addClass('resize-v');
+					}
+					else{
+						ul.children().addClass('resize-h');
+					}
 					ul.children().addClass(settings.css + '-' + i);
 				}
 			}
@@ -208,11 +216,7 @@ function moveFromTo(settings, source, destination){
 				$('li.' + settings.css).draggable({
 					opacity: 0.5,
 					containment: settings.element,
-					zIndex: 100,
-					drag: function(event, ui){
-						settings.element.find('div').unbind('mouseover');
-						settings.element.find('div').unbind('mouseout');
-					}
+					zIndex: 100
 				});
 			}
 		}
@@ -284,6 +288,13 @@ function moveFromTo(settings, source, destination){
 	    	span.html('');
 	    }
 	    return span;
+	}
+	$.fn.translate = function(coordinate, value){
+		eval('var dimension = $(this).' + coordinate + '() + value;');
+		eval('dimension = 100 * (dimension) / $(this).offsetParent().' + coordinate + '();');
+		dimension = Math.max(1, Math.min(99, dimension));
+		dimension += '%';
+		eval('$(this).' + coordinate + '(dimension)');
 	}
 })(jQuery);
 
