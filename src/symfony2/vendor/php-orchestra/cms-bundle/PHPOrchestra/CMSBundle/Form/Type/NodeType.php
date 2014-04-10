@@ -59,26 +59,35 @@ class NodeType extends AbstractType
             ->add('alias', 'text')
             ->add('language', 'orchestra_language')
             ->add('status', 'orchestra_status')
-            ->add('areas', 'orchestra_areas', array(
-                'dialogPath' => 'PHPOrchestraCMSBundle:Form:area.html.twig', 'objects' => array('blocks')
-            ))
-            ->add($nameBlocks, 'orchestra_blocks', array(
-                'dialogPath' => 'PHPOrchestraCMSBundle:Form:block.html.twig',
-                'js' => array(
-                    'script' => 'local/blocks.js',
-                    'parameter' => array(
-                        'name' => $nameBlocks,
-                        'urlNode' => $this->router->generate('php_orchestra_ajax_show_all_nodes'),
-                        'urlBlock' => $this->router->generate('php_orchestra_ajax_show_blocks_from_node')
-                    ),
-                    'render' => array(
-                        'blocks' => array(
-                            'twig' => 'PHPOrchestraCMSBundle:Blocks:showAllBlocks.html.twig',
-                            'parameter' => array('blocks' => $this->blocks, 'prefix' => $nameBlocks.'_')
+            ->add(
+                'areas',
+                'orchestra_areas',
+                array(
+                    'dialogPath' => 'PHPOrchestraCMSBundle:Form:area.html.twig',
+                    'objects' => array('blocks')
+                )
+            )
+            ->add(
+                $nameBlocks,
+                'orchestra_blocks',
+                array(
+                    'dialogPath' => 'PHPOrchestraCMSBundle:Form:block.html.twig',
+                    'js' => array(
+                        'script' => 'local/blocks.js',
+                        'parameter' => array(
+                            'name' => $nameBlocks,
+                            'urlNode' => $this->router->generate('php_orchestra_ajax_show_all_nodes'),
+                            'urlBlock' => $this->router->generate('php_orchestra_ajax_show_blocks_from_node')
+                        ),
+                        'render' => array(
+                            'blocks' => array(
+                                'twig' => 'PHPOrchestraCMSBundle:Blocks:showAllBlocks.html.twig',
+                                'parameter' => array('blocks' => $this->blocks, 'prefix' => $nameBlocks.'_')
+                            )
                         )
                     )
                 )
-            ))
+            )
             ->add('save', 'submit');
     }
     
@@ -101,17 +110,19 @@ class NodeType extends AbstractType
      */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
-        $resolver->setDefaults(array(
-            'showDialog' => true,
-            'js' => array(
-                'script' => 'local/node.js',
-                'parameter' => array(
-                    'name' => $this->getName(),
-                    'urlTemplate' => $this->router->generate('php_orchestra_ajax_show_template')
-                )
-            ),
-            'objects' => array()
-        ));
+        $resolver->setDefaults(
+            array(
+                'showDialog' => true,
+                'js' => array(
+                    'script' => 'local/node.js',
+                    'parameter' => array(
+                        'name' => $this->getName(),
+                        'urlTemplate' => $this->router->generate('php_orchestra_ajax_show_template')
+                    )
+                ),
+                'objects' => array()
+            )
+        );
     }
         
     /**

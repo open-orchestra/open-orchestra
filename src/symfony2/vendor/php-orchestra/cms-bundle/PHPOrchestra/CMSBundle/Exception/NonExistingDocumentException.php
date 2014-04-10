@@ -12,5 +12,4 @@ namespace PHPOrchestra\CMSBundle\Exception;
  */
 class NonExistingDocumentException extends \Exception
 {
-
 }

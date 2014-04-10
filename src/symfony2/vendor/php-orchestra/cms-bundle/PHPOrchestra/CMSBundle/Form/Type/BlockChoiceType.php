@@ -46,9 +46,11 @@ class BlockChoiceType extends AbstractType
     
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
-        $resolver->setDefaults(array(
-            'choices' => $this->choices,
-        ));
+        $resolver->setDefaults(
+            array(
+                'choices' => $this->choices,
+            )
+        );
     }
     
     public function getParent()

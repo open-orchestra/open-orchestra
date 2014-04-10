@@ -49,12 +49,14 @@ class BlocksType extends AbstractType
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
-        $resolver->setDefaults(array(
-            'dialogPath' => '',
-            'js' => array(),
-            'objects' => array(),
-            'attr' => array('class' => 'not-mapped')
-        ));
+        $resolver->setDefaults(
+            array(
+                'dialogPath' => '',
+                'js' => array(),
+                'objects' => array(),
+                'attr' => array('class' => 'not-mapped')
+            )
+        );
     }
     
     public function buildView(FormView $view, FormInterface $form, array $options)
