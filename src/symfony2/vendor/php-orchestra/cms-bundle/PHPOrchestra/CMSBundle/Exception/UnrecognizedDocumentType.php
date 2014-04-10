@@ -12,5 +12,4 @@ namespace PHPOrchestra\CMSBundle\Exception;
  */
 class UnrecognizedDocumentTypeException extends \Exception
 {
-
 }

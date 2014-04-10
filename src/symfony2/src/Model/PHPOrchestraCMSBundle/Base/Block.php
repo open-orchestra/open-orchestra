@@ -89,14 +89,15 @@ abstract class Block extends \Mandango\Document\EmbeddedDocument
     public function getComponent()
     {
         if (!isset($this->data['fields']['component'])) {
-            if ((!isset($this->data['fields']) || !array_key_exists('component', $this->data['fields']))
+            if (
+                (!isset($this->data['fields']) || !array_key_exists('component', $this->data['fields']))
                 &&
                 ($rap = $this->getRootAndPath())
                 &&
                 !$this->isEmbeddedOneChangedInParent()
                 &&
-                !$this->isEmbeddedManyNew()) {
-
+                !$this->isEmbeddedManyNew()
+            ) {
                 $field = $rap['path'].'.component';
                 $rap['root']->addFieldCache($field);
                 $collection = $this->getMandango()->getRepository(get_class($rap['root']))->getCollection();
@@ -166,14 +167,15 @@ abstract class Block extends \Mandango\Document\EmbeddedDocument
     public function getAttributes()
     {
         if (!isset($this->data['fields']['attributes'])) {
-            if ((!isset($this->data['fields']) || !array_key_exists('attributes', $this->data['fields']))
+            if (
+                (!isset($this->data['fields']) || !array_key_exists('attributes', $this->data['fields']))
                 &&
                 ($rap = $this->getRootAndPath())
                 &&
                 !$this->isEmbeddedOneChangedInParent()
                 &&
-                !$this->isEmbeddedManyNew()) {
-
+                !$this->isEmbeddedManyNew()
+            ) {
                 $field = $rap['path'].'.attributes';
                 $rap['root']->addFieldCache($field);
                 $collection = $this->getMandango()->getRepository(get_class($rap['root']))->getCollection();
@@ -357,27 +359,23 @@ abstract class Block extends \Mandango\Document\EmbeddedDocument
             } else {
                 $rap = $this->getRootAndPath();
                 $documentPath = $rap['path'];
-                if (isset($this->data['fields']['component'])
-                    || array_key_exists('component', $this->data['fields'])) {
+                if (isset($this->data['fields']['component']) || array_key_exists('component', $this->data['fields'])) {
                     $value = $this->data['fields']['component'];
                     $originalValue = $this->getOriginalFieldValue('component');
                     if ($value !== $originalValue) {
                         if (null !== $value) {
-                            $query['$set'][$documentPath.'.component'] =
-                                (string) $this->data['fields']['component'];
+                            $query['$set'][$documentPath.'.component'] = (string) $this->data['fields']['component'];
                         } else {
                             $query['$unset'][$documentPath.'.component'] = 1;
                         }
                     }
                 }
-                if (isset($this->data['fields']['attributes'])
-                    || array_key_exists('attributes', $this->data['fields'])) {
+                if (isset($this->data['fields']['attributes']) || array_key_exists('attributes', $this->data['fields'])) {
                     $value = $this->data['fields']['attributes'];
                     $originalValue = $this->getOriginalFieldValue('attributes');
                     if ($value !== $originalValue) {
                         if (null !== $value) {
-                            $query['$set'][$documentPath.'.attributes'] =
-                                $this->data['fields']['attributes'];
+                            $query['$set'][$documentPath.'.attributes'] = $this->data['fields']['attributes'];
                         } else {
                             $query['$unset'][$documentPath.'.attributes'] = 1;
                         }
@@ -397,7 +395,7 @@ abstract class Block extends \Mandango\Document\EmbeddedDocument
      *
      * @param \Symfony\Component\Validator\Mapping\ClassMetadata $metadata The metadata class.
      */
-    public static function loadValidatorMetadata(\Symfony\Component\Validator\Mapping\ClassMetadata $metadata)
+    static public function loadValidatorMetadata(\Symfony\Component\Validator\Mapping\ClassMetadata $metadata)
     {
         $validation = array(
             'constraints' => array(
@@ -408,8 +406,7 @@ abstract class Block extends \Mandango\Document\EmbeddedDocument
             ),
         );
 
-        foreach (\Mandango\MandangoBundle\Extension\DocumentValidation
-            ::parseNodes($validation['constraints']) as $constraint) {
+        foreach (\Mandango\MandangoBundle\Extension\DocumentValidation::parseNodes($validation['constraints']) as $constraint) {
             $metadata->addConstraint($constraint);
         }
 

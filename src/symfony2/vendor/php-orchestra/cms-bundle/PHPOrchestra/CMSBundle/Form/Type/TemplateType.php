@@ -56,26 +56,34 @@ class TemplateType extends AbstractType
             ->add('language', 'orchestra_language')
             ->add('status', 'orchestra_status')
             ->add('boDirection', 'orchestra_direction')
-            ->add('areas', 'orchestra_areas', array(
-                'dialogPath' => 'PHPOrchestraCMSBundle:Form:area.html.twig',
-                'objects' => array('areas', 'blocks')
-            ))
-            ->add($nameBlocks, 'orchestra_blocks', array(
-                'js' => array(
-                    'script' => 'local/blocks_template.js',
-                    'parameter' => array(
-                        'name' => $nameBlocks,
-                        'urlNode' => $this->router->generate('php_orchestra_ajax_show_all_nodes'),
-                        'urlBlock' => $this->router->generate('php_orchestra_ajax_show_blocks_from_node')
-                    ),
-                    'render' => array(
-                        'blocks' => array(
-                            'twig' => 'PHPOrchestraCMSBundle:Blocks:showAllBlocks.html.twig',
-                            'parameter' => array('blocks' => $this->blocks, 'prefix' => $nameBlocks.'_')
+            ->add(
+                'areas',
+                'orchestra_areas',
+                array(
+                    'dialogPath' => 'PHPOrchestraCMSBundle:Form:area.html.twig',
+                    'objects' => array('areas', 'blocks')
+                )
+            )
+            ->add(
+                $nameBlocks,
+                'orchestra_blocks',
+                array(
+                    'js' => array(
+                        'script' => 'local/blocks_template.js',
+                        'parameter' => array(
+                            'name' => $nameBlocks,
+                            'urlNode' => $this->router->generate('php_orchestra_ajax_show_all_nodes'),
+                            'urlBlock' => $this->router->generate('php_orchestra_ajax_show_blocks_from_node')
+                        ),
+                        'render' => array(
+                            'blocks' => array(
+                                'twig' => 'PHPOrchestraCMSBundle:Blocks:showAllBlocks.html.twig',
+                                'parameter' => array('blocks' => $this->blocks, 'prefix' => $nameBlocks.'_')
+                            )
                         )
                     )
                 )
-            ))
+            )
             ->add('save', 'submit');
             ;
     }
@@ -99,11 +107,13 @@ class TemplateType extends AbstractType
      */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
-        $resolver->setDefaults(array(
-            'showDialog' => true,
-            'js' => array(),
-            'objects' => array('areas')
-        ));
+        $resolver->setDefaults(
+            array(
+                'showDialog' => true,
+                'js' => array(),
+                'objects' => array('areas')
+            )
+        );
     }
     
     

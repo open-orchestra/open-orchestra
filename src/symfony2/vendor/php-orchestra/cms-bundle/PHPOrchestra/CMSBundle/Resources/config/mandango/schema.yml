@@ -28,6 +28,7 @@ Model\PHPOrchestraCMSBundle\Node:
         language: string
         status: string
         templateId: string
+        theme: string
         areas: raw
     embeddedsMany:
         blocks: {class: Model\PHPOrchestraCMSBundle\Block}

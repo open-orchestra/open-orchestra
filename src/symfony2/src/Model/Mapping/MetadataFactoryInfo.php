@@ -153,6 +153,10 @@ class MetadataFactoryInfo
                     'type' => 'string',
                     'dbName' => 'templateId',
                 ),
+                'theme' => array(
+                    'type' => 'string',
+                    'dbName' => 'theme',
+                ),
                 'areas' => array(
                     'type' => 'raw',
                     'dbName' => 'areas',

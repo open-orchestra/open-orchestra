@@ -9,7 +9,7 @@ namespace PHPOrchestra\CMSBundle\Form\DataTransformer;
 
 use Symfony\Component\Form\DataTransformerInterface;
 
-class jsonToBlocksTransformer implements DataTransformerInterface
+class JsonToBlocksTransformer implements DataTransformerInterface
 {
     /**
      * Documents service

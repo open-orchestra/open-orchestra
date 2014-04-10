@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new Mandango\MandangoBundle\MandangoBundle(),
             new Snc\RedisBundle\SncRedisBundle(),
             new PHPOrchestra\CMSBundle\PHPOrchestraCMSBundle(),
+            new FakeApp\ThemeBundle\FakeAppThemeBundle(),
             );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

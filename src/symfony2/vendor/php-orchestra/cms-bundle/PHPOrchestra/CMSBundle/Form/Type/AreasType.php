@@ -12,25 +12,27 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormView;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
-use PHPOrchestra\CMSBundle\Form\DataTransformer\jsonToAreasTransformer;
+use PHPOrchestra\CMSBundle\Form\DataTransformer\JsonToAreasTransformer;
 
 class AreasType extends AbstractType
 {
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $transformer = new jsonToAreasTransformer();
+        $transformer = new JsonToAreasTransformer();
         $builder->addModelTransformer($transformer);
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
-        $resolver->setDefaults(array(
-            'dialogPath' => '',
-            'js' => array(),
-            'objects' => array(),
-            'attr' => array('class' => 'not-mapped')
-        ));
+        $resolver->setDefaults(
+            array(
+                'dialogPath' => '',
+                'js' => array(),
+                'objects' => array(),
+                'attr' => array('class' => 'not-mapped')
+            )
+        );
     }
 
     public function buildView(FormView $view, FormInterface $form, array $options)

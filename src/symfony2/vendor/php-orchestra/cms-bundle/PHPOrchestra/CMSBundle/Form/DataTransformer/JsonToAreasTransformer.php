@@ -10,7 +10,7 @@ namespace PHPOrchestra\CMSBundle\Form\DataTransformer;
 use Symfony\Component\Form\DataTransformerInterface;
 use PHPOrchestra\CMSBundle\Model\Area;
 
-class jsonToAreasTransformer implements DataTransformerInterface
+class JsonToAreasTransformer implements DataTransformerInterface
 {
 
     const JSON_AREA_TAG = 'areas';
@@ -28,8 +28,10 @@ class jsonToAreasTransformer implements DataTransformerInterface
         $json = "[]";
         
         if (isset($areas)) {
-            foreach($areas as $key => $area)
+            foreach ($areas as $key => $area) {
                 $areas[$key] = $this->adaptArea($area);
+            }
+
             $json = json_encode($areas);
         }
         
@@ -45,9 +47,11 @@ class jsonToAreasTransformer implements DataTransformerInterface
     {
         $area[self::CLASSES_TAG] = implode(',', $area[self::CLASSES_TAG]);
         
-        if (isset($area[self::PHP_AREA_TAG]))
-            foreach ($area[self::PHP_AREA_TAG] as $key => $subAreas)
+        if (isset($area[self::PHP_AREA_TAG])) {
+            foreach ($area[self::PHP_AREA_TAG] as $key => $subAreas) {
                 $area[self::JSON_AREA_TAG][$key] = $this->adaptArea($subAreas);
+            }
+        }
         
         unset($area[self::PHP_AREA_TAG]);
         
@@ -65,12 +69,13 @@ class jsonToAreasTransformer implements DataTransformerInterface
         $areas = json_decode($json, true);
         
         $nodeAreas = array();
-        if (is_array($areas))
-            foreach($areas as $area) {
+        if (is_array($areas)) {
+            foreach ($areas as $area) {
                 $area = $this->reverseAdaptArea($area);
                 $area = new Area($area);
                 $nodeAreas[] = $area->toArray();
             }
+        }
         
         return $nodeAreas;
     }
@@ -82,18 +87,19 @@ class jsonToAreasTransformer implements DataTransformerInterface
      */
     protected function reverseAdaptArea($area)
     {
-        if(array_key_exists(self::CLASSES_TAG, $area)){
+        if (array_key_exists(self::CLASSES_TAG, $area)) {
             $area[self::CLASSES_TAG] = explode(',', $area[self::CLASSES_TAG]);
             
-            if (isset($area[self::JSON_AREA_TAG]))
-                foreach ($area[self::JSON_AREA_TAG] as $key => $subAreas)
+            if (isset($area[self::JSON_AREA_TAG])) {
+                foreach ($area[self::JSON_AREA_TAG] as $key => $subAreas) {
                     $area[self::PHP_AREA_TAG][$key] = $this->reverseAdaptArea($subAreas);
+                }
+            }
             
             unset($area[self::JSON_AREA_TAG]);
             
             return $area;
-        }
-        else{
+        } else {
             return array();
         }
     }

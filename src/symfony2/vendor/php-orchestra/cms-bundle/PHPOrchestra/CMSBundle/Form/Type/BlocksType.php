@@ -12,7 +12,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\FormView;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
-use PHPOrchestra\CMSBundle\Form\DataTransformer\jsonToBlocksTransformer;
+use PHPOrchestra\CMSBundle\Form\DataTransformer\JsonToBlocksTransformer;
 use Mandango;
 
 class BlocksType extends AbstractType
@@ -43,18 +43,20 @@ class BlocksType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $transformer = new jsonToBlocksTransformer($this->mandango);
+        $transformer = new JsonToBlocksTransformer($this->mandango);
         $builder->addModelTransformer($transformer);
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
-        $resolver->setDefaults(array(
-            'dialogPath' => '',
-            'js' => array(),
-            'objects' => array(),
-            'attr' => array('class' => 'not-mapped')
-        ));
+        $resolver->setDefaults(
+            array(
+                'dialogPath' => '',
+                'js' => array(),
+                'objects' => array(),
+                'attr' => array('class' => 'not-mapped')
+            )
+        );
     }
     
     public function buildView(FormView $view, FormInterface $form, array $options)
