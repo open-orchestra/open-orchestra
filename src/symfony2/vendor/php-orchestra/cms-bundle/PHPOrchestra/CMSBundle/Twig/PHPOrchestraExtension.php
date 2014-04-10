@@ -28,9 +28,17 @@ class PHPOrchestraExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-                     new \Twig_SimpleFunction('phpOrchestraTheme', array($this, 'phpOrchestraTheme'), array('is_safe' => array('html'))),
-                     new \Twig_SimpleFunction('phpOrchestraImageTheme', array($this, 'phpOrchestraImageTheme'), array('is_safe' => array('html'))),
-                    );
+            new \Twig_SimpleFunction(
+                'phpOrchestraTheme',
+                array($this, 'phpOrchestraTheme'),
+                array('is_safe' => array('html'))
+            ),
+            new \Twig_SimpleFunction(
+                'phpOrchestraImageTheme',
+                array($this, 'phpOrchestraImageTheme'),
+                array('is_safe' => array('html'))
+            ),
+        );
     }
 
     /**
@@ -71,8 +79,10 @@ class PHPOrchestraExtension extends \Twig_Extension
         $tags = '';
         $webDir = getcwd();
         
-        foreach (glob($webDir . $path . DIRECTORY_SEPARATOR . "*.js") as $filename)
-            $tags.= '<script type="text/javascript" src="' . str_replace($webDir, '', $filename) . '"></script>' . PHP_EOL;
+        foreach (glob($webDir . $path . DIRECTORY_SEPARATOR . "*.js") as $filename) {
+            $tags .= '<script type="text/javascript" src="'
+                . str_replace($webDir, '', $filename) . '"></script>' . PHP_EOL;
+        }
         
         return $tags;
     }

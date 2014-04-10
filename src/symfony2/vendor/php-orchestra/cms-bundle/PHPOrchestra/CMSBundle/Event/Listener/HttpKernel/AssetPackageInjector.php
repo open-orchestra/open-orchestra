@@ -32,6 +32,4 @@ class AssetPackageInjector
             $assetsHelper->addPackage($bundle->getName(), $bundlePathPackage);
         }
     }
-
-} 
-
+}
