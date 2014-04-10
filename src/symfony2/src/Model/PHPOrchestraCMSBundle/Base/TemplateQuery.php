@@ -99,13 +99,7 @@ abstract class TemplateQuery extends \Mandango\Query
                 }
 
                 // invalid
-                throw new \RuntimeException(
-                    sprintf(
-                        'The reference "%s" does not exist in the class "%s".',
-                        $referenceName,
-                        $documentClass
-                    )
-                );
+                throw new \RuntimeException(sprintf('The reference "%s" does not exist in the class "%s".', $referenceName, $documentClass));
             }
         }
 

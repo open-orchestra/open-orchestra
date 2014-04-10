@@ -105,10 +105,7 @@ abstract class Site extends \Mandango\Document\Document
                 $this->data['fields']['siteId'] = null;
             } elseif (!isset($this->data['fields']) || !array_key_exists('siteId', $this->data['fields'])) {
                 $this->addFieldCache('siteId');
-                $data = $this->getRepository()->getCollection()->findOne(
-                    array('_id' => $this->getId()),
-                    array('siteId' => 1)
-                );
+                $data = $this->getRepository()->getCollection()->findOne(array('_id' => $this->getId()), array('siteId' => 1));
                 if (isset($data['siteId'])) {
                     $this->data['fields']['siteId'] = (int) $data['siteId'];
                 } else {
@@ -170,10 +167,7 @@ abstract class Site extends \Mandango\Document\Document
                 $this->data['fields']['domain'] = null;
             } elseif (!isset($this->data['fields']) || !array_key_exists('domain', $this->data['fields'])) {
                 $this->addFieldCache('domain');
-                $data = $this->getRepository()->getCollection()->findOne(
-                    array('_id' => $this->getId()),
-                    array('domain' => 1)
-                );
+                $data = $this->getRepository()->getCollection()->findOne(array('_id' => $this->getId()), array('domain' => 1));
                 if (isset($data['domain'])) {
                     $this->data['fields']['domain'] = (string) $data['domain'];
                 } else {
@@ -235,10 +229,7 @@ abstract class Site extends \Mandango\Document\Document
                 $this->data['fields']['language'] = null;
             } elseif (!isset($this->data['fields']) || !array_key_exists('language', $this->data['fields'])) {
                 $this->addFieldCache('language');
-                $data = $this->getRepository()->getCollection()->findOne(
-                    array('_id' => $this->getId()),
-                    array('language' => 1)
-                );
+                $data = $this->getRepository()->getCollection()->findOne(array('_id' => $this->getId()), array('language' => 1));
                 if (isset($data['language'])) {
                     $this->data['fields']['language'] = (string) $data['language'];
                 } else {
@@ -454,7 +445,7 @@ abstract class Site extends \Mandango\Document\Document
      *
      * @param \Symfony\Component\Validator\Mapping\ClassMetadata $metadata The metadata class.
      */
-    public static function loadValidatorMetadata(\Symfony\Component\Validator\Mapping\ClassMetadata $metadata)
+    static public function loadValidatorMetadata(\Symfony\Component\Validator\Mapping\ClassMetadata $metadata)
     {
         $validation = array(
             'constraints' => array(
@@ -465,8 +456,7 @@ abstract class Site extends \Mandango\Document\Document
             ),
         );
 
-        foreach (\Mandango\MandangoBundle\Extension\DocumentValidation
-            ::parseNodes($validation['constraints']) as $constraint) {
+        foreach (\Mandango\MandangoBundle\Extension\DocumentValidation::parseNodes($validation['constraints']) as $constraint) {
             $metadata->addConstraint($constraint);
         }
 

@@ -11,6 +11,7 @@ Model\PHPOrchestraCMSBundle\Node:
         language: fr
         status: published
         templateId: 0
+        theme: PHPOrchestraCMSBundle:sample
         areas: [{"areaId":"header","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":0}]},{"areaId":"main","classes":[],"subAreas":[{"areaId":"left_menu","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":1}]},{"areaId":"content","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":2},{"nodeId":0,"blockId":3},{"nodeId":0,"blockId":4}]},{"areaId":"skycrapper","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":5}]}],"blocks":[]},{"areaId":"footer","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":6}]}]
         blocks:
             -
@@ -47,6 +48,7 @@ Model\PHPOrchestraCMSBundle\Node:
         language: fr
         status: published
         templateId: 0
+        theme: PHPOrchestraCMSBundle:theme1
         areas: [{"areaId":"main","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":0}]}]
         blocks:
             -
@@ -65,6 +67,7 @@ Model\PHPOrchestraCMSBundle\Node:
         language: fr
         status: published
         templateId: 0
+        theme: PHPOrchestraCMSBundle:theme2
         areas: [{"areaId":"main","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":0}]}]
         blocks:
             -
@@ -83,6 +86,7 @@ Model\PHPOrchestraCMSBundle\Node:
         language: fr
         status: published
         templateId: 0
+        theme: PHPOrchestraCMSBundle:theme2
         areas: [{"areaId":"main","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":0}]}]
         blocks:
             -
@@ -101,6 +105,7 @@ Model\PHPOrchestraCMSBundle\Node:
         language: fr
         status: published
         templateId: 0
+        theme: PHPOrchestraCMSBundle:sample
         areas: [{"areaId":"main","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":0}]}]
         blocks:
             -
@@ -119,6 +124,7 @@ Model\PHPOrchestraCMSBundle\Node:
         language: fr
         status: published
         templateId: 0
+        theme: PHPOrchestraCMSBundle:theme1
         areas: [{"areaId":"main","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":0}]}]
         blocks:
             -
@@ -137,6 +143,7 @@ Model\PHPOrchestraCMSBundle\Node:
         language: fr
         status: published
         templateId: 0
+        theme: FakeAppThemeBundle:fromApp
         areas: [{"areaId":"main","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":0}]}]
         blocks:
             -
