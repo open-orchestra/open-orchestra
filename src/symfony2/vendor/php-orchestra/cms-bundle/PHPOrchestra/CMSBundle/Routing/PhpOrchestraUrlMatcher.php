@@ -92,7 +92,7 @@ class PhpOrchestraUrlMatcher extends RedirectableUrlMatcher
     protected function dynamicMatch($pathinfo)
     {
         $slugs = explode('/', $pathinfo);
-        $nodeId = 0;
+        $nodeId = Node::ROOT_NODE_ID;
         $moduleId = false;
         $parameters = array();
         
