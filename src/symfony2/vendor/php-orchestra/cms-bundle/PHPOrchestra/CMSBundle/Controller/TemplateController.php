@@ -30,7 +30,7 @@ class TemplateController extends Controller
     public function formAction($templateId, Request $request)
     {
         $mandango = $this->container->get('mandango');
-        if(empty($templateId)){
+        if (empty($templateId)) {
             $template = $mandango->create('Model\PHPOrchestraCMSBundle\Template');
             $template->setSiteId(1);
             $template->setLanguage('fr');

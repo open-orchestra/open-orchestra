@@ -129,6 +129,7 @@ La base de données principale sera en MongoDB
     "language": "fr",
     "status": "published",
     "templateId": 42,
+    "theme": "customApp/customBundle",
     "blocks":
     {
         "1":
