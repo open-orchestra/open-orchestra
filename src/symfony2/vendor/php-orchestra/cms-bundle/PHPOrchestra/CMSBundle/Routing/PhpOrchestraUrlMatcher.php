@@ -25,20 +25,20 @@ class PhpOrchestraUrlMatcher extends RedirectableUrlMatcher
      * @var string
      */
     const PATH_PREFIX = 'router_pathinfo:';
-    
+
     /**
      * Documents service
      * @var unknown_type
      */
     protected $documentsService = null;
-    
+
     /**
      * Cache service
      * @var unknown_type
      */
     protected $cacheService = null;
-    
-    
+
+
     /**
      * Constructor
      * 
@@ -54,8 +54,8 @@ class PhpOrchestraUrlMatcher extends RedirectableUrlMatcher
         $this->documentsService = $documentsService;
         $this->cacheService = $cacheService;
     }
-    
-    
+
+
     /**
      * Find a route for a given url
      * 
@@ -81,8 +81,8 @@ class PhpOrchestraUrlMatcher extends RedirectableUrlMatcher
         
         return $parameters;
     }
-    
-    
+
+
     /**
      * try to find the node via its path
      * 
@@ -126,8 +126,8 @@ class PhpOrchestraUrlMatcher extends RedirectableUrlMatcher
             return $this->getPageRoute($pathinfo, $nodeId);
         }
     }
-    
-    
+
+
     /**
      * Get the route parameters from cache if already set
      * 
@@ -135,7 +135,7 @@ class PhpOrchestraUrlMatcher extends RedirectableUrlMatcher
      */
     protected function getFromCache($pathinfo)
     {
-        $parameters = $this->cacheService->hashGet(self::PATH_PREFIX . $pathinfo);
+        $parameters = $this->cacheService->get(self::PATH_PREFIX . $pathinfo);
         
         if (isset($parameters['module_parameters'])) {
             $parameters['module_parameters'] = unserialize($parameters['module_parameters']);
@@ -143,8 +143,8 @@ class PhpOrchestraUrlMatcher extends RedirectableUrlMatcher
         
         return $parameters;
     }
-    
-    
+
+
     /**
      * Set route parameters to cache for pathinfo
      * 
@@ -157,10 +157,10 @@ class PhpOrchestraUrlMatcher extends RedirectableUrlMatcher
             $routeParameters['module_parameters'] = serialize($routeParameters['module_parameters']);
         }
         
-        return $this->cacheService->hashSet(self::PATH_PREFIX . $pathinfo, $routeParameters);
+        return $this->cacheService->set(self::PATH_PREFIX . $pathinfo, $routeParameters);
     }
-    
-    
+
+
     /**
      * Route parameters for standard page
      * 
@@ -174,8 +174,8 @@ class PhpOrchestraUrlMatcher extends RedirectableUrlMatcher
                      "nodeId" => $nodeId
                     );
     }
-    
-    
+
+
     /**
      * Route parameters for module page
      * ie with customs parameters at the end of url
@@ -192,8 +192,8 @@ class PhpOrchestraUrlMatcher extends RedirectableUrlMatcher
                      "module_parameters" => $parameters
                     );
     }
-    
-    
+
+
     /**
      * Return node info related to node matching slug and parent nodeId
      * Info returned are nodeId and NodeType
