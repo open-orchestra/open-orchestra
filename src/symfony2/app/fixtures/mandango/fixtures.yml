@@ -34,7 +34,7 @@ Model\PHPOrchestraCMSBundle\Node:
         nodeId: fixture_generic
         nodeType: page
         siteId: 1
-        parentId: 0
+        parentId: root
         path: -
         alias: fixture-generic
         name: Generic Node
@@ -48,7 +48,7 @@ Model\PHPOrchestraCMSBundle\Node:
         nodeId: fixture_full
         nodeType: page
         siteId: 1
-        parentId: 0
+        parentId: root
         path: -
         alias: fixture-full
         name: Fixture full sample
@@ -85,7 +85,7 @@ Model\PHPOrchestraCMSBundle\Node:
         nodeId: fixture_home
         nodeType: page
         siteId: 1
-        parentId: 0
+        parentId: root
         path: -
         alias: accueil
         name: Fixture Home

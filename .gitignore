@@ -1,20 +1,18 @@
-# Symfony directories
+#==[Symfony]==========================#
 /src/symfony2/web/bundles/
 /src/symfony2/app/bootstrap.php.cache
 /src/symfony2/app/cache/*
-#/src/symfony2/app/config/parameters.yml
 /src/symfony2/app/logs/*
 !/src/symfony2/app/cache/.gitkeep
 !/src/symfony2/app/logs/.gitkeep
-#/src/symfony2/build/
-#/src/symfony2/vendor/
-#/src/symfony2/bin/
+
+#==[Composer]=========================#
 #/src/symfony2/composer.phar
 /src/symfony2/vendor/autoload.php
 /src/symfony2/vendor/composer/*
 /src/symfony2/composer.lock
 
-# Eclipse files
+#==[Eclipse]==========================#
 .buildpath
 .settings/
 .project

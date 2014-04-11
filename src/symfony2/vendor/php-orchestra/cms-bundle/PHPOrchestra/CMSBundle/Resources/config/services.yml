@@ -4,7 +4,7 @@ services:
 
     # Cache service
     phporchestra_cms.cachemanager:
-        class: PHPOrchestra\CMSBundle\Classes\CacheManager
+        class: PHPOrchestra\CMSBundle\Cache\RedisCacheManager
         arguments: [@snc_redis.default]
 
 #--[TWIG EXTENSIONS]-------------#
