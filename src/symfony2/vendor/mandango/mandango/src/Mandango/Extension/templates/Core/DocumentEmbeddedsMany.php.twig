@@ -11,8 +11,7 @@
     public function get{{ name|ucfirst }}()
     {
         if (!isset($this->data['embeddedsMany']['{{ name }}'])) {
-            $this->data['embeddedsMany']['{{ name }}'] = $embedded =
-                new \Mandango\Group\EmbeddedGroup('{{ embedded.class }}');
+            $this->data['embeddedsMany']['{{ name }}'] = $embedded = new \Mandango\Group\EmbeddedGroup('{{ embedded.class }}');
 {# not embedded #}
 {% if not config_class.isEmbedded %}
             $embedded->setRootAndPath($this, '{{ name }}');
