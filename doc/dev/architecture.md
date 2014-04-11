@@ -151,6 +151,8 @@ La base de données principale sera en MongoDB
         {
             "areaId": "html_id", // HTML identifier like "container", "header", "footer"
             "classes" : ["class1"/*, etc. */], // Additional HTML classes
+            "boPercent" : 10.4, // Percent for bo screen viewing
+            "boDirection" : "h", // v : vertical positioning in bo, h : horizontal positioning in bo 
             "subAreas":
             [
                 {

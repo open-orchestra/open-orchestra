@@ -24,6 +24,13 @@ class Area
     private $boDirection = null;
     
     /**
+     * percent
+     * 
+     * @var float
+     */
+    private $boPercent = null;
+    
+    /**
      * html classes
      * 
      * @var string[]
@@ -58,6 +65,10 @@ class Area
         
         if (isset($importArray['boDirection'])) {
             $this->boDirection = $importArray['boDirection'];
+        }
+        
+        if (isset($importArray['boPercent'])) {
+            $this->boPercent = $importArray['boPercent'];
         }
         
         if (isset($importArray['classes'])) {
@@ -114,6 +125,26 @@ class Area
     {
         return $this->boDirection;
     }
+    
+    /**
+     * Set boPercent
+     * 
+     * @param string $boPercent
+     */
+    public function setBoPercent($boPercent)
+    {
+        $this->boPercent = $boPercent;
+        return $this;
+    }
+
+    /**
+     * Get boPercent
+     */
+    public function getBoPercent()
+    {
+        return $this->boPercent;
+    }
+    
     
     /**
      * Add a html class
@@ -180,6 +211,7 @@ class Area
         return array(
             'areaId' => $this->getHtmlId(),
             'boDirection' => $this->getBoDirection(),
+            'boPercent' => $this->getBoPercent(),
             'classes' => $this->classes,
             'subAreas' => $formattedSubAreas,
             'blocks' => $this->getBlockReferences()

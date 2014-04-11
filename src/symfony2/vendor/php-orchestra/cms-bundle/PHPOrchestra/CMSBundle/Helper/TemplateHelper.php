@@ -8,16 +8,16 @@
 namespace PHPOrchestra\CMSBundle\Helper;
 
 use Model\PHPOrchestraCMSBundle\Template;
-use PHPOrchestra\CMSBundle\Form\DataTransformer\jsonToAreasTransformer;
-use PHPOrchestra\CMSBundle\Form\DataTransformer\jsonToBlocksTransformer;
+use PHPOrchestra\CMSBundle\Form\DataTransformer\JsonToAreasTransformer;
+use PHPOrchestra\CMSBundle\Form\DataTransformer\JsonToBlocksTransformer;
 use Mandango;
 
 class TemplateHelper
 {
     public static function formatTemplate(Template $template, Mandango\Mandango $mandango)
     {
-        $areaTransformer = new jsonToAreasTransformer();
-        $blockTransformer = new jsonToBlocksTransformer($mandango);
+        $areaTransformer = new JsonToAreasTransformer();
+        $blockTransformer = new JsonToBlocksTransformer($mandango);
 
         return array(
             'areas' => $areaTransformer->transform($template->getAreas()),

@@ -85,8 +85,6 @@ class TemplateController extends Controller
                     'data' => TemplateHelper::formatTemplate($template, $this->container->get('mandango'))
                 )
             );
-        } else {
-            return new Response($render->getContent());
         }
     }
 }

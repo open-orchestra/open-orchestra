@@ -66,15 +66,23 @@ function treeFormatForLoad(settings, values){
 	}
 }
 
+function resetPercent(objects){
+	for(var i in objects){
+		delete objects[i].boPercent;
+	}
+}
+
 function moveFromTo(settings, source, destination){
 	var pattern = new RegExp('^(.*)\\.(.*?)\\[(\\d*)]$');
 	var copy = eval('$.extend(true, {}, '+ source + ');');
 	eval(source.replace(pattern, 'source = {"path" : "$1", "type" : "$2", "index" : $3};'));
 	eval(source.path + '.' + source.type + '.splice(' + source.index + ', 1)');
+	resetPercent(eval(source.path + '.' + source.type));
 	if(destination){
 		if(isNaN(destination)){
 			eval(destination + ' = $.extend({}, {"' + source.type + '" : []}, ' + destination + ');');
 			eval(destination + '.' + source.type + '.push(copy);');
+			resetPercent(eval(destination + '.' + source.type));
 		}
 		else{
 			eval(source.path + '.' + source.type + '.splice(' + (source.index + destination) +  ', 0, copy)');
@@ -91,9 +99,9 @@ function moveFromTo(settings, source, destination){
 		if(tab.length > 0){
 			for(var i in tab){
 				var style = {};
-				tab[i].percent = (!("percent" in tab[i])) ? 100 / (tab.length) : tab[i].percent;
-				style.width = (values.boDirection == 'v') ? tab[i].percent + '%' : '100%';
-				style.height = (values.boDirection == 'h') ? tab[i].percent + '%' : '100%';
+				tab[i].boPercent = (!("boPercent" in tab[i])) ? 100 / (tab.length) : tab[i].boPercent;
+				style.width = (values.boDirection == 'v') ? tab[i].boPercent + '%' : '100%';
+				style.height = (values.boDirection == 'h') ? tab[i].boPercent + '%' : '100%';
 				$(this).parseTemplate({"values": settings.values,
 									"path": path + '[' + i + ']',
 									"css": settings.css,
@@ -209,7 +217,7 @@ function moveFromTo(settings, source, destination){
 						moveFromTo(settings, ui.draggable.data('path'), $(this).find('ul').data('path'));
 					},
 					accept: function(event){
-						return event.attr("class").indexOf($(this).children('ul').attr("class")) >= 0;
+						return event.attr("class").indexOf($(this).children('ul').attr("class")) >= 0 && !event.hasClass("separator-h") && !event.hasClass("separator-v");
 					}
 				});
 				$('li.' + settings.css).draggable({
@@ -217,6 +225,33 @@ function moveFromTo(settings, source, destination){
 					containment: settings.element,
 					zIndex: 100
 				});
+				separator = {
+					'separator-h' : {'axe' : 'y', 'origine': 'top', 'vector':'height'},
+					'separator-v' : {'axe' : 'x', 'origine': 'left', 'vector':'width'}
+				};
+				for(var i in separator){
+					(function(s){
+						$('li.' + settings.css + '.' + i).draggable({
+							opacity: 1,
+							zIndex: 100,
+							axis: s.axe,
+							drag: function(event, ui){
+								size = $(this).offset()[s.origine] - $(this).data('source');
+								$(this).prev().changeSize(s.vector, $(this).data('prev') + size, settings);
+								$(this).next().changeSize(s.vector, $(this).data('next') - size, settings);
+							},
+							start: function(){
+								$(this).data('source', $(this).offset()[s.origine]);
+								$(this).data('prev', eval('$(this).prev().' + s.vector + '()'));
+								$(this).data('next', eval('$(this).next().' + s.vector + '()'));
+							},
+							stop: function(event, ui){
+								$(this).css(s.origine, 'auto');
+								settings.element.parseTemplate($.extend(settings, {"path": null}));
+							}
+						})
+					})(separator[i]);
+				}
 			}
 		}
 		else{
@@ -288,12 +323,10 @@ function moveFromTo(settings, source, destination){
 	    }
 	    return span;
 	}
-	$.fn.translate = function(coordinate, value){
-		eval('var dimension = $(this).' + coordinate + '() + value;');
-		eval('dimension = 100 * (dimension) / $(this).offsetParent().' + coordinate + '();');
-		dimension = Math.max(1, Math.min(99, dimension));
-		dimension += '%';
-		eval('$(this).' + coordinate + '(dimension)');
+	$.fn.changeSize = function(coordinate, size, settings){
+		eval('size = 100 * (size) / $(this).offsetParent().' + coordinate + '();');
+		eval($(this).data('path') + '.boPercent = ' + size);
+		$(this).css(coordinate, size + '%');
 	}
 })(jQuery);
 
