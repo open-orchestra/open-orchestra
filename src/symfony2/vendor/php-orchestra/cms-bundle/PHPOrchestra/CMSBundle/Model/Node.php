@@ -13,6 +13,7 @@ abstract class Node extends \Model\PHPOrchestraCMSBundle\Base\Node
     
     const TYPE_DEFAULT = 'page';
     
+    const ROOT_NODE_ID = 'root';
     
     /**
      * Initializes the document defaults.
@@ -33,6 +34,9 @@ abstract class Node extends \Model\PHPOrchestraCMSBundle\Base\Node
         }
         if ($this->getLanguage() == '') {
             $this->setLanguage('fr');
+        }
+        if ($this->getParentId() == '') {
+            $this->setParentId(self::ROOT_NODE_ID);
         }
     }
     

@@ -52,7 +52,6 @@ class NodesController extends Controller
     public function showTreeNodesAction(Request $request)
     {
         $nodes = DocumentLoader::getDocuments('Node', array(), $this->container->get('mandango'));
-
         return $this->render(
             'PHPOrchestraCMSBundle:Tree:tree.html.twig',
             array(

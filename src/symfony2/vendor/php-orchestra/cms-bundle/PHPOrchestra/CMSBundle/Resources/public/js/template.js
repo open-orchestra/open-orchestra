@@ -101,7 +101,6 @@ function moveFromTo(settings, source, destination){
 									"type": type,
 									"element": settings.element}).appendTo($(this));
 				if(i != tab.length -1){
-					console.log(settings.css + ' ' + ((values.boDirection == 'h') ? 'separator-h' : 'separator-v'));
 					$('<li/>', {"class": settings.css + ' ' + ((values.boDirection == 'h') ? 'separator-h' : 'separator-v')}).appendTo($(this));
 				}
 			}
