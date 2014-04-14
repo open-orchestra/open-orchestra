@@ -26,8 +26,12 @@
     </logging>
 
     <filter>
-        <whitelist>
-            <directory>../../src/symfony2/vendor/php-orchestra</directory>
+        <whitelist addUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">../../src/symfony2/vendor/php-orchestra</directory>
+            <exclude>
+                <directory suffix=".php">../../src/symfony2/vendor/php-orchestra/*-bundle/PHPOrchestra/*Bundle/Controller</directory>
+                <directory suffix=".php">../../src/symfony2/vendor/php-orchestra/*-bundle/PHPOrchestra/*Bundle/Test</directory>
+            </exclude>
         </whitelist>
     </filter>
 
