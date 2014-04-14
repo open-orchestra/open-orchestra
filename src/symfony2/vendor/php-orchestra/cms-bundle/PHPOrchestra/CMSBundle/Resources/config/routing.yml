@@ -25,13 +25,14 @@ php_orchestra_cms_node:
 #        nodeId: \w+
 
 php_orchestra_ajax_show_all_nodes:
-  pattern:  /nodes/
-  defaults: { _controller: PHPOrchestraCMSBundle:Nodes:showAllNodes }
+    pattern:  /nodes/
+    defaults: { _controller: PHPOrchestraCMSBundle:Nodes:showAllNodes }
   
 php_orchestra_ajax_show_template:
-  pattern:  /template/
-  defaults: { _controller: PHPOrchestraCMSBundle:Template:showCutting }
+    pattern:  /template/
+    defaults: { _controller: PHPOrchestraCMSBundle:Template:showCutting }
   
 php_orchestra_tree:
-  pattern:  /tree/
-  defaults: { _controller: PHPOrchestraCMSBundle:BlockExample:show0 }
+    pattern:  /tree/
+    defaults: { _controller: PHPOrchestraCMSBundle:BlockExample:show0 }
+    
