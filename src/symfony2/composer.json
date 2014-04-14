@@ -29,7 +29,8 @@
     },
     "require-dev": {
         "phpunit/phpunit": "4.0.14",
-        "phpdocumentor/phpdocumentor": "2.*"
+        "phpdocumentor/phpdocumentor": "2.*",
+        "sebastian/phpcpd": "*"
     },
     "scripts": {
         "post-install-cmd": [
