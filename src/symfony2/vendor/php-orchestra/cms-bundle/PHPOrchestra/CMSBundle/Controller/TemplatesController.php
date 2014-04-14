@@ -53,7 +53,7 @@ class TemplatesController extends Controller
     {
         $templates = DocumentLoader::getDocuments('Template', array(), $this->container->get('mandango'));
         $links = array();
-        foreach ($templates as $key => $template) {
+        foreach ($templates as $template) {
             $links[] = array('id' => $template->getTemplateId(), 'class' =>'', 'text' => $template->getName());
         }
         return $this->render(

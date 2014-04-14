@@ -27,7 +27,7 @@ class NodesHelper
     public static function createRecTree(&$list, $parent)
     {
         $tree = array();
-        foreach ($parent as $k => $l) {
+        foreach ($parent as $l) {
             if (isset($list[$l['id']])) {
                 $l['sublinks'] = NodesHelper::createRecTree($list, $list[$l['id']]);
             }

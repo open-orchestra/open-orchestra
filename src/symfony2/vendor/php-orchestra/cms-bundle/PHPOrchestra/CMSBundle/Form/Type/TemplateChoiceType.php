@@ -27,7 +27,7 @@ class TemplateChoiceType extends AbstractType
     {
         $templates = DocumentLoader::getDocuments('Template', array(), $mandango);
         $this->choices[''] = '--------';
-        foreach ($templates as $key => $template) {
+        foreach ($templates as $template) {
             $this->choices[$template->getTemplateId()] = $template->getName();
         }
     }

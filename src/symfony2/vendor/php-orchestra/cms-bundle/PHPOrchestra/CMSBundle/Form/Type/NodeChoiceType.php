@@ -28,7 +28,7 @@ class NodeChoiceType extends AbstractType
     {
         $nodes = DocumentLoader::getDocuments('Node', array(), $mandango);
         $this->choices[''] = '--------';
-        foreach ($nodes as $key => $node) {
+        foreach ($nodes as $node) {
             $this->choices[$node->getNodeId()] = $node->getName();
         }
     }
