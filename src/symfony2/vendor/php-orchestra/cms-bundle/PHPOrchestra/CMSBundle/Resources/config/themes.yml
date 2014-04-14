@@ -1,4 +1,3 @@
-# Potential orchestra overrides
 parameters:
     php_orchestra.themes:
         sample :
@@ -10,6 +9,3 @@ parameters:
         theme2 :
             location: "PHPOrchestraCMSBundle:theme2"
             name: "Theme #2"
-        fromApp :
-            location: "FakeAppBundle:fromApp"
-            name: "App bundle theme"
