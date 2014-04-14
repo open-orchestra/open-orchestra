@@ -18,7 +18,7 @@ class SamplesController extends Controller
      * 
      * @param String[] $block array containing custom attributes
      */
-    public function sampleShowAction($elementsList, $_page_parameters)
+    public function sampleShowAction($elementsList, $_page_parameters = array())
     {
         $datetime = time();
         
