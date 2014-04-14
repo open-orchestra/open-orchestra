@@ -109,7 +109,7 @@ function moveFromTo(settings, source, destination){
 									"type": type,
 									"element": settings.element}).appendTo($(this));
 				if(i != tab.length -1){
-					$('<li/>', {"class": settings.css + ' ' + ((values.boDirection == 'h') ? 'separator-h' : 'separator-v')}).appendTo($(this));
+					$('<li/>', {"class": ((values.boDirection == 'h') ? 'separator-h' : 'separator-v')}).appendTo($(this));
 				}
 			}
 		}
@@ -157,6 +157,11 @@ function moveFromTo(settings, source, destination){
 						]
 				};
 		}
+		if(settings.init){
+		    formatForLoad(settings);
+		    delete settings.init;
+		}
+
 		var this_values = eval(settings.path);
 		var span = $( "<span/>", {"class": settings.css, "text": (this_values.label) ? this_values.label : 'No Record'});
 		var div = $( "<div/>", {"class": settings.css});
@@ -167,10 +172,6 @@ function moveFromTo(settings, source, destination){
 		action.appendTo(div);
 		div.appendTo(li);
 
-		if(settings.init){
-		    formatForLoad(settings);
-		    delete settings.init;
-		}
 		for(var i in actions){
 			$("<i/>", {"class": i}).click({'js': actions[i].join('')}, function(event){
 				event.stopPropagation();
@@ -217,7 +218,14 @@ function moveFromTo(settings, source, destination){
 						moveFromTo(settings, ui.draggable.data('path'), $(this).find('ul').data('path'));
 					},
 					accept: function(event){
-						return event.attr("class").indexOf($(this).children('ul').attr("class")) >= 0 && !event.hasClass("separator-h") && !event.hasClass("separator-v");
+						var source = $(this).children('ul').attr("class").split(' ');
+						var destination = event.attr("class").split(' ');
+						var found = true;
+						
+						for(var i in source){
+							found = found && ($.inArray(source[i], destination) != -1);
+						}
+						return found;
 					}
 				});
 				$('li.' + settings.css).draggable({
@@ -231,7 +239,7 @@ function moveFromTo(settings, source, destination){
 				};
 				for(var i in separator){
 					(function(s){
-						$('li.' + settings.css + '.' + i).draggable({
+						$('li.' + i).draggable({
 							opacity: 1,
 							zIndex: 100,
 							axis: s.axe,
@@ -345,6 +353,7 @@ var dialog_parameter = {
                 found = true;
                 buttons["Add " + addArray[i].charAt(0).toUpperCase() + addArray[i].slice(1)] = (function (name){
                 	return function(){
+                		resetPercent(data.this_values[name]);
                         data.this_values[name].push({'is_recursive' : true});
                         $(this).dialog( "close" );
                 	}
@@ -367,7 +376,7 @@ var dialog_parameter = {
         	buttons["Send"] = function(){
                 formatForSubmit(data.settings);
                 $(this).find('form').submit();
-                $(this).dialog( "close" );
+                $(this).dialog( "destroy" );
            }
         });
         $(this).dialog("option", "buttons", buttons);
