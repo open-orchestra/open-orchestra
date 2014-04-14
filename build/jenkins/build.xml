@@ -101,7 +101,7 @@
 
     <!-- PHP Copy Paste Detector -->
     <target name="phpcpd" description="Find duplicate code using PHPCPD" unless="appli.disable.phpcpd">
-        <exec executable="phpcpd">
+        <exec executable="${basedir}/${appli.src.project.path}/bin/phpcpd">
             <arg value="--log-pmd" />
             <arg value="${basedir}/build/logs/pmd-cpd.xml" />
             <arg value="--exclude" />
