@@ -56,20 +56,24 @@
     <!-- PHP Mess Detector -->
     <target name="phpmd" description="Perform project mess detection using PHPMD" unless="appli.disable.phpmd">
         <exec executable="phpmd">
-            <arg path="${basedir}/${appli.src.project.path}/vendor/php-orchestra" />
+            <arg path="${basedir}/${appli.src.project.path}/vendor/php-orchestra,${basedir}/${appli.src.project.path}/src" />
             <arg value="text" />
             <arg value="${basedir}/build/jenkins/phpmd.xml" />
+            <arg value="--exclude" />
+            <arg value="Base" />
         </exec>
     </target>
 
     <!-- PHP Mess Detector for CI (generate report file) -->
     <target name="phpmd-ci" description="Perform project mess detection using PHPMD" unless="appli.disable.phpmd">
         <exec executable="phpmd">
-            <arg path="${basedir}/${appli.src.project.path}/vendor/php-orchestra" />
+            <arg path="${basedir}/${appli.src.project.path}/vendor/php-orchestra,${basedir}/${appli.src.project.path}/src" />
             <arg value="xml" />
             <arg value="${basedir}/build/jenkins/phpmd.xml" />
             <arg value="--reportfile" />
             <arg value="${basedir}/build/logs/pmd.xml" />
+            <arg value="--exclude" />
+            <arg value="Base" />
         </exec>
     </target>
 
@@ -100,6 +104,8 @@
         <exec executable="phpcpd">
             <arg value="--log-pmd" />
             <arg value="${basedir}/build/logs/pmd-cpd.xml" />
+            <arg value="--exclude" />
+            <arg value="Base" />
             <arg path="${basedir}/${appli.src.project.path}/vendor/php-orchestra" />
             <arg path="${basedir}/${appli.src.project.path}/src" />
         </exec>
