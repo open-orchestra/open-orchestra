@@ -88,6 +88,7 @@ class NodeType extends AbstractType
                     )
                 )
             )
+            ->add('theme', 'orchestra_theme_choice')
             ->add('save', 'submit');
     }
     

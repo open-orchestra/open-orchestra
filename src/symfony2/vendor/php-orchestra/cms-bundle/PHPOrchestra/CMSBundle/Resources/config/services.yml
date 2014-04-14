@@ -73,6 +73,14 @@ services:
         tags:
             - { name: form.type, alias: orchestra_direction }
 
+    # Theme form field type
+    php_orchestra_cms.type.theme_choice:
+        class: PHPOrchestra\CMSBundle\Form\Type\ThemeChoiceType
+        arguments: 
+            - "%php_orchestra.themes%"
+        tags:
+            - { name: form.type, alias: orchestra_theme_choice }
+
 #--[FORM]-----------------------#
 
     # Template form type
