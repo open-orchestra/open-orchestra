@@ -22,3 +22,6 @@ parameters:
         show1 BlockExample: 
             action: "PHPOrchestraCMSBundle:BlockExample:show1"
             form: "PHPOrchestraCMSBundle:BlockExample:form1"
+        sampleShow BlockSamples: 
+            action: "PHPOrchestraCMSBundle:Samples:sampleShow"
+            form: "PHPOrchestraCMSBundle:Samples:sampleForm"
