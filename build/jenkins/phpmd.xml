@@ -8,26 +8,9 @@
   <description>PHP Mess Detector ruleset for PHP Orchestra</description>
 
   <rule ref="rulesets/design.xml" />
-  <rule ref="rulesets/unusedcode.xml" />
+  <rule ref="rulesets/unusedcode.xml">
+    <exclude name="UnusedFormalParameter" />
+  </rule>
   <rule ref="rulesets/codesize.xml" />
   <rule ref="rulesets/naming.xml" />
-  <!-- 
-  <rule ref="rulesets/codesize.xml/CyclomaticComplexity" />
-  <rule ref="rulesets/codesize.xml/NPathComplexity" />
-  <rule ref="rulesets/codesize.xml/ExcessiveClassComplexity" />
-  <rule ref="rulesets/codesize.xml/ExcessiveClassLength" />
-  <rule ref="rulesets/codesize.xml/ExcessiveMethodLength" />
-  <rule ref="rulesets/codesize.xml/ExcessiveParameterList" />
-
-  <rule ref="rulesets/design.xml/EvalExpression" />
-  <rule ref="rulesets/design.xml/ExitExpression" />
-  <rule ref="rulesets/design.xml/GotoStatement" />
-
-  <rule ref="rulesets/naming.xml/ConstructorWithNameAsEnclosingClass" />
-
-  <rule ref="rulesets/unusedcode.xml/UnusedFormalParameter" />
-  <rule ref="rulesets/unusedcode.xml/UnusedLocalVariable" />
-  <rule ref="rulesets/unusedcode.xml/UnusedPrivateField" />
-  <rule ref="rulesets/unusedcode.xml/UnusedPrivateMethod" />
-  -->
 </ruleset>
