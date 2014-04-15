@@ -36,7 +36,16 @@ class SamplesController extends Controller
 
     public function sampleFormAction($prefix)
     {
-        return $this->render('PHPOrchestraCMSBundle:Samples:dialogBlocSample.html.twig', array('prefix' => $prefix));
+        $form = $this->get('form.factory')->createNamedBuilder($prefix, 'form', null)
+            ->add('title', 'text')
+            ->add('author', 'text')
+            ->add('news', 'text')
+            ->getForm();
+        
+        return $this->render(
+                            'PHPOrchestraCMSBundle:Samples:dialogBlocSample.html.twig',
+                            array('form' => $form->createView())
+        );
     }
     
 }
