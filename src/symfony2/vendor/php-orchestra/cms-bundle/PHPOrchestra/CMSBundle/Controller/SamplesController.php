@@ -19,19 +19,25 @@ class SamplesController extends Controller
      * @param array $elementsList array containing custom attributes
      * @param array $_page_parameters additional parameters extracted from url
      */
-    public function sampleShowAction($elementsList, $_page_parameters = array())
+    public function sampleShowAction($_title, $_author, $_news, $_page_parameters = array())
     {
         $datetime = time();
         
         $response = $this->render(
             'PHPOrchestraCMSBundle:Samples:blocSample.html.twig',
-            array('elementsList' => $elementsList, 'parameters' => $_page_parameters, 'datetime' => $datetime)
+            array(
+                  'title' => $_title,
+                  'author' => $_author,
+                  'news' => $_news,
+                  'parameters' => $_page_parameters,
+                  'datetime' => $datetime
+            )
         );
         
         $response->setPublic();
         $response->setSharedMaxAge(60);
         $response->headers->addCacheControlDirective('must-revalidate', true);
-                
+        
         return $response;
     }
 
