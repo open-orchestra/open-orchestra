@@ -14,9 +14,10 @@ class SamplesController extends Controller
 {
     
     /**
-     * Render a sampleblock
+     * Render the sampleblock
      * 
-     * @param String[] $block array containing custom attributes
+     * @param array $elementsList array containing custom attributes
+     * @param array $_page_parameters additional parameters extracted from url
      */
     public function sampleShowAction($elementsList, $_page_parameters = array())
     {
@@ -34,6 +35,11 @@ class SamplesController extends Controller
         return $response;
     }
 
+    /**
+     * Render the dialog form
+     * 
+     * @param string $prefix
+     */
     public function sampleFormAction($prefix)
     {
         $form = $this->get('form.factory')->createNamedBuilder($prefix, 'form', null)

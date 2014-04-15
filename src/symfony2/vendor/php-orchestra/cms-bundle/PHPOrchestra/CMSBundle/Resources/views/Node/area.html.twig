@@ -20,6 +20,7 @@
         {% if block %} <span>{{ block.component }}</span>{% endif %}
         </legend>
     {% if block %}
+        +{{ dump(block.attributes) }}+
         {{ render_esi(controller(block.component, block.attributes), {'ignore_errors' : true} ) }}
     {% endif %}
     </fieldset>
