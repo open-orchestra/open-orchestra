@@ -43,7 +43,9 @@ class TemplateController extends Controller
             $template->setVersion($template->getVersion() + 1);
         }
         
-        $form = $this->createForm('template', $template);
+        $form = $this->createForm('template', $template, array(
+            'action' => $this->getRequest()->getUri(),
+           ));
         $form->handleRequest($request);
         if ($form->isValid()) {
             $template->setId(null);

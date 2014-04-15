@@ -13,16 +13,18 @@ function formatForSubmit(settings){
 function treeFormatForSubmit(settings, values){
 	if('blocks' in values){
 		for(var i in values.blocks){
+			var percent = values.blocks[i].boPercent;
+			delete values.blocks[i].component;
+			delete values.blocks[i].method;
+			delete values.blocks[i].label;
+			delete values.blocks[i].is_recursive;
 			if(!('nodeId' in values.blocks[i])){
+				delete values.blocks[i].boPercent;
 				if('component' in values.blocks[i]){
 					var newBlock = {'component': values.blocks[i].component};
-					delete values.blocks[i].component;
-					delete values.blocks[i].method;
-					delete values.blocks[i].label;
-					delete values.blocks[i].is_recursive;
 					newBlock.attributes = values.blocks[i];
 					settings.values.blocks.push(newBlock);
-					values.blocks[i] = {'nodeId': 0, 'blockId': settings.values.blocks.length - 1};
+					values.blocks[i] = {'nodeId': 0, 'blockId': settings.values.blocks.length - 1, 'boPercent': percent};
 				}
 			}
 		}
