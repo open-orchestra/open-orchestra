@@ -1,9 +1,13 @@
 parameters:
-    # Extend symfony 2 Framework routing
+    
+#--[EXTEND SYMFONY 2 ROUTING]---#
+    
     router.class : 'PHPOrchestra\CMSBundle\Routing\PhpOrchestraRouter'
     router.options.matcher_class : 'PHPOrchestra\CMSBundle\Routing\PhpOrchestraUrlMatcher'
     router.options.matcher_base_class : 'PHPOrchestra\CMSBundle\Routing\PhpOrchestraUrlMatcher'
     router.options.matcher.cache_class : null
+    
+#--[CHOICES PARAMETERS]---------#
     
     php_orchestra.orchestra_choice.status:
         STATUS_DRAFT: draft
@@ -15,13 +19,19 @@ parameters:
     php_orchestra.orchestra_choice.direction:
         h: Horizontal
         v: Vertical
+    
+#--[BLOCKS]---------------------#
+    
     php_orchestra.blocks:
+        
         show0 BlockExample: 
             action: "PHPOrchestraCMSBundle:BlockExample:show0"
             form: "PHPOrchestraCMSBundle:BlockExample:form0"
+        
         show1 BlockExample: 
             action: "PHPOrchestraCMSBundle:BlockExample:show1"
             form: "PHPOrchestraCMSBundle:BlockExample:form1"
-        sampleShow BlockSamples: 
+        
+        Sample Block: 
             action: "PHPOrchestraCMSBundle:Samples:sampleShow"
             form: "PHPOrchestraCMSBundle:Samples:sampleForm"
