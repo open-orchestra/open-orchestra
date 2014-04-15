@@ -165,7 +165,8 @@ La base de données principale sera en MongoDB
                     [
                         {
                             "nodeId": 0, // 0 = current node
-                            "blockId": "1"
+                            "blockId": "1",
+                            "boPercent" : 10.4 // Percent for bo screen viewing
                         }
                         //, etc.
                     ],
