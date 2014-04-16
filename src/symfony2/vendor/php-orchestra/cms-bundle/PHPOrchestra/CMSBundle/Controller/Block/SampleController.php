@@ -10,7 +10,7 @@ namespace PHPOrchestra\CMSBundle\Controller\Block;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use PHPOrchestra\CMSBundle\Model\Area;
 
-class SamplesController extends Controller
+class SampleController extends Controller
 {
     
     /**
@@ -19,12 +19,12 @@ class SamplesController extends Controller
      * @param array $elementsList array containing custom attributes
      * @param array $_page_parameters additional parameters extracted from url
      */
-    public function sampleShowAction($_title, $_author, $_news, $_page_parameters = array())
+    public function showAction($_title, $_author, $_news, $_page_parameters = array())
     {
         $datetime = time();
         
         $response = $this->render(
-            'PHPOrchestraCMSBundle:Samples:blocSample.html.twig',
+            'PHPOrchestraCMSBundle:Block/Sample:show.html.twig',
             array(
                   'title' => $_title,
                   'author' => $_author,
@@ -46,7 +46,7 @@ class SamplesController extends Controller
      * 
      * @param string $prefix
      */
-    public function sampleFormAction($prefix)
+    public function formAction($prefix)
     {
         $form = $this->get('form.factory')->createNamedBuilder($prefix, 'form', null)
             ->add('title', 'text')
@@ -55,7 +55,7 @@ class SamplesController extends Controller
             ->getForm();
         
         return $this->render(
-                            'PHPOrchestraCMSBundle:Samples:dialogBlocSample.html.twig',
+                            'PHPOrchestraCMSBundle:Block/Sample:form.html.twig',
                             array('form' => $form->createView())
         );
     }

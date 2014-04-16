@@ -33,5 +33,5 @@ parameters:
             form: "PHPOrchestraCMSBundle:Block/BlockExample:form1"
         
         Sample Block: 
-            action: "PHPOrchestraCMSBundle:Block/Samples:sampleShow"
-            form: "PHPOrchestraCMSBundle:Block/Samples:sampleForm"
+            action: "PHPOrchestraCMSBundle:Block/Sample:show"
+            form: "PHPOrchestraCMSBundle:Block/Sample:form"

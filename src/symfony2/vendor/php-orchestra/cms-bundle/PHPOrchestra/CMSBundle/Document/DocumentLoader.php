@@ -9,6 +9,11 @@ namespace PHPOrchestra\CMSBundle\Document;
 
 use PHPOrchestra\CMSBundle\Exception\UnrecognizedDocumentTypeException;
 
+/**
+ * Get documents from storage
+ * 
+ * @author Noël Gilain <noel.gilain@businessdecision.com>
+ */
 class DocumentLoader
 {
     /** 
