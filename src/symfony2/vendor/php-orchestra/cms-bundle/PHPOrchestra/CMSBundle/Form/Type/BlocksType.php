@@ -13,25 +13,24 @@ use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\FormView;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use PHPOrchestra\CMSBundle\Form\DataTransformer\JsonToBlocksTransformer;
-use Mandango;
 
 class BlocksType extends AbstractType
 {
     /**
-     * Mandango service
-     * @var Mandango\Mandango
+     * documentLoader service
+     * @var documentLoader
      */
-    public $mandango = null;
+    protected $documentLoader = null;
 
     
     /**
-     * Constructor, require mandango service
+     * Constructor, require documentLoader service
      * 
-     * @param Mandango\Mandango $mandango
+     * @param $documentLoader
      */
-    public function __construct(Mandango\Mandango $mandango = null)
+    public function __construct($documentLoader)
     {
-        $this->mandango = $mandango;
+        $this->documentLoader = $documentLoader;
     }
     
     
@@ -43,7 +42,7 @@ class BlocksType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $transformer = new JsonToBlocksTransformer($this->mandango);
+        $transformer = new JsonToBlocksTransformer($this->documentLoader);
         $builder->addModelTransformer($transformer);
     }
 

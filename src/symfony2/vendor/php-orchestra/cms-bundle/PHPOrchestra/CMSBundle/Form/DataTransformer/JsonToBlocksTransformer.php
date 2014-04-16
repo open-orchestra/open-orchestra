@@ -15,17 +15,17 @@ class JsonToBlocksTransformer implements DataTransformerInterface
      * Documents service
      * @var unknown
      */
-    public $documentsService = null;
+    public $documentLoader = null;
     
     
     /**
-     * Constructor, require documents service
+     * Constructor, require documentLoader service
      * 
-     * @param unknown $documentsService
+     * @param unknown $documentLoader
      */
-    public function __construct($documentsService)
+    public function __construct($documentLoader)
     {
-        $this->documentsService = $documentsService;
+        $this->documentLoader = $documentLoader;
     }
 
     /**
@@ -67,7 +67,7 @@ class JsonToBlocksTransformer implements DataTransformerInterface
         
         if (is_array($blocks)) {
             foreach ($blocks as $block) {
-                $blockDoc = $this->documentsService->create('Model\PHPOrchestraCMSBundle\Block')
+                $blockDoc = $this->documentLoader->createDocument('Block')
                     ->setComponent($block['component'])
                     ->setAttributes($block['attributes']);
                 $docsArray[] = $blockDoc;

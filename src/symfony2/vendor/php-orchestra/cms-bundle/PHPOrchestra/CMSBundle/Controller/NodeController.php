@@ -150,17 +150,17 @@ class NodeController extends Controller
      */
     public function formAction($nodeId, Request $request)
     {
-        $mandango = $this->container->get('mandango');
+        $documentLoder = $this->container->get('phporchestra_cms.documentloader');
         
         if (empty($nodeId)) {
-            $node = $mandango->create('Model\PHPOrchestraCMSBundle\Node');
+            $node = $documentLoader->createDocument('Node');
             $node->setSiteId(1);
             $node->setLanguage('fr');
         } else {
-            $node = $this->get('phporchestra_cms.documentloader')->getDocument('Node', array('nodeId' => $nodeId));
+            $node = $documentLoader->getDocument('Node', array('nodeId' => $nodeId));
             $node->setVersion($node->getVersion() + 1);
         }
-
+        
         $form = $this->createForm('node', $node, array(
             'action' => $this->getRequest()->getUri(),
            ));
@@ -173,7 +173,7 @@ class NodeController extends Controller
             $node->save();
             return $this->redirect($this->generateUrl('php_orchestra_cms_node', array('nodeId' => $node->getNodeId())));
         }
-
+        
         return $this->render(
             'PHPOrchestraCMSBundle:Form:node.html.twig',
             array(
@@ -200,14 +200,14 @@ class NodeController extends Controller
                 )
             )
             ->getForm();
-
+        
         $render = $this->render(
             'PHPOrchestraCMSBundle:Form:input.html.twig',
             array(
                 'form' => $form->createView()
             )
         );
-
+        
         if ($request->isXmlHttpRequest()) {
             return new JsonResponse(
                 array(

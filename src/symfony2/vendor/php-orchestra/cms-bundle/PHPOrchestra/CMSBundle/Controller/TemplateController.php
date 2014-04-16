@@ -14,7 +14,6 @@ use PHPOrchestra\CMSBundle\Form\Type\TemplateType;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use PHPOrchestra\CMSBundle\Helper\TemplateHelper;
-use Mandango;
 
 class TemplateController extends Controller
 {
@@ -28,13 +27,14 @@ class TemplateController extends Controller
      */
     public function formAction($templateId, Request $request)
     {
-        $mandango = $this->container->get('mandango');
+        $documentLoader = $this->container->get('phporchestra_cms.documentloader');
+        
         if (empty($templateId)) {
-            $template = $mandango->create('Model\PHPOrchestraCMSBundle\Template');
+            $template = $documentLoader->createDocument('Template');
             $template->setSiteId(1);
             $template->setLanguage('fr');
         } else {
-            $template = $this->get('phporchestra_cms.documentloader')->getDocument(
+            $template = $documentLoader->getDocument(
                 'Template',
                 array('templateId' => $templateId)
             );
@@ -73,7 +73,8 @@ class TemplateController extends Controller
      */
     public function showCuttingAction(Request $request)
     {
-        $template = $this->get('phporchestra_cms.documentloader')->getDocument(
+        $documentLoader = $this->get('phporchestra_cms.documentloader');
+        $template = $documentLoader->getDocument(
             'Template',
             array('templateId' => $request->get('templateId'))
         );
@@ -81,7 +82,7 @@ class TemplateController extends Controller
             return new JsonResponse(
                 array(
                     'success' => true,
-                    'data' => TemplateHelper::formatTemplate($template, $this->container->get('mandango'))
+                    'data' => TemplateHelper::formatTemplate($template, $documentLoader)
                 )
             );
         }

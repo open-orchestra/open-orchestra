@@ -18,9 +18,24 @@ class DocumentLoader
 {
     private $documentsService = null;
     
+    /**
+     * DocumentLoader service constructor
+     * 
+     * @param unknown_type $documentsService The documents storage service
+     */
     public function __construct($documentsService)
     {
         $this->documentsService = $documentsService;
+    }
+    
+    /**
+     * Factory method
+     * 
+     * @param string $documentType
+     */
+    public function createDocument($documentType)
+    {
+        return $this->documentsService->create($this->getDocumentNamespace($documentType));
     }
     
     /** 
@@ -69,6 +84,9 @@ class DocumentLoader
                 break;
             case 'Template':
                 $documentNamespace = 'Model\PHPOrchestraCMSBundle\Template';
+                break;
+            case 'Block':
+                $documentNamespace = 'Model\PHPOrchestraCMSBundle\Block';
                 break;
             default:
                 throw new UnrecognizedDocumentTypeException('Unrecognized document type : ' . $documentType);

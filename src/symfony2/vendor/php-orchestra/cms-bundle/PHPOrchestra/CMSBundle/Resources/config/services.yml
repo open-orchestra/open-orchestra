@@ -36,7 +36,7 @@ services:
     # Blocks form field type
     php_orchestra_cms.type.blocks:
         class: PHPOrchestra\CMSBundle\Form\Type\BlocksType
-        arguments: [@mandango]
+        arguments: [@phporchestra_cms.documentloader]
         tags:
             - { name: form.type, alias: orchestra_blocks }
 
