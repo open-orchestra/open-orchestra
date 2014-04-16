@@ -60,25 +60,25 @@ Model\PHPOrchestraCMSBundle\Node:
         areas: [{"areaId":"header","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":0}]},{"areaId":"main","classes":[],"boDirection":"v","subAreas":[{"areaId":"left_menu","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":1}]},{"areaId":"content","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":2},{"nodeId":0,"blockId":3},{"nodeId":0,"blockId":4}]},{"areaId":"skycrapper","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":5}]}],"blocks":[]},{"areaId":"footer","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":6}]}]
         blocks:
             -
-                component: "PHPOrchestraCMSBundle:Samples:sampleShow"
+                component: "PHPOrchestraCMSBundle:Block/Samples:sampleShow"
                 attributes: {"_title":"Qui sommes-nous ?", "_author":"Pourquoi nous choisir ?", "_news":"Nos agences"}
             -
-                component: "PHPOrchestraCMSBundle:Samples:sampleShow"
+                component: "PHPOrchestraCMSBundle:Block/Samples:sampleShow"
                 attributes: {"_title":"http://www.google.fr", "_author":"http://www.yahoo.fr", "_news":"http://altavista.box.co.uk"}
             -
-                component: "PHPOrchestraCMSBundle:Samples:sampleShow"
+                component: "PHPOrchestraCMSBundle:Block/Samples:sampleShow"
                 attributes: {"_title":"News 1", "_author":"Donec bibendum at nibh eget imperdiet. Mauris eget justo augue. Fusce fermentum iaculis erat, sollicitudin elementum enim sodales eu. Donec a ante tortor. Suspendisse a.", "_news":""}
             -
-                component: "PHPOrchestraCMSBundle:Samples:sampleShow"
+                component: "PHPOrchestraCMSBundle:Block/Samples:sampleShow"
                 attributes: {"_title":"News #2", "_author":"Aliquam convallis facilisis nulla, id ultricies ipsum cursus eu. Proin augue quam, iaculis id nisi ac, rutrum blandit leo. In leo ante, scelerisque tempus lacinia in, sollicitudin quis justo. Vestibulum.", "_news":""}
             -
-                component: "PHPOrchestraCMSBundle:Samples:sampleShow"
+                component: "PHPOrchestraCMSBundle:Block/Samples:sampleShow"
                 attributes: {"_title":"News #3", "_author":"Phasellus condimentum diam placerat varius iaculis. Aenean dictum, libero in sollicitudin hendrerit, nulla mi elementum massa, eget mattis lorem enim vel magna. Fusce suscipit orci vitae vestibulum.", "_news":""}
             -
-                component: "PHPOrchestraCMSBundle:Samples:sampleShow"
+                component: "PHPOrchestraCMSBundle:Block/Samples:sampleShow"
                 attributes: {"_title":"mapub.jpg", "_author":"qwerty", "_news":""}
             -
-                component: "PHPOrchestraCMSBundle:Samples:sampleShow"
+                component: "PHPOrchestraCMSBundle:Block/Samples:sampleShow"
                 attributes: {"_title":"Mentions légales", "_author":"Nous contacter", "_news":""}
     
     node_home:
@@ -97,7 +97,7 @@ Model\PHPOrchestraCMSBundle\Node:
         areas: [{"areaId":"main","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":0}]}]
         blocks:
             -
-                component: "PHPOrchestraCMSBundle:Samples:sampleShow"
+                component: "PHPOrchestraCMSBundle:Block/Samples:sampleShow"
                 attributes: {"_title":"Accueil", "_news":"Bienvenu sur le site de démo issu des fixtures.", "_author":""}
                 
     node_about_us:
@@ -116,7 +116,7 @@ Model\PHPOrchestraCMSBundle\Node:
         areas: [{"areaId":"main","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":0}]}]
         blocks:
             -
-                component: "PHPOrchestraCMSBundle:Samples:sampleShow"
+                component: "PHPOrchestraCMSBundle:Block/Samples:sampleShow"
                 attributes: {"_title":"Qui sommes-nous ?", "_author":"Pour tout savoir sur notre entreprise.","_news":""}
                 
     node_bd:
@@ -135,7 +135,7 @@ Model\PHPOrchestraCMSBundle\Node:
         areas: [{"areaId":"main","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":0}]}]
         blocks:
             -
-                component: "PHPOrchestraCMSBundle:Samples:sampleShow"
+                component: "PHPOrchestraCMSBundle:Block/Samples:sampleShow"
                 attributes: {"_title":"B&D", "_author":"Tout sur B&D","_news":""}
                 
     node_interakting:
@@ -154,7 +154,7 @@ Model\PHPOrchestraCMSBundle\Node:
         areas: [{"areaId":"main","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":0}]}]
         blocks:
             -
-                component: "PHPOrchestraCMSBundle:Samples:sampleShow"
+                component: "PHPOrchestraCMSBundle:Block/Samples:sampleShow"
                 attributes: {"_title":"Interakting", "_news":"Des trucs sur Interakting (non versionnés)","_author":""}
                 
     node_contact_us:
@@ -173,7 +173,7 @@ Model\PHPOrchestraCMSBundle\Node:
         areas: [{"areaId":"main","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":0}]}]
         blocks:
             -
-                component: "PHPOrchestraCMSBundle:Samples:sampleShow"
+                component: "PHPOrchestraCMSBundle:Block/Samples:sampleShow"
                 attributes: {"_title":"Nous contacter", "_author":"Comment nous contacter","_news":"swgsdwgh"}
                 
     node_directory:
@@ -192,7 +192,7 @@ Model\PHPOrchestraCMSBundle\Node:
         areas: [{"areaId":"main","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":0}]}]
         blocks:
             -
-                component: "PHPOrchestraCMSBundle:Samples:sampleShow"
+                component: "PHPOrchestraCMSBundle:Block/Samples:sampleShow"
                 attributes: {"_title":"Annuaire", "_author":"Le bottin mondain","_news":""}
                 
                 

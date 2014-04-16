@@ -5,7 +5,7 @@
  * @author Nicolas ANNE <nicolas.anne@businessdecision.com>
  */
 
-namespace PHPOrchestra\CMSBundle\Controller;
+namespace PHPOrchestra\CMSBundle\Controller\Block;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 

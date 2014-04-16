@@ -25,13 +25,13 @@ parameters:
     php_orchestra.blocks:
         
         show0 BlockExample: 
-            action: "PHPOrchestraCMSBundle:BlockExample:show0"
-            form: "PHPOrchestraCMSBundle:BlockExample:form0"
+            action: "PHPOrchestraCMSBundle:Block/BlockExample:show0"
+            form: "PHPOrchestraCMSBundle:Block/BlockExample:form0"
         
         show1 BlockExample: 
-            action: "PHPOrchestraCMSBundle:BlockExample:show1"
-            form: "PHPOrchestraCMSBundle:BlockExample:form1"
+            action: "PHPOrchestraCMSBundle:Block/BlockExample:show1"
+            form: "PHPOrchestraCMSBundle:Block/BlockExample:form1"
         
         Sample Block: 
-            action: "PHPOrchestraCMSBundle:Samples:sampleShow"
-            form: "PHPOrchestraCMSBundle:Samples:sampleForm"
+            action: "PHPOrchestraCMSBundle:Block/Samples:sampleShow"
+            form: "PHPOrchestraCMSBundle:Block/Samples:sampleForm"

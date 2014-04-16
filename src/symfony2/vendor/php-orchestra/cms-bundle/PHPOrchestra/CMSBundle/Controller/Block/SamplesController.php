@@ -5,7 +5,7 @@
  * @author Noël Gilain <noel.gilain@businessdecision.com>
  */
 
-namespace PHPOrchestra\CMSBundle\Controller;
+namespace PHPOrchestra\CMSBundle\Controller\Block;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use PHPOrchestra\CMSBundle\Model\Area;
