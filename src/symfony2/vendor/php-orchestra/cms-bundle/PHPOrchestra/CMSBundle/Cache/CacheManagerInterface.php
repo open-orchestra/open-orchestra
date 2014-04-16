@@ -23,5 +23,4 @@ interface CacheManagerInterface
      * @param string|array $value
      */
     public function set($key, $value);
-
 }

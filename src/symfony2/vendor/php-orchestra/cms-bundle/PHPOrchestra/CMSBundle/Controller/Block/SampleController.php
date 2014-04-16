@@ -55,9 +55,8 @@ class SampleController extends Controller
             ->getForm();
         
         return $this->render(
-                            'PHPOrchestraCMSBundle:Block/Sample:form.html.twig',
-                            array('form' => $form->createView())
+            'PHPOrchestraCMSBundle:Block/Sample:form.html.twig',
+            array('form' => $form->createView())
         );
     }
-    
 }

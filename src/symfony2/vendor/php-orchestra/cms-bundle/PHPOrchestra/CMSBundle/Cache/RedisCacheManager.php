@@ -62,5 +62,4 @@ class RedisCacheManager implements CacheManagerInterface
         
         return $set;
     }
-
 }

@@ -58,7 +58,8 @@ class PHPOrchestraExtension extends \Twig_Extension
         
         $cssPath = $assetsPath . 'themes' . DIRECTORY_SEPARATOR . $theme[1] . DIRECTORY_SEPARATOR . 'css';
         
-        return '<link type="text/css" rel="stylesheet" href="' . $cssPath . DIRECTORY_SEPARATOR . 'master.css">' . PHP_EOL;
+        return '<link type="text/css" rel="stylesheet" href="'
+            . $cssPath . DIRECTORY_SEPARATOR . 'master.css">' . PHP_EOL;
     }
 
     /**

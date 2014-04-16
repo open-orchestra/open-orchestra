@@ -161,9 +161,13 @@ class NodeController extends Controller
             $node->setVersion($node->getVersion() + 1);
         }
         
-        $form = $this->createForm('node', $node, array(
-            'action' => $this->getRequest()->getUri(),
-           ));
+        $form = $this->createForm(
+            'node',
+            $node,
+            array(
+                'action' => $this->getRequest()->getUri(),
+            )
+        );
         $form->handleRequest($request);
         
         if ($form->isValid()) {

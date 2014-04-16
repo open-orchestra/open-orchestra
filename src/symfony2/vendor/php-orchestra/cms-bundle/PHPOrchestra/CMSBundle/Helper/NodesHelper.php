@@ -13,7 +13,7 @@ class NodesHelper
 {
     public static function createTree($nodes)
     {
-    	
+        
         $links = array();
         foreach ($nodes as $node) {
             $parentId = $node->getParentId();
@@ -24,6 +24,8 @@ class NodesHelper
         }
         return NodesHelper::createRecTree($links, $links[Node::ROOT_NODE_ID]);
     }
+    
+    
     public static function createRecTree(&$list, $parent)
     {
         $tree = array();
@@ -33,7 +35,7 @@ class NodesHelper
             }
             $tree[] = $l;
         }
-
+        
         return $tree;
     }
 }
