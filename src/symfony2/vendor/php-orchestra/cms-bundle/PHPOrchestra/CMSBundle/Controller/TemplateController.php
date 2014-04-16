@@ -61,7 +61,7 @@ class TemplateController extends Controller
         }
         
         return $this->render(
-            'PHPOrchestraCMSBundle:Template:form.html.twig',
+            'PHPOrchestraCMSBundle:Form:template.html.twig',
             array(
                 'form' => $form->createView(),
                 'ajax' => $request->isXmlHttpRequest()

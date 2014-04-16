@@ -176,7 +176,7 @@ class NodeController extends Controller
         }
 
         return $this->render(
-            'PHPOrchestraCMSBundle:Node:form.html.twig',
+            'PHPOrchestraCMSBundle:Form:node.html.twig',
             array(
                 'form' => $form->createView(),
                 'ajax' => $request->isXmlHttpRequest()

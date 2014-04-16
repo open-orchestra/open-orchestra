@@ -81,7 +81,7 @@ class NodeType extends AbstractType
                         ),
                         'render' => array(
                             'blocks' => array(
-                                'twig' => 'PHPOrchestraCMSBundle:Blocks:showAllBlocks.html.twig',
+                                'twig' => 'PHPOrchestraCMSBundle:Form:blocksInfo.json.twig',
                                 'parameter' => array('blocks' => $this->blocks, 'prefix' => $nameBlocks.'_')
                             )
                         )
