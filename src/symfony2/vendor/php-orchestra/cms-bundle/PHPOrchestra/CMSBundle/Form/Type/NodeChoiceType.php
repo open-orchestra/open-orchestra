@@ -11,8 +11,6 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use PHPOrchestra\CMSBundle\Form\DataTransformer\JsonToAreasTransformer;
-use PHPOrchestra\CMSBundle\Document\DocumentLoader;
-use mandango;
 
 class NodeChoiceType extends AbstractType
 {
@@ -20,13 +18,13 @@ class NodeChoiceType extends AbstractType
     public $choices = null;
 
     /**
-     * Constructor, require mandango service
+     * Constructor, require documentLoader service
      * 
-     * @param Mandango\Mandango $mandango
+     * @param $documentLoader
      */
-    public function __construct(Mandango\Mandango $mandango = null)
+    public function __construct($documentLoader)
     {
-        $nodes = DocumentLoader::getDocuments('Node', array(), $mandango);
+        $nodes = $documentLoader->getDocuments('Node', array());
         $this->choices[''] = '--------';
         foreach ($nodes as $node) {
             $this->choices[$node->getNodeId()] = $node->getName();

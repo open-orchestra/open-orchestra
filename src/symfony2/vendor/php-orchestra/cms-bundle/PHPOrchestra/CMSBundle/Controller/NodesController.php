@@ -10,7 +10,6 @@ namespace PHPOrchestra\CMSBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
-use PHPOrchestra\CMSBundle\Document\DocumentLoader;
 use Symfony\Component\HttpFoundation\Request;
 use PHPOrchestra\CMSBundle\Helper\NodesHelper;
 
@@ -51,7 +50,7 @@ class NodesController extends Controller
      */
     public function showTreeNodesAction(Request $request)
     {
-        $nodes = DocumentLoader::getDocuments('Node', array(), $this->container->get('mandango'));
+        $nodes = $this->get('phporchestra_cms.documentloader')->getDocuments('Node', array());
         return $this->render(
             'PHPOrchestraCMSBundle:Tree:tree.html.twig',
             array(

@@ -11,8 +11,6 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use PHPOrchestra\CMSBundle\Form\DataTransformer\JsonToAreasTransformer;
-use PHPOrchestra\CMSBundle\Document\DocumentLoader;
-use mandango;
 
 class BlockChoiceType extends AbstractType
 {
@@ -20,13 +18,13 @@ class BlockChoiceType extends AbstractType
     public $choices = null;
 
     /**
-     * Constructor, require mandango service
+     * Constructor, require documentLoader service
      * 
-     * @param Mandango\Mandango $mandango
+     * @param $documentLoader
      */
-    public function __construct(Mandango\Mandango $mandango, $nodeId, $filter = array())
+    public function __construct($documentLoader, $nodeId, $filter = array())
     {
-        $node = DocumentLoader::getDocument('Node', array('nodeId' => $nodeId), $mandango);
+        $node = $documentLoader->getDocument('Node', array('nodeId' => $nodeId));
         $this->choices[''] = '--------';
         
         foreach ($filter as $key => $configBlock) {

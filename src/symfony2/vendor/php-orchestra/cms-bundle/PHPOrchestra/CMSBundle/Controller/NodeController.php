@@ -8,7 +8,6 @@
 namespace PHPOrchestra\CMSBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use PHPOrchestra\CMSBundle\Document\DocumentLoader;
 use PHPOrchestra\CMSBundle\Model\Area;
 use PHPOrchestra\CMSBundle\Exception\NonExistingDocumentException;
 use Symfony\Component\HttpFoundation\Request;
@@ -50,7 +49,7 @@ class NodeController extends Controller
      */
     public function showAction($nodeId)
     {
-        $node = DocumentLoader::getDocument('Node', array('nodeId' => $nodeId), $this->container->get('mandango'));
+        $node = $this->get('phporchestra_cms.documentloader')->getDocument('Node', array('nodeId' => $nodeId));
         if (is_null($node)) {
             throw new NonExistingDocumentException("Node not found");
         }
@@ -129,7 +128,7 @@ class NodeController extends Controller
     protected function getBlocksFromNode($nodeId)
     {
         $this->externalBlocks[$nodeId] = array();
-        $node = DocumentLoader::getDocument('Node', array('nodeId' => $nodeId), $this->container->get('mandango'));
+        $node = $this->get('phporchestra_cms.documentloader')->getDocument('Node', array('nodeId' => $nodeId));
         
         if ($node) {
             $blocks = $node->getBlocks();
@@ -158,7 +157,7 @@ class NodeController extends Controller
             $node->setSiteId(1);
             $node->setLanguage('fr');
         } else {
-            $node = DocumentLoader::getDocument('Node', array('nodeId' => $nodeId), $this->container->get('mandango'));
+            $node = $this->get('phporchestra_cms.documentloader')->getDocument('Node', array('nodeId' => $nodeId));
             $node->setVersion($node->getVersion() + 1);
         }
 
@@ -195,7 +194,7 @@ class NodeController extends Controller
             ->add(
                 'blockId',
                 new BlockChoiceType(
-                    $this->container->get('mandango'),
+                    $this->container->get('phporchestra_cms.documentloader'),
                     $request->get('nodeId'),
                     $this->container->getParameter('php_orchestra.blocks')
                 )

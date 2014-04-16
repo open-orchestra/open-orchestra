@@ -10,8 +10,6 @@ namespace PHPOrchestra\CMSBundle\Form\Type;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
-use PHPOrchestra\CMSBundle\Document\DocumentLoader;
-use mandango;
 
 class TemplateChoiceType extends AbstractType
 {
@@ -19,13 +17,13 @@ class TemplateChoiceType extends AbstractType
     public $choices = null;
 
     /**
-     * Constructor, require mandango service
+     * Constructor, require documentLoader service
      * 
-     * @param Mandango\Mandango $mandango
+     * @param $documentLoader
      */
-    public function __construct(Mandango\Mandango $mandango = null)
+    public function __construct($documentLoader)
     {
-        $templates = DocumentLoader::getDocuments('Template', array(), $mandango);
+        $templates = $documentLoader->getDocuments('Template', array());
         $this->choices[''] = '--------';
         foreach ($templates as $template) {
             $this->choices[$template->getTemplateId()] = $template->getName();

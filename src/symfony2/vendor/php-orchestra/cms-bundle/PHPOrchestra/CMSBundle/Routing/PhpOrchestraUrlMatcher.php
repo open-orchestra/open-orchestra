@@ -30,7 +30,7 @@ class PhpOrchestraUrlMatcher extends RedirectableUrlMatcher
      * Documents service
      * @var unknown_type
      */
-    protected $documentsService = null;
+    protected $documentLoader = null;
 
     /**
      * Cache service
@@ -44,14 +44,14 @@ class PhpOrchestraUrlMatcher extends RedirectableUrlMatcher
      * 
      * @param RouteCollection $routes
      * @param RequestContext $context
-     * @param unknown_type $documentsService
+     * @param unknown_type $documentLoader
      * @param unknown_type $cacheService
      */
-    public function __construct(RouteCollection $routes, RequestContext $context, $documentsService, $cacheService)
+    public function __construct(RouteCollection $routes, RequestContext $context, $documentLoader, $cacheService)
     {
         $this->routes = $routes;
         $this->context = $context;
-        $this->documentsService = $documentsService;
+        $this->documentLoader = $documentLoader;
         $this->cacheService = $cacheService;
     }
 
@@ -209,7 +209,7 @@ class PhpOrchestraUrlMatcher extends RedirectableUrlMatcher
             'alias' => $slug
         );
         
-        $node = DocumentLoader::getDocument('Node', $criteria, $this->documentsService);
+        $node = $this->documentLoader->getDocument('Node', $criteria);
         
         if (!is_null($node)) {
             $nodeInfo = array(

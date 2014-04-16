@@ -16,6 +16,13 @@ use PHPOrchestra\CMSBundle\Exception\UnrecognizedDocumentTypeException;
  */
 class DocumentLoader
 {
+    private $documentsService = null;
+    
+    public function __construct($documentsService)
+    {
+        $this->documentsService = $documentsService;
+    }
+    
     /** 
     * Get a MongoDB document giving its type and search citerias
     * 
@@ -23,12 +30,12 @@ class DocumentLoader
     * @param array $criteria
     * @param unknown $documentsService
     */
-    public static function getDocument($documentType, array $criteria, $documentsService)
+    public function getDocument($documentType, array $criteria)
     {
-        $repository = $documentsService->getRepository(self::getDocumentNamespace($documentType));
+        $repository = $this->documentsService->getRepository($this->getDocumentNamespace($documentType));
         $query = $repository->createQuery();
         $query->criteria($criteria);
-        $query->sort(self::getDefaultSort($documentType));
+        $query->sort($this->getDefaultSort($documentType));
         return $query->one();
     }
     
@@ -39,9 +46,9 @@ class DocumentLoader
     * @param array $criteria
     * @param unknown $documentsService
     */
-    public static function getDocuments($documentType, array $criteria, $documentsService)
+    public function getDocuments($documentType, array $criteria)
     {
-        $repository = $documentsService->getRepository(self::getDocumentNamespace($documentType));
+        $repository = $this->documentsService->getRepository($this->getDocumentNamespace($documentType));
         $query = $repository->createQuery();
         $query->criteria($criteria);
         return $query->all();
@@ -52,7 +59,7 @@ class DocumentLoader
      * 
      * @param string $documentType
      */
-    protected static function getDocumentNamespace($documentType)
+    protected function getDocumentNamespace($documentType)
     {
         $documentNamespace = '';
         switch($documentType)
@@ -75,7 +82,7 @@ class DocumentLoader
      * Get default sort filter for given document type
      * @param string $documentType
      */
-    protected static function getDefaultSort($documentType)
+    protected function getDefaultSort($documentType)
     {
         $sort = array();
         switch($documentType)

@@ -10,7 +10,6 @@ namespace PHPOrchestra\CMSBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
-use PHPOrchestra\CMSBundle\Document\DocumentLoader;
 use Symfony\Component\HttpFoundation\Request;
 
 class TemplatesController extends Controller
@@ -51,7 +50,7 @@ class TemplatesController extends Controller
      */
     public function showTreeTemplatesAction(Request $request)
     {
-        $templates = DocumentLoader::getDocuments('Template', array(), $this->container->get('mandango'));
+        $templates = $this->get('phporchestra_cms.documentloader')->getDocuments('Template', array());
         $links = array();
         foreach ($templates as $template) {
             $links[] = array('id' => $template->getTemplateId(), 'class' =>'', 'text' => $template->getName());

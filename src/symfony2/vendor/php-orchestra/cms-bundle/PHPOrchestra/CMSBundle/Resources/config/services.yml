@@ -7,6 +7,11 @@ services:
         class: PHPOrchestra\CMSBundle\Cache\RedisCacheManager
         arguments: [@snc_redis.default]
 
+    # DocumentLoader service
+    phporchestra_cms.documentloader:
+        class: PHPOrchestra\CMSBundle\Document\DocumentLoader
+        arguments: [@mandango]
+
 #--[TWIG EXTENSIONS]-------------#
 
     phporchestra_cms.twig.phporchestra_extension:
@@ -38,14 +43,14 @@ services:
     # Templates select form field type
     php_orchestra_cms.type.template_choice:
         class: PHPOrchestra\CMSBundle\Form\Type\TemplateChoiceType
-        arguments: [@mandango]
+        arguments: [@phporchestra_cms.documentloader]
         tags:
             - { name: form.type, alias: orchestra_template_choice }
 
     # Nodes select form field type
     php_orchestra_cms.type.node_choice:
         class: PHPOrchestra\CMSBundle\Form\Type\NodeChoiceType
-        arguments: [@mandango]
+        arguments: [@phporchestra_cms.documentloader]
         tags:
             - { name: form.type, alias: orchestra_node_choice }
 

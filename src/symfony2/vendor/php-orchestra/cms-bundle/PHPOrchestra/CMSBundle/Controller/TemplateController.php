@@ -11,7 +11,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use PHPOrchestra\CMSBundle\Model\Area;
 use PHPOrchestra\CMSBundle\Form\Type\TemplateType;
-use PHPOrchestra\CMSBundle\Document\DocumentLoader;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use PHPOrchestra\CMSBundle\Helper\TemplateHelper;
@@ -35,10 +34,9 @@ class TemplateController extends Controller
             $template->setSiteId(1);
             $template->setLanguage('fr');
         } else {
-            $template = DocumentLoader::getDocument(
+            $template = $this->get('phporchestra_cms.documentloader')->getDocument(
                 'Template',
-                array('templateId' => $templateId),
-                $this->container->get('mandango')
+                array('templateId' => $templateId)
             );
             $template->setVersion($template->getVersion() + 1);
         }
@@ -75,10 +73,9 @@ class TemplateController extends Controller
      */
     public function showCuttingAction(Request $request)
     {
-        $template = DocumentLoader::getDocument(
+        $template = $this->get('phporchestra_cms.documentloader')->getDocument(
             'Template',
-            array('templateId' => $request->get('templateId')),
-            $this->container->get('mandango')
+            array('templateId' => $request->get('templateId'))
         );
         if ($request->isXmlHttpRequest()) {
             return new JsonResponse(
