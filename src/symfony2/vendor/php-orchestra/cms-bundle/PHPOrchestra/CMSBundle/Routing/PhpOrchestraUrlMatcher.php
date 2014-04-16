@@ -9,7 +9,7 @@ namespace PHPOrchestra\CMSBundle\Routing;
 
 use Symfony\Bundle\FrameworkBundle\Routing\RedirectableUrlMatcher;
 use Symfony\Component\Routing\Exception\ResourceNotFoundException;
-use PHPOrchestra\CMSBundle\Classes\DocumentLoader;
+use PHPOrchestra\CMSBundle\Document\DocumentLoader;
 use PHPOrchestra\CMSBundle\Exception\UnrecognizedDocumentTypeException;
 use Symfony\Component\Routing\RouteCollection;
 use Symfony\Component\Routing\RequestContext;

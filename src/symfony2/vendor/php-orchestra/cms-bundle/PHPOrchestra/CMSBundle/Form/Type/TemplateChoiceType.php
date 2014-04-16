@@ -10,7 +10,7 @@ namespace PHPOrchestra\CMSBundle\Form\Type;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
-use PHPOrchestra\CMSBundle\Classes\DocumentLoader;
+use PHPOrchestra\CMSBundle\Document\DocumentLoader;
 use mandango;
 
 class TemplateChoiceType extends AbstractType

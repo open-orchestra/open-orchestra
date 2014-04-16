@@ -5,7 +5,7 @@
  * @author Noël Gilain <noel.gilain@businessdecision.com>
  */
 
-namespace PHPOrchestra\CMSBundle\Classes;
+namespace PHPOrchestra\CMSBundle\Document;
 
 use PHPOrchestra\CMSBundle\Exception\UnrecognizedDocumentTypeException;
 

@@ -10,7 +10,7 @@ namespace PHPOrchestra\CMSBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
-use PHPOrchestra\CMSBundle\Classes\DocumentLoader;
+use PHPOrchestra\CMSBundle\Document\DocumentLoader;
 use Symfony\Component\HttpFoundation\Request;
 use PHPOrchestra\CMSBundle\Helper\NodesHelper;
 

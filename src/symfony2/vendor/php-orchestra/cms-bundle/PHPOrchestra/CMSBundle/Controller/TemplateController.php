@@ -11,7 +11,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use PHPOrchestra\CMSBundle\Model\Area;
 use PHPOrchestra\CMSBundle\Form\Type\TemplateType;
-use PHPOrchestra\CMSBundle\Classes\DocumentLoader;
+use PHPOrchestra\CMSBundle\Document\DocumentLoader;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use PHPOrchestra\CMSBundle\Helper\TemplateHelper;

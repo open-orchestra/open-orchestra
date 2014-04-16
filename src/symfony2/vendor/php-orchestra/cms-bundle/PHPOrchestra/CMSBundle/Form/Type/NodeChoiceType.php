@@ -11,7 +11,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use PHPOrchestra\CMSBundle\Form\DataTransformer\JsonToAreasTransformer;
-use PHPOrchestra\CMSBundle\Classes\DocumentLoader;
+use PHPOrchestra\CMSBundle\Document\DocumentLoader;
 use mandango;
 
 class NodeChoiceType extends AbstractType
