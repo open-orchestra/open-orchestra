@@ -29,6 +29,8 @@ class TemplateController extends Controller
     {
         $documentLoader = $this->container->get('phporchestra_cms.documentloader');
         
+        $ajax = false;
+        
         if (empty($templateId)) {
             $template = $documentLoader->createDocument('Template');
             $template->setSiteId(1);
@@ -39,6 +41,7 @@ class TemplateController extends Controller
                 array('templateId' => $templateId)
             );
             $template->setVersion($template->getVersion() + 1);
+            $ajax = true;
         }
         
         $form = $this->createForm(
@@ -66,7 +69,7 @@ class TemplateController extends Controller
             'PHPOrchestraCMSBundle:Form:template.html.twig',
             array(
                 'form' => $form->createView(),
-                'ajax' => $request->isXmlHttpRequest()
+                'ajax' => $ajax
             )
         );
     }

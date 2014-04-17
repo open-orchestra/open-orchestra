@@ -152,6 +152,8 @@ class NodeController extends Controller
     {
         $documentLoader = $this->container->get('phporchestra_cms.documentloader');
         
+        $ajax = false;
+        
         if (empty($nodeId)) {
             $node = $documentLoader->createDocument('Node');
             $node->setSiteId(1);
@@ -159,6 +161,7 @@ class NodeController extends Controller
         } else {
             $node = $documentLoader->getDocument('Node', array('nodeId' => $nodeId));
             $node->setVersion($node->getVersion() + 1);
+            $ajax = true;
         }
         
         $form = $this->createForm(
@@ -179,10 +182,10 @@ class NodeController extends Controller
         }
         
         return $this->render(
-            'PHPOrchestraCMSBundle:Form:node.html.twig',
+            'PHPOrchestraCMSBundle:Form:template.html.twig',
             array(
                 'form' => $form->createView(),
-                'ajax' => $request->isXmlHttpRequest()
+                'ajax' => $ajax
             )
         );
     }

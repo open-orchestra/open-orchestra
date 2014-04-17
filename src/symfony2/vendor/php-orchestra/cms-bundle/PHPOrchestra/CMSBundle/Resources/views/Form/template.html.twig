@@ -6,27 +6,9 @@
 {% if ajax %}
     {% set name = 'PHPOrchestraCMSBundle:BackOffice:ajax.html.twig' %}
 {% else %}
-    {% set name = 'PHPOrchestraCMSBundle:BackOffice:layoutDualColumn.html.twig' %}
+    {% set name = 'PHPOrchestraCMSBundle:BackOffice:contentDualColumn.html.twig' %}
 {% endif %}
 {% extends name %}
-
-
-{% block title %}{{ parent() }} : Template edition{% endblock %}
-
-{% block stylesheets %}
-    {{ parent() }}
-    <link rel="stylesheet" href="{{ asset('bundles/phporchestracms/css/template.css') }}">
-{% endblock %}
-
-
-{% block javascripts %}
-    {{ parent() }}
-    <script src="{{ asset('bundles/phporchestracms/js/plugin/fancytree/jquery.fancytree.js') }}"></script>
-    <script src="{{ asset('bundles/phporchestracms/js/plugin/fancytree/jquery.fancytree.edit.js') }}"></script>
-    <script src="{{ asset('bundles/phporchestracms/js/plugin/fancytree/jquery.fancytree.glyph.js') }}"></script>
-    <script src="{{ asset('bundles/phporchestracms/js/template.js') }}"></script>
-{% endblock %}
-
 
 {% block rightbox_content %}
     {% if form.vars.showDialog %}
