@@ -21,6 +21,9 @@
 
 {% block javascripts %}
     {{ parent() }}
+    <script src="{{ asset('bundles/phporchestracms/js/plugin/fancytree/jquery.fancytree.js') }}"></script>
+    <script src="{{ asset('bundles/phporchestracms/js/plugin/fancytree/jquery.fancytree.edit.js') }}"></script>
+    <script src="{{ asset('bundles/phporchestracms/js/plugin/fancytree/jquery.fancytree.glyph.js') }}"></script>
     <script src="{{ asset('bundles/phporchestracms/js/template.js') }}"></script>
 {% endblock %}
 
