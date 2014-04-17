@@ -47,9 +47,16 @@
         <div id="main" role="main">
             <div id="ribbon">
             </div>
-            <div id="content" style="opacity: 1;height:450px;">
-            {% block content %}
-            {% endblock %}
+            <div id="content" style="opacity: 1;height:450px;top:-33px;">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-3 col-md-4 col-lg-4">
+                        <h1 class="page-title txt-color-blueDark">
+                            {% block contentTitle %}{% endblock %}
+                        </h1>
+                    </div>
+                <div class="col-xs-12 col-sm-9 col-md-8 col-lg-8"></div>
+            </div>
+            {% block content %}{% endblock %}
             </div>
         </div>
     </body>
