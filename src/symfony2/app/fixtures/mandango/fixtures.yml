@@ -82,12 +82,12 @@ Model\PHPOrchestraCMSBundle\Node:
                 attributes: {"_title":"Mentions légales", "_author":"Nous contacter", "_news":""}
     
     node_home:
-        nodeId: fixture_home
+        nodeId: root
         nodeType: page
         siteId: 1
-        parentId: root
+        parentId: -
         path: -
-        alias: accueil
+        alias: -
         name: Fixture Home
         version: 1
         language: fr
@@ -104,7 +104,7 @@ Model\PHPOrchestraCMSBundle\Node:
         nodeId: fixture_about_us
         nodeType: page
         siteId: 1
-        parentId: fixture_home
+        parentId: root
         path: -
         alias: qui-sommes-nous
         name: Fixture About Us
@@ -161,7 +161,7 @@ Model\PHPOrchestraCMSBundle\Node:
         nodeId: fixture_contact_us
         nodeType: page
         siteId: 1
-        parentId: fixture_home
+        parentId: root
         path: -
         alias: nous-contacter
         name: Fixture Contact Us

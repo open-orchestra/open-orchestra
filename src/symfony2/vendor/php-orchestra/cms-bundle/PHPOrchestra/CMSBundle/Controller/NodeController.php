@@ -150,7 +150,7 @@ class NodeController extends Controller
      */
     public function formAction($nodeId, Request $request)
     {
-        $documentLoder = $this->container->get('phporchestra_cms.documentloader');
+        $documentLoader = $this->container->get('phporchestra_cms.documentloader');
         
         if (empty($nodeId)) {
             $node = $documentLoader->createDocument('Node');

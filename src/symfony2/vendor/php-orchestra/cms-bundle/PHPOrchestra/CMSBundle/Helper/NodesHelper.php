@@ -13,16 +13,20 @@ class NodesHelper
 {
     public static function createTree($nodes)
     {
-        
         $links = array();
+        $superRoot = '';
+        
         foreach ($nodes as $node) {
+            $nodeId = $node->getNodeId();
             $parentId = $node->getParentId();
-            if (empty($parentId)) {
-                $parentId = Node::ROOT_NODE_ID;
+            
+            if (Node::ROOT_NODE_ID == $nodeId) {
+                $superRoot = $parentId;
             }
-            $links[$parentId][] = array('id' => $node->getNodeId(), 'class' => '', 'text' => $node->getName());
+            $links[$parentId][] = array('id' => $nodeId, 'class' => '', 'text' => $node->getName());
         }
-        return NodesHelper::createRecTree($links, $links[Node::ROOT_NODE_ID]);
+        
+        return NodesHelper::createRecTree($links, $links[$superRoot]);
     }
     
     
