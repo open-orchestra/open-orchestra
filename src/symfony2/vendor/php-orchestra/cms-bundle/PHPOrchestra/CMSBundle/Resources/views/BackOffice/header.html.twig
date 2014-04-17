@@ -1,0 +1,168 @@
+<div id="logo-group">
+
+    <!-- PLACE YOUR LOGO HERE -->
+    <span id="logo"> <img src="{{ asset('bundles/phporchestracms/img/logo-orchestra.png') }}" alt="PHP Factory Ochestra"> </span>
+    <!-- END LOGO PLACEHOLDER -->
+
+</div>
+
+            <!-- projects dropdown -->
+            <div id="project-context">
+
+                <span class="label">Site :</span>
+                <span id="project-selector" class="popover-trigger-element dropdown-toggle" data-toggle="dropdown"><b>Démo (Administration)</b> <i class="fa fa-angle-down"></i></span>
+
+                <!-- Suggestion: populate this list with fetch and push technique -->
+<ul class="dropdown-menu">              
+    <li class="dropdown-submenu">
+        <a tabindex="-1" ">-- Site d'administration --</a>
+        <ul class="dropdown-menu">
+                    <li>
+                <a href="javascript:selectProfile('1_1')">Administrateur</a>
+            </li>
+                </ul>
+    </li>
+    <li class="dropdown-submenu">
+        <a tabindex="-1" ">Application Mobile</a>
+        <ul class="dropdown-menu">
+                    <li>
+                <a href="javascript:selectProfile('12_4')">Administration</a>
+            </li>
+                </ul>
+    </li>
+    <li class="dropdown-submenu">
+        <a tabindex="-1" ">Cardif</a>
+        <ul class="dropdown-menu">
+                    <li>
+                <a href="javascript:selectProfile('14_6')">Administration2</a>
+            </li>
+                </ul>
+    </li>
+    <li class="dropdown-submenu">
+        <a tabindex="-1" ">Citroën CPPV2</a>
+        <ul class="dropdown-menu">
+                    <li>
+                <a href="javascript:selectProfile('13_5')">Administration</a>
+            </li>
+                </ul>
+    </li>
+    <li class="dropdown-submenu">
+        <a tabindex="-1" ">PHP Factory</a>
+        <ul class="dropdown-menu">
+                    <li>
+                <a href="javascript:selectProfile('2_2')">Administration</a>
+            </li>
+                    <li>
+                <a href="javascript:selectProfile('4_2')">Gestion des m&eacute;dias</a>
+            </li>
+                    <li>
+                <a href="javascript:selectProfile('11_2')">Invit&eacute;</a>
+            </li>
+                    <li>
+                <a href="javascript:selectProfile('3_2')">R&eacute;dacteur</a>
+            </li>
+                </ul>
+    </li>
+    <li class="dropdown-submenu">
+        <a tabindex="-1" ">Services</a>
+        <ul class="dropdown-menu">
+                    <li>
+                <a href="javascript:selectProfile('7_3')">Administration</a>
+            </li>
+                </ul>
+    </li>
+</ul>
+                <!-- end dropdown-menu-->
+
+            </div>
+            <!-- end projects dropdown -->
+
+            <!-- pulled right: nav area -->
+            <div class="pull-right">
+
+                <!-- collapse menu button -->
+                <div id="hide-menu" class="btn-header pull-right">
+                    <span> <a href="javascript:void(0);" title="Replier le menu"><i class="fa fa-reorder"></i></a> </span>
+                </div>
+                <!-- end collapse menu -->
+
+                <!-- logout button -->
+                <div id="logout" class="btn-header transparent pull-right">
+                    <span> <a href="#" title="Déconnexion" data-logout-msg="You can improve your security further after logging out by closing this opened browser"><i class="fa fa-sign-out"></i></a> </span>
+                </div>
+                <!-- end logout button -->
+
+                <!-- search mobile button (this is hidden till mobile view port) -->
+                <div id="search-mobile" class="btn-header transparent pull-right">
+<!-- 
+                    <span> <a href="javascript:void(0)" title="Search"><i class="fa fa-search"></i></a> </span>
+ -->
+                </div>
+                <!-- end search mobile button -->
+
+                <!-- fullscreen button -->
+                <div id="fullscreen" class="btn-header transparent pull-right">
+                    <span> <a href="javascript:void(0);" onclick="launchFullscreen(document.documentElement);" title="Full Screen"><i class="fa fa-fullscreen"></i></a> </span>
+                </div>
+                <!-- end fullscreen button -->
+
+                <!-- multiple lang dropdown : find all flags in the image folder -->
+                
+                
+                <ul class="header-dropdown-list hidden-xs"> 
+                <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img alt="" src="/library/Pelican/Translate/public/images/flags/fr.png"> <span> Français </span> <i class="fa fa-angle-down"></i> </a>
+                        <ul class="dropdown-menu pull-right">       
+    <li class="dropdown-submenu">
+        <li>
+            <a href="javascript:selectLanguage(1);"><img alt="" src="/library/Pelican/Translate/public/images/flags/fr.png"> Français</a>
+        </li>
+    </li>
+    <li class="dropdown-submenu">
+        <li>
+            <a href="javascript:selectLanguage(2);"><img alt="" src="/library/Pelican/Translate/public/images/flags/en.png"> English</a>
+        </li>
+    </li>
+    <li class="dropdown-submenu">
+        <li>
+            <a href="javascript:selectLanguage(3);"><img alt="" src="/library/Pelican/Translate/public/images/flags/it.png"> Italiano</a>
+        </li>
+    </li>
+    <li class="dropdown-submenu">
+        <li>
+            <a href="javascript:selectLanguage(4);"><img alt="" src="/library/Pelican/Translate/public/images/flags/es.png"> Español; castellano</a>
+        </li>
+    </li>
+    <li class="dropdown-submenu">
+        <li>
+            <a href="javascript:selectLanguage(5);"><img alt="" src="/library/Pelican/Translate/public/images/flags/ar.png"> ‫العربية</a>
+        </li>
+    </li>
+    <li class="dropdown-submenu">
+        <li>
+            <a href="javascript:selectLanguage(10);"><img alt="" src="/library/Pelican/Translate/public/images/flags/de.png"> Deutsch</a>
+        </li>
+    </li>
+    <li class="dropdown-submenu">
+        <li>
+            <a href="javascript:selectLanguage(11);"><img alt="" src="/library/Pelican/Translate/public/images/flags/gr.png"> Ελληνικά</a>
+        </li>
+    </li>
+    <li class="dropdown-submenu">
+        <li>
+            <a href="javascript:selectLanguage(14);"><img alt="" src="/library/Pelican/Translate/public/images/flags/il.png"> ‫עברית</a>
+        </li>
+    </li>
+    <li class="dropdown-submenu">
+        <li>
+            <a href="javascript:selectLanguage(32);"><img alt="" src="/library/Pelican/Translate/public/images/flags/ru.png"> русский язык</a>
+        </li>
+    </li>
+</ul>
+                    </li>
+                </ul>
+                <!-- end multiple lang -->
+
+            </div>
+            <!-- end pulled right: nav area -->
+

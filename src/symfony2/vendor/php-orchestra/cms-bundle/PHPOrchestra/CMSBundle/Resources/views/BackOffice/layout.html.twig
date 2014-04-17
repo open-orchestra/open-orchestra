@@ -22,7 +22,6 @@
             <link rel="shortcut icon" href="http://phpfactory-bo.interakting.com/img/favicon/favicon.ico" type="image/x-icon" />
             <link rel="icon" href="http://phpfactory-bo.interakting.com/img/favicon/favicon.ico" type="image/x-icon" />
 
-
     <link rel="stylesheet" href="{{ asset('bundles/phporchestracms/css/template.css') }}">
 
         {% endblock %}
@@ -31,31 +30,19 @@
             <script src="{{ asset('bundles/phporchestracms/js/libs/jquery-ui-1.10.3.min.js') }}"></script>
             <script src="{{ asset('bundles/phporchestracms/js/app.js') }}"></script>
 
-
     <script src="{{ asset('bundles/phporchestracms/js/plugin/fancytree/jquery.fancytree.js') }}"></script>
     <script src="{{ asset('bundles/phporchestracms/js/plugin/fancytree/jquery.fancytree.edit.js') }}"></script>
     <script src="{{ asset('bundles/phporchestracms/js/plugin/fancytree/jquery.fancytree.glyph.js') }}"></script>
     <script src="{{ asset('bundles/phporchestracms/js/template.js') }}"></script>
 
-
         {% endblock %}
     </head>
     <body class="fixed-header fixed-ribbon fixed-navigation">
-        <header>Header</header>
+        <header>
+            {% include 'PHPOrchestraCMSBundle:BackOffice:header.html.twig' %}
+        </header>
         <aside id="left-panel">
-            <nav>
-                <ul style="">
-                    <li>
-                        <a href="/app_dev.php/bo/node/form">
-                            <i class="fa fa-lg fa-fw fa-edit"></i>
-                            <span class="menu-item-parent">Editorial</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <span class="minifyme">
-                <i class="fa fa-arrow-circle-left hit"></i>
-            </span>
+            {% include 'PHPOrchestraCMSBundle:BackOffice:leftMenu.html.twig' %}
         </aside>
         <div id="main" role="main">
             <div id="ribbon">

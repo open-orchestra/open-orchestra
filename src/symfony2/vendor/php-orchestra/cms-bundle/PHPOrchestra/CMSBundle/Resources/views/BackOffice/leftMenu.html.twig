@@ -1,0 +1,36 @@
+<!-- User info -->
+<div class="login-info">
+    <span> <!-- User image size is adjusted inside CSS, it should stay as it --> 
+        <img src="{{ asset('bundles/phporchestracms/img/avatars/male.png') }}" alt="me" class="online" /> 
+        <a href="javascript:void(0);" id="show-shortcut">
+            Admin <i class="fa fa-angle-down"></i>
+        </a> 
+    </span>
+</div>
+<!-- end user info -->
+
+<nav>
+    <ul style="">
+        <li>
+            <a href="{{ path('php_orchestra_cms_nodeform') }}">
+                <i class="fa fa-lg fa-fw fa-edit"></i>
+                <span class="menu-item-parent">Editorial</span>
+            </a>
+        </li>
+        <li>
+            <a href="#"">
+                <i class="fa fa-lg fa-fw fa-desktop"></i>
+                <span class="menu-item-parent">Médiathèque</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa fa-lg fa-fw fa-dashboard"></i>
+                <span class="menu-item-parent">Tableaux de bord</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+<span class="minifyme">
+    <i class="fa fa-arrow-circle-left hit"></i>
+</span>
