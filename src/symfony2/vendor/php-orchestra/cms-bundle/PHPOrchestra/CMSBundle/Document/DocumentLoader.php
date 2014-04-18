@@ -45,7 +45,7 @@ class DocumentLoader
     * @param array $criteria
     * @param unknown $documentsService
     */
-    public function getDocument($documentType, array $criteria)
+    public function getDocument($documentType, array $criteria = array())
     {
         $repository = $this->documentsService->getRepository($this->getDocumentNamespace($documentType));
         $query = $repository->createQuery();
@@ -54,20 +54,55 @@ class DocumentLoader
         return $query->one();
     }
     
-    /** 
-    * Get MongoDB documents giving their type and search citerias
-    * 
-    * @param string $documentType
-    * @param array $criteria
-    * @param unknown $documentsService
-    */
-    public function getDocuments($documentType, array $criteria)
+    
+    /**
+     * Return an array containing informations about the last versions of all nodes
+     */
+    public function getNodesInLastVersion()
     {
-        $repository = $this->documentsService->getRepository($this->getDocumentNamespace($documentType));
-        $query = $repository->createQuery();
-        $query->criteria($criteria);
-        return $query->all();
+        $repository = $this->documentsService->getRepository($this->getDocumentNamespace('Node'));
+        
+        $versions = $repository->getCollection()->aggregate(
+                         array(
+                            '$sort' => array('version' => -1),
+                         ),
+                         array(
+                            '$group' => array(
+                                '_id' => '$nodeId',
+                                'version' => array('$first' => '$version'),
+                                'parentId' => array('$first' => '$parentId'),
+                                'name' => array('$first' => '$name')
+                            )
+                        )
+        );
+        
+        return $versions['result'];
     }
+    
+    
+    /**
+     * Return an array containing informations about the last versions of all templates
+     */
+    public function getTemplatesInLastVersion()
+    {
+        $repository = $this->documentsService->getRepository($this->getDocumentNamespace('Template'));
+        
+        $versions = $repository->getCollection()->aggregate(
+                         array(
+                            '$sort' => array('version' => -1),
+                         ),
+                         array(
+                            '$group' => array(
+                                '_id' => '$templateId',
+                                'version' => array('$first' => '$version'),
+                                'name' => array('$first' => '$name')
+                            )
+                        )
+        );
+        
+        return $versions['result'];
+    }
+    
     
     /**
      * Get documentType model namespace

@@ -23,10 +23,10 @@ class TemplateChoiceType extends AbstractType
      */
     public function __construct($documentLoader)
     {
-        $templates = $documentLoader->getDocuments('Template', array());
+        $templates = $documentLoader->getTemplatesInLastVersion();
         $this->choices[''] = '--------';
         foreach ($templates as $template) {
-            $this->choices[$template->getTemplateId()] = $template->getName();
+            $this->choices[$template['_id']] = $template['name'];
         }
     }
     

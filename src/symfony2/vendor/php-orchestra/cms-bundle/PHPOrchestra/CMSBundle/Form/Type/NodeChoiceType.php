@@ -24,10 +24,10 @@ class NodeChoiceType extends AbstractType
      */
     public function __construct($documentLoader)
     {
-        $nodes = $documentLoader->getDocuments('Node', array());
+        $nodes = $documentLoader->getNodesInLastVersion();
         $this->choices[''] = '--------';
         foreach ($nodes as $node) {
-            $this->choices[$node->getNodeId()] = $node->getName();
+            $this->choices[$node['_id']] = $node['name'];
         }
     }
     

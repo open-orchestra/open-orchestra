@@ -15,15 +15,14 @@ class NodesHelper
     {
         $links = array();
         $superRoot = '';
-        
         foreach ($nodes as $node) {
-            $nodeId = $node->getNodeId();
-            $parentId = $node->getParentId();
+            $nodeId = $node['_id'];
+            $parentId = $node['parentId'];
             
             if (Node::ROOT_NODE_ID == $nodeId) {
                 $superRoot = $parentId;
             }
-            $links[$parentId][] = array('id' => $nodeId, 'class' => '', 'text' => $node->getName());
+            $links[$parentId][] = array('id' => $nodeId, 'class' => '', 'text' => $node['name']);
         }
         
         return NodesHelper::createRecTree($links, $links[$superRoot]);

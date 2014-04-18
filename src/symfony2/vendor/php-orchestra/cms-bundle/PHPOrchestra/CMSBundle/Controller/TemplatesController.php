@@ -50,10 +50,10 @@ class TemplatesController extends Controller
      */
     public function showTreeTemplatesAction(Request $request)
     {
-        $templates = $this->get('phporchestra_cms.documentloader')->getDocuments('Template', array());
+        $templates = $this->get('phporchestra_cms.documentloader')->getTemplatesInLastVersion();
         $links = array();
         foreach ($templates as $template) {
-            $links[] = array('id' => $template->getTemplateId(), 'class' =>'', 'text' => $template->getName());
+            $links[] = array('id' => $template['_id'], 'class' =>'', 'text' => $template['name']);
         }
         return $this->render(
             'PHPOrchestraCMSBundle:Tree:tree.html.twig',
