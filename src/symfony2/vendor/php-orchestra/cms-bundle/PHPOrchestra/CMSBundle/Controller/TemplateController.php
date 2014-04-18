@@ -57,12 +57,7 @@ class TemplateController extends Controller
             $template->setIsNew(true);
             
             $template->save();
-            return $this->redirect(
-                $this->generateUrl(
-                    'php_orchestra_cms_templateform',
-                    array('templateId' => $template->getTemplateId(), 'ajax' => $request->isXmlHttpRequest())
-                )
-            );
+            return $this->redirect($this->generateUrl('php_orchestra_cms_bo'));
         }
         
         return $this->render(

@@ -178,7 +178,7 @@ class NodeController extends Controller
             $node->setIsNew(true);
             
             $node->save();
-            return $this->redirect($this->generateUrl('php_orchestra_cms_node', array('nodeId' => $node->getNodeId())));
+            return $this->redirect($this->generateUrl('php_orchestra_cms_bo'));
         }
         
         return $this->render(
