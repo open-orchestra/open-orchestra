@@ -87,10 +87,19 @@ class BlockChoiceTypeTest extends \PHPUnit_Framework_TestCase
         $resolverMock
             ->expects($this->once())
             ->method('setDefaults')
-            ->with($this->equalTo(array(
-                // TODO Improve choices, first entry should also have a numeric index
-                'choices' => array('' => '--------', 1 => 'key2', 2 => 'key1')
-            )));
+            ->with(
+                $this->equalTo(
+                    array(
+                        // TODO Improve choices, first entry should also have a
+                        // numeric index
+                        'choices' => array(
+                            '' => '--------',
+                            1 => 'key2',
+                            2 => 'key1'
+                        )
+                    )
+                )
+            );
         
         $this->blockChoiceType->setDefaultOptions($resolverMock);
     }

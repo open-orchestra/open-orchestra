@@ -56,8 +56,7 @@ class NodeChoiceTypeTest extends \PHPUnit_Framework_TestCase
     public function testSetDefaultOptions()
     {
         $choices = array('' => '--------');
-        foreach($this->nodes as $node)
-        {
+        foreach ($this->nodes as $node) {
             $choices[$node['_id']] = $node['name'];
         }
         
@@ -67,9 +66,7 @@ class NodeChoiceTypeTest extends \PHPUnit_Framework_TestCase
         $resolverMock
             ->expects($this->once())
             ->method('setDefaults')
-            ->with($this->equalTo(array(
-                'choices' => $choices
-            )));
+            ->with($this->equalTo(array('choices' => $choices)));
         
         $this->nodeChoiceType->setDefaultOptions($resolverMock);
     }

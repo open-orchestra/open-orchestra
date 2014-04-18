@@ -52,12 +52,16 @@ class AreasTypeTest extends \PHPUnit_Framework_TestCase
         $resolverMock
             ->expects($this->once())
             ->method('setDefaults')
-            ->with($this->equalTo(array(
-                'dialogPath' => '',
-                'js' => array(),
-                'objects' => array(),
-                'attr' => array('class' => 'not-mapped')
-            )));
+            ->with(
+                $this->equalTo(
+                    array(
+                        'dialogPath' => '',
+                        'js' => array(),
+                        'objects' => array(),
+                        'attr' => array('class' => 'not-mapped')
+                    )
+                )
+            );
         
         $this->areasType->setDefaultOptions($resolverMock);
     }

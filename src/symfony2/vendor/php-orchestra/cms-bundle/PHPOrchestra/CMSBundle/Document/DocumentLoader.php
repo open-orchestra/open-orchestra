@@ -63,19 +63,19 @@ class DocumentLoader
         $repository = $this->documentsService->getRepository($this->getDocumentNamespace('Node'));
         
         $versions = $repository->getCollection()->aggregate(
-                         array(
-                            '$sort' => array('version' => -1),
-                         ),
-                         array(
-                            '$group' => array(
-                                '_id' => '$nodeId',
-                                'version' => array('$first' => '$version'),
-                                'parentId' => array('$first' => '$parentId'),
-                                'name' => array('$first' => '$name')
-                            )
-                        )
+            array(
+                '$sort' => array('version' => -1),
+            ),
+            array(
+                '$group' => array(
+                    '_id' => '$nodeId',
+                    'version' => array('$first' => '$version'),
+                    'parentId' => array('$first' => '$parentId'),
+                    'name' => array('$first' => '$name')
+                )
+            )
         );
-        
+
         return $versions['result'];
     }
     
@@ -88,18 +88,18 @@ class DocumentLoader
         $repository = $this->documentsService->getRepository($this->getDocumentNamespace('Template'));
         
         $versions = $repository->getCollection()->aggregate(
-                         array(
-                            '$sort' => array('version' => -1),
-                         ),
-                         array(
-                            '$group' => array(
-                                '_id' => '$templateId',
-                                'version' => array('$first' => '$version'),
-                                'name' => array('$first' => '$name')
-                            )
-                        )
+            array(
+                '$sort' => array('version' => -1),
+            ),
+            array(
+                '$group' => array(
+                    '_id' => '$templateId',
+                    'version' => array('$first' => '$version'),
+                    'name' => array('$first' => '$name')
+                )
+            )
         );
-        
+
         return $versions['result'];
     }
     

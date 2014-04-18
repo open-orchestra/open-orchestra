@@ -51,9 +51,7 @@ class ThemeChoiceTypeTest extends \PHPUnit_Framework_TestCase
         $resolverMock
             ->expects($this->once())
             ->method('setDefaults')
-            ->with($this->equalTo(array(
-                'choices' => $choices
-            )));
+            ->with($this->equalTo(array('choices' => $choices)));
         
         $this->themeChoiceType->setDefaultOptions($resolverMock);
     }

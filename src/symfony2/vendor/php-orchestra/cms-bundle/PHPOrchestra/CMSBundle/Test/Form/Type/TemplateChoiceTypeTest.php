@@ -56,8 +56,7 @@ class TemplateChoiceTypeTest extends \PHPUnit_Framework_TestCase
     public function testSetDefaultOptions()
     {
         $choices = array('' => '--------');
-        foreach($this->templates as $template)
-        {
+        foreach ($this->templates as $template) {
             $choices[$template['_id']] = $template['name'];
         }
         
@@ -67,9 +66,7 @@ class TemplateChoiceTypeTest extends \PHPUnit_Framework_TestCase
         $resolverMock
             ->expects($this->once())
             ->method('setDefaults')
-            ->with($this->equalTo(array(
-                'choices' => $choices
-            )));
+            ->with($this->equalTo(array('choices' => $choices)));
         
         $this->templateChoiceType->setDefaultOptions($resolverMock);
     }
