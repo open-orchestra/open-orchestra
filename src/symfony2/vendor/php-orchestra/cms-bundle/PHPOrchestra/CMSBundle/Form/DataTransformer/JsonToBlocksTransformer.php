@@ -31,7 +31,7 @@ class JsonToBlocksTransformer implements DataTransformerInterface
     /**
      * Transforms an EmbeddedGroup to a json string.
      *
-     * @param  EmbeddedGroup|null $blocks
+     * @param  \Mandango\Group\EmbeddedGroup|null $blocks
      * @return string
      */
     public function transform($blocks)

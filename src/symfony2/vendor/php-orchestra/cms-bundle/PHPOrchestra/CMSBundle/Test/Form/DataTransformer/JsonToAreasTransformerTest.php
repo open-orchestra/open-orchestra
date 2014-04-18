@@ -2,7 +2,7 @@
 
 namespace PHPOrchestra\CMSBundle\Test\Form\DataTransformer;
 
-use \PHPOrchestra\CMSBundle\Form\DataTransformer;
+use \PHPOrchestra\CMSBundle\Form\DataTransformer\JsonToAreasTransformer;
 
 /**
  * Description of JsonToAreasTransformerTest
@@ -25,7 +25,7 @@ class JsonToAreasTransformerTest extends \PHPUnit_Framework_TestCase
     {
         parent::setUp();
         
-        $this->transformer = new DataTransformer\JsonToAreasTransformer;
+        $this->transformer = new JsonToAreasTransformer;
     }
     
     /**
@@ -87,4 +87,3 @@ class JsonToAreasTransformerTest extends \PHPUnit_Framework_TestCase
         );
     }
 }
-
