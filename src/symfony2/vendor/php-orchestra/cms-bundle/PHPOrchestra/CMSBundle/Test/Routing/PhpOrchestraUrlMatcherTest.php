@@ -42,9 +42,9 @@ class PhpOrchestraUrlMatcherTest extends \PHPUnit_Framework_TestCase
         /**
          * Database mock system, using a fake result set
          * 
-         * @var \PHPOrchestra\CMSBundle\Test\Mock\MandangoMock
+         * @var \PHPOrchestra\CMSBundle\Test\Mock\Mandango
          */
-        $documentService = $this->getMockBuilder('PHPOrchestra\\CMSBundle\\Test\\Mock\\MandangoMock')
+        $documentService = $this->getMockBuilder('PHPOrchestra\\CMSBundle\\Test\\Mock\\Mandango')
                 ->enableProxyingToOriginalMethods()
                 ->getMock();
         

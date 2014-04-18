@@ -6,11 +6,11 @@ use Mandango\MetadataFactory;
 use Mandango\Cache\CacheInterface;
 
 /**
- * Description of MandangoMock
+ * Description of Mandango
  *
  * @author Nicolas BOUQUET <nicolas.bouquet@businessdecision.com>
  */
-class MandangoMock extends \Mandango\Mandango
+class Mandango extends \Mandango\Mandango
 {
     /**
      * Fake Data Set
