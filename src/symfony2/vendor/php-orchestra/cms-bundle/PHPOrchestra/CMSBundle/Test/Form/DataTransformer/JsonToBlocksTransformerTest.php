@@ -65,7 +65,9 @@ class JsonToBlocksTransformerTest extends \PHPUnit_Framework_TestCase
          * @var \Mandango\Group\EmbeddedGroup
          */
         $blockGroup = $this->getMockBuilder('\\Mandango\\Group\\EmbeddedGroup')
-            ->setConstructorArgs(array('\\PHPOrchestra\\CMSBundle\\Test\\Mock\\MandangoDocument'))
+            ->setConstructorArgs(
+                array('\\PHPOrchestra\\CMSBundle\\Test\\Mock\\MandangoDocument')
+            )
             ->getMock();
         
         $embeddedBlocks = array();
@@ -83,7 +85,10 @@ class JsonToBlocksTransformerTest extends \PHPUnit_Framework_TestCase
         
         $transformedJson = $this->transformer->transform($blockGroup);
         
-        $this->assertEquals($expectedJson, $transformedJson);
+        $this->assertJsonStringEqualsJsonString(
+            $expectedJson,
+            $transformedJson
+        );
         
     }
     
