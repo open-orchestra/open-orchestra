@@ -12,7 +12,15 @@
 /src/symfony2/vendor/composer/*
 /src/symfony2/composer.lock
 
-#==[Eclipse]==========================#
+#==[IDE]==============================#
 .buildpath
 .settings/
 .project
+.nbproject/
+
+#==[CI generated artifacts]===========#
+/build/api
+/build/code-browser
+/build/coverage
+/build/logs
+/build/pdepend
