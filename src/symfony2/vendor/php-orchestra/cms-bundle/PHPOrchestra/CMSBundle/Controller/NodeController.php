@@ -226,4 +226,35 @@ class NodeController extends Controller
             return new Response($render->getContent());
         }
     }
+    
+    public function unpublishAction(Request $request)
+    {
+        return $this->render(
+            'PHPOrchestraCMSBundle:BackOffice:simpleMessage.html.twig',
+            array(
+                'message' => 'Unpublish node process'
+            )
+        );
+    }
+    
+    public function deleteAction(Request $request)
+    {
+        return $this->render(
+            'PHPOrchestraCMSBundle:BackOffice:simpleMessage.html.twig',
+            array(
+                'message' => 'Delete node process'
+            )
+        );
+    }
+    
+    public function moveAction(Request $request)
+    {
+        return $this->render(
+            'PHPOrchestraCMSBundle:BackOffice:simpleMessage.html.twig',
+            array(
+                'message' => 'Move nodes tree process'
+            )
+        );
+    }
+    
 }

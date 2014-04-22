@@ -2,6 +2,10 @@ php_orchestra_cms_bo:
     pattern: /bo
     defaults: { _controller: PHPOrchestraCMSBundle:BackOffice:home }
 
+php_orchestra_cms_bo_jscontextmenudispatcher:
+    pattern: /bo/js-menu-dispatcher/{cmd}
+    defaults: { _controller: PHPOrchestraCMSBundle:BackOffice:jsContextMenuDispatch, cmd: '' }
+
 php_orchestra_cms_templateform:
     pattern: /bo/template/form/{templateId}
     defaults: { _controller: PHPOrchestraCMSBundle:Template:form, templateId: 0 }

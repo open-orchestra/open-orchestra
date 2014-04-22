@@ -15,4 +15,30 @@ class BackOfficeController extends Controller
     {
         return $this->render('PHPOrchestraCMSBundle:BackOffice:home.html.twig');
     }
+    
+    public function jsContextMenuDispatchAction($cmd)
+    {
+        $action = '';
+        $params = array();
+        
+        switch ($cmd)
+        {
+            case 'createNode': // Create a subpage
+                $action = 'PHPOrchestraCMSBundle:Node:form';
+                break;
+            case 'unpublishNode': // Unpublish a page
+                $action = 'PHPOrchestraCMSBundle:Node:unpublish';
+                break;
+            case 'deleteNode': // Delete a page
+                $action = 'PHPOrchestraCMSBundle:Node:delete';
+                break;
+            case 'moveNode': // Move a pages tree
+                $action = 'PHPOrchestraCMSBundle:Node:move';
+                break;
+            default: // Unrecognized cmd
+                // exception
+        }
+        
+        return $this->forward($action, $params);
+    }
 }

@@ -1,27 +1,69 @@
 {% import "PHPOrchestraCMSBundle:Tree:tree-macros.html.twig" as macros %}
 
+<style type="text/css">
+  .ui-menu {
+    width: 100px;
+    font-size: 63%;
+  }
+</style>
+
 <div id="tree-{{ name }}">
     <h4>{{ name }}</h4>
     {{ macros.menu_links(links, name) }}
 </div>
 
-<script>
-    $(function(){
+<script><!--
+    $(function() {
+        
         $( "#tree-{{ name }}" ).fancytree($.extend(
             tree_parameter,
-            {'click' : function(event, data){
-                var url = '{{ path(path) }}/' + data.node.key.replace('tree-{{ name }}-', '');
-                $.ajax({
-                    'type': 'POST',
-                    'url': url,
-                    'success': function(response){
-                        $('[id^="dialog-"]').dialog("destroy");
-                        $('#{{ refresh }}').html(response['{{ refresh|replace({'-': '_'}) }}']);
-                    },
-                    'dataType': 'json'
-                });
+            {
+                'click': function(event, data) {
+                    var url = '{{ path(path) }}/' + data.node.key.replace('tree-{{ name }}-', '');
+                    $.ajax({
+                        'type': 'POST',
+                        'url': url,
+                        'success': function(response) {
+                            $('[id^="dialog-"]').dialog("destroy");
+                            $('#{{ refresh }}').html(response['{{ refresh|replace({'-': '_'}) }}']);
+                        },
+                        'dataType': 'json'
+                    });
                 }
             }
         ));
+        
+        $("#tree-{{ name }}").contextmenu({
+            'delegate': 'span.fancytree-title',
+//            menu: "#options",
+            'menu': [
+                {'title': 'Créer une sous-page', cmd: 'createNode'},
+                {'title': 'Dépublier', cmd: 'unpublishNode'},
+                {'title': 'Supprimer', cmd: 'deleteNode'},
+                {'title': '----'},
+                {'title': 'Déplacer l\'arbre', cmd: 'moveNode'}
+            ],
+            'beforeOpen': function(event, ui) {
+                var node = $.ui.fancytree.getNode(ui.target);
+//                node.setFocus();
+                node.setActive();
+            },
+            'select': function(event, ui) {
+                //var node = $.ui.fancytree.getNode(ui.target);
+                //alert('select ' + ui.cmd + ' on ' + node);
+                
+                // Call the menu dispatcher
+                var url = '{{ path('php_orchestra_cms_bo_jscontextmenudispatcher') }}/' + ui.cmd;
+                $.ajax({
+                    'type': 'POST',
+                    'url': url,
+                    'success': function(response) {
+                        $('#content').html(response);
+                    },
+                    'dataType': 'html'
+                });
+            }
+        });
     });
-</script>
+    
+--></script>
