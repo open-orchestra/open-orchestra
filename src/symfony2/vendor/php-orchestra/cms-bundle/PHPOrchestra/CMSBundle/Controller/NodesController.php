@@ -54,7 +54,7 @@ class NodesController extends Controller
         return $this->render(
             'PHPOrchestraCMSBundle:Tree:tree.html.twig',
             array(
-                'name' => 'node',
+                'name' => 'Pages',
                 'path' => 'php_orchestra_cms_nodeform',
                 'refresh' => 'rightbox-content',
                 'links' => NodesHelper::createTree($nodes)

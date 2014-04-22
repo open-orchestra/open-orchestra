@@ -1184,13 +1184,13 @@ function checkURL() {
 		//update hash
 		window.location.hash = $this.attr('href');
 	}
-	if (! $('nav li:has(a[href="' + url + '"])').length) {
+	/*if (! $('nav li:has(a[href="' + url + '"])').length) {
 		if ($.cookie('menu_href')) {
 			$('nav li:has(a[href="' + $.cookie('menu_href') + '"])').addClass("active");
 		}
 	} else {
 		$.cookie('menu_href', url);
-	}
+	}*/
 }
 
 // LOAD AJAX PAGES

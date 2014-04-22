@@ -58,7 +58,7 @@ class TemplatesController extends Controller
         return $this->render(
             'PHPOrchestraCMSBundle:Tree:tree.html.twig',
             array(
-                'name' => 'template',
+                'name' => 'Templates',
                 'path' => 'php_orchestra_cms_templateform',
                 'refresh' => 'rightbox-content',
                 'links' => $links
