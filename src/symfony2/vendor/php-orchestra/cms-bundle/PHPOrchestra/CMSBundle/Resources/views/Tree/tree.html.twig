@@ -20,6 +20,7 @@
             {
                 'click': function(event, data) {
                     var url = '{{ path(path) }}/' + data.node.key.replace('tree-{{ name }}-', '');
+                    $('#{{ refresh }}').html('<h1><i class="fa fa-cog fa-spin"></i> Loading...</h1>');
                     $.ajax({
                         'type': 'POST',
                         'url': url,
@@ -54,6 +55,7 @@
                 
                 // Call the menu dispatcher
                 var url = '{{ path('php_orchestra_cms_bo_jscontextmenudispatcher') }}/' + ui.cmd;
+                $('#{{ refresh }}').html('<h1><i class="fa fa-cog fa-spin"></i> Loading...</h1>');
                 $.ajax({
                     'type': 'POST',
                     'url': url,
