@@ -28,7 +28,7 @@ class RedisCacheManagerTest extends \PHPUnit_Framework_TestCase
 {
     public function setUp()
     {
-        $this->keystoreMock = $this->getMockBuilder('\\Redis')
+        $this->keystoreMock = $this->getMockBuilder('\\PHPOrchestra\\CMSBundle\\Test\\Mock\\Redis')
             ->disableOriginalConstructor()
             ->getMock();
         
