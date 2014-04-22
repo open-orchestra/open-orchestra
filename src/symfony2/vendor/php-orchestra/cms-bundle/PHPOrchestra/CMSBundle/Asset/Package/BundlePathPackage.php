@@ -25,7 +25,7 @@ class BundlePathPackage extends PathPackage
      *
      * @var string
      */
-    private $bundleDir;
+    protected $bundleDir;
 
     /**
      * (non-PHPdoc)
@@ -48,5 +48,15 @@ class BundlePathPackage extends PathPackage
     public function setBundlePath($bundleName)
     {
         $this->bundleDir = 'bundles/' . strtolower(str_replace('Bundle', '', $bundleName));
+    }
+    
+    /**
+     * Get bundle asset path (relative to web)
+     * 
+     * @return string
+     */
+    public function getBundleDir()
+    {
+        return $this->bundleDir;
     }
 }
