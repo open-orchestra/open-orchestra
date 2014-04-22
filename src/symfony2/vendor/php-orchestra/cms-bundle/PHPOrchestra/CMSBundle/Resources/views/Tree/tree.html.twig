@@ -50,15 +50,15 @@
                 node.setActive();
             },
             'select': function(event, ui) {
-                //var node = $.ui.fancytree.getNode(ui.target);
-                //alert('select ' + ui.cmd + ' on ' + node);
-                
-                // Call the menu dispatcher
+                var node = $.ui.fancytree.getNode(ui.target).key.replace('tree-{{ name }}-', '');
                 var url = '{{ path('php_orchestra_cms_bo_jscontextmenudispatcher') }}/' + ui.cmd;
+                
                 $('#{{ refresh }}').html('<h1><i class="fa fa-cog fa-spin"></i> Loading...</h1>');
+                
                 $.ajax({
                     'type': 'POST',
                     'url': url,
+                    'data': {'nodeId': node},
                     'success': function(response) {
                         $('#content').html(response);
                     },

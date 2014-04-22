@@ -7,6 +7,8 @@
 
 namespace PHPOrchestra\CMSBundle\Controller;
 
+use PHPOrchestra\CMSBundle\Exception\UnrecognizedCommandTypeException;
+
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class BackOfficeController extends Controller
@@ -36,7 +38,7 @@ class BackOfficeController extends Controller
                 $action = 'PHPOrchestraCMSBundle:Node:move';
                 break;
             default: // Unrecognized cmd
-                // exception
+                throw new UnrecognizedCommandTypeException('Unrecognized command type : ' . $cmd);
         }
         
         return $this->forward($action, $params);

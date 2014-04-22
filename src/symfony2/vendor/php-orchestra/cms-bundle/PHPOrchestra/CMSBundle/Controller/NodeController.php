@@ -242,7 +242,7 @@ class NodeController extends Controller
         return $this->render(
             'PHPOrchestraCMSBundle:BackOffice:simpleMessage.html.twig',
             array(
-                'message' => 'Delete node process'
+                'message' => 'Delete node process on ' . $request->get('nodeId')
             )
         );
     }
