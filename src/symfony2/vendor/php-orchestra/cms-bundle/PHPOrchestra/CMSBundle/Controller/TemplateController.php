@@ -89,4 +89,20 @@ class TemplateController extends Controller
             );
         }
     }
+    
+    /**
+     * Delete all version of a template
+     * 
+     * @param Request $request
+     */
+    public function deleteAction(Request $request)
+    {
+        return $this->render(
+            'PHPOrchestraCMSBundle:BackOffice:simpleMessage.html.twig',
+            array(
+                'message' => 'Delete template process on ' . $request->get('nodeId')
+            )
+        );
+    }
+    
 }

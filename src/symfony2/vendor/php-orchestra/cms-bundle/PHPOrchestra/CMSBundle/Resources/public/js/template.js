@@ -423,7 +423,7 @@ var tree_parameter = {
 
 var treeNodesMenuOptions = [
                             {'title': 'Créer une sous-page', 'cmd': 'createNode'},
-                            {'title': 'Dépublier', 'cmd': 'unpublishNode'},
+                           /* {'title': 'Dépublier', 'cmd': 'unpublishNode'},*/
                             {'title': 'Supprimer', 'cmd': 'deleteNode'},
                             {'title': '----'},
                             {'title': 'Déplacer l\'arbre', 'cmd': 'moveNode'}

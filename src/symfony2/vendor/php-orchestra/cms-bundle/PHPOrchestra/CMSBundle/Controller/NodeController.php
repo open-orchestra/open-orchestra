@@ -233,6 +233,11 @@ class NodeController extends Controller
         }
     }
     
+    /**
+     * Unpublish last version of a content
+     * 
+     * @param $request
+     */
     public function unpublishAction(Request $request)
     {
         return $this->render(
@@ -243,6 +248,12 @@ class NodeController extends Controller
         );
     }
     
+    /**
+     * Delete all version of a content
+     * Not possible if it has a subtree
+     * 
+     * @param $request
+     */
     public function deleteAction(Request $request)
     {
         return $this->render(
@@ -253,6 +264,11 @@ class NodeController extends Controller
         );
     }
     
+    /**
+     * Move a subtree from a node to another
+     *
+     * @param $request
+     */
     public function moveAction(Request $request)
     {
         return $this->render(

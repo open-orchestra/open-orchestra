@@ -41,7 +41,7 @@ class BackOfficeController extends Controller
                 $action = 'PHPOrchestraCMSBundle:Node:move';
                 break;
             
-            case 'CreateTemplate': // Create a template
+            case 'createTemplate': // Create a template
                 $action = 'PHPOrchestraCMSBundle:Template:form';
                 break;
             case 'deleteTemplate': // Delete a template
