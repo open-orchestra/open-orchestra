@@ -14,42 +14,42 @@ class Area
      * 
      * @var string
      */
-    private $htmlId = null;
+    protected $htmlId = null;
     
     /**
      * bo direction (horizontal, vertical)
      * 
      * @var string
      */
-    private $boDirection = null;
+    protected $boDirection = null;
     
     /**
      * percent
      * 
      * @var float
      */
-    private $boPercent = null;
+    protected $boPercent = null;
     
     /**
      * html classes
      * 
      * @var string[]
      */
-    private $classes = array();
+    protected $classes = array();
     
     /**
      * sub areas
      * 
      * @var Area[]
      */
-    private $subAreas = array();
+    protected $subAreas = array();
     
     /**
      * References array to blocks defined in external nodes
      * 
      * @var array
      */
-    private $blockReferences = array();
+    protected $blockReferences = array();
     
     
     /**
@@ -154,6 +154,18 @@ class Area
     public function addClass($class)
     {
         $this->classes[] = $class;
+        return $this;
+    }
+    
+    /**
+     * Set classes
+     * 
+     * @param array $classes
+     * @return \PHPOrchestra\CMSBundle\Model\Area
+     */
+    public function setClasses($classes)
+    {
+        $this->classes = $classes;
         return $this;
     }
     
