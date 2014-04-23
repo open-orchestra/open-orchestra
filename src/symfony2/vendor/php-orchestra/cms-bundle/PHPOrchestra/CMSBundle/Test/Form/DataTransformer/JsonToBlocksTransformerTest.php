@@ -61,27 +61,31 @@ class JsonToBlocksTransformerTest extends \PHPUnit_Framework_TestCase
      */
     public function testTransform($blocks, $expectedJson)
     {
-        /**
-         * @var \Mandango\Group\EmbeddedGroup
-         */
-        $blockGroup = $this->getMockBuilder('\\Mandango\\Group\\EmbeddedGroup')
-            ->setConstructorArgs(
-                array('\\PHPOrchestra\\CMSBundle\\Test\\Mock\\MandangoDocument')
-            )
-            ->getMock();
+        if (isset($blocks)) {
+            /**
+             * @var \Mandango\Group\EmbeddedGroup
+             */
+            $blockGroup = $this->getMockBuilder('\\Mandango\\Group\\EmbeddedGroup')
+                ->setConstructorArgs(
+                    array('\\PHPOrchestra\\CMSBundle\\Test\\Mock\\MandangoDocument')
+                )
+                ->getMock();
         
-        $embeddedBlocks = array();
-        foreach ($blocks as $block) {
-            $embeddedBlock = new Mock\MandangoDocument($this->documentService);
-            $embeddedBlock->setComponent($block['component']);
-            $embeddedBlock->setAttributes($block['attributes']);
-            
-            $embeddedBlocks[] = $embeddedBlock;
+            $embeddedBlocks = array();
+            foreach ($blocks as $block) {
+                $embeddedBlock = new Mock\MandangoDocument($this->documentService);
+                $embeddedBlock->setComponent($block['component']);
+                $embeddedBlock->setAttributes($block['attributes']);
+
+                $embeddedBlocks[] = $embeddedBlock;
+            }
+
+            $blockGroup->expects($this->once())
+                ->method('getSaved')
+                ->will($this->returnValue($embeddedBlocks));
+        } else {
+            $blockGroup = null;
         }
-        
-        $blockGroup->expects($this->once())
-            ->method('getSaved')
-            ->will($this->returnValue($embeddedBlocks));
         
         $transformedJson = $this->transformer->transform($blockGroup);
         
@@ -141,6 +145,13 @@ class JsonToBlocksTransformerTest extends \PHPUnit_Framework_TestCase
                 ),
                 // Json
                 '[{"component":"MyComponent","attributes":{"attr1":"value1","attr2":"value2"}}]'
+            ),
+            // Array of parameters
+            array(
+                // Array of Blocks
+                null,
+                // Json
+                '[]'
             )
         );
     }

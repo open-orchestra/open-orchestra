@@ -47,10 +47,11 @@ class DocumentLoader
     */
     public function getDocument($documentType, array $criteria = array())
     {
+        $sort = $this->getDefaultSort($documentType);
         $repository = $this->documentsService->getRepository($this->getDocumentNamespace($documentType));
         $query = $repository->createQuery();
         $query->criteria($criteria);
-        $query->sort($this->getDefaultSort($documentType));
+        $query->sort($sort);
         return $query->one();
     }
     
@@ -125,7 +126,6 @@ class DocumentLoader
                 break;
             default:
                 throw new UnrecognizedDocumentTypeException('Unrecognized document type : ' . $documentType);
-                break;
         }
         return $documentNamespace;
     }
@@ -146,7 +146,6 @@ class DocumentLoader
                 break;
             default:
                 throw new UnrecognizedDocumentTypeException('Unrecognized document type : ' . $documentType);
-                break;
         }
         return $sort;
     }

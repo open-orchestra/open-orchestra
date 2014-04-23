@@ -89,18 +89,15 @@ class JsonToAreasTransformer implements DataTransformerInterface
     {
         if (array_key_exists(self::CLASSES_TAG, $area)) {
             $area[self::CLASSES_TAG] = explode(',', $area[self::CLASSES_TAG]);
-            
-            if (isset($area[self::JSON_AREA_TAG])) {
-                foreach ($area[self::JSON_AREA_TAG] as $key => $subAreas) {
-                    $area[self::PHP_AREA_TAG][$key] = $this->reverseAdaptArea($subAreas);
-                }
-            }
-            
-            unset($area[self::JSON_AREA_TAG]);
-            
-            return $area;
-        } else {
-            return array();
         }
+        if (isset($area[self::JSON_AREA_TAG])) {
+            foreach ($area[self::JSON_AREA_TAG] as $key => $subAreas) {
+                $area[self::PHP_AREA_TAG][$key] = $this->reverseAdaptArea($subAreas);
+            }
+        }
+            
+        unset($area[self::JSON_AREA_TAG]);
+            
+        return $area;
     }
 }

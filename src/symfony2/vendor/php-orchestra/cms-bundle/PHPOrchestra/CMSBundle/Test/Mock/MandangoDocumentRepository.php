@@ -44,4 +44,40 @@ class MandangoDocumentRepository extends \Mandango\Repository
     {
         return $id;
     }
+    
+    /**
+     * Creates a MongoDB Collection mock
+     * 
+     * @return MongoCollection
+     */
+    public function getCollection()
+    {
+        $generator = new \PHPUnit_Framework_MockObject_Generator;
+        
+        /**
+         * @var \PHPUnit_Framework_MockObject_MockObject
+         */
+        $collection = $generator->getMock(
+            '\\MongoCollection',
+            array(),
+            array(),
+            '',
+            false
+        );
+        
+        $collection->expects(new \PHPUnit_Framework_MockObject_Matcher_AnyInvokedCount)
+            ->method('aggregate')
+            ->willReturnCallback(array($this, 'aggregate'));
+        
+        return $collection;
+    }
+    
+    public function aggregate()
+    {
+        $result = $this->getMandango()->getDB();
+        return array(
+            'result' => $result[$this->documentClass],
+            'ok' => 1
+        );
+    }
 }
