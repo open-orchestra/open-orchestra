@@ -61,7 +61,8 @@ class TemplatesController extends Controller
                 'name' => 'Templates',
                 'path' => 'php_orchestra_cms_templateform',
                 'refresh' => 'rightbox-content',
-                'links' => $links
+                'links' => $links,
+                'mode' => 'templates'
             )
         );
     }

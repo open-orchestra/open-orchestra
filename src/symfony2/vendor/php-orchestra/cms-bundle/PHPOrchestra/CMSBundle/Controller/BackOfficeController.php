@@ -40,6 +40,14 @@ class BackOfficeController extends Controller
             case 'moveNode': // Move a pages tree
                 $action = 'PHPOrchestraCMSBundle:Node:move';
                 break;
+            
+            case 'CreateTemplate': // Create a template
+                $action = 'PHPOrchestraCMSBundle:Template:form';
+                break;
+            case 'deleteTemplate': // Delete a template
+                $action = 'PHPOrchestraCMSBundle:Template:delete';
+                break;
+            
             default: // Unrecognized cmd
                 throw new UnrecognizedCommandTypeException('Unrecognized command type : ' . $cmd);
         }

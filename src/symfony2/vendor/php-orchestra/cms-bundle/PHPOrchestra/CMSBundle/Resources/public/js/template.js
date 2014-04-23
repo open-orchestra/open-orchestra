@@ -421,7 +421,21 @@ var tree_parameter = {
 	}
 };
 
+var treeNodesMenuOptions = [
+                            {'title': 'Créer une sous-page', 'cmd': 'createNode'},
+                            {'title': 'Dépublier', 'cmd': 'unpublishNode'},
+                            {'title': 'Supprimer', 'cmd': 'deleteNode'},
+                            {'title': '----'},
+                            {'title': 'Déplacer l\'arbre', 'cmd': 'moveNode'}
+                           ];
+
+var treeTemplatesMenuOptions = [
+                                {'title': 'Créer un template', 'cmd': 'createTemplate'},
+                                {'title': 'Supprimer', 'cmd': 'deleteTemplate'}
+                               ];
+
 function treeAjaxCall(url, params, container)
+{
     $('#' + container).html('<h1><i class="fa fa-cog fa-spin"></i> Loading...</h1>');
     $.ajax({
         'type': 'POST',

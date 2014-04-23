@@ -18,16 +18,16 @@
             }
         ));
         
+        var menuOptions = [];
+        if ('{{ mode }}' == 'nodes') {
+            menuOptions = treeNodesMenuOptions;
+        } else if ('{{ mode }}' == 'templates') {
+            menuOptions = treeTemplatesMenuOptions;
+        }
+        
         $("#tree-{{ name }}").contextmenu({
             'delegate': 'span.fancytree-title',
-//            menu: "#options",
-            'menu': [
-                {'title': 'Créer une sous-page', cmd: 'createNode'},
-                {'title': 'Dépublier', cmd: 'unpublishNode'},
-                {'title': 'Supprimer', cmd: 'deleteNode'},
-                {'title': '----'},
-                {'title': 'Déplacer l\'arbre', cmd: 'moveNode'}
-            ],
+            'menu': menuOptions,
             'beforeOpen': function(event, ui) {
                 var node = $.ui.fancytree.getNode(ui.target);
 //                node.setFocus();
