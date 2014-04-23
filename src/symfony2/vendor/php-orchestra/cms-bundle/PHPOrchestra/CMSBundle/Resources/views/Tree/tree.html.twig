@@ -60,9 +60,10 @@
                     'url': url,
                     'data': {'nodeId': node},
                     'success': function(response) {
-                        $('#content').html(response);
+                        $('[id^="dialog-"]').dialog("destroy");
+                        $('#{{ refresh }}').html(response['{{ refresh|replace({'-': '_'}) }}']);
                     },
-                    'dataType': 'html'
+                    'dataType': 'json'
                 });
             }
         });

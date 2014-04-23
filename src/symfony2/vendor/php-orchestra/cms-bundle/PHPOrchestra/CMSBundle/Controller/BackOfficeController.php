@@ -7,9 +7,9 @@
 
 namespace PHPOrchestra\CMSBundle\Controller;
 
-use PHPOrchestra\CMSBundle\Exception\UnrecognizedCommandTypeException;
-
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
+use PHPOrchestra\CMSBundle\Exception\UnrecognizedCommandTypeException;
 
 class BackOfficeController extends Controller
 {
@@ -18,7 +18,7 @@ class BackOfficeController extends Controller
         return $this->render('PHPOrchestraCMSBundle:BackOffice:home.html.twig');
     }
     
-    public function jsContextMenuDispatchAction($cmd)
+    public function jsContextMenuDispatchAction($cmd, Request $request)
     {
         $action = '';
         $params = array();
@@ -27,6 +27,9 @@ class BackOfficeController extends Controller
         {
             case 'createNode': // Create a subpage
                 $action = 'PHPOrchestraCMSBundle:Node:form';
+                $params['nodeId'] = 0;
+                $request->request->add(array('parentId' => $request->request->get('nodeId')));
+                $request->request->remove('nodeId');
                 break;
             case 'unpublishNode': // Unpublish a page
                 $action = 'PHPOrchestraCMSBundle:Node:unpublish';

@@ -164,6 +164,12 @@ class NodeController extends Controller
             $ajax = true;
         }
         
+        $parentId = $request->request->get('parentId');
+        if (isset($parentId)) {
+            $node->setParentId($parentId);
+            $ajax = true;
+        }
+        
         $form = $this->createForm(
             'node',
             $node,
