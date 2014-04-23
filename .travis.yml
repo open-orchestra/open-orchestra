@@ -3,4 +3,6 @@ language: php
 php:
   - 5.4
 
+before_script: phpenv config-add build/travis/php.ini
+
 script: phpunit --configuration build/jenkins/phpunit.xml
