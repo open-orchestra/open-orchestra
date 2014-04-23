@@ -107,17 +107,17 @@ class JsonToBlocksTransformerTest extends \PHPUnit_Framework_TestCase
     {
         $transformedBlocks = $this->transformer->reverseTransform($json);
         
-        $i = 0;
+        $index = 0;
         foreach ($transformedBlocks as $block) {
             $this->assertEquals(
-                $expectedBlocks[$i]['component'],
+                $expectedBlocks[$index]['component'],
                 $block->getComponent()
             );
             $this->assertEquals(
-                $expectedBlocks[$i]['attributes'],
+                $expectedBlocks[$index]['attributes'],
                 $block->getAttributes()
             );
-            $i++;
+            $index++;
         }
         
         $this->assertCount(count($expectedBlocks), $transformedBlocks);

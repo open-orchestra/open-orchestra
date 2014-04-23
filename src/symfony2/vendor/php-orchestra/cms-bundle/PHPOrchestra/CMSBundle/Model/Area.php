@@ -59,33 +59,15 @@ class Area
      */
     public function __construct(array $importArray = array())
     {
-        if (isset($importArray['areaId'])) {
-            $this->htmlId = $importArray['areaId'];
-        }
+        $fields = array('areaId', 'boDirection', 'boPercent', 'classes',
+            'subAreas', 'blocks');
         
-        if (isset($importArray['boDirection'])) {
-            $this->boDirection = $importArray['boDirection'];
-        }
-        
-        if (isset($importArray['boPercent'])) {
-            $this->boPercent = $importArray['boPercent'];
-        }
-        
-        if (isset($importArray['classes'])) {
-            $this->classes = $importArray['classes'];
-        }
-        
-        if (isset($importArray['subAreas']) && is_array($importArray['subAreas'])) {
-            foreach ($importArray['subAreas'] as $subArea) {
-                $this->subAreas[] = new Area($subArea);
+        foreach ($importArray as $field => $value) {
+            if (in_array($field, $fields)) {
+                $setter = 'set' . ucfirst($field);
+                $this->$setter($value);
             }
         }
-        
-        if (isset($importArray['blocks']) && is_array($importArray['blocks'])) {
-            $this->blockReferences = $importArray['blocks'];
-        }
-        
-        return $this;
     }
     
     /**
@@ -105,6 +87,24 @@ class Area
     public function getHtmlId()
     {
         return $this->htmlId;
+    }
+    
+    /**
+     * Set areaId
+     * 
+     * @param string $areaId
+     */
+    public function setAreaId($areaId)
+    {
+        return $this->setHtmlId($areaId);
+    }
+
+    /**
+     * Get areaId
+     */
+    public function getAreaId()
+    {
+        return $this->getHtmlId();
     }
     
     /**
@@ -174,6 +174,25 @@ class Area
     public function getSubAreas()
     {
         return $this->subAreas;
+    }
+    
+    /**
+     * Set sub areas
+     * Return self, fluent interface
+     * 
+     * @return \PHPOrchestra\CMSBundle\Model\Area
+     */
+    public function setSubAreas($subAreas)
+    {
+        foreach ($subAreas as $subArea) {
+            $this->subAreas[] = new Area($subArea);
+        }
+        return $this;
+    }
+    
+    public function setBlocks($blocks)
+    {
+        $this->blockReferences = $blocks;
     }
     
     /**

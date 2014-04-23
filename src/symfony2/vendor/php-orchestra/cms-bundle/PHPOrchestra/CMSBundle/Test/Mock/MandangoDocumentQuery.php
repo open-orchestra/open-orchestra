@@ -17,12 +17,12 @@ class MandangoDocumentQuery extends \Mandango\Query
     public function createCursor()
     {
         $class = $this->repository->getDocumentClass();
-        $db    = $this->repository->getMandango()->getDB();
+        $data  = $this->repository->getMandango()->getDB();
         
         $count = 0;
         $documents = array();
         
-        foreach ($db[$class] as $id => $document) {
+        foreach ($data[$class] as $id => $document) {
             $check = true;
             foreach ($this->getCriteria() as $attribute => $value) {
                 $field = $this->attributeNameToFieldName($attribute);
@@ -50,7 +50,6 @@ class MandangoDocumentQuery extends \Mandango\Query
     {
         $repository    = $this->repository;
         $mandango      = $repository->getMandango();
-        $documentClass = $repository->getDocumentClass();
         
         $documents = array();
         foreach ($this->createCursor() as $id => $data) {

@@ -37,12 +37,12 @@ class MandangoDocumentRepository extends \Mandango\Repository
      * Converts an object Id to Mongo Id
      * (nothing to do, we don't use a real mongo db here)
      * 
-     * @param string $id
+     * @param string $identifier
      * @return string
      */
-    public function idToMongo($id)
+    public function idToMongo($identifier)
     {
-        return $id;
+        return $identifier;
     }
     
     /**
