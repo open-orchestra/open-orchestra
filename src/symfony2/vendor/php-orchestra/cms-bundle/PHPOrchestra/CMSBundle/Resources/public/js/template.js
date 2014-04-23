@@ -420,3 +420,17 @@ var tree_parameter = {
 		}
 	}
 };
+
+function treeAjaxCall(url, params, container)
+    $('#' + container).html('<h1><i class="fa fa-cog fa-spin"></i> Loading...</h1>');
+    $.ajax({
+        'type': 'POST',
+        'url': url,
+        'data': params,
+        'success': function(response) {
+            $('[id^="dialog-"]').dialog("destroy");
+            $('#' + container).html(response[container.replace('-', '_')]);
+        },
+        'dataType': 'json'
+    });
+}

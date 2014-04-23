@@ -1,12 +1,5 @@
 {% import "PHPOrchestraCMSBundle:Tree:tree-macros.html.twig" as macros %}
 
-<style type="text/css">
-  .ui-menu {
-    width: 100px;
-    font-size: 63%;
-  }
-</style>
-
 <div id="tree-{{ name }}">
     <h4>{{ name }}</h4>
     {{ macros.menu_links(links, name) }}
@@ -20,16 +13,7 @@
             {
                 'click': function(event, data) {
                     var url = '{{ path(path) }}/' + data.node.key.replace('tree-{{ name }}-', '');
-                    $('#{{ refresh }}').html('<h1><i class="fa fa-cog fa-spin"></i> Loading...</h1>');
-                    $.ajax({
-                        'type': 'POST',
-                        'url': url,
-                        'success': function(response) {
-                            $('[id^="dialog-"]').dialog("destroy");
-                            $('#{{ refresh }}').html(response['{{ refresh|replace({'-': '_'}) }}']);
-                        },
-                        'dataType': 'json'
-                    });
+                    treeAjaxCall(url, {}, '{{ refresh }}');
                 }
             }
         ));
@@ -52,19 +36,7 @@
             'select': function(event, ui) {
                 var node = $.ui.fancytree.getNode(ui.target).key.replace('tree-{{ name }}-', '');
                 var url = '{{ path('php_orchestra_cms_bo_jscontextmenudispatcher') }}/' + ui.cmd;
-                
-                $('#{{ refresh }}').html('<h1><i class="fa fa-cog fa-spin"></i> Loading...</h1>');
-                
-                $.ajax({
-                    'type': 'POST',
-                    'url': url,
-                    'data': {'nodeId': node},
-                    'success': function(response) {
-                        $('[id^="dialog-"]').dialog("destroy");
-                        $('#{{ refresh }}').html(response['{{ refresh|replace({'-': '_'}) }}']);
-                    },
-                    'dataType': 'json'
-                });
+                treeAjaxCall(url, {'nodeId': node}, '{{ refresh }}');
             }
         });
     });
