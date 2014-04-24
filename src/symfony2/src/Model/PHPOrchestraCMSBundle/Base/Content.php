@@ -115,10 +115,7 @@ abstract class Content extends \Mandango\Document\Document
                 $this->data['fields']['contentId'] = null;
             } elseif (!isset($this->data['fields']) || !array_key_exists('contentId', $this->data['fields'])) {
                 $this->addFieldCache('contentId');
-                $data = $this->getRepository()->getCollection()->findOne(
-                    array('_id' => $this->getId()),
-                    array('contentId' => 1)
-                );
+                $data = $this->getRepository()->getCollection()->findOne(array('_id' => $this->getId()), array('contentId' => 1));
                 if (isset($data['contentId'])) {
                     $this->data['fields']['contentId'] = (int) $data['contentId'];
                 } else {
@@ -180,10 +177,7 @@ abstract class Content extends \Mandango\Document\Document
                 $this->data['fields']['type'] = null;
             } elseif (!isset($this->data['fields']) || !array_key_exists('type', $this->data['fields'])) {
                 $this->addFieldCache('type');
-                $data = $this->getRepository()->getCollection()->findOne(
-                    array('_id' => $this->getId()),
-                    array('type' => 1)
-                );
+                $data = $this->getRepository()->getCollection()->findOne(array('_id' => $this->getId()), array('type' => 1));
                 if (isset($data['type'])) {
                     $this->data['fields']['type'] = (string) $data['type'];
                 } else {
@@ -245,10 +239,7 @@ abstract class Content extends \Mandango\Document\Document
                 $this->data['fields']['version'] = null;
             } elseif (!isset($this->data['fields']) || !array_key_exists('version', $this->data['fields'])) {
                 $this->addFieldCache('version');
-                $data = $this->getRepository()->getCollection()->findOne(
-                    array('_id' => $this->getId()),
-                    array('version' => 1)
-                );
+                $data = $this->getRepository()->getCollection()->findOne(array('_id' => $this->getId()), array('version' => 1));
                 if (isset($data['version'])) {
                     $this->data['fields']['version'] = (int) $data['version'];
                 } else {
@@ -310,10 +301,7 @@ abstract class Content extends \Mandango\Document\Document
                 $this->data['fields']['status'] = null;
             } elseif (!isset($this->data['fields']) || !array_key_exists('status', $this->data['fields'])) {
                 $this->addFieldCache('status');
-                $data = $this->getRepository()->getCollection()->findOne(
-                    array('_id' => $this->getId()),
-                    array('status' => 1)
-                );
+                $data = $this->getRepository()->getCollection()->findOne(array('_id' => $this->getId()), array('status' => 1));
                 if (isset($data['status'])) {
                     $this->data['fields']['status'] = (string) $data['status'];
                 } else {
@@ -375,10 +363,7 @@ abstract class Content extends \Mandango\Document\Document
                 $this->data['fields']['attributes'] = null;
             } elseif (!isset($this->data['fields']) || !array_key_exists('attributes', $this->data['fields'])) {
                 $this->addFieldCache('attributes');
-                $data = $this->getRepository()->getCollection()->findOne(
-                    array('_id' => $this->getId()),
-                    array('attributes' => 1)
-                );
+                $data = $this->getRepository()->getCollection()->findOne(array('_id' => $this->getId()), array('attributes' => 1));
                 if (isset($data['attributes'])) {
                     $this->data['fields']['attributes'] = $data['attributes'];
                 } else {
@@ -573,8 +558,7 @@ abstract class Content extends \Mandango\Document\Document
                     $query['attributes'] = $this->data['fields']['attributes'];
                 }
             } else {
-                if (isset($this->data['fields']['contentId'])
-                    || array_key_exists('contentId', $this->data['fields'])) {
+                if (isset($this->data['fields']['contentId']) || array_key_exists('contentId', $this->data['fields'])) {
                     $value = $this->data['fields']['contentId'];
                     $originalValue = $this->getOriginalFieldValue('contentId');
                     if ($value !== $originalValue) {
@@ -585,8 +569,7 @@ abstract class Content extends \Mandango\Document\Document
                         }
                     }
                 }
-                if (isset($this->data['fields']['type'])
-                    || array_key_exists('type', $this->data['fields'])) {
+                if (isset($this->data['fields']['type']) || array_key_exists('type', $this->data['fields'])) {
                     $value = $this->data['fields']['type'];
                     $originalValue = $this->getOriginalFieldValue('type');
                     if ($value !== $originalValue) {
@@ -597,8 +580,7 @@ abstract class Content extends \Mandango\Document\Document
                         }
                     }
                 }
-                if (isset($this->data['fields']['version'])
-                    || array_key_exists('version', $this->data['fields'])) {
+                if (isset($this->data['fields']['version']) || array_key_exists('version', $this->data['fields'])) {
                     $value = $this->data['fields']['version'];
                     $originalValue = $this->getOriginalFieldValue('version');
                     if ($value !== $originalValue) {
@@ -609,8 +591,7 @@ abstract class Content extends \Mandango\Document\Document
                         }
                     }
                 }
-                if (isset($this->data['fields']['status'])
-                    || array_key_exists('status', $this->data['fields'])) {
+                if (isset($this->data['fields']['status']) || array_key_exists('status', $this->data['fields'])) {
                     $value = $this->data['fields']['status'];
                     $originalValue = $this->getOriginalFieldValue('status');
                     if ($value !== $originalValue) {
@@ -621,8 +602,7 @@ abstract class Content extends \Mandango\Document\Document
                         }
                     }
                 }
-                if (isset($this->data['fields']['attributes'])
-                    || array_key_exists('attributes', $this->data['fields'])) {
+                if (isset($this->data['fields']['attributes']) || array_key_exists('attributes', $this->data['fields'])) {
                     $value = $this->data['fields']['attributes'];
                     $originalValue = $this->getOriginalFieldValue('attributes');
                     if ($value !== $originalValue) {
@@ -647,7 +627,7 @@ abstract class Content extends \Mandango\Document\Document
      *
      * @param \Symfony\Component\Validator\Mapping\ClassMetadata $metadata The metadata class.
      */
-    public static function loadValidatorMetadata(\Symfony\Component\Validator\Mapping\ClassMetadata $metadata)
+    static public function loadValidatorMetadata(\Symfony\Component\Validator\Mapping\ClassMetadata $metadata)
     {
         $validation = array(
             'constraints' => array(
@@ -658,14 +638,12 @@ abstract class Content extends \Mandango\Document\Document
             ),
         );
 
-        foreach (\Mandango\MandangoBundle\Extension\DocumentValidation
-            ::parseNodes($validation['constraints']) as $constraint) {
+        foreach (\Mandango\MandangoBundle\Extension\DocumentValidation::parseNodes($validation['constraints']) as $constraint) {
             $metadata->addConstraint($constraint);
         }
 
         foreach ($validation['getters'] as $getter => $constraints) {
-            foreach (\Mandango\MandangoBundle\Extension\DocumentValidation
-            ::parseNodes($constraints) as $constraint) {
+            foreach (\Mandango\MandangoBundle\Extension\DocumentValidation::parseNodes($constraints) as $constraint) {
                 $metadata->addGetterConstraint($getter, $constraint);
             }
         }

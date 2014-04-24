@@ -27,6 +27,7 @@ Model\PHPOrchestraCMSBundle\Node:
         version: integer
         language: string
         status: string
+        deleted: boolean
         templateId: string
         theme: string
         areas: raw
@@ -43,6 +44,7 @@ Model\PHPOrchestraCMSBundle\Template:
         version: integer
         language: string
         status: string
+        deleted: boolean
         areas: raw
         boDirection: string
     embeddedsMany:

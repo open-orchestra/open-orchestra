@@ -149,6 +149,10 @@ class MetadataFactoryInfo
                     'type' => 'string',
                     'dbName' => 'status',
                 ),
+                'deleted' => array(
+                    'type' => 'boolean',
+                    'dbName' => 'deleted',
+                ),
                 'templateId' => array(
                     'type' => 'string',
                     'dbName' => 'templateId',
@@ -231,6 +235,10 @@ class MetadataFactoryInfo
                 'status' => array(
                     'type' => 'string',
                     'dbName' => 'status',
+                ),
+                'deleted' => array(
+                    'type' => 'boolean',
+                    'dbName' => 'deleted',
                 ),
                 'areas' => array(
                     'type' => 'raw',

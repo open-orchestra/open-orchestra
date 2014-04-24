@@ -38,6 +38,9 @@ abstract class Node extends \Model\PHPOrchestraCMSBundle\Base\Node
         if ($this->getParentId() == '') {
             $this->setParentId(self::ROOT_NODE_ID);
         }
+        if ($this->isDeleted() == '') {
+            $this->setDeleted(false);
+        }
     }
     
     /**
@@ -51,4 +54,12 @@ abstract class Node extends \Model\PHPOrchestraCMSBundle\Base\Node
         
         return $this;
     }
+    
+    /**
+     * Alias to getDeleted
+     */
+    public function isDeleted()
+    {
+        return $this->getDeleted();
+    } 
 }

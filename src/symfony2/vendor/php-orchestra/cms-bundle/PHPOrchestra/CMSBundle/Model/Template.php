@@ -25,6 +25,9 @@ abstract class Template extends \Model\PHPOrchestraCMSBundle\Base\Template
         if ($this->getStatus() == '') {
             $this->setStatus(self::STATUS_DRAFT);
         }
+        if ($this->isDeleted() == '') {
+            $this->setDeleted(false);
+        }
     }
     
     /**
@@ -38,4 +41,12 @@ abstract class Template extends \Model\PHPOrchestraCMSBundle\Base\Template
         
         return $this;
     }
+    
+    /**
+     * Alias to getDeleted
+     */
+    public function isDeleted()
+    {
+        return $this->getDeleted();
+    } 
 }
