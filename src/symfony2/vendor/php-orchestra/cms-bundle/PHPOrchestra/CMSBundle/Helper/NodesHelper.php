@@ -16,13 +16,16 @@ class NodesHelper
         $links = array();
         $superRoot = '';
         foreach ($nodes as $node) {
+            $class = '';
             $nodeId = $node['_id'];
             $parentId = $node['parentId'];
             
             if (Node::ROOT_NODE_ID == $nodeId) {
                 $superRoot = $parentId;
             }
-            $links[$parentId][] = array('id' => $nodeId, 'class' => '', 'text' => $node['name']);
+            if ($node['deleted'] == true)
+                $class = 'deleted';
+            $links[$parentId][] = array('id' => $nodeId, 'class' => $class, 'text' => $node['name']);
         }
         
         return NodesHelper::createRecTree($links, $links[$superRoot]);

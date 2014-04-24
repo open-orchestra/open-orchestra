@@ -249,25 +249,39 @@ class NodeController extends Controller
     }
     
     /**
-     * Delete all version of a content
-     * Not possible if it has a subtree
+     * Delete all versions of a node and related subtrees
      * 
-     * @param $request
+     * @param string $nodeId
      */
     public function deleteAction($nodeId)
     {
-        
-        // flag delete pour noeud
-        
-        // recursion deleteAction sur chaque fils
-        
+        $this->deleteTree($nodeId);
         
         return $this->render(
-            'PHPOrchestraCMSBundle:BackOffice:simpleMessage.html.twig',
-            array(
-                'message' => 'Delete node process on ' . $nodeId
-            )
-        );
+                'PHPOrchestraCMSBundle:BackOffice:simpleMessage.html.twig',
+                array(
+                    'message' => 'Delete node process on ' . $nodeId
+                )
+            );
+    }
+    
+    /**
+     * Recursivly delete a tree
+     * 
+     * @param string $nodeId
+     */
+    protected function deleteTree($nodeId)
+    {
+        $documentManager = $this->get('phporchestra_cms.documentmanager');
+        $documentManager->deleteNode($nodeId);
+        
+        $sons = $documentManager->getNodeSons($nodeId);
+        
+        foreach ($sons as $son) {
+            $this->deleteTree($son['_id']);
+        }
+        
+        return true;
     }
     
     /**

@@ -39,11 +39,10 @@ class DocumentManager
     }
     
     /** 
-    * Get a MongoDB document giving its type and search citerias
+    * Get a single MongoDB document giving its type and search citerias
     * 
     * @param string $documentType
     * @param array $criteria
-    * @param unknown $documentsService
     */
     public function getDocument($documentType, array $criteria = array())
     {
@@ -55,55 +54,19 @@ class DocumentManager
         return $query->one();
     }
     
-    
-    /**
-     * Return an array containing informations about the last versions of all nodes
-     */
-    public function getNodesInLastVersion()
+    /** 
+    * Get all MongoDB documents matching type and search citerias
+    * 
+    * @param string $documentType
+    * @param array $criteria
+    */
+    public function getDocuments($documentType, array $criteria = array())
     {
-        $repository = $this->documentsService->getRepository($this->getDocumentNamespace('Node'));
-        
-        $versions = $repository->getCollection()->aggregate(
-            array(
-                '$sort' => array('version' => -1),
-            ),
-            array(
-                '$group' => array(
-                    '_id' => '$nodeId',
-                    'version' => array('$first' => '$version'),
-                    'parentId' => array('$first' => '$parentId'),
-                    'name' => array('$first' => '$name')
-                )
-            )
-        );
-        
-        return $versions['result'];
+        $repository = $this->documentsService->getRepository($this->getDocumentNamespace($documentType));
+        $query = $repository->createQuery();
+        $query->criteria($criteria);
+        return $query->all();
     }
-    
-    
-    /**
-     * Return an array containing informations about the last versions of all templates
-     */
-    public function getTemplatesInLastVersion()
-    {
-        $repository = $this->documentsService->getRepository($this->getDocumentNamespace('Template'));
-        
-        $versions = $repository->getCollection()->aggregate(
-            array(
-                '$sort' => array('version' => -1),
-            ),
-            array(
-                '$group' => array(
-                    '_id' => '$templateId',
-                    'version' => array('$first' => '$version'),
-                    'name' => array('$first' => '$name')
-                )
-            )
-        );
-        
-        return $versions['result'];
-    }
-    
     
     /**
      * Get documentType model namespace
@@ -149,4 +112,83 @@ class DocumentManager
         }
         return $sort;
     }
+    
+    /**
+     * Return an array containing informations about the last versions of all nodes
+     */
+    public function getNodesInLastVersion(array $additionnalFilters = array())
+    {
+        $repository = $this->documentsService->getRepository($this->getDocumentNamespace('Node'));
+        
+        $filters = array(array('$sort' => array('version' => -1)));
+        
+        foreach ($additionnalFilters as $filter) {
+            $filters[] = $filter;
+        }
+        
+        $filters[] = array(
+                            '$group' => array(
+                                '_id' => '$nodeId',
+                                'version' => array('$first' => '$version'),
+                                'parentId' => array('$first' => '$parentId'),
+                                'name' => array('$first' => '$name'),
+                                'deleted' => array('$first' => '$deleted')
+                            )
+        );
+        
+        $versions = $repository->getCollection()->aggregate($filters);
+        
+        return $versions['result'];
+    }
+    
+    /**
+     * 
+     */
+    public function getNodeSons($nodeId)
+    {
+        $filters = array(array('$match' => array('parentId' => $nodeId)));
+        
+        return $this->getNodesInLastVersion($filters);
+    }
+    
+    /**
+     * Flag all versions of the node nodeId as deleted
+     * 
+     * @param $nodeId
+     */
+    public function deleteNode($nodeId)
+    {
+        $nodeVersions = $this->getDocuments('Node', array('nodeId' => $nodeId));
+        
+        foreach ($nodeVersions as $node) {
+            $node->setDeleted(true);
+            $node->save();
+        };
+        
+        return true;
+    }
+    
+    /**
+     * Return an array containing informations about the last versions of all templates
+     */
+    public function getTemplatesInLastVersion()
+    {
+        $repository = $this->documentsService->getRepository($this->getDocumentNamespace('Template'));
+        
+        $versions = $repository->getCollection()->aggregate(
+            array(
+                '$sort' => array('version' => -1),
+            ),
+            array(
+                '$group' => array(
+                    '_id' => '$templateId',
+                    'version' => array('$first' => '$version'),
+                    'name' => array('$first' => '$name')
+                )
+            )
+        );
+        
+        return $versions['result'];
+    }
+
 }

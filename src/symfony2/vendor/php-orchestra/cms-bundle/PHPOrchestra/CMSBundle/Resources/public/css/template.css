@@ -120,3 +120,7 @@ div.ui-widget-model.over{
 .no-label label{
 	display:none;
 }
+
+.deleted .fancytree-title {
+    color:#FF0000;
+}
