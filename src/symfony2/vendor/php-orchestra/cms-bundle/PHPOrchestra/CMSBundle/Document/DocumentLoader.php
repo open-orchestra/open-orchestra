@@ -76,7 +76,7 @@ class DocumentLoader
                 )
             )
         );
-
+        
         return $versions['result'];
     }
     
@@ -100,7 +100,7 @@ class DocumentLoader
                 )
             )
         );
-
+        
         return $versions['result'];
     }
     

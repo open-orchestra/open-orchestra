@@ -434,6 +434,10 @@ var treeTemplatesMenuOptions = [
                                 {'title': 'Supprimer', 'cmd': 'deleteTemplate'}
                                ];
 
+var treePreviousJs = {
+                      'deleteNode': function(){return confirmTreeDelete();}
+                     };
+
 function treeAjaxCall(url, params, container)
 {
     $('#' + container).html('<h1><i class="fa fa-cog fa-spin"></i> Loading...</h1>');
@@ -447,4 +451,9 @@ function treeAjaxCall(url, params, container)
         },
         'dataType': 'json'
     });
+}
+
+function confirmTreeDelete()
+{
+    return confirm("Vous êtes sur le point de supprimer une page ainsi que toute la sous-arborescence associée.\n\nSi vous souhaitez tout supprimer, cliquez sur \"Ok\", sinon cliquez sur \"Annuler\" et déplacez d'abord la sous-arborescence.")
 }

@@ -36,6 +36,7 @@ class BackOfficeController extends Controller
                 break;
             case 'deleteNode': // Delete a page
                 $action = 'PHPOrchestraCMSBundle:Node:delete';
+                $params['nodeId'] = $request->request->get('nodeId');
                 break;
             case 'moveNode': // Move a pages tree
                 $action = 'PHPOrchestraCMSBundle:Node:move';

@@ -254,12 +254,18 @@ class NodeController extends Controller
      * 
      * @param $request
      */
-    public function deleteAction(Request $request)
+    public function deleteAction($nodeId)
     {
+        
+        // flag delete pour noeud
+        
+        // recursion deleteAction sur chaque fils
+        
+        
         return $this->render(
             'PHPOrchestraCMSBundle:BackOffice:simpleMessage.html.twig',
             array(
-                'message' => 'Delete node process on ' . $request->get('nodeId')
+                'message' => 'Delete node process on ' . $nodeId
             )
         );
     }
