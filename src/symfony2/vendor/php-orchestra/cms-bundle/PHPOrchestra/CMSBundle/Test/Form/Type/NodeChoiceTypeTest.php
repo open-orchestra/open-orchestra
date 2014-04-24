@@ -40,17 +40,17 @@ class NodeChoiceTypeTest extends \PHPUnit_Framework_TestCase
         /**
          * A document loader using the db mock
          * 
-         * @var \PHPOrchestra\CMSBundle\Document\DocumentLoader
+         * @var \PHPOrchestra\CMSBundle\Document\DocumentManager
          */
-        $documentLoader = $this->getMockBuilder('PHPOrchestra\\CMSBundle\\Document\\DocumentLoader')
+        $documentManager = $this->getMockBuilder('PHPOrchestra\\CMSBundle\\Document\\DocumentManager')
                 ->disableOriginalConstructor()
                 ->getMock();
         
-        $documentLoader->expects($this->any())
+        $documentManager->expects($this->any())
             ->method('getNodesInLastVersion')
             ->will($this->returnValue($this->nodes));
         
-        $this->nodeChoiceType = new NodeChoiceType($documentLoader);
+        $this->nodeChoiceType = new NodeChoiceType($documentManager);
     }
     
     public function testSetDefaultOptions()

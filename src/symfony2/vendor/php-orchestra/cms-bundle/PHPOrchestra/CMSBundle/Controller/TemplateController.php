@@ -27,16 +27,16 @@ class TemplateController extends Controller
      */
     public function formAction($templateId, Request $request)
     {
-        $documentLoader = $this->container->get('phporchestra_cms.documentloader');
+        $documentManager = $this->container->get('phporchestra_cms.documentmanager');
         
         $ajax = false;
         
         if (empty($templateId)) {
-            $template = $documentLoader->createDocument('Template');
+            $template = $documentManager->createDocument('Template');
             $template->setSiteId(1);
             $template->setLanguage('fr');
         } else {
-            $template = $documentLoader->getDocument(
+            $template = $documentManager->getDocument(
                 'Template',
                 array('templateId' => $templateId)
             );
@@ -75,8 +75,8 @@ class TemplateController extends Controller
      */
     public function showCuttingAction(Request $request)
     {
-        $documentLoader = $this->get('phporchestra_cms.documentloader');
-        $template = $documentLoader->getDocument(
+        $documentManager = $this->get('phporchestra_cms.documentmanager');
+        $template = $documentManager->getDocument(
             'Template',
             array('templateId' => $request->get('templateId'))
         );
@@ -84,7 +84,7 @@ class TemplateController extends Controller
             return new JsonResponse(
                 array(
                     'success' => true,
-                    'data' => TemplateHelper::formatTemplate($template, $documentLoader)
+                    'data' => TemplateHelper::formatTemplate($template, $documentManager)
                 )
             );
         }

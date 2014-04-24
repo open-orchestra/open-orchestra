@@ -45,16 +45,16 @@ class TemplateHelperTest extends \PHPUnit_Framework_TestCase
         /**
          * A document loader using the db mock
          * 
-         * @var \PHPOrchestra\CMSBundle\Document\DocumentLoader
+         * @var \PHPOrchestra\CMSBundle\Document\DocumentManager
          */
-        $documentLoader = $this->getMockBuilder('\\PHPOrchestra\\CMSBundle\\Document\\DocumentLoader')
+        $documentManager = $this->getMockBuilder('\\PHPOrchestra\\CMSBundle\\Document\\DocumentManager')
                 ->enableProxyingToOriginalMethods()
                 ->setConstructorArgs(array($documentService))
                 ->getMock();
         
         $result = TemplateHelper::formatTemplate(
             $templateMock,
-            $documentLoader
+            $documentManager
         );
         
         $this->assertEquals(

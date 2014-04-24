@@ -9,7 +9,6 @@ namespace PHPOrchestra\CMSBundle\Routing;
 
 use Symfony\Bundle\FrameworkBundle\Routing\RedirectableUrlMatcher;
 use Symfony\Component\Routing\Exception\ResourceNotFoundException;
-use PHPOrchestra\CMSBundle\Document\DocumentLoader;
 use PHPOrchestra\CMSBundle\Exception\UnrecognizedDocumentTypeException;
 use Symfony\Component\Routing\RouteCollection;
 use Symfony\Component\Routing\RequestContext;
@@ -30,7 +29,7 @@ class PhpOrchestraUrlMatcher extends RedirectableUrlMatcher
      * Documents service
      * @var unknown_type
      */
-    protected $documentLoader = null;
+    protected $documentManager = null;
 
     /**
      * Cache service
@@ -44,14 +43,14 @@ class PhpOrchestraUrlMatcher extends RedirectableUrlMatcher
      * 
      * @param RouteCollection $routes
      * @param RequestContext $context
-     * @param unknown_type $documentLoader
+     * @param unknown_type $documentManager
      * @param unknown_type $cacheService
      */
-    public function __construct(RouteCollection $routes, RequestContext $context, $documentLoader, $cacheService)
+    public function __construct(RouteCollection $routes, RequestContext $context, $documentManager, $cacheService)
     {
         $this->routes = $routes;
         $this->context = $context;
-        $this->documentLoader = $documentLoader;
+        $this->documentManager = $documentManager;
         $this->cacheService = $cacheService;
     }
 
@@ -209,7 +208,7 @@ class PhpOrchestraUrlMatcher extends RedirectableUrlMatcher
             'alias' => $slug
         );
         
-        $node = $this->documentLoader->getDocument('Node', $criteria);
+        $node = $this->documentManager->getDocument('Node', $criteria);
         
         if (!is_null($node)) {
             $nodeInfo = array(

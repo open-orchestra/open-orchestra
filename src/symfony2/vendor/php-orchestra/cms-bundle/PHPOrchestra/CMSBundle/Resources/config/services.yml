@@ -7,9 +7,9 @@ services:
         class: PHPOrchestra\CMSBundle\Cache\RedisCacheManager
         arguments: [@snc_redis.default]
 
-    # DocumentLoader service
-    phporchestra_cms.documentloader:
-        class: PHPOrchestra\CMSBundle\Document\DocumentLoader
+    # DocumentManager service
+    phporchestra_cms.documentmanager:
+        class: PHPOrchestra\CMSBundle\Document\DocumentManager
         arguments: [@mandango]
 
 #--[TWIG EXTENSIONS]-------------#
@@ -36,21 +36,21 @@ services:
     # Blocks form field type
     php_orchestra_cms.type.blocks:
         class: PHPOrchestra\CMSBundle\Form\Type\BlocksType
-        arguments: [@phporchestra_cms.documentloader]
+        arguments: [@phporchestra_cms.documentmanager]
         tags:
             - { name: form.type, alias: orchestra_blocks }
 
     # Templates select form field type
     php_orchestra_cms.type.template_choice:
         class: PHPOrchestra\CMSBundle\Form\Type\TemplateChoiceType
-        arguments: [@phporchestra_cms.documentloader]
+        arguments: [@phporchestra_cms.documentmanager]
         tags:
             - { name: form.type, alias: orchestra_template_choice }
 
     # Nodes select form field type
     php_orchestra_cms.type.node_choice:
         class: PHPOrchestra\CMSBundle\Form\Type\NodeChoiceType
-        arguments: [@phporchestra_cms.documentloader]
+        arguments: [@phporchestra_cms.documentmanager]
         tags:
             - { name: form.type, alias: orchestra_node_choice }
 

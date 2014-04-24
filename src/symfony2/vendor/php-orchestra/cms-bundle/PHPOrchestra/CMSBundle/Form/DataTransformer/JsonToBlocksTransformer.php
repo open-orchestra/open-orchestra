@@ -15,17 +15,17 @@ class JsonToBlocksTransformer implements DataTransformerInterface
      * Documents service
      * @var unknown
      */
-    public $documentLoader = null;
+    public $documentManager = null;
     
     
     /**
-     * Constructor, require documentLoader service
+     * Constructor, require documentManager service
      * 
-     * @param unknown $documentLoader
+     * @param unknown $documentManager
      */
-    public function __construct($documentLoader)
+    public function __construct($documentManager)
     {
-        $this->documentLoader = $documentLoader;
+        $this->documentManager = $documentManager;
     }
 
     /**
@@ -67,7 +67,7 @@ class JsonToBlocksTransformer implements DataTransformerInterface
         
         if (is_array($blocks)) {
             foreach ($blocks as $block) {
-                $blockDoc = $this->documentLoader->createDocument('Block')
+                $blockDoc = $this->documentManager->createDocument('Block')
                     ->setComponent($block['component'])
                     ->setAttributes($block['attributes']);
                 $docsArray[] = $blockDoc;

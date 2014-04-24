@@ -17,20 +17,20 @@ use PHPOrchestra\CMSBundle\Form\DataTransformer\JsonToBlocksTransformer;
 class BlocksType extends AbstractType
 {
     /**
-     * documentLoader service
-     * @var documentLoader
+     * documentManager service
+     * @var documentManager
      */
-    protected $documentLoader = null;
+    protected $documentManager = null;
 
     
     /**
-     * Constructor, require documentLoader service
+     * Constructor, require documentManager service
      * 
-     * @param $documentLoader
+     * @param $documentManager
      */
-    public function __construct($documentLoader)
+    public function __construct($documentManager)
     {
-        $this->documentLoader = $documentLoader;
+        $this->documentManager = $documentManager;
     }
     
     
@@ -42,7 +42,7 @@ class BlocksType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $transformer = new JsonToBlocksTransformer($this->documentLoader);
+        $transformer = new JsonToBlocksTransformer($this->documentManager);
         $builder->addModelTransformer($transformer);
     }
 

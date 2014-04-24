@@ -22,7 +22,7 @@ class PhpOrchestraRouter extends Router
      * 
      * @var unknown_type
      */
-    protected $documentLoader = null;
+    protected $documentManager = null;
     
     /**
      * Cache service
@@ -48,7 +48,7 @@ class PhpOrchestraRouter extends Router
     ) {
         parent::__construct($container, $resource, $options, $context);
         
-        $this->documentLoader = $container->get('phporchestra_cms.documentloader');
+        $this->documentManager = $container->get('phporchestra_cms.documentmanager');
         $this->cacheService = $container->get('phporchestra_cms.cachemanager');
     }
     
@@ -65,7 +65,7 @@ class PhpOrchestraRouter extends Router
         return $this->matcher = new $this->options['matcher_class'](
             $this->getRouteCollection(),
             $this->context,
-            $this->documentLoader,
+            $this->documentManager,
             $this->cacheService
         );
     }

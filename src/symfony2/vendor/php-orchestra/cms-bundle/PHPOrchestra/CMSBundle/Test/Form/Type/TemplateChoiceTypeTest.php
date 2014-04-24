@@ -40,17 +40,17 @@ class TemplateChoiceTypeTest extends \PHPUnit_Framework_TestCase
         /**
          * A document loader using the db mock
          * 
-         * @var \PHPOrchestra\CMSBundle\Document\DocumentLoader
+         * @var \PHPOrchestra\CMSBundle\Document\DocumentManager
          */
-        $documentLoader = $this->getMockBuilder('PHPOrchestra\\CMSBundle\\Document\\DocumentLoader')
+        $documentManager = $this->getMockBuilder('PHPOrchestra\\CMSBundle\\Document\\DocumentManager')
                 ->disableOriginalConstructor()
                 ->getMock();
         
-        $documentLoader->expects($this->any())
+        $documentManager->expects($this->any())
             ->method('getTemplatesInLastVersion')
             ->will($this->returnValue($this->templates));
         
-        $this->templateChoiceType = new TemplateChoiceType($documentLoader);
+        $this->templateChoiceType = new TemplateChoiceType($documentManager);
     }
     
     public function testSetDefaultOptions()

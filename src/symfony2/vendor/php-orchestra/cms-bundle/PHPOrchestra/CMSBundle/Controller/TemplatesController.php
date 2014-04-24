@@ -50,7 +50,7 @@ class TemplatesController extends Controller
      */
     public function showTreeTemplatesAction(Request $request)
     {
-        $templates = $this->get('phporchestra_cms.documentloader')->getTemplatesInLastVersion();
+        $templates = $this->get('phporchestra_cms.documentmanager')->getTemplatesInLastVersion();
         $links = array();
         foreach ($templates as $template) {
             $links[] = array('id' => $template['_id'], 'class' =>'', 'text' => $template['name']);

@@ -49,7 +49,7 @@ class NodeController extends Controller
      */
     public function showAction($nodeId)
     {
-        $node = $this->get('phporchestra_cms.documentloader')->getDocument('Node', array('nodeId' => $nodeId));
+        $node = $this->get('phporchestra_cms.documentmanager')->getDocument('Node', array('nodeId' => $nodeId));
         if (is_null($node)) {
             throw new NonExistingDocumentException("Node not found");
         }
@@ -128,7 +128,7 @@ class NodeController extends Controller
     protected function getBlocksFromNode($nodeId)
     {
         $this->externalBlocks[$nodeId] = array();
-        $node = $this->get('phporchestra_cms.documentloader')->getDocument('Node', array('nodeId' => $nodeId));
+        $node = $this->get('phporchestra_cms.documentmanager')->getDocument('Node', array('nodeId' => $nodeId));
         
         if ($node) {
             $blocks = $node->getBlocks();
@@ -150,16 +150,16 @@ class NodeController extends Controller
      */
     public function formAction($nodeId, Request $request)
     {
-        $documentLoader = $this->container->get('phporchestra_cms.documentloader');
+        $documentManager = $this->container->get('phporchestra_cms.documentmanager');
         
         $ajax = false;
         
         if (empty($nodeId)) {
-            $node = $documentLoader->createDocument('Node');
+            $node = $documentManager->createDocument('Node');
             $node->setSiteId(1);
             $node->setLanguage('fr');
         } else {
-            $node = $documentLoader->getDocument('Node', array('nodeId' => $nodeId));
+            $node = $documentManager->getDocument('Node', array('nodeId' => $nodeId));
             $node->setVersion($node->getVersion() + 1);
             $ajax = true;
         }
@@ -207,7 +207,7 @@ class NodeController extends Controller
             ->add(
                 'blockId',
                 new BlockChoiceType(
-                    $this->container->get('phporchestra_cms.documentloader'),
+                    $this->container->get('phporchestra_cms.documentmanager'),
                     $request->get('nodeId'),
                     $this->container->getParameter('php_orchestra.blocks')
                 )

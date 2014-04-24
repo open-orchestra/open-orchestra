@@ -18,13 +18,13 @@ class NodeChoiceType extends AbstractType
     public $choices = null;
 
     /**
-     * Constructor, require documentLoader service
+     * Constructor, require documentManager service
      * 
-     * @param $documentLoader
+     * @param $documentManager
      */
-    public function __construct($documentLoader)
+    public function __construct($documentManager)
     {
-        $nodes = $documentLoader->getNodesInLastVersion();
+        $nodes = $documentManager->getNodesInLastVersion();
         $this->choices[''] = '--------';
         foreach ($nodes as $node) {
             $this->choices[$node['_id']] = $node['name'];

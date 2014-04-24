@@ -18,13 +18,13 @@ class BlockChoiceType extends AbstractType
     public $choices = null;
 
     /**
-     * Constructor, require documentLoader service
+     * Constructor, require documentManager service
      * 
-     * @param $documentLoader
+     * @param $documentManager
      */
-    public function __construct($documentLoader, $nodeId, $filter = array())
+    public function __construct($documentManager, $nodeId, $filter = array())
     {
-        $node = $documentLoader->getDocument('Node', array('nodeId' => $nodeId));
+        $node = $documentManager->getDocument('Node', array('nodeId' => $nodeId));
         $this->choices[''] = '--------';
         
         foreach ($filter as $key => $configBlock) {

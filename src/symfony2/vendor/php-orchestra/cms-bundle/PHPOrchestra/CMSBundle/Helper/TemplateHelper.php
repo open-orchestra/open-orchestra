@@ -13,10 +13,10 @@ use PHPOrchestra\CMSBundle\Form\DataTransformer\JsonToBlocksTransformer;
 
 class TemplateHelper
 {
-    public static function formatTemplate(Template $template, $documentLoader)
+    public static function formatTemplate(Template $template, $documentManager)
     {
         $areaTransformer = new JsonToAreasTransformer();
-        $blockTransformer = new JsonToBlocksTransformer($documentLoader);
+        $blockTransformer = new JsonToBlocksTransformer($documentManager);
         
         return array(
             'areas' => $areaTransformer->transform($template->getAreas()),

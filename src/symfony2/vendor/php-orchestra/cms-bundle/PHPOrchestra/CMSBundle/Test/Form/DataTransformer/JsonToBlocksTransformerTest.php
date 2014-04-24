@@ -40,16 +40,16 @@ class JsonToBlocksTransformerTest extends \PHPUnit_Framework_TestCase
         /**
          * A document loader using the db mock
          * 
-         * @var \PHPOrchestra\CMSBundle\Document\DocumentLoader
+         * @var \PHPOrchestra\CMSBundle\Document\DocumentManager
          */
-        $this->documentLoader = $this->getMockBuilder(
-            'PHPOrchestra\\CMSBundle\\Document\\DocumentLoader'
+        $this->documentManager = $this->getMockBuilder(
+            'PHPOrchestra\\CMSBundle\\Document\\DocumentManager'
         )
             ->enableProxyingToOriginalMethods()
             ->setConstructorArgs(array($this->documentService))
             ->getMock();
         
-        $this->transformer = new JsonToBlocksTransformer($this->documentLoader);
+        $this->transformer = new JsonToBlocksTransformer($this->documentManager);
     }
     
     /**

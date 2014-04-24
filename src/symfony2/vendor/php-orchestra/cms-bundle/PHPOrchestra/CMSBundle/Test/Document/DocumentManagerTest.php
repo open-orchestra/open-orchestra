@@ -17,21 +17,21 @@
 
 namespace PHPOrchestra\CMSBundle\Test\Document;
 
-use PHPOrchestra\CMSBundle\Document\DocumentLoader;
+use PHPOrchestra\CMSBundle\Document\DocumentManager;
 
 /**
- * Unit tests of DocumentLoader
+ * Unit tests of documentManager
  *
  * @author Nicolas BOUQUET <nicolas.bouquet@businessdecision.com>
  */
-class DocumentLoaderTest extends \PHPUnit_Framework_TestCase
+class documentManagerTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * DocumentLoader to be tested
+     * documentManager to be tested
      *
-     * @var PHPOrchestra\CMSBundle\Document\DocumentLoader
+     * @var PHPOrchestra\CMSBundle\Document\DocumentManager
      */
-    protected $documentLoader = null;
+    protected $documentManager = null;
     
     /**
      * Database mock system
@@ -101,7 +101,7 @@ class DocumentLoaderTest extends \PHPUnit_Framework_TestCase
             )
         );
         
-        $this->documentLoader = new DocumentLoader($this->documentService);
+        $this->documentManager = new documentManager($this->documentService);
     }
     
     /**
@@ -110,7 +110,7 @@ class DocumentLoaderTest extends \PHPUnit_Framework_TestCase
      */
     public function testCreateDocument($expectedClass, $documentType)
     {
-        $document = $this->documentLoader->createDocument($documentType);
+        $document = $this->documentManager->createDocument($documentType);
         
         $this->assertInstanceOf($expectedClass, $document);
     }
@@ -121,7 +121,7 @@ class DocumentLoaderTest extends \PHPUnit_Framework_TestCase
      */
     public function testCreateDocumentException()
     {
-        $this->documentLoader->createDocument('BadDocumentType');
+        $this->documentManager->createDocument('BadDocumentType');
     }
     
     /**
@@ -132,7 +132,7 @@ class DocumentLoaderTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetDocument($expectedDocumentId, $documentType, $criteria)
     {
-        $document = $this->documentLoader->getDocument($documentType, $criteria);
+        $document = $this->documentManager->getDocument($documentType, $criteria);
         
         $this->assertEquals($expectedDocumentId, $document->getId());
     }
@@ -143,12 +143,12 @@ class DocumentLoaderTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetDocumentException()
     {
-        $this->documentLoader->getDocument('BadDocumentType');
+        $this->documentManager->getDocument('BadDocumentType');
     }
     
     public function testGetNodesInLastVersion()
     {
-        $nodes = $this->documentLoader->getNodesInLastVersion();
+        $nodes = $this->documentManager->getNodesInLastVersion();
         
         $this->assertEquals('a01', $nodes[1]['node_id']);
         $this->assertEquals('a02', $nodes[2]['node_id']);
@@ -157,7 +157,7 @@ class DocumentLoaderTest extends \PHPUnit_Framework_TestCase
     
     public function testGetTemplatesInLastVersion()
     {
-        $templates = $this->documentLoader->getTemplatesInLastVersion();
+        $templates = $this->documentManager->getTemplatesInLastVersion();
         
         $this->assertEquals('b01', $templates[1]['template_id']);
         $this->assertEquals('b02', $templates[2]['template_id']);

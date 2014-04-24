@@ -50,7 +50,7 @@ class NodesController extends Controller
      */
     public function showTreeNodesAction(Request $request)
     {
-        $nodes = $this->get('phporchestra_cms.documentloader')->getNodesInLastVersion();
+        $nodes = $this->get('phporchestra_cms.documentmanager')->getNodesInLastVersion();
         return $this->render(
             'PHPOrchestraCMSBundle:Tree:tree.html.twig',
             array(

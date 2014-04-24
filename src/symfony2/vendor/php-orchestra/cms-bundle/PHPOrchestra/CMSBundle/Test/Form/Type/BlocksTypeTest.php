@@ -31,13 +31,13 @@ class BlocksTypeTest extends \PHPUnit_Framework_TestCase
         /**
          * A dummy document loader
          * 
-         * @var \PHPOrchestra\CMSBundle\Document\DocumentLoader
+         * @var \PHPOrchestra\CMSBundle\Document\DocumentManager
          */
-        $documentLoader = $this->getMockBuilder('PHPOrchestra\\CMSBundle\\Document\\DocumentLoader')
+        $documentManager = $this->getMockBuilder('PHPOrchestra\\CMSBundle\\Document\\DocumentManager')
                 ->disableOriginalConstructor()
                 ->getMock();
         
-        $this->blocksType = new BlocksType($documentLoader);
+        $this->blocksType = new BlocksType($documentManager);
     }
     
     public function testBuildForm()

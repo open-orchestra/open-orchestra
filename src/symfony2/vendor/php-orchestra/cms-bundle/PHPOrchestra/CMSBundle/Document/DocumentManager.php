@@ -10,16 +10,16 @@ namespace PHPOrchestra\CMSBundle\Document;
 use PHPOrchestra\CMSBundle\Exception\UnrecognizedDocumentTypeException;
 
 /**
- * Get documents from storage
+ * Manage documents
  * 
  * @author Noël Gilain <noel.gilain@businessdecision.com>
  */
-class DocumentLoader
+class DocumentManager
 {
     private $documentsService = null;
     
     /**
-     * DocumentLoader service constructor
+     * DocumentManager service constructor
      * 
      * @param unknown_type $documentsService The documents storage service
      */

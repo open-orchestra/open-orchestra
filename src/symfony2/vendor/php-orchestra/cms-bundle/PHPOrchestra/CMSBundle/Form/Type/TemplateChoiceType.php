@@ -17,13 +17,13 @@ class TemplateChoiceType extends AbstractType
     public $choices = null;
 
     /**
-     * Constructor, require documentLoader service
+     * Constructor, require documentManager service
      * 
-     * @param $documentLoader
+     * @param $documentManager
      */
-    public function __construct($documentLoader)
+    public function __construct($documentManager)
     {
-        $templates = $documentLoader->getTemplatesInLastVersion();
+        $templates = $documentManager->getTemplatesInLastVersion();
         $this->choices[''] = '--------';
         foreach ($templates as $template) {
             $this->choices[$template['_id']] = $template['name'];
