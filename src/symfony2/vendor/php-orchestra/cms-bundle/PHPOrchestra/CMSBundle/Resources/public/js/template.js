@@ -400,25 +400,12 @@ var dialog_parameter = {
 };
 
 var tree_parameter = {
-	extensions: ["glyph", "edit"],
-	checkbox: false,
-	selectMode: 2,
-	glyph: {
-		map: {
-			doc: "glyphicon glyphicon-file",
-			docOpen: "glyphicon glyphicon-file",
-			checkbox: "glyphicon glyphicon-unchecked",
-			checkboxSelected: "glyphicon glyphicon-check",
-			checkboxUnknown: "glyphicon glyphicon-share",
-			error: "glyphicon glyphicon-warning-sign",
-			expanderClosed: "glyphicon glyphicon-plus-sign",
-			expanderLazy: "glyphicon glyphicon-plus-sign",
-			expanderOpen: "glyphicon glyphicon-minus-sign",
-			folder: "glyphicon glyphicon-folder-close",
-			folderOpen: "glyphicon glyphicon-folder-open",
-			loading: "glyphicon glyphicon-refresh"
-		}
-	}
+   /* extensions: ["edit"],*/
+    autoActivate: false,
+    autoScroll: true,
+    clickFolderMode: 1,
+    keyboard: false,
+    selectMode: 1
 };
 
 var treeNodesMenuOptions = [

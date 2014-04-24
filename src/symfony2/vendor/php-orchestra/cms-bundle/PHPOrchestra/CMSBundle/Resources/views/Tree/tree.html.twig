@@ -11,7 +11,7 @@
         $( "#tree-{{ name }}" ).fancytree($.extend(
             tree_parameter,
             {
-                'click': function(event, data) {
+                'activate': function(event, data) {
                     var url = '{{ path(path) }}/' + data.node.key.replace('tree-{{ name }}-', '');
                     treeAjaxCall(url, {}, '{{ refresh }}');
                 }
