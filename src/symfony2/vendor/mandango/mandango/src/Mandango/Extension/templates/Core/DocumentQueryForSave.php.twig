@@ -66,7 +66,8 @@
 {% endif %}
 {% for name, field in config_class.fields %}
 {% if field.inherited is not defined or not field.inherited %}
-                if (isset($this->data['fields']['{{ name }}']) || array_key_exists('{{ name }}', $this->data['fields'])) {
+                if (isset($this->data['fields']['{{ name }}'])
+                    || array_key_exists('{{ name }}', $this->data['fields'])) {
                     $value = $this->data['fields']['{{ name }}'];
                     $originalValue = $this->getOriginalFieldValue('{{ name }}');
                     if ($value !== $originalValue) {

@@ -183,13 +183,13 @@ EOF;
             $value = $property->getValue();
             if (null === $value) {
                 $code .= <<<EOF
-    $isStatic{$property->getVisibility()} \${$property->getName()};
+    {$property->getVisibility()} $isStatic\${$property->getName()};
 EOF;
             } else {
                 $value = is_array($property->getValue()) ? self::exportArray($property->getValue(), 8) : var_export($property->getValue(), true);
 
                 $code .= <<<EOF
-    $isStatic{$property->getVisibility()} \${$property->getName()} = $value;
+    {$property->getVisibility()} $isStatic\${$property->getName()} = $value;
 EOF;
             }
         }
@@ -221,7 +221,7 @@ EOF;
             // abstract
             if ($method->isAbstract()) {
                 $code .= <<<EOF
-    abstract $isStatic{$method->getVisibility()} function {$method->getName()}({$method->getArguments()});
+    abstract {$method->getVisibility()} ${isStatic}function {$method->getName()}({$method->getArguments()});
 EOF;
             } else {
                 $methodCode = trim($method->getCode());
@@ -229,7 +229,7 @@ EOF;
                     $methodCode = '    '.$methodCode."\n    ";
                 }
                 $code .= <<<EOF
-    $isFinal$isStatic{$method->getVisibility()} function {$method->getName()}({$method->getArguments()})
+    $isFinal{$method->getVisibility()} ${isStatic}function {$method->getName()}({$method->getArguments()})
     {
     $methodCode}
 EOF;
@@ -251,6 +251,7 @@ EOF;
 
         $code .= <<<EOF
 }
+
 EOF;
 
         return $code;
