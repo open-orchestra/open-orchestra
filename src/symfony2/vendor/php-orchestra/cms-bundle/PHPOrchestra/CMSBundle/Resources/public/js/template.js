@@ -374,13 +374,16 @@ var dialog_parameter = {
             }
         }
         $(this).find("[type='submit']").each(function(){
-        	$(this).hide();
-        	buttons["Send"] = function(){
+            $(this).hide();
+            buttons["Save"] = function(){
                 var data = $(this).data();
                 $(this).getValue(data.this_values);
                 formatForSubmit(data.settings);
-                $(this).find('form').submit();
-                $(this).dialog( "destroy" );
+                var form = $(this).find('form');
+                url = form.attr('action');
+                params = form.serialize();
+                $(this).dialog( "close" );
+                treeAjaxCall(url, params);
            }
         });
         $(this).dialog("option", "buttons", buttons);

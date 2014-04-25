@@ -179,7 +179,10 @@ class NodeController extends Controller
             $node->setId(null);
             $node->setIsNew(true);
             $node->save();
-            return $this->redirect($this->generateUrl('php_orchestra_cms_bo'));
+            return $this->render(
+                                 'PHPOrchestraCMSBundle:BackOffice:simpleMessage.html.twig',
+                                 array('message' => 'Edition ok')
+            );
         }
         
         return $this->render(
@@ -252,11 +255,9 @@ class NodeController extends Controller
         $this->deleteTree($nodeId);
         
         return $this->render(
-                'PHPOrchestraCMSBundle:BackOffice:simpleMessage.html.twig',
-                array(
-                    'message' => 'Delete node process on ' . $nodeId
-                )
-            );
+                             'PHPOrchestraCMSBundle:BackOffice:simpleMessage.html.twig',
+                             array('message' => 'Delete node process on ' . $nodeId)
+        );
     }
     
     /**
@@ -287,9 +288,7 @@ class NodeController extends Controller
     {
         return $this->render(
             'PHPOrchestraCMSBundle:BackOffice:simpleMessage.html.twig',
-            array(
-                'message' => 'Move nodes tree process'
-            )
+            array('message' => 'Move nodes tree process')
         );
     }
 }
