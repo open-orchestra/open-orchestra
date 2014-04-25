@@ -3,17 +3,7 @@
  #
  # @author Nicolas ANNE <nicolas.anne@businessdecision.com>
  ##}
-{% if ajax %}
-    {% set name = 'PHPOrchestraCMSBundle:BackOffice:ajax.html.twig' %}
-{% else %}
-    {% set name = 'PHPOrchestraCMSBundle:BackOffice:contentDualColumn.html.twig' %}
-{% endif %}
-{% extends name %}
-
-{% block contentTitle %}
-<i class="fa-fw fa fa-home"></i> 
-Editorial 
-{% endblock %}
+{% extends 'PHPOrchestraCMSBundle:BackOffice:refresh.ajax.twig' %}
 
 {% block rightbox_content %}
     {% if form.vars.showDialog %}
@@ -22,6 +12,3 @@ Editorial
     {{ form(form) }}
 {% endblock %}
 
-{% block inbox_side_bar %}
-    {% include 'PHPOrchestraCMSBundle:BackOffice:editorialMenu.html.twig' %}
-{% endblock %}

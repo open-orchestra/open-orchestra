@@ -434,8 +434,10 @@ function treeAjaxCall(url, params)
         'data': params,
         'success': function(response) {
             $('[id^="dialog-"]').dialog("destroy");
-            $('#rightbox-content').html(response['rightbox_content']);
-            $('.inbox-side-bar').html(response['inbox_side_bar']);
+            
+            for (var selector in response) {
+                $(selector).html(response[selector]);
+            }
         },
         'dataType': 'json'
     });
