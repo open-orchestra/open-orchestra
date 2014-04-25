@@ -403,7 +403,10 @@ var dialog_parameter = {
 };
 
 var tree_parameter = {
-   /* extensions: ["edit"],*/
+    extensions: ["persist"],
+    /*persist: {
+        expandLazy: true
+    },*/
     autoActivate: false,
     autoScroll: true,
     clickFolderMode: 1,
