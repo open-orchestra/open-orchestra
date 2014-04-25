@@ -1,0 +1,24 @@
+{##
+ # This file is part of the PHPOrchestra\CMSBundle.
+ #
+ # @author Noël GILAIN <noel.gilain@businessdecision.com>
+ ##}
+{% extends 'PHPOrchestraCMSBundle:BackOffice:contentDualColumn.html.twig' %}
+
+{% block contentTitle %}
+<i class="fa-fw fa fa-home"></i> 
+Editorial 
+{% endblock %}
+
+{% block tableTitle %}
+Editorial 
+{% endblock %}
+
+{% block inbox_side_bar %}
+    {% include 'PHPOrchestraCMSBundle:BackOffice:editorialMenu.html.twig' %}
+{% endblock %}
+
+{% block rightbox_content %}
+    Voici le Dashboard de la rubrique Editoriale.
+{% endblock %}
+

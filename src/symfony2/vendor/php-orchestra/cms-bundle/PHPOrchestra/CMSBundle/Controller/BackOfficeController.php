@@ -13,11 +13,28 @@ use PHPOrchestra\CMSBundle\Exception\UnrecognizedCommandTypeException;
 
 class BackOfficeController extends Controller
 {
+    /**
+     * Back Office Home Page
+     */
     public function homeAction()
     {
         return $this->render('PHPOrchestraCMSBundle:BackOffice:home.html.twig');
     }
     
+    /**
+     * Editorial Rubric Home Page
+     */
+    public function editoAction()
+    {
+        return $this->render('PHPOrchestraCMSBundle:BackOffice:editoHome.html.twig');
+    }
+    
+    /**
+     * Tree menu Dispatcher
+     * 
+     * @param string $cmd
+     * @param Request $request
+     */
     public function jsContextMenuDispatchAction($cmd, Request $request)
     {
         $action = '';
