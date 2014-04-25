@@ -125,7 +125,10 @@ abstract class User extends \Mandango\Document\Document
                 $this->data['fields']['login'] = null;
             } elseif (!isset($this->data['fields']) || !array_key_exists('login', $this->data['fields'])) {
                 $this->addFieldCache('login');
-                $data = $this->getRepository()->getCollection()->findOne(array('_id' => $this->getId()), array('login' => 1));
+                $data = $this->getRepository()->getCollection()->findOne(
+                    array('_id' => $this->getId()),
+                    array('login' => 1)
+                );
                 if (isset($data['login'])) {
                     $this->data['fields']['login'] = (string) $data['login'];
                 } else {
@@ -187,7 +190,10 @@ abstract class User extends \Mandango\Document\Document
                 $this->data['fields']['hash'] = null;
             } elseif (!isset($this->data['fields']) || !array_key_exists('hash', $this->data['fields'])) {
                 $this->addFieldCache('hash');
-                $data = $this->getRepository()->getCollection()->findOne(array('_id' => $this->getId()), array('hash' => 1));
+                $data = $this->getRepository()->getCollection()->findOne(
+                    array('_id' => $this->getId()),
+                    array('hash' => 1)
+                );
                 if (isset($data['hash'])) {
                     $this->data['fields']['hash'] = (string) $data['hash'];
                 } else {
@@ -249,7 +255,10 @@ abstract class User extends \Mandango\Document\Document
                 $this->data['fields']['salt'] = null;
             } elseif (!isset($this->data['fields']) || !array_key_exists('salt', $this->data['fields'])) {
                 $this->addFieldCache('salt');
-                $data = $this->getRepository()->getCollection()->findOne(array('_id' => $this->getId()), array('salt' => 1));
+                $data = $this->getRepository()->getCollection()->findOne(
+                    array('_id' => $this->getId()),
+                    array('salt' => 1)
+                );
                 if (isset($data['salt'])) {
                     $this->data['fields']['salt'] = (string) $data['salt'];
                 } else {
@@ -311,7 +320,10 @@ abstract class User extends \Mandango\Document\Document
                 $this->data['fields']['firstName'] = null;
             } elseif (!isset($this->data['fields']) || !array_key_exists('firstName', $this->data['fields'])) {
                 $this->addFieldCache('firstName');
-                $data = $this->getRepository()->getCollection()->findOne(array('_id' => $this->getId()), array('firstName' => 1));
+                $data = $this->getRepository()->getCollection()->findOne(
+                    array('_id' => $this->getId()),
+                    array('firstName' => 1)
+                );
                 if (isset($data['firstName'])) {
                     $this->data['fields']['firstName'] = (string) $data['firstName'];
                 } else {
@@ -373,7 +385,10 @@ abstract class User extends \Mandango\Document\Document
                 $this->data['fields']['lastName'] = null;
             } elseif (!isset($this->data['fields']) || !array_key_exists('lastName', $this->data['fields'])) {
                 $this->addFieldCache('lastName');
-                $data = $this->getRepository()->getCollection()->findOne(array('_id' => $this->getId()), array('lastName' => 1));
+                $data = $this->getRepository()->getCollection()->findOne(
+                    array('_id' => $this->getId()),
+                    array('lastName' => 1)
+                );
                 if (isset($data['lastName'])) {
                     $this->data['fields']['lastName'] = (string) $data['lastName'];
                 } else {
@@ -435,7 +450,10 @@ abstract class User extends \Mandango\Document\Document
                 $this->data['fields']['email'] = null;
             } elseif (!isset($this->data['fields']) || !array_key_exists('email', $this->data['fields'])) {
                 $this->addFieldCache('email');
-                $data = $this->getRepository()->getCollection()->findOne(array('_id' => $this->getId()), array('email' => 1));
+                $data = $this->getRepository()->getCollection()->findOne(
+                    array('_id' => $this->getId()),
+                    array('email' => 1)
+                );
                 if (isset($data['email'])) {
                     $this->data['fields']['email'] = (string) $data['email'];
                 } else {
@@ -497,7 +515,10 @@ abstract class User extends \Mandango\Document\Document
                 $this->data['fields']['addresses'] = null;
             } elseif (!isset($this->data['fields']) || !array_key_exists('addresses', $this->data['fields'])) {
                 $this->addFieldCache('addresses');
-                $data = $this->getRepository()->getCollection()->findOne(array('_id' => $this->getId()), array('addresses' => 1));
+                $data = $this->getRepository()->getCollection()->findOne(
+                    array('_id' => $this->getId()),
+                    array('addresses' => 1)
+                );
                 if (isset($data['addresses'])) {
                     $this->data['fields']['addresses'] = (string) $data['addresses'];
                 } else {
@@ -718,7 +739,8 @@ abstract class User extends \Mandango\Document\Document
                     $query['addresses'] = (string) $this->data['fields']['addresses'];
                 }
             } else {
-                if (isset($this->data['fields']['login']) || array_key_exists('login', $this->data['fields'])) {
+                if (isset($this->data['fields']['login'])
+                    || array_key_exists('login', $this->data['fields'])) {
                     $value = $this->data['fields']['login'];
                     $originalValue = $this->getOriginalFieldValue('login');
                     if ($value !== $originalValue) {
@@ -729,7 +751,8 @@ abstract class User extends \Mandango\Document\Document
                         }
                     }
                 }
-                if (isset($this->data['fields']['hash']) || array_key_exists('hash', $this->data['fields'])) {
+                if (isset($this->data['fields']['hash'])
+                    || array_key_exists('hash', $this->data['fields'])) {
                     $value = $this->data['fields']['hash'];
                     $originalValue = $this->getOriginalFieldValue('hash');
                     if ($value !== $originalValue) {
@@ -740,7 +763,8 @@ abstract class User extends \Mandango\Document\Document
                         }
                     }
                 }
-                if (isset($this->data['fields']['salt']) || array_key_exists('salt', $this->data['fields'])) {
+                if (isset($this->data['fields']['salt'])
+                    || array_key_exists('salt', $this->data['fields'])) {
                     $value = $this->data['fields']['salt'];
                     $originalValue = $this->getOriginalFieldValue('salt');
                     if ($value !== $originalValue) {
@@ -751,7 +775,8 @@ abstract class User extends \Mandango\Document\Document
                         }
                     }
                 }
-                if (isset($this->data['fields']['firstName']) || array_key_exists('firstName', $this->data['fields'])) {
+                if (isset($this->data['fields']['firstName'])
+                    || array_key_exists('firstName', $this->data['fields'])) {
                     $value = $this->data['fields']['firstName'];
                     $originalValue = $this->getOriginalFieldValue('firstName');
                     if ($value !== $originalValue) {
@@ -762,7 +787,8 @@ abstract class User extends \Mandango\Document\Document
                         }
                     }
                 }
-                if (isset($this->data['fields']['lastName']) || array_key_exists('lastName', $this->data['fields'])) {
+                if (isset($this->data['fields']['lastName'])
+                    || array_key_exists('lastName', $this->data['fields'])) {
                     $value = $this->data['fields']['lastName'];
                     $originalValue = $this->getOriginalFieldValue('lastName');
                     if ($value !== $originalValue) {
@@ -773,7 +799,8 @@ abstract class User extends \Mandango\Document\Document
                         }
                     }
                 }
-                if (isset($this->data['fields']['email']) || array_key_exists('email', $this->data['fields'])) {
+                if (isset($this->data['fields']['email'])
+                    || array_key_exists('email', $this->data['fields'])) {
                     $value = $this->data['fields']['email'];
                     $originalValue = $this->getOriginalFieldValue('email');
                     if ($value !== $originalValue) {
@@ -784,7 +811,8 @@ abstract class User extends \Mandango\Document\Document
                         }
                     }
                 }
-                if (isset($this->data['fields']['addresses']) || array_key_exists('addresses', $this->data['fields'])) {
+                if (isset($this->data['fields']['addresses'])
+                    || array_key_exists('addresses', $this->data['fields'])) {
                     $value = $this->data['fields']['addresses'];
                     $originalValue = $this->getOriginalFieldValue('addresses');
                     if ($value !== $originalValue) {
@@ -809,7 +837,7 @@ abstract class User extends \Mandango\Document\Document
      *
      * @param \Symfony\Component\Validator\Mapping\ClassMetadata $metadata The metadata class.
      */
-    static public function loadValidatorMetadata(\Symfony\Component\Validator\Mapping\ClassMetadata $metadata)
+    public static function loadValidatorMetadata(\Symfony\Component\Validator\Mapping\ClassMetadata $metadata)
     {
         $validation = array(
             'constraints' => array(
@@ -820,12 +848,14 @@ abstract class User extends \Mandango\Document\Document
             ),
         );
 
-        foreach (\Mandango\MandangoBundle\Extension\DocumentValidation::parseNodes($validation['constraints']) as $constraint) {
+        foreach (\Mandango\MandangoBundle\Extension\DocumentValidation
+            ::parseNodes($validation['constraints']) as $constraint) {
             $metadata->addConstraint($constraint);
         }
 
         foreach ($validation['getters'] as $getter => $constraints) {
-            foreach (\Mandango\MandangoBundle\Extension\DocumentValidation::parseNodes($constraints) as $constraint) {
+            foreach (\Mandango\MandangoBundle\Extension\DocumentValidation
+            ::parseNodes($constraints) as $constraint) {
                 $metadata->addGetterConstraint($getter, $constraint);
             }
         }
