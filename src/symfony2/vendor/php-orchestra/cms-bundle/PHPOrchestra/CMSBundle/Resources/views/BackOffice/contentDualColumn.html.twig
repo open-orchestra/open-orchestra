@@ -95,11 +95,7 @@
     </header>
     <div id="leftbox-content" class="inbox-body no-content-padding" style="opacity: 1;height:100%;">
         <div class="inbox-side-bar">
-        {% block inbox_side_bar %}
-            {{ render(controller('PHPOrchestraCMSBundle:Nodes:showTreeNodes')) }}
-            <br />
-            {{ render(controller('PHPOrchestraCMSBundle:Templates:showTreeTemplates')) }}
-        {% endblock %}
+        {% block inbox_side_bar %}{% endblock %}
         </div>
         <div id="rightbox-content" class="table-wrap custom-scroll animated fast fadeInRight" style="opacity: 1;height:100%;">
             {% block rightbox_content %}{% endblock %}

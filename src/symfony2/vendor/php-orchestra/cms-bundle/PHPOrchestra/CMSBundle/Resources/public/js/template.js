@@ -425,16 +425,17 @@ var treePreviousJs = {
                       'deleteNode': function(){return confirmTreeDelete();}
                      };
 
-function treeAjaxCall(url, params, container)
+function treeAjaxCall(url, params)
 {
-    $('#' + container).html('<h1><i class="fa fa-cog fa-spin"></i> Loading...</h1>');
+    $('#rightbox-content').html('<h1><i class="fa fa-cog fa-spin"></i> Loading...</h1>');
     $.ajax({
         'type': 'POST',
         'url': url,
         'data': params,
         'success': function(response) {
             $('[id^="dialog-"]').dialog("destroy");
-            $('#' + container).html(response[container.replace('-', '_')]);
+            $('#rightbox-content').html(response['rightbox_content']);
+            $('.inbox-side-bar').html(response['inbox_side_bar']);
         },
         'dataType': 'json'
     });

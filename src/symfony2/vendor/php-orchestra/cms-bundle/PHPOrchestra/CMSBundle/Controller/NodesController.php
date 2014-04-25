@@ -56,7 +56,6 @@ class NodesController extends Controller
             array(
                 'name' => 'Pages',
                 'path' => 'php_orchestra_cms_nodeform',
-                'refresh' => 'rightbox-content',
                 'links' => NodesHelper::createTree($nodes),
                 'mode' => 'nodes'
             )

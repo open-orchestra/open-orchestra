@@ -1,5 +1,7 @@
 {%
-set value = {'rightbox_content' : block('rightbox_content'),
-            'inbox_side_bar' : block('inbox_side_bar')}
+set value = {
+             'rightbox_content' : block('rightbox_content'),
+             'inbox_side_bar' : block('inbox_side_bar')
+            }
 %}
 {{ value|json_encode|raw }}

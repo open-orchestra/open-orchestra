@@ -7,5 +7,9 @@
 
 
 {% block rightbox_content %}
-    {{ message }}
+{{ message }}
+{% endblock %}
+
+{% block inbox_side_bar %}
+{% include 'PHPOrchestraCMSBundle:BackOffice:editorialMenu.html.twig' %}
 {% endblock %}

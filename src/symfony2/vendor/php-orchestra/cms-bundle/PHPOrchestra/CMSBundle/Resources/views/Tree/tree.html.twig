@@ -14,7 +14,7 @@
                 {
                     'activate': function(event, data) {
                         var url = '{{ path(path) }}/' + data.node.key.replace('tree-{{ name }}-', '');
-                        treeAjaxCall(url, {}, '{{ refresh }}');
+                        treeAjaxCall(url, {});
                     }
                 }
             ));
@@ -43,7 +43,7 @@
                     if (!stopper) {
                         var node = $.ui.fancytree.getNode(ui.target).key.replace('tree-{{ name }}-', '');
                         var url = '{{ path('php_orchestra_cms_bo_jscontextmenudispatcher') }}/' + ui.cmd;
-                        treeAjaxCall(url, {'nodeId': node}, '{{ refresh }}');
+                        treeAjaxCall(url, {'nodeId': node});
                     }
                 }
             });
