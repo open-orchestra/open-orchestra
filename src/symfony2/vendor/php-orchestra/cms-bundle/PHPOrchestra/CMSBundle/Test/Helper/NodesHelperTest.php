@@ -49,7 +49,7 @@ class NodesHelperTest extends \PHPUnit_Framework_TestCase
                         'sublinks' => array(
                             array(
                                 'id' => '2',
-                                'class' => '',
+                                'class' => 'deleted',
                                 'text' => 'Home child'
                             )
                         )
@@ -59,12 +59,14 @@ class NodesHelperTest extends \PHPUnit_Framework_TestCase
                     array(
                         '_id'       => 'root',
                         'parentId'  => '0',
-                        'name'      => 'Home page'
+                        'name'      => 'Home page',
+                        'deleted'   => false
                     ),
                     array(
                         '_id'       => '2',
                         'parentId'  => 'root',
-                        'name'      => 'Home child'
+                        'name'      => 'Home child',
+                        'deleted'   => true
                     ),
                 )
             )
