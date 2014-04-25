@@ -1,51 +1,53 @@
 {% import "PHPOrchestraCMSBundle:Tree:tree-macros.html.twig" as macros %}
 
-<div id="tree-{{ name }}">
-    <h4>{{ name }}</h4>
-    {{ macros.menu_links(links, name) }}
-</div>
-
-<script><!--
-    $(function() {
-        
-        $( "#tree-{{ name }}" ).fancytree($.extend(
-            tree_parameter,
-            {
-                'activate': function(event, data) {
-                    var url = '{{ path(path) }}/' + data.node.key.replace('tree-{{ name }}-', '');
-                    treeAjaxCall(url, {}, '{{ refresh }}');
-                }
-            }
-        ));
-        
-        var menuOptions = [];
-        if ('{{ mode }}' == 'nodes') {
-            menuOptions = treeNodesMenuOptions;
-        } else if ('{{ mode }}' == 'templates') {
-            menuOptions = treeTemplatesMenuOptions;
-        }
-        
-        $("#tree-{{ name }}").contextmenu({
-            'delegate': 'span.fancytree-title',
-            'menu': menuOptions,
-            'beforeOpen': function(event, ui) {
-                var node = $.ui.fancytree.getNode(ui.target);
-//                node.setFocus();
-                node.setActive();
-            },
-            'select': function(event, ui) {
-                var stopper = false;
-                if ((treePreviousJs[ui.cmd] != undefined) && (!treePreviousJs[ui.cmd]())) {
-                    stopper = true;
-                }
-                
-                if (!stopper) {
-                    var node = $.ui.fancytree.getNode(ui.target).key.replace('tree-{{ name }}-', '');
-                    var url = '{{ path('php_orchestra_cms_bo_jscontextmenudispatcher') }}/' + ui.cmd;
-                    treeAjaxCall(url, {'nodeId': node}, '{{ refresh }}');
-                }
-            }
-        });
-    });
+<div id="tree-{{ name }}-container">
+    <div id="tree-{{ name }}">
+        <h4>{{ name }}</h4>
+        {{ macros.menu_links(links, name) }}
+    </div>
     
---></script>
+    <script><!--
+        $(function()
+        {
+            $( "#tree-{{ name }}" ).fancytree($.extend(
+                tree_parameter,
+                {
+                    'activate': function(event, data) {
+                        var url = '{{ path(path) }}/' + data.node.key.replace('tree-{{ name }}-', '');
+                        treeAjaxCall(url, {}, '{{ refresh }}');
+                    }
+                }
+            ));
+            
+            var menuOptions = [];
+            if ('{{ mode }}' == 'nodes') {
+                menuOptions = treeNodesMenuOptions;
+            } else if ('{{ mode }}' == 'templates') {
+                menuOptions = treeTemplatesMenuOptions;
+            }
+            
+            $("#tree-{{ name }}").contextmenu({
+                'delegate': 'span.fancytree-title',
+                'menu': menuOptions,
+                'beforeOpen': function(event, ui) {
+                    var node = $.ui.fancytree.getNode(ui.target);
+    //                node.setFocus();
+    //                node.setActive();
+                },
+                'select': function(event, ui) {
+                    var stopper = false;
+                    if ((treePreviousJs[ui.cmd] != undefined) && (!treePreviousJs[ui.cmd]())) {
+                        stopper = true;
+                    }
+                    
+                    if (!stopper) {
+                        var node = $.ui.fancytree.getNode(ui.target).key.replace('tree-{{ name }}-', '');
+                        var url = '{{ path('php_orchestra_cms_bo_jscontextmenudispatcher') }}/' + ui.cmd;
+                        treeAjaxCall(url, {'nodeId': node}, '{{ refresh }}');
+                    }
+                }
+            });
+        });
+        
+    --></script>
+</div>
