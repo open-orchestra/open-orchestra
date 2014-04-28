@@ -157,7 +157,10 @@ class NodeController extends Controller
             $node->setSiteId(1);
             $node->setLanguage('fr');
         } else {
-            $node = $documentManager->getDocument('Node', array('nodeId' => $nodeId));
+            $node = $documentManager->getDocument(
+                'Node',
+                array('nodeId' => $nodeId)
+            );
             $node->setVersion($node->getVersion() + 1);
         }
         
@@ -179,6 +182,7 @@ class NodeController extends Controller
             $node->setId(null);
             $node->setIsNew(true);
             $node->save();
+            
             return $this->render(
                                  'PHPOrchestraCMSBundle:BackOffice:simpleMessage.html.twig',
                                  array('message' => 'Edition ok')
