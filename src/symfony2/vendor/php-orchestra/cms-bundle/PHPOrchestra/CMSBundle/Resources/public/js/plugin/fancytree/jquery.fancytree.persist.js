@@ -57,21 +57,21 @@ function _loadLazyNodes(tree, instData, keyList, mode, dfd) {
 			if( mode && node.isUndefined() ) {
 				// lazyNodeList.push(node);
 				foundOne = true;
-				tree.debug("_loadLazyNodes: " + node + " is lazy: loading...");
+				//tree.debug("_loadLazyNodes: " + node + " is lazy: loading...");
 				if( mode === "expand" ) {
 					deferredList.push(node.setExpanded());
 				} else {
 					deferredList.push(node.load());
 				}
 			} else {
-				tree.debug("_loadLazyNodes: " + node + " already loaded.");
+				//tree.debug("_loadLazyNodes: " + node + " already loaded.");
 				node.setExpanded();
 				// node.expanded = true;
 				// node.render();
 			}
 		} else {
 			missingKeyList.push(key);
-			tree.debug("_loadLazyNodes: " + node + " was not yet found.");
+			//tree.debug("_loadLazyNodes: " + node + " was not yet found.");
 		}
 	}
 
@@ -215,7 +215,7 @@ $.ui.fancytree.registerExtension({
 			var cookie, dfd, i, keyList, node,
 				prevFocus = $.cookie(instData.cookiePrefix + FOCUS); // record this before node.setActive() overrides it;
 
-			tree.debug("COOKIE " + document.cookie);
+			//tree.debug("COOKIE " + document.cookie);
 
 			cookie = $.cookie(instData.cookiePrefix + EXPANDED);
 			keyList = cookie && cookie.split(instOpts.cookieDelimiter);

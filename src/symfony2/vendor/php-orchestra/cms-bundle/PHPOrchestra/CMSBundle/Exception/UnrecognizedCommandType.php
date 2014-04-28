@@ -8,7 +8,7 @@
 namespace PHPOrchestra\CMSBundle\Exception;
 
 /**
- * Exception raised when the documentManager is invoqued on an unrecognized document type
+ * Exception raised when an unknown command is passed to the dispatcher
  */
 class UnrecognizedCommandTypeException extends \Exception
 {

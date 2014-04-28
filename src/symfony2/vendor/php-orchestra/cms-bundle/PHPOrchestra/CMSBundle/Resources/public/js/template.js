@@ -403,7 +403,7 @@ var dialog_parameter = {
 };
 
 var tree_parameter = {
-    extensions: ["persist"],
+    extensions: ['persist', 'dnd'],
     /*persist: {
         expandLazy: true
     },*/
@@ -456,5 +456,10 @@ function confirmTreeDelete()
 
 function confirmTemplateDelete()
 {
-    return confirm("Vous êtes sur le point de supprimer un template.\n\nEtes-vous certain de vouloir le supprimer ?")
+    return confirm("Etes-vous certain de vouloir supprimer ce template ?")
+}
+
+function confirmDragNDrop()
+{
+    return confirm("Etes-vous certain de vouloir déplacer la sous-arcborescence ici ?")
 }

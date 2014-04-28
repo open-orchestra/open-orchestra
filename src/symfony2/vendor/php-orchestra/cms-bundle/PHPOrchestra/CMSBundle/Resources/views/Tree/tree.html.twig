@@ -12,6 +12,26 @@
             $( "#tree-{{ name }}" ).fancytree($.extend(
                 tree_parameter,
                 {
+                    'dnd': {
+                        preventVoidMoves: true,
+                        preventRecursiveMoves: true,
+                        autoExpandMS: 400,
+                        dragStart: function(node, data) {
+                            return true;
+                        },
+                        dragEnter: function(node, data) {
+                            return true;
+                        },
+                        dragDrop: function(node, data) {
+                            if (confirmDragNDrop()) {
+                                var nodeId = data.otherNode.key.replace('tree-{{ name }}-', '');
+                                var destinationId = node.key.replace('tree-{{ name }}-', '');
+                                var url = '{{ path('php_orchestra_cms_bo_jscontextmenudispatcher') }}/moveNode';
+                                data.otherNode.moveTo(node, data.hitMode);
+                                treeAjaxCall(url, {'nodeId': nodeId, 'newParentId': destinationId});
+                            }
+                        }
+                    },
                     'activate': function(event, data) {
                         var url = '{{ path(path) }}/' + data.node.key.replace('tree-{{ name }}-', '');
                         treeAjaxCall(url, {});

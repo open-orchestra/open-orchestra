@@ -57,6 +57,8 @@ class BackOfficeController extends Controller
                 break;
             case 'moveNode': // Move a pages tree
                 $action = 'PHPOrchestraCMSBundle:Node:move';
+                $params['nodeId'] = $request->request->get('nodeId');
+                $params['newParentId'] = $request->request->get('newParentId');
                 break;
             
             case 'createTemplate': // Create a template

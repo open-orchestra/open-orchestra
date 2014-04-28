@@ -286,13 +286,38 @@ class NodeController extends Controller
     /**
      * Move a subtree from a node to another
      *
-     * @param $request
+     * @param string $nodeId
+     * @param string $newParentId
      */
-    public function moveAction(Request $request)
+    public function moveAction($nodeId, $newParentId)
     {
+        $message = '';
+        
+        $documentManager = $this->get('phporchestra_cms.documentmanager');
+        
+        $node = $documentManager->getDocument(
+                'Node',
+                array('nodeId' => $nodeId)
+        );
+        
+        $parent = $documentManager->getDocument(
+                'Node',
+                array('nodeId' => $newParentId)
+        );
+        
+        if (isset($parent) && isset($node)) {
+            $node->setParentId($parent->getNodeId());
+            $node->save();
+            $message = 'Node "' . $node->getName() . '" moved under node "' . $parent->getName() . '"';
+        }
+        else
+        {
+            $message = 'Error while moving node, process aborted';
+        }
+        
         return $this->render(
             'PHPOrchestraCMSBundle:BackOffice:simpleMessage.html.twig',
-            array('message' => 'Move nodes tree process')
+            array('message' => $message)
         );
     }
 }
