@@ -30,6 +30,25 @@ Model\PHPOrchestraCMSBundle\Template:
         areas: [{"areaId":"main","classes":[],"subAreas":[],"blocks":[{}]}]
 
 Model\PHPOrchestraCMSBundle\Node:
+    node_home:
+        nodeId: root
+        nodeType: page
+        siteId: 1
+        parentId: -
+        path: -
+        alias: -
+        name: Fixture Home
+        version: 1
+        language: fr
+        status: published
+        templateId: template_main
+        theme: PHPOrchestraCMSBundle:theme1
+        areas: [{"areaId":"main","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":0}]}]
+        blocks:
+            -
+                component: "PHPOrchestraCMSBundle:Block/Sample:show"
+                attributes: {"_title":"Accueil", "_news":"Bienvenu sur le site de démo issu des fixtures.", "_author":""}
+                
     node_generic:
         nodeId: fixture_generic
         nodeType: page
@@ -81,25 +100,6 @@ Model\PHPOrchestraCMSBundle\Node:
                 component: "PHPOrchestraCMSBundle:Block/Sample:show"
                 attributes: {"_title":"Mentions légales", "_author":"Nous contacter", "_news":""}
     
-    node_home:
-        nodeId: root
-        nodeType: page
-        siteId: 1
-        parentId: -
-        path: -
-        alias: -
-        name: Fixture Home
-        version: 1
-        language: fr
-        status: published
-        templateId: template_main
-        theme: PHPOrchestraCMSBundle:theme1
-        areas: [{"areaId":"main","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":0}]}]
-        blocks:
-            -
-                component: "PHPOrchestraCMSBundle:Block/Sample:show"
-                attributes: {"_title":"Accueil", "_news":"Bienvenu sur le site de démo issu des fixtures.", "_author":""}
-                
     node_about_us:
         nodeId: fixture_about_us
         nodeType: page

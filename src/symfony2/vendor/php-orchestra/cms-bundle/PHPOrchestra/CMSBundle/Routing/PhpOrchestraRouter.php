@@ -69,4 +69,18 @@ class PhpOrchestraRouter extends Router
             $this->cacheService
         );
     }
+    
+    public function getGenerator()
+    {
+        if (null !== $this->generator) {
+            return $this->generator;
+        }
+        
+        return $this->generator = new $this->options['generator_class'](
+            $this->getRouteCollection(),
+            $this->context,
+            $this->documentManager,
+            $this->logger
+        );
+    }
 }
