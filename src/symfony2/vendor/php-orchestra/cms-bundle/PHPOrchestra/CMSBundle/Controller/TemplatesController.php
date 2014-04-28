@@ -53,7 +53,10 @@ class TemplatesController extends Controller
         $templates = $this->get('phporchestra_cms.documentmanager')->getTemplatesInLastVersion();
         $links = array();
         foreach ($templates as $template) {
-            $links[] = array('id' => $template['_id'], 'class' =>'', 'text' => $template['name']);
+            $class = '';
+            if ($template['deleted'] == true)
+                $class = 'deleted';
+            $links[] = array('id' => $template['_id'], 'class' => $class, 'text' => $template['name']);
         }
         return $this->render(
             'PHPOrchestraCMSBundle:Tree:tree.html.twig',

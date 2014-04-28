@@ -62,9 +62,12 @@ class BackOfficeController extends Controller
             case 'createTemplate': // Create a template
                 $action = 'PHPOrchestraCMSBundle:Template:form';
                 $params['templateId'] = 0;
+                $request->request->remove('nodeId');
                 break;
             case 'deleteTemplate': // Delete a template
                 $action = 'PHPOrchestraCMSBundle:Template:delete';
+                $params['templateId'] = $request->request->get('nodeId');
+                $request->request->remove('nodeId');
                 break;
             
             default: // Unrecognized cmd

@@ -31,16 +31,9 @@
                 'menu': menuOptions,
                 'beforeOpen': function(event, ui) {
                     var node = $.ui.fancytree.getNode(ui.target);
-    //                node.setFocus();
-    //                node.setActive();
                 },
                 'select': function(event, ui) {
-                    var stopper = false;
-                    if ((treePreviousJs[ui.cmd] != undefined) && (!treePreviousJs[ui.cmd]())) {
-                        stopper = true;
-                    }
-                    
-                    if (!stopper) {
+                    if ((treePreviousJs[ui.cmd] == undefined) || treePreviousJs[ui.cmd]()) {
                         var node = $.ui.fancytree.getNode(ui.target).key.replace('tree-{{ name }}-', '');
                         var url = '{{ path('php_orchestra_cms_bo_jscontextmenudispatcher') }}/' + ui.cmd;
                         treeAjaxCall(url, {'nodeId': node});

@@ -169,6 +169,23 @@ class DocumentManager
     }
     
     /**
+     * Flag all versions of the template templateId as deleted
+     * 
+     * @param $templateId
+     */
+    public function deleteTemplate($templateId)
+    {
+        $templateVersions = $this->getDocuments('Template', array('templateId' => $templateId));
+        
+        foreach ($templateVersions as $template) {
+            $template->setDeleted(true);
+            $template->save();
+        };
+        
+        return true;
+    }
+    
+    /**
      * Return an array containing informations about the last versions of all templates
      */
     public function getTemplatesInLastVersion()
@@ -183,7 +200,8 @@ class DocumentManager
                 '$group' => array(
                     '_id' => '$templateId',
                     'version' => array('$first' => '$version'),
-                    'name' => array('$first' => '$name')
+                    'name' => array('$first' => '$name'),
+                    'deleted' => array('$first' => '$deleted')
                 )
             )
         );

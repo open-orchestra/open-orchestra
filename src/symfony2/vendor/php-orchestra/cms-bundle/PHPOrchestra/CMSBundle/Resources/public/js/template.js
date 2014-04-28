@@ -416,7 +416,6 @@ var tree_parameter = {
 
 var treeNodesMenuOptions = [
                             {'title': 'Créer une sous-page', 'cmd': 'createNode'},
-                           /* {'title': 'Dépublier', 'cmd': 'unpublishNode'},*/
                             {'title': 'Supprimer', 'cmd': 'deleteNode'},
                             {'title': '----'},
                             {'title': 'Déplacer l\'arbre', 'cmd': 'moveNode'}
@@ -428,8 +427,9 @@ var treeTemplatesMenuOptions = [
                                ];
 
 var treePreviousJs = {
-                      'deleteNode': function(){return confirmTreeDelete();}
-                     };
+        'deleteNode': function(){return confirmTreeDelete();},
+        'deleteTemplate': function(){return confirmTemplateDelete();}
+};
 
 function treeAjaxCall(url, params)
 {
@@ -452,4 +452,9 @@ function treeAjaxCall(url, params)
 function confirmTreeDelete()
 {
     return confirm("Vous êtes sur le point de supprimer une page ainsi que toute la sous-arborescence associée.\n\nSi vous souhaitez tout supprimer, cliquez sur \"Ok\", sinon cliquez sur \"Annuler\" et déplacez d'abord la sous-arborescence.")
+}
+
+function confirmTemplateDelete()
+{
+    return confirm("Vous êtes sur le point de supprimer un template.\n\nEtes-vous certain de vouloir le supprimer ?")
 }

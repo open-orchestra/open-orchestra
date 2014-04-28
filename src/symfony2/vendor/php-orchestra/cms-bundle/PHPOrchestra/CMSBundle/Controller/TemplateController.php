@@ -94,14 +94,16 @@ class TemplateController extends Controller
      * 
      * @param Request $request
      */
-    public function deleteAction(Request $request)
+    public function deleteAction($templateId)
     {
+        $documentManager = $this->get('phporchestra_cms.documentmanager');
+        $documentManager->deleteTemplate($templateId);
+        
         return $this->render(
-            'PHPOrchestraCMSBundle:BackOffice:simpleMessage.html.twig',
-            array(
-                'message' => 'Delete template process on ' . $request->get('nodeId')
-            )
+                             'PHPOrchestraCMSBundle:BackOffice:simpleMessage.html.twig',
+                             array('message' => 'Delete template process on ' . $templateId)
         );
+        
     }
     
 }
