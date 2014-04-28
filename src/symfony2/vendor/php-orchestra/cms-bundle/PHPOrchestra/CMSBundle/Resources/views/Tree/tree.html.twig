@@ -20,15 +20,18 @@
                             return true;
                         },
                         dragEnter: function(node, data) {
+                            if (node.tree.$div != data.otherNode.tree.$div) {
+                                return false;
+                            }
                             return true;
                         },
                         dragDrop: function(node, data) {
                             if (confirmDragNDrop()) {
                                 var nodeId = data.otherNode.key.replace('tree-{{ name }}-', '');
-                                var destinationId = node.key.replace('tree-{{ name }}-', '');
+                                var targetNodeId = node.key.replace('tree-{{ name }}-', '');
                                 var url = '{{ path('php_orchestra_cms_bo_jscontextmenudispatcher') }}/moveNode';
                                 data.otherNode.moveTo(node, data.hitMode);
-                                treeAjaxCall(url, {'nodeId': nodeId, 'newParentId': destinationId});
+                                treeAjaxCall(url, {'nodeId': nodeId, 'newParentId': targetNodeId});
                             }
                         }
                     },
