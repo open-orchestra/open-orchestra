@@ -1,15 +1,24 @@
-# Potential orchestra overrides
-parameters:
-    php_orchestra.themes:
-        sample :
-            location: "PHPOrchestraCMSBundle:sample"
-            name: "Sample"
-        theme1 :
-            location: "PHPOrchestraCMSBundle:theme1"
-            name: "Theme #1"
-        theme2 :
-            location: "PHPOrchestraCMSBundle:theme2"
-            name: "Theme #2"
-        fromApp :
-            location: "FakeAppBundle:fromApp"
-            name: "App bundle theme"
+php_orchestra_theme:
+    themes: 
+        "Example":
+            stylesheets :
+                - PHPOrchestraThemeBundle:sample:css/master.css
+                - PHPOrchestraThemeBundle:sample:css/fo.css
+        "Thème \#1":
+            stylesheets :
+                - PHPOrchestraThemeBundle:theme1:css/master.css
+                - PHPOrchestraThemeBundle:theme1:css/main.css
+                - PHPOrchestraThemeBundle:theme1:css/secondly.css
+            javascripts :
+                - PHPOrchestraThemeBundle:theme1:js/empty.js
+        "Thème \#2":
+            stylesheets :
+                - PHPOrchestraThemeBundle:theme2:css/another.css
+                - PHPOrchestraThemeBundle:theme2:css/custom.css
+                - PHPOrchestraThemeBundle:theme2:css/master.css
+        "Thème from app":
+            stylesheets :
+                - FakeAppBundle:fromApp:css/master.css
+            javascripts :
+                - FakeAppBundle:fromApp:js/js.js
+                - FakeAppBundle:fromApp:js/subfolder/sub.js

@@ -1,3 +1,0 @@
-php_orchestra_theme_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: PHPOrchestraThemeBundle:Default:index }

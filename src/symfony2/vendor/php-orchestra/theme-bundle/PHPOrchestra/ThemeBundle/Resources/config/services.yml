@@ -1,7 +1,9 @@
-parameters:
-#    php_orchestra_theme.example.class: PHPOrchestra\ThemeBundle\Example
-
 services:
-#    php_orchestra_theme.example:
-#        class: %php_orchestra_theme.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    
+    # Theme form field type
+    php_orchestra_theme.type.theme_choice:
+        class: PHPOrchestra\ThemeBundle\Form\Type\ThemeChoiceType
+        arguments: 
+            - "%php_orchestra.themes%"
+        tags:
+            - { name: form.type, alias: orchestra_theme_choice }

@@ -19,11 +19,23 @@ class Configuration implements ConfigurationInterface
     {
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('php_orchestra_theme');
-
-        // Here you should define the parameters that are allowed to
-        // configure your bundle. See the documentation linked above for
-        // more information on that topic.
-
+        
+        $rootNode
+            ->children()
+                ->arrayNode('themes')
+                    ->prototype('array')
+                        ->children()
+                            ->arrayNode('javascripts')
+                                ->prototype('scalar')->end()
+                                ->end()
+                            ->arrayNode('stylesheets')
+                                ->prototype('scalar')->end()
+                                ->end()
+                        ->end()
+                    ->end()
+                ->end()
+            ->end();
+        
         return $treeBuilder;
     }
 }

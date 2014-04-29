@@ -15,9 +15,9 @@
  * See LICENSE.txt file for the full LICENSE text.
  */
 
-namespace PHPOrchestra\CMSBundle\Test\Form\Type;
+namespace PHPOrchestra\ThemeBundle\Tests\Form\Type;
 
-use \PHPOrchestra\CMSBundle\Form\Type\ThemeChoiceType;
+use \PHPOrchestra\ThemeBundle\Form\Type\ThemeChoiceType;
 use \PHPOrchestra\CMSBundle\Test\Mock;
 
 /**

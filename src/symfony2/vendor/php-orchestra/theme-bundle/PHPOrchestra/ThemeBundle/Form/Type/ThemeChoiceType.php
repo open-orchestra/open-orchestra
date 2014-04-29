@@ -1,11 +1,11 @@
 <?php
 /**
- * This file is part of the PHPOrchestra\CMSBundle.
+ * This file is part of the PHPOrchestra\ThemeBundle.
  *
  * @author Noël GILAIN <noel.gilain@businessdecision.com>
  */
 
-namespace PHPOrchestra\CMSBundle\Form\Type;
+namespace PHPOrchestra\ThemeBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
