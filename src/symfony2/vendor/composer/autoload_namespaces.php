@@ -35,6 +35,7 @@ return array(
     'PhpCollection' => array($vendorDir . '/phpcollection/phpcollection/src'),
     'Parsedown' => array($vendorDir . '/erusev/parsedown'),
     'PHPParser' => array($vendorDir . '/nikic/php-parser/lib'),
+    'PHPOrchestra\\ThemeBundle' => array($vendorDir . '/php-orchestra/theme-bundle'),
     'PHPOrchestra\\CMSBundle' => array($vendorDir . '/php-orchestra/cms-bundle'),
     'Metadata\\' => array($vendorDir . '/jms/metadata/src'),
     'Mandango\\Mondator\\' => array($vendorDir . '/mandango/mondator/src'),
