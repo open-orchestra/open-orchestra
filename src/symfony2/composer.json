@@ -6,7 +6,8 @@
     "autoload": {
         "psr-0": {
             "": "src/",
-            "PHPOrchestra\\CMSBundle": "vendor/php-orchestra/cms-bundle/"
+            "PHPOrchestra\\CMSBundle": "vendor/php-orchestra/cms-bundle/",
+            "PHPOrchestra\\ThemeBundle": "vendor/php-orchestra/theme-bundle/"
         }
     },
     "minimum-stability": "dev",

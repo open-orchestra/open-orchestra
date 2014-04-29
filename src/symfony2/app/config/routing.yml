@@ -1,3 +1,7 @@
+php_orchestra_theme:
+    resource: "@PHPOrchestraThemeBundle/Resources/config/routing.yml"
+    prefix:   /
+
 php_orchestra_cms:
     resource: "@PHPOrchestraCMSBundle/Resources/config/routing.yml"
     prefix:   /

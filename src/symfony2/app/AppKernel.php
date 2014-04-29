@@ -20,6 +20,7 @@ class AppKernel extends Kernel
             new Snc\RedisBundle\SncRedisBundle(),
             new PHPOrchestra\CMSBundle\PHPOrchestraCMSBundle(),
             new FakeApp\ThemeBundle\FakeAppThemeBundle(),
+            new PHPOrchestra\ThemeBundle\PHPOrchestraThemeBundle(),
             );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

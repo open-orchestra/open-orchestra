@@ -1,0 +1,7 @@
+parameters:
+#    php_orchestra_theme.example.class: PHPOrchestra\ThemeBundle\Example
+
+services:
+#    php_orchestra_theme.example:
+#        class: %php_orchestra_theme.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
