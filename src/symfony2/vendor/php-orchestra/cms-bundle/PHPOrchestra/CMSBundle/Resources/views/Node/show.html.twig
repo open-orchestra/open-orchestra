@@ -7,8 +7,10 @@
 <html>
     <head>
         <title>{{ node.name }}</title>
-        {{ phpOrchestraCssTheme(node.theme) }}
-        {{ phpOrchestraJsTheme(node.theme) }}
+        {#{ dump(theme) }#}
+        
+        {#{ phpOrchestraCssTheme(node.theme) }}
+        {{ phpOrchestraJsTheme(node.theme) }#}
     </head>
     <body>
         <div id="orchestra">

@@ -1,22 +1,26 @@
 php_orchestra_theme:
     themes: 
-        "Example":
-            stylesheets :
+        sample:
+            name: "Exemple"
+            stylesheets:
                 - PHPOrchestraThemeBundle:sample:css/master.css
                 - PHPOrchestraThemeBundle:sample:css/fo.css
-        "Thème \#1":
+        theme1:
+            name: "Thème \#1"
             stylesheets :
                 - PHPOrchestraThemeBundle:theme1:css/master.css
                 - PHPOrchestraThemeBundle:theme1:css/main.css
                 - PHPOrchestraThemeBundle:theme1:css/secondly.css
             javascripts :
                 - PHPOrchestraThemeBundle:theme1:js/empty.js
-        "Thème \#2":
+        theme2:
+            name: "Thème \#2"
             stylesheets :
                 - PHPOrchestraThemeBundle:theme2:css/another.css
                 - PHPOrchestraThemeBundle:theme2:css/custom.css
                 - PHPOrchestraThemeBundle:theme2:css/master.css
-        "Thème from app":
+        fromApp:
+            name: "Thème from app"
             stylesheets :
                 - FakeAppBundle:fromApp:css/master.css
             javascripts :

@@ -18,8 +18,8 @@ class ThemeChoiceType extends AbstractType
 
     public function __construct($themes = array())
     {
-        foreach ($themes as $theme) {
-            $this->choices[$theme['location']] = $theme['name'];
+        foreach ($themes as $themeId => $theme) {
+            $this->choices[$themeId] = $theme['name'];
         }
     }
     

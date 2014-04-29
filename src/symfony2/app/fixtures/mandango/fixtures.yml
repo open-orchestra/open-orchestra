@@ -42,7 +42,7 @@ Model\PHPOrchestraCMSBundle\Node:
         language: fr
         status: published
         templateId: template_main
-        theme: PHPOrchestraCMSBundle:theme1
+        theme: theme1
         areas: [{"areaId":"main","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":0}]}]
         blocks:
             -
@@ -75,7 +75,7 @@ Model\PHPOrchestraCMSBundle\Node:
         language: fr
         status: published
         templateId: template_full
-        theme: PHPOrchestraCMSBundle:sample
+        theme: sample
         areas: [{"areaId":"header","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":0}]},{"areaId":"main","classes":[],"boDirection":"v","subAreas":[{"areaId":"left_menu","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":1}]},{"areaId":"content","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":2},{"nodeId":0,"blockId":3},{"nodeId":0,"blockId":4}]},{"areaId":"skycrapper","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":5}]}],"blocks":[]},{"areaId":"footer","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":6}]}]
         blocks:
             -
@@ -112,7 +112,7 @@ Model\PHPOrchestraCMSBundle\Node:
         language: fr
         status: published
         templateId: template_main
-        theme: PHPOrchestraCMSBundle:theme2
+        theme: theme2
         areas: [{"areaId":"main","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":0}]}]
         blocks:
             -
@@ -131,7 +131,7 @@ Model\PHPOrchestraCMSBundle\Node:
         language: fr
         status: published
         templateId: template_main
-        theme: PHPOrchestraCMSBundle:theme2
+        theme: theme2
         areas: [{"areaId":"main","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":0}]}]
         blocks:
             -
@@ -150,7 +150,7 @@ Model\PHPOrchestraCMSBundle\Node:
         language: fr
         status: published
         templateId: template_main
-        theme: PHPOrchestraCMSBundle:sample
+        theme: sample
         areas: [{"areaId":"main","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":0}]}]
         blocks:
             -
@@ -169,7 +169,7 @@ Model\PHPOrchestraCMSBundle\Node:
         language: fr
         status: published
         templateId: template_main
-        theme: PHPOrchestraCMSBundle:theme1
+        theme: theme1
         areas: [{"areaId":"main","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":0}]}]
         blocks:
             -
@@ -188,7 +188,7 @@ Model\PHPOrchestraCMSBundle\Node:
         language: fr
         status: published
         templateId: template_main
-        theme: FakeAppThemeBundle:fromApp
+        theme: fromApp
         areas: [{"areaId":"main","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":0}]}]
         blocks:
             -

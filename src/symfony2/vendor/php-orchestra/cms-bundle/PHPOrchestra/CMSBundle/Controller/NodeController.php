@@ -62,9 +62,17 @@ class NodeController extends Controller
             }
         }
         
+        $themes = $this->container->getParameter('php_orchestra_theme.themes');
+        $theme = $themes[$node->getTheme()];
+        
         $response = $this->render(
             'PHPOrchestraCMSBundle:Node:show.html.twig',
-            array('node' => $node, 'blocks' => $this->blocks, 'datetime' => time())
+            array(
+                'node' => $node,
+                'blocks' => $this->blocks,
+                'datetime' => time(),
+                'theme' => $theme
+            )
         );
         
         $response->setPublic();

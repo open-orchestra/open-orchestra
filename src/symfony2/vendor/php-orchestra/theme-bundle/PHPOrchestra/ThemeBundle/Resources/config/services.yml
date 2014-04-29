@@ -3,7 +3,5 @@ services:
     # Theme form field type
     php_orchestra_theme.type.theme_choice:
         class: PHPOrchestra\ThemeBundle\Form\Type\ThemeChoiceType
-        arguments: 
-            - "%php_orchestra.themes%"
-        tags:
-            - { name: form.type, alias: orchestra_theme_choice }
+        arguments: ["%php_orchestra_theme.themes%"]
+        tags: [{ name: form.type, alias: orchestra_theme_choice }]
