@@ -416,9 +416,8 @@ var tree_parameter = {
 
 var treeNodesMenuOptions = [
                             {'title': 'Créer une sous-page', 'cmd': 'createNode'},
-                            {'title': 'Supprimer', 'cmd': 'deleteNode'},
-                            {'title': '----'},
-                            {'title': 'Déplacer l\'arbre', 'cmd': 'moveNode'}
+                            {'title': 'Supprimer', 'cmd': 'deleteNode'}/*,
+                            {'title': '----'},*/
                            ];
 
 var treeTemplatesMenuOptions = [
