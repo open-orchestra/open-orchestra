@@ -48,5 +48,5 @@ abstract class Template extends \Model\PHPOrchestraCMSBundle\Base\Template
     public function isDeleted()
     {
         return $this->getDeleted();
-    } 
+    }
 }

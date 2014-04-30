@@ -42,6 +42,7 @@ class BackOfficeController extends Controller
         
         switch ($cmd)
         {
+            // Nodes cmd
             case 'createNode': // Create a subpage
                 $action = 'PHPOrchestraCMSBundle:Node:form';
                 $params['nodeId'] = 0;
@@ -60,7 +61,7 @@ class BackOfficeController extends Controller
                 $params['nodeId'] = $request->request->get('nodeId');
                 $params['newParentId'] = $request->request->get('newParentId');
                 break;
-            
+            // Templates cmd
             case 'createTemplate': // Create a template
                 $action = 'PHPOrchestraCMSBundle:Template:form';
                 $params['templateId'] = 0;
@@ -71,8 +72,8 @@ class BackOfficeController extends Controller
                 $params['templateId'] = $request->request->get('nodeId');
                 $request->request->remove('nodeId');
                 break;
-            
-            default: // Unrecognized cmd
+            // Unrecognized cmd
+            default:
                 throw new UnrecognizedCommandTypeException('Unrecognized command type : ' . $cmd);
         }
         

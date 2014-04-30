@@ -188,8 +188,8 @@ class NodeController extends Controller
             $node->save();
             
             return $this->render(
-                                 'PHPOrchestraCMSBundle:BackOffice:simpleMessage.html.twig',
-                                 array('message' => 'Edition ok')
+                'PHPOrchestraCMSBundle:BackOffice:simpleMessage.html.twig',
+                array('message' => 'Edition ok')
             );
         }
         
@@ -263,8 +263,8 @@ class NodeController extends Controller
         $this->deleteTree($nodeId);
         
         return $this->render(
-                             'PHPOrchestraCMSBundle:BackOffice:simpleMessage.html.twig',
-                             array('message' => 'Delete node process on ' . $nodeId)
+            'PHPOrchestraCMSBundle:BackOffice:simpleMessage.html.twig',
+            array('message' => 'Delete node process on ' . $nodeId)
         );
     }
     
@@ -300,22 +300,20 @@ class NodeController extends Controller
         $documentManager = $this->get('phporchestra_cms.documentmanager');
         
         $node = $documentManager->getDocument(
-                'Node',
-                array('nodeId' => $nodeId)
+            'Node',
+            array('nodeId' => $nodeId)
         );
         
         $parent = $documentManager->getDocument(
-                'Node',
-                array('nodeId' => $newParentId)
+            'Node',
+            array('nodeId' => $newParentId)
         );
         
         if (isset($parent) && isset($node)) {
             $node->setParentId($parent->getNodeId());
             $node->save();
             $message = 'Node "' . $node->getName() . '" moved under node "' . $parent->getName() . '"';
-        }
-        else
-        {
+        } else {
             $message = 'Error while moving node, process aborted';
         }
         

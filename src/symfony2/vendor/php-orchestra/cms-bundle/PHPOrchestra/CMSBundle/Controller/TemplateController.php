@@ -55,8 +55,8 @@ class TemplateController extends Controller
             $template->save();
             
             return $this->render(
-                                 'PHPOrchestraCMSBundle:BackOffice:simpleMessage.html.twig',
-                                 array('message' => 'Edition ok')
+                'PHPOrchestraCMSBundle:BackOffice:simpleMessage.html.twig',
+                array('message' => 'Edition ok')
             );
         }
         
@@ -100,10 +100,9 @@ class TemplateController extends Controller
         $documentManager->deleteTemplate($templateId);
         
         return $this->render(
-                             'PHPOrchestraCMSBundle:BackOffice:simpleMessage.html.twig',
-                             array('message' => 'Delete template process on ' . $templateId)
+            'PHPOrchestraCMSBundle:BackOffice:simpleMessage.html.twig',
+            array('message' => 'Delete template process on ' . $templateId)
         );
         
     }
-    
 }

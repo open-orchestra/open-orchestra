@@ -54,8 +54,9 @@ class TemplatesController extends Controller
         $links = array();
         foreach ($templates as $template) {
             $class = '';
-            if ($template['deleted'] == true)
+            if ($template['deleted'] == true) {
                 $class = 'deleted';
+            }
             $links[] = array('id' => $template['_id'], 'class' => $class, 'text' => $template['name']);
         }
         return $this->render(

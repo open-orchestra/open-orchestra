@@ -24,7 +24,7 @@ use PHPOrchestra\CMSBundle\Document\DocumentManager;
  *
  * @author Nicolas BOUQUET <nicolas.bouquet@businessdecision.com>
  */
-class documentManagerTest extends \PHPUnit_Framework_TestCase
+class DocumentManagerTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * documentManager to be tested

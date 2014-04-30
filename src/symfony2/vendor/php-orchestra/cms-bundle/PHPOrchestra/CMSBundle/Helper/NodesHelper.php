@@ -23,8 +23,9 @@ class NodesHelper
             if (Node::ROOT_NODE_ID == $nodeId) {
                 $superRoot = $parentId;
             }
-            if ($node['deleted'] == true)
+            if ($node['deleted'] == true) {
                 $class = 'deleted';
+            }
             $links[$parentId][] = array('id' => $nodeId, 'class' => $class, 'text' => $node['name']);
         }
         

@@ -208,5 +208,4 @@ class DocumentManager
         
         return $versions['result'];
     }
-
 }

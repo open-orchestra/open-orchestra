@@ -61,5 +61,5 @@ abstract class Node extends \Model\PHPOrchestraCMSBundle\Base\Node
     public function isDeleted()
     {
         return $this->getDeleted();
-    } 
+    }
 }
