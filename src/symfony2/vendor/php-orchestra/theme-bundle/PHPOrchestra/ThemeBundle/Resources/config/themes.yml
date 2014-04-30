@@ -1,7 +1,0 @@
-php_orchestra_theme:
-    themes: 
-        sample:
-            name: "Native example"
-            stylesheets:
-                - PHPOrchestraThemeBundle:sample:css/master.css
-                - PHPOrchestraThemeBundle:sample:css/fo.css

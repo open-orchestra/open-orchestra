@@ -10,6 +10,15 @@
         {% block stylesheets %}
             {{ phpOrchestraCss(node.theme) }}
         {% endblock %}
+        
+        {#% stylesheets
+            'bundles/fakeapptheme/themes/theme1/css/font.css'
+            'bundles/fakeapptheme/themes/theme1/css/color.css'
+            'bundles/fakeapptheme/themes/theme1/css/bg.css'
+            filter='cssrewrite' %}
+            <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %#}
+
     </head>
     <body>
         <div id="orchestra">
@@ -24,5 +33,10 @@
         {% block javascripts %}
             {{ phpOrchestraJs(node.theme) }}
         {% endblock %}
+        
+        {#% javascripts
+            '@FakeAppThemeBundle/Resources/public/themes/theme1/js/alert.js' %}
+            <script src="{{ asset_url }}"></script>
+        {% endjavascripts %#}
     </body>
 </html>
