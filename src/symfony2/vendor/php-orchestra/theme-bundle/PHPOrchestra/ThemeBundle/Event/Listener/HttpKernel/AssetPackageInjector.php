@@ -5,10 +5,10 @@
  * @author Noël Gilain <noel.gilain@businessdecision.com>
  */
 
-namespace PHPOrchestra\CMSBundle\Event\Listener\HttpKernel;
+namespace PHPOrchestra\ThemeBundle\Event\Listener\HttpKernel;
 
 use Symfony\Component\HttpKernel\Event\KernelEvent;
-use PHPOrchestra\CMSBundle\Asset\Package\BundlePathPackage;
+use PHPOrchestra\ThemeBundle\Asset\Package\BundlePathPackage;
 
 class AssetPackageInjector
 {

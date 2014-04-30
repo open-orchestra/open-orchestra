@@ -1,7 +1,22 @@
 services:
-    
+
+#--[FORM FIELDS]----------------#
+
     # Theme form field type
     php_orchestra_theme.type.theme_choice:
         class: PHPOrchestra\ThemeBundle\Form\Type\ThemeChoiceType
         arguments: ["%php_orchestra_theme.themes%"]
         tags: [{ name: form.type, alias: orchestra_theme_choice }]
+
+#--[TWIG EXTENSIONS]-------------#
+
+    phporchestra_cms.twig.phporchestra_extension:
+        class: PHPOrchestra\ThemeBundle\Twig\PHPOrchestraExtension
+        arguments: [@service_container]
+        tags:
+            - { name: twig.extension }
+
+    phporchestra_cms.event.listener.assetpackage:
+        class: PHPOrchestra\ThemeBundle\Event\Listener\HttpKernel\AssetPackageInjector
+        tags:
+            - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }

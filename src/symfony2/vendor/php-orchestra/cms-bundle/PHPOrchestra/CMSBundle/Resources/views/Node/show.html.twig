@@ -6,11 +6,10 @@
 
 <html>
     <head>
-        <title>{{ node.name }}</title>
-        {#{ dump(theme) }#}
-        
-        {#{ phpOrchestraCssTheme(node.theme) }}
-        {{ phpOrchestraJsTheme(node.theme) }#}
+        <title>{% block title %}{{ node.name }}{% endblock %}</title>
+        {% block stylesheets %}
+            {{ phpOrchestraCss(node.theme) }}
+        {% endblock %}
     </head>
     <body>
         <div id="orchestra">
@@ -21,5 +20,9 @@
         {% endfor %}
             </div>
         </div>
+        
+        {% block javascripts %}
+            {{ phpOrchestraJs(node.theme) }}
+        {% endblock %}
     </body>
 </html>
