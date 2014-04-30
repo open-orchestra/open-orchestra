@@ -18,7 +18,9 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Mandango\MandangoBundle\MandangoBundle(),
             new Snc\RedisBundle\SncRedisBundle(),
+            new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),
             new PHPOrchestra\CMSBundle\PHPOrchestraCMSBundle(),
+            new PHPOrchestra\BlockBundle\PHPOrchestraBlockBundle(),
             new FakeApp\ThemeBundle\FakeAppThemeBundle(),
             new PHPOrchestra\ThemeBundle\PHPOrchestraThemeBundle(),
             );

@@ -1,0 +1,5 @@
+parameters:
+    php_orchestra.blocks:
+        TinyMCE wysiwyg: 
+            action: "PHPOrchestraBlockBundle:TinyMCEWysiwyg:show"
+            form: "PHPOrchestraBlockBundle:TinyMCEWysiwyg:form"
