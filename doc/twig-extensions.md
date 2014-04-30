@@ -53,7 +53,7 @@ A theme must be set as following :
             	javascripts : /* array of javascripts, optional */
                 	- PHPOrchestraThemeBundle:theme1:js/empty.js
 
-
+Note that you can design complexes themes by selecting files from several other themes as you specify each files that compose it, and they don't necessarly have to be located at the same place.
 
 To generate stylesheets html tags in a twig template, use the following code :
 
