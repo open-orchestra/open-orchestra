@@ -31,8 +31,8 @@ class ThemeChoiceTypeTest extends \PHPUnit_Framework_TestCase
     {
         
         $themes = array(
-            array('location' => '/some/location1', 'name' => 'Dummy theme #1'),
-            array('location' => '/some/location2', 'name' => 'Dummy theme #2'),
+            'themeId1' => array('name' => 'Dummy theme #1'),
+            'themeId2' => array('name' => 'Dummy theme #2'),
         );
         
         $this->themeChoiceType = new ThemeChoiceType($themes);
@@ -41,8 +41,8 @@ class ThemeChoiceTypeTest extends \PHPUnit_Framework_TestCase
     public function testSetDefaultOptions()
     {
         $choices = array(
-            '/some/location1' => 'Dummy theme #1',
-            '/some/location2' => 'Dummy theme #2',
+            'themeId1' => 'Dummy theme #1',
+            'themeId2' => 'Dummy theme #2',
         );
         
         $resolverMock =

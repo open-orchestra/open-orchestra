@@ -36,7 +36,7 @@ class PHPOrchestraExtensionTest extends \PHPUnit_Framework_TestCase
     {
         $functions = $this->extension->getFunctions();
         
-        $this->assertCount(3, $functions);
+        $this->assertCount(2, $functions);
         $this->assertContainsOnlyInstancesOf(
             '\\Twig_SimpleFunction',
             $functions

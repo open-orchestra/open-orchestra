@@ -36,7 +36,7 @@ class AssetPackageInjectorTest extends \PHPUnit_Framework_TestCase
             ->method('addPackage')
             ->with(
                 $this->equalTo('bundleName'),
-                $this->isInstanceOf('\\PHPOrchestra\\CMSBundle\\Asset\\Package\\BundlePathPackage')
+                $this->isInstanceOf('\\PHPOrchestra\\ThemeBundle\\Asset\\Package\\BundlePathPackage')
             );
         
         $bundles = array();
