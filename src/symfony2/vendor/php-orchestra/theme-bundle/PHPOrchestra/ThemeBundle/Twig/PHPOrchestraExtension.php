@@ -53,16 +53,17 @@ class PHPOrchestraExtension extends \Twig_Extension
      */
     public function phpOrchestraCss($themeId)
     {
-        $stylesheets = $this->themes[$themeId]['stylesheets'];
         $tags = '';
         
-        foreach ($stylesheets as $stylesheet) {
-            $tags .= $this->getHtmlTag($stylesheet, self::FILETYPE_CSS);
+        if (isset($this->themes[$themeId])) {
+            $stylesheets = $this->themes[$themeId]['stylesheets'];
+            foreach ($stylesheets as $stylesheet) {
+                $tags .= $this->getHtmlTag($stylesheet, self::FILETYPE_CSS);
+            }
         }
         
         return $tags;
     }
-
 
      /**
      * Return the html tags to include js files from the theme
@@ -71,11 +72,13 @@ class PHPOrchestraExtension extends \Twig_Extension
      */
     public function phpOrchestraJs($themeId)
     {
-        $javascripts = $this->themes[$themeId]['javascripts'];
         $tags = '';
         
-        foreach ($javascripts as $javascript) {
-            $tags .= $this->getHtmlTag($javascript, self::FILETYPE_JS);
+        if (isset($this->themes[$themeId])) {
+            $javascripts = $this->themes[$themeId]['javascripts'];
+            foreach ($javascripts as $javascript) {
+                $tags .= $this->getHtmlTag($javascript, self::FILETYPE_JS);
+            }
         }
         
         return $tags;

@@ -15,26 +15,18 @@
 
     <testsuites>
         <testsuite name="PhpOrchestra Test Suite">
-            <directory>./vendor/php-orchestra/*-bundle/PHPOrchestra/*Bundle/Tests</directory>
-            <directory>./vendor/php-orchestra/*-bundle/PHPOrchestra/*Bundle/Test</directory>
+            <directory>./vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Test</directory>
+            <directory>./vendor/php-orchestra/theme-bundle/PHPOrchestra/ThemeBundle/Tests</directory>
         </testsuite>
     </testsuites>
 
-    <!--
-    <php>
-        <server name="KERNEL_DIR" value="/path/to/your/app/" />
-    </php>
-    -->
-
     <filter>
         <whitelist>
-            <directory>./vendor</directory>
+            <directory>./vendor/php-orchestra/cms-bundle</directory>
             <exclude>
-                <directory>./src/*/*Bundle/Resources</directory>
-                <directory>./src/*/*Bundle/Tests</directory>
-                <directory>./src/*/Bundle/*Bundle/Resources</directory>
-                <directory>./src/*/Bundle/*Bundle/Tests</directory>
+                <directory>./vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Resources</directory>
             </exclude>
+            <directory>./vendor/php-orchestra/theme-bundle</directory>
         </whitelist>
     </filter>
 
