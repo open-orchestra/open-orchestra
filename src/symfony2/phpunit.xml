@@ -16,6 +16,7 @@
     <testsuites>
         <testsuite name="PhpOrchestra Test Suite">
             <directory>./vendor/php-orchestra/*-bundle/PHPOrchestra/*Bundle/Tests</directory>
+            <directory>./vendor/php-orchestra/*-bundle/PHPOrchestra/*Bundle/Test</directory>
         </testsuite>
     </testsuites>
 

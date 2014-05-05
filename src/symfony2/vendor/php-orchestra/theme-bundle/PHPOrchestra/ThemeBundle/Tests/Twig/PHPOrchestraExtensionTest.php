@@ -15,9 +15,9 @@
  * See LICENSE.txt file for the full LICENSE text.
  */
 
-namespace PHPOrchestra\CMSBundle\Test\Twig;
+namespace PHPOrchestra\ThemeBundle\Test\Twig;
 
-use \PHPOrchestra\CMSBundle\Twig\PHPOrchestraExtension;
+use \PHPOrchestra\ThemeBundle\Twig\PHPOrchestraExtension;
 
 /**
  * Unit tests of PHPOrchestraExtension

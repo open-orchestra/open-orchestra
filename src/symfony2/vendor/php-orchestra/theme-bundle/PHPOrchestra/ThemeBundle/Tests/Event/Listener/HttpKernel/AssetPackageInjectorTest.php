@@ -15,9 +15,9 @@
  * See LICENSE.txt file for the full LICENSE text.
  */
 
-namespace PHPOrchestra\CMSBundle\Test\Event\Listener\HttpKernel;
+namespace PHPOrchestra\ThemeBundle\Test\Event\Listener\HttpKernel;
 
-use \PHPOrchestra\CMSBundle\Event\Listener\HttpKernel\AssetPackageInjector;
+use \PHPOrchestra\ThemeBundle\Event\Listener\HttpKernel\AssetPackageInjector;
 
 /**
  * Description of AssetPackageInjectorTest
