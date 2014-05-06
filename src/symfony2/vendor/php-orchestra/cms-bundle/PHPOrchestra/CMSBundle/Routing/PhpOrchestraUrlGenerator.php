@@ -63,6 +63,7 @@ class PhpOrchestraUrlGenerator extends UrlGenerator
     {
         $schemeAuthority = '';
         $url = $this->getNodeAlias($nodeId);
+        $scheme = $this->context->getScheme();
         
         if (self::ABSOLUTE_URL === $referenceType || self::NETWORK_PATH === $referenceType) {
             $port = '';
