@@ -55,7 +55,7 @@ class PHPOrchestraExtension extends \Twig_Extension
     {
         $tags = '';
         
-        if (isset($this->themes[$themeId])) {
+        if (isset($this->themes[$themeId]) && isset($this->themes[$themeId]['stylesheets'])) {
             $stylesheets = $this->themes[$themeId]['stylesheets'];
             foreach ($stylesheets as $stylesheet) {
                 $tags .= $this->getHtmlTag($stylesheet, self::FILETYPE_CSS);
@@ -74,7 +74,7 @@ class PHPOrchestraExtension extends \Twig_Extension
     {
         $tags = '';
         
-        if (isset($this->themes[$themeId])) {
+        if (isset($this->themes[$themeId]) && isset($this->themes[$themeId]['javascripts'])) {
             $javascripts = $this->themes[$themeId]['javascripts'];
             foreach ($javascripts as $javascript) {
                 $tags .= $this->getHtmlTag($javascript, self::FILETYPE_JS);

@@ -28,17 +28,27 @@ class PHPOrchestraExtensionTest extends \PHPUnit_Framework_TestCase
 {
     public function setUp()
     {
+        $mockTplHelper = $this->getMockBuilder('\\Symfony\\Component\\Templating\\Helper\\CoreAssetsHelper')
+            ->disableOriginalConstructor()
+            ->getMock();
+        $mockTplHelper->expects($this->any())
+            ->method('getUrl')
+            ->will($this->returnValue('webDirectory/'));
+        
         $this->container = $this->getMock('\\Symfony\\Component\\DependencyInjection\\ContainerInterface');
         $this->container->expects($this->any())
                         ->method('getParameter')
+                        ->with('php_orchestra_theme.themes')
                         ->will($this->returnValue($this->getFakeThemes()));
                         
         $this->container->expects($this->any())
                         ->method('get')
-                        ->will($this->returnValue(NULL));
+                        ->with('templating.helper.assets')
+                        ->will($this->returnValue($mockTplHelper));
                         
         $this->extension = new PHPOrchestraExtension($this->container);
     }
+    
     
     public function testGetFunctions()
     {
@@ -54,27 +64,35 @@ class PHPOrchestraExtensionTest extends \PHPUnit_Framework_TestCase
     /**
      * Test PHPOrchestraExtension::phpOrchestraCss
      * 
-     * @dataProvider phpOrchestraCssData
+     * @dataProvider phpOrchestraCssJsData
      * 
      * @param string $themeId
-     * @param string $expectedTag
+     * @param string $expectedCssTag
+     * @param string $expectedJsTag
      */
-    public function testPhpOrchestraCss($themeId, $expectedTag)
+    public function testPhpOrchestraCss($themeId, $expectedCss, $expectedJs)
     {
         $this->assertEquals(
-            $expectedTag,
+            $expectedCss,
             $this->extension->phpOrchestraCss($themeId)
         );
     }
     
-    public function testPhpOrchestraJs()
+    /**
+     * Test PHPOrchestraExtension::phpOrchestraJs
+     * 
+     * @dataProvider phpOrchestraCssJsData
+     * 
+     * @param string $themeId
+     * @param string $expectedCssTag
+     * @param string $expectedJsTag
+     */
+    public function testPhpOrchestraJs($themeId, $expectedCss, $expectedJs)
     {
-        // TODO
-    }
-    
-    public function testGetHtmlTag()
-    {
-        // TODO
+        $this->assertEquals(
+            $expectedJs,
+            $this->extension->phpOrchestraJs($themeId)
+        );
     }
     
     public function testGetName()
@@ -86,18 +104,28 @@ class PHPOrchestraExtensionTest extends \PHPUnit_Framework_TestCase
     }
     
     /**
-     * Data provider for phpOrchestraCss
+     * Data provider for phpOrchestraCss and phpOrchestraJs
      * @return array
      */
-    public function phpOrchestraCssData()
+    public function phpOrchestraCssJsData()
     {;
-    
         $ds = DIRECTORY_SEPARATOR;
         return array(
-         /*   array('jsTheme', '<script type="text/javascript" src="themes' . $ds . 'jsTheme' . $ds . 'pathToFile1.js"></script>' . PHP_EOL),
-            array('cssTheme', '<link type="text/css" rel="stylesheet" href="themes' . $ds . 'cssTheme' . $ds . 'pathToFile1.css">' . PHP_EOL),
-        */    array('unknownTheme', ''),
-            
+            array(
+                'jsTheme',
+                '',
+                '<script type="text/javascript" src="webDirectory/themes' . $ds . 'jsTheme' . $ds . 'pathToFile1.js"></script>' . PHP_EOL,
+            ),
+            array(
+                'cssTheme',
+                '<link type="text/css" rel="stylesheet" href="webDirectory/themes' . $ds . 'cssTheme' . $ds . 'pathToFile1.css">' . PHP_EOL,
+                ''
+            ),
+            array(
+                'unknownTheme',
+                '',
+                ''
+            )
         );
     }
     
@@ -106,11 +134,11 @@ class PHPOrchestraExtensionTest extends \PHPUnit_Framework_TestCase
         return array(
             'jsTheme' => array(
                 'name' => 'Thème JS',
-                'javascripts' => array('someBundle:themeJS:pathToFile1.js')
+                'javascripts' => array('someBundle:jsTheme:pathToFile1.js')
             ),
             'cssTheme' => array(
                 'name' => 'Thème CSS',
-                'stylesheets' => array('otherBundle:themeCSS:pathToFile1.css')
+                'stylesheets' => array('otherBundle:cssTheme:pathToFile1.css')
             )
         );
     }
