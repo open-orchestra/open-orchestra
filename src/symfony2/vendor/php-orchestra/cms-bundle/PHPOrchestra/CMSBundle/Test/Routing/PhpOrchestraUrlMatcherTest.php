@@ -3,6 +3,7 @@
 namespace PHPOrchestra\CMSBundle\Test\Routing;
 
 use PHPOrchestra\CMSBundle\Routing\PhpOrchestraUrlMatcher;
+use Symfony\Component\Routing\RouteCollection;
 
 /**
  * Tests of PhpOrchestraUrlMatcher
