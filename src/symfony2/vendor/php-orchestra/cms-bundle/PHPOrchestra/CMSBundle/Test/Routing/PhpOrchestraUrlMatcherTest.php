@@ -30,7 +30,16 @@ class PhpOrchestraUrlMatcherTest extends \PHPUnit_Framework_TestCase
          * @var \PHPOrchestra\CMSBundle\Cache\CacheManagerInterface
          */
         $cacheService = $this->getMock('PHPOrchestra\\CMSBundle\\Cache\\CacheManagerInterface');
-        
+        $cacheService->expects($this->any())
+            ->method('get')
+            ->will($this->returnCallback(array($this, 'getFromCacheCallback')));
+        $this->cache[PhpOrchestraUrlMatcher::PATH_PREFIX . '/test-cache'] = array(
+            "_route" => "phporchestra_cms_module",
+            "_controller" => 'PHPOrchestra\CMSBundle\Controller\NodeController::showAction',
+            "nodeId" => "3",
+            "module_parameters" => serialize(array('param1'))
+        );
+            
         /**
          * No other route
          * 
@@ -66,6 +75,13 @@ class PhpOrchestraUrlMatcherTest extends \PHPUnit_Framework_TestCase
                         'alias'     => 'test',
                         'node_type' => 'page'
                     ),
+                    3 => array(
+                        '_id'       => '3',
+                        'node_id'   => 3,
+                        'parent_id' => '2',
+                        'alias'     => 'module',
+                        'node_type' => 'module'
+                    ),
                 )
             )
         );
@@ -99,15 +115,34 @@ class PhpOrchestraUrlMatcherTest extends \PHPUnit_Framework_TestCase
     /**
      * @dataProvider matchDataProvider
      */
-    public function testMatch($route, $controller, $nodeId, $pathinfo)
+    public function testMatch($route, $controller, $nodeId, $moduleParams, $pathinfo)
     {
-        $parameters = $this->matcher->match($pathinfo);
-        
-        $this->assertEquals($route, $parameters['_route']);
-        $this->assertEquals($controller, $parameters['_controller']);
-        $this->assertEquals($nodeId, $parameters['nodeId']);
+        if ($pathinfo == 'unknownPath') {
+            $this->setExpectedException('Symfony\Component\Routing\Exception\ResourceNotFoundException');
+            $this->matcher->match($pathinfo);
+        } else {
+            $parameters = $this->matcher->match($pathinfo);
+            
+            $this->assertEquals($route, $parameters['_route']);
+            $this->assertEquals($controller, $parameters['_controller']);
+            $this->assertEquals($nodeId, $parameters['nodeId']);
+            if ($moduleParams != '') {
+                $this->assertEquals($moduleParams, $parameters['module_parameters']);
+            }
+        }
     }
     
+    
+    public function getFromCacheCallback($pathinfo)
+    {
+        if (isset($this->cache[$pathinfo])) {
+            return $this->cache[$pathinfo];
+        } else {
+            return null;
+        }
+    }
+    
+    // route, controller, nodeId, moduleParams, pathinfo
     public function matchDataProvider()
     {
         return array(
@@ -115,8 +150,38 @@ class PhpOrchestraUrlMatcherTest extends \PHPUnit_Framework_TestCase
                 'phporchestra_cms_node',
                 'PHPOrchestra\\CMSBundle\\Controller\\NodeController::showAction',
                 2,
+                '',
                 '/test/'
             ),
+            array(
+                'phporchestra_cms_module',
+                'PHPOrchestra\\CMSBundle\\Controller\\NodeController::showAction',
+                3,
+                array('param1', 'param2'),
+                '/test/module/param1/param2'
+            ),
+            array(
+                'phporchestra_cms_module',
+                'PHPOrchestra\\CMSBundle\\Controller\\NodeController::showAction',
+                3,
+                array(),
+                '/test/module'
+            ),
+            array(
+                'phporchestra_cms_module',
+                'PHPOrchestra\\CMSBundle\\Controller\\NodeController::showAction',
+                3,
+                array('param1'),
+                '/test-cache'
+            ),
+            array(
+                '',
+                '',
+                '',
+                '',
+                'unknownPath'
+            ),
+            
         );
     }
 }
