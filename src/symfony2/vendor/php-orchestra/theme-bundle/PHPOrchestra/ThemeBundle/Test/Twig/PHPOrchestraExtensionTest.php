@@ -108,17 +108,21 @@ class PHPOrchestraExtensionTest extends \PHPUnit_Framework_TestCase
      * @return array
      */
     public function phpOrchestraCssJsData()
-    {;
-        $ds = DIRECTORY_SEPARATOR;
+    {
+        $dirSep = DIRECTORY_SEPARATOR;
         return array(
             array(
                 'jsTheme',
                 '',
-                '<script type="text/javascript" src="webDirectory/themes' . $ds . 'jsTheme' . $ds . 'pathToFile1.js"></script>' . PHP_EOL,
+                '<script type="text/javascript" src="'
+                    . 'webDirectory/themes' . $dirSep . 'jsTheme' . $dirSep . 'pathToFile1.js'
+                    . '"></script>' . PHP_EOL,
             ),
             array(
                 'cssTheme',
-                '<link type="text/css" rel="stylesheet" href="webDirectory/themes' . $ds . 'cssTheme' . $ds . 'pathToFile1.css">' . PHP_EOL,
+                '<link type="text/css" rel="stylesheet" href="'
+                    . 'webDirectory/themes' . $dirSep . 'cssTheme' . $dirSep . 'pathToFile1.css'
+                    . '">' . PHP_EOL,
                 ''
             ),
             array(

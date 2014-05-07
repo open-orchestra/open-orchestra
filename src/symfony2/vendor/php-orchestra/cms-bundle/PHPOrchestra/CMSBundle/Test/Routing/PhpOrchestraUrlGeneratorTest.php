@@ -102,7 +102,7 @@ class PhpOrchestraUrlGeneratorTest extends \PHPUnit_Framework_TestCase
         return $this->scheme;
     }
     
-//  ABSOLUTE_URL NETWORK_PATH RELATIVE_PATH
+    //  ABSOLUTE_URL NETWORK_PATH RELATIVE_PATH
     public function generateDataProvider()
     {
         return array(
@@ -132,5 +132,4 @@ class PhpOrchestraUrlGeneratorTest extends \PHPUnit_Framework_TestCase
             ),
        );
     }
-    
 }

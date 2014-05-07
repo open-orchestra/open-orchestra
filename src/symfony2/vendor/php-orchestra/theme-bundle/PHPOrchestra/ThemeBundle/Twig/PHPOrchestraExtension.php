@@ -101,12 +101,12 @@ class PHPOrchestraExtension extends \Twig_Extension
         switch ($fileType) {
             case self::FILETYPE_CSS:
                 $tag = '<link type="text/css" rel="stylesheet" href="' . $filePath . '">' . PHP_EOL;
-                break; 
+                break;
             case self::FILETYPE_JS:
                 $tag = '<script type="text/javascript" src="' . $filePath . '"></script>' . PHP_EOL;
                 break;
             default:
-                $tag = ''; 
+                $tag = '';
         }
         
         return $tag;

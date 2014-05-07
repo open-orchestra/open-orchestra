@@ -30,7 +30,12 @@ class PhpOrchestraUrlGenerator extends UrlGenerator
      * @param unknown_type $documentManager
      * @param LoggerInterface $logger
      */
-    public function __construct(RouteCollection $routes, RequestContext $context, $documentManager, LoggerInterface $logger = null)
+    public function __construct(
+        RouteCollection $routes,
+        RequestContext $context,
+        $documentManager,
+        LoggerInterface $logger = null
+    )
     {
         $this->routes = $routes;
         $this->context = $context;
