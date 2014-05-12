@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "f1ad0d73d88b5ddc208524dd32753cfd",
+    "hash": "9395f31658cd7883fecad4cc0e2d1c64",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -547,6 +547,222 @@
                 "parser"
             ],
             "time": "2013-01-12 18:59:04"
+        },
+        {
+            "name": "doctrine/mongodb",
+            "version": "1.1.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/mongodb.git",
+                "reference": "4eafa3e719bfe14422f4c1d928771331edd26b39"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/mongodb/zipball/4eafa3e719bfe14422f4c1d928771331edd26b39",
+                "reference": "4eafa3e719bfe14422f4c1d928771331edd26b39",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/common": ">=2.1.0,<2.5-dev",
+                "ext-mongo": ">=1.2.12,<1.6-dev",
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "jmikola/geojson": "~1.0"
+            },
+            "suggest": {
+                "jmikola/geojson": "Support GeoJSON geometry objects in 2dsphere queries"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Doctrine\\MongoDB": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bulat Shakirzyanov",
+                    "email": "mallluhuct@gmail.com",
+                    "homepage": "http://avalanche123.com"
+                },
+                {
+                    "name": "Jonathan H. Wage",
+                    "email": "jonwage@gmail.com",
+                    "homepage": "http://www.jwage.com/",
+                    "role": "Creator"
+                },
+                {
+                    "name": "Kris Wallsmith",
+                    "email": "kris.wallsmith@gmail.com",
+                    "homepage": "http://kriswallsmith.net/"
+                },
+                {
+                    "name": "Jeremy Mikola",
+                    "email": "jmikola@gmail.com",
+                    "homepage": "http://jmikola.net"
+                }
+            ],
+            "description": "Doctrine MongoDB Abstraction Layer",
+            "homepage": "http://www.doctrine-project.org",
+            "keywords": [
+                "database",
+                "mongodb",
+                "persistence"
+            ],
+            "time": "2014-04-29 21:14:37"
+        },
+        {
+            "name": "doctrine/mongodb-odm",
+            "version": "1.0.0-BETA10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/mongodb-odm.git",
+                "reference": "bd59fe6fdda8d564eb9e56840ca1ffe9c9ecd033"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/mongodb-odm/zipball/bd59fe6fdda8d564eb9e56840ca1ffe9c9ecd033",
+                "reference": "bd59fe6fdda8d564eb9e56840ca1ffe9c9ecd033",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/annotations": "~1.0",
+                "doctrine/cache": "~1.0",
+                "doctrine/collections": "~1.1",
+                "doctrine/common": "2.4.*",
+                "doctrine/inflector": "~1.0",
+                "doctrine/mongodb": ">=1.1.5,<2.0",
+                "php": ">=5.3.2",
+                "symfony/console": "~2.0"
+            },
+            "require-dev": {
+                "symfony/yaml": "~2.0"
+            },
+            "suggest": {
+                "symfony/yaml": "Enables the YAML metadata mapping driver"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Doctrine\\ODM\\MongoDB": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bulat Shakirzyanov",
+                    "email": "mallluhuct@gmail.com",
+                    "homepage": "http://avalanche123.com"
+                },
+                {
+                    "name": "Jonathan H. Wage",
+                    "email": "jonwage@gmail.com",
+                    "homepage": "http://www.jwage.com/",
+                    "role": "Creator"
+                },
+                {
+                    "name": "Kris Wallsmith",
+                    "email": "kris.wallsmith@gmail.com",
+                    "homepage": "http://kriswallsmith.net/"
+                },
+                {
+                    "name": "Jeremy Mikola",
+                    "email": "jmikola@gmail.com",
+                    "homepage": "http://jmikola.net"
+                }
+            ],
+            "description": "Doctrine MongoDB Object Document Mapper",
+            "homepage": "http://www.doctrine-project.org",
+            "keywords": [
+                "database",
+                "mongodb",
+                "odm",
+                "persistence"
+            ],
+            "time": "2014-05-05 16:17:08"
+        },
+        {
+            "name": "doctrine/mongodb-odm-bundle",
+            "version": "dev-master",
+            "target-dir": "Doctrine/Bundle/MongoDBBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/DoctrineMongoDBBundle.git",
+                "reference": "ba17a288ae0f2f2cb4ef1bac667710a5f3b7151e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/DoctrineMongoDBBundle/zipball/ba17a288ae0f2f2cb4ef1bac667710a5f3b7151e",
+                "reference": "ba17a288ae0f2f2cb4ef1bac667710a5f3b7151e",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/mongodb-odm": "~1.0.0-beta5@dev",
+                "php": ">=5.3.2",
+                "symfony/doctrine-bridge": "~2.1",
+                "symfony/framework-bundle": "~2.1",
+                "symfony/options-resolver": "~2.1"
+            },
+            "require-dev": {
+                "doctrine/data-fixtures": "@dev",
+                "symfony/form": "~2.1",
+                "symfony/yaml": "~2.1"
+            },
+            "suggest": {
+                "doctrine/data-fixtures": "Load data fixtures"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Doctrine\\Bundle\\MongoDBBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bulat Shakirzyanov",
+                    "email": "mallluhuct@gmail.com",
+                    "homepage": "http://avalanche123.com"
+                },
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com",
+                    "homepage": "http://www.jwage.com/",
+                    "role": "Creator"
+                },
+                {
+                    "name": "Kris Wallsmith",
+                    "email": "kris@symfony.com"
+                }
+            ],
+            "description": "Symfony2 Doctrine MongoDB Bundle",
+            "homepage": "http://www.doctrine-project.org",
+            "keywords": [
+                "mongodb",
+                "persistence",
+                "symfony"
+            ],
+            "time": "2014-04-03 20:22:59"
         },
         {
             "name": "doctrine/orm",
@@ -4382,7 +4598,9 @@
     "stability-flags": {
         "mandango/mandango-bundle": 20,
         "snc/redis-bundle": 20,
-        "stfalcon/tinymce-bundle": 20
+        "stfalcon/tinymce-bundle": 20,
+        "doctrine/mongodb-odm": 20,
+        "doctrine/mongodb-odm-bundle": 20
     },
     "platform": {
         "php": ">=5.3.3"

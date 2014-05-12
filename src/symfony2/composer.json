@@ -28,7 +28,9 @@
         "incenteev/composer-parameter-handler": "~2.0",
         "mandango/mandango-bundle": "dev-master",
         "snc/redis-bundle": "1.1.x-dev",
-        "stfalcon/tinymce-bundle": "0.3.*@dev"
+        "stfalcon/tinymce-bundle": "0.3.*@dev",
+        "doctrine/mongodb-odm": "1.0.*@dev",
+        "doctrine/mongodb-odm-bundle": "3.0.*@dev"
     },
     "require-dev": {
         "phpunit/phpunit": "4.0.14",
