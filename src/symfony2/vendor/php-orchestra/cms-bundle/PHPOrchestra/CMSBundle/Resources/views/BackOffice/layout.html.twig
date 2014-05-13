@@ -9,14 +9,18 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <title>{% block title %}PHPOrchestra{% endblock %}</title>
         {% block stylesheets %}
-            <link rel="stylesheet" href="{{ asset('bundles/phporchestracms/css/jquery-ui.css') }}">
-            <link rel="stylesheet" href="{{ asset('bundles/phporchestracms/css/bootstrap.min.css') }}">
-            <link rel="stylesheet" href="{{ asset('bundles/phporchestracms/css/font-awesome.min.css') }}">
-            <link rel="stylesheet" href="{{ asset('bundles/phporchestracms/css/smartadmin-production.css') }}">
-            <link rel="stylesheet" href="{{ asset('bundles/phporchestracms/css/smartadmin-skins.css') }}">
+            <!-- Basic Styles -->
+            <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('bundles/phporchestracms/css/bootstrap.min.css') }}">
+            <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('bundles/phporchestracms/css/font-awesome.min.css') }}">
+    
+            <!-- SmartAdmin Styles : Please note (smartadmin-production.css) was created using LESS variables -->
+            <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('bundles/phporchestracms/css/smartadmin-production.css') }}">
+            <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('bundles/phporchestracms/css/smartadmin-skins.css') }}">
+        
             <link rel="stylesheet" href="{{ asset('bundles/phporchestracms/css/ribbon.css') }}">
             <link rel="stylesheet" href="{{ asset('bundles/phporchestracms/css/phpfactory.css') }}">
-            <link rel="stylesheet" href="{{ asset('bundles/phporchestracms/css/ui.fancytree.css') }}">
+            <!-- <link rel="stylesheet" href="{{ asset('bundles/phporchestracms/css/jquery-ui.css') }}">
+            <link rel="stylesheet" href="{{ asset('bundles/phporchestracms/css/ui.fancytree.css') }}"> -->
             
             <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700" media="screen" rel="stylesheet" type="text/css" />
             <link rel="shortcut icon" href="http://phpfactory-bo.interakting.com/img/favicon/favicon.ico" type="image/x-icon" />
@@ -31,9 +35,68 @@
         {% endblock %}
         {% block javascripts %}
             <script src="{{ asset('bundles/phporchestracms/js/libs/jquery-2.0.2.min.js') }}"></script>
+    
             <script src="{{ asset('bundles/phporchestracms/js/libs/jquery-ui-1.10.3.min.js') }}"></script>
-            <script src="{{ asset('bundles/phporchestracms/js/app.js') }}"></script>
-            <script src="{{ asset('bundles/phporchestracms/js/plugin/jquery-cookie/jquery.cookie.js') }}"></script>
+    
+            <!-- JS TOUCH : include this plugin for mobile drag / drop touch events
+            <script src="{{ asset('bundles/phporchestracms/js/plugin/jquery-touch/jquery.ui.touch-punch.min.js') }}"></script> -->
+    
+            <!-- BOOTSTRAP JS -->
+            <script src="{{ asset('bundles/phporchestracms/js/bootstrap/bootstrap.min.js') }}"></script>
+    
+            <!-- CUSTOM NOTIFICATION -->
+            <script src="{{ asset('bundles/phporchestracms/js/notification/SmartNotification.min.js') }}"></script>
+    
+            <!-- JARVIS WIDGETS -->
+            <script src="{{ asset('bundles/phporchestracms/js/smartwidgets/jarvis.widget.min.js') }}"></script>
+    
+            <!-- EASY PIE CHARTS -->
+            <script src="{{ asset('bundles/phporchestracms/js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js') }}"></script>
+    
+            <!-- SPARKLINES -->
+            <script src="{{ asset('bundles/phporchestracms/js/plugin/sparkline/jquery.sparkline.min.js') }}"></script>
+    
+            <!-- JQUERY VALIDATE -->
+            <script src="{{ asset('bundles/phporchestracms/js/plugin/jquery-validate/jquery.validate.min.js') }}"></script>
+    
+            <!-- JQUERY MASKED INPUT -->
+            <script src="{{ asset('bundles/phporchestracms/js/plugin/masked-input/jquery.maskedinput.min.js') }}"></script>
+    
+            <!-- JQUERY SELECT2 INPUT -->
+            <script src="{{ asset('bundles/phporchestracms/js/plugin/select2/select2.min.js') }}"></script>
+    
+            <!-- JQUERY UI + Bootstrap Slider -->
+            <script src="{{ asset('bundles/phporchestracms/js/plugin/bootstrap-slider/bootstrap-slider.min.js') }}"></script>
+    
+            <!-- browser msie issue fix -->
+            <script src="{{ asset('bundles/phporchestracms/js/plugin/msie-fix/jquery.mb.browser.min.js') }}"></script>
+    
+            <!-- FastClick: For mobile devices: you can disable this in app.js -->
+            <!-- <script src="{{ asset('bundles/phporchestracms/js/plugin/fastclick/fastclick.js') }}"></script> -->
+    
+            <!--[if IE 7]>
+    
+            <h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
+    
+            <![endif]-->
+    
+            <!-- MAIN APP JS FILE -->
+            <script src="{{ asset('bundles/phporchestracms/js/app0.js') }}"></script>
+    
+            <!-- Your GOOGLE ANALYTICS CODE Below -->
+            <script type="text/javascript">
+            
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
+              _gaq.push(['_trackPageview']);
+            
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+            
+            </script>
             
             <!-- TREE MENU : SHOULD BE LOADED ONLY WHEN REQUIRED -->
             <script src="{{ asset('bundles/phporchestracms/js/plugin/fancytree/jquery.fancytree.js') }}"></script>
