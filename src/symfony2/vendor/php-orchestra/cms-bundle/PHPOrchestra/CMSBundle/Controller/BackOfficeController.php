@@ -30,6 +30,14 @@ class BackOfficeController extends Controller
     }
     
     /**
+     * Site Home Page
+     */
+    public function siteAction()
+    {
+        return $this->render('PHPOrchestraCMSBundle:BackOffice:siteHome.html.twig');
+    }
+    
+    /**
      * Tree menu Dispatcher
      * 
      * @param string $cmd

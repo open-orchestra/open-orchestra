@@ -6,6 +6,10 @@ php_orchestra_cms_bo_edito:
     pattern: /bo/edito
     defaults: { _controller: PHPOrchestraCMSBundle:BackOffice:edito }
 
+php_orchestra_cms_bo_site:
+    pattern: /bo/site
+    defaults: { _controller: PHPOrchestraCMSBundle:BackOffice:site }
+
 php_orchestra_cms_bo_jscontextmenudispatcher:
     pattern: /bo/js-menu-dispatcher/{cmd}
     defaults: { _controller: PHPOrchestraCMSBundle:BackOffice:jsContextMenuDispatch, cmd: '' }
