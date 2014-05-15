@@ -71,3 +71,12 @@ Model\PHPOrchestraCMSBundle\User:
         lastName: string
         email: string
         addresses: string
+        
+Model\PHPOrchestraCMSBundle\Site:
+    collection: site
+    fields:
+        domain: string
+        alias: string
+        defaultLanguage: string
+        languages: string
+        blocks: string

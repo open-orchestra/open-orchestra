@@ -195,4 +195,10 @@ Model\PHPOrchestraCMSBundle\Node:
                 component: "PHPOrchestraCMSBundle:Block/Sample:show"
                 attributes: {"_title":"Annuaire", "_author":"Le bottin mondain","_news":""}
                 
-                
+Model\PHPOrchestraCMSBundle\Site:
+    default_site:
+        domain: www.phpOrchestra.fr
+        alias: www.php-orchestra.fr
+        defaultLanguage: fr
+        languages: en,fr
+        blocks: show0 BlockExample,show1 BlockExample,Sample Block

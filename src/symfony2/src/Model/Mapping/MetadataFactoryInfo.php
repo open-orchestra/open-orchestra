@@ -14,17 +14,25 @@ class MetadataFactoryInfo
             'inheritable' => false,
             'inheritance' => false,
             'fields' => array(
-                'siteId' => array(
-                    'type' => 'integer',
-                    'dbName' => 'siteId',
-                ),
                 'domain' => array(
                     'type' => 'string',
                     'dbName' => 'domain',
                 ),
-                'language' => array(
+                'alias' => array(
                     'type' => 'string',
-                    'dbName' => 'language',
+                    'dbName' => 'alias',
+                ),
+                'defaultLanguage' => array(
+                    'type' => 'string',
+                    'dbName' => 'defaultLanguage',
+                ),
+                'languages' => array(
+                    'type' => 'string',
+                    'dbName' => 'languages',
+                ),
+                'blocks' => array(
+                    'type' => 'string',
+                    'dbName' => 'blocks',
                 ),
             ),
             '_has_references' => false,

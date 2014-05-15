@@ -60,11 +60,12 @@ class DocumentManager
     * @param string $documentType
     * @param array $criteria
     */
-    public function getDocuments($documentType, array $criteria = array())
+    public function getDocuments($documentType, array $criteria = array(), $sort = array())
     {
         $repository = $this->documentsService->getRepository($this->getDocumentNamespace($documentType));
         $query = $repository->createQuery();
         $query->criteria($criteria);
+        $query->sort($sort);
         return $query->all();
     }
     
@@ -86,6 +87,9 @@ class DocumentManager
                 break;
             case 'Block':
                 $documentNamespace = 'Model\PHPOrchestraCMSBundle\Block';
+                break;
+            case 'Site':
+                $documentNamespace = 'Model\PHPOrchestraCMSBundle\Site';
                 break;
             default:
                 throw new UnrecognizedDocumentTypeException('Unrecognized document type : ' . $documentType);
