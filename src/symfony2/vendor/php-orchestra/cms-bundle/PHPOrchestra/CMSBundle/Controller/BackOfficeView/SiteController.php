@@ -13,9 +13,9 @@ use Symfony\Component\HttpFoundation\Request;
 class SiteController extends Controller
 {
 
-	public function listAction($start=0, $end=10, $criteria=array(), $sort=array())
+    public function listAction($start=0, $end=10, $criteria=array(), $sort=array())
     {
-    	$params['values'] = $this->get('phporchestra_cms.siteadapter')->getValues($start=0, $end=10, $criteria=array(), $sort=array());
+        $params['values'] = $this->get('phporchestra_cms.siteadapter')->getValues($start=0, $end=10, $criteria=array(), $sort=array());
         return $this->forward('PHPOrchestraCMSBundle:View:list', $params);
     }
 }

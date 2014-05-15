@@ -5,7 +5,7 @@
  * @author Noël Gilain <noel.gilain@businessdecision.com>
  */
 
-namespace PHPOrchestra\CMSBundle\Controller;
+namespace PHPOrchestra\CMSBundle\Controller\BackOfficeView;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -26,7 +26,7 @@ class BackOfficeController extends Controller
      */
     public function editoAction()
     {
-        return $this->render('PHPOrchestraCMSBundle:BackOffice:editoHome.html.twig');
+        return $this->render('PHPOrchestraCMSBundle:BackOffice/Editorial:editoHome.html.twig');
     }
     
     /**

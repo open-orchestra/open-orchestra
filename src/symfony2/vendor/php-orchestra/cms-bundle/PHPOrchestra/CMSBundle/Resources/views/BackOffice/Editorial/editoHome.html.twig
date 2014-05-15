@@ -3,7 +3,7 @@
  #
  # @author Noël GILAIN <noel.gilain@businessdecision.com>
  ##}
-{% extends 'PHPOrchestraCMSBundle:BackOffice:contentDualColumn.html.twig' %}
+{% extends 'PHPOrchestraCMSBundle:BackOffice/Include:contentDualColumn.html.twig' %}
 
 {% block contentTitle %}
 <i class="fa-fw fa fa-home"></i> 
@@ -15,7 +15,7 @@ Editorial
 {% endblock %}
 
 {% block inbox_side_bar %}
-    {% include 'PHPOrchestraCMSBundle:BackOffice:editorialMenu.html.twig' %}
+    {% include 'PHPOrchestraCMSBundle:BackOffice/Editorial:editorialMenu.html.twig' %}
 {% endblock %}
 
 {% block rightbox_content %}
