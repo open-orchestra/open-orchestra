@@ -14,6 +14,11 @@ php_orchestra_cms_bo_content:
     pattern: /content
     defaults: { _controller: PHPOrchestraCMSBundle:BackOfficeView/content:home }
 
+php_orchestra_cms_clearroutingcache:
+    pattern: /cache/routing/clear
+    defaults: { _controller: PHPOrchestraCMSBundle:cache:clearRoutingCache }
+
+
 php_orchestra_cms_bo_jscontextmenudispatcher:
     pattern: /bo/js-menu-dispatcher/{cmd}
     defaults: { _controller: PHPOrchestraCMSBundle:BackOfficeView/BackOffice:jsContextMenuDispatch, cmd: '' }

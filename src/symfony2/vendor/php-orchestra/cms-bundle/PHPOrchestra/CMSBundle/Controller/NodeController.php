@@ -188,7 +188,7 @@ class NodeController extends Controller
             $node->save();
             
             return $this->render(
-                'PHPOrchestraCMSBundle:BackOffice/Include:simpleMessage.html.twig',
+                'PHPOrchestraCMSBundle:BackOffice/Editorial:simpleMessage.html.twig',
                 array('message' => 'Edition ok')
             );
         }
@@ -246,7 +246,7 @@ class NodeController extends Controller
     public function unpublishAction(Request $request)
     {
         return $this->render(
-            'PHPOrchestraCMSBundle:BackOffice/Include:simpleMessage.html.twig',
+            'PHPOrchestraCMSBundle:BackOffice/Editorial:simpleMessage.html.twig',
             array(
                 'message' => 'Unpublish node process'
             )
@@ -263,7 +263,7 @@ class NodeController extends Controller
         $this->deleteTree($nodeId);
         
         return $this->render(
-            'PHPOrchestraCMSBundle:BackOffice/Include:simpleMessage.html.twig',
+            'PHPOrchestraCMSBundle:BackOffice/Editorial:simpleMessage.html.twig',
             array('message' => 'Delete node process on ' . $nodeId)
         );
     }
@@ -318,7 +318,7 @@ class NodeController extends Controller
         }
         
         return $this->render(
-            'PHPOrchestraCMSBundle:BackOffice/Include:simpleMessage.html.twig',
+            'PHPOrchestraCMSBundle:BackOffice/Editorial:simpleMessage.html.twig',
             array('message' => $message)
         );
     }
