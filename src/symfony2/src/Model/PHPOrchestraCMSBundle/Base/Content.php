@@ -61,6 +61,11 @@ abstract class Content extends \Mandango\Document\Document
         } elseif (isset($data['_fields']['status'])) {
             $this->data['fields']['status'] = null;
         }
+        if (isset($data['shortName'])) {
+            $this->data['fields']['shortName'] = (string) $data['shortName'];
+        } elseif (isset($data['_fields']['shortName'])) {
+            $this->data['fields']['shortName'] = null;
+        }
         if (isset($data['attributes'])) {
             $embedded = new \Mandango\Group\EmbeddedGroup('Model\PHPOrchestraCMSBundle\ContentAttribute');
             $embedded->setRootAndPath($this, 'attributes');
@@ -396,6 +401,71 @@ abstract class Content extends \Mandango\Document\Document
         return $this->data['fields']['status'];
     }
 
+    /**
+     * Set the "shortName" field.
+     *
+     * @param mixed $value The value.
+     *
+     * @return \Model\PHPOrchestraCMSBundle\Content The document (fluent interface).
+     */
+    public function setShortName($value)
+    {
+        if (!isset($this->data['fields']['shortName'])) {
+            if (!$this->isNew()) {
+                $this->getShortName();
+                if ($this->isFieldEqualTo('shortName', $value)) {
+                    return $this;
+                }
+            } else {
+                if (null === $value) {
+                    return $this;
+                }
+                $this->fieldsModified['shortName'] = null;
+                $this->data['fields']['shortName'] = $value;
+                return $this;
+            }
+        } elseif ($this->isFieldEqualTo('shortName', $value)) {
+            return $this;
+        }
+
+        if (!isset($this->fieldsModified['shortName']) && !array_key_exists('shortName', $this->fieldsModified)) {
+            $this->fieldsModified['shortName'] = $this->data['fields']['shortName'];
+        } elseif ($this->isFieldModifiedEqualTo('shortName', $value)) {
+            unset($this->fieldsModified['shortName']);
+        }
+
+        $this->data['fields']['shortName'] = $value;
+
+        return $this;
+    }
+
+    /**
+     * Returns the "shortName" field.
+     *
+     * @return mixed The $name field.
+     */
+    public function getShortName()
+    {
+        if (!isset($this->data['fields']['shortName'])) {
+            if ($this->isNew()) {
+                $this->data['fields']['shortName'] = null;
+            } elseif (!isset($this->data['fields']) || !array_key_exists('shortName', $this->data['fields'])) {
+                $this->addFieldCache('shortName');
+                $data = $this->getRepository()->getCollection()->findOne(
+                    array('_id' => $this->getId()),
+                    array('shortName' => 1)
+                );
+                if (isset($data['shortName'])) {
+                    $this->data['fields']['shortName'] = (string) $data['shortName'];
+                } else {
+                    $this->data['fields']['shortName'] = null;
+                }
+            }
+        }
+
+        return $this->data['fields']['shortName'];
+    }
+
     private function isFieldEqualTo($field, $otherValue)
     {
         $value = $this->data['fields'][$field];
@@ -521,6 +591,9 @@ abstract class Content extends \Mandango\Document\Document
         if ('status' == $name) {
             return $this->setStatus($value);
         }
+        if ('shortName' == $name) {
+            return $this->setShortName($value);
+        }
 
         throw new \InvalidArgumentException(sprintf('The document data "%s" is not valid.', $name));
     }
@@ -550,6 +623,9 @@ abstract class Content extends \Mandango\Document\Document
         }
         if ('status' == $name) {
             return $this->getStatus();
+        }
+        if ('shortName' == $name) {
+            return $this->getShortName();
         }
         if ('attributes' == $name) {
             return $this->getAttributes();
@@ -585,6 +661,9 @@ abstract class Content extends \Mandango\Document\Document
         if (isset($array['status'])) {
             $this->setStatus($array['status']);
         }
+        if (isset($array['shortName'])) {
+            $this->setShortName($array['shortName']);
+        }
         if (isset($array['attributes'])) {
             $embeddeds = array();
             foreach ($array['attributes'] as $documentData) {
@@ -613,6 +692,7 @@ abstract class Content extends \Mandango\Document\Document
         $array['version'] = $this->getVersion();
         $array['language'] = $this->getLanguage();
         $array['status'] = $this->getStatus();
+        $array['shortName'] = $this->getShortName();
 
         return $array;
     }
@@ -642,6 +722,9 @@ abstract class Content extends \Mandango\Document\Document
                 }
                 if (isset($this->data['fields']['status'])) {
                     $query['status'] = (string) $this->data['fields']['status'];
+                }
+                if (isset($this->data['fields']['shortName'])) {
+                    $query['shortName'] = (string) $this->data['fields']['shortName'];
                 }
             } else {
                 if (isset($this->data['fields']['contentId'])
@@ -701,6 +784,18 @@ abstract class Content extends \Mandango\Document\Document
                             $query['$set']['status'] = (string) $this->data['fields']['status'];
                         } else {
                             $query['$unset']['status'] = 1;
+                        }
+                    }
+                }
+                if (isset($this->data['fields']['shortName'])
+                    || array_key_exists('shortName', $this->data['fields'])) {
+                    $value = $this->data['fields']['shortName'];
+                    $originalValue = $this->getOriginalFieldValue('shortName');
+                    if ($value !== $originalValue) {
+                        if (null !== $value) {
+                            $query['$set']['shortName'] = (string) $this->data['fields']['shortName'];
+                        } else {
+                            $query['$unset']['shortName'] = 1;
                         }
                     }
                 }

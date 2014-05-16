@@ -12,7 +12,11 @@ php_orchestra_cms_bo_site:
 
 php_orchestra_cms_bo_content:
     pattern: /content/{contentType}
-    defaults: { _controller: PHPOrchestraCMSBundle:BackOfficeView/content:home}
+    defaults: { _controller: PHPOrchestraCMSBundle:BackOfficeView/content:list}
+
+php_orchestra_cms_bo_content_edit:
+    pattern: /content/edit/{contentId}
+    defaults: { _controller: PHPOrchestraCMSBundle:BackOfficeView/content:form}
 
 php_orchestra_cms_clearroutingcache:
     pattern: /cache/routing/clear

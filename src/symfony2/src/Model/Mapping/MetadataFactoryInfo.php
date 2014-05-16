@@ -365,6 +365,10 @@ class MetadataFactoryInfo
                     'type' => 'string',
                     'dbName' => 'status',
                 ),
+                'shortName' => array(
+                    'type' => 'string',
+                    'dbName' => 'shortName',
+                ),
             ),
             '_has_references' => false,
             'referencesOne' => array(
@@ -446,7 +450,7 @@ class MetadataFactoryInfo
             'isEmbedded' => false,
             'mandango' => null,
             'connection' => '',
-            'collection' => 'content',
+            'collection' => 'contentType',
             'inheritable' => false,
             'inheritance' => false,
             'fields' => array(

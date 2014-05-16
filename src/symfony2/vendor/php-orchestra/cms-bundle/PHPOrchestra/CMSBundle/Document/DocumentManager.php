@@ -91,28 +91,19 @@ class DocumentManager
      */
     protected function getDocumentNamespace($documentType)
     {
-        $documentNamespace = '';
-        switch($documentType)
-        {
-            case 'Node':
-                $documentNamespace = 'Model\PHPOrchestraCMSBundle\Node';
-                break;
-            case 'Template':
-                $documentNamespace = 'Model\PHPOrchestraCMSBundle\Template';
-                break;
-            case 'Block':
-                $documentNamespace = 'Model\PHPOrchestraCMSBundle\Block';
-                break;
-            case 'Site':
-                $documentNamespace = 'Model\PHPOrchestraCMSBundle\Site';
-                break;
-            case 'ContentType':
-                $documentNamespace = 'Model\PHPOrchestraCMSBundle\ContentType';
-                break;
-            default:
-                throw new UnrecognizedDocumentTypeException('Unrecognized document type : ' . $documentType);
+        $documentNamespaces = array(
+            'Node' => 'Model\PHPOrchestraCMSBundle\Node',
+            'Template' => 'Model\PHPOrchestraCMSBundle\Template',
+            'Block' => 'Model\PHPOrchestraCMSBundle\Block',
+            'Site' => 'Model\PHPOrchestraCMSBundle\Site',
+            'ContentType' => 'Model\PHPOrchestraCMSBundle\ContentType',
+            'Content' => 'Model\PHPOrchestraCMSBundle\Content'
+        );
+        if (isset($documentNamespaces[$documentType])) {
+            return $documentNamespaces[$documentType];
+        } else {
+            throw new UnrecognizedDocumentTypeException('Unrecognized document type : ' . $documentType);
         }
-        return $documentNamespace;
     }
     
     

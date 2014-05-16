@@ -55,7 +55,7 @@ Model\PHPOrchestraCMSBundle\Template:
 
 
 Model\PHPOrchestraCMSBundle\ContentAttribute:
-    collection: content
+    collection: contentAttribute
     isEmbedded: true
     fields:
         name: string
@@ -70,18 +70,19 @@ Model\PHPOrchestraCMSBundle\Content:
         version: integer
         language: string
         status: string
+        shortName: string
     embeddedsMany:
         attributes: {class: Model\PHPOrchestraCMSBundle\ContentAttribute}
 
 Model\PHPOrchestraCMSBundle\ContentField:
-    collection: content
+    collection: contentField
     isEmbedded: true
     fields:
         name: string
         type: string
 
 Model\PHPOrchestraCMSBundle\ContentType:
-    collection: content
+    collection: contentType
     fields:
         contentType: string
     embeddedsMany:
