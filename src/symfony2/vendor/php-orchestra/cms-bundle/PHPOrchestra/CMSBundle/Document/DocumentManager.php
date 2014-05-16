@@ -59,14 +59,29 @@ class DocumentManager
     * 
     * @param string $documentType
     * @param array $criteria
+    * @param array $sort
+    * @param bool $asArray, true to getdocuments as array, false to get as objects
     */
-    public function getDocuments($documentType, array $criteria = array(), $sort = array())
+    public function getDocuments($documentType, array $criteria = array(), $sort = array(), $asArray = false)
     {
         $repository = $this->documentsService->getRepository($this->getDocumentNamespace($documentType));
         $query = $repository->createQuery();
         $query->criteria($criteria);
         $query->sort($sort);
-        return $query->all();
+        $documents = $query->all();
+         if ($asArray) {
+            $documents = $this->adaptToArray($documents);
+        }
+        return $documents;
+    }
+    
+    public function adaptToArray($collection)
+    {
+        $documents = array();
+        foreach ($collection as $document) {
+            $documents[] = $document->toArray();
+        }
+        return $documents;
     }
     
     /**
@@ -90,6 +105,9 @@ class DocumentManager
                 break;
             case 'Site':
                 $documentNamespace = 'Model\PHPOrchestraCMSBundle\Site';
+                break;
+            case 'ContentType':
+                $documentNamespace = 'Model\PHPOrchestraCMSBundle\ContentType';
                 break;
             default:
                 throw new UnrecognizedDocumentTypeException('Unrecognized document type : ' . $documentType);

@@ -18,7 +18,9 @@ class BackOfficeController extends Controller
      */
     public function homeAction()
     {
-        $contentTypes = array('news' => 'News', 'cars' => 'Voitures');
+        $documentManager = $this->container->get('phporchestra_cms.documentmanager');
+        
+        $contentTypes = $documentManager->getDocuments('ContentType', array(), array(), true);
         
         return $this->render(
             'PHPOrchestraCMSBundle:BackOffice:home.html.twig',

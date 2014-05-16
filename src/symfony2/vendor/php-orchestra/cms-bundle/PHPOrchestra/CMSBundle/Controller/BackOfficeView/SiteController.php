@@ -15,7 +15,8 @@ class SiteController extends Controller
 
     public function listAction($start=0, $end=10, $criteria=array(), $sort=array())
     {
-        $params['values'] = $this->get('phporchestra_cms.siteadapter')->getValues($start=0, $end=10, $criteria=array(), $sort=array());
+        $documentManager = $this->container->get('phporchestra_cms.documentmanager');
+        $params['values'] = $documentManager->getDocuments('Site', $criteria, $sort, true);
         return $this->forward('PHPOrchestraCMSBundle:View:list', $params);
     }
 }

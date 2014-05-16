@@ -19,8 +19,10 @@
                 <li>
                     <a href="#">Gestion des contenus</a>
                     <ul>
-                    {% for contentType, contentLabel in contentTypes %}
-                        <li><a href="{{ path('php_orchestra_cms_bo_content', {'contentType' : contentType}) }}">{{ contentLabel }}</a></li>
+                    {% for contentType in contentTypes %}
+                        {% if contentType.contentType != '' %}
+                        <li><a href="{{ path('php_orchestra_cms_bo_content', {'contentType' : contentType.contentType}) }}">{{ contentType.contentType }}</a></li>
+                        {% endif %}
                     {% endfor %}
                     </ul>
                 </li>
