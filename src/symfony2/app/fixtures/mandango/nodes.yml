@@ -1,34 +1,3 @@
-Model\PHPOrchestraCMSBundle\Template:
-    template_generic:
-        templateId: template_generic
-        siteId: 1
-        version: 1
-        name: Generic Template
-        language: fr
-        status: published
-        boDirection: h
-        areas: [{"areaId":"Generic Area","classes":[],"subAreas":[],"blocks":[]}]
-
-    template_full:
-        templateId: template_full
-        siteId: 1
-        version: 1
-        name: Full Template
-        language: fr
-        status: published
-        boDirection: h
-        areas: [{"areaId":"header","classes":[],"subAreas":[],"blocks":[]},{"areaId":"main","classes":[],"boDirection":"v","subAreas":[{"areaId":"left_menu","classes":[],"subAreas":[],"blocks":[]},{"areaId":"content","classes":[],"subAreas":[],"blocks":[]},{"areaId":"skycrapper","classes":[],"subAreas":[],"blocks":[]}],"blocks":[]},{"areaId":"footer","classes":[],"subAreas":[],"blocks":[]}]
-
-    template_main:
-        templateId: template_main
-        siteId: 1
-        version: 1
-        name: Generic Main
-        language: fr
-        status: published
-        boDirection: h
-        areas: [{"areaId":"main","classes":[],"subAreas":[],"blocks":[{}]}]
-
 Model\PHPOrchestraCMSBundle\Node:
     node_home:
         nodeId: root
@@ -194,11 +163,3 @@ Model\PHPOrchestraCMSBundle\Node:
             -
                 component: "PHPOrchestraCMSBundle:Block/Sample:show"
                 attributes: {"_title":"Annuaire", "_author":"Le bottin mondain","_news":""}
-                
-Model\PHPOrchestraCMSBundle\Site:
-    default_site:
-        domain: www.phpOrchestra.fr
-        alias: www.php-orchestra.fr
-        defaultLanguage: fr
-        languages: en,fr
-        blocks: show0 BlockExample,show1 BlockExample,Sample Block

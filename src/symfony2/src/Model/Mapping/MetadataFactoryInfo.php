@@ -14,6 +14,10 @@ class MetadataFactoryInfo
             'inheritable' => false,
             'inheritance' => false,
             'fields' => array(
+                'siteId' => array(
+                    'type' => 'integer',
+                    'dbName' => 'siteId',
+                ),
                 'domain' => array(
                     'type' => 'string',
                     'dbName' => 'domain',
@@ -293,6 +297,59 @@ class MetadataFactoryInfo
         );
     }
 
+    public function getModelPHPOrchestraCMSBundleContentAttributeClass()
+    {
+        return array(
+            'isEmbedded' => false,
+            'mandango' => null,
+            'connection' => '',
+            'collection' => 'content',
+            'inheritable' => false,
+            'inheritance' => false,
+            'fields' => array(
+                'name' => array(
+                    'type' => 'string',
+                    'dbName' => 'name',
+                ),
+                'value' => array(
+                    'type' => 'string',
+                    'dbName' => 'value',
+                ),
+            ),
+            '_has_references' => false,
+            'referencesOne' => array(
+
+            ),
+            'referencesMany' => array(
+
+            ),
+            'embeddedsOne' => array(
+
+            ),
+            'embeddedsMany' => array(
+
+            ),
+            'relationsOne' => array(
+
+            ),
+            'relationsManyOne' => array(
+
+            ),
+            'relationsManyMany' => array(
+
+            ),
+            'relationsManyThrough' => array(
+
+            ),
+            'indexes' => array(
+
+            ),
+            '_indexes' => array(
+
+            ),
+        );
+    }
+
     public function getModelPHPOrchestraCMSBundleContentClass()
     {
         return array(
@@ -315,13 +372,13 @@ class MetadataFactoryInfo
                     'type' => 'integer',
                     'dbName' => 'version',
                 ),
+                'language' => array(
+                    'type' => 'string',
+                    'dbName' => 'language',
+                ),
                 'status' => array(
                     'type' => 'string',
                     'dbName' => 'status',
-                ),
-                'attributes' => array(
-                    'type' => 'raw',
-                    'dbName' => 'attributes',
                 ),
             ),
             '_has_references' => false,
@@ -335,7 +392,9 @@ class MetadataFactoryInfo
 
             ),
             'embeddedsMany' => array(
-
+                'attributes' => array(
+                    'class' => 'Model\\PHPOrchestraCMSBundle\\ContentAttribute',
+                ),
             ),
             'relationsOne' => array(
 

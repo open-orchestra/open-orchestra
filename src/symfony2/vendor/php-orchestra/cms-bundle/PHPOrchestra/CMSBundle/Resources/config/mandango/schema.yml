@@ -3,7 +3,10 @@ Model\PHPOrchestraCMSBundle\Site:
     fields:
         siteId: integer
         domain: string
-        language: string
+        alias: string
+        defaultLanguage: string
+        languages: string
+        blocks: string
 
 
 Model\PHPOrchestraCMSBundle\Block:
@@ -51,16 +54,25 @@ Model\PHPOrchestraCMSBundle\Template:
         blocks: {class: Model\PHPOrchestraCMSBundle\Block}
 
 
+Model\PHPOrchestraCMSBundle\ContentAttribute:
+    collection: content
+    fields:
+        name: string
+        value: string
+
+
 Model\PHPOrchestraCMSBundle\Content:
     collection: content
     fields:
         contentId: integer
         type: string
         version: integer
+        language: string
         status: string
-        attributes: raw
+    embeddedsMany:
+        attributes: {class: Model\PHPOrchestraCMSBundle\ContentAttribute}
 
-        
+
 Model\PHPOrchestraCMSBundle\User:
     collection: user
     fields:
@@ -71,12 +83,3 @@ Model\PHPOrchestraCMSBundle\User:
         lastName: string
         email: string
         addresses: string
-        
-Model\PHPOrchestraCMSBundle\Site:
-    collection: site
-    fields:
-        domain: string
-        alias: string
-        defaultLanguage: string
-        languages: string
-        blocks: string

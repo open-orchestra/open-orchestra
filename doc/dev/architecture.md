@@ -191,13 +191,14 @@ La base de données principale sera en MongoDB
     "contentId": 1,
     "type": "news", // news, comment, article, etc.
     "version": 1,
+    "language": "fr"
     "status": "published",
     "attributes":
     {
-        "custom_attribute": "value",
-        "custom_attribute": "value",
-        "custom_attribute": "value",
-        "custom_attribute": "value"
+        "custom_attribute_name": "value",
+        "custom_attribute_name": "value",
+        "custom_attribute_name": "value",
+        "custom_attribute_name": "value"
         //, etc.
     }
 }

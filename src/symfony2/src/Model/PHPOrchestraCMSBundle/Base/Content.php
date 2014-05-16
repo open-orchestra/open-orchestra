@@ -51,15 +51,21 @@ abstract class Content extends \Mandango\Document\Document
         } elseif (isset($data['_fields']['version'])) {
             $this->data['fields']['version'] = null;
         }
+        if (isset($data['language'])) {
+            $this->data['fields']['language'] = (string) $data['language'];
+        } elseif (isset($data['_fields']['language'])) {
+            $this->data['fields']['language'] = null;
+        }
         if (isset($data['status'])) {
             $this->data['fields']['status'] = (string) $data['status'];
         } elseif (isset($data['_fields']['status'])) {
             $this->data['fields']['status'] = null;
         }
         if (isset($data['attributes'])) {
-            $this->data['fields']['attributes'] = $data['attributes'];
-        } elseif (isset($data['_fields']['attributes'])) {
-            $this->data['fields']['attributes'] = null;
+            $embedded = new \Mandango\Group\EmbeddedGroup('Model\PHPOrchestraCMSBundle\ContentAttribute');
+            $embedded->setRootAndPath($this, 'attributes');
+            $embedded->setSavedData($data['attributes']);
+            $this->data['embeddedsMany']['attributes'] = $embedded;
         }
 
         return $this;
@@ -261,6 +267,71 @@ abstract class Content extends \Mandango\Document\Document
     }
 
     /**
+     * Set the "language" field.
+     *
+     * @param mixed $value The value.
+     *
+     * @return \Model\PHPOrchestraCMSBundle\Content The document (fluent interface).
+     */
+    public function setLanguage($value)
+    {
+        if (!isset($this->data['fields']['language'])) {
+            if (!$this->isNew()) {
+                $this->getLanguage();
+                if ($this->isFieldEqualTo('language', $value)) {
+                    return $this;
+                }
+            } else {
+                if (null === $value) {
+                    return $this;
+                }
+                $this->fieldsModified['language'] = null;
+                $this->data['fields']['language'] = $value;
+                return $this;
+            }
+        } elseif ($this->isFieldEqualTo('language', $value)) {
+            return $this;
+        }
+
+        if (!isset($this->fieldsModified['language']) && !array_key_exists('language', $this->fieldsModified)) {
+            $this->fieldsModified['language'] = $this->data['fields']['language'];
+        } elseif ($this->isFieldModifiedEqualTo('language', $value)) {
+            unset($this->fieldsModified['language']);
+        }
+
+        $this->data['fields']['language'] = $value;
+
+        return $this;
+    }
+
+    /**
+     * Returns the "language" field.
+     *
+     * @return mixed The $name field.
+     */
+    public function getLanguage()
+    {
+        if (!isset($this->data['fields']['language'])) {
+            if ($this->isNew()) {
+                $this->data['fields']['language'] = null;
+            } elseif (!isset($this->data['fields']) || !array_key_exists('language', $this->data['fields'])) {
+                $this->addFieldCache('language');
+                $data = $this->getRepository()->getCollection()->findOne(
+                    array('_id' => $this->getId()),
+                    array('language' => 1)
+                );
+                if (isset($data['language'])) {
+                    $this->data['fields']['language'] = (string) $data['language'];
+                } else {
+                    $this->data['fields']['language'] = null;
+                }
+            }
+        }
+
+        return $this->data['fields']['language'];
+    }
+
+    /**
      * Set the "status" field.
      *
      * @param mixed $value The value.
@@ -325,71 +396,6 @@ abstract class Content extends \Mandango\Document\Document
         return $this->data['fields']['status'];
     }
 
-    /**
-     * Set the "attributes" field.
-     *
-     * @param mixed $value The value.
-     *
-     * @return \Model\PHPOrchestraCMSBundle\Content The document (fluent interface).
-     */
-    public function setAttributes($value)
-    {
-        if (!isset($this->data['fields']['attributes'])) {
-            if (!$this->isNew()) {
-                $this->getAttributes();
-                if ($this->isFieldEqualTo('attributes', $value)) {
-                    return $this;
-                }
-            } else {
-                if (null === $value) {
-                    return $this;
-                }
-                $this->fieldsModified['attributes'] = null;
-                $this->data['fields']['attributes'] = $value;
-                return $this;
-            }
-        } elseif ($this->isFieldEqualTo('attributes', $value)) {
-            return $this;
-        }
-
-        if (!isset($this->fieldsModified['attributes']) && !array_key_exists('attributes', $this->fieldsModified)) {
-            $this->fieldsModified['attributes'] = $this->data['fields']['attributes'];
-        } elseif ($this->isFieldModifiedEqualTo('attributes', $value)) {
-            unset($this->fieldsModified['attributes']);
-        }
-
-        $this->data['fields']['attributes'] = $value;
-
-        return $this;
-    }
-
-    /**
-     * Returns the "attributes" field.
-     *
-     * @return mixed The $name field.
-     */
-    public function getAttributes()
-    {
-        if (!isset($this->data['fields']['attributes'])) {
-            if ($this->isNew()) {
-                $this->data['fields']['attributes'] = null;
-            } elseif (!isset($this->data['fields']) || !array_key_exists('attributes', $this->data['fields'])) {
-                $this->addFieldCache('attributes');
-                $data = $this->getRepository()->getCollection()->findOne(
-                    array('_id' => $this->getId()),
-                    array('attributes' => 1)
-                );
-                if (isset($data['attributes'])) {
-                    $this->data['fields']['attributes'] = $data['attributes'];
-                } else {
-                    $this->data['fields']['attributes'] = null;
-                }
-            }
-        }
-
-        return $this->data['fields']['attributes'];
-    }
-
     private function isFieldEqualTo($field, $otherValue)
     {
         $value = $this->data['fields'][$field];
@@ -435,6 +441,60 @@ abstract class Content extends \Mandango\Document\Document
     }
 
     /**
+     * Returns the "attributes" embedded many.
+     *
+     * @return \Mandango\Group\EmbeddedGroup The "attributes" embedded many.
+     */
+    public function getAttributes()
+    {
+        if (!isset($this->data['embeddedsMany']['attributes'])) {
+            $this->data['embeddedsMany']['attributes'] = $embedded =
+                new \Mandango\Group\EmbeddedGroup('Model\PHPOrchestraCMSBundle\ContentAttribute');
+            $embedded->setRootAndPath($this, 'attributes');
+        }
+
+        return $this->data['embeddedsMany']['attributes'];
+    }
+
+    /**
+     * Adds documents to the "attributes" embeddeds many.
+     *
+     * @param mixed $documents A document or an array or documents.
+     *
+     * @return \Model\PHPOrchestraCMSBundle\Content The document (fluent interface).
+     */
+    public function addAttributes($documents)
+    {
+        $this->getAttributes()->add($documents);
+
+        return $this;
+    }
+
+    /**
+     * Removes documents to the "attributes" embeddeds many.
+     *
+     * @param mixed $documents A document or an array or documents.
+     *
+     * @return \Model\PHPOrchestraCMSBundle\Content The document (fluent interface).
+     */
+    public function removeAttributes($documents)
+    {
+        $this->getAttributes()->remove($documents);
+
+        return $this;
+    }
+
+    /**
+     * Resets the groups of the document.
+     */
+    public function resetGroups()
+    {
+        if (isset($this->data['embeddedsMany']['attributes'])) {
+            $this->data['embeddedsMany']['attributes']->reset();
+        }
+    }
+
+    /**
      * Set a document data value by data name as string.
      *
      * @param string $name  The data name.
@@ -455,11 +515,11 @@ abstract class Content extends \Mandango\Document\Document
         if ('version' == $name) {
             return $this->setVersion($value);
         }
+        if ('language' == $name) {
+            return $this->setLanguage($value);
+        }
         if ('status' == $name) {
             return $this->setStatus($value);
-        }
-        if ('attributes' == $name) {
-            return $this->setAttributes($value);
         }
 
         throw new \InvalidArgumentException(sprintf('The document data "%s" is not valid.', $name));
@@ -484,6 +544,9 @@ abstract class Content extends \Mandango\Document\Document
         }
         if ('version' == $name) {
             return $this->getVersion();
+        }
+        if ('language' == $name) {
+            return $this->getLanguage();
         }
         if ('status' == $name) {
             return $this->getStatus();
@@ -516,11 +579,19 @@ abstract class Content extends \Mandango\Document\Document
         if (isset($array['version'])) {
             $this->setVersion($array['version']);
         }
+        if (isset($array['language'])) {
+            $this->setLanguage($array['language']);
+        }
         if (isset($array['status'])) {
             $this->setStatus($array['status']);
         }
         if (isset($array['attributes'])) {
-            $this->setAttributes($array['attributes']);
+            $embeddeds = array();
+            foreach ($array['attributes'] as $documentData) {
+                $embeddeds[] = $embedded = new \Model\PHPOrchestraCMSBundle\ContentAttribute($this->getMandango());
+                $embedded->setDocumentData($documentData);
+            }
+            $this->getAttributes()->replace($embeddeds);
         }
 
         return $this;
@@ -540,8 +611,8 @@ abstract class Content extends \Mandango\Document\Document
         $array['contentId'] = $this->getContentId();
         $array['type'] = $this->getType();
         $array['version'] = $this->getVersion();
+        $array['language'] = $this->getLanguage();
         $array['status'] = $this->getStatus();
-        $array['attributes'] = $this->getAttributes();
 
         return $array;
     }
@@ -566,11 +637,11 @@ abstract class Content extends \Mandango\Document\Document
                 if (isset($this->data['fields']['version'])) {
                     $query['version'] = (int) $this->data['fields']['version'];
                 }
+                if (isset($this->data['fields']['language'])) {
+                    $query['language'] = (string) $this->data['fields']['language'];
+                }
                 if (isset($this->data['fields']['status'])) {
                     $query['status'] = (string) $this->data['fields']['status'];
-                }
-                if (isset($this->data['fields']['attributes'])) {
-                    $query['attributes'] = $this->data['fields']['attributes'];
                 }
             } else {
                 if (isset($this->data['fields']['contentId'])
@@ -609,6 +680,18 @@ abstract class Content extends \Mandango\Document\Document
                         }
                     }
                 }
+                if (isset($this->data['fields']['language'])
+                    || array_key_exists('language', $this->data['fields'])) {
+                    $value = $this->data['fields']['language'];
+                    $originalValue = $this->getOriginalFieldValue('language');
+                    if ($value !== $originalValue) {
+                        if (null !== $value) {
+                            $query['$set']['language'] = (string) $this->data['fields']['language'];
+                        } else {
+                            $query['$unset']['language'] = 1;
+                        }
+                    }
+                }
                 if (isset($this->data['fields']['status'])
                     || array_key_exists('status', $this->data['fields'])) {
                     $value = $this->data['fields']['status'];
@@ -621,22 +704,42 @@ abstract class Content extends \Mandango\Document\Document
                         }
                     }
                 }
-                if (isset($this->data['fields']['attributes'])
-                    || array_key_exists('attributes', $this->data['fields'])) {
-                    $value = $this->data['fields']['attributes'];
-                    $originalValue = $this->getOriginalFieldValue('attributes');
-                    if ($value !== $originalValue) {
-                        if (null !== $value) {
-                            $query['$set']['attributes'] = $this->data['fields']['attributes'];
-                        } else {
-                            $query['$unset']['attributes'] = 1;
-                        }
-                    }
-                }
             }
         }
         if (true === $reset) {
             $reset = 'deep';
+        }
+        if (isset($this->data['embeddedsMany'])) {
+            if ($isNew) {
+                if (isset($this->data['embeddedsMany']['attributes'])) {
+                    foreach ($this->data['embeddedsMany']['attributes']->getAdd() as $document) {
+                        $query = $document->queryForSave($query, $isNew);
+                    }
+                }
+            } else {
+                if (isset($this->data['embeddedsMany']['attributes'])) {
+                    $group = $this->data['embeddedsMany']['attributes'];
+                    foreach ($group->getSaved() as $document) {
+                        $query = $document->queryForSave($query, $isNew);
+                    }
+                    $groupRap = $group->getRootAndPath();
+                    foreach ($group->getAdd() as $document) {
+                        $q = $document->queryForSave(array(), true);
+                        $rap = $document->getRootAndPath();
+                        foreach (explode('.', $rap['path']) as $name) {
+                            if (0 === strpos($name, '_add')) {
+                                $name = substr($name, 4);
+                            }
+                            $q = $q[$name];
+                        }
+                        $query['$pushAll'][$groupRap['path']][] = $q;
+                    }
+                    foreach ($group->getRemove() as $document) {
+                        $rap = $document->getRootAndPath();
+                        $query['$unset'][$rap['path']] = 1;
+                    }
+                }
+            }
         }
 
         return $query;
