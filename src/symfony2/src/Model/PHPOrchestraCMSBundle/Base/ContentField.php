@@ -3,9 +3,9 @@
 namespace Model\PHPOrchestraCMSBundle\Base;
 
 /**
- * Base class of Model\PHPOrchestraCMSBundle\ContentAttribute document.
+ * Base class of Model\PHPOrchestraCMSBundle\ContentField document.
  */
-abstract class ContentAttribute extends \Mandango\Document\EmbeddedDocument
+abstract class ContentField extends \Mandango\Document\EmbeddedDocument
 {
     /**
      * Initializes the document defaults.
@@ -20,7 +20,7 @@ abstract class ContentAttribute extends \Mandango\Document\EmbeddedDocument
      * @param array $data  The document data.
      * @param bool  $clean Whether clean the document.
      *
-     * @return \Model\PHPOrchestraCMSBundle\ContentAttribute The document (fluent interface).
+     * @return \Model\PHPOrchestraCMSBundle\ContentField The document (fluent interface).
      */
     public function setDocumentData($data, $clean = false)
     {
@@ -34,10 +34,10 @@ abstract class ContentAttribute extends \Mandango\Document\EmbeddedDocument
         } elseif (isset($data['_fields']['name'])) {
             $this->data['fields']['name'] = null;
         }
-        if (isset($data['value'])) {
-            $this->data['fields']['value'] = (string) $data['value'];
-        } elseif (isset($data['_fields']['value'])) {
-            $this->data['fields']['value'] = null;
+        if (isset($data['type'])) {
+            $this->data['fields']['type'] = (string) $data['type'];
+        } elseif (isset($data['_fields']['type'])) {
+            $this->data['fields']['type'] = null;
         }
 
         return $this;
@@ -48,7 +48,7 @@ abstract class ContentAttribute extends \Mandango\Document\EmbeddedDocument
      *
      * @param mixed $value The value.
      *
-     * @return \Model\PHPOrchestraCMSBundle\ContentAttribute The document (fluent interface).
+     * @return \Model\PHPOrchestraCMSBundle\ContentField The document (fluent interface).
      */
     public function setName($value)
     {
@@ -117,56 +117,56 @@ abstract class ContentAttribute extends \Mandango\Document\EmbeddedDocument
     }
 
     /**
-     * Set the "value" field.
+     * Set the "type" field.
      *
      * @param mixed $value The value.
      *
-     * @return \Model\PHPOrchestraCMSBundle\ContentAttribute The document (fluent interface).
+     * @return \Model\PHPOrchestraCMSBundle\ContentField The document (fluent interface).
      */
-    public function setValue($value)
+    public function setType($value)
     {
-        if (!isset($this->data['fields']['value'])) {
+        if (!isset($this->data['fields']['type'])) {
             if (($rap = $this->getRootAndPath()) && !$rap['root']->isNew()) {
-                $this->getValue();
-                if ($this->isFieldEqualTo('value', $value)) {
+                $this->getType();
+                if ($this->isFieldEqualTo('type', $value)) {
                     return $this;
                 }
             } else {
                 if (null === $value) {
                     return $this;
                 }
-                $this->fieldsModified['value'] = null;
-                $this->data['fields']['value'] = $value;
+                $this->fieldsModified['type'] = null;
+                $this->data['fields']['type'] = $value;
                 return $this;
             }
-        } elseif ($this->isFieldEqualTo('value', $value)) {
+        } elseif ($this->isFieldEqualTo('type', $value)) {
             return $this;
         }
 
-        if (!isset($this->fieldsModified['value']) && !array_key_exists('value', $this->fieldsModified)) {
-            $this->fieldsModified['value'] = $this->data['fields']['value'];
-        } elseif ($this->isFieldModifiedEqualTo('value', $value)) {
-            unset($this->fieldsModified['value']);
+        if (!isset($this->fieldsModified['type']) && !array_key_exists('type', $this->fieldsModified)) {
+            $this->fieldsModified['type'] = $this->data['fields']['type'];
+        } elseif ($this->isFieldModifiedEqualTo('type', $value)) {
+            unset($this->fieldsModified['type']);
         }
 
-        $this->data['fields']['value'] = $value;
+        $this->data['fields']['type'] = $value;
 
         return $this;
     }
 
     /**
-     * Returns the "value" field.
+     * Returns the "type" field.
      *
      * @return mixed The $name field.
      */
-    public function getValue()
+    public function getType()
     {
-        if (!isset($this->data['fields']['value'])) {
-            if ((!isset($this->data['fields']) || !array_key_exists('value', $this->data['fields']))
+        if (!isset($this->data['fields']['type'])) {
+            if ((!isset($this->data['fields']) || !array_key_exists('type', $this->data['fields']))
                 && ($rap = $this->getRootAndPath())
                 && !$this->isEmbeddedOneChangedInParent()
                 && !$this->isEmbeddedManyNew()) {
-                $field = $rap['path'].'.value';
+                $field = $rap['path'].'.type';
                 $rap['root']->addFieldCache($field);
                 $collection = $this->getMandango()->getRepository(get_class($rap['root']))->getCollection();
                 $data = $collection->findOne(array('_id' => $rap['root']->getId()), array($field => 1));
@@ -178,15 +178,15 @@ abstract class ContentAttribute extends \Mandango\Document\EmbeddedDocument
                     $data = $data[$key];
                 }
                 if (null !== $data) {
-                    $this->data['fields']['value'] = (string) $data;
+                    $this->data['fields']['type'] = (string) $data;
                 }
             }
-            if (!isset($this->data['fields']['value'])) {
-                $this->data['fields']['value'] = null;
+            if (!isset($this->data['fields']['type'])) {
+                $this->data['fields']['type'] = null;
             }
         }
 
-        return $this->data['fields']['value'];
+        return $this->data['fields']['type'];
     }
 
     private function isFieldEqualTo($field, $otherValue)
@@ -248,8 +248,8 @@ abstract class ContentAttribute extends \Mandango\Document\EmbeddedDocument
         if ('name' == $name) {
             return $this->setName($value);
         }
-        if ('value' == $name) {
-            return $this->setValue($value);
+        if ('type' == $name) {
+            return $this->setType($value);
         }
 
         throw new \InvalidArgumentException(sprintf('The document data "%s" is not valid.', $name));
@@ -269,8 +269,8 @@ abstract class ContentAttribute extends \Mandango\Document\EmbeddedDocument
         if ('name' == $name) {
             return $this->getName();
         }
-        if ('value' == $name) {
-            return $this->getValue();
+        if ('type' == $name) {
+            return $this->getType();
         }
 
         throw new \InvalidArgumentException(sprintf('The document data "%s" is not valid.', $name));
@@ -281,15 +281,15 @@ abstract class ContentAttribute extends \Mandango\Document\EmbeddedDocument
      *
      * @param array $array An array.
      *
-     * @return \Model\PHPOrchestraCMSBundle\ContentAttribute The document (fluent interface).
+     * @return \Model\PHPOrchestraCMSBundle\ContentField The document (fluent interface).
      */
     public function fromArray(array $array)
     {
         if (isset($array['name'])) {
             $this->setName($array['name']);
         }
-        if (isset($array['value'])) {
-            $this->setValue($array['value']);
+        if (isset($array['type'])) {
+            $this->setType($array['type']);
         }
 
         return $this;
@@ -307,7 +307,7 @@ abstract class ContentAttribute extends \Mandango\Document\EmbeddedDocument
         $array = array();
 
         $array['name'] = $this->getName();
-        $array['value'] = $this->getValue();
+        $array['type'] = $this->getType();
 
         return $array;
     }
@@ -341,8 +341,8 @@ abstract class ContentAttribute extends \Mandango\Document\EmbeddedDocument
                 if (isset($this->data['fields']['name'])) {
                     $query['name'] = (string) $this->data['fields']['name'];
                 }
-                if (isset($this->data['fields']['value'])) {
-                    $query['value'] = (string) $this->data['fields']['value'];
+                if (isset($this->data['fields']['type'])) {
+                    $query['type'] = (string) $this->data['fields']['type'];
                 }
                 unset($query);
                 $query = $rootQuery;
@@ -361,15 +361,15 @@ abstract class ContentAttribute extends \Mandango\Document\EmbeddedDocument
                         }
                     }
                 }
-                if (isset($this->data['fields']['value'])
-                    || array_key_exists('value', $this->data['fields'])) {
-                    $value = $this->data['fields']['value'];
-                    $originalValue = $this->getOriginalFieldValue('value');
+                if (isset($this->data['fields']['type'])
+                    || array_key_exists('type', $this->data['fields'])) {
+                    $value = $this->data['fields']['type'];
+                    $originalValue = $this->getOriginalFieldValue('type');
                     if ($value !== $originalValue) {
                         if (null !== $value) {
-                            $query['$set'][$documentPath.'.value'] = (string) $this->data['fields']['value'];
+                            $query['$set'][$documentPath.'.type'] = (string) $this->data['fields']['type'];
                         } else {
-                            $query['$unset'][$documentPath.'.value'] = 1;
+                            $query['$unset'][$documentPath.'.type'] = 1;
                         }
                     }
                 }

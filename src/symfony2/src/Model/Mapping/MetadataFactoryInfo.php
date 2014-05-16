@@ -300,10 +300,7 @@ class MetadataFactoryInfo
     public function getModelPHPOrchestraCMSBundleContentAttributeClass()
     {
         return array(
-            'isEmbedded' => false,
-            'mandango' => null,
-            'connection' => '',
-            'collection' => 'content',
+            'isEmbedded' => true,
             'inheritable' => false,
             'inheritance' => false,
             'fields' => array(
@@ -329,18 +326,6 @@ class MetadataFactoryInfo
             'embeddedsMany' => array(
 
             ),
-            'relationsOne' => array(
-
-            ),
-            'relationsManyOne' => array(
-
-            ),
-            'relationsManyMany' => array(
-
-            ),
-            'relationsManyThrough' => array(
-
-            ),
             'indexes' => array(
 
             ),
@@ -364,9 +349,9 @@ class MetadataFactoryInfo
                     'type' => 'integer',
                     'dbName' => 'contentId',
                 ),
-                'type' => array(
+                'contentType' => array(
                     'type' => 'string',
-                    'dbName' => 'type',
+                    'dbName' => 'contentType',
                 ),
                 'version' => array(
                     'type' => 'integer',
@@ -394,6 +379,95 @@ class MetadataFactoryInfo
             'embeddedsMany' => array(
                 'attributes' => array(
                     'class' => 'Model\\PHPOrchestraCMSBundle\\ContentAttribute',
+                ),
+            ),
+            'relationsOne' => array(
+
+            ),
+            'relationsManyOne' => array(
+
+            ),
+            'relationsManyMany' => array(
+
+            ),
+            'relationsManyThrough' => array(
+
+            ),
+            'indexes' => array(
+
+            ),
+            '_indexes' => array(
+
+            ),
+        );
+    }
+
+    public function getModelPHPOrchestraCMSBundleContentFieldClass()
+    {
+        return array(
+            'isEmbedded' => true,
+            'inheritable' => false,
+            'inheritance' => false,
+            'fields' => array(
+                'name' => array(
+                    'type' => 'string',
+                    'dbName' => 'name',
+                ),
+                'type' => array(
+                    'type' => 'string',
+                    'dbName' => 'type',
+                ),
+            ),
+            '_has_references' => false,
+            'referencesOne' => array(
+
+            ),
+            'referencesMany' => array(
+
+            ),
+            'embeddedsOne' => array(
+
+            ),
+            'embeddedsMany' => array(
+
+            ),
+            'indexes' => array(
+
+            ),
+            '_indexes' => array(
+
+            ),
+        );
+    }
+
+    public function getModelPHPOrchestraCMSBundleContentTypeClass()
+    {
+        return array(
+            'isEmbedded' => false,
+            'mandango' => null,
+            'connection' => '',
+            'collection' => 'content',
+            'inheritable' => false,
+            'inheritance' => false,
+            'fields' => array(
+                'contentType' => array(
+                    'type' => 'string',
+                    'dbName' => 'contentType',
+                ),
+            ),
+            '_has_references' => false,
+            'referencesOne' => array(
+
+            ),
+            'referencesMany' => array(
+
+            ),
+            'embeddedsOne' => array(
+
+            ),
+            'embeddedsMany' => array(
+                'fields' => array(
+                    'class' => 'Model\\PHPOrchestraCMSBundle\\ContentField',
                 ),
             ),
             'relationsOne' => array(

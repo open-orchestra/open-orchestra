@@ -191,7 +191,7 @@ La base de données principale sera en MongoDB
     "contentId": 1,
     "type": "news", // news, comment, article, etc.
     "version": 1,
-    "language": "fr"
+    "language": "fr",
     "status": "published",
     "attributes":
     {

@@ -18,7 +18,12 @@ class BackOfficeController extends Controller
      */
     public function homeAction()
     {
-        return $this->render('PHPOrchestraCMSBundle:BackOffice:home.html.twig');
+        $contentTypes = array('news' => 'News', 'cars' => 'Voitures');
+        
+        return $this->render(
+            'PHPOrchestraCMSBundle:BackOffice:home.html.twig',
+            array('contentTypes' => $contentTypes)
+        );
     }
     
     /**

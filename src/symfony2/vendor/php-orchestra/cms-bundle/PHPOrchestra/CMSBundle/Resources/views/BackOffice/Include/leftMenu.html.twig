@@ -12,34 +12,25 @@
 <nav>
     <ul style="">
         <li>
-            <a href="#">
-                <i class="fa fa-lg fa-fw fa-edit"></i>
-                <span class="menu-item-parent">Editorial</span>
-            </a>
+            <a href="#"><i class="fa fa-lg fa-fw fa-edit"></i><span class="menu-item-parent">Editorial</span></a>
             <ul style="display: block;">
+                <li><a href="{{ path('php_orchestra_cms_bo_site') }}">Gestion des sites</a></li>
+                <li><a href="{{ path('php_orchestra_cms_bo_edito') }}">Gestion des gabarits</a></li>
                 <li>
-                    <a href="{{ path('php_orchestra_cms_bo_site') }}">Gestion des sites</a>
+                    <a href="#">Gestion des contenus</a>
+                    <ul>
+                    {% for contentType, contentLabel in contentTypes %}
+                        <li><a href="{{ path('php_orchestra_cms_bo_content', {'contentType' : contentType}) }}">{{ contentLabel }}</a></li>
+                    {% endfor %}
+                    </ul>
                 </li>
-                <li>
-                    <a href="{{ path('php_orchestra_cms_bo_edito') }}">Gestion des gabarits</a>
-                </li>
-                <li>
-                    <a href="{{ path('php_orchestra_cms_bo_content') }}">Gestion des contenus</a>
-                </li>
-                <li>
-                    <a href="{{ path('php_orchestra_cms_bo_edito') }}">Gestion des pages</a>
-                </li>
+                <li><a href="{{ path('php_orchestra_cms_bo_edito') }}">Gestion des pages</a></li>
             </ul>
         </li>
         <li>
-            <a href="#">
-                <i class="fa fa-lg fa-fw fa-wrench"></i>
-                <span class="menu-item-parent">Outils</span>
-            </a>
+            <a href="#"><i class="fa fa-lg fa-fw fa-wrench"></i><span class="menu-item-parent">Outils</span></a>
             <ul style="display: block;">
-                <li>
-                    <a href="#" id="clearRoutingCache">Purge du cache de routage</a>
-                </li>
+                <li><a href="#" id="clearRoutingCache">Purge du cache de routage</a></li>
             </ul>
         </li>
     </ul>

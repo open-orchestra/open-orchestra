@@ -56,6 +56,7 @@ Model\PHPOrchestraCMSBundle\Template:
 
 Model\PHPOrchestraCMSBundle\ContentAttribute:
     collection: content
+    isEmbedded: true
     fields:
         name: string
         value: string
@@ -65,12 +66,26 @@ Model\PHPOrchestraCMSBundle\Content:
     collection: content
     fields:
         contentId: integer
-        type: string
+        contentType: string
         version: integer
         language: string
         status: string
     embeddedsMany:
         attributes: {class: Model\PHPOrchestraCMSBundle\ContentAttribute}
+
+Model\PHPOrchestraCMSBundle\ContentField:
+    collection: content
+    isEmbedded: true
+    fields:
+        name: string
+        type: string
+
+Model\PHPOrchestraCMSBundle\ContentType:
+    collection: content
+    fields:
+        contentType: string
+    embeddedsMany:
+        fields: {class: Model\PHPOrchestraCMSBundle\ContentField}
 
 
 Model\PHPOrchestraCMSBundle\User:
