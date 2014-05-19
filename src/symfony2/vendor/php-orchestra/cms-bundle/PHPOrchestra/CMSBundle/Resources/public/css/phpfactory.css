@@ -231,6 +231,12 @@ color: #000!important;
     padding:0px;
     height:auto;
 }
-.DTTT.btn-group.table_tools_group{
-    right:153px;	
+
+div.top-tools .DTTT_container{
+    position: absolute;
+    right: 208px;
+    top: -38px;
+}
+div.top-tools .ColVis button{
+    height: 28px;
 }

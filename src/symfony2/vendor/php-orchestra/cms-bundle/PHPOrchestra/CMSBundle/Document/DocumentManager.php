@@ -60,12 +60,16 @@ class DocumentManager
     * @param string $documentType
     * @param array $criteria
     */
-    public function getDocuments($documentType, array $criteria = array(), $sort = array())
+    public function getDocuments($documentType, $criteria = array(), $sort = array())
     {
         $repository = $this->documentsService->getRepository($this->getDocumentNamespace($documentType));
         $query = $repository->createQuery();
-        $query->criteria($criteria);
-        $query->sort($sort);
+        if($criteria){
+            $query->criteria($criteria);
+        }
+        if($sort){
+            $query->sort($sort);
+        }
         return $query->all();
     }
     

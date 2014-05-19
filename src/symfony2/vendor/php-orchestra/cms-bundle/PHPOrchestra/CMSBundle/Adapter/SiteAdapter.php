@@ -23,30 +23,41 @@ class SiteAdapter
         $this->documentManager = $documentManager;
     }
 	
+    public function getLabels()
+    {
+        return array(
+            'Domain',
+            'Alias',
+            'Default Language',
+            'Languages',
+            'Blocks');
+    }
+
+    public function getSearchs()
+    {
+        return array(
+            array('name' => 'domain', 'type' => 'text'),
+            array('name' => 'alias', 'type' => 'text'),
+            array('name' => 'defaultLanguage', 'type' => 'text'),
+            array('name' => 'languages', 'type' => 'text'),
+            array('name' => 'blocks', 'type' => 'text'));
+    }
+    
     public function getValues($start, $end, $criteria, $sort)
     {
+    	$sort = (is_array($sort)) ? array_map('intval', $sort) : $sort;
+    	parse_str($criteria, $criteria);
         $collection = $this->documentManager->getDocuments('Site', $criteria, $sort);
         $aValues = array();
+        
         foreach ($collection as $item) {
-            $aValues['domain'] = $item->getDomain();
-            $aValues['alias'] = $item->getAlias();
-            $aValues['defaultLanguage'] = $item->getDefaultLanguage();
-            $aValues['languages'] = $item->getLanguages();
-            $aValues['blocks'] = $item->getBlocks();
+	        $aValues[] = array(
+	            $item->getDomain(),
+	            $item->getAlias(),
+	            $item->getDefaultLanguage(),
+	            implode('<br />', $item->getLanguages()),
+	            implode('<br />', $item->getBlocks()));
         }
-        var_dump($aValues);
         return $aValues;
     }
 }
-
-
-/*        $templates = $this->get('phporchestra_cms.documentmanager')->getTemplatesInLastVersion();
-        $links = array();
-        foreach ($templates as $template) {
-            $class = '';
-            if ($template['deleted'] == true) {
-                $class = 'deleted';
-            }
-            $links[] = array('id' => $template['_id'], 'class' => $class, 'text' => $template['name']);
-        }
-*/

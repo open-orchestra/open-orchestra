@@ -13,8 +13,13 @@ use PHPOrchestra\CMSBundle\Exception\UnrecognizedCommandTypeException;
 
 class ViewController extends Controller
 {
-    public function listAction($values)
+    public function listAction($labels, $searchs)
     {
-        return $this->render('PHPOrchestraCMSBundle:BackOffice:viewLayout.html.twig');
+        return $this->render('PHPOrchestraCMSBundle:BackOffice:viewLayout.html.twig',
+            array(
+                'labels' => $labels,
+                'searchs' => $searchs,
+            )
+        );
     }
 }

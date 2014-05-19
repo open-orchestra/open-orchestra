@@ -1090,6 +1090,48 @@ function loadScript(scriptName, callback) {
 /* ~ END: LOAD SCRIPTS */
 
 /*
+ * LOAD CSS
+ * Usage:
+ * loadCss("css/my_lovely_css.css");
+ */
+
+var cssArray = {};
+
+function loadCss(cssName) {
+
+	if (!cssArray[cssName]) {
+		cssArray[cssName] = true;
+
+/*		
+		
+	    doc = doc || document;
+	    var head = doc.getElementsByTagName("head")[0];
+	    if (head && addRule) {
+	        var styleEl = doc.createElement("style");
+	        styleEl.type = "text/css";
+	        styleEl.media = "screen";
+	        head.appendChild(styleEl);
+	        addRule(selector, rule, styleEl, doc);
+	        styleEl = null;
+	    }*/
+		
+		// adding the css tag to the head as suggested before
+		var body = document.getElementsByTagName('body')[0];
+		var css = document.createElement('link');
+		css.href = cssName;
+		css.media = "screen";
+		css.type = 'text/css';
+		css.rel = 'stylesheet';
+		// fire the loading
+		body.appendChild(css);
+
+	}
+}
+
+/* ~ END: LOAD SCRIPTS */
+
+
+/*
 * APP AJAX REQUEST SETUP
 * Description: Executes and fetches all ajax requests also
 * updates naivgation elements to active

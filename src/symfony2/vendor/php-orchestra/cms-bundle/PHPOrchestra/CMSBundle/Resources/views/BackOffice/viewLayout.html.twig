@@ -44,179 +44,24 @@
                         </div>
                         <table id="datatable_fixed_column" class="table table-striped table-bordered smart-form">
                             <thead>
-                                <tr>
-                                    <th>Rendering engine</th>
-                                    <th>Browser</th>
-                                    <th>Platform(s)</th>
-                                    <th>Engine version</th>
-                                    <th>CSS grade</th>
-                                </tr>
                                 <tr class="second">
+                                {% for key, search in searchs %}
                                     <td>
                                         <label class="input">
-                                            <input type="text" name="search_engine" value="Filter engines" class="search_init">
+                                    {% if search['type'] == 'text' %}
+                                            <input type="text" name="{{ search['name'] }}" placeholder="Filter {{ labels[key] }}" class="search_init">
+                                    {% endif %}
                                         </label>
                                     </td>
-                                    <td>
-                                        <label class="input">
-                                            <input type="text" name="search_browser" value="Filter browsers" class="search_init">
-                                        </label>    
-                                    </td>
-                                    <td>
-                                        <label class="input">
-                                            <input type="text" name="search_platform" value="Filter platforms" class="search_init">
-                                        </label>    
-                                    </td>
-                                    <td>
-                                        <label class="input">
-                                            <input type="text" name="search_version" value="Filter versions" class="search_init">
-                                        </label>    
-                                    </td>
-                                    <td>
-                                        <label class="input">
-                                            <input type="text" name="search_grade" value="Filter grades" class="search_init">
-                                        </label>    
-                                    </td>
+                                {% endfor %}
+                                </tr>
+                                <tr>
+                                {% for label in labels %}
+                                    <th>{{ label }}</th>
+                                {% endfor %}
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="odd gradeX">
-                                    <td>Trident</td>
-                                    <td>Internet
-                                    Explorer 4.0</td>
-                                    <td>Win 95+</td>
-                                    <td> 4</td>
-                                    <td>X</td>
-                                </tr>
-                                <tr class="even gradeC">
-                                    <td>Trident</td>
-                                    <td>Internet
-                                    Explorer 5.0</td>
-                                    <td>Win 95+</td>
-                                    <td>5</td>
-                                    <td>C</td>
-                                </tr>
-                                <tr class="odd gradeA">
-                                    <td>Trident</td>
-                                    <td>Internet
-                                    Explorer 5.5</td>
-                                    <td>Win 95+</td>
-                                    <td>5.5</td>
-                                    <td>A</td>
-                                </tr>
-                                <tr class="even gradeA">
-                                    <td>Trident</td>
-                                    <td>Internet
-                                    Explorer 6</td>
-                                    <td>Win 98+</td>
-                                    <td>6</td>
-                                    <td>A</td>
-                                </tr>
-                                <tr class="odd gradeA">
-                                    <td>Trident</td>
-                                    <td>Internet Explorer 7</td>
-                                    <td>Win XP SP2+</td>
-                                    <td>7</td>
-                                    <td>A</td>
-                                </tr>
-                                <tr class="even gradeA">
-                                    <td>Trident</td>
-                                    <td>AOL browser (AOL desktop)</td>
-                                    <td>Win XP</td>
-                                    <td>6</td>
-                                    <td>A</td>
-                                </tr>
-                                <tr class="gradeA">
-                                    <td>Gecko</td>
-                                    <td>Firefox 1.0</td>
-                                    <td>Win 98+ / OSX.2+</td>
-                                    <td>1.7</td>
-                                    <td>A</td>
-                                </tr>
-                                <tr class="gradeA">
-                                    <td>Gecko</td>
-                                    <td>Firefox 1.5</td>
-                                    <td>Win 98+ / OSX.2+</td>
-                                    <td>1.8</td>
-                                    <td>A</td>
-                                </tr>
-                                <tr class="gradeA">
-                                    <td>Gecko</td>
-                                    <td>Firefox 2.0</td>
-                                    <td>Win 98+ / OSX.2+</td>
-                                    <td>1.8</td>
-                                    <td>A</td>
-                                </tr>
-                                <tr class="gradeA">
-                                    <td>Gecko</td>
-                                    <td>Firefox 3.0</td>
-                                    <td>Win 2k+ / OSX.3+</td>
-                                    <td>1.9</td>
-                                    <td>A</td>
-                                </tr>
-                                <tr class="gradeA">
-                                    <td>Gecko</td>
-                                    <td>Camino 1.0</td>
-                                    <td>OSX.2+</td>
-                                    <td>1.8</td>
-                                    <td>A</td>
-                                </tr>
-                                <tr class="gradeA">
-                                    <td>Gecko</td>
-                                    <td>Camino 1.5</td>
-                                    <td>OSX.3+</td>
-                                    <td>1.8</td>
-                                    <td>A</td>
-                                </tr>
-                                <tr class="gradeA">
-                                    <td>Gecko</td>
-                                    <td>Netscape 7.2</td>
-                                    <td>Win 95+ / Mac OS 8.6-9.2</td>
-                                    <td>1.7</td>
-                                    <td>A</td>
-                                </tr>
-                                <tr class="gradeA">
-                                    <td>Gecko</td>
-                                    <td>Netscape Browser 8</td>
-                                    <td>Win 98SE+</td>
-                                    <td>1.7</td>
-                                    <td>A</td>
-                                </tr>
-                                <tr class="gradeA">
-                                    <td>Gecko</td>
-                                    <td>Netscape Navigator 9</td>
-                                    <td>Win 98+ / OSX.2+</td>
-                                    <td>1.8</td>
-                                    <td>A</td>
-                                </tr>
-                                <tr class="gradeA">
-                                    <td>Gecko</td>
-                                    <td>Mozilla 1.0</td>
-                                    <td>Win 95+ / OSX.1+</td>
-                                    <td>1</td>
-                                    <td>A</td>
-                                </tr>
-                                <tr class="gradeA">
-                                    <td>Gecko</td>
-                                    <td>Mozilla 1.1</td>
-                                    <td>Win 95+ / OSX.1+</td>
-                                    <td>1.1</td>
-                                    <td>A</td>
-                                </tr>
-                                <tr class="gradeA">
-                                    <td>Gecko</td>
-                                    <td>Mozilla 1.2</td>
-                                    <td>Win 95+ / OSX.1+</td>
-                                    <td>1.2</td>
-                                    <td>A</td>
-                                </tr>
-                                <tr class="gradeA">
-                                    <td>Gecko</td>
-                                    <td>Mozilla 1.3</td>
-                                    <td>Win 95+ / OSX.1+</td>
-                                    <td>1.3</td>
-                                    <td>A</td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -251,77 +96,94 @@
 
     loadDataTableScripts();
     function loadDataTableScripts() {
-
-        loadScript("{{ asset('bundles/phporchestracms/js/plugin/datatables/jquery.dataTables-cust.min.js') }}", dt_2);
-
+        
+        loadCss("{{ asset('bundles/phporchestracms/js/plugin/DataTables-1.10.0/media/css/jquery.dataTables.min.css') }}");
+        loadCss("{{ asset('bundles/phporchestracms/js/plugin/DataTables-1.10.0/media/css/jquery.dataTables_themeroller.min.css') }}");
+        loadScript("{{ asset('bundles/phporchestracms/js/plugin/DataTables-1.10.0/media/js/jquery.dataTables.min.js') }}", dt_1);
+        
+        function dt_1() {
+            loadCss("{{ asset('bundles/phporchestracms/js/plugin/DataTables-1.10.0/extensions/AutoFill/css/dataTables.autoFill.min.css') }}");
+            loadScript("{{ asset('bundles/phporchestracms/js/plugin/DataTables-1.10.0/extensions/AutoFill/js/dataTables.autoFill.min.js') }}", dt_2);
+        }
         function dt_2() {
-            loadScript("{{ asset('bundles/phporchestracms/js/plugin/datatables/ColReorder.min.js') }}", dt_3);
+            loadCss("{{ asset('bundles/phporchestracms/js/plugin/DataTables-1.10.0/extensions/ColReorder/css/dataTables.colReorder.min.css') }}");
+            loadScript("{{ asset('bundles/phporchestracms/js/plugin/DataTables-1.10.0/extensions/ColReorder/js/dataTables.colReorder.min.js') }}", dt_3);
         }
-
         function dt_3() {
-            loadScript("{{ asset('bundles/phporchestracms/js/plugin/datatables/FixedColumns.min.js') }}", dt_4);
+            loadCss("{{ asset('bundles/phporchestracms/js/plugin/DataTables-1.10.0/extensions/ColVis/css/dataTables.colVis.min.css') }}");
+            loadScript("{{ asset('bundles/phporchestracms/js/plugin/DataTables-1.10.0/extensions/ColVis/js/dataTables.colVis.min.js') }}", dt_4);
         }
-
         function dt_4() {
-            loadScript("{{ asset('bundles/phporchestracms/js/plugin/datatables/ColVis.min.js') }}", dt_5);
+            loadCss("{{ asset('bundles/phporchestracms/js/plugin/DataTables-1.10.0/extensions/FixedColumns/css/dataTables.fixedColumns.min.css') }}");
+            loadScript("{{ asset('bundles/phporchestracms/js/plugin/DataTables-1.10.0/extensions/FixedColumns/js/dataTables.fixedColumns.min.js') }}", dt_5);
         }
-
         function dt_5() {
-            loadScript("{{ asset('bundles/phporchestracms/js/plugin/datatables/ZeroClipboard.js') }}", dt_6);
+            loadCss("{{ asset('bundles/phporchestracms/js/plugin/DataTables-1.10.0/extensions/FixedHeader/css/dataTables.fixedHeader.min.css') }}");
+            loadScript("{{ asset('bundles/phporchestracms/js/plugin/DataTables-1.10.0/extensions/FixedHeader/js/dataTables.fixedHeader.min.js') }}", dt_6);
         }
-
         function dt_6() {
-            loadScript("{{ asset('bundles/phporchestracms/js/plugin/datatables/media/js/TableTools.min.js') }}", dt_7);
+            loadCss("{{ asset('bundles/phporchestracms/js/plugin/DataTables-1.10.0/extensions/KeyTable/css/dataTables.keyTable.min.css') }}");
+            loadScript("{{ asset('bundles/phporchestracms/js/plugin/DataTables-1.10.0/extensions/KeyTable/js/dataTables.keyTable.min.js') }}", dt_7);
         }
-
         function dt_7() {
-            loadScript("{{ asset('bundles/phporchestracms/js/plugin/datatables/DT_bootstrap.js') }}", runDataTables);
+            loadCss("{{ asset('bundles/phporchestracms/js/plugin/DataTables-1.10.0/extensions/Scroller/css/dataTables.scroller.min.css') }}");
+            loadScript("{{ asset('bundles/phporchestracms/js/plugin/DataTables-1.10.0/extensions/Scroller/js/dataTables.scroller.min.js') }}", dt_8);
         }
-
+        function dt_8() {
+            loadCss("{{ asset('bundles/phporchestracms/js/plugin/DataTables-1.10.0/extensions/TableTools/css/dataTables.tableTools.min.css') }}");
+            loadScript("{{ asset('bundles/phporchestracms/js/plugin/DataTables-1.10.0/extensions/TableTools/js/dataTables.tableTools.min.js') }}", runDataTables);
+        }
     }
     function runDataTables() {
-
-        /* Add the events etc before DataTables hides a column */
+        /* Add the events etc before DataTables hides a column 
         $("#datatable_fixed_column thead input").keyup(function() {
             oTable.fnFilter(this.value, oTable.oApi._fnVisibleToColumnIndex(oTable.fnSettings(), $("thead input").index(this)));
-        });
+        });*/
 
-        $("#datatable_fixed_column thead input").each(function(i) {
-            this.initVal = this.value;
-        });
-        $("#datatable_fixed_column thead input").focus(function() {
-            if (this.className == "search_init") {
-                this.className = "";
-                this.value = "";
-            }
-        });
-        $("#datatable_fixed_column thead input").blur(function(i) {
-            if (this.value == "") {
-                this.className = "search_init";
-                this.value = this.initVal;
-            }
-        });     
-        
         $('#datatable_fixed_column').dataTable({
-            "sPaginationType" : "bootstrap",
-            "sDom" : "<'dt-top-row'TClf>r<'dt-wrapper't><'dt-row dt-bottom-row'<'row'<'col-sm-6'i><'col-sm-6 text-right'p>>",
-            "bSortCellsTop" : true,
-            "oTableTools" : {
-                "aButtons" : ["copy", "print", {
-                    "sExtends" : "collection",
-                    "sButtonText" : 'Save <span class="caret" />',
-                    "aButtons" : ["csv", "xls", "pdf"]
-                }],
-                "sSwfPath" : "{{ asset('bundles/phporchestracms/js/plugin/datatables/media/swf/copy_csv_xls_pdf.swf') }}"
+            "serverSide": true,
+            "ordering": true,
+            "searching": false,
+            "scroller": {
+                "loadingIndicator": true,
+                "displayBuffer": 2
             },
-            "fnInitComplete" : function(oSettings, json) {
-                $('.ColVis_Button').addClass('btn btn-default btn-sm').html('Columns <i class="icon-arrow-down"></i>');
-                $('.DTTT.btn-group').addClass('table_tools_group').children('a.btn').each(function() {
-                    $(this).addClass('btn-sm btn-default');
+            "ajax": function ( data, callback, settings ) {
+                var start = (data.start) ? data.start : 0;
+                var end = (data.end) ? data.end : 10;
+                var criteria = $('.search_init').filter(function() { return $(this).val() != ""; }).serialize();
+                var sort = {};
+                var rank = 0;
+                if(rank = $('.dataTables_scrollHead .sorting_asc').index() >= 0){
+                    var name = $('.search_init').eq(rank).attr('name');
+                    sort[name] = -1;            
+                }
+                else if(rank = $('.dataTables_scrollHead .sorting_desc').index() >= 0){
+                    var name = $('.search_init').eq(rank).attr('name');
+                    sort[name] = 1;            
+                }
+                $.ajax({
+                    "type": "POST",
+                    "url": "{{ path('php_orchestra_cms_bo_site') }}",
+                    "dataType": "json",
+                    "data": { "parse": true, "start": start, "end": end, "criteria": criteria, "sort": sort},
+                })
+                .done(function( records ) {
+                    out = records.data;
+                    callback( {
+                        draw: data.draw,
+                        data: out,
+                        recordsTotal: 2,
+                        recordsFiltered: 1
+                    } );
                 });
-            }
-        });
-        
+            },
+            "dom": 'R<"top-tools"TC><"clear">rtiS',
+            "tableTools": {
+                "sSwfPath": "{{ asset('bundles/phporchestracms/js/plugin/DataTables-1.10.0/extensions/TableTools/swf/copy_csv_xls_pdf.swf') }}"
+            },
+            "scrollY": 200
+        } );
     }
 
 </script>
