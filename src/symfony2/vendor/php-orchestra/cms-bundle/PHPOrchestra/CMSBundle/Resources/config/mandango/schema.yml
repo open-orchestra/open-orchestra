@@ -71,6 +71,7 @@ Model\PHPOrchestraCMSBundle\Content:
         language: string
         status: string
         shortName: string
+        contentTypeVersion: integer
     embeddedsMany:
         attributes: {class: Model\PHPOrchestraCMSBundle\ContentAttribute}
 
@@ -85,6 +86,7 @@ Model\PHPOrchestraCMSBundle\ContentType:
     collection: contentType
     fields:
         contentType: string
+        version: integer
     embeddedsMany:
         fields: {class: Model\PHPOrchestraCMSBundle\ContentField}
 

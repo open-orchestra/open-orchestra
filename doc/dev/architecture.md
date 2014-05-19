@@ -194,6 +194,7 @@ La base de données principale sera en MongoDB
     "language": "fr",
     "status": "published",
     "shortName": "Recognizable title", // Used sometimes to show content as in BO lists
+    "contentTypeVersion": 1 // Version of the contentType when content was saved
     "attributes":
     {
         "custom_attribute_name": "value",
@@ -210,6 +211,7 @@ La base de données principale sera en MongoDB
 ```json
 {
     "contentType": "news", // news, comment, article, etc.
+    "version": 1
     "fields":
     {
         "custom_field_name": "field_type",

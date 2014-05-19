@@ -1,6 +1,7 @@
 Model\PHPOrchestraCMSBundle\ContentType:
     news:
         contentType: "news"
+        version: 1
         fields:
             -
                 name: "title"
@@ -16,6 +17,7 @@ Model\PHPOrchestraCMSBundle\ContentType:
                 type: "text"
     cars:
         contentType: "cars"
+        version: 1
         fields:
             -
                 name: "name"

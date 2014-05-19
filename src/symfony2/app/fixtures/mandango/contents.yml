@@ -6,6 +6,7 @@ Model\PHPOrchestraCMSBundle\Content:
         language: "fr"
         status: "published"
         shortName: "Bien vivre en France"
+        contentTypeVersion: 1
         attributes:
             -
                 name: "title"
@@ -27,6 +28,7 @@ Model\PHPOrchestraCMSBundle\Content:
         language: "fr"
         status: "published"
         shortName: "Lorem ipsum"
+        contentTypeVersion: 1
         attributes:
             -
                 name: "title"
@@ -48,6 +50,7 @@ Model\PHPOrchestraCMSBundle\Content:
         language: "en"
         status: "draft"
         shortName: "R5 3 portes"
+        contentTypeVersion: 1
         attributes:
             -
                 name: "name"

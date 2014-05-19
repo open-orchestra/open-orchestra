@@ -8,8 +8,6 @@
 namespace PHPOrchestra\CMSBundle\Controller\BackOfficeView;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Request;
-use PHPOrchestra\CMSBundle\Exception\UnrecognizedCommandTypeException;
 
 class ContentController extends Controller
 {

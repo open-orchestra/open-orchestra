@@ -10,6 +10,10 @@ php_orchestra_cms_bo_site:
     pattern: /site
     defaults: { _controller: PHPOrchestraCMSBundle:BackOfficeView/Site:list }
 
+php_orchestra_cms_bo_contentType:
+    pattern: /contentType/{contentType}
+    defaults: { _controller: PHPOrchestraCMSBundle:BackOfficeView/contentType:list}
+
 php_orchestra_cms_bo_content:
     pattern: /content/{contentType}
     defaults: { _controller: PHPOrchestraCMSBundle:BackOfficeView/content:list}

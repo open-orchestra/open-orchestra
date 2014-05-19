@@ -13,7 +13,7 @@
     <ul style="">
         <li>
             <a href="#"><i class="fa fa-lg fa-fw fa-edit"></i><span class="menu-item-parent">Editorial</span></a>
-            <ul style="display: block;">
+            <ul style="display:block;">
                 <li><a href="{{ path('php_orchestra_cms_bo_site') }}">Gestion des sites</a></li>
                 <li><a href="{{ path('php_orchestra_cms_bo_edito') }}">Gestion des gabarits</a></li>
                 <li>
@@ -30,8 +30,23 @@
             </ul>
         </li>
         <li>
+            <a href="#"><i class="fa fa-lg fa-fw fa-desktop"></i><span class="menu-item-parent">Administration</span></a>
+            <ul style="display:block;">
+                <li>
+                    <a href="#">Type de contenus</a>
+                    <ul>
+                    {% for contentType in contentTypes %}
+                        {% if contentType.contentType != '' %}
+                        <li><a href="{{ path('php_orchestra_cms_bo_contentType', {'contentType' : contentType.contentType}) }}">{{ contentType.contentType }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
             <a href="#"><i class="fa fa-lg fa-fw fa-wrench"></i><span class="menu-item-parent">Outils</span></a>
-            <ul style="display: block;">
+            <ul style="display:block;">
                 <li>
                     <a href="#" id="clearRoutingCache">Purge du cache de routage</a>
                     {% include 'PHPOrchestraCMSBundle:BackOffice/Tools:clearRoutingCacheDialog.html.twig' %}
