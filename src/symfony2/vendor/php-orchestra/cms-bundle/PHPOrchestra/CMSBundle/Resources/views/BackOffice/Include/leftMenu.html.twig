@@ -32,7 +32,10 @@
         <li>
             <a href="#"><i class="fa fa-lg fa-fw fa-wrench"></i><span class="menu-item-parent">Outils</span></a>
             <ul style="display: block;">
-                <li><a href="#" id="clearRoutingCache">Purge du cache de routage</a></li>
+                <li>
+                    <a href="#" id="clearRoutingCache">Purge du cache de routage</a>
+                    {% include 'PHPOrchestraCMSBundle:BackOffice/Tools:clearRoutingCacheDialog.html.twig' %}
+                </li>
             </ul>
         </li>
     </ul>
@@ -41,4 +44,3 @@
     <i class="fa fa-arrow-circle-left hit"></i>
 </span>
 
-{% include 'PHPOrchestraCMSBundle:BackOffice/Tools:clearRoutingCacheDialog.html.twig' %}

@@ -5,7 +5,15 @@
  ##}
 
 <script type="text/javascript">
-    var clearingUrl = '{{ path('php_orchestra_cms_clearroutingcache') }}'
+$(document).ready(function() {
+    var clearRoutingCache = new ConfirmDialog(
+        'clearRoutingCache',
+        function(){window.location.hash = '{{ path('php_orchestra_cms_clearroutingcache') }}';},
+        370
+    );
+    
+    clearRoutingCache.create();
+});
 </script>
 
 {% set vars = {
