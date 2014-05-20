@@ -32,7 +32,7 @@ php_orchestra_cms_bo_content_edit:
 
 php_orchestra_cms_clearroutingcache:
     pattern: /cache/routing/clear
-    defaults: { _controller: PHPOrchestraCMSBundle:cache:clearRoutingCache }
+    defaults: { _controller: PHPOrchestraCMSBundle:Cache:clearRoutingCache }
 
 
 php_orchestra_cms_bo_jscontextmenudispatcher:

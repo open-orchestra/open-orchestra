@@ -140,7 +140,7 @@
             oTable.fnFilter(this.value, oTable.oApi._fnVisibleToColumnIndex(oTable.fnSettings(), $("thead input").index(this)));
         });*/
 
-        $('#datatable_fixed_column').dataTable({
+        var table = $('#datatable_fixed_column').dataTable({
             "serverSide": true,
             "ordering": true,
             "searching": false,
@@ -179,6 +179,10 @@
             },
             "scrollY": 200
         } );
+        $('.search_init').on( 'keyup change', function (e) {
+            table._fnDraw();
+        } );
+
     }
 
 </script>

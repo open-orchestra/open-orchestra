@@ -38,9 +38,12 @@ class SiteController extends Controller
         $documentManager = $this->container->get('phporchestra_cms.documentmanager');
         
         if ($request->get('parse')) {
-        	parse_str($request->get('criteria'), $criteria);
         	$sort = is_array($request->get('sort')) ? array_map('intval', $request->get('sort')) : $request->get('sort');
-
+            parse_str($request->get('criteria'), $criteria);
+        	array_walk($criteria, function(&$value, $key) {
+                $value = new \MongoRegex('/^'.preg_quote($value).'/i');
+            });
+        	
         	$aValues = $documentManager->getDocuments('Site', $criteria, $sort, true, $request->get('start'), $request->get('length'));
             foreach($aValues as $key => $values){
             	$aValues[$key] = array(
