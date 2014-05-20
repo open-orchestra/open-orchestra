@@ -458,13 +458,21 @@ class MetadataFactoryInfo
             'inheritable' => false,
             'inheritance' => false,
             'fields' => array(
-                'contentType' => array(
+                'contentTypeId' => array(
                     'type' => 'string',
-                    'dbName' => 'contentType',
+                    'dbName' => 'contentTypeId',
+                ),
+                'name' => array(
+                    'type' => 'string',
+                    'dbName' => 'name',
                 ),
                 'version' => array(
                     'type' => 'integer',
                     'dbName' => 'version',
+                ),
+                'status' => array(
+                    'type' => 'string',
+                    'dbName' => 'status',
                 ),
                 'deleted' => array(
                     'type' => 'boolean',

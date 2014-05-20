@@ -36,15 +36,25 @@ abstract class ContentType extends \Mandango\Document\Document
             $this->setId($data['_id']);
             $this->setIsNew(false);
         }
-        if (isset($data['contentType'])) {
-            $this->data['fields']['contentType'] = (string) $data['contentType'];
-        } elseif (isset($data['_fields']['contentType'])) {
-            $this->data['fields']['contentType'] = null;
+        if (isset($data['contentTypeId'])) {
+            $this->data['fields']['contentTypeId'] = (string) $data['contentTypeId'];
+        } elseif (isset($data['_fields']['contentTypeId'])) {
+            $this->data['fields']['contentTypeId'] = null;
+        }
+        if (isset($data['name'])) {
+            $this->data['fields']['name'] = (string) $data['name'];
+        } elseif (isset($data['_fields']['name'])) {
+            $this->data['fields']['name'] = null;
         }
         if (isset($data['version'])) {
             $this->data['fields']['version'] = (int) $data['version'];
         } elseif (isset($data['_fields']['version'])) {
             $this->data['fields']['version'] = null;
+        }
+        if (isset($data['status'])) {
+            $this->data['fields']['status'] = (string) $data['status'];
+        } elseif (isset($data['_fields']['status'])) {
+            $this->data['fields']['status'] = null;
         }
         if (isset($data['deleted'])) {
             $this->data['fields']['deleted'] = (bool) $data['deleted'];
@@ -62,68 +72,133 @@ abstract class ContentType extends \Mandango\Document\Document
     }
 
     /**
-     * Set the "contentType" field.
+     * Set the "contentTypeId" field.
      *
      * @param mixed $value The value.
      *
      * @return \Model\PHPOrchestraCMSBundle\ContentType The document (fluent interface).
      */
-    public function setContentType($value)
+    public function setContentTypeId($value)
     {
-        if (!isset($this->data['fields']['contentType'])) {
+        if (!isset($this->data['fields']['contentTypeId'])) {
             if (!$this->isNew()) {
-                $this->getContentType();
-                if ($this->isFieldEqualTo('contentType', $value)) {
+                $this->getContentTypeId();
+                if ($this->isFieldEqualTo('contentTypeId', $value)) {
                     return $this;
                 }
             } else {
                 if (null === $value) {
                     return $this;
                 }
-                $this->fieldsModified['contentType'] = null;
-                $this->data['fields']['contentType'] = $value;
+                $this->fieldsModified['contentTypeId'] = null;
+                $this->data['fields']['contentTypeId'] = $value;
                 return $this;
             }
-        } elseif ($this->isFieldEqualTo('contentType', $value)) {
+        } elseif ($this->isFieldEqualTo('contentTypeId', $value)) {
             return $this;
         }
 
-        if (!isset($this->fieldsModified['contentType']) && !array_key_exists('contentType', $this->fieldsModified)) {
-            $this->fieldsModified['contentType'] = $this->data['fields']['contentType'];
-        } elseif ($this->isFieldModifiedEqualTo('contentType', $value)) {
-            unset($this->fieldsModified['contentType']);
+        if (!isset($this->fieldsModified['contentTypeId']) && !array_key_exists('contentTypeId', $this->fieldsModified)) {
+            $this->fieldsModified['contentTypeId'] = $this->data['fields']['contentTypeId'];
+        } elseif ($this->isFieldModifiedEqualTo('contentTypeId', $value)) {
+            unset($this->fieldsModified['contentTypeId']);
         }
 
-        $this->data['fields']['contentType'] = $value;
+        $this->data['fields']['contentTypeId'] = $value;
 
         return $this;
     }
 
     /**
-     * Returns the "contentType" field.
+     * Returns the "contentTypeId" field.
      *
      * @return mixed The $name field.
      */
-    public function getContentType()
+    public function getContentTypeId()
     {
-        if (!isset($this->data['fields']['contentType'])) {
+        if (!isset($this->data['fields']['contentTypeId'])) {
             if ($this->isNew()) {
-                $this->data['fields']['contentType'] = null;
-            } elseif (!isset($this->data['fields']) || !array_key_exists('contentType', $this->data['fields'])) {
-                $this->addFieldCache('contentType');
+                $this->data['fields']['contentTypeId'] = null;
+            } elseif (!isset($this->data['fields']) || !array_key_exists('contentTypeId', $this->data['fields'])) {
+                $this->addFieldCache('contentTypeId');
                 $data = $this->getRepository()->getCollection()->findOne(
                     array('_id' => $this->getId()),
-                    array('contentType' => 1)
+                    array('contentTypeId' => 1)
                 );
-                if (isset($data['contentType'])) {
-                    $this->data['fields']['contentType'] = (string) $data['contentType'];
+                if (isset($data['contentTypeId'])) {
+                    $this->data['fields']['contentTypeId'] = (string) $data['contentTypeId'];
                 } else {
-                    $this->data['fields']['contentType'] = null;
+                    $this->data['fields']['contentTypeId'] = null;
                 }
             }
         }
 
-        return $this->data['fields']['contentType'];
+        return $this->data['fields']['contentTypeId'];
+    }
+
+    /**
+     * Set the "name" field.
+     *
+     * @param mixed $value The value.
+     *
+     * @return \Model\PHPOrchestraCMSBundle\ContentType The document (fluent interface).
+     */
+    public function setName($value)
+    {
+        if (!isset($this->data['fields']['name'])) {
+            if (!$this->isNew()) {
+                $this->getName();
+                if ($this->isFieldEqualTo('name', $value)) {
+                    return $this;
+                }
+            } else {
+                if (null === $value) {
+                    return $this;
+                }
+                $this->fieldsModified['name'] = null;
+                $this->data['fields']['name'] = $value;
+                return $this;
+            }
+        } elseif ($this->isFieldEqualTo('name', $value)) {
+            return $this;
+        }
+
+        if (!isset($this->fieldsModified['name']) && !array_key_exists('name', $this->fieldsModified)) {
+            $this->fieldsModified['name'] = $this->data['fields']['name'];
+        } elseif ($this->isFieldModifiedEqualTo('name', $value)) {
+            unset($this->fieldsModified['name']);
+        }
+
+        $this->data['fields']['name'] = $value;
+
+        return $this;
+    }
+
+    /**
+     * Returns the "name" field.
+     *
+     * @return mixed The $name field.
+     */
+    public function getName()
+    {
+        if (!isset($this->data['fields']['name'])) {
+            if ($this->isNew()) {
+                $this->data['fields']['name'] = null;
+            } elseif (!isset($this->data['fields']) || !array_key_exists('name', $this->data['fields'])) {
+                $this->addFieldCache('name');
+                $data = $this->getRepository()->getCollection()->findOne(
+                    array('_id' => $this->getId()),
+                    array('name' => 1)
+                );
+                if (isset($data['name'])) {
+                    $this->data['fields']['name'] = (string) $data['name'];
+                } else {
+                    $this->data['fields']['name'] = null;
+                }
+            }
+        }
+
+        return $this->data['fields']['name'];
     }
 
     /**
@@ -189,6 +264,71 @@ abstract class ContentType extends \Mandango\Document\Document
         }
 
         return $this->data['fields']['version'];
+    }
+
+    /**
+     * Set the "status" field.
+     *
+     * @param mixed $value The value.
+     *
+     * @return \Model\PHPOrchestraCMSBundle\ContentType The document (fluent interface).
+     */
+    public function setStatus($value)
+    {
+        if (!isset($this->data['fields']['status'])) {
+            if (!$this->isNew()) {
+                $this->getStatus();
+                if ($this->isFieldEqualTo('status', $value)) {
+                    return $this;
+                }
+            } else {
+                if (null === $value) {
+                    return $this;
+                }
+                $this->fieldsModified['status'] = null;
+                $this->data['fields']['status'] = $value;
+                return $this;
+            }
+        } elseif ($this->isFieldEqualTo('status', $value)) {
+            return $this;
+        }
+
+        if (!isset($this->fieldsModified['status']) && !array_key_exists('status', $this->fieldsModified)) {
+            $this->fieldsModified['status'] = $this->data['fields']['status'];
+        } elseif ($this->isFieldModifiedEqualTo('status', $value)) {
+            unset($this->fieldsModified['status']);
+        }
+
+        $this->data['fields']['status'] = $value;
+
+        return $this;
+    }
+
+    /**
+     * Returns the "status" field.
+     *
+     * @return mixed The $name field.
+     */
+    public function getStatus()
+    {
+        if (!isset($this->data['fields']['status'])) {
+            if ($this->isNew()) {
+                $this->data['fields']['status'] = null;
+            } elseif (!isset($this->data['fields']) || !array_key_exists('status', $this->data['fields'])) {
+                $this->addFieldCache('status');
+                $data = $this->getRepository()->getCollection()->findOne(
+                    array('_id' => $this->getId()),
+                    array('status' => 1)
+                );
+                if (isset($data['status'])) {
+                    $this->data['fields']['status'] = (string) $data['status'];
+                } else {
+                    $this->data['fields']['status'] = null;
+                }
+            }
+        }
+
+        return $this->data['fields']['status'];
     }
 
     /**
@@ -366,11 +506,17 @@ abstract class ContentType extends \Mandango\Document\Document
      */
     public function set($name, $value)
     {
-        if ('contentType' == $name) {
-            return $this->setContentType($value);
+        if ('contentTypeId' == $name) {
+            return $this->setContentTypeId($value);
+        }
+        if ('name' == $name) {
+            return $this->setName($value);
         }
         if ('version' == $name) {
             return $this->setVersion($value);
+        }
+        if ('status' == $name) {
+            return $this->setStatus($value);
         }
         if ('deleted' == $name) {
             return $this->setDeleted($value);
@@ -390,11 +536,17 @@ abstract class ContentType extends \Mandango\Document\Document
      */
     public function get($name)
     {
-        if ('contentType' == $name) {
-            return $this->getContentType();
+        if ('contentTypeId' == $name) {
+            return $this->getContentTypeId();
+        }
+        if ('name' == $name) {
+            return $this->getName();
         }
         if ('version' == $name) {
             return $this->getVersion();
+        }
+        if ('status' == $name) {
+            return $this->getStatus();
         }
         if ('deleted' == $name) {
             return $this->getDeleted();
@@ -418,11 +570,17 @@ abstract class ContentType extends \Mandango\Document\Document
         if (isset($array['id'])) {
             $this->setId($array['id']);
         }
-        if (isset($array['contentType'])) {
-            $this->setContentType($array['contentType']);
+        if (isset($array['contentTypeId'])) {
+            $this->setContentTypeId($array['contentTypeId']);
+        }
+        if (isset($array['name'])) {
+            $this->setName($array['name']);
         }
         if (isset($array['version'])) {
             $this->setVersion($array['version']);
+        }
+        if (isset($array['status'])) {
+            $this->setStatus($array['status']);
         }
         if (isset($array['deleted'])) {
             $this->setDeleted($array['deleted']);
@@ -450,8 +608,10 @@ abstract class ContentType extends \Mandango\Document\Document
     {
         $array = array('id' => $this->getId());
 
-        $array['contentType'] = $this->getContentType();
+        $array['contentTypeId'] = $this->getContentTypeId();
+        $array['name'] = $this->getName();
         $array['version'] = $this->getVersion();
+        $array['status'] = $this->getStatus();
         $array['deleted'] = $this->getDeleted();
 
         return $array;
@@ -468,25 +628,43 @@ abstract class ContentType extends \Mandango\Document\Document
 
         if (isset($this->data['fields'])) {
             if ($isNew || $reset) {
-                if (isset($this->data['fields']['contentType'])) {
-                    $query['contentType'] = (string) $this->data['fields']['contentType'];
+                if (isset($this->data['fields']['contentTypeId'])) {
+                    $query['contentTypeId'] = (string) $this->data['fields']['contentTypeId'];
+                }
+                if (isset($this->data['fields']['name'])) {
+                    $query['name'] = (string) $this->data['fields']['name'];
                 }
                 if (isset($this->data['fields']['version'])) {
                     $query['version'] = (int) $this->data['fields']['version'];
+                }
+                if (isset($this->data['fields']['status'])) {
+                    $query['status'] = (string) $this->data['fields']['status'];
                 }
                 if (isset($this->data['fields']['deleted'])) {
                     $query['deleted'] = (bool) $this->data['fields']['deleted'];
                 }
             } else {
-                if (isset($this->data['fields']['contentType'])
-                    || array_key_exists('contentType', $this->data['fields'])) {
-                    $value = $this->data['fields']['contentType'];
-                    $originalValue = $this->getOriginalFieldValue('contentType');
+                if (isset($this->data['fields']['contentTypeId'])
+                    || array_key_exists('contentTypeId', $this->data['fields'])) {
+                    $value = $this->data['fields']['contentTypeId'];
+                    $originalValue = $this->getOriginalFieldValue('contentTypeId');
                     if ($value !== $originalValue) {
                         if (null !== $value) {
-                            $query['$set']['contentType'] = (string) $this->data['fields']['contentType'];
+                            $query['$set']['contentTypeId'] = (string) $this->data['fields']['contentTypeId'];
                         } else {
-                            $query['$unset']['contentType'] = 1;
+                            $query['$unset']['contentTypeId'] = 1;
+                        }
+                    }
+                }
+                if (isset($this->data['fields']['name'])
+                    || array_key_exists('name', $this->data['fields'])) {
+                    $value = $this->data['fields']['name'];
+                    $originalValue = $this->getOriginalFieldValue('name');
+                    if ($value !== $originalValue) {
+                        if (null !== $value) {
+                            $query['$set']['name'] = (string) $this->data['fields']['name'];
+                        } else {
+                            $query['$unset']['name'] = 1;
                         }
                     }
                 }
@@ -499,6 +677,18 @@ abstract class ContentType extends \Mandango\Document\Document
                             $query['$set']['version'] = (int) $this->data['fields']['version'];
                         } else {
                             $query['$unset']['version'] = 1;
+                        }
+                    }
+                }
+                if (isset($this->data['fields']['status'])
+                    || array_key_exists('status', $this->data['fields'])) {
+                    $value = $this->data['fields']['status'];
+                    $originalValue = $this->getOriginalFieldValue('status');
+                    if ($value !== $originalValue) {
+                        if (null !== $value) {
+                            $query['$set']['status'] = (string) $this->data['fields']['status'];
+                        } else {
+                            $query['$unset']['status'] = 1;
                         }
                     }
                 }

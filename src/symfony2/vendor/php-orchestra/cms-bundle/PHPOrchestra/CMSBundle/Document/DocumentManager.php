@@ -39,11 +39,11 @@ class DocumentManager
     }
     
     /** 
-    * Get a single MongoDB document giving its type and search citerias
-    * 
-    * @param string $documentType
-    * @param array $criteria
-    */
+     * Get a single MongoDB document giving its type and search citerias
+     * 
+     * @param string $documentType
+     * @param array $criteria
+     */
     public function getDocument($documentType, array $criteria = array())
     {
         $sort = $this->getDefaultSort($documentType);
@@ -52,6 +52,18 @@ class DocumentManager
         $query->criteria($criteria);
         $query->sort($sort);
         return $query->one();
+    }
+    
+    /**
+     * Get a single MongoDB document giving its _id
+     * 
+     * @param string $id
+     */
+    public function getDocumentById($documentType, $id)
+    {
+        $sort = $this->getDefaultSort($documentType);
+        $repository = $this->documentsService->getRepository($this->getDocumentNamespace($documentType));
+        return $repository->findOneById($id);
     }
     
     /** 
@@ -123,6 +135,7 @@ class DocumentManager
         {
             case 'Node':
             case 'Template':
+            case 'ContentType':
                 $sort = array('version' => -1);
                 break;
             default:
@@ -192,4 +205,39 @@ class DocumentManager
         
         return $versions['result'];
     }
+    
+    /**
+     * Return an array containing informations about the last versions of all nodes
+     */
+    public function getContentTypesInLastVersion(array $additionnalFilters = array())
+    {
+        $repository = $this->documentsService->getRepository($this->getDocumentNamespace('ContentType'));
+        
+        $filters = array(
+            array('$match' => array(
+                'status' => 'published',
+                'deleted' => 'false'
+            )),
+            array('$sort' => array('version' => -1))
+        );
+        
+        foreach ($additionnalFilters as $filter) {
+            $filters[] = $filter;
+        }
+        
+        $filters[] = array(
+                            '$group' => array(
+                                '_id' => '$contentTypeId',
+                                'version' => array('$first' => '$version'),
+                                'name' => array('$first' => '$name'),
+                                'status' => array('$first' => '$status'),
+                                'deleted' => array('$first' => '$deleted')
+                            )
+        );
+        
+        $versions = $repository->getCollection()->aggregate($filters);
+        
+        return $versions['result'];
+    }
+    
 }

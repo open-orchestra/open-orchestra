@@ -85,8 +85,10 @@ Model\PHPOrchestraCMSBundle\ContentField:
 Model\PHPOrchestraCMSBundle\ContentType:
     collection: contentType
     fields:
-        contentType: string
+        contentTypeId: string
+        name: string
         version: integer
+        status: string
         deleted: boolean
     embeddedsMany:
         fields: {class: Model\PHPOrchestraCMSBundle\ContentField}
