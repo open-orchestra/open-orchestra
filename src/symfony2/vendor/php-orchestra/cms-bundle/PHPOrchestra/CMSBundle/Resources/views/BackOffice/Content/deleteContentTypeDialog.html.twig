@@ -1,0 +1,36 @@
+{##
+ # This file is part of the PHPOrchestra\CMSBundle.
+ #
+ # @author Noël GILAIN <noel.gilain@businessdecision.com>
+ ##}
+
+<!-- DYNAMISE THE CONTENT TYPE -->
+
+<script type="text/javascript">
+$(document).ready(function() {
+    
+    var deleteContentType = new ConfirmDialog(
+        'deleteContentType',
+        function(params){
+            window.location.hash = "{{ path('php_orchestra_cms_bo_contentType_delete') }}/" + params.selectedContentType;
+        },
+        370
+    );
+    
+    deleteContentType.create();
+    
+    $('.deleteContentType').click(function(e) {
+        $("#dialog-deleteContentType").dialog({'okParams' : {'selectedContentType' : $(this).attr('data-contentType')}});
+        $("#dialog-deleteContentType").dialog("open");
+    });
+});
+</script>
+
+{% set vars = {
+    'dialogId' : 'dialog-deleteContentType',
+    'dialogTitle' : 'Suppression de type de contenu',
+    'dialogMessage' : 'Vous êtes sur le point de supprimer un type de contenu.<br /><br />Souhaitez-vous continuer ?'
+   }
+%}
+
+{% include 'PHPOrchestraCMSBundle:BackOffice/Dialogs:confirmation.html.twig' with vars %}

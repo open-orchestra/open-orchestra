@@ -369,6 +369,10 @@ class MetadataFactoryInfo
                     'type' => 'string',
                     'dbName' => 'shortName',
                 ),
+                'contentTypeVersion' => array(
+                    'type' => 'integer',
+                    'dbName' => 'contentTypeVersion',
+                ),
             ),
             '_has_references' => false,
             'referencesOne' => array(
@@ -457,6 +461,14 @@ class MetadataFactoryInfo
                 'contentType' => array(
                     'type' => 'string',
                     'dbName' => 'contentType',
+                ),
+                'version' => array(
+                    'type' => 'integer',
+                    'dbName' => 'version',
+                ),
+                'deleted' => array(
+                    'type' => 'boolean',
+                    'dbName' => 'deleted',
                 ),
             ),
             '_has_references' => false,

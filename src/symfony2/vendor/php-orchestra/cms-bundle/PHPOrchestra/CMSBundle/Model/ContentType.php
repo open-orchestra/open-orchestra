@@ -24,4 +24,13 @@ abstract class ContentType extends \Model\PHPOrchestraCMSBundle\Base\ContentType
         
         return $document;
     }
+    
+    /**
+     * Mark the document as deleted
+     */
+    public function markAsDeleted()
+    {
+        $this->setDeleted(true);
+        return $this->save();
+    }
 }

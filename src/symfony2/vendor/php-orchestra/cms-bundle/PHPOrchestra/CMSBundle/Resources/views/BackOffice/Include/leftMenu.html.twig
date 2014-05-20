@@ -33,14 +33,7 @@
             <a href="#"><i class="fa fa-lg fa-fw fa-desktop"></i><span class="menu-item-parent">Administration</span></a>
             <ul style="display:block;">
                 <li>
-                    <a href="#">Type de contenus</a>
-                    <ul>
-                    {% for contentType in contentTypes %}
-                        {% if contentType.contentType != '' %}
-                        <li><a href="{{ path('php_orchestra_cms_bo_contentType', {'contentType' : contentType.contentType}) }}">{{ contentType.contentType }}</a></li>
-                        {% endif %}
-                    {% endfor %}
-                    </ul>
+                    <a href="{{ path('php_orchestra_cms_bo_contentType') }}">Type de contenus</a>
                 </li>
             </ul>
         </li>

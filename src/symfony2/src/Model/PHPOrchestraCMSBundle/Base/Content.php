@@ -66,6 +66,11 @@ abstract class Content extends \Mandango\Document\Document
         } elseif (isset($data['_fields']['shortName'])) {
             $this->data['fields']['shortName'] = null;
         }
+        if (isset($data['contentTypeVersion'])) {
+            $this->data['fields']['contentTypeVersion'] = (int) $data['contentTypeVersion'];
+        } elseif (isset($data['_fields']['contentTypeVersion'])) {
+            $this->data['fields']['contentTypeVersion'] = null;
+        }
         if (isset($data['attributes'])) {
             $embedded = new \Mandango\Group\EmbeddedGroup('Model\PHPOrchestraCMSBundle\ContentAttribute');
             $embedded->setRootAndPath($this, 'attributes');
@@ -466,6 +471,71 @@ abstract class Content extends \Mandango\Document\Document
         return $this->data['fields']['shortName'];
     }
 
+    /**
+     * Set the "contentTypeVersion" field.
+     *
+     * @param mixed $value The value.
+     *
+     * @return \Model\PHPOrchestraCMSBundle\Content The document (fluent interface).
+     */
+    public function setContentTypeVersion($value)
+    {
+        if (!isset($this->data['fields']['contentTypeVersion'])) {
+            if (!$this->isNew()) {
+                $this->getContentTypeVersion();
+                if ($this->isFieldEqualTo('contentTypeVersion', $value)) {
+                    return $this;
+                }
+            } else {
+                if (null === $value) {
+                    return $this;
+                }
+                $this->fieldsModified['contentTypeVersion'] = null;
+                $this->data['fields']['contentTypeVersion'] = $value;
+                return $this;
+            }
+        } elseif ($this->isFieldEqualTo('contentTypeVersion', $value)) {
+            return $this;
+        }
+
+        if (!isset($this->fieldsModified['contentTypeVersion']) && !array_key_exists('contentTypeVersion', $this->fieldsModified)) {
+            $this->fieldsModified['contentTypeVersion'] = $this->data['fields']['contentTypeVersion'];
+        } elseif ($this->isFieldModifiedEqualTo('contentTypeVersion', $value)) {
+            unset($this->fieldsModified['contentTypeVersion']);
+        }
+
+        $this->data['fields']['contentTypeVersion'] = $value;
+
+        return $this;
+    }
+
+    /**
+     * Returns the "contentTypeVersion" field.
+     *
+     * @return mixed The $name field.
+     */
+    public function getContentTypeVersion()
+    {
+        if (!isset($this->data['fields']['contentTypeVersion'])) {
+            if ($this->isNew()) {
+                $this->data['fields']['contentTypeVersion'] = null;
+            } elseif (!isset($this->data['fields']) || !array_key_exists('contentTypeVersion', $this->data['fields'])) {
+                $this->addFieldCache('contentTypeVersion');
+                $data = $this->getRepository()->getCollection()->findOne(
+                    array('_id' => $this->getId()),
+                    array('contentTypeVersion' => 1)
+                );
+                if (isset($data['contentTypeVersion'])) {
+                    $this->data['fields']['contentTypeVersion'] = (int) $data['contentTypeVersion'];
+                } else {
+                    $this->data['fields']['contentTypeVersion'] = null;
+                }
+            }
+        }
+
+        return $this->data['fields']['contentTypeVersion'];
+    }
+
     private function isFieldEqualTo($field, $otherValue)
     {
         $value = $this->data['fields'][$field];
@@ -594,6 +664,9 @@ abstract class Content extends \Mandango\Document\Document
         if ('shortName' == $name) {
             return $this->setShortName($value);
         }
+        if ('contentTypeVersion' == $name) {
+            return $this->setContentTypeVersion($value);
+        }
 
         throw new \InvalidArgumentException(sprintf('The document data "%s" is not valid.', $name));
     }
@@ -626,6 +699,9 @@ abstract class Content extends \Mandango\Document\Document
         }
         if ('shortName' == $name) {
             return $this->getShortName();
+        }
+        if ('contentTypeVersion' == $name) {
+            return $this->getContentTypeVersion();
         }
         if ('attributes' == $name) {
             return $this->getAttributes();
@@ -664,6 +740,9 @@ abstract class Content extends \Mandango\Document\Document
         if (isset($array['shortName'])) {
             $this->setShortName($array['shortName']);
         }
+        if (isset($array['contentTypeVersion'])) {
+            $this->setContentTypeVersion($array['contentTypeVersion']);
+        }
         if (isset($array['attributes'])) {
             $embeddeds = array();
             foreach ($array['attributes'] as $documentData) {
@@ -693,6 +772,7 @@ abstract class Content extends \Mandango\Document\Document
         $array['language'] = $this->getLanguage();
         $array['status'] = $this->getStatus();
         $array['shortName'] = $this->getShortName();
+        $array['contentTypeVersion'] = $this->getContentTypeVersion();
 
         return $array;
     }
@@ -725,6 +805,9 @@ abstract class Content extends \Mandango\Document\Document
                 }
                 if (isset($this->data['fields']['shortName'])) {
                     $query['shortName'] = (string) $this->data['fields']['shortName'];
+                }
+                if (isset($this->data['fields']['contentTypeVersion'])) {
+                    $query['contentTypeVersion'] = (int) $this->data['fields']['contentTypeVersion'];
                 }
             } else {
                 if (isset($this->data['fields']['contentId'])
@@ -796,6 +879,18 @@ abstract class Content extends \Mandango\Document\Document
                             $query['$set']['shortName'] = (string) $this->data['fields']['shortName'];
                         } else {
                             $query['$unset']['shortName'] = 1;
+                        }
+                    }
+                }
+                if (isset($this->data['fields']['contentTypeVersion'])
+                    || array_key_exists('contentTypeVersion', $this->data['fields'])) {
+                    $value = $this->data['fields']['contentTypeVersion'];
+                    $originalValue = $this->getOriginalFieldValue('contentTypeVersion');
+                    if ($value !== $originalValue) {
+                        if (null !== $value) {
+                            $query['$set']['contentTypeVersion'] = (int) $this->data['fields']['contentTypeVersion'];
+                        } else {
+                            $query['$unset']['contentTypeVersion'] = 1;
                         }
                     }
                 }

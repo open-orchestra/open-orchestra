@@ -61,7 +61,7 @@ function ConfirmDialog(confirmId, okCallback, width)
                     "class" : "btn btn-primary",
                     click : function() {
                         $(this).dialog("close");
-                        that.okCallback();
+                        that.okCallback($(this).dialog("option", "okParams"));
                     }
                 }
             ]

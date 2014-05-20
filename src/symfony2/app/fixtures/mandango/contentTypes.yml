@@ -2,6 +2,7 @@ Model\PHPOrchestraCMSBundle\ContentType:
     news:
         contentType: "news"
         version: 1
+        deleted: false
         fields:
             -
                 name: "title"
@@ -18,6 +19,7 @@ Model\PHPOrchestraCMSBundle\ContentType:
     cars:
         contentType: "cars"
         version: 1
+        deleted: false
         fields:
             -
                 name: "name"

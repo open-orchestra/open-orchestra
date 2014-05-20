@@ -211,7 +211,8 @@ La base de données principale sera en MongoDB
 ```json
 {
     "contentType": "news", // news, comment, article, etc.
-    "version": 1
+    "version": 1,
+    "deleted": false,
     "fields":
     {
         "custom_field_name": "field_type",

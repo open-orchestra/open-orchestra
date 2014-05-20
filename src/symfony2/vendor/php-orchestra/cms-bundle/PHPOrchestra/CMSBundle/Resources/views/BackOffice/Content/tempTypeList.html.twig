@@ -1,0 +1,19 @@
+Listing des types de contenus
+<table border="1">
+    <thead>
+        <th>Id</th><th>Name</th><th>Version</th><th></th><th></th>
+    </thead>
+    <tbody>
+    {% for contentType in contentTypes %}
+    <tr>
+        <td>{{ contentType.contentType }}</td>
+        <td>{{ contentType.contentType }}</td>
+        <td>{{ contentType.version }}</td>
+        <td><a href="{{ path('php_orchestra_cms_bo_contentType_edit', {'contentType' : contentType.contentType}) }}">Editer</a></td>
+        <td><input type="button" class="deleteContentType" data-contentType="{{ contentType.contentType }}" value="Supprimer"></td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% include 'PHPOrchestraCMSBundle:BackOffice/Content:deleteContentTypeDialog.html.twig' %}
