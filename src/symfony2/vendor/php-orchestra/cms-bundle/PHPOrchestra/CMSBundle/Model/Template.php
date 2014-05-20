@@ -49,4 +49,15 @@ abstract class Template extends \Model\PHPOrchestraCMSBundle\Base\Template
     {
         return $this->getDeleted();
     }
+    
+    /**
+     * Flag all versions of the template templateId as deleted
+     * 
+     * @param $templateId
+     */
+    public function markAsDeleted()
+    {
+        $this->setDeleted('true');
+        return $this->save();
+    }
 }

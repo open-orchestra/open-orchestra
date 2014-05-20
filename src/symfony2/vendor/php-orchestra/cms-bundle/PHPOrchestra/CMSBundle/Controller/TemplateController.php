@@ -97,7 +97,11 @@ class TemplateController extends Controller
     public function deleteAction($templateId)
     {
         $documentManager = $this->get('phporchestra_cms.documentmanager');
-        $documentManager->deleteTemplate($templateId);
+        $templateVersions = $documentManager->getDocuments('Template', array('templateId' => $templateId));
+        
+        foreach($templateVersions as $templateVersion) {
+            $templateVersion->markAsDeleted();
+        }
         
         return $this->render(
             'PHPOrchestraCMSBundle:BackOffice/Editorial:simpleMessage.html.twig',
