@@ -150,31 +150,26 @@
             },
             "ajax": function ( data, callback, settings ) {
                 var start = (data.start) ? data.start : 0;
-                var end = (data.end) ? data.end : 10;
+                var length = (data.end) ? data.end : 12;
                 var criteria = $('.search_init').filter(function() { return $(this).val() != ""; }).serialize();
                 var sort = {};
-                var rank = 0;
-                if(rank = $('.dataTables_scrollHead .sorting_asc').index() >= 0){
-                    var name = $('.search_init').eq(rank).attr('name');
-                    sort[name] = -1;            
-                }
-                else if(rank = $('.dataTables_scrollHead .sorting_desc').index() >= 0){
-                    var name = $('.search_init').eq(rank).attr('name');
-                    sort[name] = 1;            
+                for(var i in data.order){
+                    var name = $('.search_init').eq(data.order[i].column).attr('name');
+                    sort[name] = (data.order[i].dir == "asc") ? 1 : -1;
                 }
                 $.ajax({
                     "type": "POST",
                     "url": "{{ path('php_orchestra_cms_bo_site') }}",
                     "dataType": "json",
-                    "data": { "parse": true, "start": start, "end": end, "criteria": criteria, "sort": sort},
+                    "data": { "parse": true, "start": start, "length": length, "criteria": criteria, "sort": sort},
                 })
                 .done(function( records ) {
                     out = records.data;
                     callback( {
                         draw: data.draw,
                         data: out,
-                        recordsTotal: 2,
-                        recordsFiltered: 1
+                        recordsTotal: 15,
+                        recordsFiltered: 15
                     } );
                 });
             },

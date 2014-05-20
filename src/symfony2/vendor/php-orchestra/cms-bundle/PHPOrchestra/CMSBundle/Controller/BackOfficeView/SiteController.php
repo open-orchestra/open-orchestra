@@ -33,11 +33,15 @@ class SiteController extends Controller
             array('name' => 'languages', 'type' => 'text'),
             array('name' => 'blocks', 'type' => 'text'));
     }
-    public function listAction(Request $request, $start=0, $end=10, $criteria=array(), $sort=array())
+    public function listAction(Request $request)
     {
         $documentManager = $this->container->get('phporchestra_cms.documentmanager');
+        
         if ($request->get('parse')) {
-            $aValues = $documentManager->getDocuments('Site', $criteria, $sort, true);
+        	parse_str($request->get('criteria'), $criteria);
+        	$sort = is_array($request->get('sort')) ? array_map('intval', $request->get('sort')) : $request->get('sort');
+
+        	$aValues = $documentManager->getDocuments('Site', $criteria, $sort, true, $request->get('start'), $request->get('length'));
             foreach($aValues as $key => $values){
             	$aValues[$key] = array(
             	   $values['domain'],
