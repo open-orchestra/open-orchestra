@@ -276,7 +276,12 @@ class NodeController extends Controller
     protected function deleteTree($nodeId)
     {
         $documentManager = $this->get('phporchestra_cms.documentmanager');
-        $documentManager->deleteNode($nodeId);
+        
+        $nodeVersions = $documentManager->getDocuments('Node', array('nodeId' => $nodeId));
+        
+        foreach ($nodeVersions as $node) {
+            $node->markAsDeleted();
+        };
         
         $sons = $documentManager->getNodeSons($nodeId);
         

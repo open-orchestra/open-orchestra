@@ -165,23 +165,6 @@ class DocumentManager
     }
     
     /**
-     * Flag all versions of the node nodeId as deleted
-     * 
-     * @param $nodeId
-     */
-    public function deleteNode($nodeId)
-    {
-        $nodeVersions = $this->getDocuments('Node', array('nodeId' => $nodeId));
-        
-        foreach ($nodeVersions as $node) {
-            $node->setDeleted(true);
-            $node->save();
-        };
-        
-        return true;
-    }
-    
-    /**
      * Flag all versions of the template templateId as deleted
      * 
      * @param $templateId

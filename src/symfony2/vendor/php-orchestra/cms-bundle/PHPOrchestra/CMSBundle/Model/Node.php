@@ -62,4 +62,10 @@ abstract class Node extends \Model\PHPOrchestraCMSBundle\Base\Node
     {
         return $this->getDeleted();
     }
+    
+    public function markAsDeleted()
+    {
+        $this->setDeleted('true');
+        return $this->save();
+    }
 }
