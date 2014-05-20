@@ -12,11 +12,6 @@ services:
         class: PHPOrchestra\CMSBundle\Document\DocumentManager
         arguments: [@mandango]
 
-    # Site Adapter service
-    phporchestra_cms.siteadapter:
-        class: PHPOrchestra\CMSBundle\Adapter\SiteAdapter
-        arguments: [@phporchestra_cms.documentmanager]
-
 #--[FORM FIELDS]----------------#
 
     # Areas form field type

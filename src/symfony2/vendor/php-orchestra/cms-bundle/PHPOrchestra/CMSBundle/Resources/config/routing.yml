@@ -1,24 +1,41 @@
 php_orchestra_cms_bo:
     pattern: /bo
-    defaults: { _controller: PHPOrchestraCMSBundle:BackOffice:home }
+    defaults: { _controller: PHPOrchestraCMSBundle:BackOfficeView/BackOffice:home }
 
 php_orchestra_cms_bo_edito:
-    pattern: /bo/edito
-    defaults: { _controller: PHPOrchestraCMSBundle:BackOffice:edito }
+    pattern: /edito
+    defaults: { _controller: PHPOrchestraCMSBundle:BackOfficeView/BackOffice:edito }
+
+php_orchestra_cms_bo_site:
+    pattern: /site
+    defaults: { _controller: PHPOrchestraCMSBundle:BackOfficeView/Site:list }
+
+php_orchestra_cms_bo_contentType:
+    pattern: /contentType/{contentType}
+    defaults: { _controller: PHPOrchestraCMSBundle:BackOfficeView/contentType:list}
+
+php_orchestra_cms_bo_content:
+    pattern: /content/{contentType}
+    defaults: { _controller: PHPOrchestraCMSBundle:BackOfficeView/content:list}
+
+php_orchestra_cms_bo_content_edit:
+    pattern: /content/edit/{contentId}
+    defaults: { _controller: PHPOrchestraCMSBundle:BackOfficeView/content:form}
+
+php_orchestra_cms_clearroutingcache:
+    pattern: /cache/routing/clear
+    defaults: { _controller: PHPOrchestraCMSBundle:cache:clearRoutingCache }
+
 
 php_orchestra_cms_bo_jscontextmenudispatcher:
     pattern: /bo/js-menu-dispatcher/{cmd}
-    defaults: { _controller: PHPOrchestraCMSBundle:BackOffice:jsContextMenuDispatch, cmd: '' }
+    defaults: { _controller: PHPOrchestraCMSBundle:BackOfficeView/BackOffice:jsContextMenuDispatch, cmd: '' }
 
 php_orchestra_cms_templateform:
     pattern: /bo/template/form/{templateId}
     defaults: { _controller: PHPOrchestraCMSBundle:Template:form, templateId: 0 }
 #    requirements:
 #        templateId: \w+
-
-php_orchestra_cms_bo_site:
-    pattern: /site
-    defaults: { _controller: PHPOrchestraCMSBundle:BackOfficeView/Site:list }
 
 php_orchestra_cms_nodeform:
     pattern: /bo/node/form/{nodeId}

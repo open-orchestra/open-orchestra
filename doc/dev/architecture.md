@@ -189,21 +189,41 @@ La base de données principale sera en MongoDB
 ```json
 {
     "contentId": 1,
-    "type": "news", // news, comment, article, etc.
+    "contentType": "news", // news, comment, article, etc.
     "version": 1,
+    "language": "fr",
     "status": "published",
+    "shortName": "Recognizable title", // Used sometimes to show content as in BO lists
+    "contentTypeVersion": 1 // Version of the contentType when content was saved
     "attributes":
     {
-        "custom_attribute": "value",
-        "custom_attribute": "value",
-        "custom_attribute": "value",
-        "custom_attribute": "value"
+        "custom_attribute_name": "value",
+        "custom_attribute_name": "value",
+        "custom_attribute_name": "value",
+        "custom_attribute_name": "value"
         //, etc.
     }
 }
 ```
 
-#### 4.2.4 Collection user
+#### 4.2.4 Collection contentType
+
+```json
+{
+    "contentType": "news", // news, comment, article, etc.
+    "version": 1
+    "fields":
+    {
+        "custom_field_name": "field_type",
+        "custom_field_name": "field_type",
+        "custom_field_name": "field_type",
+        "custom_field_name": "field_type",
+        //, etc.
+    }
+}
+```
+
+#### 4.2.5 Collection user
 
 ```json
 {

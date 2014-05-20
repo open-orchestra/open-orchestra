@@ -3,16 +3,16 @@
 namespace Model\PHPOrchestraCMSBundle\Base;
 
 /**
- * Base class of repository of Model\PHPOrchestraCMSBundle\Content document.
+ * Base class of repository of Model\PHPOrchestraCMSBundle\ContentField document.
  */
-abstract class ContentRepository extends \Mandango\Repository
+abstract class ContentFieldRepository extends \Mandango\Repository
 {
     /**
      * {@inheritdoc}
      */
     public function __construct(\Mandango\Mandango $mandango)
     {
-        $this->documentClass = 'Model\PHPOrchestraCMSBundle\Content';
+        $this->documentClass = 'Model\PHPOrchestraCMSBundle\ContentField';
         $this->isFile = false;
         $this->collectionName = 'content';
 
@@ -72,7 +72,6 @@ abstract class ContentRepository extends \Mandango\Repository
                 $document->clearModified();
                 $identityMap[(string) $data['_id']] = $document;
 
-                $document->resetGroups();
             }
         }
 
@@ -82,7 +81,6 @@ abstract class ContentRepository extends \Mandango\Repository
                 $query = $document->queryForSave();
                 $collection->update(array('_id' => $this->idToMongo($document->getId())), $query, $updateOptions);
                 $document->clearModified();
-                $document->resetGroups();
             }
         }
     }

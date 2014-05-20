@@ -23,4 +23,11 @@ interface CacheManagerInterface
      * @param string|array $value
      */
     public function set($key, $value);
+    
+    /**
+     * Delete all keys matching $pattern
+     * 
+     * @param string $pattern
+     */
+    public function deleteKeys($pattern);
 }

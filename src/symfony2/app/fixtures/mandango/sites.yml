@@ -1,0 +1,8 @@
+Model\PHPOrchestraCMSBundle\Site:
+    default_site:
+        siteId: 1
+        domain: www.phpOrchestra.fr
+        alias: www.php-orchestra.fr
+        defaultLanguage: fr
+        languages: en,fr
+        blocks: show0 BlockExample,show1 BlockExample,Sample Block

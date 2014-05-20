@@ -1,0 +1,30 @@
+Model\PHPOrchestraCMSBundle\ContentType:
+    news:
+        contentType: "news"
+        version: 1
+        fields:
+            -
+                name: "title"
+                type: "text"
+            -
+                name: "image"
+                type: "image"
+            -
+                name: "intro"
+                type: "text"
+            -
+                name: "text"
+                type: "text"
+    cars:
+        contentType: "cars"
+        version: 1
+        fields:
+            -
+                name: "name"
+                type: "text"
+            -
+                name: "image"
+                type: "image"
+            -
+                name: "description"
+                type: "text"

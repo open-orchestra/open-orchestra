@@ -1,0 +1,26 @@
+{##
+ # This file is part of the PHPOrchestra\CMSBundle.
+ #
+ # @author Noël GILAIN <noel.gilain@businessdecision.com>
+ ##}
+
+<script type="text/javascript">
+$(document).ready(function() {
+    var clearRoutingCache = new ConfirmDialog(
+        'clearRoutingCache',
+        function(){window.location.hash = '{{ path('php_orchestra_cms_clearroutingcache') }}';},
+        370
+    );
+    
+    clearRoutingCache.create();
+});
+</script>
+
+{% set vars = {
+    'dialogId' : 'dialog-clearRoutingCache',
+    'dialogTitle' : 'Purge du cache de routage',
+    'dialogMessage' : 'Vous êtes sur le point de supprimer le cache de routage.<br /><br />Souhaitez-vous continuer ?'
+   }
+%}
+
+{% include 'PHPOrchestraCMSBundle:BackOffice/Dialogs:confirmation.html.twig' with vars %}

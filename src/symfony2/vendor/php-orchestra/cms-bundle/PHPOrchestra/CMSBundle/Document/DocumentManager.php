@@ -59,18 +59,29 @@ class DocumentManager
     * 
     * @param string $documentType
     * @param array $criteria
+    * @param array $sort
+    * @param bool $asArray, true to getdocuments as array, false to get as objects
     */
-    public function getDocuments($documentType, $criteria = array(), $sort = array())
+    public function getDocuments($documentType, array $criteria = array(), $sort = array(), $asArray = false)
     {
         $repository = $this->documentsService->getRepository($this->getDocumentNamespace($documentType));
         $query = $repository->createQuery();
-        if($criteria){
-            $query->criteria($criteria);
+        $query->criteria($criteria);
+        $query->sort($sort);
+        $documents = $query->all();
+         if ($asArray) {
+            $documents = $this->adaptToArray($documents);
         }
-        if($sort){
-            $query->sort($sort);
+        return $documents;
+    }
+    
+    public function adaptToArray($collection)
+    {
+        $documents = array();
+        foreach ($collection as $document) {
+            $documents[] = $document->toArray();
         }
-        return $query->all();
+        return $documents;
     }
     
     /**
@@ -80,25 +91,19 @@ class DocumentManager
      */
     protected function getDocumentNamespace($documentType)
     {
-        $documentNamespace = '';
-        switch($documentType)
-        {
-            case 'Node':
-                $documentNamespace = 'Model\PHPOrchestraCMSBundle\Node';
-                break;
-            case 'Template':
-                $documentNamespace = 'Model\PHPOrchestraCMSBundle\Template';
-                break;
-            case 'Block':
-                $documentNamespace = 'Model\PHPOrchestraCMSBundle\Block';
-                break;
-            case 'Site':
-                $documentNamespace = 'Model\PHPOrchestraCMSBundle\Site';
-                break;
-            default:
-                throw new UnrecognizedDocumentTypeException('Unrecognized document type : ' . $documentType);
+        $documentNamespaces = array(
+            'Node' => 'Model\PHPOrchestraCMSBundle\Node',
+            'Template' => 'Model\PHPOrchestraCMSBundle\Template',
+            'Block' => 'Model\PHPOrchestraCMSBundle\Block',
+            'Site' => 'Model\PHPOrchestraCMSBundle\Site',
+            'ContentType' => 'Model\PHPOrchestraCMSBundle\ContentType',
+            'Content' => 'Model\PHPOrchestraCMSBundle\Content'
+        );
+        if (isset($documentNamespaces[$documentType])) {
+            return $documentNamespaces[$documentType];
+        } else {
+            throw new UnrecognizedDocumentTypeException('Unrecognized document type : ' . $documentType);
         }
-        return $documentNamespace;
     }
     
     

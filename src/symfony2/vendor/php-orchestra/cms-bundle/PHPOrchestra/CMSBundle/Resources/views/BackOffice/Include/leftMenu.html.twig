@@ -1,0 +1,61 @@
+<!-- User info -->
+<div class="login-info">
+    <span> <!-- User image size is adjusted inside CSS, it should stay as it --> 
+        <img src="{{ asset('bundles/phporchestracms/img/avatars/male.png') }}" alt="me" class="online" /> 
+        <a href="javascript:void(0);" id="show-shortcut">
+            Admin <i class="fa fa-angle-down"></i>
+        </a> 
+    </span>
+</div>
+<!-- end user info -->
+
+<nav>
+    <ul style="">
+        <li>
+            <a href="#"><i class="fa fa-lg fa-fw fa-edit"></i><span class="menu-item-parent">Editorial</span></a>
+            <ul style="display:block;">
+                <li><a href="{{ path('php_orchestra_cms_bo_site') }}">Gestion des sites</a></li>
+                <li><a href="{{ path('php_orchestra_cms_bo_edito') }}">Gestion des gabarits</a></li>
+                <li>
+                    <a href="#">Gestion des contenus</a>
+                    <ul>
+                    {% for contentType in contentTypes %}
+                        {% if contentType.contentType != '' %}
+                        <li><a href="{{ path('php_orchestra_cms_bo_content', {'contentType' : contentType.contentType}) }}">{{ contentType.contentType }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                    </ul>
+                </li>
+                <li><a href="{{ path('php_orchestra_cms_bo_edito') }}">Gestion des pages</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#"><i class="fa fa-lg fa-fw fa-desktop"></i><span class="menu-item-parent">Administration</span></a>
+            <ul style="display:block;">
+                <li>
+                    <a href="#">Type de contenus</a>
+                    <ul>
+                    {% for contentType in contentTypes %}
+                        {% if contentType.contentType != '' %}
+                        <li><a href="{{ path('php_orchestra_cms_bo_contentType', {'contentType' : contentType.contentType}) }}">{{ contentType.contentType }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#"><i class="fa fa-lg fa-fw fa-wrench"></i><span class="menu-item-parent">Outils</span></a>
+            <ul style="display:block;">
+                <li>
+                    <a href="#" id="clearRoutingCache">Purge du cache de routage</a>
+                    {% include 'PHPOrchestraCMSBundle:BackOffice/Tools:clearRoutingCacheDialog.html.twig' %}
+                </li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+<span class="minifyme">
+    <i class="fa fa-arrow-circle-left hit"></i>
+</span>
+

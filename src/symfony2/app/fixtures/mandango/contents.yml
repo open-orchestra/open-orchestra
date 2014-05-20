@@ -1,0 +1,63 @@
+Model\PHPOrchestraCMSBundle\Content:
+    news_bien_vivre:
+        contentId: 1
+        contentType: "news"
+        version: 1
+        language: "fr"
+        status: "published"
+        shortName: "Bien vivre en France"
+        contentTypeVersion: 1
+        attributes:
+            -
+                name: "title"
+                value: "Bien vivre en France"
+            -
+                name: "image"
+                value: "web/bvef.jpg"
+            -
+                name: "intro"
+                value: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non feugiat sem. Aliquam a mauris tellus. In hac habitasse platea dictumst. Nunc eget interdum ante, id mollis diam. Suspendisse sed magna lectus. Aenean fringilla elementum lorem id suscipit. Phasellus feugiat tellus sapien, id tempus nisi ultrices ut."
+            -
+                name: "text"
+                value: "Cras non dui id neque mattis molestie. Quisque feugiat metus in est aliquet, nec convallis ante blandit. Suspendisse tincidunt tortor et tellus eleifend bibendum. Fusce fringilla mauris dolor, quis tempus diam tempus eu. Morbi enim orci, aliquam at sapien eu, dignissim commodo enim. Nulla ultricies erat non facilisis feugiat. Quisque fringilla ante lacus, vitae viverra magna aliquam non. Pellentesque quis diam suscipit, tincidunt felis eget, mollis mauris. Nulla facilisi.<br /><br />Nunc tincidunt pellentesque suscipit. Donec tristique massa at turpis fringilla, non aliquam ante luctus. Nam in felis tristique, scelerisque magna eget, sagittis purus. Maecenas malesuada placerat rutrum. Vestibulum sem urna, pharetra et fermentum a, iaculis quis augue. Ut ac neque mauris. In vel risus dui. Fusce lacinia a velit vitae condimentum."
+    
+    news_lorem_ipsum:
+        contentId: 2
+        contentType: "news"
+        version: 1
+        language: "fr"
+        status: "published"
+        shortName: "Lorem ipsum"
+        contentTypeVersion: 1
+        attributes:
+            -
+                name: "title"
+                value: "lorem Ipsum"
+            -
+                name: "image"
+                value: ""
+            -
+                name: "intro"
+                value: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non feugiat sem. Aliquam a mauris tellus. In hac habitasse platea dictumst. Nunc eget interdum ante, id mollis diam. Suspendisse sed magna lectus. Aenean fringilla elementum lorem id suscipit. Phasellus feugiat tellus sapien, id tempus nisi ultrices ut."
+            -
+                name: "text"
+                value: "Cras non dui id neque mattis molestie. Quisque feugiat metus in est aliquet, nec convallis ante blandit. Suspendisse tincidunt tortor et tellus eleifend bibendum. Fusce fringilla mauris dolor, quis tempus diam tempus eu. Morbi enim orci, aliquam at sapien eu, dignissim commodo enim. Nulla ultricies erat non facilisis feugiat. Quisque fringilla ante lacus, vitae viverra magna aliquam non. Pellentesque quis diam suscipit, tincidunt felis eget, mollis mauris. Nulla facilisi.<br /><br />Nunc tincidunt pellentesque suscipit. Donec tristique massa at turpis fringilla, non aliquam ante luctus. Nam in felis tristique, scelerisque magna eget, sagittis purus. Maecenas malesuada placerat rutrum. Vestibulum sem urna, pharetra et fermentum a, iaculis quis augue. Ut ac neque mauris. In vel risus dui. Fusce lacinia a velit vitae condimentum."
+
+    car_r5:
+        contentId: 3
+        contentType: "cars"
+        version: 2
+        language: "en"
+        status: "draft"
+        shortName: "R5 3 portes"
+        contentTypeVersion: 1
+        attributes:
+            -
+                name: "name"
+                value: "R5 3 doors"
+            -
+                name: "image"
+                value: "r5.png"
+            -
+                name: "description"
+                value: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non feugiat sem. Aliquam a mauris tellus. In hac habitasse platea dictumst. Nunc eget interdum ante, id mollis diam. Suspendisse sed magna lectus. Aenean fringilla elementum lorem id suscipit. Phasellus feugiat tellus sapien, id tempus nisi ultrices ut."

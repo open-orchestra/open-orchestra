@@ -3,18 +3,18 @@
 namespace Model\PHPOrchestraCMSBundle\Base;
 
 /**
- * Base class of repository of Model\PHPOrchestraCMSBundle\Content document.
+ * Base class of repository of Model\PHPOrchestraCMSBundle\ContentType document.
  */
-abstract class ContentRepository extends \Mandango\Repository
+abstract class ContentTypeRepository extends \Mandango\Repository
 {
     /**
      * {@inheritdoc}
      */
     public function __construct(\Mandango\Mandango $mandango)
     {
-        $this->documentClass = 'Model\PHPOrchestraCMSBundle\Content';
+        $this->documentClass = 'Model\PHPOrchestraCMSBundle\ContentType';
         $this->isFile = false;
-        $this->collectionName = 'content';
+        $this->collectionName = 'contentType';
 
         parent::__construct($mandango);
     }

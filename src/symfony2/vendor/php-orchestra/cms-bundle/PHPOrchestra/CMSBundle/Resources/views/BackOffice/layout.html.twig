@@ -83,6 +83,9 @@
             <!-- MAIN APP JS FILE -->
             <script src="{{ asset('bundles/phporchestracms/js/app0.js') }}"></script>
     
+            <!-- DIALOGS JS FILE -->
+            <script src="{{ asset('bundles/phporchestracms/js/confirmDialog.js') }}"></script>
+    
             <!-- Your GOOGLE ANALYTICS CODE Below -->
             <script type="text/javascript">
             
@@ -99,6 +102,7 @@
             </script>
             
             <!-- TREE MENU : SHOULD BE LOADED ONLY WHEN REQUIRED -->
+            <script src="{{ asset('bundles/phporchestracms/js/plugin/jquery-cookie/jquery.cookie.js') }}"></script>
             <script src="{{ asset('bundles/phporchestracms/js/plugin/fancytree/jquery.fancytree.js') }}"></script>
             <script src="{{ asset('bundles/phporchestracms/js/plugin/fancytree/jquery.fancytree.persist.js') }}" type="text/javascript"></script>
             <script src="{{ asset('bundles/phporchestracms/js/plugin/fancytree/jquery.fancytree.dnd.js') }}" type="text/javascript"></script>
@@ -112,10 +116,10 @@
     </head>
     <body class="fixed-header fixed-ribbon fixed-navigation">
         <header>
-            {% include 'PHPOrchestraCMSBundle:BackOffice:header.html.twig' %}
+            {% include 'PHPOrchestraCMSBundle:BackOffice/Include:header.html.twig' %}
         </header>
         <aside id="left-panel">
-            {% include 'PHPOrchestraCMSBundle:BackOffice:leftMenu.html.twig' %}
+            {% include 'PHPOrchestraCMSBundle:BackOffice/Include:leftMenu.html.twig' %}
         </aside>
         <div id="main" role="main">
             <div id="ribbon">
