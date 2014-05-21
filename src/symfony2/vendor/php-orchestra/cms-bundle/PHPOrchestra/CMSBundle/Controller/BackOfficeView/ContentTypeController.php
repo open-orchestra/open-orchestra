@@ -8,6 +8,7 @@
 namespace PHPOrchestra\CMSBundle\Controller\BackOfficeView;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Model\PHPOrchestraCMSBundle\ContentType;
 
 class ContentTypeController extends Controller
 {
@@ -17,7 +18,7 @@ class ContentTypeController extends Controller
     public function listAction()
     {
         $documentManager = $this->container->get('phporchestra_cms.documentmanager');
-        $contentTypes = $documentManager->getDocuments('ContentType', array('deleted' => false), array(), true);
+        $contentTypes = $documentManager->getDocuments('ContentType', array('deleted' => false));
         
         return $this->render(
             'PHPOrchestraCMSBundle:BackOffice/Content:tempTypeList.html.twig',
@@ -28,9 +29,37 @@ class ContentTypeController extends Controller
     }
 
 
-    public function formAction($contentType)
+    public function formAction($contentTypeId, $id)
     {
+        $documentManager = $this->container->get('phporchestra_cms.documentmanager');
+        $contentType = $documentManager->getDocumentById('ContentType', $id);
+        $lastVersion = $documentManager->getDocument('ContentType', array('contentTypeId' => $contentTypeId));
         
+        $contentType->setVersion(1 + $lastVersion->getVersion());
+        $contentType->setStatus(ContentType::STATUS_DRAFT);
+        
+        $form = $this->createForm(
+            'contentType',
+            $contentType
+        );
+       /* $form->handleRequest($request);
+        
+        if ($form->isValid()) {
+            $node->setId(null);
+            $node->setIsNew(true);
+            $node->save();
+            
+            return $this->redirect(
+                $this->generateUrl('php_orchestra_cms_bo_contentType')
+            );
+        }*/
+        
+        return $this->render(
+            'PHPOrchestraCMSBundle:BackOffice/Content:contentTypeForm.html.twig',
+            array(
+                'form' => $form->createView()
+            )
+        );
     }
 
 

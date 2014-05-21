@@ -1,7 +1,9 @@
 Model\PHPOrchestraCMSBundle\ContentType:
     news:
-        contentType: "news"
+        contentTypeId: "news"
+        name: "Actualité"
         version: 1
+        status: "published"
         deleted: false
         fields:
             -
@@ -17,8 +19,10 @@ Model\PHPOrchestraCMSBundle\ContentType:
                 name: "text"
                 type: "text"
     cars:
-        contentType: "cars"
+        contentTypeId: "car"
+        name: "Voiture"
         version: 1
+        status: "published"
         deleted: false
         fields:
             -
@@ -29,4 +33,46 @@ Model\PHPOrchestraCMSBundle\ContentType:
                 type: "image"
             -
                 name: "description"
+                type: "text"
+    cars_v2:
+        contentTypeId: "car"
+        name: "Voiture"
+        version: 2
+        status: "unpublished"
+        deleted: false
+        fields:
+            -
+                name: "name"
+                type: "text"
+            -
+                name: "image"
+                type: "image"
+            -
+                name: "description"
+                type: "text"
+    cars_v3:
+        contentTypeId: "car"
+        name: "Voiture"
+        version: 3
+        status: "draft"
+        deleted: false
+        fields:
+            -
+                name: "name"
+                type: "text"
+            -
+                name: "image"
+                type: "image"
+            -
+                name: "description"
+                type: "text"
+    customer1:
+        contentTypeId: "customer"
+        name: "Client"
+        version: 1
+        status: "draft"
+        deleted: false
+        fields:
+            -
+                name: "name"
                 type: "text"

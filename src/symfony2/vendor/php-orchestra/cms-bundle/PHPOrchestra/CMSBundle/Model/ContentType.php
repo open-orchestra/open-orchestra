@@ -7,6 +7,10 @@ namespace PHPOrchestra\CMSBundle\Model;
  */
 abstract class ContentType extends \Model\PHPOrchestraCMSBundle\Base\ContentType
 {
+    const STATUS_UNPUBLISHED = 'unpublished';
+    const STATUS_PUBLISHED = 'published';
+    const STATUS_DRAFT = 'draft';
+    
     /**
      * (non-PHPdoc)
      * @see src/symfony2/src/Model/PHPOrchestraCMSBundle/Base/Model\PHPOrchestraCMSBundle\Base.ContentType::toArray()
