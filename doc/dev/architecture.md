@@ -2,14 +2,14 @@
 Architecture PHP Orchestra
 ==========================
 
-1. Introduction
----------------
+1 Introduction
+--------------
 
 Ceci est un document de travail, voué à évoluer et poser les bonnes questions,
 avant que toute architecture ne soit validée.
 
-2. Fonctionnalités attendues
------------------------------
+2 Fonctionnalités attendues
+---------------------------
 
 Liste des fonctionnalités qui sont souhaitées pour PHP Orchestra, qu'elles
 soient héritées ou non de PHP Factory.
@@ -29,8 +29,8 @@ soient héritées ou non de PHP Factory.
 | Extensibilité     | Possibilité de greffer des produits tiers (smart, etc.)  |
 
 
-3. Normes de développement
---------------------------
+3 Normes de développement
+-------------------------
 
 ### 3.1 Répertoires
 
@@ -93,8 +93,8 @@ Les tests seront intégrés à la plateforme d'intégration continue.
 Travis-ci sera utilisé. (voir Pascal pour la mise en place)
 +Scrutinizer
 
-4. Modèle de données
---------------------
+4 Modèle de données
+-------------------
 
 ### 4.1 Base de données
 
@@ -249,3 +249,68 @@ La base de données principale sera en MongoDB
 }
 ```
 
+5 Spécifications détaillées
+---------------------------
+
+### 5.1 Gestion des pages
+
+#### 5.1.1 Maquettes ergonomiques
+
+* [Onglet contenu](mockups/node-content-tab.png)
+
+* [Insertion de bloc](mockups/node-content-tab-block-selection.png)
+
+* [Onglet principal](mockups/node-main-tab.png)
+
+* [Onglet SEO](mockups/node-seo-meta-tab.png)
+
+### 5.2 Gestion des contenus
+
+### 5.3 Gestion des sites
+
+### 5.4 Gestion du routing
+
+### 5.5 Multilinguisme
+
+### 5.6 Gestion des versions
+
+### 5.7 Multisite
+
+### 5.8 Workflow de publication
+
+### 5.9 Listes, CRUD (RAD BO)
+
+### 5.10 Indexation et recherche
+
+### 5.11 Cache
+
+### 5.12 Médiathèque
+
+### 5.13 Gestion des utilisateurs
+
+### 5.14 Gestion des droits
+
+### 5.15 Thème ergonomique BO
+
+6. ORM, couche d'abstraction d'accès aux données
+------------------------------------------------
+
+7. Composants/Bundles utilisés
+-------------------------------
+
+| Composant         | Version     | Utilisation                                              |
+|-------------------|-------------|----------------------------------------------------------|
+| MongoDB           | 2.4.x-2.6.x | Base de données principale, stockages des données CMS    |
+| Redis             |       2.4.x | Cache applicatif, gestion des sessions                   |
+| Varnish           |         3.x | Cache HTTP, ESI                                          |
+| PHP5              |        >5.4 | Interpréteur                                             |
+| Symfony2          |         2.4 | Framework                                                |
+| Doctrine          |         dev | ORM/ODM                                                  |
+| Mandango          |         dev | MongoDB ORM en cours de remplacement par Doctrine        |
+| Assetic           |             | Gestion des assets                                       |
+| Twig              |             | Moteur de templating                                     |
+| PHPUnit           |       4.0.x | Tests unitaires                                          |
+| Jenkins           |             | Intégration continue                                     |
+| Travis-ci         |             | Intégration continue                                     |
+| Git               |             | Gestion des sources                                      |
+|                   |             |                                                          |
