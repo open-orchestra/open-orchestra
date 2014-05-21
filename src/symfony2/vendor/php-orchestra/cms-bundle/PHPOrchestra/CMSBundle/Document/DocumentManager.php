@@ -80,6 +80,14 @@ class DocumentManager
         return $documents;
     }
     
+    public function getDocumentsCount($documentType, array $criteria = array())
+    {
+        $repository = $this->documentsService->getRepository($this->getDocumentNamespace($documentType));
+        $query = $repository->createQuery();
+        $query->criteria($criteria);
+        return $query->count();
+    }
+    
     public function adaptToArray($collection)
     {
         $documents = array();

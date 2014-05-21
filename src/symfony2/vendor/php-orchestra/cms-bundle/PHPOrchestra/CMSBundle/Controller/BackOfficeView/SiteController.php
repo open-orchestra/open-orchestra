@@ -7,63 +7,45 @@
 
 namespace PHPOrchestra\CMSBundle\Controller\BackOfficeView;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\HttpFoundation\Response;
+use PHPOrchestra\CMSBundle\Controller\ViewController;
 
-class SiteController extends Controller
+class SiteController extends ViewController
 {
-    public function getLabels()
-    {
-        return array(
-            'Domain',
-            'Alias',
-            'Default Language',
-            'Languages',
-            'Blocks');
-    }
 
-    public function getSearchs()
+	public function format(){
+		$aValues = $this->getValues();
+        foreach($aValues as &$values){
+        	$values = array($values['domain'],
+        	   $values['alias'],
+        	   implode('<br />', explode(',', $values['defaultLanguage'])),
+        	   $values['languages'],
+        	   implode('<br />', explode(',', $values['blocks'])),
+               parent::modifyButton($values['siteId']),
+               parent::deleteButton($values['siteId']));
+        }
+        $this->setValues($aValues);
+    }
+    
+    public function listAction(Request $request)
     {
-        return array(
+    	$this->setEntity('Site');
+    	$this->setSearchs(array(
             array('name' => 'domain', 'type' => 'text'),
             array('name' => 'alias', 'type' => 'text'),
             array('name' => 'defaultLanguage', 'type' => 'text'),
             array('name' => 'languages', 'type' => 'text'),
-            array('name' => 'blocks', 'type' => 'text'));
-    }
-    public function listAction(Request $request)
-    {
-        $documentManager = $this->container->get('phporchestra_cms.documentmanager');
-        
-        if ($request->get('parse')) {
-        	$sort = is_array($request->get('sort')) ? array_map('intval', $request->get('sort')) : $request->get('sort');
-            parse_str($request->get('criteria'), $criteria);
-        	array_walk($criteria, function(&$value, $key) {
-                $value = new \MongoRegex('/^'.preg_quote($value).'/i');
-            });
-        	
-        	$aValues = $documentManager->getDocuments('Site', $criteria, $sort, true, $request->get('start'), $request->get('length'));
-            foreach($aValues as $key => $values){
-            	$aValues[$key] = array(
-            	   $values['domain'],
-            	   $values['alias'],
-            	   $values['defaultLanguage'],
-            	   $values['languages'],
-            	   $values['blocks'],
-                );
-            }        	
-        	return new JsonResponse(
-                array(
-                    'success' => true,
-                    'data' => $aValues
-                )
-            );
-        } else {
-            $params['searchs'] = $this->getSearchs();
-            $params['labels'] = $this->getLabels();
-            return $this->forward('PHPOrchestraCMSBundle:View:list', $params);
-        }
+            array('name' => 'blocks', 'type' => 'text'),
+            '',
+            ''));
+    	$this->setLabels(array(
+            'Domain',
+            'Alias',
+            'Default Language',
+            'Languages',
+            'Blocks',
+	    	'',
+	    	''));
+    	return parent::listActionEntity($request);
     }
 }

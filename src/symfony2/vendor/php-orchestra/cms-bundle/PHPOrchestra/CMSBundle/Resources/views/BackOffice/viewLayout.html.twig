@@ -47,11 +47,13 @@
                                 <tr class="second">
                                 {% for key, search in searchs %}
                                     <td>
-                                        <label class="input">
-                                    {% if search['type'] == 'text' %}
-                                            <input type="text" name="{{ search['name'] }}" placeholder="Filter {{ labels[key] }}" class="search_init">
+                                    {% if search.type is defined %}
+                                        {% if search.type == 'text' %}
+                                            <label class="input">
+                                                <input type="text" name="{{ search['name'] }}" placeholder="Filter {{ labels[key] }}" class="search_init">
+                                            </label>
+                                        {% endif %}
                                     {% endif %}
-                                        </label>
                                     </td>
                                 {% endfor %}
                                 </tr>
@@ -135,11 +137,6 @@
         }
     }
     function runDataTables() {
-        /* Add the events etc before DataTables hides a column 
-        $("#datatable_fixed_column thead input").keyup(function() {
-            oTable.fnFilter(this.value, oTable.oApi._fnVisibleToColumnIndex(oTable.fnSettings(), $("thead input").index(this)));
-        });*/
-
         var table = $('#datatable_fixed_column').dataTable({
             "serverSide": true,
             "ordering": true,
@@ -150,7 +147,7 @@
             },
             "ajax": function ( data, callback, settings ) {
                 var start = (data.start) ? data.start : 0;
-                var length = (data.end) ? data.end : 12;
+                var length = (data.length) ? data.length : 0;
                 var criteria = $('.search_init').filter(function() { return $(this).val() != ""; }).serialize();
                 var sort = {};
                 for(var i in data.order){
@@ -164,12 +161,12 @@
                     "data": { "parse": true, "start": start, "length": length, "criteria": criteria, "sort": sort},
                 })
                 .done(function( records ) {
-                    out = records.data;
+                    out = records.data.values;
                     callback( {
                         draw: data.draw,
                         data: out,
-                        recordsTotal: 15,
-                        recordsFiltered: 15
+                        recordsTotal: records.data.count,
+                        recordsFiltered: records.data.partialCount
                     } );
                 });
             },
