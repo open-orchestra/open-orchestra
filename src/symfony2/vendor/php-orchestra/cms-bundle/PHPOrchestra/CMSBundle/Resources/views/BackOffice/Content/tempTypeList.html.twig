@@ -11,7 +11,7 @@ Listing des types de contenus
         <td>{{ contentType.name }}</td>
         <td>{{ contentType.version }}</td>
         <td>{{ contentType.status }}</td>
-        <td><input type="button" class="editContentType" data-contentType="{{ contentType.contentTypeId }}" data-contentTypeId="{{ contentType.id }}" value="Editer" />
+        <td><input type="button" class="editContentType" data-contentTypeId="{{ contentType.id }}" value="Editer" />
         <td><input type="button" class="deleteContentType" data-contentType="{{ contentType.contentTypeId }}" value="Supprimer" /></td>
     </tr>
     {% endfor %}
@@ -22,9 +22,7 @@ Listing des types de contenus
 $(document).ready(function() {
     $('.editContentType').click(function(e) {
         window.location.hash =
-            "{{ path('php_orchestra_cms_bo_contentType_edit') }}/"
-            + $(this).attr('data-contentType') + '/'
-            + $(this).attr('data-contentTypeId');
+            "{{ path('php_orchestra_cms_bo_contentType_edit') }}/" + $(this).attr('data-contentTypeId');
     });
 });
 </script>

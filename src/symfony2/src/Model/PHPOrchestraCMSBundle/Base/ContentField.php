@@ -29,71 +29,86 @@ abstract class ContentField extends \Mandango\Document\EmbeddedDocument
             $this->fieldsModified = array();
         }
 
-        if (isset($data['name'])) {
-            $this->data['fields']['name'] = (string) $data['name'];
-        } elseif (isset($data['_fields']['name'])) {
-            $this->data['fields']['name'] = null;
+        if (isset($data['fieldId'])) {
+            $this->data['fields']['fieldId'] = (string) $data['fieldId'];
+        } elseif (isset($data['_fields']['fieldId'])) {
+            $this->data['fields']['fieldId'] = null;
         }
         if (isset($data['type'])) {
             $this->data['fields']['type'] = (string) $data['type'];
         } elseif (isset($data['_fields']['type'])) {
             $this->data['fields']['type'] = null;
         }
+        if (isset($data['options'])) {
+            $this->data['fields']['options'] = unserialize($data['options']);
+        } elseif (isset($data['_fields']['options'])) {
+            $this->data['fields']['options'] = null;
+        }
+        if (isset($data['mandatory'])) {
+            $this->data['fields']['mandatory'] = (bool) $data['mandatory'];
+        } elseif (isset($data['_fields']['mandatory'])) {
+            $this->data['fields']['mandatory'] = null;
+        }
+        if (isset($data['searchable'])) {
+            $this->data['fields']['searchable'] = (bool) $data['searchable'];
+        } elseif (isset($data['_fields']['searchable'])) {
+            $this->data['fields']['searchable'] = null;
+        }
 
         return $this;
     }
 
     /**
-     * Set the "name" field.
+     * Set the "fieldId" field.
      *
      * @param mixed $value The value.
      *
      * @return \Model\PHPOrchestraCMSBundle\ContentField The document (fluent interface).
      */
-    public function setName($value)
+    public function setFieldId($value)
     {
-        if (!isset($this->data['fields']['name'])) {
+        if (!isset($this->data['fields']['fieldId'])) {
             if (($rap = $this->getRootAndPath()) && !$rap['root']->isNew()) {
-                $this->getName();
-                if ($this->isFieldEqualTo('name', $value)) {
+                $this->getFieldId();
+                if ($this->isFieldEqualTo('fieldId', $value)) {
                     return $this;
                 }
             } else {
                 if (null === $value) {
                     return $this;
                 }
-                $this->fieldsModified['name'] = null;
-                $this->data['fields']['name'] = $value;
+                $this->fieldsModified['fieldId'] = null;
+                $this->data['fields']['fieldId'] = $value;
                 return $this;
             }
-        } elseif ($this->isFieldEqualTo('name', $value)) {
+        } elseif ($this->isFieldEqualTo('fieldId', $value)) {
             return $this;
         }
 
-        if (!isset($this->fieldsModified['name']) && !array_key_exists('name', $this->fieldsModified)) {
-            $this->fieldsModified['name'] = $this->data['fields']['name'];
-        } elseif ($this->isFieldModifiedEqualTo('name', $value)) {
-            unset($this->fieldsModified['name']);
+        if (!isset($this->fieldsModified['fieldId']) && !array_key_exists('fieldId', $this->fieldsModified)) {
+            $this->fieldsModified['fieldId'] = $this->data['fields']['fieldId'];
+        } elseif ($this->isFieldModifiedEqualTo('fieldId', $value)) {
+            unset($this->fieldsModified['fieldId']);
         }
 
-        $this->data['fields']['name'] = $value;
+        $this->data['fields']['fieldId'] = $value;
 
         return $this;
     }
 
     /**
-     * Returns the "name" field.
+     * Returns the "fieldId" field.
      *
      * @return mixed The $name field.
      */
-    public function getName()
+    public function getFieldId()
     {
-        if (!isset($this->data['fields']['name'])) {
-            if ((!isset($this->data['fields']) || !array_key_exists('name', $this->data['fields']))
+        if (!isset($this->data['fields']['fieldId'])) {
+            if ((!isset($this->data['fields']) || !array_key_exists('fieldId', $this->data['fields']))
                 && ($rap = $this->getRootAndPath())
                 && !$this->isEmbeddedOneChangedInParent()
                 && !$this->isEmbeddedManyNew()) {
-                $field = $rap['path'].'.name';
+                $field = $rap['path'].'.fieldId';
                 $rap['root']->addFieldCache($field);
                 $collection = $this->getMandango()->getRepository(get_class($rap['root']))->getCollection();
                 $data = $collection->findOne(array('_id' => $rap['root']->getId()), array($field => 1));
@@ -105,15 +120,15 @@ abstract class ContentField extends \Mandango\Document\EmbeddedDocument
                     $data = $data[$key];
                 }
                 if (null !== $data) {
-                    $this->data['fields']['name'] = (string) $data;
+                    $this->data['fields']['fieldId'] = (string) $data;
                 }
             }
-            if (!isset($this->data['fields']['name'])) {
-                $this->data['fields']['name'] = null;
+            if (!isset($this->data['fields']['fieldId'])) {
+                $this->data['fields']['fieldId'] = null;
             }
         }
 
-        return $this->data['fields']['name'];
+        return $this->data['fields']['fieldId'];
     }
 
     /**
@@ -189,6 +204,225 @@ abstract class ContentField extends \Mandango\Document\EmbeddedDocument
         return $this->data['fields']['type'];
     }
 
+    /**
+     * Set the "options" field.
+     *
+     * @param mixed $value The value.
+     *
+     * @return \Model\PHPOrchestraCMSBundle\ContentField The document (fluent interface).
+     */
+    public function setOptions($value)
+    {
+        if (!isset($this->data['fields']['options'])) {
+            if (($rap = $this->getRootAndPath()) && !$rap['root']->isNew()) {
+                $this->getOptions();
+                if ($this->isFieldEqualTo('options', $value)) {
+                    return $this;
+                }
+            } else {
+                if (null === $value) {
+                    return $this;
+                }
+                $this->fieldsModified['options'] = null;
+                $this->data['fields']['options'] = $value;
+                return $this;
+            }
+        } elseif ($this->isFieldEqualTo('options', $value)) {
+            return $this;
+        }
+
+        if (!isset($this->fieldsModified['options']) && !array_key_exists('options', $this->fieldsModified)) {
+            $this->fieldsModified['options'] = $this->data['fields']['options'];
+        } elseif ($this->isFieldModifiedEqualTo('options', $value)) {
+            unset($this->fieldsModified['options']);
+        }
+
+        $this->data['fields']['options'] = $value;
+
+        return $this;
+    }
+
+    /**
+     * Returns the "options" field.
+     *
+     * @return mixed The $name field.
+     */
+    public function getOptions()
+    {
+        if (!isset($this->data['fields']['options'])) {
+            if ((!isset($this->data['fields']) || !array_key_exists('options', $this->data['fields']))
+                && ($rap = $this->getRootAndPath())
+                && !$this->isEmbeddedOneChangedInParent()
+                && !$this->isEmbeddedManyNew()) {
+                $field = $rap['path'].'.options';
+                $rap['root']->addFieldCache($field);
+                $collection = $this->getMandango()->getRepository(get_class($rap['root']))->getCollection();
+                $data = $collection->findOne(array('_id' => $rap['root']->getId()), array($field => 1));
+                foreach (explode('.', $field) as $key) {
+                    if (!isset($data[$key])) {
+                        $data = null;
+                        break;
+                    }
+                    $data = $data[$key];
+                }
+                if (null !== $data) {
+                    $this->data['fields']['options'] = unserialize($data);
+                }
+            }
+            if (!isset($this->data['fields']['options'])) {
+                $this->data['fields']['options'] = null;
+            }
+        }
+
+        return $this->data['fields']['options'];
+    }
+
+    /**
+     * Set the "mandatory" field.
+     *
+     * @param mixed $value The value.
+     *
+     * @return \Model\PHPOrchestraCMSBundle\ContentField The document (fluent interface).
+     */
+    public function setMandatory($value)
+    {
+        if (!isset($this->data['fields']['mandatory'])) {
+            if (($rap = $this->getRootAndPath()) && !$rap['root']->isNew()) {
+                $this->getMandatory();
+                if ($this->isFieldEqualTo('mandatory', $value)) {
+                    return $this;
+                }
+            } else {
+                if (null === $value) {
+                    return $this;
+                }
+                $this->fieldsModified['mandatory'] = null;
+                $this->data['fields']['mandatory'] = $value;
+                return $this;
+            }
+        } elseif ($this->isFieldEqualTo('mandatory', $value)) {
+            return $this;
+        }
+
+        if (!isset($this->fieldsModified['mandatory']) && !array_key_exists('mandatory', $this->fieldsModified)) {
+            $this->fieldsModified['mandatory'] = $this->data['fields']['mandatory'];
+        } elseif ($this->isFieldModifiedEqualTo('mandatory', $value)) {
+            unset($this->fieldsModified['mandatory']);
+        }
+
+        $this->data['fields']['mandatory'] = $value;
+
+        return $this;
+    }
+
+    /**
+     * Returns the "mandatory" field.
+     *
+     * @return mixed The $name field.
+     */
+    public function getMandatory()
+    {
+        if (!isset($this->data['fields']['mandatory'])) {
+            if ((!isset($this->data['fields']) || !array_key_exists('mandatory', $this->data['fields']))
+                && ($rap = $this->getRootAndPath())
+                && !$this->isEmbeddedOneChangedInParent()
+                && !$this->isEmbeddedManyNew()) {
+                $field = $rap['path'].'.mandatory';
+                $rap['root']->addFieldCache($field);
+                $collection = $this->getMandango()->getRepository(get_class($rap['root']))->getCollection();
+                $data = $collection->findOne(array('_id' => $rap['root']->getId()), array($field => 1));
+                foreach (explode('.', $field) as $key) {
+                    if (!isset($data[$key])) {
+                        $data = null;
+                        break;
+                    }
+                    $data = $data[$key];
+                }
+                if (null !== $data) {
+                    $this->data['fields']['mandatory'] = (bool) $data;
+                }
+            }
+            if (!isset($this->data['fields']['mandatory'])) {
+                $this->data['fields']['mandatory'] = null;
+            }
+        }
+
+        return $this->data['fields']['mandatory'];
+    }
+
+    /**
+     * Set the "searchable" field.
+     *
+     * @param mixed $value The value.
+     *
+     * @return \Model\PHPOrchestraCMSBundle\ContentField The document (fluent interface).
+     */
+    public function setSearchable($value)
+    {
+        if (!isset($this->data['fields']['searchable'])) {
+            if (($rap = $this->getRootAndPath()) && !$rap['root']->isNew()) {
+                $this->getSearchable();
+                if ($this->isFieldEqualTo('searchable', $value)) {
+                    return $this;
+                }
+            } else {
+                if (null === $value) {
+                    return $this;
+                }
+                $this->fieldsModified['searchable'] = null;
+                $this->data['fields']['searchable'] = $value;
+                return $this;
+            }
+        } elseif ($this->isFieldEqualTo('searchable', $value)) {
+            return $this;
+        }
+
+        if (!isset($this->fieldsModified['searchable']) && !array_key_exists('searchable', $this->fieldsModified)) {
+            $this->fieldsModified['searchable'] = $this->data['fields']['searchable'];
+        } elseif ($this->isFieldModifiedEqualTo('searchable', $value)) {
+            unset($this->fieldsModified['searchable']);
+        }
+
+        $this->data['fields']['searchable'] = $value;
+
+        return $this;
+    }
+
+    /**
+     * Returns the "searchable" field.
+     *
+     * @return mixed The $name field.
+     */
+    public function getSearchable()
+    {
+        if (!isset($this->data['fields']['searchable'])) {
+            if ((!isset($this->data['fields']) || !array_key_exists('searchable', $this->data['fields']))
+                && ($rap = $this->getRootAndPath())
+                && !$this->isEmbeddedOneChangedInParent()
+                && !$this->isEmbeddedManyNew()) {
+                $field = $rap['path'].'.searchable';
+                $rap['root']->addFieldCache($field);
+                $collection = $this->getMandango()->getRepository(get_class($rap['root']))->getCollection();
+                $data = $collection->findOne(array('_id' => $rap['root']->getId()), array($field => 1));
+                foreach (explode('.', $field) as $key) {
+                    if (!isset($data[$key])) {
+                        $data = null;
+                        break;
+                    }
+                    $data = $data[$key];
+                }
+                if (null !== $data) {
+                    $this->data['fields']['searchable'] = (bool) $data;
+                }
+            }
+            if (!isset($this->data['fields']['searchable'])) {
+                $this->data['fields']['searchable'] = null;
+            }
+        }
+
+        return $this->data['fields']['searchable'];
+    }
+
     private function isFieldEqualTo($field, $otherValue)
     {
         $value = $this->data['fields'][$field];
@@ -245,11 +479,20 @@ abstract class ContentField extends \Mandango\Document\EmbeddedDocument
      */
     public function set($name, $value)
     {
-        if ('name' == $name) {
-            return $this->setName($value);
+        if ('fieldId' == $name) {
+            return $this->setFieldId($value);
         }
         if ('type' == $name) {
             return $this->setType($value);
+        }
+        if ('options' == $name) {
+            return $this->setOptions($value);
+        }
+        if ('mandatory' == $name) {
+            return $this->setMandatory($value);
+        }
+        if ('searchable' == $name) {
+            return $this->setSearchable($value);
         }
 
         throw new \InvalidArgumentException(sprintf('The document data "%s" is not valid.', $name));
@@ -266,11 +509,20 @@ abstract class ContentField extends \Mandango\Document\EmbeddedDocument
      */
     public function get($name)
     {
-        if ('name' == $name) {
-            return $this->getName();
+        if ('fieldId' == $name) {
+            return $this->getFieldId();
         }
         if ('type' == $name) {
             return $this->getType();
+        }
+        if ('options' == $name) {
+            return $this->getOptions();
+        }
+        if ('mandatory' == $name) {
+            return $this->getMandatory();
+        }
+        if ('searchable' == $name) {
+            return $this->getSearchable();
         }
 
         throw new \InvalidArgumentException(sprintf('The document data "%s" is not valid.', $name));
@@ -285,11 +537,20 @@ abstract class ContentField extends \Mandango\Document\EmbeddedDocument
      */
     public function fromArray(array $array)
     {
-        if (isset($array['name'])) {
-            $this->setName($array['name']);
+        if (isset($array['fieldId'])) {
+            $this->setFieldId($array['fieldId']);
         }
         if (isset($array['type'])) {
             $this->setType($array['type']);
+        }
+        if (isset($array['options'])) {
+            $this->setOptions($array['options']);
+        }
+        if (isset($array['mandatory'])) {
+            $this->setMandatory($array['mandatory']);
+        }
+        if (isset($array['searchable'])) {
+            $this->setSearchable($array['searchable']);
         }
 
         return $this;
@@ -306,8 +567,11 @@ abstract class ContentField extends \Mandango\Document\EmbeddedDocument
     {
         $array = array();
 
-        $array['name'] = $this->getName();
+        $array['fieldId'] = $this->getFieldId();
         $array['type'] = $this->getType();
+        $array['options'] = $this->getOptions();
+        $array['mandatory'] = $this->getMandatory();
+        $array['searchable'] = $this->getSearchable();
 
         return $array;
     }
@@ -338,26 +602,35 @@ abstract class ContentField extends \Mandango\Document\EmbeddedDocument
                     }
                     $query =& $query[$name];
                 }
-                if (isset($this->data['fields']['name'])) {
-                    $query['name'] = (string) $this->data['fields']['name'];
+                if (isset($this->data['fields']['fieldId'])) {
+                    $query['fieldId'] = (string) $this->data['fields']['fieldId'];
                 }
                 if (isset($this->data['fields']['type'])) {
                     $query['type'] = (string) $this->data['fields']['type'];
+                }
+                if (isset($this->data['fields']['options'])) {
+                    $query['options'] = serialize($this->data['fields']['options']);
+                }
+                if (isset($this->data['fields']['mandatory'])) {
+                    $query['mandatory'] = (bool) $this->data['fields']['mandatory'];
+                }
+                if (isset($this->data['fields']['searchable'])) {
+                    $query['searchable'] = (bool) $this->data['fields']['searchable'];
                 }
                 unset($query);
                 $query = $rootQuery;
             } else {
                 $rap = $this->getRootAndPath();
                 $documentPath = $rap['path'];
-                if (isset($this->data['fields']['name'])
-                    || array_key_exists('name', $this->data['fields'])) {
-                    $value = $this->data['fields']['name'];
-                    $originalValue = $this->getOriginalFieldValue('name');
+                if (isset($this->data['fields']['fieldId'])
+                    || array_key_exists('fieldId', $this->data['fields'])) {
+                    $value = $this->data['fields']['fieldId'];
+                    $originalValue = $this->getOriginalFieldValue('fieldId');
                     if ($value !== $originalValue) {
                         if (null !== $value) {
-                            $query['$set'][$documentPath.'.name'] = (string) $this->data['fields']['name'];
+                            $query['$set'][$documentPath.'.fieldId'] = (string) $this->data['fields']['fieldId'];
                         } else {
-                            $query['$unset'][$documentPath.'.name'] = 1;
+                            $query['$unset'][$documentPath.'.fieldId'] = 1;
                         }
                     }
                 }
@@ -370,6 +643,42 @@ abstract class ContentField extends \Mandango\Document\EmbeddedDocument
                             $query['$set'][$documentPath.'.type'] = (string) $this->data['fields']['type'];
                         } else {
                             $query['$unset'][$documentPath.'.type'] = 1;
+                        }
+                    }
+                }
+                if (isset($this->data['fields']['options'])
+                    || array_key_exists('options', $this->data['fields'])) {
+                    $value = $this->data['fields']['options'];
+                    $originalValue = $this->getOriginalFieldValue('options');
+                    if ($value !== $originalValue) {
+                        if (null !== $value) {
+                            $query['$set'][$documentPath.'.options'] = serialize($this->data['fields']['options']);
+                        } else {
+                            $query['$unset'][$documentPath.'.options'] = 1;
+                        }
+                    }
+                }
+                if (isset($this->data['fields']['mandatory'])
+                    || array_key_exists('mandatory', $this->data['fields'])) {
+                    $value = $this->data['fields']['mandatory'];
+                    $originalValue = $this->getOriginalFieldValue('mandatory');
+                    if ($value !== $originalValue) {
+                        if (null !== $value) {
+                            $query['$set'][$documentPath.'.mandatory'] = (bool) $this->data['fields']['mandatory'];
+                        } else {
+                            $query['$unset'][$documentPath.'.mandatory'] = 1;
+                        }
+                    }
+                }
+                if (isset($this->data['fields']['searchable'])
+                    || array_key_exists('searchable', $this->data['fields'])) {
+                    $value = $this->data['fields']['searchable'];
+                    $originalValue = $this->getOriginalFieldValue('searchable');
+                    if ($value !== $originalValue) {
+                        if (null !== $value) {
+                            $query['$set'][$documentPath.'.searchable'] = (bool) $this->data['fields']['searchable'];
+                        } else {
+                            $query['$unset'][$documentPath.'.searchable'] = 1;
                         }
                     }
                 }

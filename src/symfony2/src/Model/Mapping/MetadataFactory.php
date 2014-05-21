@@ -11,7 +11,6 @@ class MetadataFactory extends \Mandango\MetadataFactory
         'Model\\PHPOrchestraCMSBundle\\Template' => false,
         'Model\\PHPOrchestraCMSBundle\\ContentAttribute' => true,
         'Model\\PHPOrchestraCMSBundle\\Content' => false,
-        'Model\\PHPOrchestraCMSBundle\\ContentField' => true,
         'Model\\PHPOrchestraCMSBundle\\ContentType' => false,
         'Model\\PHPOrchestraCMSBundle\\User' => false,
     );

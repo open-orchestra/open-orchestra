@@ -24,7 +24,16 @@ class ContentTypeType extends AbstractType
             ->add('contentTypeId', 'text', array('label' => 'Identifiant du type de contenu : '))
             ->add('version', 'text', array('read_only' => true))
             ->add('status', 'text', array('read_only' => true))
-            ->add('enregistrer', 'submit');
+            ->add('fields', 'textarea', array('read_only' => true));
+        
+        $customFields = json_decode($options['data']->getFields());
+        
+        foreach ($customFields as $key => $customField) {
+            $builder->add('cf' . $key . '-' . $customField->fieldId, 'text', array('mapped' => false));
+        }
+        
+        $builder->add('enregistrer', 'submit');
+        
     }
     
     /**

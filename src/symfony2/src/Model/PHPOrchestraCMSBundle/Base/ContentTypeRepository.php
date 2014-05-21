@@ -72,7 +72,6 @@ abstract class ContentTypeRepository extends \Mandango\Repository
                 $document->clearModified();
                 $identityMap[(string) $data['_id']] = $document;
 
-                $document->resetGroups();
             }
         }
 
@@ -82,7 +81,6 @@ abstract class ContentTypeRepository extends \Mandango\Repository
                 $query = $document->queryForSave();
                 $collection->update(array('_id' => $this->idToMongo($document->getId())), $query, $updateOptions);
                 $document->clearModified();
-                $document->resetGroups();
             }
         }
     }
