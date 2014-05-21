@@ -4,4 +4,23 @@
  # @author Noël GILAIN <noel.gilain@businessdecision.com>
  ##}
 
-{{ form(form) }}
+{% form_theme form 'PHPOrchestraCMSBundle:Form:customField.html.twig' %}
+
+{#% for key, value in form.vars.form %}
+    {{ key }} <br />
+{% endfor %#}
+
+{#{ form(form) }#}
+
+{{ form_widget(form.fields) }}<hr />
+<table>
+    <tr><td>{{ form_label(form.name) }}</td><td>{{ form_widget(form.name) }}</td></tr>
+    <tr><td>{{ form_label(form.contentTypeId) }}</td><td>{{ form_widget(form.contentTypeId) }}</td></tr>
+    <tr><td>{{ form_label(form.version) }}</td><td>{{ form_widget(form.version) }}</td></tr>
+    <tr><td>{{ form_label(form.status) }}</td><td>{{ form_widget(form.status) }}</td></tr>
+    {% for key, value in form.vars.form %}
+        {% if key starts with 'customField' %}
+    <tr><td colspan="2">{{ form_widget(form[key]) }}</td></tr>
+        {% endif %}
+    {% endfor %}
+</table>

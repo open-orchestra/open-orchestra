@@ -12,24 +12,24 @@ use Symfony\Component\Form\FormBuilderInterface;
 
 class ContentTypeType extends AbstractType
 {
-    public function __construct()
+    /*public function __construct()
     {
         
-    }
+    }*/
     
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name', 'text', array('label' => 'Nom du type de contenu : '))
-            ->add('contentTypeId', 'text', array('label' => 'Identifiant du type de contenu : '))
+            ->add('name', 'text', array('label' => 'Nom du type de contenu'))
+            ->add('contentTypeId', 'text', array('label' => 'Identifiant'))
             ->add('version', 'text', array('read_only' => true))
             ->add('status', 'text', array('read_only' => true))
-            ->add('fields', 'textarea', array('read_only' => true));
-        
+            ->add('fields', 'hidden', array('data' => $options['data']->getFields()));
+            
         $customFields = json_decode($options['data']->getFields());
         
         foreach ($customFields as $key => $customField) {
-            $builder->add('cf' . $key . '-' . $customField->fieldId, 'text', array('mapped' => false));
+            $builder->add('customField' . $key, 'orchestra_customField', array('mapped' => false, 'data' => $customField));
         }
         
         $builder->add('enregistrer', 'submit');
