@@ -31,11 +31,7 @@ php_orchestra_cms_bo_content_edit:
     defaults: { _controller: PHPOrchestraCMSBundle:BackOfficeView/content:form}
 
 php_orchestra_cms_clearroutingcache:
-<<<<<<< HEAD
-    pattern: /cache/routing/clear
-=======
     pattern: /clear/cache/routing
->>>>>>> Add Basic contentType edition
     defaults: { _controller: PHPOrchestraCMSBundle:Cache:clearRoutingCache }
 
 
