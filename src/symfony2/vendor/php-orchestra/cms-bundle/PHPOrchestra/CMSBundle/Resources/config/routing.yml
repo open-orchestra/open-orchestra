@@ -12,7 +12,7 @@ php_orchestra_cms_bo_site:
 
 php_orchestra_cms_bo_contentType:
     pattern: /list/contentType
-    defaults: { _controller: PHPOrchestraCMSBundle:BackOfficeView/contentType:list}
+    defaults: { _controller: PHPOrchestraCMSBundle:BackOfficeView/ContentType:list}
 
 php_orchestra_cms_bo_contentType_edit:
     pattern: /edit/contentType/{contentTypeId}/{id}
@@ -20,15 +20,15 @@ php_orchestra_cms_bo_contentType_edit:
 
 php_orchestra_cms_bo_contentType_delete:
     pattern: /delete/contentType/{contentType}
-    defaults: { _controller: PHPOrchestraCMSBundle:BackOfficeView/contentType:delete, contentType:''}
+    defaults: { _controller: PHPOrchestraCMSBundle:BackOfficeView/ContentType:delete, contentType:''}
 
 php_orchestra_cms_bo_content:
     pattern: /list/content/{contentType}
-    defaults: { _controller: PHPOrchestraCMSBundle:BackOfficeView/content:list}
+    defaults: { _controller: PHPOrchestraCMSBundle:BackOfficeView/Content:list}
 
 php_orchestra_cms_bo_content_edit:
     pattern: /edit/content/{contentId}
-    defaults: { _controller: PHPOrchestraCMSBundle:BackOfficeView/content:form}
+    defaults: { _controller: PHPOrchestraCMSBundle:BackOfficeView/Content:form}
 
 php_orchestra_cms_clearroutingcache:
     pattern: /clear/cache/routing
