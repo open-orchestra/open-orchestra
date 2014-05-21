@@ -75,12 +75,15 @@ Model\PHPOrchestraCMSBundle\Content:
     embeddedsMany:
         attributes: {class: Model\PHPOrchestraCMSBundle\ContentAttribute}
 
-Model\PHPOrchestraCMSBundle\ContentField:
-    collection: contentField
-    isEmbedded: true
-    fields:
-        name: string
-        type: string
+#Model\PHPOrchestraCMSBundle\ContentField:
+#    collection: contentField
+#    isEmbedded: true
+#    fields:
+#        fieldId: string
+#        type: string
+#        options: serialized
+#        mandatory: boolean
+#        searchable: boolean
 
 Model\PHPOrchestraCMSBundle\ContentType:
     collection: contentType
@@ -90,8 +93,7 @@ Model\PHPOrchestraCMSBundle\ContentType:
         version: integer
         status: string
         deleted: boolean
-    embeddedsMany:
-        fields: {class: Model\PHPOrchestraCMSBundle\ContentField}
+        fields: raw
 
 
 Model\PHPOrchestraCMSBundle\User:

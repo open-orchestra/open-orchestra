@@ -62,10 +62,9 @@ abstract class ContentType extends \Mandango\Document\Document
             $this->data['fields']['deleted'] = null;
         }
         if (isset($data['fields'])) {
-            $embedded = new \Mandango\Group\EmbeddedGroup('Model\PHPOrchestraCMSBundle\ContentField');
-            $embedded->setRootAndPath($this, 'fields');
-            $embedded->setSavedData($data['fields']);
-            $this->data['embeddedsMany']['fields'] = $embedded;
+            $this->data['fields']['fields'] = $data['fields'];
+        } elseif (isset($data['_fields']['fields'])) {
+            $this->data['fields']['fields'] = null;
         }
 
         return $this;
@@ -396,6 +395,71 @@ abstract class ContentType extends \Mandango\Document\Document
         return $this->data['fields']['deleted'];
     }
 
+    /**
+     * Set the "fields" field.
+     *
+     * @param mixed $value The value.
+     *
+     * @return \Model\PHPOrchestraCMSBundle\ContentType The document (fluent interface).
+     */
+    public function setFields($value)
+    {
+        if (!isset($this->data['fields']['fields'])) {
+            if (!$this->isNew()) {
+                $this->getFields();
+                if ($this->isFieldEqualTo('fields', $value)) {
+                    return $this;
+                }
+            } else {
+                if (null === $value) {
+                    return $this;
+                }
+                $this->fieldsModified['fields'] = null;
+                $this->data['fields']['fields'] = $value;
+                return $this;
+            }
+        } elseif ($this->isFieldEqualTo('fields', $value)) {
+            return $this;
+        }
+
+        if (!isset($this->fieldsModified['fields']) && !array_key_exists('fields', $this->fieldsModified)) {
+            $this->fieldsModified['fields'] = $this->data['fields']['fields'];
+        } elseif ($this->isFieldModifiedEqualTo('fields', $value)) {
+            unset($this->fieldsModified['fields']);
+        }
+
+        $this->data['fields']['fields'] = $value;
+
+        return $this;
+    }
+
+    /**
+     * Returns the "fields" field.
+     *
+     * @return mixed The $name field.
+     */
+    public function getFields()
+    {
+        if (!isset($this->data['fields']['fields'])) {
+            if ($this->isNew()) {
+                $this->data['fields']['fields'] = null;
+            } elseif (!isset($this->data['fields']) || !array_key_exists('fields', $this->data['fields'])) {
+                $this->addFieldCache('fields');
+                $data = $this->getRepository()->getCollection()->findOne(
+                    array('_id' => $this->getId()),
+                    array('fields' => 1)
+                );
+                if (isset($data['fields'])) {
+                    $this->data['fields']['fields'] = $data['fields'];
+                } else {
+                    $this->data['fields']['fields'] = null;
+                }
+            }
+        }
+
+        return $this->data['fields']['fields'];
+    }
+
     private function isFieldEqualTo($field, $otherValue)
     {
         $value = $this->data['fields'][$field];
@@ -441,60 +505,6 @@ abstract class ContentType extends \Mandango\Document\Document
     }
 
     /**
-     * Returns the "fields" embedded many.
-     *
-     * @return \Mandango\Group\EmbeddedGroup The "fields" embedded many.
-     */
-    public function getFields()
-    {
-        if (!isset($this->data['embeddedsMany']['fields'])) {
-            $this->data['embeddedsMany']['fields'] = $embedded =
-                new \Mandango\Group\EmbeddedGroup('Model\PHPOrchestraCMSBundle\ContentField');
-            $embedded->setRootAndPath($this, 'fields');
-        }
-
-        return $this->data['embeddedsMany']['fields'];
-    }
-
-    /**
-     * Adds documents to the "fields" embeddeds many.
-     *
-     * @param mixed $documents A document or an array or documents.
-     *
-     * @return \Model\PHPOrchestraCMSBundle\ContentType The document (fluent interface).
-     */
-    public function addFields($documents)
-    {
-        $this->getFields()->add($documents);
-
-        return $this;
-    }
-
-    /**
-     * Removes documents to the "fields" embeddeds many.
-     *
-     * @param mixed $documents A document or an array or documents.
-     *
-     * @return \Model\PHPOrchestraCMSBundle\ContentType The document (fluent interface).
-     */
-    public function removeFields($documents)
-    {
-        $this->getFields()->remove($documents);
-
-        return $this;
-    }
-
-    /**
-     * Resets the groups of the document.
-     */
-    public function resetGroups()
-    {
-        if (isset($this->data['embeddedsMany']['fields'])) {
-            $this->data['embeddedsMany']['fields']->reset();
-        }
-    }
-
-    /**
      * Set a document data value by data name as string.
      *
      * @param string $name  The data name.
@@ -520,6 +530,9 @@ abstract class ContentType extends \Mandango\Document\Document
         }
         if ('deleted' == $name) {
             return $this->setDeleted($value);
+        }
+        if ('fields' == $name) {
+            return $this->setFields($value);
         }
 
         throw new \InvalidArgumentException(sprintf('The document data "%s" is not valid.', $name));
@@ -586,12 +599,7 @@ abstract class ContentType extends \Mandango\Document\Document
             $this->setDeleted($array['deleted']);
         }
         if (isset($array['fields'])) {
-            $embeddeds = array();
-            foreach ($array['fields'] as $documentData) {
-                $embeddeds[] = $embedded = new \Model\PHPOrchestraCMSBundle\ContentField($this->getMandango());
-                $embedded->setDocumentData($documentData);
-            }
-            $this->getFields()->replace($embeddeds);
+            $this->setFields($array['fields']);
         }
 
         return $this;
@@ -613,6 +621,7 @@ abstract class ContentType extends \Mandango\Document\Document
         $array['version'] = $this->getVersion();
         $array['status'] = $this->getStatus();
         $array['deleted'] = $this->getDeleted();
+        $array['fields'] = $this->getFields();
 
         return $array;
     }
@@ -642,6 +651,9 @@ abstract class ContentType extends \Mandango\Document\Document
                 }
                 if (isset($this->data['fields']['deleted'])) {
                     $query['deleted'] = (bool) $this->data['fields']['deleted'];
+                }
+                if (isset($this->data['fields']['fields'])) {
+                    $query['fields'] = $this->data['fields']['fields'];
                 }
             } else {
                 if (isset($this->data['fields']['contentTypeId'])
@@ -704,42 +716,22 @@ abstract class ContentType extends \Mandango\Document\Document
                         }
                     }
                 }
+                if (isset($this->data['fields']['fields'])
+                    || array_key_exists('fields', $this->data['fields'])) {
+                    $value = $this->data['fields']['fields'];
+                    $originalValue = $this->getOriginalFieldValue('fields');
+                    if ($value !== $originalValue) {
+                        if (null !== $value) {
+                            $query['$set']['fields'] = $this->data['fields']['fields'];
+                        } else {
+                            $query['$unset']['fields'] = 1;
+                        }
+                    }
+                }
             }
         }
         if (true === $reset) {
             $reset = 'deep';
-        }
-        if (isset($this->data['embeddedsMany'])) {
-            if ($isNew) {
-                if (isset($this->data['embeddedsMany']['fields'])) {
-                    foreach ($this->data['embeddedsMany']['fields']->getAdd() as $document) {
-                        $query = $document->queryForSave($query, $isNew);
-                    }
-                }
-            } else {
-                if (isset($this->data['embeddedsMany']['fields'])) {
-                    $group = $this->data['embeddedsMany']['fields'];
-                    foreach ($group->getSaved() as $document) {
-                        $query = $document->queryForSave($query, $isNew);
-                    }
-                    $groupRap = $group->getRootAndPath();
-                    foreach ($group->getAdd() as $document) {
-                        $q = $document->queryForSave(array(), true);
-                        $rap = $document->getRootAndPath();
-                        foreach (explode('.', $rap['path']) as $name) {
-                            if (0 === strpos($name, '_add')) {
-                                $name = substr($name, 4);
-                            }
-                            $q = $q[$name];
-                        }
-                        $query['$pushAll'][$groupRap['path']][] = $q;
-                    }
-                    foreach ($group->getRemove() as $document) {
-                        $rap = $document->getRootAndPath();
-                        $query['$unset'][$rap['path']] = 1;
-                    }
-                }
-            }
         }
 
         return $query;

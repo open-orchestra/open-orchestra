@@ -410,44 +410,6 @@ class MetadataFactoryInfo
         );
     }
 
-    public function getModelPHPOrchestraCMSBundleContentFieldClass()
-    {
-        return array(
-            'isEmbedded' => true,
-            'inheritable' => false,
-            'inheritance' => false,
-            'fields' => array(
-                'name' => array(
-                    'type' => 'string',
-                    'dbName' => 'name',
-                ),
-                'type' => array(
-                    'type' => 'string',
-                    'dbName' => 'type',
-                ),
-            ),
-            '_has_references' => false,
-            'referencesOne' => array(
-
-            ),
-            'referencesMany' => array(
-
-            ),
-            'embeddedsOne' => array(
-
-            ),
-            'embeddedsMany' => array(
-
-            ),
-            'indexes' => array(
-
-            ),
-            '_indexes' => array(
-
-            ),
-        );
-    }
-
     public function getModelPHPOrchestraCMSBundleContentTypeClass()
     {
         return array(
@@ -478,6 +440,10 @@ class MetadataFactoryInfo
                     'type' => 'boolean',
                     'dbName' => 'deleted',
                 ),
+                'fields' => array(
+                    'type' => 'raw',
+                    'dbName' => 'fields',
+                ),
             ),
             '_has_references' => false,
             'referencesOne' => array(
@@ -490,9 +456,7 @@ class MetadataFactoryInfo
 
             ),
             'embeddedsMany' => array(
-                'fields' => array(
-                    'class' => 'Model\\PHPOrchestraCMSBundle\\ContentField',
-                ),
+
             ),
             'relationsOne' => array(
 
