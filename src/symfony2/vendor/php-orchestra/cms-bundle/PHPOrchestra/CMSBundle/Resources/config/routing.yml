@@ -16,7 +16,7 @@ php_orchestra_cms_bo_contentType:
 
 php_orchestra_cms_bo_contentType_edit:
     pattern: /edit/contentType/{contentTypeId}/{id}
-    defaults: { _controller: PHPOrchestraCMSBundle:BackOfficeView/contentType:form}
+    defaults: { _controller: PHPOrchestraCMSBundle:BackOfficeView/contentType:form, contentTypeId:'', id:''}
 
 php_orchestra_cms_bo_contentType_delete:
     pattern: /delete/contentType/{contentType}

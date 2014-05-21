@@ -9,6 +9,7 @@ namespace PHPOrchestra\CMSBundle\Controller\BackOfficeView;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Model\PHPOrchestraCMSBundle\ContentType;
+use Symfony\Component\HttpFoundation\Request;
 
 class ContentTypeController extends Controller
 {
@@ -29,7 +30,7 @@ class ContentTypeController extends Controller
     }
 
 
-    public function formAction($contentTypeId, $id)
+    public function formAction($contentTypeId, $id, Request $request)
     {
         $documentManager = $this->container->get('phporchestra_cms.documentmanager');
         $contentType = $documentManager->getDocumentById('ContentType', $id);
@@ -42,7 +43,7 @@ class ContentTypeController extends Controller
             'contentType',
             $contentType
         );
-       /* $form->handleRequest($request);
+        $form->handleRequest($request);
         
         if ($form->isValid()) {
             $node->setId(null);
@@ -52,7 +53,7 @@ class ContentTypeController extends Controller
             return $this->redirect(
                 $this->generateUrl('php_orchestra_cms_bo_contentType')
             );
-        }*/
+        }
         
         return $this->render(
             'PHPOrchestraCMSBundle:BackOffice/Content:contentTypeForm.html.twig',

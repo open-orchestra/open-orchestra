@@ -20,9 +20,11 @@ class ContentTypeType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('version', 'text')
-            ->add('name', 'text')
-            ->add('save', 'submit');
+            ->add('name', 'text', array('label' => 'Nom du type de contenu : '))
+            ->add('contentTypeId', 'text', array('label' => 'Identifiant du type de contenu : '))
+            ->add('version', 'text', array('read_only' => true))
+            ->add('status', 'text', array('read_only' => true))
+            ->add('enregistrer', 'submit');
     }
     
     /**
