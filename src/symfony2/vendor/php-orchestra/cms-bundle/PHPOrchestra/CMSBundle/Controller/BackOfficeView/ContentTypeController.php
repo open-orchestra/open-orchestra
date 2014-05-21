@@ -30,11 +30,11 @@ class ContentTypeController extends Controller
     }
 
 
-    public function formAction($contentTypeId, $id, Request $request)
+    public function formAction($id, Request $request)
     {
         $documentManager = $this->container->get('phporchestra_cms.documentmanager');
         $contentType = $documentManager->getDocumentById('ContentType', $id);
-        $lastVersion = $documentManager->getDocument('ContentType', array('contentTypeId' => $contentTypeId));
+        $lastVersion = $documentManager->getDocument('ContentType', array('contentTypeId' => $contentType->getContentTypeId()));
         
         $contentType->setVersion(1 + $lastVersion->getVersion());
         $contentType->setStatus(ContentType::STATUS_DRAFT);
