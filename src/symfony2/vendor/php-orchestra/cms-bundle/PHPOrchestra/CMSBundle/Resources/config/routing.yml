@@ -7,8 +7,8 @@ php_orchestra_cms_bo_edito:
     defaults: { _controller: PHPOrchestraCMSBundle:BackOfficeView/BackOffice:edito }
 
 php_orchestra_cms_bo_site:
-    pattern: /site
-    defaults: { _controller: PHPOrchestraCMSBundle:BackOfficeView/Site:list }
+    resource: "@PHPOrchestraCMSBundle/Controller/BackOfficeView/SiteController.php"
+    type: annotation
 
 php_orchestra_cms_bo_contentType:
     pattern: /list/contentType

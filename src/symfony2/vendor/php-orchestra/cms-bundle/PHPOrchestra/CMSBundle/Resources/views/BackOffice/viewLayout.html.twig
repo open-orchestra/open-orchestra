@@ -156,7 +156,7 @@
                 }
                 $.ajax({
                     "type": "POST",
-                    "url": "{{ path('php_orchestra_cms_bo_site') }}",
+                    "url": "{{ path(listUrl) }}",
                     "dataType": "json",
                     "data": { "parse": true, "start": start, "length": length, "criteria": criteria, "sort": sort},
                 })
@@ -168,6 +168,9 @@
                         recordsTotal: records.data.count,
                         recordsFiltered: records.data.partialCount
                     } );
+                    $('.editContentType').click(function(e) {
+                        window.location.hash = $(this).attr('data-contentType');
+                    });
                 });
             },
             "dom": 'R<"top-tools"TC><"clear">rtiS',
@@ -181,5 +184,4 @@
         } );
 
     }
-
 </script>

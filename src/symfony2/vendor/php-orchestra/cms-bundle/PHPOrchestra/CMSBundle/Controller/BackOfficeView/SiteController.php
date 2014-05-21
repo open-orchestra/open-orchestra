@@ -9,10 +9,34 @@ namespace PHPOrchestra\CMSBundle\Controller\BackOfficeView;
 
 use Symfony\Component\HttpFoundation\Request;
 use PHPOrchestra\CMSBundle\Controller\ViewController;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
+/**
+ * @Route("/site")
+ */
 class SiteController extends ViewController
 {
 
+    function __construct() {
+        $this->setEntity('Site');
+        $this->setSearchs(array(
+            array('name' => 'domain', 'type' => 'text'),
+            array('name' => 'alias', 'type' => 'text'),
+            array('name' => 'defaultLanguage', 'type' => 'text'),
+            array('name' => 'languages', 'type' => 'text'),
+            array('name' => 'blocks', 'type' => 'text'),
+            '',
+            ''));
+        $this->setLabels(array(
+            'Domain',
+            'Alias',
+            'Default Language',
+            'Languages',
+            'Blocks',
+            '',
+            ''));
+    }
+	
 	public function format(){
 		$aValues = $this->getValues();
         foreach($aValues as &$values){
@@ -27,25 +51,4 @@ class SiteController extends ViewController
         $this->setValues($aValues);
     }
     
-    public function listAction(Request $request)
-    {
-    	$this->setEntity('Site');
-    	$this->setSearchs(array(
-            array('name' => 'domain', 'type' => 'text'),
-            array('name' => 'alias', 'type' => 'text'),
-            array('name' => 'defaultLanguage', 'type' => 'text'),
-            array('name' => 'languages', 'type' => 'text'),
-            array('name' => 'blocks', 'type' => 'text'),
-            '',
-            ''));
-    	$this->setLabels(array(
-            'Domain',
-            'Alias',
-            'Default Language',
-            'Languages',
-            'Blocks',
-	    	'',
-	    	''));
-    	return parent::listActionEntity($request);
-    }
 }

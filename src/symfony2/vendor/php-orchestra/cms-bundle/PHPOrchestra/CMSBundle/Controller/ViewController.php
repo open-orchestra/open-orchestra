@@ -11,6 +11,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
 abstract class ViewController extends Controller
 {
@@ -19,6 +20,7 @@ abstract class ViewController extends Controller
 	private $searchs = array();
     private $labels = array();
     private $values = array();
+    private $route;
     
     abstract public function format();
 	
@@ -58,9 +60,17 @@ abstract class ViewController extends Controller
         return $this->values;
     }
     
+    public function setRoute($route){
+        $this->route = $route;
+    }
+    
+    public function getRoute(){
+        return $this->route;
+    }
+    
     public function modifyButton($value){
     	return '
-            <button onclick="document.location.href=\'\'" value="Modifier" class="btn btn-primary">
+            <button data-contenttype="'.$this->generateUrl($this->getRoute().'_edit', array('id' => $value)).'" value="Modifier" class="btn btn-primary editContentType">
                <i class="fa fa-edit"></i>
                Modifier
             </button>
@@ -69,16 +79,29 @@ abstract class ViewController extends Controller
 	
     public function deleteButton($value){
         return '
-            <button onclick="document.location.href=\'\'" value="Supprimer" class="btn btn-danger">
+            <button data-contenttype="'.$this->generateUrl($this->getRoute().'_delete', array('id' => $value)).'" value="Supprimer" class="btn btn-danger">
                 <i class="fa fa-trash-o"></i>
                 Supprimer
             </button>
         ';
     }
     
-    public function listActionEntity(Request $request)
+    /**
+     * @Route("/edit/{id}")
+     */
+    public function editAction($id){}
+    /**
+     * @Route("/delete/{id}")
+     */
+    public function deleteAction($id){}
+    /**
+     * @Route("/list")
+     */
+    public function listAction(Request $request)
     {
-        if ($request->get('parse')) {
+    	$this->setRoute(preg_replace('/^(.*)_list$/', '$1', $request->get('_route')));
+
+    	if ($request->get('parse')) {
             $documentManager = $this->container->get('phporchestra_cms.documentmanager');
             $sort = is_array($request->get('sort')) ? array_map('intval', $request->get('sort')) : $request->get('sort');
             parse_str($request->get('criteria'), $criteria);
@@ -104,13 +127,14 @@ abstract class ViewController extends Controller
                 )
             );
         } else {
-            return $this->render('PHPOrchestraCMSBundle:BackOffice:viewLayout.html.twig',
+        	return $this->render('PHPOrchestraCMSBundle:BackOffice:viewLayout.html.twig',
                 array(
                     'labels' => $this->getLabels(),
                     'searchs' => $this->getSearchs(),
+                    'listUrl' => $request->get('_route'),
+                    'deleteUrl' => $request->get('_route'),
                 )
             );
-            return $this->forward('PHPOrchestraCMSBundle:View:list', $params);
         }
      }
 }
