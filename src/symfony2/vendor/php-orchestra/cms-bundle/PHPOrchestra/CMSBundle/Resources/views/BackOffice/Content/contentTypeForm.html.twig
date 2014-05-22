@@ -6,13 +6,24 @@
 
 {% form_theme form 'PHPOrchestraCMSBundle:Form:customField.html.twig' %}
 
-{#% for key, value in form.vars.form %}
+{#{ dump(form.id.vars) }} <hr />
+
+{% for key, value in form.id.vars %}
     {{ key }} <br />
 {% endfor %#}
 
-{#{ form(form) }#}
 
-{{ form_widget(form.fields) }}<hr />
+{{ form_start(
+    form,
+    {
+        'method': 'POST',
+        'action': path('php_orchestra_cms_bo_contentType_edit', {'id': form.id.vars.value})
+    }
+) }}
+
+{{ form_errors(form) }}
+
+{{ form_widget(form.fields) }}
 <table>
     <tr><td>{{ form_label(form.name) }}</td><td>{{ form_widget(form.name) }}</td></tr>
     <tr><td>{{ form_label(form.contentTypeId) }}</td><td>{{ form_widget(form.contentTypeId) }}</td></tr>
@@ -24,3 +35,15 @@
         {% endif %}
     {% endfor %}
 </table>
+<table>
+    <tr><td>{{ form_widget(form.cancel) }}</td><td>{{ form_widget(form.save) }}</td></tr>
+</table>
+{{ form_end(form) }}
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.cancelButton').click(function(){
+            window.location.hash = "{{ path('php_orchestra_cms_bo_contentType') }}";
+        });
+    });
+</script>

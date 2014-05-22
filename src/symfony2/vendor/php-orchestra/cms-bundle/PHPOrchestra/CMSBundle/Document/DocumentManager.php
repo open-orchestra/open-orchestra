@@ -76,17 +76,22 @@ class DocumentManager
     */
     public function getDocuments($documentType, array $criteria = array(), $sort = array(), $asArray = false, $start=0, $length=0)
     {
+        if (array() == $sort)
+        {
+            $sort = $this->getDefaultSort($documentType);
+        }
         $repository = $this->documentsService->getRepository($this->getDocumentNamespace($documentType));
         $query = $repository->createQuery();
         $query->criteria($criteria);
         $query->sort($sort);
-        if($length == 0){
+        if ($length == 0)
+        {
             $documents = $query->all();
+        } else {
+            $documents = $query->skip($start)->limit($length);
         }
-        else{
-        	$documents = $query->skip($start)->limit($length);
-        }
-        if ($asArray) {
+        if ($asArray)
+        {
             $documents = $this->adaptToArray($documents);
         }
         return $documents;
@@ -143,8 +148,10 @@ class DocumentManager
         {
             case 'Node':
             case 'Template':
-            case 'ContentType':
                 $sort = array('version' => -1);
+                break;
+            case 'ContentType':
+                $sort = array('contentTypeId' => 1, 'version' => -1);
                 break;
             default:
                 throw new UnrecognizedDocumentTypeException('Unrecognized document type : ' . $documentType);

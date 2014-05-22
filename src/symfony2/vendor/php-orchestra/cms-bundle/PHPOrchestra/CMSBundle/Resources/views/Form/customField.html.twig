@@ -1,14 +1,16 @@
 {% block orchestra_customField_widget %}
-<hr />
+<fieldset>
+    <legend>Field type : {{ form.vars.value.type }}</legend>
 {#{ dump(form.vars.value)}#}
 
 {#% for key, value in form.vars %}
     {{ key }} <br />
 {% endfor %#}
 
-Label <input type="text" value="" /><br />
-Identifiant <input type="text" value="{{ form.vars.value.fieldId }}" /><br />
-Type : {{ form.vars.value.type }}<br />
-Indexable <input type="checkbox" /><br />
-
+    <table>
+        <tr><td>Nom du champ</td><td><input type="text" value="" /></td></tr>
+        <tr><td>Identifiant</td><td><input type="text" value="{{ form.vars.value.fieldId }}" /></td></tr>
+        <tr><td>Indexable</td><td><input type="checkbox" /></td></tr>
+    </table>
+</fieldset>
 {% endblock %}

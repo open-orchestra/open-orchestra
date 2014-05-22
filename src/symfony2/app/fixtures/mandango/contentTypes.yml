@@ -7,19 +7,11 @@ Model\PHPOrchestraCMSBundle\ContentType:
         deleted: false
         fields: '[{"fieldId":"title", "type":"text"}, {"fieldId":"image", "type":"image"}, {"fieldId":"intro", "type":"text"}, {"fieldId":"text", "type":"text"}]'
             
-    cars:
-        contentTypeId: "car"
-        name: "Voiture"
-        version: 1
-        status: "published"
-        deleted: false
-        fields: '[{"fieldId":"name", "type":"text"}, {"fieldId":"image", "type":"image"}, {"fieldId":"description", "type":"text"}]'
-            
     cars_v2:
         contentTypeId: "car"
         name: "Voiture"
         version: 2
-        status: "unpublished"
+        status: "published"
         deleted: false
         fields: '[{"fieldId":"name", "type":"text"}, {"fieldId":"image", "type":"image"}, {"fieldId":"description", "type":"text"}]'
             
@@ -35,7 +27,7 @@ Model\PHPOrchestraCMSBundle\ContentType:
         contentTypeId: "customer"
         name: "Client"
         version: 1
-        status: "draft"
+        status: "published"
         deleted: false
         fields: '[{"fieldId":"name", "type":"text"}]'
         
