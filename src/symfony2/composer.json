@@ -8,7 +8,8 @@
             "": "src/",
             "PHPOrchestra\\CMSBundle": "vendor/php-orchestra/cms-bundle/",
             "PHPOrchestra\\ThemeBundle": "vendor/php-orchestra/theme-bundle/",
-            "PHPOrchestra\\BlockBundle": "vendor/php-orchestra/block-bundle/"
+            "PHPOrchestra\\BlockBundle": "vendor/php-orchestra/block-bundle/",
+            "PHPOrchestra\\ModelBundle": "vendor/php-orchestra/model-bundle/"
         }
     },
     "minimum-stability": "dev",

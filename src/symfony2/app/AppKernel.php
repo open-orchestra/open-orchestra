@@ -15,6 +15,7 @@ class AppKernel extends Kernel
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
+            new Doctrine\Bundle\MongoDBBundle\DoctrineMongoDBBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Mandango\MandangoBundle\MandangoBundle(),
             new Snc\RedisBundle\SncRedisBundle(),
@@ -23,6 +24,8 @@ class AppKernel extends Kernel
             new PHPOrchestra\BlockBundle\PHPOrchestraBlockBundle(),
             new FakeApp\ThemeBundle\FakeAppThemeBundle(),
             new PHPOrchestra\ThemeBundle\PHPOrchestraThemeBundle(),
+            new PHPOrchestra\ModelBundle\PHPOrchestraModelBundle(),
+            new PHPOrchestraModel\MongoBundle\PHPOrchestraModelMongoBundle(),
             );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

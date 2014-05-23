@@ -37,6 +37,7 @@ return array(
     'Parsedown' => array($vendorDir . '/erusev/parsedown'),
     'PHPParser' => array($vendorDir . '/nikic/php-parser/lib'),
     'PHPOrchestra\\ThemeBundle' => array($vendorDir . '/php-orchestra/theme-bundle'),
+    'PHPOrchestra\\ModelBundle' => array($vendorDir . '/php-orchestra/model-bundle'),
     'PHPOrchestra\\CMSBundle' => array($vendorDir . '/php-orchestra/cms-bundle'),
     'PHPOrchestra\\BlockBundle' => array($vendorDir . '/php-orchestra/block-bundle'),
     'Metadata\\' => array($vendorDir . '/jms/metadata/src'),
