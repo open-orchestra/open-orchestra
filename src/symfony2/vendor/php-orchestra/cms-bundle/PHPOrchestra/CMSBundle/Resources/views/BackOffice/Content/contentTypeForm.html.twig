@@ -8,7 +8,7 @@
 
 {#{ dump(form.id.vars) }} <hr />
 
-{% for key, value in form.id.vars %}
+{% for key, value in form %}
     {{ key }} <br />
 {% endfor %#}
 
@@ -29,7 +29,7 @@
     <tr><td>{{ form_label(form.contentTypeId) }}</td><td>{{ form_widget(form.contentTypeId) }}</td></tr>
     <tr><td>{{ form_label(form.version) }}</td><td>{{ form_widget(form.version) }}</td></tr>
     <tr><td>{{ form_label(form.status) }}</td><td>{{ form_widget(form.status) }}</td></tr>
-    {% for key, value in form.vars.form %}
+    {% for key, value in form %}
         {% if key starts with 'customField' %}
     <tr><td colspan="2">{{ form_widget(form[key]) }}</td></tr>
         {% endif %}
@@ -45,5 +45,20 @@
         $('.cancelButton').click(function(){
             window.location.hash = "{{ path('php_orchestra_cms_bo_contentType') }}";
         });
+        
+        $('.saveButton').click(function(){
+            submitForm();
+        });
     });
+
+    function submitForm()
+    {
+        aggregateCustomFields();
+        $("[name='{{ form.vars.name }}']").submit();
+    }
+
+    function aggregateCustomFields()
+    {
+        
+    }
 </script>

@@ -7,36 +7,52 @@
 
 namespace PHPOrchestra\CMSBundle\Form\Type;
 
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\Form\FormInterface;
+use Symfony\Component\Form\FormView;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 
 class CustomFieldType extends AbstractType
 {
+    protected $availableFields = null;
+
+    public function __construct(ContainerInterface $container)
+    {
+        $this->availableFields = $container->getParameter('php_orchestra.custom_types');
+    }
+
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-    //	print_r($options['data']);
-   /*     $customFields = json_decode($options['data']);
-    print_r($customFields);
+        $builder->add('label', 'text')
+            ->add('fieldId', 'text')
+            ->add('searchable', 'checkbox', array('required' => false));
+            
+        $parameters = $this->availableFields[$options['data']->type];
         
-        foreach ($customFields as $key => $customField) {
-            $builder->add('field' . $key, 'text', array('mapped' => false));
-        }*/
-     }
+        foreach ($parameters['options'] as $optionName => $option) {
+            $builder->add(
+                'option_' . $optionName,
+                $option['type'],
+                array(
+                    'mapped' => false,
+                    'label' => $option['label']
+                )
+            );
+        }
+            
+    }
 
  /*   public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
     }*/
     
-   /* public function buildView(FormView $view, FormInterface $form, array $options)
+    public function buildView(FormView $view, FormInterface $form, array $options)
     {
-    }*/
+       // $view->vars['showDialog'] = $options['showDialog'];
+        
+    }
     
-    
-/*    public function getParent()
-    {
-        return 'hidden';
-    }*/
-
     /**
      * getName
      */

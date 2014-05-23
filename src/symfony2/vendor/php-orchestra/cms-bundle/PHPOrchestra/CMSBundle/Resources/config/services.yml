@@ -17,6 +17,7 @@ services:
     # Custom field form field type
     php_orchestra_cms.type.customField:
         class: PHPOrchestra\CMSBundle\Form\Type\CustomFieldType
+        arguments: [@service_container]
         tags:
             - { name: form.type, alias: orchestra_customField }
 

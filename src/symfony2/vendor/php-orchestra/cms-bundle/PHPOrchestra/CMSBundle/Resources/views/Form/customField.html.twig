@@ -3,14 +3,21 @@
     <legend>Field type : {{ form.vars.value.type }}</legend>
 {#{ dump(form.vars.value)}#}
 
-{#% for key, value in form.vars %}
+{#% for key, value in form.vars.form %}
     {{ key }} <br />
 {% endfor %#}
 
     <table>
-        <tr><td>Nom du champ</td><td><input type="text" value="" /></td></tr>
-        <tr><td>Identifiant</td><td><input type="text" value="{{ form.vars.value.fieldId }}" /></td></tr>
-        <tr><td>Indexable</td><td><input type="checkbox" /></td></tr>
+        <tr><td>Label du champ</td><td>{{ form_widget(form.label) }}</td></tr>
+        <tr><td>Identifiant</td><td>{{ form_widget(form.fieldId) }}</td></tr>
+        <tr><td>Indexable</td><td>{{ form_widget(form.searchable) }}</td></tr>
+        {% for key, value in form %}
+            {% if key starts with 'option' %}
+        <tr><td>{{ form_label(form[key]) }}</td><td>{{ form_widget(form[key]) }}</td></tr>
+            {% endif %}
+        {% endfor %}
+        
+        
     </table>
 </fieldset>
 {% endblock %}

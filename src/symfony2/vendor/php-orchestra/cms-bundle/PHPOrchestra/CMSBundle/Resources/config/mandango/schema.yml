@@ -79,11 +79,11 @@ Model\PHPOrchestraCMSBundle\Content:
 #    collection: contentField
 #    isEmbedded: true
 #    fields:
-#        fieldId: string
-#        type: string
-#        options: serialized
-#        mandatory: boolean
-#        searchable: boolean
+#        fieldId: string        # title
+#        name: string           # titre
+#        type: string           # text
+#        options: serialized    # max_length, required, read_only
+#        searchable: boolean    # true
 
 Model\PHPOrchestraCMSBundle\ContentType:
     collection: contentType
