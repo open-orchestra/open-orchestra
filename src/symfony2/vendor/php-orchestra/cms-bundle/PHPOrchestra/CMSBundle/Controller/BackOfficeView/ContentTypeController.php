@@ -34,10 +34,11 @@ class ContentTypeController extends Controller
     {
         $documentManager = $this->container->get('phporchestra_cms.documentmanager');
         $contentType = $documentManager->getDocumentById('ContentType', $id);
-        $lastVersion = $documentManager->getDocument('ContentType', array('contentTypeId' => $contentType->getContentTypeId()));
         
-        $contentType->setVersion(1 + $lastVersion->getVersion());
-        $contentType->setStatus(ContentType::STATUS_DRAFT);
+        if ($contentType->getStatus() != ContentType::STATUS_DRAFT)
+        {
+            $contentType->generateDraft();
+        }
         
         $form = $this->createForm(
             'contentType',
@@ -46,11 +47,25 @@ class ContentTypeController extends Controller
         $form->handleRequest($request);
         
         if ($form->isValid()) {
-            $node->setId(null);
-            $node->setIsNew(true);
-            $node->save();
+            $versions = $documentManager->getDocuments(
+                'ContentType',
+                array(
+                    'contentTypeId' => $contentType->getContentTypeId(),
+                    'status' => $contentType->getStatus()
+                )
+            );
             
-            return $this->redirect(
+            foreach ($versions as $version)
+            {
+                if ($version->getId() != $contentType->getId())
+                {
+                    $version->delete();
+                }
+            }
+            
+            $contentType->save();
+            
+           return $this->redirect(
                 $this->generateUrl('php_orchestra_cms_bo_contentType')
             );
         }

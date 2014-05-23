@@ -5,23 +5,15 @@ Model\PHPOrchestraCMSBundle\ContentType:
         version: 1
         status: "published"
         deleted: false
-        fields: '[{"fieldId":"title", "type":"text"}, {"fieldId":"image", "type":"image"}, {"fieldId":"intro", "type":"text"}, {"fieldId":"text", "type":"text"}]'
-            
-    cars:
-        contentTypeId: "car"
-        name: "Voiture"
-        version: 1
-        status: "published"
-        deleted: false
-        fields: '[{"fieldId":"name", "type":"text"}, {"fieldId":"image", "type":"image"}, {"fieldId":"description", "type":"text"}]'
+        fields: '[{"fieldId":"title", "type":"orchestra_text"}, {"fieldId":"image", "type":"image"}, {"fieldId":"intro", "type":"orchestra_text"}, {"fieldId":"text", "type":"orchestra_text"}]'
             
     cars_v2:
         contentTypeId: "car"
         name: "Voiture"
         version: 2
-        status: "unpublished"
+        status: "published"
         deleted: false
-        fields: '[{"fieldId":"name", "type":"text"}, {"fieldId":"image", "type":"image"}, {"fieldId":"description", "type":"text"}]'
+        fields: '[{"fieldId":"name", "type":"orchestra_text"}, {"fieldId":"image", "type":"image"}, {"fieldId":"description", "type":"orchestra_text"}]'
             
     cars_v3:
         contentTypeId: "car"
@@ -29,13 +21,12 @@ Model\PHPOrchestraCMSBundle\ContentType:
         version: 3
         status: "draft"
         deleted: false
-        fields: '[{"fieldId":"name", "type":"text"}, {"fieldId":"image", "type":"image"}, {"fieldId":"description", "type":"text"}]'
+        fields: '[{"fieldId":"name", "type":"orchestra_text"}, {"fieldId":"image", "type":"image"}, {"fieldId":"description", "type":"orchestra_text"}]'
             
-    customer1:
+    customer:
         contentTypeId: "customer"
         name: "Client"
         version: 1
-        status: "draft"
+        status: "published"
         deleted: false
-        fields: '[{"fieldId":"name", "type":"text"}]'
-        
+        fields: '[{"fieldId":"name", "label": "Nom", "searchable": true, "type":"orchestra_text", "options":{"max_length":25, "required": true}}, {"fieldId":"identifier", "label": "Identifiant", "searchable": false, "type":"orchestra_integer", "options":{"rounding_mode": 1, "grouping": 1, "required": true}}]'

@@ -4,4 +4,61 @@
  # @author Noël GILAIN <noel.gilain@businessdecision.com>
  ##}
 
-{{ form(form) }}
+{% form_theme form 'PHPOrchestraCMSBundle:Form:customField.html.twig' %}
+
+{#{ dump(form.id.vars) }} <hr />
+
+{% for key, value in form %}
+    {{ key }} <br />
+{% endfor %#}
+
+
+{{ form_start(
+    form,
+    {
+        'method': 'POST',
+        'action': path('php_orchestra_cms_bo_contentType_edit', {'id': form.id.vars.value})
+    }
+) }}
+
+{{ form_errors(form) }}
+
+{{ form_widget(form.fields) }}
+<table>
+    <tr><td>{{ form_label(form.name) }}</td><td>{{ form_widget(form.name) }}</td></tr>
+    <tr><td>{{ form_label(form.contentTypeId) }}</td><td>{{ form_widget(form.contentTypeId) }}</td></tr>
+    <tr><td>{{ form_label(form.version) }}</td><td>{{ form_widget(form.version) }}</td></tr>
+    <tr><td>{{ form_label(form.status) }}</td><td>{{ form_widget(form.status) }}</td></tr>
+    {% for key, value in form %}
+        {% if key starts with 'customField' %}
+    <tr><td colspan="2">{{ form_widget(form[key]) }}</td></tr>
+        {% endif %}
+    {% endfor %}
+</table>
+<table>
+    <tr><td>{{ form_widget(form.cancel) }}</td><td>{{ form_widget(form.save) }}</td></tr>
+</table>
+{{ form_end(form) }}
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.cancelButton').click(function(){
+            window.location.hash = "{{ path('php_orchestra_cms_bo_contentType') }}";
+        });
+        
+        $('.saveButton').click(function(){
+            submitForm();
+        });
+    });
+
+    function submitForm()
+    {
+        aggregateCustomFields();
+        $("[name='{{ form.vars.name }}']").submit();
+    }
+
+    function aggregateCustomFields()
+    {
+        
+    }
+</script>

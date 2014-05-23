@@ -37,3 +37,31 @@ parameters:
         Sample Block: 
             action: "PHPOrchestraCMSBundle:Block/Sample:show"
             form: "PHPOrchestraCMSBundle:Block/Sample:form"
+
+#--[CUSTOM FIELDS]--------------#
+    
+    php_orchestra.custom_types:
+        
+        orchestra_text:
+            type: text
+            options:
+                max_length:
+                    type: integer
+                    label: Longueur maximale
+                required:
+                    type: checkbox
+                    label: Champ obligatoire
+        
+        orchestra_integer:
+            type: integer
+            options:
+                rounding_mode:
+                    type: integer
+                    label: Mode d'arrondis
+                grouping:
+                    type: integer
+                    label: Formatage
+                required:
+                    type: checkbox
+                    label: Champ obligatoire
+                    
