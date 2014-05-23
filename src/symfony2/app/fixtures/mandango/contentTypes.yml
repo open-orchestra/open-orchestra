@@ -29,4 +29,4 @@ Model\PHPOrchestraCMSBundle\ContentType:
         version: 1
         status: "published"
         deleted: false
-        fields: '[{"fieldId":"name", "label": "Nom", "searchable": true, "type":"orchestra_text", "options":{"max_length":25, "required": true}}, {"fieldId":"identifier", "label": "Identifiant", "searchable": false, "type":"orchestra_integer", "options":{"rounding_mode": 1, "grouping": 1, "required": true}}]'
+        fields: '[{"fieldId":"name", "label": "Nom", "searchable": true, "type":"orchestra_text", "options":{"max_length":25, "required": true}}, {"fieldId":"identifier", "label": "Identifiant", "searchable": false, "type":"orchestra_integer", "options":{"rounding_mode": 1, "grouping": 2, "required": false}}]'

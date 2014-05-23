@@ -7,6 +7,7 @@
 
 namespace PHPOrchestra\CMSBundle\Form\Type;
 
+use PHPOrchestra\CMSBundle\Form\DataTransformer\StdClassToCustomFieldTransformer;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\FormView;
@@ -24,35 +25,20 @@ class CustomFieldType extends AbstractType
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        $transformer = new StdClassToCustomFieldTransformer();
+        $builder->addModelTransformer($transformer);
+        
         $builder->add('label', 'text')
             ->add('fieldId', 'text')
             ->add('searchable', 'checkbox', array('required' => false));
-            
+        
         $parameters = $this->availableFields[$options['data']->type];
         
         foreach ($parameters['options'] as $optionName => $option) {
-            $builder->add(
-                'option_' . $optionName,
-                $option['type'],
-                array(
-                    'mapped' => false,
-                    'label' => $option['label']
-                )
-            );
+            $builder->add('option_' . $optionName, $option['type'], array('label' => $option['label']));
         }
-            
     }
 
- /*   public function setDefaultOptions(OptionsResolverInterface $resolver)
-    {
-    }*/
-    
-    public function buildView(FormView $view, FormInterface $form, array $options)
-    {
-       // $view->vars['showDialog'] = $options['showDialog'];
-        
-    }
-    
     /**
      * getName
      */

@@ -12,7 +12,13 @@
     {{ key }} <br />
 {% endfor %#}
 
-
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.cancelButton').click(function(){
+            window.location.hash = "{{ path('php_orchestra_cms_bo_contentType') }}";
+        });
+    });
+</script>
 {{ form_start(
     form,
     {
@@ -39,26 +45,3 @@
     <tr><td>{{ form_widget(form.cancel) }}</td><td>{{ form_widget(form.save) }}</td></tr>
 </table>
 {{ form_end(form) }}
-
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('.cancelButton').click(function(){
-            window.location.hash = "{{ path('php_orchestra_cms_bo_contentType') }}";
-        });
-        
-        $('.saveButton').click(function(){
-            submitForm();
-        });
-    });
-
-    function submitForm()
-    {
-        aggregateCustomFields();
-        $("[name='{{ form.vars.name }}']").submit();
-    }
-
-    function aggregateCustomFields()
-    {
-        
-    }
-</script>

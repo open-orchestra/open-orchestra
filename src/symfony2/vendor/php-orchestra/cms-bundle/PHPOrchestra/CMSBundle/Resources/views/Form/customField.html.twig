@@ -1,13 +1,8 @@
 {% block orchestra_customField_widget %}
 <fieldset>
     <legend>Field type : {{ form.vars.value.type }}</legend>
-{#{ dump(form.vars.value)}#}
-
-{#% for key, value in form.vars.form %}
-    {{ key }} <br />
-{% endfor %#}
-
-    <table>
+    
+    <table class="customField" data-id="{{ form.vars.name }}">
         <tr><td>Label du champ</td><td>{{ form_widget(form.label) }}</td></tr>
         <tr><td>Identifiant</td><td>{{ form_widget(form.fieldId) }}</td></tr>
         <tr><td>Indexable</td><td>{{ form_widget(form.searchable) }}</td></tr>
@@ -16,8 +11,8 @@
         <tr><td>{{ form_label(form[key]) }}</td><td>{{ form_widget(form[key]) }}</td></tr>
             {% endif %}
         {% endfor %}
-        
-        
     </table>
+    
 </fieldset>
+
 {% endblock %}
