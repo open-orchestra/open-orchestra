@@ -73,6 +73,13 @@ services:
         tags:
             - { name: form.type, alias: contentType}
 
+    # Site Form Builder
+    php_orchestra_cms.type.site:
+        class: PHPOrchestra\CMSBundle\Form\Type\SiteType
+        arguments: [@router, %php_orchestra.blocks%]
+        tags:
+            - { name: form.type, alias: site}
+
     # Template form type
     php_orchestra_cms.type.template:
         class: PHPOrchestra\CMSBundle\Form\Type\TemplateType

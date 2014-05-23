@@ -44,14 +44,20 @@ class DocumentManager
      * @param string $documentType
      * @param array $criteria
      */
-    public function getDocument($documentType, array $criteria = array())
+    public function getDocument($documentType, array $criteria = array(), $asArray = false)
     {
         $sort = $this->getDefaultSort($documentType);
         $repository = $this->documentsService->getRepository($this->getDocumentNamespace($documentType));
         $query = $repository->createQuery();
+        $criteria = array('siteId' => 1);
         $query->criteria($criteria);
         $query->sort($sort);
-        return $query->one();
+        $document = $query->one();
+        if ($asArray) {
+            $document = $document->toArray();
+        }
+        
+        return $document;
     }
     
     /**
@@ -59,11 +65,15 @@ class DocumentManager
      * 
      * @param string $id
      */
-    public function getDocumentById($documentType, $id)
+    public function getDocumentById($documentType, $id, $asArray = false)
     {
         $sort = $this->getDefaultSort($documentType);
         $repository = $this->documentsService->getRepository($this->getDocumentNamespace($documentType));
-        return $repository->findOneById($id);
+        $document = $repository->findOneById($id);
+        if ($asArray) {
+            $document = $document->toArray();
+        }
+        return $document;
     }
     
     /** 
@@ -145,6 +155,9 @@ class DocumentManager
             case 'Template':
             case 'ContentType':
                 $sort = array('version' => -1);
+                break;
+            case 'Site':
+                $sort = array();
                 break;
             default:
                 throw new UnrecognizedDocumentTypeException('Unrecognized document type : ' . $documentType);

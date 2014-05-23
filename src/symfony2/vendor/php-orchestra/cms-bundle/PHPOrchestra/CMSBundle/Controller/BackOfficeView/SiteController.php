@@ -8,47 +8,35 @@
 namespace PHPOrchestra\CMSBundle\Controller\BackOfficeView;
 
 use Symfony\Component\HttpFoundation\Request;
-use PHPOrchestra\CMSBundle\Controller\ViewController;
+use PHPOrchestra\CMSBundle\Controller\TableViewController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
 /**
  * @Route("/site")
  */
-class SiteController extends ViewController
+class SiteController extends TableViewController
 {
 
     function __construct() {
-        $this->setEntity('Site');
-        $this->setSearchs(array(
-            array('name' => 'domain', 'type' => 'text'),
-            array('name' => 'alias', 'type' => 'text'),
-            array('name' => 'defaultLanguage', 'type' => 'text'),
-            array('name' => 'languages', 'type' => 'text'),
-            array('name' => 'blocks', 'type' => 'text'),
-            '',
-            ''));
-        $this->setLabels(array(
-            'Domain',
-            'Alias',
-            'Default Language',
-            'Languages',
-            'Blocks',
-            '',
-            ''));
+    	$this->setEntity('Site');
+    	parent::__construct();
     }
 	
-	public function format(){
-		$aValues = $this->getValues();
-        foreach($aValues as &$values){
-        	$values = array($values['domain'],
-        	   $values['alias'],
-        	   implode('<br />', explode(',', $values['defaultLanguage'])),
-        	   $values['languages'],
-        	   implode('<br />', explode(',', $values['blocks'])),
-               parent::modifyButton($values['siteId']),
-               parent::deleteButton($values['siteId']));
-        }
-        $this->setValues($aValues);
+    public function edit(){
     }
     
+    public function catalog(Request $request){
+    }
+        
+    public function setColumns(){
+        $this->columns = array(
+            array('name' => 'domain', 'search' => 'text', 'button' =>'', 'label' => 'Domain'),
+            array('name' => 'alias', 'search' => 'text', 'button' =>'', 'label' => 'Alias'),
+            array('name' => 'defaultLanguage', 'search' => 'text', 'button' =>'', 'label' => 'Default Language'),
+            array('name' => 'languages', 'search' => 'text', 'button' =>'', 'label' => 'Languages'),
+            array('name' => 'blocks', 'search' => 'text', 'button' =>'', 'label' => 'Blocks'),
+            array('name' => '', 'search' => '', 'button' =>'modify', 'label' => ''),
+            array('name' => '', 'search' => '', 'button' =>'delete', 'label' => '')
+       );
+    }
 }

@@ -45,12 +45,12 @@
                         <table id="datatable_fixed_column" class="table table-striped table-bordered smart-form">
                             <thead>
                                 <tr class="second">
-                                {% for key, search in searchs %}
+                                {% for column in columns %}
                                     <td>
-                                    {% if search.type is defined %}
-                                        {% if search.type == 'text' %}
+                                    {% if column.search is defined %}
+                                        {% if column.search == 'text' %}
                                             <label class="input">
-                                                <input type="text" name="{{ search['name'] }}" placeholder="Filter {{ labels[key] }}" class="search_init">
+                                                <input type="text" name="{{ column.name }}" placeholder="Filter {{ column.label }}" class="search_init">
                                             </label>
                                         {% endif %}
                                     {% endif %}
@@ -58,8 +58,8 @@
                                 {% endfor %}
                                 </tr>
                                 <tr>
-                                {% for label in labels %}
-                                    <th>{{ label }}</th>
+                                {% for column in columns %}
+                                    <th>{{ column.label }}</th>
                                 {% endfor %}
                                 </tr>
                             </thead>
