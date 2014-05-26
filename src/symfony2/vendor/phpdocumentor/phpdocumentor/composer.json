@@ -68,10 +68,10 @@
     "config": {
         "bin-dir":"bin/"
     },
-    "bin": ["bin/phpdoc.php"],
+    "bin": ["bin/phpdoc.php", "bin/phpdoc"],
     "extra": {
         "branch-alias": {
-            "dev-develop": "2.4-dev"
+            "dev-develop": "2.5-dev"
         }
     }
 }
