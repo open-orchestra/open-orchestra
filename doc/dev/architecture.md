@@ -326,7 +326,7 @@ décorrellés dans le document).
     },
     "published": true
 }
-``̀ 
+```
 
 #### 5.8.2 Les rôles
 
@@ -352,7 +352,7 @@ Collection *workflow_role*
         // , etc.
     }
 }
-``̀ 
+```
 
 #### 5.8.3 Les transitions
 
@@ -385,7 +385,8 @@ Cette information vient compléter la collection existante *user*.
         // , etc.
     }
 }
-``̀ 
+```
+
 ### 5.9 Listes, CRUD (RAD BO)
 
 ### 5.10 Indexation et recherche
