@@ -1,6 +1,6 @@
 <?php
 
-use Doctrine\ODM\MongoDB\Mapping\Driver\AnnotationDriver;
+use Doctrine\Common\Annotations\AnnotationRegistry;
 use Composer\Autoload\ClassLoader;
 
 /**
@@ -8,6 +8,11 @@ use Composer\Autoload\ClassLoader;
  */
 $loader = require __DIR__.'/../vendor/autoload.php';
 
-AnnotationDriver::registerAnnotationClasses();
+AnnotationRegistry::registerLoader(function($class) use ($loader) {  
+        $loader->loadClass($class);  
+            return class_exists($class, false);  
+});
+  
+AnnotationRegistry::registerFile(__DIR__.'/../vendor/doctrine/mongodb-odm/lib/Doctrine/ODM/MongoDB/Mapping/Annotations/DoctrineAnnotations.php');
 
 return $loader;
