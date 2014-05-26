@@ -278,6 +278,114 @@ La base de données principale sera en MongoDB
 
 ### 5.8 Workflow de publication
 
+Le moteur de workflow permet de gérer les étapes de publication d'un contenu du
+site. Celui-ci peut s'appliquer à une page (collection *node*) ou à n'importe
+quel type de contenu (collection *content*).
+
+Pour fonctionner, le moteur s'appuie sur des états de publication des
+documents (brouillon -> à valider -> publié), des transitions entre ces états,
+des rôles utilisateurs (contributeur, correcteur, validateur, etc.) et des
+utilisateurs auxquels on affecte ces rôles pour chaque type de document concerné
+(un même utilisateur peut être correcteur pour des news et contributeur pour des
+pages).
+
+Cette logique restera très proche de celle déjà en place pour PHP Factory.
+
+Le workflow est utilisé à chaque fois que l'on enregistre une version de
+document dont l'état est modifié.
+
+#### 5.8.1 Les états
+
+Les états possibles pour un document sont une liste arbitraire que
+l'administrateur peut modifier. Les états seront enregistrés dans une collection
+*workflow_status*. Au moins un état correspondra à état de publication.
+Lorsqu'on passe un document dans un état de publication, le document lui-même
+est flaggé comme étant publié (ces 2 informations, état et publication sont
+décorrellés dans le document).
+
+/À valider/ Les états sont communs à toute la plateforme (et non par site).
+
+```json
+{
+    "name": "draft",
+    "label":
+    {
+        "en": "Draft",
+        "fr": "Brouillon"
+        // , etc.
+    },
+    "published": false
+},
+{
+    "name": "published",
+    "label":
+    {
+        "en": "Published",
+        "fr": "Publié"
+        // , etc.
+    },
+    "published": true
+}
+``̀ 
+
+#### 5.8.2 Les rôles
+
+La liste des rôles est également arbitraire et modifiable par l'administrateur.
+Collection *workflow_role*
+
+```json
+{
+    "name": "contributor",
+    "label":
+    {
+        "en": "Contributor",
+        "fr": "Contributeur"
+        // , etc.
+    }
+},
+{
+    "name": "publisher",
+    "label":
+    {
+        "en": "Publisher",
+        "fr": "Editeur"
+        // , etc.
+    }
+}
+``̀ 
+
+#### 5.8.3 Les transitions
+
+Les transitions sont une liste d'autorisations qui reflètent le workflow de
+publication. Par exemple : "Le contributeur peut passer un contenur de l'état
+*draft* à l'état *to_validate*".
+
+Certaines transitions peuvent n'être autorisées que pour l'auteur du contenu.
+Collection *workflow_transition*
+
+| role        | status_from | status_to   | if_owner |
+|-------------|-------------|-------------|----------|
+| contributor | draft       | to_validate | false    |
+| validator   | to_validate | published   | false    |
+| validator   | to_validate | draft       | false    |
+
+#### 5.8.4 Affectation des rôles
+
+Un utilisateur peut avoir un rôle pour un certain type de contenu.
+Cette information vient compléter la collection existante *user*.
+
+```json
+{
+    // [User info],
+    "workflow_roles":
+    {
+        "node": "contributor",
+        "content_news": "contributor",
+        "content_blog": "validator"
+        // , etc.
+    }
+}
+``̀ 
 ### 5.9 Listes, CRUD (RAD BO)
 
 ### 5.10 Indexation et recherche
@@ -292,19 +400,19 @@ La base de données principale sera en MongoDB
 
 ### 5.15 Thème ergonomique BO
 
-6. ORM, couche d'abstraction d'accès aux données
-------------------------------------------------
+6 ORM, couche d'abstraction d'accès aux données
+-----------------------------------------------
 
-7. Composants/Bundles utilisés
--------------------------------
+7 Composants/Bundles utilisés
+------------------------------
 
 | Composant         | Version     | Utilisation                                              |
 |-------------------|-------------|----------------------------------------------------------|
 | MongoDB           | 2.4.x-2.6.x | Base de données principale, stockages des données CMS    |
 | Redis             |       2.4.x | Cache applicatif, gestion des sessions                   |
 | Varnish           |         3.x | Cache HTTP, ESI                                          |
-| PHP5              |        >5.4 | Interpréteur                                             |
-| Symfony2          |         2.4 | Framework                                                |
+| PHP5              | 5.4.x-5.5.x | Interpréteur                                             |
+| Symfony2          |       2.4.x | Framework                                                |
 | Doctrine          |         dev | ORM/ODM                                                  |
 | Mandango          |         dev | MongoDB ORM en cours de remplacement par Doctrine        |
 | Assetic           |             | Gestion des assets                                       |
@@ -314,3 +422,6 @@ La base de données principale sera en MongoDB
 | Travis-ci         |             | Intégration continue                                     |
 | Git               |             | Gestion des sources                                      |
 |                   |             |                                                          |
+
+8 Gestion des sources
+---------------------
