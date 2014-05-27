@@ -6,9 +6,10 @@
 
 {% block orchestra_customField_widget %}
 <fieldset>
-    <legend>Field type : {{ form.vars.value.type }}</legend>
+    <legend>{{ form.vars.value.type }}</legend>
     
     <table class="customField" data-id="{{ form.vars.name }}">
+        <tr><td>Supprimer le champ</td><td>{{ form_widget(form.removeField) }}</td></tr>
         <tr><td>Label du champ</td><td>{{ form_widget(form.label) }}</td></tr>
         <tr><td>Identifiant</td><td>{{ form_widget(form.fieldId) }}</td></tr>
         <tr><td>Indexable</td><td>{{ form_widget(form.searchable) }}</td></tr>

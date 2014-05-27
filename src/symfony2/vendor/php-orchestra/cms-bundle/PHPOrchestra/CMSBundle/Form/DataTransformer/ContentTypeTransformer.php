@@ -43,12 +43,13 @@ class ContentTypeTransformer implements DataTransformerInterface
     {
         $fields = array();
         foreach ($datas->customFieldsIndex as $index) {
-            $fields[] = $datas->$index;
+            if (!is_null($datas->$index)) {
+                $fields[] = $datas->$index;
+            }
         }
-        
         if ($datas->new_field != '') {
             $fields[] = (object) array(
-               "fieldId" => "",
+                "fieldId" => "",
                 "label" => "",
                 "searchable" => false,
                 "type" => $datas->new_field,
@@ -57,7 +58,6 @@ class ContentTypeTransformer implements DataTransformerInterface
         }
         
         $datas->setFields(json_encode($fields));
-        
         return $datas;
     }
 }

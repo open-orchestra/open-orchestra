@@ -25,8 +25,7 @@ class ContentTypeType extends AbstractType
             ->add('version', 'text', array('read_only' => true))
             ->add('status', 'choice', array('choices' => array(ContentType::STATUS_DRAFT => ContentType::STATUS_DRAFT, ContentType::STATUS_PUBLISHED => ContentType::STATUS_PUBLISHED)))
             ->add('id', 'hidden', array('mapped' => false, 'data' => (string)$options['data']->getId()))
-            ->add('fields', 'hidden', array('data' => $options['data']->getFields())
-        );
+            ->add('fields', 'hidden', array('data' => $options['data']->getFields()));
         
         $customFields = json_decode($options['data']->getFields());
         

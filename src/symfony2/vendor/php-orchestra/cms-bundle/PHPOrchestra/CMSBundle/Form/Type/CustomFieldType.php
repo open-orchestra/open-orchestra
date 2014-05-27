@@ -30,8 +30,9 @@ class CustomFieldType extends AbstractType
         
         $builder->add('label', 'text')
             ->add('fieldId', 'text')
-            ->add('searchable', 'checkbox', array('required' => false));
-        
+            ->add('searchable', 'checkbox', array('required' => false))
+            ->add('removeField', 'checkbox', array('required' => false));
+            
         $parameters = $this->availableFields[$options['data']->type];
         $optionsValues = $options['data']->options;
         

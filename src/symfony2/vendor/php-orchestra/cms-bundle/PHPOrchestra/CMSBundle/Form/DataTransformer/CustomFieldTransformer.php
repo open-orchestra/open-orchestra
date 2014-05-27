@@ -27,6 +27,7 @@ class CustomFieldTransformer implements DataTransformerInterface
             }
         }
         unset($datas['options']);
+        $datas['removeField'] = false;
         return (object) $datas;
     }
 
@@ -40,13 +41,16 @@ class CustomFieldTransformer implements DataTransformerInterface
     {
         $datas = (array) $datas;
         
-        foreach ($datas as $name => $value) {
-            if (strpos($name, 'option_') === 0) {
-                $datas['options'][str_replace('option_', '', $name)] = $value;
-                unset($datas[$name]);
+        if ($datas['removeField']) {
+            return null;
+        } else {
+            foreach ($datas as $name => $value) {
+                if (strpos($name, 'option_') === 0) {
+                    $datas['options'][str_replace('option_', '', $name)] = $value;
+                    unset($datas[$name]);
+                }
             }
+            return (object) $datas;
         }
-        
-        return (object) $datas;
     }
 }

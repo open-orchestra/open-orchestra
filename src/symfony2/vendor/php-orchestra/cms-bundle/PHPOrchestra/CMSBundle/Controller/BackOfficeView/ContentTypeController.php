@@ -23,9 +23,7 @@ class ContentTypeController extends Controller
         
         return $this->render(
             'PHPOrchestraCMSBundle:BackOffice/Content:tempTypeList.html.twig',
-            array(
-                'contentTypes' => $contentTypes
-            )
+            array('contentTypes' => $contentTypes)
         );
     }
 
@@ -53,9 +51,7 @@ class ContentTypeController extends Controller
         
         return $this->render(
             'PHPOrchestraCMSBundle:BackOffice/Content:contentTypeForm.html.twig',
-            array(
-                'form' => $form->createView()
-            )
+            array('form' => $form->createView())
         );
     }
 
