@@ -66,6 +66,7 @@ abstract class ContentType extends \Model\PHPOrchestraCMSBundle\Base\ContentType
     {
         $this->setVersion(1 + $this->getVersion());
         $this->setStatus(self::STATUS_DRAFT);
+        $this->setDeleted(false);
         $this->setId(null);
         $this->setIsNew(true);
         $this->save();

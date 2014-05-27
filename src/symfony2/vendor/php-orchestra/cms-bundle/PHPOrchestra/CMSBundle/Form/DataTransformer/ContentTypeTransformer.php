@@ -29,6 +29,7 @@ class ContentTypeTransformer implements DataTransformerInterface
             $customFieldsIndex[] = $varName;
         }
         $contentType->customFieldsIndex = $customFieldsIndex;
+        $contentType->new_field = '';
         return $contentType;
     }
 
@@ -44,6 +45,17 @@ class ContentTypeTransformer implements DataTransformerInterface
         foreach ($datas->customFieldsIndex as $index) {
             $fields[] = $datas->$index;
         }
+        
+        if ($datas->new_field != '') {
+            $fields[] = (object) array(
+               "fieldId" => "",
+                "label" => "",
+                "searchable" => false,
+                "type" => $datas->new_field,
+                "options" => (object) array()
+            );
+        }
+        
         $datas->setFields(json_encode($fields));
         
         return $datas;

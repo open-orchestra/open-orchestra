@@ -14,6 +14,13 @@ services:
 
 #--[FORM FIELDS]----------------#
 
+    # Orchestra field select form field type
+    php_orchestra_cms.type.fieldSelect:
+        class: PHPOrchestra\CMSBundle\Form\Type\OrchestraFieldSelectType
+        arguments: [@service_container]
+        tags:
+            - { name: form.type, alias: orchestra_fieldSelect }
+
     # Custom field form field type
     php_orchestra_cms.type.customField:
         class: PHPOrchestra\CMSBundle\Form\Type\CustomFieldType
@@ -78,25 +85,25 @@ services:
     php_orchestra_cms.type.contentType:
         class: PHPOrchestra\CMSBundle\Form\Type\ContentTypeType
         tags:
-            - { name: form.type, alias: contentType}
+            - { name: form.type, alias: contentType }
 
     # Site Form Builder
     php_orchestra_cms.type.site:
         class: PHPOrchestra\CMSBundle\Form\Type\SiteType
         arguments: [@router, %php_orchestra.blocks%]
         tags:
-            - { name: form.type, alias: site}
+            - { name: form.type, alias: site }
 
     # Template form type
     php_orchestra_cms.type.template:
         class: PHPOrchestra\CMSBundle\Form\Type\TemplateType
         arguments: [@router, %php_orchestra.blocks%]
         tags:
-            - { name: form.type, alias: template}
+            - { name: form.type, alias: template }
 
     # Node form type
     php_orchestra_cms.type.node:
         class: PHPOrchestra\CMSBundle\Form\Type\NodeType
         arguments: [@router, %php_orchestra.blocks%]
         tags:
-            - { name: form.type, alias: node}
+            - { name: form.type, alias: node }

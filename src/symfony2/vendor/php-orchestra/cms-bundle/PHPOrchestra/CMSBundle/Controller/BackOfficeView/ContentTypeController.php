@@ -35,39 +35,20 @@ class ContentTypeController extends Controller
         $documentManager = $this->container->get('phporchestra_cms.documentmanager');
         $contentType = $documentManager->getDocumentById('ContentType', $id);
         
-        if ($contentType->getStatus() != ContentType::STATUS_DRAFT)
-        {
+        if ($contentType->getStatus() != ContentType::STATUS_DRAFT) {
             $contentType->generateDraft();
         }
         
-        $form = $this->createForm(
-            'contentType',
-            $contentType
-        );
+        $form = $this->createForm('contentType', $contentType);
         $form->handleRequest($request);
         
-        if ($form->isValid()) {
-            $versions = $documentManager->getDocuments(
-                'ContentType',
-                array(
-                    'contentTypeId' => $contentType->getContentTypeId(),
-                    'status' => $contentType->getStatus()
-                )
-            );
-            
-            foreach ($versions as $version)
-            {
-                if ($version->getId() != $contentType->getId())
-                {
-                    $version->delete();
-                }
-            }
-            
+        if ($contentType->new_field != '') {
             $contentType->save();
-            
-           return $this->redirect(
-                $this->generateUrl('php_orchestra_cms_bo_contentType')
-            );
+            return $this->redirect($this->generateUrl('php_orchestra_cms_bo_contentType_edit', array('id' => (string)$contentType->getId())));
+        } elseif ($form->isValid()) {
+            $this->deleteOtherStatusVersions($contentType->getContentTypeId(), $contentType->getStatus());
+            $contentType->save();
+            return $this->redirect($this->generateUrl('php_orchestra_cms_bo_contentType'));
         }
         
         return $this->render(
@@ -78,6 +59,26 @@ class ContentTypeController extends Controller
         );
     }
 
+    protected function deleteOtherStatusVersions($contentTypeId, $status)
+    {
+        $documentManager = $this->container->get('phporchestra_cms.documentmanager');
+        
+        $versions = $documentManager->getDocuments(
+            'ContentType',
+            array(
+                'contentTypeId' => $contentTypeId,
+                'status' => $status
+            )
+        );
+        
+        foreach ($versions as $version) {
+            if ($version->getId() != $contentTypeId) {
+                $version->delete();
+            }
+        }
+        
+        return true;
+    }
 
     public function deleteAction($contentType)
     {

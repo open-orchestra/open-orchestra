@@ -48,9 +48,13 @@ parameters:
                 max_length:
                     type: integer
                     label: Longueur maximale
+                    default_value: 0
+                    required: true
                 required:
                     type: checkbox
                     label: Champ obligatoire
+                    default_value: false
+                    required: false
         
         orchestra_integer:
             type: integer
@@ -58,10 +62,15 @@ parameters:
                 rounding_mode:
                     type: integer
                     label: Mode d'arrondis
+                    default_value: 0
+                    required: true
                 grouping:
                     type: integer
                     label: Formatage
+                    default_value: 0
+                    required: true
                 required:
                     type: checkbox
                     label: Champ obligatoire
-                    
+                    default_value: false
+                    required: false

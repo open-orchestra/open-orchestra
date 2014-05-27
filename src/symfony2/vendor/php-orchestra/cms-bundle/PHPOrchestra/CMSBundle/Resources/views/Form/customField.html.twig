@@ -1,3 +1,9 @@
+{##
+ # This file is part of the PHPOrchestra\CMSBundle.
+ #
+ # @author Noël GILAIN <noel.gilain@businessdecision.com>
+ ##}
+
 {% block orchestra_customField_widget %}
 <fieldset>
     <legend>Field type : {{ form.vars.value.type }}</legend>
@@ -14,5 +20,8 @@
     </table>
     
 </fieldset>
+{% endblock %}
 
+{% block orchestra_fieldSelect_widget %}
+    {{ block('choice_widget') }} <button name="newfield" id="newfield" type="submit">Ajouter</button>
 {% endblock %}

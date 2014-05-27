@@ -29,11 +29,14 @@ class ContentTypeType extends AbstractType
         );
         
         $customFields = json_decode($options['data']->getFields());
+        
         foreach ($customFields as $key => $customField) {
             $builder->add('customField_' . $key, 'orchestra_customField', array('data' => $customField));
         }
         
-        $builder->add('cancel', 'button', array('attr' => array('class' => 'cancelButton')))
+        $builder
+            ->add('new_field', 'orchestra_fieldSelect', array('required' => false))
+            ->add('cancel', 'button', array('attr' => array('class' => 'cancelButton')))
             ->add('save', 'submit');
     }
     
