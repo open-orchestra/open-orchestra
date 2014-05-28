@@ -33,6 +33,8 @@ Model\PHPOrchestraCMSBundle\Node:
         deleted: boolean
         templateId: string
         theme: string
+        inMenu: boolean
+        inFooter: boolean
         areas: raw
     embeddedsMany:
         blocks: {class: Model\PHPOrchestraCMSBundle\Block}
