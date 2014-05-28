@@ -30,13 +30,14 @@ class SiteController extends TableViewController
         
     public function setColumns(){
         $this->columns = array(
-            array('name' => 'domain', 'search' => 'text', 'button' =>'', 'label' => 'Domain'),
-            array('name' => 'alias', 'search' => 'text', 'button' =>'', 'label' => 'Alias'),
-            array('name' => 'defaultLanguage', 'search' => 'text', 'button' =>'', 'label' => 'Default Language'),
-            array('name' => 'languages', 'search' => 'text', 'button' =>'', 'label' => 'Languages'),
-            array('name' => 'blocks', 'search' => 'text', 'button' =>'', 'label' => 'Blocks'),
-            array('name' => '', 'search' => '', 'button' =>'modify', 'label' => ''),
-            array('name' => '', 'search' => '', 'button' =>'delete', 'label' => '')
+            array('name' => 'domain', 'search' => 'text', 'label' => 'Domain'),
+            array('name' => 'alias', 'search' => 'text', 'label' => 'Alias'),
+            array('name' => 'defaultLanguage', 'search' => 'text', 'label' => 'Default Language'),
+            array('name' => 'languages', 'search' => 'text', 'label' => 'Languages', 'callback' => "replaceComaByNewLine"),
+            array('name' => 'blocks', 'search' => 'text', 'label' => 'Blocks', 'callback' => "replaceComaByNewLine"),
+            array('button' =>'modify'),
+            array('button' =>'delete'
+            )
        );
     }
 }

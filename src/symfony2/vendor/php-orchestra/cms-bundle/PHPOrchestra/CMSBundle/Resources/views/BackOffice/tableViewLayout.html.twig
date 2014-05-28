@@ -1,93 +1,57 @@
-<section class="" id="widget-grid">
+{##
+ # This file is part of the PHPOrchestra\CMSBundle.
+ #
+ # @author Nicolas ANNE <nicolas.anne@businessdecision.com>
+ ##}
 
-    <!-- row -->
-    <div class="row">
+{% set vars = {
+    'title' : title
+   }
+%}
 
-        <!-- NEW WIDGET START -->
-        <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12 sortable-grid ui-sortable">
+{% include 'PHPOrchestraCMSBundle:BackOffice:beginSmartDiv.html.twig' with vars %}
 
-            <!-- Widget ID (each widget will need unique ID)-->
-            <div class="jarviswidget jarviswidget-color-darken" id="wid-id-0" data-widget-editbutton="false">
-                <!-- widget options:
-                usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+<div class="widget-body-toolbar">
 
-                data-widget-colorbutton="false"
-                data-widget-editbutton="false"
-                data-widget-togglebutton="false"
-                data-widget-deletebutton="false"
-                data-widget-fullscreenbutton="false"
-                data-widget-custombutton="false"
-                data-widget-collapsed="true"
-                data-widget-sortable="false"
+</div>
+<table id="datatable_fixed_column" class="table table-striped table-bordered smart-form">
+    <thead>
+        <tr class="second">
+        {% for column in columns %}
+            <td>
+            {% if column.search is defined %}
+                {% if column.search == 'text' %}
+                    <label class="input">
+                        <input type="text" name="{{ column.name }}" placeholder="Filter {{ column.label }}" class="search_init">
+                    </label>
+                {% endif %}
+            {% endif %}
+            </td>
+        {% endfor %}
+        </tr>
+        <tr>
+        {% for column in columns %}
+            {% if column.search is defined %}
+                <th>{{ column.label }}</th>
+            {% else %}
+                <th>&nbsp;</th>
+            {% endif %}
+        {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
 
-                -->
-                <header>
-                    <span class="widget-icon"> <i class="fa fa-table"></i> </span>
-                    <h2>Standard Data Tables </h2>
-
-                </header>
-
-                <!-- widget div-->
-                <div>
-
-                    <!-- widget edit box -->
-                    <div class="jarviswidget-editbox">
-                        <!-- This area used as dropdown edit box -->
-
-                    </div>
-                    <!-- end widget edit box -->
-
-                    <!-- widget content -->
-                    <div class="widget-body no-padding">
-                        <div class="widget-body-toolbar">
-
-                        </div>
-                        <table id="datatable_fixed_column" class="table table-striped table-bordered smart-form">
-                            <thead>
-                                <tr class="second">
-                                {% for column in columns %}
-                                    <td>
-                                    {% if column.search is defined %}
-                                        {% if column.search == 'text' %}
-                                            <label class="input">
-                                                <input type="text" name="{{ column.name }}" placeholder="Filter {{ column.label }}" class="search_init">
-                                            </label>
-                                        {% endif %}
-                                    {% endif %}
-                                    </td>
-                                {% endfor %}
-                                </tr>
-                                <tr>
-                                {% for column in columns %}
-                                    <th>{{ column.label }}</th>
-                                {% endfor %}
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
-                    </div>
-                    <!-- end widget content -->
-
-                </div>
-                <!-- end widget div -->
-
-            </div>
-            <!-- end widget -->
-        </article>
-        <!-- WIDGET END -->
-
+{% include 'PHPOrchestraCMSBundle:BackOffice:endSmartDiv.html.twig' %}
+{% if ribbon is defined %}
+    <div class="ribbon">
+    {{ ribbon|raw }}
     </div>
+{% endif %}
 
-    <!-- end row -->
-
-</section>
 
 <script type="text/javascript">
-
-    // DO NOT REMOVE : GLOBAL FUNCTIONS!
-    pageSetUp();
-    
     // PAGE RELATED SCRIPTS
 
     /* remove previous elems */
@@ -168,9 +132,6 @@
                         recordsTotal: records.data.count,
                         recordsFiltered: records.data.partialCount
                     } );
-                    $('.editContentType').click(function(e) {
-                        window.location.hash = $(this).attr('data-contentType');
-                    });
                 });
             },
             "dom": 'R<"top-tools"TC><"clear">rtiS',
@@ -182,6 +143,5 @@
         $('.search_init').on( 'keyup change', function (e) {
             table._fnDraw();
         } );
-
     }
 </script>

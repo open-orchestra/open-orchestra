@@ -21,13 +21,12 @@ abstract class TableViewController extends Controller
     protected $entity = null;
     protected $key = null;
     protected $route;
-    
-    abstract public function edit();
-    abstract public function catalog(Request $request);
+    protected $callback = array();
     abstract public function setColumns();
     
     function __construct() {
         $this->setColumns();
+        $this->callback['replaceComaByNewLine'] = create_function('$value', 'return implode("<br />", explode(",", $value));');
     }
         
     public function getColumns()
@@ -69,58 +68,97 @@ abstract class TableViewController extends Controller
         return $this->route;
     }
 
-    public function generateUrlKey($url, $value){
-        $id = array();
-        if($this->getKey() === null){
-        	$id = $value['id']->__toString();
+    /**
+     * @Route("/edit/{id}")
+     */
+    public function editAction(Request $request, $id=null){
+        $this->setRoute(preg_replace('/^(.*)_edit$/', '$1', $request->get('_route')));
+    	if($this->getEntity() !== null){
+            return $this->editEntity($request, $id);
         }
         else{
-	        foreach($this->getKey() as $key){
-	            if(array_key_exists($key, $value)){
-	                $id[] = $value[$key];
-	            }
-	        }
-	        $id = implode('|', $id);
+            return $this->edit($id);
         }
-        return $this->generateUrl($url, array('id' => $id));
+    }
+    /**
+     * @Route("/save/{id}")
+     */
+    public function saveAction(Request $request, $id=null){
+        $this->setRoute(preg_replace('/^(.*)_save$/', '$1', $request->get('_route')));
+    	if($this->getEntity() !== null){
+            return $this->saveEntity($request, $id);
+        }
+        else{
+            return $this->save($id);    
+        }
+    }
+    /**
+     * @Route("/delete/{id}")
+     */
+    public function deleteAction(Request $request, $id=null){
+        $this->setRoute(preg_replace('/^(.*)_delete$/', '$1', $request->get('_route')));
+    	if($this->getEntity() !== null){
+            return $this->deleteEntity($request, $id);
+        }
+        else{
+            return $this->edit($id);    
+        }
+    }
+     /**
+     * @Route("/catalog")
+     */
+    public function catalogAction(Request $request)
+    {
+        $this->setRoute(preg_replace('/^(.*)_catalog$/', '$1', $request->get('_route')));
+        if($this->getEntity() !== null){
+            return $this->catalogEntity($request);
+        }
+        else{
+            return $this->catalog($request);
+        }
+    }
+    
+    
+    public function generateUrlValue($url, $value){
+    	if(!empty($value)){
+            return $this->generateUrl($url, array('id' => $value));
+    	}
+    	else{
+    		return $this->generateUrl($url);
+    	}
+    }
+    
+    public function genericButton($value, $path, $label, $classBtn, $class){
+        if($this->getEntity() !== null){
+            return '
+                <button data-parameter="'.$this->generateUrlValue($this->getRoute().'_'.$path, $value).'" value="'.$label.'" class="'.$classBtn.'">
+                   <i class="'.$class.'"></i>&nbsp;'.$label.'
+                </button>
+            ';
+        }
+        else{
+            return '
+                <button data-parameter="'.$value.'" value="'.$label.'" class="btn '.$classBtn.'">
+                   <i class="'.$class.'"></i>&nbsp;'.$label.'
+                </button>
+            ';
+        }
     }
     
     public function modifyButton($value){
-    	if($this->getEntity() !== null){
-	    	return '
-	            <button data-contenttype="'.$this->generateUrlKey($this->getRoute().'_edit', $value).'" value="Modifier" class="btn btn-primary editContentType">
-	               <i class="fa fa-edit"></i>
-	               Modifier
-	            </button>
-	        ';
-    	}
-    	else{
-            return '
-                <button data-contenttype="'.$value.'" value="Modifier" class="btn btn-primary editContentType">
-                   <i class="fa fa-edit"></i>
-                   Modifier
-                </button>
-            ';
-    	}
+    	return $this->genericButton($value, 'edit', 'Modifier', 'btn btn-primary redirect', 'fa fa-edit');
     }
-	
     public function deleteButton($value){
-    	if($this->getEntity() !== null){
-	    	return '
-	            <button data-contenttype="'.$this->generateUrlKey($this->getRoute().'_edit', $value).'" value="Supprimer" class="btn btn-danger">
-	                <i class="fa fa-trash-o"></i>
-	                Supprimer
-	            </button>
-	        ';
-        }
-        else{
-            return '
-                <button data-contenttype="'.$value.'" value="Supprimer" class="btn btn-danger">
-                    <i class="fa fa-trash-o"></i>
-                    Supprimer
-                </button>
-            ';
-        }
+        return $this->genericButton($value, 'delete', 'Supprimer', 'btn btn-danger', 'fa fa-trash-o');
+    }
+    public function addButton(){
+        return $this->genericButton('', 'edit', 'Ajouter', 'btn btn-small btn-ribbon bt-primary redirect', 'fa fa-plus');
+    }
+    public function saveButton($value){
+        return $this->genericButton($value, 'save', 'Enregistrer', 'btn btn-small btn-ribbon bt-primary', 'fa fa-save');
+    }
+    public function backButton(){
+        return $this->genericButton('', 'catalog', 'Retour', 'btn btn-small btn-ribbon bt-primary redirect', 'fa fa-undo');
     }
     
     public function format(){
@@ -129,14 +167,21 @@ abstract class TableViewController extends Controller
         foreach($values as &$record){
         	$newRecord = array();
         	foreach($columns as $column){
-        		if($column['button'] == 'modify'){
-        			$newRecord[] = $this->modifyButton($record);
-        		}
-        		else if($column['button'] == 'delete'){
-        			$newRecord[] = $this->deleteButton($record);
+        		if(array_key_exists('button', $column)){
+	        		if($column['button'] == 'modify'){
+	        			$newRecord[] = $this->modifyButton($record['id']->__toString());
+	        		}
+	        		else if($column['button'] == 'delete'){
+	        			$newRecord[] = $this->deleteButton($record['id']->__toString());
+	        		}
         		}
         		else{
-        			$newRecord[] = $record[$column['name']];
+        			if(array_key_exists('callback', $column)){
+        		        $newRecord[] = $this->callback[$column['callback']]($record[$column['name']]);
+        			}
+        			else{
+        				$newRecord[] = $record[$column['name']];
+        			}
         		}
         	}
         	$record = $newRecord;
@@ -144,70 +189,47 @@ abstract class TableViewController extends Controller
         $this->setValues($values);
     }
 
-    /**
-     * @Route("/edit/{id}")
-     */
-    public function editAction($id, Request $request){
-    	
-        if($this->getEntity() !== null){
-            $documentManager = $this->container->get('phporchestra_cms.documentmanager');
-        	if(empty($id)) {
-	            $document = $documentManager->createDocument($this->getEntity());
-	        }
-	        else {
-	            if($this->getKey() === null){
-	                $document = $documentManager->getDocumentById($this->getEntity(), $id, true);
-	            }
-	            else{
-	                $criteria = array_combine($this->getKey(), explode('|', $id));
-	                $document = $documentManager->getDocument($this->getEntity(), $criteria, true);
-	            }
-	        }
-            $form = $this->createForm(
-                lcfirst($this->getEntity()),
-                $document,
-	            array(
-	                'action' => $this->getRequest()->getUri(),
-	            )
-	        );
-            $form->handleRequest($request);
-	        if ($form->isValid()) {
-	            return $this->render(
-	                'PHPOrchestraCMSBundle:BackOffice/Editorial:simpleMessage.html.twig',
-	                array('message' => 'Edition ok')
-	            );
-	        }
-	        return $this->render(
-	            'PHPOrchestraCMSBundle:BackOffice/TableView:form.html.twig',
-	            array(
-	                'form' => $form->createView()
-	            )
-	        );
-        }
-        else{
-            return $this->edit($id);	
-        }
-    }
-    /**
-     * @Route("/delete/{id}")
-     */
-    public function deleteAction($id){}
-    /**
-     * @Route("/catalog")
-     */
-    public function catalogAction(Request $request)
+    public function editEntity(Request $request, $id)
     {
-    	if($this->getEntity() !== null){
-    		return $this->catalogEntity($request);
-    	}
-    	else{
-    		return $this->catalog($request);
-    	}
+        $documentManager = $this->container->get('phporchestra_cms.documentmanager');
+        if(empty($id)) {
+            $document = $documentManager->createDocument($this->getEntity());
+        }
+        else {
+            if($this->getKey() === null){
+                $document = $documentManager->getDocumentById($this->getEntity(), $id, true);
+            }
+            else{
+                $criteria = array_combine($this->getKey(), explode('|', $id));
+                $document = $documentManager->getDocument($this->getEntity(), $criteria, true);
+            }
+        }
+        $form = $this->createForm(
+            lcfirst($this->getEntity()),
+            $document,
+            array(
+               'action' => $this->getRequest()->getUri(),
+            )
+        );
+        $form->handleRequest($request);
+        if ($form->isValid()) {
+            return $this->render(
+                'PHPOrchestraCMSBundle:BackOffice/Editorial:simpleMessage.html.twig',
+                array('message' => 'Edition ok')
+            );
+        }
+        return $this->render(
+            'PHPOrchestraCMSBundle:BackOffice/TableView:form.html.twig',
+            array(
+                'form' => $form->createView(),
+                'title' => $this->getEntity(),
+                'ribbon' => $this->saveButton($id).$this->backButton()
+            
+            )
+        );
     }
     public function catalogEntity(Request $request)
     {
-        $this->setRoute(preg_replace('/^(.*)_catalog$/', '$1', $request->get('_route')));
-
         if ($request->get('parse')) {
             $documentManager = $this->container->get('phporchestra_cms.documentmanager');
             $sort = is_array($request->get('sort')) ? array_map('intval', $request->get('sort')) : $request->get('sort');
@@ -239,6 +261,8 @@ abstract class TableViewController extends Controller
                     'columns' => $this->getColumns(),
                     'listUrl' => $request->get('_route'),
                     'deleteUrl' => $request->get('_route'),
+                    'title' => $this->getEntity(),
+                    'ribbon' => $this->addButton()
                 )
             );
         }
