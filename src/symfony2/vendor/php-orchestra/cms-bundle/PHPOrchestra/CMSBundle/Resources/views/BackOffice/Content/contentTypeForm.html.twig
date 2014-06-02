@@ -41,8 +41,9 @@
         {% endif %}
     {% endfor %}
 </table>
+<br /><hr />
 <table>
-    <tr><td colspan="2">{{ form_widget(form.new_field) }}</td></tr>
+    <tr style="width:50px;"><td>{{ form_label(form.new_field) }}</td><td>{{ form_widget(form.new_field) }}</td></tr>
     <tr><td>{{ form_widget(form.cancel) }}</td><td>{{ form_widget(form.save) }}</td></tr>
 </table>
 {{ form_end(form) }}

@@ -34,7 +34,7 @@ class ContentTypeType extends AbstractType
         }
         
         $builder
-            ->add('new_field', 'orchestra_fieldSelect', array('required' => false))
+            ->add('new_field', 'orchestra_fieldSelect', array('label' => 'Nouveau champ', 'required' => false))
             ->add('cancel', 'button', array('attr' => array('class' => 'cancelButton')))
             ->add('save', 'submit');
     }
