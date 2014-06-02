@@ -272,6 +272,44 @@ La base de données principale sera en MongoDB
 
 ### 5.5 Multilinguisme
 
+La langue peut être fixée soit par le domaine, soit par le préfixe dans l'URL.
+
+#### 5.5.1 Déterminer la langue par le site
+
+Par domaine :
+
+* www.example.org => "fr"
+
+* fr.domain.com => "fr"
+
+* en.domain.com => "en"
+
+Pour choisir la langue, la variable d'environnement PO_LANG doit être fixée.
+
+```apache
+<VirtualHost *:80>
+    # [...]
+    SetEnv PO_LANG fr
+</VirtualHost>
+```
+
+#### 5.5.2 Déterminer la langue par l'URL
+
+* http://www.example.org/fr/
+
+* http://www.example.org/en/contact
+
+* http://www.example.org/es/my/path?query
+
+#### 5.5.3 Gestion des traductions
+
+Les traductions des textes utilisés dans les gabarits seront réalisées via
+le service Translator de Symfony2.
+
+Le format de stockage des traductions ser XLIFF.
+
+http://symfony.com/doc/current/book/translation.html
+
 ### 5.6 Gestion des versions
 
 ### 5.7 Multisite
@@ -389,6 +427,8 @@ Cette information vient compléter la collection existante *user*.
 
 ### 5.9 Listes, CRUD (RAD BO)
 
+
+
 ### 5.10 Indexation et recherche
 
 ### 5.11 Cache
@@ -405,7 +445,7 @@ Cette information vient compléter la collection existante *user*.
 -----------------------------------------------
 
 7 Composants/Bundles utilisés
-------------------------------
+-----------------------------
 
 | Composant         | Version     | Utilisation                                              |
 |-------------------|-------------|----------------------------------------------------------|

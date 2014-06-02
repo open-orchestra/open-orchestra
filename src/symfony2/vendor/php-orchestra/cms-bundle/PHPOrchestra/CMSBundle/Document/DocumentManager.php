@@ -49,7 +49,6 @@ class DocumentManager
         $sort = $this->getDefaultSort($documentType);
         $repository = $this->documentsService->getRepository($this->getDocumentNamespace($documentType));
         $query = $repository->createQuery();
-        $criteria = array('siteId' => 1);
         $query->criteria($criteria);
         $query->sort($sort);
         $document = $query->one();
