@@ -69,6 +69,10 @@ var ismobile = (/iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.tes
  */
 
 $(document).ready(function() {
+	$('#content').on('click', 'button.redirect', function(){
+		window.location.hash = $(this).attr('data-parameter')
+	});
+	
 	/*
 	 * Fire tooltips
 	 */

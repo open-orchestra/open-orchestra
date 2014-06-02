@@ -47,6 +47,7 @@
 
 {% endblock %}
 
+
 {% block orchestra_areas_widget %}
     {% set showDialog = form.parent.vars.showDialog %}
     {{ block('orchestra_widget') }}
@@ -58,10 +59,32 @@
 {% endblock %}
 
 {% extends "form_div_layout.html.twig" %}
+
+
+{% block form_row %}
+{% spaceless %}
+    <section>
+        {{ form_label(form, null, {'label_attr': {'class': 'label'}}) }}
+        <label class="{{ block_prefixes[1]|lexicon_translator }}">
+            {{ form_widget(form) }}<i></i>
+        </label>
+        <div class="note">
+            {{ form_errors(form) }}
+        </div>
+    </section>
+{% endspaceless %}
+{% endblock form_row %}
+
+
 {% block form %}
+{% spaceless %}
     {% if form.vars.showDialog %}
         <div id="dialog-{{ form.vars.name }}" style="display:none;" title="{{ form.vars.name }}">
-            {{ parent() }}
+            {{ form_start(form, {'attr': {'class': 'smart-form'}}) }}
+                <fieldset>
+                {{ form_widget(form) }}
+                </fieldset>
+            {{ form_end(form) }}
         </div>
         <div id="{{ form.vars.name }}-model" class="template-model"></div>
         {{ block('generic_behavior') }}
@@ -71,6 +94,11 @@
             });
         </script>
     {% else %}
-        {{ parent() }}
+        {{ form_start(form, {'attr': {'class': 'smart-form'}}) }}
+            <fieldset>
+            {{ form_widget(form) }}
+            </fieldset>
+        {{ form_end(form) }}
     {% endif %}
-{% endblock %}
+{% endspaceless %}
+{% endblock form %}

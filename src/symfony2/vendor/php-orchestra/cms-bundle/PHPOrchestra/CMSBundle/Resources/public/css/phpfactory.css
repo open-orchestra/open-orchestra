@@ -231,7 +231,7 @@ color: #000!important;
     padding:0px;
     height:auto;
 }
-
+/* patch smart css */
 div.top-tools .DTTT_container{
     position: absolute;
     right: 208px;
@@ -240,3 +240,8 @@ div.top-tools .DTTT_container{
 div.top-tools .ColVis button{
     height: 28px;
 }
+.ribbon{
+    z-index:999;
+}
+
+/* end patch smart css */

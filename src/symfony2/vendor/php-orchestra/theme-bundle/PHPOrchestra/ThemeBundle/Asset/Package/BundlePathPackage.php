@@ -31,13 +31,13 @@ class BundlePathPackage extends PathPackage
      * (non-PHPdoc)
      * @see Symfony\Component\Templating\Asset\PathPackage::getUrl
      */
-    public function getUrl($path)
+    public function getUrl($path, $version = NULL)
     {
         if (isset($this->bundleDir)) {
             $path = $this->bundleDir . '/' . ltrim($path, '/');
         }
         
-        return parent::getUrl($path);
+        return parent::getUrl($path, $version);
     }
 
     /**

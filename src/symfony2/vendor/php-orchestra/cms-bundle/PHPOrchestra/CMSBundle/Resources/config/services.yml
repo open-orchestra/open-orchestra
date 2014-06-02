@@ -107,3 +107,9 @@ services:
         arguments: [@router, %php_orchestra.blocks%]
         tags:
             - { name: form.type, alias: node }
+
+#--[TWIG]-----------------------#            
+    php_orchestra_cms.twig.lexicon_translator:
+        class: PHPOrchestra\CMSBundle\Twig\LexiconTranslatorExtension
+        tags:
+            - { name: twig.extension }
