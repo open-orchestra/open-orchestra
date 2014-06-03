@@ -15,7 +15,7 @@
 <script type="text/javascript">
     $(document).ready(function() {
         $('.cancelButton').click(function(){
-            window.location.hash = "{{ path('php_orchestra_cms_bo_contentType') }}";
+            window.location.hash = "{{ path('phporchestra_cms_backofficeview_contenttype_catalog') }}";
         });
     });
 </script>
@@ -23,7 +23,7 @@
     form,
     {
         'method': 'POST',
-        'action': path('php_orchestra_cms_bo_contentType_edit', {'id': form.id.vars.value})
+        'action': path('phporchestra_cms_backofficeview_contenttype_edit', {'id': form.id.vars.value})
     }
 ) }}
 

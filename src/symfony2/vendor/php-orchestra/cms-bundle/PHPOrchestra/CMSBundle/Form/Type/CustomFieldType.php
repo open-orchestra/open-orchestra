@@ -8,6 +8,7 @@
 namespace PHPOrchestra\CMSBundle\Form\Type;
 
 use PHPOrchestra\CMSBundle\Form\DataTransformer\CustomFieldTransformer;
+use PHPOrchestra\CMSBundle\Exception\UnknownFieldTypeException;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\FormView;
@@ -32,9 +33,19 @@ class CustomFieldType extends AbstractType
             ->add('fieldId', 'text')
             ->add('searchable', 'checkbox', array('required' => false))
             ->add('removeField', 'checkbox', array('required' => false));
-            
+        
+        if (!isset($this->availableFields[$options['data']->type])) {
+            throw new UnknownFieldTypeException('Unknown field type : ' . $options['data']->type);
+        }
+        
         $parameters = $this->availableFields[$options['data']->type];
-        $optionsValues = $options['data']->options;
+        
+        $optionsValues = (object) array();
+        if (isset($options['data']->options)) {
+            $optionsValues = $options['data']->options;
+        } else {
+            $options['data']->options = $optionsValues;
+        }
         
         foreach ($parameters['options'] as $optionName => $option) {
             if (!property_exists($optionsValues, $optionName)) {

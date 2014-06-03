@@ -28,48 +28,13 @@ class ContentTypeController extends TableViewController
             array('name' => 'name', 'search' => 'text', 'label' => 'Nom'),
             array('name' => 'version', 'search' => 'text', 'label' => 'Version'),
             array('name' => 'status', 'search' => 'text', 'label' => 'Statut'),
+            array('name' => 'deleted', 'search' => 'text', 'label' => 'Supprimé'),
             array('button' =>'modify'),
             array('button' =>'delete')
        );
     }
     
-    
-    
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-    /**
-     * View the list of contentTypes
-     */
-/*    public function listAction()
-    {
-        $documentManager = $this->container->get('phporchestra_cms.documentmanager');
-        $contentTypes = $documentManager->getDocuments('ContentType', array('deleted' => false));
-        
-        return $this->render(
-            'PHPOrchestraCMSBundle:BackOffice/Content:tempTypeList.html.twig',
-            array('contentTypes' => $contentTypes)
-        );
-    }
-*/
-/*
-    public function formAction($id, Request $request)
-    {
+    public function editEntity(Request $request, $id)    {
         $documentManager = $this->container->get('phporchestra_cms.documentmanager');
         $contentType = $documentManager->getDocumentById('ContentType', $id);
         
@@ -82,11 +47,11 @@ class ContentTypeController extends TableViewController
         
         if ($contentType->new_field != '') {
             $contentType->save();
-            return $this->redirect($this->generateUrl('php_orchestra_cms_bo_contentType_edit', array('id' => (string)$contentType->getId())));
+            return $this->redirect($this->generateUrl('phporchestra_cms_backofficeview_contenttype_edit', array('id' => (string)$contentType->getId())));
         } elseif ($form->isValid()) {
             $this->deleteOtherStatusVersions($contentType->getContentTypeId(), $contentType->getStatus());
             $contentType->save();
-            return $this->redirect($this->generateUrl('php_orchestra_cms_bo_contentType'));
+            return $this->redirect($this->generateUrl('phporchestra_cms_backofficeview_contenttype_catalog'));
         }
         
         return $this->render(
@@ -94,8 +59,7 @@ class ContentTypeController extends TableViewController
             array('form' => $form->createView())
         );
     }
-*/
-    /*
+    
     protected function deleteOtherStatusVersions($contentTypeId, $status)
     {
         $documentManager = $this->container->get('phporchestra_cms.documentmanager');
@@ -116,21 +80,35 @@ class ContentTypeController extends TableViewController
         
         return true;
     }
-*/
-    /*
-    public function deleteAction2($contentType)
+    
+    public function deleteEntity($request, $id)
     {
         $documentManager = $this->get('phporchestra_cms.documentmanager');
-        $contentTypeVersions = $documentManager->getDocuments('ContentType', array('contentType' => $contentType));
+        
+        $contentType = $documentManager->getDocumentById('ContentType', $id);
+        $contentTypeId = $contentType->getContentTypeId();
+        $contentTypeVersions = $documentManager->getDocuments('ContentType', array('contentTypeId' => $contentTypeId));
         
         foreach ($contentTypeVersions as $contentTypeVersion) {
             $contentTypeVersion->markAsDeleted();
         }
         
         return $this->redirect(
-            $this->generateUrl('php_orchestra_cms_bo_contentType')
+            $this->generateUrl('phporchestra_cms_backofficeview_contenttype_catalog')
         );
-        
     }
-    */
 }
+
+
+
+/*    public function listAction()
+    {
+        $documentManager = $this->container->get('phporchestra_cms.documentmanager');
+        $contentTypes = $documentManager->getDocuments('ContentType', array('deleted' => false));
+        
+        return $this->render(
+            'PHPOrchestraCMSBundle:BackOffice/Content:tempTypeList.html.twig',
+            array('contentTypes' => $contentTypes)
+        );
+    }
+*/
