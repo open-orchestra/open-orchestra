@@ -7,16 +7,56 @@
 
 namespace PHPOrchestra\CMSBundle\Controller\BackOfficeView;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use PHPOrchestra\CMSBundle\Controller\TableViewController;
 use Model\PHPOrchestraCMSBundle\ContentType;
 use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
-class ContentTypeController extends Controller
+/**
+ * @Route("/contenttype")
+ */
+class ContentTypeController extends TableViewController
 {
+    function __construct() {
+        $this->setEntity('ContentType');
+        parent::__construct();
+    }
+    
+    public function setColumns(){
+        $this->columns = array(
+            array('name' => 'contentTypeId', 'search' => 'text', 'label' => 'Identifiant'),
+            array('name' => 'name', 'search' => 'text', 'label' => 'Nom'),
+            array('name' => 'version', 'search' => 'text', 'label' => 'Version'),
+            array('name' => 'status', 'search' => 'text', 'label' => 'Statut'),
+            array('button' =>'modify'),
+            array('button' =>'delete')
+       );
+    }
+    
+    
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
     /**
      * View the list of contentTypes
      */
-    public function listAction()
+/*    public function listAction()
     {
         $documentManager = $this->container->get('phporchestra_cms.documentmanager');
         $contentTypes = $documentManager->getDocuments('ContentType', array('deleted' => false));
@@ -26,8 +66,8 @@ class ContentTypeController extends Controller
             array('contentTypes' => $contentTypes)
         );
     }
-
-
+*/
+/*
     public function formAction($id, Request $request)
     {
         $documentManager = $this->container->get('phporchestra_cms.documentmanager');
@@ -54,7 +94,8 @@ class ContentTypeController extends Controller
             array('form' => $form->createView())
         );
     }
-
+*/
+    /*
     protected function deleteOtherStatusVersions($contentTypeId, $status)
     {
         $documentManager = $this->container->get('phporchestra_cms.documentmanager');
@@ -75,8 +116,9 @@ class ContentTypeController extends Controller
         
         return true;
     }
-
-    public function deleteAction($contentType)
+*/
+    /*
+    public function deleteAction2($contentType)
     {
         $documentManager = $this->get('phporchestra_cms.documentmanager');
         $contentTypeVersions = $documentManager->getDocuments('ContentType', array('contentType' => $contentType));
@@ -90,4 +132,5 @@ class ContentTypeController extends Controller
         );
         
     }
+    */
 }

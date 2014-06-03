@@ -40,12 +40,7 @@ abstract class ContentType extends \Model\PHPOrchestraCMSBundle\Base\ContentType
     {
         $document = parent::toArray($withReferenceFields);
         
-        $fields = $this->getFields();
-        $fieldsToArray = array();
-        foreach ($fields as $field) {
-            $fieldsToArray[] = $field->toArray();
-        }
-        $document['fields'] = $fieldsToArray;
+        $document['fields'] =  json_decode($this->getFields());
         
         return $document;
     }
