@@ -1,0 +1,29 @@
+{##
+ # This file is part of the PHPOrchestra\CMSBundle.
+ #
+ # @author Benjamin Fouché <benjamin.fouche@businessdecision.com>
+ ##}
+{#{ dump(nodeId) }#}
+
+{% if resultset.numfound is not defined %}
+    {% if resultset is empty %}
+        Sorry no results for this search.
+    {% else %}
+        {% for result in resultset %}
+            {% include "PHPOrchestraBlockBundle:Search:search.html.twig" with {"data": data, "resultset": result, "nodeId": nodeId} %}        
+        {% endfor %}
+    {% endif %}
+{% else %}
+    
+    {% if resultset.spellcheck is not empty %}
+        {% include "PHPOrchestraBlockBundle:Search:spellcheck.html.twig" %}
+    {% endif %}
+    
+    {% for doc in resultset %}
+        <ul>
+            {% for field in doc %}
+                <li>{{ field }}</li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+{% endif %}
