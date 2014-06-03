@@ -101,6 +101,16 @@ abstract class Node extends \Mandango\Document\Document
         } elseif (isset($data['_fields']['theme'])) {
             $this->data['fields']['theme'] = null;
         }
+        if (isset($data['inMenu'])) {
+            $this->data['fields']['inMenu'] = (bool) $data['inMenu'];
+        } elseif (isset($data['_fields']['inMenu'])) {
+            $this->data['fields']['inMenu'] = null;
+        }
+        if (isset($data['inFooter'])) {
+            $this->data['fields']['inFooter'] = (bool) $data['inFooter'];
+        } elseif (isset($data['_fields']['inFooter'])) {
+            $this->data['fields']['inFooter'] = null;
+        }
         if (isset($data['areas'])) {
             $this->data['fields']['areas'] = $data['areas'];
         } elseif (isset($data['_fields']['areas'])) {
@@ -962,6 +972,136 @@ abstract class Node extends \Mandango\Document\Document
     }
 
     /**
+     * Set the "inMenu" field.
+     *
+     * @param mixed $value The value.
+     *
+     * @return \Model\PHPOrchestraCMSBundle\Node The document (fluent interface).
+     */
+    public function setInMenu($value)
+    {
+        if (!isset($this->data['fields']['inMenu'])) {
+            if (!$this->isNew()) {
+                $this->getInMenu();
+                if ($this->isFieldEqualTo('inMenu', $value)) {
+                    return $this;
+                }
+            } else {
+                if (null === $value) {
+                    return $this;
+                }
+                $this->fieldsModified['inMenu'] = null;
+                $this->data['fields']['inMenu'] = $value;
+                return $this;
+            }
+        } elseif ($this->isFieldEqualTo('inMenu', $value)) {
+            return $this;
+        }
+
+        if (!isset($this->fieldsModified['inMenu']) && !array_key_exists('inMenu', $this->fieldsModified)) {
+            $this->fieldsModified['inMenu'] = $this->data['fields']['inMenu'];
+        } elseif ($this->isFieldModifiedEqualTo('inMenu', $value)) {
+            unset($this->fieldsModified['inMenu']);
+        }
+
+        $this->data['fields']['inMenu'] = $value;
+
+        return $this;
+    }
+
+    /**
+     * Returns the "inMenu" field.
+     *
+     * @return mixed The $name field.
+     */
+    public function getInMenu()
+    {
+        if (!isset($this->data['fields']['inMenu'])) {
+            if ($this->isNew()) {
+                $this->data['fields']['inMenu'] = null;
+            } elseif (!isset($this->data['fields']) || !array_key_exists('inMenu', $this->data['fields'])) {
+                $this->addFieldCache('inMenu');
+                $data = $this->getRepository()->getCollection()->findOne(
+                    array('_id' => $this->getId()),
+                    array('inMenu' => 1)
+                );
+                if (isset($data['inMenu'])) {
+                    $this->data['fields']['inMenu'] = (bool) $data['inMenu'];
+                } else {
+                    $this->data['fields']['inMenu'] = null;
+                }
+            }
+        }
+
+        return $this->data['fields']['inMenu'];
+    }
+
+    /**
+     * Set the "inFooter" field.
+     *
+     * @param mixed $value The value.
+     *
+     * @return \Model\PHPOrchestraCMSBundle\Node The document (fluent interface).
+     */
+    public function setInFooter($value)
+    {
+        if (!isset($this->data['fields']['inFooter'])) {
+            if (!$this->isNew()) {
+                $this->getInFooter();
+                if ($this->isFieldEqualTo('inFooter', $value)) {
+                    return $this;
+                }
+            } else {
+                if (null === $value) {
+                    return $this;
+                }
+                $this->fieldsModified['inFooter'] = null;
+                $this->data['fields']['inFooter'] = $value;
+                return $this;
+            }
+        } elseif ($this->isFieldEqualTo('inFooter', $value)) {
+            return $this;
+        }
+
+        if (!isset($this->fieldsModified['inFooter']) && !array_key_exists('inFooter', $this->fieldsModified)) {
+            $this->fieldsModified['inFooter'] = $this->data['fields']['inFooter'];
+        } elseif ($this->isFieldModifiedEqualTo('inFooter', $value)) {
+            unset($this->fieldsModified['inFooter']);
+        }
+
+        $this->data['fields']['inFooter'] = $value;
+
+        return $this;
+    }
+
+    /**
+     * Returns the "inFooter" field.
+     *
+     * @return mixed The $name field.
+     */
+    public function getInFooter()
+    {
+        if (!isset($this->data['fields']['inFooter'])) {
+            if ($this->isNew()) {
+                $this->data['fields']['inFooter'] = null;
+            } elseif (!isset($this->data['fields']) || !array_key_exists('inFooter', $this->data['fields'])) {
+                $this->addFieldCache('inFooter');
+                $data = $this->getRepository()->getCollection()->findOne(
+                    array('_id' => $this->getId()),
+                    array('inFooter' => 1)
+                );
+                if (isset($data['inFooter'])) {
+                    $this->data['fields']['inFooter'] = (bool) $data['inFooter'];
+                } else {
+                    $this->data['fields']['inFooter'] = null;
+                }
+            }
+        }
+
+        return $this->data['fields']['inFooter'];
+    }
+
+    /**
      * Set the "areas" field.
      *
      * @param mixed $value The value.
@@ -1175,6 +1315,12 @@ abstract class Node extends \Mandango\Document\Document
         if ('theme' == $name) {
             return $this->setTheme($value);
         }
+        if ('inMenu' == $name) {
+            return $this->setInMenu($value);
+        }
+        if ('inFooter' == $name) {
+            return $this->setInFooter($value);
+        }
         if ('areas' == $name) {
             return $this->setAreas($value);
         }
@@ -1231,6 +1377,12 @@ abstract class Node extends \Mandango\Document\Document
         }
         if ('theme' == $name) {
             return $this->getTheme();
+        }
+        if ('inMenu' == $name) {
+            return $this->getInMenu();
+        }
+        if ('inFooter' == $name) {
+            return $this->getInFooter();
         }
         if ('areas' == $name) {
             return $this->getAreas();
@@ -1293,6 +1445,12 @@ abstract class Node extends \Mandango\Document\Document
         if (isset($array['theme'])) {
             $this->setTheme($array['theme']);
         }
+        if (isset($array['inMenu'])) {
+            $this->setInMenu($array['inMenu']);
+        }
+        if (isset($array['inFooter'])) {
+            $this->setInFooter($array['inFooter']);
+        }
         if (isset($array['areas'])) {
             $this->setAreas($array['areas']);
         }
@@ -1332,6 +1490,8 @@ abstract class Node extends \Mandango\Document\Document
         $array['deleted'] = $this->getDeleted();
         $array['templateId'] = $this->getTemplateId();
         $array['theme'] = $this->getTheme();
+        $array['inMenu'] = $this->getInMenu();
+        $array['inFooter'] = $this->getInFooter();
         $array['areas'] = $this->getAreas();
 
         return $array;
@@ -1386,6 +1546,12 @@ abstract class Node extends \Mandango\Document\Document
                 }
                 if (isset($this->data['fields']['theme'])) {
                     $query['theme'] = (string) $this->data['fields']['theme'];
+                }
+                if (isset($this->data['fields']['inMenu'])) {
+                    $query['inMenu'] = (bool) $this->data['fields']['inMenu'];
+                }
+                if (isset($this->data['fields']['inFooter'])) {
+                    $query['inFooter'] = (bool) $this->data['fields']['inFooter'];
                 }
                 if (isset($this->data['fields']['areas'])) {
                     $query['areas'] = $this->data['fields']['areas'];
@@ -1544,6 +1710,30 @@ abstract class Node extends \Mandango\Document\Document
                             $query['$set']['theme'] = (string) $this->data['fields']['theme'];
                         } else {
                             $query['$unset']['theme'] = 1;
+                        }
+                    }
+                }
+                if (isset($this->data['fields']['inMenu'])
+                    || array_key_exists('inMenu', $this->data['fields'])) {
+                    $value = $this->data['fields']['inMenu'];
+                    $originalValue = $this->getOriginalFieldValue('inMenu');
+                    if ($value !== $originalValue) {
+                        if (null !== $value) {
+                            $query['$set']['inMenu'] = (bool) $this->data['fields']['inMenu'];
+                        } else {
+                            $query['$unset']['inMenu'] = 1;
+                        }
+                    }
+                }
+                if (isset($this->data['fields']['inFooter'])
+                    || array_key_exists('inFooter', $this->data['fields'])) {
+                    $value = $this->data['fields']['inFooter'];
+                    $originalValue = $this->getOriginalFieldValue('inFooter');
+                    if ($value !== $originalValue) {
+                        if (null !== $value) {
+                            $query['$set']['inFooter'] = (bool) $this->data['fields']['inFooter'];
+                        } else {
+                            $query['$unset']['inFooter'] = 1;
                         }
                     }
                 }

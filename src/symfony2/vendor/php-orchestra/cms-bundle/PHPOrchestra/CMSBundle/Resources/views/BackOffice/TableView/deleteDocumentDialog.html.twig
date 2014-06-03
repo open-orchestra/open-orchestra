@@ -1,0 +1,31 @@
+{##
+ # This file is part of the PHPOrchestra\CMSBundle.
+ #
+ # @author Noël GILAIN <noel.gilain@businessdecision.com>
+ ##}
+
+<script type="text/javascript">
+    var deleteDocument = new ConfirmDialog(
+        'deleteDocument',
+        function(params){
+            window.location.hash = params.url;
+        },
+        370
+    );
+    
+    deleteDocument.create();
+    
+    $('#content').on('click', '.delete', function(){
+        $("#dialog-deleteDocument").dialog({'okParams' : {'url' : $(this).attr('data-parameter')}});
+        $("#dialog-deleteDocument").dialog("open");
+    });
+</script>
+
+{% set vars = {
+    'dialogId' : 'dialog-deleteDocument',
+    'dialogTitle' : 'Suppression du document',
+    'dialogMessage' : 'Vous êtes sur le point de supprimer un document.<br /><br />Souhaitez-vous continuer ?'
+   }
+%}
+
+{% include 'PHPOrchestraCMSBundle:BackOffice/Dialogs:confirmation.html.twig' with vars %}

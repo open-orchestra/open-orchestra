@@ -173,6 +173,14 @@ class MetadataFactoryInfo
                     'type' => 'string',
                     'dbName' => 'theme',
                 ),
+                'inMenu' => array(
+                    'type' => 'boolean',
+                    'dbName' => 'inMenu',
+                ),
+                'inFooter' => array(
+                    'type' => 'boolean',
+                    'dbName' => 'inFooter',
+                ),
                 'areas' => array(
                     'type' => 'raw',
                     'dbName' => 'areas',

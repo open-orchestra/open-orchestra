@@ -149,7 +149,7 @@ abstract class TableViewController extends Controller
     	return $this->genericButton($value, 'edit', 'Modifier', 'btn btn-primary redirect', 'fa fa-edit');
     }
     public function deleteButton($value){
-        return $this->genericButton($value, 'delete', 'Supprimer', 'btn btn-danger', 'fa fa-trash-o');
+        return $this->genericButton($value, 'delete', 'Supprimer', 'btn btn-danger delete', 'fa fa-trash-o');
     }
     public function addButton(){
         return $this->genericButton('', 'edit', 'Ajouter', 'btn btn-small btn-ribbon bt-primary redirect', 'fa fa-plus');
