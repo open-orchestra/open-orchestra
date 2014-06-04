@@ -17,9 +17,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class SiteController extends TableViewController
 {
 
-    function __construct() {
+    function init() {
     	$this->setEntity('Site');
-    	parent::__construct();
     }
 	
     public function edit(){

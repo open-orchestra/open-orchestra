@@ -49,11 +49,10 @@ class ValidationListener implements EventSubscriberInterface
     public function validateForm(FormEvent $event)
     {
         $form = $event->getForm();
-
         if ($form->isRoot()) {
-            // Validate the form in group "Default"
+        	// Validate the form in group "Default"
             $violations = $this->validator->validate($form);
-
+            
             foreach ($violations as $violation) {
                 // Allow the "invalid" constraint to be put onto
                 // non-synchronized forms

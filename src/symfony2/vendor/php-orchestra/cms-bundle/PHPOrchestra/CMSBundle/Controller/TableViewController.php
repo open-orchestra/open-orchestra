@@ -26,9 +26,12 @@ abstract class TableViewController extends Controller
     
     function __construct() {
         $this->setColumns();
-        $this->callback['replaceComaByNewLine'] = create_function('$value', 'return implode("<br />", explode(",", $value));');
+        $this->init();
+        $this->callback['replaceComaByNewLine'] = function($value){return implode('<br />', explode(',', $value));};
     }
         
+    public function init(){}
+
     public function getColumns()
     {
         return $this->columns;
@@ -78,18 +81,6 @@ abstract class TableViewController extends Controller
         }
         else{
             return $this->edit($id);
-        }
-    }
-    /**
-     * @Route("/save/{id}")
-     */
-    public function saveAction(Request $request, $id=null){
-        $this->setRoute(preg_replace('/^(.*)_save$/', '$1', $request->get('_route')));
-    	if($this->getEntity() !== null){
-            return $this->saveEntity($request, $id);
-        }
-        else{
-            return $this->save($id);    
         }
     }
     /**
@@ -155,7 +146,7 @@ abstract class TableViewController extends Controller
         return $this->genericButton('', 'edit', 'Ajouter', 'btn btn-small btn-ribbon bt-primary redirect', 'fa fa-plus');
     }
     public function saveButton($value){
-        return $this->genericButton($value, 'save', 'Enregistrer', 'btn btn-small btn-ribbon bt-primary', 'fa fa-save');
+        return $this->genericButton($value, 'edit', 'Enregistrer', 'btn btn-small btn-ribbon bt-primary submit', 'fa fa-save');
     }
     public function backButton(){
         return $this->genericButton('', 'catalog', 'Retour', 'btn btn-small btn-ribbon bt-primary redirect', 'fa fa-undo');
@@ -191,17 +182,18 @@ abstract class TableViewController extends Controller
 
     public function editEntity(Request $request, $id)
     {
+
         $documentManager = $this->container->get('phporchestra_cms.documentmanager');
         if(empty($id)) {
             $document = $documentManager->createDocument($this->getEntity());
         }
         else {
             if($this->getKey() === null){
-                $document = $documentManager->getDocumentById($this->getEntity(), $id, true);
+                $document = $documentManager->getDocumentById($this->getEntity(), $id);
             }
             else{
                 $criteria = array_combine($this->getKey(), explode('|', $id));
-                $document = $documentManager->getDocument($this->getEntity(), $criteria, true);
+                $document = $documentManager->getDocument($this->getEntity(), $criteria);
             }
         }
         $form = $this->createForm(
@@ -211,12 +203,36 @@ abstract class TableViewController extends Controller
                'action' => $this->getRequest()->getUri(),
             )
         );
-        $form->handleRequest($request);
-        if ($form->isValid()) {
-            return $this->render(
-                'PHPOrchestraCMSBundle:BackOffice/Editorial:simpleMessage.html.twig',
-                array('message' => 'Edition ok')
-            );
+        
+        if($request->getMethod() == 'POST'){
+	        $form->handleRequest($request);
+	        
+	        if ($form->isValid()) {
+	        	$document->save();
+		        return new JsonResponse(
+		            array(
+		                'success' => true,
+		                'data' => $this->generateUrl($this->getRoute().'_catalog'),
+		            )
+		        );
+	        }
+	        else{
+		        $render = $this->render(
+		            'PHPOrchestraCMSBundle:BackOffice/TableView:form.html.twig',
+		            array(
+		                'form' => $form->createView(),
+		                'title' => $this->getEntity(),
+		                'ribbon' => $this->saveButton($id).$this->backButton()
+		            
+		            )
+		        );
+                return new JsonResponse(
+                    array(
+                        'success' => false,
+                        'data' => $render->getContent()
+                    )
+                );
+	        }
         }
         return $this->render(
             'PHPOrchestraCMSBundle:BackOffice/TableView:form.html.twig',
@@ -228,6 +244,7 @@ abstract class TableViewController extends Controller
             )
         );
     }
+
     public function catalogEntity(Request $request)
     {
         if ($request->get('parse')) {

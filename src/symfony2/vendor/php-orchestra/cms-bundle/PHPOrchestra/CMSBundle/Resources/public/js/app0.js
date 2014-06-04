@@ -70,9 +70,21 @@ var ismobile = (/iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.tes
 
 $(document).ready(function() {
 	$('#content').on('click', 'button.redirect', function(){
-		window.location.hash = $(this).attr('data-parameter')
+		loadURL($(this).attr('data-parameter'), $('#content'));
 	});
 	
+	$('#content').on('click', 'button.submit', function(){
+		var data = $('#content form').serializeArray();
+		$.post($(this).attr('data-parameter') , data, function (response) {
+			if(response.success){
+				loadURL(response.data, $('#content'));
+			}
+			else{
+				$('#content').html(response.data);
+			}
+		});
+	});
+
 	/*
 	 * Fire tooltips
 	 */

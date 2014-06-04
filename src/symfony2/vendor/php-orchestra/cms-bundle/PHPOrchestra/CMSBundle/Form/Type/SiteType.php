@@ -96,6 +96,12 @@ class SiteType extends AbstractType
             )
         );
     }
+
+    
+    public static function loadValidatorMetadata(ClassMetadata $metadata)
+    {
+        $metadata->addPropertyConstraint('domain', new NotBlank());
+    }
     
     
     /**
