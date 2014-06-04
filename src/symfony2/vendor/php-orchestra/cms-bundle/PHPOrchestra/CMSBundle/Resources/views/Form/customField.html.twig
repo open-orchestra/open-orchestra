@@ -6,21 +6,18 @@
 
 {% block orchestra_customField_widget %}
 <fieldset>
-    <legend>{{ form.vars.value.type }}</legend>
-    
-    <table class="customField" data-id="{{ form.vars.name }}">
-        <tr><td>Supprimer le champ</td><td>{{ form_widget(form.removeField) }}</td></tr>
-        <tr><td>Label du champ</td><td>{{ form_widget(form.label) }}</td></tr>
-        <tr><td>Identifiant</td><td>{{ form_widget(form.fieldId) }}</td></tr>
-        <tr><td>Indexable</td><td>{{ form_widget(form.searchable) }}</td></tr>
-        {% for key, value in form %}
-            {% if key starts with 'option' %}
-        <tr><td>{{ form_label(form[key]) }}</td><td>{{ form_widget(form[key]) }}</td></tr>
-            {% endif %}
-        {% endfor %}
-    </table>
-    
+    Type de champ : {{ form.vars.value.type }}<br /><br />
+    {{ form_row(form.removeField) }}
+    {{ form_row(form.label) }}
+    {{ form_row(form.fieldId) }}
+    {{ form_row(form.searchable) }}
+    {% for key, value in form %}
+        {% if key starts with 'option' %}
+            {{ form_row(form[key]) }}
+        {% endif %}
+    {% endfor %}
 </fieldset>
+<br />
 {% endblock %}
 
 {% block orchestra_fieldSelect_widget %}

@@ -34,9 +34,13 @@ class ContentTypeController extends TableViewController
        );
     }
     
-    public function editEntity(Request $request, $id)    {
+    public function editEntity(Request $request, $id) {
         $documentManager = $this->container->get('phporchestra_cms.documentmanager');
+        if (empty($id)) {
+            $contentType = $documentManager->createDocument('ContentType');
+        } else {
         $contentType = $documentManager->getDocumentById('ContentType', $id);
+        }
         
         if ($contentType->getStatus() != ContentType::STATUS_DRAFT) {
             $contentType->generateDraft();

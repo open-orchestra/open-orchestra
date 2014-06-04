@@ -34,4 +34,8 @@ php_orchestra_theme:
             javascripts :
                 - PHPOrchestraThemeBundle:theme1:js/empty.js
                 - FakeAppThemeBundle:fromApp:js/subfolder/sub.js
- 
+    
+twig:
+    form:
+        resources:
+            - 'PHPOrchestraCMSBundle:Form:customField.html.twig'

@@ -63,10 +63,16 @@
 {% block form_row %}
 {% spaceless %}
     <section>
+    {% if block_prefixes[1] == 'checkbox' %}
+        <label class="checkbox">
+            {{ form_widget(form) }}
+            <i></i>{{ form_label(form, null, {'label_attr': {'class': 'label'}}) }}</label>
+    {% else %}
         {{ form_label(form, null, {'label_attr': {'class': 'label'}}) }}
         <label class="{{ block_prefixes[1]|lexicon_translator }}">
             {{ form_widget(form) }}<i></i>
         </label>
+    {% endif %}
         <div class="note">
             {{ form_errors(form) }}
         </div>
