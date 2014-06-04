@@ -4,13 +4,7 @@
  # @author Noël GILAIN <noel.gilain@businessdecision.com>
  ##}
 
-{% form_theme form 'PHPOrchestraCMSBundle:Form:customField.html.twig' %}
-
-{#{ dump(form.id.vars) }} <hr />
-
-{% for key, value in form %}
-    {{ key }} <br />
-{% endfor %#}
+{% form_theme form 'PHPOrchestraCMSBundle:Form:extend.html.twig' %}
 
 <script type="text/javascript">
     $(document).ready(function() {
@@ -19,31 +13,30 @@
         });
     });
 </script>
+
 {{ form_start(
     form,
     {
+        'attr': {'class': 'smart-form'},
         'method': 'POST',
         'action': path('phporchestra_cms_backofficeview_contenttype_edit', {'id': form.id.vars.value})
     }
 ) }}
 
-{{ form_errors(form) }}
-
 {{ form_widget(form.fields) }}
-<table>
-    <tr><td>{{ form_label(form.name) }}</td><td>{{ form_widget(form.name) }}</td></tr>
-    <tr><td>{{ form_label(form.contentTypeId) }}</td><td>{{ form_widget(form.contentTypeId) }}</td></tr>
-    <tr><td>{{ form_label(form.version) }}</td><td>{{ form_widget(form.version) }}</td></tr>
-    <tr><td>{{ form_label(form.status) }}</td><td>{{ form_widget(form.status) }}</td></tr>
-    {% for key, value in form %}
-        {% if key starts with 'customField' %}
-    <tr><td colspan="2">{{ form_widget(form[key]) }}</td></tr>
-        {% endif %}
-    {% endfor %}
-</table>
-<br /><hr />
-<table>
-    <tr style="width:50px;"><td>{{ form_label(form.new_field) }}</td><td>{{ form_widget(form.new_field) }}</td></tr>
-    <tr><td>{{ form_widget(form.cancel) }}</td><td>{{ form_widget(form.save) }}</td></tr>
-</table>
+
+{{ form_row(form.name) }}
+{{ form_row(form.contentTypeId) }}
+{{ form_row(form.version) }}
+{{ form_row(form.status) }}
+{% for key, value in form %}
+    {% if key starts with 'customField' %}
+        {{ form_widget(form[key]) }}
+    {% endif %}
+{% endfor %}
+
+<div class="ribbon">
+    {{ form_label(form.new_field) }} {{ form_widget(form.new_field) }} {{ form_widget(form.cancel) }} {{ form_widget(form.save) }}
+</div>
+
 {{ form_end(form) }}

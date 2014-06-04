@@ -23,10 +23,13 @@ class ContentTypeTransformer implements DataTransformerInterface
         $customFields = json_decode($contentType->getFields());
         
         $customFieldsIndex = array();
-        foreach ($customFields as $key => $customField) {
-            $varName = 'customField_' . $key;
-            $contentType->$varName = $customField;
-            $customFieldsIndex[] = $varName;
+        
+        if (is_array($customFields)) {
+            foreach ($customFields as $key => $customField) {
+                $varName = 'customField_' . $key;
+                $contentType->$varName = $customField;
+                $customFieldsIndex[] = $varName;
+            }
         }
         $contentType->customFieldsIndex = $customFieldsIndex;
         $contentType->new_field = '';
