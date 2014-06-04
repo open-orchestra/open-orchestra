@@ -4764,5 +4764,108 @@
             "persistence",
             "symfony"
         ]
+    },
+    {
+        "name": "solarium/solarium",
+        "version": "3.2.0",
+        "version_normalized": "3.2.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/basdenooijer/solarium.git",
+            "reference": "f602c2020d1b57e7a3aa0c75088222ce31438aba"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/basdenooijer/solarium/zipball/f602c2020d1b57e7a3aa0c75088222ce31438aba",
+            "reference": "f602c2020d1b57e7a3aa0c75088222ce31438aba",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.2",
+            "symfony/event-dispatcher": "~2.1"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~3.7",
+            "squizlabs/php_codesniffer": "~1.4"
+        },
+        "time": "2013-09-13 08:09:42",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Solarium\\": "library/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "NewBSD"
+        ],
+        "authors": [
+            {
+                "name": "See GitHub contributors",
+                "homepage": "https://github.com/basdenooijer/solarium/contributors"
+            }
+        ],
+        "description": "PHP Solr client",
+        "homepage": "http://www.solarium-project.org",
+        "keywords": [
+            "php",
+            "search",
+            "solr"
+        ]
+    },
+    {
+        "name": "nelmio/solarium-bundle",
+        "version": "v2.0.4",
+        "version_normalized": "2.0.4.0",
+        "target-dir": "Nelmio/SolariumBundle",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/nelmio/NelmioSolariumBundle.git",
+            "reference": "b4b63e0006c7d191811e0f056ff3a8f32e2a973b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/nelmio/NelmioSolariumBundle/zipball/b4b63e0006c7d191811e0f056ff3a8f32e2a973b",
+            "reference": "b4b63e0006c7d191811e0f056ff3a8f32e2a973b",
+            "shasum": ""
+        },
+        "require": {
+            "solarium/solarium": "~3.0",
+            "symfony/framework-bundle": "~2.1"
+        },
+        "time": "2013-06-26 15:44:55",
+        "type": "symfony-bundle",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Nelmio\\SolariumBundle": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Nelmio",
+                "homepage": "http://nelm.io"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://github.com/nelmio/NelmioSolariumBundle/contributors"
+            }
+        ],
+        "description": "Integration with solarium solr client.",
+        "keywords": [
+            "search",
+            "solarium",
+            "solr"
+        ]
     }
 ]

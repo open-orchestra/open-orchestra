@@ -11,8 +11,12 @@ php_orchestra_cms_bo_site:
     type: annotation
 
 php_orchestra_cms_bo_contentType:
-    pattern: /list/contentType
-    defaults: { _controller: PHPOrchestraCMSBundle:BackOfficeView/ContentType:list}
+    resource: "@PHPOrchestraCMSBundle/Controller/BackOfficeView/ContentTypeController.php"
+    type: annotation
+
+#php_orchestra_cms_bo_contentType:
+#    pattern: /list/contentType
+#    defaults: { _controller: PHPOrchestraCMSBundle:BackOfficeView/ContentType:list}
 
 php_orchestra_cms_bo_contentType_edit:
     pattern: /edit/contentType/{id}
