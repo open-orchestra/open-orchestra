@@ -244,4 +244,7 @@ div.top-tools .ColVis button{
     z-index:999;
 }
 
+form .ribbon{
+    top:-51px !important;
+
 /* end patch smart css */

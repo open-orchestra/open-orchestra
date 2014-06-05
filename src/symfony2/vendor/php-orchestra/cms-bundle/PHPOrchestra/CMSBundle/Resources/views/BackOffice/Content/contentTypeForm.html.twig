@@ -6,14 +6,6 @@
 
 {% form_theme form 'PHPOrchestraCMSBundle:Form:extend.html.twig' %}
 
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('.cancelButton').click(function(){
-            window.location.hash = "{{ path('phporchestra_cms_backofficeview_contenttype_catalog') }}";
-        });
-    });
-</script>
-
 {{ form_start(
     form,
     {
@@ -36,7 +28,7 @@
 {% endfor %}
 
 <div class="ribbon">
-    {{ form_label(form.new_field) }} {{ form_widget(form.new_field) }} {{ form_widget(form.cancel) }} {{ form_widget(form.save) }}
+    {{ form_label(form.new_field) }} {{ form_widget(form.new_field) }} {{ ribbon|raw }}
 </div>
 
 {{ form_end(form) }}
