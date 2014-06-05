@@ -19,8 +19,9 @@ abstract class TableViewController extends Controller
 	protected $columns = array();
     protected $values = array();
     protected $entity = null;
+    protected $criteria = array();
+    protected $sort = array();
     protected $key = null;
-    protected $route;
     protected $callback = array();
     abstract public function setColumns();
     
@@ -53,6 +54,22 @@ abstract class TableViewController extends Controller
         return $this->entity;
     }
     
+    public function setCriteria($criteria){
+        $this->criteria = $criteria;
+    }
+    
+    public function getCriteria($criteria){
+        return $this->criteria;
+    }
+        
+    public function setSort($sort){
+        $this->sort = $sort;
+    }
+    
+    public function getSort($sort){
+        return $this->sort;
+    }
+    
     public function setKey($key){
     	if(is_array($key)){
             $this->key = $key;
@@ -63,19 +80,14 @@ abstract class TableViewController extends Controller
         return $this->key;
     }
     
-    public function setRoute($route){
-        $this->route = $route;
+    /**
+     * @Route("/{action}/{id}")
+     */
+    public function indexAction(Request $request, $action, $id=null){
+    	return call_user_func(array($this, $action.'Action'), $request, $id);
     }
     
-    public function getRoute(){
-        return $this->route;
-    }
-
-    /**
-     * @Route("/edit/{id}")
-     */
     public function editAction(Request $request, $id=null){
-        $this->setRoute(preg_replace('/^(.*)_edit$/', '$1', $request->get('_route')));
     	if($this->getEntity() !== null){
             return $this->editEntity($request, $id);
         }
@@ -83,11 +95,8 @@ abstract class TableViewController extends Controller
             return $this->edit($id);
         }
     }
-    /**
-     * @Route("/delete/{id}")
-     */
+
     public function deleteAction(Request $request, $id=null){
-        $this->setRoute(preg_replace('/^(.*)_delete$/', '$1', $request->get('_route')));
     	if($this->getEntity() !== null){
             return $this->deleteEntity($request, $id);
         }
@@ -95,12 +104,9 @@ abstract class TableViewController extends Controller
             return $this->edit($id);    
         }
     }
-     /**
-     * @Route("/catalog")
-     */
+
     public function catalogAction(Request $request)
     {
-        $this->setRoute(preg_replace('/^(.*)_catalog$/', '$1', $request->get('_route')));
         if($this->getEntity() !== null){
             return $this->catalogEntity($request);
         }
@@ -110,19 +116,18 @@ abstract class TableViewController extends Controller
     }
     
     
-    public function generateUrlValue($url, $value){
+    public function generateUrlValue($action, $value){
+    	$parameter = array('action' => $action);
     	if(!empty($value)){
-            return $this->generateUrl($url, array('id' => $value));
+    		$parameter['id'] = $value;
     	}
-    	else{
-    		return $this->generateUrl($url);
-    	}
+    	return $this->generateUrl($this->get('request')->get('_route'), $parameter);
     }
     
-    public function genericButton($value, $path, $label, $classBtn, $class){
+    public function genericButton($value, $action, $label, $classBtn, $class){
         if($this->getEntity() !== null){
             return '
-                <button data-parameter="'.$this->generateUrlValue($this->getRoute().'_'.$path, $value).'" value="'.$label.'" class="'.$classBtn.'">
+                <button data-parameter="'.$this->generateUrlValue($action, $value).'" value="'.$label.'" class="'.$classBtn.'">
                    <i class="'.$class.'"></i>&nbsp;'.$label.'
                 </button>
             ';
@@ -249,10 +254,14 @@ abstract class TableViewController extends Controller
     {
         if ($request->get('parse')) {
             $documentManager = $this->container->get('phporchestra_cms.documentmanager');
-            $sort = is_array($request->get('sort')) ? array_map('intval', $request->get('sort')) : $request->get('sort');
+            
+            $sort = is_array($request->get('sort')) ? $request->get('sort') : $this->sort;
+            $sort = array_map('intval', $sort);
+
             parse_str($request->get('criteria'), $criteria);
+            $criteria = array_merge($this->criteria, $criteria);
             array_walk($criteria, function(&$value, $key) {
-                $value = new \MongoRegex('/^'.preg_quote($value).'/i');
+                $value = new \MongoRegex('/'.preg_quote($value).'/i');
             });
             
             $this->setValues($documentManager->getDocuments($this->getEntity(), $criteria, $sort, true, $request->get('start'), $request->get('length')));
@@ -273,11 +282,12 @@ abstract class TableViewController extends Controller
                 )
             );
         } else {
+        	
             return $this->render('PHPOrchestraCMSBundle:BackOffice:tableViewLayout.html.twig',
                 array(
                     'columns' => $this->getColumns(),
-                    'listUrl' => $request->get('_route'),
-                    'deleteUrl' => $request->get('_route'),
+                    'listUrl' => $this->generateUrl($this->get('request')->get('_route'), array('action' => 'catalog')),
+                    'order' => array(array(1, 'desc')),
                     'title' => $this->getEntity(),
                     'ribbon' => $this->addButton()
                 )

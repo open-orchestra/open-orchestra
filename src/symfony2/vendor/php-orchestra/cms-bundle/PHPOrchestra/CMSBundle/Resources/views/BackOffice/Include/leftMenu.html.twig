@@ -14,7 +14,7 @@
         <li>
             <a href="#"><i class="fa fa-lg fa-fw fa-edit"></i><span class="menu-item-parent">Editorial</span></a>
             <ul style="display:block;">
-                <li><a href="{{ path('phporchestra_cms_backofficeview_site_catalog') }}">Gestion des sites</a></li>
+                <li><a href="{{ path('phporchestra_cms_backofficeview_site_index', {'action' : 'catalog'}) }}">Gestion des sites</a></li>
                 <li><a href="{{ path('php_orchestra_cms_bo_edito') }}">Gestion des gabarits</a></li>
                 <li>
                     <a href="#">Gestion des contenus</a>
@@ -33,7 +33,7 @@
             <a href="#"><i class="fa fa-lg fa-fw fa-desktop"></i><span class="menu-item-parent">Administration</span></a>
             <ul style="display:block;">
                 <li>
-                    <a href="{{ path('phporchestra_cms_backofficeview_contenttype_catalog') }}">Type de contenus</a>
+                    <a href="{#{ path('phporchestra_cms_backofficeview_contenttype_catalog') }#}">Type de contenus</a>
                 </li>
             </ul>
         </li>

@@ -1,4 +1,4 @@
-function loadDataTableScripts(path, listurl) {
+function loadDataTableScripts(path, listurl, order) {
     
     loadCss(path + "plugin/DataTables-1.10.0/media/css/jquery.dataTables.min.css");
     loadCss(path + "plugin/DataTables-1.10.0/media/css/jquery.dataTables_themeroller.min.css");
@@ -36,13 +36,16 @@ function loadDataTableScripts(path, listurl) {
     function dt_8() {
         loadCss(path + "plugin/DataTables-1.10.0/extensions/TableTools/css/dataTables.tableTools.min.css");
         loadScript(path + "plugin/DataTables-1.10.0/extensions/TableTools/js/dataTables.tableTools.min.js", 
-        runDataTables(path, listurl));
+        runDataTables(path, listurl, order));
     }
 }
-function runDataTables(path, listurl) {
+function runDataTables(path, listurl, order) {
+	
+	console.log(order);
     var table = $('#datatable_fixed_column').dataTable({
         "serverSide": true,
         "ordering": true,
+        "order": order,
         "searching": false,
         "scroller": {
             "loadingIndicator": true,
