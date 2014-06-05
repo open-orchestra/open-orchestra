@@ -65,11 +65,11 @@ class ContentTypeController extends TableViewController
         
         if ($contentType->new_field != '') {
             $contentType->save();
-            return $this->redirect($this->generateUrl('phporchestra_cms_backofficeview_contenttype_edit', array('id' => (string)$contentType->getId())));
+            return $this->redirect($this->generateUrl('phporchestra_cms_backofficeview_contenttype_index', array('action' => 'edit', 'id' => (string)$contentType->getId())));
         } elseif ($form->isValid()) {
             $this->deleteOtherStatusVersions($contentType->getContentTypeId(), $contentType->getStatus());
             $contentType->save();
-            return $this->redirect($this->generateUrl('phporchestra_cms_backofficeview_contenttype_catalog'));
+            return $this->redirect($this->generateUrl('phporchestra_cms_backofficeview_contenttype_index', array('action' => 'catalog')));
         }
         
         return $this->render(
@@ -126,7 +126,7 @@ class ContentTypeController extends TableViewController
         }
         
         return $this->redirect(
-            $this->generateUrl('phporchestra_cms_backofficeview_contenttype_catalog')
+            $this->generateUrl('phporchestra_cms_backofficeview_contenttype_index', array('action' => 'catalog'))
         );
     }
 }

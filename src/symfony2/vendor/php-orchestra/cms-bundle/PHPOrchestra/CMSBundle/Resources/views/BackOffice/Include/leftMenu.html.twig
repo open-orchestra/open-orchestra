@@ -21,7 +21,7 @@
                     <ul>
                     {% for contentType in contentTypes %}
                         {% if contentType._id != '' %}
-                        <li><a href="{{ path('phporchestra_cms_backofficeview_content_catalog', {'contentTypeId' : contentType._id}) }}">{{ contentType.name }}</a></li>
+                        <li><a href="{{ path('phporchestra_cms_backofficeview_content_index', {'action' : 'catalog', 'contentTypeId' : contentType._id}) }}">{{ contentType.name }}</a></li>
                         {% endif %}
                     {% endfor %}
                     </ul>
@@ -33,7 +33,7 @@
             <a href="#"><i class="fa fa-lg fa-fw fa-desktop"></i><span class="menu-item-parent">Administration</span></a>
             <ul style="display:block;">
                 <li>
-                    <a href="{#{ path('phporchestra_cms_backofficeview_contenttype_catalog') }#}">Type de contenus</a>
+                    <a href="{{ path('phporchestra_cms_backofficeview_contenttype_index', {'action' : 'catalog'}) }}">Type de contenus</a>
                 </li>
             </ul>
         </li>
