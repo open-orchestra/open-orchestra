@@ -7,14 +7,40 @@
 
 namespace PHPOrchestra\CMSBundle\Controller\BackOfficeView;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use PHPOrchestra\CMSBundle\Controller\TableViewController;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
-class ContentController extends Controller
+/**
+ * @Route("/content/{contentTypeId}")
+ */
+class ContentController extends TableViewController
 {
     /**
-     * View the list of a specific contentType
+     * (non-PHPdoc)
+     * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Controller/PHPOrchestra\CMSBundle\Controller.TableViewController::init()
      */
-    public function listAction($contentType)
+    function init() {
+        $this->setEntity('Content');
+    }
+    
+    /**
+     * (non-PHPdoc)
+     * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Controller/PHPOrchestra\CMSBundle\Controller.TableViewController::setColumns()
+     */
+    public function setColumns(){
+        $this->columns = array(
+            array('name' => 'contentType', 'search' => 'text', 'label' => 'Type de contenu'),
+            array('name' => 'shortName', 'search' => 'text', 'label' => 'Nom'),
+            array('name' => 'laguage', 'search' => 'text', 'label' => 'Langue'),
+            array('name' => 'version', 'search' => 'text', 'label' => 'Version'),
+            array('name' => 'status', 'search' => 'text', 'label' => 'Statut'),
+            array('name' => 'deleted', 'search' => 'text', 'label' => 'Supprimé'),
+            array('button' =>'modify'),
+            array('button' =>'delete')
+       );
+    }
+
+/*    public function listAction($contentType)
     {
         $documentManager = $this->container->get('phporchestra_cms.documentmanager');
         $contents = $documentManager->getDocuments('Content', array('contentType' => $contentType), array(), true);
@@ -32,5 +58,5 @@ class ContentController extends Controller
     {
         die();
         return $this->render('PHPOrchestraCMSBundle:BackOffice:home.html.twig');
-    }
+    }*/
 }

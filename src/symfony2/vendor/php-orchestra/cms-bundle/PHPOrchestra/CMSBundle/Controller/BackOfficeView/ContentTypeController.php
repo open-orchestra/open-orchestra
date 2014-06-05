@@ -17,11 +17,20 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
  */
 class ContentTypeController extends TableViewController
 {
-    function __construct() {
+    
+    /**
+     * (non-PHPdoc)
+     * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Controller/PHPOrchestra\CMSBundle\Controller.TableViewController::init()
+     */
+    function init() {
         $this->setEntity('ContentType');
-        parent::__construct();
     }
     
+    
+    /**
+     * (non-PHPdoc)
+     * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Controller/PHPOrchestra\CMSBundle\Controller.TableViewController::setColumns()
+     */
     public function setColumns(){
         $this->columns = array(
             array('name' => 'contentTypeId', 'search' => 'text', 'label' => 'Identifiant'),
@@ -34,6 +43,11 @@ class ContentTypeController extends TableViewController
        );
     }
     
+    
+    /**
+     * (non-PHPdoc)
+     * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Controller/PHPOrchestra\CMSBundle\Controller.TableViewController::editEntity()
+     */
     public function editEntity(Request $request, $id) {
         $documentManager = $this->container->get('phporchestra_cms.documentmanager');
         if (empty($id)) {
@@ -60,10 +74,20 @@ class ContentTypeController extends TableViewController
         
         return $this->render(
             'PHPOrchestraCMSBundle:BackOffice/Content:contentTypeForm.html.twig',
-            array('form' => $form->createView())
+            array(
+                'form' => $form->createView(),
+                'ribbon' => $this->saveButton($id) . $this->backButton()
+            )
         );
     }
     
+    
+    /**
+     * Keep only one version of the status $status for the document $contentTypeId
+     * 
+     * @param string $contentTypeId
+     * @param string $status
+     */
     protected function deleteOtherStatusVersions($contentTypeId, $status)
     {
         $documentManager = $this->container->get('phporchestra_cms.documentmanager');
@@ -85,6 +109,11 @@ class ContentTypeController extends TableViewController
         return true;
     }
     
+    
+    /**
+     * (non-PHPdoc)
+     * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Controller/PHPOrchestra\CMSBundle\Controller.TableViewController::deleteEntity()
+     */
     public function deleteEntity($request, $id)
     {
         $documentManager = $this->get('phporchestra_cms.documentmanager');

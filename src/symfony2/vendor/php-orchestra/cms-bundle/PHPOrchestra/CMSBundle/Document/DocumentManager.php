@@ -181,13 +181,14 @@ class DocumentManager
         }
         
         $filters[] = array(
-                            '$group' => array(
-                                '_id' => '$nodeId',
-                                'version' => array('$first' => '$version'),
-                                'parentId' => array('$first' => '$parentId'),
-                                'name' => array('$first' => '$name'),
-                                'deleted' => array('$first' => '$deleted')
-                            )
+            '$group' =>
+                array(
+                    '_id' => '$nodeId',
+                    'version' => array('$first' => '$version'),
+                    'parentId' => array('$first' => '$parentId'),
+                    'name' => array('$first' => '$name'),
+                    'deleted' => array('$first' => '$deleted')
+                )
         );
         
         $versions = $repository->getCollection()->aggregate($filters);
@@ -217,12 +218,13 @@ class DocumentManager
                 '$sort' => array('version' => -1),
             ),
             array(
-                '$group' => array(
-                    '_id' => '$templateId',
-                    'version' => array('$first' => '$version'),
-                    'name' => array('$first' => '$name'),
-                    'deleted' => array('$first' => '$deleted')
-                )
+                '$group' =>
+                    array(
+                        '_id' => '$templateId',
+                        'version' => array('$first' => '$version'),
+                        'name' => array('$first' => '$name'),
+                        'deleted' => array('$first' => '$deleted')
+                    )
             )
         );
         
@@ -237,10 +239,13 @@ class DocumentManager
         $repository = $this->documentsService->getRepository($this->getDocumentNamespace('ContentType'));
         
         $filters = array(
-            array('$match' => array(
-                'status' => 'published',
-                'deleted' => 'false'
-            )),
+            array(
+                '$match' =>
+                    array(
+                        'status' => 'published',
+                        'deleted' => false
+                    )
+            ),
             array('$sort' => array('version' => -1))
         );
         
@@ -249,17 +254,17 @@ class DocumentManager
         }
         
         $filters[] = array(
-                            '$group' => array(
-                                '_id' => '$contentTypeId',
-                                'version' => array('$first' => '$version'),
-                                'name' => array('$first' => '$name'),
-                                'status' => array('$first' => '$status'),
-                                'deleted' => array('$first' => '$deleted')
-                            )
+            '$group' =>
+                array(
+                    '_id' => '$contentTypeId',
+                    'version' => array('$first' => '$version'),
+                    'name' => array('$first' => '$name'),
+                    'status' => array('$first' => '$status'),
+                    'deleted' => array('$first' => '$deleted')
+                )
         );
         
         $versions = $repository->getCollection()->aggregate($filters);
-        
         return $versions['result'];
     }
     
