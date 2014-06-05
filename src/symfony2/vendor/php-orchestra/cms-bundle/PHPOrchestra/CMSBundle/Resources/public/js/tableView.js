@@ -40,8 +40,6 @@ function loadDataTableScripts(path, listurl, order) {
     }
 }
 function runDataTables(path, listurl, order) {
-	
-	console.log(order);
     var table = $('#datatable_fixed_column').dataTable({
         "serverSide": true,
         "ordering": true,
@@ -100,14 +98,14 @@ $(document).ready(function() {
 	
 	
 	$('#content').on('click', 'button.redirect', function(){
-		loadURL($(this).attr('data-parameter'), $('#content'));
+		window.location.hash = $(this).attr('data-parameter');
 	});
 	
 	$('#content').on('click', 'button.submit', function(){
 		var data = $('#content form').serializeArray();
 		$.post($(this).attr('data-parameter') , data, function (response) {
 			if(response.success){
-				loadURL(response.data, $('#content'));
+				window.location.hash = $(this).attr('data-parameter');
 			}
 			else{
 				$('#content').html(response.data);

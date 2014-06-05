@@ -217,7 +217,7 @@ abstract class TableViewController extends Controller
 		        return new JsonResponse(
 		            array(
 		                'success' => true,
-		                'data' => $this->generateUrl($this->getRoute().'_catalog'),
+		                'data' => $this->generateUrl($this->get('request')->get('_route'), array('action' => 'catalog')),
 		            )
 		        );
 	        }
@@ -249,11 +249,26 @@ abstract class TableViewController extends Controller
             )
         );
     }
-
+    public function deleteEntity(Request $request, $id)
+    {
+        $documentManager = $this->container->get('phporchestra_cms.documentmanager');
+        if(!empty($id)) {
+            if($this->getKey() === null){
+                $document = $documentManager->getDocumentById($this->getEntity(), $id);
+            }
+            else{
+                $criteria = array_combine($this->getKey(), explode('|', $id));
+                $document = $documentManager->getDocument($this->getEntity(), $criteria);
+            }
+        	$document->delete();
+        }
+        
+        return $this->redirect($this->generateUrl($this->get('request')->get('_route'), array('action' => 'catalog')));
+    }
     public function catalogEntity(Request $request)
     {
-        if ($request->get('parse')) {
-            $documentManager = $this->container->get('phporchestra_cms.documentmanager');
+        $documentManager = $this->container->get('phporchestra_cms.documentmanager');
+    	if ($request->get('parse')) {
             
             $sort = is_array($request->get('sort')) ? $request->get('sort') : $this->sort;
             $sort = array_map('intval', $sort);

@@ -85,7 +85,7 @@ class ContentTypeController extends TableViewController
         return true;
     }
     
-    public function deleteEntity($request, $id)
+    public function deleteEntity(Request $request, $id)
     {
         $documentManager = $this->get('phporchestra_cms.documentmanager');
         
