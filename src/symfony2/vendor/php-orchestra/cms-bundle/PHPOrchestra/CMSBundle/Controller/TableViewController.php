@@ -23,11 +23,14 @@ abstract class TableViewController extends Controller
     protected $sort = array();
     protected $key = null;
     protected $callback = array();
+    protected $buttonTwig = 'PHPOrchestraCMSBundle:BackOffice/TableView:button.html.twig';
+    
     abstract public function setColumns();
     
     function __construct() {
         $this->setColumns();
         $this->init();
+        $this->callback['arrayToNewLine'] = function($value){return implode('<br />', $value);};
         $this->callback['replaceComaByNewLine'] = function($value){return implode('<br />', explode(',', $value));};
     }
         
@@ -80,6 +83,14 @@ abstract class TableViewController extends Controller
         return $this->key;
     }
     
+    public function setButtonTwig($buttonTwig){
+        $this->buttonTwig = $buttonTwig;
+    }
+    
+    public function getButtonTwig($buttonTwig){
+        return $this->buttonTwig;
+    }
+    
     /**
      * @Route("/{action}/{id}")
      */
@@ -124,21 +135,20 @@ abstract class TableViewController extends Controller
     	return $this->generateUrl($this->get('request')->get('_route'), $parameter);
     }
     
-    public function genericButton($value, $action, $label, $classBtn, $class){
+    public function genericButton($data, $action, $label, $class, $icon){
         if($this->getEntity() !== null){
-            return '
-                <button data-parameter="'.$this->generateUrlValue($action, $value).'" value="'.$label.'" class="'.$classBtn.'">
-                   <i class="'.$class.'"></i>&nbsp;'.$label.'
-                </button>
-            ';
+        	$data = $this->generateUrlValue($action, $data);
         }
-        else{
-            return '
-                <button data-parameter="'.$value.'" value="'.$label.'" class="btn '.$classBtn.'">
-                   <i class="'.$class.'"></i>&nbsp;'.$label.'
-                </button>
-            ';
-        }
+        $render = $this->render(
+            $this->buttonTwig,
+            array(
+                'data' => $data,
+                'label' => $label,
+                'class' => $class,
+                'icon' => $icon
+            )
+        );
+        return $render->getContent();    	
     }
     
     public function modifyButton($value){
@@ -201,6 +211,7 @@ abstract class TableViewController extends Controller
                 $document = $documentManager->getDocument($this->getEntity(), $criteria);
             }
         }
+        
         $form = $this->createForm(
             lcfirst($this->getEntity()),
             $document,
@@ -208,46 +219,31 @@ abstract class TableViewController extends Controller
                'action' => $this->getRequest()->getUri(),
             )
         );
-        
-        if($request->getMethod() == 'POST'){
-	        $form->handleRequest($request);
-	        
-	        if ($form->isValid()) {
-	        	$document->save();
-		        return new JsonResponse(
-		            array(
-		                'success' => true,
-		                'data' => $this->generateUrl($this->get('request')->get('_route'), array('action' => 'catalog')),
-		            )
-		        );
-	        }
-	        else{
-		        $render = $this->render(
-		            'PHPOrchestraCMSBundle:BackOffice/TableView:form.html.twig',
-		            array(
-		                'form' => $form->createView(),
-		                'title' => $this->getEntity(),
-		                'ribbon' => $this->saveButton($id).$this->backButton()
-		            
-		            )
-		        );
-                return new JsonResponse(
-                    array(
-                        'success' => false,
-                        'data' => $render->getContent()
-                    )
-                );
-	        }
-        }
-        return $this->render(
+        $render = $this->render(
             'PHPOrchestraCMSBundle:BackOffice/TableView:form.html.twig',
             array(
                 'form' => $form->createView(),
                 'title' => $this->getEntity(),
                 'ribbon' => $this->saveButton($id).$this->backButton()
-            
             )
-        );
+         );
+        if($request->getMethod() == 'POST'){
+	        $form->handleRequest($request);
+	        $success = false;
+	        $data = $render->getContent();
+	        if ($form->isValid()) {
+	        	$document->save();
+	            $success = true;
+	            $data = $this->generateUrl($this->get('request')->get('_route'), array('action' => 'catalog'));
+	        }
+            return new JsonResponse(
+                array(
+                    'success' => $success,
+                    'data' => $data
+                )
+            );
+        }
+        return $render;
     }
     public function deleteEntity(Request $request, $id)
     {

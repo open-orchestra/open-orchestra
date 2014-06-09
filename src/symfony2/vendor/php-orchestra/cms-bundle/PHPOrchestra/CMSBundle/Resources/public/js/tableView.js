@@ -50,6 +50,7 @@ function runDataTables(path, listurl, order) {
             "displayBuffer": 2
         },
         "ajax": function ( data, callback, settings ) {
+        	$(".DTS_Loading").show();
             var start = (data.start) ? data.start : 0;
             var length = (data.length) ? data.length : 0;
             var criteria = $('.search_init').filter(function() { return $(this).val() != ""; }).serialize();
@@ -65,6 +66,7 @@ function runDataTables(path, listurl, order) {
                 "data": { "parse": true, "start": start, "length": length, "criteria": criteria, "sort": sort},
             })
             .done(function( records ) {
+            	$(".DTS_Loading").hide();
                 out = records.data.values;
                 callback( {
                     draw: data.draw,
@@ -96,7 +98,6 @@ $(document).ready(function() {
 	    
 	deleteDocument.create();
 	
-	
 	$('#content').on('click', 'button.redirect', function(){
 		window.location.hash = $(this).attr('data-parameter');
 	});
@@ -105,7 +106,7 @@ $(document).ready(function() {
 		var data = $('#content form').serializeArray();
 		$.post($(this).attr('data-parameter') , data, function (response) {
 			if(response.success){
-				window.location.hash = $(this).attr('data-parameter');
+				window.location.hash = response.data;
 			}
 			else{
 				$('#content').html(response.data);

@@ -45,7 +45,7 @@ class SiteType extends AbstractType
             ->add('domain', 'text', array('label' => 'Domain'))
             ->add('alias', 'text', array('label' => 'Alias'))
             ->add('defaultLanguage', 'orchestra_language', array('label' => 'Default Language'))
-            ->add('languages', 'orchestra_language', array('label' => 'Languages'/*, 'multiple' => true*/))
+            ->add('languages', 'orchestra_language', array('label' => 'Languages', 'multiple' => true))
             ->add(
                 $nameBlocks,
                 'orchestra_blocks',

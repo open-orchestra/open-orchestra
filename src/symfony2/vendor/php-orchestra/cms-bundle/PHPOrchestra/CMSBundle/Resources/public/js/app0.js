@@ -1137,8 +1137,10 @@ function loadCss(cssName) {
 * Description: Executes and fetches all ajax requests also
 * updates naivgation elements to active
 */
+$(document).ready(function() {
 if($.navAsAjax)
 {
+	
     // fire this on page load if nav exists
     if ($('nav').length) {
 	    checkURL();
@@ -1147,9 +1149,8 @@ if($.navAsAjax)
     $(document).on('click', 'nav a[href!="#"]', function(e) {
 	    e.preventDefault();
 	    $this = $(e.currentTarget);
-
 	    // if parent is not active then get hash, or else page is assumed to be loaded
-	    if (!$this.parent().hasClass("active") && !$this.attr('target')) {
+	    if (/*!$this.parent().hasClass("active") && */!$this.attr('target')) {
 
 		    // update window with hash
 		    // you could also do here:  $.device === "mobile" - and save a little more memory
@@ -1157,11 +1158,14 @@ if($.navAsAjax)
 		    if ($.root_.hasClass('mobile-view-activated')) {
 			    $.root_.removeClass('hidden-menu');
 			    window.setTimeout(function() {
-				    window.location.hash = $this.attr('href')
+				    window.location.hash = $this.attr('href');
 			    }, 150);
 			    // it may not need this delay...
 		    } else {
-			    window.location.hash = $this.attr('href');
+			    window.location.hash = '';
+			    window.setTimeout(function() {
+				    window.location.hash = $this.attr('href');
+			    }, 150);
 		    }
 	    }
 
@@ -1190,10 +1194,11 @@ if($.navAsAjax)
 
     // DO on hash change
     $(window).on('hashchange', function() {
+    	if(window.location.hash != '')
 	    checkURL();
     });
 }
-
+});
 // CHECK TO SEE IF URL EXISTS
 function checkURL() {
 

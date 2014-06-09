@@ -246,5 +246,9 @@ div.top-tools .ColVis button{
 
 form .ribbon{
     top:-51px !important;
-
+}
+.note ul{
+    list-style-type:none;
+    color:#880000;
+}
 /* end patch smart css */

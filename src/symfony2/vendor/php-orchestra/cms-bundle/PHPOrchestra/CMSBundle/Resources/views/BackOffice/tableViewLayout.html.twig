@@ -51,7 +51,6 @@
 {% endif %}
 
 {% include 'PHPOrchestraCMSBundle:BackOffice/TableView:deleteDocumentDialog.html.twig' %}
-<script type="text/javascript" src="{{ asset('bundles/phporchestracms/js/tableView.js') }}"></script>
 <script type="text/javascript">
     loadDataTableScripts('{{ asset('bundles/phporchestracms/js/') }}', '{{ listUrl }}', {{ order|json_encode()|raw}});
 </script>
