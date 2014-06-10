@@ -126,7 +126,7 @@ class ContentTypeController extends TableViewController
         }
         
         return $this->redirect(
-            $this->generateUrl('phporchestra_cms_backofficeview_contenttype_index', array('action' => 'catalog'))
+            $this->generateUrlValue('catalog')
         );
     }
 }

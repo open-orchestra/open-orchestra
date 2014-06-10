@@ -27,6 +27,11 @@ abstract class Content extends \Model\PHPOrchestraCMSBundle\Base\Content
         }
     }
     
+    public function isDeleted()
+    {
+        return $this->getDeleted();
+    }
+    
     /**
      * Mark the document as deleted
      */

@@ -9,6 +9,7 @@ namespace PHPOrchestra\CMSBundle\Controller\BackOfficeView;
 
 use PHPOrchestra\CMSBundle\Controller\TableViewController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * @Route("/content/{contentTypeId}")
@@ -39,5 +40,26 @@ class ContentController extends TableViewController
             array('button' =>'modify'),
             array('button' =>'delete')
        );
+    }
+    
+    /**
+     * (non-PHPdoc)
+     * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Controller/PHPOrchestra\CMSBundle\Controller.TableViewController::deleteEntity()
+     */
+    public function deleteEntity(Request $request, $id)
+    {
+        $documentManager = $this->get('phporchestra_cms.documentmanager');
+        
+        $content = $documentManager->getDocumentById('Content', $id);
+        $contentId = $content->getContentId();
+        $contentVersions = $documentManager->getDocuments('Content', array('contentId' => $contentId));
+        
+        foreach ($contentVersions as $contentVersion) {
+            $contentVersion->markAsDeleted();
+        }
+        
+        return $this->redirect(
+            $this->generateUrlValue('catalog')
+        );
     }
 }
