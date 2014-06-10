@@ -87,7 +87,7 @@ function runDataTables(path, listurl, order) {
     } );
 }
 
-$(document).ready(function() {
+function createDeleteConfirmDialog(){
 	var deleteDocument = new ConfirmDialog(
 	        'deleteDocument',
 	        function(params){
@@ -97,6 +97,9 @@ $(document).ready(function() {
 	    );
 	    
 	deleteDocument.create();
+}
+
+$(document).ready(function() {
 	
 	$('#content').on('click', 'button.redirect', function(){
 		window.location.hash = $(this).attr('data-parameter');

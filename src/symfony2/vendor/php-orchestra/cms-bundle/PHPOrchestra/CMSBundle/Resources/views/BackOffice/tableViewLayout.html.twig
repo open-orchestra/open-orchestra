@@ -52,5 +52,6 @@
 
 {% include 'PHPOrchestraCMSBundle:BackOffice/TableView:deleteDocumentDialog.html.twig' %}
 <script type="text/javascript">
+    createDeleteConfirmDialog();
     loadDataTableScripts('{{ asset('bundles/phporchestracms/js/') }}', '{{ listUrl }}', {{ order|json_encode()|raw}});
 </script>

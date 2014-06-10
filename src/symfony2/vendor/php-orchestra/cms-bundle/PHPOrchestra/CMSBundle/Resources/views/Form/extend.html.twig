@@ -69,8 +69,8 @@
             <i></i>{{ form_label(form, null, {'label_attr': {'class': 'label'}}) }}</label>
     {% else %}
         {{ form_label(form, null, {'label_attr': {'class': 'label'}}) }}
-        <label class="{{ block_prefixes[1]|lexicon_translator }}">
-            {{ form_widget(form) }}<i></i>
+        <label class="{{ block_prefixes[1]|lexicon_translator }} {% if multiple is defined and multiple %} select-multiple{% endif %}">
+            {{ form_widget(form) }}{% if multiple is not defined or not multiple %}<i></i>{% endif %}
         </label>
     {% endif %}
         <div class="note">
