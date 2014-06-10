@@ -83,7 +83,7 @@
 
 {% block form %}
 {% spaceless %}
-    {% if form.vars.showDialog %}
+    {% if form.vars.showDialog is defined  and form.vars.showDialog %}
         <div id="dialog-{{ form.vars.name }}" style="display:none;" title="{{ form.vars.name }}">
             {{ form_start(form, {'attr': {'class': 'smart-form'}}) }}
                 <fieldset>

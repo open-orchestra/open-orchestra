@@ -32,7 +32,6 @@ abstract class TableViewController extends Controller
     
     function __construct() {
         $this->setColumns();
-        $this->init();
         $this->callback['arrayToNewLine'] = function($value){return implode('<br />', $value);};
         $this->callback['replaceComaByNewLine'] = function($value){return implode('<br />', explode(',', $value));};
     }
@@ -97,12 +96,13 @@ abstract class TableViewController extends Controller
     /**
      * @Route("/{action}/{id}")
      */
-    public function indexAction(Request $request, $action, $id=null){
+    public function indexAction(Request $request, $action, $id = null){
         $this->routeParameters = $request->attributes->get('_route_params');
+        $this->init();
         return call_user_func(array($this, $action.'Action'), $request, $id);
     }
     
-    public function editAction(Request $request, $id=null){
+    public function editAction(Request $request, $id = null){
     	if($this->getEntity() !== null){
             return $this->editEntity($request, $id);
         }
@@ -111,7 +111,7 @@ abstract class TableViewController extends Controller
         }
     }
 
-    public function deleteAction(Request $request, $id=null){
+    public function deleteAction(Request $request, $id = null){
     	if($this->getEntity() !== null){
             return $this->deleteEntity($request, $id);
         }
@@ -124,8 +124,7 @@ abstract class TableViewController extends Controller
     {
         if($this->getEntity() !== null){
             return $this->catalogEntity($request);
-        }
-        else{
+        } else {
             return $this->catalog($request);
         }
     }
@@ -229,6 +228,8 @@ abstract class TableViewController extends Controller
                'action' => $this->getRequest()->getUri(),
             )
         );
+        
+        
         $render = $this->render(
             'PHPOrchestraCMSBundle:BackOffice/TableView:form.html.twig',
             array(

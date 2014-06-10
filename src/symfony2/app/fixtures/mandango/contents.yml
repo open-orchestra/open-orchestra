@@ -7,6 +7,7 @@ Model\PHPOrchestraCMSBundle\Content:
         status: "published"
         shortName: "Bien vivre en France"
         contentTypeVersion: 1
+        deleted: false
         attributes:
             -
                 name: "title"
@@ -29,6 +30,7 @@ Model\PHPOrchestraCMSBundle\Content:
         status: "published"
         shortName: "Lorem ipsum"
         contentTypeVersion: 1
+        deleted: true
         attributes:
             -
                 name: "title"
@@ -51,6 +53,7 @@ Model\PHPOrchestraCMSBundle\Content:
         status: "draft"
         shortName: "R5 3 portes"
         contentTypeVersion: 1
+        deleted: true
         attributes:
             -
                 name: "name"

@@ -81,6 +81,12 @@ services:
 
 #--[FORM]-----------------------#
 
+    # Content Form Builder
+    php_orchestra_cms.type.content:
+        class: PHPOrchestra\CMSBundle\Form\Type\ContentType
+        tags:
+            - { name: form.type, alias: content }
+
     # ContentType Form Builder
     php_orchestra_cms.type.contentType:
         class: PHPOrchestra\CMSBundle\Form\Type\ContentTypeType

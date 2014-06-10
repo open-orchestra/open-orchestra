@@ -74,6 +74,7 @@ Model\PHPOrchestraCMSBundle\Content:
         status: string
         shortName: string
         contentTypeVersion: integer
+        deleted: boolean
     embeddedsMany:
         attributes: {class: Model\PHPOrchestraCMSBundle\ContentAttribute}
 

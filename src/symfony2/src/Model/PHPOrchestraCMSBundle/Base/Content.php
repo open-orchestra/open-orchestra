@@ -71,6 +71,11 @@ abstract class Content extends \Mandango\Document\Document
         } elseif (isset($data['_fields']['contentTypeVersion'])) {
             $this->data['fields']['contentTypeVersion'] = null;
         }
+        if (isset($data['deleted'])) {
+            $this->data['fields']['deleted'] = (bool) $data['deleted'];
+        } elseif (isset($data['_fields']['deleted'])) {
+            $this->data['fields']['deleted'] = null;
+        }
         if (isset($data['attributes'])) {
             $embedded = new \Mandango\Group\EmbeddedGroup('Model\PHPOrchestraCMSBundle\ContentAttribute');
             $embedded->setRootAndPath($this, 'attributes');
@@ -536,6 +541,71 @@ abstract class Content extends \Mandango\Document\Document
         return $this->data['fields']['contentTypeVersion'];
     }
 
+    /**
+     * Set the "deleted" field.
+     *
+     * @param mixed $value The value.
+     *
+     * @return \Model\PHPOrchestraCMSBundle\Content The document (fluent interface).
+     */
+    public function setDeleted($value)
+    {
+        if (!isset($this->data['fields']['deleted'])) {
+            if (!$this->isNew()) {
+                $this->getDeleted();
+                if ($this->isFieldEqualTo('deleted', $value)) {
+                    return $this;
+                }
+            } else {
+                if (null === $value) {
+                    return $this;
+                }
+                $this->fieldsModified['deleted'] = null;
+                $this->data['fields']['deleted'] = $value;
+                return $this;
+            }
+        } elseif ($this->isFieldEqualTo('deleted', $value)) {
+            return $this;
+        }
+
+        if (!isset($this->fieldsModified['deleted']) && !array_key_exists('deleted', $this->fieldsModified)) {
+            $this->fieldsModified['deleted'] = $this->data['fields']['deleted'];
+        } elseif ($this->isFieldModifiedEqualTo('deleted', $value)) {
+            unset($this->fieldsModified['deleted']);
+        }
+
+        $this->data['fields']['deleted'] = $value;
+
+        return $this;
+    }
+
+    /**
+     * Returns the "deleted" field.
+     *
+     * @return mixed The $name field.
+     */
+    public function getDeleted()
+    {
+        if (!isset($this->data['fields']['deleted'])) {
+            if ($this->isNew()) {
+                $this->data['fields']['deleted'] = null;
+            } elseif (!isset($this->data['fields']) || !array_key_exists('deleted', $this->data['fields'])) {
+                $this->addFieldCache('deleted');
+                $data = $this->getRepository()->getCollection()->findOne(
+                    array('_id' => $this->getId()),
+                    array('deleted' => 1)
+                );
+                if (isset($data['deleted'])) {
+                    $this->data['fields']['deleted'] = (bool) $data['deleted'];
+                } else {
+                    $this->data['fields']['deleted'] = null;
+                }
+            }
+        }
+
+        return $this->data['fields']['deleted'];
+    }
+
     private function isFieldEqualTo($field, $otherValue)
     {
         $value = $this->data['fields'][$field];
@@ -667,6 +737,9 @@ abstract class Content extends \Mandango\Document\Document
         if ('contentTypeVersion' == $name) {
             return $this->setContentTypeVersion($value);
         }
+        if ('deleted' == $name) {
+            return $this->setDeleted($value);
+        }
 
         throw new \InvalidArgumentException(sprintf('The document data "%s" is not valid.', $name));
     }
@@ -702,6 +775,9 @@ abstract class Content extends \Mandango\Document\Document
         }
         if ('contentTypeVersion' == $name) {
             return $this->getContentTypeVersion();
+        }
+        if ('deleted' == $name) {
+            return $this->getDeleted();
         }
         if ('attributes' == $name) {
             return $this->getAttributes();
@@ -743,6 +819,9 @@ abstract class Content extends \Mandango\Document\Document
         if (isset($array['contentTypeVersion'])) {
             $this->setContentTypeVersion($array['contentTypeVersion']);
         }
+        if (isset($array['deleted'])) {
+            $this->setDeleted($array['deleted']);
+        }
         if (isset($array['attributes'])) {
             $embeddeds = array();
             foreach ($array['attributes'] as $documentData) {
@@ -773,6 +852,7 @@ abstract class Content extends \Mandango\Document\Document
         $array['status'] = $this->getStatus();
         $array['shortName'] = $this->getShortName();
         $array['contentTypeVersion'] = $this->getContentTypeVersion();
+        $array['deleted'] = $this->getDeleted();
 
         return $array;
     }
@@ -808,6 +888,9 @@ abstract class Content extends \Mandango\Document\Document
                 }
                 if (isset($this->data['fields']['contentTypeVersion'])) {
                     $query['contentTypeVersion'] = (int) $this->data['fields']['contentTypeVersion'];
+                }
+                if (isset($this->data['fields']['deleted'])) {
+                    $query['deleted'] = (bool) $this->data['fields']['deleted'];
                 }
             } else {
                 if (isset($this->data['fields']['contentId'])
@@ -891,6 +974,18 @@ abstract class Content extends \Mandango\Document\Document
                             $query['$set']['contentTypeVersion'] = (int) $this->data['fields']['contentTypeVersion'];
                         } else {
                             $query['$unset']['contentTypeVersion'] = 1;
+                        }
+                    }
+                }
+                if (isset($this->data['fields']['deleted'])
+                    || array_key_exists('deleted', $this->data['fields'])) {
+                    $value = $this->data['fields']['deleted'];
+                    $originalValue = $this->getOriginalFieldValue('deleted');
+                    if ($value !== $originalValue) {
+                        if (null !== $value) {
+                            $query['$set']['deleted'] = (bool) $this->data['fields']['deleted'];
+                        } else {
+                            $query['$unset']['deleted'] = 1;
                         }
                     }
                 }

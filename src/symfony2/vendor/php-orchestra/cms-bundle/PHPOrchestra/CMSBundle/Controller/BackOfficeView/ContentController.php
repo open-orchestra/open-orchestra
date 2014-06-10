@@ -21,6 +21,7 @@ class ContentController extends TableViewController
      */
     function init() {
         $this->setEntity('Content');
+        $this->setCriteria(array('contentType' => $this->routeParameters['contentTypeId']));
     }
     
     /**
@@ -34,29 +35,9 @@ class ContentController extends TableViewController
             array('name' => 'language', 'search' => 'text', 'label' => 'Langue'),
             array('name' => 'version', 'search' => 'text', 'label' => 'Version'),
             array('name' => 'status', 'search' => 'text', 'label' => 'Statut'),
-           /* array('name' => 'deleted', 'search' => 'text', 'label' => 'Supprimé'),*/
+            array('name' => 'deleted', 'search' => 'text', 'label' => 'Supprimé'),
             array('button' =>'modify'),
             array('button' =>'delete')
        );
     }
-
-/*    public function listAction($contentType)
-    {
-        $documentManager = $this->container->get('phporchestra_cms.documentmanager');
-        $contents = $documentManager->getDocuments('Content', array('contentType' => $contentType), array(), true);
-        
-        return $this->render(
-            'PHPOrchestraCMSBundle:BackOffice/Content:tempList.html.twig',
-            array(
-                'contentType' => $contentType,
-                'contents' => $contents
-            )
-        );
-    }
-    
-    public function formAction()
-    {
-        die();
-        return $this->render('PHPOrchestraCMSBundle:BackOffice:home.html.twig');
-    }*/
 }

@@ -18,6 +18,31 @@ class DocumentManager
 {
     private $documentsService = null;
     
+    private $documentsMapping = array(
+        'Node' => array(
+            'namespace' => 'Model\PHPOrchestraCMSBundle\Node',
+            'defaultSort' => array('version' => -1)
+        ),
+        'Template' => array(
+            'namespace' => 'Model\PHPOrchestraCMSBundle\Template',
+            'defaultSort' => array('version' => -1)
+        ),
+        'Block' => array(
+            'namespace' => 'Model\PHPOrchestraCMSBundle\Block'
+        ),
+        'Site' => array(
+            'namespace' => 'Model\PHPOrchestraCMSBundle\Site'
+        ),
+        'ContentType' => array(
+            'namespace' => 'Model\PHPOrchestraCMSBundle\ContentType',
+            'defaultSort' => array('contentTypeId' => 1, 'version' => -1)
+        ),
+        'Content' => array(
+            'namespace' => 'Model\PHPOrchestraCMSBundle\Content'
+        )
+    );
+    
+    
     /**
      * DocumentManager service constructor
      * 
@@ -127,19 +152,10 @@ class DocumentManager
      */
     protected function getDocumentNamespace($documentType)
     {
-        $documentNamespaces = array(
-            'Node' => 'Model\PHPOrchestraCMSBundle\Node',
-            'Template' => 'Model\PHPOrchestraCMSBundle\Template',
-            'Block' => 'Model\PHPOrchestraCMSBundle\Block',
-            'Site' => 'Model\PHPOrchestraCMSBundle\Site',
-            'ContentType' => 'Model\PHPOrchestraCMSBundle\ContentType',
-            'Content' => 'Model\PHPOrchestraCMSBundle\Content'
-        );
-        if (isset($documentNamespaces[$documentType])) {
-            return $documentNamespaces[$documentType];
-        } else {
+        if (!isset($this->documentsMapping[$documentType])) {
             throw new UnrecognizedDocumentTypeException('Unrecognized document type : ' . $documentType);
         }
+        return $this->documentsMapping[$documentType]['namespace'];
     }
     
     
@@ -149,21 +165,16 @@ class DocumentManager
      */
     protected function getDefaultSort($documentType)
     {
-        $sort = array();
-        switch($documentType)
-        {
-            case 'Node':
-            case 'Template':
-                $sort = array('version' => -1);
-                break;
-            case 'Site':
-                $sort = array();
-            case 'ContentType':
-                $sort = array('contentTypeId' => 1, 'version' => -1);
-                break;
-            default:
-                throw new UnrecognizedDocumentTypeException('Unrecognized document type : ' . $documentType);
+        if (!isset($this->documentsMapping[$documentType])) {
+            throw new UnrecognizedDocumentTypeException('Unrecognized document type : ' . $documentType);
         }
+        
+        $sort = array();
+        
+        if (isset($this->documentsMapping[$documentType]['defaultSort'])) {
+            $sort = $this->documentsMapping[$documentType]['defaultSort'];
+        }
+        
         return $sort;
     }
     

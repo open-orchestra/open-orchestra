@@ -381,6 +381,10 @@ class MetadataFactoryInfo
                     'type' => 'integer',
                     'dbName' => 'contentTypeVersion',
                 ),
+                'deleted' => array(
+                    'type' => 'boolean',
+                    'dbName' => 'deleted',
+                ),
             ),
             '_has_references' => false,
             'referencesOne' => array(
