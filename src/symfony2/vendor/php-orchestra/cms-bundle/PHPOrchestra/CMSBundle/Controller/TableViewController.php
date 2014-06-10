@@ -7,6 +7,8 @@
 
 namespace PHPOrchestra\CMSBundle\Controller;
 
+use PHPOrchestra\CMSBundle\Exception\NonExistingFieldException;
+
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -24,6 +26,7 @@ abstract class TableViewController extends Controller
     protected $key = null;
     protected $callback = array();
     protected $buttonTwig = 'PHPOrchestraCMSBundle:BackOffice/TableView:button.html.twig';
+    protected $routeParameters = array();
     
     abstract public function setColumns();
     
@@ -95,7 +98,8 @@ abstract class TableViewController extends Controller
      * @Route("/{action}/{id}")
      */
     public function indexAction(Request $request, $action, $id=null){
-    	return call_user_func(array($this, $action.'Action'), $request, $id);
+        $this->routeParameters = $request->attributes->get('_route_params');
+        return call_user_func(array($this, $action.'Action'), $request, $id);
     }
     
     public function editAction(Request $request, $id=null){
@@ -127,12 +131,15 @@ abstract class TableViewController extends Controller
     }
     
     
-    public function generateUrlValue($action, $value){
-    	$parameter = array('action' => $action);
-    	if(!empty($value)){
-    		$parameter['id'] = $value;
-    	}
-    	return $this->generateUrl($this->get('request')->get('_route'), $parameter);
+    public function generateUrlValue($action, $id = false) {
+        $parameters = $this->routeParameters;
+        $parameters['action'] = $action;
+        if(!empty($id)){
+            $parameters['id'] = $id;
+        } else {
+            unset($parameters['id']);
+        }
+        return $this->generateUrl($this->get('request')->get('_route'), $parameters);
     }
     
     public function genericButton($data, $action, $label, $class, $icon){
@@ -182,6 +189,9 @@ abstract class TableViewController extends Controller
 	        		}
         		}
         		else{
+                    if (!isset($record[$column['name']])) {
+                        throw new NonExistingFieldException('The field ' . $column['name'] . ' does not exist in TableViewController.php');
+                    }
         			if(array_key_exists('callback', $column)){
         		        $newRecord[] = $this->callback[$column['callback']]($record[$column['name']]);
         			}
@@ -234,7 +244,7 @@ abstract class TableViewController extends Controller
 	        if ($form->isValid()) {
 	        	$document->save();
 	            $success = true;
-	            $data = $this->generateUrl($this->get('request')->get('_route'), array('action' => 'catalog'));
+	            $data = $this->generateUrlValue('catalog');
 	        }
             return new JsonResponse(
                 array(
@@ -259,7 +269,7 @@ abstract class TableViewController extends Controller
         	$document->delete();
         }
         
-        return $this->redirect($this->generateUrl($this->get('request')->get('_route'), array('action' => 'catalog')));
+        return $this->redirect($this->generateUrlValue('catalog'));
     }
     public function catalogEntity(Request $request)
     {
@@ -297,7 +307,7 @@ abstract class TableViewController extends Controller
             return $this->render('PHPOrchestraCMSBundle:BackOffice:tableViewLayout.html.twig',
                 array(
                     'columns' => $this->getColumns(),
-                    'listUrl' => $this->generateUrl($this->get('request')->get('_route'), array('action' => 'catalog')),
+                    'listUrl' => $this->generateUrlValue('catalog'),
                     'order' => array(array(1, 'desc')),
                     'title' => $this->getEntity(),
                     'ribbon' => $this->addButton()

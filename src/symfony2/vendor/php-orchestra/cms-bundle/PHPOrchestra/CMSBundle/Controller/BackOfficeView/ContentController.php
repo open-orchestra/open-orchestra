@@ -31,10 +31,10 @@ class ContentController extends TableViewController
         $this->columns = array(
             array('name' => 'contentType', 'search' => 'text', 'label' => 'Type de contenu'),
             array('name' => 'shortName', 'search' => 'text', 'label' => 'Nom'),
-            array('name' => 'laguage', 'search' => 'text', 'label' => 'Langue'),
+            array('name' => 'language', 'search' => 'text', 'label' => 'Langue'),
             array('name' => 'version', 'search' => 'text', 'label' => 'Version'),
             array('name' => 'status', 'search' => 'text', 'label' => 'Statut'),
-            array('name' => 'deleted', 'search' => 'text', 'label' => 'Supprimé'),
+           /* array('name' => 'deleted', 'search' => 'text', 'label' => 'Supprimé'),*/
             array('button' =>'modify'),
             array('button' =>'delete')
        );
