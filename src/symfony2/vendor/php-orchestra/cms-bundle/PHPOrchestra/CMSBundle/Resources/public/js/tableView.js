@@ -82,6 +82,7 @@ function runDataTables(path, listurl, order) {
         },
         "scrollY": 200
     } );
+    
     $('.search_init').on( 'keyup change', function (e) {
         table._fnDraw();
     } );
