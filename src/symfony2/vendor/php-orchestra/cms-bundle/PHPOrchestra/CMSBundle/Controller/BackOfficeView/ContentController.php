@@ -63,8 +63,20 @@ class ContentController extends TableViewController
             $document->generateDraft();
         }
         
+        $documentManager = $this->container->get('phporchestra_cms.documentmanager');
+        $contentType = $documentManager->getDocument(
+            'ContentType',
+            array(
+                'contentTypeId' => $document->getContentType(),
+                'status' => 'published'
+            )
+        );
+        // QUID si pas de contentType valide ???
+        $document->contentTypeStructure = $contentType;
+        
         return $document;
     }
+    
     
     /**
      * (non-PHPdoc)

@@ -15,6 +15,9 @@ class ContentType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        $attributes = $options['data']->getAttributes();
+        $attributes->contentType = $options['data']->contentTypeStructure;
+        
         $builder
             ->add('shortName', 'text', array('label' => 'Nom de référence'))
             ->add('contentType', 'text', array('label' => 'Type de contenu', 'read_only' => 'true'))
@@ -29,11 +32,18 @@ class ContentType extends AbstractType
                             Content::STATUS_DRAFT => Content::STATUS_DRAFT,
                             Content::STATUS_PUBLISHED => Content::STATUS_PUBLISHED,
                             Content::STATUS_UNPUBLISHED => Content::STATUS_UNPUBLISHED
-                    )
+                        )
+                )
+            )
+            ->add(
+                'attributes',
+                'contentAttributes',
+                array(
+                    'label' => 'Attributs',
+                    'data' => $attributes
                 )
             )
             ->add('id', 'hidden', array('mapped' => false, 'data' => (string)$options['data']->getId()));
-            //embeddedsMany:attributes: {class: Model\PHPOrchestraCMSBundle\ContentAttribute}
     }
     
     /**

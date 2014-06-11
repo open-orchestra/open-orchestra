@@ -48,7 +48,7 @@ Model\PHPOrchestraCMSBundle\Content:
 
     car_r5:
         contentId: 3
-        contentType: "cars"
+        contentType: "car"
         version: 2
         language: "en"
         status: "draft"
@@ -65,3 +65,23 @@ Model\PHPOrchestraCMSBundle\Content:
             -
                 name: "description"
                 value: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non feugiat sem. Aliquam a mauris tellus. In hac habitasse platea dictumst. Nunc eget interdum ante, id mollis diam. Suspendisse sed magna lectus. Aenean fringilla elementum lorem id suscipit. Phasellus feugiat tellus sapien, id tempus nisi ultrices ut."
+
+    customer_jeanpaul:
+        contentId: 4
+        contentType: "customer"
+        version: 2
+        language: "fr"
+        status: "published"
+        shortName: "Jean-Paul"
+        contentTypeVersion: 1
+        deleted: false
+        attributes:
+            -
+                name: "firstname"
+                value: "Jean-Claude"
+            -
+                name: "lastname"
+                value: "Convenant"
+            -
+                name: "identifier"
+                value: "28"
