@@ -58,4 +58,18 @@ abstract class Content extends \Model\PHPOrchestraCMSBundle\Base\Content
         
         return $document;
     }
+    
+    /**
+     * Generate a draft version of the ContentType
+     */
+    public function generateDraft()
+    {
+        $this->setVersion(1 + $this->getVersion());
+        $this->setStatus(self::STATUS_DRAFT);
+        $this->setDeleted(false);
+        $this->setId(null);
+        $this->setIsNew(true);
+        $this->save();
+    }
+    
 }

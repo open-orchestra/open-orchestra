@@ -8,6 +8,7 @@
 namespace PHPOrchestra\CMSBundle\Controller\BackOfficeView;
 
 use PHPOrchestra\CMSBundle\Controller\TableViewController;
+use Model\PHPOrchestraCMSBundle\Content;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -40,6 +41,29 @@ class ContentController extends TableViewController
             array('button' =>'modify'),
             array('button' =>'delete')
        );
+    }
+    
+    /**
+     * (non-PHPdoc)
+     * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Controller/PHPOrchestra\CMSBundle\Controller.TableViewController::modifyDocumentAfterCreate($document)
+     */
+    protected function modifyDocumentAfterCreate($document)
+    {
+        $document->setContentType($this->routeParameters['contentTypeId']);
+        return $document;
+    }
+    
+    /**
+     * (non-PHPdoc)
+     * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Controller/PHPOrchestra\CMSBundle\Controller.TableViewController::modifyDocumentAfterGet($document)
+     */
+    protected function modifyDocumentAfterGet($document)
+    {
+            if ($document->getStatus() != Content::STATUS_DRAFT) {
+            $document->generateDraft();
+        }
+        
+        return $document;
     }
     
     /**
