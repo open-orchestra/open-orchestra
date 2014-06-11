@@ -59,11 +59,40 @@ class ContentController extends TableViewController
      */
     protected function modifyDocumentAfterGet($document)
     {
-            if ($document->getStatus() != Content::STATUS_DRAFT) {
+        if ($document->getStatus() != Content::STATUS_DRAFT) {
             $document->generateDraft();
         }
         
         return $document;
+    }
+    
+    /**
+     * (non-PHPdoc)
+     * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Controller/PHPOrchestra\CMSBundle\Controller.TableViewController::afterSave($document)
+     */
+    protected function afterSave($document)
+    {
+        $documentManager = $this->container->get('phporchestra_cms.documentmanager');
+        
+        $publishedVersions = $documentManager->getDocuments(
+            'Content',
+            array(
+                'contentId' => $document->getContentId(),
+                'status' => Content::STATUS_PUBLISHED
+            )
+        );
+        
+        foreach ($publishedVersions as $version) {
+            if ($version->getId() != $document->getId()) {
+                $version->setStatus(Content::STATUS_UNPUBLISHED);
+                $version->save();
+            }
+        }
+        
+        return array(
+            'success' => true,
+            'data' => $this->generateUrlValue('catalog')
+        );
     }
     
     /**

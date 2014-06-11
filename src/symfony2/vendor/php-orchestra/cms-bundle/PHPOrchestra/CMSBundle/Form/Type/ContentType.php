@@ -20,7 +20,18 @@ class ContentType extends AbstractType
             ->add('contentType', 'text', array('label' => 'Type de contenu', 'read_only' => 'true'))
             ->add('version', 'text', array('label' => 'Version', 'read_only' => true))
             ->add('language', 'text', array('label' => 'Language'))
-            ->add('status', 'choice', array('choices' => array(Content::STATUS_DRAFT => Content::STATUS_DRAFT, Content::STATUS_PUBLISHED => Content::STATUS_PUBLISHED)))
+            ->add(
+                'status',
+                'choice',
+                array(
+                    'choices' =>
+                        array(
+                            Content::STATUS_DRAFT => Content::STATUS_DRAFT,
+                            Content::STATUS_PUBLISHED => Content::STATUS_PUBLISHED,
+                            Content::STATUS_UNPUBLISHED => Content::STATUS_UNPUBLISHED
+                    )
+                )
+            )
             ->add('id', 'hidden', array('mapped' => false, 'data' => (string)$options['data']->getId()));
             //embeddedsMany:attributes: {class: Model\PHPOrchestraCMSBundle\ContentAttribute}
     }
