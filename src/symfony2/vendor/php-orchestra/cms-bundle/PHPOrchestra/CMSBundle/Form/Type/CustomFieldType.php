@@ -32,7 +32,7 @@ class CustomFieldType extends AbstractType
         $parameters = $this->availableFields[$options['data']->type];
         $builder->add('label', 'text')
             ->add('fieldId', 'text', array('label' => 'Identifiant'))
-            ->add('defaultValue', 'text', array('label' => 'Valeur par défaut'))
+            ->add('defaultValue', 'text', array('label' => 'Valeur par défaut', 'required' => false))
             ->add('searchable', 'checkbox', array('required' => false, 'label' => 'Indexable'))
             ->add('symfonyType', 'hidden', array('data' => $parameters['type']))
             ->add('removeField', 'checkbox', array('required' => false, 'label' => 'Supprimer le champ'));

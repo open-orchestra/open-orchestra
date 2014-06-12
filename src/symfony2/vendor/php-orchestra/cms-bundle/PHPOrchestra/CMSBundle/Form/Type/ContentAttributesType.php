@@ -34,6 +34,9 @@ class ContentAttributesType extends AbstractType
                 $fieldOptions = array();
                 if (isset($field->options)) {
                     $fieldOptions = (array) $field->options;
+                    if (isset($fieldOptions['max_length']) && $fieldOptions['max_length'] == 0) {
+                        unset($fieldOptions['max_length']);
+                    }
                 }
                 $fieldOptions['label'] = $field->label;
                 $builder->add($field->fieldId, $field->symfonyType, $fieldOptions);
