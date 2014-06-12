@@ -39,7 +39,7 @@ class ContentTypeTransformer implements DataTransformerInterface
     /**
      * Transforms an object in valid ContentType entity.
      *
-     * @param  object
+     * @param  object $datas
      * @return object
      */
     public function reverseTransform($datas) // formfield => entity

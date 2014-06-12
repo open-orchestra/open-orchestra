@@ -18,11 +18,20 @@ class ContentAttributesType extends AbstractType
 {
     protected $documentManager = null;
 
+    /**
+     * Constructor
+     * 
+     * @param $documentManager
+     */
     public function __construct($documentManager)
     {
         $this->documentManager = $documentManager;
     }
 
+    /**
+     * (non-PHPdoc)
+     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony\Component\Form.AbstractType::buildForm()
+     */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $fields = json_decode($options['data']->contentType->getFields());
@@ -45,7 +54,8 @@ class ContentAttributesType extends AbstractType
     }
 
     /**
-     * getName
+     * (non-PHPdoc)
+     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony\Component\Form.FormTypeInterface::getName()
      */
     public function getName()
     {

@@ -70,6 +70,9 @@ class PhpOrchestraRouter extends Router
         );
     }
     
+    /**
+     * Get the url generator
+     */
     public function getGenerator()
     {
         if (null !== $this->generator) {

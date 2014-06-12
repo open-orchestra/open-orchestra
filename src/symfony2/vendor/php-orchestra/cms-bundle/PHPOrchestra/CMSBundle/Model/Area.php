@@ -168,7 +168,7 @@ class Area
         $this->classes = $classes;
         return $this;
     }
-    
+
     /**
      * Add a sub area
      * 
@@ -179,7 +179,7 @@ class Area
         $this->subAreas[] = $area;
         return $this;
     }
-    
+
     /**
      * Get sub areas
      */
@@ -187,7 +187,7 @@ class Area
     {
         return $this->subAreas;
     }
-    
+
     /**
      * Set sub areas
      * Return self, fluent interface
@@ -201,12 +201,17 @@ class Area
         }
         return $this;
     }
-    
+
+    /**
+     * Set blocks
+     * 
+     * @param unknown_type $blocks
+     */
     public function setBlocks($blocks)
     {
         $this->blockReferences = $blocks;
     }
-    
+
     /**
      * Add an external block reference
      * 
@@ -218,7 +223,7 @@ class Area
         $this->blockReferences[] = array('nodeId' => $nodeId, 'blockId' => $blockId);
         return $this;
     }
-    
+
     /**
      * get block references
      */
@@ -226,7 +231,6 @@ class Area
     {
         return $this->blockReferences;
     }
-    
 
     /**
      * Adapt area from object to array

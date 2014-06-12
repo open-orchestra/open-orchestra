@@ -33,12 +33,9 @@ class BlocksType extends AbstractType
         $this->documentManager = $documentManager;
     }
     
-    
     /**
-     * Form builder
-     * 
-     * @param FormBuilderInterface $builder
-     * @param array $options
+     * (non-PHPdoc)
+     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony\Component\Form.AbstractType::buildForm()
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -46,6 +43,10 @@ class BlocksType extends AbstractType
         $builder->addModelTransformer($transformer);
     }
 
+    /**
+     * (non-PHPdoc)
+     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony\Component\Form.AbstractType::setDefaultOptions()
+     */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(
@@ -58,6 +59,10 @@ class BlocksType extends AbstractType
         );
     }
     
+    /**
+     * (non-PHPdoc)
+     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony\Component\Form.AbstractType::buildView()
+     */
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
         $view->vars['dialogPath'] = $options['dialogPath'];
@@ -67,7 +72,8 @@ class BlocksType extends AbstractType
     
     
     /**
-     * Extends textarea type
+     * (non-PHPdoc)
+     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony\Component\Form.AbstractType::getParent()
      */
     public function getParent()
     {
@@ -75,7 +81,8 @@ class BlocksType extends AbstractType
     }
 
     /**
-     * getName
+     * (non-PHPdoc)
+     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony\Component\Form.FormTypeInterface::getName()
      */
     public function getName()
     {

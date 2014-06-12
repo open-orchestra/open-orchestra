@@ -13,6 +13,10 @@ use Model\PHPOrchestraCMSBundle\Content;
 
 class ContentType extends AbstractType
 {
+    /**
+     * (non-PHPdoc)
+     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony\Component\Form.AbstractType::buildForm()
+     */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $attributes = $options['data']->getAttributes();
@@ -47,7 +51,8 @@ class ContentType extends AbstractType
     }
     
     /**
-     * @return string
+     * (non-PHPdoc)
+     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony\Component\Form.FormTypeInterface::getName()
      */
     public function getName()
     {

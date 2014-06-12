@@ -2,7 +2,7 @@
 /**
  * This file is part of the PHPOrchestra\ThemeBundle.
  *
- * @author Noël Gilain <noel.gilain@businessdecision.com>
+ * @author Nicolas Anne <nicolas.anne@businessdecision.com>
  */
 
 namespace PHPOrchestra\CMSBundle\Twig;

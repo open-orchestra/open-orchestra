@@ -16,6 +16,11 @@ class ThemeChoiceType extends AbstractType
 
     public $choices = null;
 
+    /**
+     * Constructor
+     * 
+     * @param $themes
+     */
     public function __construct($themes = array())
     {
         foreach ($themes as $themeId => $theme) {
@@ -23,6 +28,10 @@ class ThemeChoiceType extends AbstractType
         }
     }
     
+    /**
+     * (non-PHPdoc)
+     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony\Component\Form.AbstractType::setDefaultOptions()
+     */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(
@@ -32,11 +41,19 @@ class ThemeChoiceType extends AbstractType
         );
     }
 
+    /**
+     * (non-PHPdoc)
+     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony\Component\Form.AbstractType::getParent()
+     */
     public function getParent()
     {
         return 'choice';
     }
 
+    /**
+     * (non-PHPdoc)
+     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony\Component\Form.FormTypeInterface::getName()
+     */
     public function getName()
     {
         return 'orchestra_theme_choice';

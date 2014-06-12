@@ -14,6 +14,12 @@ class ContentAttributesTransformer implements DataTransformerInterface
     protected $documentManager = null;
     protected $fieldsStructure = null;
 
+    /**
+     * Constructor
+     * 
+     * @param unknown_type $documentManager
+     * @param unknown_type $fieldsStructure
+     */
     public function __construct($documentManager, $fieldsStructure)
     {
         $this->documentManager = $documentManager;
@@ -23,8 +29,7 @@ class ContentAttributesTransformer implements DataTransformerInterface
     /**
      * Transforms a ContentAttributes entity to inject attributeFields
      *
-     * @param object ContentType
-     * @return object
+     * @param object $attributes
      */
     public function transform($attributes) // entity => formfield
     {
@@ -46,10 +51,9 @@ class ContentAttributesTransformer implements DataTransformerInterface
     }
 
     /**
-     * Transforms an object in valid ContentAttributes entity.
+     * Transforms an object $attributes in valid ContentAttributes entity.
      *
-     * @param  object
-     * @return object
+     * @param  object $attributes
      */
     public function reverseTransform($attributes) // formfield => entity
     {
