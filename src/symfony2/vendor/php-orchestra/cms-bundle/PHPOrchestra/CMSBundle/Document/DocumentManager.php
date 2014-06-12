@@ -39,6 +39,9 @@ class DocumentManager
         ),
         'Content' => array(
             'namespace' => 'Model\PHPOrchestraCMSBundle\Content'
+        ),
+        'ContentAttribute' => array(
+            'namespace' => 'Model\PHPOrchestraCMSBundle\ContentAttribute'
         )
     );
     

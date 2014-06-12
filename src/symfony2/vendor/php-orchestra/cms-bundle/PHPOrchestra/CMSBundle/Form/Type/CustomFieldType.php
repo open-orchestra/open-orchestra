@@ -29,16 +29,16 @@ class CustomFieldType extends AbstractType
         $transformer = new CustomFieldTransformer();
         $builder->addModelTransformer($transformer);
         
+        $parameters = $this->availableFields[$options['data']->type];
         $builder->add('label', 'text')
             ->add('fieldId', 'text', array('label' => 'Identifiant'))
             ->add('searchable', 'checkbox', array('required' => false, 'label' => 'Indexable'))
+            ->add('symfonyType', 'hidden', array('data' => $parameters['type']))
             ->add('removeField', 'checkbox', array('required' => false, 'label' => 'Supprimer le champ'));
         
         if (!isset($this->availableFields[$options['data']->type])) {
             throw new UnknownFieldTypeException('Unknown field type : ' . $options['data']->type);
         }
-        
-        $parameters = $this->availableFields[$options['data']->type];
         
         $optionsValues = (object) array();
         if (isset($options['data']->options)) {

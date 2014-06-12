@@ -72,4 +72,16 @@ abstract class Content extends \Model\PHPOrchestraCMSBundle\Base\Content
         $this->save();
     }
     
+    /**
+     * Alias to addAttributes as used by symfony standard forms
+     * 
+     * @param document | document[] $documents
+     */
+    public function setAttributes($documents)
+    {
+        $this->addAttributes($documents);
+        
+        return $this;
+    }
+    
 }

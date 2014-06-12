@@ -52,11 +52,12 @@ class ContentTypeTransformer implements DataTransformerInterface
         }
         if ($datas->new_field != '') {
             $fields[] = (object) array(
-                "fieldId" => "",
-                "label" => "",
-                "searchable" => false,
-                "type" => $datas->new_field,
-                "options" => (object) array()
+                'fieldId' => '',
+                'label' => '',
+                'searchable' => false,
+                'type' => $datas->new_field,
+                'symfonyType' => '',
+                'options' => (object) array()
             );
         }
         

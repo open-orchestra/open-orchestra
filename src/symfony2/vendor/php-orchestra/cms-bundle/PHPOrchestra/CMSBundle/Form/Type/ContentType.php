@@ -22,7 +22,7 @@ class ContentType extends AbstractType
             ->add('shortName', 'text', array('label' => 'Nom de référence'))
             ->add('contentType', 'text', array('label' => 'Type de contenu', 'read_only' => 'true'))
             ->add('version', 'text', array('label' => 'Version', 'read_only' => true))
-            ->add('language', 'text', array('label' => 'Language'))
+            ->add('language', 'text', array('label' => 'Language', 'read_only' => true))
             ->add(
                 'status',
                 'choice',

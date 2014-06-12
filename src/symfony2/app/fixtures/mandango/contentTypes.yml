@@ -5,7 +5,7 @@ Model\PHPOrchestraCMSBundle\ContentType:
         version: 1
         status: "published"
         deleted: false
-        fields: '[{"fieldId":"title", "label": "Titre", "searchable": true, "type":"orchestra_text"}, {"fieldId":"intro", "label": "Introduction", "searchable": true, "type":"orchestra_text"}, {"fieldId":"text", "label": "Texte", "searchable": true, "type":"orchestra_text"}]'
+        fields: '[{"fieldId":"title", "label": "Titre", "searchable": true, "type":"orchestra_text", "symfonyType":"text", "options":{"max_length":25, "required": true}}, {"fieldId":"intro", "label": "Introduction", "searchable": true, "type":"orchestra_text", "symfonyType":"text", "options":{"max_length":25, "required": true}}, {"fieldId":"text", "label": "Texte", "searchable": true, "type":"orchestra_text", "symfonyType":"text", "options":{"max_length":25, "required": true}}]'
     
     cars_v2:
         contentTypeId: "car"
@@ -13,7 +13,7 @@ Model\PHPOrchestraCMSBundle\ContentType:
         version: 2
         status: "published"
         deleted: false
-        fields: '[{"fieldId":"name", "label": "Nom", "searchable": true, "type":"orchestra_text"}, {"fieldId":"description", "label": "Description", "searchable": true, "type":"orchestra_text"}]'
+        fields: '[{"fieldId":"name", "label": "Nom", "searchable": true, "type":"orchestra_text", "symfonyType":"text", "options":{"max_length":25, "required": true}}, {"fieldId":"description", "label": "Description", "searchable": true, "type":"orchestra_text", "symfonyType":"text", "options":{"max_length":25, "required": true}}]'
     
     cars_v3:
         contentTypeId: "car"
@@ -21,7 +21,7 @@ Model\PHPOrchestraCMSBundle\ContentType:
         version: 3
         status: "draft"
         deleted: false
-        fields: '[{"fieldId":"name", "label": "Nom", "searchable": true, "type":"orchestra_text"}, {"fieldId":"description", "label": "Description", "searchable": true, "type":"orchestra_text"}]'
+        fields: '[{"fieldId":"name", "label": "Nom", "searchable": true, "type":"orchestra_text", "symfonyType":"text", "options":{"max_length":25, "required": true}}, {"fieldId":"description", "label": "Description", "searchable": true, "type":"orchestra_text", "symfonyType":"text", "options":{"max_length":25, "required": true}}]'
     
     customer:
         contentTypeId: "customer"
@@ -29,4 +29,4 @@ Model\PHPOrchestraCMSBundle\ContentType:
         version: 1
         status: "published"
         deleted: false
-        fields: '[{"fieldId":"firstname", "label": "Prénom", "searchable": true, "type":"orchestra_text", "options":{"max_length":25, "required": true}}, {"fieldId":"lastname", "label": "Nom", "searchable": true, "type":"orchestra_text", "options":{"max_length":25, "required": true}}, {"fieldId":"identifier", "label": "Identifiant", "searchable": false, "type":"orchestra_integer", "options":{"rounding_mode": 1, "grouping": 2, "required": false}}]'
+        fields: '[{"fieldId":"firstname", "label": "Prénom", "searchable": true, "type":"orchestra_text", "symfonyType":"text", "options":{"max_length":25, "required": true}}, {"fieldId":"lastname", "label": "Nom", "searchable": true, "type":"orchestra_text", "symfonyType":"text", "options":{"max_length":25, "required": true}}, {"fieldId":"identifier", "label": "Identifiant", "searchable": false, "type":"orchestra_integer", "options":{"rounding_mode": 1, "grouping": 2, "required": false}}]'

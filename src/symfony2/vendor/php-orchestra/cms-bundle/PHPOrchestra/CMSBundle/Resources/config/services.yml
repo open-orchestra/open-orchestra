@@ -17,7 +17,7 @@ services:
     # Orchestra content type attributes
     php_orchestra_cms.type.contentAttributes:
         class: PHPOrchestra\CMSBundle\Form\Type\ContentAttributesType
-        arguments: [@service_container]
+        arguments: [@phporchestra_cms.documentmanager]
         tags:
             - { name: form.type, alias: contentAttributes }
 

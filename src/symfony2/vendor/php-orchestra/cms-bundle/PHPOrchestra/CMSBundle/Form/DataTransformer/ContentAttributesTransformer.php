@@ -11,6 +11,14 @@ use Symfony\Component\Form\DataTransformerInterface;
 
 class ContentAttributesTransformer implements DataTransformerInterface
 {
+    protected $documentManager = null;
+    protected $fieldsStructure = null;
+
+    public function __construct($documentManager, $fieldsStructure)
+    {
+        $this->documentManager = $documentManager;
+        $this->fieldsStructure = $fieldsStructure;
+    } 
 
     /**
      * Transforms a ContentAttributes entity to inject attributeFields
@@ -20,8 +28,16 @@ class ContentAttributesTransformer implements DataTransformerInterface
      */
     public function transform($attributes) // entity => formfield
     {
-        //print_r($attributes);exit();
         $formAttributes = array();
+        
+        // Fields default values
+        foreach ($this->fieldsStructure as $fieldStructure)
+        {
+            $name = $fieldStructure->fieldId;
+            $attributes->$name = 0; // <= CHANGE THIS WITH A DEFAULT VALUE EDITED IN CONTENTTYPE FORM
+        }
+        
+        // Fields edited values
         foreach ($attributes as $key => $attribute) {
             $name = $attribute->getName();
             $attributes->$name = $attribute->getValue();
@@ -35,26 +51,18 @@ class ContentAttributesTransformer implements DataTransformerInterface
      * @param  object
      * @return object
      */
-    public function reverseTransform($datas) // formfield => entity
+    public function reverseTransform($attributes) // formfield => entity
     {
-/*        $fields = array();
-        foreach ($datas->customFieldsIndex as $index) {
-            if (!is_null($datas->$index)) {
-                $fields[] = $datas->$index;
-            }
-        }
-        if ($datas->new_field != '') {
-            $fields[] = (object) array(
-                "fieldId" => "",
-                "label" => "",
-                "searchable" => false,
-                "type" => $datas->new_field,
-                "options" => (object) array()
-            );
-        }
+        $newAttributes = array();
         
-        $datas->setFields(json_encode($fields));
-        return $datas;*/
-    	return null;
+        foreach ($this->fieldsStructure as $fieldStructure)
+        {
+            $attribute = $this->documentManager->createDocument('ContentAttribute');
+            $name = $fieldStructure->fieldId;
+            $attribute->setName($name);
+            $attribute->setValue($attributes->$name);
+            $newAttributes[] = $attribute;
+        }
+        return $newAttributes;
     }
 }
