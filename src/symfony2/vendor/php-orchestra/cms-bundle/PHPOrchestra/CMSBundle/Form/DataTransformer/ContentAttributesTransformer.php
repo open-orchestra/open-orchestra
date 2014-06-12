@@ -34,7 +34,7 @@ class ContentAttributesTransformer implements DataTransformerInterface
         foreach ($this->fieldsStructure as $fieldStructure)
         {
             $name = $fieldStructure->fieldId;
-            $attributes->$name = 0; // <= CHANGE THIS WITH A DEFAULT VALUE EDITED IN CONTENTTYPE FORM
+            $attributes->$name = $fieldStructure->defaultValue;
         }
         
         // Fields edited values

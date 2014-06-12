@@ -54,6 +54,7 @@ class ContentTypeTransformer implements DataTransformerInterface
             $fields[] = (object) array(
                 'fieldId' => '',
                 'label' => '',
+                'defaultValue' => '',
                 'searchable' => false,
                 'type' => $datas->new_field,
                 'symfonyType' => '',
