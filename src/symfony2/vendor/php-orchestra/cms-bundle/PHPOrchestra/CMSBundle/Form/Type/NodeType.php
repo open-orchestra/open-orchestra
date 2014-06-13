@@ -47,9 +47,6 @@ class NodeType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-
-        $nameBlocks = 'blocks';
-        
         $builder
             ->add('nodeId', 'hidden')
             ->add('siteId', 'hidden')
@@ -102,9 +99,7 @@ class NodeType extends AbstractType
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
         $view->vars['inDialog'] = true;
-    	
-    	
-    	$view->vars['showDialog'] = $options['showDialog'];
+        $view->vars['showDialog'] = $options['showDialog'];
         $view->vars['objects'] = $options['objects'];
         $view->vars['js'] = $options['js'];
     }

@@ -8,3 +8,4 @@ namespace PHPOrchestra\CMSBundle\Model;
 class NodeRepository extends \Model\PHPOrchestraCMSBundle\Base\NodeRepository
 {
 }
+

@@ -94,7 +94,6 @@ class DocumentManager
      */
     public function getDocumentById($documentType, $documentId, $asArray = false)
     {
-        $sort = $this->getDefaultSort($documentType);
         $repository = $this->documentsService->getRepository($this->getDocumentNamespace($documentType));
         $document = $repository->findOneById($documentId);
         if ($asArray) {
@@ -118,8 +117,7 @@ class DocumentManager
         $asArray = false,
         $start = 0,
         $length = 0
-    )
-    {
+    ) {
         if (array() == $sort) {
             $sort = $this->getDefaultSort($documentType);
         }

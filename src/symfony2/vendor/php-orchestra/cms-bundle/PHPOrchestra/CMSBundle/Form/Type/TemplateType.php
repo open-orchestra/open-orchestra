@@ -47,9 +47,6 @@ class TemplateType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        
-        $nameBlocks = 'blocks';
-        
         $builder
             ->add('templateId', 'hidden')
             ->add('siteId', 'hidden')
@@ -84,7 +81,7 @@ class TemplateType extends AbstractType
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
         $view->vars['inDialog'] = $options['inDialog'];//true
-    	$view->vars['js'] = $options['js'];//'pagegenerator/template/begin.js';
+        $view->vars['js'] = $options['js'];//'pagegenerator/template/begin.js';
     }
     
     /**
