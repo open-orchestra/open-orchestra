@@ -101,7 +101,7 @@ class TemplateController extends Controller
         $documentManager = $this->get('phporchestra_cms.documentmanager');
         $templateVersions = $documentManager->getDocuments('Template', array('templateId' => $templateId));
         
-        foreach($templateVersions as $templateVersion) {
+        foreach ($templateVersions as $templateVersion) {
             $templateVersion->markAsDeleted();
         }
         

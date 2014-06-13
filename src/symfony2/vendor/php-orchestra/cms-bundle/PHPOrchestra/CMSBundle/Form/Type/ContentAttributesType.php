@@ -30,7 +30,8 @@ class ContentAttributesType extends AbstractType
 
     /**
      * (non-PHPdoc)
-     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony\Component\Form.AbstractType::buildForm()
+     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony
+     * \Component\Form.AbstractType::buildForm()
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -39,7 +40,7 @@ class ContentAttributesType extends AbstractType
         $builder->addModelTransformer($transformer);
         
         if (count($fields) > 0) {
-            foreach ($fields as $key => $field) {
+            foreach ($fields as $field) {
                 $fieldOptions = array();
                 if (isset($field->options)) {
                     $fieldOptions = (array) $field->options;
@@ -55,7 +56,8 @@ class ContentAttributesType extends AbstractType
 
     /**
      * (non-PHPdoc)
-     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony\Component\Form.FormTypeInterface::getName()
+     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony
+     * \Component\Form.FormTypeInterface::getName()
      */
     public function getName()
     {

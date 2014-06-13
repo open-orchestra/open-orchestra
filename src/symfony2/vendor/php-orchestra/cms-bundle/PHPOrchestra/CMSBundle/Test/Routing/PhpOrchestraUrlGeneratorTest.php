@@ -130,6 +130,6 @@ class PhpOrchestraUrlGeneratorTest extends \PHPUnit_Framework_TestCase
                 PhpOrchestraUrlGenerator::RELATIVE_PATH,
                 'Symfony\Component\Routing\Exception\RouteNotFoundException'
             ),
-       );
+        );
     }
 }

@@ -118,12 +118,15 @@ class NodeController extends Controller
         if (isset($this->externalBlocks[$realNodeId][$blockReference['blockId']])) {
             $this->blocks[$blockReference['nodeId']][$blockReference['blockId']] =
                 $this->externalBlocks[$realNodeId][$blockReference['blockId']];
-            $this->blocks[$blockReference['nodeId']][$blockReference['blockId']]['attributes']['_page_parameters']['url'] =
-                $this->container->get('request')->attributes->get('module_parameters');
+            $this->blocks[$blockReference['nodeId']][$blockReference['blockId']]
+                ['attributes']['_page_parameters']['url'] =
+                    $this->container->get('request')->attributes->get('module_parameters');
         }
         
-        $this->blocks[$blockReference['nodeId']][$blockReference['blockId']]['attributes']['_page_parameters']['query'] = $this->getRequest()->query->all();
-        $this->blocks[$blockReference['nodeId']][$blockReference['blockId']]['attributes']['_page_parameters']['post'] = $this->getRequest()->request->all();
+        $this->blocks[$blockReference['nodeId']][$blockReference['blockId']]['attributes']
+            ['_page_parameters']['query'] = $this->getRequest()->query->all();
+        $this->blocks[$blockReference['nodeId']][$blockReference['blockId']]['attributes']
+            ['_page_parameters']['post'] = $this->getRequest()->request->all();
     }
     
     

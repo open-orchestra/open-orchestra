@@ -16,7 +16,8 @@ class ContentTypeType extends AbstractType
 {
     /**
      * (non-PHPdoc)
-     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony\Component\Form.AbstractType::buildForm()
+     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony
+     * \Component\Form.AbstractType::buildForm()
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -27,7 +28,16 @@ class ContentTypeType extends AbstractType
             ->add('name', 'text', array('label' => 'Label du type de contenu'))
             ->add('contentTypeId', 'text', array('label' => 'Identifiant'))
             ->add('version', 'text', array('read_only' => true))
-            ->add('status', 'choice', array('choices' => array(ContentType::STATUS_DRAFT => ContentType::STATUS_DRAFT, ContentType::STATUS_PUBLISHED => ContentType::STATUS_PUBLISHED)))
+            ->add(
+                'status',
+                'choice',
+                array(
+                    'choices' => array(
+                        ContentType::STATUS_DRAFT => ContentType::STATUS_DRAFT,
+                        ContentType::STATUS_PUBLISHED => ContentType::STATUS_PUBLISHED
+                    )
+                )
+            )
             ->add('id', 'hidden', array('mapped' => false, 'data' => (string)$options['data']->getId()))
             ->add('fields', 'hidden', array('data' => $options['data']->getFields()));
         
@@ -45,7 +55,8 @@ class ContentTypeType extends AbstractType
     
     /**
      * (non-PHPdoc)
-     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony\Component\Form.FormTypeInterface::getName()
+     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony
+     * \Component\Form.FormTypeInterface::getName()
      */
     public function getName()
     {

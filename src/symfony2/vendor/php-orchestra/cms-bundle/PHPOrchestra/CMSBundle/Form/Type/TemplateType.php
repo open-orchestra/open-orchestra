@@ -42,7 +42,8 @@ class TemplateType extends AbstractType
     
     /**
      * (non-PHPdoc)
-     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony\Component\Form.AbstractType::buildForm()
+     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony
+     * \Component\Form.AbstractType::buildForm()
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -77,7 +78,8 @@ class TemplateType extends AbstractType
         
     /**
      * (non-PHPdoc)
-     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony\Component\Form.AbstractType::buildView()
+     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony
+     * \Component\Form.AbstractType::buildView()
      */
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
@@ -87,7 +89,8 @@ class TemplateType extends AbstractType
     
     /**
      * (non-PHPdoc)
-     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony\Component\Form.AbstractType::setDefaultOptions()
+     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony
+     * \Component\Form.AbstractType::setDefaultOptions()
      */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
@@ -101,7 +104,8 @@ class TemplateType extends AbstractType
     
     /**
      * (non-PHPdoc)
-     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony\Component\Form.FormTypeInterface::getName()
+     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony
+     * \Component\Form.FormTypeInterface::getName()
      */
     public function getName()
     {

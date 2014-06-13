@@ -35,8 +35,7 @@ class PhpOrchestraUrlGenerator extends UrlGenerator
         RequestContext $context,
         $documentManager,
         LoggerInterface $logger = null
-    )
-    {
+    ) {
         $this->routes = $routes;
         $this->context = $context;
         $this->logger = $logger;
@@ -45,7 +44,8 @@ class PhpOrchestraUrlGenerator extends UrlGenerator
 
     /**
      * (non-PHPdoc)
-     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Routing/Generator/Symfony\Component\Routing\Generator.UrlGenerator::generate()
+     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Routing/Generator/Symfony
+     * \Component\Routing\Generator.UrlGenerator::generate()
      */
     public function generate($name, $parameters = array(), $referenceType = self::ABSOLUTE_PATH)
     {

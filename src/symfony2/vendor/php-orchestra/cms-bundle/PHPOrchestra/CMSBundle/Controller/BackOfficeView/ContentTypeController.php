@@ -20,18 +20,22 @@ class ContentTypeController extends TableViewController
     
     /**
      * (non-PHPdoc)
-     * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Controller/PHPOrchestra\CMSBundle\Controller.TableViewController::init()
+     * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Controller/PHPOrchestra
+     * \CMSBundle\Controller.TableViewController::init()
      */
-    function init() {
+    public function init()
+    {
         $this->setEntity('ContentType');
     }
     
     
     /**
      * (non-PHPdoc)
-     * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Controller/PHPOrchestra\CMSBundle\Controller.TableViewController::setColumns()
+     * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Controller/PHPOrchestra
+     * \CMSBundle\Controller.TableViewController::setColumns()
      */
-    public function setColumns(){
+    public function setColumns()
+    {
         $this->columns = array(
             array('name' => 'contentTypeId', 'search' => 'text', 'label' => 'Identifiant'),
             array('name' => 'name', 'search' => 'text', 'label' => 'Nom'),
@@ -40,16 +44,19 @@ class ContentTypeController extends TableViewController
             array('name' => 'deleted', 'search' => 'text', 'label' => 'Supprimé'),
             array('button' =>'modify'),
             array('button' =>'delete')
-       );
+        );
     }
     
     
     /**
      * (non-PHPdoc)
-     * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Controller/PHPOrchestra\CMSBundle\Controller.TableViewController::editEntity()
+     * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Controller/PHPOrchestra
+     * \CMSBundle\Controller.TableViewController::editEntity()
      */
-    public function editEntity(Request $request, $id) {
+    public function editEntity(Request $request, $id)
+    {
         $documentManager = $this->container->get('phporchestra_cms.documentmanager');
+        
         if (empty($id)) {
             $contentType = $documentManager->createDocument('ContentType');
         } else {
@@ -65,11 +72,28 @@ class ContentTypeController extends TableViewController
         
         if ($contentType->new_field != '') {
             $contentType->save();
-            return $this->redirect($this->generateUrl('phporchestra_cms_backofficeview_contenttype_index', array('action' => 'edit', 'id' => (string)$contentType->getId())));
+            
+            return $this->redirect(
+                $this->generateUrl(
+                    'phporchestra_cms_backofficeview_contenttype_index',
+                    array(
+                        'action' => 'edit',
+                        'id' => (string)$contentType->getId()
+                    )
+                )
+            );
+            
         } elseif ($form->isValid()) {
+            
             $this->deleteOtherStatusVersions($contentType->getContentTypeId(), $contentType->getStatus());
             $contentType->save();
-            return $this->redirect($this->generateUrl('phporchestra_cms_backofficeview_contenttype_index', array('action' => 'catalog')));
+            
+            return $this->redirect(
+                $this->generateUrl(
+                    'phporchestra_cms_backofficeview_contenttype_index',
+                    array('action' => 'catalog')
+                )
+            );
         }
         
         return $this->render(
@@ -111,7 +135,8 @@ class ContentTypeController extends TableViewController
     
     /**
      * (non-PHPdoc)
-     * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Controller/PHPOrchestra\CMSBundle\Controller.TableViewController::deleteEntity()
+     * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Controller/PHPOrchestra
+     * \CMSBundle\Controller.TableViewController::deleteEntity()
      */
     public function deleteEntity(Request $request, $id)
     {

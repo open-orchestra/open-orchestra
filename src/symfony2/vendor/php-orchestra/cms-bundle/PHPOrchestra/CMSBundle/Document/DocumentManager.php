@@ -92,11 +92,11 @@ class DocumentManager
      * 
      * @param string $id
      */
-    public function getDocumentById($documentType, $id, $asArray = false)
+    public function getDocumentById($documentType, $documentId, $asArray = false)
     {
         $sort = $this->getDefaultSort($documentType);
         $repository = $this->documentsService->getRepository($this->getDocumentNamespace($documentType));
-        $document = $repository->findOneById($id);
+        $document = $repository->findOneById($documentId);
         if ($asArray) {
             $document = $document->toArray();
         }
@@ -111,7 +111,14 @@ class DocumentManager
     * @param array $sort
     * @param bool $asArray, true to getdocuments as array, false to get as objects
     */
-    public function getDocuments($documentType, array $criteria = array(), $sort = array(), $asArray = false, $start=0, $length=0)
+    public function getDocuments(
+        $documentType,
+        array $criteria = array(),
+        $sort = array(),
+        $asArray = false,
+        $start = 0,
+        $length = 0
+    )
     {
         if (array() == $sort) {
             $sort = $this->getDefaultSort($documentType);
@@ -225,7 +232,8 @@ class DocumentManager
      * Return sons of $nodeId
      * 
      * @param string $nodeId
-     */    public function getNodeSons($nodeId)
+     */
+    public function getNodeSons($nodeId)
     {
         $filters = array(array('$match' => array('parentId' => $nodeId)));
         

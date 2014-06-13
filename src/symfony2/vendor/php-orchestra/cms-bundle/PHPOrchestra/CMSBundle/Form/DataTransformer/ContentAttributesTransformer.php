@@ -24,7 +24,7 @@ class ContentAttributesTransformer implements DataTransformerInterface
     {
         $this->documentManager = $documentManager;
         $this->fieldsStructure = $fieldsStructure;
-    } 
+    }
 
     /**
      * Transforms a ContentAttributes entity to inject attributeFields
@@ -33,17 +33,14 @@ class ContentAttributesTransformer implements DataTransformerInterface
      */
     public function transform($attributes) // entity => formfield
     {
-        $formAttributes = array();
-        
         // Fields default values
-        foreach ($this->fieldsStructure as $fieldStructure)
-        {
+        foreach ($this->fieldsStructure as $fieldStructure) {
             $name = $fieldStructure->fieldId;
             $attributes->$name = $fieldStructure->defaultValue;
         }
         
         // Fields edited values
-        foreach ($attributes as $key => $attribute) {
+        foreach ($attributes as $attribute) {
             $name = $attribute->getName();
             $attributes->$name = $attribute->getValue();
         }
@@ -59,8 +56,7 @@ class ContentAttributesTransformer implements DataTransformerInterface
     {
         $newAttributes = array();
         
-        foreach ($this->fieldsStructure as $fieldStructure)
-        {
+        foreach ($this->fieldsStructure as $fieldStructure) {
             $attribute = $this->documentManager->createDocument('ContentAttribute');
             $name = $fieldStructure->fieldId;
             $attribute->setName($name);
