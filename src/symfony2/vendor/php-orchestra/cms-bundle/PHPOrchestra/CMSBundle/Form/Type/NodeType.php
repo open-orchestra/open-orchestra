@@ -59,7 +59,7 @@ class NodeType extends AbstractType
             ->add('alias', 'text')
             ->add('language', 'orchestra_language')
             ->add('status', 'orchestra_status')
-            ->add(
+/*            ->add(
                 'areas',
                 'orchestra_areas',
                 array(
@@ -87,7 +87,7 @@ class NodeType extends AbstractType
                         )
                     )
                 )
-            )
+            )*/
             ->add('theme', 'orchestra_theme_choice')
             ->add('save', 'submit');
     }
@@ -101,7 +101,10 @@ class NodeType extends AbstractType
      */
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
-        $view->vars['showDialog'] = $options['showDialog'];
+        $view->vars['inDialog'] = true;
+    	
+    	
+    	$view->vars['showDialog'] = $options['showDialog'];
         $view->vars['objects'] = $options['objects'];
         $view->vars['js'] = $options['js'];
     }

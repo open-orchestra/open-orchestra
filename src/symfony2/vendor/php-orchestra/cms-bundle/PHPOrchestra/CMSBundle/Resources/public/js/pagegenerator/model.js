@@ -90,10 +90,10 @@ function moveFromTo(settings, source, destination){
 			eval(source.path + '.' + source.type + '.splice(' + (source.index + destination) +  ', 0, copy)');
 		}
 	}
-	settings.element.parseTemplate($.extend(settings, {"path": null}));
+	settings.element.parseModel($.extend(settings, {"path": null}));
 }
 (function($){
-    $.fn.createSubTemplate = function(settings, type){
+    $.fn.createSubModel = function(settings, type){
 		var values = eval(settings.path);
 		var tab = eval(settings.path + '.' + type);
 		var path = settings.path + '.' + type;
@@ -104,7 +104,8 @@ function moveFromTo(settings, source, destination){
 				tab[i].boPercent = (!("boPercent" in tab[i])) ? 100 / (tab.length) : tab[i].boPercent;
 				style.width = (values.boDirection == 'v') ? tab[i].boPercent + '%' : '100%';
 				style.height = (values.boDirection == 'h') ? tab[i].boPercent + '%' : '100%';
-				$(this).parseTemplate({"values": settings.values,
+				style.display = (values.boDirection == 'v') ? 'inline-block' : 'block';
+				$(this).parseModel({"values": settings.values,
 									"path": path + '[' + i + ']',
 									"css": settings.css,
 									"style" : style,
@@ -116,49 +117,43 @@ function moveFromTo(settings, source, destination){
 			}
 		}
 	}
-	$.fn.parseTemplate = function(options)
+	$.fn.parseModel = function(options)
 	{
 		var settings = $.extend({
 			"values": $(this).data(),
 			"css": "ui-widget-model"
 		}, options || {});
 
-		var actions;
+		var actions = {};
 		if(settings.path == null){
 			settings.element = this;
 			settings.path = "settings.values";
 			settings.type = $(this).attr('id').replace('-model', '');
 			settings.style = '';
 			settings.element.html('');
-			actions = {
-					'fa fa-cog' : [
-					   	'$( "#dialog-" + settings.type ).data("settings", settings);',
-						'$( "#dialog-" + settings.type ).data("this_values", this_values);',
-						'$( "#dialog-" + settings.type ).dialog( "open" );'
-				    ]
-				};
 		}
 		else{
 			actions = {
 					'fa fa-trash-o' : [
 					    'moveFromTo(settings, settings.path);',
-						'settings.element.parseTemplate($.extend(settings, {"path": null}));'
-					],
-					'fa fa-cog' : [
-					   	'$( "#dialog-" + settings.type ).data("settings", settings);',
-						'$( "#dialog-" + settings.type ).data("this_values", this_values);',
-						'$( "#dialog-" + settings.type ).dialog( "open" );'
+						'settings.element.parseModel($.extend(settings, {"path": null}));'
 					],
 					'fa fa-plus-circle' : [
 						'moveFromTo(settings, settings.path, +1);',
-						'settings.element.parseTemplate($.extend(settings, {"path": null}));'
+						'settings.element.parseModel($.extend(settings, {"path": null}));'
 						],
 					'fa fa-minus-circle' : [
 						'moveFromTo(settings, settings.path, -1);',
-						'settings.element.parseTemplate($.extend(settings, {"path": null}));'
+						'settings.element.parseModel($.extend(settings, {"path": null}));'
 						]
 				};
 		}
+		actions['fa fa-cog'] = [
+				   	'$( "#dialog-" + settings.type ).data("settings", settings);',
+					'$( "#dialog-" + settings.type ).data("this_values", this_values);',
+					'$( "#dialog-" + settings.type ).dialog( "open" );'
+			    ];
+		
 		if(settings.init){
 		    formatForLoad(settings);
 		    delete settings.init;
@@ -187,14 +182,7 @@ function moveFromTo(settings, source, destination){
 				if('is_recursive' in this_values[i][0]){
 					found = true;
 					ul.addClass(settings.css + '-' + i);
-					ul.createSubTemplate(settings, i);
-					if(this_values.boDirection == 'v'){
-						ul.children().css('display', 'inline-block');
-						ul.children().addClass('resize-v');
-					}
-					else{
-						ul.children().addClass('resize-h');
-					}
+					ul.createSubModel(settings, i);
 					ul.children().addClass(settings.css + '-' + i);
 				}
 			}
@@ -257,7 +245,7 @@ function moveFromTo(settings, source, destination){
 							},
 							stop: function(event, ui){
 								$(this).css(s.origine, 'auto');
-								settings.element.parseTemplate($.extend(settings, {"path": null}));
+								settings.element.parseModel($.extend(settings, {"path": null}));
 							}
 						})
 					})(separator[i]);
@@ -339,126 +327,3 @@ function moveFromTo(settings, source, destination){
 		$(this).css(coordinate, size + '%');
 	}
 })(jQuery);
-
-var dialog_parameter = {
-    resizable: false,
-    width:530,
-    modal: true,
-    autoOpen: false,
-    open: function ( event, ui) {
-        var data = $(this).data();
-        var found = false;
-        var buttons = $.extend({}, $(this).dialog("option", "allbuttons"));
-        var addArray = $(this).dialog("option", "addArray");
-        for(var i in addArray){
-            if(addArray[i] in data.this_values){
-                found = true;
-                buttons["Add " + addArray[i].charAt(0).toUpperCase() + addArray[i].slice(1)] = (function (name){
-                	return function(){
-                		resetPercent(data.this_values[name]);
-                        data.this_values[name].push({'is_recursive' : true});
-                        $(this).dialog( "close" );
-                	}
-                })(addArray[i]);
-            }
-        }
-        if(!found){
-            for(var i in addArray){
-                buttons["Add " + addArray[i].charAt(0).toUpperCase() + addArray[i].slice(1)] = (function (name){
-                	return function(){
-                        data.this_values[name] = new Array();
-                        data.this_values[name].push({'is_recursive' : true});
-                        $(this).dialog( "close" );
-                	}
-                })(addArray[i]);
-            }
-        }
-        $(this).find("[type='submit']").each(function(){
-            $(this).hide();
-            buttons["Save"] = function(){
-                var data = $(this).data();
-                $(this).getValue(data.this_values);
-                formatForSubmit(data.settings);
-                var form = $(this).find('form');
-                url = form.attr('action');
-                params = form.serialize();
-                $(this).dialog( "close" );
-                treeAjaxCall(url, params);
-           }
-        });
-        $(this).dialog("option", "buttons", buttons);
-        $(this).setValue(data.this_values);
-    },
-    allbuttons: {
-        "Apply": function() {
-            var data = $(this).data();
-            $(this).getValue(data.this_values);
-            $(this).dialog( "close" );
-        },
-    },
-    close: function ( event, ui) {
-        var data = $(this).data();
-        data.settings.element.parseTemplate($.extend(data.settings, {"path": null}));
-    }
-};
-
-var tree_parameter = {
-    extensions: ['persist', 'dnd'],
-    /*persist: {
-        expandLazy: true
-    },*/
-    autoActivate: false,
-    autoScroll: true,
-    clickFolderMode: 1,
-    keyboard: false,
-    selectMode: 1
-};
-
-var treeNodesMenuOptions = [
-                            {'title': 'Créer une sous-page', 'cmd': 'createNode'},
-                            {'title': 'Supprimer', 'cmd': 'deleteNode'}/*,
-                            {'title': '----'},*/
-                           ];
-
-var treeTemplatesMenuOptions = [
-                                {'title': 'Créer un template', 'cmd': 'createTemplate'},
-                                {'title': 'Supprimer', 'cmd': 'deleteTemplate'}
-                               ];
-
-var treePreviousJs = {
-        'deleteNode': function(){return confirmTreeDelete();},
-        'deleteTemplate': function(){return confirmTemplateDelete();}
-};
-
-function treeAjaxCall(url, params)
-{
-    $('#rightbox-content').html('<h1><i class="fa fa-cog fa-spin"></i> Loading...</h1>');
-    $.ajax({
-        'type': 'POST',
-        'url': url,
-        'data': params,
-        'success': function(response) {
-            $('[id^="dialog-"]').dialog("destroy");
-            
-            for (var selector in response) {
-                $(selector).html(response[selector]);
-            }
-        },
-        'dataType': 'json'
-    });
-}
-
-function confirmTreeDelete()
-{
-    return confirm("Vous êtes sur le point de supprimer une page ainsi que toute la sous-arborescence associée.\n\nSi vous souhaitez tout supprimer, cliquez sur \"Ok\", sinon cliquez sur \"Annuler\" et déplacez d'abord la sous-arborescence.")
-}
-
-function confirmTemplateDelete()
-{
-    return confirm("Etes-vous certain de vouloir supprimer ce template ?")
-}
-
-function confirmDragNDrop()
-{
-    return confirm("Etes-vous certain de vouloir déplacer la sous-arcborescence ici ?")
-}

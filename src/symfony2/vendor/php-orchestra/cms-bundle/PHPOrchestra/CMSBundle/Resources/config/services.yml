@@ -119,3 +119,7 @@ services:
         class: PHPOrchestra\CMSBundle\Twig\LexiconTranslatorExtension
         tags:
             - { name: twig.extension }
+    php_orchestra_cms.twig.add_html:
+        class: PHPOrchestra\CMSBundle\Twig\AddHtmlExtension
+        tags:
+            - { name: twig.extension }

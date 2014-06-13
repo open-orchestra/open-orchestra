@@ -60,28 +60,14 @@ class TemplateType extends AbstractType
                 'areas',
                 'orchestra_areas',
                 array(
-                    'dialogPath' => 'PHPOrchestraCMSBundle:Form:area.html.twig',
-                    'objects' => array('areas', 'blocks')
+                    'controller' => 'PHPOrchestraCMSBundle:SubForm:Area'
                 )
             )
             ->add(
-                $nameBlocks,
+                'blocks',
                 'orchestra_blocks',
                 array(
-                    'js' => array(
-                        'script' => 'local/blocks_template.js',
-                        'parameter' => array(
-                            'name' => $nameBlocks,
-                            'urlNode' => $this->router->generate('php_orchestra_ajax_show_all_nodes'),
-                            'urlBlock' => $this->router->generate('php_orchestra_ajax_show_blocks_from_node')
-                        ),
-                        'render' => array(
-                            'blocks' => array(
-                                'twig' => 'PHPOrchestraCMSBundle:Form:blocksInfo.json.twig',
-                                'parameter' => array('blocks' => $this->blocks, 'prefix' => $nameBlocks.'_')
-                            )
-                        )
-                    )
+                    'controller' => 'PHPOrchestraCMSBundle:SubForm:Block'
                 )
             )
             ->add('save', 'submit');
@@ -97,9 +83,8 @@ class TemplateType extends AbstractType
      */
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
-        $view->vars['showDialog'] = $options['showDialog'];
-        $view->vars['objects'] = $options['objects'];
-        $view->vars['js'] = $options['js'];
+        $view->vars['inDialog'] = $options['inDialog'];//true
+    	$view->vars['js'] = $options['js'];//'pagegenerator/template/begin.js';
     }
     
     /**
@@ -109,9 +94,8 @@ class TemplateType extends AbstractType
     {
         $resolver->setDefaults(
             array(
-                'showDialog' => true,
-                'js' => array(),
-                'objects' => array('areas')
+                'inDialog' => false,
+                'js' => ''
             )
         );
     }

@@ -50,22 +50,17 @@ class BlocksType extends AbstractType
     {
         $resolver->setDefaults(
             array(
-                'dialogPath' => '',
-                'js' => array(),
-                'objects' => array(),
+                'controller' => '',
                 'attr' => array('class' => 'not-mapped')
             )
         );
     }
-    
+
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
-        $view->vars['dialogPath'] = $options['dialogPath'];
-        $view->vars['js'] = $options['js'];
-        $view->vars['objects'] = $options['objects'];
+        $view->vars['controller'] = $options['controller'];
     }
-    
-    
+        
     /**
      * Extends textarea type
      */

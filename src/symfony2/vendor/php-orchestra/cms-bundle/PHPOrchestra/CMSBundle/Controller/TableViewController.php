@@ -188,7 +188,7 @@ abstract class TableViewController extends Controller
 	        		}
         		}
         		else{
-                    if (!isset($record[$column['name']])) {
+                    if (!array_key_exists($column['name'], $record)) {
                         throw new NonExistingFieldException('The field ' . $column['name'] . ' does not exist in TableViewController.php');
                     }
         			if(array_key_exists('callback', $column)){

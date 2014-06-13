@@ -45,6 +45,8 @@ class TemplateController extends Controller
             'template',
             $template,
             array(
+                'inDialog' => true,
+                'js' => 'pagegenerator/template/begin.js',
                 'action' => $this->getRequest()->getUri()
             )
         );
