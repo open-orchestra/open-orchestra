@@ -19,9 +19,6 @@ class ContentType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $attributes = $options['data']->getAttributes();
-        $attributes->contentType = $options['data']->contentTypeStructure;
-        
         $builder
             ->add('shortName', 'text', array('label' => 'Nom de référence'))
             ->add('contentType', 'text', array('label' => 'Type de contenu', 'read_only' => 'true'))
@@ -38,16 +35,29 @@ class ContentType extends AbstractType
                             Content::STATUS_UNPUBLISHED => Content::STATUS_UNPUBLISHED
                         )
                 )
-            )
-            ->add(
-                'attributes',
-                'contentAttributes',
-                array(
-                    'label' => 'Attributs',
-                    'data' => $attributes
-                )
-            )
-            ->add('id', 'hidden', array('mapped' => false, 'data' => (string)$options['data']->getId()));
+            );
+            
+        if (isset($options['data']) && is_object($options['data'])) {
+            
+            if (method_exists($options['data'], 'getId')) {
+                $builder->add('id', 'hidden', array('mapped' => false, 'data' => (string)$options['data']->getId()));
+            }
+            
+            if (method_exists($options['data'], 'getAttributes') && isset($options['data']->contentTypeStructure)) {
+                $attributes = $options['data']->getAttributes();
+                
+                $attributes->contentType = $options['data']->contentTypeStructure;
+                
+                $builder->add(
+                    'attributes',
+                    'contentAttributes',
+                    array(
+                        'label' => 'Attributs',
+                        'data' => $attributes
+                    )
+                );
+            }
+        }
     }
     
     /**
