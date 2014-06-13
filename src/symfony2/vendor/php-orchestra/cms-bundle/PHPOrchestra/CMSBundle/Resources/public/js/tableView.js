@@ -108,6 +108,7 @@ $(document).ready(function() {
 	
 	$('#content').on('click', 'button.submit', function(){
 		var data = $('#content form').serializeArray();
+	    $('#content').html('<h1><i class="fa fa-cog fa-spin"></i> Loading...</h1>');
 		$.post($(this).attr('data-parameter') , data, function (response) {
 			if(response.success){
 				window.location.hash = response.data;

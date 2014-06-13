@@ -39,7 +39,7 @@ class ContentTypeTransformer implements DataTransformerInterface
     /**
      * Transforms an object in valid ContentType entity.
      *
-     * @param  object
+     * @param  object $datas
      * @return object
      */
     public function reverseTransform($datas) // formfield => entity
@@ -52,11 +52,13 @@ class ContentTypeTransformer implements DataTransformerInterface
         }
         if ($datas->new_field != '') {
             $fields[] = (object) array(
-                "fieldId" => "",
-                "label" => "",
-                "searchable" => false,
-                "type" => $datas->new_field,
-                "options" => (object) array()
+                'fieldId' => '',
+                'label' => '',
+                'defaultValue' => '',
+                'searchable' => false,
+                'type' => $datas->new_field,
+                'symfonyType' => '',
+                'options' => (object) array()
             );
         }
         

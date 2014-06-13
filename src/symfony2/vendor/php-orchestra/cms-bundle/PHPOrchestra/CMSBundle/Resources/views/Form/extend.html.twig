@@ -21,6 +21,8 @@
         <label class="checkbox">
             {{ form_widget(form) }}
             <i></i>{{ form_label(form, null, {'label_attr': {'class': 'label'}}) }}</label>
+    {% elseif  block_prefixes[1] == 'contentAttributes' %}
+        {{ form_widget(form) }}
     {% else %}
         {{ form_label(form, null, {'label_attr': {'class': 'label'}}) }}
         <label class="{{ block_prefixes[1]|lexicon_translator }} {% if multiple is defined and multiple %} select-multiple{% endif %}">

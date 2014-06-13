@@ -14,6 +14,13 @@ services:
 
 #--[FORM FIELDS]----------------#
 
+    # Orchestra content type attributes
+    php_orchestra_cms.type.contentAttributes:
+        class: PHPOrchestra\CMSBundle\Form\Type\ContentAttributesType
+        arguments: [@phporchestra_cms.documentmanager]
+        tags:
+            - { name: form.type, alias: contentAttributes }
+
     # Orchestra field select form field type
     php_orchestra_cms.type.fieldSelect:
         class: PHPOrchestra\CMSBundle\Form\Type\OrchestraFieldSelectType

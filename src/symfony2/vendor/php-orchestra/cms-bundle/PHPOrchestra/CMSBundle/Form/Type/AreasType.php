@@ -16,13 +16,20 @@ use PHPOrchestra\CMSBundle\Form\DataTransformer\JsonToAreasTransformer;
 
 class AreasType extends AbstractType
 {
-
+    /**
+     * (non-PHPdoc)
+     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony\Component\Form.AbstractType::buildForm()
+     */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $transformer = new JsonToAreasTransformer();
         $builder->addModelTransformer($transformer);
     }
 
+    /**
+     * (non-PHPdoc)
+     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony\Component\Form.AbstractType::setDefaultOptions()
+     */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(
@@ -33,16 +40,28 @@ class AreasType extends AbstractType
         );
     }
 
+    /**
+     * (non-PHPdoc)
+     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony\Component\Form.AbstractType::buildView()
+     */
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
         $view->vars['controller'] = $options['controller'];
     }
-    
+
+    /**
+     * (non-PHPdoc)
+     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony\Component\Form.AbstractType::getParent()
+     */
     public function getParent()
     {
         return 'hidden';
     }
 
+    /**
+     * (non-PHPdoc)
+     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony\Component\Form.FormTypeInterface::getName()
+     */
     public function getName()
     {
         return 'orchestra_areas';

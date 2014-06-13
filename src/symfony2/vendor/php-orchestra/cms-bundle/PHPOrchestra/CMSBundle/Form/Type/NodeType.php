@@ -29,7 +29,10 @@ class NodeType extends AbstractType
     
     
     /**
-     * @param Router
+     * Constructor
+     * 
+     * @param $router
+     * @param $blocks
      */
     public function __construct(Router $router, $blocks)
     {
@@ -38,10 +41,8 @@ class NodeType extends AbstractType
     }
             
     /**
-     * Build Node form
-     * 
-     * @param FormBuilderInterface $builder
-     * @param  array $options
+     * (non-PHPdoc)
+     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony\Component\Form.AbstractType::buildForm()
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -93,11 +94,8 @@ class NodeType extends AbstractType
     }
     
     /**
-     * Add parameters to view
-     * 
-     * @param FormView $view
-     * @param FormInterface $form
-     * @param array $options
+     * (non-PHPdoc)
+     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony\Component\Form.AbstractType::buildView()
      */
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
@@ -110,7 +108,8 @@ class NodeType extends AbstractType
     }
     
     /**
-     * @param array $options
+     * (non-PHPdoc)
+     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony\Component\Form.AbstractType::setDefaultOptions()
      */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
@@ -130,7 +129,8 @@ class NodeType extends AbstractType
     }
         
     /**
-     * @return string
+     * (non-PHPdoc)
+     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony\Component\Form.FormTypeInterface::getName()
      */
     public function getName()
     {

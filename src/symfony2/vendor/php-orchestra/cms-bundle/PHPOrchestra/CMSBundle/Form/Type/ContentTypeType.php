@@ -14,6 +14,10 @@ use Model\PHPOrchestraCMSBundle\ContentType;
 
 class ContentTypeType extends AbstractType
 {
+    /**
+     * (non-PHPdoc)
+     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony\Component\Form.AbstractType::buildForm()
+     */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $transformer = new ContentTypeTransformer();
@@ -25,7 +29,6 @@ class ContentTypeType extends AbstractType
             ->add('version', 'text', array('read_only' => true))
             ->add('status', 'choice', array('choices' => array(ContentType::STATUS_DRAFT => ContentType::STATUS_DRAFT, ContentType::STATUS_PUBLISHED => ContentType::STATUS_PUBLISHED)))
             ->add('id', 'hidden', array('mapped' => false, 'data' => (string)$options['data']->getId()))
-            ->add('deleted', 'hidden')
             ->add('fields', 'hidden', array('data' => $options['data']->getFields()));
         
         $customFields = json_decode($options['data']->getFields());
@@ -41,7 +44,8 @@ class ContentTypeType extends AbstractType
     }
     
     /**
-     * @return string
+     * (non-PHPdoc)
+     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony\Component\Form.FormTypeInterface::getName()
      */
     public function getName()
     {

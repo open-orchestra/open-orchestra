@@ -27,6 +27,11 @@ abstract class Content extends \Model\PHPOrchestraCMSBundle\Base\Content
         }
     }
     
+    public function isDeleted()
+    {
+        return $this->getDeleted();
+    }
+    
     /**
      * Mark the document as deleted
      */
@@ -53,4 +58,30 @@ abstract class Content extends \Model\PHPOrchestraCMSBundle\Base\Content
         
         return $document;
     }
+    
+    /**
+     * Generate a draft version of the ContentType
+     */
+    public function generateDraft()
+    {
+        $this->setVersion(1 + $this->getVersion());
+        $this->setStatus(self::STATUS_DRAFT);
+        $this->setDeleted(false);
+        $this->setId(null);
+        $this->setIsNew(true);
+        $this->save();
+    }
+    
+    /**
+     * Alias to addAttributes as used by symfony standard forms
+     * 
+     * @param document | document[] $documents
+     */
+    public function setAttributes($documents)
+    {
+        $this->addAttributes($documents);
+        
+        return $this;
+    }
+    
 }

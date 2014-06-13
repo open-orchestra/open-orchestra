@@ -8,7 +8,7 @@
 namespace PHPOrchestra\CMSBundle\Exception;
 
 /**
- * Exception raised when trying to access to an unknown field type
+ * Exception raised when trying to access an unknown field type
  */
 class UnknownFieldTypeException extends \Exception
 {

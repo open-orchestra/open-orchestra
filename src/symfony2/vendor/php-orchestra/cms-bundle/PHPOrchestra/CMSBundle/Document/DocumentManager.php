@@ -39,6 +39,9 @@ class DocumentManager
         ),
         'Content' => array(
             'namespace' => 'Model\PHPOrchestraCMSBundle\Content'
+        ),
+        'ContentAttribute' => array(
+            'namespace' => 'Model\PHPOrchestraCMSBundle\ContentAttribute'
         )
     );
     
@@ -128,6 +131,12 @@ class DocumentManager
         return $documents;
     }
     
+    /**
+     * Get the number of documents matching $documentType and $criteria
+     * 
+     * @param dstring $documentType
+     * @param array $criteria
+     */
     public function getDocumentsCount($documentType, array $criteria = array())
     {
         $repository = $this->documentsService->getRepository($this->getDocumentNamespace($documentType));
@@ -136,6 +145,11 @@ class DocumentManager
         return $query->count();
     }
     
+    /**
+     * Tranform a collection into an array
+     *
+     * @param $collection
+     */
     public function adaptToArray($collection)
     {
         $documents = array();
@@ -208,9 +222,10 @@ class DocumentManager
     }
     
     /**
+     * Return sons of $nodeId
      * 
-     */
-    public function getNodeSons($nodeId)
+     * @param string $nodeId
+     */    public function getNodeSons($nodeId)
     {
         $filters = array(array('$match' => array('parentId' => $nodeId)));
         
@@ -278,5 +293,4 @@ class DocumentManager
         $versions = $repository->getCollection()->aggregate($filters);
         return $versions['result'];
     }
-    
 }

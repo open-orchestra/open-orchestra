@@ -29,7 +29,10 @@ class TemplateType extends AbstractType
     
     
     /**
-     * @param Router
+     * Constructor
+     * 
+     * @param $router
+     * @param $blocks
      */
     public function __construct(Router $router, $blocks)
     {
@@ -38,10 +41,8 @@ class TemplateType extends AbstractType
     }
     
     /**
-     * Build Template form
-     * 
-     * @param FormBuilderInterface $builder
-     * @param  array $options
+     * (non-PHPdoc)
+     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony\Component\Form.AbstractType::buildForm()
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -75,11 +76,8 @@ class TemplateType extends AbstractType
     }
         
     /**
-     * Add parameters to view
-     * 
-     * @param FormView $view
-     * @param FormInterface $form
-     * @param array $options
+     * (non-PHPdoc)
+     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony\Component\Form.AbstractType::buildView()
      */
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
@@ -88,7 +86,8 @@ class TemplateType extends AbstractType
     }
     
     /**
-     * @param array $options
+     * (non-PHPdoc)
+     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony\Component\Form.AbstractType::setDefaultOptions()
      */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
@@ -100,9 +99,9 @@ class TemplateType extends AbstractType
         );
     }
     
-    
     /**
-     * @return string
+     * (non-PHPdoc)
+     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony\Component\Form.FormTypeInterface::getName()
      */
     public function getName()
     {

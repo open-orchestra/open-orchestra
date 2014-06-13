@@ -19,26 +19,36 @@ class CustomFieldType extends AbstractType
 {
     protected $availableFields = null;
 
+    /**
+     * Constructor
+     * 
+     * @param ContainerInterface $container
+     */
     public function __construct(ContainerInterface $container)
     {
         $this->availableFields = $container->getParameter('php_orchestra.custom_types');
     }
 
+    /**
+     * (non-PHPdoc)
+     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony\Component\Form.AbstractType::buildForm()
+     */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $transformer = new CustomFieldTransformer();
         $builder->addModelTransformer($transformer);
         
+        $parameters = $this->availableFields[$options['data']->type];
         $builder->add('label', 'text')
             ->add('fieldId', 'text', array('label' => 'Identifiant'))
+            ->add('defaultValue', 'text', array('label' => 'Valeur par défaut', 'required' => false))
             ->add('searchable', 'checkbox', array('required' => false, 'label' => 'Indexable'))
+            ->add('symfonyType', 'hidden', array('data' => $parameters['type']))
             ->add('removeField', 'checkbox', array('required' => false, 'label' => 'Supprimer le champ'));
         
         if (!isset($this->availableFields[$options['data']->type])) {
             throw new UnknownFieldTypeException('Unknown field type : ' . $options['data']->type);
         }
-        
-        $parameters = $this->availableFields[$options['data']->type];
         
         $optionsValues = (object) array();
         if (isset($options['data']->options)) {
@@ -61,7 +71,8 @@ class CustomFieldType extends AbstractType
     }
 
     /**
-     * getName
+     * (non-PHPdoc)
+     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony\Component\Form.FormTypeInterface::getName()
      */
     public function getName()
     {

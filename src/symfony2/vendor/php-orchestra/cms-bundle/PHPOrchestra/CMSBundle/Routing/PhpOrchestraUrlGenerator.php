@@ -92,6 +92,12 @@ class PhpOrchestraUrlGenerator extends UrlGenerator
         return $url;
     }
     
+    /**
+     * return relative path to $nodeId
+     * 
+     * @param unknown_type $nodeId
+     * @throws RouteNotFoundException
+     */
     protected function getNodeAlias($nodeId)
     {
         $alias = '';

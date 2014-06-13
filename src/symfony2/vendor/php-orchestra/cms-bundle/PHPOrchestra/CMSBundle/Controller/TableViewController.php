@@ -206,21 +206,63 @@ abstract class TableViewController extends Controller
 
     public function editEntity(Request $request, $id)
     {
+        $document = $this->getDocument($id);
+        $document = $this->modifyDocumentAfterGet($document);
+        
+        $form = $this->createEditForm($document);
+        
+        return $this->editRender($request, $id, $form, $document);
+    }
 
+    /**
+     * Get an existing document by its $id or create a new one
+     * 
+     * @param string $id
+     */
+    protected function getDocument($id)
+    {
         $documentManager = $this->container->get('phporchestra_cms.documentmanager');
-        if(empty($id)) {
+        if (empty($id)) {
             $document = $documentManager->createDocument($this->getEntity());
-        }
-        else {
-            if($this->getKey() === null){
+            $document = $this->modifyDocumentAfterCreate($document);
+        } else {
+            if ($this->getKey() === null) {
                 $document = $documentManager->getDocumentById($this->getEntity(), $id);
-            }
-            else{
+            } else {
                 $criteria = array_combine($this->getKey(), explode('|', $id));
                 $document = $documentManager->getDocument($this->getEntity(), $criteria);
             }
         }
-        
+        return $document;
+    }
+
+    /**
+     * Allow to modify a loaded $document after its creation
+     * 
+     * @param unknown_type $document of $this->entity type
+     */
+    protected function modifyDocumentAfterCreate($document)
+    {
+        return $document;
+    }
+
+    /**
+     * Allow to modify a loaded $document before passing it to the form
+     * 
+     * @param unknown_type $document of $this->entity type
+     */
+    protected function modifyDocumentAfterGet($document)
+    {
+        return $document;
+    }
+
+    /**
+     * Return the edit form
+     * 
+     * @param $document
+     */
+    protected function createEditForm($document)
+    {
         $form = $this->createForm(
             lcfirst($this->getEntity()),
             $document,
@@ -229,24 +271,39 @@ abstract class TableViewController extends Controller
             )
         );
         
-        
+        return $form;
+    }
+
+    /**
+     * Render the view, either edit form or catalog list
+     * 
+     * @param Request $request
+     * @param string $id
+     * @param unknown_type $form
+     * @param unknown_type $document of $this->entity type
+     */
+    protected function editRender($request, $id, $form, $document)
+    {
         $render = $this->render(
             'PHPOrchestraCMSBundle:BackOffice/TableView:form.html.twig',
             array(
                 'form' => $form->createView(),
                 'title' => $this->getEntity(),
-                'ribbon' => $this->saveButton($id).$this->backButton()
+                'ribbon' => $this->saveButton($id) . $this->backButton()
             )
-         );
-        if($request->getMethod() == 'POST'){
-	        $form->handleRequest($request);
-	        $success = false;
-	        $data = $render->getContent();
-	        if ($form->isValid()) {
-	        	$document->save();
-	            $success = true;
-	            $data = $this->generateUrlValue('catalog');
-	        }
+        );
+        
+        if ($request->getMethod() == 'POST') {
+            $form->handleRequest($request);
+            $success = false;
+            $data = $render->getContent();
+            if ($form->isValid()) {
+                $document = $this->modifyDocumentBeforeSave($document);
+                $document->save();
+                $saveResult = $this->afterSave($document);
+                $success = $saveResult['success'];
+                $data = $saveResult['data'];
+            }
             return new JsonResponse(
                 array(
                     'success' => $success,
@@ -256,6 +313,30 @@ abstract class TableViewController extends Controller
         }
         return $render;
     }
+    
+    /**
+     * Allows to modify document after form validation and before saving it
+     * 
+     * @param unknown_type $document of $this->entity type
+     */
+    protected function modifyDocumentBeforeSave($document)
+    {
+        return $document;
+    }
+    
+    /**
+     * Allows to do some additionnal stuff after saving the $document
+     * 
+     * @param unknown_type $document of $this->entity type
+     */
+    protected function afterSave($document)
+    {
+        return array(
+            'success' => true,
+            'data' => $this->generateUrlValue('catalog')
+        );
+    }
+    
     public function deleteEntity(Request $request, $id)
     {
         $documentManager = $this->container->get('phporchestra_cms.documentmanager');

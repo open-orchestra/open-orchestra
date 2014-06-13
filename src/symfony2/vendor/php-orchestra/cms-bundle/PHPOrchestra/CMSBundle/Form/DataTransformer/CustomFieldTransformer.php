@@ -15,7 +15,7 @@ class CustomFieldTransformer implements DataTransformerInterface
     /**
      * Transforms a stdclass field to inject customfield options as standard fields
      *
-     * @param object $datasFromJson
+     * @param object $datas
      * @return object
      */
     public function transform($datas) // stdclass customField => formfield

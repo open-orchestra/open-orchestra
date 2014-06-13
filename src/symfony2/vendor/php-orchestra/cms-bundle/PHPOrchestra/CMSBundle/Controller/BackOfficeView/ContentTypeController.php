@@ -53,7 +53,7 @@ class ContentTypeController extends TableViewController
         if (empty($id)) {
             $contentType = $documentManager->createDocument('ContentType');
         } else {
-        $contentType = $documentManager->getDocumentById('ContentType', $id);
+            $contentType = $documentManager->getDocumentById('ContentType', $id);
         }
         
         if ($contentType->getStatus() != ContentType::STATUS_DRAFT) {
@@ -126,21 +126,7 @@ class ContentTypeController extends TableViewController
         }
         
         return $this->redirect(
-            $this->generateUrl('phporchestra_cms_backofficeview_contenttype_index', array('action' => 'catalog'))
+            $this->generateUrlValue('catalog')
         );
     }
 }
-
-
-
-/*    public function listAction()
-    {
-        $documentManager = $this->container->get('phporchestra_cms.documentmanager');
-        $contentTypes = $documentManager->getDocuments('ContentType', array('deleted' => false));
-        
-        return $this->render(
-            'PHPOrchestraCMSBundle:BackOffice/Content:tempTypeList.html.twig',
-            array('contentTypes' => $contentTypes)
-        );
-    }
-*/

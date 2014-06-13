@@ -8,8 +8,10 @@
 <fieldset>
     Type de champ : {{ form.vars.value.type }}<br /><br />
     {{ form_row(form.removeField) }}
+    {{ form_row(form.symfonyType) }}
     {{ form_row(form.label) }}
     {{ form_row(form.fieldId) }}
+    {{ form_row(form.defaultValue) }}
     {{ form_row(form.searchable) }}
     {% for key, value in form %}
         {% if key starts with 'option' %}
