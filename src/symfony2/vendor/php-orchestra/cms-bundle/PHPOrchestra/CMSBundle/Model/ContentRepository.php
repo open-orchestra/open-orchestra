@@ -7,4 +7,16 @@ namespace PHPOrchestra\CMSBundle\Model;
  */
 class ContentRepository extends \Model\PHPOrchestraCMSBundle\Base\ContentRepository
 {
+
+    /**
+     * Get all contents in mongodb
+     *
+     * @return list of contents
+     */
+    public function getAllContents()
+    {
+        $query = $this->getMandango()->getRepository('Model\PHPOrchestraCMSBundle\Content')->createQuery();
+        $contents = $query->all();
+        return $contents;
+    }
 }
