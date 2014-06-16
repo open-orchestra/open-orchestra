@@ -39,17 +39,30 @@ class CustomFieldType extends AbstractType
         $transformer = new CustomFieldTransformer();
         $builder->addModelTransformer($transformer);
         
+        if (!isset($options['data']) || !isset($options['data']->type)) {
+            throw new UnknownFieldTypeException('No data');
+        }
+        
+        if (!isset($this->availableFields[$options['data']->type])) {
+            throw new UnknownFieldTypeException('Unknown field type : ' . $options['data']->type);
+        }
+        
         $parameters = $this->availableFields[$options['data']->type];
+        
+        if (!isset($parameters['type'])) {
+            throw new UnknownFieldTypeException('Missconfiguration on field type ' . $options['data']->type);
+        }
+        
+        if (!isset($parameters['options']) || !is_array($parameters['options'])) {
+            throw new UnknownFieldTypeException('Field type not described : ' . $options['data']->type);
+        }
+        
         $builder->add('label', 'text')
             ->add('fieldId', 'text', array('label' => 'Identifiant'))
             ->add('defaultValue', 'text', array('label' => 'Valeur par défaut', 'required' => false))
             ->add('searchable', 'checkbox', array('required' => false, 'label' => 'Indexable'))
             ->add('symfonyType', 'hidden', array('data' => $parameters['type']))
             ->add('removeField', 'checkbox', array('required' => false, 'label' => 'Supprimer le champ'));
-        
-        if (!isset($this->availableFields[$options['data']->type])) {
-            throw new UnknownFieldTypeException('Unknown field type : ' . $options['data']->type);
-        }
         
         $optionsValues = (object) array();
         if (isset($options['data']->options)) {
@@ -81,3 +94,4 @@ class CustomFieldType extends AbstractType
         return 'orchestra_customField';
     }
 }
+
