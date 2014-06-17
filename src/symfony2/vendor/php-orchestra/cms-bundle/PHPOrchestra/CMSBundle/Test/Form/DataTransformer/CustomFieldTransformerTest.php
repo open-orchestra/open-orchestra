@@ -5,7 +5,7 @@ namespace PHPOrchestra\CMSBundle\Test\Form\DataTransformer;
 use \PHPOrchestra\CMSBundle\Form\DataTransformer\CustomFieldTransformer;
 
 /**
- * Description of JsonToAreasTransformerTest
+ * Description of CustomFieldTransformerTest
  *
  * @author Noël GILAIN <noel.gilain@businessdecision.com>
  */
