@@ -3,6 +3,7 @@
 namespace PHPOrchestra\CMSBundle\Test\Form\DataTransformer;
 
 use \PHPOrchestra\CMSBundle\Form\DataTransformer\ContentAttributesTransformer;
+use PHPOrchestra\CMSBundle\Test\Mock\TestAttribute;
 
 /**
  * Description of ContentAttributesTransformerTest
@@ -173,34 +174,5 @@ class ContentAttributesTransformerTest extends \PHPUnit_Framework_TestCase
                 )
             )
             );
-    }
-}
-
-class TestAttribute
-{
-    public function __construct($name = '', $value = '')
-    {
-        $this->setName($name);
-        $this->setValue($value);
-    }
-    
-    public function getName()
-    {
-        return $this->name;
-    }
-    
-    public function getValue()
-    {
-        return $this->value;
-    }
-    
-    public function setName($name)
-    {
-        $this->name = $name;
-    }
-    
-    public function setValue($value)
-    {
-        $this->value = $value;
     }
 }

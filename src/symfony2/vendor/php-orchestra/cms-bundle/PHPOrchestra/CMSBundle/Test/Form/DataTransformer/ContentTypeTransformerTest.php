@@ -3,6 +3,7 @@
 namespace PHPOrchestra\CMSBundle\Test\Form\DataTransformer;
 
 use \PHPOrchestra\CMSBundle\Form\DataTransformer\ContentTypeTransformer;
+use PHPOrchestra\CMSBundle\Test\Mock\TestContentType;
 
 /**
  * Description of ContentTypeTransformerTest
@@ -120,25 +121,5 @@ class ContentTypeTransformerTest extends \PHPUnit_Framework_TestCase
             array($datas, $result),
             array($datasFull, $resultFull)
         );
-    }
-}
-
-class TestContentType
-{
-    public function __construct($fields = array(), $customFieldsIndex = array(), $new_field = '')
-    {
-        $this->setFields(json_encode($fields));
-        $this->customFieldsIndex = $customFieldsIndex;
-        $this->new_field = $new_field;
-    }
-    
-    public function getFields()
-    {
-        return $this->fields;
-    }
-    
-    public function setFields($fields)
-    {
-        $this->fields = $fields;
     }
 }
