@@ -94,4 +94,3 @@ class CustomFieldType extends AbstractType
         return 'orchestra_customField';
     }
 }
-

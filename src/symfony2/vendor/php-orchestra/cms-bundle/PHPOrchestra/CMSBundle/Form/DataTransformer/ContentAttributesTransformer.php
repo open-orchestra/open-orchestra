@@ -35,8 +35,7 @@ class ContentAttributesTransformer implements DataTransformerInterface
     {
         // Fields default values
         foreach ($this->fieldsStructure as $fieldStructure) {
-            if (
-                is_object($fieldStructure)
+            if (is_object($fieldStructure)
                 && isset($fieldStructure->fieldId)
                 && isset($fieldStructure->defaultValue)
             ) {
@@ -47,8 +46,7 @@ class ContentAttributesTransformer implements DataTransformerInterface
         
         // Fields edited values
         foreach ($attributes as $attribute) {
-            if (
-                is_object($attribute)
+            if (is_object($attribute)
                 && method_exists($attribute, 'getName')
                 && method_exists($attribute, 'getValue')
             ) {
@@ -69,8 +67,7 @@ class ContentAttributesTransformer implements DataTransformerInterface
         $newAttributes = array();
         
         foreach ($this->fieldsStructure as $fieldStructure) {
-            if (
-                is_object($fieldStructure)
+            if (is_object($fieldStructure)
                 && isset($fieldStructure->fieldId)
                 && isset($fieldStructure->defaultValue)
                 && is_object($attributes)

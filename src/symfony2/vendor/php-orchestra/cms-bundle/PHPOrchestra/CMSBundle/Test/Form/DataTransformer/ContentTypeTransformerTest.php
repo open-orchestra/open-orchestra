@@ -53,15 +53,15 @@ class ContentTypeTransformerTest extends \PHPUnit_Framework_TestCase
             'field3' => 'customField3',
         );
         
-        $result = new testContentType($fields);
+        $result = new TestContentType($fields);
         $result->customField_field1 = 'customField1';
         $result->customField_field2 = 'customField2';
         $result->customField_field3 = 'customField3';
         $result->customFieldsIndex = array('customField_field1', 'customField_field2', 'customField_field3');
         
         return array(
-            array(new testContentType(), new testContentType()),
-            array(new testContentType($fields), $result)
+            array(new TestContentType(), new TestContentType()),
+            array(new TestContentType($fields), $result)
         );
     }
     
@@ -77,7 +77,7 @@ class ContentTypeTransformerTest extends \PHPUnit_Framework_TestCase
         );
         
         
-        $datas = new testContentType(
+        $datas = new TestContentType(
             $fields,
             array('customField1', 'customField2')
         );
@@ -88,7 +88,7 @@ class ContentTypeTransformerTest extends \PHPUnit_Framework_TestCase
         $result->setFields(json_encode(array('value2')));
         
         
-        $datasFull = new testContentType(
+        $datasFull = new TestContentType(
             $fields,
             array('customField1', 'customField2'),
             'newField'
@@ -123,7 +123,7 @@ class ContentTypeTransformerTest extends \PHPUnit_Framework_TestCase
     }
 }
 
-class testContentType
+class TestContentType
 {
     public function __construct($fields = array(), $customFieldsIndex = array(), $new_field = '')
     {
@@ -132,6 +132,13 @@ class testContentType
         $this->new_field = $new_field;
     }
     
-    public function getFields() {return $this->fields;}
-    public function setFields($fields) {$this->fields = $fields;}
+    public function getFields()
+    {
+        return $this->fields;
+    }
+    
+    public function setFields($fields)
+    {
+        $this->fields = $fields;
+    }
 }

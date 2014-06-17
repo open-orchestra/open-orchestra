@@ -119,11 +119,11 @@ class ContentController extends TableViewController
      * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Controller/PHPOrchestra
      * \CMSBundle\Controller.TableViewController::deleteEntity()
      */
-    public function deleteEntity(Request $request, $id)
+    public function deleteEntity(Request $request, $documentId)
     {
         $documentManager = $this->get('phporchestra_cms.documentmanager');
         
-        $content = $documentManager->getDocumentById('Content', $id);
+        $content = $documentManager->getDocumentById('Content', $documentId);
         $contentId = $content->getContentId();
         $contentVersions = $documentManager->getDocuments('Content', array('contentId' => $contentId));
         

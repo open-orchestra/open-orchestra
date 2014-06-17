@@ -53,14 +53,14 @@ class ContentTypeController extends TableViewController
      * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Controller/PHPOrchestra
      * \CMSBundle\Controller.TableViewController::editEntity()
      */
-    public function editEntity(Request $request, $id)
+    public function editEntity(Request $request, $documentId)
     {
         $documentManager = $this->container->get('phporchestra_cms.documentmanager');
         
-        if (empty($id)) {
+        if (empty($documentId)) {
             $contentType = $documentManager->createDocument('ContentType');
         } else {
-            $contentType = $documentManager->getDocumentById('ContentType', $id);
+            $contentType = $documentManager->getDocumentById('ContentType', $documentId);
         }
         
         if ($contentType->getStatus() != ContentType::STATUS_DRAFT) {
@@ -100,7 +100,7 @@ class ContentTypeController extends TableViewController
             'PHPOrchestraCMSBundle:BackOffice/Content:contentTypeForm.html.twig',
             array(
                 'form' => $form->createView(),
-                'ribbon' => $this->saveButton($id) . $this->backButton()
+                'ribbon' => $this->saveButton($documentId) . $this->backButton()
             )
         );
     }
@@ -138,11 +138,11 @@ class ContentTypeController extends TableViewController
      * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Controller/PHPOrchestra
      * \CMSBundle\Controller.TableViewController::deleteEntity()
      */
-    public function deleteEntity(Request $request, $id)
+    public function deleteEntity(Request $request, $documentId)
     {
         $documentManager = $this->get('phporchestra_cms.documentmanager');
         
-        $contentType = $documentManager->getDocumentById('ContentType', $id);
+        $contentType = $documentManager->getDocumentById('ContentType', $documentId);
         $contentTypeId = $contentType->getContentTypeId();
         $contentTypeVersions = $documentManager->getDocuments('ContentType', array('contentTypeId' => $contentTypeId));
         

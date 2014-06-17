@@ -61,30 +61,30 @@ class ContentAttributesTest extends \PHPUnit_Framework_TestCase
     
     public function getOptions()
     {
-        $contentTypeWithNoField = $this->getMockBuilder('\\Model\\PHPOrchestraCMSBundle\\ContentType')
+        $contentType0F = $this->getMockBuilder('\\Model\\PHPOrchestraCMSBundle\\ContentType')
             ->disableOriginalConstructor()
             ->getMock();
-        $dataWithNoField = (object) array('contentType' => $contentTypeWithNoField);
+        $dataWithNoField = (object) array('contentType' => $contentType0F);
         
-        $contentTypeWith3Fields = $this->getMockBuilder('\\Model\\PHPOrchestraCMSBundle\\ContentType')
+        $contentType3F = $this->getMockBuilder('\\Model\\PHPOrchestraCMSBundle\\ContentType')
             ->disableOriginalConstructor()
             ->getMock();
         $jsonFields = '[
             {"fieldId": "field1", "defaultValue": "value1", "label": "label1", "symfonyType": "type1"},
             {"fieldId": "field2", "defaultValue": "value2", "label": "label1", "symfonyType": "type2"},
-            {"fieldId": "field3", "defaultValue": "value3", "label": "label1", "symfonyType": "type3", "options": {"max_length": 0}}
+            {"fieldId": "field3", "defaultValue": "value3", "label": "label1", "symfonyType": "type3",
+             "options": {"max_length": 0}}
         ]';
-        $contentTypeWith3Fields
+        $contentType3F
             ->expects($this->any())
             ->method('getFields')
             ->will($this->returnValue($jsonFields));
         
-        $dataWith3Fields = (object) array('contentType' => $contentTypeWith3Fields);
+        $dataWith3Fields = (object) array('contentType' => $contentType3F);
         
         return array(
             array(array('data' =>  $dataWithNoField), 0),
             array(array('data' =>  $dataWith3Fields), 3),
         );
     }
-    
 }

@@ -27,7 +27,7 @@ class ContentAttributesTransformerTest extends \PHPUnit_Framework_TestCase
     
     public function createAttribute()
     {
-        return new testAttribute();
+        return new TestAttribute();
     }
     
     /**
@@ -70,12 +70,12 @@ class ContentAttributesTransformerTest extends \PHPUnit_Framework_TestCase
             array(
                 array(),
                 (object) array(
-                    'attribute1' => new testAttribute('name1', 'value1'),
-                    'attribute2' => new testAttribute('name2', 'value2')
+                    'attribute1' => new TestAttribute('name1', 'value1'),
+                    'attribute2' => new TestAttribute('name2', 'value2')
                 ),
                 (object) array(
-                    'attribute1' => new testAttribute('name1', 'value1'),
-                    'attribute2' => new testAttribute('name2', 'value2'),
+                    'attribute1' => new TestAttribute('name1', 'value1'),
+                    'attribute2' => new TestAttribute('name2', 'value2'),
                     'name1' => 'value1',
                     'name2' => 'value2'
                 )
@@ -106,14 +106,14 @@ class ContentAttributesTransformerTest extends \PHPUnit_Framework_TestCase
                     )
                 ),
                 (object) array(
-                    'attribute1' => new testAttribute('name1', 'value1'),
-                    'attribute2' => new testAttribute('name2', 'value2'),
-                    'attribute3' => new testAttribute('field1', 'overrideValue1')
+                    'attribute1' => new TestAttribute('name1', 'value1'),
+                    'attribute2' => new TestAttribute('name2', 'value2'),
+                    'attribute3' => new TestAttribute('field1', 'overrideValue1')
                 ),
                 (object) array(
-                    'attribute1' => new testAttribute('name1', 'value1'),
-                    'attribute2' => new testAttribute('name2', 'value2'),
-                    'attribute3' => new testAttribute('field1', 'overrideValue1'),
+                    'attribute1' => new TestAttribute('name1', 'value1'),
+                    'attribute2' => new TestAttribute('name2', 'value2'),
+                    'attribute3' => new TestAttribute('field1', 'overrideValue1'),
                     'field1' => 'overrideValue1',
                     'field2' => 'defaultValue2',
                     'name1' => 'value1',
@@ -148,7 +148,7 @@ class ContentAttributesTransformerTest extends \PHPUnit_Framework_TestCase
                 ),
                 (object) array(),
                 array(
-                    new testAttribute('field1', 'defaultValue1')
+                    new TestAttribute('field1', 'defaultValue1')
                 )
             ),
         
@@ -168,25 +168,39 @@ class ContentAttributesTransformerTest extends \PHPUnit_Framework_TestCase
                     'field2' => 'formValue2'
                 ),
                 array(
-                    new testAttribute('field1', 'formValue1'),
-                    new testAttribute('field2', 'formValue2')
+                    new TestAttribute('field1', 'formValue1'),
+                    new TestAttribute('field2', 'formValue2')
                 )
             )
             );
     }
 }
 
-class testAttribute {
+class TestAttribute
+{
     public function __construct($name = '', $value = '')
     {
         $this->setName($name);
         $this->setValue($value);
     }
     
-    public function getName() {return $this->name;}
-    public function getValue() {return $this->value;}
+    public function getName()
+    {
+        return $this->name;
+    }
     
-    public function setName($name) {$this->name = $name;}
-    public function setValue($value) {$this->value = $value;}
+    public function getValue()
+    {
+        return $this->value;
+    }
+    
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+    
+    public function setValue($value)
+    {
+        $this->value = $value;
+    }
 }
-

@@ -103,14 +103,13 @@ class CustomFieldTypeTypeTest extends \PHPUnit_Framework_TestCase
     {
         $unknownFieldType = (object) array('type' => 'orchestra_hidden');
         $missConfiguration = (object) array('type' => 'orchestra_missconf');
-        $fieldtypeNotDescribed = (object) array('type' => 'orchestra_notdescribed');
+        $fieldtypeNoDesc = (object) array('type' => 'orchestra_notdescribed');
         
         return array(
             array(array()), // No data
             array(array('data' =>  $unknownFieldType)), // Unknown field type
             array(array('data' =>  $missConfiguration)), // Missconfiguration
-            array(array('data' =>  $fieldtypeNotDescribed)), // Field type not described
+            array(array('data' =>  $fieldtypeNoDesc)), // Field type not described
         );
     }
 }
-

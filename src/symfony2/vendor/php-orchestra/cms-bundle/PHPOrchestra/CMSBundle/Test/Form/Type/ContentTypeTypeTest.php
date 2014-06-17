@@ -57,38 +57,39 @@ class ContentTypeTypeTest extends \PHPUnit_Framework_TestCase
     
     public function getOptions()
     {
-        $contentTypeWithNoField = $this->getMockBuilder('\\Model\\PHPOrchestraCMSBundle\\ContentType')
+        $contentType0F = $this->getMockBuilder('\\Model\\PHPOrchestraCMSBundle\\ContentType')
             ->disableOriginalConstructor()
             ->getMock();
         
-        $contentTypeWithNoField
+        $contentType0F
             ->expects($this->any())
             ->method('getId')
             ->will($this->returnValue('id'));
         
         
         
-        $contentTypeWith3Fields = $this->getMockBuilder('\\Model\\PHPOrchestraCMSBundle\\ContentType')
+        $contentType3F = $this->getMockBuilder('\\Model\\PHPOrchestraCMSBundle\\ContentType')
             ->disableOriginalConstructor()
             ->getMock();
         
         $jsonFields = '[
             {"fieldId": "field1", "defaultValue": "value1", "label": "label1", "symfonyType": "type1"},
             {"fieldId": "field2", "defaultValue": "value2", "label": "label1", "symfonyType": "type2"},
-            {"fieldId": "field3", "defaultValue": "value3", "label": "label1", "symfonyType": "type3", "options": {"max_length": 0}}
+            {"fieldId": "field3", "defaultValue": "value3", "label": "label1", "symfonyType": "type3",
+             "options": {"max_length": 0}}
         ]';
         
-        $contentTypeWith3Fields
+        $contentType3F
             ->expects($this->any())
             ->method('getId')
             ->will($this->returnValue('id'));
         
-        $contentTypeWith3Fields
+        $contentType3F
             ->expects($this->any())
             ->method('getId')
             ->will($this->returnValue('id'));
         
-        $contentTypeWith3Fields
+        $contentType3F
             ->expects($this->any())
             ->method('getFields')
             ->will($this->returnValue($jsonFields));
@@ -96,8 +97,8 @@ class ContentTypeTypeTest extends \PHPUnit_Framework_TestCase
         
         
         return array(
-            array(array('data' =>  $contentTypeWithNoField), 7),
-            array(array('data' =>  $contentTypeWith3Fields), 10),
+            array(array('data' =>  $contentType0F), 7),
+            array(array('data' =>  $contentType3F), 10),
         );
     }
 }
