@@ -10,7 +10,7 @@ namespace PHPOrchestra\CMSBundle\Form\Type;
 use PHPOrchestra\CMSBundle\Form\DataTransformer\ContentTypeTransformer;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Model\PHPOrchestraCMSBundle\ContentType;
+use Model\PHPOrchestraCMSBundle\ContentType as ContentTypeModel;
 
 class ContentTypeType extends AbstractType
 {
@@ -33,8 +33,8 @@ class ContentTypeType extends AbstractType
                 'choice',
                 array(
                     'choices' => array(
-                        ContentType::STATUS_DRAFT => ContentType::STATUS_DRAFT,
-                        ContentType::STATUS_PUBLISHED => ContentType::STATUS_PUBLISHED
+                        ContentTypeModel::STATUS_DRAFT => ContentTypeModel::STATUS_DRAFT,
+                        ContentTypeModel::STATUS_PUBLISHED => ContentTypeModel::STATUS_PUBLISHED
                     )
                 )
             )
