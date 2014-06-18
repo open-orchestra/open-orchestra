@@ -6,6 +6,8 @@
 
 {% form_theme form 'PHPOrchestraCMSBundle:Form:extend.html.twig' %}
 
+{% include 'PHPOrchestraCMSBundle:BackOffice:beginSmartDiv.html.twig' %}
+
 {{ form_start(
     form,
     {
@@ -15,17 +17,21 @@
     }
 ) }}
 
+<fieldset>
 {{ form_widget(form.fields) }}
-
 {{ form_row(form.name) }}
 {{ form_row(form.contentTypeId) }}
 {{ form_row(form.version) }}
 {{ form_row(form.status) }}
+</fieldset>
+
 {% for key, value in form %}
     {% if key starts with 'customField' %}
         {{ form_widget(form[key]) }}
     {% endif %}
 {% endfor %}
+
+{% include 'PHPOrchestraCMSBundle:BackOffice:endSmartDiv.html.twig' %}
 
 <div class="ribbon">
     {{ form_label(form.new_field) }} {{ form_widget(form.new_field) }} {{ ribbon|raw }}
