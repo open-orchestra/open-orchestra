@@ -11,6 +11,7 @@ use PHPOrchestra\CMSBundle\Controller\TableViewController;
 use Model\PHPOrchestraCMSBundle\ContentType;
 use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
  * @Route("/contenttype")
@@ -88,10 +89,10 @@ class ContentTypeController extends TableViewController
             $this->deleteOtherStatusVersions($contentType->getContentTypeId(), $contentType->getStatus());
             $contentType->save();
             
-            return $this->redirect(
-                $this->generateUrl(
-                    'phporchestra_cms_backofficeview_contenttype_index',
-                    array('action' => 'catalog')
+            return new JsonResponse(
+                array(
+                    'success' => true,
+                    'data' => $this->generateUrlValue('catalog')
                 )
             );
         }
