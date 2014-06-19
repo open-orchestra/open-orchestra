@@ -110,14 +110,14 @@ services:
     # Template form type
     php_orchestra_cms.type.template:
         class: PHPOrchestra\CMSBundle\Form\Type\TemplateType
-        arguments: [@router, %php_orchestra.blocks%]
+        arguments: [@phporchestra_cms.documentmanager]
         tags:
             - { name: form.type, alias: template }
 
     # Node form type
     php_orchestra_cms.type.node:
         class: PHPOrchestra\CMSBundle\Form\Type\NodeType
-        arguments: [@router, %php_orchestra.blocks%]
+        arguments: [@phporchestra_cms.documentmanager]
         tags:
             - { name: form.type, alias: node }
 

@@ -1,5 +1,5 @@
 tree_parameter = {
-    extensions: ['persist', 'dnd'],
+    //extensions: ['persist', 'dnd'],
     /*persist: {
         expandLazy: true
     },*/

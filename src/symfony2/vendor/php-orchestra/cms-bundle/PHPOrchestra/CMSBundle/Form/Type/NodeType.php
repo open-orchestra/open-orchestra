@@ -13,20 +13,16 @@ use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\FormView;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Symfony\Component\Routing\Router;
+use PHPOrchestra\CMSBundle\Form\DataTransformer\NodeTypeTransformer;
 
 class NodeType extends AbstractType
 {
 
     /**
-     * @var Router
-     */
-    private $router;
-    
-    /**
-     * @var Blocks
-     */
-    private $blocks;
-    
+    * documentManager service
+    * @var documentManager
+    */
+    protected $documentManager = null;
     
     /**
      * Constructor
@@ -34,10 +30,9 @@ class NodeType extends AbstractType
      * @param $router
      * @param $blocks
      */
-    public function __construct(Router $router, $blocks)
+    public function __construct($documentManager)
     {
-        $this->router = $router;
-        $this->blocks = $blocks;
+        $this->documentManager = $documentManager;
     }
             
     /**
@@ -46,9 +41,10 @@ class NodeType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-
-        $nameBlocks = 'blocks';
-        
+    	
+        $transformer = new NodeTypeTransformer($this->documentManager);
+        $builder->addModelTransformer($transformer);
+    	
         $builder
             ->add('nodeId', 'hidden')
             ->add('siteId', 'hidden')
@@ -60,35 +56,21 @@ class NodeType extends AbstractType
             ->add('alias', 'text')
             ->add('language', 'orchestra_language')
             ->add('status', 'orchestra_status')
-/*            ->add(
+            ->add(
                 'areas',
                 'orchestra_areas',
                 array(
-                    'dialogPath' => 'PHPOrchestraCMSBundle:Form:area.html.twig',
-                    'objects' => array('blocks')
+                    'controller' => 'PHPOrchestraCMSBundle:NodeArea:form'
                 )
             )
             ->add(
-                $nameBlocks,
+                'blocks',
                 'orchestra_blocks',
                 array(
-                    'dialogPath' => 'PHPOrchestraCMSBundle:Form:block.html.twig',
-                    'js' => array(
-                        'script' => 'local/blocks.js',
-                        'parameter' => array(
-                            'name' => $nameBlocks,
-                            'urlNode' => $this->router->generate('php_orchestra_ajax_show_all_nodes'),
-                            'urlBlock' => $this->router->generate('php_orchestra_ajax_show_blocks_from_node')
-                        ),
-                        'render' => array(
-                            'blocks' => array(
-                                'twig' => 'PHPOrchestraCMSBundle:Form:blocksInfo.json.twig',
-                                'parameter' => array('blocks' => $this->blocks, 'prefix' => $nameBlocks.'_')
-                            )
-                        )
-                    )
+                    'mapped' => false,
+                    'controller' => 'PHPOrchestraCMSBundle:NodeBlock:form'
                 )
-            )*/
+            )
             ->add('theme', 'orchestra_theme_choice')
             ->add('save', 'submit');
     }
@@ -99,11 +81,7 @@ class NodeType extends AbstractType
      */
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
-        $view->vars['inDialog'] = true;
-    	
-    	
-    	$view->vars['showDialog'] = $options['showDialog'];
-        $view->vars['objects'] = $options['objects'];
+        $view->vars['inDialog'] = $options['inDialog'];
         $view->vars['js'] = $options['js'];
     }
     
@@ -115,19 +93,12 @@ class NodeType extends AbstractType
     {
         $resolver->setDefaults(
             array(
-                'showDialog' => true,
-                'js' => array(
-                    'script' => 'local/node.js',
-                    'parameter' => array(
-                        'name' => $this->getName(),
-                        'urlTemplate' => $this->router->generate('php_orchestra_ajax_show_template')
-                    )
-                ),
-                'objects' => array()
+                'inDialog' => false,
+                'js' => ''
             )
         );
     }
-        
+            
     /**
      * (non-PHPdoc)
      * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony\Component\Form.FormTypeInterface::getName()

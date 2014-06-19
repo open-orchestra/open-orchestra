@@ -180,20 +180,26 @@ class NodeController extends Controller
             'node',
             $node,
             array(
-                'action' => $this->getRequest()->getUri(),
+                'inDialog' => true,
+                'js' => 'pagegenerator/node.js',
+                'action' => $this->getRequest()->getUri()
             )
         );
-        $form->handleRequest($request);
         
-        if ($form->isValid()) {
-            $node->setId(null);
-            $node->setIsNew(true);
-            $node->save();
-            
-            return $this->render(
-                'PHPOrchestraCMSBundle:BackOffice/Editorial:simpleMessage.html.twig',
-                array('message' => 'Edition ok')
-            );
+        
+        if ($request->getMethod() == 'POST') {
+	        $form->handleRequest($request);
+	        
+	        if ($form->isValid()) {
+	            $node->setId(null);
+	            $node->setIsNew(true);
+	            $node->save();
+	            
+	            return $this->render(
+	                'PHPOrchestraCMSBundle:BackOffice/Editorial:simpleMessage.html.twig',
+	                array('message' => 'Edition ok')
+	            );
+	        }
         }
         
         return $this->render(

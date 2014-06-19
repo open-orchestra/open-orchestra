@@ -16,33 +16,7 @@ use PHPOrchestra\CMSBundle\Form\DataTransformer\JsonToBlocksTransformer;
 
 class BlocksType extends AbstractType
 {
-    /**
-     * documentManager service
-     * @var documentManager
-     */
-    protected $documentManager = null;
-
     
-    /**
-     * Constructor, require documentManager service
-     * 
-     * @param $documentManager
-     */
-    public function __construct($documentManager)
-    {
-        $this->documentManager = $documentManager;
-    }
-    
-    /**
-     * (non-PHPdoc)
-     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony\Component\Form.AbstractType::buildForm()
-     */
-    public function buildForm(FormBuilderInterface $builder, array $options)
-    {
-        $transformer = new JsonToBlocksTransformer($this->documentManager);
-        $builder->addModelTransformer($transformer);
-    }
-
     /**
      * (non-PHPdoc)
      * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony\Component\Form.AbstractType::setDefaultOptions()

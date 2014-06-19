@@ -42,7 +42,7 @@
     <script>
         var urlJs = "{{ asset('bundles/phporchestracms/js/') }}";
         {% if form.vars.js is defined and form.vars.js != '' %}
-        loadScript("{{ asset('bundles/phporchestracms/js/' ~ form.vars.js) }}");
+        loadScript("{{ asset('bundles/phporchestracms/js/' ~ form.vars.js) }}?" + Math.random());
         {% endif %}
     </script>
 

@@ -1,62 +1,67 @@
-
-ul.ui-widget-model, li.ui-widget-model{
+.ui-model ul, .ui-model li{
     position:relative;
 	padding:0px;
     margin:0px;
 }
-ul.ui-widget-model{
+.ui-model ul{
 	display:block;
 	width:100%;
 	height:100%;
 }
-li.ui-widget-model{
+.ui-model li{
     display:block;
     width:100%;
     height:100%;
     z-index:1;
 }
-.ui-widget-model li.separator-h{
+.ui-model  li.separator-h{
 	position:absolute;
 	left:0px;
 	display:block;
     background-color:#888888;
     height:2px;
-    margin:-7px 0 5px 0px;
+    margin:-7px -5px;
     width:100%;
     cursor:ns-resize;
     z-index:2;
 }
-.ui-widget-model li.separator-v{
+.ui-model  li.separator-v{
     position:absolute;
     top:0px;
 	display:inline-block;
     height:100%;
     width:2px;
-    margin:0px 5px 0px -7px;
+    margin:-5px -7px;
     background-color:#888888;
     cursor:ew-resize;
     z-index:2;
 }
-span.ui-widget-model{
+.ui-model li.block{
+	display : block;
+}
+.ui-model li.inline{
+    display : inline-block;
+}
+.ui-model span{
     position:absolute;
     display:block;
     margin:-16px 0 -20px -8px;
     line-height:20px;
 }
-.ui-widget-model span.action{
+.ui-model  span.action{
     position:absolute;
 	display:block;
 	height:12px;
-	top:0px;
+	top:18px;
 	right:0px;
 }
-.ui-widget-model span.action i{
+.ui-model  span.action i{
 	position:relative;
 	float:right;
 	padding:1px;
     cursor:pointer;
 }
-div.ui-widget-model{
+.ui-model div{
     font:10px arial,sans-serif;
 	position:absolute;
     border-radius:8px;
@@ -76,7 +81,7 @@ div.ui-widget-model{
     background:linear-gradient(to bottom,  #4e4e4e 0%,#717171 50%,#676767 51%,#a8a8a8 100%); /* W3C */
     filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#4e4e4e', endColorstr='#a8a8a8',GradientType=0 ); /* IE6-9 */
 }
-.ui-widget-model-areas div.ui-widget-model{
+.ui-model .ui-model-areas div{
 	box-shadow:0px 0px 5px #888888;
 	background:#1e5799; /* Old browsers */
 	background:-moz-linear-gradient(top,  #1e5799 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%); /* FF3.6+ */
@@ -87,7 +92,7 @@ div.ui-widget-model{
 	background:linear-gradient(to bottom,  #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* W3C */
 	filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
 }
-.ui-widget-model-blocks div.ui-widget-model{
+.ui-model .ui-model-blocks div{
 	box-shadow:0px 0px 5px #888888;
     background:#1e9a52; /* Old browsers */
     background:-moz-linear-gradient(top,  #1e9a52 0%, #28d662 50%, #20ca5a 51%, #7ae79d 100%); /* FF3.6+ */
@@ -98,7 +103,7 @@ div.ui-widget-model{
     background:linear-gradient(to bottom,  #1e9a52 0%,#28d662 50%,#20ca5a 51%,#7ae79d 100%); /* W3C */
     filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e9a52', endColorstr='#7ae79d',GradientType=0 ); /* IE6-9 */
 }
-div.ui-widget-model.over{
+.ui-model div.over{
 	box-shadow:0px 0px 5px #888888;
     background:#9a381e; /* Old browsers */
     background:-moz-linear-gradient(top,  #9a381e 0%, #d63d28 50%, #ca3520 51%, #e7857a 100%); /* FF3.6+ */
@@ -110,7 +115,7 @@ div.ui-widget-model.over{
     filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#9a381e', endColorstr='#e7857a',GradientType=0 ); /* IE6-9 */
 }
 
-.main-model{
+.ui-model{
 	   width:100%;
 	   height:100%;
 }

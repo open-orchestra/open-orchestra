@@ -2,8 +2,8 @@ function addButton(name, data, jThis){
 	return {
         	"click" : (function (name, data, jThis){
             	return function(){
-            		resetPercent(data.this_values[name]);
-                    data.this_values[name].push({'is_recursive' : true});
+            		resetPercent(data[name]);
+                    data[name].push({'ui-model' : {}});
                     jThis.dialog( "close" );
             	}
         		})(name, data, jThis),
@@ -19,15 +19,21 @@ dialog_parameter = {
     modal: true,
     autoOpen: false,
     open: function ( event, ui) {
-        var data = $(this).data();
+        var data = $(this).data('container').data('settings');
+        data = eval('data' + $(this).data('path'));	
         var found = false;
         var buttons = $.extend({}, $(this).dialog("option", "allbuttons"));
         var addArray = $(this).dialog("option", "addArray");
-        for(var i in addArray){
-            if(addArray[i] in data.this_values){
-                found = true;
-                buttons[addArray[i]] = addButton(addArray[i], data, $(this));
-            }
+        var keys = $(this).data('container').data('subtab');
+        
+        for(var i in keys){
+    		var key = keys[i];
+    		if(key in data){
+    			found = true;
+                if(addArray.indexOf(key) > -1){
+                    buttons[key] = addButton(key, data, $(this));
+                }
+    		}
         }
         if(!found){
             for(var i in addArray){
@@ -38,9 +44,10 @@ dialog_parameter = {
             $(this).hide();
             buttons["save"] = {
             	"click" : function(){
-	                var data = $(this).data();
-	                $(this).getValue(data.this_values);
-	                formatForSubmit(data.settings);
+	                var data = $(this).data('container').data('settings');
+	                data = eval('data' + $(this).data('path'));	
+	                $(this).fromFormToJs(data);
+	                $(this).data('container').setSubmit();
 	                var form = $(this).find('form');
 	                url = form.attr('action');
 	                params = form.serialize();
@@ -52,13 +59,14 @@ dialog_parameter = {
             };
         });
         $(this).dialog("option", "buttons", buttons);
-        $(this).setValue(data.this_values);
+        $(this).fromJsToForm(data);
     },
     allbuttons: {
         "apply": {
     		"click" : function() {
-		            var data = $(this).data();
-		            $(this).getValue(data.this_values);
+			        var data = $(this).data('container').data('settings');
+			        data = eval('data' + $(this).data('path'));
+		            $(this).fromFormToJs(data);
 		            $(this).dialog( "close" );
 	        	},
 	        "text" : "Apply",
@@ -66,7 +74,6 @@ dialog_parameter = {
     	}
     },
     close: function ( event, ui) {
-        var data = $(this).data();
-        data.settings.element.parseModel($.extend(data.settings, {"path": null}));
+    	$(this).data('container').parent().model({"type" : $(this).data('container').data('target')});
     }
 };

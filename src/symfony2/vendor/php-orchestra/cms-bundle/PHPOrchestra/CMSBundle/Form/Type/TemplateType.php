@@ -13,20 +13,16 @@ use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\FormView;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Symfony\Component\Routing\Router;
+use PHPOrchestra\CMSBundle\Form\DataTransformer\NodeTypeTransformer;
 
 class TemplateType extends AbstractType
 {
     
     /**
-     * @var Router
-     */
-    private $router;
-    
-    /**
-     * @var Blocks
-     */
-    private $blocks;
-    
+    * documentManager service
+    * @var documentManager
+    */
+    protected $documentManager = null;
     
     /**
      * Constructor
@@ -34,21 +30,20 @@ class TemplateType extends AbstractType
      * @param $router
      * @param $blocks
      */
-    public function __construct(Router $router, $blocks)
+    public function __construct($documentManager)
     {
-        $this->router = $router;
-        $this->blocks = $blocks;
+        $this->documentManager = $documentManager;
     }
-    
+	    
     /**
      * (non-PHPdoc)
      * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony\Component\Form.AbstractType::buildForm()
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        
-        $nameBlocks = 'blocks';
-        
+        $transformer = new NodeTypeTransformer($this->documentManager);
+        $builder->addModelTransformer($transformer);
+    	
         $builder
             ->add('templateId', 'hidden')
             ->add('siteId', 'hidden')
@@ -61,18 +56,18 @@ class TemplateType extends AbstractType
                 'areas',
                 'orchestra_areas',
                 array(
-                    'controller' => 'PHPOrchestraCMSBundle:SubForm:Area'
+                    'controller' => 'PHPOrchestraCMSBundle:TemplateArea:form'
                 )
             )
             ->add(
                 'blocks',
                 'orchestra_blocks',
                 array(
-                    'controller' => 'PHPOrchestraCMSBundle:SubForm:Block'
+                    'mapped' => false,
+                    'controller' => 'PHPOrchestraCMSBundle:TemplateBlock:form'
                 )
             )
             ->add('save', 'submit');
-            ;
     }
         
     /**
@@ -81,8 +76,8 @@ class TemplateType extends AbstractType
      */
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
-        $view->vars['inDialog'] = $options['inDialog'];//true
-    	$view->vars['js'] = $options['js'];//'pagegenerator/template/begin.js';
+        $view->vars['inDialog'] = $options['inDialog'];
+    	$view->vars['js'] = $options['js'];
     }
     
     /**
