@@ -19,18 +19,22 @@ class ContentController extends TableViewController
 {
     /**
      * (non-PHPdoc)
-     * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Controller/PHPOrchestra\CMSBundle\Controller.TableViewController::init()
+     * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Controller/PHPOrchestra
+     * \CMSBundle\Controller.TableViewController::init()
      */
-    function init() {
+    public function init()
+    {
         $this->setEntity('Content');
         $this->setCriteria(array('contentType' => $this->routeParameters['contentTypeId']));
     }
     
     /**
      * (non-PHPdoc)
-     * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Controller/PHPOrchestra\CMSBundle\Controller.TableViewController::setColumns()
+     * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Controller/PHPOrchestra
+     * \CMSBundle\Controller.TableViewController::setColumns()
      */
-    public function setColumns(){
+    public function setColumns()
+    {
         $this->columns = array(
             array('name' => 'contentType', 'search' => 'text', 'label' => 'Type de contenu'),
             array('name' => 'shortName', 'search' => 'text', 'label' => 'Nom'),
@@ -40,12 +44,13 @@ class ContentController extends TableViewController
             array('name' => 'deleted', 'search' => 'text', 'label' => 'Supprimé'),
             array('button' =>'modify'),
             array('button' =>'delete')
-       );
+        );
     }
     
     /**
      * (non-PHPdoc)
-     * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Controller/PHPOrchestra\CMSBundle\Controller.TableViewController::modifyDocumentAfterCreate($document)
+     * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Controller/PHPOrchestra
+     * \CMSBundle\Controller.TableViewController::modifyDocumentAfterCreate($document)
      */
     protected function modifyDocumentAfterCreate($document)
     {
@@ -55,7 +60,8 @@ class ContentController extends TableViewController
     
     /**
      * (non-PHPdoc)
-     * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Controller/PHPOrchestra\CMSBundle\Controller.TableViewController::modifyDocumentAfterGet($document)
+     * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Controller/PHPOrchestra
+     * \CMSBundle\Controller.TableViewController::modifyDocumentAfterGet($document)
      */
     protected function modifyDocumentAfterGet($document)
     {
@@ -80,7 +86,8 @@ class ContentController extends TableViewController
     
     /**
      * (non-PHPdoc)
-     * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Controller/PHPOrchestra\CMSBundle\Controller.TableViewController::afterSave($document)
+     * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Controller/PHPOrchestra
+     * \CMSBundle\Controller.TableViewController::afterSave($document)
      */
     protected function afterSave($document)
     {
@@ -109,13 +116,14 @@ class ContentController extends TableViewController
     
     /**
      * (non-PHPdoc)
-     * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Controller/PHPOrchestra\CMSBundle\Controller.TableViewController::deleteEntity()
+     * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Controller/PHPOrchestra
+     * \CMSBundle\Controller.TableViewController::deleteEntity()
      */
-    public function deleteEntity(Request $request, $id)
+    public function deleteEntity(Request $request, $documentId)
     {
         $documentManager = $this->get('phporchestra_cms.documentmanager');
         
-        $content = $documentManager->getDocumentById('Content', $id);
+        $content = $documentManager->getDocumentById('Content', $documentId);
         $contentId = $content->getContentId();
         $contentVersions = $documentManager->getDocuments('Content', array('contentId' => $contentId));
         

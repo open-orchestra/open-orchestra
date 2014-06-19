@@ -1,5 +1,26 @@
-<ul>
+{##
+ # This file is part of the PHPOrchestra\CMSBundle.
+ #
+ # @author Benjamin Fouché <benjamin.fouche@businessdecision.com>
+ ##}
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
+<script type="text/javascript">
+$(function () {
+	//console.log()
+    $(form_Search).autocomplete({
+        source: "{{ path(url) }}",
+        minLength: 4
+    });
+});
+</script>
+
+<div class="ui-widget">
+
     {{ form_start(form) }}
         {{ form_widget(form.Search) }}
-        <input type="submit" value="{{ value }}" name="{{ name }}" class="{{ class }}" />
-</ul>
+        <input id="search" type="submit" value="{{ value }}" name="{{ name }}" class="{{ class }}" />
+
+
+
+</div>

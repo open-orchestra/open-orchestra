@@ -83,5 +83,4 @@ abstract class Content extends \Model\PHPOrchestraCMSBundle\Base\Content
         
         return $this;
     }
-    
 }

@@ -94,6 +94,19 @@ class RedisCacheManagerTest extends \PHPUnit_Framework_TestCase
         $this->redisCacheManager->set($key, $value);
     }
     
+    public function testDeleteKeys()
+    {
+        $this->keystoreMock
+            ->expects($this->once())
+            ->method('keys');
+        
+        $this->keystoreMock
+            ->expects($this->once())
+            ->method('del');
+        
+        $this->redisCacheManager->deleteKeys('somePatternToDelete');
+    }
+    
     public function getData()
     {
         return array(

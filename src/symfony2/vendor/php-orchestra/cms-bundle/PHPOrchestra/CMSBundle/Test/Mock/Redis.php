@@ -43,4 +43,14 @@ class Redis
     {
         
     }
+    
+    public function keys($pattern)
+    {
+        return 'listOfKeys';
+    }
+    
+    public function del($keys)
+    {
+        
+    }
 }

@@ -31,7 +31,8 @@ class RedisCacheManager implements CacheManagerInterface
 
     /**
      * (non-PHPdoc)
-     * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Cache/PHPOrchestra\CMSBundle\Cache.CacheManagerInterface::get()
+     * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Cache/PHPOrchestra
+     * \CMSBundle\Cache.CacheManagerInterface::get()
      */
     public function get($key)
     {
@@ -47,7 +48,8 @@ class RedisCacheManager implements CacheManagerInterface
 
     /**
      * (non-PHPdoc)
-     * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Cache/PHPOrchestra\CMSBundle\Cache.CacheManagerInterface::set()
+     * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Cache/PHPOrchestra
+     * \CMSBundle\Cache.CacheManagerInterface::set()
      */
     public function set($key, $value)
     {
@@ -62,7 +64,8 @@ class RedisCacheManager implements CacheManagerInterface
     
     /**
      * (non-PHPdoc)
-     * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Cache/PHPOrchestra\CMSBundle\Cache.CacheManagerInterface::deleteKeys()
+     * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Cache/PHPOrchestra
+     * \CMSBundle\Cache.CacheManagerInterface::deleteKeys()
      */
     public function deleteKeys($pattern)
     {

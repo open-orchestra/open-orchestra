@@ -19,7 +19,8 @@ class BlocksType extends AbstractType
     
     /**
      * (non-PHPdoc)
-     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony\Component\Form.AbstractType::setDefaultOptions()
+     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony
+     * \Component\Form.AbstractType::setDefaultOptions()
      */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
@@ -32,7 +33,8 @@ class BlocksType extends AbstractType
     }
     /**
      * (non-PHPdoc)
-     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony\Component\Form.AbstractType::buildView()
+     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony
+     * \Component\Form.AbstractType::buildView()
      */
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
@@ -41,7 +43,8 @@ class BlocksType extends AbstractType
         
     /**
      * (non-PHPdoc)
-     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony\Component\Form.AbstractType::getParent()
+     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony
+     * \Component\Form.AbstractType::getParent()
      */
     public function getParent()
     {
@@ -50,7 +53,8 @@ class BlocksType extends AbstractType
 
     /**
      * (non-PHPdoc)
-     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony\Component\Form.FormTypeInterface::getName()
+     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony
+     * \Component\Form.FormTypeInterface::getName()
      */
     public function getName()
     {

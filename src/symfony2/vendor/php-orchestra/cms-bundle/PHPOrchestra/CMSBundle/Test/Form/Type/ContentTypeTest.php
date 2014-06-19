@@ -28,7 +28,7 @@ class ContentTypeTest extends \PHPUnit_Framework_TestCase
 {
     public function setUp()
     {
-        $this->content = new ContentType();
+        $this->contentType = new ContentType();
     }
     
     /**
@@ -46,7 +46,7 @@ class ContentTypeTest extends \PHPUnit_Framework_TestCase
             ->expects($this->exactly($expectedAddCount))
             ->method('add')
             ->will($this->returnSelf());
-        $this->content->buildForm($formBuilderMock, $options);
+        $this->contentType->buildForm($formBuilderMock, $options);
     }
 
     public function getOptions()
@@ -73,6 +73,6 @@ class ContentTypeTest extends \PHPUnit_Framework_TestCase
 
     public function testGetName()
     {
-        $this->assertEquals('content', $this->content->getName());
+        $this->assertEquals('content', $this->contentType->getName());
     }
 }

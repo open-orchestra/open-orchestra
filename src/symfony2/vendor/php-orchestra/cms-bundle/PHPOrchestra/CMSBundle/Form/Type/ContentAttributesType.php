@@ -30,32 +30,44 @@ class ContentAttributesType extends AbstractType
 
     /**
      * (non-PHPdoc)
-     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony\Component\Form.AbstractType::buildForm()
+     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony
+     * \Component\Form.AbstractType::buildForm()
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $fields = json_decode($options['data']->contentType->getFields());
-        $transformer = new ContentAttributesTransformer($this->documentManager, $fields);
-        $builder->addModelTransformer($transformer);
-        
-        if (count($fields) > 0) {
-            foreach ($fields as $key => $field) {
-                $fieldOptions = array();
-                if (isset($field->options)) {
-                    $fieldOptions = (array) $field->options;
-                    if (isset($fieldOptions['max_length']) && $fieldOptions['max_length'] == 0) {
-                        unset($fieldOptions['max_length']);
+        if (isset($options['data']) && isset($options['data']->contentType)) {
+            $fields = $options['data']->contentType->getFields();
+            
+            if (isset($fields)) {
+                $fields = json_decode($fields);
+                $transformer = new ContentAttributesTransformer($this->documentManager, $fields);
+                $builder->addModelTransformer($transformer);
+                
+                if (count($fields) > 0) {
+                    foreach ($fields as $field) {
+                        if (isset($field->fieldId) && isset($field->symfonyType)) {
+                            $fieldOptions = array();
+                            if (isset($field->options)) {
+                                $fieldOptions = (array) $field->options;
+                                if (isset($fieldOptions['max_length']) && $fieldOptions['max_length'] == 0) {
+                                    unset($fieldOptions['max_length']);
+                                }
+                            }
+                            if (isset($field->label)) {
+                                $fieldOptions['label'] = $field->label;
+                            }
+                            $builder->add($field->fieldId, $field->symfonyType, $fieldOptions);
+                        }
                     }
                 }
-                $fieldOptions['label'] = $field->label;
-                $builder->add($field->fieldId, $field->symfonyType, $fieldOptions);
             }
         }
     }
 
     /**
      * (non-PHPdoc)
-     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony\Component\Form.FormTypeInterface::getName()
+     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony
+     * \Component\Form.FormTypeInterface::getName()
      */
     public function getName()
     {

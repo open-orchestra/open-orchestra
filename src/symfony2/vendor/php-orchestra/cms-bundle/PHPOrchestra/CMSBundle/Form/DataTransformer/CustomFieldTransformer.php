@@ -41,7 +41,7 @@ class CustomFieldTransformer implements DataTransformerInterface
     {
         $datas = (array) $datas;
         
-        if ($datas['removeField']) {
+        if (isset($datas['removeField']) && $datas['removeField']) {
             return null;
         } else {
             foreach ($datas as $name => $value) {

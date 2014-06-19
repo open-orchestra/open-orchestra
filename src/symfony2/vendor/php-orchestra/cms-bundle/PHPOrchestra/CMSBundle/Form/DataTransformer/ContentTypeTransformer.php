@@ -24,15 +24,15 @@ class ContentTypeTransformer implements DataTransformerInterface
         
         $customFieldsIndex = array();
         
-        if (is_array($customFields)) {
-            foreach ($customFields as $key => $customField) {
-                $varName = 'customField_' . $key;
-                $contentType->$varName = $customField;
-                $customFieldsIndex[] = $varName;
-            }
+        foreach ($customFields as $key => $customField) {
+            $varName = 'customField_' . $key;
+            $contentType->$varName = $customField;
+            $customFieldsIndex[] = $varName;
         }
+        
         $contentType->customFieldsIndex = $customFieldsIndex;
         $contentType->new_field = '';
+        
         return $contentType;
     }
 

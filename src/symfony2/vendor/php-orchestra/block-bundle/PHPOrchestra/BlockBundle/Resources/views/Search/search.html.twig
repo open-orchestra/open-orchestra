@@ -3,27 +3,39 @@
  #
  # @author Benjamin Fouché <benjamin.fouche@businessdecision.com>
  ##}
-{#{ dump(nodeId) }#}
+{#{ dump(resultset.numfound) }#}
 
+{# if they are 0 result #}
 {% if resultset.numfound is not defined %}
     {% if resultset is empty %}
-        Sorry no results for this search.
+        Sorry no results for "{{ data }}".
     {% else %}
+        {# Browse the result list and call this template #}
         {% for result in resultset %}
+            {#{ dump(result) }#}
             {% include "PHPOrchestraBlockBundle:Search:search.html.twig" with {"data": data, "resultset": result, "nodeId": nodeId} %}        
         {% endfor %}
     {% endif %}
 {% else %}
+    <div id="searchid">
+    {#{ dump(resultset) }#}
     
     {% if resultset.spellcheck is not empty %}
+        {# Call spellCheck template #}
         {% include "PHPOrchestraBlockBundle:Search:spellcheck.html.twig" %}
     {% endif %}
     
-    {% for doc in resultset %}
-        <ul>
-            {% for field in doc %}
-                <li>{{ field }}</li>
-            {% endfor %}
-        </ul>
-    {% endfor %}
+    {# This template display list of facet #}
+    {% if resultset.facetSet is not empty %}
+        {% include "PHPOrchestraBlockBundle:Search:facet.html.twig" %}
+    {% endif %}
+    
+    {% if resultset is not empty %}
+        {# This template display list of documents in the result#}
+        {% include "PHPOrchestraBlockBundle:Search:showDocs.html.twig" %}
+    {% else %}
+        Sorry no results for "{{ data }}".
+    {% endif %}
+    
+    </div>
 {% endif %}
