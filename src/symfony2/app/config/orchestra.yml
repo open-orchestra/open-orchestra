@@ -38,4 +38,4 @@ php_orchestra_theme:
 twig:
     form:
         resources:
-            - 'PHPOrchestraCMSBundle:Form:customField.html.twig'
+            - 'PHPOrchestraCMSBundle:Form:contentTypeFields.html.twig'

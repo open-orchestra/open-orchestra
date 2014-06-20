@@ -21,12 +21,11 @@ services:
         tags:
             - { name: form.type, alias: contentAttributes }
 
-    # Orchestra field select form field type
-    php_orchestra_cms.type.fieldSelect:
-        class: PHPOrchestra\CMSBundle\Form\Type\OrchestraFieldSelectType
-        arguments: [@service_container]
+    # contentType fields 
+    php_orchestra_cms.type.contentTypeFields:
+        class: PHPOrchestra\CMSBundle\Form\Type\ContentTypeFieldsType
         tags:
-            - { name: form.type, alias: orchestra_fieldSelect }
+            - { name: form.type, alias: contentTypeFields }
 
     # Custom field form field type
     php_orchestra_cms.type.customField:

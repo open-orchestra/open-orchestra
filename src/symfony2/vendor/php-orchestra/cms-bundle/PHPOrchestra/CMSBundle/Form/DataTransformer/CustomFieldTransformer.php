@@ -11,7 +11,6 @@ use Symfony\Component\Form\DataTransformerInterface;
 
 class CustomFieldTransformer implements DataTransformerInterface
 {
-
     /**
      * Transforms a stdclass field to inject customfield options as standard fields
      *
@@ -37,20 +36,21 @@ class CustomFieldTransformer implements DataTransformerInterface
      * @param  object
      * @return object
      */
-    public function reverseTransform($datas) // formfield => stdclass customField
+    public function reverseTransform($customFieldObject) // formfield => stdclass customField
     {
-        $datas = (array) $datas;
+        $customField = (array) $customFieldObject;
         
-        if (isset($datas['removeField']) && $datas['removeField']) {
+        /*if (isset($datas['removeField']) && $datas['removeField']) {
             return null;
-        } else {
-            foreach ($datas as $name => $value) {
-                if (strpos($name, 'option_') === 0) {
-                    $datas['options'][str_replace('option_', '', $name)] = $value;
-                    unset($datas[$name]);
+        } else {*/
+            foreach ($customField as $paramName => $paramValue) {
+                if (strpos($paramName, 'option_') === 0) {
+                    $customField['options'][str_replace('option_', '', $paramName)] = $paramValue;
+                    unset($customField[$paramName]);
                 }
             }
-            return (object) $datas;
-        }
+            
+            return (object) $customField;
+        //}
     }
 }

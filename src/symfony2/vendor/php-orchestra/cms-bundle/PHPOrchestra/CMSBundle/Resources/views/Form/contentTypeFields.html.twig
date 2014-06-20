@@ -4,6 +4,15 @@
  # @author Noël GILAIN <noel.gilain@businessdecision.com>
  ##}
 
+{% block contentTypeFields_widget %}
+{{ form_row(form.jsonFields) }}
+    {% for key, value in form %}
+        {% if key starts with 'customField' %}
+            {{ form_widget(form[key]) }}
+      {% endif %}
+    {% endfor %}
+{% endblock %}
+
 {% block orchestra_customField_widget %}
 <fieldset>
     Type de champ : {{ form.vars.value.type }}<br /><br />
@@ -19,8 +28,4 @@
         {% endif %}
     {% endfor %}
 </fieldset>
-{% endblock %}
-
-{% block orchestra_fieldSelect_widget %}
-    {{ block('choice_widget') }} <button name="newfield" id="newfield" type="submit">Ajouter</button>
 {% endblock %}

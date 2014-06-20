@@ -20,17 +20,6 @@ class ContentTypeTransformer implements DataTransformerInterface
      */
     public function transform($contentType) // entity => formfield
     {
-        $customFields = json_decode($contentType->getFields());
-        
-        $customFieldsIndex = array();
-        
-        foreach ($customFields as $key => $customField) {
-            $varName = 'customField_' . $key;
-            $contentType->$varName = $customField;
-            $customFieldsIndex[] = $varName;
-        }
-        
-        $contentType->customFieldsIndex = $customFieldsIndex;
         $contentType->new_field = '';
         
         return $contentType;
@@ -39,30 +28,26 @@ class ContentTypeTransformer implements DataTransformerInterface
     /**
      * Transforms an object in valid ContentType entity.
      *
-     * @param  object $datas
+     * @param  object $contentType
      * @return object
      */
-    public function reverseTransform($datas) // formfield => entity
+    public function reverseTransform($contentType) // formfield => entity
     {
-        $fields = array();
-        foreach ($datas->customFieldsIndex as $index) {
-            if (!is_null($datas->$index)) {
-                $fields[] = $datas->$index;
-            }
-        }
-        if ($datas->new_field != '') {
+        if ($contentType->new_field != '') {
+            $fields = json_decode($contentType->getFields());
+            
             $fields[] = (object) array(
                 'fieldId' => '',
                 'label' => '',
                 'defaultValue' => '',
                 'searchable' => false,
-                'type' => $datas->new_field,
+                'type' => $contentType->new_field,
                 'symfonyType' => '',
                 'options' => (object) array()
             );
+            $contentType->setFields(json_encode($fields));
         }
         
-        $datas->setFields(json_encode($fields));
-        return $datas;
+        return $contentType;
     }
 }
