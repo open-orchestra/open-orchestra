@@ -68,4 +68,34 @@ abstract class Node extends \Model\PHPOrchestraCMSBundle\Base\Node
         $this->setDeleted('true');
         return $this->save();
     }
+
+
+    /**
+     * Give content for the document
+     * 
+     * @param Solarium\QueryType\Update\Query\Document\Document $doc
+     * @param array $fields 
+     * 
+     * @return Solarium\QueryType\Update\Query\Document\Document
+     */
+    public function toSolrDocument($doc, $fields)
+    {
+        $doc->id = $this->getNodeId();
+        $doc->title = $this->getAlias();
+        $doc->name = $this->getName();
+        $doc->version = $this->getVersion();
+        $doc->language = $this->getLanguage();
+        $doc->type = $this->getNodeType();
+        $doc->parentId = $this->getParentId();
+        $doc->status = $this->getStatus();
+        $doc->idPath = $this->getPath();
+        
+        foreach ($fields as $name => $value) {
+            if (!empty($value)) {
+                $doc->$name = implode("", $value);
+            }
+        }
+        
+        return $doc;
+    }
 }
