@@ -44,8 +44,11 @@ class ContentTypeFieldsTransformer implements DataTransformerInterface
         $jsonFields = json_decode($formFields['jsonFields']);
         
         $fields = array();
+        
         for ($i = 0; $i < count($jsonFields); $i++) {
-           $fields[] = $formFields['customField_' . $i];
+            if (!$formFields['customField_' . $i]->removeField) {
+                $fields[] = $formFields['customField_' . $i];
+            }
         }
         
         return json_encode($fields);

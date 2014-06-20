@@ -40,17 +40,13 @@ class CustomFieldTransformer implements DataTransformerInterface
     {
         $customField = (array) $customFieldObject;
         
-        /*if (isset($datas['removeField']) && $datas['removeField']) {
-            return null;
-        } else {*/
-            foreach ($customField as $paramName => $paramValue) {
-                if (strpos($paramName, 'option_') === 0) {
-                    $customField['options'][str_replace('option_', '', $paramName)] = $paramValue;
-                    unset($customField[$paramName]);
-                }
+        foreach ($customField as $paramName => $paramValue) {
+            if (strpos($paramName, 'option_') === 0) {
+                $customField['options'][str_replace('option_', '', $paramName)] = $paramValue;
+                unset($customField[$paramName]);
             }
-            
-            return (object) $customField;
-        //}
+        }
+        
+        return (object) $customField;
     }
 }
