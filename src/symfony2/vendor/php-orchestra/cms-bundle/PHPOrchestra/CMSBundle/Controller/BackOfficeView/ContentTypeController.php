@@ -66,26 +66,30 @@ class ContentTypeController extends TableViewController
         
         if ($contentType->getStatus() != ContentType::STATUS_DRAFT) {
             $contentType->generateDraft();
+            $documentId = (string) $contentType->getId();
         }
         
         $form = $this->createForm('contentType', $contentType);
         
         if ($request->getMethod() == 'POST') {
             $form->handleRequest($request);
+            
             if ($contentType->new_field != '') {
                 $contentType->save();
-                $form = $this->createForm('contentType', $contentType); // Toujours utile ?
+                $form = $this->createForm('contentType', $contentType);
             }
-            if ($contentType->new_field != '' || !$form->isValid()) {
-                $render = $this->getRender($form, $documentId);
-                $success = false;
-                $data = $render->getContent();
-            } else {
+            
+            if ($form->isValid() && $contentType->new_field == '') {
                 $this->deleteOtherStatusVersions($contentType->getContentTypeId(), $contentType->getStatus());
                 $contentType->save();
                 $success = true;
                 $data = $this->generateUrlValue('catalog');
+            } else {
+                $success = false;
+                $render = $this->getRender($form, $documentId);
+                $data = $render->getContent();
             }
+            
             return new JsonResponse(
                 array(
                     'success' => $success,
@@ -126,7 +130,7 @@ class ContentTypeController extends TableViewController
                 'icon' => $icon
             )
         );
-        return $render->getContent();       
+        return $render->getContent();
     }
     
     /**
@@ -148,7 +152,7 @@ class ContentTypeController extends TableViewController
         );
         
         foreach ($versions as $version) {
-            if ($version->getId() != $contentTypeId) {
+            if ($version->getContentTypeId() != $contentTypeId) {
                 $version->delete();
             }
         }
