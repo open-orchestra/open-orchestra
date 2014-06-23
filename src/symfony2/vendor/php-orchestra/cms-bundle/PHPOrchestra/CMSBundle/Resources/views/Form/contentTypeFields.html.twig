@@ -14,7 +14,14 @@
 
 {% block orchestra_customField_widget %}
 <fieldset>
-    Type de champ : {{ form.vars.value.type }}<br /><br />
+    <legend>
+        {% if form.vars.value.label != '' %}
+            Champ "{{ form.vars.value.label }}"
+        {% else %}
+            Nouveau champ
+        {% endif %}
+        [{{ form.vars.value.type }}]
+    </legend>
     {{ form_row(form.removeField) }}
     {{ form_row(form.symfonyType) }}
     {{ form_row(form.label) }}

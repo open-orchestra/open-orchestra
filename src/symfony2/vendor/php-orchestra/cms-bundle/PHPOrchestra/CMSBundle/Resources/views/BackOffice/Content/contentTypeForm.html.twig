@@ -6,7 +6,8 @@
 
 {% form_theme form 'PHPOrchestraCMSBundle:Form:extend.html.twig' %}
 
-{% include 'PHPOrchestraCMSBundle:BackOffice:beginSmartDiv.html.twig' %}
+{% set vars = {'title' : 'Type de contenu'} %}
+{% include 'PHPOrchestraCMSBundle:BackOffice:beginSmartDiv.html.twig' with vars %}
 
 {{ form_start(
     form,
@@ -17,15 +18,17 @@
     }
 ) }}
 
+{{ form_errors(form) }}
+
 <fieldset>
-    {{ form_errors(form) }}
+    <legend>Définition du type de contenu</legend>
     {{ form_row(form.new_field) }}
     {{ form_row(form.name) }}
     {{ form_row(form.contentTypeId) }}
     {{ form_row(form.version) }}
     {{ form_row(form.status) }}
-    {{ form_widget(form.fields) }}
 </fieldset>
+{{ form_widget(form.fields) }}
 
 {{ form_end(form) }}
 
