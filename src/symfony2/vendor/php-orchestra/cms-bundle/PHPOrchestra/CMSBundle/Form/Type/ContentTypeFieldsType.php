@@ -26,8 +26,6 @@ class ContentTypeFieldsType extends AbstractType
         $transformer = new ContentTypeFieldsTransformer();
         $builder->addModelTransformer($transformer);
         
-        $builder->add('jsonFields', 'textarea');
-        
         $customFields = json_decode($options['data']);
         
         if (is_array($customFields)) {

@@ -40,7 +40,7 @@ class ContentTypeType extends AbstractType
             )
             ->add('id', 'hidden', array('mapped' => false, 'data' => (string)$options['data']->getId()))
             ->add('fields', 'contentTypeFields', array('data' => $options['data']->getFields()))
-            ->add('new_field', 'text', array('label' => 'Nouveau champ', 'required' => false));
+            ->add('new_field', 'hidden', array('label' => 'Nouveau champ', 'required' => false));
     }
     
     /**

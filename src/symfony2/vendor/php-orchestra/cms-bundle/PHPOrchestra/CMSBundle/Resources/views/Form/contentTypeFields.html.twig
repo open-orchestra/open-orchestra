@@ -5,7 +5,6 @@
  ##}
 
 {% block contentTypeFields_widget %}
-{{ form_row(form.jsonFields) }}
     {% for key, value in form %}
         {% if key starts with 'customField' %}
             {{ form_widget(form[key]) }}

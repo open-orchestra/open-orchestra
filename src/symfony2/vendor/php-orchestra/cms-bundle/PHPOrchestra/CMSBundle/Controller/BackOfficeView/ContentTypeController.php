@@ -105,7 +105,10 @@ class ContentTypeController extends TableViewController
     {
         $select = $this->render(
             'PHPOrchestraCMSBundle:BackOffice/Content:customFieldSelect.html.twig',
-            array('availableFields' => $this->container->getParameter('php_orchestra.custom_types'))
+            array(
+                'availableFields' => $this->container->getParameter('php_orchestra.custom_types'),
+                'saveAction' => $this->generateUrlValue('edit', $documentId)
+            )
         );
         
         return $this->render(
