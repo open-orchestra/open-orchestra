@@ -8,17 +8,15 @@
 {% if resultset.spellcheck.suggestions is not empty%}
     <div id="spellid">
     <ul>
-    {#{ dump('ici') }#}
     {% for suggestion in resultset.spellcheck.suggestions %}
     
         {{ 'Voulez vous dire '}}<a href="{{ path('php_orchestra_cms_node', {'nodeId': nodeId, 'Search': suggestion.word }) }}">{{ suggestion.word }}</a>
     {% endfor %}
     
     {#% for suggestion in resultset.spellcheck.suggestions %}
-        {#{ dump('ici') }}
+        
         {{ 'Voulez vous dire : '}}
         {% for word in suggestion.words %}
-            {#{ dump(word) }}
             <a href="{{ path('php_orchestra_cms_node', {'nodeId': nodeId, 'Search': word.word }) }}">{{ word.word }}</a>
         {% endfor %}
     {% endfor %#}

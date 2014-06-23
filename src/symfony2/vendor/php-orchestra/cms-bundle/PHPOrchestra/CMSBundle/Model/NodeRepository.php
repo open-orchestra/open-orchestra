@@ -109,4 +109,3 @@ class NodeRepository extends \Model\PHPOrchestraCMSBundle\Base\NodeRepository
         return $nodes;
     }
 }
-

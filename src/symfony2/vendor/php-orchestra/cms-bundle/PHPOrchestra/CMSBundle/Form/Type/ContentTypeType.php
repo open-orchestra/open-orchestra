@@ -7,10 +7,10 @@
 
 namespace PHPOrchestra\CMSBundle\Form\Type;
 
-use PHPOrchestra\CMSBundle\Form\DataTransformer\ContentTypeTransformer;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Model\PHPOrchestraCMSBundle\ContentType as ContentTypeModel;
+use PHPOrchestra\CMSBundle\Form\DataTransformer\ContentTypeTransformer;
 
 class ContentTypeType extends AbstractType
 {
@@ -39,18 +39,8 @@ class ContentTypeType extends AbstractType
                 )
             )
             ->add('id', 'hidden', array('mapped' => false, 'data' => (string)$options['data']->getId()))
-            ->add('fields', 'hidden', array('data' => $options['data']->getFields()));
-        
-        $customFields = json_decode($options['data']->getFields());
-        
-        if (is_array($customFields)) {
-            foreach ($customFields as $key => $customField) {
-                $builder->add('customField_' . $key, 'orchestra_customField', array('data' => $customField));
-            }
-        }
-        
-        $builder
-            ->add('new_field', 'orchestra_fieldSelect', array('label' => 'Nouveau champ', 'required' => false));
+            ->add('fields', 'contentTypeFields', array('data' => $options['data']->getFields()))
+            ->add('new_field', 'hidden', array('label' => 'Nouveau champ', 'required' => false));
     }
     
     /**

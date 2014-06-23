@@ -18,23 +18,26 @@
 ) }}
 
 <fieldset>
-{{ form_widget(form.fields) }}
-{{ form_row(form.name) }}
-{{ form_row(form.contentTypeId) }}
-{{ form_row(form.version) }}
-{{ form_row(form.status) }}
+    {{ form_errors(form) }}
+    {{ form_row(form.new_field) }}
+    {{ form_row(form.name) }}
+    {{ form_row(form.contentTypeId) }}
+    {{ form_row(form.version) }}
+    {{ form_row(form.status) }}
+    {{ form_widget(form.fields) }}
 </fieldset>
 
-{% for key, value in form %}
-    {% if key starts with 'customField' %}
-        {{ form_widget(form[key]) }}
-    {% endif %}
-{% endfor %}
+{{ form_end(form) }}
 
 {% include 'PHPOrchestraCMSBundle:BackOffice:endSmartDiv.html.twig' %}
 
 <div class="ribbon">
-    {{ form_label(form.new_field) }} {{ form_widget(form.new_field) }} {{ ribbon|raw }}
+    {{ ribbon|raw }}
 </div>
 
-{{ form_end(form) }}
+
+<script type="text/javascript">
+    $('#newFieldSelector').change(function() {
+        $('#contentType_new_field').val($(this).val());
+    });
+</script>

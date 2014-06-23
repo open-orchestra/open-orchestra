@@ -1,0 +1,20 @@
+{##
+ # This file is part of the PHPOrchestra\CMSBundle.
+ #
+ # @author Noël GILAIN <noel.gilain@businessdecision.com>
+ ##}
+
+<select id="newFieldSelector" style="float:left;margin-left:10px;margin-right:5px;">
+    <option value="">--</option>
+{% for fieldId, fieldName in availableFields %}
+    <option value="{{ fieldId }}">{{ fieldId }}</option>
+{% endfor %}
+</select>
+
+{% set data = '' %}
+{% set label = 'Ajouter' %}
+{% set class = 'btn btn-small btn-ribbon bt-primary submit' %}
+{% set icon = 'fa fa-plus' %}
+{% set data = saveAction %}
+
+{% include 'PHPOrchestraCMSBundle:BackOffice/TableView:button.html.twig' %}

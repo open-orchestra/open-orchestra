@@ -66,46 +66,75 @@ class ContentTypeController extends TableViewController
         
         if ($contentType->getStatus() != ContentType::STATUS_DRAFT) {
             $contentType->generateDraft();
+            $documentId = (string) $contentType->getId();
         }
         
         $form = $this->createForm('contentType', $contentType);
-        $form->handleRequest($request);
         
-        if ($contentType->new_field != '') {
-            $contentType->save();
+        if ($request->getMethod() == 'POST') {
+            $form->handleRequest($request);
             
-            return $this->redirect(
-                $this->generateUrl(
-                    'phporchestra_cms_backofficeview_contenttype_index',
-                    array(
-                        'action' => 'edit',
-                        'id' => (string)$contentType->getId()
-                    )
-                )
-            );
+            if ($contentType->new_field != '') {
+                $contentType->save();
+                $form = $this->createForm('contentType', $contentType);
+            }
             
-        } elseif ($form->isValid()) {
-            
-            $this->deleteOtherStatusVersions($contentType->getContentTypeId(), $contentType->getStatus());
-            $contentType->save();
+            if ($form->isValid() && $contentType->new_field == '') {
+                $this->deleteOtherStatusVersions($contentType->getContentTypeId(), $contentType->getStatus());
+                $contentType->save();
+                $success = true;
+                $data = $this->generateUrlValue('catalog');
+            } else {
+                $success = false;
+                $render = $this->getRender($form, $documentId);
+                $data = $render->getContent();
+            }
             
             return new JsonResponse(
                 array(
-                    'success' => true,
-                    'data' => $this->generateUrlValue('catalog')
+                    'success' => $success,
+                    'data' => $data
                 )
             );
         }
+        
+        return $this->getRender($form, $documentId);
+    }
+    
+    protected function getRender($form, $documentId)
+    {
+        $select = $this->render(
+            'PHPOrchestraCMSBundle:BackOffice/Content:customFieldSelect.html.twig',
+            array(
+                'availableFields' => $this->container->getParameter('php_orchestra.custom_types'),
+                'saveAction' => $this->generateUrlValue('edit', $documentId)
+            )
+        );
         
         return $this->render(
             'PHPOrchestraCMSBundle:BackOffice/Content:contentTypeForm.html.twig',
             array(
                 'form' => $form->createView(),
-                'ribbon' => $this->saveButton($documentId) . $this->backButton()
+                'ribbon' => $this->saveButton($documentId) . $this->backButton() . $select->getContent()
             )
         );
     }
     
+    public function genericButton($data, $action, $label, $class, $icon){
+        if($this->getEntity() !== null){
+            $data = $this->generateUrlValue($action, $data);
+        }
+        $render = $this->render(
+            $this->buttonTwig,
+            array(
+                'data' => $data,
+                'label' => $label,
+                'class' => $class,
+                'icon' => $icon
+            )
+        );
+        return $render->getContent();
+    }
     
     /**
      * Keep only one version of the status $status for the document $contentTypeId
@@ -126,7 +155,7 @@ class ContentTypeController extends TableViewController
         );
         
         foreach ($versions as $version) {
-            if ($version->getId() != $contentTypeId) {
+            if ($version->getContentTypeId() != $contentTypeId) {
                 $version->delete();
             }
         }

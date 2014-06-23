@@ -83,4 +83,31 @@ abstract class Content extends \Model\PHPOrchestraCMSBundle\Base\Content
         
         return $this;
     }
+    
+
+    /**
+     * Give content for the document
+     *
+     * @param Solarium\QueryType\Update\Query\Document\Document $doc
+     * @param array $fields
+     *
+     * @return Solarium\QueryType\Update\Query\Document\Document
+     */
+    public function toSolrDocument($doc, $fields)
+    {
+        $doc->id = $this->getContentId();
+        $doc->name = $this->getShortName();
+        $doc->version = $this->getVersion();
+        $doc->language = $this->getLanguage();
+        $doc->type = $this->getContentType();
+        $doc->status = $this->getStatus();
+         
+        foreach ($fields as $name => $value) {
+            if (!empty($value)) {
+                $doc->$name = implode("", $value);
+            }
+        }
+    
+        return $doc;
+    }
 }
