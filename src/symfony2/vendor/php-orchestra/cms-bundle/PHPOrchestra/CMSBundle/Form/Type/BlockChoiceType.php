@@ -10,7 +10,6 @@ namespace PHPOrchestra\CMSBundle\Form\Type;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
-use PHPOrchestra\CMSBundle\Form\DataTransformer\JsonToAreasTransformer;
 
 class BlockChoiceType extends AbstractType
 {
@@ -22,14 +21,11 @@ class BlockChoiceType extends AbstractType
      * 
      * @param $documentManager
      */
-    public function __construct($documentManager, $nodeId, $filter = array())
+    public function __construct($nodeId, $documentManager, $filter = array())
     {
         $node = $documentManager->getDocument('Node', array('nodeId' => $nodeId));
         $this->choices[''] = '--------';
-        
-        foreach ($filter as $key => $configBlock) {
-            $filter[$key] = $configBlock['action'];
-        }
+        $filter = array_map(function($value) { return $value['action']; }, $filter);
         $filter = array_flip($filter);
         $blocks = $node->getBlocks();
         $intRank = 1;

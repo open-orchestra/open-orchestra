@@ -55,7 +55,7 @@ function resetPercent(objects){
 	        }
 	        $(this).find(":input").not('button').each(function(){
 		        var id = $(this).attr( "id" ).replace(prefix + '_', '');
-		        if(!$(this).hasClass('not-mapped')){
+		        if(!$(this).hasClass('not-mapped') && id != '_token'){
 		        	data[id] = $(this).val();
 		        	if($(this).hasClass('used-as-label')){
 		        		if('ui-model' in data){
@@ -76,19 +76,18 @@ function resetPercent(objects){
 			var ref = $(this);
 	        $(this).find(":input").each(function(){
 	        	var id = $(this).attr("id").replace(prefix + '_', '');
-	        	var value = '';
-	        	if(id in data){
-	        		value = data[id]
-	        	}
-	        	if(value != $(this).val()){
-		    		$(this).val(value);
-		        	try{
-			        	if('change' in $._data($(this)[0], 'events')){
-			        		$(this).change();
-			        		ref.setValue(data);
-			        	}
+	        	if(id != '_token'){
+		        	var value = '';
+		        	if(id in data){
+		        		value = data[id]
 		        	}
-		        	catch(e){}
+		        	if(value != $(this).val()){
+			    		$(this).val(value);
+			    		if($(this).hasClass('reload')){
+			    			$(this).change();
+			    			ref.fromJsToForm(data);
+			    		}
+		        	}
 	        	}
 	    	});
 		});
@@ -161,6 +160,7 @@ function resetPercent(objects){
 				],
 				'fa fa-cog' : [
 				   	'$( "#dialog-" + options.type ).data("path", options.path);',
+				   	'$( "#dialog-" + options.type ).fromJsToForm(this_settings);',
 					'$( "#dialog-" + options.type ).dialog( "open" );'
 				]
 			};

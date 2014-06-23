@@ -60,7 +60,8 @@ class NodeType extends AbstractType
                 'areas',
                 'orchestra_areas',
                 array(
-                    'controller' => 'PHPOrchestraCMSBundle:NodeArea:form'
+                    'controller' => 'PHPOrchestraCMSBundle:Area:form',
+                    'parameter' => array('type' => 'node')
                 )
             )
             ->add(
@@ -68,7 +69,8 @@ class NodeType extends AbstractType
                 'orchestra_blocks',
                 array(
                     'mapped' => false,
-                    'controller' => 'PHPOrchestraCMSBundle:NodeBlock:form'
+                    'controller' => 'PHPOrchestraCMSBundle:Block:form',
+                    'parameter' => array('type' => 'node')
                 )
             )
             ->add('theme', 'orchestra_theme_choice')

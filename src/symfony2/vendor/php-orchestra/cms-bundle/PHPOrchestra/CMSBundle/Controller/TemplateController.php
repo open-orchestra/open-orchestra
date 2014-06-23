@@ -13,7 +13,6 @@ use PHPOrchestra\CMSBundle\Model\Area;
 use PHPOrchestra\CMSBundle\Form\Type\TemplateType;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
-use PHPOrchestra\CMSBundle\Helper\TemplateHelper;
 
 class TemplateController extends Controller
 {
@@ -70,27 +69,6 @@ class TemplateController extends Controller
                 'form' => $form->createView()
             )
         );
-    }
-    
-    /**
-     * send template cutting
-     * 
-     */
-    public function showCuttingAction(Request $request)
-    {
-        $documentManager = $this->get('phporchestra_cms.documentmanager');
-        $template = $documentManager->getDocument(
-            'Template',
-            array('templateId' => $request->get('templateId'))
-        );
-        if ($request->isXmlHttpRequest()) {
-            return new JsonResponse(
-                array(
-                    'success' => true,
-                    'data' => TemplateHelper::formatTemplate($template, $documentManager)
-                )
-            );
-        }
     }
     
     /**

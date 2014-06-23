@@ -213,42 +213,6 @@ class NodeController extends Controller
         );
     }
 
-    /**
-     * List blocks from node filtered by those contained in config.yml
-     * 
-     */
-    public function showBlocksFromNodeAction(Request $request)
-    {
-        $form = $this->get('form.factory')
-            ->createNamedBuilder($request->get('form'), 'form')
-            ->add(
-                'blockId',
-                new BlockChoiceType(
-                    $this->container->get('phporchestra_cms.documentmanager'),
-                    $request->get('nodeId'),
-                    $this->container->getParameter('php_orchestra.blocks')
-                )
-            )
-            ->getForm();
-        
-        $render = $this->render(
-            'PHPOrchestraCMSBundle:Form:input.html.twig',
-            array(
-                'form' => $form->createView()
-            )
-        );
-        
-        if ($request->isXmlHttpRequest()) {
-            return new JsonResponse(
-                array(
-                    'success' => true,
-                    'data' => $render->getContent()
-                )
-            );
-        } else {
-            return new Response($render->getContent());
-        }
-    }
     
     /**
      * Unpublish last version of a content

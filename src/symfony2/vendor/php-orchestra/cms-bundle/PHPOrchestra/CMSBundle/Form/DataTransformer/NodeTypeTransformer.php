@@ -44,12 +44,14 @@ class NodeTypeTransformer implements DataTransformerInterface
 						$blockRef = $blocks[$block['blockId']];
 						unset($block['blockId']);
 						unset($block['nodeId']);
-						$block['_method_'] = self::BLOCK_GENERATE;
-                        $block['_component_'] = $blockRef->getComponent();
-                        $block = array_merge($block, $blockRef->getAttributes());
+						$block['method'] = self::BLOCK_GENERATE;
+                        $block['component'] = $blockRef->getComponent();
+                        $attributs = $blockRef->getAttributes();
+                        $attributs = array_combine(array_map(function($value) { return 'attributs_'.$value; }, array_keys($attributs)), array_values($attributs));
+                        $block = array_merge($block, $attributs);
 					}
 					else{
-						$block['_method_'] = self::BLOCK_LOAD;
+						$block['method'] = self::BLOCK_LOAD;
 					}
 				}
 				if(sizeof($value) == 0){
@@ -73,18 +75,20 @@ class NodeTypeTransformer implements DataTransformerInterface
         foreach($values as $key => &$value){
         	if($key === 'blocks'){
                 foreach($value as &$block){
-                    if(array_key_exists('_method_', $block) && $block['_method_'] === 'generate'){
-                        $component = $block['_component_'];
-                        unset($block['_method_']);
-                        unset($block['_component_']);
+                    if(array_key_exists('method', $block) && $block['method'] === 'generate'){
+                        $component = $block['component'];
+                        unset($block['method']);
+                        unset($block['component']);
                         unset($block['_token']);
+                        $attributs = $block;
+                        $attributs = array_combine(array_map(function($value) { return preg_replace('/^attributs_/', '', $value); }, array_keys($attributs)), array_values($attributs));
                         $blockDoc = $this->documentManager->createDocument('Block')
                             ->setComponent($component)
-                            ->setAttributes($block);
+                            ->setAttributes($attributs);
                         $block = array('nodeId' => 0, 'blockId' => $node->getBlocks()->count());
                         $node->addBlocks($blockDoc);
                     }
-                    else{
+                    elseif(array_key_exists('nodeId', $block) && array_key_exists('blockId', $block)){
                     	$block = array('nodeId' => $block['nodeId'], 'blockId' => $block['blockId']);
                     }
                 }

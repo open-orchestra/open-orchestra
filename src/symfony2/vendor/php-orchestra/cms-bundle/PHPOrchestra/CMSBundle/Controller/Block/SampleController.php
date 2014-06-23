@@ -41,22 +41,4 @@ class SampleController extends Controller
         return $response;
     }
 
-    /**
-     * Render the dialog form
-     * 
-     * @param string $prefix
-     */
-    public function formAction($prefix)
-    {
-        $form = $this->get('form.factory')->createNamedBuilder($prefix, 'form', null)
-            ->add('title', 'text')
-            ->add('author', 'text')
-            ->add('news', 'text')
-            ->getForm();
-        
-        return $this->render(
-            'PHPOrchestraCMSBundle:Block/Sample:form.html.twig',
-            array('form' => $form->createView())
-        );
-    }
 }

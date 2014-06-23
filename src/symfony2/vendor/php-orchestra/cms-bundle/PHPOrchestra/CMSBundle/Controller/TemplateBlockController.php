@@ -32,7 +32,6 @@ class TemplateBlockController extends Controller
                 'js' => 'pagegenerator/template_block.js'
             )
         );
-        
         return $this->render(
             'PHPOrchestraCMSBundle:Form:form.html.twig',
             array(

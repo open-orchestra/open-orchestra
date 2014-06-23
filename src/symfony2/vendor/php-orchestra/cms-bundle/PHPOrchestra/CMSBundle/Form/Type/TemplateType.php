@@ -57,7 +57,8 @@ class TemplateType extends AbstractType
                 'areas',
                 'orchestra_areas',
                 array(
-                    'controller' => 'PHPOrchestraCMSBundle:TemplateArea:form'
+                    'controller' => 'PHPOrchestraCMSBundle:Area:form',
+                    'parameter' => array('type' => 'template')
                 )
             )
             ->add(
@@ -65,7 +66,8 @@ class TemplateType extends AbstractType
                 'orchestra_blocks',
                 array(
                     'mapped' => false,
-                    'controller' => 'PHPOrchestraCMSBundle:TemplateBlock:form'
+                    'controller' => 'PHPOrchestraCMSBundle:Block:form',
+                    'parameter' => array('type' => 'template')
                 )
             )
             ->add('save', 'submit');

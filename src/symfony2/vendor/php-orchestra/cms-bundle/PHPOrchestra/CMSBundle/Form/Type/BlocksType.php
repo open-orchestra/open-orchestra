@@ -12,7 +12,6 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\FormView;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
-use PHPOrchestra\CMSBundle\Form\DataTransformer\JsonToBlocksTransformer;
 
 class BlocksType extends AbstractType
 {
@@ -27,6 +26,7 @@ class BlocksType extends AbstractType
         $resolver->setDefaults(
             array(
                 'controller' => '',
+                'parameter' => array(),
                 'attr' => array('class' => 'not-mapped')
             )
         );
@@ -39,6 +39,7 @@ class BlocksType extends AbstractType
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
         $view->vars['controller'] = $options['controller'];
+        $view->vars['parameter'] = $options['parameter'];
     }
         
     /**

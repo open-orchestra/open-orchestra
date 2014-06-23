@@ -38,24 +38,17 @@ php_orchestra_cms_nodeform:
 #    requirements:
 #        nodeId: \w+
 
-php_orchestra_ajax_show_blocks_from_node:
-  pattern: /node/blocks
-  defaults: { _controller: PHPOrchestraCMSBundle:Node:showBlocksFromNode }
-
 php_orchestra_cms_node:
     pattern: /node/{nodeId}
     defaults: { _controller: PHPOrchestraCMSBundle:Node:show }
 #    requirements:
 #        nodeId: \w+
 
-php_orchestra_ajax_show_all_nodes:
-    pattern: /nodes/
-    defaults: { _controller: PHPOrchestraCMSBundle:Nodes:showAllNodes }
-  
-php_orchestra_ajax_show_template:
-    pattern: /template/
-    defaults: { _controller: PHPOrchestraCMSBundle:Template:showCutting }
-  
-php_orchestra_tree:
-    pattern: /tree/
-    defaults: { _controller: PHPOrchestraCMSBundle:BlockExample:show0 }
+php_orchestra_cms_blockform:
+    pattern: /admin/block/form/{type}
+    defaults: { _controller: PHPOrchestraCMSBundle:Block:form, type: node }
+
+php_orchestra_cms_areaform:
+    pattern: /admin/area/form/{type}
+    defaults: { _controller: PHPOrchestraCMSBundle:Area:form, type: node }
+

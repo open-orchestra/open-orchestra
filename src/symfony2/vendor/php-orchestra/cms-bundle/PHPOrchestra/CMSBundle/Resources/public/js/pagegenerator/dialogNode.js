@@ -2,6 +2,9 @@ function addButton(name, data, jThis){
 	return {
         	"click" : (function (name, data, jThis){
             	return function(){
+            		if(!(name in data)){
+            			data[name] = [];
+            		}
             		resetPercent(data[name]);
                     data[name].push({'ui-model' : {}});
                     jThis.dialog( "close" );
@@ -59,7 +62,6 @@ dialog_parameter = {
             };
         });
         $(this).dialog("option", "buttons", buttons);
-        $(this).fromJsToForm(data);
     },
     allbuttons: {
         "apply": {

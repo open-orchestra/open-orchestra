@@ -9,27 +9,27 @@ namespace PHPOrchestra\CMSBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use PHPOrchestra\CMSBundle\Form\Type\BlockType;
+use PHPOrchestra\CMSBundle\Form\Type\AreaType;
 use Symfony\Component\HttpFoundation\Response;
 
-class NodeBlockController extends Controller
+class AreaController extends Controller
 {
     
     /**
      * 
-     * Render the node Block form
+     * Render the node Area form
      * @param Request $request
      * 
      */
-    public function formAction()
+    public function formAction($type)
     {
         $form = $this->createForm(
-            new BlockType(),
+            new AreaType(),
             null,
             array(
                 'inDialog' => true,
                 'subForm' => true,
-                'js' => 'pagegenerator/node_block.js'
+                'js' => 'pagegenerator/'.$type.'_area.js'
             )
         );
         

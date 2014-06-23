@@ -45,28 +45,7 @@ class SiteType extends AbstractType
             ->add('domain', 'text', array('label' => 'Domain'))
             ->add('alias', 'text', array('label' => 'Alias'))
             ->add('defaultLanguage', 'orchestra_language', array('label' => 'Default Language'))
-            ->add('languages', 'orchestra_language', array('label' => 'Languages', 'multiple' => true))
-            ->add(
-                $nameBlocks,
-                'orchestra_blocks',
-                array(
-                    'mapped' => false,
-                    'js' => array(
-                        'script' => 'local/blocks_template.js',
-                        'parameter' => array(
-                            'name' => $nameBlocks,
-                            'urlNode' => $this->router->generate('php_orchestra_ajax_show_all_nodes'),
-                            'urlBlock' => $this->router->generate('php_orchestra_ajax_show_blocks_from_node')
-                        ),
-                        'render' => array(
-                            'blocks' => array(
-                                'twig' => 'PHPOrchestraCMSBundle:Form:blocksInfo.json.twig',
-                                'parameter' => array('blocks' => $this->blocks, 'prefix' => $nameBlocks.'_')
-                            )
-                        )
-                    )
-                )
-            );
+            ->add('languages', 'orchestra_language', array('label' => 'Languages', 'multiple' => true));
     }
     
     /**

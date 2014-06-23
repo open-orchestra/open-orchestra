@@ -1,6 +1,0 @@
-{% form_theme form 'PHPOrchestraCMSBundle:Form:extend.html.twig' %}
-{% for child in form %}
-    {% if child.vars.name != '_token' %}
-        {{ form_row(child) }}
-    {% endif %}
-{% endfor %}

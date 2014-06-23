@@ -12,7 +12,6 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormView;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
-use PHPOrchestra\CMSBundle\Form\DataTransformer\JsonToAreasTransformer;
 
 class AreasType extends AbstractType
 {
@@ -27,6 +26,7 @@ class AreasType extends AbstractType
         $resolver->setDefaults(
             array(
                 'controller' => '',
+                'parameter' => array(),
                 'attr' => array('class' => 'not-mapped')
             )
         );
@@ -40,6 +40,7 @@ class AreasType extends AbstractType
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
         $view->vars['controller'] = $options['controller'];
+        $view->vars['parameter'] = $options['parameter'];
     }
 
     /**
