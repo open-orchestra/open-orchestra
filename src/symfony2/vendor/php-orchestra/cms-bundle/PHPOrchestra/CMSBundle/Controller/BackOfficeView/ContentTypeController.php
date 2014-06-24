@@ -57,14 +57,16 @@ class ContentTypeController extends TableViewController
         
         if (empty($documentId)) {
             $contentType = $documentManager->createDocument('ContentType');
+            $contentType->save();
         } else {
             $contentType = $documentManager->getDocumentById('ContentType', $documentId);
         }
         
         if ($contentType->getStatus() != ContentType::STATUS_DRAFT) {
             $contentType->generateDraft();
-            $documentId = (string) $contentType->getId();
         }
+        
+        $documentId = (string) $contentType->getId();
         
         $form = $this->createForm('contentType', $contentType);
         
