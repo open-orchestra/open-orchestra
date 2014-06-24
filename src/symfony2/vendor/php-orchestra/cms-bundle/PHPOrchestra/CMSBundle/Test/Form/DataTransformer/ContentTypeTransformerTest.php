@@ -54,8 +54,6 @@ class ContentTypeTransformerTest extends \PHPUnit_Framework_TestCase
             'customField3',
         );
         
-        $result = new TestContentType($fields);
-        
         return array(
             array(new TestContentType(), new TestContentType()),
             array(new TestContentType($fields), new TestContentType($fields))
