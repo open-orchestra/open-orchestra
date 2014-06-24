@@ -17,18 +17,18 @@
 
 namespace PHPOrchestra\CMSBundle\Test\Form\Type;
 
-use \PHPOrchestra\CMSBundle\Form\Type\ContentTypeType;
+use \PHPOrchestra\CMSBundle\Form\Type\ContentTypeFieldsType;
 
 /**
- * Description of ContentTypeTest
+ * Description of ContentTypeFieldsTypeTest
  *
  * @author Noël GILAIN <noel.gilain@businessdecision.com>
  */
-class ContentTypeTypeTest extends \PHPUnit_Framework_TestCase
+class ContentTypeFieldsTypeTest extends \PHPUnit_Framework_TestCase
 {
     public function setUp()
     {
-        $this->contentTypeType = new ContentTypeType();
+        $this->ContentTypeFieldsType = new ContentTypeFieldsType();
     }
 
     /**
@@ -47,34 +47,16 @@ class ContentTypeTypeTest extends \PHPUnit_Framework_TestCase
             ->method('add')
             ->will($this->returnSelf());
         
-        $this->contentTypeType->buildForm($formBuilderMock, $options);
+        $this->ContentTypeFieldsType->buildForm($formBuilderMock, $options);
     }
 
     public function testGetName()
     {
-        $this->assertEquals('contentType', $this->contentTypeType->getName());
+        $this->assertEquals('contentTypeFields', $this->ContentTypeFieldsType->getName());
     }
     
     public function getOptions()
     {
-        /**** DATA 0 FIELDS ************/
-        
-        $contentType0F = $this->getMockBuilder('\\Model\\PHPOrchestraCMSBundle\\ContentType')
-            ->disableOriginalConstructor()
-            ->getMock();
-        
-        $contentType0F
-            ->expects($this->any())
-            ->method('getId')
-            ->will($this->returnValue('id'));
-        
-        
-        /**** DATA 3 FIELDS ************/
-        
-        $contentType3F = $this->getMockBuilder('\\Model\\PHPOrchestraCMSBundle\\ContentType')
-            ->disableOriginalConstructor()
-            ->getMock();
-        
         $jsonFields = '[
             {"fieldId": "field1", "defaultValue": "value1", "label": "label1", "symfonyType": "type1"},
             {"fieldId": "field2", "defaultValue": "value2", "label": "label1", "symfonyType": "type2"},
@@ -82,26 +64,11 @@ class ContentTypeTypeTest extends \PHPUnit_Framework_TestCase
              "options": {"max_length": 0}}
         ]';
         
-        $contentType3F
-            ->expects($this->any())
-            ->method('getId')
-            ->will($this->returnValue('id'));
-        
-        $contentType3F
-            ->expects($this->any())
-            ->method('getId')
-            ->will($this->returnValue('id'));
-        
-        $contentType3F
-            ->expects($this->any())
-            ->method('getFields')
-            ->will($this->returnValue($jsonFields));
-        
-        
-        /***** TEST DATAS **************/
         return array(
-            array(array('data' =>  $contentType0F), 7),
-            array(array('data' =>  $contentType3F), 7)
+            array(array(), 0),
+            array(array('data' =>  ''), 0),
+            array(array('data' =>  $jsonFields), 3),
         );
     }
 }
+    

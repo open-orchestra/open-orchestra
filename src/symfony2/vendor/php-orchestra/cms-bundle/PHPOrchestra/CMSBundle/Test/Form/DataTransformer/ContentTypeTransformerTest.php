@@ -49,20 +49,16 @@ class ContentTypeTransformerTest extends \PHPUnit_Framework_TestCase
     public function getTransformData()
     {
         $fields = array(
-            'field1' => 'customField1',
-            'field2' => 'customField2',
-            'field3' => 'customField3',
+            'customField1',
+            'customField2',
+            'customField3',
         );
         
         $result = new TestContentType($fields);
-        $result->customField_field1 = 'customField1';
-        $result->customField_field2 = 'customField2';
-        $result->customField_field3 = 'customField3';
-        $result->customFieldsIndex = array('customField_field1', 'customField_field2', 'customField_field3');
         
         return array(
             array(new TestContentType(), new TestContentType()),
-            array(new TestContentType($fields), $result)
+            array(new TestContentType($fields), new TestContentType($fields))
         );
     }
     
@@ -72,37 +68,33 @@ class ContentTypeTransformerTest extends \PHPUnit_Framework_TestCase
     public function getReverseTransformData()
     {
         $fields = array(
-            'field1' => 'customField1',
-            'field2' => 'customField2',
-            'field3' => 'customField3',
+            'customField1',
+            'customField2',
+            'customField3',
         );
         
+        /************ DATASET 1 ************************/
         
         $datas = new TestContentType(
-            $fields,
-            array('customField1', 'customField2')
+            $fields
         );
-        $datas->customField1 = null;
-        $datas->customField2 = 'value2';
         
         $result = clone $datas;
-        $result->setFields(json_encode(array('value2')));
         
+        /************ DATASET 2 ************************/
         
         $datasFull = new TestContentType(
             $fields,
-            array('customField1', 'customField2'),
             'newField'
         );
-        $datasFull->customField1 = 'value1';
-        $datasFull->customField2 = 'value2';
         
         $resultFull = clone $datasFull;
         $resultFull->setFields(
             json_encode(
                 array(
-                    'value1',
-                    'value2',
+                    'customField1',
+                    'customField2',
+                    'customField3',
                     (object) array(
                         'fieldId' => '',
                         'label' => '',
@@ -116,6 +108,7 @@ class ContentTypeTransformerTest extends \PHPUnit_Framework_TestCase
             )
         );
         
+        /************ TEST DATAS  *************************/
         
         return array(
             array($datas, $result),

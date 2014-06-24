@@ -25,11 +25,13 @@ class ContentTypeFieldsType extends AbstractType
         $transformer = new ContentTypeFieldsTransformer();
         $builder->addModelTransformer($transformer);
         
-        $customFields = json_decode($options['data']);
-        
-        if (is_array($customFields)) {
-            foreach ($customFields as $key => $customField) {
-                $builder->add('customField_' . $key, 'orchestra_customField', array('data' => $customField));
+        if (isset($options['data'])) {
+            $customFields = json_decode($options['data']);
+            
+            if (is_array($customFields)) {
+                foreach ($customFields as $key => $customField) {
+                    $builder->add('customField_' . $key, 'orchestra_customField', array('data' => $customField));
+                }
             }
         }
     }

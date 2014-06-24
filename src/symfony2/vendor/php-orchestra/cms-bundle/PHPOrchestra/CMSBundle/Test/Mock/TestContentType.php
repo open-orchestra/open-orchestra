@@ -9,10 +9,10 @@ namespace PHPOrchestra\CMSBundle\Test\Mock;
  */
 class TestContentType
 {
-    public function __construct($fields = array(), $customFieldsIndex = array(), $new_field = '')
+    public function __construct($fields = array(), /*$customFieldsIndex = array(),*/ $new_field = '')
     {
         $this->setFields(json_encode($fields));
-        $this->customFieldsIndex = $customFieldsIndex;
+       // $this->customFieldsIndex = $customFieldsIndex;
         $this->new_field = $new_field;
     }
     
