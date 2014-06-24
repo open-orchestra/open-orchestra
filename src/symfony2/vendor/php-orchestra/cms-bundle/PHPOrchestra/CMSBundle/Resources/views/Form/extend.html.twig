@@ -77,3 +77,13 @@
     {% endif %}
 {% endspaceless %}
 {% endblock form_errors %}
+
+{% block form_widget_compound %}
+{% spaceless %}
+    {% if form.parent is empty %}
+        {{ form_errors(form) }}
+    {% endif %}
+    {{ block('form_rows') }}
+    {{ form_rest(form) }}
+{% endspaceless %}
+{% endblock form_widget_compound %}

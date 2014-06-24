@@ -80,6 +80,8 @@ class ContentController extends TableViewController
         // QUID si pas de contentType valide ???
         $document->contentTypeStructure = $contentType;
         
+        $this->setTitle($contentType->getName());
+        
         return $document;
     }
     
