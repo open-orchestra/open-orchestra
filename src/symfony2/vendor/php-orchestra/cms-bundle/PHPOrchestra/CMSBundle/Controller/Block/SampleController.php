@@ -40,5 +40,4 @@ class SampleController extends Controller
         
         return $response;
     }
-
 }

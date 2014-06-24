@@ -77,7 +77,11 @@ class ContentTypeController extends TableViewController
             }
             
             if ($form->isValid() && $contentType->new_field == '') {
-                $this->deleteOtherStatusVersions($contentType->getContentTypeId(), $contentType->getStatus(), $documentId);
+                $this->deleteOtherStatusVersions(
+                    $contentType->getContentTypeId(),
+                    $contentType->getStatus(),
+                    $documentId
+                );
                 $contentType->save();
                 $success = true;
                 $data = $this->generateUrlValue('catalog');

@@ -40,8 +40,6 @@ class ContentTypeFieldsTransformer implements DataTransformerInterface
      */
     public function reverseTransform($formFields) // formfield => entity
     {
-        $jsonFields = json_decode($formFields['jsonFields']);
-        
         $fields = array();
         
         foreach ($formFields as $fieldName => $fieldValue) {
