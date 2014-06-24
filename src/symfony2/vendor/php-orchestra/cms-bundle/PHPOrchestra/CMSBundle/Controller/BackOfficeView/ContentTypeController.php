@@ -18,7 +18,6 @@ use Symfony\Component\HttpFoundation\JsonResponse;
  */
 class ContentTypeController extends TableViewController
 {
-    
     /**
      * (non-PHPdoc)
      * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Controller/PHPOrchestra
@@ -28,8 +27,7 @@ class ContentTypeController extends TableViewController
     {
         $this->setEntity('ContentType');
     }
-    
-    
+
     /**
      * (non-PHPdoc)
      * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Controller/PHPOrchestra
@@ -47,8 +45,7 @@ class ContentTypeController extends TableViewController
             array('button' =>'delete')
         );
     }
-    
-    
+
     /**
      * (non-PHPdoc)
      * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Controller/PHPOrchestra
@@ -100,7 +97,13 @@ class ContentTypeController extends TableViewController
         
         return $this->getRender($form, $documentId);
     }
-    
+
+    /**
+     * Get the form render
+     * 
+     * @param unknown_type $form
+     * @param string $documentId
+     */
     protected function getRender($form, $documentId)
     {
         $select = $this->render(
@@ -119,25 +122,9 @@ class ContentTypeController extends TableViewController
             )
         );
     }
-    
-    public function genericButton($data, $action, $label, $class, $icon){
-        if($this->getEntity() !== null){
-            $data = $this->generateUrlValue($action, $data);
-        }
-        $render = $this->render(
-            $this->buttonTwig,
-            array(
-                'data' => $data,
-                'label' => $label,
-                'class' => $class,
-                'icon' => $icon
-            )
-        );
-        return $render->getContent();
-    }
-    
+
     /**
-     * Keep only one version of the status $status for the document $contentTypeId
+     * Keep only one version of the status $status for the document $documentId
      * 
      * @param string $contentTypeId
      * @param string $status
@@ -163,7 +150,7 @@ class ContentTypeController extends TableViewController
         
         return true;
     }
-    
+
     /**
      * (non-PHPdoc)
      * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Controller/PHPOrchestra

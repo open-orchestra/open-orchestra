@@ -15,7 +15,6 @@ use Symfony\Component\Form\FormBuilderInterface;
 
 class ContentTypeFieldsType extends AbstractType
 {
-
     /**
      * (non-PHPdoc)
      * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony

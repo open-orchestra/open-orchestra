@@ -11,7 +11,6 @@ use Symfony\Component\Form\DataTransformerInterface;
 
 class ContentTypeTransformer implements DataTransformerInterface
 {
-
     /**
      * Transforms a ContentType entity to inject customfields as standard fields
      *

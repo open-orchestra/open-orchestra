@@ -12,7 +12,7 @@ use Symfony\Component\Form\DataTransformerInterface;
 class CustomFieldTransformer implements DataTransformerInterface
 {
     /**
-     * Transforms a stdclass field to inject customfield options as standard fields
+     * Transforms a stdclass field to inject customfield options in form
      *
      * @param object $datas
      * @return object
@@ -31,7 +31,7 @@ class CustomFieldTransformer implements DataTransformerInterface
     }
 
     /**
-     * Transforms a form object in valid stdclass customfield
+     * Transforms a form object into a valid stdclass customfield
      *
      * @param  object
      * @return object
