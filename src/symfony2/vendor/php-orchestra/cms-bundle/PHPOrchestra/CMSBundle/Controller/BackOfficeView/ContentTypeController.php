@@ -80,7 +80,7 @@ class ContentTypeController extends TableViewController
             }
             
             if ($form->isValid() && $contentType->new_field == '') {
-                $this->deleteOtherStatusVersions($contentType->getContentTypeId(), $contentType->getStatus());
+                $this->deleteOtherStatusVersions($contentType->getContentTypeId(), $contentType->getStatus(), $documentId);
                 $contentType->save();
                 $success = true;
                 $data = $this->generateUrlValue('catalog');
@@ -141,8 +141,9 @@ class ContentTypeController extends TableViewController
      * 
      * @param string $contentTypeId
      * @param string $status
+     * @param string $documentId
      */
-    protected function deleteOtherStatusVersions($contentTypeId, $status)
+    protected function deleteOtherStatusVersions($contentTypeId, $status, $documentId)
     {
         $documentManager = $this->container->get('phporchestra_cms.documentmanager');
         
@@ -155,7 +156,7 @@ class ContentTypeController extends TableViewController
         );
         
         foreach ($versions as $version) {
-            if ($version->getContentTypeId() != $contentTypeId) {
+            if ($version->getId() != $documentId) {
                 $version->delete();
             }
         }
