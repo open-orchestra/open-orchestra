@@ -150,7 +150,7 @@ class NodeTypeTransformer implements DataTransformerInterface
 	/**
      * Transforms a node
      *
-     * @param object ContentType
+     * @param object NodeType
      * @return object
      */
     public function transform($node)
@@ -170,17 +170,10 @@ class NodeTypeTransformer implements DataTransformerInterface
     }
 
     /**
-     * Transforms a node
-     *
-     * @param  object $datas
-     * @return object
-     */
-    
-    /**
-     * Transforms a json string to an array of Areas array.
+     * Transforms a json string to a node.
      *
      * @param  string $json
-     * @return Area[]
+     * @return Node
      */
     public function reverseTransform($node)
     {

@@ -2,9 +2,9 @@
 {% block generic_behavior %}
     {{ form_widget(form) }}
     {% if parameter is defined %}
-        {{ put_bottom(render(controller(controller, parameter))) }}
+        {{ push_html(render(controller(controller, parameter))) }}
     {% else %}
-        {{ put_bottom(render(controller(controller))) }}
+        {{ push_html(render(controller(controller))) }}
     {% endif %}
 {% endblock %}
 
@@ -14,6 +14,11 @@
 
 {% block orchestra_blocks_widget %}
     {{ block('generic_behavior') }}
+{% endblock %}
+
+{% block blocks_widget %}
+    {{ unshift_js(asset('bundles/phporchestracms/js/pagegenerator/block.js')) }}
+    {{ form_widget(form) }}
 {% endblock %}
 
 {% extends "form_div_layout.html.twig" %}
@@ -42,6 +47,17 @@
 
 {% block form %}
 {% spaceless %}
+    {% set html %}
+    {% if form.vars.beginJs is defined %}
+        {% for js in form.vars.beginJs %}
+            {{ unshift_js(asset('bundles/phporchestracms/js/') ~ js) }}
+        {% endfor %} 
+    {% endif %}
+    {% if form.vars.endJs is defined %}
+        {% for js in form.vars.endJs %}
+            {{ push_js(asset('bundles/phporchestracms/js/') ~ js) }}
+        {% endfor %} 
+    {% endif %}
     {% if form.vars.inDialog is defined and form.vars.inDialog %}
         <div id="dialog-{{ form.vars.name }}" style="display:none;" title="{{ form.vars.name }}">
     {% endif %}
@@ -54,15 +70,13 @@
     {% if form.vars.inDialog is defined  and form.vars.inDialog %}
         </div>
     {% endif %}
+    {% endset %}
     {% if form.vars.subForm is not defined %}
-        {{ print_bottom() }}
+        {{ print_html(html) }}
+        {{ print_js() }}
+    {% else %}
+        {{ html }}
     {% endif %}
-    <script>
-        var urlJs = "{{ asset('bundles/phporchestracms/js/') }}";
-        {% if form.vars.js is defined and form.vars.js != '' %}
-        loadScript("{{ asset('bundles/phporchestracms/js/' ~ form.vars.js) }}?" + Math.random());
-        {% endif %}
-    </script>
 {% endspaceless %}
 {% endblock form %}
 

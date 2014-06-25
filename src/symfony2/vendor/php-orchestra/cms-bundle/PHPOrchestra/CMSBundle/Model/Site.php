@@ -31,5 +31,5 @@ abstract class Site extends \Model\PHPOrchestraCMSBundle\Base\Site
     	$value = (is_string($value)) ? explode(',', $value) : $value;
     	return $value;
     }
-    
+        
 }

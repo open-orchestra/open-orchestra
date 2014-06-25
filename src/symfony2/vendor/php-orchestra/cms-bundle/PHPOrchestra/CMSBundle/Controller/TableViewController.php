@@ -209,7 +209,7 @@ abstract class TableViewController extends Controller
         $document = $this->getDocument($id);
         $document = $this->modifyDocumentAfterGet($document);
         
-        $form = $this->createEditForm($document);
+        $form = $this->createEditForm($request, $document);
         
         return $this->editRender($request, $id, $form, $document);
     }
@@ -261,19 +261,51 @@ abstract class TableViewController extends Controller
      * 
      * @param $document
      */
-    protected function createEditForm($document)
+    protected function createEditForm($request, $document)
     {
-        $form = $this->createForm(
-            lcfirst($this->getEntity()),
-            $document,
-            array(
-               'action' => $this->getRequest()->getUri(),
-            )
-        );
+    	if ($request->query->get('refresh') !== null) {
+        	$name = lcfirst($this->getEntity());
+	        $form = $this->createForm(
+	            $name,
+	            $request->query->get($name),
+	            array(
+	               'action' => $this->getRequest()->getUri(),
+	            )
+	        );
+        }
+        else{
+	        $form = $this->createForm(
+	            lcfirst($this->getEntity()),
+	            $document,
+	            array(
+	               'action' => $this->getRequest()->getUri(),
+	            )
+	        );
+        }
         
         return $form;
     }
 
+    /**
+     * Factorize Render for json and no json response
+     * 
+     * @param Request $request
+     * @param string $id
+     * @param unknown_type $form
+     * @param unknown_type $document of $this->entity type
+     */
+    protected function getRender($id, $form)
+    {
+        return $this->render(
+            'PHPOrchestraCMSBundle:BackOffice/TableView:form.html.twig',
+            array(
+                'form' => $form->createView(),
+                'title' => $this->getEntity(),
+                'ribbon' => $this->saveButton($id) . $this->backButton()
+            )
+        );
+    }
+    
     /**
      * Render the view, either edit form or catalog list
      * 
@@ -284,34 +316,44 @@ abstract class TableViewController extends Controller
      */
     protected function editRender($request, $id, $form, $document)
     {
-        $render = $this->render(
-            'PHPOrchestraCMSBundle:BackOffice/TableView:form.html.twig',
-            array(
-                'form' => $form->createView(),
-                'title' => $this->getEntity(),
-                'ribbon' => $this->saveButton($id) . $this->backButton()
-            )
-        );
-        
-        if ($request->getMethod() == 'POST') {
-            $form->handleRequest($request);
-            $success = false;
-            $data = $render->getContent();
-            if ($form->isValid()) {
-                $document = $this->modifyDocumentBeforeSave($document);
-                $document->save();
-                $saveResult = $this->afterSave($document);
-                $success = $saveResult['success'];
-                $data = $saveResult['data'];
-            }
+        if ($request->query->get('refresh') !== null) {
+            $render = $this->render(
+                'PHPOrchestraCMSBundle:Form:form.html.twig',
+                array(
+                    'form' => $form->createView()
+                )
+            );
             return new JsonResponse(
                 array(
-                    'success' => $success,
-                    'data' => $data
+                    'success' => true,
+                    'data' => $render->getContent()
                 )
             );
         }
-        return $render;
+        else{
+        	if ($request->getMethod() == 'POST') {
+	        	$form->handleRequest($request);
+	            $success = false;
+	            if ($form->isValid()) {
+	                $document = $this->modifyDocumentBeforeSave($document);
+	                $document->save();
+	                $saveResult = $this->afterSave($document);
+	                $success = $saveResult['success'];
+	                $data = $saveResult['data'];
+	            }
+	            else{
+                    $data = $this->getRender($id, $form)->getContent();	            	
+	            }
+	            return new JsonResponse(
+	                array(
+	                    'success' => $success,
+	                    'data' => $data
+	                )
+	            );
+	        }
+	        
+	        return $this->getRender($id, $form);
+        }
     }
     
     /**

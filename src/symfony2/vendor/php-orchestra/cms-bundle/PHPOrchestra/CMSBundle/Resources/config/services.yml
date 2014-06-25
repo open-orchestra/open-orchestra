@@ -54,6 +54,13 @@ services:
         tags:
             - { name: form.type, alias: orchestra_template_choice }
 
+    # Block select after node form field type
+    php_orchestra_cms.type.block:
+        class: PHPOrchestra\CMSBundle\Form\Type\BlockType
+        arguments: [@phporchestra_cms.documentmanager, "%php_orchestra.blocks%"]
+        tags:
+            - { name: form.type, alias: blocks }
+
     # Nodes select form field type
     php_orchestra_cms.type.node_choice:
         class: PHPOrchestra\CMSBundle\Form\Type\NodeChoiceType
@@ -102,7 +109,6 @@ services:
     # Site Form Builder
     php_orchestra_cms.type.site:
         class: PHPOrchestra\CMSBundle\Form\Type\SiteType
-        arguments: [@router, %php_orchestra.blocks%]
         tags:
             - { name: form.type, alias: site }
 

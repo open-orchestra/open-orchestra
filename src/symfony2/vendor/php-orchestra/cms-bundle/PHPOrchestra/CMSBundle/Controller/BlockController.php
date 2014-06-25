@@ -9,7 +9,6 @@ namespace PHPOrchestra\CMSBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use PHPOrchestra\CMSBundle\Form\Type\BlockType;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
@@ -25,45 +24,36 @@ class BlockController extends Controller
     public function formAction($type)
     {
     	$request = $this->get('request');
-    	$blockType = new BlockType($this->get('phporchestra_cms.documentmanager'), $this->container->getParameter('php_orchestra.blocks'));
     	$action = $this->generateUrl('php_orchestra_cms_blockform', array('type' => $type));
         $inDialog = true;
         $subForm = true;
         $js = 'pagegenerator/'.$type.'_block.js';
-        $data = array('is_node' => ($type == 'node'));
-    	
-        if ($request->getMethod() == 'POST') {
+        $refresh = array('is_node' => ($type == 'node'));
+        if ($request->getMethod() == 'GET' && $request->query->get('refresh') !== null) {
 	        $inDialog = false;
 	        $subForm = false;
 	        $js = '';
-	        $formData = $request->request->all();
-	        $data = array_merge($data, $formData[$blockType->getName()]);
+            $refresh = array_merge($refresh, $request->query->get('blocks'));
         }
-
         $form = $this->createForm(
-            $blockType,
-            null,
+            'blocks',
+            $refresh,
             array(
                 'action' => $action,
                 'inDialog' => $inDialog,
                 'subForm' => $subForm,
-                'js' => $js,
-                'data' => $data
+                'beginJs' => array($js, 'pagegenerator/dialogNode.js'),
             )
         );
         
-        if ($request->getMethod() == 'POST') {
-        	$form->handleRequest($request);
-        }
         $render = $this->render(
             'PHPOrchestraCMSBundle:Form:form.html.twig',
             array(
                 'form' => $form->createView()
             )
         );
-
-        if ($request->getMethod() == 'POST') {
-            return new JsonResponse(
+        if ($request->getMethod() == 'GET' && $request->query->get('refresh') !== null) {
+        	return new JsonResponse(
                 array(
                     'success' => true,
                     'data' => $render->getContent()

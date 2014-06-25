@@ -13,53 +13,27 @@ use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\FormView;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Symfony\Component\Routing\Router;
+use PHPOrchestra\CMSBundle\Form\DataTransformer\SiteTypeTransformer;
 
 class SiteType extends AbstractType
 {
-    /**
-     * @var Router
-     */
-    private $router;
-    
-    /**
-     * @var Blocks
-     */
-    private $blocks;
-    
-    
-    /**
-     * @param Router
-     */
-    public function __construct(Router $router, $blocks)
-    {
-        $this->router = $router;
-        $this->blocks = $blocks;
-    }
 	    
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-    	$nameBlocks = 'blocks';
+        $data = (array_key_exists('subblocks', $options['data'])) ? $options['data']['subblocks'] : array();
     	
     	$builder
             ->add('siteId', 'hidden')
             ->add('domain', 'text', array('label' => 'Domain'))
             ->add('alias', 'text', array('label' => 'Alias'))
             ->add('defaultLanguage', 'orchestra_language', array('label' => 'Default Language'))
-            ->add('languages', 'orchestra_language', array('label' => 'Languages', 'multiple' => true));
-    }
-    
-    /**
-     * Add parameters to view
-     * 
-     * @param FormView $view
-     * @param FormInterface $form
-     * @param array $options
-     */
-    public function buildView(FormView $view, FormInterface $form, array $options)
-    {
-        $view->vars['showDialog'] = $options['showDialog'];
-        $view->vars['objects'] = $options['objects'];
-        $view->vars['js'] = $options['js'];
+            ->add('languages', 'orchestra_language', array('label' => 'Languages', 'multiple' => true))
+            ->add('blocks', 'hidden')
+            ->add('subblocks', 'blocks',
+            array(
+                'mapped' => false,
+                'data' => $data
+            ));
     }
     
     /**
@@ -69,19 +43,10 @@ class SiteType extends AbstractType
     {
         $resolver->setDefaults(
             array(
-                'showDialog' => false,
-                'js' => array(),
-                'objects' => array()
+                'refresh' => array()
             )
         );
     }
-
-    
-    public static function loadValidatorMetadata(ClassMetadata $metadata)
-    {
-        $metadata->addPropertyConstraint('domain', new NotBlank());
-    }
-    
     
     /**
      * @return string

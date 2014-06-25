@@ -47,7 +47,8 @@ class BlockType extends AbstractType
 	 */
 	public function buildForm(FormBuilderInterface $builder, array $options)
 	{
-		if($options['data']['is_node']){
+		
+		if(array_key_exists('is_node', $options['data']) && $options['data']['is_node']){
 			$builder->add('method',  'choice', array('attr' => array('class' => 'reload'), 'choices' => array(''=> '--------', 'generate' => 'Generate', 'load' => 'Load')));
 			if(array_key_exists('method', $options['data'])){
 				if($options['data']['method'] == 'load'){
@@ -73,14 +74,19 @@ class BlockType extends AbstractType
 			}
 		}
         else{
-            $builder->add('nodeId', 'orchestra_node_choice', array('attr' => array('class' => 'reload')));
-            if(array_key_exists('nodeId', $options['data']) && $options['data']['nodeId'] != ''){
-                $builder->add('blockId', new BlockChoiceType($options['data']['nodeId'], $this->documentManager, $this->filter), array('attr' => array('class' => 'used-as-label')));
-            }
+        	if(array_key_exists('multiple', $options['data'])){
+                $builder->add('nodeId', 'orchestra_node_choice', array('attr' => array('class' => 'reload')));
+                if(array_key_exists('nodeId', $options['data']) && $options['data']['nodeId'] != ''){
+                    $builder->add('blockId', new BlockChoiceType($options['data']['nodeId'], $this->documentManager, $this->filter), array('attr' => array('class' => 'reload')));
+                }
+        	}
+        	else{
+	            $builder->add('nodeId', 'orchestra_node_choice', array('attr' => array('class' => 'reload')));
+	            if(array_key_exists('nodeId', $options['data']) && $options['data']['nodeId'] != ''){
+	                $builder->add('blockId', new BlockChoiceType($options['data']['nodeId'], $this->documentManager, $this->filter), array('attr' => array('class' => 'used-as-label')));
+	            }
+        	}
         }
-        $builder->addEventListener(FormEvents::POST_SUBMIT, function ($event) {
-            $event->stopPropagation();
-        }, 900);
 	}
 
 	/**
@@ -94,7 +100,8 @@ class BlockType extends AbstractType
 	{
 		$view->vars['inDialog'] = $options['inDialog'];
 		$view->vars['subForm'] = $options['subForm'];
-		$view->vars['js'] = $options['js'];
+        $view->vars['beginJs'] = $options['beginJs'];
+        $view->vars['endJs'] = $options['endJs'];
 	}
 
 	/**
@@ -103,12 +110,12 @@ class BlockType extends AbstractType
 	public function setDefaultOptions(OptionsResolverInterface $resolver)
 	{
 		$resolver->setDefaults(
-		array(
-                'inDialog' => false,
-                'subForm' => false,
-                'js' => '',
-                'data' => array('method_' => false)
-		)
+			array(
+	                'inDialog' => false,
+	                'subForm' => false,
+	                'beginJs' => array(),
+	                'endJs' => array()
+			)
 		);
 	}
 

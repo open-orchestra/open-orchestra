@@ -42,7 +42,8 @@ class AreaType extends AbstractType
     {
         $view->vars['inDialog'] = $options['inDialog'];
         $view->vars['subForm'] = $options['subForm'];
-        $view->vars['js'] = $options['js'];
+        $view->vars['beginJs'] = $options['beginJs'];
+        $view->vars['endJs'] = $options['endJs'];
     }
     
     /**
@@ -54,7 +55,8 @@ class AreaType extends AbstractType
             array(
                 'inDialog' => false,
                 'subForm' => false,
-                'js' => ''
+                'beginJs' => array(),
+                'endJs' => array()
             )
         );
     }

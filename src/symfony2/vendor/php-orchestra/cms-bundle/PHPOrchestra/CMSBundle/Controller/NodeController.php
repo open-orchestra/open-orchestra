@@ -184,11 +184,11 @@ class NodeController extends Controller
             $node,
             array(
                 'inDialog' => true,
-                'js' => 'pagegenerator/node.js',
+                'beginJs' => array('pagegenerator/dialogNode.js', 'pagegenerator/model.js'),
+                'endJs' => array('pagegenerator/node.js'),
                 'action' => $this->getRequest()->getUri()
             )
         );
-        
         
         if ($request->getMethod() == 'POST') {
 	        $form->handleRequest($request);

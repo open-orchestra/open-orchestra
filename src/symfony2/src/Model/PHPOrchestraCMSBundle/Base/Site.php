@@ -404,6 +404,8 @@ abstract class Site extends \Mandango\Document\Document
      */
     public function setBlocks($value)
     {
+    	
+    	
         if (!isset($this->data['fields']['blocks'])) {
             if (!$this->isNew()) {
                 $this->getBlocks();
@@ -429,7 +431,7 @@ abstract class Site extends \Mandango\Document\Document
         }
 
         $this->data['fields']['blocks'] = $value;
-
+//var_dump($this->getBlocks());
         return $this;
     }
 

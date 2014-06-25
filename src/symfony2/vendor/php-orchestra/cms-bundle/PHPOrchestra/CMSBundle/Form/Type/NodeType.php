@@ -85,7 +85,8 @@ class NodeType extends AbstractType
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
         $view->vars['inDialog'] = $options['inDialog'];
-        $view->vars['js'] = $options['js'];
+        $view->vars['beginJs'] = $options['beginJs'];
+        $view->vars['endJs'] = $options['endJs'];
     }
     
     /**
@@ -98,7 +99,8 @@ class NodeType extends AbstractType
         $resolver->setDefaults(
             array(
                 'inDialog' => false,
-                'js' => ''
+                'beginJs' => array(),
+                'endJs' => array()
             )
         );
     }

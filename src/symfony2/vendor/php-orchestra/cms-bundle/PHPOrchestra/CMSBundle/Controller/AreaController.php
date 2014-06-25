@@ -29,7 +29,7 @@ class AreaController extends Controller
             array(
                 'inDialog' => true,
                 'subForm' => true,
-                'js' => 'pagegenerator/'.$type.'_area.js'
+                'beginJs' => array('pagegenerator/'.$type.'_area.js', 'pagegenerator/dialogNode.js'),
             )
         );
         
