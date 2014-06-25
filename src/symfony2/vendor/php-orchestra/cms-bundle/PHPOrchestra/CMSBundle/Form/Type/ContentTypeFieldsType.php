@@ -15,7 +15,6 @@ use Symfony\Component\Form\FormBuilderInterface;
 
 class ContentTypeFieldsType extends AbstractType
 {
-
     /**
      * (non-PHPdoc)
      * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony
@@ -26,11 +25,13 @@ class ContentTypeFieldsType extends AbstractType
         $transformer = new ContentTypeFieldsTransformer();
         $builder->addModelTransformer($transformer);
         
-        $customFields = json_decode($options['data']);
-        
-        if (is_array($customFields)) {
-            foreach ($customFields as $key => $customField) {
-                $builder->add('customField_' . $key, 'orchestra_customField', array('data' => $customField));
+        if (isset($options['data'])) {
+            $customFields = json_decode($options['data']);
+            
+            if (is_array($customFields)) {
+                foreach ($customFields as $key => $customField) {
+                    $builder->add('customField_' . $key, 'orchestra_customField', array('data' => $customField));
+                }
             }
         }
     }

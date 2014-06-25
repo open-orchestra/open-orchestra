@@ -18,7 +18,6 @@ use Symfony\Component\HttpFoundation\JsonResponse;
  */
 class ContentTypeController extends TableViewController
 {
-    
     /**
      * (non-PHPdoc)
      * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Controller/PHPOrchestra
@@ -28,8 +27,7 @@ class ContentTypeController extends TableViewController
     {
         $this->setEntity('ContentType');
     }
-    
-    
+
     /**
      * (non-PHPdoc)
      * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Controller/PHPOrchestra
@@ -47,8 +45,7 @@ class ContentTypeController extends TableViewController
             array('button' =>'delete')
         );
     }
-    
-    
+
     /**
      * (non-PHPdoc)
      * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Controller/PHPOrchestra
@@ -60,14 +57,16 @@ class ContentTypeController extends TableViewController
         
         if (empty($documentId)) {
             $contentType = $documentManager->createDocument('ContentType');
+            $contentType->save();
         } else {
             $contentType = $documentManager->getDocumentById('ContentType', $documentId);
         }
         
         if ($contentType->getStatus() != ContentType::STATUS_DRAFT) {
             $contentType->generateDraft();
-            $documentId = (string) $contentType->getId();
         }
+        
+        $documentId = (string) $contentType->getId();
         
         $form = $this->createForm('contentType', $contentType);
         
@@ -80,7 +79,11 @@ class ContentTypeController extends TableViewController
             }
             
             if ($form->isValid() && $contentType->new_field == '') {
-                $this->deleteOtherStatusVersions($contentType->getContentTypeId(), $contentType->getStatus());
+                $this->deleteOtherStatusVersions(
+                    $contentType->getContentTypeId(),
+                    $contentType->getStatus(),
+                    $documentId
+                );
                 $contentType->save();
                 $success = true;
                 $data = $this->generateUrlValue('catalog');
@@ -100,7 +103,13 @@ class ContentTypeController extends TableViewController
         
         return $this->getRender($form, $documentId);
     }
-    
+
+    /**
+     * Get the form render
+     * 
+     * @param unknown_type $form
+     * @param string $documentId
+     */
     protected function getRender($form, $documentId)
     {
         $select = $this->render(
@@ -119,30 +128,15 @@ class ContentTypeController extends TableViewController
             )
         );
     }
-    
-    public function genericButton($data, $action, $label, $class, $icon){
-        if($this->getEntity() !== null){
-            $data = $this->generateUrlValue($action, $data);
-        }
-        $render = $this->render(
-            $this->buttonTwig,
-            array(
-                'data' => $data,
-                'label' => $label,
-                'class' => $class,
-                'icon' => $icon
-            )
-        );
-        return $render->getContent();
-    }
-    
+
     /**
-     * Keep only one version of the status $status for the document $contentTypeId
+     * Keep only one version of the status $status for the document $documentId
      * 
      * @param string $contentTypeId
      * @param string $status
+     * @param string $documentId
      */
-    protected function deleteOtherStatusVersions($contentTypeId, $status)
+    protected function deleteOtherStatusVersions($contentTypeId, $status, $documentId)
     {
         $documentManager = $this->container->get('phporchestra_cms.documentmanager');
         
@@ -155,14 +149,14 @@ class ContentTypeController extends TableViewController
         );
         
         foreach ($versions as $version) {
-            if ($version->getContentTypeId() != $contentTypeId) {
+            if ($version->getId() != $documentId) {
                 $version->delete();
             }
         }
         
         return true;
     }
-    
+
     /**
      * (non-PHPdoc)
      * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Controller/PHPOrchestra

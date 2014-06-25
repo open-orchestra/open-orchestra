@@ -42,7 +42,7 @@ class ContentTypeType extends AbstractType
             ->add('fields', 'contentTypeFields', array('data' => $options['data']->getFields()))
             ->add('new_field', 'hidden', array('label' => 'Nouveau champ', 'required' => false));
     }
-    
+
     /**
      * (non-PHPdoc)
      * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony

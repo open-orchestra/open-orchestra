@@ -11,9 +11,8 @@ use Symfony\Component\Form\DataTransformerInterface;
 
 class ContentTypeFieldsTransformer implements DataTransformerInterface
 {
-
     /**
-     * Transforms a ContentType entity to inject customfields as standard fields
+     * Transforms a json of content type fields into array to inject customfields in form
      *
      * @param sring $jsonFields
      * @return array
@@ -34,15 +33,13 @@ class ContentTypeFieldsTransformer implements DataTransformerInterface
     }
 
     /**
-     * Transforms an object in valid ContentType entity.
+     * Transforms an array into a valid json of content type fields to inject in document entity
      *
      * @param  array $formFields
      * @return string
      */
     public function reverseTransform($formFields) // formfield => entity
     {
-        $jsonFields = json_decode($formFields['jsonFields']);
-        
         $fields = array();
         
         foreach ($formFields as $fieldName => $fieldValue) {

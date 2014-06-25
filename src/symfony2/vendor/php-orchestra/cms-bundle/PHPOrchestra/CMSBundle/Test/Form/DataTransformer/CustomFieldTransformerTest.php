@@ -80,7 +80,9 @@ class CustomFieldTransformerTest extends \PHPUnit_Framework_TestCase
                 (object) array(
                     'removeField' => true
                 ),
-                null
+                (object) array(
+                    'removeField' => true
+                )
             ),
             array(
                 (object) array('removeField' => false),
