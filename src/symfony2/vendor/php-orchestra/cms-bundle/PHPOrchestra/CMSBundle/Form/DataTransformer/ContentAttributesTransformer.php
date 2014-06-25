@@ -37,7 +37,6 @@ class ContentAttributesTransformer implements DataTransformerInterface
         foreach ($this->fieldsStructure as $fieldStructure) {
             if (is_object($fieldStructure)
                 && isset($fieldStructure->fieldId)
-                && isset($fieldStructure->defaultValue)
             ) {
                 $name = $fieldStructure->fieldId;
                 $attributes->$name = $fieldStructure->defaultValue;
@@ -54,6 +53,7 @@ class ContentAttributesTransformer implements DataTransformerInterface
                 $attributes->$name = $attribute->getValue();
             }
         }
+        
         return $attributes;
     }
 

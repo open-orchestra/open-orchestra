@@ -247,6 +247,11 @@ div.top-tools .ColVis button{
 form .ribbon{
     top:-51px !important;
 }
+
+.btn.btn-ribbon{
+    margin-top: 4px !important;
+}
+
 .note ul{
     list-style-type:none;
     color:#880000;
