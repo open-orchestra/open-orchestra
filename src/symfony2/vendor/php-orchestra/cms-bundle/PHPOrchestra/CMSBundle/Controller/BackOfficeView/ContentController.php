@@ -26,6 +26,7 @@ class ContentController extends TableViewController
     {
         $this->setEntity('Content');
         $this->setCriteria(array('contentType' => $this->routeParameters['contentTypeId']));
+        $this->setMainTitle('Contenus de type ' . $this->routeParameters['contentTypeId']);
     }
     
     /**
@@ -79,8 +80,6 @@ class ContentController extends TableViewController
         );
         // QUID si pas de contentType valide ???
         $document->contentTypeStructure = $contentType;
-        
-        $this->setTitle($contentType->getName());
         
         return $document;
     }
