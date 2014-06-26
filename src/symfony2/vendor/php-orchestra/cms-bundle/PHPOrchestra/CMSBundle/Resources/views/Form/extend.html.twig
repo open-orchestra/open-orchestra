@@ -27,18 +27,18 @@
 {% spaceless %}
     <section>
     {% if block_prefixes[1] == 'checkbox' %}
-        <label class="checkbox">
+        <label class="checkbox"{% if errors|length > 0 %} state-error{% endif %}>
             {{ form_widget(form) }}
             <i></i>{{ form_label(form, null, {'label_attr': {'class': 'label'}}) }}</label>
     {% elseif  block_prefixes[1] == 'contentAttributes' %}
         {{ form_widget(form) }}
     {% else %}
         {{ form_label(form, null, {'label_attr': {'class': 'label'}}) }}
-        <label class="label {{ block_prefixes[1]|lexicon_translator }} {% if multiple is defined and multiple %} select-multiple{% endif %}">
+        <label class="label {% if errors|length > 0 %}state-error {% endif %}{{ block_prefixes[1]|lexicon_translator }} {% if multiple is defined and multiple %} select-multiple{% endif %}">
             {{ form_widget(form) }}{% if multiple is not defined or not multiple %}<i></i>{% endif %}
         </label>
     {% endif %}
-        <div class="note">
+        <div class="note note-error">
             {{ form_errors(form) }}
         </div>
     </section>
@@ -79,18 +79,6 @@
     {% endif %}
 {% endspaceless %}
 {% endblock form %}
-
-{% block form_errors %}
-{% spaceless %}
-    {% if errors|length > 0 %}
-    <div class="alert alert-danger fade in">
-        {% for error in errors %}
-            {{ error.messageTemplate|trans(error.messageParameters, 'validators') }}<br />
-        {% endfor %} 
-    </div>
-    {% endif %}
-{% endspaceless %}
-{% endblock form_errors %}
 
 {% block form_widget_compound %}
 {% spaceless %}

@@ -71,7 +71,7 @@ class NodeController extends Controller
         );
         
         $response->setPublic();
-        $response->setSharedMaxAge(15);
+        $response->setSharedMaxAge(100);
         $response->headers->addCacheControlDirective('must-revalidate', true);
         
         return $response;
