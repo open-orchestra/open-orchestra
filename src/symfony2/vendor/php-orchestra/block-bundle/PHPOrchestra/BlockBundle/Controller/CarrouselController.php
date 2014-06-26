@@ -44,5 +44,4 @@ class CarrouselController extends Controller
     			array('form' => $form->createView())
     	);
     }
-    
 }
