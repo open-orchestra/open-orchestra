@@ -3,6 +3,3 @@ parameters:
         TinyMCE wysiwyg: 
             action: "PHPOrchestraBlockBundle:TinyMCEWysiwyg:show"
             form: "PHPOrchestraBlockBundle:TinyMCEWysiwyg:form"
-        Sample Block: 
-            action: "PHPOrchestraCMSBundle:Block/Sample:show"
-            form: "PHPOrchestra\CMSBundle\Form\Type\Block\SampleType"
