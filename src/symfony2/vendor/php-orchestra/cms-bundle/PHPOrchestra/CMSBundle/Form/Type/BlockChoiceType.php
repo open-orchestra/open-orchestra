@@ -21,21 +21,28 @@ class BlockChoiceType extends AbstractType
      * 
      * @param $documentManager
      */
-    public function __construct($nodeId, $documentManager, $filter = array())
+    public function __construct($documentManager, $filters = array(), $nodeId = 0)
     {
-        $node = $documentManager->getDocument('Node', array('nodeId' => $nodeId));
-        $this->choices[''] = '--------';
-        $filter = array_map(function($value) { return $value['action']; }, $filter);
-        $filter = array_flip($filter);
-        $blocks = $node->getBlocks();
-        $intRank = 1;
-        foreach ($blocks as $block) {
-            $component = $block->getComponent();
-            if (array_key_exists($component, $filter)) {
-                $this->choices[$intRank] = $filter[$component];
-                $intRank++;
+    	if($nodeId === 0){
+    		foreach ($filters as $key => $filter) {
+                $this->choices[$key] = $key;
             }
-        }
+    	}
+    	else{
+	        $node = $documentManager->getDocument('Node', array('nodeId' => $nodeId));
+	        $this->choices[''] = '--------';
+	        $filters = array_map(function($value) { return $value['action']; }, $filters);
+	        $filters = array_flip($filters);
+	        $blocks = $node->getBlocks();
+	        $intRank = 1;
+	        foreach ($blocks as $block) {
+	            $component = $block->getComponent();
+	            if (array_key_exists($component, $filters)) {
+	                $this->choices[$intRank] = $filters[$component];
+	                $intRank++;
+	            }
+	        }
+    	}
     }
     
     public function setDefaultOptions(OptionsResolverInterface $resolver)

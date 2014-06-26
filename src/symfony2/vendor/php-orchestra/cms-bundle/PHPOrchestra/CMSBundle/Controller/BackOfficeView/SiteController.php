@@ -33,7 +33,7 @@ class SiteController extends TableViewController
             array('name' => 'alias', 'search' => 'text', 'label' => 'Alias'),
             array('name' => 'defaultLanguage', 'search' => 'text', 'label' => 'Default Language'),
             array('name' => 'languages', 'search' => 'text', 'label' => 'Languages', 'callback' => "arrayToNewLine"),
-            array('name' => 'blocks', 'search' => 'text', 'label' => 'Blocks', 'callback' => "replaceComaByNewLine"),
+            array('name' => 'blocks', 'search' => 'text', 'label' => 'Blocks', 'callback' => "arrayToNewLine"),
             array('button' =>'modify'),
             array('button' =>'delete'
             )

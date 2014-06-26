@@ -28,12 +28,7 @@ class SiteType extends AbstractType
             ->add('alias', 'text', array('label' => 'Alias'))
             ->add('defaultLanguage', 'orchestra_language', array('label' => 'Default Language'))
             ->add('languages', 'orchestra_language', array('label' => 'Languages', 'multiple' => true))
-            ->add('blocks', 'hidden')
-            ->add('subblocks', 'blocks',
-            array(
-                'mapped' => false,
-                'data' => $data
-            ));
+            ->add('blocks', 'orchestra_block_choice', array('multiple' => true));
     }
     
     /**

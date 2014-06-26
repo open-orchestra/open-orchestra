@@ -54,7 +54,7 @@ class BlockType extends AbstractType
 				if($options['data']['method'] == 'load'){
 					$builder->add('nodeId', 'orchestra_node_choice', array('attr' => array('class' => 'reload')));
 					if(array_key_exists('nodeId', $options['data']) && $options['data']['nodeId'] != ''){
-						$builder->add('blockId', new BlockChoiceType($options['data']['nodeId'], $this->documentManager, $this->filter), array('attr' => array('class' => 'used-as-label')));
+						$builder->add('blockId', new BlockChoiceType($this->documentManager, $this->filter, $options['data']['nodeId']), array('attr' => array('class' => 'used-as-label')));
 					}
 				}
 				if($options['data']['method'] == 'generate'){
@@ -74,18 +74,10 @@ class BlockType extends AbstractType
 			}
 		}
         else{
-        	if(array_key_exists('multiple', $options['data'])){
-                $builder->add('nodeId', 'orchestra_node_choice', array('attr' => array('class' => 'reload')));
-                if(array_key_exists('nodeId', $options['data']) && $options['data']['nodeId'] != ''){
-                    $builder->add('blockId', new BlockChoiceType($options['data']['nodeId'], $this->documentManager, $this->filter), array('attr' => array('class' => 'reload')));
-                }
-        	}
-        	else{
-	            $builder->add('nodeId', 'orchestra_node_choice', array('attr' => array('class' => 'reload')));
-	            if(array_key_exists('nodeId', $options['data']) && $options['data']['nodeId'] != ''){
-	                $builder->add('blockId', new BlockChoiceType($options['data']['nodeId'], $this->documentManager, $this->filter), array('attr' => array('class' => 'used-as-label')));
-	            }
-        	}
+            $builder->add('nodeId', 'orchestra_node_choice', array('attr' => array('class' => 'reload')));
+            if(array_key_exists('nodeId', $options['data']) && $options['data']['nodeId'] != ''){
+                $builder->add('blockId', new BlockChoiceType($this->documentManager, $this->filter, $options['data']['nodeId']), array('attr' => array('class' => 'used-as-label')));
+            }
         }
 	}
 

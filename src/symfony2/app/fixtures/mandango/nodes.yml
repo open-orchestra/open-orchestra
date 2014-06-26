@@ -16,7 +16,7 @@ Model\PHPOrchestraCMSBundle\Node:
         blocks:
             -
                 component: "PHPOrchestraCMSBundle:Block/Sample:show"
-                attributes: {"_title":"Accueil", "_news":"Bienvenu sur le site de démo issu des fixtures.", "_author":""}
+                attributes: {"title":"Accueil", "news":"Bienvenu sur le site de démo issu des fixtures.", "author":""}
                 
     node_generic:
         nodeId: fixture_generic
@@ -49,25 +49,25 @@ Model\PHPOrchestraCMSBundle\Node:
         blocks:
             -
                 component: "PHPOrchestraCMSBundle:Block/Sample:show"
-                attributes: {"_title":"Qui sommes-nous ?", "_author":"Pourquoi nous choisir ?", "_news":"Nos agences"}
+                attributes: {"title":"Qui sommes-nous ?", "author":"Pourquoi nous choisir ?", "news":"Nos agences"}
             -
                 component: "PHPOrchestraCMSBundle:Block/Sample:show"
-                attributes: {"_title":"http://www.google.fr", "_author":"http://www.yahoo.fr", "_news":"http://altavista.box.co.uk"}
+                attributes: {"title":"http://www.google.fr", "author":"http://www.yahoo.fr", "news":"http://altavista.box.co.uk"}
             -
                 component: "PHPOrchestraCMSBundle:Block/Sample:show"
-                attributes: {"_title":"News 1", "_author":"Donec bibendum at nibh eget imperdiet. Mauris eget justo augue. Fusce fermentum iaculis erat, sollicitudin elementum enim sodales eu. Donec a ante tortor. Suspendisse a.", "_news":""}
+                attributes: {"title":"News 1", "author":"Donec bibendum at nibh eget imperdiet. Mauris eget justo augue. Fusce fermentum iaculis erat, sollicitudin elementum enim sodales eu. Donec a ante tortor. Suspendisse a.", "news":""}
             -
                 component: "PHPOrchestraCMSBundle:Block/Sample:show"
-                attributes: {"_title":"News #2", "_author":"Aliquam convallis facilisis nulla, id ultricies ipsum cursus eu. Proin augue quam, iaculis id nisi ac, rutrum blandit leo. In leo ante, scelerisque tempus lacinia in, sollicitudin quis justo. Vestibulum.", "_news":""}
+                attributes: {"title":"News #2", "author":"Aliquam convallis facilisis nulla, id ultricies ipsum cursus eu. Proin augue quam, iaculis id nisi ac, rutrum blandit leo. In leo ante, scelerisque tempus lacinia in, sollicitudin quis justo. Vestibulum.", "news":""}
             -
                 component: "PHPOrchestraCMSBundle:Block/Sample:show"
-                attributes: {"_title":"News #3", "_author":"Phasellus condimentum diam placerat varius iaculis. Aenean dictum, libero in sollicitudin hendrerit, nulla mi elementum massa, eget mattis lorem enim vel magna. Fusce suscipit orci vitae vestibulum.", "_news":""}
+                attributes: {"title":"News #3", "author":"Phasellus condimentum diam placerat varius iaculis. Aenean dictum, libero in sollicitudin hendrerit, nulla mi elementum massa, eget mattis lorem enim vel magna. Fusce suscipit orci vitae vestibulum.", "news":""}
             -
                 component: "PHPOrchestraCMSBundle:Block/Sample:show"
-                attributes: {"_title":"mapub.jpg", "_author":"qwerty", "_news":""}
+                attributes: {"title":"mapub.jpg", "author":"qwerty", "news":""}
             -
                 component: "PHPOrchestraCMSBundle:Block/Sample:show"
-                attributes: {"_title":"Mentions légales", "_author":"Nous contacter", "_news":""}
+                attributes: {"title":"Mentions légales", "author":"Nous contacter", "news":""}
     
     node_about_us:
         nodeId: fixture_about_us
@@ -86,7 +86,7 @@ Model\PHPOrchestraCMSBundle\Node:
         blocks:
             -
                 component: "PHPOrchestraCMSBundle:Block/Sample:show"
-                attributes: {"_title":"Qui sommes-nous ?", "_author":"Pour tout savoir sur notre entreprise.","_news":""}
+                attributes: {"title":"Qui sommes-nous ?", "author":"Pour tout savoir sur notre entreprise.","news":""}
                 
     node_bd:
         nodeId: fixture_bd
@@ -105,7 +105,7 @@ Model\PHPOrchestraCMSBundle\Node:
         blocks:
             -
                 component: "PHPOrchestraCMSBundle:Block/Sample:show"
-                attributes: {"_title":"B&D", "_author":"Tout sur B&D","_news":""}
+                attributes: {"title":"B&D", "author":"Tout sur B&D","news":""}
                 
     node_interakting:
         nodeId: fixture_interakting
@@ -124,7 +124,7 @@ Model\PHPOrchestraCMSBundle\Node:
         blocks:
             -
                 component: "PHPOrchestraCMSBundle:Block/Sample:show"
-                attributes: {"_title":"Interakting", "_news":"Des trucs sur Interakting (non versionnés)","_author":""}
+                attributes: {"title":"Interakting", "news":"Des trucs sur Interakting (non versionnés)","author":""}
                 
     node_contact_us:
         nodeId: fixture_contact_us
@@ -143,7 +143,7 @@ Model\PHPOrchestraCMSBundle\Node:
         blocks:
             -
                 component: "PHPOrchestraCMSBundle:Block/Sample:show"
-                attributes: {"_title":"Nous contacter", "_author":"Comment nous contacter","_news":"swgsdwgh"}
+                attributes: {"title":"Nous contacter", "author":"Comment nous contacter","news":"swgsdwgh"}
                 
     node_directory:
         nodeId: fixture_directory
@@ -162,4 +162,4 @@ Model\PHPOrchestraCMSBundle\Node:
         blocks:
             -
                 component: "PHPOrchestraCMSBundle:Block/Sample:show"
-                attributes: {"_title":"Annuaire", "_author":"Le bottin mondain","_news":""}
+                attributes: {"title":"Annuaire", "author":"Le bottin mondain","news":""}

@@ -28,8 +28,19 @@ abstract class Site extends \Model\PHPOrchestraCMSBundle\Base\Site
     
     public function getLanguages(){
     	$value = parent::getLanguages();
-    	$value = (is_string($value)) ? explode(',', $value) : $value;
+    	$value = (is_string($value)) ? explode(',', $value) : array();
     	return $value;
     }
-        
+    
+    public function setBlocks($value)
+    {
+        $value = (is_array($value)) ? implode(',', $value) : $value;
+        parent::setBlocks($value);
+    }
+    
+    public function getBlocks(){
+        $value = parent::getBlocks();
+        $value = (is_string($value)) ? explode(',', $value) : array();
+        return $value;
+    }
 }

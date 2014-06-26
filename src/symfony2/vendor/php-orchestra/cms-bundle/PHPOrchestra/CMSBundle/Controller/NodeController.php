@@ -15,7 +15,6 @@ use PHPOrchestra\CMSBundle\Form\Type\NodeType;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use PHPOrchestra\CMSBundle\Helper\NodeHelper;
-use PHPOrchestra\CMSBundle\Form\Type\BlockChoiceType;
 
 class NodeController extends Controller
 {
