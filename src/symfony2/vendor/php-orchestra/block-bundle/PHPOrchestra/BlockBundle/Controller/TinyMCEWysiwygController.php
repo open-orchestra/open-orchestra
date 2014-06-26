@@ -32,7 +32,7 @@ class TinyMCEWysiwygController extends Controller
      * 
      * @param string $htmlContent HTML to render
      */
-    public function showAction($_htmlContent = array() , $_page_parameters = array())
+    public function showAction($_htmlContent, $_page_parameters)
     {
         $response = $this->render(
             'PHPOrchestraBlockBundle:TinyMCEWysiwyg:show.html.twig',
