@@ -18,15 +18,15 @@
 </div>
 
 {# Pagination #}
-{% set nombrepage = (resultset.numfound / nbdocs)| round(0, 'ceil') %}
+{% set nbpage = (resultset.numfound / nbdocs)| round(0, 'ceil') %}
 
-{% if nombrepage > 1 %}
+{% if nbpage > 1 %}
 <div class="pagination">
 	<ul>
 		{# We use range(a, b) function which create an array of value between a and b #}
 		
-		{% for p in range(1, nombrepage ) %}
-			<li{% if p == page %} class="btn"{% endif %}>
+		{% for p in range(1, nbpage ) %}
+			<li{% if p == page %} class="btn-pagination"{% endif %}>
 				<a href="{{ path('php_orchestra_cms_node', {'nodeId': nodeId, 'page': p, 'Search': data}) }}">{{ p }}</a>
 			</li> 
 		{% endfor %}
