@@ -29,54 +29,53 @@ class FooterController extends Controller
 {
 
 
-	/**
-	 * Display Footer
-	 * 
-	 * @param string $id    id of the footer
-	 * @param string $class class of the tags
-	 */
-	public function showAction($_id, $_class)
-	{
-		$mandango = $this->get('mandango');
-		$repository = $mandango->getRepository('Model\PHPOrchestraCMSBundle\Node');
-		$tree = $repository->getFooterTree();
+    /**
+     * Display Footer
+     * 
+     * @param string $id    id of the footer
+     * @param string $class class of the tags
+     */
+    public function showAction($id, $class)
+    {
+        $mandango = $this->get('mandango');
+        $repository = $mandango->getRepository('Model\PHPOrchestraCMSBundle\Node');
+        $tree = $repository->getFooterTree();
 
-		$response = $this->render('PHPOrchestraBlockBundle:Footer:show.html.twig',
-				array(
-				    'tree' => $tree,
-					'id' => $_id,
-					'class' => $_class,
-				)
-		);
-		
-		/*$response->setPublic();
-		$response->setSharedMaxAge(0);*/
-		return $response;
-	}
+        $response = $this->render(
+            'PHPOrchestraBlockBundle:Footer:show.html.twig',
+            array(
+                'tree' => $tree,
+                'id' => $id,
+                'class' => $class,
+            )
+        );
+        
+        return $response;
+    }
 
 
-	/**
-	 * Render the dialog form
-	 * 
-	 * @param string $prefix
-	 */
-	public function formAction($prefix)
-	{
-		$form = $this->get('form.factory')
-		->createNamedBuilder($prefix, 'form', null)
-		->add(
-				'idFooter',
-				'text'
-		)
-		->add(
-		        'class',
-				'text'
-		)
-		->getForm();
-		
-		return $this->render(
-				'PHPOrchestraBlockBundle:Footer:form.html.twig',
-				array('form' => $form->createView())
-		);
-	}
+    /**
+     * Render the dialog form
+     * 
+     * @param string $prefix
+     */
+    public function formAction($prefix)
+    {
+        $form = $this->get('form.factory')
+        ->createNamedBuilder($prefix, 'form', null)
+        ->add(
+            'idFooter',
+            'text'
+        )
+        ->add(
+            'classFooter',
+            'text'
+        )
+        ->getForm();
+        
+        return $this->render(
+            'PHPOrchestraBlockBundle:Footer:form.html.twig',
+            array('form' => $form->createView())
+        );
+    }
 }

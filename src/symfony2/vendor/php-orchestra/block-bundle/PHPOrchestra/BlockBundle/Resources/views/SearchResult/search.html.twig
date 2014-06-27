@@ -8,7 +8,7 @@
 {# if they are 0 result #}
 {% if resultset.numfound is not defined %}
     {% if resultset is empty %}
-        Sorry no results for "{{ data }}".
+        {{ 'Sorry no results for'|trans }} "{{ data }}".
     {% else %}
         {# Browse the result list and call this template #}
         {% for result in resultset %}
@@ -34,7 +34,7 @@
         {# This template display list of documents in the result#}
         {% include "PHPOrchestraBlockBundle:SearchResult:showDocs.html.twig" %}
     {% else %}
-        Sorry no results for "{{ data }}".
+        {{ 'Sorry no results for'|trans }} "{{ data }}".
     {% endif %}
     
     </div>

@@ -10,7 +10,7 @@
         {% if node.sublinks is defined %}
             {% for child in node.sublinks %}
                 {% if child %}
-                    {% include "PHPOrchestraBlockBundle:Menu:show.html.twig" with {"node": child} %}
+                    {% include "PHPOrchestraBlockBundle:Footer:show.html.twig" with {"node": child} %}
                 {% endif %}
             {% endfor %}
         {% endif %}

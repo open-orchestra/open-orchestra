@@ -129,16 +129,12 @@ class NodeRepositoryTest extends \PHPUnit_Framework_TestCase
                 'inFooter' => true,
         );
 
-        $testquery = $this->mandango->getRepository('Model\PHPOrchestraCMSBundle\Node')->createQuery();
-        $testquery->criteria($filter);
-        $nodes = $testquery->all();
-        //var_dump($nodes);
         $result   = $this->repository->getTree($filter);
         //var_dump($result);
         $expected = NodeRepositoryTest::createTreeData();
         //var_dump($expected);
         $this->assertEquals($expected, $result);
-    }
+    }*/
 
 
     /**
@@ -169,6 +165,26 @@ class NodeRepositoryTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expected, $result);
     }
 
+    
+    /**
+     * Test getAllNodes function
+     */
+    public function testGetAllNodes()
+    {
+    	$result = $this->repository->getAllNodes();
+    	$this->assertEquals("root", $result[1]->getNodeId());
+    }
+
+
+    /**
+     * Test getOne function
+     */
+    public function testGetOne()
+    {
+    	$result = $this->repository->getOne('root');
+    	$this->assertEquals('root', $result->getNodeId());
+    }
+    
 
     /**
      * Tree of nodes

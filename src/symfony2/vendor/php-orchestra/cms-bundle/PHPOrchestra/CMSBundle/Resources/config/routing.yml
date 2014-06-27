@@ -52,3 +52,6 @@ php_orchestra_cms_areaform:
     pattern: /admin/area/form/{type}
     defaults: { _controller: PHPOrchestraCMSBundle:Area:form, type: node }
 
+php_orchestra_autocomplete:
+    pattern: /ajax
+    defaults: { _controller: PHPOrchestraBlockBundle:SearchResult:autocomplete }

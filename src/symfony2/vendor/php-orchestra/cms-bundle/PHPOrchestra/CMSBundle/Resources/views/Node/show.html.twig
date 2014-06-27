@@ -10,7 +10,11 @@
         {% block stylesheets %}
             {{ phpOrchestraCss(node.theme) }}
         {% endblock %}
-        
+        {% stylesheets 
+            '@PHPOrchestraCMSBundle/Resources/public/css/jquery-ui.css'
+        %}
+            <link rel="stylesheet" href="{{ asset_url }}"/>
+        {% endstylesheets %}
         {#% stylesheets
             'bundles/fakeapptheme/themes/theme1/css/font.css'
             'bundles/fakeapptheme/themes/theme1/css/color.css'
@@ -18,6 +22,12 @@
             filter='cssrewrite' %}
             <link rel="stylesheet" href="{{ asset_url }}" />
         {% endstylesheets %#}
+        {% javascripts
+            '@PHPOrchestraCMSBundle/Resources/public/js/libs/jquery-2.0.2.min.js'
+            '@PHPOrchestraCMSBundle/Resources/public/js/libs/jquery-ui-1.10.3.min.js'
+        %}
+            <script src="{{ asset_url }}"></script>
+        {% endjavascripts %}
 
     </head>
     <body>
