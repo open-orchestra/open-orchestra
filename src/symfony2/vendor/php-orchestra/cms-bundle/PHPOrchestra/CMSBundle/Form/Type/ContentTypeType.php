@@ -11,6 +11,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Model\PHPOrchestraCMSBundle\ContentType as ContentTypeModel;
 use PHPOrchestra\CMSBundle\Form\DataTransformer\ContentTypeTransformer;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 class ContentTypeType extends AbstractType
 {
@@ -25,8 +26,22 @@ class ContentTypeType extends AbstractType
         $builder->addModelTransformer($transformer);
         
         $builder
-            ->add('name', 'text', array('label' => 'Label du type de contenu'))
-            ->add('contentTypeId', 'text', array('label' => 'Identifiant'))
+            ->add(
+                'name',
+                'text',
+                array(
+                    'label' => 'Label du type de contenu',
+                    'constraints' => new NotBlank()
+                )
+            )
+            ->add(
+                'contentTypeId',
+                'text',
+                array(
+                    'label' => 'Identifiant',
+                    'constraints' => new NotBlank()
+                )
+            )
             ->add('version', 'text', array('read_only' => true))
             ->add(
                 'status',

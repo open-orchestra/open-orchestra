@@ -4,11 +4,14 @@
  # @author Nicolas ANNE <nicolas.anne@businessdecision.com>
  ##}
 {% form_theme form 'PHPOrchestraCMSBundle:Form:extend.html.twig' %}
+
 {% set vars = {
-    'title' : title
+    'mainTitle' : mainTitle,
+    'tableTitle' : tableTitle
    }
 %}
 
+{% include 'PHPOrchestraCMSBundle:BackOffice:contentTitle.html.twig' with vars %}
 {% include 'PHPOrchestraCMSBundle:BackOffice:beginSmartDiv.html.twig' with vars %}
 {{ form(form) }}
 {% include 'PHPOrchestraCMSBundle:BackOffice:endSmartDiv.html.twig' %}

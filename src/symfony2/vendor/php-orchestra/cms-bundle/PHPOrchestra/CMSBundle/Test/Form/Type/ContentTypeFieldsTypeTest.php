@@ -71,4 +71,3 @@ class ContentTypeFieldsTypeTest extends \PHPUnit_Framework_TestCase
         );
     }
 }
-    

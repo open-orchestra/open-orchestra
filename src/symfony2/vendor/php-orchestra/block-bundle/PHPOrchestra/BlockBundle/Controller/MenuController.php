@@ -18,7 +18,7 @@
 namespace PHPOrchestra\BlockBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Response;
+
 
 /**
  * Menu Controller
@@ -28,53 +28,53 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class MenuController extends Controller
 {
-    /**
-     * display Menu
-     *
-     * @param string $class class of the tag
-     * @param string $id    id of the menu
-     */
-    public function showAction($_class, $_id)
-    {
-        $mandango = $this->get('mandango');
-        $repository = $mandango->getRepository('Model\PHPOrchestraCMSBundle\Node');
-        $tree = $repository->getMenuTree();
 
-        $response = $this->render(
-            'PHPOrchestraBlockBundle:Menu:show.html.twig',
-            array(
-                    'tree'  => $tree,
-                    'class' => $_class,
-                    'id'    => $_id
-                )
+	/**
+	 * display Menu
+	 * 
+	 * @param string $class class of the tag
+	 * @param string $id    id of the menu
+	 */
+	public function showAction($_class, $_id)
+	{
+		$mandango = $this->get('mandango');
+		$repository = $mandango->getRepository('Model\PHPOrchestraCMSBundle\Node');
+		$tree = $repository->getMenuTree();
+
+		$response = $this->render('PHPOrchestraBlockBundle:Menu:show.html.twig',
+				array(
+						'tree'  => $tree,
+						'class' => $_class,
+						'id'    => $_id
+				)
         );
-        
-        return $response;
-    }
+		
+		return $response;
+	}
 
 
-    /**
-     * Render the dialog form
-     *
-     * @param string $prefix
-     */
-    public function formAction($prefix)
-    {
-        $form = $this->get('form.factory')
-            ->createNamedBuilder($prefix, 'form', null)
-            ->add(
-                'class',
-                'text'
-            )
-            ->add(
-                'idMenu',
-                'text'
-            )
-            ->getForm();
-    
-        return $this->render(
-            'PHPOrchestraBlockBundle:Menu:form.html.twig',
-            array('form' => $form->createView())
-        );
-    }
+	/**
+	 * Render the dialog form
+	 *
+	 * @param string $prefix
+	 */
+	public function formAction($prefix)
+	{
+		$form = $this->get('form.factory')
+		    ->createNamedBuilder($prefix, 'form', null)
+		    ->add(
+				'class',
+				'text'
+		    )
+		    ->add(
+			    'idMenu',
+		    	'text'
+		    )
+		    ->getForm();
+	
+		return $this->render(
+				'PHPOrchestraBlockBundle:Menu:form.html.twig',
+				array('form' => $form->createView())
+		);
+	}
 }

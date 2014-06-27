@@ -249,7 +249,11 @@ form .ribbon{
 }
 
 .btn.btn-ribbon{
-    margin-top: 4px !important;
+    margin-top: 5px !important;
+}
+
+span.btn.btn-ribbon {
+    margin-top: 0px !important;
 }
 
 .note ul{

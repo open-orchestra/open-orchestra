@@ -61,17 +61,20 @@ class ContentAttributesTest extends \PHPUnit_Framework_TestCase
     
     public function getOptions()
     {
+        /** DATA SET NO FIELD **/
         $contentType0F = $this->getMockBuilder('\\Model\\PHPOrchestraCMSBundle\\ContentType')
             ->disableOriginalConstructor()
             ->getMock();
         $dataWithNoField = (object) array('contentType' => $contentType0F);
         
+        /** DATA SET 3 FIELDS **/
         $contentType3F = $this->getMockBuilder('\\Model\\PHPOrchestraCMSBundle\\ContentType')
             ->disableOriginalConstructor()
             ->getMock();
         $jsonFields = '[
-            {"fieldId": "field1", "defaultValue": "value1", "label": "label1", "symfonyType": "type1"},
-            {"fieldId": "field2", "defaultValue": "value2", "label": "label1", "symfonyType": "type2"},
+            {"fieldId": "field1", "defaultValue": "value1", "label": "label1", "symfonyType": "email"},
+            {"fieldId": "field2", "defaultValue": "value2", "label": "label1", "symfonyType": "type2",
+             "options": {"max_length": 20, "required": true}},
             {"fieldId": "field3", "defaultValue": "value3", "label": "label1", "symfonyType": "type3",
              "options": {"max_length": 0}}
         ]';

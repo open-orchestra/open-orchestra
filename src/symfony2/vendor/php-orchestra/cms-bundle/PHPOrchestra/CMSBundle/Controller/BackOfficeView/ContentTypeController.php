@@ -26,6 +26,7 @@ class ContentTypeController extends TableViewController
     public function init()
     {
         $this->setEntity('ContentType');
+        $this->setMainTitle('Type de contenus');
     }
 
     /**
@@ -124,7 +125,9 @@ class ContentTypeController extends TableViewController
             'PHPOrchestraCMSBundle:BackOffice/Content:contentTypeForm.html.twig',
             array(
                 'form' => $form->createView(),
-                'ribbon' => $this->saveButton($documentId) . $this->backButton() . $select->getContent()
+                'ribbon' => $this->saveButton($documentId) . $this->backButton() . $select->getContent(),
+                'mainTitle' => $this->getMainTitle(),
+                'tableTitle' => $this->getTableTitle(),
             )
         );
     }

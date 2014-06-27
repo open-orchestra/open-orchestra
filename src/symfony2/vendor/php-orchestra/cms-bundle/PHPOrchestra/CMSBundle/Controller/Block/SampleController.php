@@ -35,7 +35,7 @@ class SampleController extends Controller
         );
         
         $response->setPublic();
-        $response->setSharedMaxAge(60);
+        $response->setSharedMaxAge(5);
         $response->headers->addCacheControlDirective('must-revalidate', true);
         
         return $response;
