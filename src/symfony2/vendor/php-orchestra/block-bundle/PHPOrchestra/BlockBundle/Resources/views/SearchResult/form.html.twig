@@ -1,9 +1,9 @@
-{{ form_label(form.nodeId) }}    {{ form_widget(form.nodeId) }}
-{{ form_label(form.nbdoc) }}    {{ form_widget(form.nbdoc) }}
-{{ form_label(form.fielddisplayed) }}    {{ form_widget(form.fielddisplayed) }}
-{{ form_label(form.filtres) }}    {{ form_widget(form.filtres) }}
-{{ form_label(form.facets) }}    {{ form_widget(form.facets) }}
-{{ form_label(form.optionsrecherche) }}    {{ form_widget(form.optionsrecherche) }}
-{{ form_label(form.nbspellcheck) }}    {{ form_widget(form.nbspellcheck) }}
-{{ form_label(form.optionsdismax) }}    {{ form_widget(form.optionsdismax) }}
+{{ form_label(form.nodeId)|trans|raw }}    {{ form_widget(form.nodeId) }}
+{{ form_label(form.documentsNumber)|trans|raw }}    {{ form_widget(form.documentsNumber) }}
+{{ form_label(form.fieldsDisplayed)|trans|raw }}    {{ form_widget(form.fieldsDisplayed) }}
+{{ form_label(form.filters)|trans|raw }}    {{ form_widget(form.filters) }}
+{{ form_label(form.facets)|trans|raw }}    {{ form_widget(form.facets) }}
+{{ form_label(form.searchOptions)|trans|raw }}    {{ form_widget(form.searchOptions) }}
+{{ form_label(form.spellCheckNumber)|trans|raw }}    {{ form_widget(form.spellCheckNumber) }}
+{{ form_label(form.dismaxOptions)|trans|raw }}    {{ form_widget(form.dismaxOptions) }}
 <script type="text/javascript">initTinyMCE();</script>
