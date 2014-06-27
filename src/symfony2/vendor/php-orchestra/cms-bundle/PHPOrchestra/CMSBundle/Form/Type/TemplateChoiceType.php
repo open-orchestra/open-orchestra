@@ -24,7 +24,6 @@ class TemplateChoiceType extends AbstractType
     public function __construct($documentManager)
     {
         $templates = $documentManager->getTemplatesInLastVersion();
-        $this->choices[''] = '--------';
         foreach ($templates as $template) {
             $this->choices[$template['_id']] = $template['name'];
         }

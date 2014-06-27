@@ -14,7 +14,7 @@ class SampleController extends Controller
 {
     
     /**
-     * Render the sampleblock
+     * Render the sampleblock for front
      * 
      * @param array $elementsList array containing custom attributes
      * @param array $_page_parameters additional parameters extracted from url
@@ -39,5 +39,22 @@ class SampleController extends Controller
         $response->headers->addCacheControlDirective('must-revalidate', true);
         
         return $response;
+    }
+
+    /**
+     * Render the sampleblock for back
+     * 
+     * @param array $elementsList array containing custom attributes
+     */
+    public function showBackAction($title, $author, $news)
+    {
+        return $this->render(
+            'PHPOrchestraCMSBundle:Block/Sample:showBack.html.twig',
+            array(
+                  'title' => $title,
+                  'author' => $author,
+                  'news' => $news
+            )
+        );
     }
 }

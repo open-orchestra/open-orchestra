@@ -27,7 +27,8 @@ abstract class TableViewController extends Controller
     protected $callback = array();
     protected $buttonTwig = 'PHPOrchestraCMSBundle:BackOffice/TableView:button.html.twig';
     protected $routeParameters = array();
-    protected $title = '';
+    protected $mainTitle = '';
+    protected $tableTitle = '';
     
     abstract public function setColumns();
     
@@ -87,25 +88,43 @@ abstract class TableViewController extends Controller
     }
     
     /**
+     * Set main title
+     * 
+     * @param string $title
+     */
+    public function setMainTitle($title)
+    {
+        $this->mainTitle = $title;
+    }
+    
+    /**
+     * Get main title
+     */
+    public function getMainTitle()
+    {
+        if ($this->mainTitle != '') {
+            return $this->mainTitle;
+        } else {
+            return $this->getEntity();
+        }
+    }
+    
+    /**
      * Set table title
      * 
      * @param string $title
      */
-    public function setTitle($title)
+    public function setTableTitle($title)
     {
-        $this->title = $title;
+        $this->tableTitle = $title;
     }
     
     /**
      * Get table title
      */
-    public function getTitle()
+    public function getTableTitle()
     {
-        if ($this->title != '') {
-            return $this->title;
-        } else {
-            return $this->getEntity();
-        }
+        return $this->tableTitle;
     }
     
     public function setButtonTwig($buttonTwig){
@@ -126,6 +145,8 @@ abstract class TableViewController extends Controller
     }
     
     public function editAction(Request $request, $id = null){
+        $this->setTableTitle('Edition');
+        
     	if($this->getEntity() !== null){
             return $this->editEntity($request, $id);
         }
@@ -145,6 +166,8 @@ abstract class TableViewController extends Controller
 
     public function catalogAction(Request $request)
     {
+        $this->setTableTitle('Liste');
+        
         if($this->getEntity() !== null){
             return $this->catalogEntity($request);
         } else {
@@ -323,7 +346,8 @@ abstract class TableViewController extends Controller
             'PHPOrchestraCMSBundle:BackOffice/TableView:form.html.twig',
             array(
                 'form' => $form->createView(),
-                'title' => $this->getTitle(),
+                'mainTitle' => $this->getMainTitle(),
+                'tableTitle' => $this->getTableTitle(),
                 'ribbon' => $this->saveButton($id) . $this->backButton()
             )
         );
@@ -456,7 +480,8 @@ abstract class TableViewController extends Controller
                     'columns' => $this->getColumns(),
                     'listUrl' => $this->generateUrlValue('catalog'),
                     'order' => array(array(1, 'desc')),
-                    'title' => $this->getTitle(),
+                    'mainTitle' => $this->getMainTitle(),
+                    'tableTitle' => $this->getTableTitle(),
                     'ribbon' => $this->addButton()
                 )
             );

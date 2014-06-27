@@ -77,18 +77,23 @@ class ContentAttributesType extends AbstractType
      */
     public function generateConstraints($field)
     {
-        $options = (array) $field->options;
         $constraints = array();
         
-        if (isset($options['max_length']) && $options['max_length'] > 0) {
-            $constraints[] = new Length(array('max' => $options['max_length']));
-        }
-        if (isset($options['required']) && $options['required']) {
-            $constraints[] = new NotBlank();
+        if (isset($field->symfonyType)) {
+            if ($field->symfonyType == 'email') {
+                $constraints[] = new Email();
+            }
         }
         
-        if ($field->symfonyType == 'email') {
-            $constraints[] = new Email();
+        if (isset($field->options)) {
+            $options = (array) $field->options;
+            
+            if (isset($options['max_length']) && $options['max_length'] > 0) {
+                $constraints[] = new Length(array('max' => $options['max_length']));
+            }
+            if (isset($options['required']) && $options['required']) {
+                $constraints[] = new NotBlank();
+            }
         }
         
         return $constraints;
