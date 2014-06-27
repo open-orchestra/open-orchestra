@@ -104,8 +104,26 @@ class NodeRepository extends \Model\PHPOrchestraCMSBundle\Base\NodeRepository
     public function getAllNodes()
     {
         $query = $this->getMandango()->getRepository('Model\PHPOrchestraCMSBundle\Node')->createQuery();
+        //$query = $this->createQuery();
         $nodes = $query->all();
         
         return $nodes;
+    }
+
+
+    /**
+     * Get a node by nodeId
+     * 
+     * @param string $nodeId
+     * @return <\Mandango\Document\Document, NULL>
+     */
+    public function getOne($nodeId)
+    {
+        //$query = $this->createQuery();
+        $query = $this->getMandango()->getRepository('Model\PHPOrchestraCMSBundle\Node')->createQuery();
+        $query->criteria(array('nodeId' => $nodeId));
+        $node = $query->one();
+        
+        return $node;
     }
 }
