@@ -24,21 +24,19 @@ class BlockChoiceType extends AbstractType
     public function __construct($documentManager, $filters = array(), $nodeId = 0)
     {
     	if($nodeId === 0){
-    		foreach ($filters as $key => $filter) {
-                $this->choices[$key] = $key;
+    		foreach ($filters as $filter) {
+                $this->choices[$filter] = $filter;
             }
     	}
     	else{
 	        $node = $documentManager->getDocument('Node', array('nodeId' => $nodeId));
-	        $this->choices[''] = '--------';
-	        $filters = array_map(function($value) { return $value['action']; }, $filters);
-	        $filters = array_flip($filters);
 	        $blocks = $node->getBlocks();
-	        $intRank = 1;
+	        $intRank = 0;
 	        foreach ($blocks as $block) {
 	            $component = $block->getComponent();
-	            if (array_key_exists($component, $filters)) {
-	                $this->choices[$intRank] = $filters[$component];
+	            $component = preg_replace('/^PHPOrchestraCMSBundle:Block\/(.*?):show$/', '$1', $component);
+	            if (in_array($component, $filters)) {
+	                $this->choices[$intRank] = $component;
 	                $intRank++;
 	            }
 	        }

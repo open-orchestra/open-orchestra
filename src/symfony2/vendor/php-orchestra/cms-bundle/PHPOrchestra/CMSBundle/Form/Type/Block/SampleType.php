@@ -21,7 +21,7 @@ class SampleType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title', 'text')
+            ->add('title', 'textarea')
             ->add('author', 'text')
             ->add('news', 'text');
     }

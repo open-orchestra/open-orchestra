@@ -24,7 +24,6 @@ class NodeChoiceType extends AbstractType
     public function __construct($documentManager)
     {
         $nodes = $documentManager->getNodesInLastVersion();
-        $this->choices[''] = '--------';
         foreach ($nodes as $node) {
             $this->choices[$node['_id']] = $node['name'];
         }

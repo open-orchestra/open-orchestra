@@ -14,6 +14,8 @@ use Symfony\Component\Form\FormView;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use PHPOrchestra\CMSBundle\Form\Type\BlockChoiceType;
 use Symfony\Component\Form\FormEvents;
+use PHPOrchestra\CMSBundle\Form\Type\Block;
+
 class BlockType extends AbstractType
 {
 	/**
@@ -23,9 +25,9 @@ class BlockType extends AbstractType
 	protected $documentManager = null;
 
 	/**
-	 * filter values
+	 * filters values
 	 */
-	protected $filter = array();
+	protected $filters = array();
 
 
 	/**
@@ -33,10 +35,10 @@ class BlockType extends AbstractType
 	 *
 	 * @param $documentManager
 	 */
-	public function __construct($documentManager, $filter = array())
+	public function __construct($documentManager, $filters = array())
 	{
 		$this->documentManager = $documentManager;
-		$this->filter = $filter;
+		$this->filters = $filters;
 	}
 
 	/**
@@ -49,26 +51,24 @@ class BlockType extends AbstractType
 	{
 		
 		if(array_key_exists('is_node', $options['data']) && $options['data']['is_node']){
-			$builder->add('method',  'choice', array('attr' => array('class' => 'reload'), 'choices' => array(''=> '--------', 'generate' => 'Generate', 'load' => 'Load')));
+			$builder->add('method',  'choice', array('attr' => array('class' => 'reload'), 'choices' => array('generate' => 'Generate', 'load' => 'Load'), 'empty_value' => '--------'));
 			if(array_key_exists('method', $options['data'])){
 				if($options['data']['method'] == 'load'){
-					$builder->add('nodeId', 'orchestra_node_choice', array('attr' => array('class' => 'reload')));
+					$builder->add('nodeId', 'orchestra_node_choice', array('attr' => array('class' => 'reload'), 'empty_value' => '--------'));
 					if(array_key_exists('nodeId', $options['data']) && $options['data']['nodeId'] != ''){
-						$builder->add('blockId', new BlockChoiceType($this->documentManager, $this->filter, $options['data']['nodeId']), array('attr' => array('class' => 'used-as-label')));
+						$builder->add('blockId', new BlockChoiceType($this->documentManager, $this->filters, $options['data']['nodeId']), array('attr' => array('class' => 'used-as-label'), 'empty_value' => '--------'));
 					}
 				}
 				if($options['data']['method'] == 'generate'){
-					$choices = array_map(function($value) { return $value['action']; }, $this->filter);
-					$choices = array_flip($choices);
-					$choices = array_merge(array('' => '--------'), $choices);
-					$builder->add('component',  'choice', array('attr' => array('class' => 'reload used-as-label'), 'choices' => $choices));
+					$choices = array();
+					foreach($this->filters as $filter){
+						$choices['PHPOrchestraCMSBundle:Block/'.$filter.':show'] = $filter;
+					}
+					$builder->add('component',  'choice', array('attr' => array('class' => 'reload used-as-label'), 'choices' => $choices, 'empty_value' => '--------'));
 					if(array_key_exists('component', $options['data']) && $options['data']['component'] != ''){
-						$type = array_filter($this->filter, function($value)  use ($options) { return $value['action'] == $options['data']['component']; });
-						if(count($type) > 0){
-							$type = each($type);
-							$type = $type['value']['form'];
-							$builder->add('attributs', new $type());
-						}
+						$type = preg_replace('/^PHPOrchestraCMSBundle:Block\/(.*?):show$/', '$1', $options['data']['component']);
+						$type = new \ReflectionClass('PHPOrchestra\CMSBundle\Form\Type\Block\\'.$type.'Type');
+						$builder->add('attributs', $type->newInstance());
 					}
 				}
 			}
@@ -76,7 +76,7 @@ class BlockType extends AbstractType
         else{
             $builder->add('nodeId', 'orchestra_node_choice', array('attr' => array('class' => 'reload')));
             if(array_key_exists('nodeId', $options['data']) && $options['data']['nodeId'] != ''){
-                $builder->add('blockId', new BlockChoiceType($this->documentManager, $this->filter, $options['data']['nodeId']), array('attr' => array('class' => 'used-as-label')));
+                $builder->add('blockId', new BlockChoiceType($this->documentManager, $this->filters, $options['data']['nodeId']), array('attr' => array('class' => 'used-as-label')));
             }
         }
 	}
