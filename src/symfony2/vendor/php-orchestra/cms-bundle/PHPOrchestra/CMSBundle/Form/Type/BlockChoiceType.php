@@ -21,26 +21,30 @@ class BlockChoiceType extends AbstractType
      * 
      * @param $documentManager
      */
-    public function __construct($documentManager, $filters = array(), $nodeId = 0)
+    public function __construct($documentManager, $filters = array(), $nodeId = 0, $siteId = 0)
     {
-    	if($nodeId === 0){
-    		foreach ($filters as $filter) {
-                $this->choices[$filter] = $filter;
+    	$this->choices = array();
+    	if(is_array($filters) && count($filters) > 0){
+    		foreach($filters as $filter){
+    			$this->choices[$filter] = $filter;
+    		}
+    	}
+    	elseif($nodeId !== 0){
+            $node = $documentManager->getDocument('Node', array('nodeId' => $nodeId));    		
+            $blocks = $node->getBlocks();
+            $intRank = 0;
+            foreach ($blocks as $block) {
+                $this->choices[$intRank] = $block->getComponent();
+                $intRank++;
             }
-    	}
-    	else{
-	        $node = $documentManager->getDocument('Node', array('nodeId' => $nodeId));
-	        $blocks = $node->getBlocks();
-	        $intRank = 0;
-	        foreach ($blocks as $block) {
-	            $component = $block->getComponent();
-	            $component = preg_replace('/^PHPOrchestraCMSBundle:Block\/(.*?):show$/', '$1', $component);
-	            if (in_array($component, $filters)) {
-	                $this->choices[$intRank] = $component;
-	                $intRank++;
-	            }
-	        }
-    	}
+        }
+        elseif($siteId !== 0){
+            $site = $documentManager->getDocument('Site', array('siteId' => $siteId));
+            $blocks = $site->getBlocks();
+            foreach ($blocks as $block) {
+                $this->choices[$block] = $block;
+            }
+        }
     }
     
     public function setDefaultOptions(OptionsResolverInterface $resolver)

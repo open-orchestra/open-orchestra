@@ -20,7 +20,7 @@
         {% if block %} <span>{{ block.component }}</span>{% endif %}
         </legend>
     {% if block %}
-        {{ render_esi(controller(block.component, block.attributes), {'ignore_errors' : true} ) }}
+        {{ render_esi(controller('PHPOrchestraCMSBundle:Block/' ~ block.component ~ ':show', block.attributes), {'ignore_errors' : true} ) }}
     {% endif %}
     </fieldset>
 {% endfor %}

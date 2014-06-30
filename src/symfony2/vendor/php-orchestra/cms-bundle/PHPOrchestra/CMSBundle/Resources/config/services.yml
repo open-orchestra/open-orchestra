@@ -74,7 +74,7 @@ services:
     # Block select form field type
     php_orchestra_cms.type.block_choice:
         class: PHPOrchestra\CMSBundle\Form\Type\BlockChoiceType
-        arguments: [@phporchestra_cms.documentmanager, "%php_orchestra.blocks%", 0]
+        arguments: [@phporchestra_cms.documentmanager, "%php_orchestra.blocks%", 0, 0]
         tags:
             - { name: form.type, alias: orchestra_block_choice }
 

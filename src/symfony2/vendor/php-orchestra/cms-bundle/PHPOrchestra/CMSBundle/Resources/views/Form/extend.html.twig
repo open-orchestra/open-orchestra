@@ -16,6 +16,11 @@
     {{ block('generic_behavior') }}
 {% endblock %}
 
+{% block tinyMCEWysiwyg_widget %}
+    {{ form_widget(form) }}
+    {{ tinymce_init() }}
+{% endblock %}
+
 {% block blocks_widget %}
     {{ unshift_js(asset('bundles/phporchestracms/js/pagegenerator/block.js')) }}
     {{ form_widget(form) }}
