@@ -184,7 +184,7 @@ class NodeController extends Controller
             array(
                 'inDialog' => true,
                 'beginJs' => array('pagegenerator/dialogNode.js', 'pagegenerator/model.js'),
-                'endJs' => array('pagegenerator/node.js'),
+                'endJs' => array('pagegenerator/node.js?'.time()),
                 'action' => $this->getRequest()->getUri()
             )
         );

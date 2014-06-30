@@ -27,7 +27,7 @@ class BlockController extends Controller
     	$action = $this->generateUrl('php_orchestra_cms_blockform', array('type' => $type));
         $inDialog = true;
         $subForm = true;
-        $js = 'pagegenerator/'.$type.'_block.js';
+        $js = 'pagegenerator/'.$type.'_block.js?'.time();
         $refresh = array('is_node' => ($type == 'node'));
         if ($request->getMethod() == 'GET' && $request->query->get('refresh') !== null) {
 	        $inDialog = false;

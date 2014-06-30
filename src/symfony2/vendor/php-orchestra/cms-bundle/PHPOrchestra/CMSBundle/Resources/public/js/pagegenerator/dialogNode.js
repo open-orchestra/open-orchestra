@@ -15,13 +15,25 @@ function addButton(name, data, jThis){
         };
 }
 
+function deleteDialogIfExists(name){
+	$(".ui-dialog").filter(function(i) {
+		if($(this).children('#' + name).length){
+			$(this).children('#' + name).remove();
+			return true;
+		}
+		else{
+			return false;
+		}
+	}).remove();
+}
+
 function getDialogParameter(){
 	dialog_parameter = {
 	    resizable: false,
 	    width:530,
 	    modal: true,
 	    autoOpen: false,
-	    open: function ( event, ui) {
+	    open: function ( event, ui ) {
 	        var data = $(this).data('container').data('settings');
 	        data = eval('data' + $(this).data('path'));	
 	        var found = false;

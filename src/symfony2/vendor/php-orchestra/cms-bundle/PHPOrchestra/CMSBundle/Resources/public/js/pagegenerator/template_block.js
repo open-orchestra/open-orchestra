@@ -1,1 +1,2 @@
-$( "#dialog-blocks" ).dialog($.extend(dialog_parameter, {"addArray" : []}));
+deleteDialogIfExists('dialog-blocks');
+$('#dialog-blocks').dialog($.extend(dialog_parameter, {"addArray" : []}));

@@ -56,18 +56,13 @@ class BlockType extends AbstractType
 				if($options['data']['method'] == 'load'){
 					$builder->add('nodeId', 'orchestra_node_choice', array('attr' => array('class' => 'reload'), 'empty_value' => '--------'));
 					if(array_key_exists('nodeId', $options['data']) && $options['data']['nodeId'] != ''){
-						$builder->add('blockId', new BlockChoiceType($this->documentManager, $this->filters, $options['data']['nodeId']), array('attr' => array('class' => 'used-as-label'), 'empty_value' => '--------'));
+						$builder->add('blockId', new BlockChoiceType($this->documentManager, array(), $options['data']['nodeId']), array('attr' => array('class' => 'used-as-label'), 'empty_value' => '--------'));
 					}
 				}
 				if($options['data']['method'] == 'generate'){
-					$choices = array();
-					foreach($this->filters as $filter){
-						$choices['PHPOrchestraCMSBundle:Block/'.$filter.':show'] = $filter;
-					}
-					$builder->add('component',  'choice', array('attr' => array('class' => 'reload used-as-label'), 'choices' => $choices, 'empty_value' => '--------'));
+                    $builder->add('component', new BlockChoiceType($this->documentManager, array(), 0, 1), array('attr' => array('class' => 'reload used-as-label'), 'empty_value' => '--------'));
 					if(array_key_exists('component', $options['data']) && $options['data']['component'] != ''){
-						$type = preg_replace('/^PHPOrchestraCMSBundle:Block\/(.*?):show$/', '$1', $options['data']['component']);
-						$type = new \ReflectionClass('PHPOrchestra\CMSBundle\Form\Type\Block\\'.$type.'Type');
+						$type = new \ReflectionClass('PHPOrchestra\CMSBundle\Form\Type\Block\\'.$options['data']['component'].'Type');
 						$builder->add('attributs', $type->newInstance());
 					}
 				}

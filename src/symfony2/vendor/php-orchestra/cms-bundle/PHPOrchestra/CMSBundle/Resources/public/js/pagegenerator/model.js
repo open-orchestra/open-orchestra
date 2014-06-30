@@ -43,6 +43,7 @@ function resetPercent(objects){
     {
 		return this.each(function(){
 			var prefix = $(this).attr('id').replace('dialog-', '');
+			var ref = $(this);
 	        for(var i in data){
 				try{
 					'ui-model' in data[i][0];
@@ -57,13 +58,42 @@ function resetPercent(objects){
 		        var id = $(this).attr( "id" ).replace(prefix + '_', '');
 		        if(!$(this).hasClass('not-mapped') && id != '_token'){
 		        	data[id] = $(this).val();
-		        	if($(this).hasClass('used-as-label')){
-		        		if('ui-model' in data){
+		        	if('ui-model' in data){
+		        		if('method' in data){
+		        			if(data['method'] == 'generate' && 'component' in data){
+		        				//console.log(data);
+		        				/*$('form').on('change', '.reload', function(){
+		        					var target = $(this).parents('form');
+		        					var data = target.serializeArray();
+		        					data.push({'name': 'refresh', 'value': true});
+		        				    $.ajax({
+		        				        'type': 'GET',
+		        				        'url': target.attr('action'),
+		        				        'success': function(response){
+		        				    		$(response.data).each(function(){
+		        				    			if($(this).prop("tagName") == target.prop("tagName")){
+		        				    				target.html($(this).html());
+		        				    			}
+		        				    		});
+		        				        },
+		        				        'data': data,
+		        				        'dataType': 'json',
+		        				        'async': false
+		        				    });
+		        				});*/
+		        			}
+		        			if(data['method'] == 'load' && 'blockId' in data && 'nodeId' in data){
+
+		        			
+		        			
+		        			}
+		        		}
+			        	if($(this).hasClass('used-as-label')){
 			        		data['ui-model'].label = $(this).val();
 			        		if($(this).is('select')){
 			        			data['ui-model'].label = $(this).find(":selected").text();
 			        		}
-		        		}
+			        	}
 		        	}
 		        }
 	        });
