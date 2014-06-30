@@ -197,6 +197,12 @@ class NodeController extends Controller
 	            $node->setIsNew(true);
 	            $node->save();
 	            
+                // Testing if solr is running and index a node
+                $indexSolr = $this->get('phporchestra_cms.indexsolr');
+                if ($indexSolr->solrIsRunning()) {
+	            	$indexSolr->get('phporchestra_cms.indexsolr')->slpitDoc($node, 'Node');
+	            }
+	            
 	            return $this->render(
 	                'PHPOrchestraCMSBundle:BackOffice/Editorial:simpleMessage.html.twig',
 	                array('message' => 'Edition ok')
@@ -236,6 +242,12 @@ class NodeController extends Controller
     public function deleteAction($nodeId)
     {
         $this->deleteTree($nodeId);
+        
+        // Testing if solr is running and delete a node from the index
+        $indexSolr = $this->get('phporchestra_cms.indexsolr');
+        if ($indexSolr->solrIsRunning()) {
+            $indexSolr->deleteIndex($nodeId);
+        }
         
         return $this->render(
             'PHPOrchestraCMSBundle:BackOffice/Editorial:simpleMessage.html.twig',
@@ -292,6 +304,13 @@ class NodeController extends Controller
         if (isset($parent) && isset($node)) {
             $node->setParentId($parent->getNodeId());
             $node->save();
+
+            // Testing if solr is running and index a node
+            $indexSolr = $this->get('phporchestra_cms.indexsolr');
+            if ($indexSolr->solrIsRunning()) {
+                $indexSolr->get('phporchestra_cms.indexsolr')->slpitDoc($node, 'Node');
+            }
+
             $message = 'Node "' . $node->getName() . '" moved under node "' . $parent->getName() . '"';
         } else {
             $message = 'Error while moving node, process aborted';

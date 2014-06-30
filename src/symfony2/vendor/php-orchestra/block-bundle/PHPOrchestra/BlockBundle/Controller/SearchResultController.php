@@ -29,59 +29,66 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class SearchResultController extends Controller
 {
-    
+
     
     /**
      * Render the search's result block
      * 
-     * @param string $_nodeId node identifiant
-     * @param string $_page page number
+     * @param string $nodeId node identifiant
+     * @param string $page page number
      * @param array $_page_parameters additional parameters extracted from url
      * 
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function showAction(
-        $_nodeId,
-        $_nbdoc,
-        $_fielddisplayed,
-        $_nbspellcheck,
-        $_facets = array(),
-        $_filter = array(),
-        $_optionsearch = array(),
-        $_optionsdismax = array(),
-        $_page = null,
+        $nodeId,
+        $nbdoc,
+        $fielddisplayed,
+        $nbspellcheck,
+        $facets = array(),
+        $filter = array(),
+        $optionsearch = array(),
+        $optionsdismax = array(),
+        $page = null,
         $_page_parameters = array()
     ) {
-        if (!isset($_page)) {
-            $_page = 1;
+        if (!isset($page)) {
+            $page = 1;
         }
+
         // Method POST
         if (isset($_page_parameters['post']['form'])) {
             if (is_array($_page_parameters['post']['form'])) {
                 $form = $_page_parameters['post']['form'];
                 if (isset($form['Search'])) {
                     $data = $form['Search'];
-        
-                    $optionsearch = array('start' => ($_page * $_nbdoc) - $_nbdoc, 'rows' => $_page * $_nbdoc);
+                    
+                    if (!empty($optionsearch)) {
+                        $optionsearch['start'] = ($page * $nbdoc) - $nbdoc;
+                        $optionsearch['rows'] = $page * $nbdoc;
+                    } else {
+                        $optionsearch = array('start' => ($page * $nbdoc) - $nbdoc, 'rows' => $page * $nbdoc);
+                    }
+                    
                     // Result of search
                     $resultSet = $this->callResearch(
                         $data,
-                        $_nbspellcheck,
+                        $nbspellcheck,
                         $optionsearch,
-                        $_facets,
-                        $_filter,
-                        $_optionsdismax
+                        $facets,
+                        $filter,
+                        $optionsdismax
                     );
         
                     // Call template
                     return $this->callTemplate(
                         $data,
                         $resultSet,
-                        $_nodeId,
-                        $_page,
-                        $_nbdoc,
-                        $_fielddisplayed,
-                        $_facets
+                        $nodeId,
+                        $page,
+                        $nbdoc,
+                        $fielddisplayed,
+                        $facets
                     );
         
                 }
@@ -95,52 +102,59 @@ class SearchResultController extends Controller
                     $data = $form['Search'];
         
                     if (isset($form['page'])) {
-                        $_page = $form['page'];
+                        $page = $form['page'];
                     }
-                    $optionsearch = array('start' => ($_page * $_nbdoc) - $_nbdoc, 'rows' => $_page * $_nbdoc);
+                    
+                    if (!empty($optionsearch)) {
+                        $optionsearch['start'] = ($page * $nbdoc) - $nbdoc;
+                        $optionsearch['rows'] = $page * $nbdoc;
+                    } else {
+                        $optionsearch = array('start' => ($page * $nbdoc) - $nbdoc, 'rows' => $page * $nbdoc);
+                    }
+
                     // Result of search
                     $resultSet = $this->callResearch(
                         $data,
-                        $_nbspellcheck,
+                        $nbspellcheck,
                         $optionsearch,
-                        $_facets,
-                        $_filter,
-                        $_optionsdismax
+                        $facets,
+                        $filter,
+                        $optionsdismax
                     );
         
                     // Call template
                     return $this->callTemplate(
                         $data,
                         $resultSet,
-                        $_nodeId,
-                        $_page,
-                        $_nbdoc,
-                        $_fielddisplayed,
-                        $_facets
+                        $nodeId,
+                        $page,
+                        $nbdoc,
+                        $fielddisplayed,
+                        $facets
                     );
         
                 } else {
                     // Filter
                     if (isset($form['data']) && isset($form['filter']) && isset($form['facetname'])) {
-        
+
                         // Result of filter query
                         $resultSet = $this->callFilter($form['data'], $form['filter'], $form['facetname']);
-        
+
                         // Call template
                         return $this->callTemplate(
                             $form['data'],
                             $resultSet,
-                            $_nodeId,
-                            $_page,
-                            $_nbdoc,
-                            $_fielddisplayed,
-                            $_facets
+                            $nodeId,
+                            $page,
+                            $nbdoc,
+                            $fielddisplayed,
+                            $facets
                         );
                     }
                 }
             }
         }
-        return new Response('Erreur ');
+        return new Response($this->get('translator')->trans('Error in showAction'));
     }
 
 
@@ -173,6 +187,7 @@ class SearchResultController extends Controller
         // Filtering
         if (isset($filters) && !empty($filters)) {
             if (!isset($filters['name'])) {
+                // array of filter
                 foreach ($filters as $filter) {
                     $search->filter($query, $filter['name'], $filter['field']);
                 }
@@ -192,8 +207,8 @@ class SearchResultController extends Controller
     
         return $this->result($client, $query, $search);
     }
-    
-    
+
+
     /**
      * Create a filter query
      *
@@ -211,8 +226,8 @@ class SearchResultController extends Controller
     
         return $client->select($query);
     }
-    
-    
+
+
     /**
      * Return result of the query
      *
@@ -247,8 +262,8 @@ class SearchResultController extends Controller
             return $resultset;
         }
     }
-    
-    
+
+
     /**
      * Call facet services
      *
@@ -311,8 +326,8 @@ class SearchResultController extends Controller
             }
         }
     }
-    
-    
+
+
     /**
      * Call search template
      *
@@ -375,21 +390,19 @@ class SearchResultController extends Controller
         // Search term in the index with suggester object
         $query->setQuery($terms);
         $query->setCollate(true);
-    
+
         // Get the result
         $resultset = $client->suggester($query);
         $result = array();
+        
+        $result[] = $resultset->getCollation();
         foreach ($resultset->getResults() as $suggest) {
-            $result[] = $suggest;
-        }
-        $result2 = "";
-        if (isset($result)) {
-            foreach ($result as $suggest) {
-                $result2 = $suggest->getSuggestions();
+            foreach ($suggest->getSuggestions() as $suggestion) {
+                $result[] = $suggestion;
             }
         }
     
-        return new JsonResponse($result2);
+        return new JsonResponse($result);
     }
 
 
@@ -407,11 +420,11 @@ class SearchResultController extends Controller
             'text'
         )
         ->add(
-            'nbdoc',
+            'documentsNumber',
             'integer'
         )
         ->add(
-            'fielddisplayed',
+            'fieldsDisplayed',
             'textarea'
         )
         ->add(
@@ -419,19 +432,19 @@ class SearchResultController extends Controller
             'textarea'
         )
         ->add(
-            'filtres',
+            'filters',
             'textarea'
         )
         ->add(
-            'optionsrecherche',
+            'searchOptions',
             'textarea'
         )
         ->add(
-            'nbspellcheck',
+            'spellCheckNumber',
             'integer'
         )
         ->add(
-            'optionsdismax',
+            'dismaxOptions',
             'textarea'
         )->getForm();
         

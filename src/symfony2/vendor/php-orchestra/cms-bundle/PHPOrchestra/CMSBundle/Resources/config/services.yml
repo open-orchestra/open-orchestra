@@ -12,6 +12,16 @@ services:
         class: PHPOrchestra\CMSBundle\Document\DocumentManager
         arguments: [@mandango]
 
+    # IndexCommand service
+    phporchestra_cms.indexsolr:
+        class: PHPOrchestra\BlockBundle\IndexCommand\SolrIndexCommand
+        arguments: [@service_container]
+    
+    # SearchCommand service
+    phporchestra_cms.searchsolr:
+        class: PHPOrchestra\BlockBundle\IndexCommand\SolrSearchCommand
+        arguments: [@service_container]
+
 #--[FORM FIELDS]----------------#
 
     # Orchestra content type attributes
