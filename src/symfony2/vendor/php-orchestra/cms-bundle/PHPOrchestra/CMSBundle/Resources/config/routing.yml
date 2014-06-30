@@ -14,6 +14,10 @@ php_orchestra_cms_bo_contentType:
     resource: "@PHPOrchestraCMSBundle/Controller/BackOfficeView/ContentTypeController.php"
     type: annotation
 
+php_orchestra_cms_bo_contentType_ajaxmenu:
+    pattern: /ajax/contenttype/menu/{siteId}
+    defaults: { _controller: PHPOrchestraCMSBundle:BackOfficeView/ContentType:ajaxMenu, siteId: '' }
+
 php_orchestra_cms_bo_content:
     resource: "@PHPOrchestraCMSBundle/Controller/BackOfficeView/ContentController.php"
     type: annotation

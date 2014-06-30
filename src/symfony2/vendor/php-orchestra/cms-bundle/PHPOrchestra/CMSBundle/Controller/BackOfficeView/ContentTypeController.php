@@ -181,4 +181,32 @@ class ContentTypeController extends TableViewController
             $this->generateUrlValue('catalog')
         );
     }
+    
+    /**
+     * Return a list of contentTypes alloawed for $siteId
+     * 
+     * @param string $siteId
+     */
+    public function ajaxMenuAction($siteId)
+    {
+        $documentManager = $this->container->get('phporchestra_cms.documentmanager');
+        $contentTypes = $documentManager->getContentTypesInLastVersion();
+        
+        $contentTypesArray = array();
+        
+        foreach($contentTypes as $contentType) {
+            $contentTypesArray[] = array(
+                'url' => $this->container->get('router')->generate(
+                    'phporchestra_cms_backofficeview_content_index',
+                    array(
+                        'action' => 'catalog',
+                        'contentTypeId' => $contentType['_id']
+                    )
+                ),
+                'label' => htmlentities($contentType['name'])
+            );
+        }
+        
+        return new JsonResponse($contentTypesArray);
+    }
 }
