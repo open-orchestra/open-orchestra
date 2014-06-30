@@ -217,7 +217,8 @@ class DocumentManager
                     'version' => array('$first' => '$version'),
                     'parentId' => array('$first' => '$parentId'),
                     'name' => array('$first' => '$name'),
-                    'deleted' => array('$first' => '$deleted')
+                    'deleted' => array('$first' => '$deleted'),
+                    'blocks' => array('$first' => '$blocks'),
                 )
         );
         
@@ -298,5 +299,32 @@ class DocumentManager
         
         $versions = $repository->getCollection()->aggregate($filters);
         return $versions['result'];
+    }
+
+    /**
+     * Return a block in a node
+     */
+    public function getBlockInNode($nodeId, $blockId)
+    {
+    	
+        $result = null;
+        
+    	$filters = array(
+            array(
+                '$match' =>
+                    array(
+                        'nodeId' => $nodeId
+                    )
+            )
+        );
+    	$node = $this->getNodesInLastVersion($filters);
+    	if(count($node) > 0){
+    		$node = $node[0];
+    		if(array_key_exists('blocks', $node) && array_key_exists($blockId, $node['blocks'])){
+    			return $node['blocks'][$blockId];
+    		}
+    	}
+    	
+    	return null;
     }
 }

@@ -37,7 +37,13 @@ function resetPercent(objects){
 		delete objects[i].boPercent;
 	}
 }
-
+function formIdToName(prefix, data){
+	var result = [];
+	for(var i in data){
+		result.push({'name': prefix + '[' + i.replace('_', '][') + ']', 'value': data[i]});
+	}
+	return result;
+}
 (function($){
     $.fn.fromFormToJs = function(data)
     {
@@ -59,35 +65,6 @@ function resetPercent(objects){
 		        if(!$(this).hasClass('not-mapped') && id != '_token'){
 		        	data[id] = $(this).val();
 		        	if('ui-model' in data){
-		        		if('method' in data){
-		        			if(data['method'] == 'generate' && 'component' in data){
-		        				//console.log(data);
-		        				/*$('form').on('change', '.reload', function(){
-		        					var target = $(this).parents('form');
-		        					var data = target.serializeArray();
-		        					data.push({'name': 'refresh', 'value': true});
-		        				    $.ajax({
-		        				        'type': 'GET',
-		        				        'url': target.attr('action'),
-		        				        'success': function(response){
-		        				    		$(response.data).each(function(){
-		        				    			if($(this).prop("tagName") == target.prop("tagName")){
-		        				    				target.html($(this).html());
-		        				    			}
-		        				    		});
-		        				        },
-		        				        'data': data,
-		        				        'dataType': 'json',
-		        				        'async': false
-		        				    });
-		        				});*/
-		        			}
-		        			if(data['method'] == 'load' && 'blockId' in data && 'nodeId' in data){
-
-		        			
-		        			
-		        			}
-		        		}
 			        	if($(this).hasClass('used-as-label')){
 			        		data['ui-model'].label = $(this).val();
 			        		if($(this).is('select')){
@@ -97,6 +74,18 @@ function resetPercent(objects){
 		        	}
 		        }
 	        });
+    		if('method' in data){
+			    $.ajax({
+			        'type': 'GET',
+			        'url': $(this).find('form').attr("action"),
+			        'success': function(response){
+			    		data['ui-model']['html'] = response.data;
+			        },
+			        'data': $.extend(data, {'preview': true}),
+			        'dataType': 'json',
+			        'async': false
+			    });
+    		}
 		});
     }
     $.fn.fromJsToForm = function(data)
@@ -104,22 +93,21 @@ function resetPercent(objects){
 		return this.each(function(){
 			var prefix = $(this).attr('id').replace('dialog-', '');
 			var ref = $(this);
-	        $(this).find(":input").each(function(){
-	        	var id = $(this).attr("id").replace(prefix + '_', '');
-	        	if(id != '_token'){
-		        	var value = '';
+			var refresh = $(this).find(":input.refresh");
+			if(refresh.length){
+				refresh.eq(0).refreshForm(formIdToName(prefix, data));
+			}
+			else{
+		        $(this).find(':input[id!="' + prefix + '__token"]').each(function(){
+		        	var id = $(this).attr("id").replace(prefix + '_', '');
 		        	if(id in data){
-		        		value = data[id]
+		        		$(this).val(data[id]);
 		        	}
-		        	if(value != $(this).val()){
-			    		$(this).val(value);
-			    		if($(this).hasClass('reload')){
-			    			$(this).change();
-			    			ref.fromJsToForm(data);
-			    		}
+		        	else{
+		        		$(this).val('');
 		        	}
-	        	}
-	    	});
+		    	});
+			}
 		});
     }
 	$.fn.moveFromTo = function(source, destination){
@@ -211,11 +199,15 @@ function resetPercent(objects){
 			var container_settings = container.data('settings');
 			var this_settings = eval('container_settings' + options.path);
 			var is_container = $(this).find('.ui-model').length > 0;
-			var span = $("<span/>").text(('label' in this_settings['ui-model']) ? this_settings['ui-model'].label : 'No Record');
+			var title = $("<span/>").addClass("title").text(('label' in this_settings['ui-model']) ? this_settings['ui-model'].label : 'No Record');
 			var div = $("<div/>");
 			var action = $("<span/>").addClass("action");
-			span.appendTo(div);
+			title.appendTo(div);
 			action.appendTo(div);
+			if('html' in this_settings['ui-model']){
+				var preview = $("<span/>").addClass("preview").html(this_settings['ui-model']['html']);
+				preview.appendTo(div);	
+			}
 
 			if(is_container){
 				actions = {'fa fa-cog' : actions['fa fa-cog']};
