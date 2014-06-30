@@ -10,8 +10,11 @@ Model\PHPOrchestraCMSBundle\Node:
         version: 1
         language: fr
         status: published
+        deleted: false
         templateId: template_main
         theme: theme1
+        inMenu: true
+        inFooter: false
         areas: [{"areaId":"main","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":0}]}]
         blocks:
             -
@@ -29,7 +32,10 @@ Model\PHPOrchestraCMSBundle\Node:
         version: 1
         language: fr
         status: published
+        deleted: true
         templateId: template_generic
+        inMenu: true
+        inFooter: false
         areas: [{"areaId":"Generic Area","classes":[],"subAreas":[],"blocks":[]}]
 
     node_full:
@@ -43,16 +49,19 @@ Model\PHPOrchestraCMSBundle\Node:
         version: 1
         language: fr
         status: published
+        deleted: false
         templateId: template_full
         theme: mixed
-        areas: [{"areaId":"header","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":0}]},{"areaId":"main","classes":[],"boDirection":"v","subAreas":[{"areaId":"left_menu","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":1}]},{"areaId":"content","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":2},{"nodeId":0,"blockId":3},{"nodeId":0,"blockId":4}]},{"areaId":"skycrapper","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":5}]}],"blocks":[]},{"areaId":"footer","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":6}]}]
+        inMenu: true
+        inFooter: false
+        areas: [{"areaId":"header","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":0}]},{"areaId":"main","classes":[],"boDirection":"v","subAreas":[{"areaId":"left_menu","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":1}]},{"areaId":"content","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":2},{"nodeId":0,"blockId":3},{"nodeId":0,"blockId":4}]},{"areaId":"skycrapper","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":5}]}],"blocks":[]},{"areaId":"footer","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":6}]},{"areaId":"Search","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":7}]}]
         blocks:
             -
                 component: "PHPOrchestraCMSBundle:Block/Sample:show"
                 attributes: {"title":"Qui sommes-nous ?", "author":"Pourquoi nous choisir ?", "news":"Nos agences"}
             -
-                component: "PHPOrchestraCMSBundle:Block/Sample:show"
-                attributes: {"title":"http://www.google.fr", "author":"http://www.yahoo.fr", "news":"http://altavista.box.co.uk"}
+                component: "PHPOrchestraBlockBundle:Menu:show"
+                attributes: {"class":{"div":"divclass", "ul":"ulclass", "link":"linkclass"}, "id":"idmenu"}
             -
                 component: "PHPOrchestraCMSBundle:Block/Sample:show"
                 attributes: {"title":"News 1", "author":"Donec bibendum at nibh eget imperdiet. Mauris eget justo augue. Fusce fermentum iaculis erat, sollicitudin elementum enim sodales eu. Donec a ante tortor. Suspendisse a.", "news":""}
@@ -66,8 +75,11 @@ Model\PHPOrchestraCMSBundle\Node:
                 component: "PHPOrchestraCMSBundle:Block/Sample:show"
                 attributes: {"title":"mapub.jpg", "author":"qwerty", "news":""}
             -
-                component: "PHPOrchestraCMSBundle:Block/Sample:show"
-                attributes: {"title":"Mentions légales", "author":"Nous contacter", "news":""}
+                component: "PHPOrchestraBlockBundle:Footer:show"
+                attributes: {"id":"idFooter", "class":{"div":"divclass", "ul":"ulclass", "link":"linkclass"}}
+            -
+                component: "PHPOrchestraBlockBundle:Search:show"
+                attributes: {"value":"Rechercher", "name":"btnSearch", "class":"classbouton", "nodeId":"fixture_search"}
     
     node_about_us:
         nodeId: fixture_about_us
@@ -80,8 +92,11 @@ Model\PHPOrchestraCMSBundle\Node:
         version: 1
         language: fr
         status: published
+        deleted: false
         templateId: template_main
         theme: theme2
+        inMenu: true
+        inFooter: true
         areas: [{"areaId":"main","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":0}]}]
         blocks:
             -
@@ -99,8 +114,11 @@ Model\PHPOrchestraCMSBundle\Node:
         version: 1
         language: fr
         status: published
+        deleted: false
         templateId: template_main
         theme: theme2
+        inMenu: true
+        inFooter: true
         areas: [{"areaId":"main","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":0}]}]
         blocks:
             -
@@ -118,8 +136,11 @@ Model\PHPOrchestraCMSBundle\Node:
         version: 1
         language: fr
         status: published
+        deleted: false
         templateId: template_main
         theme: sample
+        inMenu: true
+        inFooter: true
         areas: [{"areaId":"main","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":0}]}]
         blocks:
             -
@@ -137,8 +158,11 @@ Model\PHPOrchestraCMSBundle\Node:
         version: 1
         language: fr
         status: published
+        deleted: false
         templateId: template_main
         theme: theme1
+        inMenu: false
+        inFooter: true
         areas: [{"areaId":"main","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":0}]}]
         blocks:
             -
@@ -156,10 +180,47 @@ Model\PHPOrchestraCMSBundle\Node:
         version: 1
         language: fr
         status: published
+        deleted: false
         templateId: template_main
         theme: fromApp
+        inMenu: false
+        inFooter: true
         areas: [{"areaId":"main","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":0}]}]
         blocks:
             -
                 component: "PHPOrchestraCMSBundle:Block/Sample:show"
                 attributes: {"title":"Annuaire", "author":"Le bottin mondain","news":""}
+
+    node_search:
+        nodeId: fixture_search
+        nodeType: search
+        siteId: 1
+        parentId: root
+        path: -
+        alias: recherche
+        name: fixture search
+        version: 1
+        language: fr
+        status: published
+        deleted: false
+        templateId: template_full
+        theme: mixed
+        inMenu: false
+        inFooter: false
+        areas: [{"areaId":"header","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":0}]},{"areaId":"main","classes":[],"boDirection":"v","subAreas":[{"areaId":"left_menu","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":1}]},{"areaId":"content","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":2},{"nodeId":0,"blockId":3}]}],"blocks":[]},{"areaId":"footer","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":4}]}]
+        blocks:
+            -
+                component: "PHPOrchestraCMSBundle:Block/Sample:show"
+                attributes: {"title":"Qui sommes-nous ?", "author":"Pourquoi nous choisir ?", "news":"Nos agences"}
+            -
+                component: "PHPOrchestraBlockBundle:Menu:show"
+                attributes: {"class":{"div":"divclass", "ul":"ulclass", "link":"linkclass"}, "id":"idmenu"}
+            -
+                component: "PHPOrchestraBlockBundle:Search:show"
+                attributes: {"value":"Rechercher", "name":"btnSearch", "class":"classbouton", "nodeId":"fixture_search"}
+            -
+                component: "PHPOrchestraBlockBundle:SearchResult:show"
+                attributes: {"nodeId":"fixture_search", "nbdoc":"5", "fielddisplayed":{"0":"title_s", "1":"news_t", "2":"author_s", "3":"title_t", "4":"intro_t", "5":"text_t", "6":"description_t"}, "facets":{"facetField":{"name":"parent", "field":"parentId", "options":{}}}, "filter":{}, "nbspellcheck":"6", "optionsearch":{}, "optionsdismax":{"fields":{"0":"author_s", "1":"intro_t", "2":"title_s"}, "boost":{"0":"2", "1":"1.5", "2":"1"}, "mm":"75%"}}
+            -
+                component: "PHPOrchestraBlockBundle:Footer:show"
+                attributes: {"id":"idFooter", "class":{"div":"divclass", "ul":"ulclass", "link":"linkclass"}}

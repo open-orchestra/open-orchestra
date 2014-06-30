@@ -1,0 +1,32 @@
+Model\PHPOrchestraCMSBundle\FieldIndex:
+    test_1:
+        fieldName: title
+        fieldType: s
+
+    test_2:
+        fieldName: news
+        fieldType: t
+
+    test_3:
+        fieldName: author
+        fieldType: s
+
+    test_4:
+        fieldName: title
+        fieldType: t
+
+    test_5:
+        fieldName: image
+        fieldType: s
+
+    test_6:
+        fieldName: intro
+        fieldType: t
+
+    test_7:
+        fieldName: text
+        fieldType: t
+
+    test_8:
+        fieldName: description
+        fieldType: t

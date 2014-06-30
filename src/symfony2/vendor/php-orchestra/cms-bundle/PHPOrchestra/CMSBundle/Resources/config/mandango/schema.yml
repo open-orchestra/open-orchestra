@@ -99,3 +99,16 @@ Model\PHPOrchestraCMSBundle\User:
         lastName: string
         email: string
         addresses: string
+
+
+Model\PHPOrchestraCMSBundle\ListIndex:
+    collection: listIndex
+    fields:
+        nodeId: string
+        contentId: integer
+
+Model\PHPOrchestraCMSBundle\FieldIndex:
+    collection: fieldIndex
+    fields:
+        fieldName: string
+        fieldType: string
