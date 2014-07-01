@@ -88,7 +88,9 @@ function getDialogParameter(){
 	    	}
 	    },
 	    close: function ( event, ui) {
-	    	$(this).data('container').parent().model({"type" : $(this).data('container').data('target')});
+	    	console.log(event);
+	    	
+	    	$(this).data('container').parent().model({"type" : $(this).data('container').data('target'), "resizable" : $(this).data('container').data('resizable')});
 	    }
 	};
 	return dialog_parameter;

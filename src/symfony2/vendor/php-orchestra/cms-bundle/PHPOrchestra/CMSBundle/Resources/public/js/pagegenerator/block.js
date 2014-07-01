@@ -5,7 +5,10 @@ $('body').on('change', '.refresh', function(){
 (function($){
 	$.fn.refreshForm = function(params){
 		var target = $(this).parents('form');
-		params = target.serializeArray().concat({'name': 'refresh', 'value': true}, params || {});
+		if(!params){
+			params = target.serializeArray();
+		}
+		params = params.concat({'name': 'refresh', 'value': true});
 	    $.ajax({
 	        'type': 'GET',
 	        'url': target.attr('action'),

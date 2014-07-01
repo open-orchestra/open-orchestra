@@ -128,7 +128,7 @@ function formIdToName(prefix, data){
 				}
 			}
 			resetPercent(sourceInfo.tab);
-	    	container.parent().model({"type" : container.data('target')});
+	    	container.parent().model({"type" : container.data('target'), "resizable" : container.data('resizable')});
 		});
 	}
 	$.fn.changeSize = function(coordinate, size){
@@ -164,23 +164,6 @@ function formIdToName(prefix, data){
 				"type" : ""
 			}, options || {});
 
-			var actions = {
-				'fa fa-trash-o' : [
-				    '$(this).moveFromTo(options.path);',
-				],
-				'fa fa-arrow-circle-o-down' : [
-					'$(this).moveFromTo(options.path, +1);',
-				],
-				'fa fa-arrow-circle-o-up' : [
-					'$(this).moveFromTo(options.path, -1);',
-				],
-				'fa fa-cog' : [
-				   	'$( "#dialog-" + options.type ).data("path", options.path);',
-				   	'$( "#dialog-" + options.type ).fromJsToForm(this_settings);',
-					'$( "#dialog-" + options.type ).dialog( "open" );'
-				]
-			};
-			
 			var container = $.merge($(this).find('.ui-model'), $(this).parents('.ui-model'));
 
 			if(container.length == 0){
@@ -188,12 +171,12 @@ function formIdToName(prefix, data){
 				container.appendTo($(this));
 				container.data('settings', {});
 				container.data('target', options.type);
+				container.data('resizable', options.resizable);
 				container.data('subtab', ['areas', 'blocks']);
 				container.setSettings(options);
 			}
 			
 			$('#dialog-' + options.type).data('container', container);
-			
 			var container_settings = container.data('settings');
 			var this_settings = eval('container_settings' + options.path);
 			var boDirection = (this_settings.boDirection == 'v') ? 'v' : 'h';
@@ -209,7 +192,6 @@ function formIdToName(prefix, data){
 			action.appendTo(div);
 
 			if(is_container){
-				actions = {'fa fa-cog' : actions['fa fa-cog']};
 				container.empty();
 				var ul = $("<ul/>").addClass('ui-model-' + options.type);
 				var li = $( "<li/>");
@@ -220,13 +202,9 @@ function formIdToName(prefix, data){
 			else{
 				div.appendTo($(this));
 			}
-
+			var actions = returnNextAction(options.actions);
 			for(var i in actions){
-				var css = i;
-				if('direction' in options && options['direction'] == 'v'){
-					css = css.replace('up', 'left').replace('down', 'right');
-				}
-				$("<i/>").addClass(css).click({'js': actions[i].join('')}, function(event){
+				$("<i/>").addClass(i).click({'js': actions[i].join('')}, function(event){
 					event.stopPropagation();
 					eval(event.data.js);
 				}).appendTo(action);
@@ -251,8 +229,8 @@ function formIdToName(prefix, data){
 							subli.css('height', (boDirection == 'h') ? obj.boPercent + '%' : '100%');
 							subli.addClass('ui-model-' + i)
 							subli.data('path', path);
-							subli.model({'path' : path, 'type' : i, 'direction' : boDirection});
-							if(j != this_settings[i].length -1){
+							subli.model({'path' : path, 'type' : i, 'actions': returnNextActionType(this_settings[i].length, boDirection)});
+							if(j != this_settings[i].length -1 && container.data('resizable')){
 								var separator = $('<li/>', {"class": 'separator-'+ boDirection});
 								separator.appendTo(ul);
 								var parameter = (boDirection == 'v') ? {'axe' : 'x', 'origine': 'left', 'vector':'width'} : {'axe' : 'y', 'origine': 'top', 'vector':'height'};
@@ -277,7 +255,7 @@ function formIdToName(prefix, data){
 											var data = container.data('settings');
 											eval('data' + $(this).prev().data('path') + '.boPercent = ' + parseFloat($(this).prev()[0].style[s.vector]) + ';');
 											eval('data' + $(this).next().data('path') + '.boPercent = ' + parseFloat($(this).next()[0].style[s.vector]) + ';');
-									    	container.parent().model({"type" : container.data('target')});
+									    	container.parent().model({"type" : container.data('target'), "resizable" : container.data('resizable')});
 										}
 									})
 								})(parameter);
