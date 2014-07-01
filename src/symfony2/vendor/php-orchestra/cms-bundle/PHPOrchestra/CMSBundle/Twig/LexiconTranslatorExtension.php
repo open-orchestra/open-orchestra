@@ -12,8 +12,8 @@ class LexiconTranslatorExtension extends \Twig_Extension
 
     protected $lexic = array('symfonyTypeToSmartType' => array('choice' => 'select',
                                     'text' => 'input'));
-	
-	public function getFilters()
+    
+    public function getFilters()
     {
         return array(
             new \Twig_SimpleFilter('lexicon_translator', array($this, 'lexiconTranslatorFilter')),
@@ -22,8 +22,8 @@ class LexiconTranslatorExtension extends \Twig_Extension
 
     public function lexiconTranslatorFilter($key, $fromto = "symfonyTypeToSmartType")
     {
-    	if(array_key_exists($fromto, $this->lexic) && array_key_exists($key, $this->lexic[$fromto])){
-    		return $this->lexic[$fromto][$key];
+        if(array_key_exists($fromto, $this->lexic) && array_key_exists($key, $this->lexic[$fromto])){
+            return $this->lexic[$fromto][$key];
         }
         else{
             return $key;

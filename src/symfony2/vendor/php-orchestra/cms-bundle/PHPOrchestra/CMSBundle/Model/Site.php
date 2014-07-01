@@ -10,26 +10,26 @@ use Symfony\Component\Validator\Constraints\NotBlank;
  */
 abstract class Site extends \Model\PHPOrchestraCMSBundle\Base\Site
 {
-	
+    
     public static function loadValidatorMetadata(ClassMetadata $metadata){
         Site::loadClassMetadata($metadata);
     }
-	public static function loadClassMetadata(ClassMetadata $metadata)
+    public static function loadClassMetadata(ClassMetadata $metadata)
     {
-    	$metadata->addGetterConstraint('domain', new NotBlank());
+        $metadata->addGetterConstraint('domain', new NotBlank());
     }
-	
+    
 
     public function setLanguages($value)
     {
-  		$value = (is_array($value)) ? implode(',', $value) : $value;
-    	parent::setLanguages($value);
+          $value = (is_array($value)) ? implode(',', $value) : $value;
+        parent::setLanguages($value);
     }
     
     public function getLanguages(){
-    	$value = parent::getLanguages();
-    	$value = (is_string($value)) ? explode(',', $value) : array();
-    	return $value;
+        $value = parent::getLanguages();
+        $value = (is_string($value)) ? explode(',', $value) : array();
+        return $value;
     }
     
     public function setBlocks($value)

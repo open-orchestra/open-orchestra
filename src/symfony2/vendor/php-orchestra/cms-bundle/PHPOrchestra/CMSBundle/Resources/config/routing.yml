@@ -58,4 +58,4 @@ php_orchestra_cms_areaform:
 
 php_orchestra_autocomplete:
     pattern: /ajax/search/autocomplete
-    defaults: { _controller: PHPOrchestraBlockBundle:SearchResult:autocomplete }
+    defaults: { _controller: PHPOrchestraCMSBundle:Block/SearchResult:autocomplete }

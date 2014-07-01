@@ -51,17 +51,17 @@ class TemplateController extends Controller
             )
         );
         if ($request->getMethod() == 'POST') {
-	        $form->handleRequest($request);
-	        if ($form->isValid()) {
-	            $template->setId(null);
-	            $template->setIsNew(true);
-	            $template->save();
-	            
-	            return $this->render(
-	                'PHPOrchestraCMSBundle:BackOffice/Editorial:simpleMessage.html.twig',
-	                array('message' => 'Edition ok')
-	            );
-	        }
+            $form->handleRequest($request);
+            if ($form->isValid()) {
+                $template->setId(null);
+                $template->setIsNew(true);
+                $template->save();
+                
+                return $this->render(
+                    'PHPOrchestraCMSBundle:BackOffice/Editorial:simpleMessage.html.twig',
+                    array('message' => 'Edition ok')
+                );
+            }
         }
         
         return $this->render(

@@ -1,0 +1,24 @@
+{##
+ # This file is part of the PHPOrchestra\CMSBundle.
+ #
+ # @author benjamin Fouché <benjamin.fouche@businessdecision.com>
+ ##}
+
+{% if node is defined %}
+    <ul class="{{ class.ul }}">
+        <li><a href="{{ node.id|url_encode }}" class="{{ class.link }}">{{ node.text }}</a></li>
+        {% if node.sublinks is defined %}
+            {% for child in node.sublinks %}
+                {% if child %}
+                    {% include "PHPOrchestraBlockBundle:Footer:show.html.twig" with {"node": child} %}
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    </ul>
+{% else %}
+    <div id="{{ id }}" class="{{ class.div }}">
+    {% for node in tree %}
+         {% include "PHPOrchestraBlockBundle:Footer:show.html.twig" with {"node": node, "class": class} %}
+    {% endfor %}
+    </div>
+{% endif %}

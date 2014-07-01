@@ -27,9 +27,9 @@ class AddHtmlExtension extends \Twig_Extension{
     }
 
     public function unshiftHtml($value) {
-    	$html = $this->top_html;
-    	array_unshift($html, $value);
-    	$this->top_html = $html;
+        $html = $this->top_html;
+        array_unshift($html, $value);
+        $this->top_html = $html;
     }
     public function pushHtml($value) {
         $html = $this->bottom_html;
@@ -53,21 +53,21 @@ class AddHtmlExtension extends \Twig_Extension{
     }
     
     public function printJs($debug = false) {
-    	$html = '';
+        $html = '';
         if(count($this->js) > 0){
-	    	$html .= '<script>'.PHP_EOL;
-	    	foreach($this->js as $key => $script){
-	    		$html .= 'function dt_'.$key.'(){'.PHP_EOL;
-	    		if($debug){
-	    			$html .= 'console.log("'.$script.'");'.PHP_EOL;
-	    		}
+            $html .= '<script>'.PHP_EOL;
+            foreach($this->js as $key => $script){
+                $html .= 'function dt_'.$key.'(){'.PHP_EOL;
+                if($debug){
+                    $html .= 'console.log("'.$script.'");'.PHP_EOL;
+                }
                 $html .= 'loadScript("'.$script.'", dt_'.($key + 1).');'.PHP_EOL;
                 $html .= '}'.PHP_EOL;
-	    	}
-	    	$html .= 'function dt_'.($key + 1).'(){}'.PHP_EOL;
+            }
+            $html .= 'function dt_'.($key + 1).'(){}'.PHP_EOL;
             $html .= 'dt_0();'.PHP_EOL;
-	    	$html .= '</script>'.PHP_EOL;
-	    }
+            $html .= '</script>'.PHP_EOL;
+        }
         return $html;
     }
     /**

@@ -34,7 +34,7 @@ class TemplateType extends AbstractType
     {
         $this->documentManager = $documentManager;
     }
-	    
+        
     /**
      * (non-PHPdoc)
      * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony
@@ -44,7 +44,7 @@ class TemplateType extends AbstractType
     {
         $transformer = new NodeTypeTransformer($this->documentManager);
         $builder->addModelTransformer($transformer);
-    	
+        
         $builder
             ->add('templateId', 'hidden')
             ->add('siteId', 'hidden')
