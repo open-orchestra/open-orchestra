@@ -40,6 +40,7 @@ class ContentAttributesType extends AbstractType
     {
         if (isset($options['data']) && isset($options['data']->contentType)) {
             $fields = $options['data']->contentType->getFields();
+            $language = $options['data']->language;
             
             if (isset($fields)) {
                 $fields = json_decode($fields);
@@ -57,7 +58,10 @@ class ContentAttributesType extends AbstractType
                                 }
                             }
                             if (isset($field->label)) {
-                                $fieldOptions['label'] = $field->label;
+                                $labels = (array) json_decode($field->label);
+                                if (isset($labels[$language])) {
+                                    $fieldOptions['label'] = $labels[$language];
+                                }
                             }
                             
                             $fieldOptions['constraints'] = $this->generateConstraints($field);

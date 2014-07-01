@@ -42,7 +42,7 @@ abstract class ContentType extends \Mandango\Document\Document
             $this->data['fields']['contentTypeId'] = null;
         }
         if (isset($data['name'])) {
-            $this->data['fields']['name'] = (string) $data['name'];
+            $this->data['fields']['name'] = $data['name'];
         } elseif (isset($data['_fields']['name'])) {
             $this->data['fields']['name'] = null;
         }
@@ -190,7 +190,7 @@ abstract class ContentType extends \Mandango\Document\Document
                     array('name' => 1)
                 );
                 if (isset($data['name'])) {
-                    $this->data['fields']['name'] = (string) $data['name'];
+                    $this->data['fields']['name'] = $data['name'];
                 } else {
                     $this->data['fields']['name'] = null;
                 }
@@ -641,7 +641,7 @@ abstract class ContentType extends \Mandango\Document\Document
                     $query['contentTypeId'] = (string) $this->data['fields']['contentTypeId'];
                 }
                 if (isset($this->data['fields']['name'])) {
-                    $query['name'] = (string) $this->data['fields']['name'];
+                    $query['name'] = $this->data['fields']['name'];
                 }
                 if (isset($this->data['fields']['version'])) {
                     $query['version'] = (int) $this->data['fields']['version'];
@@ -674,7 +674,7 @@ abstract class ContentType extends \Mandango\Document\Document
                     $originalValue = $this->getOriginalFieldValue('name');
                     if ($value !== $originalValue) {
                         if (null !== $value) {
-                            $query['$set']['name'] = (string) $this->data['fields']['name'];
+                            $query['$set']['name'] = $this->data['fields']['name'];
                         } else {
                             $query['$unset']['name'] = 1;
                         }
