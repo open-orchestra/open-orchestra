@@ -17,14 +17,8 @@
                 <li><a href="{{ path('phporchestra_cms_backofficeview_site_index', {'action' : 'catalog'}) }}">Gestion des sites</a></li>
                 <li><a href="{{ path('php_orchestra_cms_bo_edito') }}">Gestion des gabarits</a></li>
                 <li>
-                    <a href="#">Gestion des contenus</a>
-                    <ul>
-                    {% for contentType in contentTypes %}
-                        {% if contentType._id != '' %}
-                        <li><a href="{{ path('phporchestra_cms_backofficeview_content_index', {'action' : 'catalog', 'contentTypeId' : contentType._id}) }}">{{ contentType.name }}</a></li>
-                        {% endif %}
-                    {% endfor %}
-                    </ul>
+                    <a href="{{ path('php_orchestra_cms_bo_contentType_ajaxmenu') }}" target="_menu">Gestion des contenus</a>
+                    <ul><li><a href="">Loading ...</a></li></ul>
                 </li>
                 <li><a href="{{ path('php_orchestra_cms_bo_edito') }}">Gestion des pages</a></li>
             </ul>

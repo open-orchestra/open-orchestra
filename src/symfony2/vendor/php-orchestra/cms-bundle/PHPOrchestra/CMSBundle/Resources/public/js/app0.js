@@ -1171,6 +1171,42 @@ if($.navAsAjax)
 
     });
 
+    // fire links with targets on menu to open
+    $(document).on('click', 'nav a[target="_menu"]', function(e) {
+        e.preventDefault();
+        $this = $(e.currentTarget);
+        window.setTimeout(function() {
+            
+            if (!$this.hasClass('menu-opened')) {
+                $this.addClass("menu-opened");
+                
+                $.ajax({
+                    type : "GET",
+                    url : $this.attr('href'),
+                    dataType : 'json',
+                    cache : false,
+                    success : function(data) {
+                        var html = '';
+                        for (var i = 0; i < data.length; i++) {
+                            html += '<li><a href="' + data[i].url + '">' + data[i].label + '</a></li>'
+                        }
+                        $this.next().html(html);
+                        return false;
+                    },
+                    error : function(xhr, ajaxOptions, thrownError) {
+                        $this.next().html('<li><a href=""><i class="fa fa-times-circle"></i> Error</a></li>');
+                    },
+                    async : false
+                });
+                
+            } else {
+                $this.removeClass("menu-opened");
+                $this.next().html('<li><a href="">Loading ...</a></li>');
+            }
+            
+        }, 200);
+    });
+
     // fire links with targets on different window
     $(document).on('click', 'nav a[target="_blank"]', function(e) {
 	    e.preventDefault();

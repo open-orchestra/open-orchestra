@@ -1,19 +1,24 @@
-$('form').on('change', '.reload', function(){
-	var target = $(this).parents('form');
-	var data = target.serializeArray();
-	data.push({'name': 'refresh', 'value': true});
-    $.ajax({
-        'type': 'GET',
-        'url': target.attr('action'),
-        'success': function(response){
-    		$(response.data).each(function(){
-    			if($(this).prop("tagName") == target.prop("tagName")){
-    				target.html($(this).html());
-    			}
-    		});
-        },
-        'data': data,
-        'dataType': 'json',
-        'async': false
-    });
+$('body').on('change', '.refresh', function(){
+	$(this).refreshForm();
 });
+
+(function($){
+	$.fn.refreshForm = function(params){
+		var target = $(this).parents('form');
+		params = target.serializeArray().concat({'name': 'refresh', 'value': true}, params || {});
+	    $.ajax({
+	        'type': 'GET',
+	        'url': target.attr('action'),
+	        'success': function(response){
+	    		$(response.data).each(function(){
+	    			if($(this).prop("tagName") == target.prop("tagName")){
+	    				target.html($(this).html());
+	    			}
+	    		});
+	        },
+	        'data': params,
+	        'dataType': 'json',
+	        'async': false
+	    });
+	}
+})(jQuery);

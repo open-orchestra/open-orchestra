@@ -51,16 +51,16 @@ class BlockType extends AbstractType
 	{
 		
 		if(array_key_exists('is_node', $options['data']) && $options['data']['is_node']){
-			$builder->add('method',  'choice', array('attr' => array('class' => 'reload'), 'choices' => array('generate' => 'Generate', 'load' => 'Load'), 'empty_value' => '--------'));
+			$builder->add('method',  'choice', array('attr' => array('class' => 'refresh'), 'choices' => array('generate' => 'Generate', 'load' => 'Load'), 'empty_value' => '--------'));
 			if(array_key_exists('method', $options['data'])){
 				if($options['data']['method'] == 'load'){
-					$builder->add('nodeId', 'orchestra_node_choice', array('attr' => array('class' => 'reload'), 'empty_value' => '--------'));
+					$builder->add('nodeId', 'orchestra_node_choice', array('attr' => array('class' => 'refresh'), 'empty_value' => '--------'));
 					if(array_key_exists('nodeId', $options['data']) && $options['data']['nodeId'] != ''){
 						$builder->add('blockId', new BlockChoiceType($this->documentManager, array(), $options['data']['nodeId']), array('attr' => array('class' => 'used-as-label'), 'empty_value' => '--------'));
 					}
 				}
 				if($options['data']['method'] == 'generate'){
-                    $builder->add('component', new BlockChoiceType($this->documentManager, array(), 0, 1), array('attr' => array('class' => 'reload used-as-label'), 'empty_value' => '--------'));
+                    $builder->add('component', new BlockChoiceType($this->documentManager, array(), 0, 1), array('attr' => array('class' => 'refresh used-as-label'), 'empty_value' => '--------'));
 					if(array_key_exists('component', $options['data']) && $options['data']['component'] != ''){
 						$type = new \ReflectionClass('PHPOrchestra\CMSBundle\Form\Type\Block\\'.$options['data']['component'].'Type');
 						$builder->add('attributs', $type->newInstance());
@@ -69,7 +69,7 @@ class BlockType extends AbstractType
 			}
 		}
         else{
-            $builder->add('nodeId', 'orchestra_node_choice', array('attr' => array('class' => 'reload')));
+            $builder->add('nodeId', 'orchestra_node_choice', array('attr' => array('class' => 'refresh')));
             if(array_key_exists('nodeId', $options['data']) && $options['data']['nodeId'] != ''){
                 $builder->add('blockId', new BlockChoiceType($this->documentManager, $this->filters, $options['data']['nodeId']), array('attr' => array('class' => 'used-as-label')));
             }
