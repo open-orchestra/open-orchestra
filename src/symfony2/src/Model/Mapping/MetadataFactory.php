@@ -13,5 +13,7 @@ class MetadataFactory extends \Mandango\MetadataFactory
         'Model\\PHPOrchestraCMSBundle\\Content' => false,
         'Model\\PHPOrchestraCMSBundle\\ContentType' => false,
         'Model\\PHPOrchestraCMSBundle\\User' => false,
+        'Model\\PHPOrchestraCMSBundle\\ListIndex' => false,
+        'Model\\PHPOrchestraCMSBundle\\FieldIndex' => false,
     );
 }

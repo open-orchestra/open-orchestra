@@ -193,7 +193,7 @@ La base de données principale sera en MongoDB
     "version": 1,
     "language": "fr",
     "status": "published",
-    "shortName": "Recognizable title", // Used sometimes to show content as in BO lists
+    "shortName": "Recognizable title", // Used to show content in BO lists
     "contentTypeVersion": 1 // Version of the contentType when content was saved
     "attributes":
     {
@@ -210,17 +210,26 @@ La base de données principale sera en MongoDB
 
 ```json
 {
-    "contentType": "news", // news, comment, article, etc.
+    "contentTypeId": "news", // news, comment, article, etc.
+	"name": "{\"en\":\"English Name\", \"fr\":\"Nom Français\", etc...}" // json of content type labels in available languages
     "version": 1,
+	"status": draft,
     "deleted": false,
-    "fields":
-    {
-        "custom_field_name": "field_type",
-        "custom_field_name": "field_type",
-        "custom_field_name": "field_type",
-        "custom_field_name": "field_type",
-        //, etc.
-    }
+    "fields": // json array of objects fields
+    "[
+		{
+        "fieldId": "name", // internal field id
+        "label": "{\"en\":\"Name\", \"fr\":\"Nom\", etc...}", // json of internationals labels
+        "defaultValue": "some default value",
+        "searchable": true, // if field is searchable via index
+        "type": "orchestra_text", // Orchestra custom field type
+		"symfonyType": "text", // Symfony form type to use to render the field in content edition => known in conf but saved here for better perf when editing a content
+		"options": {"max_length":25, "required": true} // json of symfony form type options
+    	},
+		{custom field 2},
+		{custom field 3},
+		etc ...
+	]"
 }
 ```
 

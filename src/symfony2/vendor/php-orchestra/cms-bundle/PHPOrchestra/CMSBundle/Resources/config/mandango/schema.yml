@@ -82,7 +82,7 @@ Model\PHPOrchestraCMSBundle\ContentType:
     collection: contentType
     fields:
         contentTypeId: string
-        name: string
+        name: raw
         version: integer
         status: string
         deleted: boolean

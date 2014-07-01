@@ -15,8 +15,8 @@
 {% block orchestra_customField_widget %}
 <fieldset>
     <legend>
-        {% if form.vars.value.label != '' %}
-            Champ "{{ form.vars.value.label }}"
+        {% if form.vars.value.fieldId != '' %}
+            Champ "{{ form.vars.value.fieldId }}"
         {% else %}
             Nouveau champ
         {% endif %}
@@ -24,8 +24,8 @@
     </legend>
     {{ form_row(form.removeField) }}
     {{ form_row(form.symfonyType) }}
-    {{ form_row(form.label) }}
     {{ form_row(form.fieldId) }}
+    {{ form_widget(form.label) }}
     {{ form_row(form.defaultValue) }}
     {{ form_row(form.searchable) }}
     {% for key, value in form %}

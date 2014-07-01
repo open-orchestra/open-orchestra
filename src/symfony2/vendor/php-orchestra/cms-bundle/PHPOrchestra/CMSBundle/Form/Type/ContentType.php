@@ -45,6 +45,7 @@ class ContentType extends AbstractType
             
             if (method_exists($options['data'], 'getAttributes') && isset($options['data']->contentTypeStructure)) {
                 $attributes = $options['data']->getAttributes();
+                $attributes->language = $options['data']->getLanguage();
                 
                 $attributes->contentType = $options['data']->contentTypeStructure;
                 

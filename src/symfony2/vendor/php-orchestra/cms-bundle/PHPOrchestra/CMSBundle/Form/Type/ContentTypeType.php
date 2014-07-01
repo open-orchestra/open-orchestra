@@ -26,22 +26,16 @@ class ContentTypeType extends AbstractType
         $builder->addModelTransformer($transformer);
         
         $builder
-            ->add(
-                'name',
-                'text',
-                array(
-                    'label' => 'Label du type de contenu',
-                    'constraints' => new NotBlank()
-                )
-            )
+            ->add('id', 'hidden', array('mapped' => false, 'data' => (string)$options['data']->getId()))
             ->add(
                 'contentTypeId',
                 'text',
                 array(
-                    'label' => 'Identifiant',
+                    'label' => 'Identifiant technique',
                     'constraints' => new NotBlank()
                 )
             )
+            ->add('name', 'multilingualText')
             ->add('version', 'text', array('read_only' => true))
             ->add(
                 'status',
@@ -53,7 +47,6 @@ class ContentTypeType extends AbstractType
                     )
                 )
             )
-            ->add('id', 'hidden', array('mapped' => false, 'data' => (string)$options['data']->getId()))
             ->add('fields', 'contentTypeFields', array('data' => $options['data']->getFields()))
             ->add('new_field', 'hidden', array('label' => 'Nouveau champ', 'required' => false));
     }

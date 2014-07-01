@@ -42,7 +42,6 @@ class ContentController extends TableViewController
             array('name' => 'language', 'search' => 'text', 'label' => 'Langue'),
             array('name' => 'version', 'search' => 'text', 'label' => 'Version'),
             array('name' => 'status', 'search' => 'text', 'label' => 'Statut'),
-            array('name' => 'deleted', 'search' => 'text', 'label' => 'Supprimé'),
             array('button' =>'modify'),
             array('button' =>'delete')
         );
@@ -108,7 +107,7 @@ class ContentController extends TableViewController
                 $version->save();
             }
         }
-
+        
         // Testing if solr is running and index a content
         $indexSolr = $this->container->get('phporchestra_cms.indexsolr');
         if ($indexSolr->solrIsRunning()) {
@@ -137,7 +136,7 @@ class ContentController extends TableViewController
         foreach ($contentVersions as $contentVersion) {
             $contentVersion->markAsDeleted();
         }
-
+        
         // Testing if solr is running and delete a content from the index
         $indexSolr = $this->get('phporchestra_cms.indexsolr');
         if ($indexSolr->solrIsRunning()) {

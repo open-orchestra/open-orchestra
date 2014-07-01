@@ -437,7 +437,7 @@ class MetadataFactoryInfo
                     'dbName' => 'contentTypeId',
                 ),
                 'name' => array(
-                    'type' => 'string',
+                    'type' => 'raw',
                     'dbName' => 'name',
                 ),
                 'version' => array(
@@ -528,6 +528,112 @@ class MetadataFactoryInfo
                 'addresses' => array(
                     'type' => 'string',
                     'dbName' => 'addresses',
+                ),
+            ),
+            '_has_references' => false,
+            'referencesOne' => array(
+
+            ),
+            'referencesMany' => array(
+
+            ),
+            'embeddedsOne' => array(
+
+            ),
+            'embeddedsMany' => array(
+
+            ),
+            'relationsOne' => array(
+
+            ),
+            'relationsManyOne' => array(
+
+            ),
+            'relationsManyMany' => array(
+
+            ),
+            'relationsManyThrough' => array(
+
+            ),
+            'indexes' => array(
+
+            ),
+            '_indexes' => array(
+
+            ),
+        );
+    }
+
+    public function getModelPHPOrchestraCMSBundleListIndexClass()
+    {
+        return array(
+            'isEmbedded' => false,
+            'mandango' => null,
+            'connection' => '',
+            'collection' => 'listIndex',
+            'inheritable' => false,
+            'inheritance' => false,
+            'fields' => array(
+                'nodeId' => array(
+                    'type' => 'string',
+                    'dbName' => 'nodeId',
+                ),
+                'contentId' => array(
+                    'type' => 'integer',
+                    'dbName' => 'contentId',
+                ),
+            ),
+            '_has_references' => false,
+            'referencesOne' => array(
+
+            ),
+            'referencesMany' => array(
+
+            ),
+            'embeddedsOne' => array(
+
+            ),
+            'embeddedsMany' => array(
+
+            ),
+            'relationsOne' => array(
+
+            ),
+            'relationsManyOne' => array(
+
+            ),
+            'relationsManyMany' => array(
+
+            ),
+            'relationsManyThrough' => array(
+
+            ),
+            'indexes' => array(
+
+            ),
+            '_indexes' => array(
+
+            ),
+        );
+    }
+
+    public function getModelPHPOrchestraCMSBundleFieldIndexClass()
+    {
+        return array(
+            'isEmbedded' => false,
+            'mandango' => null,
+            'connection' => '',
+            'collection' => 'fieldIndex',
+            'inheritable' => false,
+            'inheritance' => false,
+            'fields' => array(
+                'fieldName' => array(
+                    'type' => 'string',
+                    'dbName' => 'fieldName',
+                ),
+                'fieldType' => array(
+                    'type' => 'string',
+                    'dbName' => 'fieldType',
                 ),
             ),
             '_has_references' => false,
