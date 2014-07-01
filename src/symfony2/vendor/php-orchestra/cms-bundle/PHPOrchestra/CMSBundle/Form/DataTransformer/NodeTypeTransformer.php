@@ -13,7 +13,7 @@ use PHPOrchestra\CMSBundle\Model\Area;
 class NodeTypeTransformer implements DataTransformerInterface
 {
 
-	const BLOCK_GENERATE = 'generate';
+    const BLOCK_GENERATE = 'generate';
     const BLOCK_LOAD = 'load';
     const JSON_AREA_TAG = 'areas';
     const PHP_AREA_TAG = 'subAreas';
@@ -35,45 +35,45 @@ class NodeTypeTransformer implements DataTransformerInterface
         $this->documentManager = $documentManager;
     }
     
-	public function recTransform($values, $blocks)
+    public function recTransform($values, $blocks)
     {
-		foreach($values as $key => &$value){
-			if($key === 'blocks'){
-				foreach($value as &$block){
-					if(array_key_exists('nodeId', $block) && array_key_exists('blockId', $block) && array_key_exists($block['blockId'], $blocks) && $block['nodeId'] === 0){
-						$blockRef = $blocks[$block['blockId']];
-						unset($block['blockId']);
-						unset($block['nodeId']);
-						$block['method'] = self::BLOCK_GENERATE;
+        foreach($values as $key => &$value){
+            if($key === 'blocks'){
+                foreach($value as &$block){
+                    if(array_key_exists('nodeId', $block) && array_key_exists('blockId', $block) && array_key_exists($block['blockId'], $blocks) && $block['nodeId'] === 0){
+                        $blockRef = $blocks[$block['blockId']];
+                        unset($block['blockId']);
+                        unset($block['nodeId']);
+                        $block['method'] = self::BLOCK_GENERATE;
                         $block['component'] = $blockRef->getComponent();
                         $attributs = $blockRef->getAttributes();
                         $attributs = array_combine(array_map(function($value) { return 'attributs_'.$value; }, array_keys($attributs)), array_values($attributs));
                         $block = array_merge($block, $attributs);
-					}
-					else{
-						$block['method'] = self::BLOCK_LOAD;
-					}
-				}
-				if(sizeof($value) == 0){
-					unset($values['blocks']);
-				}
-			}
-			if($key == self::PHP_AREA_TAG){
-		        foreach($value as &$area){
-		            $area = $this->recTransform($area, $blocks);
-		        }
+                    }
+                    else{
+                        $block['method'] = self::BLOCK_LOAD;
+                    }
+                }
+                if(sizeof($value) == 0){
+                    unset($values['blocks']);
+                }
+            }
+            if($key == self::PHP_AREA_TAG){
+                foreach($value as &$area){
+                    $area = $this->recTransform($area, $blocks);
+                }
                 if(sizeof($value) == 0){
                     unset($values[self::PHP_AREA_TAG]);
                 }
-			}
-		}
-		return $values;
+            }
+        }
+        return $values;
     }
     
     public function reverseRecTransform($values, &$node)
     {
         foreach($values as $key => &$value){
-        	if($key === 'blocks'){
+            if($key === 'blocks'){
                 foreach($value as &$block){
                     if(array_key_exists('method', $block) && $block['method'] === 'generate'){
                         $component = $block['component'];
@@ -89,10 +89,10 @@ class NodeTypeTransformer implements DataTransformerInterface
                         $node->addBlocks($blockDoc);
                     }
                     elseif(array_key_exists('nodeId', $block) && array_key_exists('blockId', $block)){
-                    	$block = array('nodeId' => $block['nodeId'], 'blockId' => $block['blockId']);
+                        $block = array('nodeId' => $block['nodeId'], 'blockId' => $block['blockId']);
                     }
                 }
-        	}
+            }
             if($key == self::JSON_AREA_TAG){
                 foreach($value as &$area){
                     $area = $this->reverseRecTransform($area, $node);
@@ -105,7 +105,7 @@ class NodeTypeTransformer implements DataTransformerInterface
         return $values;
     }
     
-	
+    
     /**
      * Adapt a Php array to be exported to json
      * 
@@ -147,7 +147,7 @@ class NodeTypeTransformer implements DataTransformerInterface
         return $area;
     }
     
-	/**
+    /**
      * Transforms a node
      *
      * @param object NodeType
@@ -155,18 +155,18 @@ class NodeTypeTransformer implements DataTransformerInterface
      */
     public function transform($node)
     {
-    	$areas = $node->getAreas();
-    	$blocks = $node->getBlocks()->getSaved();
-    	
-    	if (isset($areas)) {
-	    	foreach($areas as &$area){
-	    		$area = $this->recTransform($area, $blocks);
-	    		$area = $this->adaptArea($area);
-	    	}
-    	}
+        $areas = $node->getAreas();
+        $blocks = $node->getBlocks()->getSaved();
+        
+        if (isset($areas)) {
+            foreach($areas as &$area){
+                $area = $this->recTransform($area, $blocks);
+                $area = $this->adaptArea($area);
+            }
+        }
         $node->setAreas(json_encode($areas));
 
-    	return $node;
+        return $node;
     }
 
     /**
@@ -177,14 +177,14 @@ class NodeTypeTransformer implements DataTransformerInterface
      */
     public function reverseTransform($node)
     {
-    	$areas = json_decode($node->getAreas(), true);
-    	
-    	$node->removeBlocks($node->getBlocks()->getSaved());
-    	
-    	$nodeAreas = array();
+        $areas = json_decode($node->getAreas(), true);
+        
+        $node->removeBlocks($node->getBlocks()->getSaved());
+        
+        $nodeAreas = array();
         if (is_array($areas)) {
             foreach ($areas as $area) {
-            	$area = $this->reverseRecTransform($area, $node);
+                $area = $this->reverseRecTransform($area, $node);
                 $area = $this->reverseAdaptArea($area);
                 $area = new Area($area);
                 $nodeAreas[] = $area->toArray();

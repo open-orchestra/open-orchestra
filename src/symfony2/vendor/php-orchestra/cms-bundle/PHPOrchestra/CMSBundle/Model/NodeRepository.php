@@ -9,7 +9,7 @@ use PHPOrchestra\CMSBundle\Helper\NodesHelper;
  */
 class NodeRepository extends \Model\PHPOrchestraCMSBundle\Base\NodeRepository
 {
-
+    
     /**
      * create a node tree for Menu
      * 
@@ -125,5 +125,13 @@ class NodeRepository extends \Model\PHPOrchestraCMSBundle\Base\NodeRepository
         $node = $query->one();
         
         return $node;
+    }
+
+
+    public function getAllNodeToIndex()
+    {
+        $query = $this->getMandango()->getRepository('Model\PHPOrchestraCMSBundle\Node')->createQuery();
+        $query->criteria(array('status' => 'published', 'deleted' => false));
+        return $query->all();
     }
 }

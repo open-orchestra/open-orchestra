@@ -60,7 +60,7 @@ Model\PHPOrchestraCMSBundle\Node:
                 component: "Sample"
                 attributes: {"title":"Qui sommes-nous ?", "author":"Pourquoi nous choisir ?", "news":"Nos agences"}
             -
-                component: "PHPOrchestraBlockBundle:Menu:show"
+                component: "Menu"
                 attributes: {"class":{"div":"divclass", "ul":"ulclass", "link":"linkclass"}, "id":"idmenu"}
             -
                 component: "Sample"
@@ -75,10 +75,10 @@ Model\PHPOrchestraCMSBundle\Node:
                 component: "Sample"
                 attributes: {"title":"mapub.jpg", "author":"qwerty", "news":""}
             -
-                component: "PHPOrchestraBlockBundle:Footer:show"
+                component: "Footer"
                 attributes: {"id":"idFooter", "class":{"div":"divclass", "ul":"ulclass", "link":"linkclass"}}
             -
-                component: "PHPOrchestraBlockBundle:Search:show"
+                component: "Search"
                 attributes: {"value":"Rechercher", "name":"btnSearch", "class":"classbouton", "nodeId":"fixture_search"}
     
     node_about_us:
@@ -210,18 +210,18 @@ Model\PHPOrchestraCMSBundle\Node:
         areas: [{"areaId":"header","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":0}]},{"areaId":"main","classes":[],"boDirection":"v","subAreas":[{"areaId":"left_menu","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":1}]},{"areaId":"content","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":2},{"nodeId":0,"blockId":3}]}],"blocks":[]},{"areaId":"footer","classes":[],"subAreas":[],"blocks":[{"nodeId":0,"blockId":4}]}]
         blocks:
             -
-                component: "PHPOrchestraCMSBundle:Block/Sample:show"
+                component: "Sample"
                 attributes: {"title":"Qui sommes-nous ?", "author":"Pourquoi nous choisir ?", "news":"Nos agences"}
             -
-                component: "PHPOrchestraBlockBundle:Menu:show"
+                component: "Menu"
                 attributes: {"class":{"div":"divclass", "ul":"ulclass", "link":"linkclass"}, "id":"idmenu"}
             -
-                component: "PHPOrchestraBlockBundle:Search:show"
+                component: "Search"
                 attributes: {"value":"Rechercher", "name":"btnSearch", "class":"classbouton", "nodeId":"fixture_search"}
             -
-                component: "PHPOrchestraBlockBundle:SearchResult:show"
+                component: "SearchResult"
                 attributes: {"nodeId":"fixture_search", "nbdoc":"5", "fielddisplayed":{"0":"title_s", "1":"news_t", "2":"author_s", "3":"title_t", "4":"intro_t", "5":"text_t", "6":"description_t"}, "facets":{"facetField":{"name":"parent", "field":"parentId", "options":{}}}, "filter":{}, "nbspellcheck":"6", "optionsearch":{}, "optionsdismax":{"fields":{"0":"author_s", "1":"intro_t", "2":"title_s"}, "boost":{"0":"2", "1":"1.5", "2":"1"}, "mm":"75%"}}
             -
-                component: "PHPOrchestraBlockBundle:Footer:show"
+                component: "Footer"
                 attributes: {"id":"idFooter", "class":{"div":"divclass", "ul":"ulclass", "link":"linkclass"}}
 

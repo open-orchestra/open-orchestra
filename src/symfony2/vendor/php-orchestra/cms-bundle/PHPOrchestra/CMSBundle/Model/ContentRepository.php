@@ -7,7 +7,7 @@ namespace PHPOrchestra\CMSBundle\Model;
  */
 class ContentRepository extends \Model\PHPOrchestraCMSBundle\Base\ContentRepository
 {
-
+    
     /**
      * Get all contents in mongodb
      *
@@ -24,7 +24,7 @@ class ContentRepository extends \Model\PHPOrchestraCMSBundle\Base\ContentReposit
     /**
      * Get a content by id
      *
-     * @param string $contentId
+     * @param integer $contentId
      * @return <\Mandango\Document\Document, NULL>
      */
     public function getOne($contentId)
@@ -33,5 +33,13 @@ class ContentRepository extends \Model\PHPOrchestraCMSBundle\Base\ContentReposit
         $query->criteria(array('contentId' => $contentId));
         $content = $query->one();
         return $content;
+    }
+
+
+    public function getAllToIndex()
+    {
+        $query = $this->getMandango()->getRepository('Model\PHPOrchestraCMSBundle\Content')->createQuery();
+        $query->criteria(array('status' => 'published', 'deleted' => false));
+        return $query->all();
     }
 }

@@ -3,6 +3,7 @@
 namespace PHPOrchestra\CMSBundle\Test\Model;
 
 use PHPOrchestra\CMSBundle\Model\ListIndexRepository;
+
 class ListIndexRepositoryTest extends \PHPUnit_Framework_TestCase
 {
 
@@ -18,7 +19,7 @@ class ListIndexRepositoryTest extends \PHPUnit_Framework_TestCase
      *
      * @var \PHPOrchestra\CMSBundle\Test\Mock\Mandango
      */
-    protected $mandango = NULL;
+    protected $mandango = null;
 
 
     /**
@@ -32,8 +33,8 @@ class ListIndexRepositoryTest extends \PHPUnit_Framework_TestCase
          * @var \PHPOrchestra\CMSBundle\Test\Mock\Mandango
          */
         $this->mandango = $this->getMockBuilder('PHPOrchestra\\CMSBundle\\Test\\Mock\\Mandango')
-        ->enableProxyingToOriginalMethods()
-        ->getMock();
+            ->enableProxyingToOriginalMethods()
+            ->getMock();
         
         $this->mandango->setDB(
             array(

@@ -15,7 +15,7 @@
  * See LICENSE.txt file for the full LICENSE text.
  */
 
-namespace PHPOrchestra\BlockBundle\Controller;
+namespace PHPOrchestra\CMSBundle\Controller\Block;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -35,6 +35,12 @@ class SearchResultController extends Controller
      * Render the search's result block
      * 
      * @param string $nodeId node identifiant
+     * @param int $nbdoc number of documents per page
+     * @param array $fielddisplayed array of field name which are display
+     * @param int $nbspellcheck number of spell check result
+     * @param array $filter array of filter
+     * @param array $optionsearch array of option
+     * @param array $optionsdismax array of option for dismax component
      * @param string $page page number
      * @param array $_page_parameters additional parameters extracted from url
      * 
@@ -79,7 +85,7 @@ class SearchResultController extends Controller
                         $filter,
                         $optionsdismax
                     );
-        
+
                     // Call template
                     return $this->callTemplate(
                         $data,
@@ -344,7 +350,7 @@ class SearchResultController extends Controller
     {
         if (isset($facets)) {
             return $this->render(
-                "PHPOrchestraBlockBundle:SearchResult:search.html.twig",
+                "PHPOrchestraCMSBundle:Block/SearchResult:show.html.twig",
                 array(
                     'data' => $data,
                     'resultset' => $resultSet,
@@ -357,7 +363,7 @@ class SearchResultController extends Controller
             );
         } else {
             return $this->render(
-                "PHPOrchestraBlockBundle:SearchResult:search.html.twig",
+                "PHPOrchestraCMSBundle:Block/SearchResult:show.html.twig",
                 array(
                     'data' => $data,
                     'resultset' => $resultset,
@@ -382,89 +388,154 @@ class SearchResultController extends Controller
         $request = $this->container->get('request');
         $terms = $request->query->get('term');
     
-        // Create suggester object
+        // Create facet query
         $client = $this->get('solarium.client');
-        $query = $client->createSuggester();
-        $query->setHandler('suggest');
-    
-        // Search term in the index with suggester object
-        $query->setQuery($terms);
-        $query->setCollate(true);
-
-        // Get the result
-        $resultset = $client->suggester($query);
-        $result = array();
-        
-        //$result[] = $resultset->getCollation();
-        foreach ($resultset->getResults() as $suggest) {
-            foreach ($suggest->getSuggestions() as $suggestion) {
-                $result[] = $suggestion;
-            }
-        }
-        /*$query = $client->createSelect();
+        $query = $client->createSelect();
         $query->setQuery('*:*');
         $facetSet = $query->getFacetSet();
         $facet = $facetSet->createFacetField('autocomplete')->setField('suggest');
         $facet->setMinCount(1);
         $facet->setPrefix($terms);
         $resultset = $client->select($query);
-        
-        /*$result[] = $resultset->getCollation();
-        foreach ($resultset->getFacetSet()->getFacets as $facet) {
-        	foreach ($suggest->getSuggestions() as $suggestion) {
-        		$result[] = $suggestion;
-        	}
-        }*/
-        //$resultset->getFacetSet()->getFacets()
-        return new JsonResponse('ici');
+    
+        $result = array();
+        foreach ($resultset->getFacetSet()->getFacets() as $facet) {
+            $values = $facet->getValues();
+            foreach ($values as $name => $value) {
+                $result[] = $name;
+            }
+        }
+        return new JsonResponse($result);
     }
 
 
     /**
-     * Render the dialog form
-     *
-     * @param string $prefix
+     * @see \PHPOrchestra\CMSBundle\Controller\Block\BlockInterface::showBackAction()
      */
-    public function formAction($prefix)
-    {
-        $form = $this->get('form.factory')
-        ->createNamedBuilder($prefix, 'form', null)
-        ->add(
-            'nodeId',
-            'text'
-        )
-        ->add(
-            'documentsNumber',
-            'integer'
-        )
-        ->add(
-            'fieldsDisplayed',
-            'textarea'
-        )
-        ->add(
-            'facets',
-            'textarea'
-        )
-        ->add(
-            'filters',
-            'textarea'
-        )
-        ->add(
-            'searchOptions',
-            'textarea'
-        )
-        ->add(
-            'spellCheckNumber',
-            'integer'
-        )
-        ->add(
-            'dismaxOptions',
-            'textarea'
-        )->getForm();
+    public function showBackAction(
+        $nodeId,
+        $nbdoc,
+        $fielddisplayed,
+        $nbspellcheck,
+        $facets = array(),
+        $filter = array(),
+        $optionsearch = array(),
+        $optionsdismax = array(),
+        $page = null,
+        $_page_parameters = array()
+    ) {
         
-        return $this->render(
-            'PHPOrchestraBlockBundle:SearchResult:form.html.twig',
-            array('form' => $form->createView())
-        );
+        if (!isset($page)) {
+            $page = 1;
+        }
+        
+        // Method POST
+        if (isset($_page_parameters['post']['form'])) {
+            if (is_array($_page_parameters['post']['form'])) {
+                $form = $_page_parameters['post']['form'];
+                if (isset($form['Search'])) {
+                    $data = $form['Search'];
+        
+                    if (!empty($optionsearch)) {
+                        $optionsearch['start'] = ($page * $nbdoc) - $nbdoc;
+                        $optionsearch['rows'] = $page * $nbdoc;
+                    } else {
+                        $optionsearch = array('start' => ($page * $nbdoc) - $nbdoc, 'rows' => $page * $nbdoc);
+                    }
+        
+                    // Result of search
+                    $resultSet = $this->callResearch(
+                        $data,
+                        $nbspellcheck,
+                        $optionsearch,
+                        $facets,
+                        $filter,
+                        $optionsdismax
+                    );
+        
+                    // Call template
+                    return $this->render(
+                        "PHPOrchestraCMSBundle:Block/SearchResult:showBack.html.twig",
+                        array(
+                            'data' => $data,
+                            'resultset' => $resultSet,
+                            'nodeId' => $nodeId,
+                            'page' => $page,
+                            'nbdocs' => $nbdoc,
+                            'fieldsdisplayed' => $fielddisplayed,
+                            'facetsArray' => $facets
+                        )
+                    );
+        
+                }
+            }
+        }
+        // Method GET
+        if (isset($_page_parameters['query'])) {
+            if (is_array($_page_parameters['query'])) {
+                $form = $_page_parameters['query'];
+                if (isset($form['Search'])) {
+                    $data = $form['Search'];
+        
+                    if (isset($form['page'])) {
+                        $page = $form['page'];
+                    }
+        
+                    if (!empty($optionsearch)) {
+                        $optionsearch['start'] = ($page * $nbdoc) - $nbdoc;
+                        $optionsearch['rows'] = $page * $nbdoc;
+                    } else {
+                        $optionsearch = array('start' => ($page * $nbdoc) - $nbdoc, 'rows' => $page * $nbdoc);
+                    }
+        
+                    // Result of search
+                    $resultSet = $this->callResearch(
+                        $data,
+                        $nbspellcheck,
+                        $optionsearch,
+                        $facets,
+                        $filter,
+                        $optionsdismax
+                    );
+        
+                    // Call template
+                    return $this->render(
+                        "PHPOrchestraCMSBundle:Block/SearchResult:showBack.html.twig",
+                        array(
+                            'data' => $data,
+                            'resultset' => $resultSet,
+                            'nodeId' => $nodeId,
+                            'page' => $page,
+                            'nbdocs' => $nbdoc,
+                            'fieldsdisplayed' => $fielddisplayed,
+                            'facetsArray' => $facets
+                        )
+                    );
+        
+                } else {
+                    // Filter
+                    if (isset($form['data']) && isset($form['filter']) && isset($form['facetname'])) {
+        
+                        // Result of filter query
+                        $resultSet = $this->callFilter($form['data'], $form['filter'], $form['facetname']);
+        
+                        // Call template
+                        return $this->render(
+                            "PHPOrchestraCMSBundle:Block/SearchResult:showBack.html.twig",
+                            array(
+                                'data' => $form['data'],
+                                'resultset' => $resultSet,
+                                'nodeId' => $nodeId,
+                                'page' => $page,
+                                'nbdocs' => $nbdoc,
+                                'fieldsdisplayed' => $fielddisplayed,
+                                'facetsArray' => $facets
+                            )
+                        );
+                    }
+                }
+            }
+        }
+        return new Response($this->get('translator')->trans('Error in showAction'));
     }
 }

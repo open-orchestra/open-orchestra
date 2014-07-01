@@ -27,9 +27,9 @@ class AddHtmlExtension extends \Twig_Extension{
     }
 
     public function unshiftHtml($value) {
-    	$html = $this->top_html;
-    	array_unshift($html, $value);
-    	$this->top_html = $html;
+        $html = $this->top_html;
+        array_unshift($html, $value);
+        $this->top_html = $html;
     }
     public function pushHtml($value) {
         $html = $this->bottom_html;
@@ -53,7 +53,7 @@ class AddHtmlExtension extends \Twig_Extension{
     }
     
     public function printJs($debug = false) {
-    	$html = '';
+        $html = '';
         if(count($this->js) > 0){
 	    	$html .= '<script>';
 	    	foreach($this->js as $key => $script){
