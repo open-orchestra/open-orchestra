@@ -1,0 +1,32 @@
+{##
+ # This file is part of the PHPOrchestra\CMSBundle.
+ #
+ # @author Benjamin Fouché <benjamin.fouche@businessdecision.com>
+ ##}
+
+{#{ dump(resultset.spellcheck) }#}
+{% if resultset.spellcheck.suggestions is not empty%}
+    <div id="spellid">
+    <ul>
+    {% for suggestion in resultset.spellcheck.suggestions %}
+    
+        {{ 'Voulez vous dire '}}<a href="{{ path('php_orchestra_cms_node', {'nodeId': nodeId, 'Search': suggestion.word }) }}">{{ suggestion.word }}</a>
+    {% endfor %}
+    
+    {#% for suggestion in resultset.spellcheck.suggestions %}
+        
+        {{ 'Voulez vous dire : '}}
+        {% for word in suggestion.words %}
+            <a href="{{ path('php_orchestra_cms_node', {'nodeId': nodeId, 'Search': word.word }) }}">{{ word.word }}</a>
+        {% endfor %}
+    {% endfor %#}
+    </ul>
+    </div>
+{% endif %}
+
+{#Corrige le mot#}
+{#% for index, collation in resultset.spellcheck.collations %}
+    {% for correction in collation.corrections %}
+        {{ correction }}
+    {% endfor %}
+{% endfor %#}

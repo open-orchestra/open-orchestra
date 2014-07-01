@@ -1,0 +1,47 @@
+{##
+ # This file is part of the PHPOrchestra\CMSBundle.
+ #
+ # @author Benjamin Fouché <benjamin.fouche@businessdecision.com>
+ ##}
+ 
+{% if resultset.facetSet.facets is not empty %}
+     <div id="facetid">
+
+     {% if facetsArray.facetField is defined %}
+         {% for name, facets in resultset.facetSet.facets %}
+         <ul>
+             {{ name }} :
+         
+             {% for facet, value in facets %}
+                 {% if value > 0 %}
+                     <a href="?data={{ data }}&filter={{ facetsArray.facetField.field }}:{{ facet }}&facetname={{ name }}">{{ facet }} ({{ value }})</a>
+                 {% endif %}
+             {% endfor %}
+         
+         </ul>
+         {% endfor %}
+         
+     {% elseif facetsArray.facetQuery is defined %}
+         {{ 'Facets : ' }}
+         <ul>
+         {% for name, facets in resultset.facetSet.facets %}
+             {% if facets.value > 0 %}
+                 <a href="?data={{ data }}&filter={{ facetsArray.facetQuery.query }}&facetname={{ name }}">{{ name }}  ({{ facets.value }})</a> 
+             {% endif %}
+         {% endfor %}
+         </ul>
+     {% elseif facetsArray.multiQuery is defined %}
+         {% for name, facets in resultset.facetSet.facets %}
+             <ul>
+                 {{ name }} :
+                 {% for facet, value in facets %}
+                     {% if value > 0 %}
+                         <a href="?data={{ data }}&filter={{ facetsArray.multiQuery.queries[facet] }}&facetname={{ name }}"> {{ facet }} ({{ value }}) </a>
+                     {% endif %}
+                 {% endfor %}
+             </ul>
+         {% endfor %}
+         
+     {% endif %}
+     </div>
+{% endif %}
