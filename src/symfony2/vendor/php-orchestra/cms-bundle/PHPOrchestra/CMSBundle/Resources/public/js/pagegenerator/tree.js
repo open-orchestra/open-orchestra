@@ -28,17 +28,15 @@ var treePreviousJs = {
 
 function treeAjaxCall(url, params)
 {
-    $('#rightbox-content').html('<h1><i class="fa fa-cog fa-spin"></i> Loading...</h1>');
+	var target = $('#content div[role="content"]');
+    target.html('<h1><i class="fa fa-cog fa-spin"></i> Loading...</h1>');
     $.ajax({
         'type': 'POST',
         'url': url,
         'data': params,
         'success': function(response) {
-            for (var selector in response) {
-                $(selector).html(response[selector]);
-            }
-        },
-        'dataType': 'json'
+    		target.html(response);
+        }
     });
 }
 

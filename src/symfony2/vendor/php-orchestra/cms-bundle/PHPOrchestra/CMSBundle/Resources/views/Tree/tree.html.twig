@@ -1,4 +1,9 @@
 {% import "PHPOrchestraCMSBundle:Tree:tree-macros.html.twig" as macros %}
+<script src="{{ asset('bundles/phporchestracms/js/pagegenerator/tree.js') }}"></script>
+<li><a href="">{{ name }}</a>
+{{ macros.menu_links(links, name) }}
+</li>
+{#
 
 <div id="tree-{{ name }}-container">
     <div id="tree-{{ name }}">
@@ -67,3 +72,4 @@
         
     --></script>
 </div>
+#}

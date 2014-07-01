@@ -97,17 +97,15 @@ function formIdToName(prefix, data){
 			if(refresh.length){
 				refresh.eq(0).refreshForm(formIdToName(prefix, data));
 			}
-			else{
-		        $(this).find(':input[id!="' + prefix + '__token"]').each(function(){
-		        	var id = $(this).attr("id").replace(prefix + '_', '');
-		        	if(id in data){
-		        		$(this).val(data[id]);
-		        	}
-		        	else{
-		        		$(this).val('');
-		        	}
-		    	});
-			}
+	        $(this).find(':input[id!="' + prefix + '__token"]').each(function(){
+	        	var id = $(this).attr("id").replace(prefix + '_', '');
+	        	if(id in data){
+	        		$(this).val(data[id]);
+	        	}
+	        	else{
+	        		$(this).val('');
+	        	}
+	    	});
 		});
     }
 	$.fn.moveFromTo = function(source, destination){
@@ -170,10 +168,10 @@ function formIdToName(prefix, data){
 				'fa fa-trash-o' : [
 				    '$(this).moveFromTo(options.path);',
 				],
-				'fa fa-plus-circle' : [
+				'fa fa-arrow-circle-o-down' : [
 					'$(this).moveFromTo(options.path, +1);',
 				],
-				'fa fa-minus-circle' : [
+				'fa fa-arrow-circle-o-up' : [
 					'$(this).moveFromTo(options.path, -1);',
 				],
 				'fa fa-cog' : [
@@ -198,16 +196,17 @@ function formIdToName(prefix, data){
 			
 			var container_settings = container.data('settings');
 			var this_settings = eval('container_settings' + options.path);
+			var boDirection = (this_settings.boDirection == 'v') ? 'v' : 'h';
 			var is_container = $(this).find('.ui-model').length > 0;
 			var title = $("<span/>").addClass("title").text(('label' in this_settings['ui-model']) ? this_settings['ui-model'].label : 'No Record');
 			var div = $("<div/>");
 			var action = $("<span/>").addClass("action");
 			title.appendTo(div);
-			action.appendTo(div);
 			if('html' in this_settings['ui-model']){
 				var preview = $("<span/>").addClass("preview").html(this_settings['ui-model']['html']);
 				preview.appendTo(div);	
 			}
+			action.appendTo(div);
 
 			if(is_container){
 				actions = {'fa fa-cog' : actions['fa fa-cog']};
@@ -223,7 +222,11 @@ function formIdToName(prefix, data){
 			}
 
 			for(var i in actions){
-				$("<i/>", {"class": i}).click({'js': actions[i].join('')}, function(event){
+				var css = i;
+				if('direction' in options && options['direction'] == 'v'){
+					css = css.replace('up', 'left').replace('down', 'right');
+				}
+				$("<i/>").addClass(css).click({'js': actions[i].join('')}, function(event){
 					event.stopPropagation();
 					eval(event.data.js);
 				}).appendTo(action);
@@ -236,7 +239,6 @@ function formIdToName(prefix, data){
 					if('ui-model' in this_settings[i][0]){
 						addArray = [i];
 						var ul = $( "<ul/>");
-						var boDirection = (this_settings.boDirection == 'v') ? 'v' : 'h';
 						ul.appendTo(div);
 						ul.addClass('ui-model-' + i);
 						for(var j in this_settings[i]){
@@ -249,7 +251,7 @@ function formIdToName(prefix, data){
 							subli.css('height', (boDirection == 'h') ? obj.boPercent + '%' : '100%');
 							subli.addClass('ui-model-' + i)
 							subli.data('path', path);
-							subli.model({'path' : path, 'type' : i});
+							subli.model({'path' : path, 'type' : i, 'direction' : boDirection});
 							if(j != this_settings[i].length -1){
 								var separator = $('<li/>', {"class": 'separator-'+ boDirection});
 								separator.appendTo(ul);
