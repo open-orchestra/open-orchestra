@@ -16,23 +16,23 @@ use Symfony\Component\HttpFoundation\Response;
 class HeaderController extends Controller
 {
      /**
-	 * Function to show header block
-	 *
-	 * @param string $id id of block
-	 * @param string $class class of block
-	 * @param array $block array of blocks 
-	 */
+     * Function to show header block
+     *
+     * @param string $id id of block
+     * @param string $class class of block
+     * @param array $block array of blocks 
+     */
     function headerShowAction($id, $class, $block = array())
     {
-    	$response = $this->render(
-    			'PHPOrchestraBlockBundle:Header:show.html.twig',
-    			array(
-    					'id' => $id,
-    					'class' => $class,
-    					'block' => $block
-    			)
-    	);
-    	return $response;
+        $response = $this->render(
+                'PHPOrchestraBlockBundle:Header:show.html.twig',
+                array(
+                        'id' => $id,
+                        'class' => $class,
+                        'block' => $block
+                )
+        );
+        return $response;
     }
     
     
@@ -43,18 +43,18 @@ class HeaderController extends Controller
      */
     public function formAction($prefix)
     {
-    	$form = $this->get('form.factory')
-    	->createNamedBuilder($prefix, 'form', null)
-    	->add(
-    			'id',
-    			'class',
-    			'block'
-    	)
-    	->getForm();
+        $form = $this->get('form.factory')
+        ->createNamedBuilder($prefix, 'form', null)
+        ->add(
+                'id',
+                'class',
+                'block'
+        )
+        ->getForm();
     
-    	return $this->render(
-    			'PHPOrchestraBlockBundle:Header:form.html.twig',
-    			array('form' => $form->createView())
-    	);
+        return $this->render(
+                'PHPOrchestraBlockBundle:Header:form.html.twig',
+                array('form' => $form->createView())
+        );
     }
 }

@@ -19,7 +19,7 @@ class FieldIndexRepositoryTest extends \PHPUnit_Framework_TestCase
      *
      * @var \PHPOrchestra\CMSBundle\Test\Mock\Mandango
      */
-    protected $mandango = NULL;
+    protected $mandango = null;
 
 
     /**

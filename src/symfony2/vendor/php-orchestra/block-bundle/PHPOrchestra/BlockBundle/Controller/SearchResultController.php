@@ -395,14 +395,28 @@ class SearchResultController extends Controller
         $resultset = $client->suggester($query);
         $result = array();
         
-        $result[] = $resultset->getCollation();
+        //$result[] = $resultset->getCollation();
         foreach ($resultset->getResults() as $suggest) {
             foreach ($suggest->getSuggestions() as $suggestion) {
                 $result[] = $suggestion;
             }
         }
-    
-        return new JsonResponse($result);
+        /*$query = $client->createSelect();
+        $query->setQuery('*:*');
+        $facetSet = $query->getFacetSet();
+        $facet = $facetSet->createFacetField('autocomplete')->setField('suggest');
+        $facet->setMinCount(1);
+        $facet->setPrefix($terms);
+        $resultset = $client->select($query);
+        
+        /*$result[] = $resultset->getCollation();
+        foreach ($resultset->getFacetSet()->getFacets as $facet) {
+        	foreach ($suggest->getSuggestions() as $suggestion) {
+        		$result[] = $suggestion;
+        	}
+        }*/
+        //$resultset->getFacetSet()->getFacets()
+        return new JsonResponse('ici');
     }
 
 

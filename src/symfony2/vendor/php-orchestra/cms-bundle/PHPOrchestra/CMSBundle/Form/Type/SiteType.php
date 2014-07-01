@@ -17,12 +17,12 @@ use PHPOrchestra\CMSBundle\Form\DataTransformer\SiteTypeTransformer;
 
 class SiteType extends AbstractType
 {
-	    
+        
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $data = (array_key_exists('subblocks', $options['data'])) ? $options['data']['subblocks'] : array();
-    	
-    	$builder
+        
+        $builder
             ->add('siteId', 'hidden')
             ->add('domain', 'text', array('label' => 'Domain'))
             ->add('alias', 'text', array('label' => 'Alias'))

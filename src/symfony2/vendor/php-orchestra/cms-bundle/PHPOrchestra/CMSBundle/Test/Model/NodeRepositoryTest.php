@@ -26,7 +26,7 @@ class NodeRepositoryTest extends \PHPUnit_Framework_TestCase
      * 
      * @var \PHPOrchestra\CMSBundle\Test\Mock\Mandango
      */
-    protected $mandango = NULL;
+    protected $mandango = null;
 
 
     /**
@@ -95,8 +95,8 @@ class NodeRepositoryTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetMenuTree2()
     {
-    	$result   = $this->repository->getMenuTree();
-    	$this->assertEquals(array(), $result);
+        $result   = $this->repository->getMenuTree();
+        $this->assertEquals(array(), $result);
     }
 
 
@@ -113,8 +113,8 @@ class NodeRepositoryTest extends \PHPUnit_Framework_TestCase
 
     public function testGetFooterTree2()
     {
-    	$result = $this->repository->getFooterTree();
-    	$this->assertEquals(array(), $result);
+        $result = $this->repository->getFooterTree();
+        $this->assertEquals(array(), $result);
     }
 
 
@@ -171,8 +171,8 @@ class NodeRepositoryTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetAllNodes()
     {
-    	$result = $this->repository->getAllNodes();
-    	$this->assertEquals("root", $result[1]->getNodeId());
+        $result = $this->repository->getAllNodes();
+        $this->assertEquals("root", $result[1]->getNodeId());
     }
 
 
@@ -181,8 +181,18 @@ class NodeRepositoryTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetOne()
     {
-    	$result = $this->repository->getOne('root');
-    	$this->assertEquals('root', $result->getNodeId());
+        $result = $this->repository->getOne('root');
+        $this->assertEquals('root', $result->getNodeId());
+    }
+    
+    
+    /**
+     * Test getAllNodeToIndex function
+     */
+    public function testGetAllNodeToIndex()
+    {
+        $result = $this->repository->getAllNodeToIndex();
+        $this->assertEquals('root', $result[1]->getNodeId());
     }
     
 
