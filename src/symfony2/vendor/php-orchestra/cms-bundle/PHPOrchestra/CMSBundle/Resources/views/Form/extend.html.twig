@@ -16,11 +16,6 @@
     {{ block('generic_behavior') }}
 {% endblock %}
 
-{% block tinyMCEWysiwyg_widget %}
-    {{ form_widget(form) }}
-    {{ tinymce_init() }}
-{% endblock %}
-
 {% block blocks_widget %}
     {{ unshift_js(asset('bundles/phporchestracms/js/pagegenerator/block.js')) }}
     {{ form_widget(form) }}
@@ -31,6 +26,10 @@
 {% block form_row %}
 {% spaceless %}
     <section>
+    {% set name = "PHPOrchestraCMSBundle:Block/" ~ block_prefixes[1]|capitalize ~ ":extend.html.twig" %}
+    {% if twig_exists(name) %}
+        {% include name %}
+    {% endif %}
     {% if block_prefixes[1] == 'checkbox' %}
         <label class="checkbox"{% if errors|length > 0 %} state-error{% endif %}>
             {{ form_widget(form) }}

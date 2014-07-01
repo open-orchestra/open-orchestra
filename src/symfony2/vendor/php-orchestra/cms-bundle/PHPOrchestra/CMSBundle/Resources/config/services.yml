@@ -152,3 +152,8 @@ services:
         class: PHPOrchestra\CMSBundle\Twig\AddHtmlExtension
         tags:
             - { name: twig.extension }
+    php_orchestra_cms.twig.php_function:
+        class: PHPOrchestra\CMSBundle\Twig\AddPhpFunctionExtension
+        arguments: [@service_container]
+        tags:
+            - { name: twig.extension }
