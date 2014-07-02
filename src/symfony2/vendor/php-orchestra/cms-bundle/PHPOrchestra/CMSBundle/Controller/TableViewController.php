@@ -29,6 +29,7 @@ abstract class TableViewController extends Controller
     protected $routeParameters = array();
     protected $mainTitle = '';
     protected $tableTitle = '';
+    protected $recordPrimaryKey = 'id';
     
     abstract public function setColumns();
     
@@ -61,11 +62,29 @@ abstract class TableViewController extends Controller
         return $this->entity;
     }
     
+    /**
+     * Set the primary key of records shown in list
+     * 
+     * @param string $key
+     */
+    public function setRecordPrimaryKey($key)
+    {
+        $this->recordPrimaryKey = $key;
+    }
+    
+    /**
+     * Get the primary key of records shown in list
+     */
+    public function getRecordPrimaryKey()
+    {
+        return $this->recordPrimaryKey;
+    }
+    
     public function setCriteria($criteria){
         $this->criteria = $criteria;
     }
     
-    public function getCriteria($criteria){
+    public function getCriteria(){
         return $this->criteria;
     }
         
@@ -73,7 +92,7 @@ abstract class TableViewController extends Controller
         $this->sort = $sort;
     }
     
-    public function getSort($sort){
+    public function getSort(){
         return $this->sort;
     }
     
@@ -227,10 +246,10 @@ abstract class TableViewController extends Controller
             foreach($columns as $column){
                 if(array_key_exists('button', $column)){
                     if($column['button'] == 'modify'){
-                        $newRecord[] = $this->modifyButton($record['id']->__toString());
+                        $newRecord[] = $this->modifyButton($record[$this->getRecordPrimaryKey()]->__toString());
                     }
                     else if($column['button'] == 'delete'){
-                        $newRecord[] = $this->deleteButton($record['id']->__toString());
+                        $newRecord[] = $this->deleteButton($record[$this->getRecordPrimaryKey()]->__toString());
                     }
                 }
                 else{
@@ -366,9 +385,7 @@ abstract class TableViewController extends Controller
         if ($request->query->get('refresh') !== null) {
             $render = $this->render(
                 'PHPOrchestraCMSBundle:Form:form.html.twig',
-                array(
-                    'form' => $form->createView()
-                )
+                array('form' => $form->createView())
             );
             return new JsonResponse(
                 array(
@@ -376,8 +393,7 @@ abstract class TableViewController extends Controller
                     'data' => $render->getContent()
                 )
             );
-        }
-        else{
+        } else {
             if ($request->getMethod() == 'POST') {
                 $form->handleRequest($request);
                 $success = false;
@@ -387,8 +403,7 @@ abstract class TableViewController extends Controller
                     $saveResult = $this->afterSave($document);
                     $success = $saveResult['success'];
                     $data = $saveResult['data'];
-                }
-                else{
+                } else {
                     $data = $this->getRender($id, $form)->getContent();                    
                 }
                 return new JsonResponse(
@@ -442,39 +457,12 @@ abstract class TableViewController extends Controller
         
         return $this->redirect($this->generateUrlValue('catalog'));
     }
+    
     public function catalogEntity(Request $request)
     {
-        $documentManager = $this->container->get('phporchestra_cms.documentmanager');
         if ($request->get('parse')) {
-            
-            $sort = is_array($request->get('sort')) ? $request->get('sort') : $this->sort;
-            $sort = array_map('intval', $sort);
-
-            parse_str($request->get('criteria'), $criteria);
-            $criteria = array_merge($this->criteria, $criteria);
-            array_walk($criteria, function(&$value, $key) {
-                $value = new \MongoRegex('/'.preg_quote($value).'/i');
-            });
-            
-            $this->setValues($documentManager->getDocuments($this->getEntity(), $criteria, $sort, true, $request->get('start'), $request->get('length')));
-            $this->format();
-            
-            $count = $documentManager->getDocumentsCount($this->getEntity());
-            
-            $partialCount = $documentManager->getDocumentsCount($this->getEntity(), $criteria);
-            
-            return new JsonResponse(
-                array(
-                    'success' => true,
-                    'data' => array(
-                        'values' => $this->values,
-                        'count' => $count,
-                        'partialCount' => $partialCount
-                    )
-                )
-            );
+            return $this->getCatalogRecords($request);
         } else {
-            
             return $this->render('PHPOrchestraCMSBundle:BackOffice:tableViewLayout.html.twig',
                 array(
                     'columns' => $this->getColumns(),
@@ -486,5 +474,50 @@ abstract class TableViewController extends Controller
                 )
             );
         }
+    }
+    
+    /**
+     * Get the records to show in the list
+     * 
+     * @param Request $request
+     */
+    public function getCatalogRecords(Request $request)
+    {
+        $documentManager = $this->container->get('phporchestra_cms.documentmanager');
+        $sort = is_array($request->get('sort')) ? $request->get('sort') : $this->sort;
+        $sort = array_map('intval', $sort);
+        
+        parse_str($request->get('criteria'), $criteria);
+        $criteria = array_merge($this->criteria, $criteria);
+        array_walk($criteria, function(&$value, $key) {
+            $value = new \MongoRegex('/'.preg_quote($value).'/i');
+        });
+        
+        $this->setValues(
+            $documentManager->getDocuments(
+                $this->getEntity(),
+                $criteria,
+                $sort,
+                true,
+                $request->get('start'),
+                $request->get('length')
+            )
+        );
+        $this->format();
+        
+        $count = $documentManager->getDocumentsCount($this->getEntity());
+        
+        $partialCount = $documentManager->getDocumentsCount($this->getEntity(), $criteria);
+        
+        return new JsonResponse(
+            array(
+                'success' => true,
+                'data' => array(
+                    'values' => $this->values,
+                    'count' => $count,
+                    'partialCount' => $partialCount
+                )
+            )
+        );
     }
 }

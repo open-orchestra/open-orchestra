@@ -27,6 +27,7 @@ class ContentTypeController extends TableViewController
     {
         $this->setEntity('ContentType');
         $this->setMainTitle('Type de contenus');
+      //  $this->setCriteria(array('deleted' => false));
         $this->callback['selectLanguageName'] = function($jsonLanguages)
         {
             $languages = (array) json_decode($jsonLanguages);

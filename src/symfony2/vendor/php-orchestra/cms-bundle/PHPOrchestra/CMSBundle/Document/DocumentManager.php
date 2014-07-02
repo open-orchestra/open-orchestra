@@ -38,7 +38,8 @@ class DocumentManager
             'defaultSort' => array('contentTypeId' => 1, 'version' => -1)
         ),
         'Content' => array(
-            'namespace' => 'Model\PHPOrchestraCMSBundle\Content'
+            'namespace' => 'Model\PHPOrchestraCMSBundle\Content',
+            'defaultSort' => array('contentId' => 1, 'version' => -1)
         ),
         'ContentAttribute' => array(
             'namespace' => 'Model\PHPOrchestraCMSBundle\ContentAttribute'
@@ -67,7 +68,7 @@ class DocumentManager
     }
     
     /** 
-     * Get a single MongoDB document giving its type and search citerias
+     * Get a single MongoDB document given by its type and search citerias
      * 
      * @param string $documentType
      * @param array $criteria
@@ -88,7 +89,7 @@ class DocumentManager
     }
     
     /**
-     * Get a single MongoDB document giving its _id
+     * Get a single MongoDB document given by its _id
      * 
      * @param string $id
      */
@@ -301,6 +302,47 @@ class DocumentManager
         return $versions['result'];
     }
 
+
+    public function getGroupedContentsByContentId(array $criteria = array(), $offset = 0, $length = 0, $sort = array())
+    {
+        if (count($sort) == 0) {
+            $sort = $this->getDefaultSort('Content');
+        }
+        
+        $repository = $this->documentsService->getRepository($this->getDocumentNamespace('Content'));
+        
+        $filters = array(
+            array('$match' => $criteria),
+            array('$sort' => $sort)
+        );
+        
+        $filters[] = array(
+            '$group' =>
+                array(
+                    '_id' => '$contentId',
+                    'id' => array('$first' => '$_id'),
+                    'version' => array('$first' => '$version'),
+                    'language' => array('$first' => '$language'),
+                    'shortName' => array('$first' => '$shortName'),
+                    'status' => array('$first' => '$status'),
+                    'contentType' => array('$first' => '$contentType'),
+                    'contentId' => array('$first' => '$contentId')
+                )
+        );
+        
+        if ($offset !=0) {
+            $filters[] = array('$skip' => $offset);
+        }
+        
+        if ($length !=0) {
+            $filters[] = array('$limit' => $length);
+        }
+        
+        $contents = $repository->getCollection()->aggregate($filters);
+        
+        return $contents['result'];
+    }
+    
     /**
      * Return a block in a node
      */

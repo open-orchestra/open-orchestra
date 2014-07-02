@@ -7,6 +7,7 @@
 
 namespace PHPOrchestra\CMSBundle\Controller\BackOfficeView;
 
+use Symfony\Component\HttpFoundation\JsonResponse;
 use PHPOrchestra\CMSBundle\Controller\TableViewController;
 use Model\PHPOrchestraCMSBundle\Content;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -25,7 +26,12 @@ class ContentController extends TableViewController
     public function init()
     {
         $this->setEntity('Content');
-        $this->setCriteria(array('contentType' => $this->routeParameters['contentTypeId']));
+        $this->setCriteria(
+            array(
+                'contentType' => $this->routeParameters['contentTypeId'],
+              //  'deleted' => false
+            )
+        );
         $this->setMainTitle('Contenus de type ' . $this->routeParameters['contentTypeId']);
     }
     
@@ -37,13 +43,49 @@ class ContentController extends TableViewController
     public function setColumns()
     {
         $this->columns = array(
-            array('name' => 'contentType', 'search' => 'text', 'label' => 'Type de contenu'),
+            array('name' => 'contentId', 'search' => 'text', 'label' => 'Id de contenu'),
             array('name' => 'shortName', 'search' => 'text', 'label' => 'Nom'),
             array('name' => 'language', 'search' => 'text', 'label' => 'Langue'),
             array('name' => 'version', 'search' => 'text', 'label' => 'Version'),
             array('name' => 'status', 'search' => 'text', 'label' => 'Statut'),
             array('button' =>'modify'),
             array('button' =>'delete')
+        );
+    }
+    
+    /**
+     * (non-PHPdoc)
+     * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Controller/PHPOrchestra
+     * \CMSBundle\Controller.TableViewController::getCatalogRecords()
+     */
+    public function getCatalogRecords(Request $request)
+    {
+        $documentManager = $this->container->get('phporchestra_cms.documentmanager');
+        
+        $sort = array();
+        if (is_array($request->get('sort'))) {
+            $sort = $request->get('sort');
+        }
+        $sort = array_map('intval', $sort);
+        
+        $this->setValues(
+            $documentManager->getGroupedContentsByContentId(
+                $this->getCriteria(),
+                (int) $request->get('start'),
+                (int) $request->get('length')
+            )
+        );
+        $this->format();
+        
+        return new JsonResponse(
+            array(
+                'success' => true,
+                'data' => array(
+                    'values' => $this->values,
+                    'count' => count($documentManager->getGroupedContentsByContentId($this->getCriteria())),
+                    'partialCount' => count($this->values)
+                )
+            )
         );
     }
     
