@@ -47,7 +47,7 @@ class ContentController extends TableViewController
             array('name' => 'shortName', 'search' => 'text', 'label' => 'Nom'),
             array('name' => 'language', 'search' => 'text', 'label' => 'Langue'),
             array('name' => 'version', 'search' => 'text', 'label' => 'Version'),
-            array('name' => 'status', 'search' => 'text', 'label' => 'Statut'),
+        //    array('name' => 'status', 'search' => 'text', 'label' => 'Statut'),
             array('button' =>'modify'),
             array('button' =>'delete')
         );
@@ -85,6 +85,27 @@ class ContentController extends TableViewController
                     'count' => count($documentManager->getGroupedContentsByContentId($this->getCriteria())),
                     'partialCount' => count($this->values)
                 )
+            )
+        );
+    }
+    
+    /**
+     * (non-PHPdoc)
+     * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Controller/PHPOrchestra
+     * \CMSBundle\Controller.TableViewController::getRender()
+     */
+    protected function getRender($id, $form)
+    {
+        $availableLanguages = $this->container->getParameter('php_orchestra.languages.availables');
+        
+        return $this->render(
+            'PHPOrchestraCMSBundle:BackOffice/Content:contentForm.html.twig',
+            array(
+                'form' => $form->createView(),
+                'mainTitle' => $this->getMainTitle(),
+                'tableTitle' => $this->getTableTitle(),
+                'ribbon' => $this->saveButton($id) . $this->backButton(),
+                'availableLanguages' => $availableLanguages
             )
         );
     }

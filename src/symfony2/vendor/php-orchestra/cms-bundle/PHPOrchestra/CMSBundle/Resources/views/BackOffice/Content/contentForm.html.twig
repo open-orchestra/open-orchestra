@@ -1,0 +1,34 @@
+{##
+ # This file is part of the PHPOrchestra\CMSBundle.
+ #
+ # @author Nicolas ANNE <nicolas.anne@businessdecision.com>
+ ##}
+{% form_theme form 'PHPOrchestraCMSBundle:Form:extend.html.twig' %}
+
+{% set vars = {
+    'mainTitle' : mainTitle,
+    'tableTitle' : tableTitle
+   }
+%}
+
+{% include 'PHPOrchestraCMSBundle:BackOffice:contentTitle.html.twig' with vars %}
+
+<ul class="nav nav-tabs" id="languages">
+{% for language in availableLanguages %}
+    <li class="{% if language|upper == form.vars.value.language|upper %}active{% endif %}">
+        <a data-toggle="tab" href="#">{{ language|upper }}</a>
+    </li>
+{% endfor %}
+</ul>
+
+{% include 'PHPOrchestraCMSBundle:BackOffice:beginSmartDiv.html.twig' with vars %}
+
+{{ form(form) }}
+
+{% include 'PHPOrchestraCMSBundle:BackOffice:endSmartDiv.html.twig' %}
+
+{% if ribbon is defined %}
+    <div class="ribbon">
+    {{ ribbon|raw }}
+    </div>
+{% endif %}

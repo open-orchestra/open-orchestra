@@ -404,7 +404,7 @@ abstract class TableViewController extends Controller
                     $success = $saveResult['success'];
                     $data = $saveResult['data'];
                 } else {
-                    $data = $this->getRender($id, $form)->getContent();                    
+                    $data = $this->getRender($id, $form)->getContent();
                 }
                 return new JsonResponse(
                     array(
