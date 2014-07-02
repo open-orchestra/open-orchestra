@@ -66,7 +66,7 @@ abstract class Content extends \Model\PHPOrchestraCMSBundle\Base\Content
     }
     
     /**
-     * Generate a draft version of the ContentType
+     * Generate a draft version of the Content
      */
     public function generateDraft()
     {
