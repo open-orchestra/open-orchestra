@@ -39,10 +39,8 @@ function getDialogParameter(){
 	        var found = false;
 	        var buttons = $.extend({}, $(this).dialog("option", "allbuttons"));
 	        var addArray = $(this).dialog("option", "addArray");
-	        var keys = $(this).data('container').data('subtab');
-	        
-	        for(var i in keys){
-	    		var key = keys[i];
+	        for(var i in allowed_object){
+	    		var key = allowed_object[i];
 	    		if(key in data){
 	    			found = true;
 	                if(addArray.indexOf(key) > -1){
@@ -88,9 +86,8 @@ function getDialogParameter(){
 	    	}
 	    },
 	    close: function ( event, ui) {
-	    	console.log(event);
-	    	
-	    	$(this).data('container').parent().model({"type" : $(this).data('container').data('target'), "resizable" : $(this).data('container').data('resizable')});
+	    	$(this).data('source').empty();
+	    	$(this).data('source').model({'path' : $(this).data('path'), 'parent_path': $(this).data('parent_path'), 'type' : $(this).data('type')});
 	    }
 	};
 	return dialog_parameter;

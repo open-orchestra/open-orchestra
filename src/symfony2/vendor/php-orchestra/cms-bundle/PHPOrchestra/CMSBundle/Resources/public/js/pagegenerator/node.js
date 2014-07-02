@@ -1,20 +1,20 @@
-function returnNextActionType(length, direction){
-	actionType = 'none';
-	return actionType;
-}
-function returnNextAction(type){
-	type = (!type) ? 'none' : type;
+var allowed_object = ['areas', 'blocks'];
+
+function returnActions(options, length, direction){
+	id = 'none';
 	var actions = {
 			'none': {
 				'fa fa-cog' : [
-		       	   	'$( "#dialog-" + options.type ).data("path", options.path);',
-		       	   	'$( "#dialog-" + options.type ).fromJsToForm(this_settings);',
-		       		'$( "#dialog-" + options.type ).dialog( "open" );'
+		       	   	'$("#dialog-' + options.type + '").data(' + JSON.stringify(options) + ');',
+		       	   	'$("#dialog-' + options.type + '").data("source", $(this).closest("li"));',
+		       	   	'$("#dialog-' + options.type + '").fromJsToForm();',
+		       		'$("#dialog-' + options.type + '").dialog( "open" );'
 		       	]
 			}
 	};
-	return actions[type];
+	return actions[id];
 }
+
 deleteDialogIfExists('dialog-node');
 $('#dialog-node').dialog($.extend(getDialogParameter(), {"addArray" : []}));
 $('#content div[role="content"]').html('');
