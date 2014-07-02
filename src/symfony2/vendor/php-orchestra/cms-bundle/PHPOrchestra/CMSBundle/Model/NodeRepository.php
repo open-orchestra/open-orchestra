@@ -2,7 +2,7 @@
 
 namespace PHPOrchestra\CMSBundle\Model;
 
-use PHPOrchestra\CMSBundle\Helper\NodesHelper;
+use PHPOrchestra\CMSBundle\Helper\TreeHelper;
 
 /**
  * Model\PHPOrchestraCMSBundle\Node bundle document repository.
@@ -92,7 +92,7 @@ class NodeRepository extends \Model\PHPOrchestraCMSBundle\Base\NodeRepository
                 $links2[$superroot][] = array('id' => $nodeId, 'text' => $name);
             }
         }
-        return NodesHelper::createRecTree($links2, $links2[$superroot]);
+        return TreeHelper::createRecTree($links2, $links2[$superroot]);
     }
 
 
