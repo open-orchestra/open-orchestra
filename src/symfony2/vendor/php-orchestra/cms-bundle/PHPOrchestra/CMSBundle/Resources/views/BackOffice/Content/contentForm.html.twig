@@ -1,7 +1,7 @@
 {##
  # This file is part of the PHPOrchestra\CMSBundle.
  #
- # @author Nicolas ANNE <nicolas.anne@businessdecision.com>
+ # @author Noël GILAIN <noel.gilain@businessdecision.com>
  ##}
 {% form_theme form 'PHPOrchestraCMSBundle:Form:extend.html.twig' %}
 
@@ -15,9 +15,21 @@
 
 <ul class="nav nav-tabs" id="languages">
 {% for language in availableLanguages %}
-    <li class="{% if language|upper == form.vars.value.language|upper %}active{% endif %}">
-        <a data-toggle="tab" href="#">{{ language|upper }}</a>
+    {% if language|upper == form.vars.value.language|upper %}
+    <li class="active"><a>{{ language|upper }}</a></li>
+    {% else %}
+    <li>
+        <a href="{{ path(
+            'phporchestra_cms_backofficeview_content_index',
+            {
+                'action' : 'findforedit',
+                'contentTypeId' : form.vars.value.contentType,
+                'contentId' : form.vars.value.contentId,
+                'language' : language
+            }
+        ) }}" class="tabLink">{{ language|upper }}</a>
     </li>
+    {% endif %}
 {% endfor %}
 </ul>
 
