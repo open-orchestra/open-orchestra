@@ -22,6 +22,12 @@ services:
         class: PHPOrchestra\BlockBundle\IndexCommand\SolrSearchCommand
         arguments: [@service_container]
 
+#--[CONTROLLER SERVICES]----------#
+
+    # Render Block Controller
+    phporchestra_cms.blockcontroller:
+        class: PHPOrchestra\CMSBundle\Controller\BlockController
+        
 #--[FORM FIELDS]----------------#
 
     # Multilingual text field
@@ -139,14 +145,14 @@ services:
     # Template form type
     php_orchestra_cms.type.template:
         class: PHPOrchestra\CMSBundle\Form\Type\TemplateType
-        arguments: [@phporchestra_cms.documentmanager]
+        arguments: [@service_container]
         tags:
             - { name: form.type, alias: template }
 
     # Node form type
     php_orchestra_cms.type.node:
         class: PHPOrchestra\CMSBundle\Form\Type\NodeType
-        arguments: [@phporchestra_cms.documentmanager]
+        arguments: [@service_container]
         tags:
             - { name: form.type, alias: node }
 

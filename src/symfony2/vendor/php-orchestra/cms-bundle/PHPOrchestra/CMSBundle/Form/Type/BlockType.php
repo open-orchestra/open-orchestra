@@ -49,7 +49,6 @@ class BlockType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        
         if(array_key_exists('is_node', $options['data']) && $options['data']['is_node']){
             $builder->add('method',  'choice', array('attr' => array('class' => 'refresh'), 'choices' => array('generate' => 'Generate', 'load' => 'Load'), 'empty_value' => '--------'));
             if(array_key_exists('method', $options['data'])){

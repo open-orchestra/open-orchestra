@@ -1,49 +1,8 @@
-function tagAsModelElement(tab){
-	for(var i in allowed_object){
-		var key = allowed_object[i];
-		if(key in tab){
-			for(var j in tab[key]){
-				tagAsModelElement(tab[key][j]);
-				tab[key][j]['ui-model'] = {};
-			}
-		}
-	}
-}
-function untagAsModelElement(tab){
-	for(var i in allowed_object){
-		var key = allowed_object[i];
-		if(key in tab){
-			for(var j in tab[key]){
-				untagAsModelElement(tab[key][j]);
-				delete tab[key][j]['ui-model'];
-			}
-		}
-	}
-}
 function getValueInObject(data, path, key){
 	try{
-		if(key){
-			return eval('data' + path + '.' + key);
-		}
-		else{
-			return eval('data' + path);
-		}
+		return (key) ? eval('data' + path + '.' + key) : eval('data' + path);
 	}
 	catch(e){
-	}
-}
-function refreshSettings(path){
-	for(var i in allowed_object){
-		var key = allowed_object[i];
-		var tab;
-		if(tab = getValueInObject($('#dialog-' + key).data('container').data('settings'), path, key)){
-			for(var j in tab){
-				$('#dialog-' + key).data('path', path + '.' + key + '[' + j + ']');
-				$( "#dialog-" + key ).fromJsToForm();
-				$( "#dialog-" + key ).fromFormToJs();
-				refreshSettings(path + '.' + key + '[' + j + ']');
-			}
-		}
 	}
 }
 function resetPercent(objects){
@@ -155,19 +114,19 @@ function formIdToName(prefix, data){
 	{
 		return this.each(function(){
 			var settings = $(this).data('settings');
+			eval('values = ' + $("#" + options.type + "_areas").val() + ';');
+			if('areas' in values){
+				settings.areas = values.areas;
+			}
 			settings['ui-model'] = {};
 			$("#dialog-" + options.type).data('path', '');
 			$("#dialog-" + options.type).fromFormToJs();
-			settings.areas = eval($("#" + options.type + "_areas").val());
-			tagAsModelElement(settings);
-			refreshSettings('');
 		});
 	}
 	$.fn.setSubmit = function(options)
 	{
 		return this.each(function(){
 			var settings = $(this).data('settings');
-			untagAsModelElement(settings);
 			$("#" + $(this).data('type') + "_areas").val(JSON.stringify(settings.areas));
 		});
 	}
