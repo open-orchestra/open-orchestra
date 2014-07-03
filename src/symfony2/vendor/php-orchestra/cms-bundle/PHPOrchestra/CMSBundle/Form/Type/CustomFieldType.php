@@ -57,8 +57,8 @@ class CustomFieldType extends AbstractType
             throw new UnknownFieldTypeException('Field type not described : ' . $options['data']->type);
         }
         
-        $builder->add('label', 'text')
-            ->add('fieldId', 'text', array('label' => 'Identifiant'))
+        $builder->add('label', 'multilingualText')
+            ->add('fieldId', 'text', array('label' => 'Identifiant technique'))
             ->add('defaultValue', 'text', array('label' => 'Valeur par défaut', 'required' => false))
             ->add('searchable', 'checkbox', array('required' => false, 'label' => 'Indexable'))
             ->add('symfonyType', 'hidden', array('data' => $parameters['type']))

@@ -22,11 +22,17 @@ abstract class Content extends \Model\PHPOrchestraCMSBundle\Base\Content
         if ($this->getStatus() == '') {
             $this->setStatus(self::STATUS_DRAFT);
         }
+        if ($this->getLanguage() == '') {
+            $this->setLanguage('fr');
+        }
         if ($this->isDeleted() == '') {
             $this->setDeleted(false);
         }
     }
     
+    /**
+     * Alias to getDeleted
+     */
     public function isDeleted()
     {
         return $this->getDeleted();
@@ -60,7 +66,7 @@ abstract class Content extends \Model\PHPOrchestraCMSBundle\Base\Content
     }
     
     /**
-     * Generate a draft version of the ContentType
+     * Generate a draft version of the Content
      */
     public function generateDraft()
     {

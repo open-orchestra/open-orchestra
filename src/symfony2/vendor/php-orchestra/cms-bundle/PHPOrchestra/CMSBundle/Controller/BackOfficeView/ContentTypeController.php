@@ -27,6 +27,16 @@ class ContentTypeController extends TableViewController
     {
         $this->setEntity('ContentType');
         $this->setMainTitle('Type de contenus');
+      //  $this->setCriteria(array('deleted' => false));
+        $this->callback['selectLanguageName'] = function($jsonLanguages)
+        {
+            $languages = (array) json_decode($jsonLanguages);
+            $value = '';
+            if (is_array($languages) && isset($languages['fr'])) {
+                $value = $languages['fr'];
+            }
+            return $value;
+        };
     }
 
     /**
@@ -38,10 +48,9 @@ class ContentTypeController extends TableViewController
     {
         $this->columns = array(
             array('name' => 'contentTypeId', 'search' => 'text', 'label' => 'Identifiant'),
-            array('name' => 'name', 'search' => 'text', 'label' => 'Nom'),
+            array('name' => 'name', 'search' => 'text', 'label' => 'Nom', 'callback' => 'selectLanguageName'),
             array('name' => 'version', 'search' => 'text', 'label' => 'Version'),
             array('name' => 'status', 'search' => 'text', 'label' => 'Statut'),
-            array('name' => 'deleted', 'search' => 'text', 'label' => 'Supprimé'),
             array('button' =>'modify'),
             array('button' =>'delete')
         );
@@ -187,7 +196,7 @@ class ContentTypeController extends TableViewController
      * 
      * @param string $siteId
      */
-    public function ajaxMenuAction($siteId)
+    public function ajaxMenuAction($language, $siteId)
     {
         $documentManager = $this->container->get('phporchestra_cms.documentmanager');
         $contentTypes = $documentManager->getContentTypesInLastVersion();
@@ -195,6 +204,12 @@ class ContentTypeController extends TableViewController
         $contentTypesArray = array();
         
         foreach($contentTypes as $contentType) {
+            $languages = (array) json_decode($contentType['name']);
+            $name = 'Unknown name in ' . $language;
+            if (isset($languages[$language])) {
+                $name = $languages[$language];
+            }
+            
             $contentTypesArray[] = array(
                 'url' => $this->container->get('router')->generate(
                     'phporchestra_cms_backofficeview_content_index',
@@ -203,7 +218,7 @@ class ContentTypeController extends TableViewController
                         'contentTypeId' => $contentType['_id']
                     )
                 ),
-                'label' => htmlentities($contentType['name'])
+                'label' => htmlentities($name)
             );
         }
         

@@ -1,33 +1,47 @@
-function tagAsModelElement(tab, keys){
-	for(var i in keys){
-		var key = keys[i];
+function tagAsModelElement(tab){
+	for(var i in allowed_object){
+		var key = allowed_object[i];
 		if(key in tab){
 			for(var j in tab[key]){
-				tagAsModelElement(tab[key][j], keys);
+				tagAsModelElement(tab[key][j]);
 				tab[key][j]['ui-model'] = {};
 			}
 		}
 	}
 }
-function untagAsModelElement(tab, keys){
-	for(var i in keys){
-		var key = keys[i];
+function untagAsModelElement(tab){
+	for(var i in allowed_object){
+		var key = allowed_object[i];
 		if(key in tab){
 			for(var j in tab[key]){
-				untagAsModelElement(tab[key][j], keys);
+				untagAsModelElement(tab[key][j]);
 				delete tab[key][j]['ui-model'];
 			}
 		}
 	}
 }
-function refreshSettings(tab, keys){
-	for(var i in keys){
-		var key = keys[i]
-		if(key in tab){
-			for(var j in tab[key]){
-				$( "#dialog-" + key ).fromJsToForm(tab[key][j]);
-				$( "#dialog-" + key ).fromFormToJs(tab[key][j]);
-				refreshSettings(tab[key][j], keys);
+function getValueInObject(data, path, key){
+	try{
+		if(key){
+			return eval('data' + path + '.' + key);
+		}
+		else{
+			return eval('data' + path);
+		}
+	}
+	catch(e){
+	}
+}
+function refreshSettings(path){
+	for(var i in allowed_object){
+		var key = allowed_object[i];
+		var tab;
+		if(tab = getValueInObject($('#dialog-' + key).data('container').data('settings'), path, key)){
+			for(var j in tab){
+				$('#dialog-' + key).data('path', path + '.' + key + '[' + j + ']');
+				$( "#dialog-" + key ).fromJsToForm();
+				$( "#dialog-" + key ).fromFormToJs();
+				refreshSettings(path + '.' + key + '[' + j + ']');
 			}
 		}
 	}
@@ -45,10 +59,11 @@ function formIdToName(prefix, data){
 	return result;
 }
 (function($){
-    $.fn.fromFormToJs = function(data)
+    $.fn.fromFormToJs = function()
     {
 		return this.each(function(){
-			var prefix = $(this).attr('id').replace('dialog-', '');
+			var data = getValueInObject($(this).data('container').data('settings'), $(this).data('path'));
+			var prefix = $(this).data('type');
 			var ref = $(this);
 	        for(var i in data){
 				try{
@@ -88,26 +103,25 @@ function formIdToName(prefix, data){
     		}
 		});
     }
-    $.fn.fromJsToForm = function(data)
+    $.fn.fromJsToForm = function()
     {
 		return this.each(function(){
-			var prefix = $(this).attr('id').replace('dialog-', '');
+			var data = getValueInObject($(this).data('container').data('settings'), $(this).data('path'));
+			var prefix = $(this).data('type');
 			var ref = $(this);
 			var refresh = $(this).find(":input.refresh");
 			if(refresh.length){
 				refresh.eq(0).refreshForm(formIdToName(prefix, data));
 			}
-			else{
-		        $(this).find(':input[id!="' + prefix + '__token"]').each(function(){
-		        	var id = $(this).attr("id").replace(prefix + '_', '');
-		        	if(id in data){
-		        		$(this).val(data[id]);
-		        	}
-		        	else{
-		        		$(this).val('');
-		        	}
-		    	});
-			}
+	        $(this).find(':input[id!="' + prefix + '__token"]').each(function(){
+	        	var id = $(this).attr("id").replace(prefix + '_', '');
+	        	if(id in data){
+	        		$(this).val(data[id]);
+	        	}
+	        	else{
+	        		$(this).val('');
+	        	}
+	    	});
 		});
     }
 	$.fn.moveFromTo = function(source, destination){
@@ -130,7 +144,7 @@ function formIdToName(prefix, data){
 				}
 			}
 			resetPercent(sourceInfo.tab);
-	    	container.parent().model({"type" : container.data('target')});
+	    	container.parent().model({"type" : container.data('type'), "resizable" : container.data('resizable')});
 		});
 	}
 	$.fn.changeSize = function(coordinate, size){
@@ -142,18 +156,31 @@ function formIdToName(prefix, data){
 		return this.each(function(){
 			var settings = $(this).data('settings');
 			settings['ui-model'] = {};
-			$("#dialog-" + options.type).fromFormToJs($(this).data('settings'));
+			$("#dialog-" + options.type).data('path', '');
+			$("#dialog-" + options.type).fromFormToJs();
 			settings.areas = eval($("#" + options.type + "_areas").val());
-			tagAsModelElement(settings, $(this).data('subtab'));
-			refreshSettings(settings, $(this).data('subtab'));
+			tagAsModelElement(settings);
+			refreshSettings('');
 		});
 	}
 	$.fn.setSubmit = function(options)
 	{
 		return this.each(function(){
 			var settings = $(this).data('settings');
-			untagAsModelElement(settings, $(this).data('subtab'));
-			$("#" + $(this).data('target') + "_areas").val(JSON.stringify(settings.areas));
+			untagAsModelElement(settings);
+			$("#" + $(this).data('type') + "_areas").val(JSON.stringify(settings.areas));
+		});
+	}
+	$.fn.addAction = function(actions)
+	{
+		return this.each(function(){
+			type = 'none';
+			for(var i in actions){
+				$("<i/>").addClass(i).click({'js': actions[i].join('')}, function(event){
+					event.stopPropagation();
+					eval(event.data.js);
+				}).appendTo($(this));
+			}
 		});
 	}
 	$.fn.model = function(options)
@@ -166,67 +193,48 @@ function formIdToName(prefix, data){
 				"type" : ""
 			}, options || {});
 
-			var actions = {
-				'fa fa-trash-o' : [
-				    '$(this).moveFromTo(options.path);',
-				],
-				'fa fa-plus-circle' : [
-					'$(this).moveFromTo(options.path, +1);',
-				],
-				'fa fa-minus-circle' : [
-					'$(this).moveFromTo(options.path, -1);',
-				],
-				'fa fa-cog' : [
-				   	'$( "#dialog-" + options.type ).data("path", options.path);',
-				   	'$( "#dialog-" + options.type ).fromJsToForm(this_settings);',
-					'$( "#dialog-" + options.type ).dialog( "open" );'
-				]
-			};
-			
 			var container = $.merge($(this).find('.ui-model'), $(this).parents('.ui-model'));
 
 			if(container.length == 0){
 				container = $( "<div/>").addClass("ui-model");
 				container.appendTo($(this));
+				container.data(options);
 				container.data('settings', {});
-				container.data('target', options.type);
-				container.data('subtab', ['areas', 'blocks']);
+				$('#dialog-' + options.type).data('container', container);
+				$('#dialog-' + options.type).data('type', options.type);
+				for(var i in allowed_object){
+					var key = allowed_object[i];
+					$('#dialog-' + key).data('type', key);
+					$('#dialog-' + key).data('container', container);
+				}
 				container.setSettings(options);
 			}
+			$(this).data(options);
 			
-			$('#dialog-' + options.type).data('container', container);
-			
-			var container_settings = container.data('settings');
-			var this_settings = eval('container_settings' + options.path);
+			var this_settings = getValueInObject(container.data('settings'), options.path);
+			var bo_direction_tools = (this_settings.boDirection == 'v') ? {'axe' : 'x', 'origine': 'left', 'vector':'width', 'css':'inline', 'prefix':'v'} : {'axe' : 'y', 'origine': 'top', 'vector':'height', 'css':'block', 'prefix':'h'};
 			var is_container = $(this).find('.ui-model').length > 0;
-			var title = $("<span/>").addClass("title").text(('label' in this_settings['ui-model']) ? this_settings['ui-model'].label : 'No Record');
-			var div = $("<div/>");
-			var action = $("<span/>").addClass("action");
-			title.appendTo(div);
-			action.appendTo(div);
-			if('html' in this_settings['ui-model']){
-				var preview = $("<span/>").addClass("preview").html(this_settings['ui-model']['html']);
-				preview.appendTo(div);	
-			}
+			var father_length = getValueInObject(container.data('settings'), options.parent_path + '.' + options.type, 'length');
+			var father_bo_direction = (father_bo_direction = getValueInObject(container.data('settings'), options.parent_path, 'boDirection')) ? father_bo_direction : 'h';
 
+			var div = $("<div/>");
+			$("<span/>").addClass("title")
+						.text(getValueInObject(container.data('settings'), options.path + "['ui-model']", 'label'))
+						.appendTo(div);
+			$("<span/>").addClass("preview")
+						.html(getValueInObject(container.data('settings'), options.path + "['ui-model']", 'html'))
+						.appendTo(div);
+			$("<span/>").addClass("action")
+						.addAction(returnActions(options, father_length, father_bo_direction))
+						.appendTo(div);
 			if(is_container){
-				actions = {'fa fa-cog' : actions['fa fa-cog']};
 				container.empty();
-				var ul = $("<ul/>").addClass('ui-model-' + options.type);
-				var li = $( "<li/>");
-				div.appendTo(li);
-				li.appendTo(ul);
-				ul.appendTo(container);
+				container.append(
+					$("<ul/>").addClass('ui-model-' + options.type)
+							  .append($("<li/>").append(div)));
 			}
 			else{
 				div.appendTo($(this));
-			}
-
-			for(var i in actions){
-				$("<i/>", {"class": i}).click({'js': actions[i].join('')}, function(event){
-					event.stopPropagation();
-					eval(event.data.js);
-				}).appendTo(action);
 			}
 
 			var addArray = $("#dialog-" + options.type).dialog("option", "addArray");
@@ -236,24 +244,19 @@ function formIdToName(prefix, data){
 					if('ui-model' in this_settings[i][0]){
 						addArray = [i];
 						var ul = $( "<ul/>");
-						var boDirection = (this_settings.boDirection == 'v') ? 'v' : 'h';
 						ul.appendTo(div);
 						ul.addClass('ui-model-' + i);
 						for(var j in this_settings[i]){
-							var obj = this_settings[i][j];
 							var subli = $( "<li/>");
 							var path = options.path + '.' + i + '[' + j + ']';
 							subli.appendTo(ul);
-							obj.boPercent = (!("boPercent" in obj)) ? 100 / (this_settings[i].length) : obj.boPercent;						
-							subli.css('width', (boDirection == 'v') ? obj.boPercent + '%' : '100%');
-							subli.css('height', (boDirection == 'h') ? obj.boPercent + '%' : '100%');
+							boPercent = (boPercent = getValueInObject(container.data('settings'), path, "boPercent")) ? boPercent : 100 / (this_settings[i].length);
+							subli.css(bo_direction_tools.vector, boPercent + '%');
 							subli.addClass('ui-model-' + i)
-							subli.data('path', path);
-							subli.model({'path' : path, 'type' : i});
-							if(j != this_settings[i].length -1){
-								var separator = $('<li/>', {"class": 'separator-'+ boDirection});
+							subli.model({'path' : path, 'parent_path': options.path, 'type' : i});
+							if(j != this_settings[i].length -1 && container.data('resizable')){
+								var separator = $('<li/>', {"class": 'separator-'+ bo_direction_tools.prefix});
 								separator.appendTo(ul);
-								var parameter = (boDirection == 'v') ? {'axe' : 'x', 'origine': 'left', 'vector':'width'} : {'axe' : 'y', 'origine': 'top', 'vector':'height'};
 								(function(s){
 									separator.draggable({
 										opacity: 1,
@@ -275,46 +278,44 @@ function formIdToName(prefix, data){
 											var data = container.data('settings');
 											eval('data' + $(this).prev().data('path') + '.boPercent = ' + parseFloat($(this).prev()[0].style[s.vector]) + ';');
 											eval('data' + $(this).next().data('path') + '.boPercent = ' + parseFloat($(this).next()[0].style[s.vector]) + ';');
-									    	container.parent().model({"type" : container.data('target')});
+									    	container.parent().model({"type" : container.data('type'), "resizable" : container.data('resizable')});
 										}
 									})
-								})(parameter);
+								})(bo_direction_tools);
 							}
-							subli.draggable({
-								'opacity': 0.5,
-								'containment': container,
-								'zIndex': 100
-								
-							});
+							if(container.data('resizable')){
+								subli.draggable({
+									'opacity': 0.5,
+									'containment': container,
+									'zIndex': 100
+									
+								});
+							}
 						}
-						if(boDirection == 'v'){
-							ul.children().addClass('inline');
-						}
-						else{
-							ul.children().addClass('block');
-						}
+						ul.children().addClass(bo_direction_tools.css);
 					}
 				}
 				catch (e){}
 			}
-
-			div.droppable({
-				greedy: true,
-				tolerance: "pointer",
-				hoverClass: 'over',
-				drop : function(event, ui){
-					if(ui.draggable.data("path")){
-						$(this).moveFromTo(ui.draggable.data("path"), options.path);
+			if(container.data('resizable')){
+				div.droppable({
+					greedy: true,
+					tolerance: "pointer",
+					hoverClass: 'over',
+					drop : function(event, ui){
+						if(ui.draggable.data("path")){
+							$(this).moveFromTo(ui.draggable.data("path"), options.path);
+						}
+					},
+					accept: function(ui){
+						var accept = false;
+						for(var i in addArray){
+							accept = accept || ui.hasClass('ui-model-' + addArray[i]);
+						}
+						return accept;
 					}
-				},
-				accept: function(ui){
-					var accept = false;
-					for(var i in addArray){
-						accept = accept || ui.hasClass('ui-model-' + addArray[i]);
-					}
-					return accept;
-				}
-			});
+				});
+			}
 		});
 	}
 

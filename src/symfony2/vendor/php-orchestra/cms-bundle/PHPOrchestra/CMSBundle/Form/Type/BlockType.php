@@ -69,9 +69,9 @@ class BlockType extends AbstractType
             }
         }
         else{
-            $builder->add('nodeId', 'orchestra_node_choice', array('attr' => array('class' => 'refresh')));
+            $builder->add('nodeId', 'orchestra_node_choice', array('attr' => array('class' => 'refresh'), 'empty_value' => '--------'));
             if(array_key_exists('nodeId', $options['data']) && $options['data']['nodeId'] != ''){
-                $builder->add('blockId', new BlockChoiceType($this->documentManager, $this->filters, $options['data']['nodeId']), array('attr' => array('class' => 'used-as-label')));
+                $builder->add('blockId', new BlockChoiceType($this->documentManager, array(), $options['data']['nodeId']), array('attr' => array('class' => 'used-as-label'), 'empty_value' => '--------'));
             }
         }
     }

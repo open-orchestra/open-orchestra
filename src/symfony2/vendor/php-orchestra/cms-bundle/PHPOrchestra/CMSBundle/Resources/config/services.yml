@@ -24,6 +24,13 @@ services:
 
 #--[FORM FIELDS]----------------#
 
+    # Multilingual text field
+    php_orchestra_cms.type.multilingualText:
+        class: PHPOrchestra\CMSBundle\Form\Type\MultilingualTextType
+        arguments: [@service_container]
+        tags:
+            - { name: form.type, alias: multilingualText }
+
     # Orchestra content type attributes
     php_orchestra_cms.type.contentAttributes:
         class: PHPOrchestra\CMSBundle\Form\Type\ContentAttributesType
@@ -143,12 +150,18 @@ services:
         tags:
             - { name: form.type, alias: node }
 
-#--[TWIG]-----------------------#            
+#--[TWIG]-----------------------#
+
     php_orchestra_cms.twig.lexicon_translator:
         class: PHPOrchestra\CMSBundle\Twig\LexiconTranslatorExtension
         tags:
             - { name: twig.extension }
     php_orchestra_cms.twig.add_html:
         class: PHPOrchestra\CMSBundle\Twig\AddHtmlExtension
+        tags:
+            - { name: twig.extension }
+    php_orchestra_cms.twig.php_function:
+        class: PHPOrchestra\CMSBundle\Twig\AddPhpFunctionExtension
+        arguments: [@service_container]
         tags:
             - { name: twig.extension }

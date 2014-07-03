@@ -211,8 +211,10 @@ class NodeController extends Controller
         }
         
         return $this->render(
-            'PHPOrchestraCMSBundle:Form:template.html.twig',
+            'PHPOrchestraCMSBundle:BackOffice/Editorial:template.html.twig',
             array(
+                'mainTitle' => 'Gestion des pages',
+                'tableTitle' => '',
                 'form' => $form->createView()
             )
         );

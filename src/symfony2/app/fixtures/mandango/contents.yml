@@ -27,7 +27,7 @@ Model\PHPOrchestraCMSBundle\Content:
         contentId: 2
         contentType: "news"
         version: 1
-        language: "fr"
+        language: "en"
         status: "published"
         shortName: "Lorem ipsum"
         contentTypeVersion: 1
@@ -84,4 +84,4 @@ Model\PHPOrchestraCMSBundle\Content:
                 value: "Convenant"
             -
                 name: "identifier"
-                value: "28"
+                value: 28

@@ -1,2 +1,2 @@
 deleteDialogIfExists('dialog-areas');
-$('#dialog-areas').dialog($.extend(dialog_parameter, {"addArray" : ['areas', 'blocks']}));
+$('#dialog-areas').dialog($.extend(getDialogParameter(), {"addArray" : ['areas', 'blocks']}));

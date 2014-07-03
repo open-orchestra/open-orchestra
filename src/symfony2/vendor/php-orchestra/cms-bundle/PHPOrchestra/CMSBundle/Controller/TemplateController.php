@@ -65,8 +65,10 @@ class TemplateController extends Controller
         }
         
         return $this->render(
-            'PHPOrchestraCMSBundle:Form:template.html.twig',
+            'PHPOrchestraCMSBundle:BackOffice/Editorial:template.html.twig',
             array(
+                'mainTitle' => 'Gestion des gabarits',
+                'tableTitle' => '',
                 'form' => $form->createView()
             )
         );

@@ -35,7 +35,7 @@ class TinyMCEWysiwygController extends Controller
     public function showAction($_htmlContent = array() , $_page_parameters = array())
     {
         $response = $this->render(
-            'PHPOrchestraBlockBundle:TinyMCEWysiwyg:show.html.twig',
+            'PHPOrchestraCMSBundle:Block/TinyMCEWysiwyg:show.html.twig',
             array(
                   'htmlContent' => $_htmlContent
             )
@@ -46,4 +46,20 @@ class TinyMCEWysiwygController extends Controller
         return $response;
     }
 
+    /**
+     * Display HTML fort BO
+     * 
+     * @param string $htmlContent HTML to render
+     */
+    public function showBackAction($_htmlContent = array())
+    {
+        $response = $this->render(
+            'PHPOrchestraCMSBundle:Block/TinyMCEWysiwyg:show.html.twig',
+            array(
+                  'htmlContent' => $_htmlContent
+            )
+        );
+        
+        return $response;
+    }
 }

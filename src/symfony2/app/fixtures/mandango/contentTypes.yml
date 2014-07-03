@@ -1,32 +1,32 @@
 Model\PHPOrchestraCMSBundle\ContentType:
     news:
         contentTypeId: "news"
-        name: "Actualité"
+        name: '{"fr":"Actualité", "en":"News"}'
         version: 1
         status: "published"
         deleted: false
-        fields: '[{"fieldId":"title", "label": "Titre", "defaultValue" : "", "searchable": true, "type":"orchestra_text", "symfonyType":"text", "options":{"max_length":25, "required": true}}, {"fieldId":"intro", "label": "Introduction", "defaultValue" : "", "searchable": true, "type":"orchestra_text", "symfonyType":"text", "options":{"max_length":25, "required": true}}, {"fieldId":"text", "label": "Texte", "defaultValue" : "", "searchable": true, "type":"orchestra_text", "symfonyType":"text", "options":{"max_length":25, "required": true}}]'
+        fields: '[{"fieldId":"title", "label": "{\"en\": \"Title\", \"fr\": \"Titre\"}", "defaultValue" : "", "searchable": true, "type":"orchestra_text", "symfonyType":"text", "options":{"max_length":25, "required": true}}, {"fieldId":"intro", "label": "{\"en\": \"Introduction\", \"fr\": \"Introduction\"}", "defaultValue" : "", "searchable": true, "type":"orchestra_text", "symfonyType":"text", "options":{"max_length":25, "required": true}}, {"fieldId":"text", "label": "{\"en\": \"Text\", \"fr\": \"Texte\"}", "defaultValue" : "", "searchable": true, "type":"orchestra_text", "symfonyType":"text", "options":{"max_length":25, "required": true}}]'
     
     cars_v2:
         contentTypeId: "car"
-        name: "Voiture"
+        name: '{"fr":"Voiture", "en":"Car"}'
         version: 2
         status: "published"
         deleted: false
-        fields: '[{"fieldId":"name", "label": "Nom", "defaultValue" : "", "searchable": true, "type":"orchestra_text", "symfonyType":"text", "options":{"max_length":25, "required": true}}, {"fieldId":"description", "label": "Description", "defaultValue" : "", "searchable": true, "type":"orchestra_text", "symfonyType":"text", "options":{"max_length":25, "required": true}}]'
+        fields: '[{"fieldId":"name", "label": "{\"en\": \"Name\", \"fr\": \"Nom\"}", "defaultValue" : "", "searchable": true, "type":"orchestra_text", "symfonyType":"text", "options":{"max_length":25, "required": true}}, {"fieldId":"description", "label": "{\"en\": \"Description\", \"fr\": \"Description\"}", "defaultValue" : "", "searchable": true, "type":"orchestra_text", "symfonyType":"text", "options":{"max_length":25, "required": true}}]'
     
     cars_v3:
         contentTypeId: "car"
-        name: "Voiture"
+        name: '{"fr":"Voiture", "en":"Car"}'
         version: 3
         status: "draft"
         deleted: false
-        fields: '[{"fieldId":"name", "label": "Nom", "defaultValue" : "Entrez le nom de la voiture ici", "searchable": true, "type":"orchestra_text", "symfonyType":"text", "options":{"max_length":25, "required": true}}, {"fieldId":"description", "label": "Description", "defaultValue" : "Et ici une courte description", "searchable": true, "type":"orchestra_text", "symfonyType":"text", "options":{"max_length":25, "required": true}}]'
+        fields: '[{"fieldId":"name", "label": "{\"en\": \"Name\", \"fr\": \"Nom\"}", "defaultValue" : "Entrez le nom de la voiture ici", "searchable": true, "type":"orchestra_text", "symfonyType":"text", "options":{"max_length":25, "required": true}}, {"fieldId":"description", "label": "{\"en\": \"Description\", \"fr\": \"Description\"}", "defaultValue" : "Et ici une courte description", "searchable": true, "type":"orchestra_text", "symfonyType":"text", "options":{"max_length":25, "required": true}}]'
     
     customer:
         contentTypeId: "customer"
-        name: "Client"
+        name: '{"fr":"Client", "en":"Customer"}'
         version: 1
         status: "published"
         deleted: false
-        fields: '[{"fieldId":"firstname", "label": "Prénom", "defaultValue" : "", "searchable": true, "type":"orchestra_text", "symfonyType":"text", "options":{"max_length":25, "required": true}}, {"fieldId":"lastname", "label": "Nom", "defaultValue" : "", "searchable": true, "type":"orchestra_text", "symfonyType":"text", "options":{"max_length":25, "required": true}}, {"fieldId":"identifier", "label": "Identifiant", "defaultValue" : "", "searchable": false, "type":"orchestra_integer", "symfonyType":"integer", "options":{"rounding_mode": 1, "grouping": 2, "required": false}}]'
+        fields: '[{"fieldId":"firstname", "label": "{\"en\": \"Firstname\", \"fr\": \"Prénom\"}", "defaultValue" : "", "searchable": true, "type":"orchestra_text", "symfonyType":"text", "options":{"max_length":25, "required": true}}, {"fieldId":"lastname", "label": "{\"en\": \"Lastname\", \"fr\": \"Nom\"}", "defaultValue" : "", "searchable": true, "type":"orchestra_text", "symfonyType":"text", "options":{"max_length":25, "required": true}}, {"fieldId":"identifier", "label": "{\"en\": \"Identifier\", \"fr\": \"Identifiant\"}", "defaultValue" : "", "searchable": false, "type":"orchestra_integer", "symfonyType":"integer", "options":{"rounding_mode": 1, "grouping": 2, "required": false}}]'

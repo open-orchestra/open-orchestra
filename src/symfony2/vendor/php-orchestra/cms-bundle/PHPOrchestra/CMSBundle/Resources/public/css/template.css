@@ -45,7 +45,7 @@
 .ui-model span.title{
     position:absolute;
     display:block;
-    margin:-29px 0 -20px -8px;
+    margin:-29px 0 0 -18px;
     line-height:20px;
     font-weight:bold;
 }
@@ -53,8 +53,8 @@
     position:absolute;
 	display:block;
 	height:12px;
-	top:0px;
-	right:2px;
+	top:-12px;
+	right:0px;
 }
 .ui-model span.preview{
     bottom: 0;
