@@ -1,0 +1,46 @@
+{##
+ # This file is part of the PHPOrchestra\CMSBundle.
+ #
+ # @author Noël GILAIN <noel.gilain@businessdecision.com>
+ ##}
+{% form_theme form 'PHPOrchestraCMSBundle:Form:extend.html.twig' %}
+
+{% set vars = {
+    'mainTitle' : mainTitle,
+    'tableTitle' : tableTitle
+   }
+%}
+
+{% include 'PHPOrchestraCMSBundle:BackOffice:contentTitle.html.twig' with vars %}
+
+<ul class="nav nav-tabs" id="languages">
+{% for language in availableLanguages %}
+    {% if language|upper == form.vars.value.language|upper %}
+    <li class="active"><a>{{ language|upper }}</a></li>
+    {% else %}
+    <li>
+        <a href="{{ path(
+            'phporchestra_cms_backofficeview_content_index',
+            {
+                'action' : 'findforedit',
+                'contentTypeId' : form.vars.value.contentType,
+                'contentId' : form.vars.value.contentId,
+                'language' : language
+            }
+        ) }}" class="tabLink">{{ language|upper }}</a>
+    </li>
+    {% endif %}
+{% endfor %}
+</ul>
+
+{% include 'PHPOrchestraCMSBundle:BackOffice:beginSmartDiv.html.twig' with vars %}
+
+{{ form(form) }}
+
+{% include 'PHPOrchestraCMSBundle:BackOffice:endSmartDiv.html.twig' %}
+
+{% if ribbon is defined %}
+    <div class="ribbon">
+    {{ ribbon|raw }}
+    </div>
+{% endif %}

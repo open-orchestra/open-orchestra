@@ -37,7 +37,7 @@ abstract class Content extends \Mandango\Document\Document
             $this->setIsNew(false);
         }
         if (isset($data['contentId'])) {
-            $this->data['fields']['contentId'] = (int) $data['contentId'];
+            $this->data['fields']['contentId'] = (string) $data['contentId'];
         } elseif (isset($data['_fields']['contentId'])) {
             $this->data['fields']['contentId'] = null;
         }
@@ -141,7 +141,7 @@ abstract class Content extends \Mandango\Document\Document
                     array('contentId' => 1)
                 );
                 if (isset($data['contentId'])) {
-                    $this->data['fields']['contentId'] = (int) $data['contentId'];
+                    $this->data['fields']['contentId'] = (string) $data['contentId'];
                 } else {
                     $this->data['fields']['contentId'] = null;
                 }
@@ -869,7 +869,7 @@ abstract class Content extends \Mandango\Document\Document
         if (isset($this->data['fields'])) {
             if ($isNew || $reset) {
                 if (isset($this->data['fields']['contentId'])) {
-                    $query['contentId'] = (int) $this->data['fields']['contentId'];
+                    $query['contentId'] = (string) $this->data['fields']['contentId'];
                 }
                 if (isset($this->data['fields']['contentType'])) {
                     $query['contentType'] = (string) $this->data['fields']['contentType'];
@@ -899,7 +899,7 @@ abstract class Content extends \Mandango\Document\Document
                     $originalValue = $this->getOriginalFieldValue('contentId');
                     if ($value !== $originalValue) {
                         if (null !== $value) {
-                            $query['$set']['contentId'] = (int) $this->data['fields']['contentId'];
+                            $query['$set']['contentId'] = (string) $this->data['fields']['contentId'];
                         } else {
                             $query['$unset']['contentId'] = 1;
                         }

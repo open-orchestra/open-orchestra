@@ -47,7 +47,6 @@ class ContentController extends TableViewController
             array('name' => 'shortName', 'search' => 'text', 'label' => 'Nom'),
             array('name' => 'language', 'search' => 'text', 'label' => 'Langue'),
             array('name' => 'version', 'search' => 'text', 'label' => 'Version'),
-            array('name' => 'status', 'search' => 'text', 'label' => 'Statut'),
             array('button' =>'modify'),
             array('button' =>'delete')
         );
@@ -85,6 +84,27 @@ class ContentController extends TableViewController
                     'count' => count($documentManager->getGroupedContentsByContentId($this->getCriteria())),
                     'partialCount' => count($this->values)
                 )
+            )
+        );
+    }
+    
+    /**
+     * (non-PHPdoc)
+     * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Controller/PHPOrchestra
+     * \CMSBundle\Controller.TableViewController::getRender()
+     */
+    protected function getRender($id, $form)
+    {
+        $availableLanguages = $this->container->getParameter('php_orchestra.languages.availables');
+        
+        return $this->render(
+            'PHPOrchestraCMSBundle:BackOffice/Content:contentForm.html.twig',
+            array(
+                'form' => $form->createView(),
+                'mainTitle' => $this->getMainTitle(),
+                'tableTitle' => $this->getTableTitle(),
+                'ribbon' => $this->saveButton($id) . $this->backButton(),
+                'availableLanguages' => $availableLanguages
             )
         );
     }
@@ -187,6 +207,50 @@ class ContentController extends TableViewController
         
         return $this->redirect(
             $this->generateUrlValue('catalog')
+        );
+    }
+    
+    /**
+     * Find the content matching criterias, if none is found create a new one
+     * Then return the edit form url
+     * 
+     * @param $request
+     * @param $id
+     */
+    public function findForEditAction(Request $request, $id)
+    {
+        $contentTypeId = $request->get('contentTypeId');
+        $contentId = $request->get('contentId');
+        $language = $request->get('language');
+        $version = $request->get('version');
+        
+        $documentManager = $this->get('phporchestra_cms.documentmanager');
+        
+        $criteria = array(
+            'contentType' => $contentTypeId,
+            'contentId' => $contentId,
+            'language' => $language
+        );
+        
+        if ($version != 0) {
+            $criteria['version'] = $version;
+        }
+        
+        $content = $documentManager->getDocument('Content', $criteria);
+        
+        if (count($content) == 0) {
+            $content = $documentManager->createDocument('Content');
+            $content->setContentType($contentTypeId);
+            $content->setContentId($contentId);
+            $content->setLanguage($language);
+            $content->save();
+        }
+        
+        return new JsonResponse(
+            array(
+                'success' => true,
+                'data' => $this->generateUrlValue('edit', $content->getId())
+            )
         );
     }
 }

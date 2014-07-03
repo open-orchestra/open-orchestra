@@ -67,7 +67,7 @@ Model\PHPOrchestraCMSBundle\ContentAttribute:
 Model\PHPOrchestraCMSBundle\Content:
     collection: content
     fields:
-        contentId: integer
+        contentId: string
         contentType: string
         version: integer
         language: string
