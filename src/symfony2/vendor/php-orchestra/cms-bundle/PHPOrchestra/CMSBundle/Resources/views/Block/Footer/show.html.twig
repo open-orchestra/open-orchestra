@@ -6,7 +6,7 @@
 
 {% if node is defined %}
     <ul class="{{ class.ul }}">
-        <li><a href="{{ node.id|url_encode }}" class="{{ class.link }}">{{ node.text }}</a></li>
+        <li><a href="{{ node.url }}" class="{{ class.link }}">{{ node.text }}</a></li>
         {% if node.sublinks is defined %}
             {% for child in node.sublinks %}
                 {% if child %}
