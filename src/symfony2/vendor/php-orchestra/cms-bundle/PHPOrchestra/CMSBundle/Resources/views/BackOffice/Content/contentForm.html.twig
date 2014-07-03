@@ -13,6 +13,7 @@
 
 {% include 'PHPOrchestraCMSBundle:BackOffice:contentTitle.html.twig' with vars %}
 
+
 <ul class="nav nav-tabs" id="languages">
 {% for language in availableLanguages %}
     {% if language|upper == form.vars.value.language|upper %}
@@ -31,6 +32,24 @@
     </li>
     {% endif %}
 {% endfor %}
+    <li class="pull-right active">
+        <div>
+            <select class="selectSwitcher">
+                <!-- >option value="new">Créer une nouvelle version</option -->
+            {% for version in contentVersions %}
+                <option value="{{ path(
+                    'phporchestra_cms_backofficeview_content_index',
+                    {
+                        'action' : 'edit',
+                        'contentTypeId' : form.vars.value.contentType,
+                        'id' : version.id.__toString()
+                    }
+                ) }}" {% if version.version == form.vars.value.version %}selected="selected"{% endif %}
+                >Version {{ version.version }} ({{ version.status }})</option>
+            {% endfor %}
+            </select>
+        </div>
+    </li>
 </ul>
 
 {% include 'PHPOrchestraCMSBundle:BackOffice:beginSmartDiv.html.twig' with vars %}

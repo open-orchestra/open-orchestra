@@ -22,8 +22,9 @@ class ContentType extends AbstractType
     {
         $builder
             ->add('shortName', 'text', array('label' => 'Nom de référence'))
-            ->add('version', 'text', array('label' => 'Version', 'read_only' => true))
-            ->add('language', 'text', array('label' => 'Language'))
+            ->add('version', 'hidden')
+            ->add('language', 'hidden')
+            ->add('contentId', 'hidden')
             ->add(
                 'status',
                 'choice',

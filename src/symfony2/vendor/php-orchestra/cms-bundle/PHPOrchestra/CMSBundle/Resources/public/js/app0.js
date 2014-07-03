@@ -1240,7 +1240,14 @@ if($.navAsAjax)
             }
         });
     });
+    
+    // change a select switcher
+    $(document).on('change', '.selectSwitcher', function(e) {
+        e.preventDefault();
+        window.location.hash = $(e.currentTarget).val();
+    });
 
+    
     // DO on hash change
     $(window).on('hashchange', function() {
     	if(window.location.hash != '')

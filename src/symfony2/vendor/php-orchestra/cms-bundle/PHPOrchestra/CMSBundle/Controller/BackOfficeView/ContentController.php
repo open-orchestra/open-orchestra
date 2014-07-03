@@ -97,6 +97,13 @@ class ContentController extends TableViewController
     {
         $availableLanguages = $this->container->getParameter('php_orchestra.languages.availables');
         
+        $documentManager = $this->container->get('phporchestra_cms.documentmanager');
+        $criteria = array(
+            'contentId' => $form->get('contentId')->getData(),
+            'language' => $form->get('language')->getData()
+        );
+        $versions = $documentManager->getDocuments('Content', $criteria, array('version' => -1), true);
+        
         return $this->render(
             'PHPOrchestraCMSBundle:BackOffice/Content:contentForm.html.twig',
             array(
@@ -104,7 +111,8 @@ class ContentController extends TableViewController
                 'mainTitle' => $this->getMainTitle(),
                 'tableTitle' => $this->getTableTitle(),
                 'ribbon' => $this->saveButton($id) . $this->backButton(),
-                'availableLanguages' => $availableLanguages
+                'availableLanguages' => $availableLanguages,
+                'contentVersions' => $versions
             )
         );
     }
@@ -127,9 +135,9 @@ class ContentController extends TableViewController
      */
     protected function modifyDocumentAfterGet($document)
     {
-        if ($document->getStatus() != Content::STATUS_DRAFT) {
+     /*   if ($document->getStatus() != Content::STATUS_DRAFT) {
             $document->generateDraft();
-        }
+        }*/
         
         $documentManager = $this->container->get('phporchestra_cms.documentmanager');
         $contentType = $documentManager->getDocument(
@@ -171,10 +179,10 @@ class ContentController extends TableViewController
         }
         
         // Testing if solr is running and index a content
-        $indexSolr = $this->container->get('phporchestra_cms.indexsolr');
+   /*     $indexSolr = $this->container->get('phporchestra_cms.indexsolr');
         if ($indexSolr->solrIsRunning()) {
             $indexSolr->slpitDoc($document, 'Content');
-        }
+        }*/
         
         return array(
             'success' => true,
@@ -200,10 +208,10 @@ class ContentController extends TableViewController
         }
         
         // Testing if solr is running and delete a content from the index
-        $indexSolr = $this->get('phporchestra_cms.indexsolr');
+   /*     $indexSolr = $this->get('phporchestra_cms.indexsolr');
         if ($indexSolr->solrIsRunning()) {
             $indexSolr->deleteIndex($documentId);
-        }
+        }*/
         
         return $this->redirect(
             $this->generateUrlValue('catalog')
