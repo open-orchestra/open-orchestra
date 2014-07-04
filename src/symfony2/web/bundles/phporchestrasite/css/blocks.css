@@ -1,0 +1,381 @@
+@CHARSET "UTF-8";
+
+*
+{
+	margin : 0;
+	padding: 0;
+}
+
+body
+{
+	background: url("/bundles/phporchestrasite/images/bg_orchestra.png") repeat center;
+    background-size: cover;
+}
+
+a
+{
+	color : #89b245;
+	font-size: 11px;
+	text-decoration: none;
+}
+
+ul , li 
+{
+	list-style: none;
+}
+
+p
+{
+	font-size: 12px;
+
+}
+
+td
+{
+	padding-left: 14px;
+	padding-right: 14px;
+	font-size: 12px;
+}
+
+input
+{
+	width: 215px;
+	height: 25px;
+	font-size: 12px;
+    line-height: 18px;
+    cursor:pointer;
+}
+
+input[type="submit"]{
+	width: 35px;
+    height: 20px;
+}
+
+body,a,li,ul,p,td,h4
+{
+	font-family: Arial, "Helvetica Neue", Helvetica, "Nimbus Sans L", sans-serif;
+}
+
+h4
+{
+	color: #ffffff;
+	font-size: 20px;
+}
+ /*==== CSS LOGO ====*/
+ 
+ #logo
+ {
+	  display: inline-block;
+	  width: auto;
+	  height: auto;
+	  margin-left: 90px;
+	  margin-top: 23px;
+ }
+
+/*  ========== CSS MENU FOOTER ==========   */ 
+#header
+{
+	width: 100%;
+	height: 119px;
+	background-color: #f0f1f1;
+	border-bottom: 2px solid #89b245;
+	font-family:georgia, serif;
+}
+
+#main_menu div
+{
+	width: 810px;
+    margin-left: auto;
+    margin-right: auto;
+}  
+
+ 
+/*===== CSS MAIN AREA====*/
+
+#myMain
+{
+    width: 100%;
+    height: 100%;
+    padding-bottom:30px;
+    padding-top:30px;
+}
+
+
+/*===== CSS SUB MENU ===*/
+#mySubMenu
+{
+    float: right;
+    display: inline-block;
+    position: absolute;
+    right: 200px;
+    top: 20px;
+}
+
+#mySubMenu li 
+{
+    display: inline ;
+    
+    border-right: 1px solid #999999;
+}
+
+#mySubMenu li a
+{
+    font-size: 11px;
+    color : #999999;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+#mySubMenu li a
+{
+    font-size: 11px;
+    color : #5b5b5b;
+}
+#mySubMenu a:hover
+{
+	text-decoration: underline;
+}
+
+#btnHome
+{
+	font-size: 14px;
+}
+
+/* ======= CSS FOOTER ====== */
+
+#footer
+{
+	width: 100%;
+	height: 200px;
+	margin: auto;
+	background-color: #f0f1f1;
+	border-top: 2px solid #89b245;
+	clear: both;
+	float:left;
+}
+
+#containeFooter
+{
+    width: 760px;
+    height: auto;   
+    margin: auto;
+    margin-top: 20px;
+}
+
+#containeFooter h4, #footerContact li 
+{
+    color: #5b5b5b;
+}
+
+#containeFooter div 
+{
+	display: inline-block;
+	vertical-align: top;
+}
+
+#footerContact
+{
+    margin-left: 40px;
+}
+
+#footerInfos,#footerLegal ,#footerContact ,#footerNetworks 
+{
+	width: 176px;
+	height: 108px;
+	font-size: 12px;
+}
+
+#footerInfos li,#footerLegal li,#footerNetworks li 
+{
+    list-style-type: circle;
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 2px; 
+    color: #89b245;
+ }
+
+/* ======= CSS page Content And area (page home) =========*/
+
+#mainContentArea1
+{
+    width: 1020px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#mainContentArea2
+{
+    width: 1020px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+#mainContentArea2 div
+{
+    display: inline-block;
+}
+
+.content
+{
+    width : 450px;
+    height: auto;
+    margin: auto;
+    background-color: #89b245;
+     -webkit-border-radius: 6px 6px 0 0;
+    -moz-border-radius: 6px 6px 0 0;
+    border-radius: 6px 6px 0 0;
+    padding: 25px;
+}
+    
+    
+.content p
+{
+    display: inline-flex;
+}
+
+/*======= CSS Content  ========*/
+
+.content2
+{
+	width :  760px;
+	height:auto;
+	min-height:  387px;
+	margin:  auto;
+	line-height:2em;
+	background-color: #ffffff;
+	float: left;
+	margin: 0 10px 36px 0;
+    padding: 20px 40px;
+    -webkit-border-radius: 6px 6px 0 0;
+    -moz-border-radius: 6px 6px 0 0;
+    border-radius: 6px 6px 0 0;
+
+}
+
+.content2 input
+{
+	margin-bottom: 24px;
+}
+
+.content2 #form
+{
+	margin-top: 20px;
+}
+
+.content2 #form input[type="submit"]
+{
+	width: 40px;
+    height: 20px;
+}
+
+.content3
+{
+    width :  250px;
+    height:  auto;
+    margin:  auto;
+    background-color: #ffffff;
+    margin-bottom: 10px;
+    
+}
+
+
+.content3 p
+{
+    vertical-align: middle;
+    margin-bottom: 5px;
+}
+
+
+.content3 label
+{
+	margin-bottom: 2px;
+}
+
+/*====== CSS module =======*/
+
+#moduleArea 
+{
+	width :  250px;
+	height:  auto;
+	float: right;
+	margin-right: 40px;
+	text-align: center;
+	font-size: 11px;
+	color: #111;
+}
+
+.blocTitle
+{
+    border: 1px solid #acacac;
+    height: 40px;
+    border-bottom: none;
+    -webkit-border-radius: 6px 6px 0 0;
+    -moz-border-radius: 6px 6px 0 0;
+    border-radius: 6px 6px 0 0;
+    background-color: #89b245;
+	display: block;
+}
+
+.titleModule
+{
+	text-transform:uppercase;
+    font-weight:900;
+    letter-spacing: 0.5px;
+    font-size: 16px;
+    color: #FFFFFF;
+    margin-top: 11px;
+}
+
+.blockContent,#Contact
+{
+	width: auto;
+    height: 300px;
+    padding: 10px 20px 0;
+    background: transparent;
+    border: 1px solid #acacac;
+    padding-bottom: 5px;
+    line-height: 14px;
+    text-align: left;
+}  
+
+/*====== CSS page Contact =====*/
+
+
+#contactArea
+{
+	width: 1020px;
+	height: auto;
+}
+#contactForm,#contactInformation
+{
+    display: inline-block;
+    float: left;
+}
+
+#contactForm
+{
+    margin-left: 100px;
+}
+
+.fontOrange
+{
+    color: #89b245; 
+}
+/*==== CSS FORM */
+
+
+#contactForm textarea
+{
+    max-width: 300px;
+    max-height: 350px;
+}
+
+#form textarea
+{
+	max-width: 670px;
+    max-height: 370px;
+}
