@@ -27,7 +27,7 @@ use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
  * @MongoDB\EmbeddedDocument
  */
 abstract class BaseBlock
-{   
+{
     /**
      * @var string $component
      * @MongoDB\Field(type="string")

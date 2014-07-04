@@ -29,21 +29,21 @@ class FooterTypeTest extends \PHPUnit_Framework_TestCase
 {
 
     public function setUp()
-    {        
+    {
         $this->footerType = new FooterType();
     }
 
 
     public function testBuildForm()
     {
-    	$formBuilderMock =
-    	$this->getMock('\\Symfony\\Component\\Form\\FormBuilderInterface');
-    	
-    	$formBuilderMock
-    	    ->expects($this->exactly(2))
-    	    ->method('add')
-    	    ->will($this->returnSelf());
-    	
-    	$this->footerType->buildForm($formBuilderMock, array());
+        $formBuilderMock =
+        $this->getMock('\\Symfony\\Component\\Form\\FormBuilderInterface');
+        
+        $formBuilderMock
+            ->expects($this->exactly(2))
+            ->method('add')
+            ->will($this->returnSelf());
+        
+        $this->footerType->buildForm($formBuilderMock, array());
     }
 }

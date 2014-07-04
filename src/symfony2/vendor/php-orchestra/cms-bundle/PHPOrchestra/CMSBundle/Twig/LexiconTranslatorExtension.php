@@ -22,10 +22,9 @@ class LexiconTranslatorExtension extends \Twig_Extension
 
     public function lexiconTranslatorFilter($key, $fromto = "symfonyTypeToSmartType")
     {
-        if(array_key_exists($fromto, $this->lexic) && array_key_exists($key, $this->lexic[$fromto])){
+        if (array_key_exists($fromto, $this->lexic) && array_key_exists($key, $this->lexic[$fromto])) {
             return $this->lexic[$fromto][$key];
-        }
-        else{
+        } else {
             return $key;
         }
     }

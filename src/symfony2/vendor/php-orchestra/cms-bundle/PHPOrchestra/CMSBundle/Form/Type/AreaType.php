@@ -24,7 +24,7 @@ class AreaType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-    	$builder
+        $builder
             ->add('areaId', 'text', array('attr' => array('class' => 'used-as-label')))
             ->add('classes', 'text')
             ->add('boDirection', 'choice', array(

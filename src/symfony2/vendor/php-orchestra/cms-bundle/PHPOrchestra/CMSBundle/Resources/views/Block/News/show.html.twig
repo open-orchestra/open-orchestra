@@ -1,0 +1,15 @@
+{# loop for see all news #}
+     {% for myNews in allNews %}
+	     <h3>
+	     	{{ myNews.shortName }}
+	     </h3>
+	     {% for myAttributes in myNews.attributes %}
+	     	<div>
+	     		</br>
+		     	{{ (myAttributes.name) }}
+		     	</br>
+		     	{{ (myAttributes.value) }}
+		     	</br>
+	     	</div>
+	     {% endfor %}
+     {% endfor %}

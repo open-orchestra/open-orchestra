@@ -28,22 +28,22 @@ use \PHPOrchestra\CMSBundle\Form\Type\Block\SampleType;
 class SampleTypeTest extends \PHPUnit_Framework_TestCase
 {
 
-	public function setUp()
-	{
-		$this->SampleType = new SampleType();
-	}
+    public function setUp()
+    {
+        $this->SampleType = new SampleType();
+    }
 
 
-	public function testBuildForm()
-	{
-		$formBuilderMock =
-		$this->getMock('\\Symfony\\Component\\Form\\FormBuilderInterface');
-			
-		$formBuilderMock
-		->expects($this->exactly(3))
-		->method('add')
-		->will($this->returnSelf());
+    public function testBuildForm()
+    {
+        $formBuilderMock =
+        $this->getMock('\\Symfony\\Component\\Form\\FormBuilderInterface');
+            
+        $formBuilderMock
+        ->expects($this->exactly(3))
+        ->method('add')
+        ->will($this->returnSelf());
 
-		$this->SampleType->buildForm($formBuilderMock, array());
-	}
+        $this->SampleType->buildForm($formBuilderMock, array());
+    }
 }

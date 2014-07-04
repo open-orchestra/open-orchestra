@@ -25,7 +25,8 @@ class MultilingualTextTransformer implements DataTransformerInterface
 
     /**
      * (non-PHPdoc)
-     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony\Component\Form.DataTransformerInterface::transform()
+     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/
+     * Symfony\Component\Form.DataTransformerInterface::transform()
      */
     public function transform($jsonLanguages) // entity => formfield
     {
@@ -49,7 +50,8 @@ class MultilingualTextTransformer implements DataTransformerInterface
 
     /**
      * (non-PHPdoc)
-     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony\Component\Form.DataTransformerInterface::reverseTransform()
+     * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/
+     * Symfony\Component\Form.DataTransformerInterface::reverseTransform()
      */
     public function reverseTransform($formLanguages) // formfield => entity
     {

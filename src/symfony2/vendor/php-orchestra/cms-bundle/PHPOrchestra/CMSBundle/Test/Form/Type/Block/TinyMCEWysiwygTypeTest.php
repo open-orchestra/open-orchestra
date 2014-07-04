@@ -28,22 +28,22 @@ use \PHPOrchestra\CMSBundle\Form\Type\Block\TinyMCEWysiwygType;
 class TinyMCEWysiwygTypeTest extends \PHPUnit_Framework_TestCase
 {
 
-	public function setUp()
-	{
-		$this->TinyMCEWysiwygType = new TinyMCEWysiwygType();
-	}
+    public function setUp()
+    {
+        $this->TinyMCEWysiwygType = new TinyMCEWysiwygType();
+    }
 
 
-	public function testBuildForm()
-	{
-		$formBuilderMock =
-		$this->getMock('\\Symfony\\Component\\Form\\FormBuilderInterface');
-			
-		$formBuilderMock
-		->expects($this->exactly(1))
-		->method('add')
-		->will($this->returnSelf());
+    public function testBuildForm()
+    {
+        $formBuilderMock =
+        $this->getMock('\\Symfony\\Component\\Form\\FormBuilderInterface');
+            
+        $formBuilderMock
+        ->expects($this->exactly(1))
+        ->method('add')
+        ->will($this->returnSelf());
 
-		$this->TinyMCEWysiwygType->buildForm($formBuilderMock, array());
-	}
+        $this->TinyMCEWysiwygType->buildForm($formBuilderMock, array());
+    }
 }

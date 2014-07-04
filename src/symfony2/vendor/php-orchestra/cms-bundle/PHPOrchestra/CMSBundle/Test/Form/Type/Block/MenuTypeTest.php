@@ -28,22 +28,22 @@ use \PHPOrchestra\CMSBundle\Form\Type\Block\MenuType;
 class MenuTypeTest extends \PHPUnit_Framework_TestCase
 {
 
-	public function setUp()
-	{
-		$this->menuType = new MenuType();
-	}
+    public function setUp()
+    {
+        $this->menuType = new MenuType();
+    }
 
 
-	public function testBuildForm()
-	{
-		$formBuilderMock =
-		$this->getMock('\\Symfony\\Component\\Form\\FormBuilderInterface');
-		 
-		$formBuilderMock
-		    ->expects($this->exactly(2))
-		    ->method('add')
-		    ->will($this->returnSelf());
-		
-		$this->menuType->buildForm($formBuilderMock, array());
-	}
+    public function testBuildForm()
+    {
+        $formBuilderMock =
+        $this->getMock('\\Symfony\\Component\\Form\\FormBuilderInterface');
+         
+        $formBuilderMock
+            ->expects($this->exactly(2))
+            ->method('add')
+            ->will($this->returnSelf());
+        
+        $this->menuType->buildForm($formBuilderMock, array());
+    }
 }
