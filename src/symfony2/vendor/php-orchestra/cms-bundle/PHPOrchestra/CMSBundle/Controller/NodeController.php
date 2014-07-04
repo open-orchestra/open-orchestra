@@ -40,6 +40,27 @@ class NodeController extends Controller
     private $blocks = array();
     
     
+    
+    /**
+     * A getter for the variable externalBlocks
+     *
+     * @param none
+     */
+    public function getExternalBlocks()
+    {
+    	return $this->externalBlocks;
+    }
+    
+    /**
+     * A getter for the variable externalBlocks
+     *
+     * @param none
+     */
+    public function getBlocksNoparam()
+    {
+    	return $this->blocks;
+    }
+    
     /**
      * Render Node
      * 
@@ -323,4 +344,6 @@ class NodeController extends Controller
             array('message' => $message)
         );
     }
+
+    
 }
