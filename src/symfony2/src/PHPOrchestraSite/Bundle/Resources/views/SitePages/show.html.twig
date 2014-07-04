@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}{{ node.name }}{% endblock %}</title>
+        <!-- CSS BLOKC -->
+        <link rel="stylesheet" href="{{ asset('bundles/phporchestrasite/css/blocks.css') }}" type="text/css" />
+        
+        <!-- CSS CARROUSEL -->
+        <link rel="stylesheet" href="{{ asset('bundles/phporchestrasite/css/carrousel.css') }}" type="text/css" />
+        
+        <!-- CSS MENU -->
+        <link rel='stylesheet' href="{{ asset('bundles/phporchestrasite/css/menu/menu.css') }}" type='text/css' media='screen' />
+		
+        
+   		<!--  Lib JS  -->
+		<script type='text/javascript' src='/bundles/phporchestrasite/js/jquery-1.9.1.min.js'></script>
+		
+		<!-- JS CARROUSEL -->
+    	<script type='text/javascript' src='/bundles/phporchestrasite/js/jssor.core.js'></script>
+    	<script type='text/javascript' src='/bundles/phporchestrasite/js/jssor.utils.js'></script>
+    	<script type='text/javascript' src='/bundles/phporchestrasite/js/jssor.slider.js'></script>
+    	<script language="JavaScript" type="text/javascript" src='/bundles/phporchestrasite/js/carrousel.js'></script>
+    	
+    	<!-- JS MENU -->
+    	<script type='text/javascript' src='/bundles/phporchestrasite/js/menu/jquery.easing.min.js'></script>
+		<script type='text/javascript' src='/bundles/phporchestrasite/js/menu/jquery.lavalamp.min.js'></script>
+		<script type='text/javascript' src='/bundles/phporchestrasite/js/menu/cufon.yui.js'></script>
+		<script type='text/javascript' src='/bundles/phporchestrasite/js/menu/myriad.js'></script>
+		 
+    </head>
+    
+    <body>
+        <div id="orchestra">
+            <div id="orchestra-main">
+		        {% for area in node.areas %}
+		            {% include "PHPOrchestraSiteBundle:SitePages:area.html.twig" with {"area": area, "blocks": blocks} only %}
+		        {% endfor %}
+            </div>
+        </div>
+    </body>
+</html>

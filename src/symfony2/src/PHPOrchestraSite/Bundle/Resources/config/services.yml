@@ -1,0 +1,7 @@
+parameters:
+#    php_orchestra_site.example.class: PHPOrchestraSite\Bundle\Example
+
+services:
+#    php_orchestra_site.example:
+#        class: %php_orchestra_site.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

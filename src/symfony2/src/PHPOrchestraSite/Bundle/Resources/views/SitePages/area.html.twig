@@ -1,0 +1,19 @@
+<div id="{{ area.areaId }}">
+{% for subArea in area.subAreas %}
+    {% include "PHPOrchestraSiteBundle:SitePages:area.html.twig" with {"area" : subArea, "blocks" : blocks} only %}
+{% endfor %}
+
+{% if area.blocks is defined  %}
+	{% for blockReference in area.blocks %}
+	    {% set block = false %}
+	    {% if blocks[blockReference.nodeId][blockReference.blockId] is defined %}
+	        {% set block = blocks[blockReference.nodeId][blockReference.blockId] %}
+	    {% endif %}
+	    <div>
+	    {% if block %}
+				{{ render_esi(controller('PHPOrchestraCMSBundle:Block/' ~ block.component ~ ':show', block.attributes), {'ignore_errors' : true} ) }}
+	    {% endif %}
+	    </div>
+	{% endfor %}
+{% endif %}	
+</div>
