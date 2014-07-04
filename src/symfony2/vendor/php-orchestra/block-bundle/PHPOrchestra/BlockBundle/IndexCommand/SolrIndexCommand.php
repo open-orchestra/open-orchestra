@@ -189,6 +189,11 @@ class SolrIndexCommand
                 $fieldType = $field->getFieldType();
                 $fieldComplete[$fieldName.'_'.$fieldType] = $this->getContentContent($doc, $fieldName);
             }
+            $fieldComplete['url'] = array(
+                $this->container->get(
+                    'phporchestra_cms.urlgeneratorContent'
+                )->generateUrl($doc->getContentId())
+            );
             return $fieldComplete;
         }
         return $fieldComplete;

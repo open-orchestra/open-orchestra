@@ -76,14 +76,14 @@ class MenuController extends Controller
 
     public function getTreeUrl($tree)
     {
-    	$wood = array();
-    	foreach ($tree as $node) {
-    		$node['url'] = $this->generateUrl($node['id']);
-    		if (isset($node['sublinks'])) {
-    			$node['sublinks'] = $this->getTreeUrl($node['sublinks']);
-    		}
-    		$wood[] = $node;
-    	}
-    	return $wood;
+        $wood = array();
+        foreach ($tree as $node) {
+            $node['url'] = $this->generateUrl($node['id']);
+            if (isset($node['sublinks'])) {
+                $node['sublinks'] = $this->getTreeUrl($node['sublinks']);
+            }
+            $wood[] = $node;
+        }
+        return $wood;
     }
 }

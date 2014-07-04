@@ -32,32 +32,43 @@ abstract class TableViewController extends Controller
     
     abstract public function setColumns();
     
-    function __construct() {
+    function __construct()
+    {
         $this->setColumns();
-        $this->callback['arrayToNewLine'] = function($value){return implode('<br />', $value);};
-        $this->callback['replaceComaByNewLine'] = function($value){return implode('<br />', explode(',', $value));};
+        $this->callback['arrayToNewLine'] = function ($value) {
+            return implode('<br />', $value);
+        };
+        $this->callback['replaceComaByNewLine'] = function ($value) {
+            return implode('<br />', explode(',', $value));
+        };
     }
         
-    public function init(){}
+    public function init()
+    {
+    }
 
     public function getColumns()
     {
         return $this->columns;
     }
     
-    public function setValues($values){
+    public function setValues($values)
+    {
         $this->values = $values;
     }
     
-    public function getValues(){
+    public function getValues()
+    {
         return $this->values;
     }
     
-    public function setEntity($entity){
+    public function setEntity($entity)
+    {
         $this->entity = $entity;
     }
     
-    public function getEntity(){
+    public function getEntity()
+    {
         return $this->entity;
     }
     
@@ -79,29 +90,35 @@ abstract class TableViewController extends Controller
         return $this->recordPrimaryKey;
     }
     
-    public function setCriteria($criteria){
+    public function setCriteria($criteria)
+    {
         $this->criteria = $criteria;
     }
     
-    public function getCriteria(){
+    public function getCriteria()
+    {
         return $this->criteria;
     }
         
-    public function setSort($sort){
+    public function setSort($sort)
+    {
         $this->sort = $sort;
     }
     
-    public function getSort(){
+    public function getSort()
+    {
         return $this->sort;
     }
     
-    public function setKey($key){
-        if(is_array($key)){
+    public function setKey($key)
+    {
+        if (is_array($key)) {
             $this->key = $key;
         }
     }
     
-    public function getKey(){
+    public function getKey()
+    {
         return $this->key;
     }
     
@@ -145,40 +162,43 @@ abstract class TableViewController extends Controller
         return $this->tableTitle;
     }
     
-    public function setButtonTwig($buttonTwig){
+    public function setButtonTwig($buttonTwig)
+    {
         $this->buttonTwig = $buttonTwig;
     }
     
-    public function getButtonTwig($buttonTwig){
+    public function getButtonTwig($buttonTwig)
+    {
         return $this->buttonTwig;
     }
     
     /**
      * @Route("/{action}/{id}")
      */
-    public function indexAction(Request $request, $action, $id = null){
+    public function indexAction(Request $request, $action, $id = null)
+    {
         $this->routeParameters = $request->attributes->get('_route_params');
         $this->init();
         return call_user_func(array($this, $action.'Action'), $request, $id);
     }
     
-    public function editAction(Request $request, $id = null){
+    public function editAction(Request $request, $id = null)
+    {
         $this->setTableTitle('Edition');
-        
-        if($this->getEntity() !== null){
+
+        if ($this->getEntity() !== null) {
             return $this->editEntity($request, $id);
-        }
-        else{
+        } else {
             return $this->edit($id);
         }
     }
 
-    public function deleteAction(Request $request, $id = null){
-        if($this->getEntity() !== null){
+    public function deleteAction(Request $request, $id = null)
+    {
+        if ($this->getEntity() !== null) {
             return $this->deleteEntity($request, $id);
-        }
-        else{
-            return $this->edit($id);    
+        } else {
+            return $this->edit($id);
         }
     }
 
@@ -186,7 +206,7 @@ abstract class TableViewController extends Controller
     {
         $this->setTableTitle('Liste');
         
-        if($this->getEntity() !== null){
+        if ($this->getEntity() !== null) {
             return $this->catalogEntity($request);
         } else {
             return $this->catalog($request);
@@ -194,10 +214,11 @@ abstract class TableViewController extends Controller
     }
     
     
-    public function generateUrlValue($action, $id = false) {
+    public function generateUrlValue($action, $id = false)
+    {
         $parameters = $this->routeParameters;
         $parameters['action'] = $action;
-        if(!empty($id)){
+        if (!empty($id)) {
             $parameters['id'] = $id;
         } else {
             unset($parameters['id']);
@@ -205,8 +226,9 @@ abstract class TableViewController extends Controller
         return $this->generateUrl($this->get('request')->get('_route'), $parameters);
     }
     
-    public function genericButton($data, $action, $label, $class, $icon){
-        if($this->getEntity() !== null){
+    public function genericButton($data, $action, $label, $class, $icon)
+    {
+        if ($this->getEntity() !== null) {
             $data = $this->generateUrlValue($action, $data);
         }
         $render = $this->render(
@@ -218,47 +240,82 @@ abstract class TableViewController extends Controller
                 'icon' => $icon
             )
         );
-        return $render->getContent();        
+        return $render->getContent();
     }
     
-    public function modifyButton($value){
-        return $this->genericButton($value, 'edit', 'Modifier', 'btn btn-primary redirect', 'fa fa-edit');
+    public function modifyButton($value)
+    {
+        return $this->genericButton(
+            $value,
+            'edit',
+            'Modifier',
+            'btn btn-primary redirect',
+            'fa fa-edit'
+        );
     }
-    public function deleteButton($value){
-        return $this->genericButton($value, 'delete', 'Supprimer', 'btn btn-danger delete', 'fa fa-trash-o');
+    public function deleteButton($value)
+    {
+        return $this->genericButton(
+            $value,
+            'delete',
+            'Supprimer',
+            'btn btn-danger delete',
+            'fa fa-trash-o'
+        );
     }
-    public function addButton(){
-        return $this->genericButton('', 'edit', 'Ajouter', 'btn btn-small btn-ribbon bt-primary redirect', 'fa fa-plus');
+    public function addButton()
+    {
+        return $this->genericButton(
+            '',
+            'edit',
+            'Ajouter',
+            'btn btn-small btn-ribbon bt-primary redirect',
+            'fa fa-plus'
+        );
     }
-    public function saveButton($value){
-        return $this->genericButton($value, 'edit', 'Enregistrer', 'btn btn-small btn-ribbon bt-primary submit', 'fa fa-save');
+    public function saveButton($value)
+    {
+        return $this->genericButton(
+            $value,
+            'edit',
+            'Enregistrer',
+            'btn btn-small btn-ribbon bt-primary submit',
+            'fa fa-save'
+        );
     }
-    public function backButton(){
-        return $this->genericButton('', 'catalog', 'Retour', 'btn btn-small btn-ribbon bt-primary redirect', 'fa fa-undo');
+    public function backButton()
+    {
+        return $this->genericButton(
+            '',
+            'catalog',
+            'Retour',
+            'btn btn-small btn-ribbon bt-primary redirect',
+            'fa fa-undo'
+        );
     }
     
-    public function format(){
+    public function format()
+    {
         $values = $this->getValues();
         $columns = $this->getColumns();
-        foreach($values as &$record){
+        foreach ($values as &$record) {
             $newRecord = array();
-            foreach($columns as $column){
-                if(array_key_exists('button', $column)){
-                    if($column['button'] == 'modify'){
+            foreach ($columns as $column) {
+                if (array_key_exists('button', $column)) {
+                    if ($column['button'] == 'modify') {
                         $newRecord[] = $this->modifyButton($record[$this->getRecordPrimaryKey()]->__toString());
-                    }
-                    else if($column['button'] == 'delete'){
+                    } elseif ($column['button'] == 'delete') {
                         $newRecord[] = $this->deleteButton($record[$this->getRecordPrimaryKey()]->__toString());
                     }
-                }
-                else{
+                } else {
                     if (!array_key_exists($column['name'], $record)) {
-                        throw new NonExistingFieldException('The field ' . $column['name'] . ' does not exist in TableViewController.php');
+                        throw new NonExistingFieldException(
+                            'The field ' . $column['name'] . ' does not exist in TableViewController.php'
+                        );
                     }
-                    if(array_key_exists('callback', $column)){
+                    if (array_key_exists('callback', $column)) {
                         $newRecord[] = $this->callback[$column['callback']]($record[$column['name']]);
-                    }
-                    else{
+                    } else {
                         $newRecord[] = $record[$column['name']];
                     }
                 }
@@ -336,8 +393,7 @@ abstract class TableViewController extends Controller
                    'action' => $this->getRequest()->getUri(),
                 )
             );
-        }
-        else{
+        } else {
             $form = $this->createForm(
                 lcfirst($this->getEntity()),
                 $document,
@@ -443,11 +499,10 @@ abstract class TableViewController extends Controller
     public function deleteEntity(Request $request, $id)
     {
         $documentManager = $this->container->get('phporchestra_cms.documentmanager');
-        if(!empty($id)) {
-            if($this->getKey() === null){
+        if (!empty($id)) {
+            if ($this->getKey() === null) {
                 $document = $documentManager->getDocumentById($this->getEntity(), $id);
-            }
-            else{
+            } else {
                 $criteria = array_combine($this->getKey(), explode('|', $id));
                 $document = $documentManager->getDocument($this->getEntity(), $criteria);
             }
@@ -462,7 +517,8 @@ abstract class TableViewController extends Controller
         if ($request->get('parse')) {
             return $this->getCatalogRecords($request);
         } else {
-            return $this->render('PHPOrchestraCMSBundle:BackOffice:tableViewLayout.html.twig',
+            return $this->render(
+                'PHPOrchestraCMSBundle:BackOffice:tableViewLayout.html.twig',
                 array(
                     'columns' => $this->getColumns(),
                     'listUrl' => $this->generateUrlValue('catalog'),
@@ -488,9 +544,12 @@ abstract class TableViewController extends Controller
         
         parse_str($request->get('criteria'), $criteria);
         $criteria = array_merge($this->criteria, $criteria);
-        array_walk($criteria, function(&$value, $key) {
-            $value = new \MongoRegex('/'.preg_quote($value).'/i');
-        });
+        array_walk(
+            $criteria,
+            function (&$value, $key) {
+                $value = new \MongoRegex('/'.preg_quote($value).'/i');
+            }
+        );
         
         $this->setValues(
             $documentManager->getDocuments(

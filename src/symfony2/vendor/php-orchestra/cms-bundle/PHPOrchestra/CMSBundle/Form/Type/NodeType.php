@@ -42,7 +42,7 @@ class NodeType extends AbstractType
     {
         $transformer = new NodeTypeTransformer($this->container, true);
         $builder->addModelTransformer($transformer);
-    	
+
         $builder
             ->add('nodeId', 'hidden')
             ->add('siteId', 'hidden')

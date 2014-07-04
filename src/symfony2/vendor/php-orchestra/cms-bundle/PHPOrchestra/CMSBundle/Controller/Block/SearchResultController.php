@@ -30,7 +30,7 @@ use Symfony\Component\HttpFoundation\Response;
 class SearchResultController extends Controller
 {
 
-    
+
     /**
      * Render the search's result block
      * 
@@ -85,7 +85,7 @@ class SearchResultController extends Controller
                         $filter,
                         $optionsdismax
                     );
-
+                    
                     // Call template
                     return $this->callTemplate(
                         $data,
@@ -348,6 +348,7 @@ class SearchResultController extends Controller
      */
     public function callTemplate($data, $resultSet, $nodeId, $page, $nbdoc, $fields, $facets = array())
     {
+        $firstField = array_shift($fields);
         if (isset($facets)) {
             return $this->render(
                 "PHPOrchestraCMSBundle:Block/SearchResult:show.html.twig",
@@ -355,10 +356,12 @@ class SearchResultController extends Controller
                     'data' => $data,
                     'resultset' => $resultSet,
                     'nodeId' => $nodeId,
-                     'page' => $page,
-                     'nbdocs' => $nbdoc,
-                     'fieldsdisplayed' => $fields,
-                     'facetsArray' => $facets
+                    'page' => $page,
+                    'nbdocs' => $nbdoc,
+                    'fieldsdisplayed' => $fields,
+                    'facetsArray' => $facets,
+                    'baseUrl' => $this->container->get('router')->getContext()->getBaseUrl(),
+                    'firstField' => $firstField
                 )
             );
         } else {
@@ -371,6 +374,8 @@ class SearchResultController extends Controller
                     'page' => $page,
                     'nbdocs' => $nbdoc,
                     '$fields' => $fields,
+                    'baseUrl' => $this->container->get('router')->getContext()->getBaseUrl(),
+                    'firstField' => $firstField
                 )
             );
         }

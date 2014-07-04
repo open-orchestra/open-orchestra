@@ -8,7 +8,7 @@
 namespace PHPOrchestra\CMSBundle\Document;
 
 use PHPOrchestra\CMSBundle\Exception\UnrecognizedDocumentTypeException;
-
+    
 /**
  * Manage documents
  * 
@@ -348,10 +348,10 @@ class DocumentManager
      */
     public function getBlockInNode($nodeId, $blockId)
     {
-    	
+        
         $result = null;
         
-    	$filters = array(
+        $filters = array(
             array(
                 '$match' =>
                     array(
@@ -359,14 +359,14 @@ class DocumentManager
                     )
             )
         );
-    	$node = $this->getNodesInLastVersion($filters);
-    	if(count($node) > 0){
-    		$node = $node[0];
-    		if(array_key_exists('blocks', $node) && array_key_exists($blockId, $node['blocks'])){
-    			return $node['blocks'][$blockId];
-    		}
-    	}
-    	
-    	return null;
+        $node = $this->getNodesInLastVersion($filters);
+        if (count($node) > 0) {
+            $node = $node[0];
+            if (array_key_exists('blocks', $node) && array_key_exists($blockId, $node['blocks'])) {
+                return $node['blocks'][$blockId];
+            }
+        }
+        
+        return null;
     }
 }

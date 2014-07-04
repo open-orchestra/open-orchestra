@@ -6,9 +6,11 @@
  */
 
 namespace PHPOrchestra\CMSBundle\Twig;
+
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
-class AddPhpFunctionExtension extends \Twig_Extension{
+class AddPhpFunctionExtension extends \Twig_Extension
+{
     
     protected $container;
  
@@ -16,21 +18,24 @@ class AddPhpFunctionExtension extends \Twig_Extension{
     {
         $this->container = $container;
     }
-	
-	/**
+
+    /**
      * {@inheritdoc}
      */
-    public function getFunctions() {
+    public function getFunctions()
+    {
         return array(
             'file_exists' => new \Twig_Function_Method($this, 'file_exists'),
             'twig_exists' => new \Twig_Function_Method($this, 'twig_exists'),
         );
     }
 
-    public function file_exists($file) {
-    	return file_exists($file);
+    public function file_exists($file)
+    {
+        return file_exists($file);
     }
-    public function twig_exists($file) {
+    public function twig_exists($file)
+    {
         return $this->container->get('templating')->exists($file);
     }
     /**
@@ -38,7 +43,8 @@ class AddPhpFunctionExtension extends \Twig_Extension{
      *
      * @return string The extension name
      */
-    public function getName() {
+    public function getName()
+    {
         return 'php_function';
     }
 }

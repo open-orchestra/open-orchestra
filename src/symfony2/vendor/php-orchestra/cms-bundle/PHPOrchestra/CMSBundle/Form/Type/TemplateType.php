@@ -32,7 +32,7 @@ class TemplateType extends AbstractType
     {
         $this->container = $container;
     }
-	            
+
     /**
      * (non-PHPdoc)
      * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony
@@ -42,7 +42,7 @@ class TemplateType extends AbstractType
     {
         $transformer = new NodeTypeTransformer($this->container, false);
         $builder->addModelTransformer($transformer);
-	        
+
         $builder
             ->add('templateId', 'hidden')
             ->add('siteId', 'hidden')

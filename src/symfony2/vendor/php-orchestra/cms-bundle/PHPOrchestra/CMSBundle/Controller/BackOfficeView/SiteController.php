@@ -17,17 +17,21 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class SiteController extends TableViewController
 {
 
-    function init() {
+    function init()
+    {
         $this->setEntity('Site');
     }
     
-    public function edit(){
+    public function edit()
+    {
     }
     
-    public function catalog(Request $request){
+    public function catalog(Request $request)
+    {
     }
         
-    public function setColumns(){
+    public function setColumns()
+    {
         $this->columns = array(
             array('name' => 'domain', 'search' => 'text', 'label' => 'Domain'),
             array('name' => 'alias', 'search' => 'text', 'label' => 'Alias'),
@@ -37,6 +41,6 @@ class SiteController extends TableViewController
             array('button' =>'modify'),
             array('button' =>'delete'
             )
-       );
+        );
     }
 }

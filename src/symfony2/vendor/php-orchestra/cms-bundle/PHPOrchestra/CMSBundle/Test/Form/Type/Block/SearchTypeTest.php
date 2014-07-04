@@ -28,22 +28,22 @@ use \PHPOrchestra\CMSBundle\Form\Type\Block\SearchType;
 class SearchTypeTest extends \PHPUnit_Framework_TestCase
 {
 
-	public function setUp()
-	{
-		$this->SearchType = new SearchType();
-	}
+    public function setUp()
+    {
+        $this->SearchType = new SearchType();
+    }
 
 
-	public function testBuildForm()
-	{
-		$formBuilderMock =
-		$this->getMock('\\Symfony\\Component\\Form\\FormBuilderInterface');
-			
-		$formBuilderMock
-		->expects($this->exactly(4))
-		->method('add')
-		->will($this->returnSelf());
+    public function testBuildForm()
+    {
+        $formBuilderMock =
+        $this->getMock('\\Symfony\\Component\\Form\\FormBuilderInterface');
+            
+        $formBuilderMock
+        ->expects($this->exactly(4))
+        ->method('add')
+        ->will($this->returnSelf());
 
-		$this->SearchType->buildForm($formBuilderMock, array());
-	}
+        $this->SearchType->buildForm($formBuilderMock, array());
+    }
 }
