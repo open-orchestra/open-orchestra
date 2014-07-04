@@ -1,0 +1,8 @@
+<div class='content3'>  
+	<h3 class='blocTitle'>
+		<p class='titleModule'>Contact</p> 
+	</h3>
+	
+	<form action="{{ path('orchestra_mail_send')}}" method="post">
+		{{ form(form)|trans|raw }}
+	</form>
