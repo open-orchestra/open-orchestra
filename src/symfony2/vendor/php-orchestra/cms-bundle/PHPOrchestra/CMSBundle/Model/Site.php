@@ -11,7 +11,8 @@ use Symfony\Component\Validator\Constraints\NotBlank;
 abstract class Site extends \Model\PHPOrchestraCMSBundle\Base\Site
 {
     
-    public static function loadValidatorMetadata(ClassMetadata $metadata){
+    public static function loadValidatorMetadata(ClassMetadata $metadata)
+    {
         Site::loadClassMetadata($metadata);
     }
     public static function loadClassMetadata(ClassMetadata $metadata)
@@ -26,7 +27,8 @@ abstract class Site extends \Model\PHPOrchestraCMSBundle\Base\Site
         parent::setLanguages($value);
     }
     
-    public function getLanguages(){
+    public function getLanguages()
+    {
         $value = parent::getLanguages();
         $value = (is_string($value)) ? explode(',', $value) : array();
         return $value;
@@ -38,7 +40,8 @@ abstract class Site extends \Model\PHPOrchestraCMSBundle\Base\Site
         parent::setBlocks($value);
     }
     
-    public function getBlocks(){
+    public function getBlocks()
+    {
         $value = parent::getBlocks();
         $value = (is_string($value)) ? explode(',', $value) : array();
         return $value;

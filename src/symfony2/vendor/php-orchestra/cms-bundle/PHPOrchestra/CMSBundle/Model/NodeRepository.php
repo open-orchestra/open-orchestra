@@ -9,7 +9,7 @@ use PHPOrchestra\CMSBundle\Helper\TreeHelper;
  */
 class NodeRepository extends \Model\PHPOrchestraCMSBundle\Base\NodeRepository
 {
-    
+
     /**
      * create a node tree for Menu
      * 
@@ -22,7 +22,7 @@ class NodeRepository extends \Model\PHPOrchestraCMSBundle\Base\NodeRepository
             'deleted' => false,
             'inMenu' => true,
         );
-        
+    
         $tree = $this->getTree($filter);
         return $tree;
     }
@@ -93,6 +93,27 @@ class NodeRepository extends \Model\PHPOrchestraCMSBundle\Base\NodeRepository
             }
         }
         return TreeHelper::createRecTree($links2, $links2[$superroot]);
+    }
+
+    /**
+     * Give url foreach node in the tree
+     * 
+     * @param array $tree tree of node
+     * @param Symfony\Component\DependencyInjection\ContainerAware $container
+     * 
+     * @return array tree of node
+     */
+    public function getTreeUrl($tree, $container)
+    {
+        $wood = array();
+        foreach ($tree as $node) {
+            $node['url'] = $container->get('router')->generate($node['id']);
+            if (isset($node['sublinks'])) {
+                $node['sublinks'] = $this->getTreeUrl($node['sublinks'], $container);
+            }
+            $wood[] = $node;
+        }
+        return $wood;
     }
 
 

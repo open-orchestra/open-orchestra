@@ -99,10 +99,7 @@
     width:100%;
     height:600px;
 }
-.no-label label{
-	display:none;
-}
-
-.deleted .fancytree-title {
-    color:#FF0000;
+.ui-model div.dialog-selected{
+    background-image: url(../img/alpha.png);
+    background-size: 10px 100%;
 }

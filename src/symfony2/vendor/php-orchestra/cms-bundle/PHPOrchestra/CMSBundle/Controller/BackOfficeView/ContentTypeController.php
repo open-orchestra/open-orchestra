@@ -28,8 +28,7 @@ class ContentTypeController extends TableViewController
         $this->setEntity('ContentType');
         $this->setMainTitle('Type de contenus');
       //  $this->setCriteria(array('deleted' => false));
-        $this->callback['selectLanguageName'] = function($jsonLanguages)
-        {
+        $this->callback['selectLanguageName'] = function ($jsonLanguages) {
             $languages = (array) json_decode($jsonLanguages);
             $value = '';
             if (is_array($languages) && isset($languages['fr'])) {
@@ -203,7 +202,7 @@ class ContentTypeController extends TableViewController
         
         $contentTypesArray = array();
         
-        foreach($contentTypes as $contentType) {
+        foreach ($contentTypes as $contentType) {
             $languages = (array) json_decode($contentType['name']);
             $name = 'Unknown name in ' . $language;
             if (isset($languages[$language])) {

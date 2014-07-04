@@ -47,7 +47,6 @@ class ContentController extends TableViewController
             array('name' => 'shortName', 'search' => 'text', 'label' => 'Nom'),
             array('name' => 'language', 'search' => 'text', 'label' => 'Langue'),
             array('name' => 'version', 'search' => 'text', 'label' => 'Version'),
-        //    array('name' => 'status', 'search' => 'text', 'label' => 'Statut'),
             array('button' =>'modify'),
             array('button' =>'delete')
         );
@@ -98,6 +97,13 @@ class ContentController extends TableViewController
     {
         $availableLanguages = $this->container->getParameter('php_orchestra.languages.availables');
         
+        $documentManager = $this->container->get('phporchestra_cms.documentmanager');
+        $criteria = array(
+            'contentId' => $form->get('contentId')->getData(),
+            'language' => $form->get('language')->getData()
+        );
+        $versions = $documentManager->getDocuments('Content', $criteria, array('version' => -1), true);
+        
         return $this->render(
             'PHPOrchestraCMSBundle:BackOffice/Content:contentForm.html.twig',
             array(
@@ -105,7 +111,8 @@ class ContentController extends TableViewController
                 'mainTitle' => $this->getMainTitle(),
                 'tableTitle' => $this->getTableTitle(),
                 'ribbon' => $this->saveButton($id) . $this->backButton(),
-                'availableLanguages' => $availableLanguages
+                'availableLanguages' => $availableLanguages,
+                'contentVersions' => $versions
             )
         );
     }
@@ -128,9 +135,9 @@ class ContentController extends TableViewController
      */
     protected function modifyDocumentAfterGet($document)
     {
-        if ($document->getStatus() != Content::STATUS_DRAFT) {
+     /*   if ($document->getStatus() != Content::STATUS_DRAFT) {
             $document->generateDraft();
-        }
+        }*/
         
         $documentManager = $this->container->get('phporchestra_cms.documentmanager');
         $contentType = $documentManager->getDocument(
@@ -172,10 +179,10 @@ class ContentController extends TableViewController
         }
         
         // Testing if solr is running and index a content
-        $indexSolr = $this->container->get('phporchestra_cms.indexsolr');
+   /*     $indexSolr = $this->container->get('phporchestra_cms.indexsolr');
         if ($indexSolr->solrIsRunning()) {
             $indexSolr->slpitDoc($document, 'Content');
-        }
+        }*/
         
         return array(
             'success' => true,
@@ -201,13 +208,57 @@ class ContentController extends TableViewController
         }
         
         // Testing if solr is running and delete a content from the index
-        $indexSolr = $this->get('phporchestra_cms.indexsolr');
+   /*     $indexSolr = $this->get('phporchestra_cms.indexsolr');
         if ($indexSolr->solrIsRunning()) {
             $indexSolr->deleteIndex($documentId);
-        }
+        }*/
         
         return $this->redirect(
             $this->generateUrlValue('catalog')
+        );
+    }
+    
+    /**
+     * Find the content matching criterias, if none is found create a new one
+     * Then return the edit form url
+     * 
+     * @param $request
+     * @param $id
+     */
+    public function findForEditAction(Request $request, $id)
+    {
+        $contentTypeId = $request->get('contentTypeId');
+        $contentId = $request->get('contentId');
+        $language = $request->get('language');
+        $version = $request->get('version');
+        
+        $documentManager = $this->get('phporchestra_cms.documentmanager');
+        
+        $criteria = array(
+            'contentType' => $contentTypeId,
+            'contentId' => $contentId,
+            'language' => $language
+        );
+        
+        if ($version != 0) {
+            $criteria['version'] = $version;
+        }
+        
+        $content = $documentManager->getDocument('Content', $criteria);
+        
+        if (count($content) == 0) {
+            $content = $documentManager->createDocument('Content');
+            $content->setContentType($contentTypeId);
+            $content->setContentId($contentId);
+            $content->setLanguage($language);
+            $content->save();
+        }
+        
+        return new JsonResponse(
+            array(
+                'success' => true,
+                'data' => $this->generateUrlValue('edit', $content->getId())
+            )
         );
     }
 }

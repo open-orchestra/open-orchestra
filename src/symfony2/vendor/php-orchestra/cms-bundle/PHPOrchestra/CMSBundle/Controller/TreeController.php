@@ -24,9 +24,9 @@ class TreeController extends Controller
     {
         $nodes = $this->get('phporchestra_cms.documentmanager')->getNodesInLastVersion();
         
-        foreach($nodes as &$node){
-        	$node['url'] = $this->generateUrl('php_orchestra_cms_nodeform', array('nodeId' => $node['_id']));
-        	$node['class'] = ($node['deleted'] == true) ? 'deleted' : '';
+        foreach ($nodes as &$node) {
+            $node['url'] = $this->generateUrl('php_orchestra_cms_nodeform', array('nodeId' => $node['_id']));
+            $node['class'] = ($node['deleted'] == true) ? 'deleted' : '';
         }
         $nodes = TreeHelper::createTree($nodes, '_id', 'parentId');
 
@@ -40,8 +40,11 @@ class TreeController extends Controller
     {
         $templates = $this->get('phporchestra_cms.documentmanager')->getTemplatesInLastVersion();
 
-        foreach($templates as $key => &$template){
-            $template['url'] = $this->generateUrl('php_orchestra_cms_templateform', array('templateId' => $template['_id']));
+        foreach ($templates as $key => &$template) {
+            $template['url'] = $this->generateUrl(
+                'php_orchestra_cms_templateform',
+                array('templateId' => $template['_id'])
+            );
             $template['class'] = ($template['deleted'] == true) ? 'deleted' : '';
         }
         

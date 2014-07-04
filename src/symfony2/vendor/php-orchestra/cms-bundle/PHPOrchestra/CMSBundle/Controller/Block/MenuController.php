@@ -39,14 +39,15 @@ class MenuController extends Controller
         $mandango = $this->get('mandango');
         $repository = $mandango->getRepository('Model\PHPOrchestraCMSBundle\Node');
         $tree = $repository->getMenuTree();
+        $tree = $repository->getTreeUrl($tree, $this->container);
 
         $response = $this->render(
             'PHPOrchestraCMSBundle:Block/Menu:show.html.twig',
             array(
-                    'tree'  => $tree,
-                    'class' => $class,
-                    'id'    => $id
-                )
+                'tree'  => $tree,
+                'class' => $class,
+                'id'    => $id
+            )
         );
         
         return $response;
@@ -70,5 +71,19 @@ class MenuController extends Controller
                 'id'    => $id
             )
         );
+    }
+
+
+    public function getTreeUrl($tree)
+    {
+        $wood = array();
+        foreach ($tree as $node) {
+            $node['url'] = $this->generateUrl($node['id']);
+            if (isset($node['sublinks'])) {
+                $node['sublinks'] = $this->getTreeUrl($node['sublinks']);
+            }
+            $wood[] = $node;
+        }
+        return $wood;
     }
 }

@@ -36,14 +36,14 @@ $columns = array(
     array(
         'db'        => 'start_date',
         'dt'        => 4,
-        'formatter' => function( $d, $row ) {
-            return date( 'jS M y', strtotime($d));
+        'formatter' => function ($d, $row) {
+            return date('jS M y', strtotime($d));
         }
     ),
     array(
         'db'        => 'salary',
         'dt'        => 5,
-        'formatter' => function( $d, $row ) {
+        'formatter' => function ($d, $row) {
             return '$'.number_format($d);
         }
     )
@@ -66,7 +66,5 @@ $sql_details = array(
 require( 'ssp.class.php' );
 
 echo json_encode(
-    SSP::simple( $_GET, $sql_details, $table, $primaryKey, $columns )
+    SSP::simple($_GET, $sql_details, $table, $primaryKey, $columns)
 );
-
-

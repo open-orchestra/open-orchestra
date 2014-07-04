@@ -354,7 +354,7 @@ class MetadataFactoryInfo
             'inheritance' => false,
             'fields' => array(
                 'contentId' => array(
-                    'type' => 'integer',
+                    'type' => 'string',
                     'dbName' => 'contentId',
                 ),
                 'contentType' => array(

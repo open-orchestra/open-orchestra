@@ -13,7 +13,7 @@ use Model\PHPOrchestraCMSBundle\Node;
  */
 class NodeRepositoryTest extends \PHPUnit_Framework_TestCase
 {
-
+    
     /**
      * repository to be tested
      * 
@@ -165,6 +165,27 @@ class NodeRepositoryTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expected, $result);
     }
 
+
+    /**
+     * Test unit getTreeUrl()
+     */
+    public function testGetTreeUrl()
+    {
+        $tree = $this->createTreeData();
+        $generateUrl = $this->getMockBuilder('\\PHPOrchestra\\CMSBundle\\Routing\\PhpOrchestraUrlGenerator')
+            ->disableOriginalConstructor()
+            ->getMock();
+        $container = $this->getMock('\\Symfony\\Component\\DependencyInjection\\Container');
+        $container->expects($this->any())->method('get')->willReturn($generateUrl);
+        $generateUrl->expects($this->at(0))->method('generate')->will($this->returnValue('/app_dev.php'));
+        $generateUrl->expects($this->at(1))->method('generate')->will($this->returnValue('/app_dev.php/fixture-full'));
+        
+        $result = $this->repository->getTreeUrl($tree, $container);
+        $expected = $this->createTreeUrl();
+        
+        $this->assertEquals($expected, $result);
+    }
+
     
     /**
      * Test getAllNodes function
@@ -202,15 +223,32 @@ class NodeRepositoryTest extends \PHPUnit_Framework_TestCase
     public function createTreeData()
     {
         return array(
-                array(
-                    'id'   => 'root',
-                    'text' => 'test1',
-                ),
-                array(
-                    'id'   => 'superroot',
-                    'text' => 'test2',
-                )
-               );
+            array(
+                'id'   => 'root',
+                'text' => 'test1',
+            ),
+            array(
+                'id'   => 'superroot',
+                'text' => 'test2',
+            )
+        );
+    }
+    
+
+    public function createTreeUrl()
+    {
+        return array(
+            array(
+                'id'   => 'root',
+                'text' => 'test1',
+                'url'  => '/app_dev.php',
+            ),
+            array(
+                'id'   => 'superroot',
+                'text' => 'test2',
+                'url'  => '/app_dev.php/fixture-full',
+            )
+        );
     }
 
 

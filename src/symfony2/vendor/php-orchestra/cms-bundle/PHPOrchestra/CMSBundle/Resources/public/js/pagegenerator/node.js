@@ -1,18 +1,14 @@
 var allowed_object = ['areas', 'blocks'];
 
 function returnActions(options, length, direction){
-	id = 'none';
-	var actions = {
-			'none': {
-				'fa fa-cog' : [
-		       	   	'$("#dialog-' + options.type + '").data(' + JSON.stringify(options) + ');',
-		       	   	'$("#dialog-' + options.type + '").data("source", $(this).closest("li"));',
-		       	   	'$("#dialog-' + options.type + '").fromJsToForm();',
-		       		'$("#dialog-' + options.type + '").dialog( "open" );'
-		       	]
-			}
+	return {
+		'fa fa-cog' : [
+       	   	'$("#dialog-' + options.type + '").data(' + JSON.stringify(options) + ');',
+       	   	'$("#dialog-' + options.type + '").data("source", $(this).closest("li"));',
+       	   	'$("#dialog-' + options.type + '").fromJsToForm();',
+       		'$("#dialog-' + options.type + '").dialog( "open" );'
+       	]
 	};
-	return actions[id];
 }
 
 deleteDialogIfExists('dialog-node');

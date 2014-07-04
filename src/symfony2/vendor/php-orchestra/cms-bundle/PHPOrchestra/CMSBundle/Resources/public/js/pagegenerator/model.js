@@ -1,49 +1,8 @@
-function tagAsModelElement(tab){
-	for(var i in allowed_object){
-		var key = allowed_object[i];
-		if(key in tab){
-			for(var j in tab[key]){
-				tagAsModelElement(tab[key][j]);
-				tab[key][j]['ui-model'] = {};
-			}
-		}
-	}
-}
-function untagAsModelElement(tab){
-	for(var i in allowed_object){
-		var key = allowed_object[i];
-		if(key in tab){
-			for(var j in tab[key]){
-				untagAsModelElement(tab[key][j]);
-				delete tab[key][j]['ui-model'];
-			}
-		}
-	}
-}
 function getValueInObject(data, path, key){
 	try{
-		if(key){
-			return eval('data' + path + '.' + key);
-		}
-		else{
-			return eval('data' + path);
-		}
+		return (key) ? eval('data' + path + '.' + key) : eval('data' + path);
 	}
 	catch(e){
-	}
-}
-function refreshSettings(path){
-	for(var i in allowed_object){
-		var key = allowed_object[i];
-		var tab;
-		if(tab = getValueInObject($('#dialog-' + key).data('container').data('settings'), path, key)){
-			for(var j in tab){
-				$('#dialog-' + key).data('path', path + '.' + key + '[' + j + ']');
-				$( "#dialog-" + key ).fromJsToForm();
-				$( "#dialog-" + key ).fromFormToJs();
-				refreshSettings(path + '.' + key + '[' + j + ']');
-			}
-		}
 	}
 }
 function resetPercent(objects){
@@ -79,13 +38,8 @@ function formIdToName(prefix, data){
 		        var id = $(this).attr( "id" ).replace(prefix + '_', '');
 		        if(!$(this).hasClass('not-mapped') && id != '_token'){
 		        	data[id] = $(this).val();
-		        	if('ui-model' in data){
-			        	if($(this).hasClass('used-as-label')){
-			        		data['ui-model'].label = $(this).val();
-			        		if($(this).is('select')){
-			        			data['ui-model'].label = $(this).find(":selected").text();
-			        		}
-			        	}
+		        	if($(this).hasClass('used-as-label')){
+		        		data['ui-model'].label = (!$(this).is('select')) ? $(this).val() : $(this).find(":selected").text();
 		        	}
 		        }
 	        });
@@ -115,12 +69,7 @@ function formIdToName(prefix, data){
 			}
 	        $(this).find(':input[id!="' + prefix + '__token"]').each(function(){
 	        	var id = $(this).attr("id").replace(prefix + '_', '');
-	        	if(id in data){
-	        		$(this).val(data[id]);
-	        	}
-	        	else{
-	        		$(this).val('');
-	        	}
+	        	$(this).val(getValueInObject(data, '', id));
 	    	});
 		});
     }
@@ -155,19 +104,17 @@ function formIdToName(prefix, data){
 	{
 		return this.each(function(){
 			var settings = $(this).data('settings');
+			eval('values = ' + $("#" + options.type + "_areas").val() + ';');
+			settings.areas = getValueInObject(values, '', 'areas');
 			settings['ui-model'] = {};
 			$("#dialog-" + options.type).data('path', '');
 			$("#dialog-" + options.type).fromFormToJs();
-			settings.areas = eval($("#" + options.type + "_areas").val());
-			tagAsModelElement(settings);
-			refreshSettings('');
 		});
 	}
 	$.fn.setSubmit = function(options)
 	{
 		return this.each(function(){
 			var settings = $(this).data('settings');
-			untagAsModelElement(settings);
 			$("#" + $(this).data('type') + "_areas").val(JSON.stringify(settings.areas));
 		});
 	}
@@ -181,6 +128,48 @@ function formIdToName(prefix, data){
 					eval(event.data.js);
 				}).appendTo($(this));
 			}
+		});
+	}
+	$.fn.activDraggable = function(parameters){
+		return this.each(function(){
+			$(this).draggable({
+				opacity: 1,
+				zIndex: 100,
+				axis: parameters.axe,
+				drag: function(event, ui){
+					size = $(this).offset()[parameters.origine] - $(this).data('origine');
+					$(this).prev().changeSize(parameters.vector, $(this).data('prev') + size);
+					$(this).next().changeSize(parameters.vector, $(this).data('next') - size);
+				},
+				start: function(){
+					$(this).data('origine', $(this).offset()[parameters.origine]);
+					$(this).data('prev', eval('$(this).prev().' + parameters.vector + '()'));
+					$(this).data('next', eval('$(this).next().' + parameters.vector + '()'));
+				},
+				stop: function(event, ui){
+					$(this).css(parameters.origine, 'auto');
+					var container = $(this).parents('.ui-model');
+					var data = container.data('settings');
+					eval('data' + $(this).prev().data('path') + '.boPercent = ' + parseFloat($(this).prev()[0].style[parameters.vector]) + ';');
+					eval('data' + $(this).next().data('path') + '.boPercent = ' + parseFloat($(this).next()[0].style[parameters.vector]) + ';');
+			    	container.parent().model({"type" : container.data('type'), "resizable" : container.data('resizable')});
+				}
+			})
+		});
+	}
+	$.fn.activDroppable = function(css){
+		return this.each(function(){
+			$(this).droppable({
+				greedy: true,
+				tolerance: "pointer",
+				hoverClass: 'over',
+				drop : function(event, ui){
+					if(ui.draggable.data("path")){
+						$(this).moveFromTo(ui.draggable.data("path"), $(this).parent().data("path"));
+					}
+				},
+				accept: css
+			});
 		});
 	}
 	$.fn.model = function(options)
@@ -237,7 +226,7 @@ function formIdToName(prefix, data){
 				div.appendTo($(this));
 			}
 
-			var addArray = $("#dialog-" + options.type).dialog("option", "addArray");
+			var addArray = $.merge([], $("#dialog-" + options.type).dialog("option", "addArray"));
 
 			for(var i in this_settings){
 				try{
@@ -254,36 +243,12 @@ function formIdToName(prefix, data){
 							subli.css(bo_direction_tools.vector, boPercent + '%');
 							subli.addClass('ui-model-' + i)
 							subli.model({'path' : path, 'parent_path': options.path, 'type' : i});
-							if(j != this_settings[i].length -1 && container.data('resizable')){
-								var separator = $('<li/>', {"class": 'separator-'+ bo_direction_tools.prefix});
-								separator.appendTo(ul);
-								(function(s){
-									separator.draggable({
-										opacity: 1,
-										zIndex: 100,
-										axis: s.axe,
-										drag: function(event, ui){
-											size = $(this).offset()[s.origine] - $(this).data('source');
-											$(this).prev().changeSize(s.vector, $(this).data('prev') + size);
-											$(this).next().changeSize(s.vector, $(this).data('next') - size);
-										},
-										start: function(){
-											$(this).data('source', $(this).offset()[s.origine]);
-											$(this).data('prev', eval('$(this).prev().' + s.vector + '()'));
-											$(this).data('next', eval('$(this).next().' + s.vector + '()'));
-										},
-										stop: function(event, ui){
-											$(this).css(s.origine, 'auto');
-											var container = $(this).parents('.ui-model');
-											var data = container.data('settings');
-											eval('data' + $(this).prev().data('path') + '.boPercent = ' + parseFloat($(this).prev()[0].style[s.vector]) + ';');
-											eval('data' + $(this).next().data('path') + '.boPercent = ' + parseFloat($(this).next()[0].style[s.vector]) + ';');
-									    	container.parent().model({"type" : container.data('type'), "resizable" : container.data('resizable')});
-										}
-									})
-								})(bo_direction_tools);
-							}
 							if(container.data('resizable')){
+								if(j != this_settings[i].length -1){
+									var separator = $('<li/>', {"class": 'separator-'+ bo_direction_tools.prefix});
+									separator.appendTo(ul);
+									separator.activDraggable(bo_direction_tools);
+								}
 								subli.draggable({
 									'opacity': 0.5,
 									'containment': container,
@@ -297,24 +262,12 @@ function formIdToName(prefix, data){
 				}
 				catch (e){}
 			}
+			
 			if(container.data('resizable')){
-				div.droppable({
-					greedy: true,
-					tolerance: "pointer",
-					hoverClass: 'over',
-					drop : function(event, ui){
-						if(ui.draggable.data("path")){
-							$(this).moveFromTo(ui.draggable.data("path"), options.path);
-						}
-					},
-					accept: function(ui){
-						var accept = false;
-						for(var i in addArray){
-							accept = accept || ui.hasClass('ui-model-' + addArray[i]);
-						}
-						return accept;
-					}
-				});
+				for(var i in addArray){
+					addArray[i] = '.ui-model-' + addArray[i];
+				}
+				div.activDroppable(addArray.join(', '));
 			}
 		});
 	}

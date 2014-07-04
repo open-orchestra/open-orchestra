@@ -13,40 +13,39 @@ class TreeHelper
 {
     public static function createTree($values, $l_id = null, $l_pid = null)
     {
-    	if($l_id === null){
+        if ($l_id === null) {
             foreach ($values as $key => $value) {
-            	$values[$key] = array();
-            	$values[$key]['id'] = $value;
+                $values[$key] = array();
+                $values[$key]['id'] = $value;
             }
             return $values;
-    	}
-        else{    	
-	        $connection = array();
-	        foreach ($values as $value) {
-	            $connection[$value[$l_id]] = $value[$l_pid];
-	        }
-	        $links = array();
-	        
-	        $superRoot = '';
-	        foreach ($connection as $key => $value) {
-	            $id = $key;
-	            $pid = $value;
-	            if(!array_key_exists($pid, $values)){
-	            	$superRoot = $pid;
-	            }
-	            $links[$pid][] = array('id' => $id);
-	        }
-	        $links = TreeHelper::createRecTree($links, $links[$superRoot]);
-	        
-	        $connection = array();
-	        foreach ($values as $value) {
-	            $connection[$value[$l_id]] = $value;
-	        }
-	        array_walk_recursive($links, function(&$value) use ($connection) {
-	            $value = $connection[$value];
-	        });
-	        
-	        return $links;
+        } else {
+            $connection = array();
+            foreach ($values as $value) {
+                $connection[$value[$l_id]] = $value[$l_pid];
+            }
+            $links = array();
+            
+            $superRoot = '';
+            foreach ($connection as $key => $value) {
+                $id = $key;
+                $pid = $value;
+                if (!array_key_exists($pid, $values)) {
+                    $superRoot = $pid;
+                }
+                $links[$pid][] = array('id' => $id);
+            }
+            $links = TreeHelper::createRecTree($links, $links[$superRoot]);
+            
+            $connection = array();
+            foreach ($values as $value) {
+                $connection[$value[$l_id]] = $value;
+            }
+            array_walk_recursive($links, function (&$value) use ($connection) {
+                $value = $connection[$value];
+            });
+            
+            return $links;
         }
     }
     

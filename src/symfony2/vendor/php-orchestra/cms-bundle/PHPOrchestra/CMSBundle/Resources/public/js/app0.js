@@ -1228,6 +1228,26 @@ if($.navAsAjax)
 	    e.preventDefault();
     });
 
+    // click on links inside content
+    $(document).on('click', '.tabLink', function(e) {
+        e.preventDefault();
+        $('#content').html('<h1><i class="fa fa-cog fa-spin"></i> Loading...</h1>');
+        $.post($(e.currentTarget).attr('href'), function(response) {
+            if (response.success) {
+                window.location.hash = response.data;
+            } else {
+                $('#content').html(response.data);
+            }
+        });
+    });
+    
+    // change a select switcher
+    $(document).on('change', '.selectSwitcher', function(e) {
+        e.preventDefault();
+        window.location.hash = $(e.currentTarget).val();
+    });
+
+    
     // DO on hash change
     $(window).on('hashchange', function() {
     	if(window.location.hash != '')
