@@ -90,7 +90,7 @@ class NodeTypeTransformer implements DataTransformerInterface
                     	$block['ui-model']['html'] = $response['data'];
                     }
                 }
-                if(sizeof($value) == 0){
+                if(count($value) == 0){
                     unset($values['blocks']);
                 }
             }
@@ -101,7 +101,9 @@ class NodeTypeTransformer implements DataTransformerInterface
                     $form = $this->container->get('form.factory')->create(new AreaType($this->container->get('phporchestra_cms.documentmanager')), $area);
                     $area['ui-model'] = $this->getInformationsFromType($form);
                 }
-                $values[self::JSON_AREA_TAG] = $value;
+                if(count($value) > 0){
+                    $values[self::JSON_AREA_TAG] = $value;
+                }
                 unset($values[self::PHP_AREA_TAG]);
             }
         }
