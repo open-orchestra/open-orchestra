@@ -1,19 +1,79 @@
-function addButton(name, data, jThis){
-	return {
-        	"click" : (function (name, data, jThis){
-            	return function(){
+(function($){
+    $.fn.addButton = function(button)
+    {
+		return this.each(function(){
+			var buttons = $(this).dialog("option", "buttons");
+			buttons.push(button);
+			$(this).dialog("option", "buttons", buttons);
+		});
+	}
+
+	$.fn.addObjectButton = function(name)
+    {
+		return this.each(function(){
+	        var data = $(this).data('container').data('settings');
+	        data = eval('data' + $(this).data('path'));	
+			var button = {
+	        	"click" : function(){
             		if(!(name in data)){
             			data[name] = [];
             		}
             		resetPercent(data[name]);
                     data[name].push({'ui-model' : {}});
-                    jThis.dialog( "close" );
-            	}
-        		})(name, data, jThis),
-        	"text" : "Add " + name.charAt(0).toUpperCase() + name.slice(1),
-        	"class" : "btn btn-default"
-        };
-}
+                    var rank = data[name].length - 1;
+                    $(this).dialog( "close" );
+                    $('#dialog-' + name).data('css', $(this).data('css'));
+                    $('#dialog-' + name).data('parent_path', $(this).data('path'));
+                    $('#dialog-' + name).data('path', $(this).data('path') + '.' + name + '[' + rank + ']');
+                    $('#dialog-' + name).data('source', $(this).data('source').find('li').last());
+                    $('#dialog-' + name).fromJsToForm();
+                    $('#dialog-' + name).dialog( "open" );
+            	},
+	        	"text" : "Add " + name.charAt(0).toUpperCase() + name.slice(1),
+	        	"class" : "btn btn-default"
+	        };
+			$(this).addButton(button);
+		});
+	}
+    
+    $.fn.addSubmitButton = function(name)
+    {
+		return this.each(function(){
+			var button = {
+	        	"click" : function(){
+		            var data = $(this).data('container').data('settings');
+		            data = eval('data' + $(this).data('path'));	
+		            $(this).fromFormToJs(data);
+		            $(this).data('container').setSubmit();
+		            var form = $(this).find('form');
+		            url = form.attr('action');
+		            params = form.serialize();
+		            $(this).dialog( "close" );
+		            treeAjaxCall(url, params);
+            	},
+	        	"text" : "Save",
+	        	"class" : "btn btn-primary"
+	        };
+			$(this).addButton(button);
+		});
+    }
+    $.fn.addApplyButton = function(name)
+    {
+		return this.each(function(){
+			var button = {
+	    		"click" : function() {
+			        var data = $(this).data('container').data('settings');
+			        data = eval('data' + $(this).data('path'));
+		            $(this).fromFormToJs(data);
+		            $(this).dialog( "close" );
+	        	},
+		        "text" : "Apply",
+		        "class" : "btn btn-default"
+	        };
+			$(this).addButton(button);
+		});
+    }
+})(jQuery);
 
 function deleteDialogIfExists(name){
 	$(".ui-dialog").filter(function(i) {
@@ -34,58 +94,34 @@ function getDialogParameter(){
 	    modal: true,
 	    autoOpen: false,
 	    open: function ( event, ui ) {
+			$(this).data('source').children().first().addClass('dialog-selected');
+			$(this).dialog("option", "buttons", []);
+			$(this).addApplyButton();
 	        var data = $(this).data('container').data('settings');
 	        data = eval('data' + $(this).data('path'));	
 	        var found = false;
-	        var buttons = $.extend({}, $(this).dialog("option", "allbuttons"));
 	        var addArray = $(this).dialog("option", "addArray");
 	        for(var i in allowed_object){
 	    		var key = allowed_object[i];
 	    		if(key in data){
 	    			found = true;
 	                if(addArray.indexOf(key) > -1){
-	                    buttons[key] = addButton(key, data, $(this));
+	                	$(this).addObjectButton(key);
 	                }
 	    		}
 	        }
 	        if(!found){
 	            for(var i in addArray){
-	                buttons[addArray[i]] = addButton(addArray[i], data, $(this));
+                	$(this).addObjectButton(addArray[i]);
 	            }
 	        }
 	        $(this).find("[type='submit']").each(function(){
 	            $(this).hide();
-	            buttons["save"] = {
-	            	"click" : function(){
-		                var data = $(this).data('container').data('settings');
-		                data = eval('data' + $(this).data('path'));	
-		                $(this).fromFormToJs(data);
-		                $(this).data('container').setSubmit();
-		                var form = $(this).find('form');
-		                url = form.attr('action');
-		                params = form.serialize();
-		                $(this).dialog( "close" );
-		                treeAjaxCall(url, params);
-	            	},
-	            	"text" : "Save",
-	            	"class" : "btn btn-primary"
-	            };
+	            $(this).addSubmitButton();
 	        });
-	        $(this).dialog("option", "buttons", buttons);
-	    },
-	    allbuttons: {
-	        "apply": {
-	    		"click" : function() {
-				        var data = $(this).data('container').data('settings');
-				        data = eval('data' + $(this).data('path'));
-			            $(this).fromFormToJs(data);
-			            $(this).dialog( "close" );
-		        	},
-		        "text" : "Apply",
-		        "class" : "btn btn-default"
-	    	}
 	    },
 	    close: function ( event, ui) {
+	    	$(this).data('source').children().first().removeClass('dialog-selected');
 	    	$(this).data('source').empty();
 	    	$(this).data('source').model({'path' : $(this).data('path'), 'parent_path': $(this).data('parent_path'), 'type' : $(this).data('type')});
 	    }

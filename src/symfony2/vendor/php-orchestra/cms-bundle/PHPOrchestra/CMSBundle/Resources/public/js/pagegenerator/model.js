@@ -137,12 +137,12 @@ function formIdToName(prefix, data){
 				zIndex: 100,
 				axis: parameters.axe,
 				drag: function(event, ui){
-					size = $(this).offset()[parameters.origine] - $(this).data('source');
+					size = $(this).offset()[parameters.origine] - $(this).data('origine');
 					$(this).prev().changeSize(parameters.vector, $(this).data('prev') + size);
 					$(this).next().changeSize(parameters.vector, $(this).data('next') - size);
 				},
 				start: function(){
-					$(this).data('source', $(this).offset()[parameters.origine]);
+					$(this).data('origine', $(this).offset()[parameters.origine]);
 					$(this).data('prev', eval('$(this).prev().' + parameters.vector + '()'));
 					$(this).data('next', eval('$(this).next().' + parameters.vector + '()'));
 				},
