@@ -86,6 +86,31 @@ class BlockController extends Controller
         }
     }
     
+    public function getRecRefresh($request, $form, $refresh){
+    	$children = $form->all();
+    	$restart = false;
+    	if(count($children) > 0){
+	        foreach($children as $child){
+	            $view = $child->createView();
+                if($request->query->get($view->vars['id'])){
+    	            if(!array_key_exists($view->vars['name'], $refresh)){
+	                    $refresh[$view->vars['name']] = $request->query->get($view->vars['id']);
+	                    $restart = true;
+	                }
+                }
+                else{
+                    if(!array_key_exists($view->vars['name'], $refresh)){
+                    	$refresh[$view->vars['name']] = array();
+                    }
+                	list($restart, $refresh[$view->vars['name']]) = $this->getRecRefresh($request, $child, $refresh[$view->vars['name']]);
+                }
+	            if($restart){
+	            	break;
+	            }
+	        }
+    	}
+        return array($restart, $refresh);
+    }
     /**
      * 
      * Render the node Block form after refresh request
@@ -95,7 +120,17 @@ class BlockController extends Controller
      */
     public function getRefresh($request, $type){
         $refresh = array('is_node' => ($type == 'node'));
-        $refresh = array_merge($refresh, $request->query->get('blocks'));
+        if(is_array($request->query->get('blocks'))){
+            $refresh = array_merge($refresh, $request->query->get('blocks'));
+        }
+        else{
+            $form = $this->createForm('blocks', $refresh);
+            list($restart, $refresh) = $this->getRecRefresh($request, $form, $refresh);
+            while($restart){
+                $form = $this->createForm('blocks', $refresh);
+            	list($restart, $refresh) = $this->getRecRefresh($request, $form, $refresh);
+        	}
+        }
         $form = $this->createForm(
             'blocks',
             $refresh,

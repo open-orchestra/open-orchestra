@@ -42,7 +42,7 @@ class BlockType extends AbstractType
     }
 
     /**
-     * Build Template form
+     * Build Block form
      *
      * @param FormBuilderInterface $builder
      * @param  array $options

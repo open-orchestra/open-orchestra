@@ -13,7 +13,7 @@ function resetPercent(objects){
 function formIdToName(prefix, data){
 	var result = [];
 	for(var i in data){
-		result.push({'name': prefix + '[' + i.replace('_', '][') + ']', 'value': data[i]});
+		result.push({'name': prefix + '_' + i, 'value': data[i]});
 	}
 	return result;
 }
@@ -43,17 +43,19 @@ function formIdToName(prefix, data){
 		        	}
 		        }
 	        });
-    		if('method' in data){
-			    $.ajax({
-			        'type': 'GET',
-			        'url': $(this).find('form').attr("action"),
-			        'success': function(response){
-			    		data['ui-model']['html'] = response.data;
-			        },
-			        'data': $.extend(data, {'preview': true}),
-			        'dataType': 'json',
-			        'async': false
-			    });
+    		if('ui-model' in data && (url = $(this).find('form').attr("action")) != ''){
+    			if(url != ''){
+				    $.ajax({
+				        'type': 'GET',
+				        'url': url,
+				        'success': function(response){
+				    		data['ui-model']['html'] = response.data;
+				        },
+				        'data': $.extend(data, {'preview': true}),
+				        'dataType': 'json',
+				        'async': false
+				    });
+    			}
     		}
 		});
     }
