@@ -20,7 +20,6 @@ class ContentRepository extends \Model\PHPOrchestraCMSBundle\Base\ContentReposit
         return $contents;
     }
 
-
     /**
      * Get a content by id
      *
@@ -41,5 +40,20 @@ class ContentRepository extends \Model\PHPOrchestraCMSBundle\Base\ContentReposit
         $query = $this->getMandango()->getRepository('Model\PHPOrchestraCMSBundle\Content')->createQuery();
         $query->criteria(array('status' => 'published', 'deleted' => false));
         return $query->all();
+    }
+    
+    /**
+     * Get all content if the contentType is "news"
+     *
+     * @param none
+     * @return list of news
+     */
+    public function getAllNews()
+    {
+    	$query = $this->getMandango()->getRepository('Model\PHPOrchestraCMSBundle\Content')->createQuery();
+    	$query->criteria(array('contentType'=> "news",
+    			'status'=> "published"));
+    	$allNews = $query->all();
+    	return $allNews;
     }
 }
