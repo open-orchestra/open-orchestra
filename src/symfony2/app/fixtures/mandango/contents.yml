@@ -51,6 +51,26 @@ Model\PHPOrchestraCMSBundle\Content:
         contentType: "car"
         version: 2
         language: "en"
+        status: "published"
+        shortName: "R5 3 portes"
+        contentTypeVersion: 1
+        deleted: true
+        attributes:
+            -
+                name: "name"
+                value: "R5 3 doors"
+            -
+                name: "image"
+                value: "r5.png"
+            -
+                name: "description"
+                value: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non feugiat sem. Aliquam a mauris tellus. In hac habitasse platea dictumst. Nunc eget interdum ante, id mollis diam. Suspendisse sed magna lectus. Aenean fringilla elementum lorem id suscipit. Phasellus feugiat tellus sapien, id tempus nisi ultrices ut."
+
+    car_r5_v1:
+        contentId: "3"
+        contentType: "car"
+        version: 1
+        language: "en"
         status: "draft"
         shortName: "R5 3 portes"
         contentTypeVersion: 1

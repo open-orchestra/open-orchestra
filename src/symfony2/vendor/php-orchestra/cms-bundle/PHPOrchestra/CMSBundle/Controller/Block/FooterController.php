@@ -39,6 +39,7 @@ class FooterController extends Controller
         $mandango = $this->get('mandango');
         $repository = $mandango->getRepository('Model\PHPOrchestraCMSBundle\Node');
         $tree = $repository->getFooterTree();
+        $tree = $repository->getTreeUrl($tree, $this->container);
 
         $response = $this->render(
             'PHPOrchestraCMSBundle:Block/Footer:show.html.twig',

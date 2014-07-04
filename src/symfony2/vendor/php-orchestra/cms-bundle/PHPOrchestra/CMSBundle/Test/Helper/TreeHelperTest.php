@@ -17,7 +17,7 @@
 
 namespace PHPOrchestra\CMSBundle\Test\Helper;
 
-use \PHPOrchestra\CMSBundle\Helper\NodesHelper;
+use \PHPOrchestra\CMSBundle\Helper\TreeHelper;
 
 /**
  * Unit tests of NodesHelper
@@ -33,7 +33,7 @@ class NodesHelperTest extends \PHPUnit_Framework_TestCase
      */
     public function testCreateTree($expectedResult, $nodes)
     {
-        $result = NodesHelper::createTree($nodes);
+        $result = TreeHelper::createTree($nodes);
         $this->assertEquals($expectedResult, $result);
     }
     
