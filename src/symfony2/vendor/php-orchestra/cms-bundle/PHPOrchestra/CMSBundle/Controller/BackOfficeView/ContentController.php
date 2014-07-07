@@ -176,7 +176,7 @@ class ContentController extends TableViewController
         }
         
         // Testing if solr is running and index a content
-   /*     $indexSolr = $this->container->get('phporchestra_cms.indexsolr');
+        /*$indexSolr = $this->container->get('phporchestra_cms.indexsolr');
         if ($indexSolr->solrIsRunning()) {
             $indexSolr->slpitDoc($document, 'Content');
         }*/
@@ -205,7 +205,7 @@ class ContentController extends TableViewController
         }
         
         // Testing if solr is running and delete a content from the index
-   /*     $indexSolr = $this->get('phporchestra_cms.indexsolr');
+        /*$indexSolr = $this->get('phporchestra_cms.indexsolr');
         if ($indexSolr->solrIsRunning()) {
             $indexSolr->deleteIndex($documentId);
         }*/

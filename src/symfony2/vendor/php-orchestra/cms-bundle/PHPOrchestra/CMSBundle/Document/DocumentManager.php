@@ -360,8 +360,12 @@ class DocumentManager
      * @param int $length
      * @param array $sort
      */
-    public function getContentTypesGroupedByContentTypeId(array $criteria = array(), $offset = 0, $length = 0, $sort = array())
-    {
+    public function getContentTypesGroupedByContentTypeId(
+        array $criteria = array(),
+        $offset = 0,
+        $length = 0,
+        $sort = array()
+    ) {
         if (count($sort) == 0) {
             $sort = $this->getDefaultSort('ContentType');
         }
@@ -404,9 +408,6 @@ class DocumentManager
      */
     public function getBlockInNode($nodeId, $blockId)
     {
-        
-        $result = null;
-        
         $filters = array(
             array(
                 '$match' =>
