@@ -13,6 +13,35 @@
 %}
 
 {% include 'PHPOrchestraCMSBundle:BackOffice:contentTitle.html.twig' with vars %}
+
+<ul class="nav nav-tabs" id="languages">
+{% if contentTypeVersions|length > 0 %}
+    <li class="pull-right active">
+        <div>
+            <select class="selectSwitcher">
+                <option value="{{ path(
+                    'phporchestra_cms_backofficeview_contenttype_index',
+                    {
+                        'action' : 'duplicate',
+                        'id' : form.vars.value.id.__toString()
+                    }
+                ) }}" data-loadmode="ajax">Créer une nouvelle version</option>
+            {% for version in contentTypeVersions %}
+                <option value="{{ path(
+                    'phporchestra_cms_backofficeview_contenttype_index',
+                    {
+                        'action' : 'edit',
+                        'id' : version.id.__toString()
+                    }
+                ) }}" {% if version.version == form.vars.value.version %}selected="selected"{% endif %}
+                >Version {{ version.version }} ({{ version.status }})</option>
+            {% endfor %}
+            </select>
+        </div>
+    </li>
+{% endif %}
+</ul>
+
 {% include 'PHPOrchestraCMSBundle:BackOffice:beginSmartDiv.html.twig' with vars %}
 
 {{ form_start(

@@ -35,7 +35,7 @@ class DocumentManager
         ),
         'ContentType' => array(
             'namespace' => 'Model\PHPOrchestraCMSBundle\ContentType',
-            'defaultSort' => array('contentTypeId' => 1, 'version' => -1)
+            'defaultSort' => array('contentTypeId' => -1, 'version' => -1)
         ),
         'Content' => array(
             'namespace' => 'Model\PHPOrchestraCMSBundle\Content',
@@ -302,7 +302,15 @@ class DocumentManager
         return $versions['result'];
     }
 
-
+    /**
+     * Get a list of distinct contents grouped by contentId
+     * ie only 1 version of each content (for all combinations of version/language)
+     * 
+     * @param array $criteria
+     * @param int $offset
+     * @param int $length
+     * @param array $sort
+     */
     public function getGroupedContentsByContentId(array $criteria = array(), $offset = 0, $length = 0, $sort = array())
     {
         if (count($sort) == 0) {
@@ -327,6 +335,54 @@ class DocumentManager
                     'status' => array('$first' => '$status'),
                     'contentType' => array('$first' => '$contentType'),
                     'contentId' => array('$first' => '$contentId')
+                )
+        );
+        
+        if ($offset !=0) {
+            $filters[] = array('$skip' => $offset);
+        }
+        
+        if ($length !=0) {
+            $filters[] = array('$limit' => $length);
+        }
+        
+        $contents = $repository->getCollection()->aggregate($filters);
+        
+        return $contents['result'];
+    }
+    
+    /**
+     * Get a list of distinct content types grouped by contentTypeId
+     * ie only the last version of each content type
+     * 
+     * @param array $criteria
+     * @param int $offset
+     * @param int $length
+     * @param array $sort
+     */
+    public function getContentTypesGroupedByContentTypeId(array $criteria = array(), $offset = 0, $length = 0, $sort = array())
+    {
+        if (count($sort) == 0) {
+            $sort = $this->getDefaultSort('ContentType');
+        }
+        
+        $repository = $this->documentsService->getRepository($this->getDocumentNamespace('ContentType'));
+        
+        $filters = array(array('$sort' => $sort));
+        
+        if (count($criteria) > 0) {
+            $filters[] = array('$match' => $criteria);
+        }
+        
+        $filters[] = array(
+            '$group' =>
+                array(
+                    '_id' => '$contentTypeId',
+                    'id' => array('$first' => '$_id'),
+                    'version' => array('$first' => '$version'),
+                    'name' => array('$first' => '$name'),
+                    'status' => array('$first' => '$status'),
+                    'contentTypeId' => array('$first' => '$contentTypeId'),
                 )
         );
         
