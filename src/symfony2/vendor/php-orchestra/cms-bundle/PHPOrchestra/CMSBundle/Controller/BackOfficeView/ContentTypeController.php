@@ -71,9 +71,9 @@ class ContentTypeController extends TableViewController
             $contentType = $documentManager->getDocumentById('ContentType', $documentId);
         }
         
-        if ($contentType->getStatus() != ContentType::STATUS_DRAFT) {
+       /* if ($contentType->getStatus() != ContentType::STATUS_DRAFT) {
             $contentType->generateDraft();
-        }
+        }*/
         
         $documentId = (string) $contentType->getId();
         

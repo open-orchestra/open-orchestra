@@ -31,6 +31,7 @@
     </li>
     {% endif %}
 {% endfor %}
+{% if contentVersions|length > 0 %}
     <li class="pull-right active">
         <div>
             <select class="selectSwitcher">
@@ -56,6 +57,7 @@
             </select>
         </div>
     </li>
+{% endif %}
 </ul>
 
 {% include 'PHPOrchestraCMSBundle:BackOffice:beginSmartDiv.html.twig' with vars %}

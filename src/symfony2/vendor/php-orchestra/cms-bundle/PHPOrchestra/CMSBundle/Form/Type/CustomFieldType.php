@@ -7,6 +7,10 @@
 
 namespace PHPOrchestra\CMSBundle\Form\Type;
 
+use Symfony\Component\Validator\Constraints\NotBlank;
+
+use Symfony\Component\Validator\Constraints\Type;
+use Symfony\Component\Validator\Constraints\Email;
 use PHPOrchestra\CMSBundle\Form\DataTransformer\CustomFieldTransformer;
 use PHPOrchestra\CMSBundle\Exception\UnknownFieldTypeException;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -56,10 +60,24 @@ class CustomFieldType extends AbstractType
         if (!isset($parameters['options']) || !is_array($parameters['options'])) {
             throw new UnknownFieldTypeException('Field type not described : ' . $options['data']->type);
         }
-        
         $builder->add('label', 'multilingualText')
-            ->add('fieldId', 'text', array('label' => 'Identifiant technique'))
-            ->add('defaultValue', 'text', array('label' => 'Valeur par défaut', 'required' => false))
+            ->add(
+                'fieldId',
+                'text',
+                array(
+                    'label' => 'Identifiant technique',
+                    'constraints' => array(new NotBlank(), new Type('string'))
+                )
+            )
+            ->add(
+                'defaultValue',
+                'text',
+                array(
+                    'label' => 'Valeur par défaut',
+                    'required' => false,
+                    'constraints' => $this->getConstraints($options['data']->symfonyType)
+                )
+            )
             ->add('searchable', 'checkbox', array('required' => false, 'label' => 'Indexable'))
             ->add('symfonyType', 'hidden', array('data' => $parameters['type']))
             ->add('removeField', 'checkbox', array('required' => false, 'label' => 'Supprimer le champ'));
@@ -84,6 +102,28 @@ class CustomFieldType extends AbstractType
         }
     }
 
+    /**
+     * Get specific constraint depending on the field type
+     * 
+     * @param string $fieldType
+     */
+    public function getConstraints($fieldType)
+    {
+        $constraint = array();
+        
+        switch ($fieldType) {
+            case 'integer':
+                $constraint = new Type(array('type' => 'numeric'));
+                break;
+            case 'email':
+                $constraint = new Email();
+                break;
+            default:;
+        }
+        
+        return $constraint;
+    }
+    
     /**
      * (non-PHPdoc)
      * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony
