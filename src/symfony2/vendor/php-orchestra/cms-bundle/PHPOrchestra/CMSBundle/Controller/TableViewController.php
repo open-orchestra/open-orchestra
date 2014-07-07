@@ -412,7 +412,6 @@ abstract class TableViewController extends Controller
      * @param Request $request
      * @param string $id
      * @param unknown_type $form
-     * @param unknown_type $document of $this->entity type
      */
     protected function getRender($id, $form)
     {

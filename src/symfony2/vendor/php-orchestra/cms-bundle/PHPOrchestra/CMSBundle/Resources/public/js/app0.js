@@ -1231,20 +1231,19 @@ if($.navAsAjax)
     // click on links inside content
     $(document).on('click', '.tabLink', function(e) {
         e.preventDefault();
-        $('#content').html('<h1><i class="fa fa-cog fa-spin"></i> Loading...</h1>');
-        $.post($(e.currentTarget).attr('href'), function(response) {
-            if (response.success) {
-                window.location.hash = response.data;
-            } else {
-                $('#content').html(response.data);
-            }
-        });
+        orchestraAjaxLoad($(e.currentTarget).attr('href'));
     });
     
     // change a select switcher
     $(document).on('change', '.selectSwitcher', function(e) {
         e.preventDefault();
-        window.location.hash = $(e.currentTarget).val();
+        $this = $(e.currentTarget);
+        
+        if ($this.find("option:selected").attr('data-loadmode') == 'ajax') {
+            orchestraAjaxLoad($this.val());
+        } else {
+            window.location.hash = $this.val();
+        }
     });
 
     
@@ -1255,6 +1254,20 @@ if($.navAsAjax)
     });
 }
 });
+
+// Specific orchestra ajax loading
+function orchestraAjaxLoad(url)
+{
+    $('#content').html('<h1><i class="fa fa-cog fa-spin"></i> Loading...</h1>');
+    $.post(url, function(response) {
+        if (response.success) {
+            window.location.hash = response.data;
+        } else {
+            $('#content').html(response.data);
+        }
+    });
+}
+
 // CHECK TO SEE IF URL EXISTS
 function checkURL() {
 
@@ -1283,7 +1296,6 @@ function checkURL() {
 		first = $this.attr('href');
 		
 		$this = $('nav > ul > li:first-child > ul > li:first-child > a[href!="#"]');
-		console.log($this.attr('href'));
 
 		//update hash
 		window.location.hash = $this.attr('href');
