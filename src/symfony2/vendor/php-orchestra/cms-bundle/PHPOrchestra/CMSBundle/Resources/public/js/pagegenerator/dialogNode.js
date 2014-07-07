@@ -115,10 +115,10 @@ function getDialogParameter(){
                 	$(this).addObjectButton(addArray[i]);
 	            }
 	        }
-	        $(this).find("[type='submit']").each(function(){
-	            $(this).hide();
-	            $(this).addSubmitButton();
-	        });
+	        if($(this).find("[type='submit']").length){
+	        	$(this).find("[type='submit']").hide();
+	        	$(this).addSubmitButton();
+	        }
 	    },
 	    close: function ( event, ui) {
 	    	$(this).data('source').children().first().removeClass('dialog-selected');

@@ -3,6 +3,24 @@
 <li><a href="">{{ name }}</a>
 {{ macros.menu_links(links, name) }}
 </li>
+<script>
+$(".connectedSortable").sortable({
+    connectWith: ".connectedSortable",
+    placeholder: "sortable-placeholder active",
+    toleranceElement: 'div',
+    appendTo: "body",
+    helper: 'clone',
+    start:function( event, ui ){
+    $('.sortable-placeholde').html('test');
+    }
+});
+$('.connectedSortable').bind('sortstart', function(event, ui) {
+    $('.sortable-placeholder').html('<a href="">' + ui.helper.find('a').html() + '</a>');
+    ui.helper.css('display', 'none');
+});
+</script>
+
+
 {#
 
 <div id="tree-{{ name }}-container">

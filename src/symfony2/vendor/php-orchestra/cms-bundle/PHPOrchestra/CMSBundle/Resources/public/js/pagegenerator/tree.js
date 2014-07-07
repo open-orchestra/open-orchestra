@@ -28,14 +28,23 @@ var treePreviousJs = {
 
 function treeAjaxCall(url, params)
 {
-	var target = $('#content div[role="content"]');
-    target.html('<h1><i class="fa fa-cog fa-spin"></i> Loading...</h1>');
+	var newDiv = $(document.createElement('div')); 
+	newDiv.html('<h1><i class="fa fa-cog fa-spin"></i> Loading...</h1>');
+	newDiv.dialog({ title: "Mise à jour" });
+	
     $.ajax({
         'type': 'POST',
         'url': url,
         'data': params,
         'success': function(response) {
-    		target.html(response);
+    		newDiv.html(response.data);
+    		if(response.nav){
+    			$('nav a[href="' + window.location.hash.substr(1) + '"]').html(response.nav);
+    		}
+    	    window.setTimeout(function() {
+    	    	newDiv.dialog("close");
+    	    }, 2000);
+
         }
     });
 }

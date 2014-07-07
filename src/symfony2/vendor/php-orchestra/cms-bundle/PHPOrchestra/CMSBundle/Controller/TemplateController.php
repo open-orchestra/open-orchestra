@@ -56,10 +56,26 @@ class TemplateController extends Controller
                 $template->setId(null);
                 $template->setIsNew(true);
                 $template->save();
-                
-                return $this->render(
-                    'PHPOrchestraCMSBundle:BackOffice/Editorial:simpleMessage.html.twig',
-                    array('message' => 'Edition ok')
+                return new JsonResponse(
+                    array(
+                        'success' => true,
+                        'data' => $this->render(
+                            'PHPOrchestraCMSBundle:BackOffice/Editorial:simpleMessage.html.twig',
+                            array('message' => 'Edition ok')
+                        )->getContent(),
+                        'nav' => $template->getName()
+                    )
+                );
+            }
+            else{
+                return new JsonResponse(
+                    array(
+                        'success' => false,
+                        'data' => $this->render(
+                            'PHPOrchestraCMSBundle:BackOffice/Editorial:simpleMessage.html.twig',
+                            array('message' => 'Edition ko')
+                        )->getContent()
+                    )
                 );
             }
         }

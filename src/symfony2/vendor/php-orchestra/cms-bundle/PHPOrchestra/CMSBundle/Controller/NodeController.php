@@ -212,25 +212,41 @@ class NodeController extends Controller
         
         if ($request->getMethod() == 'POST') {
             $form->handleRequest($request);
-            
             if ($form->isValid()) {
                 $node->setId(null);
                 $node->setIsNew(true);
                 $node->save();
-                
+
                 // Testing if solr is running and index a node
                 $indexSolr = $this->get('phporchestra_cms.indexsolr');
                 if ($indexSolr->solrIsRunning()) {
                     $indexSolr->get('phporchestra_cms.indexsolr')->slpitDoc($node, 'Node');
                 }
                 
-                return $this->render(
-                    'PHPOrchestraCMSBundle:BackOffice/Editorial:simpleMessage.html.twig',
-                    array('message' => 'Edition ok')
+            	return new JsonResponse(
+                    array(
+                        'success' => true,
+                        'data' => $this->render(
+                            'PHPOrchestraCMSBundle:BackOffice/Editorial:simpleMessage.html.twig',
+                            array('message' => 'Edition ok')
+                        )->getContent(),
+                        'nav' => $node->getName()
+                    )
+                );
+            }
+            else{
+                return new JsonResponse(
+                    array(
+                        'success' => false,
+                        'data' => $this->render(
+                            'PHPOrchestraCMSBundle:BackOffice/Editorial:simpleMessage.html.twig',
+                            array('message' => 'Edition ko')
+                        )->getContent()
+                    )
                 );
             }
         }
-        
+                
         return $this->render(
             'PHPOrchestraCMSBundle:BackOffice/Editorial:template.html.twig',
             array(

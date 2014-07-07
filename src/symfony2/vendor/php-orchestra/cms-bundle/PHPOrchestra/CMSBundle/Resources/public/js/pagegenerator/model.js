@@ -34,14 +34,16 @@ function formIdToName(prefix, data){
 					}
 				}
 	        }
-	        $(this).find(":input").not('button').each(function(){
-		        var id = $(this).attr( "id" ).replace(prefix + '_', '');
-		        if(!$(this).hasClass('not-mapped') && id != '_token'){
+	        $(this).find(":input")
+	        	.not('button')
+	        	.not('.not-mapped')
+	        	.not('#' + prefix + '_token')
+	        	.each(function(){
+			        var id = $(this).attr( "id" ).replace(prefix + '_', '');
 		        	data[id] = $(this).val();
 		        	if($(this).hasClass('used-as-label')){
 		        		data['ui-model'].label = (!$(this).is('select')) ? $(this).val() : $(this).find(":selected").text();
 		        	}
-		        }
 	        });
     		if('ui-model' in data && (url = $(this).find('form').attr("action")) != ''){
     			if(url != ''){
