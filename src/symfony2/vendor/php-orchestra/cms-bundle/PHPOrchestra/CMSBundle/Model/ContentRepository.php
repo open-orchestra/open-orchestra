@@ -50,10 +50,14 @@ class ContentRepository extends \Model\PHPOrchestraCMSBundle\Base\ContentReposit
      */
     public function getAllNews()
     {
-    	$query = $this->getMandango()->getRepository('Model\PHPOrchestraCMSBundle\Content')->createQuery();
-    	$query->criteria(array('contentType'=> "news",
-    			'status'=> "published"));
-    	$allNews = $query->all();
-    	return $allNews;
+        $query = $this->getMandango()->getRepository('Model\PHPOrchestraCMSBundle\Content')->createQuery();
+        $query->criteria(
+            array(
+                'contentType'=> "news",
+                'status'=> "published"
+            )
+        );
+        $allNews = $query->all();
+        return $allNews;
     }
 }

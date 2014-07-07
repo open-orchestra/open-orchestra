@@ -7,7 +7,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-
 /**
  * Description of HeaderController
  *
@@ -15,24 +14,24 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class HeaderController extends Controller
 {
-     /**
-	 * Function to show header block
-	 *
-	 * @param string $id id of block
-	 * @param string $class class of block
-	 * @param array $block array of blocks 
-	 */
-    function showAction($id, $class, $logo)
+    /**
+     * Function to show header block
+     *
+     * @param string $id id of block
+     * @param string $class class of block
+     * @param array $block array of blocks
+     */
+    public function showAction($id, $class, $logo)
     {
-    	$response = $this->render(
-    			'PHPOrchestraCMSBundle:Block/Header:show.html.twig',
-    			array(
-    					'id' => $id,
-    					'class' => $class,
-    					'logo' => $logo
-    			)
-    	);
-    	return $response;
+        $response = $this->render(
+            'PHPOrchestraCMSBundle:Block/Header:show.html.twig',
+            array(
+                'id' => $id,
+                'class' => $class,
+                'logo' => $logo
+            )
+        );
+        return $response;
     }
     
     
@@ -43,19 +42,16 @@ class HeaderController extends Controller
      * @param string $class class of block
      * @param array $block array of blocks
      */
-    function showBackAction($id, $class, $logo)
+    public function showBackAction($id, $class, $logo)
     {
-    	$response = $this->render(
-    			'PHPOrchestraCMSBundle:Block/Header:show.html.twig',
-    			array(
-    					'id' => $id,
-    					'class' => $class,
-    					'logo' => $logo
-    			)
-    	);
-    	return $response;
+        $response = $this->render(
+            'PHPOrchestraCMSBundle:Block/Header:show.html.twig',
+            array(
+                'id' => $id,
+                'class' => $class,
+                'logo' => $logo
+            )
+        );
+        return $response;
     }
-    
-    
-    
 }

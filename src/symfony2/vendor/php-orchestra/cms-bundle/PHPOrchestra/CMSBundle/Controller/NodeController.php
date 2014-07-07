@@ -48,7 +48,7 @@ class NodeController extends Controller
      */
     public function getExternalBlocks()
     {
-    	return $this->externalBlocks;
+        return $this->externalBlocks;
     }
     
     /**
@@ -58,7 +58,7 @@ class NodeController extends Controller
      */
     public function getBlocksNoparam()
     {
-    	return $this->blocks;
+        return $this->blocks;
     }
     
     /**
@@ -344,6 +344,4 @@ class NodeController extends Controller
             array('message' => $message)
         );
     }
-
-    
 }

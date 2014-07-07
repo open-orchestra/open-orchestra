@@ -5,7 +5,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use PHPOrchestra\CMSBundle\Model\Area;
 use PHPOrchestra\CMSBundle\Model\ContentRepository;
 
-
 /**
  * Description of NewsController
  * this controller allow to show all news content
@@ -14,35 +13,28 @@ use PHPOrchestra\CMSBundle\Model\ContentRepository;
 
 class NewsController extends Controller
 {
-	
-	function showAction()
-	{
-		$allNews = $this->get('mandango')->getRepository('Model\PHPOrchestraCMSBundle\Content')->getAllNews();
-		
-		$response = $this->render(
-				'PHPOrchestraCMSBundle:Block/News:show.html.twig',
-				array(
+    
+    public function showAction()
+    {
+        $allNews = $this->get('mandango')->getRepository('Model\PHPOrchestraCMSBundle\Content')->getAllNews();
+        
+        $response = $this->render(
+            'PHPOrchestraCMSBundle:Block/News:show.html.twig',
+            array('allNews' => $allNews)
+        );
 
-						'allNews' => $allNews,
-				)
-		);
+        return $response;
+    }
+    
+    public function showBackAction()
+    {
+        $allNews = $this->get('mandango')->getRepository('Model\PHPOrchestraCMSBundle\Content')->getAllNews();
+        
+        $response = $this->render(
+            'PHPOrchestraCMSBundle:Block/News:show.html.twig',
+            array('allNews' => $allNews)
+        );
 
-		return $response;
-	}
-	
-	function showBackAction()
-	{
-		$allNews = $this->get('mandango')->getRepository('Model\PHPOrchestraCMSBundle\Content')->getAllNews();
-		
-		$response = $this->render(
-				'PHPOrchestraCMSBundle:Block/News:show.html.twig',
-				array(
-		
-						'allNews' => $allNews,
-				)
-		);
-		
-		return $response;
-	}
-	
+        return $response;
+    }
 }

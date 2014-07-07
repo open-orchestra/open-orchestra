@@ -33,8 +33,7 @@ class SiteController extends NodeController
         
         $node = $this->get('phporchestra_cms.documentmanager')->getDocument('Node', array('nodeId' => $nodeId));
         
-        if (is_null($node)) 
-        {
+        if (is_null($node)) {
             throw new NonExistingDocumentException("Node not found");
         }
         
@@ -44,14 +43,14 @@ class SiteController extends NodeController
             foreach ($areas as $area) {
                 $this->getBlocks(new Area($area), $nodeId);
             }
-        }    
+        }
 
         $response = $this->render(
             'PHPOrchestraSiteBundle:SitePages:show.html.twig',
-                array(
-                        'node' => $node,
-                        'blocks' => $this->getBlocksNoparam()
-                    )
+            array(
+                'node' => $node,
+                'blocks' => $this->getBlocksNoparam()
+            )
         );
             
         return $response;
