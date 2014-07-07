@@ -100,7 +100,8 @@ class ContentController extends TableViewController
         $documentManager = $this->container->get('phporchestra_cms.documentmanager');
         $criteria = array(
             'contentId' => $form->get('contentId')->getData(),
-            'language' => $form->get('language')->getData()
+            'language' => $form->get('language')->getData(),
+            'contentType' => $form->get('contentType')->getData(),
         );
         $versions = $documentManager->getDocuments('Content', $criteria, array('version' => -1), true);
         
@@ -135,10 +136,6 @@ class ContentController extends TableViewController
      */
     protected function modifyDocumentAfterGet($document)
     {
-     /*   if ($document->getStatus() != Content::STATUS_DRAFT) {
-            $document->generateDraft();
-        }*/
-        
         $documentManager = $this->container->get('phporchestra_cms.documentmanager');
         $contentType = $documentManager->getDocument(
             'ContentType',
@@ -222,8 +219,8 @@ class ContentController extends TableViewController
      * Find the content matching criterias, if none is found create a new one
      * Then return the edit form url
      * 
-     * @param $request
-     * @param $id
+     * @param Request $request
+     * @param string $id
      */
     public function findForEditAction(Request $request, $id)
     {
@@ -257,7 +254,28 @@ class ContentController extends TableViewController
         return new JsonResponse(
             array(
                 'success' => true,
-                'data' => $this->generateUrlValue('edit', $content->getId())
+                'data' => $this->generateUrlValue('edit', (string) $content->getId())
+            )
+        );
+    }
+    
+    /**
+     * Create a news version of content $id
+     * 
+     * @param Request $request
+     * @param string $id
+     */
+    public function duplicateAction(Request $request, $id)
+    {
+        $documentManager = $this->get('phporchestra_cms.documentmanager');
+        
+        $content = $documentManager->getDocumentById('Content', $id);
+        $content->generateDraft();
+        
+        return new JsonResponse(
+            array(
+                'success' => true,
+                'data' => $this->generateUrlValue('edit', (string) $content->getId())
             )
         );
     }

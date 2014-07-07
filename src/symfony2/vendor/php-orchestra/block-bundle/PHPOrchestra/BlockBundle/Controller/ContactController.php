@@ -25,12 +25,15 @@ class ContactController extends Controller
      * @param string $id id of block
      * @param string $class class of block
      */
-    function ContactFormShowAction($id,$class){
+    public function ContactFormShowAction($id, $class)
+    {
         
         $form = $this->createForm(new ContactType());
        
-        return $this->render('PHPOrchestraBlockBundle:Contact:show.html.twig', array(
-                'form' => $form->createView()));
+        return $this->render(
+            'PHPOrchestraBlockBundle:Contact:show.html.twig',
+            array('form' => $form->createView())
+        );
     }
     
     /**
@@ -40,7 +43,8 @@ class ContactController extends Controller
      * @param none
      *
      */
-    function ContactMailSendAction(){
+    public function ContactMailSendAction()
+    {
         
         $mailAdmin = null;//Email administrator
         
@@ -48,25 +52,24 @@ class ContactController extends Controller
         
         $request = $this->get('request');
         
-        if ($request->isMethod('POST'))
-        {
+        if ($request->isMethod('POST')) {
             $form->bind($request);
          
             if ($form->isValid()) {
-                //send alert message to webmaster 
+                //send alert message to webmaster
                 $messageToAdmin = \Swift_Message::newInstance()
                 ->setSubject($form->get('Sujet')->getData())
                 ->setFrom($form->get('E-mail')->getData())
                 ->setTo($mailAdmin)
                 ->setBody(
-                        $this->renderView(
-                                'PHPOrchestraBlockBundle:Email:show_admin.txt.twig',
-                                array(
-                                        'name' => $form->get('Nom')->getData(),
-                                        'message' => $form->get('Message')->getData(),
-                                        'mail' => $form->get('E-mail')->getData()
-                                )
+                    $this->renderView(
+                        'PHPOrchestraBlockBundle:Email:show_admin.txt.twig',
+                        array(
+                            'name' => $form->get('Nom')->getData(),
+                            'message' => $form->get('Message')->getData(),
+                            'mail' => $form->get('E-mail')->getData()
                         )
+                    )
                 );
                 $this->get('mailer')->send($messageToAdmin);
                 
@@ -76,12 +79,12 @@ class ContactController extends Controller
                 ->setFrom($mailAdmin)
                 ->setTo($form->get('E-mail')->getData())
                 ->setBody(
-                        $this->renderView(
-                                'PHPOrchestraBlockBundle:Email:show_user.txt.twig',
-                                array(
-                                        'name' => "Orchestra"
-                                )
+                    $this->renderView(
+                        'PHPOrchestraBlockBundle:Email:show_user.txt.twig',
+                        array(
+                            'name' => "Orchestra"
                         )
+                    )
                 );
                 $this->get('mailer')->send($messageToUser);
             }
@@ -100,17 +103,15 @@ class ContactController extends Controller
         $form = $this->get('form.factory')
         ->createNamedBuilder($prefix, 'form', null)
         ->add(
-                'id',
-                'class',
-                'form'
+            'id',
+            'class',
+            'form'
         )
         ->getForm();
     
         return $this->render(
-                'PHPOrchestraBlockBundle:Header:form.html.twig',
-                array('form' => $form->createView())
+            'PHPOrchestraBlockBundle:Header:form.html.twig',
+            array('form' => $form->createView())
         );
     }
-    
-    
 }

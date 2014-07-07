@@ -14,14 +14,17 @@ use Symfony\Component\HttpFoundation\Response;
 
 class CarrouselController extends Controller
 {
-    function showAction($pictures = array(), $width , $height)
+    public function showAction($pictures = array(), $width, $height)
     {
-    	return $this->render('PHPOrchestraBlockBundle:Carrousel:show.html.twig', array(
-    			'pictures' => $pictures,
-    	        'width'=> $width,
-    			'height'=> $height	
-    	));
-    }	
+        return $this->render(
+            'PHPOrchestraBlockBundle:Carrousel:show.html.twig',
+            array(
+                'pictures' => $pictures,
+                'width'=> $width,
+                'height'=> $height
+            )
+        );
+    }
     
     /**
      * Render the dialog form
@@ -30,18 +33,18 @@ class CarrouselController extends Controller
      */
     public function formAction($prefix)
     {
-    	$form = $this->get('form.factory')
-    	->createNamedBuilder($prefix, 'form', null)
-    	->add(
-    			'pictures',
-    			'width',
-    			'height'
-    	)
-    	->getForm();
-    
-    	return $this->render(
-    			'PHPOrchestraBlockBundle:Carrousel:form.html.twig',
-    			array('form' => $form->createView())
-    	);
+        $form = $this->get('form.factory')
+            ->createNamedBuilder($prefix, 'form', null)
+            ->add(
+                'pictures',
+                'width',
+                'height'
+            )
+            ->getForm();
+
+        return $this->render(
+            'PHPOrchestraBlockBundle:Carrousel:form.html.twig',
+            array('form' => $form->createView())
+        );
     }
 }

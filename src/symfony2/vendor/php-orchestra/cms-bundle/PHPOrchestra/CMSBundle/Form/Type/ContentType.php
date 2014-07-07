@@ -25,6 +25,7 @@ class ContentType extends AbstractType
             ->add('version', 'hidden')
             ->add('language', 'hidden')
             ->add('contentId', 'hidden')
+            ->add('contentType', 'hidden')
             ->add(
                 'status',
                 'choice',

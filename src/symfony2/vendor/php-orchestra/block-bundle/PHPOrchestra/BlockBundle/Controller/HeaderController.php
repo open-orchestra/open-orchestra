@@ -7,7 +7,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-
 /**
  * Description of HeaderController
  *
@@ -22,15 +21,15 @@ class HeaderController extends Controller
      * @param string $class class of block
      * @param array $block array of blocks 
      */
-    function headerShowAction($id, $class, $block = array())
+    public function headerShowAction($id, $class, $block = array())
     {
         $response = $this->render(
-                'PHPOrchestraBlockBundle:Header:show.html.twig',
-                array(
-                        'id' => $id,
-                        'class' => $class,
-                        'block' => $block
-                )
+            'PHPOrchestraBlockBundle:Header:show.html.twig',
+            array(
+                'id' => $id,
+                'class' => $class,
+                'block' => $block
+            )
         );
         return $response;
     }
@@ -46,15 +45,15 @@ class HeaderController extends Controller
         $form = $this->get('form.factory')
         ->createNamedBuilder($prefix, 'form', null)
         ->add(
-                'id',
-                'class',
-                'block'
+            'id',
+            'class',
+            'block'
         )
         ->getForm();
     
         return $this->render(
-                'PHPOrchestraBlockBundle:Header:form.html.twig',
-                array('form' => $form->createView())
+            'PHPOrchestraBlockBundle:Header:form.html.twig',
+            array('form' => $form->createView())
         );
     }
 }

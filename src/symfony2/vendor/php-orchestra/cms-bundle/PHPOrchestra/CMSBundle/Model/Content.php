@@ -70,10 +70,18 @@ abstract class Content extends \Model\PHPOrchestraCMSBundle\Base\Content
      */
     public function generateDraft()
     {
-        $this->setVersion(1 + $this->getVersion());
+        $this->setContentId($this->getContentId());
+        $this->setContentType($this->getContentType());
+        $this->setVersion(\time());
+        $this->setLanguage($this->getLanguage());
         $this->setStatus(self::STATUS_DRAFT);
+        $this->setShortName($this->getShortName());
         $this->setDeleted(false);
-        $this->setId(null);
+        $attributes = $this->getAttributes();
+        foreach ($attributes as $attribute) {
+            $this->addAttributes($attribute);
+        }
+        
         $this->setIsNew(true);
         $this->save();
     }

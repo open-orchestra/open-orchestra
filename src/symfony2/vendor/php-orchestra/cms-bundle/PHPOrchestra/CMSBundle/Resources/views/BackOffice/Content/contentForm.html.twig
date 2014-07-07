@@ -13,7 +13,6 @@
 
 {% include 'PHPOrchestraCMSBundle:BackOffice:contentTitle.html.twig' with vars %}
 
-
 <ul class="nav nav-tabs" id="languages">
 {% for language in availableLanguages %}
     {% if language|upper == form.vars.value.language|upper %}
@@ -35,7 +34,14 @@
     <li class="pull-right active">
         <div>
             <select class="selectSwitcher">
-                <!-- >option value="new">Créer une nouvelle version</option -->
+                <option value="{{ path(
+                    'phporchestra_cms_backofficeview_content_index',
+                    {
+                        'action' : 'duplicate',
+                        'contentTypeId' : form.vars.value.contentType,
+                        'id' : form.vars.value.id.__toString()
+                    }
+                ) }}" data-loadmode="ajax">Créer une nouvelle version</option>
             {% for version in contentVersions %}
                 <option value="{{ path(
                     'phporchestra_cms_backofficeview_content_index',
