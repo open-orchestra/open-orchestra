@@ -147,6 +147,23 @@ Install git and clone project from github : [https://github.com/itkg/phporchestr
 You can see **conf/apache2/php-orchestra** for a vhost sample  
 **/!\ CHANGE PATH IN VHOST + CREATE LOG DIR**
 
+##### 11. Install Solr
+
+To install Solr download solr-4.8.0 in http://archive.apache.org/dist/lucene/solr/4.8.0/.
+
+Then extract folder to the package and replace the file in github phporchestra/conf/solr by solr-4.8.0/example/solr/collection1/conf
+
+To run solr use java -jar start.jar in sor-4.8.0/example
+
+To verify if solr is running check on you browser this url: http://127.0.0.1:8983/solr
+
+To use solr and solarium you need:
+* php version 5.4
+* cUrl php lib
+* java 1.7
+
+
 ----------   
+
 **Additional info :**  
 The secret token chosen during the symfony installation procss is $php-orchestra$
