@@ -113,19 +113,19 @@ class CustomFieldType extends AbstractType
      */
     public function getConstraints($fieldType)
     {
-        $constraint = array();
+        $constraints = array();
         
         switch ($fieldType) {
             case 'integer':
-                $constraint = new Type(array('type' => 'numeric'));
+                $constraints[] = new Type(array('type' => 'numeric'));
                 break;
             case 'email':
-                $constraint = new Email();
+                $constraints[] = new Email();
                 break;
             default:;
         }
         
-        return $constraint;
+        return $constraints;
     }
     
     /**
