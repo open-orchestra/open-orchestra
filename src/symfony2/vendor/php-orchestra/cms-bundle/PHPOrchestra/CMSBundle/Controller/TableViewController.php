@@ -185,7 +185,7 @@ abstract class TableViewController extends Controller
     public function editAction(Request $request, $id = null)
     {
         $this->setTableTitle('Edition');
-
+        
         if ($this->getEntity() !== null) {
             return $this->editEntity($request, $id);
         } else {
@@ -336,7 +336,7 @@ abstract class TableViewController extends Controller
     }
 
     /**
-     * Get an existing document by its $id or create a new one
+     * Get an existing document by its $mongoId or create a new one
      * 
      * @param string $mongoId
      */

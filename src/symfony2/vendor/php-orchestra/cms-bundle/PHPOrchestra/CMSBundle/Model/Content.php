@@ -28,6 +28,9 @@ abstract class Content extends \Model\PHPOrchestraCMSBundle\Base\Content
         if ($this->isDeleted() == '') {
             $this->setDeleted(false);
         }
+        if ($this->getContentId() == '') {
+            $this->setContentId(\time());
+        }
     }
     
     /**
