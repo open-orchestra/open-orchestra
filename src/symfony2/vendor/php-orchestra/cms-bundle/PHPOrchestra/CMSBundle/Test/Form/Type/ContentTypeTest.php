@@ -64,10 +64,10 @@ class ContentTypeTest extends \PHPUnit_Framework_TestCase
             ->will($this->returnValue((object) array('fakeAttribute' => 'fakeValue')));
         
         return array(
-            array(array(), 4),
-            array(array('data' => 'fake'), 4),
-            array(array('data' =>  $contentType), 5),
-            array(array('data' =>  $contentTypeFull), 6)
+            array(array(), 6),
+            array(array('data' => 'fake'), 6),
+            array(array('data' =>  $contentType), 7),
+            array(array('data' =>  $contentTypeFull), 8)
         );
     }
 

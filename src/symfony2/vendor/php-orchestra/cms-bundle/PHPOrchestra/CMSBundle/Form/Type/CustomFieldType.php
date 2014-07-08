@@ -43,8 +43,12 @@ class CustomFieldType extends AbstractType
         $transformer = new CustomFieldTransformer();
         $builder->addModelTransformer($transformer);
         
-        if (!isset($options['data']) || !isset($options['data']->type)) {
-            throw new UnknownFieldTypeException('No data');
+        if (
+            !isset($options['data'])
+            || !isset($options['data']->type)
+            || !isset($options['data']->symfonyType)
+        ) {
+            throw new UnknownFieldTypeException('No data or incomplete data');
         }
         
         if (!isset($this->availableFields[$options['data']->type])) {

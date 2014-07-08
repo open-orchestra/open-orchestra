@@ -87,9 +87,13 @@ class CustomFieldTypeTypeTest extends \PHPUnit_Framework_TestCase
 
     public function getOptions()
     {
-        $dataWithNoOptions = (object) array('type' => 'orchestra_text');
+        $dataWithNoOptions = (object) array(
+            'type' => 'orchestra_text',
+            'symfonyType' => 'text'
+        );
         $dataWithOptions = (object) array(
             'type' => 'orchestra_text',
+            'symfonyType' => 'text',
             'options' => (object) array('required' => false)
         );
         

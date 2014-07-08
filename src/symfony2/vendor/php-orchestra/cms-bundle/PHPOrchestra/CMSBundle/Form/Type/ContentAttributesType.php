@@ -38,7 +38,7 @@ class ContentAttributesType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        if (isset($options['data']) && isset($options['data']->contentType)) {
+        if (isset($options['data']) && isset($options['data']->contentType) && isset($options['data']->language)) {
             $fields = $options['data']->contentType->getFields();
             $language = $options['data']->language;
             

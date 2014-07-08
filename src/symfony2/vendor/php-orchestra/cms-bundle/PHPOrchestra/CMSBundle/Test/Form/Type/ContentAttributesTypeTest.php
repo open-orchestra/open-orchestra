@@ -83,7 +83,10 @@ class ContentAttributesTest extends \PHPUnit_Framework_TestCase
             ->method('getFields')
             ->will($this->returnValue($jsonFields));
         
-        $dataWith3Fields = (object) array('contentType' => $contentType3F);
+        $dataWith3Fields = (object) array(
+            'contentType' => $contentType3F,
+            'language' => 'fr'
+        );
         
         return array(
             array(array('data' =>  $dataWithNoField), 0),
