@@ -57,9 +57,11 @@ class MultilingualTextTransformer implements DataTransformerInterface
     {
         $languages = array();
         
-        foreach ($formLanguages as $language_id => $value) {
-            if (substr($language_id, 0, 9) == 'language_') {
-                $languages[substr($language_id, 9)] = $value;
+        if (is_array($formLanguages)) {
+            foreach ($formLanguages as $language_id => $value) {
+                if (substr($language_id, 0, 9) == 'language_') {
+                    $languages[substr($language_id, 9)] = $value;
+                }
             }
         }
         
