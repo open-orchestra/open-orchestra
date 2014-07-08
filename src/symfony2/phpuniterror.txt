@@ -1,0 +1,84 @@
+PHPUnit 4.0.14 by Sebastian Bergmann.
+
+Configuration read from /media/sf_Orchestra/src/symfony2/phpunit.xml
+
+...............................................................  63 / 153 ( 41%)
+....EE.....FFFF....EE.......................................... 126 / 153 ( 82%)
+...........................
+
+Time: 2.93 minutes, Memory: 18.50Mb
+
+There were 4 errors:
+
+1) PHPOrchestra\CMSBundle\Test\Form\Type\ContentAttributesTest::testBuildForm with data set #0 (array(stdClass), 0)
+Undefined property: stdClass::$language
+
+/media/sf_Orchestra/src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Form/Type/ContentAttributesType.php:43
+/media/sf_Orchestra/src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Test/Form/Type/ContentAttributesTypeTest.php:54
+phar:///usr/bin/phpunit/phpunit/TextUI/Command.php:179
+phar:///usr/bin/phpunit/phpunit/TextUI/Command.php:132
+
+2) PHPOrchestra\CMSBundle\Test\Form\Type\ContentAttributesTest::testBuildForm with data set #1 (array(stdClass), 3)
+Undefined property: stdClass::$language
+
+/media/sf_Orchestra/src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Form/Type/ContentAttributesType.php:43
+/media/sf_Orchestra/src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Test/Form/Type/ContentAttributesTypeTest.php:54
+phar:///usr/bin/phpunit/phpunit/TextUI/Command.php:179
+phar:///usr/bin/phpunit/phpunit/TextUI/Command.php:132
+
+3) PHPOrchestra\CMSBundle\Test\Form\Type\CustomFieldTypeTypeTest::testBuildForm with data set #0 (array(stdClass), 7)
+Undefined property: stdClass::$symfonyType
+
+/media/sf_Orchestra/src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Form/Type/CustomFieldType.php:78
+/media/sf_Orchestra/src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Test/Form/Type/CustomFieldTypeTest.php:68
+phar:///usr/bin/phpunit/phpunit/TextUI/Command.php:179
+phar:///usr/bin/phpunit/phpunit/TextUI/Command.php:132
+
+4) PHPOrchestra\CMSBundle\Test\Form\Type\CustomFieldTypeTypeTest::testBuildForm with data set #1 (array(stdClass), 7)
+Undefined property: stdClass::$symfonyType
+
+/media/sf_Orchestra/src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Form/Type/CustomFieldType.php:78
+/media/sf_Orchestra/src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Test/Form/Type/CustomFieldTypeTest.php:68
+phar:///usr/bin/phpunit/phpunit/TextUI/Command.php:179
+phar:///usr/bin/phpunit/phpunit/TextUI/Command.php:132
+
+--
+
+There were 4 failures:
+
+1) PHPOrchestra\CMSBundle\Test\Form\Type\ContentTypeTest::testBuildForm with data set #0 (array(), 4)
+Symfony\Component\Form\FormBuilderInterface::add('contentType', 'hidden', Array ()) was not expected to be called more than 4 times.
+
+/media/sf_Orchestra/src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Form/Type/ContentType.php:28
+/media/sf_Orchestra/src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Test/Form/Type/ContentTypeTest.php:49
+phar:///usr/bin/phpunit/phpunit/TextUI/Command.php:179
+phar:///usr/bin/phpunit/phpunit/TextUI/Command.php:132
+
+2) PHPOrchestra\CMSBundle\Test\Form\Type\ContentTypeTest::testBuildForm with data set #1 (array('fake'), 4)
+Symfony\Component\Form\FormBuilderInterface::add('contentType', 'hidden', Array ()) was not expected to be called more than 4 times.
+
+/media/sf_Orchestra/src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Form/Type/ContentType.php:28
+/media/sf_Orchestra/src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Test/Form/Type/ContentTypeTest.php:49
+phar:///usr/bin/phpunit/phpunit/TextUI/Command.php:179
+phar:///usr/bin/phpunit/phpunit/TextUI/Command.php:132
+
+3) PHPOrchestra\CMSBundle\Test\Form\Type\ContentTypeTest::testBuildForm with data set #2 (array(Mock_Content_cb931ac6), 5)
+Symfony\Component\Form\FormBuilderInterface::add('status', 'choice', Array (...)) was not expected to be called more than 5 times.
+
+/media/sf_Orchestra/src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Form/Type/ContentType.php:40
+/media/sf_Orchestra/src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Test/Form/Type/ContentTypeTest.php:49
+phar:///usr/bin/phpunit/phpunit/TextUI/Command.php:179
+phar:///usr/bin/phpunit/phpunit/TextUI/Command.php:132
+
+4) PHPOrchestra\CMSBundle\Test\Form\Type\ContentTypeTest::testBuildForm with data set #3 (array(Mock_Content_cb931ac6), 6)
+Symfony\Component\Form\FormBuilderInterface::add('id', 'hidden', Array (...)) was not expected to be called more than 6 times.
+
+/media/sf_Orchestra/src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Form/Type/ContentType.php:45
+/media/sf_Orchestra/src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Test/Form/Type/ContentTypeTest.php:49
+phar:///usr/bin/phpunit/phpunit/TextUI/Command.php:179
+phar:///usr/bin/phpunit/phpunit/TextUI/Command.php:132
+
+FAILURES!
+Tests: 153, Assertions: 190, Failures: 4, Errors: 4.
+
+Generating code coverage report in HTML format ... done

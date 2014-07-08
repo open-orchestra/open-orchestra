@@ -59,7 +59,7 @@ class NodeTypeTest extends \PHPUnit_Framework_TestCase
         $this->nodeType->buildForm($formBuilderMock, array());
     }
     
-    public function testSetDefaultOptions()
+    /*public function testSetDefaultOptions()
     {
         $resolverMock =
             $this->getMock('\\Symfony\\Component\\OptionsResolver\\OptionsResolverInterface');
@@ -84,9 +84,9 @@ class NodeTypeTest extends \PHPUnit_Framework_TestCase
             );
         
         $this->nodeType->setDefaultOptions($resolverMock);
-    }
+    }*/
     
-    public function testBuildView()
+    /*public function testBuildView()
     {
         $viewMock =
             $this->getMock('\\Symfony\\Component\\Form\\FormView');
@@ -109,7 +109,7 @@ class NodeTypeTest extends \PHPUnit_Framework_TestCase
         unset($expectedViewVars['unusedOption']);
         
         $this->assertEquals($expectedViewVars, $viewMock->vars);
-    }
+    }*/
 
     public function testGetName()
     {
