@@ -75,7 +75,8 @@ class ContentAttributesTest extends \PHPUnit_Framework_TestCase
             {"fieldId": "field1", "defaultValue": "value1", "label": "label1", "symfonyType": "email"},
             {"fieldId": "field2", "defaultValue": "value2", "label": "label1", "symfonyType": "type2",
              "options": {"max_length": 20, "required": true}},
-            {"fieldId": "field3", "defaultValue": "value3", "label": "{\"fr\":\"français\", \"en\":\"english\"}", "symfonyType": "type3",
+            {"fieldId": "field3", "defaultValue": "value3",
+             "label": "{\"fr\":\"français\", \"en\":\"english\"}", "symfonyType": "type3",
              "options": {"max_length": 0}}
         ]';
         $contentType3F

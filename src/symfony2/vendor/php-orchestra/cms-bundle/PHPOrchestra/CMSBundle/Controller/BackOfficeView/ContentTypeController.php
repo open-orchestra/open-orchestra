@@ -266,9 +266,9 @@ class ContentTypeController extends TableViewController
      * Then return the edit form url
      * 
      * @param Request $request
-     * @param string $id
+     * @param string $mongoId
      */
-    public function findForEditAction(Request $request, $id)
+    public function findForEditAction(Request $request, $mongoId)
     {
         $documentManager = $this->get('phporchestra_cms.documentmanager');
         
@@ -288,16 +288,16 @@ class ContentTypeController extends TableViewController
     }
 
     /** 
-     * Create a news version of contentType $id
+     * Create a news version of contentType $mongoId
      * 
      * @param Request $request
      * @param string $id
      */
-    public function duplicateAction(Request $request, $id)
+    public function duplicateAction(Request $request, $mongoId)
     {
         $documentManager = $this->get('phporchestra_cms.documentmanager');
         
-        $contentType = $documentManager->getDocumentById('ContentType', $id);
+        $contentType = $documentManager->getDocumentById('ContentType', $mongoId);
         $contentType->generateDraft();
         
         return new JsonResponse(

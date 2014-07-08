@@ -61,18 +61,6 @@ class MultilingualTest extends \PHPUnit_Framework_TestCase
 
     public function getOptions()
     {
-        $contentType = $this->getMockBuilder('\\Model\\PHPOrchestraCMSBundle\\Content')
-            ->disableOriginalConstructor()
-            ->getMock();
-        $contentTypeFull = $this->getMockBuilder('\\Model\\PHPOrchestraCMSBundle\\Content')
-            ->disableOriginalConstructor()
-            ->getMock();
-        $contentTypeFull->contentTypeStructure = 'fakeStructure';
-        
-        $contentTypeFull->expects($this->any())
-            ->method('getAttributes')
-            ->will($this->returnValue((object) array('fakeAttribute' => 'fakeValue')));
-        
         return array(
             array(array(), 3),
             array(array('fake' => 'fake'), 3),

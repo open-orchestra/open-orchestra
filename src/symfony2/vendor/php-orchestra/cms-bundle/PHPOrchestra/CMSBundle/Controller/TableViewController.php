@@ -32,7 +32,7 @@ abstract class TableViewController extends Controller
     
     abstract public function setColumns();
     
-    function __construct()
+    public function __construct()
     {
         $this->setColumns();
         $this->callback['arrayToNewLine'] = function ($value) {
@@ -338,19 +338,19 @@ abstract class TableViewController extends Controller
     /**
      * Get an existing document by its $id or create a new one
      * 
-     * @param string $id
+     * @param string $mongoId
      */
-    protected function getDocument($id)
+    protected function getDocument($mongoId)
     {
         $documentManager = $this->container->get('phporchestra_cms.documentmanager');
-        if (empty($id)) {
+        if (empty($mongoId)) {
             $document = $documentManager->createDocument($this->getEntity());
             $document = $this->modifyDocumentAfterCreate($document);
         } else {
             if ($this->getKey() === null) {
-                $document = $documentManager->getDocumentById($this->getEntity(), $id);
+                $document = $documentManager->getDocumentById($this->getEntity(), $mongoId);
             } else {
-                $criteria = array_combine($this->getKey(), explode('|', $id));
+                $criteria = array_combine($this->getKey(), explode('|', $mongoId));
                 $document = $documentManager->getDocument($this->getEntity(), $criteria);
             }
         }
@@ -410,10 +410,10 @@ abstract class TableViewController extends Controller
      * Factorize Render for json and no json response
      * 
      * @param Request $request
-     * @param string $id
+     * @param string $mongoId
      * @param unknown_type $form
      */
-    protected function getRender($id, $form)
+    protected function getRender($mongoId, $form)
     {
         return $this->render(
             'PHPOrchestraCMSBundle:BackOffice/TableView:form.html.twig',
@@ -421,7 +421,7 @@ abstract class TableViewController extends Controller
                 'form' => $form->createView(),
                 'mainTitle' => $this->getMainTitle(),
                 'tableTitle' => $this->getTableTitle(),
-                'ribbon' => $this->saveButton($id) . $this->backButton()
+                'ribbon' => $this->saveButton($mongoId) . $this->backButton()
             )
         );
     }
@@ -430,11 +430,11 @@ abstract class TableViewController extends Controller
      * Render the view, either edit form or catalog list
      * 
      * @param Request $request
-     * @param string $id
+     * @param string $mongoId
      * @param unknown_type $form
      * @param unknown_type $document of $this->entity type
      */
-    protected function editRender($request, $id, $form, $document)
+    protected function editRender($request, $mongoId, $form, $document)
     {
         if ($request->query->get('refresh') !== null) {
             $render = $this->render(
@@ -458,7 +458,7 @@ abstract class TableViewController extends Controller
                     $success = $saveResult['success'];
                     $data = $saveResult['data'];
                 } else {
-                    $data = $this->getRender($id, $form)->getContent();
+                    $data = $this->getRender($mongoId, $form)->getContent();
                 }
                 return new JsonResponse(
                     array(
@@ -468,7 +468,7 @@ abstract class TableViewController extends Controller
                 );
             }
             
-            return $this->getRender($id, $form);
+            return $this->getRender($mongoId, $form);
         }
     }
     

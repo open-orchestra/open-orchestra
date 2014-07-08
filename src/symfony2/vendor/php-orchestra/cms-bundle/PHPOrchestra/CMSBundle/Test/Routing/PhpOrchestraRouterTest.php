@@ -27,11 +27,11 @@ class PhpOrchestraRouterTest extends \PHPUnit_Framework_TestCase
         $container->expects($this->at(1)) // 'phporchestra_cms.documentmanager'
             ->method('get')
             ->will($this->returnValue(null));
-            
+        
         $container->expects($this->at(2)) // 'routing.loader'
             ->method('get')
             ->will($this->returnValue($mockRoutingLoader));
-            
+        
         $this->router = new PhpOrchestraRouter(
             $container,
             null,
