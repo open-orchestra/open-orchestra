@@ -1,78 +1,73 @@
-<header id="header">
-<div id="logo-group">
+        <!-- HEADER -->
+        <header id="header">
+            <div id="logo-group">
 
-    <!-- PLACE YOUR LOGO HERE -->
-    <span id="logo"> <img src="{{ asset('bundles/phporchestracms/img/logo-orchestra.png') }}" alt="PHP Ochestra"> </span>
-    <!-- END LOGO PLACEHOLDER -->
+                <!-- PLACE YOUR LOGO HERE -->
+                <span id="logo"> <img src="{{ asset('bundles/phporchestracms/img/logo-orchestra.png') }}" alt="PHP Ochestra"> </span>
+                <!-- END LOGO PLACEHOLDER -->
 
-</div>
+                <!-- Note: The activity badge color changes when clicked and resets the number to 0
+                Suggestion: You may want to set a flag when this happens to tick off all checked messages / notifications -->
+                <span id="activity" class="activity-dropdown"> <i class="fa fa-user"></i> <b class="badge"> 21 </b> </span>
+
+                <!-- AJAX-DROPDOWN : control this dropdown height, look and feel from the LESS variable file -->
+                <div class="ajax-dropdown">
+
+                    <!-- the ID links are fetched via AJAX to the ajax container "ajax-notifications" -->
+                    <div class="btn-group btn-group-justified" data-toggle="buttons">
+                        <label class="btn btn-default">
+                            <input type="radio" name="activity" id="ajax/notify/mail.html">
+                            Msgs (14) </label>
+                        <label class="btn btn-default">
+                            <input type="radio" name="activity" id="ajax/notify/notifications.html">
+                            notify (3) </label>
+                        <label class="btn btn-default">
+                            <input type="radio" name="activity" id="ajax/notify/tasks.html">
+                            Tasks (4) </label>
+                    </div>
+
+                    <!-- notification content -->
+                    <div class="ajax-notifications custom-scroll">
+
+                        <div class="alert alert-transparent">
+                            <h4>Click a button to show messages here</h4>
+                            This blank page message helps protect your privacy, or you can show the first message here automatically.
+                        </div>
+
+                        <i class="fa fa-lock fa-4x fa-border"></i>
+
+                    </div>
+                    <!-- end notification content -->
+
+                    <!-- footer: refresh area -->
+                    <span> Last updated on: 12/12/2013 9:43AM
+                        <button type="button" data-loading-text="<i class='fa fa-refresh fa-spin'></i> Loading..." class="btn btn-xs btn-default pull-right">
+                            <i class="fa fa-refresh"></i>
+                        </button> </span>
+                    <!-- end footer -->
+
+                </div>
+                <!-- END AJAX-DROPDOWN -->
+            </div>
 
             <!-- projects dropdown -->
             <div id="project-context">
 
                 <span class="label">Site :</span>
-                <span id="project-selector" class="popover-trigger-element dropdown-toggle" data-toggle="dropdown"><b>Démo (Administration)</b> <i class="fa fa-angle-down"></i></span>
+                <span id="project-selector" class="popover-trigger-element dropdown-toggle" data-toggle="dropdown"><b>Current Site</b> <i class="fa fa-angle-down"></i></span>
 
                 <!-- Suggestion: populate this list with fetch and push technique -->
-<ul class="dropdown-menu">              
-    <li class="dropdown-submenu">
-        <a tabindex="-1" ">-- Site d'administration --</a>
-        <ul class="dropdown-menu">
+                <ul class="dropdown-menu">
                     <li>
-                <a href="javascript:selectProfile('1_1')">Administrateur</a>
-            </li>
+                        <a href="javascript:void(0);">Site 1</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">Site 2</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">Site 3</a>
+                    </li>
                 </ul>
-    </li>
-    <li class="dropdown-submenu">
-        <a tabindex="-1" ">Application Mobile</a>
-        <ul class="dropdown-menu">
-                    <li>
-                <a href="javascript:selectProfile('12_4')">Administration</a>
-            </li>
-                </ul>
-    </li>
-    <li class="dropdown-submenu">
-        <a tabindex="-1" ">Cardif</a>
-        <ul class="dropdown-menu">
-                    <li>
-                <a href="javascript:selectProfile('14_6')">Administration2</a>
-            </li>
-                </ul>
-    </li>
-    <li class="dropdown-submenu">
-        <a tabindex="-1" ">Administration</a>
-        <ul class="dropdown-menu">
-                    <li>
-                <a href="javascript:selectProfile('13_5')">Administration</a>
-            </li>
-                </ul>
-    </li>
-    <li class="dropdown-submenu">
-        <a tabindex="-1" ">PHP Orchestra</a>
-        <ul class="dropdown-menu">
-                    <li>
-                <a href="javascript:selectProfile('2_2')">Administration</a>
-            </li>
-                    <li>
-                <a href="javascript:selectProfile('4_2')">Gestion des m&eacute;dias</a>
-            </li>
-                    <li>
-                <a href="javascript:selectProfile('11_2')">Invit&eacute;</a>
-            </li>
-                    <li>
-                <a href="javascript:selectProfile('3_2')">R&eacute;dacteur</a>
-            </li>
-                </ul>
-    </li>
-    <li class="dropdown-submenu">
-        <a tabindex="-1" ">Services</a>
-        <ul class="dropdown-menu">
-                    <li>
-                <a href="javascript:selectProfile('7_3')">Administration</a>
-            </li>
-                </ul>
-    </li>
-</ul>
                 <!-- end dropdown-menu-->
 
             </div>
@@ -89,77 +84,47 @@
 
                 <!-- logout button -->
                 <div id="logout" class="btn-header transparent pull-right">
-                    <span> <a href="#" title="Déconnexion" data-logout-msg="You can improve your security further after logging out by closing this opened browser"><i class="fa fa-sign-out"></i></a> </span>
+                    <span> <a href="#" title="Se déconnecter" data-logout-msg="You can improve your security further after logging out by closing this opened browser"><i class="fa fa-sign-out"></i></a> </span>
                 </div>
                 <!-- end logout button -->
 
                 <!-- search mobile button (this is hidden till mobile view port) -->
                 <div id="search-mobile" class="btn-header transparent pull-right">
-<!-- 
-                    <span> <a href="javascript:void(0)" title="Search"><i class="fa fa-search"></i></a> </span>
- -->
+                    <span> <a href="javascript:void(0)" title="Rechercher"><i class="fa fa-search"></i></a> </span>
                 </div>
                 <!-- end search mobile button -->
 
+                <!-- input: search field -->
+                <form action="#" class="header-search pull-right">
+                    <input type="text" name="param" placeholder="Rechercher" id="search-fld">
+                    <button type="submit">
+                        <i class="fa fa-search"></i>
+                    </button>
+                    <a href="javascript:void(0);" id="cancel-search-js" title="Annuler"><i class="fa fa-times"></i></a>
+                </form>
+                <!-- end input: search field -->
+
                 <!-- fullscreen button -->
                 <div id="fullscreen" class="btn-header transparent pull-right">
-                    <span> <a href="javascript:void(0);" onclick="launchFullscreen(document.documentElement);" title="Full Screen"><i class="fa fa-fullscreen"></i></a> </span>
+                    <span> <a href="javascript:void(0);" onclick="launchFullscreen(document.documentElement);" title="Plein écran"><i class="fa fa-fullscreen"></i></a> </span>
                 </div>
                 <!-- end fullscreen button -->
 
                 <!-- multiple lang dropdown : find all flags in the image folder -->
-                
-                
-                <ul class="header-dropdown-list hidden-xs"> 
-                <li>
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <!-- img alt="" src="/library/Pelican/Translate/public/images/flags/fr.png" --> <span> Français </span> <i class="fa fa-angle-down"></i> </a>
-                        <ul class="dropdown-menu pull-right">       
-    <li class="dropdown-submenu">
-        <li>
-            <a href="javascript:selectLanguage(1);"><!-- img alt="" src="/library/Pelican/Translate/public/images/flags/fr.png" --> Français</a>
-        </li>
-    </li>
-    <li class="dropdown-submenu">
-        <li>
-            <a href="javascript:selectLanguage(2);"><!-- img alt="" src="/library/Pelican/Translate/public/images/flags/en.png" --> English</a>
-        </li>
-    </li>
-    <li class="dropdown-submenu">
-        <li>
-            <a href="javascript:selectLanguage(3);"><!-- img alt="" src="/library/Pelican/Translate/public/images/flags/it.png" --> Italiano</a>
-        </li>
-    </li>
-    <li class="dropdown-submenu">
-        <li>
-            <a href="javascript:selectLanguage(4);"><!-- img alt="" src="/library/Pelican/Translate/public/images/flags/es.png" --> Español; castellano</a>
-        </li>
-    </li>
-    <li class="dropdown-submenu">
-        <li>
-            <a href="javascript:selectLanguage(5);"><!-- img alt="" src="/library/Pelican/Translate/public/images/flags/ar.png" --> ‫العربية</a>
-        </li>
-    </li>
-    <li class="dropdown-submenu">
-        <li>
-            <a href="javascript:selectLanguage(10);"><!-- img alt="" src="/library/Pelican/Translate/public/images/flags/de.png" --> Deutsch</a>
-        </li>
-    </li>
-    <li class="dropdown-submenu">
-        <li>
-            <a href="javascript:selectLanguage(11);"><!-- img alt="" src="/library/Pelican/Translate/public/images/flags/gr.png" --> Ελληνικά</a>
-        </li>
-    </li>
-    <li class="dropdown-submenu">
-        <li>
-            <a href="javascript:selectLanguage(14);"><!-- img alt="" src="/library/Pelican/Translate/public/images/flags/il.png"--> ‫עברית</a>
-        </li>
-    </li>
-    <li class="dropdown-submenu">
-        <li>
-            <a href="javascript:selectLanguage(32);"><!-- img alt="" src="/library/Pelican/Translate/public/images/flags/ru.png" --> русский язык</a>
-        </li>
-    </li>
-</ul>
+                <ul class="header-dropdown-list hidden-xs">
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img alt="" src="{{ asset('bundles/phporchestracms/img/flags/us.png') }}"> <span> US </span> <i class="fa fa-angle-down"></i> </a>
+                        <ul class="dropdown-menu pull-right">
+                            <li class="active">
+                                <a href="javascript:void(0);"><img alt="" src="{{ asset('bundles/phporchestracms/img/flags/us.png') }}"> US</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);"><img alt="" src="{{ asset('bundles/phporchestracms/img/flags/es.png') }}"> Spanish</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);"><img alt="" src="{{ asset('bundles/phporchestracms/img/flags/de.png') }}"> German</a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
                 <!-- end multiple lang -->
@@ -167,4 +132,5 @@
             </div>
             <!-- end pulled right: nav area -->
 
-</header>
+        </header>
+        <!-- END HEADER -->
