@@ -3,13 +3,13 @@ Model\PHPOrchestraCMSBundle\ListIndex:
         nodeId: fixture_full
     
     test_2:
-        contentId: 1
+        contentId: "1"
     
     test_3:
         nodeId: fixture_about_us
     
     test_4:
-        contentId: 3
+        contentId: "3"
     
     test_5:
         nodeId: fixture_bd

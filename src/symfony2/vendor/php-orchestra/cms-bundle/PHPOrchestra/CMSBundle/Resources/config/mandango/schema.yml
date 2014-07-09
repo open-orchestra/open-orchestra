@@ -105,7 +105,7 @@ Model\PHPOrchestraCMSBundle\ListIndex:
     collection: listIndex
     fields:
         nodeId: string
-        contentId: integer
+        contentId: string
 
 Model\PHPOrchestraCMSBundle\FieldIndex:
     collection: fieldIndex
