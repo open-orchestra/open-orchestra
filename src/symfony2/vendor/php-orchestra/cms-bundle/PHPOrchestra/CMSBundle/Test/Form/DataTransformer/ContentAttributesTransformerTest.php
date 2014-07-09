@@ -148,9 +148,7 @@ class ContentAttributesTransformerTest extends \PHPUnit_Framework_TestCase
                     )
                 ),
                 (object) array(),
-                array(
-                    new TestAttribute('field1', 'defaultValue1')
-                )
+                array()
             ),
         
             array(

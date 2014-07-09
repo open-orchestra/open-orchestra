@@ -66,22 +66,25 @@ class ContentAttributesTransformer implements DataTransformerInterface
     {
         $newAttributes = array();
         
-        foreach ($this->fieldsStructure as $fieldStructure) {
-            if (is_object($fieldStructure)
-                && isset($fieldStructure->fieldId)
-                && isset($fieldStructure->defaultValue)
-                && is_object($attributes)
-            ) {
-                $attribute = $this->documentManager->createDocument('ContentAttribute');
-                $name = $fieldStructure->fieldId;
-                $attribute->setName($name);
-                $attribute->setValue($fieldStructure->defaultValue);
-                if (isset($attributes->$name)) {
-                    $attribute->setValue($attributes->$name);
+        if (is_object($attributes)) {
+            
+            foreach ($this->fieldsStructure as $fieldStructure) {
+                
+                if (is_object($fieldStructure)
+                    && isset($fieldStructure->fieldId)
+                    && isset($attributes->{$fieldStructure->fieldId})
+                ) {
+                    $attribute = $this->documentManager->createDocument('ContentAttribute');
+                    $attributeName = $fieldStructure->fieldId;
+                    $attribute->setName($attributeName);
+                    if (isset($attributes->$attributeName)) {
+                        $attribute->setValue($attributes->$attributeName);
+                    }
+                    $newAttributes[] = $attribute;
                 }
-                $newAttributes[] = $attribute;
-                unset($attribute);
+                
             }
+            
         }
         
         return $newAttributes;
