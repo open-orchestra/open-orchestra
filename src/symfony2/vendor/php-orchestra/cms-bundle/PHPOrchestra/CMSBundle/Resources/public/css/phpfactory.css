@@ -242,11 +242,12 @@ div.top-tools .ColVis button{
 }
 .ribbon{
     z-index:999;
-    top:-30px !important;
+    top:-30px;
 }
 
-form .ribbon{
-    top:-51px !important;
+.fixed-ribbon .ribbon{
+    position: fixed !important;
+    top:60px !important;
 }
 
 span.btn.btn-ribbon {
