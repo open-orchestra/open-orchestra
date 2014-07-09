@@ -21,6 +21,12 @@
     {{ form_widget(form) }}
 {% endblock %}
 
+{% block textarea_widget %}
+{% spaceless %}
+    <textarea class="custom-scroll" rows="5" {{ block('widget_attributes') }}>{{ value }}</textarea>
+{% endspaceless %}
+{% endblock textarea_widget %}
+
 {% extends "form_div_layout.html.twig" %}
 
 {% block form_row %}
@@ -34,7 +40,12 @@
         <label class="checkbox"{% if errors|length > 0 %} state-error{% endif %}>
             {{ form_widget(form) }}
             <i></i>{{ form_label(form, null, {'label_attr': {'class': 'label'}}) }}</label>
-    {% elseif  block_prefixes[1] == 'contentAttributes' %}
+    {% elseif block_prefixes[2] == 'textarea' %}
+        {{ form_label(form, null, {'label_attr': {'class': 'label'}}) }}
+        <label class="textarea textarea-resizable{% if errors|length > 0 %} state-error{% endif %}">
+            {{ form_widget(form) }}
+        </label>
+    {% elseif block_prefixes[1] == 'contentAttributes' %}
         {{ form_widget(form) }}
     {% else %}
         {{ form_label(form, null, {'label_attr': {'class': 'label'}}) }}
