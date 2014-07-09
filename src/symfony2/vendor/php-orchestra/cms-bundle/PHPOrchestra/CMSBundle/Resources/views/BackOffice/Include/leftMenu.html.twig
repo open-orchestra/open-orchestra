@@ -16,28 +16,25 @@
         <li>
             <a href="#"><i class="fa fa-lg fa-fw fa-edit"></i><span class="menu-item-parent">Editorial</span></a>
             <ul style="display:block;">
-                <li><a href="{{ path('phporchestra_cms_backofficeview_site_index', {'action' : 'catalog'}) }}">Gestion des sites</a></li>
                 {{ render(controller('PHPOrchestraCMSBundle:Tree:showTreeNodes')) }}
                 {{ render(controller('PHPOrchestraCMSBundle:Tree:showTreeTemplates')) }}
                 <li>
-                    <a href="{{ path('php_orchestra_cms_bo_contentType_ajaxmenu', {'language':'fr', 'siteId':''}) }}" target="_menu">Gestion des contenus</a>
+                    <a href="{{ path('php_orchestra_cms_bo_contentType_ajaxmenu', {'language':'fr', 'siteId':''}) }}" target="_menu">Contenus</a>
                     <ul><li><a href="">Loading ...</a></li></ul>
                 </li>
             </ul>
         </li>
         <li>
             <a href="#"><i class="fa fa-lg fa-fw fa-desktop"></i><span class="menu-item-parent">Administration</span></a>
-            <ul style="display:block;">
+            <ul style="">
+                <li>
+                    <a href="{{ path('phporchestra_cms_backofficeview_site_index', {'action' : 'catalog'}) }}">Sites</a>
+                </li>
                 <li>
                     <a href="{{ path('phporchestra_cms_backofficeview_contenttype_index', {'action':'catalog'}) }}">Type de contenus</a>
                 </li>
-            </ul>
-        </li>
-        <li>
-            <a href="#"><i class="fa fa-lg fa-fw fa-wrench"></i><span class="menu-item-parent">Outils</span></a>
-            <ul style="display:block;">
                 <li>
-                    <a href="#" id="clearRoutingCache">Purge du cache de routage</a>
+                    <a href="#" id="clearRoutingCache">Cache de routage</a>
                     {% include 'PHPOrchestraCMSBundle:BackOffice/Tools:clearRoutingCacheDialog.html.twig' %}
                 </li>
             </ul>

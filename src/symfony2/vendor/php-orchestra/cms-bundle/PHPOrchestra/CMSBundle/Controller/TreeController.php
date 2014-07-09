@@ -30,7 +30,7 @@ class TreeController extends Controller
         }
         $nodes = TreeHelper::createTree($nodes, '_id', 'parentId');
 
-        return $this->getRender($nodes, 'Gestion des pages');
+        return $this->getRender($nodes, 'Pages');
     }
     /**
      * List all templates
@@ -50,7 +50,7 @@ class TreeController extends Controller
         
         $templates = TreeHelper::createTree($templates);
         
-        return $this->getRender($templates, 'Gestion des gabarits');
+        return $this->getRender($templates, 'Gabarits');
     }
     
     /**
