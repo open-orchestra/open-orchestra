@@ -35,3 +35,21 @@
     {% endfor %}
 </fieldset>
 {% endblock %}
+
+{% block multilingualText_widget %}
+    {% for key, value in form %}
+        {% if key starts with 'language' %}
+            {% set language = key|replace({'language_':''}) %}
+            {% set flagPath = asset('bundles/phporchestracms/img/flags/' ~ language ~ '.png') %}
+            {% set flagTag = '<img alt="' ~ language ~ ' flag" src="' ~ flagPath ~ '"> ' %}
+            {{ form_row(
+                form[key],
+                {'label' : 'Label du type de contenu (' ~ flagTag ~ language|upper ~ ')' | raw}
+            ) }}
+      {% endif %}
+    {% endfor %}
+{% endblock %}
+
+{% block text_label %}
+    {{ label | raw }}
+{% endblock %}

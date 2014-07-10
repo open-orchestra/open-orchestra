@@ -50,11 +50,7 @@ class MultilingualTextType extends AbstractType
         }
         
         foreach ($this->languages as $language => $name) {
-            $builder->add(
-                'language_' . $language,
-                'text',
-                array('label' => 'Label du type de contenu (' . $language . ')')
-            );
+            $builder->add('language_' . $language, 'text');
         }
     }
 
