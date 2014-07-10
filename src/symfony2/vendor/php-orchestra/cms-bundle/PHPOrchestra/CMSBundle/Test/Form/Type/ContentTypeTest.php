@@ -28,7 +28,15 @@ class ContentTypeTest extends \PHPUnit_Framework_TestCase
 {
     public function setUp()
     {
-        $this->contentType = new ContentType();
+        $contextManager = $this->getMockBuilder('\\PHPOrchestra\\CMSBundle\\Context\\ContextManager')
+            ->disableOriginalConstructor()
+            ->getMock();
+        
+        $contextManager->expects($this->any())
+            ->method('getCurrentLocale')
+            ->will($this->returnValue('en'));
+        
+        $this->contentType = new ContentType($contextManager);
     }
     
     /**
