@@ -1,10 +1,5 @@
 parameters:
-    php_orchestra.languages.availables :
-        - en
-        - fr
-        - de
-        - es
-    
+
 #--[EXTEND SYMFONY 2 ROUTING]---#
 
     router.class : 'PHPOrchestra\CMSBundle\Routing\PhpOrchestraRouter'

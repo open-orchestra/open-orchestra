@@ -13,6 +13,18 @@ use Model\PHPOrchestraCMSBundle\Content;
 
 class ContentType extends AbstractType
 {
+    private $contextManager = null;
+
+    /**
+     * Constructor
+     * 
+     * @param object $contextManager
+     */
+    public function __construct($contextManager)
+    {
+        $this->contextManager = $contextManager;
+    }
+
     /**
      * (non-PHPdoc)
      * @see src/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Symfony
@@ -47,7 +59,7 @@ class ContentType extends AbstractType
             
             if (method_exists($options['data'], 'getAttributes') && isset($options['data']->contentTypeStructure)) {
                 $attributes = $options['data']->getAttributes();
-                $attributes->language = $options['data']->getLanguage();
+                $attributes->language = $this->contextManager->getCurrentLocale();
                 
                 $attributes->contentType = $options['data']->contentTypeStructure;
                 

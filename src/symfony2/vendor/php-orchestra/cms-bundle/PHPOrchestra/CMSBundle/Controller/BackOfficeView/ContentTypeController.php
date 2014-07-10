@@ -241,7 +241,7 @@ class ContentTypeController extends TableViewController
         
         foreach ($contentTypes as $contentType) {
             $languages = (array) json_decode($contentType['name']);
-            $name = 'Unknown name in ' . $language;
+            $name = '[' . $contentType['_id'] . ']';
             if (isset($languages[$language])) {
                 $name = $languages[$language];
             }

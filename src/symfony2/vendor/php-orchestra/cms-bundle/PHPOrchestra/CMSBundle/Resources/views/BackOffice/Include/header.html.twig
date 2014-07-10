@@ -113,17 +113,13 @@
                 <!-- multiple lang dropdown : find all flags in the image folder -->
                 <ul class="header-dropdown-list hidden-xs">
                     <li>
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img alt="" src="{{ asset('bundles/phporchestracms/img/flags/us.png') }}"> <span> US </span> <i class="fa fa-angle-down"></i> </a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img alt="" src="{{ asset('bundles/phporchestracms/img/flags/' ~ context.currentLocale ~ '.png') }}"> <span> {{ context.currentLocale|upper }} </span> <i class="fa fa-angle-down"></i> </a>
                         <ul class="dropdown-menu pull-right">
-                            <li class="active">
-                                <a href="javascript:void(0);"><img alt="US flag" src="{{ asset('bundles/phporchestracms/img/flags/us.png') }}"> US</a>
+                            {% for language in available_languages %}
+                            <li{% if context.currentLocale == language %} class="active"{% endif %}>
+                                <a href="javascript:callAndReload('{{ path('php_orchestra_setLanguage', {'language':language}) }}');"><img alt="{{language}} flag" src="{{ asset('bundles/phporchestracms/img/flags/' ~ language ~ '.png') }}"> {{ language|upper }}</a>
                             </li>
-                            <li>
-                                <a href="javascript:void(0);"><img alt="ES flag" src="{{ asset('bundles/phporchestracms/img/flags/es.png') }}"> Spanish</a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0);"><img alt="DE flag" src="{{ asset('bundles/phporchestracms/img/flags/de.png') }}"> German</a>
-                            </li>
+                            {% endfor %}
                         </ul>
                     </li>
                 </ul>

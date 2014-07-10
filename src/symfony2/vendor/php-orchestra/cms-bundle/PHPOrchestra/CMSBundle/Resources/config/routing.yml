@@ -59,3 +59,7 @@ php_orchestra_cms_areaform:
 php_orchestra_autocomplete:
     pattern: /ajax/search/autocomplete
     defaults: { _controller: PHPOrchestraCMSBundle:Block/SearchResult:autocomplete }
+
+php_orchestra_setLanguage:
+    pattern: /ajax/context/setLanguage/{language}
+    defaults: { _controller: PHPOrchestraCMSBundle:BackOfficeView/Language:SetLanguage, language:en }

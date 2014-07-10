@@ -51,10 +51,17 @@ $(document).on('change', '.selectSwitcher', function(e) {
     }
 });
 
+function displayLoader()
+{
+    $('#content').html('<h1><i class="fa fa-cog fa-spin"></i> Loading...</h1>');
+    
+    return true;
+}
+
 // Specific orchestra ajax loading
 function orchestraAjaxLoad(url)
 {
-    $('#content').html('<h1><i class="fa fa-cog fa-spin"></i> Loading...</h1>');
+    displayLoader();
     $.post(url, function(response) {
         if (response.success) {
             window.location.hash = response.data;
@@ -64,6 +71,15 @@ function orchestraAjaxLoad(url)
     });
 }
 
+function callAndReload(action)
+{
+    displayLoader();
+    $.post(action, function(response) {
+        if (response.success) {
+            window.location.reload();
+        }
+    });
+}
 
 /*
  * LOAD CSS

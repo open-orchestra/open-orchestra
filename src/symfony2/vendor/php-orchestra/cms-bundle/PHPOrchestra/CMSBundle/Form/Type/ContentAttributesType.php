@@ -59,6 +59,7 @@ class ContentAttributesType extends AbstractType
                             }
                             if (isset($field->label)) {
                                 $labels = (array) json_decode($field->label);
+                                $fieldOptions['label'] = '[' . $field->fieldId . ']';
                                 if (isset($labels[$language])) {
                                     $fieldOptions['label'] = $labels[$language];
                                 }

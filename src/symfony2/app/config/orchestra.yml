@@ -1,3 +1,18 @@
+parameters:
+    php_orchestra.languages.availables :
+        - en
+        - fr
+        - de
+        - es
+
+twig:
+    form:
+        resources:
+            - 'PHPOrchestraCMSBundle:Form:contentTypeFields.html.twig'
+    globals:
+        available_languages: %php_orchestra.languages.availables%
+        context: @phporchestra_cms.contextmanager
+
 php_orchestra_theme:
     themes: 
         sample:
@@ -34,8 +49,3 @@ php_orchestra_theme:
             javascripts :
                 - PHPOrchestraThemeBundle:theme1:js/empty.js
                 - FakeAppThemeBundle:fromApp:js/subfolder/sub.js
-    
-twig:
-    form:
-        resources:
-            - 'PHPOrchestraCMSBundle:Form:contentTypeFields.html.twig'
