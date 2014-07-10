@@ -86,6 +86,10 @@
                 <source>The list of documents is empty!</source>
                 <target>La liste de documents est vide!</target>
             </trans-unit>
+            <trans-unit id="indexCommand_solrNotRunning">
+                <source>Solr is not running!</source>
+                <target>Le serveur Solr n'est pas lancé!</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

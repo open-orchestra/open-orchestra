@@ -160,7 +160,7 @@ class SearchResultController extends Controller
                 }
             }
         }
-        return new Response($this->get('translator')->trans('Error in showAction'));
+        return new Response($this->get('translator')->trans('No results found'));
     }
 
 
