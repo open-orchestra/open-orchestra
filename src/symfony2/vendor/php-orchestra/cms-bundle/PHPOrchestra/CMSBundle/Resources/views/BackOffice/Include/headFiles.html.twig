@@ -1,0 +1,46 @@
+        <!-- Basic Styles -->
+        <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('bundles/phporchestracms/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('bundles/phporchestracms/css/font-awesome.min.css') }}">
+
+        <!-- SmartAdmin Styles : Please note (smartadmin-production.css) was created using LESS variables -->
+        <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('bundles/phporchestracms/css/smartadmin-production.css') }}">
+        <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('bundles/phporchestracms/css/smartadmin-skins.css') }}">
+
+        <link rel="stylesheet" href="{{ asset('bundles/phporchestracms/css/ribbon.css') }}">
+        <link rel="stylesheet" href="{{ asset('bundles/phporchestracms/css/phpfactory.css') }}">
+        <!-- <link rel="stylesheet" href="{{ asset('bundles/phporchestracms/css/jquery-ui.css') }}">
+        <link rel="stylesheet" href="{{ asset('bundles/phporchestracms/css/ui.fancytree.css') }}"> -->
+
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700" media="screen" rel="stylesheet" type="text/css" />
+        <link rel="shortcut icon" href="http://phpfactory-bo.interakting.com/img/favicon/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="http://phpfactory-bo.interakting.com/img/favicon/favicon.ico" type="image/x-icon" />
+
+        <!-- TREE MENU : SHOULD BE LOADED ONLY WHEN REQUIRED -->
+        <link rel="stylesheet" href="{{ asset('bundles/phporchestracms/css/template.css') }}">
+        <link rel="stylesheet" href="{{ asset('bundles/phporchestracms/css/dnd.fancytree.css') }}">
+        <link href="{{ asset('bundles/phporchestracms/fancytree/skin-win8/ui.fancytree.css') }}" rel="stylesheet" type="text/css">
+        <!-- /TREE MENU -->
+
+        <!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+        <script>
+            if (!window.jQuery) {
+                document.write('<script src="js/libs/jquery-2.0.2.min.js"><\/script>');
+            }
+        </script>
+        
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+        <script>
+            if (!window.jQuery.ui) {
+                document.write('<script src="js/libs/jquery-ui-1.10.3.min.js"><\/script>');
+            }
+        </script>
+
+        <!-- DIALOGS -->
+        <script src="{{ asset('bundles/phporchestracms/js/confirmDialog.js') }}"></script>
+
+        <!-- PHPORCHESTRA APP JS FILE -->
+        <script src="{{ asset('bundles/phporchestracms/js/phporchestra.js') }}"></script>
+
+        <!-- TABLEVIEW -->
+        <script type="text/javascript" src="{{ asset('bundles/phporchestracms/js/tableView.js') }}"></script>

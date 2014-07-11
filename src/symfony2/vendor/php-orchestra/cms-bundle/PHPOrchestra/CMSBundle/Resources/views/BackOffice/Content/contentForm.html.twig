@@ -16,7 +16,7 @@
 <ul class="nav nav-tabs" id="languages">
 {% for language in availableLanguages %}
     {% if language|upper == form.vars.value.language|upper %}
-    <li class="active"><a>{{ language|upper }}</a></li>
+    <li class="active"><a><img alt="{{ language }} flag" src="{{ asset('bundles/phporchestracms/img/flags/' ~ language ~ '.png') }}"> {{ language|upper }}</a></li>
     {% else %}
     <li>
         <a href="{{ path(
@@ -27,10 +27,11 @@
                 'contentId' : form.vars.value.contentId,
                 'language' : language
             }
-        ) }}" class="tabLink">{{ language|upper }}</a>
+        ) }}" class="tabLink"><img alt="{{ language }} flag" src="{{ asset('bundles/phporchestracms/img/flags/' ~ language ~ '.png') }}"> {{ language|upper }}</a>
     </li>
     {% endif %}
 {% endfor %}
+{% if contentVersions|length > 0 %}
     <li class="pull-right active">
         <div>
             <select class="selectSwitcher">
@@ -56,6 +57,7 @@
             </select>
         </div>
     </li>
+{% endif %}
 </ul>
 
 {% include 'PHPOrchestraCMSBundle:BackOffice:beginSmartDiv.html.twig' with vars %}

@@ -1,7 +1,7 @@
-/*
- * VARIABLES
- * Description: All Global Vars
- */
+	/*
+	 * VARIABLES
+	 * Description: All Global Vars
+	 */
 	// Impacts the responce rate of some of the responsive elements (lower value affects CPU but improves speed)
 	$.throttle_delay = 350;
 	
@@ -11,38 +11,40 @@
 	// Note: You will also need to change this variable in the "variable.less" file.
 	$.navbar_height = 49; 
 
-/*
- * APP DOM REFERENCES
- * Description: Obj DOM reference, please try to avoid changing these
- */	
+	/*
+	 * APP DOM REFERENCES
+	 * Description: Obj DOM reference, please try to avoid changing these
+	 */	
 	$.root_ = $('body');
 	$.left_panel = $('#left-panel');
 	$.shortcut_dropdown = $('#shortcut');
+	$.bread_crumb = $('#ribbon ol.breadcrumb');
 
-/*
- * APP CONFIGURATION
- * Description: Enable / disable certain theme features here
- */		
+    // desktop or mobile
+    $.device = null;
+
+	/*
+	 * APP CONFIGURATION
+	 * Description: Enable / disable certain theme features here
+	 */		
 	$.navAsAjax = true; // Your left nav in your app will no longer fire ajax calls
 	
 	// Please make sure you have included "jarvis.widget.js" for this below feature to work
 	$.enableJarvisWidgets = true;
-	// $.enableJarvisWidgets needs to be true it to work (could potentially 
-	// crash your webApp if you have too many widgets running on mobile view)	
-	$.enableMobileWidgets = false;
 	
-	// Plugin dependency "smartclick.js"
-	$.enableFastClick = true; // remove the 300 ms delay in iDevices
+	// Warning: Enabling mobile widgets could potentially crash your webApp if you have too many 
+	// 			widgets running at once (must have $.enableJarvisWidgets = true)
+	$.enableMobileWidgets = false;
 
 
-/*
- * DETECT MOBILE DEVICES
- * Description: Detects mobile device - if any of the listed device is detected
- * a class is inserted to $.root_ and the variable $.device is decleard. 
- */	
-
-/* so far this is covering most hand held devices */
-var ismobile = (/iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase()));
+	/*
+	 * DETECT MOBILE DEVICES
+	 * Description: Detects mobile device - if any of the listed device is detected
+	 * a class is inserted to $.root_ and the variable $.device is decleard. 
+	 */	
+	
+	/* so far this is covering most hand held devices */
+	var ismobile = (/iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase()));
 
 	if (!ismobile) {
 		// Desktop
@@ -53,12 +55,9 @@ var ismobile = (/iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.tes
 		$.root_.addClass("mobile-detected");
 		$.device = "mobile";
 		
-		// remove 300ms delay from apple touch devices
-		// dependency: plugin/smartclick/smartclick.js
-		if ($.enableFastClick){
-			$('nav ul a').noClickDelay();
-			$('#hide-menu a').noClickDelay();
-		}
+		// Removes the tap delay in idevices
+		// dependency: js/plugin/fastclick/fastclick.js 
+		// FastClick.attach(document.body);
 	}
 
 /* ~ END: CHECK MOBILE DEVICE */
@@ -69,7 +68,6 @@ var ismobile = (/iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.tes
  */
 
 $(document).ready(function() {
-
 	/*
 	 * Fire tooltips
 	 */
@@ -126,7 +124,7 @@ $(document).ready(function() {
 	// ACTIVITY
 	// ajax drop
 	$('#activity').click(function(e) {
-		$this = $(this);
+		var $this = $(this);
 
 		if ($this.find('.badge').hasClass('bg-color-red')) {
 			$this.find('.badge').removeClassPrefix('bg-color-');
@@ -149,7 +147,8 @@ $(document).ready(function() {
 	});
 
 	$('input[name="activity"]').change(function() {
-		$this = $(this);
+		//alert($(this).val())
+		var $this = $(this);
 
 		url = $this.attr('id');
 		container = $('.ajax-notifications');
@@ -188,9 +187,14 @@ $(document).ready(function() {
 
 	// RESET WIDGETS
 	$('#refresh').click(function(e) {
+		
+		var $this = $(this);
+		
+		$.widresetMSG = $this.data('reset-msg');
+		
 		$.SmartMessageBox({
 			title : "<i class='fa fa-refresh' style='color:green'></i> Clear Local Storage",
-			content : "Would you like to RESET all your saved widgets and clear LocalStorage?",
+			content : $.widresetMSG || "Would you like to RESET all your saved widgets and clear LocalStorage?",
 			buttons : '[No][Yes]'
 		}, function(ButtonPressed) {
 			if (ButtonPressed == "Yes" && localStorage) {
@@ -205,12 +209,14 @@ $(document).ready(function() {
 	// LOGOUT BUTTON
 	$('#logout a').click(function(e) {
 		//get the link
-		$.loginURL = $(this).attr('href');
+		var $this = $(this);
+		$.loginURL = $this.attr('href');
+		$.logoutMSG = $this.data('logout-msg');
 
 		// ask verification
 		$.SmartMessageBox({
 			title : "<i class='fa fa-sign-out txt-color-orangeDark'></i> Logout <span class='txt-color-orangeDark'><strong>" + $('#show-shortcut').text() + "</strong></span> ?",
-			content : "You can improve your security further after logging out by closing this opened browser",
+			content : $.logoutMSG || "You can improve your security further after logging out by closing this opened browser",
 			buttons : '[No][Yes]'
 
 		}, function(ButtonPressed) {
@@ -364,9 +370,10 @@ $(document).ready(function() {
 
 // Fix page and nav height
 function nav_page_height() {
-	setHeight = $('#main').height();
-	menuHeight = $.left_panel.height();
-	windowHeight = $(window).height() - $.navbar_height;
+	var setHeight = $('#main').height();
+	//menuHeight = $.left_panel.height();
+	
+	var windowHeight = $(window).height() - $.navbar_height;
 	//set height
 
 	if (setHeight > windowHeight) {// if content height exceedes actual window height and menuHeight
@@ -536,6 +543,47 @@ jQuery.fn.doesExist = function() {
 /* ~ END: ELEMENT EXIST OR NOT */
 
 /*
+ * FULL SCREEN FUNCTION
+ */
+
+// Find the right method, call on correct element
+function launchFullscreen(element) {
+
+	if (!$.root_.hasClass("full-screen")) {
+
+		$.root_.addClass("full-screen");
+
+		if (element.requestFullscreen) {
+			element.requestFullscreen();
+		} else if (element.mozRequestFullScreen) {
+			element.mozRequestFullScreen();
+		} else if (element.webkitRequestFullscreen) {
+			element.webkitRequestFullscreen();
+		} else if (element.msRequestFullscreen) {
+			element.msRequestFullscreen();
+		}
+
+	} else {
+		
+		$.root_.removeClass("full-screen");
+		
+		if (document.exitFullscreen) {
+			document.exitFullscreen();
+		} else if (document.mozCancelFullScreen) {
+			document.mozCancelFullScreen();
+		} else if (document.webkitExitFullscreen) {
+			document.webkitExitFullscreen();
+		}
+
+	}
+
+}
+
+/*
+ * ~ END: FULL SCREEN FUNCTION
+ */
+
+/*
  * INITIALIZE FORMS
  * Description: Select2, Masking, Datepicker, Autocomplete
  */
@@ -558,7 +606,7 @@ function runAllForms() {
 	 */
 	if ($.fn.select2) {
 		$('.select2').each(function() {
-			$this = $(this);
+			var $this = $(this);
 			var width = $this.attr('data-select-width') || '100%';
 			//, _showSearchInput = $this.attr('data-select-search') === 'true';
 			$this.select2({
@@ -576,7 +624,7 @@ function runAllForms() {
 	if ($.fn.mask) {
 		$('[data-mask]').each(function() {
 
-			$this = $(this);
+			var $this = $(this);
 			var mask = $this.attr('data-mask') || 'error...', mask_placeholder = $this.attr('data-mask-placeholder') || 'X';
 
 			$this.mask(mask, {
@@ -592,7 +640,7 @@ function runAllForms() {
 	if ($.fn.autocomplete) {
 		$('[data-autocomplete]').each(function() {
 
-			$this = $(this);
+			var $this = $(this);
 			var availableTags = $this.data('autocomplete') || ["The", "Quick", "Brown", "Fox", "Jumps", "Over", "Three", "Lazy", "Dogs"];
 
 			$this.autocomplete({
@@ -609,7 +657,7 @@ function runAllForms() {
 	if ($.fn.datepicker) {
 		$('.datepicker').each(function() {
 
-			$this = $(this);
+			var $this = $(this);
 			var dataDateFormat = $this.attr('data-dateformat') || 'dd.mm.yy';
 
 			$this.datepicker({
@@ -657,7 +705,7 @@ function runAllCharts() {
 	if ($.fn.sparkline) {
 
 		$('.sparkline').each(function() {
-			$this = $(this);
+			var $this = $(this);
 			var sparklineType = $this.data('sparkline-type') || 'bar';
 
 			// BAR CHART
@@ -909,7 +957,7 @@ function runAllCharts() {
 	if ($.fn.easyPieChart) {
 
 		$('.easy-pie-chart').each(function() {
-			$this = $(this);
+			var $this = $(this);
 			var barColor = $this.css('color') || $this.data('pie-color'), trackColor = $this.data('pie-track-color') || '#eeeeee', size = parseInt($this.data('pie-size')) || 25;
 			$this.easyPieChart({
 				barColor : barColor,
@@ -1091,56 +1139,12 @@ function loadScript(scriptName, callback) {
 /* ~ END: LOAD SCRIPTS */
 
 /*
- * LOAD CSS
- * Usage:
- * loadCss("css/my_lovely_css.css");
- */
-
-var cssArray = {};
-
-function loadCss(cssName) {
-
-	if (!cssArray[cssName]) {
-		cssArray[cssName] = true;
-
-/*		
-		
-	    doc = doc || document;
-	    var head = doc.getElementsByTagName("head")[0];
-	    if (head && addRule) {
-	        var styleEl = doc.createElement("style");
-	        styleEl.type = "text/css";
-	        styleEl.media = "screen";
-	        head.appendChild(styleEl);
-	        addRule(selector, rule, styleEl, doc);
-	        styleEl = null;
-	    }*/
-		
-		// adding the css tag to the head as suggested before
-		var body = document.getElementsByTagName('body')[0];
-		var css = document.createElement('link');
-		css.href = cssName;
-		css.media = "screen";
-		css.type = 'text/css';
-		css.rel = 'stylesheet';
-		// fire the loading
-		body.appendChild(css);
-
-	}
-}
-
-/* ~ END: LOAD SCRIPTS */
-
-
-/*
 * APP AJAX REQUEST SETUP
 * Description: Executes and fetches all ajax requests also
 * updates naivgation elements to active
 */
-$(document).ready(function() {
 if($.navAsAjax)
 {
-	
     // fire this on page load if nav exists
     if ($('nav').length) {
 	    checkURL();
@@ -1148,69 +1152,43 @@ if($.navAsAjax)
 
     $(document).on('click', 'nav a[href!="#"]', function(e) {
 	    e.preventDefault();
-	    $this = $(e.currentTarget);
+	    var $this = $(e.currentTarget);
+
 	    // if parent is not active then get hash, or else page is assumed to be loaded
-	    if (/*!$this.parent().hasClass("active") && */!$this.attr('target')) {
+		if (!$this.parent().hasClass("active") && !$this.attr('target')) {
 
 		    // update window with hash
 		    // you could also do here:  $.device === "mobile" - and save a little more memory
-		
+
 		    if ($.root_.hasClass('mobile-view-activated')) {
 			    $.root_.removeClass('hidden-menu');
 			    window.setTimeout(function() {
-				    window.location.hash = $this.attr('href');
+					if (window.location.search) {
+						window.location.href =
+							window.location.href.replace(window.location.search, '')
+								.replace(window.location.hash, '') + '#' + $this.attr('href');
+					} else {
+						window.location.hash = $this.attr('href')
+					}
 			    }, 150);
 			    // it may not need this delay...
 		    } else {
-			    window.location.hash = '';
-			    window.setTimeout(function() {
-				    window.location.hash = $this.attr('href');
-			    }, 150);
+				if (window.location.search) {
+					window.location.href =
+						window.location.href.replace(window.location.search, '')
+							.replace(window.location.hash, '') + '#' + $this.attr('href');
+				} else {
+					window.location.hash = $this.attr('href');
+				}
 		    }
 	    }
 
     });
 
-    // fire links with targets on menu to open
-    $(document).on('click', 'nav a[target="_menu"]', function(e) {
-        e.preventDefault();
-        $this = $(e.currentTarget);
-        window.setTimeout(function() {
-            
-            if (!$this.hasClass('menu-opened')) {
-                $this.addClass("menu-opened");
-                
-                $.ajax({
-                    type : "GET",
-                    url : $this.attr('href'),
-                    dataType : 'json',
-                    cache : false,
-                    success : function(data) {
-                        var html = '';
-                        for (var i = 0; i < data.length; i++) {
-                            html += '<li><a href="' + data[i].url + '">' + data[i].label + '</a></li>'
-                        }
-                        $this.next().html(html);
-                        return false;
-                    },
-                    error : function(xhr, ajaxOptions, thrownError) {
-                        $this.next().html('<li><a href=""><i class="fa fa-times-circle"></i> Error</a></li>');
-                    },
-                    async : false
-                });
-                
-            } else {
-                $this.removeClass("menu-opened");
-                $this.next().html('<li><a href="">Loading ...</a></li>');
-            }
-            
-        }, 200);
-    });
-
     // fire links with targets on different window
     $(document).on('click', 'nav a[target="_blank"]', function(e) {
 	    e.preventDefault();
-	    $this = $(e.currentTarget);
+	    var $this = $(e.currentTarget);
 
 	    window.open($this.attr('href'));
     });
@@ -1218,7 +1196,7 @@ if($.navAsAjax)
     // fire links with targets on same window
     $(document).on('click', 'nav a[target="_top"]', function(e) {
 	    e.preventDefault();
-	    $this = $(e.currentTarget);
+	    var $this = $(e.currentTarget);
 
 	    window.location = ($this.attr('href'));
     });
@@ -1228,43 +1206,9 @@ if($.navAsAjax)
 	    e.preventDefault();
     });
 
-    // click on links inside content
-    $(document).on('click', '.tabLink', function(e) {
-        e.preventDefault();
-        orchestraAjaxLoad($(e.currentTarget).attr('href'));
-    });
-    
-    // change a select switcher
-    $(document).on('change', '.selectSwitcher', function(e) {
-        e.preventDefault();
-        $this = $(e.currentTarget);
-        
-        if ($this.find("option:selected").attr('data-loadmode') == 'ajax') {
-            orchestraAjaxLoad($this.val());
-        } else {
-            window.location.hash = $this.val();
-        }
-    });
-
-    
     // DO on hash change
     $(window).on('hashchange', function() {
-    	if(window.location.hash != '')
 	    checkURL();
-    });
-}
-});
-
-// Specific orchestra ajax loading
-function orchestraAjaxLoad(url)
-{
-    $('#content').html('<h1><i class="fa fa-cog fa-spin"></i> Loading...</h1>');
-    $.post(url, function(response) {
-        if (response.success) {
-            window.location.hash = response.data;
-        } else {
-            $('#content').html(response.data);
-        }
     });
 }
 
@@ -1272,8 +1216,8 @@ function orchestraAjaxLoad(url)
 function checkURL() {
 
 	//get the url by removing the hash
-	url = location.hash.replace(/^#/, '');
-	//params = extractUrlParams();
+	var url = location.hash.replace(/^#/, '');
+
 	container = $('#content');
 	// Do this if url exists (for page refresh, etc...)
 	if (url) {
@@ -1281,21 +1225,18 @@ function checkURL() {
 		$('nav li.active').removeClass("active");
 		// match the url and add the active class
 		$('nav li:has(a[href="' + url + '"])').addClass("active");
-		title = ($('nav a[href="' + url + '"]').attr('title'))
+		var title = ($('nav a[href="' + url + '"]').attr('title'))
 
 		// change page title from global var
 		document.title = (title || document.title);
 		//console.log("page title: " + document.title);
 
 		// parse url to jquery
-		loadURL(url, container);
+		loadURL(url + location.search, container);
 	} else {
-		var first
+
 		// grab the first URL from nav
-		$this = $('nav > ul > li:first-child > ul > li:first-child > a[href!="#"]');
-		first = $this.attr('href');
-		
-		$this = $('nav > ul > li:first-child > ul > li:first-child > a[href!="#"]');
+		var $this = $('nav > ul > li:first-child > a[href!="#"]');
 
 		//update hash
 		window.location.hash = $this.attr('href');
@@ -1317,23 +1258,17 @@ function loadURL(url, container) {
 		beforeSend : function() {
 			// cog placed
 			container.html('<h1><i class="fa fa-cog fa-spin"></i> Loading...</h1>');
-
+		
 			// Only draw breadcrumb if it is main content material
 			// TODO: see the framerate for the animation in touch devices
 			
 			if (container[0] == $("#content")[0]) {
 				drawBreadCrumb();
-				// update title with breadcrumb...
-				document.title = $(".breadcrumb li:last-child").text();
 				// scroll up
-				$("html, body").animate({
+				$("html").animate({
 					scrollTop : 0
 				}, "fast");
-			} else {
-				container.animate({
-					scrollTop : 0
-				}, "fast");
-			}
+			} 
 		},
 		/*complete: function(){
 	    	// Handle the complete event
@@ -1344,10 +1279,10 @@ function loadURL(url, container) {
 			// alert("success")
 			
 			container.css({
-				opacity : '0.2'
+				opacity : '0.0'
 			}).html(data).delay(50).animate({
 				opacity : '1.0'
-			}, 50);
+			}, 300);
 			
 
 		},
@@ -1362,12 +1297,15 @@ function loadURL(url, container) {
 
 // UPDATE BREADCRUMB
 function drawBreadCrumb() {
-
+	var nav_elems = $('nav li.active > a'), count = nav_elems.length;
+	
 	//console.log("breadcrumb")
-	$("#ribbon ol.breadcrumb").empty();
-	$("#ribbon ol.breadcrumb").append($("<li>Home</li>"));
-	$('nav li.active > a').each(function() {
-		$("#ribbon ol.breadcrumb").append($("<li></li>").html($.trim($(this).clone().children(".badge").remove().end().text())));
+	$.bread_crumb.empty();
+	$.bread_crumb.append($("<li>Home</li>"));
+	nav_elems.each(function() {
+		$.bread_crumb.append($("<li></li>").html($.trim($(this).clone().children(".badge").remove().end().text())));
+		// update title when breadcrumb is finished...
+		if (!--count) document.title = $.bread_crumb.find("li:last-child").text();
 	});
 
 }
@@ -1406,7 +1344,7 @@ function pageSetUp() {
 	
 		// run form elements
 		runAllForms();
-		
+
 	} else {
 		
 		// is mobile
@@ -1433,33 +1371,6 @@ function pageSetUp() {
 		
 	}
 
-}
-
-/////////////////////////
-var buttonDef = new Object();
-function showButtons() {
-	if (buttonDef) {
-		for (button in buttonDef) {
-			if ($('#button_' + button)) {
-					if (buttonDef[button] > '') {
-						$('#button_' + button).css('display','block');
-					} else {
-						$('#button_' + button).css('display','none');
-					}
-			}
-		}
-	}
-}
-
-function extractUrlParams () {
-	var u = location.href.replace('/#').split('?');
-	var t = u[1].split('&');
-	var f = [];
-	for (var i=0; i<t.length; i++) {
-		var x = t[ i ].split('=');
-		f[x[0]]=x[1];
-	}
-	return f;
 }
 
 // Keep only 1 active popover per trigger - also check and hide active popover if user clicks on document

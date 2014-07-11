@@ -27,7 +27,7 @@ class ContentTypeController extends TableViewController
     {
         $this->setEntity('ContentType');
         $this->setMainTitle('Type de contenus');
-      //  $this->setCriteria(array('deleted' => false));
+        //$this->setCriteria(array('deleted' => false));
         $this->callback['selectLanguageName'] = function ($jsonLanguages) {
             $languages = (array) json_decode($jsonLanguages);
             $value = '';
@@ -58,6 +58,42 @@ class ContentTypeController extends TableViewController
     /**
      * (non-PHPdoc)
      * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Controller/PHPOrchestra
+     * \CMSBundle\Controller.TableViewController::getCatalogRecords()
+     */
+    public function getCatalogRecords(Request $request)
+    {
+        $documentManager = $this->container->get('phporchestra_cms.documentmanager');
+        
+        $sort = array();
+        if (is_array($request->get('sort'))) {
+            $sort = $request->get('sort');
+        }
+        $sort = array_map('intval', $sort);
+        
+        $this->setValues(
+            $documentManager->getContentTypesGroupedByContentTypeId(
+                $this->getCriteria(),
+                (int) $request->get('start'),
+                (int) $request->get('length')
+            )
+        );
+        $this->format();
+        
+        return new JsonResponse(
+            array(
+                'success' => true,
+                'data' => array(
+                    'values' => $this->values,
+                    'count' => count($documentManager->getContentTypesGroupedByContentTypeId($this->getCriteria())),
+                    'partialCount' => count($this->values)
+                )
+            )
+        );
+    }
+
+    /**
+     * (non-PHPdoc)
+     * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Controller/PHPOrchestra
      * \CMSBundle\Controller.TableViewController::editEntity()
      */
     public function editEntity(Request $request, $documentId)
@@ -69,10 +105,6 @@ class ContentTypeController extends TableViewController
             $contentType->save();
         } else {
             $contentType = $documentManager->getDocumentById('ContentType', $documentId);
-        }
-        
-        if ($contentType->getStatus() != ContentType::STATUS_DRAFT) {
-            $contentType->generateDraft();
         }
         
         $documentId = (string) $contentType->getId();
@@ -88,12 +120,13 @@ class ContentTypeController extends TableViewController
             }
             
             if ($form->isValid() && $contentType->new_field == '') {
-                $this->deleteOtherStatusVersions(
-                    $contentType->getContentTypeId(),
-                    $contentType->getStatus(),
-                    $documentId
-                );
                 $contentType->save();
+                if ($contentType->getStatus() == contentType::STATUS_PUBLISHED) {
+                    $this->unpublishOtherPublishedVersions(
+                        $contentType->getContentTypeId(),
+                        $contentType->getId()
+                    );
+                }
                 $success = true;
                 $data = $this->generateUrlValue('catalog');
             } else {
@@ -129,6 +162,10 @@ class ContentTypeController extends TableViewController
             )
         );
         
+        $documentManager = $this->container->get('phporchestra_cms.documentmanager');
+        $criteria = array('contentTypeId' => $form->get('contentTypeId')->getData());
+        $versions = $documentManager->getDocuments('ContentType', $criteria, array('version' => -1), true);
+        
         return $this->render(
             'PHPOrchestraCMSBundle:BackOffice/Content:contentTypeForm.html.twig',
             array(
@@ -136,18 +173,18 @@ class ContentTypeController extends TableViewController
                 'ribbon' => $this->saveButton($documentId) . $this->backButton() . $select->getContent(),
                 'mainTitle' => $this->getMainTitle(),
                 'tableTitle' => $this->getTableTitle(),
+                'contentTypeVersions' => $versions
             )
         );
     }
 
     /**
-     * Keep only one version of the status $status for the document $documentId
+     * Keep only one published version of the document $documentId
      * 
      * @param string $contentTypeId
-     * @param string $status
      * @param string $documentId
      */
-    protected function deleteOtherStatusVersions($contentTypeId, $status, $documentId)
+    protected function unpublishOtherPublishedVersions($contentTypeId, $documentId)
     {
         $documentManager = $this->container->get('phporchestra_cms.documentmanager');
         
@@ -155,7 +192,7 @@ class ContentTypeController extends TableViewController
             'ContentType',
             array(
                 'contentTypeId' => $contentTypeId,
-                'status' => $status
+                'status' => contentType::STATUS_PUBLISHED
             )
         );
         
@@ -204,7 +241,7 @@ class ContentTypeController extends TableViewController
         
         foreach ($contentTypes as $contentType) {
             $languages = (array) json_decode($contentType['name']);
-            $name = 'Unknown name in ' . $language;
+            $name = '[' . $contentType['_id'] . ']';
             if (isset($languages[$language])) {
                 $name = $languages[$language];
             }
@@ -222,5 +259,52 @@ class ContentTypeController extends TableViewController
         }
         
         return new JsonResponse($contentTypesArray);
+    }
+
+    /**
+     * Find the contentType matching criterias, if none is found create a new one
+     * Then return the edit form url
+     * 
+     * @param Request $request
+     * @param string $mongoId
+     */
+    public function findForEditAction(Request $request, $mongoId)
+    {
+        $documentManager = $this->get('phporchestra_cms.documentmanager');
+        
+        $criteria = array(
+            'contentTypeId' => $request->get('contentTypeId'),
+            'version' => $request->get('version')
+        );
+        
+        $contentType = $documentManager->getDocument('ContentType', $criteria);
+        
+        return new JsonResponse(
+            array(
+                'success' => true,
+                'data' => $this->generateUrlValue('edit', (string) $contentType->getId())
+            )
+        );
+    }
+
+    /** 
+     * Create a news version of contentType $mongoId
+     * 
+     * @param Request $request
+     * @param string $id
+     */
+    public function duplicateAction(Request $request, $mongoId)
+    {
+        $documentManager = $this->get('phporchestra_cms.documentmanager');
+        
+        $contentType = $documentManager->getDocumentById('ContentType', $mongoId);
+        $contentType->generateDraft();
+        
+        return new JsonResponse(
+            array(
+                'success' => true,
+                'data' => $this->generateUrlValue('edit', (string) $contentType->getId())
+            )
+        );
     }
 }

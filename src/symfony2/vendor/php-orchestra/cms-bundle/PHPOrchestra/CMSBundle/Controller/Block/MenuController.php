@@ -62,6 +62,7 @@ class MenuController extends Controller
         $mandango = $this->get('mandango');
         $repository = $mandango->getRepository('Model\PHPOrchestraCMSBundle\Node');
         $tree = $repository->getMenuTree();
+        $tree = $repository->getTreeUrl($tree, $this->container);
         
         return $this->render(
             'PHPOrchestraCMSBundle:Block/Menu:showBack.html.twig',

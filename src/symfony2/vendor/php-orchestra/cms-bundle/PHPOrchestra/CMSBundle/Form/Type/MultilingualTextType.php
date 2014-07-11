@@ -40,23 +40,17 @@ class MultilingualTextType extends AbstractType
         $builder->addModelTransformer($transformer);
         
         if (isset($options['data'])) {
-            $contributedLanguages = json_decode($options['data']);
+            $contributedLanguages = (array) json_decode($options['data']);
             
-            if (is_array($contributedLanguages)) {
-                foreach ($contributedLanguages as $language => $name) {
-                    if (isset($this->languages[$language])) {
-                        $this->languages[$language] = $name;
-                    }
+            foreach ($contributedLanguages as $language => $name) {
+                if (isset($this->languages[$language])) {
+                    $this->languages[$language] = $name;
                 }
             }
         }
         
         foreach ($this->languages as $language => $name) {
-            $builder->add(
-                'language_' . $language,
-                'text',
-                array('label' => 'Label du type de contenu (' . $language . ')')
-            );
+            $builder->add('language_' . $language, 'text');
         }
     }
 

@@ -36,7 +36,7 @@ class ContentTypeType extends AbstractType
                 )
             )
             ->add('name', 'multilingualText')
-            ->add('version', 'text', array('read_only' => true))
+            ->add('version', 'hidden', array('read_only' => true))
             ->add(
                 'status',
                 'choice',

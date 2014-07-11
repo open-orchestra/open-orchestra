@@ -53,7 +53,7 @@ class NodeChoiceTypeTest extends \PHPUnit_Framework_TestCase
         $this->nodeChoiceType = new NodeChoiceType($documentManager);
     }
     
-    public function testSetDefaultOptions()
+    /*public function testSetDefaultOptions()
     {
         $choices = array('' => '--------');
         foreach ($this->nodes as $node) {
@@ -69,7 +69,7 @@ class NodeChoiceTypeTest extends \PHPUnit_Framework_TestCase
             ->with($this->equalTo(array('choices' => $choices)));
         
         $this->nodeChoiceType->setDefaultOptions($resolverMock);
-    }
+    }*/
     
     public function testGetParent()
     {

@@ -93,7 +93,7 @@ class ContentController extends TableViewController
      * @see src/symfony2/vendor/php-orchestra/cms-bundle/PHPOrchestra/CMSBundle/Controller/PHPOrchestra
      * \CMSBundle\Controller.TableViewController::getRender()
      */
-    protected function getRender($id, $form)
+    protected function getRender($mongoId, $form)
     {
         $availableLanguages = $this->container->getParameter('php_orchestra.languages.availables');
         
@@ -111,7 +111,7 @@ class ContentController extends TableViewController
                 'form' => $form->createView(),
                 'mainTitle' => $this->getMainTitle(),
                 'tableTitle' => $this->getTableTitle(),
-                'ribbon' => $this->saveButton($id) . $this->backButton(),
+                'ribbon' => $this->saveButton($mongoId) . $this->backButton(),
                 'availableLanguages' => $availableLanguages,
                 'contentVersions' => $versions
             )
@@ -176,7 +176,7 @@ class ContentController extends TableViewController
         }
         
         // Testing if solr is running and index a content
-   /*     $indexSolr = $this->container->get('phporchestra_cms.indexsolr');
+        /*$indexSolr = $this->container->get('phporchestra_cms.indexsolr');
         if ($indexSolr->solrIsRunning()) {
             $indexSolr->slpitDoc($document, 'Content');
         }*/
@@ -205,7 +205,7 @@ class ContentController extends TableViewController
         }
         
         // Testing if solr is running and delete a content from the index
-   /*     $indexSolr = $this->get('phporchestra_cms.indexsolr');
+        /*$indexSolr = $this->get('phporchestra_cms.indexsolr');
         if ($indexSolr->solrIsRunning()) {
             $indexSolr->deleteIndex($documentId);
         }*/
@@ -220,9 +220,9 @@ class ContentController extends TableViewController
      * Then return the edit form url
      * 
      * @param Request $request
-     * @param string $id
+     * @param string $mongoId
      */
-    public function findForEditAction(Request $request, $id)
+    public function findForEditAction(Request $request, $mongoId)
     {
         $contentTypeId = $request->get('contentTypeId');
         $contentId = $request->get('contentId');
@@ -260,16 +260,16 @@ class ContentController extends TableViewController
     }
     
     /**
-     * Create a news version of content $id
+     * Create a news version of content $mongoId
      * 
      * @param Request $request
-     * @param string $id
+     * @param string $mongoId
      */
-    public function duplicateAction(Request $request, $id)
+    public function duplicateAction(Request $request, $mongoId)
     {
         $documentManager = $this->get('phporchestra_cms.documentmanager');
         
-        $content = $documentManager->getDocumentById('Content', $id);
+        $content = $documentManager->getDocumentById('Content', $mongoId);
         $content->generateDraft();
         
         return new JsonResponse(

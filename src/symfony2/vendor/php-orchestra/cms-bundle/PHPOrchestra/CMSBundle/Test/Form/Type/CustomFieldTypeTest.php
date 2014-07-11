@@ -17,6 +17,10 @@
 
 namespace PHPOrchestra\CMSBundle\Test\Form\Type;
 
+use Symfony\Component\Validator\Constraints\Email;
+
+use Symfony\Component\Validator\Constraints\Type;
+
 use PHPOrchestra\CMSBundle\Form\Type\CustomFieldType;
 
 /**
@@ -68,6 +72,24 @@ class CustomFieldTypeTypeTest extends \PHPUnit_Framework_TestCase
         $this->customField->buildForm($this->formBuilderMock, $options);
     }
 
+    public function getOptions()
+    {
+        $dataWithNoOptions = (object) array(
+            'type' => 'orchestra_text',
+            'symfonyType' => 'text'
+        );
+        $dataWithOptions = (object) array(
+            'type' => 'orchestra_text',
+            'symfonyType' => 'text',
+            'options' => (object) array('required' => false)
+        );
+        
+        return array(
+            array(array('data' =>  $dataWithNoOptions), 7),
+            array(array('data' =>  $dataWithOptions), 7)
+        );
+    }
+
     /**
      * @dataProvider getExceptionsData
      * 
@@ -80,30 +102,20 @@ class CustomFieldTypeTypeTest extends \PHPUnit_Framework_TestCase
         $this->customField->buildForm($this->formBuilderMock, $options);
     }
 
-    public function testGetName()
-    {
-        $this->assertEquals('orchestra_customField', $this->customField->getName());
-    }
-
-    public function getOptions()
-    {
-        $dataWithNoOptions = (object) array('type' => 'orchestra_text');
-        $dataWithOptions = (object) array(
-            'type' => 'orchestra_text',
-            'options' => (object) array('required' => false)
-        );
-        
-        return array(
-            array(array('data' =>  $dataWithNoOptions), 7),
-            array(array('data' =>  $dataWithOptions), 7)
-        );
-    }
-
     public function getExceptionsData()
     {
-        $unknownFieldType = (object) array('type' => 'orchestra_hidden');
-        $missConfiguration = (object) array('type' => 'orchestra_missconf');
-        $fieldtypeNoDesc = (object) array('type' => 'orchestra_notdescribed');
+        $unknownFieldType = (object) array(
+            'type' => 'orchestra_hidden',
+            'symfonyType' => 'hidden'
+        );
+        $missConfiguration = (object) array(
+            'type' => 'orchestra_missconf',
+            'symfonyType' => 'missconf'
+        );
+        $fieldtypeNoDesc = (object) array(
+            'type' => 'orchestra_notdescribed',
+            'symfonyType' => 'notdescribed'
+        );
         
         return array(
             array(array()), // No data
@@ -111,5 +123,30 @@ class CustomFieldTypeTypeTest extends \PHPUnit_Framework_TestCase
             array(array('data' =>  $missConfiguration)), // Missconfiguration
             array(array('data' =>  $fieldtypeNoDesc)), // Field type not described
         );
+    }
+    
+    /**
+     * @dataProvider getConstraintsData
+     * 
+     * @param string  $fieldType
+     * @param array  $expectedContraints
+     */
+    public function testGetConstraints($fieldType, $expectedConstraints)
+    {
+        $this->assertEquals($this->customField->getConstraints($fieldType), $expectedConstraints);
+    }
+    
+    public function getConstraintsData()
+    {
+        return array(
+            array('unkonwnFieldType', array()),
+            array('integer', array(new Type(array('type' => 'numeric')))),
+            array('email', array(new Email()))
+        );
+    }
+    
+    public function testGetName()
+    {
+        $this->assertEquals('orchestra_customField', $this->customField->getName());
     }
 }

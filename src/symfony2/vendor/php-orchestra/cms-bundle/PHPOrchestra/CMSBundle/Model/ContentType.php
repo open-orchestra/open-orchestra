@@ -59,10 +59,13 @@ abstract class ContentType extends \Model\PHPOrchestraCMSBundle\Base\ContentType
      */
     public function generateDraft()
     {
-        $this->setVersion(1 + $this->getVersion());
+        $this->setContentTypeId($this->getContentTypeId());
+        $this->setName($this->getName());
+        $this->setVersion(\time());
         $this->setStatus(self::STATUS_DRAFT);
         $this->setDeleted(false);
-        $this->setId(null);
+        $this->setFields($this->getfields());
+        
         $this->setIsNew(true);
         $this->save();
     }

@@ -6,6 +6,14 @@
                 <source>Symfony2 is great</source>
                 <target>J'aime Symfony2</target>
             </trans-unit>
+            <trans-unit id="searchResult_NoResultFound">
+                <source>No results found</source>
+                <target>Aucun résultat trouvé</target>
+            </trans-unit>
+            <trans-unit id="searchResult_resultNotFound">
+                <source>Sorry no results for</source>
+                <target>Aucun résultat trouvé pour</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
