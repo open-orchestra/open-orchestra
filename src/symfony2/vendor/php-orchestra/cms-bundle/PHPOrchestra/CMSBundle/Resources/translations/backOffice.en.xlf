@@ -89,6 +89,49 @@
                     </trans-unit>
                 </group>
                 
+                <group id="tableView">
+                    <trans-unit id="tableView.deleteDialog.title">
+                        <source>tableView.deleteDialog.title</source>
+                        <target>Delete the document</target>
+                    </trans-unit>
+                    <trans-unit id="tableView.deleteDialog.message">
+                        <source>tableView.deleteDialog.message</source>
+                        <target>You are about to delete the document. Would you like to continue?</target>
+                    </trans-unit>
+                    <trans-unit id="tableView.filterLabel">
+                        <source>filter%label%</source>
+                        <target>Filter label</target>
+                    </trans-unit>
+                    <trans-unit id="tableView.edition">
+                        <source>tableView.edition</source>
+                        <target>Edition</target>
+                    </trans-unit>
+                    <trans-unit id="tableView.list">
+                        <source>tableView.list</source>
+                        <target>List</target>
+                    </trans-unit>
+                    <trans-unit id="tableView.modify">
+                        <source>tableView.modify</source>
+                        <target>Modify</target>
+                    </trans-unit>
+                    <trans-unit id="tableView.delete">
+                        <source>tableView.delete</source>
+                        <target>Delete</target>
+                    </trans-unit>
+                    <trans-unit id="tableView.add">
+                        <source>tableView.add</source>
+                        <target>Add</target>
+                    </trans-unit>
+                    <trans-unit id="tableView.save">
+                        <source>tableView.save</source>
+                        <target>Save</target>
+                    </trans-unit>
+                    <trans-unit id="tableView.back">
+                        <source>tableView.back</source>
+                        <target>Back</target>
+                    </trans-unit>
+                </group>
+                
             </group>
             
         </body>

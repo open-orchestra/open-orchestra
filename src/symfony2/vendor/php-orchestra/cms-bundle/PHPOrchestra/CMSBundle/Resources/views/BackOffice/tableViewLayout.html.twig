@@ -23,7 +23,7 @@
             {% if column.search is defined %}
                 {% if column.search == 'text' %}
                     <label class="input">
-                        <input type="text" name="{{ column.name }}" placeholder="Filter {{ column.label }}" class="search_init">
+                        <input type="text" name="{{ column.name }}" placeholder="{{ 'filter%label%'|trans({'label':column.label}, 'backOffice') }}" class="search_init">
                     </label>
                 {% endif %}
             {% endif %}
