@@ -3,6 +3,13 @@
     <file source-language="en" datatype="plaintext" original="file.ext">
         <body>
             
+            <group id="general">
+                <trans-unit id="loading">
+                    <source>loading</source>
+                    <target>Chargement ...</target>
+                </trans-unit>
+            </group>
+            
             <group id="topMenu">
                 <trans-unit id="site">
                     <source>site</source>
@@ -28,6 +35,60 @@
                     <source>%language%_flag</source>
                     <target>drapeau language</target>
                 </trans-unit>
+            </group>
+            
+            <group id="leftMenu">
+                
+                <group id="editorial">
+                    <trans-unit id="edito.editorial">
+                        <source>edito.editorial</source>
+                        <target>Editorial</target>
+                    </trans-unit>
+                    <trans-unit id="edito.nodes">
+                        <source>edito.nodes</source>
+                        <target>Pages</target>
+                    </trans-unit>
+                    <trans-unit id="edito.templates">
+                        <source>edito.templates</source>
+                        <target>Gabarits</target>
+                    </trans-unit>
+                    <trans-unit id="edito.contents">
+                        <source>edito.contents</source>
+                        <target>Contenus</target>
+                    </trans-unit>
+                </group>
+                
+                <group id="administration">
+                    <trans-unit id="admin.administration">
+                        <source>admin.administration</source>
+                        <target>Administration</target>
+                    </trans-unit>
+                    <trans-unit id="admin.sites">
+                        <source>admin.sites</source>
+                        <target>Sites</target>
+                    </trans-unit>
+                    <trans-unit id="admin.contentTypes">
+                        <source>admin.contentTypes</source>
+                        <target>Types de contenus</target>
+                    </trans-unit>
+                    <trans-unit id="admin.routingCache">
+                        <source>admin.routingCache</source>
+                        <target>Cache de routage</target>
+                    </trans-unit>
+                    <trans-unit id="admin.routingCache.dialog.title">
+                        <source>admin.routingCache.dialog.title</source>
+                        <target>Cache de routage</target>
+                    </trans-unit>
+                    <trans-unit id="admin.routingCache.dialog.message">
+                        <source>admin.routingCache.dialog.message</source>
+                        <target>Vous êtes sur le point de supprimer le cache de routage. Souhaitez-vous continuer ?</target>
+                    </trans-unit>
+                    <trans-unit id="admin.routingCache.ok">
+                        <source>admin.routingCache.ok</source>
+                        <target>Le cache de routage a été purgé avec succès.</target>
+                    </trans-unit>
+                </group>
+                
             </group>
             
         </body>

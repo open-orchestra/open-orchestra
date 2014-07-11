@@ -65,7 +65,7 @@ class TreeController extends Controller
         
         $nodes = TreeHelper::createTree($nodes, '_id', 'parentId');
 
-        return $this->getRender($nodes, 'Pages');
+        return $this->getRender($nodes, $this->get('translator')->trans('edito.nodes', array(), 'backOffice'));
     }
     /**
      * List all templates
@@ -111,7 +111,7 @@ class TreeController extends Controller
 
         $templates = TreeHelper::createTree($templates);
         
-        return $this->getRender($templates, 'Gabarits');
+        return $this->getRender($templates, $this->get('translator')->trans('edito.templates', array(), 'backOffice'));
     }
     
     /**
