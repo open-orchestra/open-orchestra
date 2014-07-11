@@ -1,93 +1,27 @@
+{#{ (form._token.value) }#}
 {% import "PHPOrchestraCMSBundle:Tree:tree-macros.html.twig" as macros %}
 <script src="{{ asset('bundles/phporchestracms/js/pagegenerator/tree.js') }}"></script>
 <li><a href="">{{ name }}</a>
+{% set name = name|e('url')|replace({'%': '-'}) %}
 {{ macros.menu_links(links, name) }}
 </li>
+
 <script>
-$(".connectedSortable").sortable({
-    connectWith: ".connectedSortable",
-    placeholder: "sortable-placeholder active",
-    toleranceElement: 'div',
+$(".{{ name }}-connectedSortable").sortable({
+    connectWith: ".{{ name }}-connectedSortable",
+    placeholder: "{{ name }}-sortable-placeholder active",
+    toleranceElement: '> div',
     appendTo: "body",
-    helper: 'clone',
-    start:function( event, ui ){
-    $('.sortable-placeholde').html('test');
-    }
+    helper: 'clone'
 });
-$('.connectedSortable').bind('sortstart', function(event, ui) {
-    $('.sortable-placeholder').html('<a href="">' + ui.helper.find('a').html() + '</a>');
+
+$('.{{ name }}-connectedSortable').bind('sortstart', function(event, ui) {
+    $('.{{ name }}-sortable-placeholder').html('<a href="">' + ui.helper.find('a').html() + '</a>');
     ui.helper.css('display', 'none');
 });
+
+$('.{{ name }}-connectedSortable i').click(function(e){
+    var parameter = $(this).data();
+    treeAjaxCall(parameter.url, parameter.value);
+});
 </script>
-
-
-{#
-
-<div id="tree-{{ name }}-container">
-    <div id="tree-{{ name }}">
-        <h4>{{ name }}</h4>
-        {{ macros.menu_links(links, name) }}
-    </div>
-    <script src="{{ asset('bundles/phporchestracms/js/pagegenerator/tree.js') }}"></script>
-    <script><!--
-        $(function()
-        {
-            $( "#tree-{{ name }}" ).fancytree($.extend(
-                tree_parameter,
-                {
-                    'dnd': {
-                        preventVoidMoves: true,
-                        preventRecursiveMoves: true,
-                        autoExpandMS: 400,
-                        dragStart: function(node, data) {
-                            return true;
-                        },
-                        dragEnter: function(node, data) {
-                            if (node.tree.$div != data.otherNode.tree.$div) {
-                                return false;
-                            }
-                            return true;
-                        },
-                        dragDrop: function(node, data) {
-                            if (confirmDragNDrop()) {
-                                var nodeId = data.otherNode.key.replace('tree-{{ name }}-', '');
-                                var targetNodeId = node.key.replace('tree-{{ name }}-', '');
-                                var url = '{{ path('php_orchestra_cms_bo_jscontextmenudispatcher') }}/moveNode';
-                                data.otherNode.moveTo(node, data.hitMode);
-                                treeAjaxCall(url, {'nodeId': nodeId, 'newParentId': targetNodeId});
-                            }
-                        }
-                    },
-                    'activate': function(event, data) {
-                        var url = '{{ path(path) }}/' + data.node.key.replace('tree-{{ name }}-', '');
-                        treeAjaxCall(url, {});
-                    }
-                }
-            ));
-            
-            var menuOptions = [];
-            if ('{{ mode }}' == 'nodes') {
-                menuOptions = treeNodesMenuOptions;
-            } else if ('{{ mode }}' == 'templates') {
-                menuOptions = treeTemplatesMenuOptions;
-            }
-            
-            $("#tree-{{ name }}").contextmenu({
-                'delegate': 'span.fancytree-title',
-                'menu': menuOptions,
-                'beforeOpen': function(event, ui) {
-                    var node = $.ui.fancytree.getNode(ui.target);
-                },
-                'select': function(event, ui) {
-                    if ((treePreviousJs[ui.cmd] == undefined) || treePreviousJs[ui.cmd]()) {
-                        var node = $.ui.fancytree.getNode(ui.target).key.replace('tree-{{ name }}-', '');
-                        var url = '{{ path('php_orchestra_cms_bo_jscontextmenudispatcher') }}/' + ui.cmd;
-                        treeAjaxCall(url, {'nodeId': node});
-                    }
-                }
-            });
-        });
-        
-    --></script>
-</div>
-#}

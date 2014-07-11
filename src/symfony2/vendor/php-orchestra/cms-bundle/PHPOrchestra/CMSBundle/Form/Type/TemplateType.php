@@ -46,6 +46,7 @@ class TemplateType extends AbstractType
         $builder
             ->add('templateId', 'hidden')
             ->add('siteId', 'hidden')
+            ->add('deleted', 'hidden')
             ->add('version', 'hidden')
             ->add('name', 'text', array('attr' => array('class' => 'used-as-label')))
             ->add('language', 'orchestra_language')

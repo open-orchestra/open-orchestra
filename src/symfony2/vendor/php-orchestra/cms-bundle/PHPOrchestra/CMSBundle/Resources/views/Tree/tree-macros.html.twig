@@ -1,12 +1,25 @@
 {% macro menu_links(links, name) %}
-    <ul class="connectedSortable">
+    {% set create = '' %}
+    <ul class="{{ name }}-connectedSortable">
     {% for link in links %}
-        <li id="{{ link.id._id }}" class="{{ link.id.class }}">
+        {% set id = name ~ '-' ~ link.id._id %}
+        {% set id = id|e('url')|replace({'%': '-'}) %}
+        <li class="{{ link.id.class }}">
             <div>
-                <a href="{{ link.id.url }}">{{ link.id.name }}</a>
-                    {% if 'sublinks' in link|keys %}
-                        {{ _self.menu_links(link.sublinks, name) }}
+                <a href="{{ link.id.url }}">
+                    {% if link.id.action is defined %}
+                    <i class="{{ link.id.action.css }}" id="{{ id }}">
+                        {{ link.id.action.text }}
+                        <script>
+                            $('#{{ id }}').data( {{ link.id.action.js|json_encode|raw }});
+                        </script>
+                    </i>
                     {% endif %}
+                    {{ link.id.name }}
+                </a>
+                {% if 'sublinks' in link|keys %}
+                    {{ _self.menu_links(link.sublinks, name) }}
+                {% endif %}
             </div>
         </li>
     {% endfor %}

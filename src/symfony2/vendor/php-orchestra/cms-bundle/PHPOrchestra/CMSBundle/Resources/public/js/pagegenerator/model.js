@@ -119,7 +119,7 @@ function formIdToName(prefix, data){
 	{
 		return this.each(function(){
 			var settings = $(this).data('settings');
-			$("#" + $(this).data('type') + "_areas").val(JSON.stringify(settings.areas));
+			$("#" + $(this).data('type') + "_areas").val(JSON.stringify({'areas' : settings.areas}));
 		});
 	}
 	$.fn.addAction = function(actions)

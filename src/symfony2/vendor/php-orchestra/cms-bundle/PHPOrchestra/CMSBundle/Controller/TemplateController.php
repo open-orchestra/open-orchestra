@@ -21,12 +21,14 @@ class TemplateController extends Controller
      * 
      * Render the templates form
      * @param int $templateId
-     * @param Request $request
+     * @param string parentId
      * 
      */
-    public function formAction($templateId, Request $request)
+    public function formAction($templateId = 0)
     {
-        $documentManager = $this->container->get('phporchestra_cms.documentmanager');
+    	
+        $request = $this->get('request');
+    	$documentManager = $this->container->get('phporchestra_cms.documentmanager');
         
         if (empty($templateId)) {
             $template = $documentManager->createDocument('Template');
@@ -40,46 +42,51 @@ class TemplateController extends Controller
             $template->setVersion($template->getVersion() + 1);
         }
         
-        $form = $this->createForm(
-            'template',
-            $template,
-            array(
-                'inDialog' => true,
-                'beginJs' => array('pagegenerator/dialogNode.js', 'pagegenerator/model.js'),
-                'endJs' => array('pagegenerator/template.js?'.time()),
-                'action' => $this->getRequest()->getUri()
-            )
-        );
-        if ($request->getMethod() == 'POST') {
-            $form->handleRequest($request);
-            if ($form->isValid()) {
+        $doSave = ($request->getMethod() == 'POST');
+        if($request->request->get('ajax')){
+            $template->fromArray($request->request->all());
+            $doSave = true;
+        }
+        else{
+            $form = $this->createForm(
+                'template',
+                $template,
+                array(
+                    'inDialog' => true,
+                    'beginJs' => array('pagegenerator/dialogNode.js', 'pagegenerator/model.js'),
+                    'endJs' => array('pagegenerator/template.js?'.time()),
+                    'action' => $this->getRequest()->getUri()
+                )
+            );
+            if($doSave){
+                $form->handleRequest($request);
+                $doSave = $form->isValid();
+            }
+        }
+        if ($doSave) {
+            if(!$template->getDeleted()){
                 $template->setId(null);
                 $template->setIsNew(true);
                 $template->save();
-                return new JsonResponse(
-                    array(
-                        'success' => true,
-                        'data' => $this->render(
-                            'PHPOrchestraCMSBundle:BackOffice/Editorial:simpleMessage.html.twig',
-                            array('message' => 'Edition ok')
-                        )->getContent(),
-                        'nav' => $template->getName()
-                    )
-                );
             }
             else{
-                return new JsonResponse(
-                    array(
-                        'success' => false,
-                        'data' => $this->render(
-                            'PHPOrchestraCMSBundle:BackOffice/Editorial:simpleMessage.html.twig',
-                            array('message' => 'Edition ko')
-                        )->getContent()
-                    )
-                );
+                $this->deleteTree($template->getNodeId());
             }
+            $response = $this->render(
+                'PHPOrchestraCMSBundle:BackOffice/Dialogs:confirmation.html.twig',
+                array(
+                    'dialogId' => '',
+                    'dialogTitle' => 'Modification du template',
+                    'dialogMessage' => 'Modification ok',
+                )
+            );
+            return new JsonResponse(
+                array(
+                    'dialog' => $response->getContent(),
+                )
+            );
         }
-        
+                
         return $this->render(
             'PHPOrchestraCMSBundle:BackOffice/Editorial:template.html.twig',
             array(
@@ -95,7 +102,7 @@ class TemplateController extends Controller
      * 
      * @param Request $request
      */
-    public function deleteAction($templateId)
+    public function deleteTree($templateId)
     {
         $documentManager = $this->get('phporchestra_cms.documentmanager');
         $templateVersions = $documentManager->getDocuments('Template', array('templateId' => $templateId));

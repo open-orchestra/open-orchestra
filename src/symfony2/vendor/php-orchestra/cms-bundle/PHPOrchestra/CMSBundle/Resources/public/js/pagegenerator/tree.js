@@ -1,65 +1,57 @@
-tree_parameter = {
-    //extensions: ['persist', 'dnd'],
-    /*persist: {
-        expandLazy: true
-    },*/
-    autoActivate: false,
-    autoScroll: true,
-    clickFolderMode: 1,
-    keyboard: false,
-    selectMode: 1
-};
-
-var treeNodesMenuOptions = [
-                            {'title': 'Créer une sous-page', 'cmd': 'createNode'},
-                            {'title': 'Supprimer', 'cmd': 'deleteNode'}/*,
-                            {'title': '----'},*/
-                           ];
-
-var treeTemplatesMenuOptions = [
-                                {'title': 'Créer un template', 'cmd': 'createTemplate'},
-                                {'title': 'Supprimer', 'cmd': 'deleteTemplate'}
-                               ];
-
-var treePreviousJs = {
-        'deleteNode': function(){return confirmTreeDelete();},
-        'deleteTemplate': function(){return confirmTemplateDelete();}
+var treeAjaxCallDialog = {
+    resizable: false,
+    width:530,
+    modal: true,
+    close: function ( event, ui) {
+        $(this).dialog("destroy");
+    }
 };
 
 function treeAjaxCall(url, params)
 {
 	var newDiv = $(document.createElement('div')); 
 	newDiv.html('<h1><i class="fa fa-cog fa-spin"></i> Loading...</h1>');
-	newDiv.dialog({ title: "Mise à jour" });
+	newDiv.dialog($.extend({'title' : 'Mise à jour'}, treeAjaxCallDialog));
 	
     $.ajax({
         'type': 'POST',
         'url': url,
         'data': params,
         'success': function(response) {
-    		newDiv.html(response.data);
-    		if(response.nav){
-    			$('nav a[href="' + window.location.hash.substr(1) + '"]').html(response.nav);
+    		newDiv.dialog("close");
+    		
+    		if(typeof response == 'string'){
+    			$('#content').html(response);
     		}
-    	    window.setTimeout(function() {
-    	    	newDiv.dialog("close");
-    	    }, 2000);
-
+    		else{
+	    		newDiv = $(response.dialog);
+	    		if('url' in response){
+	    			newDiv.dialog($.extend({	
+	    				'buttons' : [
+	    		               {
+	    		                   "click" : function(){
+	    		                       treeAjaxCall(response.url, response.value);
+	    		                       $(this).dialog("close");
+	    		                   },
+	    		                   "text" : "Confimer",
+	    		                   "class" : "btn btn-danger"
+	    		               },
+	    		               {
+	    		                   "click" : function(){
+	    		                       $(this).dialog("destroy");
+	    		                   },
+	    		                   "text" : "Annuler",
+	    		                   "class" : "btn btn-default"
+	    		               }]}, treeAjaxCallDialog));
+	    		}
+	    		else{
+	    			newDiv.dialog(treeAjaxCallDialog);
+	                window.setTimeout(function() {
+	                    newDiv.dialog("close");
+	                }, 2000);
+	    		}
+    		}
         }
     });
 }
 
-function confirmTreeDelete()
-{
-    return confirm("Vous êtes sur le point de supprimer une page ainsi que toute la sous-arborescence associée.\n\nSi vous souhaitez tout supprimer, cliquez sur \"Ok\", sinon cliquez sur \"Annuler\" et déplacez d'abord la sous-arborescence.")
-}
-
-function confirmTemplateDelete()
-{
-    return confirm("Etes-vous certain de vouloir supprimer ce template ?")
-}
-
-function confirmDragNDrop()
-{
-    return confirm("Etes-vous certain de vouloir déplacer la sous-arcborescence ici ?")
-}

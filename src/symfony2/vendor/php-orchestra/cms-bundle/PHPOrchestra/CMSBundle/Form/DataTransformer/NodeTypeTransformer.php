@@ -155,14 +155,15 @@ class NodeTypeTransformer implements DataTransformerInterface
      */
     public function transform($node)
     {
-        $areas = $node->getAreas();
-        $blocks = $node->getBlocks()->getSaved();
-        if (isset($areas)) {
-            $areas = array(self::PHP_AREA_TAG => $node->getAreas());
-            $areas = $this->recTransform($areas, $blocks);
-        }
-        $node->setAreas(json_encode($areas));
-
+    	if(isset($node)){
+	        $areas = $node->getAreas();
+	        $blocks = $node->getBlocks()->getSaved();
+	        if (isset($areas)) {
+	            $areas = array(self::PHP_AREA_TAG => $node->getAreas());
+	            $areas = $this->recTransform($areas, $blocks);
+	        }
+	        $node->setAreas(json_encode($areas));
+    	}
         return $node;
     }
 
@@ -174,15 +175,15 @@ class NodeTypeTransformer implements DataTransformerInterface
      */
     public function reverseTransform($node)
     {
-        $areas = json_decode($node->getAreas(), true);
-        $node->removeBlocks($node->getBlocks()->getSaved());
-        
-        if (is_array($areas)) {
-        	$areas = array(self::JSON_AREA_TAG => $areas);
-            $areas = $this->reverseRecTransform($areas, $node);
-            $node->setAreas($areas[self::PHP_AREA_TAG]);
-        }
-        
+    	if(isset($node)){
+    		$areas = json_decode($node->getAreas(), true);
+	        $node->removeBlocks($node->getBlocks()->getSaved());
+	        if (is_array($areas)) {
+	        	$areas = array(self::JSON_AREA_TAG => $areas);
+	            $areas = $this->reverseRecTransform($areas, $node);
+	            $node->setAreas($areas[self::PHP_AREA_TAG]);
+	        }
+    	}
         return $node;
     }    
 }

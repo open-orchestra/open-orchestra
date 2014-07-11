@@ -10,6 +10,7 @@ namespace PHPOrchestra\CMSBundle\Controller\BackOfficeView;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use PHPOrchestra\CMSBundle\Exception\UnrecognizedCommandTypeException;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class BackOfficeController extends Controller
 {
@@ -37,19 +38,76 @@ class BackOfficeController extends Controller
      */
     public function jsContextMenuDispatchAction($cmd, Request $request)
     {
-        $action = '';
-        $params = array();
-        
+
         switch ($cmd)
+        {
+            case 'createNode':
+            	$request->setMethod('GET');
+            	return $this->forward('PHPOrchestraCMSBundle:Node:form', array());
+            	break;
+	        case 'confirmDeleteNode':
+	            $response = $this->render(
+	                'PHPOrchestraCMSBundle:BackOffice/Dialogs:confirmation.html.twig',
+	                array(
+	                    'dialogId' => '',
+	                    'dialogTitle' => 'Suppression du node',
+	                    'dialogMessage' => 'Vous êtes sur le point de supprimer le node ""<br /><br />Souhaitez-vous continuer ?',
+	                )
+	            );
+	            return new JsonResponse(
+	                array(
+	                    'dialog' => $response->getContent(),
+	                    'url' => $this->generateUrl('php_orchestra_cms_bo_jscontextmenudispatcher', array('cmd' => 'deleteNode')),
+	                    'value' => array('nodeId' => $request->request->get('nodeId')),
+	                )
+	            );
+	            break;
+            case 'deleteNode':
+            	$request->request->add(array('ajax' => true));
+            	$request->request->add(array('deleted' => true));
+                return $this->forward('PHPOrchestraCMSBundle:Node:form', array('nodeId' => $request->request->get('nodeId')));
+            case 'createTemplate':
+                $request->setMethod('GET');
+                return $this->forward('PHPOrchestraCMSBundle:Template:form', array());
+                break;
+            case 'confirmDeleteTemplate':
+                $response = $this->render(
+                    'PHPOrchestraCMSBundle:BackOffice/Dialogs:confirmation.html.twig',
+                    array(
+                        'dialogId' => '',
+                        'dialogTitle' => 'Suppression du Template',
+                        'dialogMessage' => 'Vous êtes sur le point de supprimer le template ""<br /><br />Souhaitez-vous continuer ?',
+                    )
+                );
+                return new JsonResponse(
+                    array(
+                        'dialog' => $response->getContent(),
+                        'url' => $this->generateUrl('php_orchestra_cms_bo_jscontextmenudispatcher', array('cmd' => 'deleteTemplate')),
+                        'value' => array('templateId' => $request->request->get('templateId')),
+                    )
+                );
+                break;
+            case 'deleteTemplate':
+                $request->request->add(array('ajax' => true));
+                $request->request->add(array('deleted' => true));
+                return $this->forward('PHPOrchestraCMSBundle:Template:form', array('templateId' => $request->request->get('templateId')));
+            default:
+                throw new UnrecognizedCommandTypeException('Unrecognized command type : ' . $cmd);
+        }
+/*        switch ($cmd)
         {
             // Nodes cmd
             case 'createNode': // Create a subpage
                 $action = 'PHPOrchestraCMSBundle:Node:form';
+                
+                
+                
                 $params['nodeId'] = 0;
                 $request->request->add(array('parentId' => $request->request->get('nodeId')));
                 $request->request->remove('nodeId');
                 break;
             case 'unpublishNode': // Unpublish a page
+            	$params['save'] = true;
                 $action = 'PHPOrchestraCMSBundle:Node:unpublish';
                 break;
             case 'deleteNode': // Delete a page
@@ -65,18 +123,16 @@ class BackOfficeController extends Controller
             case 'createTemplate': // Create a template
                 $action = 'PHPOrchestraCMSBundle:Template:form';
                 $params['templateId'] = 0;
-                $request->request->remove('nodeId');
                 break;
             case 'deleteTemplate': // Delete a template
                 $action = 'PHPOrchestraCMSBundle:Template:delete';
-                $params['templateId'] = $request->request->get('nodeId');
-                $request->request->remove('nodeId');
+                $params['templateId'] = $request->request->get('templateId');
                 break;
             // Unrecognized cmd
             default:
                 throw new UnrecognizedCommandTypeException('Unrecognized command type : ' . $cmd);
-        }
+        }*/
         
-        return $this->forward($action, $params);
+        //return $this->forward($action, $params);
     }
 }

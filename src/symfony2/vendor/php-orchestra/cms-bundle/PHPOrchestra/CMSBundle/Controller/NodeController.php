@@ -9,6 +9,7 @@ namespace PHPOrchestra\CMSBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use PHPOrchestra\CMSBundle\Model\Area;
+use PHPOrchestra\CMSBundle\Model\Node;
 use PHPOrchestra\CMSBundle\Exception\NonExistingDocumentException;
 use Symfony\Component\HttpFoundation\Request;
 use PHPOrchestra\CMSBundle\Form\Type\NodeType;
@@ -175,11 +176,13 @@ class NodeController extends Controller
      /**
      * Test purpose : render a basic Node form
      * 
-     * @param Request $request
+     * @param int nodeId
+     * @param string parentId
      * @return Response
      */
-    public function formAction($nodeId, Request $request)
+    public function formAction($nodeId = 0)
     {
+    	$request = $this->get('request');
         $documentManager = $this->container->get('phporchestra_cms.documentmanager');
         
         if (empty($nodeId)) {
@@ -193,58 +196,55 @@ class NodeController extends Controller
             );
             $node->setVersion($node->getVersion() + 1);
         }
-        
-        $parentId = $request->request->get('parentId');
-        if (isset($parentId)) {
-            $node->setParentId($parentId);
+        $doSave = ($request->getMethod() == 'POST');
+        if($request->request->get('ajax')){
+        	$node->fromArray($request->request->all());
+        	$doSave = true;
         }
-        
-        $form = $this->createForm(
-            'node',
-            $node,
-            array(
-                'inDialog' => true,
-                'beginJs' => array('pagegenerator/dialogNode.js', 'pagegenerator/model.js'),
-                'endJs' => array('pagegenerator/node.js?'.time()),
-                'action' => $this->getRequest()->getUri()
-            )
-        );
-        
-        if ($request->getMethod() == 'POST') {
-            $form->handleRequest($request);
-            if ($form->isValid()) {
+        else{
+	        $form = $this->createForm(
+	            'node',
+	            $node,
+	            array(
+	                'inDialog' => true,
+	                'beginJs' => array('pagegenerator/dialogNode.js', 'pagegenerator/model.js'),
+	                'endJs' => array('pagegenerator/node.js?'.time()),
+	                'action' => $this->getRequest()->getUri()
+	            )
+	        );
+	        if($doSave){
+	        	$form->handleRequest($request);
+	        	$doSave = $form->isValid();
+	        }
+        }
+        if ($doSave) {
+            if(!$node->getDeleted()){
                 $node->setId(null);
                 $node->setIsNew(true);
                 $node->save();
-
                 // Testing if solr is running and index a node
                 $indexSolr = $this->get('phporchestra_cms.indexsolr');
                 if ($indexSolr->solrIsRunning()) {
                     $indexSolr->get('phporchestra_cms.indexsolr')->slpitDoc($node, 'Node');
                 }
-                
-            	return new JsonResponse(
-                    array(
-                        'success' => true,
-                        'data' => $this->render(
-                            'PHPOrchestraCMSBundle:BackOffice/Editorial:simpleMessage.html.twig',
-                            array('message' => 'Edition ok')
-                        )->getContent(),
-                        'nav' => $node->getName()
-                    )
-                );
             }
             else{
-                return new JsonResponse(
-                    array(
-                        'success' => false,
-                        'data' => $this->render(
-                            'PHPOrchestraCMSBundle:BackOffice/Editorial:simpleMessage.html.twig',
-                            array('message' => 'Edition ko')
-                        )->getContent()
-                    )
-                );
+            	$this->deleteTree($node->getNodeId());
             }
+            
+            $response = $this->render(
+                'PHPOrchestraCMSBundle:BackOffice/Dialogs:confirmation.html.twig',
+                array(
+                    'dialogId' => '',
+                    'dialogTitle' => 'Modification du node',
+                    'dialogMessage' => 'Modification ok',
+                )
+            );
+            return new JsonResponse(
+                array(
+                    'dialog' => $response->getContent(),
+                )
+            );
         }
                 
         return $this->render(
@@ -257,43 +257,6 @@ class NodeController extends Controller
         );
     }
 
-    
-    /**
-     * Unpublish last version of a content
-     * 
-     * @param $request
-     */
-    public function unpublishAction(Request $request)
-    {
-        return $this->render(
-            'PHPOrchestraCMSBundle:BackOffice/Editorial:simpleMessage.html.twig',
-            array(
-                'message' => 'Unpublish node process'
-            )
-        );
-    }
-    
-    /**
-     * Delete all versions of a node and related subtrees
-     * 
-     * @param string $nodeId
-     */
-    public function deleteAction($nodeId)
-    {
-        $this->deleteTree($nodeId);
-        
-        // Testing if solr is running and delete a node from the index
-        $indexSolr = $this->get('phporchestra_cms.indexsolr');
-        if ($indexSolr->solrIsRunning()) {
-            $indexSolr->deleteIndex($nodeId);
-        }
-        
-        return $this->render(
-            'PHPOrchestraCMSBundle:BackOffice/Editorial:simpleMessage.html.twig',
-            array('message' => 'Delete node process on ' . $nodeId)
-        );
-    }
-    
     /**
      * Recursivly delete a tree
      * 
@@ -301,7 +264,13 @@ class NodeController extends Controller
      */
     protected function deleteTree($nodeId)
     {
-        $documentManager = $this->get('phporchestra_cms.documentmanager');
+        // Testing if solr is running and delete a node from the index
+        $indexSolr = $this->get('phporchestra_cms.indexsolr');
+        if ($indexSolr->solrIsRunning()) {
+            $indexSolr->deleteIndex($nodeId);
+        }
+    	
+    	$documentManager = $this->get('phporchestra_cms.documentmanager');
         
         $nodeVersions = $documentManager->getDocuments('Node', array('nodeId' => $nodeId));
         
@@ -314,50 +283,7 @@ class NodeController extends Controller
         foreach ($sons as $son) {
             $this->deleteTree($son['_id']);
         }
-        
         return true;
     }
     
-    /**
-     * Move a subtree from a node to another
-     *
-     * @param string $nodeId
-     * @param string $newParentId
-     */
-    public function moveAction($nodeId, $newParentId)
-    {
-        $message = '';
-        
-        $documentManager = $this->get('phporchestra_cms.documentmanager');
-        
-        $node = $documentManager->getDocument(
-            'Node',
-            array('nodeId' => $nodeId)
-        );
-        
-        $parent = $documentManager->getDocument(
-            'Node',
-            array('nodeId' => $newParentId)
-        );
-        
-        if (isset($parent) && isset($node)) {
-            $node->setParentId($parent->getNodeId());
-            $node->save();
-
-            // Testing if solr is running and index a node
-            $indexSolr = $this->get('phporchestra_cms.indexsolr');
-            if ($indexSolr->solrIsRunning()) {
-                $indexSolr->get('phporchestra_cms.indexsolr')->slpitDoc($node, 'Node');
-            }
-
-            $message = 'Node "' . $node->getName() . '" moved under node "' . $parent->getName() . '"';
-        } else {
-            $message = 'Error while moving node, process aborted';
-        }
-        
-        return $this->render(
-            'PHPOrchestraCMSBundle:BackOffice/Editorial:simpleMessage.html.twig',
-            array('message' => $message)
-        );
-    }
 }

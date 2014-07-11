@@ -25,16 +25,17 @@ class TreeHelper
                 $connection[$value[$l_id]] = $value[$l_pid];
             }
             $links = array();
-            
+
             $superRoot = '';
             foreach ($connection as $key => $value) {
                 $id = $key;
                 $pid = $value;
-                if (!array_key_exists($pid, $values)) {
+                if (!array_key_exists($pid, $connection)) {
                     $superRoot = $pid;
                 }
                 $links[$pid][] = array('id' => $id);
             }
+            
             $links = TreeHelper::createRecTree($links, $links[$superRoot]);
             
             $connection = array();
