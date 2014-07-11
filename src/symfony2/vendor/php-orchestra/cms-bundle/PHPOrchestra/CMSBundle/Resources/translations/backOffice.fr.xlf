@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            
+            <group id="topMenu">
+                <trans-unit id="site">
+                    <source>site</source>
+                    <target>Site :</target>
+                </trans-unit>
+                <trans-unit id="collapse_menu">
+                    <source>collapse_menu</source>
+                    <target>Replier le menu</target>
+                </trans-unit>
+                <trans-unit id="sign_out">
+                    <source>sign_out</source>
+                    <target>Se déconnecter</target>
+                </trans-unit>
+                <trans-unit id="improve_security_closing_browser">
+                    <source>improve_security_closing_browser</source>
+                    <target>Vous pouvez améliorer votre sécurité après la déconnexion en fermant votre navigateur</target>
+                </trans-unit>
+                <trans-unit id="fullscreen">
+                    <source>fullscreen</source>
+                    <target>Plein écran</target>
+                </trans-unit>
+                <trans-unit id="language_flag">
+                    <source>%language%_flag</source>
+                    <target>drapeau language</target>
+                </trans-unit>
+            </group>
+            
+        </body>
+    </file>
+</xliff>

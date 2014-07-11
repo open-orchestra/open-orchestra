@@ -27,6 +27,13 @@ services:
         class: PHPOrchestra\CMSBundle\Context\ContextManager
         arguments: [@session]
 
+    # Locale listener
+    phporchestra_cms.locale_listener:
+        class: PHPOrchestra\CMSBundle\EventListener\LocaleListener
+        arguments: ["%kernel.default_locale%"]
+        tags:
+            - { name: kernel.event_subscriber }
+
 #--[CONTROLLER SERVICES]----------#
 
     # Render Block Controller

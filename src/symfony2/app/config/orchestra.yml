@@ -4,6 +4,10 @@ parameters:
         - fr
         - de
         - es
+    kernel.default_locale : en
+        
+framework:
+    translator: { fallback: "%kernel.default_locale%" }
 
 twig:
     form:
