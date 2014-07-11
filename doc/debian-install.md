@@ -151,7 +151,7 @@ You can see **conf/apache2/php-orchestra** for a vhost sample
 
 To install Solr download solr-4.8.0 in http://archive.apache.org/dist/lucene/solr/4.8.0/.
 
-Then extract folder to the package and replace the file in github phporchestra/conf/solr by solr-4.8.0/example/solr/collection1/conf
+Then extract folder to the package and replace the files in solr-4.8.0/example/solr/collection1/conf by the files in github phporchestra/conf/solr 
 
 To run solr use java -jar start.jar in sor-4.8.0/example
 
