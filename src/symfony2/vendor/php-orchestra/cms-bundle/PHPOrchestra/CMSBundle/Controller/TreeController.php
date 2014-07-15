@@ -34,7 +34,7 @@ class TreeController extends Controller
                 'text' => '',
                 'js' => array(
 	                'url' => $this->generateUrl('php_orchestra_cms_bo_jscontextmenudispatcher', array('cmd' => 'confirmDeleteNode')),
-	                'value' => array('nodeId' => $node['_id'])
+	                'value' => array('nodeId' => $node['_id'], 'name' => $node['name'])
 	            )
             );
             if(!in_array($node['_id'], $listParentId)){
@@ -42,14 +42,12 @@ class TreeController extends Controller
             }
         }
         
-        $count = 0;
         foreach($listParentId as $parentId){
-        	$nodeId = $parentId.'-'.$count;
             array_push($nodes, array(
-                '_id' => $nodeId,
+                '_id' => uniqid('node-'),
                 'parentId' => $parentId,
                 'name' => '',
-                'url' => '',
+                'url' => '#',
                 'class' => '',
                 'action' => array(
                     'css' => 'fa fa-file',
@@ -60,12 +58,11 @@ class TreeController extends Controller
                     )
                 )
             ));
-            $count++;
         }
         
         $nodes = TreeHelper::createTree($nodes, '_id', 'parentId');
 
-        return $this->getRender($nodes, 'Pages');
+        return $this->getRender($nodes, 'Gestion des Pages');
     }
     /**
      * List all templates
@@ -87,17 +84,15 @@ class TreeController extends Controller
                 'text' => '',
                 'js' => array(
                     'url' => $this->generateUrl('php_orchestra_cms_bo_jscontextmenudispatcher', array('cmd' => 'confirmDeleteTemplate')),
-                    'value' => array('templateId' => $template['_id'])
+                    'value' => array('templateId' => $template['_id'], 'name' => $template['name'])
                 )
             );
         }
         
-        $templateId = time();
-
         array_push($templates, array(
-            '_id' => $templateId,
+            '_id' => uniqid('template-'),
             'name' => '',
-            'url' => '',
+            'url' => '#',
             'class' => '',
             'action' => array(
                 'css' => 'fa fa-file',
@@ -111,7 +106,7 @@ class TreeController extends Controller
 
         $templates = TreeHelper::createTree($templates);
         
-        return $this->getRender($templates, 'Gabarits');
+        return $this->getRender($templates, 'Gestion des Gabarits');
     }
     
     /**

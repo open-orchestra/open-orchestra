@@ -51,7 +51,7 @@ class BackOfficeController extends Controller
 	                array(
 	                    'dialogId' => '',
 	                    'dialogTitle' => 'Suppression du node',
-	                    'dialogMessage' => 'Vous êtes sur le point de supprimer le node ""<br /><br />Souhaitez-vous continuer ?',
+	                    'dialogMessage' => 'Vous êtes sur le point de supprimer le node "'.$request->request->get('name').'"<br /><br />Souhaitez-vous continuer ?',
 	                )
 	            );
 	            return new JsonResponse(
@@ -76,7 +76,7 @@ class BackOfficeController extends Controller
                     array(
                         'dialogId' => '',
                         'dialogTitle' => 'Suppression du Template',
-                        'dialogMessage' => 'Vous êtes sur le point de supprimer le template ""<br /><br />Souhaitez-vous continuer ?',
+                        'dialogMessage' => 'Vous êtes sur le point de supprimer le template "'.$request->request->get('name').'"<br /><br />Souhaitez-vous continuer ?',
                     )
                 );
                 return new JsonResponse(

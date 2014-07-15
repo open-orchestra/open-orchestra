@@ -80,7 +80,7 @@ class NodeTypeTransformer implements DataTransformerInterface
                     else{
                         $block['method'] = self::BLOCK_LOAD;
                     }
-                    $request = new Request($block);
+                    $request = new Request(array(), $block);
                     $form = $this->container->get('form.factory')->create(new BlockType($this->container->get('phporchestra_cms.documentmanager')), array_merge($block, array('is_node' => $this->isNode)));
                     $block['ui-model'] = $this->getInformationsFromType($form);
                     $blockController = $this->container->get('phporchestra_cms.blockcontroller');

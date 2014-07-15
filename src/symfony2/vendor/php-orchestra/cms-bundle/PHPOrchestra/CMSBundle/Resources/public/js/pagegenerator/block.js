@@ -10,7 +10,7 @@ $('body').on('change', '.refresh', function(){
 		}
 		params = params.concat({'name': 'refresh', 'value': true});
 	    $.ajax({
-	        'type': 'GET',
+	        'type': 'POST',
 	        'url': target.attr('action'),
 	        'success': function(response){
 	    		$(response.data).each(function(){

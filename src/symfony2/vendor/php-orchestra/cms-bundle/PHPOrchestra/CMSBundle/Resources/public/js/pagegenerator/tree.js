@@ -33,7 +33,7 @@ function treeAjaxCall(url, params)
 	    		                       treeAjaxCall(response.url, response.value);
 	    		                       $(this).dialog("close");
 	    		                   },
-	    		                   "text" : "Confimer",
+	    		                   "text" : "Confirmer",
 	    		                   "class" : "btn btn-danger"
 	    		               },
 	    		               {

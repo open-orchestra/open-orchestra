@@ -25,7 +25,7 @@ class BlockController extends Controller
     {
         $component = '';
         $attributs = array();
-        $attributs = $request->query->all();
+        $attributs = $request->request->all();
         $allowed=array_filter(
             array_keys($attributs),
             function ($key) {
@@ -42,7 +42,7 @@ class BlockController extends Controller
             ),
             array_values($attributs)
         );
-        $component = $request->query->get('component');
+        $component = $request->request->get('component');
         return array($component, $attributs);
     }
     /**
@@ -56,8 +56,8 @@ class BlockController extends Controller
         $component = '';
         $attributs = array();
         $block = $this->get('phporchestra_cms.documentmanager')->getBlockInNode(
-            $request->query->get('nodeId'),
-            $request->query->get('blockId')
+            $request->request->get('nodeId'),
+            $request->request->get('blockId')
         );
         if ($block) {
             $component = $block['component'];
@@ -76,10 +76,10 @@ class BlockController extends Controller
     {
         $component = '';
         $attributs = array();
-        if ($request->query->get('component') !== null) {
+        if ($request->request->get('component') !== null) {
             list($component, $attributs) = $this->getGenerateInformations($request);
-        } elseif ($request->query->get('nodeId') !== null && $request->query->get('blockId') !== null) {
-            list($component, $attributs) = $this->getLoadInformations($request);
+        } elseif ($request->request->get('nodeId') !== null && $request->request->get('blockId') !== null) {
+        	list($component, $attributs) = $this->getLoadInformations($request);
         }
         if ($component !== '') {
             $response  = $this->forward('PHPOrchestraCMSBundle:Block/'.$component.':showBack', $attributs);
@@ -105,9 +105,9 @@ class BlockController extends Controller
     	if(count($children) > 0){
 	        foreach($children as $child){
 	            $view = $child->createView();
-                if($request->query->get($view->vars['id'])){
+                if($request->request->get($view->vars['id'])){
     	            if(!array_key_exists($view->vars['name'], $refresh)){
-	                    $refresh[$view->vars['name']] = $request->query->get($view->vars['id']);
+	                    $refresh[$view->vars['name']] = $request->request->get($view->vars['id']);
 	                    $restart = true;
 	                }
                 }
@@ -134,8 +134,8 @@ class BlockController extends Controller
     public function getRefresh($request, $type)
     {
         $refresh = array('is_node' => ($type == 'node'));
-        if(is_array($request->query->get('blocks'))){
-            $refresh = array_merge($refresh, $request->query->get('blocks'));
+        if(is_array($request->request->get('blocks'))){
+            $refresh = array_merge($refresh, $request->request->get('blocks'));
         }
         else{
             $form = $this->createForm('blocks', $refresh);
@@ -178,9 +178,9 @@ class BlockController extends Controller
     {
         $request = $this->get('request');
         
-        if ($request->getMethod() == 'GET' && $request->query->get('preview') !== null) {
+        if ($request->request->get('preview') !== null) {
             return $this->getPreview($request);
-        } elseif ($request->getMethod() == 'GET' && $request->query->get('refresh') !== null) {
+        } elseif ($request->request->get('refresh') !== null) {
             return $this->getRefresh($request, $type);
         } else {
             $refresh = array('is_node' => ($type == 'node'));
