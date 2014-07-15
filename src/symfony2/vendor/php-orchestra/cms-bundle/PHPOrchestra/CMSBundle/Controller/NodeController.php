@@ -223,10 +223,10 @@ class NodeController extends Controller
                 $node->setIsNew(true);
                 $node->save();
                 // Testing if solr is running and index a node
-                $indexSolr = $this->get('phporchestra_cms.indexsolr');
+                /*$indexSolr = $this->get('phporchestra_cms.indexsolr');
                 if ($indexSolr->solrIsRunning()) {
                     $indexSolr->get('phporchestra_cms.indexsolr')->slpitDoc($node, 'Node');
-                }
+                }*/
             }
             else{
             	$this->deleteTree($node->getNodeId());
@@ -265,10 +265,10 @@ class NodeController extends Controller
     protected function deleteTree($nodeId)
     {
         // Testing if solr is running and delete a node from the index
-        $indexSolr = $this->get('phporchestra_cms.indexsolr');
+        /*$indexSolr = $this->get('phporchestra_cms.indexsolr');
         if ($indexSolr->solrIsRunning()) {
             $indexSolr->deleteIndex($nodeId);
-        }
+        }*/
     	
     	$documentManager = $this->get('phporchestra_cms.documentmanager');
         

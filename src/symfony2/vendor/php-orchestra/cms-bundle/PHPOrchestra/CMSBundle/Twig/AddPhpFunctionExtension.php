@@ -27,6 +27,7 @@ class AddPhpFunctionExtension extends \Twig_Extension
         return array(
             'file_exists' => new \Twig_Function_Method($this, 'file_exists'),
             'twig_exists' => new \Twig_Function_Method($this, 'twig_exists'),
+            'e_crc32' => new \Twig_Function_Method($this, 'e_crc32'),
         );
     }
 
@@ -37,6 +38,10 @@ class AddPhpFunctionExtension extends \Twig_Extension
     public function twig_exists($file)
     {
         return $this->container->get('templating')->exists($file);
+    }
+    public function e_crc32($value)
+    {
+        return crc32($value);
     }
     /**
      * Returns the name of the extension.

@@ -33,7 +33,13 @@ class BlockChoiceType extends AbstractType
             $blocks = $node->getBlocks();
             $intRank = 0;
             foreach ($blocks as $block) {
-                $this->choices[$intRank] = $block->getComponent();
+            	$attributs = $block->getAttributes();
+            	$result = array();
+            	array_walk_recursive($attributs, function($val, $key) use (&$result) {$result[] = $val;});
+            	$result = implode(', ', $result);
+            	$result = (strlen($result) > 50) ? substr($result, 0, 47).'...' : $result;
+            	$result = ' ['.$result.']';
+                $this->choices[$intRank] = $block->getComponent().$result;
                 $intRank++;
             }
         } elseif ($siteId !== 0) {

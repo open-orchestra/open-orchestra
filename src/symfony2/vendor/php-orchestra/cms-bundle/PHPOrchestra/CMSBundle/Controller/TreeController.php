@@ -25,23 +25,19 @@ class TreeController extends Controller
         $nodes = $this->get('phporchestra_cms.documentmanager')->getNodesInLastVersion();
         
         $listParentId = array();
-        
         foreach ($nodes as &$node) {
             $node['url'] = $this->generateUrl('php_orchestra_cms_nodeform', array('nodeId' => $node['_id']));
             $node['class'] = ($node['deleted'] == true) ? 'deleted' : '';
             $node['action'] = array(
                 'css' => 'fa fa-trash-o',
                 'text' => '',
-                'js' => array(
-	                'url' => $this->generateUrl('php_orchestra_cms_bo_jscontextmenudispatcher', array('cmd' => 'confirmDeleteNode')),
-	                'value' => array('nodeId' => $node['_id'], 'name' => $node['name'])
-	            )
+                'url' => $this->generateUrl('php_orchestra_cms_bo_jscontextmenudispatcher', array('cmd' => 'confirmDeleteNode')),
             );
+            $node['parameter'] = array('nodeId' => $node['_id'], 'name' => $node['name']);
             if(!in_array($node['_id'], $listParentId)){
             	$listParentId[] = $node['_id'];
             }
         }
-        
         foreach($listParentId as $parentId){
             array_push($nodes, array(
                 '_id' => uniqid('node-'),
@@ -52,17 +48,15 @@ class TreeController extends Controller
                 'action' => array(
                     'css' => 'fa fa-file',
                     'text' => 'Nouvelle page',
-                    'js' => array(
-                        'url' => $this->generateUrl('php_orchestra_cms_bo_jscontextmenudispatcher', array('cmd' => 'createNode')),
-                        'value' => array('parentId' => $parentId)
-                    )
-                )
+                    'url' => $this->generateUrl('php_orchestra_cms_bo_jscontextmenudispatcher', array('cmd' => 'createNode')),
+                ),
+                'parameter' => array('parentId' => $parentId)
             ));
         }
         
         $nodes = TreeHelper::createTree($nodes, '_id', 'parentId');
 
-        return $this->getRender($nodes, $this->get('translator')->trans('edito.nodes', array(), 'backOffice'));
+        return $this->getRender($nodes, $this->generateUrl('php_orchestra_cms_bo_jscontextmenudispatcher', array('cmd' => 'moveNode')), $this->get('translator')->trans('edito.nodes', array(), 'backOffice'));
     }
     /**
      * List all templates
@@ -82,11 +76,9 @@ class TreeController extends Controller
             $template['action'] = array(
                 'css' => 'fa fa-trash-o',
                 'text' => '',
-                'js' => array(
-                    'url' => $this->generateUrl('php_orchestra_cms_bo_jscontextmenudispatcher', array('cmd' => 'confirmDeleteTemplate')),
-                    'value' => array('templateId' => $template['_id'], 'name' => $template['name'])
-                )
+                'url' => $this->generateUrl('php_orchestra_cms_bo_jscontextmenudispatcher', array('cmd' => 'confirmDeleteTemplate')),
             );
+            $template['parameter'] = array('templateId' => $template['_id'], 'name' => $template['name']);
         }
         
         array_push($templates, array(
@@ -97,27 +89,26 @@ class TreeController extends Controller
             'action' => array(
                 'css' => 'fa fa-file',
                 'text' => 'Nouveau gabarit',
-                'js' => array(
-                    'url' => $this->generateUrl('php_orchestra_cms_bo_jscontextmenudispatcher', array('cmd' => 'createTemplate')),
-                    'value' => array()
-                )
-            )
+                'url' => $this->generateUrl('php_orchestra_cms_bo_jscontextmenudispatcher', array('cmd' => 'createTemplate')),
+            ),
+            'parameter' => array()
         ));
 
         $templates = TreeHelper::createTree($templates);
-        return $this->getRender($templates, $this->get('translator')->trans('edito.templates', array(), 'backOffice'));
+        return $this->getRender($templates, '', $this->get('translator')->trans('edito.templates', array(), 'backOffice'));
     }
     
     /**
      * Render tree
      * 
      */
-    public function getRender($links, $name)
+    public function getRender($links, $moveUrl, $name)
     {
         return $this->render(
             'PHPOrchestraCMSBundle:Tree:tree.html.twig',
             array(
                 'name' => $name,
+                'moveUrl' => $moveUrl,
                 'links' => $links
             )
         );

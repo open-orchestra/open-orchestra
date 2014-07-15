@@ -35,7 +35,6 @@ function formIdToName(prefix, data){
 				}
 	        }
 	        $(this).find(":input")
-	        	.not('button')
 	        	.not('.not-mapped')
 	        	.not('#' + prefix + '_token')
 	        	.each(function(){

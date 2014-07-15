@@ -73,7 +73,7 @@ class NodeType extends AbstractType
                 )
             )
             ->add('theme', 'orchestra_theme_choice')
-            ->add('save', 'submit');
+            ->add('save', 'submit', array('attr' => array('class' => 'not-mapped')));
     }
     
     /**

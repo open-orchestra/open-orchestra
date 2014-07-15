@@ -66,6 +66,14 @@ class BackOfficeController extends Controller
             	$request->request->add(array('ajax' => true));
             	$request->request->add(array('deleted' => true));
                 return $this->forward('PHPOrchestraCMSBundle:Node:form', array('nodeId' => $request->request->get('nodeId')));
+                break;
+            case 'moveNode':
+                $request->request->add(array('ajax' => true));
+                $node = $request->request->get('node');
+                $parentNode = $request->request->get('parentNode');
+                $request->request->add(array('parentId' => $parentNode['nodeId']));
+                return $this->forward('PHPOrchestraCMSBundle:Node:form', array('nodeId' => $node['nodeId']));
+                break;
             case 'createTemplate':
                 $request->setMethod('GET');
                 return $this->forward('PHPOrchestraCMSBundle:Template:form', array());
@@ -91,6 +99,7 @@ class BackOfficeController extends Controller
                 $request->request->add(array('ajax' => true));
                 $request->request->add(array('deleted' => true));
                 return $this->forward('PHPOrchestraCMSBundle:Template:form', array('templateId' => $request->request->get('templateId')));
+                break;
             default:
                 throw new UnrecognizedCommandTypeException('Unrecognized command type : ' . $cmd);
         }

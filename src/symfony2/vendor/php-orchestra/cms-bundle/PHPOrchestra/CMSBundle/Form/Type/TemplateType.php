@@ -69,7 +69,7 @@ class TemplateType extends AbstractType
                     'parameter' => array('type' => 'template')
                 )
             )
-            ->add('save', 'submit');
+            ->add('save', 'submit', array('attr' => array('class' => 'not-mapped')));
     }
         
     /**

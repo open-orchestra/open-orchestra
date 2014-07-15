@@ -258,4 +258,20 @@ span.btn.btn-ribbon {
     list-style-type:none;
     color:#880000;
 }
+
+nav ul ul ul li a {
+    padding: 8px 10px 8px 40px  !important;
+}
+nav ul ul ul ul li a {
+    padding-left: 55px !important;
+}
+nav ul ul ul ul ul li a {
+    padding-left: 70px !important;
+}
+nav ul ul ul ul ul ul li a {
+    padding-left: 100px !important;
+}
+nav > ul ul li a i {
+	white-space:nowrap;
+}
 /* end patch smart css */

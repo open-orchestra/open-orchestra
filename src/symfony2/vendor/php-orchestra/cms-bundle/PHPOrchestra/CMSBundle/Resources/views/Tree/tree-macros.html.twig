@@ -2,16 +2,15 @@
     {% set create = '' %}
     <ul class="{{ name }}-connectedSortable">
     {% for link in links %}
-        {% set id = name ~ '-' ~ link.id._id %}
-        {% set id = id|e('url')|replace({'%': '-'}) %}
-        <li class="{{ link.id.class }}">
+        {% set id = name ~ '-' ~ e_crc32(link.id._id) %}
+        <li class="{{ link.id.class }}" id="{{ id }}">
             <div>
                 <a href="{{ link.id.url }}">
                     {% if link.id.action is defined %}
-                    <i class="{{ link.id.action.css }}" id="{{ id }}">
+                    <i class="{{ link.id.action.css }}">
                         {{ link.id.action.text }}
                         <script>
-                            $('#{{ id }}').data( {{ link.id.action.js|json_encode|raw }});
+                            $('#{{ id }} i').eq(0).data({{ {'url':link.id.action.url}|json_encode|raw }});
                         </script>
                     </i>
                     {% endif %}
@@ -20,6 +19,9 @@
                 {% if 'sublinks' in link|keys %}
                     {{ _self.menu_links(link.sublinks, name) }}
                 {% endif %}
+                <script>
+                    $('#{{ id }}').data({{ {'tree-parameter':link.id.parameter}|json_encode|raw }});
+                </script>
             </div>
         </li>
     {% endfor %}
