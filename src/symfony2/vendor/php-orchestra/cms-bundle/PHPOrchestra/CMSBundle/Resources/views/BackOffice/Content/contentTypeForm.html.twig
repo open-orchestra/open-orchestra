@@ -4,78 +4,71 @@
  # @author Noël GILAIN <noel.gilain@businessdecision.com>
  ##}
 
-{% form_theme form 'PHPOrchestraCMSBundle:Form:extend.html.twig' %}
+{% extends 'PHPOrchestraCMSBundle:BackOffice:contentLayout.html.twig' %}
 
-{% set vars = {
-    'mainTitle' : mainTitle,
-    'tableTitle' : tableTitle
-   }
-%}
+{% block beforeSmartDiv %}
+    <ul class="nav nav-tabs" id="languages">
+    {% if contentTypeVersions|length > 0 %}
+        <li class="pull-right active">
+            <div>
+                <select class="selectSwitcher">
+                    <option value="{{ path(
+                        'phporchestra_cms_backofficeview_contenttype_index',
+                        {
+                            'action' : 'duplicate',
+                            'id' : form.vars.value.id.__toString()
+                        }
+                    ) }}" data-loadmode="ajax">Créer une nouvelle version</option>
+                {% for version in contentTypeVersions %}
+                    <option value="{{ path(
+                        'phporchestra_cms_backofficeview_contenttype_index',
+                        {
+                            'action' : 'edit',
+                            'id' : version.id.__toString()
+                        }
+                    ) }}" {% if version.version == form.vars.value.version %}selected="selected"{% endif %}
+                    >Version {{ version.version }} ({{ version.status }})</option>
+                {% endfor %}
+                </select>
+            </div>
+        </li>
+    {% endif %}
+    </ul>
+{% endblock %}
 
-{% include 'PHPOrchestraCMSBundle:BackOffice:contentTitle.html.twig' with vars %}
+{% block mainContent %}
+    {{ form_start(
+        form,
+        {
+            'attr': {'class': 'smart-form'},
+            'method': 'POST',
+            'action': path('phporchestra_cms_backofficeview_contenttype_index', {'action' : 'edit', 'id': form.id.vars.value})
+        }
+    ) }}
+    
+    {{ form_errors(form) }}
+    
+    <fieldset>
+        <legend>Définition du type de contenu</legend>
+        {{ form_row(form.new_field) }}
+        {{ form_row(form.contentTypeId) }}
+        {{ form_row(form.status) }}
+        {{ form_widget(form.name) }}
+        {{ form_row(form.version) }}
+    </fieldset>
+    {{ form_widget(form.fields) }}
+    
+    {{ form_end(form) }}
+{% endblock %}
 
-<ul class="nav nav-tabs" id="languages">
-{% if contentTypeVersions|length > 0 %}
-    <li class="pull-right active">
-        <div>
-            <select class="selectSwitcher">
-                <option value="{{ path(
-                    'phporchestra_cms_backofficeview_contenttype_index',
-                    {
-                        'action' : 'duplicate',
-                        'id' : form.vars.value.id.__toString()
-                    }
-                ) }}" data-loadmode="ajax">Créer une nouvelle version</option>
-            {% for version in contentTypeVersions %}
-                <option value="{{ path(
-                    'phporchestra_cms_backofficeview_contenttype_index',
-                    {
-                        'action' : 'edit',
-                        'id' : version.id.__toString()
-                    }
-                ) }}" {% if version.version == form.vars.value.version %}selected="selected"{% endif %}
-                >Version {{ version.version }} ({{ version.status }})</option>
-            {% endfor %}
-            </select>
-        </div>
-    </li>
-{% endif %}
-</ul>
-
-{% include 'PHPOrchestraCMSBundle:BackOffice:beginSmartDiv.html.twig' with vars %}
-
-{{ form_start(
-    form,
-    {
-        'attr': {'class': 'smart-form'},
-        'method': 'POST',
-        'action': path('phporchestra_cms_backofficeview_contenttype_index', {'action' : 'edit', 'id': form.id.vars.value})
-    }
-) }}
-
-{{ form_errors(form) }}
-
-<fieldset>
-    <legend>Définition du type de contenu</legend>
-    {{ form_row(form.new_field) }}
-    {{ form_row(form.contentTypeId) }}
-    {{ form_row(form.status) }}
-    {{ form_widget(form.name) }}
-    {{ form_row(form.version) }}
-</fieldset>
-{{ form_widget(form.fields) }}
-
-{{ form_end(form) }}
-
-{% include 'PHPOrchestraCMSBundle:BackOffice:endSmartDiv.html.twig' %}
-
-<div class="ribbon">
-    {{ ribbon|raw }}
-</div>
-
-
-<script type="text/javascript">
-    $('#newFieldSelector').change(function() {
-        $('#contentType_new_field').val($(this).val());
-    });
-</script>
+{% block afterSmartDiv %}
+    <div class="ribbon">
+        {{ ribbon|raw }}
+    </div>
+    
+    <script type="text/javascript">
+        $('#newFieldSelector').change(function() {
+            $('#contentType_new_field').val($(this).val());
+        });
+    </script>
+{% endblock %}

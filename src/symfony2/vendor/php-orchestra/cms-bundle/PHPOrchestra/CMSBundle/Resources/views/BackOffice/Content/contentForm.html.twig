@@ -3,71 +3,66 @@
  #
  # @author Noël GILAIN <noel.gilain@businessdecision.com>
  ##}
-{% form_theme form 'PHPOrchestraCMSBundle:Form:extend.html.twig' %}
 
-{% set vars = {
-    'mainTitle' : mainTitle,
-    'tableTitle' : tableTitle
-   }
-%}
+{% extends 'PHPOrchestraCMSBundle:BackOffice:contentLayout.html.twig' %}
 
-{% include 'PHPOrchestraCMSBundle:BackOffice:contentTitle.html.twig' with vars %}
+{% block beforeSmartDiv %}
+    <ul class="nav nav-tabs" id="languages">
+        {% for language in availableLanguages %}
+            {% if language|upper == form.vars.value.language|upper %}
+                <li class="active"><a><img alt="{{ language }} flag" src="{{ asset('bundles/phporchestracms/img/flags/' ~ language ~ '.png') }}"> {{ language|upper }}</a></li>
+            {% else %}
+                <li>
+                    <a href="{{ path(
+                        'phporchestra_cms_backofficeview_content_index',
+                        {
+                            'action' : 'findforedit',
+                            'contentTypeId' : form.vars.value.contentType,
+                            'contentId' : form.vars.value.contentId,
+                            'language' : language
+                        }
+                    ) }}" class="tabLink"><img alt="{{ language }} flag" src="{{ asset('bundles/phporchestracms/img/flags/' ~ language ~ '.png') }}"> {{ language|upper }}</a>
+                </li>
+            {% endif %}
+        {% endfor %}
+        {% if contentVersions|length > 0 %}
+            <li class="pull-right active">
+                <div>
+                    <select class="selectSwitcher">
+                        <option value="{{ path(
+                            'phporchestra_cms_backofficeview_content_index',
+                            {
+                                'action' : 'duplicate',
+                                'contentTypeId' : form.vars.value.contentType,
+                                'id' : form.vars.value.id.__toString()
+                            }
+                        ) }}" data-loadmode="ajax">Créer une nouvelle version</option>
+                    {% for version in contentVersions %}
+                        <option value="{{ path(
+                            'phporchestra_cms_backofficeview_content_index',
+                            {
+                                'action' : 'edit',
+                                'contentTypeId' : form.vars.value.contentType,
+                                'id' : version.id.__toString()
+                            }
+                        ) }}" {% if version.version == form.vars.value.version %}selected="selected"{% endif %}
+                        >Version {{ version.version }} ({{ version.status }})</option>
+                    {% endfor %}
+                    </select>
+                </div>
+            </li>
+        {% endif %}
+    </ul>
+{% endblock %}
 
-<ul class="nav nav-tabs" id="languages">
-{% for language in availableLanguages %}
-    {% if language|upper == form.vars.value.language|upper %}
-    <li class="active"><a><img alt="{{ language }} flag" src="{{ asset('bundles/phporchestracms/img/flags/' ~ language ~ '.png') }}"> {{ language|upper }}</a></li>
-    {% else %}
-    <li>
-        <a href="{{ path(
-            'phporchestra_cms_backofficeview_content_index',
-            {
-                'action' : 'findforedit',
-                'contentTypeId' : form.vars.value.contentType,
-                'contentId' : form.vars.value.contentId,
-                'language' : language
-            }
-        ) }}" class="tabLink"><img alt="{{ language }} flag" src="{{ asset('bundles/phporchestracms/img/flags/' ~ language ~ '.png') }}"> {{ language|upper }}</a>
-    </li>
-    {% endif %}
-{% endfor %}
-{% if contentVersions|length > 0 %}
-    <li class="pull-right active">
-        <div>
-            <select class="selectSwitcher">
-                <option value="{{ path(
-                    'phporchestra_cms_backofficeview_content_index',
-                    {
-                        'action' : 'duplicate',
-                        'contentTypeId' : form.vars.value.contentType,
-                        'id' : form.vars.value.id.__toString()
-                    }
-                ) }}" data-loadmode="ajax">Créer une nouvelle version</option>
-            {% for version in contentVersions %}
-                <option value="{{ path(
-                    'phporchestra_cms_backofficeview_content_index',
-                    {
-                        'action' : 'edit',
-                        'contentTypeId' : form.vars.value.contentType,
-                        'id' : version.id.__toString()
-                    }
-                ) }}" {% if version.version == form.vars.value.version %}selected="selected"{% endif %}
-                >Version {{ version.version }} ({{ version.status }})</option>
-            {% endfor %}
-            </select>
+{% block mainContent %}
+    {{ form(form) }}
+{% endblock %}
+
+{% block afterSmartDiv %}
+    {% if ribbon is defined %}
+        <div class="ribbon">
+        {{ ribbon|raw }}
         </div>
-    </li>
-{% endif %}
-</ul>
-
-{% include 'PHPOrchestraCMSBundle:BackOffice:beginSmartDiv.html.twig' with vars %}
-
-{{ form(form) }}
-
-{% include 'PHPOrchestraCMSBundle:BackOffice:endSmartDiv.html.twig' %}
-
-{% if ribbon is defined %}
-    <div class="ribbon">
-    {{ ribbon|raw }}
-    </div>
-{% endif %}
+    {% endif %}
+{% endblock %}

@@ -14,7 +14,7 @@
 <nav>
     <ul style="">
         <li>
-            <a href="#"><i class="fa fa-lg fa-fw fa-edit"></i><span class="menu-item-parent">{{ 'edito.editorial'|trans({}, 'backOffice') }}</span></a>
+            <a href="{{ path('php_orchestra_cms_bo_edito') }}"><i class="fa fa-lg fa-fw fa-edit"></i><span class="menu-item-parent">{{ 'edito.editorial'|trans({}, 'backOffice') }}</span></a>
             <ul style="display:block;">
                 {{ render(controller('PHPOrchestraCMSBundle:Tree:showTreeNodes')) }}
                 {{ render(controller('PHPOrchestraCMSBundle:Tree:showTreeTemplates')) }}

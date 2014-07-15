@@ -1,0 +1,54 @@
+{##
+ # This file is part of the PHPOrchestra\CMSBundle.
+ #
+ # @author Nicolas ANNE <nicolas.anne@businessdecision.com>
+ ##}
+
+{% extends 'PHPOrchestraCMSBundle:BackOffice:contentLayout.html.twig' %}
+
+{% block mainContent %}
+    <div class="widget-body-toolbar"></div>
+    
+    <table id="datatable_fixed_column" class="table table-striped table-bordered smart-form">
+        <thead>
+            <tr class="second">
+            {% for column in columns %}
+                <td>
+                {% if column.search is defined %}
+                    {% if column.search == 'text' %}
+                        <label class="input">
+                            <input type="text" name="{{ column.name }}" placeholder="{{ 'filter%label%'|trans({'label':column.label}, 'backOffice') }}" class="search_init">
+                        </label>
+                    {% endif %}
+                {% endif %}
+                </td>
+            {% endfor %}
+            </tr>
+            <tr>
+            {% for column in columns %}
+                {% if column.search is defined %}
+                    <th>{{ column.label }}</th>
+                {% else %}
+                    <th>&nbsp;</th>
+                {% endif %}
+            {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+{% endblock %}
+
+{% block afterSmartDiv %}
+    {% if ribbon is defined %}
+        <div class="ribbon">
+        {{ ribbon|raw }}
+        </div>
+    {% endif %}
+    
+    {% include 'PHPOrchestraCMSBundle:BackOffice/TableView:deleteDocumentDialog.html.twig' %}
+    <script type="text/javascript">
+        createDeleteConfirmDialog();
+        loadDataTableScripts('{{ asset('bundles/phporchestracms/js/') }}', '{{ listUrl }}', {{ order|json_encode()|raw}});
+    </script>
+{% endblock %}
