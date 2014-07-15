@@ -517,7 +517,7 @@ abstract class TableViewController extends Controller
             return $this->getCatalogRecords($request);
         } else {
             return $this->render(
-                'PHPOrchestraCMSBundle:BackOffice:tableViewLayout.html.twig',
+                'PHPOrchestraCMSBundle:BackOffice:TableView/tableViewLayout.html.twig',
                 array(
                     'columns' => $this->getColumns(),
                     'listUrl' => $this->generateUrlValue('catalog'),

@@ -3,20 +3,17 @@
  #
  # @author Nicolas ANNE <nicolas.anne@businessdecision.com>
  ##}
-{% form_theme form 'PHPOrchestraCMSBundle:Form:extend.html.twig' %}
 
-{% set vars = {
-    'mainTitle' : mainTitle,
-    'tableTitle' : tableTitle
-   }
-%}
+{% extends 'PHPOrchestraCMSBundle:BackOffice:contentLayout.html.twig' %}
 
-{% include 'PHPOrchestraCMSBundle:BackOffice:contentTitle.html.twig' with vars %}
-{% include 'PHPOrchestraCMSBundle:BackOffice:beginSmartDiv.html.twig' with vars %}
-{{ form(form) }}
-{% include 'PHPOrchestraCMSBundle:BackOffice:endSmartDiv.html.twig' %}
-{% if ribbon is defined %}
-    <div class="ribbon">
-    {{ ribbon|raw }}
-    </div>
-{% endif %}
+{% block mainContent %}
+    {{ form(form) }}
+{% endblock %}
+
+{% block afterSmartDiv %}
+    {% if ribbon is defined %}
+        <div class="ribbon">
+        {{ ribbon|raw }}
+        </div>
+    {% endif %}
+{% endblock %}

@@ -4,16 +4,8 @@
  # @author Nicolas ANNE <nicolas.anne@businessdecision.com>
  ##}
 
-{% set vars = {
-    'mainTitle' : mainTitle,
-    'tableTitle' : tableTitle
-   }
-%}
+{% extends 'PHPOrchestraCMSBundle:BackOffice:contentLayout.html.twig' %}
 
-{% include 'PHPOrchestraCMSBundle:BackOffice:contentTitle.html.twig' with vars %}
-{% include 'PHPOrchestraCMSBundle:BackOffice:beginSmartDiv.html.twig' with vars %}
-
-{% form_theme form 'PHPOrchestraCMSBundle:Form:extend.html.twig' %}
-{{ form(form) }}
-
-{% include 'PHPOrchestraCMSBundle:BackOffice:endSmartDiv.html.twig' %}
+{% block mainContent %}
+    {{ form(form) }}
+{% endblock %}

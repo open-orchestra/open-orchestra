@@ -1,0 +1,26 @@
+{##
+ # This file is part of the PHPOrchestra\CMSBundle.
+ #
+ # @author Noël GILAIN <noel.gilain@businessdecision.com>
+ ##}
+{% if form is defined %}
+    {% form_theme form 'PHPOrchestraCMSBundle:Form:extend.html.twig' %}
+{% endif %}
+
+{% set vars = {
+    'mainTitle' : mainTitle,
+    'tableTitle' : tableTitle
+   }
+%}
+
+{% include 'PHPOrchestraCMSBundle:BackOffice:Include/contentTitle.html.twig' with vars %}
+
+{% block beforeSmartDiv %}{% endblock %}
+
+{% include 'PHPOrchestraCMSBundle:BackOffice:Include/beginSmartDiv.html.twig' with vars %}
+
+{% block mainContent %}{% endblock %}
+
+{% include 'PHPOrchestraCMSBundle:BackOffice:Include/endSmartDiv.html.twig' %}
+
+{% block afterSmartDiv %}{% endblock %}
