@@ -35,7 +35,7 @@ class ContentTypeType extends AbstractType
                     'constraints' => new NotBlank()
                 )
             )
-            ->add('name', 'multilingualText')
+            ->add('name', 'multilingualText', array('label' => 'Label du type de contenu'))
             ->add('version', 'hidden', array('read_only' => true))
             ->add(
                 'status',
