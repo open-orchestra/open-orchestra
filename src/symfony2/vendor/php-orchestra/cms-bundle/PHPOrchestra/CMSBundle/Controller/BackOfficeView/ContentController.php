@@ -25,6 +25,8 @@ class ContentController extends TableViewController
      */
     public function init()
     {
+        parent::init();
+        
         $this->setEntity('Content');
         $this->setCriteria(
             array(

@@ -134,6 +134,89 @@
                 
             </group>
             
+            <group id="contentTypes">
+                
+                <trans-unit id="contentTypes.mainTitle">
+                    <source>contentTypes.mainTitle</source>
+                    <target>Types de contenu</target>
+                </trans-unit>
+                
+                <group id="contentTypes.list">
+                    <trans-unit id="contentTypes.list.identifier">
+                        <source>contentTypes.list.identifier</source>
+                        <target>Identifiant</target>
+                    </trans-unit>
+                    <trans-unit id="contentTypes.list.name">
+                        <source>contentTypes.list.name</source>
+                        <target>Nom</target>
+                    </trans-unit>
+                    <trans-unit id="contentTypes.list.version">
+                        <source>contentTypes.list.version</source>
+                        <target>Version</target>
+                    </trans-unit>
+                    <trans-unit id="contentTypes.list.status">
+                        <source>contentTypes.list.status</source>
+                        <target>Statut</target>
+                    </trans-unit>
+                </group>
+                
+                <group id="contentTypes.form">
+                    <trans-unit id="contentTypes.form.identifier">
+                        <source>contentTypes.form.identifier</source>
+                        <target>Identifiant technique</target>
+                    </trans-unit>
+                    <trans-unit id="contentTypes.form.label">
+                        <source>contentTypes.form.label</source>
+                        <target>Intitulé du type de contenu</target>
+                    </trans-unit>
+                    <trans-unit id="contentTypes.form.version">
+                        <source>contentTypes.form.version</source>
+                        <target>Version</target>
+                    </trans-unit>
+                    <trans-unit id="contentTypes.form.status">
+                        <source>contentTypes.form.status</source>
+                        <target>Statut</target>
+                    </trans-unit>
+                    <trans-unit id="contentTypes.form.newVersion">
+                        <source>contentTypes.form.newVersion</source>
+                        <target>Créer une nouvelle version</target>
+                    </trans-unit>
+                    <trans-unit id="contentTypes.form.versX">
+                        <source>contentTypes.form.version%versionNumber%</source>
+                        <target>Version versionNumber</target>
+                    </trans-unit>
+                    <trans-unit id="contentTypes.form.typeDefinition">
+                        <source>contentTypes.form.typeDefinition</source>
+                        <target>Définition du type de contenu</target>
+                    </trans-unit>
+                    <trans-unit id="contentTypes.form.fieldX">
+                        <source>contentTypes.form.field%fieldId%</source>
+                        <target>Champ "fieldName"</target>
+                    </trans-unit>
+                    <trans-unit id="contentTypes.form.newField">
+                        <source>contentTypes.form.newField</source>
+                        <target>Nouveau champ</target>
+                    </trans-unit>
+                    <trans-unit id="contentTypes.form.fieldLabel">
+                        <source>contentTypes.form.fieldLabel</source>
+                        <target>Intitulé du champ</target>
+                    </trans-unit>
+                    <trans-unit id="contentTypes.form.defaultValue">
+                        <source>contentTypes.form.defaultValue</source>
+                        <target>Valeur par défaut</target>
+                    </trans-unit>
+                    <trans-unit id="contentTypes.form.indexable">
+                        <source>contentTypes.form.indexable</source>
+                        <target>Indexable</target>
+                    </trans-unit>
+                    <trans-unit id="contentTypes.form.removeField">
+                        <source>contentTypes.form.removeField</source>
+                        <target>Supprimer le champ</target>
+                    </trans-unit>
+                </group>
+                
+            </group>
+            
         </body>
     </file>
 </xliff>

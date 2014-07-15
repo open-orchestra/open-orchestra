@@ -34,7 +34,6 @@ abstract class TableViewController extends Controller
     
     public function __construct()
     {
-        $this->setColumns();
         $this->callback['arrayToNewLine'] = function ($value) {
             return implode('<br />', $value);
         };
@@ -45,6 +44,7 @@ abstract class TableViewController extends Controller
         
     public function init()
     {
+        $this->setColumns();
     }
 
     public function getColumns()
@@ -177,8 +177,8 @@ abstract class TableViewController extends Controller
      */
     public function indexAction(Request $request, $action, $id = null)
     {
-        $this->routeParameters = $request->attributes->get('_route_params');
         $this->init();
+        $this->routeParameters = $request->attributes->get('_route_params');
         return call_user_func(array($this, $action.'Action'), $request, $id);
     }
     

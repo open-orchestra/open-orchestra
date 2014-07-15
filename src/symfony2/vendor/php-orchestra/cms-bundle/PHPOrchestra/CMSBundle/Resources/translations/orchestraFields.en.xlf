@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <group id="orchestraFields">
+                <trans-unit id="max_length">
+                    <source>max_length</source>
+                    <target>Max length</target>
+                </trans-unit>
+                <trans-unit id="required_field">
+                    <source>required_field</source>
+                    <target>Required field</target>
+                </trans-unit>
+                <trans-unit id="rounding_mode">
+                    <source>rounding_mode</source>
+                    <target>Rounding mode</target>
+                </trans-unit>
+                <trans-unit id="format">
+                    <source>format</source>
+                    <target>Format</target>
+                </trans-unit>
+            </group>
+        </body>
+    </file>
+</xliff>

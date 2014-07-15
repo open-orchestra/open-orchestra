@@ -63,27 +63,53 @@ class CustomFieldType extends AbstractType
         if (!isset($parameters['options']) || !is_array($parameters['options'])) {
             throw new UnknownFieldTypeException('Field type not described : ' . $options['data']->type);
         }
-        $builder->add('label', 'multilingualText')
+        $builder
+            ->add(
+                'removeField',
+                'checkbox',
+                array(
+                    'required' => false,
+                    'label' => 'contentTypes.form.removeField',
+                    'translation_domain' => 'backOffice'
+                )
+            )
             ->add(
                 'fieldId',
                 'text',
                 array(
-                    'label' => 'Identifiant technique',
+                    'label' => 'contentTypes.form.identifier',
+                    'translation_domain' => 'backOffice',
                     'constraints' => array(new NotBlank(), new Type('string'))
+                )
+            )
+            ->add(
+                'label',
+                'multilingualText',
+                array(
+                    'label' => 'contentTypes.form.fieldLabel',
+                    'translation_domain' => 'backOffice'
                 )
             )
             ->add(
                 'defaultValue',
                 'text',
                 array(
-                    'label' => 'Valeur par défaut',
+                    'label' => 'contentTypes.form.defaultValue',
+                    'translation_domain' => 'backOffice',
                     'required' => false,
                     'constraints' => $this->getConstraints($options['data']->symfonyType)
                 )
             )
-            ->add('searchable', 'checkbox', array('required' => false, 'label' => 'Indexable'))
-            ->add('symfonyType', 'hidden', array('data' => $parameters['type']))
-            ->add('removeField', 'checkbox', array('required' => false, 'label' => 'Supprimer le champ'));
+            ->add(
+                'searchable',
+                'checkbox',
+                array(
+                    'required' => false,
+                    'label' => 'contentTypes.form.indexable',
+                    'translation_domain' => 'backOffice'
+                )
+            )
+            ->add('symfonyType', 'hidden', array('data' => $parameters['type']));
         
         $optionsValues = (object) array();
         if (isset($options['data']->options)) {
@@ -98,6 +124,7 @@ class CustomFieldType extends AbstractType
             }
             $fieldParams = array(
                 'label' => $option['label'],
+                'translation_domain' => 'orchestraFields',
                 'required' => $option['required']
             );
             

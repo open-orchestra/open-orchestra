@@ -134,6 +134,89 @@
                 
             </group>
             
+            <group id="contentTypes">
+                
+                <trans-unit id="contentTypes.mainTitle">
+                    <source>contentTypes.mainTitle</source>
+                    <target>Content types</target>
+                </trans-unit>
+                
+                <group id="contentTypes.list">
+                    <trans-unit id="contentTypes.list.identifier">
+                        <source>contentTypes.list.identifier</source>
+                        <target>Identifier</target>
+                    </trans-unit>
+                    <trans-unit id="contentTypes.list.name">
+                        <source>contentTypes.list.name</source>
+                        <target>Name</target>
+                    </trans-unit>
+                    <trans-unit id="contentTypes.list.version">
+                        <source>contentTypes.list.version</source>
+                        <target>Version</target>
+                    </trans-unit>
+                    <trans-unit id="contentTypes.list.status">
+                        <source>contentTypes.list.status</source>
+                        <target>Status</target>
+                    </trans-unit>
+                </group>
+                
+                <group id="contentTypes.form">
+                    <trans-unit id="contentTypes.form.identifier">
+                        <source>contentTypes.form.identifier</source>
+                        <target>Technical identifier</target>
+                    </trans-unit>
+                    <trans-unit id="contentTypes.form.label">
+                        <source>contentTypes.form.label</source>
+                        <target>Content type label</target>
+                    </trans-unit>
+                    <trans-unit id="contentTypes.form.version">
+                        <source>contentTypes.form.version</source>
+                        <target>Version</target>
+                    </trans-unit>
+                    <trans-unit id="contentTypes.form.status">
+                        <source>contentTypes.form.status</source>
+                        <target>Status</target>
+                    </trans-unit>
+                    <trans-unit id="contentTypes.form.newVersion">
+                        <source>contentTypes.form.newVersion</source>
+                        <target>Create a new version</target>
+                    </trans-unit>
+                    <trans-unit id="contentTypes.form.versX">
+                        <source>contentTypes.form.version%versionNumber%</source>
+                        <target>Version versionNumber</target>
+                    </trans-unit>
+                    <trans-unit id="contentTypes.form.typeDefinition">
+                        <source>contentTypes.form.typeDefinition</source>
+                        <target>Content type definition</target>
+                    </trans-unit>
+                    <trans-unit id="contentTypes.form.fieldX">
+                        <source>contentTypes.form.field%fieldId%</source>
+                        <target>Field "fieldName"</target>
+                    </trans-unit>
+                    <trans-unit id="contentTypes.form.newField">
+                        <source>contentTypes.form.newField</source>
+                        <target>New field</target>
+                    </trans-unit>
+                    <trans-unit id="contentTypes.form.fieldLabel">
+                        <source>contentTypes.form.fieldLabel</source>
+                        <target>Field label</target>
+                    </trans-unit>
+                    <trans-unit id="contentTypes.form.defaultValue">
+                        <source>contentTypes.form.defaultValue</source>
+                        <target>Default value</target>
+                    </trans-unit>
+                    <trans-unit id="contentTypes.form.indexable">
+                        <source>contentTypes.form.indexable</source>
+                        <target>Indexable</target>
+                    </trans-unit>
+                    <trans-unit id="contentTypes.form.removeField">
+                        <source>contentTypes.form.removeField</source>
+                        <target>Remove field</target>
+                    </trans-unit>
+                </group>
+                
+            </group>
+            
         </body>
     </file>
 </xliff>

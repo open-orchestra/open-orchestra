@@ -31,12 +31,28 @@ class ContentTypeType extends AbstractType
                 'contentTypeId',
                 'text',
                 array(
-                    'label' => 'Identifiant technique',
+                    'label' => 'contentTypes.form.identifier',
+                    'translation_domain' => 'backOffice',
                     'constraints' => new NotBlank()
                 )
             )
-            ->add('name', 'multilingualText', array('label' => 'Label du type de contenu'))
-            ->add('version', 'hidden', array('read_only' => true))
+            ->add(
+                'name',
+                'multilingualText',
+                array(
+                    'label' => 'contentTypes.form.label',
+                    'translation_domain' => 'backOffice'
+                )
+            )
+            ->add(
+                'version',
+                'hidden',
+                array(
+                    'read_only' => true,
+                    'label' => 'contentTypes.form.version',
+                    'translation_domain' => 'backOffice'
+                )
+            )
             ->add(
                 'status',
                 'choice',
@@ -44,7 +60,9 @@ class ContentTypeType extends AbstractType
                     'choices' => array(
                         ContentTypeModel::STATUS_DRAFT => ContentTypeModel::STATUS_DRAFT,
                         ContentTypeModel::STATUS_PUBLISHED => ContentTypeModel::STATUS_PUBLISHED
-                    )
+                    ),
+                    'label' => 'contentTypes.form.status',
+                    'translation_domain' => 'backOffice'
                 )
             )
             ->add('fields', 'contentTypeFields', array('data' => $options['data']->getFields()))
