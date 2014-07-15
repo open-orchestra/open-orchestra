@@ -19,9 +19,12 @@ class ContextManager
     private $session = null;
     const KEY_LOCALE = '_locale';
     
-    public function __construct($session)
+    public function __construct($session, $defaultLocale = 'en')
     {
         $this->session = $session;
+        if ($this->getCurrentLocale() == '') {
+            $this->setCurrentLocale($defaultLocale);
+        }
     }
     
     /**
