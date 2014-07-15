@@ -5,7 +5,7 @@
     <span> <!-- User image size is adjusted inside CSS, it should stay as it --> 
         <img src="{{ asset('bundles/phporchestracms/img/avatars/male.png') }}" alt="me" class="online" /> 
         <a href="javascript:void(0);" id="show-shortcut">
-            Admin <i class="fa fa-angle-down"></i>
+            xAdminx <i class="fa fa-angle-down"></i>
         </a> 
     </span>
 </div>
@@ -14,27 +14,27 @@
 <nav>
     <ul style="">
         <li>
-            <a href="#"><i class="fa fa-lg fa-fw fa-edit"></i><span class="menu-item-parent">Editorial</span></a>
+            <a href="#"><i class="fa fa-lg fa-fw fa-edit"></i><span class="menu-item-parent">{{ 'edito.editorial'|trans({}, 'backOffice') }}</span></a>
             <ul style="display:block;">
                 {{ render(controller('PHPOrchestraCMSBundle:Tree:showTreeNodes')) }}
                 {{ render(controller('PHPOrchestraCMSBundle:Tree:showTreeTemplates')) }}
                 <li>
-                    <a href="{{ path('php_orchestra_cms_bo_contentType_ajaxmenu', {'language':context.currentLocale, 'siteId':''}) }}" target="_menu">Contenus</a>
-                    <ul><li><a href="">Loading ...</a></li></ul>
+                    <a href="{{ path('php_orchestra_cms_bo_contentType_ajaxmenu', {'language':context.currentLocale, 'siteId':''}) }}" target="_menu">{{ 'edito.contents'|trans({}, 'backOffice') }}</a>
+                    <ul><li><a href="">{{ 'loading'|trans({}, 'backOffice') }}</a></li></ul>
                 </li>
             </ul>
         </li>
         <li>
-            <a href="#"><i class="fa fa-lg fa-fw fa-desktop"></i><span class="menu-item-parent">Administration</span></a>
+            <a href="#"><i class="fa fa-lg fa-fw fa-desktop"></i><span class="menu-item-parent">{{ 'admin.administration'|trans({}, 'backOffice') }}</span></a>
             <ul style="">
                 <li>
-                    <a href="{{ path('phporchestra_cms_backofficeview_site_index', {'action' : 'catalog'}) }}">Sites</a>
+                    <a href="{{ path('phporchestra_cms_backofficeview_site_index', {'action' : 'catalog'}) }}">{{ 'admin.sites'|trans({}, 'backOffice') }}</a>
                 </li>
                 <li>
-                    <a href="{{ path('phporchestra_cms_backofficeview_contenttype_index', {'action':'catalog'}) }}">Type de contenus</a>
+                    <a href="{{ path('phporchestra_cms_backofficeview_contenttype_index', {'action':'catalog'}) }}">{{ 'admin.contentTypes'|trans({}, 'backOffice') }}</a>
                 </li>
                 <li>
-                    <a href="#" id="clearRoutingCache">Cache de routage</a>
+                    <a href="#" id="clearRoutingCache">{{ 'admin.routingCache'|trans({}, 'backOffice') }}</a>
                     {% include 'PHPOrchestraCMSBundle:BackOffice/Tools:clearRoutingCacheDialog.html.twig' %}
                 </li>
             </ul>

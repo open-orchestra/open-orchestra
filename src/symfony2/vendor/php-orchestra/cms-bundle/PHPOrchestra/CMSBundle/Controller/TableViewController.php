@@ -184,7 +184,7 @@ abstract class TableViewController extends Controller
     
     public function editAction(Request $request, $id = null)
     {
-        $this->setTableTitle('Edition');
+        $this->setTableTitle($this->get('translator')->trans('tableView.edition', array(), 'backOffice'));
         
         if ($this->getEntity() !== null) {
             return $this->editEntity($request, $id);
@@ -204,7 +204,7 @@ abstract class TableViewController extends Controller
 
     public function catalogAction(Request $request)
     {
-        $this->setTableTitle('Liste');
+        $this->setTableTitle($this->get('translator')->trans('tableView.list', array(), 'backOffice'));
         
         if ($this->getEntity() !== null) {
             return $this->catalogEntity($request);
@@ -248,7 +248,7 @@ abstract class TableViewController extends Controller
         return $this->genericButton(
             $value,
             'edit',
-            'Modifier',
+            $this->get('translator')->trans('tableView.modify', array(), 'backOffice'),
             'btn btn-primary redirect',
             'fa fa-edit'
         );
@@ -258,7 +258,7 @@ abstract class TableViewController extends Controller
         return $this->genericButton(
             $value,
             'delete',
-            'Supprimer',
+            $this->get('translator')->trans('tableView.delete', array(), 'backOffice'),
             'btn btn-danger delete',
             'fa fa-trash-o'
         );
@@ -268,7 +268,7 @@ abstract class TableViewController extends Controller
         return $this->genericButton(
             '',
             'edit',
-            'Ajouter',
+            $this->get('translator')->trans('tableView.add', array(), 'backOffice'),
             'btn btn-small btn-ribbon bt-primary redirect',
             'fa fa-plus'
         );
@@ -278,7 +278,7 @@ abstract class TableViewController extends Controller
         return $this->genericButton(
             $value,
             'edit',
-            'Enregistrer',
+            $this->get('translator')->trans('tableView.save', array(), 'backOffice'),
             'btn btn-small btn-ribbon bt-primary submit',
             'fa fa-save'
         );
@@ -288,7 +288,7 @@ abstract class TableViewController extends Controller
         return $this->genericButton(
             '',
             'catalog',
-            'Retour',
+            $this->get('translator')->trans('tableView.back', array(), 'backOffice'),
             'btn btn-small btn-ribbon bt-primary redirect',
             'fa fa-undo'
         );

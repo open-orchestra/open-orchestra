@@ -9,17 +9,19 @@ namespace PHPOrchestra\CMSBundle\Context;
 
 use Symfony\Component\HttpFoundation\Session\Session;
 
+/**
+ * Centralize app contextual datas
+ * 
+ * @author Noël
+ */
 class ContextManager
 {
     private $session = null;
+    const KEY_LOCALE = '_locale';
     
     public function __construct($session)
     {
         $this->session = $session;
-        
-        if ($this->session->get('bo_language') == '') {
-            $this->session->set('bo_language', 'en');
-        }
     }
     
     /**
@@ -27,7 +29,7 @@ class ContextManager
      */
     public function getCurrentLocale()
     {
-        return $this->session->get('bo_language');
+        return $this->session->get(self::KEY_LOCALE);
     }
 
     /**
@@ -37,6 +39,6 @@ class ContextManager
      */
     public function setCurrentLocale($locale)
     {
-        $this->session->set('bo_language', $locale);
+        $this->session->set(self::KEY_LOCALE, $locale);
     }
 }

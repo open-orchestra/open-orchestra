@@ -1,0 +1,139 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            
+            <group id="general">
+                <trans-unit id="loading">
+                    <source>loading</source>
+                    <target>Loading ...</target>
+                </trans-unit>
+            </group>
+            
+            <group id="topMenu">
+                <trans-unit id="site">
+                    <source>site</source>
+                    <target>Site:</target>
+                </trans-unit>
+                <trans-unit id="collapse_menu">
+                    <source>collapse_menu</source>
+                    <target>Collapse menu</target>
+                </trans-unit>
+                <trans-unit id="sign_out">
+                    <source>sign_out</source>
+                    <target>Sign out</target>
+                </trans-unit>
+                <trans-unit id="improve_security_closing_browser">
+                    <source>improve_security_closing_browser</source>
+                    <target>You can improve your security further after logging out by closing this opened browser</target>
+                </trans-unit>
+                <trans-unit id="fullscreen">
+                    <source>fullscreen</source>
+                    <target>Full screen</target>
+                </trans-unit>
+                <trans-unit id="language_flag">
+                    <source>%language%_flag</source>
+                    <target>language flag</target>
+                </trans-unit>
+            </group>
+            
+            <group id="leftMenu">
+                
+                <group id="editorial">
+                    <trans-unit id="edito.editorial">
+                        <source>edito.editorial</source>
+                        <target>Editorial</target>
+                    </trans-unit>
+                    <trans-unit id="edito.nodes">
+                        <source>edito.nodes</source>
+                        <target>Pages</target>
+                    </trans-unit>
+                    <trans-unit id="edito.templates">
+                        <source>edito.templates</source>
+                        <target>Templates</target>
+                    </trans-unit>
+                    <trans-unit id="edito.contents">
+                        <source>edito.contents</source>
+                        <target>Contents</target>
+                    </trans-unit>
+                </group>
+                
+                <group id="administration">
+                    <trans-unit id="admin.administration">
+                        <source>admin.administration</source>
+                        <target>Administration</target>
+                    </trans-unit>
+                    <trans-unit id="admin.sites">
+                        <source>admin.sites</source>
+                        <target>Websites</target>
+                    </trans-unit>
+                    <trans-unit id="admin.contentTypes">
+                        <source>admin.contentTypes</source>
+                        <target>Content types</target>
+                    </trans-unit>
+                    <trans-unit id="admin.routingCache">
+                        <source>admin.routingCache</source>
+                        <target>Routing cache</target>
+                    </trans-unit>
+                    <trans-unit id="admin.routingCache.dialog.title">
+                        <source>admin.routingCache.dialog.title</source>
+                        <target>Purge routing cache</target>
+                    </trans-unit>
+                    <trans-unit id="admin.routingCache.dialog.message">
+                        <source>admin.routingCache.dialog.message</source>
+                        <target>You are about to remove the routing cache. Would you like to continue?</target>
+                    </trans-unit>
+                    <trans-unit id="admin.routingCache.ok">
+                        <source>admin.routingCache.ok</source>
+                        <target>The routing cache was successfully purged.</target>
+                    </trans-unit>
+                </group>
+                
+                <group id="tableView">
+                    <trans-unit id="tableView.deleteDialog.title">
+                        <source>tableView.deleteDialog.title</source>
+                        <target>Delete the document</target>
+                    </trans-unit>
+                    <trans-unit id="tableView.deleteDialog.message">
+                        <source>tableView.deleteDialog.message</source>
+                        <target>You are about to delete the document. Would you like to continue?</target>
+                    </trans-unit>
+                    <trans-unit id="tableView.filterLabel">
+                        <source>filter%label%</source>
+                        <target>Filter label</target>
+                    </trans-unit>
+                    <trans-unit id="tableView.edition">
+                        <source>tableView.edition</source>
+                        <target>Edition</target>
+                    </trans-unit>
+                    <trans-unit id="tableView.list">
+                        <source>tableView.list</source>
+                        <target>List</target>
+                    </trans-unit>
+                    <trans-unit id="tableView.modify">
+                        <source>tableView.modify</source>
+                        <target>Modify</target>
+                    </trans-unit>
+                    <trans-unit id="tableView.delete">
+                        <source>tableView.delete</source>
+                        <target>Delete</target>
+                    </trans-unit>
+                    <trans-unit id="tableView.add">
+                        <source>tableView.add</source>
+                        <target>Add</target>
+                    </trans-unit>
+                    <trans-unit id="tableView.save">
+                        <source>tableView.save</source>
+                        <target>Save</target>
+                    </trans-unit>
+                    <trans-unit id="tableView.back">
+                        <source>tableView.back</source>
+                        <target>Back</target>
+                    </trans-unit>
+                </group>
+                
+            </group>
+            
+        </body>
+    </file>
+</xliff>
