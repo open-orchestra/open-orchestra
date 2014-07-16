@@ -17,7 +17,6 @@
 
 namespace PHPOrchestra\BlockBundle\Test\IndexCommand;
 
-            
 use Model\PHPOrchestraCMSBundle\Node;
 use PHPOrchestra\BlockBundle\IndexCommand\SolrIndexCommand;
 use Model\PHPOrchestraCMSBundle\Content;
@@ -65,7 +64,7 @@ class SolrIndexCommandTest extends \PHPUnit_Framework_TestCase
 
 
     /**
-     * Initialise unit test
+     * Initialize unit test
      * 
      * @see PHPUnit_Framework_TestCase::setUp()
      */
@@ -220,10 +219,38 @@ class SolrIndexCommandTest extends \PHPUnit_Framework_TestCase
      */
     public function testSolrIsRunning()
     {
+        $request = $this->getMock('\\Solarium\\Core\\Query\\RequestBuilder');
         $ping = $this->getMock('\\Solarium\\QueryType\\Ping\\Query');
+        $adapter = $this->getMock('\\Solarium\\Core\\Client\\Adapter\\Curl');
+        $endpoint = $this->getMock('\\Solarium\\Core\\Client\\Endpoint');
+        
         $this->container->expects($this->once())->method('get')->will($this->returnValue($this->client));
-        $this->client->expects($this->once())->method('createPing')->will($this->returnValue($ping));
-        $this->assertTrue($this->solrIndexCommand->solrIsRunning());
+        $this->client->expects($this->at(0))->method('createPing')->will($this->returnValue($ping));
+        $this->client->expects($this->at(1))->method('createRequest')->will($this->returnValue($request));
+        $adapter->expects($this->once())->method('createHandle')->will($this->returnValue(curl_init()));
+        $this->client->expects($this->at(2))->method('getAdapter')->will($this->returnValue($adapter));
+        $this->client->expects($this->at(3))->method('getEndPoint')->will($this->returnValue($endpoint));
+        
+        $this->assertFalse($this->solrIndexCommand->solrIsRunning());
+    }
+
+
+    /**
+     * Test generateUrl
+     */
+    public function testGenerateUrl()
+    {
+        $repository = $this->getMock(
+            'PHPOrchestra\\CMSBundle\\Test\\Mock\\MandangoDocumentRepository',
+            array('getAllNodes'),
+            array($this->mandango)
+        );
+        
+        $this->mandango->expects($this->any())->method('getRepository')->will($this->returnValue($repository));
+        $this->container->expects($this->once())->method('get')->will($this->returnValue($this->mandango));
+        
+        $result = $this->solrIndexCommand->generateUrl("1", "news");
+        $this->assertEquals('', $result);
     }
 
 
