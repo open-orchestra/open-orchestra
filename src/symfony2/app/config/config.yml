@@ -29,6 +29,12 @@ twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
 
+services:
+    twig.extension.text:
+       class: Twig_Extensions_Extension_Text
+       tags:
+           - { name: twig.extension }
+
 # Assetic Configuration
 assetic:
     debug:          "%kernel.debug%"
@@ -61,15 +67,15 @@ doctrine:
         auto_generate_proxy_classes: "%kernel.debug%"
         auto_mapping: true
 
-doctrine_mongodb:
-    connections:
-        default:
-            server: mongodb://localhost:27017
-            options: {}
-    default_database: php_orchestra
-    document_managers:
-        default:
-            auto_mapping: true
+#doctrine_mongodb:
+#    connections:
+#        default:
+#            server: mongodb://localhost:27017
+#            options: {}
+#    default_database: php_orchestra
+#    document_managers:
+#        default:
+#            auto_mapping: true
 
 # Swiftmailer Configuration
 swiftmailer:
@@ -93,3 +99,16 @@ snc_redis:
             alias: default
             dsn: redis://localhost
             logging: %kernel.debug%
+
+
+nelmio_solarium:
+    endpoints:
+        default:
+            host: localhost
+            port: 8983
+            path: /solr
+            core: collection1
+            timeout: 5
+    clients:
+        default:
+            endpoints: [default]
