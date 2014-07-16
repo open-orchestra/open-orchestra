@@ -8,7 +8,7 @@
 
 #==[Composer]=========================#
 #/src/symfony2/composer.phar
-/src/symfony2/vendor/autoload.php
+/src/symfony2/vendor/*
 /src/symfony2/vendor/composer/*
 /src/symfony2/composer.lock
 
