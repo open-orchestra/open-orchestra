@@ -14,19 +14,22 @@ class AppKernel extends Kernel
             new Symfony\Bundle\MonologBundle\MonologBundle(),
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
+            new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
+
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Doctrine\Bundle\MongoDBBundle\DoctrineMongoDBBundle(),
-            new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Mandango\MandangoBundle\MandangoBundle(),
             new Snc\RedisBundle\SncRedisBundle(),
+
             new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),
+            new FakeApp\ThemeBundle\FakeAppThemeBundle(),
+            new Nelmio\SolariumBundle\NelmioSolariumBundle(),
+
             new PHPOrchestra\CMSBundle\PHPOrchestraCMSBundle(),
             new PHPOrchestra\BlockBundle\PHPOrchestraBlockBundle(),
-            new FakeApp\ThemeBundle\FakeAppThemeBundle(),
             new PHPOrchestra\ThemeBundle\PHPOrchestraThemeBundle(),
             new PHPOrchestra\ModelBundle\PHPOrchestraModelBundle(),
             new PHPOrchestraModel\MongoBundle\PHPOrchestraModelMongoBundle(),
-            new Nelmio\SolariumBundle\NelmioSolariumBundle(),
             );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
