@@ -22,6 +22,11 @@ services:
         class: PHPOrchestra\BlockBundle\IndexCommand\SolrSearchCommand
         arguments: [@service_container]
 
+    # call the indexation service
+        phporchestra_cms.indexHelper:
+            class: PHPOrchestra\CMSBundle\Helper\IndexHelper
+            arguments: [@service_container]
+
     # Context service
     phporchestra_cms.contextmanager:
         class: PHPOrchestra\CMSBundle\Context\ContextManager

@@ -4,6 +4,12 @@ namespace PHPOrchestra\CMSBundle\Test\Model;
 
 use PHPOrchestra\CMSBundle\Model\ListIndexRepository;
 
+/**
+ * Test unit
+ * 
+ * @author Benjamin Fouché <benjamin.fouche@businessdecision.com>
+ *
+ */
 class ListIndexRepositoryTest extends \PHPUnit_Framework_TestCase
 {
 
@@ -50,9 +56,21 @@ class ListIndexRepositoryTest extends \PHPUnit_Framework_TestCase
     }
 
 
+    /**
+     * Test getAll()
+     */
     public function testGetAll()
     {
         $result = $this->repository->getAll();
         $this->assertEquals("fixture_full", $result[1]->getNodeId());
+    }
+
+
+    /**
+     * Test removeByDocId()
+     */
+    public function testRemoveByDocId()
+    {
+        $this->repository->removeByDocId('fixture_full');
     }
 }
