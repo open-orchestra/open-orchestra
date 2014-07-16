@@ -1,0 +1,24 @@
+---
+- hosts: all
+  vars_files:
+    - vars/main.yml
+  vars:
+    http_port: 80
+    max_clients: 200
+  remote_user: root
+  tasks:
+  - name: ensure apache is at the latest version
+    apt: pkg=apache2 state=latest
+  - name: ensure that php5-xsl is at the last version
+    apt: pkg=php5-xsl state=latest
+  - name: ensure apache is running
+    service: name=apache2 state=started
+  roles:
+  - common
+  - lesmyrmidons.mongodb
+  - geerlingguy.solr
+  - geerlingguy.php
+  - DavidWittman.redis
+  handlers:
+    - name: restart apache
+      service: name=apache2 state=restarted
