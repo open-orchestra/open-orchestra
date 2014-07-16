@@ -13,29 +13,29 @@
         {# Browse the result list and call this template #}
         {% for result in resultset %}
             {#{ dump(result) }#}
-            {% include "PHPOrchestraCMSBundle:Block/SearchResult:show.html.twig" with {"data": data, "resultset": result, "nodeId": nodeId} %}        
+            {% include "PHPOrchestraCMSBundle:Block/SearchResult:showBack.html.twig" with {"data": data, "resultset": result, "nodeId": nodeId} %}
         {% endfor %}
     {% endif %}
 {% else %}
     <div id="searchid">
-    {#{ dump(resultset) }#}
-    
-    {% if resultset.spellcheck is not empty %}
-        {# Call spellCheck template #}
-        {% include "PHPOrchestraCMSBundle:Block/SearchResult:spellcheck.html.twig" %}
-    {% endif %}
-    
-    {# This template display list of facet #}
-    {% if resultset.facetSet is not empty %}
-        {% include "PHPOrchestraCMSBundle:Block/SearchResult:facet.html.twig" %}
-    {% endif %}
-    
-    {% if resultset is not empty %}
-        {# This template display list of documents in the result#}
-        {% include "PHPOrchestraCMSBundle:Block/SearchResult:showDocs.html.twig" %}
-    {% else %}
-        {{ 'Sorry no results for'|trans }} "{{ data }}".
-    {% endif %}
-    
+        {#{ dump(resultset) }#}
+
+        {% if resultset.spellcheck is not empty %}
+            {# Call spellCheck template #}
+            {% include "PHPOrchestraCMSBundle:Block/SearchResult:spellcheck.html.twig" %}
+        {% endif %}
+
+        {# This template display list of facet #}
+        {% if resultset.facetSet is not empty %}
+            {% include "PHPOrchestraCMSBundle:Block/SearchResult:facet.html.twig" %}
+        {% endif %}
+
+        {% if resultset is not empty %}
+            {# This template display list of documents in the result#}
+            {% include "PHPOrchestraCMSBundle:Block/SearchResult:showDocs.html.twig" %}
+        {% else %}
+            {{ 'Sorry no results for'|trans }} "{{ data }}".
+        {% endif %}
+
     </div>
 {% endif %}

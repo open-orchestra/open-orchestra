@@ -36,10 +36,10 @@ class SearchType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('bouttonName', 'text')
             ->add('bouttonValue', 'text')
             ->add('bouttonClass', 'text')
-            ->add('nodeId', 'text');
+            ->add('nodeId', 'text')
+            ->add('limit', 'integer');
     }
     
     /**

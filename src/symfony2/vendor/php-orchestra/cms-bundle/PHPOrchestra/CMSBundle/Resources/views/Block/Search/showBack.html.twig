@@ -3,22 +3,16 @@
  #
  # @author Benjamin Fouché <benjamin.fouche@businessdecision.com>
  ##}
+
 <script type="text/javascript">
-$(function () {
-	//console.log()
-    $(form_Search).autocomplete({
-        source: "{{ path(url) }}",
-        minLength: 4
+    $(function () {
+        $('#autocomplete_search_terms').autocomplete({
+            source: $('#autocomplete_search_terms').data('autocomplete-url'),
+            minLength: $('#autocomplete_search_terms').data('min-length')
+        });
     });
-});
 </script>
 
 <div class="ui-widget">
-
-    {{ form_start(form) }}
-        {{ form_widget(form.Search) }}
-        <input id="search" type="submit" value="{{ value }}" name="{{ name }}" class="{{ class }}" />
-
-
-
+    {{ form(form) }}
 </div>
