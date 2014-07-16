@@ -222,7 +222,6 @@ class DocumentManager
                     'blocks' => array('$first' => '$blocks'),
                 )
         );
-        
         $versions = $repository->getCollection()->aggregate($filters);
         
         return $versions['result'];

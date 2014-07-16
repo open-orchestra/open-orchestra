@@ -20,9 +20,9 @@ class TreeController extends Controller
      * List all nodes
      * 
      */
-    public function showTreeNodesAction(Request $request)
+    public function showTreeNodesAction()
     {
-        $nodes = $this->get('phporchestra_cms.documentmanager')->getNodesInLastVersion();
+        $nodes = $this->get('phporchestra_cms.documentmanager')->getNodesInLastVersion(array(array('$match' => array('deleted' => false))));
         
         $listParentId = array();
         foreach ($nodes as &$node) {
@@ -44,7 +44,7 @@ class TreeController extends Controller
                 'parentId' => $parentId,
                 'name' => '',
                 'url' => '#',
-                'class' => '',
+                'class' => 'ui-state-unsortable',
                 'action' => array(
                     'css' => 'fa fa-file',
                     'text' => 'Nouvelle page',
@@ -62,10 +62,11 @@ class TreeController extends Controller
      * List all templates
      * 
      */
-    public function showTreeTemplatesAction(Request $request)
+    public function showTreeTemplatesAction()
     {
     	
-    	$templates = $this->get('phporchestra_cms.documentmanager')->getTemplatesInLastVersion();
+    	$templates = $this->get('phporchestra_cms.documentmanager')->getTemplatesInLastVersion(array(array('$match' => array('deleted' => false))));
+    	
         
         foreach ($templates as $key => &$template) {
             $template['url'] = $this->generateUrl(
@@ -85,7 +86,7 @@ class TreeController extends Controller
             '_id' => uniqid('template-'),
             'name' => '',
             'url' => '#',
-            'class' => '',
+            'class' => 'ui-state-unsortable',
             'action' => array(
                 'css' => 'fa fa-file',
                 'text' => 'Nouveau gabarit',
