@@ -105,8 +105,13 @@ class SearchResultController extends Controller
         if (isset($_page_parameters['query'])) {
             if (is_array($_page_parameters['query'])) {
                 $form = $_page_parameters['query'];
-                if (isset($form['terms'])) {
-                    $data = $form['terms'];
+                if (isset($form['autocomplete_search']) || isset($form['terms'])) {
+
+                    if (isset($form['autocomplete_search'])) {
+                        $data = $form['autocomplete_search']['terms'];
+                    } elseif (isset($form['terms'])) {
+                        $data = $form['terms'];
+                    }
         
                     if (isset($form['page'])) {
                         $page = $form['page'];
@@ -143,6 +148,10 @@ class SearchResultController extends Controller
                 } else {
                     // Filter
                     if (isset($form['data']) && isset($form['filter']) && isset($form['facetname'])) {
+
+                        if (isset($form['page'])) {
+                            $page = $form['page'];
+                        }
 
                         // Result of filter query
                         $resultSet = $this->callFilter($form['data'], $form['filter'], $form['facetname']);

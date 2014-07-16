@@ -30,7 +30,7 @@
 		
 		{% for p in range(1, nbpage ) %}
 			<li{% if p == page %} class="btn-pagination"{% endif %}>
-				<a href="{{ path('php_orchestra_cms_node', {'nodeId': nodeId, 'page': p, 'Search': data}) }}">{{ p }}</a>
+				<a href="{{ path('php_orchestra_cms_node', {'nodeId': nodeId, 'page': p, 'terms': data}) }}">{{ p }}</a>
 			</li> 
 		{% endfor %}
 	</ul>

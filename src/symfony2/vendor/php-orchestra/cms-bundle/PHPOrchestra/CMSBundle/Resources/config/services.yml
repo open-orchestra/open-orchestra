@@ -23,9 +23,9 @@ services:
         arguments: [@service_container]
 
     # call the indexation service
-        phporchestra_cms.indexHelper:
-            class: PHPOrchestra\CMSBundle\Helper\IndexHelper
-            arguments: [@service_container]
+    phporchestra_cms.indexHelper:
+        class: PHPOrchestra\CMSBundle\Helper\IndexHelper
+        arguments: [@service_container]
 
     # Context service
     phporchestra_cms.contextmanager:
