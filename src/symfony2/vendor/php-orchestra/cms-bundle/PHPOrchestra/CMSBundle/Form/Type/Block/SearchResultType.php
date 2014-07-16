@@ -43,7 +43,8 @@ class SearchResultType extends AbstractType
             ->add('filters', 'textarea')
             ->add('searchOptions', 'textarea')
             ->add('spellCheckNumber', 'integer')
-            ->add('dismaxOptions', 'textarea');
+            ->add('dismaxOptions', 'textarea')
+            ->add('limitField', 'integer');
     }
     
     /**

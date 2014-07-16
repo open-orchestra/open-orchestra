@@ -13,7 +13,7 @@
                     {% if firstField == fieldname %}
                         <li><a href="{{baseUrl}}{{ doc.url }}" class="doclink">{{ fieldvalue }}</a></li>
                     {% elseif fieldname in fieldsdisplayed %}
-                        <li class="field">{{ fieldvalue | truncate(20, true, '...') }}</li>
+                        <li class="field">{{ fieldvalue | truncate(limitField, true, '...') }}</li>
                     {% endif %}
                 {% endfor %}
             </ul>

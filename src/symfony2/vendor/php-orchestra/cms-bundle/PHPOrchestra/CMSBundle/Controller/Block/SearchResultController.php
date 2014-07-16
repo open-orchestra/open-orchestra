@@ -52,6 +52,7 @@ class SearchResultController extends Controller
         $nbdoc,
         $fielddisplayed,
         $nbspellcheck,
+        $limitField = 50,
         $facets = array(),
         $filter = array(),
         $optionsearch = array(),
@@ -104,6 +105,7 @@ class SearchResultController extends Controller
                         $page,
                         $nbdoc,
                         $fielddisplayed,
+                        $limitField,
                         $facets
                     );
         
@@ -126,6 +128,7 @@ class SearchResultController extends Controller
                             $page,
                             $nbdoc,
                             $fielddisplayed,
+                            $limitField,
                             $facets
                         );
                     }
@@ -314,11 +317,12 @@ class SearchResultController extends Controller
      * @param string $nodeId identifiant of node
      * @param int $page number of page
      * @param int $nbdoc number of documents per page selected by the user
+     * @param int $limitfield limit number of letters
      * @param array $facets array if they have facets
      *
      * @return Symfony\Component\HttpFoundation\Response
      */
-    public function callTemplate($data, $resultSet, $nodeId, $page, $nbdoc, $fields, $facets = array())
+    public function callTemplate($data, $resultSet, $nodeId, $page, $nbdoc, $fields, $limitfield, $facets = array())
     {
         $firstField = array_shift($fields);
         if (isset($facets)) {
@@ -333,7 +337,8 @@ class SearchResultController extends Controller
                     'fieldsdisplayed' => $fields,
                     'facetsArray' => $facets,
                     'baseUrl' => $this->container->get('router')->getContext()->getBaseUrl(),
-                    'firstField' => $firstField
+                    'firstField' => $firstField,
+                    'limitField' => $limitfield
                 )
             );
         } else {
@@ -347,7 +352,8 @@ class SearchResultController extends Controller
                     'nbdocs' => $nbdoc,
                     '$fields' => $fields,
                     'baseUrl' => $this->container->get('router')->getContext()->getBaseUrl(),
-                    'firstField' => $firstField
+                    'firstField' => $firstField,
+                    'limitField' => $limitfield
                 )
             );
         }
