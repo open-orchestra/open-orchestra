@@ -100,6 +100,9 @@ class BackOfficeController extends Controller
                 $request->request->add(array('deleted' => true));
                 return $this->forward('PHPOrchestraCMSBundle:Template:form', array('templateId' => $request->request->get('templateId')));
                 break;
+            case 'refresh':
+                return $this->forward($request->request->get('controller'));
+                break;
             default:
                 throw new UnrecognizedCommandTypeException('Unrecognized command type : ' . $cmd);
         }
