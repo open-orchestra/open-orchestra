@@ -17,10 +17,8 @@
 
 namespace PHPOrchestra\CMSBundle\Controller\Block;
 
+use PHPOrchestra\CMSBundle\Form\Type\AutocompleteSearchType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
  * Search Controller
@@ -33,27 +31,22 @@ class SearchController extends Controller
 
     /**
      * Display search field
+     *
+     * @param string $value
+     * @param string $class
+     * @param string $nodeId
+     * @param int    $limit
      */
-    public function showAction($value, $name, $class, $nodeId)
+    public function showAction($value, $class, $nodeId, $limit = 6)
     {
         // Search form
-        $defaultData = null;
-        $form = $this->createFormBuilder($defaultData)
-            ->setAction($this->generateUrl('php_orchestra_cms_node', array('nodeId' => $nodeId)))
-            ->add(
-                'Search',
-                'text'
-            )->getForm();
-        
+        $form = $this->generateSearchForm($value, $class, $nodeId, $limit);
+
         return $this->render(
             'PHPOrchestraCMSBundle:Block/Search:show.html.twig',
             array(
                 'form' => $form->createView(),
-                'value' => $value,
-                'name' => $name,
-                'class' => $class,
-                'nodeId' => $nodeId,
-                'url' => 'php_orchestra_autocomplete',
+                'url' => 'php_orchestra_autocomplete'
             )
         );
     }
@@ -62,25 +55,41 @@ class SearchController extends Controller
     /** 
      * @see \PHPOrchestra\CMSBundle\Controller\Block\BlockInterface::showBackAction()
      */
-    public function showBackAction($value, $name, $class, $nodeId)
+    public function showBackAction($value, $class, $nodeId, $limit = 6)
     {
-        $form = $this->createFormBuilder(null)
-            ->setAction($this->generateUrl('php_orchestra_cms_node', array('nodeId' => $nodeId)))
-            ->add(
-                'Search',
-                'text'
-            )->getForm();
+        $form = $this->generateSearchForm($value, $class, $nodeId, $limit);
         
         return $this->render(
             'PHPOrchestraCMSBundle:Block/Search:showBack.html.twig',
             array(
                 'form'   => $form->createView(),
-                'value'  => $value,
-                'name'   => $name,
-                'class'  => $class,
-                'nodeId' => $nodeId,
-                'url'    => 'php_orchestra_autocomplete',
                 )
         );
+    }
+
+    /**
+     * @param string $value
+     * @param string $class
+     * @param string $nodeId
+     * @param int    $limit
+     *
+     * @return \Symfony\Component\Form\Form
+     */
+    protected function generateSearchForm($value, $class, $nodeId, $limit)
+    {
+        $form = $this->createForm(
+            new AutocompleteSearchType(
+                $this->generateUrl('php_orchestra_autocomplete', array('limit' => $limit)),
+                $value,
+                $class
+            ),
+            null,
+            array(
+                'action' => $this->generateUrl('php_orchestra_cms_node', array('nodeId' => $nodeId)),
+                'method' => 'GET',
+            )
+        );
+
+        return $form;
     }
 }
