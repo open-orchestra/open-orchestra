@@ -79,7 +79,7 @@ Model\PHPOrchestraCMSBundle\Node:
                 attributes: {"id":"idFooter", "class":{"div":"divclass", "ul":"ulclass", "link":"linkclass"}}
             -
                 component: "Search"
-                attributes: {"value":"Rechercher", "name":"btnSearch", "class":"classbouton", "nodeId":"fixture_search"}
+                attributes: {"value":"Rechercher", "class":"classbouton", "nodeId":"fixture_search", "limit":8}
     
     node_about_us:
         nodeId: fixture_about_us
@@ -167,7 +167,7 @@ Model\PHPOrchestraCMSBundle\Node:
         blocks:
             -
                 component: "Sample"
-                attributes: {"title":"Nous contacter", "author":"Comment nous contacter","news":"swgsdwgh"}
+                attributes: {"title":"Nous contacter", "author":"Comment nous contacter","news":"swgsdwgh", "contentType":"news"}
                 
     node_directory:
         nodeId: fixture_directory
@@ -189,7 +189,7 @@ Model\PHPOrchestraCMSBundle\Node:
         blocks:
             -
                 component: "Sample"
-                attributes: {"title":"Annuaire", "author":"Le bottin mondain","news":""}
+                attributes: {"title":"Annuaire", "author":"Le bottin mondain","news":"", "contentType":"car"}
 
     node_search:
         nodeId: fixture_search

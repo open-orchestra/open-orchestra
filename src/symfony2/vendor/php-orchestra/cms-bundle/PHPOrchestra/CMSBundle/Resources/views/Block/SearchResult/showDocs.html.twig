@@ -13,7 +13,7 @@
                     {% if firstField == fieldname %}
                         <li><a href="{{baseUrl}}{{ doc.url }}" class="doclink">{{ fieldvalue }}</a></li>
                     {% elseif fieldname in fieldsdisplayed %}
-                        <li class="field">{{ fieldvalue }}</li>
+                        <li class="field">{{ fieldvalue | truncate(20, true, '...') }}</li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -30,7 +30,7 @@
 		
 		{% for p in range(1, nbpage ) %}
 			<li{% if p == page %} class="btn-pagination"{% endif %}>
-				<a href="{{ path('php_orchestra_cms_node', {'nodeId': nodeId, 'page': p, 'Search': data}) }}">{{ p }}</a>
+				<a href="{{ path('php_orchestra_cms_node', {'nodeId': nodeId, 'page': p, 'terms': data}) }}">{{ p }}</a>
 			</li> 
 		{% endfor %}
 	</ul>

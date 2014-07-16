@@ -47,12 +47,12 @@ parameters:
             options:
                 max_length:
                     type: integer
-                    label: Longueur maximale
+                    label: max_length
                     default_value: 0
                     required: true
                 required:
                     type: checkbox
-                    label: Champ obligatoire
+                    label: required_field
                     default_value: false
                     required: false
         
@@ -61,12 +61,12 @@ parameters:
             options:
                 max_length:
                     type: integer
-                    label: Longueur maximale
+                    label: max_length
                     default_value: 0
                     required: true
                 required:
                     type: checkbox
-                    label: Champ obligatoire
+                    label: required_field
                     default_value: false
                     required: false
         
@@ -75,17 +75,17 @@ parameters:
             options:
                 rounding_mode:
                     type: integer
-                    label: Mode d'arrondis
+                    label: rounding_mode
                     default_value: 0
                     required: true
                 grouping:
                     type: integer
-                    label: Formatage
+                    label: format
                     default_value: 0
                     required: true
                 required:
                     type: checkbox
-                    label: Champ obligatoire
+                    label: required_field
                     default_value: false
                     required: false
         
@@ -94,12 +94,12 @@ parameters:
             options:
                 max_length:
                     type: integer
-                    label: Longueur maximale
+                    label: max_length
                     default_value: 0
                     required: true
                 required:
                     type: checkbox
-                    label: Champ obligatoire
+                    label: required_field
                     default_value: false
                     required: false
         

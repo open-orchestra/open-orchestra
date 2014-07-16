@@ -25,14 +25,17 @@ class ContentTypeController extends TableViewController
      */
     public function init()
     {
+        parent::init();
+        
         $this->setEntity('ContentType');
-        $this->setMainTitle('Type de contenus');
+        $this->setMainTitle($this->get('translator')->trans('contentTypes.mainTitle', array(), 'backOffice'));
         //$this->setCriteria(array('deleted' => false));
         $this->callback['selectLanguageName'] = function ($jsonLanguages) {
             $languages = (array) json_decode($jsonLanguages);
             $value = '';
-            if (is_array($languages) && isset($languages['fr'])) {
-                $value = $languages['fr'];
+            $currentLanguage = $this->get('phporchestra_cms.contextmanager')->getCurrentLocale();
+            if (is_array($languages) && isset($languages[$currentLanguage])) {
+                $value = $languages[$currentLanguage];
             }
             return $value;
         };
@@ -45,11 +48,30 @@ class ContentTypeController extends TableViewController
      */
     public function setColumns()
     {
+        $translator = $this->get('translator');
+        
         $this->columns = array(
-            array('name' => 'contentTypeId', 'search' => 'text', 'label' => 'Identifiant'),
-            array('name' => 'name', 'search' => 'text', 'label' => 'Nom', 'callback' => 'selectLanguageName'),
-            array('name' => 'version', 'search' => 'text', 'label' => 'Version'),
-            array('name' => 'status', 'search' => 'text', 'label' => 'Statut'),
+            array(
+                'name' => 'contentTypeId',
+                'search' => 'text',
+                'label' => $translator->trans('contentTypes.list.identifier', array(), 'backOffice')
+            ),
+            array(
+                'name' => 'name',
+                'search' => 'text',
+                'label' => $translator->trans('contentTypes.list.name', array(), 'backOffice'),
+                'callback' => 'selectLanguageName'
+            ),
+            array(
+                'name' => 'version',
+                'search' => 'text',
+                'label' =>  $translator->trans('contentTypes.list.version', array(), 'backOffice')
+            ),
+            array(
+                'name' => 'status',
+                'search' => 'text',
+                'label' =>  $translator->trans('contentTypes.list.status', array(), 'backOffice')
+            ),
             array('button' =>'modify'),
             array('button' =>'delete')
         );

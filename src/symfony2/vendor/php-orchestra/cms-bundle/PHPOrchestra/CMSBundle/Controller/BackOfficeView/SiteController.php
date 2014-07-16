@@ -19,6 +19,8 @@ class SiteController extends TableViewController
 
     function init()
     {
+        parent::init();
+        
         $this->setEntity('Site');
     }
     

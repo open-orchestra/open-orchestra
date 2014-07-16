@@ -20,6 +20,7 @@ namespace PHPOrchestra\CMSBundle\Controller\Block;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * SearchResult Controller
@@ -62,50 +63,17 @@ class SearchResultController extends Controller
             $page = 1;
         }
 
-        // Method POST
-        if (isset($_page_parameters['post']['form'])) {
-            if (is_array($_page_parameters['post']['form'])) {
-                $form = $_page_parameters['post']['form'];
-                if (isset($form['Search'])) {
-                    $data = $form['Search'];
-                    
-                    if (!empty($optionsearch)) {
-                        $optionsearch['start'] = ($page * $nbdoc) - $nbdoc;
-                        $optionsearch['rows'] = $page * $nbdoc;
-                    } else {
-                        $optionsearch = array('start' => ($page * $nbdoc) - $nbdoc, 'rows' => $page * $nbdoc);
-                    }
-                    
-                    // Result of search
-                    $resultSet = $this->callResearch(
-                        $data,
-                        $nbspellcheck,
-                        $optionsearch,
-                        $facets,
-                        $filter,
-                        $optionsdismax
-                    );
-                    
-                    // Call template
-                    return $this->callTemplate(
-                        $data,
-                        $resultSet,
-                        $nodeId,
-                        $page,
-                        $nbdoc,
-                        $fielddisplayed,
-                        $facets
-                    );
-        
-                }
-            }
-        }
         // Method GET
         if (isset($_page_parameters['query'])) {
             if (is_array($_page_parameters['query'])) {
                 $form = $_page_parameters['query'];
-                if (isset($form['Search'])) {
-                    $data = $form['Search'];
+                if (isset($form['autocomplete_search']) || isset($form['terms'])) {
+
+                    if (isset($form['autocomplete_search'])) {
+                        $data = $form['autocomplete_search']['terms'];
+                    } elseif (isset($form['terms'])) {
+                        $data = $form['terms'];
+                    }
         
                     if (isset($form['page'])) {
                         $page = $form['page'];
@@ -142,6 +110,10 @@ class SearchResultController extends Controller
                 } else {
                     // Filter
                     if (isset($form['data']) && isset($form['filter']) && isset($form['facetname'])) {
+
+                        if (isset($form['page'])) {
+                            $page = $form['page'];
+                        }
 
                         // Result of filter query
                         $resultSet = $this->callFilter($form['data'], $form['filter'], $form['facetname']);
@@ -385,12 +357,13 @@ class SearchResultController extends Controller
     /**
      * Get list of words find by auto-completion with solr
      *
-     * @return \Symfony\Component\HttpFoundation\JsonResponse
+     * @param Request $request
+     *
+     * @return JsonResponse
      */
-    public function autocompleteAction()
+    public function autocompleteAction(Request $request)
     {
         // Take words in the search word field
-        $request = $this->container->get('request');
         $terms = $request->query->get('term');
     
         // Create facet query
@@ -398,6 +371,7 @@ class SearchResultController extends Controller
         $query = $client->createSelect();
         $query->setQuery('*:*');
         $facetSet = $query->getFacetSet();
+        $facetSet->setLimit($request->get('limit', 5));
         $facet = $facetSet->createFacetField('autocomplete')->setField('suggest');
         $facet->setMinCount(1);
         $facet->setPrefix($terms);
@@ -429,25 +403,24 @@ class SearchResultController extends Controller
         $page = null,
         $_page_parameters = array()
     ) {
-        
         if (!isset($page)) {
             $page = 1;
         }
-        
+
         // Method POST
         if (isset($_page_parameters['post']['form'])) {
             if (is_array($_page_parameters['post']['form'])) {
                 $form = $_page_parameters['post']['form'];
-                if (isset($form['Search'])) {
-                    $data = $form['Search'];
-        
+                if (isset($form['search'])) {
+                    $data = $form['search'];
+                    
                     if (!empty($optionsearch)) {
                         $optionsearch['start'] = ($page * $nbdoc) - $nbdoc;
                         $optionsearch['rows'] = $page * $nbdoc;
                     } else {
                         $optionsearch = array('start' => ($page * $nbdoc) - $nbdoc, 'rows' => $page * $nbdoc);
                     }
-        
+                    
                     // Result of search
                     $resultSet = $this->callResearch(
                         $data,
@@ -457,19 +430,16 @@ class SearchResultController extends Controller
                         $filter,
                         $optionsdismax
                     );
-        
+                    
                     // Call template
-                    return $this->render(
-                        "PHPOrchestraCMSBundle:Block/SearchResult:showBack.html.twig",
-                        array(
-                            'data' => $data,
-                            'resultset' => $resultSet,
-                            'nodeId' => $nodeId,
-                            'page' => $page,
-                            'nbdocs' => $nbdoc,
-                            'fieldsdisplayed' => $fielddisplayed,
-                            'facetsArray' => $facets
-                        )
+                    return $this->callTemplate(
+                        $data,
+                        $resultSet,
+                        $nodeId,
+                        $page,
+                        $nbdoc,
+                        $fielddisplayed,
+                        $facets
                     );
         
                 }
@@ -479,20 +449,20 @@ class SearchResultController extends Controller
         if (isset($_page_parameters['query'])) {
             if (is_array($_page_parameters['query'])) {
                 $form = $_page_parameters['query'];
-                if (isset($form['Search'])) {
-                    $data = $form['Search'];
+                if (isset($form['search'])) {
+                    $data = $form['search'];
         
                     if (isset($form['page'])) {
                         $page = $form['page'];
                     }
-        
+                    
                     if (!empty($optionsearch)) {
                         $optionsearch['start'] = ($page * $nbdoc) - $nbdoc;
                         $optionsearch['rows'] = $page * $nbdoc;
                     } else {
                         $optionsearch = array('start' => ($page * $nbdoc) - $nbdoc, 'rows' => $page * $nbdoc);
                     }
-        
+
                     // Result of search
                     $resultSet = $this->callResearch(
                         $data,
@@ -504,43 +474,37 @@ class SearchResultController extends Controller
                     );
         
                     // Call template
-                    return $this->render(
-                        "PHPOrchestraCMSBundle:Block/SearchResult:showBack.html.twig",
-                        array(
-                            'data' => $data,
-                            'resultset' => $resultSet,
-                            'nodeId' => $nodeId,
-                            'page' => $page,
-                            'nbdocs' => $nbdoc,
-                            'fieldsdisplayed' => $fielddisplayed,
-                            'facetsArray' => $facets
-                        )
+                    return $this->callTemplate(
+                        $data,
+                        $resultSet,
+                        $nodeId,
+                        $page,
+                        $nbdoc,
+                        $fielddisplayed,
+                        $facets
                     );
         
                 } else {
                     // Filter
                     if (isset($form['data']) && isset($form['filter']) && isset($form['facetname'])) {
-        
+
                         // Result of filter query
                         $resultSet = $this->callFilter($form['data'], $form['filter'], $form['facetname']);
-        
+
                         // Call template
-                        return $this->render(
-                            "PHPOrchestraCMSBundle:Block/SearchResult:showBack.html.twig",
-                            array(
-                                'data' => $form['data'],
-                                'resultset' => $resultSet,
-                                'nodeId' => $nodeId,
-                                'page' => $page,
-                                'nbdocs' => $nbdoc,
-                                'fieldsdisplayed' => $fielddisplayed,
-                                'facetsArray' => $facets
-                            )
+                        return $this->callTemplate(
+                            $form['data'],
+                            $resultSet,
+                            $nodeId,
+                            $page,
+                            $nbdoc,
+                            $fielddisplayed,
+                            $facets
                         );
                     }
                 }
             }
         }
-        return new Response($this->get('translator')->trans('Error in showAction'));
+        return new Response($this->get('translator')->trans('No results found'));
     }
 }

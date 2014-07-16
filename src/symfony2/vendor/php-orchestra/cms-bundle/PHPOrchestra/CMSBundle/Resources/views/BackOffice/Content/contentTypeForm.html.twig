@@ -10,7 +10,7 @@
     <ul class="nav nav-tabs" id="languages">
     {% if contentTypeVersions|length > 0 %}
         <li class="pull-right active">
-            <div>
+            <div class="versionContainer">
                 <select class="selectSwitcher">
                     <option value="{{ path(
                         'phporchestra_cms_backofficeview_contenttype_index',
@@ -18,7 +18,7 @@
                             'action' : 'duplicate',
                             'id' : form.vars.value.id.__toString()
                         }
-                    ) }}" data-loadmode="ajax">Créer une nouvelle version</option>
+                    ) }}" data-loadmode="ajax">{{ 'contentTypes.form.newVersion'|trans({}, 'backOffice') }}</option>
                 {% for version in contentTypeVersions %}
                     <option value="{{ path(
                         'phporchestra_cms_backofficeview_contenttype_index',
@@ -27,7 +27,7 @@
                             'id' : version.id.__toString()
                         }
                     ) }}" {% if version.version == form.vars.value.version %}selected="selected"{% endif %}
-                    >Version {{ version.version }} ({{ version.status }})</option>
+                    >{{ 'contentTypes.form.version%versionNumber%'|trans({'versionNumber':version.version}, 'backOffice') }} ({{ version.status }})</option>
                 {% endfor %}
                 </select>
             </div>
@@ -49,7 +49,7 @@
     {{ form_errors(form) }}
     
     <fieldset>
-        <legend>Définition du type de contenu</legend>
+        <legend>{{ 'contentTypes.form.typeDefinition'|trans({}, 'backOffice') }}</legend>
         {{ form_row(form.new_field) }}
         {{ form_row(form.contentTypeId) }}
         {{ form_row(form.status) }}

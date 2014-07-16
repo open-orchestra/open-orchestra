@@ -33,23 +33,31 @@ class ContentType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('shortName', 'text', array('label' => 'Nom de référence'))
-            ->add('version', 'hidden')
-            ->add('language', 'hidden')
-            ->add('contentId', 'hidden')
-            ->add('contentType', 'hidden')
+            ->add(
+                'shortName',
+                'text',
+                array(
+                    'label' => 'contents.form.name',
+                    'translation_domain' => 'backOffice'
+                )
+            )
             ->add(
                 'status',
                 'choice',
                 array(
-                    'choices' =>
-                        array(
-                            Content::STATUS_DRAFT => Content::STATUS_DRAFT,
-                            Content::STATUS_PUBLISHED => Content::STATUS_PUBLISHED,
-                            Content::STATUS_UNPUBLISHED => Content::STATUS_UNPUBLISHED
-                        )
+                    'choices' => array(
+                        Content::STATUS_DRAFT => Content::STATUS_DRAFT,
+                        Content::STATUS_PUBLISHED => Content::STATUS_PUBLISHED,
+                        Content::STATUS_UNPUBLISHED => Content::STATUS_UNPUBLISHED
+                    ),
+                    'label' => 'contents.form.version',
+                    'translation_domain' => 'backOffice'
                 )
-            );
+            )
+            ->add('version', 'hidden')
+            ->add('language', 'hidden')
+            ->add('contentId', 'hidden')
+            ->add('contentType', 'hidden');
         
         if (isset($options['data']) && is_object($options['data'])) {
             

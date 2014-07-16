@@ -182,7 +182,7 @@ class NodeController extends Controller
      */
     public function formAction($nodeId = 0)
     {
-    	$request = $this->get('request');
+        $request = $this->get('request');
         $documentManager = $this->container->get('phporchestra_cms.documentmanager');
         
         if (empty($nodeId)) {
@@ -197,39 +197,35 @@ class NodeController extends Controller
             $node->setVersion($node->getVersion() + 1);
         }
         $doSave = ($request->getMethod() == 'POST');
-        if($request->request->get('ajax')){
-        	$node->fromArray($request->request->all());
-        	$doSave = true;
-        }
-        else{
-	        $form = $this->createForm(
-	            'node',
-	            $node,
-	            array(
-	                'inDialog' => true,
-	                'beginJs' => array('pagegenerator/dialogNode.js', 'pagegenerator/model.js'),
-	                'endJs' => array('pagegenerator/node.js?'.time()),
-	                'action' => $this->getRequest()->getUri()
-	            )
-	        );
-	        if($doSave){
-	        	$form->handleRequest($request);
-	        	$doSave = $form->isValid();
-	        }
+        if ($request->request->get('ajax')) {
+            $node->fromArray($request->request->all());
+            $doSave = true;
+        } else {
+            $form = $this->createForm(
+                'node',
+                $node,
+                array(
+                    'inDialog' => true,
+                    'beginJs' => array('pagegenerator/dialogNode.js', 'pagegenerator/model.js'),
+                    'endJs' => array('pagegenerator/node.js?'.time()),
+                    'action' => $this->getRequest()->getUri()
+                )
+            );
+            if ($doSave) {
+                $form->handleRequest($request);
+                $doSave = $form->isValid();
+            }
         }
         if ($doSave) {
-            if(!$node->getDeleted()){
+            if (!$node->getDeleted()) {
                 $node->setId(null);
                 $node->setIsNew(true);
                 $node->save();
-                // Testing if solr is running and index a node
-                /*$indexSolr = $this->get('phporchestra_cms.indexsolr');
-                if ($indexSolr->solrIsRunning()) {
-                    $indexSolr->get('phporchestra_cms.indexsolr')->slpitDoc($node, 'Node');
-                }*/
-            }
-            else{
-            	$this->deleteTree($node->getNodeId());
+
+                /*$soft = $this->get('phporchestra_cms.indexHelper');
+                $soft->index($node, 'Node');*/
+            } else {
+                $this->deleteTree($node->getNodeId());
             }
             
             $response = $this->render(
@@ -264,13 +260,10 @@ class NodeController extends Controller
      */
     protected function deleteTree($nodeId)
     {
-        // Testing if solr is running and delete a node from the index
-        /*$indexSolr = $this->get('phporchestra_cms.indexsolr');
-        if ($indexSolr->solrIsRunning()) {
-            $indexSolr->deleteIndex($nodeId);
-        }*/
-    	
-    	$documentManager = $this->get('phporchestra_cms.documentmanager');
+        /*$soft = $this->get('phporchestra_cms.indexHelper');
+        $soft->deleteIndex($nodeId);*/
+        
+        $documentManager = $this->get('phporchestra_cms.documentmanager');
         
         $nodeVersions = $documentManager->getDocuments('Node', array('nodeId' => $nodeId));
         
@@ -285,5 +278,4 @@ class NodeController extends Controller
         }
         return true;
     }
-    
 }

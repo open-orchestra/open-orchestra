@@ -14,7 +14,7 @@
  *
  * See LICENSE.txt file for the full LICENSE text.
  */
-    
+
 namespace PHPOrchestra\BlockBundle\Test\Command;
 
 use Symfony\Component\Console\Tester\CommandTester;
@@ -30,12 +30,29 @@ use PHPOrchestra\BlockBundle\Command\IndexCommand;
 class IndexCommandTest extends \PHPUnit_Framework_TestCase
 {
 
+    /**
+     * @var PHPOrchestra\CMSBundle\Test\Mock\Mandango
+     */
     protected $mandango = null;
     
+    /**
+     * @var Symfony\Component\HttpKernel\Kernel
+     */
     protected $kernel = null;
     
+    /**
+     * @var Symfony\Component\DependencyInjection\Container
+     */
     protected $container = null;
     
+    /**
+     * @var PHPOrchestra\BlockBundle\IndexCommand\SolrIndexCommand
+     */
+    protected $solrIndex = null;
+
+    /**
+     * @see PHPUnit_Framework_TestCase::setUp()
+     */
     public function setUp()
     {
         $this->mandango = $this->getMock('PHPOrchestra\\CMSBundle\\Test\\Mock\\Mandango');
@@ -58,11 +75,28 @@ class IndexCommandTest extends \PHPUnit_Framework_TestCase
             false
         );
         
+        $this->solrIndex = $this->getMock(
+            '\\PHPOrchestra\\BlockBundle\\IndexCommand\\SolrIndexCommand',
+            array(),
+            array($this->container)
+        );
+        
+        $indexHelper = $this->getMock(
+            '\\PHPOrchestra\\CMSBundle\\Helper\\IndexHelper',
+            array(),
+            array($this->container)
+        );
+        
+        $indexHelper->expects($this->at(0))->method('getSolr')->will($this->returnValue(true));
+        $indexHelper->expects($this->at(0))->method('getElasticSearch')->will($this->returnValue(true));
+        
         $trans = $this->getMock('\\Symfony\\Component\\Translation\\Translator', array(), array('en'));
         
-        $this->mandango->expects($this->once())->method('getRepository')->will($this->returnValue($repository));
+        $this->mandango->expects($this->any())->method('getRepository')->will($this->returnValue($repository));
         $this->container->expects($this->at(0))->method('get')->will($this->returnValue($this->mandango));
-        $this->container->expects($this->at(1))->method('get')->will($this->returnValue($trans));
+        $this->container->expects($this->at(1))->method('get')->will($this->returnValue($indexHelper));
+        $this->container->expects($this->at(2))->method('get')->will($this->returnValue($this->solrIndex));
+        $this->container->expects($this->at(3))->method('get')->will($this->returnValue($trans));
         $this->kernel->expects($this->once())->method('getContainer')->will($this->returnValue($this->container));
         
     }

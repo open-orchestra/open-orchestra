@@ -25,14 +25,24 @@ class ContentController extends TableViewController
      */
     public function init()
     {
+        parent::init();
+        
         $this->setEntity('Content');
+        
+        $this->setMainTitle(
+            $this->get('translator')->trans(
+                'contents.mainTitle%contentType%',
+                array('contentType' => $this->routeParameters['contentTypeId']),
+                'backOffice'
+            )
+        );
+        
         $this->setCriteria(
             array(
                 'contentType' => $this->routeParameters['contentTypeId'],
               //  'deleted' => false
             )
         );
-        $this->setMainTitle('Contenus de type ' . $this->routeParameters['contentTypeId']);
     }
     
     /**
@@ -42,11 +52,29 @@ class ContentController extends TableViewController
      */
     public function setColumns()
     {
+        $translator = $this->get('translator');
+        
         $this->columns = array(
-            array('name' => 'contentId', 'search' => 'text', 'label' => 'Id de contenu'),
-            array('name' => 'shortName', 'search' => 'text', 'label' => 'Nom'),
-            array('name' => 'language', 'search' => 'text', 'label' => 'Langue'),
-            array('name' => 'version', 'search' => 'text', 'label' => 'Version'),
+            array(
+                'name' => 'contentId',
+                'search' => 'text',
+                'label' => $translator->trans('contents.list.contentId', array(), 'backOffice')
+            ),
+            array(
+                'name' => 'shortName',
+                'search' => 'text',
+                'label' => $translator->trans('contents.list.label', array(), 'backOffice')
+            ),
+            array(
+                'name' => 'language',
+                'search' => 'text',
+                'label' => $translator->trans('contents.list.language', array(), 'backOffice')
+            ),
+            array(
+                'name' => 'version',
+                'search' => 'text',
+                'label' => $translator->trans('contents.list.version', array(), 'backOffice')
+            ),
             array('button' =>'modify'),
             array('button' =>'delete')
         );
@@ -174,12 +202,9 @@ class ContentController extends TableViewController
                 $version->save();
             }
         }
-        
-        // Testing if solr is running and index a content
-        /*$indexSolr = $this->container->get('phporchestra_cms.indexsolr');
-        if ($indexSolr->solrIsRunning()) {
-            $indexSolr->slpitDoc($document, 'Content');
-        }*/
+
+        /*$soft = $this->get('phporchestra_cms.indexHelper');
+        $soft->index($document, 'Content');*/
         
         return array(
             'success' => true,
@@ -203,12 +228,9 @@ class ContentController extends TableViewController
         foreach ($contentVersions as $contentVersion) {
             $contentVersion->markAsDeleted();
         }
-        
-        // Testing if solr is running and delete a content from the index
-        /*$indexSolr = $this->get('phporchestra_cms.indexsolr');
-        if ($indexSolr->solrIsRunning()) {
-            $indexSolr->deleteIndex($documentId);
-        }*/
+
+        /*$soft = $this->get('phporchestra_cms.indexHelper');
+        $soft->deleteIndex($contentId);*/
         
         return $this->redirect(
             $this->generateUrlValue('catalog')

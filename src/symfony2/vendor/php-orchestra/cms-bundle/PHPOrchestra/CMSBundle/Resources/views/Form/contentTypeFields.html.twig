@@ -12,13 +12,14 @@
     {% endfor %}
 {% endblock %}
 
+
 {% block orchestra_customField_widget %}
 <fieldset>
     <legend>
         {% if form.vars.value.fieldId != '' %}
-            Champ "{{ form.vars.value.fieldId }}"
+            {{ 'contentTypes.form.field%fieldId%'|trans({'fieldId':form.vars.value.fieldId}, 'backOffice') }}
         {% else %}
-            Nouveau champ
+            {{ 'contentTypes.form.newField'|trans({}, 'backOffice') }}
         {% endif %}
         [{{ form.vars.value.type }}]
     </legend>
@@ -36,6 +37,7 @@
 </fieldset>
 {% endblock %}
 
+
 {% block multilingualText_widget %}
 <div class="widget-body">
     {{ form_label(form)}}
@@ -51,11 +53,11 @@
       {% endif %}
     {% endfor %}
     </ul>
-    <div class="tab-content padding-10" id="myTabContent1">
+    <div class="tab-content padding-10" id="tabContent_{{ form.vars.id }}">
     {% for key, value in form %}
         {% if key starts with 'language' %}
             {% set language = key|replace({'language_':''}) %}
-        <div id="language_{{ form.vars.id }}_{{ language }}" class="tab-pane fade{% if loop.first %} active in{% endif %}">
+        <div id="language_{{ form.vars.id }}_{{ language }}" class="tab-pane {% if loop.first %} active in{% endif %}">
             <section>
                 <label class="label input" style="margin-top:14px;">
                     {{ form_widget(form[key]) }}<i></i>

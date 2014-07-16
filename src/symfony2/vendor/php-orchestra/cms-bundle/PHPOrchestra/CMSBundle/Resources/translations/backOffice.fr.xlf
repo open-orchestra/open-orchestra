@@ -2,14 +2,18 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
     <file source-language="en" datatype="plaintext" original="file.ext">
         <body>
-            
+
+<!-- GENERAL -->
+
             <group id="general">
                 <trans-unit id="loading">
                     <source>loading</source>
                     <target>Chargement ...</target>
                 </trans-unit>
             </group>
-            
+
+<!-- TOP MENU -->
+
             <group id="topMenu">
                 <trans-unit id="site">
                     <source>site</source>
@@ -36,7 +40,9 @@
                     <target>drapeau language</target>
                 </trans-unit>
             </group>
-            
+
+<!-- LEFT MENU -->
+
             <group id="leftMenu">
                 
                 <group id="editorial">
@@ -88,7 +94,9 @@
                         <target>Le cache de routage a été purgé avec succès.</target>
                     </trans-unit>
                 </group>
-                
+
+<!-- TABLE VIEW -->
+
                 <group id="tableView">
                     <trans-unit id="tableView.deleteDialog.title">
                         <source>tableView.deleteDialog.title</source>
@@ -129,6 +137,140 @@
                     <trans-unit id="tableView.back">
                         <source>tableView.back</source>
                         <target>Retour</target>
+                    </trans-unit>
+                </group>
+                
+            </group>
+
+<!-- CONTENT TYPES -->
+
+            <group id="contentTypes">
+                
+                <trans-unit id="contentTypes.mainTitle">
+                    <source>contentTypes.mainTitle</source>
+                    <target>Types de contenu</target>
+                </trans-unit>
+                
+                <group id="contentTypes.list">
+                    <trans-unit id="contentTypes.list.identifier">
+                        <source>contentTypes.list.identifier</source>
+                        <target>Identifiant</target>
+                    </trans-unit>
+                    <trans-unit id="contentTypes.list.name">
+                        <source>contentTypes.list.name</source>
+                        <target>Nom</target>
+                    </trans-unit>
+                    <trans-unit id="contentTypes.list.version">
+                        <source>contentTypes.list.version</source>
+                        <target>Version</target>
+                    </trans-unit>
+                    <trans-unit id="contentTypes.list.status">
+                        <source>contentTypes.list.status</source>
+                        <target>Statut</target>
+                    </trans-unit>
+                </group>
+                
+                <group id="contentTypes.form">
+                    <trans-unit id="contentTypes.form.identifier">
+                        <source>contentTypes.form.identifier</source>
+                        <target>Identifiant technique</target>
+                    </trans-unit>
+                    <trans-unit id="contentTypes.form.label">
+                        <source>contentTypes.form.label</source>
+                        <target>Intitulé du type de contenu</target>
+                    </trans-unit>
+                    <trans-unit id="contentTypes.form.version">
+                        <source>contentTypes.form.version</source>
+                        <target>Version</target>
+                    </trans-unit>
+                    <trans-unit id="contentTypes.form.status">
+                        <source>contentTypes.form.status</source>
+                        <target>Statut</target>
+                    </trans-unit>
+                    <trans-unit id="contentTypes.form.newVersion">
+                        <source>contentTypes.form.newVersion</source>
+                        <target>Créer une nouvelle version</target>
+                    </trans-unit>
+                    <trans-unit id="contentTypes.form.versX">
+                        <source>contentTypes.form.version%versionNumber%</source>
+                        <target>Version versionNumber</target>
+                    </trans-unit>
+                    <trans-unit id="contentTypes.form.typeDefinition">
+                        <source>contentTypes.form.typeDefinition</source>
+                        <target>Définition du type de contenu</target>
+                    </trans-unit>
+                    <trans-unit id="contentTypes.form.fieldX">
+                        <source>contentTypes.form.field%fieldId%</source>
+                        <target>Champ "fieldName"</target>
+                    </trans-unit>
+                    <trans-unit id="contentTypes.form.newField">
+                        <source>contentTypes.form.newField</source>
+                        <target>Nouveau champ</target>
+                    </trans-unit>
+                    <trans-unit id="contentTypes.form.fieldLabel">
+                        <source>contentTypes.form.fieldLabel</source>
+                        <target>Intitulé du champ</target>
+                    </trans-unit>
+                    <trans-unit id="contentTypes.form.defaultValue">
+                        <source>contentTypes.form.defaultValue</source>
+                        <target>Valeur par défaut</target>
+                    </trans-unit>
+                    <trans-unit id="contentTypes.form.indexable">
+                        <source>contentTypes.form.indexable</source>
+                        <target>Indexable</target>
+                    </trans-unit>
+                    <trans-unit id="contentTypes.form.removeField">
+                        <source>contentTypes.form.removeField</source>
+                        <target>Supprimer le champ</target>
+                    </trans-unit>
+                </group>
+                
+            </group>
+
+<!-- CONTENTS -->
+
+            <group id="contents">
+                
+                <trans-unit id="contents.mainTitleX">
+                    <source>contents.mainTitle%contentType%</source>
+                    <target>Contenus de type contentType</target>
+                </trans-unit>
+                
+                <group id="contents.list">
+                    <trans-unit id="contents.list.contentId">
+                        <source>contents.list.contentId</source>
+                        <target>Identifiant</target>
+                    </trans-unit>
+                    <trans-unit id="contents.list.label">
+                        <source>contents.list.label</source>
+                        <target>Intitulé</target>
+                    </trans-unit>
+                    <trans-unit id="contents.list.language">
+                        <source>contents.list.language</source>
+                        <target>Langue</target>
+                    </trans-unit>
+                    <trans-unit id="contents.list.version">
+                        <source>contents.list.version</source>
+                        <target>Version</target>
+                    </trans-unit>
+                </group>
+                
+                <group id="contents.form">
+                    <trans-unit id="contents.form.name">
+                        <source>contents.form.name</source>
+                        <target>Intitulé du contenu</target>
+                    </trans-unit>
+                    <trans-unit id="contents.form.version">
+                        <source>contents.form.version</source>
+                        <target>Version</target>
+                    </trans-unit>
+                    <trans-unit id="contents.form.newVersion">
+                        <source>contents.form.newVersion</source>
+                        <target>Créer une nouvelle version</target>
+                    </trans-unit>
+                    <trans-unit id="contents.form.versX">
+                        <source>contents.form.version%versionNumber%</source>
+                        <target>Version versionNumber</target>
                     </trans-unit>
                 </group>
                 

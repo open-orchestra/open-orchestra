@@ -33,7 +33,6 @@ class SolrIndexCommand
      */
     protected $container;
 
-
     /**
      * Instantiate the container
      * 
@@ -48,13 +47,14 @@ class SolrIndexCommand
     /**
      * index one or more nodes in solr
      * 
-     * @param Node(array)|Content(array) $docs One or many object Node|Content
-     * @param string $doctype type of documents
+     * @param Node(array)|
+     * Content(array) $docs One or many object Node|Content
+     * @param string $docType type of documents
      * @param array $fields array of Model/PHPOrchestraCMSBundle/FieldIndex
      * 
      * @return indexation result
      */
-    public function index($docs, $doctype, $fields)
+    public function index($docs, $docType, $fields)
     {
         $client = $this->container->get('solarium.client');
         
@@ -67,12 +67,12 @@ class SolrIndexCommand
         if (is_array($docs)) {
             foreach ($docs as $doc) {
                 if (isset($doc) && !empty($doc)) {
-                    $field = $this->getField($fields, $doc, $doctype);
+                    $field = $this->getField($fields, $doc, $docType);
                     $documents[] = $doc->toSolrDocument($update->createDocument(), $field);
                 }
             }
         } else {
-            $field = $this->getField($fields, $docs, $doctype);
+            $field = $this->getField($fields, $docs, $docType);
             $documents[] = $docs->toSolrDocument($update->createDocument(), $field);
         }
         
@@ -190,9 +190,7 @@ class SolrIndexCommand
                 $fieldComplete[$fieldName.'_'.$fieldType] = $this->getContentContent($doc, $fieldName);
             }
             $fieldComplete['url'] = array(
-                $this->container->get(
-                    'phporchestra_cms.urlgeneratorContent'
-                )->generateUrl($doc->getContentId())
+                $this->generateUrl($doc->getContentId(), $doc->getContentType())
             );
             return $fieldComplete;
         }
@@ -206,16 +204,16 @@ class SolrIndexCommand
      * @param Node(array)|Content(array) $docs One or many object Node|Content
      * @param string $docType type of documents
      */
-    public function slpitDoc($docs, $doctype)
+    public function slpitDoc($docs, $docType)
     {
         $fields = $this->container->get('mandango')->getRepository('Model\PHPOrchestraCMSBundle\FieldIndex')->getAll();
         
         if (!is_array($docs) || count($docs) < 500) {
-            $this->index($docs, $doctype, $fields);
+            $this->index($docs, $docType, $fields);
         } else {
             $docArray = array_chunk($docs, 500);
             foreach ($docArray as $doc) {
-                $this->index($doc, $doctype, $fields);
+                $this->index($doc, $docType, $fields);
             }
         }
     }
@@ -228,17 +226,73 @@ class SolrIndexCommand
      */
     public function solrIsRunning()
     {
-        // Index the node in solr
+        // Create a ping query
         $client = $this->container->get('solarium.client');
-        $query = $client->createPing();
-        $run = false;
-         
-        try {
-            $result = $client->ping($query);
-            $run = true;
-        } catch (Solarium\Exception $e) {
-            // the SOLR server is inaccessible, do something
+        $ping = $client->createPing();
+    
+        // Create a handle with the adapter and get the http response
+        $request = $client->createRequest($ping);
+        $handle = $client->getAdapter()->createHandle($request, $client->getEndPoint());
+        $http = curl_exec($handle);
+
+        if ($http === false) {
+            return false;
+        } else {
+            return true;
         }
-        return $run;
+    }
+
+
+    /**
+     * Generate the url of a content
+     *
+     * @param string $contentId
+     * @param string $contentType
+     *
+     * @return string|null
+     */
+    public function generateUrl($contentId, $contentType)
+    {
+        // Get all Nodes and test if they have the contentType
+        $nodes = $this->container->get('mandango')->getRepository('Model\PHPOrchestraCMSBundle\Node')->getAllNodes();
+        $uri = null;
+        if (is_array($nodes)) {
+            foreach ($nodes as $node) {
+                $isContent = $this->isContent($node, $contentType);
+                if ($isContent === true) {
+                    // Get url of the node
+                    $uri = $this->container->get('router')->generate($node->getNodeId(), array($contentId));
+                    break;
+                }
+            }
+        }
+    
+        return $uri;
+    }
+    
+    
+    /**
+     * Test if a node have a content with the same content type
+     *
+     * @param Node $node
+     * @param string $contentId content id
+     * @param string $contentType content type
+     *
+     * @return boolean
+     */
+    public function isContent($node, $contentType)
+    {
+        $blocks = $node->getBlocks();
+        foreach ($blocks as $block) {
+            $attributes = $block->getAttributes();
+            foreach ($attributes as $name => $value) {
+                if (strcmp($name, 'contentType') === 0) {
+                    if (strcmp($value, $contentType) === 0) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
     }
 }
