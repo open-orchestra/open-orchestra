@@ -6,11 +6,8 @@
 !/src/symfony2/app/cache/.gitkeep
 !/src/symfony2/app/logs/.gitkeep
 
-#==[Composer]=========================#
-#/src/symfony2/composer.phar
+#==[Vendor]=========================#
 /src/symfony2/vendor/*
-/src/symfony2/vendor/composer/*
-/src/symfony2/composer.lock
 
 #==[IDE]==============================#
 .buildpath
