@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Sensio\Bundle\FrameworkExtraBundle\Tests\EventListener;
 
 use Sensio\Bundle\FrameworkExtraBundle\Security\ExpressionLanguage;
@@ -29,7 +38,7 @@ class SecurityListenerTest extends \PHPUnit_Framework_TestCase
         $language = new ExpressionLanguage();
 
         $listener = new SecurityListener($securityContext, $language, $trustResolver);
-        $request = $this->createRequest(new Security(array('expression' => 'has_role("ROLE_ADMIN") and is_granted("FOO")')));
+        $request = $this->createRequest(new Security(array('expression' => 'has_role("ROLE_ADMIN") or is_granted("FOO")')));
 
         $event = new FilterControllerEvent($this->getMock('Symfony\Component\HttpKernel\HttpKernelInterface'), function () { return new Response(); }, $request, null);
 

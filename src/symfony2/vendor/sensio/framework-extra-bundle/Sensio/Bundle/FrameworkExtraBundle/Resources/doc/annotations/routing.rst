@@ -115,7 +115,8 @@ Route Prefix
 ------------
 
 A ``@Route`` annotation on a controller class defines a prefix for all action
-routes::
+routes (note that you cannot have more than one ``@Route`` annotation on a
+class)::
 
     /**
      * @Route("/blog")
@@ -172,7 +173,7 @@ PostController()`` itself::
     /**
      * @Route(service="my_post_controller_service")
      */
-    class PostController extends Controller
+    class PostController
     {
         // ...
     }

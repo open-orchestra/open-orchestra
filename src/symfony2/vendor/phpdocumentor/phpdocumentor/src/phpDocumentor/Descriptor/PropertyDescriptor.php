@@ -17,7 +17,9 @@ use phpDocumentor\Descriptor\Tag\VarDescriptor;
 /**
  * Descriptor representing a property.
  */
-class PropertyDescriptor extends DescriptorAbstract implements Interfaces\PropertyInterface
+class PropertyDescriptor
+    extends DescriptorAbstract
+    implements Interfaces\PropertyInterface, Interfaces\VisibilityInterface
 {
     /** @var ClassDescriptor|TraitDescriptor $parent */
     protected $parent;
@@ -89,7 +91,7 @@ class PropertyDescriptor extends DescriptorAbstract implements Interfaces\Proper
     /**
      * {@inheritDoc}
      */
-    public function setTypes(array $types)
+    public function setTypes(Collection $types)
     {
         $this->types = $types;
     }
@@ -100,7 +102,7 @@ class PropertyDescriptor extends DescriptorAbstract implements Interfaces\Proper
     public function getTypes()
     {
         if (!$this->types) {
-            $this->types = array();
+            $this->types = new Collection();
 
             /** @var VarDescriptor $var */
             $var = $this->getVar()->getIterator()->current();
@@ -162,7 +164,7 @@ class PropertyDescriptor extends DescriptorAbstract implements Interfaces\Proper
      *
      * @return PropertyDescriptor|null
      */
-    protected function getInheritedElement()
+    public function getInheritedElement()
     {
         /** @var ClassDescriptor|InterfaceDescriptor|null $associatedClass */
         $associatedClass = $this->getParent();

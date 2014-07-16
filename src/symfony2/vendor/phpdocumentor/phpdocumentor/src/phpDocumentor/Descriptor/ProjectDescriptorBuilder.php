@@ -15,6 +15,7 @@ use phpDocumentor\Descriptor\Builder\AssemblerFactory;
 use phpDocumentor\Descriptor\Builder\Reflector\AssemblerAbstract;
 use phpDocumentor\Descriptor\Filter\Filter;
 use phpDocumentor\Descriptor\Filter\Filterable;
+use phpDocumentor\Descriptor\ProjectDescriptor\Settings;
 use phpDocumentor\Descriptor\Validator\Error;
 use Psr\Log\LogLevel;
 use Symfony\Component\Validator\ConstraintViolation;
@@ -74,7 +75,8 @@ class ProjectDescriptorBuilder
      * to determine whether the visibility of that element is matches what the user has specified when it ran
      * phpDocumentor.
      *
-     * @param integer $visibility One of the visibility constants of the ProjectDescriptor class.
+     * @param string|integer $visibility One of the visibility constants of the ProjectDescriptor class or the words
+     *     'public', 'protected', 'private' or 'internal'.
      *
      * @see ProjectDescriptor where the visibility is stored and that declares the constants to use.
      *
@@ -82,6 +84,13 @@ class ProjectDescriptorBuilder
      */
     public function isVisibilityAllowed($visibility)
     {
+        switch($visibility) {
+            case 'public':    $visibility = Settings::VISIBILITY_PUBLIC; break;
+            case 'protected': $visibility = Settings::VISIBILITY_PROTECTED; break;
+            case 'private':   $visibility = Settings::VISIBILITY_PRIVATE; break;
+            case 'internal':  $visibility = Settings::VISIBILITY_INTERNAL; break;
+        }
+
         return $this->getProjectDescriptor()->isVisibilityAllowed($visibility);
     }
 
@@ -102,7 +111,7 @@ class ProjectDescriptorBuilder
      *
      * @throws \InvalidArgumentException if no Assembler could be found that matches the given data.
      *
-     * @return DescriptorAbstract|null
+     * @return DescriptorAbstract|Collection|null
      */
     public function buildDescriptor($data)
     {
@@ -123,14 +132,9 @@ class ProjectDescriptorBuilder
             return null;
         }
 
-        // filter the descriptor; this may result in the descriptor being removed!
-        $descriptor = $this->filter($descriptor);
-        if (!$descriptor) {
-            return null;
-        }
-
-        // Validate the descriptor and store any errors
-        $descriptor->setErrors($this->validate($descriptor));
+        $descriptor = (!is_array($descriptor) && (!$descriptor instanceof Collection))
+            ? $this->filterAndValidateDescriptor($descriptor)
+            : $this->filterAndValidateEachDescriptor($descriptor);
 
         return $descriptor;
     }
@@ -184,5 +188,54 @@ class ProjectDescriptorBuilder
         }
 
         return $errors;
+    }
+
+    /**
+     * Filters each descriptor, validates them, stores the validation results and returns a collection of transmuted
+     * objects.
+     *
+     * @param DescriptorAbstract[] $descriptor
+     *
+     * @return Collection
+     */
+    private function filterAndValidateEachDescriptor($descriptor)
+    {
+        $descriptors = new Collection();
+        foreach ($descriptor as $key => $item) {
+            $item = $this->filterAndValidateDescriptor($item);
+            if (!$item) {
+                continue;
+            }
+
+            $descriptors[$key] = $item;
+        }
+
+        return $descriptors;
+    }
+
+    /**
+     * Filters a descriptor, validates it, stores the validation results and returns the transmuted object or null
+     * if it is supposed to be removed.
+     *
+     * @param DescriptorAbstract $descriptor
+     *
+     * @return DescriptorAbstract|null
+     */
+    protected function filterAndValidateDescriptor($descriptor)
+    {
+        if (!$descriptor instanceof Filterable) {
+            return $descriptor;
+        }
+
+        // filter the descriptor; this may result in the descriptor being removed!
+        $descriptor = $this->filter($descriptor);
+        if (!$descriptor) {
+            return null;
+        }
+
+        // Validate the descriptor and store any errors
+        $descriptor->setErrors($this->validate($descriptor));
+
+        return $descriptor;
     }
 }

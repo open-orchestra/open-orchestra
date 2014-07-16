@@ -241,7 +241,13 @@ class SncRedisExtension extends Extension
         }
         if ($client['options']['connection_timeout']) {
             $connectParameters[] = $client['options']['connection_timeout'];
+        } else {
+            $connectParameters[] = 0;
         }
+        if ($client['options']['connection_persistent']) {
+            $connectParameters[] = $dsn->getPersistentId();
+        }
+
         $phpredisDef->addMethodCall($connectMethod, $connectParameters);
         if ($client['options']['prefix']) {
             $phpredisDef->addMethodCall('setOption', array(\Redis::OPT_PREFIX, $client['options']['prefix']));
@@ -331,7 +337,7 @@ class SncRedisExtension extends Extension
                 if ($cache['namespace']) {
                     $def->addMethodCall('setNamespace', array($cache['namespace']));
                 }
-                $container->setDefinition(sprintf('doctrine.odm.mongodb.%s_%s', $dm, $name), $def);
+                $container->setDefinition(sprintf('doctrine_mongodb.odm.%s_%s', $dm, $name), $def);
             }
         }
     }

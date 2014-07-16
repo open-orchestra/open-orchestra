@@ -52,15 +52,15 @@
         {% if node.classes|length > 0 or node.interfaces|length > 0 or node.traits|length > 0 %}
             <div class="package-indent">
                 <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
-                {% for trait in node.traits %}
+                {% for trait in node.traits|sort_asc %}
                     {{ self.elementSummary(trait, 'trait') }}
                 {% endfor %}
 
-                {% for interface in node.interfaces %}
+                {% for interface in node.interfaces|sort_asc %}
                     {{ self.elementSummary(interface, 'interface') }}
                 {% endfor %}
 
-                {% for class in node.classes %}
+                {% for class in node.classes|sort_asc %}
                     {{ self.elementSummary(class, 'class') }}
                 {% endfor %}
             </div>
@@ -75,7 +75,7 @@
 {% macro renderPackageSidebar(node) %}
     {% import _self as self %}
 
-    {% for package in node.children %}
+    {% for package in node.children|sort_asc %}
     <li>
         <a href="{{ path(package) }}" title="{{ package.name }}">
             <i class="icon-th"></i> {{ package.name }}
@@ -107,7 +107,12 @@
                 <li class="nav-header">
                     <i class="icon-map-marker"></i> Packages
                 </li>
-                {{ self.renderPackageSidebar(node) }}
+                <a href="{{ path(node) }}" title="{{ node.name }}">
+                    <i class="icon-th"></i> {{ node.name }}
+                </a>
+                <ul class="nav nav-list nav-packages">
+                    {{ self.renderPackageSidebar(node) }}
+                </ul>
             </ul>
         </div>
 

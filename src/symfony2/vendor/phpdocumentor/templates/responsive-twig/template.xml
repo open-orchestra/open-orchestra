@@ -27,6 +27,7 @@
     <transformation query="indexes.packages" writer="twig" source="templates/responsive-twig/package.html.twig" />
     <transformation query="indexes.classes" writer="twig" source="templates/responsive-twig/class.html.twig" />
     <transformation query="indexes.interfaces" writer="twig" source="templates/responsive-twig/class.html.twig" />
+    <transformation query="indexes.traits" writer="twig" source="templates/responsive-twig/class.html.twig" />
     <transformation writer="twig" source="templates/responsive-twig/reports/markers.html.twig" artifact="markers.html"/>
     <transformation writer="twig" source="templates/responsive-twig/reports/errors.html.twig" artifact="errors.html"/>
     <transformation writer="twig" source="templates/responsive-twig/reports/deprecated.html.twig" artifact="deprecated.html"/>

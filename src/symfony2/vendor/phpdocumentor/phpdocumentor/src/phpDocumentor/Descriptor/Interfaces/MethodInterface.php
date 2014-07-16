@@ -16,7 +16,7 @@ use phpDocumentor\Descriptor\Collection;
 /**
  * Describes the public interface of the description for a method.
  */
-interface MethodInterface extends BaseInterface
+interface MethodInterface extends ElementInterface, TypeInterface
 {
     /**
      * @param boolean $abstract
@@ -61,9 +61,4 @@ interface MethodInterface extends BaseInterface
      * @return void
      */
     public function setVisibility($visibility);
-
-    /**
-     * @return string
-     */
-    public function getVisibility();
 }

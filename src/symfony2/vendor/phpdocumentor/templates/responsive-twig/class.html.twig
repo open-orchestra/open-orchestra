@@ -57,7 +57,7 @@
 
                     <h3><i class="icon-custom icon-method"></i> Methods</h3>
                     {% set specialMethods = node.magicMethods ? node.inheritedMethods.merge(node.magicMethods) : node.inheritedMethods %}
-                    {% for method in node.methods.merge(specialMethods) %}
+                    {% for method in node.methods.merge(specialMethods)|sort_asc %}
                         <a id="method_{{ method.name }}"></a>
                         <div class="element clickable method {{ method.visibility }} {{ method.deprecated ? 'deprecated' }} method_{{ method.name }}{{ method.parent.name != node.name ? ' inherited' : '' }}" data-toggle="collapse" data-target=".method_{{ method.name }} .collapse">
                             <h2>{{ method.summary ?: method.name }}</h2>

@@ -467,6 +467,16 @@ class FeatureContext extends BehatContext
     }
 
     /**
+     * @Then /^the application must have run successfully$/
+     */
+    public function theApplicationMustHaveRunSuccessfully()
+    {
+        if ($this->process->getErrorOutput()) {
+            throw new \Exception($this->process->getErrorOutput());
+        }
+    }
+
+    /**
      * @Given /^a source file containing validation errors$/
      */
     public function aSourceFileContainingValidationErrors()
@@ -664,6 +674,20 @@ XML
         $descriptorClass = '\\phpDocumentor\\Descriptor\\' . ucfirst($arg1) . 'Descriptor';
         if (!$expressionResult instanceof $descriptorClass) {
             throw new Exception('The value at the given expression is not a \'' . $arg1. '\'');
+        }
+    }
+
+    /**
+     * @Then /^the AST has no "([^"]*)" at expression "([^"]*)"$/
+     */
+    public function theAstHasNoExpression($arg1, $arg2)
+    {
+        $expression = new ExpressionLanguage();
+        $expressionResult = $expression->evaluate($arg2, array('project' => $this->getAst()));
+
+        $descriptorClass = '\\phpDocumentor\\Descriptor\\' . ucfirst($arg1) . 'Descriptor';
+        if ($expressionResult instanceof $descriptorClass) {
+            throw new Exception('The value at the given expression is a \'' . $arg1. '\' while this was not expected');
         }
     }
 }

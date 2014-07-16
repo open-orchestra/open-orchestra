@@ -20,6 +20,8 @@ use phpDocumentor\Compiler\Pass\ElementsIndexBuilder;
 use phpDocumentor\Compiler\Pass\NamespaceTreeBuilder;
 use phpDocumentor\Compiler\Pass\PackageTreeBuilder;
 use phpDocumentor\Compiler\Pass\MarkerFromTagsExtractor;
+use phpDocumentor\Compiler\Pass\ResolveInlineLinkAndSeeTags;
+use phpDocumentor\Descriptor\ProjectDescriptorBuilder;
 use phpDocumentor\Transformer\Command\Project\TransformCommand;
 use phpDocumentor\Transformer\Command\Template\ListCommand;
 use phpDocumentor\Transformer\Template\Factory;
@@ -55,7 +57,14 @@ class ServiceProvider extends \stdClass implements ServiceProviderInterface
         // parameters
         $app['linker.substitutions'] = array(
             'phpDocumentor\Descriptor\ProjectDescriptor'      => array('files'),
-            'phpDocumentor\Descriptor\FileDescriptor'         => array('tags', 'classes', 'interfaces', 'traits'),
+            'phpDocumentor\Descriptor\FileDescriptor'         => array(
+                'tags',
+                'classes',
+                'interfaces',
+                'traits',
+                'functions',
+                'constants'
+            ),
             'phpDocumentor\Descriptor\ClassDescriptor'        => array(
                 'tags',
                 'parent',
@@ -65,25 +74,27 @@ class ServiceProvider extends \stdClass implements ServiceProviderInterface
                 'methods',
                 'usedTraits',
             ),
-            'phpDocumentor\Descriptor\InterfaceDescriptor'    => array(
+            'phpDocumentor\Descriptor\InterfaceDescriptor'       => array(
                 'tags',
                 'parent',
                 'constants',
                 'methods',
             ),
-            'phpDocumentor\Descriptor\TraitDescriptor'        => array(
+            'phpDocumentor\Descriptor\TraitDescriptor'           => array(
                 'tags',
                 'properties',
                 'methods',
                 'usedTraits',
             ),
-            'phpDocumentor\Descriptor\MethodDescriptor'       => array('tags', 'arguments'),
-            'phpDocumentor\Descriptor\ArgumentDescriptor'     => array('types'),
-            'phpDocumentor\Descriptor\PropertyDescriptor'     => array('tags', 'types'),
-            'phpDocumentor\Descriptor\ConstantDescriptor'     => array('tags', 'types'),
-            'phpDocumentor\Descriptor\Tag\ParamDescriptor'    => array('types'),
-            'phpDocumentor\Descriptor\Tag\ReturnDescriptor'   => array('types'),
-            'phpDocumentor\Descriptor\Tag\SeeDescriptor'      => array('reference'),
+            'phpDocumentor\Descriptor\FunctionDescriptor'        => array('tags', 'arguments'),
+            'phpDocumentor\Descriptor\MethodDescriptor'          => array('tags', 'arguments'),
+            'phpDocumentor\Descriptor\ArgumentDescriptor'        => array('types'),
+            'phpDocumentor\Descriptor\PropertyDescriptor'        => array('tags', 'types'),
+            'phpDocumentor\Descriptor\ConstantDescriptor'        => array('tags', 'types'),
+            'phpDocumentor\Descriptor\Tag\ParamDescriptor'       => array('types'),
+            'phpDocumentor\Descriptor\Tag\ReturnDescriptor'      => array('types'),
+            'phpDocumentor\Descriptor\Tag\SeeDescriptor'         => array('reference'),
+            'phpDocumentor\Descriptor\Type\CollectionDescriptor' => array('baseType', 'types', 'keyTypes'),
         );
 
         // services
@@ -94,6 +105,10 @@ class ServiceProvider extends \stdClass implements ServiceProviderInterface
                 $compiler->insert(new MarkerFromTagsExtractor(), MarkerFromTagsExtractor::COMPILER_PRIORITY);
                 $compiler->insert(new PackageTreeBuilder(), PackageTreeBuilder::COMPILER_PRIORITY);
                 $compiler->insert(new NamespaceTreeBuilder(), NamespaceTreeBuilder::COMPILER_PRIORITY);
+                $compiler->insert(
+                    new ResolveInlineLinkAndSeeTags($container['transformer.routing.queue']),
+                    ResolveInlineLinkAndSeeTags::COMPILER_PRIORITY
+                );
                 $compiler->insert($container['linker'], Linker::COMPILER_PRIORITY);
                 $compiler->insert($container['transformer'], Transformer::COMPILER_PRIORITY);
                 $compiler->insert(
@@ -118,8 +133,11 @@ class ServiceProvider extends \stdClass implements ServiceProviderInterface
         );
 
         $app['transformer.routing.standard'] = $app->share(
-            function () {
-                return new Router\StandardRouter();
+            function ($container) {
+                /** @var ProjectDescriptorBuilder $projectDescriptorBuilder */
+                $projectDescriptorBuilder = $container['descriptor.builder'];
+
+                return new Router\StandardRouter($projectDescriptorBuilder);
             }
         );
         $app['transformer.routing.external'] = $app->share(
@@ -202,7 +220,10 @@ class ServiceProvider extends \stdClass implements ServiceProviderInterface
 
         $app['transformer.template.collection'] = $app->share(
             function ($container) {
-                return new Template\Collection($container['transformer.template.factory']);
+                return new Template\Collection(
+                    $container['transformer.template.factory'],
+                    $container['transformer.writer.collection']
+                );
             }
         );
     }

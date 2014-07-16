@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Sensio\Bundle\FrameworkExtraBundle\Tests\EventListener;
 
 use Symfony\Component\HttpFoundation\Request;
@@ -28,7 +37,7 @@ class HttpCacheListenerTest extends \PHPUnit_Framework_TestCase
             ->method('setResponse')
         ;
 
-        $this->response->setStatusCode(404);
+        $this->response->setStatusCode(500);
 
         $this->assertInternalType('null', $this->listener->onKernelResponse($this->event));
     }

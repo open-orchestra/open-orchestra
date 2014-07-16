@@ -53,7 +53,7 @@
     <em><xsl:value-of select="docblock/description" disable-output-escaping="yes" /></em><br />
     </xsl:if>
     <xsl:if test="docblock/long-description">
-    <xsl:value-of select="docblock/long-description" disable-output-escaping="yes" /><br />
+    <xsl:value-of select="php:function('phpDocumentor\Plugin\Core\Xslt\Extension::markdown', string(docblock/long-description))" disable-output-escaping="yes" /><br />
     </xsl:if>
 
     <xsl:if test="count(method) > 0">

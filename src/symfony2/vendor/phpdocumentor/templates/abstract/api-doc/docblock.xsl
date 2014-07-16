@@ -108,7 +108,7 @@
 
   <xsl:template match="docblock/long-description">
     <div class="long-description">
-      <xsl:value-of select="." disable-output-escaping="yes" />
+      <xsl:value-of select="php:function('phpDocumentor\Plugin\Core\Xslt\Extension::markdown', string())" disable-output-escaping="yes" />
     </div>
   </xsl:template>
 

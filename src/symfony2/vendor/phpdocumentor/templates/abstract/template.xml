@@ -7,6 +7,8 @@
   <version>1.0.3</version>
   <transformations>
     <transformation writer="xml" artifact="structure.xml"/>
+    <transformation query="copy" writer="FileIo" source="js" artifact="js"/>
+    <transformation query="copy" writer="FileIo" source="images" artifact="images"/>
     <transformation query="copy" writer="FileIo" source="templates/abstract/images" artifact="images"/>
     <transformation query="copy" writer="FileIo" source="templates/abstract/css" artifact="css"/>
     <transformation query="copy" writer="FileIo" source="templates/abstract/js" artifact="js"/>

@@ -4,9 +4,9 @@ CHANGELOG for 1.0.x
 This changelog references the relevant changes done in 1.0 minor versions.
 
 To get the diff for a specific change, go to
-https://github.com/doctrine/mongodb/commit/XXX where XXX is the commit hash.
+https://github.com/doctrine/mongodb-odm/commit/XXX where XXX is the commit hash.
 To get the diff between two versions, go to
-https://github.com/doctrine/mongodb/compare/XXX...YYY where XXX and YYY are
+https://github.com/doctrine/mongodb-odm/compare/XXX...YYY where XXX and YYY are
 the older and newer versions, respectively.
 
 To generate a changelog summary since the last version, run
@@ -15,13 +15,44 @@ To generate a changelog summary since the last version, run
 1.0.x-dev
 ---------
 
+1.0.0-BETA11 (2014-06-06)
+-------------------------
+
+All issues and pull requests in this release may be found under the
+[1.0.0-BETA11 milestone](https://github.com/doctrine/mongodb-odm/issues?milestone=5&state=closed).
+
+#### Ensure cascade mapping option is always set
+
+ClassMetadataInfo's handling of cascade options was refactored in
+[#888](https://github.com/doctrine/mongodb-odm/pull/888) to be more consistent
+with ORM. These changes ensure that `$mapping["cascade"]` is always set, which
+is required by ResolveTargetDocumentListener.
+
+#### Use Reflection API to create document instances in PHP 5.4+
+
+PHP 5.4.29 and 5.5.13 introduced a BC-breaking change to `unserialize()`, which
+broke ODM's ability to instantiate document classes without invoking their
+constructor (used for hydration). The suggested work-around is to use
+`ReflectionClass::newInstanceWithoutConstructor()`, which is available in 5.4+.
+This change was implemented in
+[#893](https://github.com/doctrine/mongodb-odm/pull/893).
+
 1.0.0-BETA10 (2014-05-05)
 -------------------------
 
 All issues and pull requests in this release may be found under the
 [1.0.0-BETA10 milestone](https://github.com/doctrine/mongodb-odm/issues?milestone=2&state=closed).
 
-### Improved support for differentiating identifier types and non-scalar values
+#### ResolveTargetDocumentListener
+
+[#663](https://github.com/doctrine/mongodb-odm/pull/663) added a new
+ResolveTargetDocumentListener service, which allows `targetDocument` metadata to
+be resolved at runtime. This is based on a corresponding class in ORM, which has
+existed since version 2.2. This promotes loose coupling by allowing interfaces
+or abstract classes to be specified in the owning model's metadata. The service
+will then resolve those values to a concrete class upon the ODM's request.
+
+#### Improved support for differentiating identifier types and non-scalar values
 
 ODM previously required that documents use scalar identifier values. Also, the
 identity map, which UnitOfWork uses to track managed documents, was unable to
@@ -32,7 +63,7 @@ arrays (i.e. `hash` type) and the identity map should no longer confuse strings
 and numeric types. Embedded documents and references are still not supported as
 identifier values.
 
-### Classes not listed in discriminator maps
+#### Classes not listed in discriminator maps
 
 When a discriminator map is used, ODM will store the object's short key instead
 of its FQCN in the discriminator field. Previously, ODM might leave that field
@@ -40,7 +71,7 @@ blank when dealing with a class that was not defined in the map. ODM will now
 fall back to storing the FQCN in this case. This primarily affects embedded
 documents and references.
 
-### Criteria API
+#### Criteria API
 
 The base DocumentRepository class now implements the Selectable interface from
 the Criteria API in Doctrine Collections 1.1. This brings some consistency with
@@ -75,7 +106,9 @@ The `@HasLifecycleCallbacks` class annotation is now required for lifecycle
 annotations on methods *declared within that class* to be registered. If a
 parent and child close both register the same lifecycle callback, ODM will only
 invoke it once. Previously, the same callback could be registered and invoked
-multiple times (see #427, #474, and #695).
+multiple times (see [#427](https://github.com/doctrine/mongodb-odm/pull/427),
+[#474](https://github.com/doctrine/mongodb-odm/pull/474), and
+[#695](https://github.com/doctrine/mongodb-odm/pull/695)).
 
 The `@AlsoLoad` method annotation does not require `@HasLifecycleCallbacks` on
 the class in which it is declared. If the method considers multiple fields, it
