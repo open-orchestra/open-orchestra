@@ -15,6 +15,7 @@
       </ifModule>
   ]]></description>
   <transformations>
+    <transformation query="copy" writer="FileIo" source="templates/clean/htaccess.dist" artifact=".htaccess"/>
     <transformation query="copy" writer="FileIo" source="templates/clean/images" artifact="images"/>
     <transformation query="copy" writer="FileIo" source="templates/clean/css" artifact="css"/>
     <transformation query="copy" writer="FileIo" source="templates/clean/js" artifact="js"/>

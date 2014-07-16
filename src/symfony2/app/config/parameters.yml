@@ -12,5 +12,3 @@ parameters:
     mailer_password: null
     locale: en
     secret: $php-orchestra$
-    indexation:
-        - solr

@@ -12,13 +12,13 @@
 {% block content %}
     <div class="row">
         <div class="span7">
-            {% if project.namespace.namespaces|length > 0 or not project.indexes.packages %}
+            {% if project.indexes.namespaces|length > 0 or not project.indexes.packages %}
                 <div class="well">
                     <ul class="nav nav-list">
                         <li class="nav-header">Namespaces</li>
                         {% block listRootNamespaces %}
                             <li><a href="{{ path(project.namespace) }}">Global ({{ project.namespace.name }})</a></li>
-                            {% for namespace in project.namespace.children %}
+                            {% for namespace in project.namespace.children|sort_asc %}
                                 <li><a href="{{ path(namespace) }}">{{ namespace.name }}</a></li>
                             {% endfor %}
                         {% endblock %}
@@ -32,7 +32,7 @@
                         <li class="nav-header">Packages</li>
                         {% block listRootPackages %}
                             <li><a href="{{ path(project.indexes.packages|first) }}">Global ({{ (project.indexes.packages|first).name }})</a></li>
-                            {% for package in (project.indexes.packages|first).children %}
+                            {% for package in (project.indexes.packages|first).children|sort_asc %}
                                 <li><a href="{{ path(package) }}">{{ package.name }}</a></li>
                             {% endfor %}
                         {% endblock %}
@@ -57,6 +57,11 @@
                         <li>
                             <a href="{{ path('errors.html') }}">
                                 <i class="icon-list-alt"></i> Errors {{ macros.renderErrorCounter(project.files) }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ path('deprecated.html') }}">
+                                <i class="icon-list-alt"></i> Deprecated {{ macros.renderDeprecatedCounter(project.indexes.elements) }}
                             </a>
                         </li>
                         <li>

@@ -4,14 +4,14 @@
  *
  * PHP Version 5.3
  *
- * @author    Mike van Riel <mike.vanriel@naenius.com>
- * @copyright 2010-2012 Mike van Riel / Naenius (http://www.naenius.com)
+ * @copyright 2010-2014 Mike van Riel / Naenius (http://www.naenius.com)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @link      http://phpdoc.org
  */
+
 namespace phpDocumentor\Command\Project;
 
-use phpDocumentor\Command\ConfigurableCommand;
+use phpDocumentor\Command\Command;
 use phpDocumentor\Descriptor\ProjectDescriptorBuilder;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Input\InputInterface;
@@ -35,7 +35,7 @@ use Symfony\Component\Console\Output\OutputInterface;
  * present. In the configuration file can you specify the same settings (and
  * more) as the command line provides.
  */
-class RunCommand extends ConfigurableCommand
+class RunCommand extends Command
 {
     /**
      * Initializes this command and sets the name, description, options and
@@ -136,7 +136,8 @@ HELP
                 'hidden',
                 null,
                 InputOption::VALUE_NONE,
-                'set to on to descend into hidden directories (directories starting with \'.\'), default is on'
+                'Use this option to tell phpDocumentor to parse files and directories that begin with a period (.), '
+                . 'by default these are ignored'
             )
             ->addOption(
                 'ignore-symlinks',
@@ -171,7 +172,7 @@ HELP
             ->addOption(
                 'visibility',
                 null,
-                InputOption::VALUE_OPTIONAL,
+                InputOption::VALUE_OPTIONAL | InputOption::VALUE_IS_ARRAY,
                 'Specifies the parse visibility that should be displayed in the documentation (comma separated e.g. '
                 . '"public,protected")'
             )
@@ -220,8 +221,6 @@ HELP
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        parent::execute($input, $output);
-
         $parse_command     = $this->getApplication()->find('project:parse');
         $transform_command = $this->getApplication()->find('project:transform');
 

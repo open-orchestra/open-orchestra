@@ -19,7 +19,7 @@ they can be injected as controller method arguments::
     {
     }
 
-Several things happens under the hood:
+Several things happen under the hood:
 
 * The converter tries to get a ``SensioBlogBundle:Post`` object from the
   request attributes (request attributes comes from route placeholders -- here
@@ -40,6 +40,27 @@ If you use type hinting as in the example above, you can even omit the
     public function showAction(Post $post)
     {
     }
+
+.. tip::
+
+    You can disable the auto-conversion of type-hinted method arguments feature
+    by setting the ``auto_convert`` flag to ``false``:
+
+    .. configuration-block::
+
+        .. code-block:: yaml
+
+            # app/config/config.yml
+            sensio_framework_extra:
+                request:
+                    converters: true
+                    auto_convert: false
+
+        .. code-block:: xml
+
+            <sensio-framework-extra:config>
+                <request converters="true" auto-convert="true" />
+            </sensio-framework-extra:config>
 
 To detect which converter is run on a parameter the following process is run:
 
@@ -189,20 +210,20 @@ All converters must implement the ``ParamConverterInterface``::
 
     namespace Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter;
 
-    use Sensio\Bundle\FrameworkExtraBundle\Configuration\ConfigurationInterface;
+    use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
     use Symfony\Component\HttpFoundation\Request;
 
     interface ParamConverterInterface
     {
-        function apply(Request $request, ConfigurationInterface $configuration);
+        function apply(Request $request, ParamConverter $configuration);
 
-        function supports(ConfigurationInterface $configuration);
+        function supports(ParamConverter $configuration);
     }
 
 The ``supports()`` method must return ``true`` when it is able to convert the
 given configuration (a ``ParamConverter`` instance).
 
-The ``ParamConverter`` instance has three information about the annotation:
+The ``ParamConverter`` instance has three pieces of information about the annotation:
 
 * ``name``: The attribute name;
 * ``class``: The attribute class name (can be any string representing a class
@@ -238,6 +259,11 @@ both. If you don't specifiy a priority or name the converter will be added to
 the converter stack with a priority of `0`. To explicitly disable the
 registration by priority you have to set `priority="false"` in your tag
 definition.
+
+.. tip::
+
+   If you would like to inject services or additional arguments to custom param converter, the priority shouldn't
+   be higher than 1. Otherwise, the service wouldn't be loaded.
 
 .. tip::
 

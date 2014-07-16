@@ -33,6 +33,7 @@ use phpDocumentor\Descriptor\Builder\Reflector\Tags\ReturnAssembler;
 use phpDocumentor\Descriptor\Builder\Reflector\Tags\SeeAssembler;
 use phpDocumentor\Descriptor\Builder\Reflector\Tags\SinceAssembler;
 use phpDocumentor\Descriptor\Builder\Reflector\Tags\ThrowsAssembler;
+use phpDocumentor\Descriptor\Builder\Reflector\Tags\TypeCollectionAssembler;
 use phpDocumentor\Descriptor\Builder\Reflector\Tags\UsesAssembler;
 use phpDocumentor\Descriptor\Builder\Reflector\Tags\VarAssembler;
 use phpDocumentor\Descriptor\Builder\Reflector\Tags\VersionAssembler;
@@ -41,6 +42,7 @@ use phpDocumentor\Descriptor\Filter\ClassFactory;
 use phpDocumentor\Descriptor\Filter\Filter;
 use phpDocumentor\Descriptor\Filter\StripIgnore;
 use phpDocumentor\Descriptor\Filter\StripInternal;
+use phpDocumentor\Descriptor\Filter\StripOnVisibility;
 use phpDocumentor\Plugin\Core\Descriptor\Validator\Constraints as phpDocAssert;
 use phpDocumentor\Reflection\ClassReflector\ConstantReflector as ClassConstant;
 use phpDocumentor\Reflection\ClassReflector;
@@ -58,6 +60,7 @@ use phpDocumentor\Reflection\DocBlock\Tag\ThrowsTag;
 use phpDocumentor\Reflection\DocBlock\Tag\UsesTag;
 use phpDocumentor\Reflection\DocBlock\Tag\VarTag;
 use phpDocumentor\Reflection\DocBlock\Tag;
+use phpDocumentor\Reflection\DocBlock\Type\Collection as TypeCollection;
 use phpDocumentor\Reflection\FileReflector;
 use phpDocumentor\Reflection\FunctionReflector;
 use phpDocumentor\Reflection\InterfaceReflector;
@@ -132,32 +135,37 @@ class ServiceProvider implements ServiceProviderInterface
         $varMatcher         = function ($criteria) { return $criteria instanceof VarTag; };
         $versionMatcher     = function ($criteria) { return $criteria instanceof Tag\VersionTag; };
 
+        $typeCollectionMatcher = function ($criteria) { return $criteria instanceof TypeCollection; };
+
         $tagFallbackMatcher = function ($criteria) { return $criteria instanceof Tag; };
         // @codingStandardsIgnoreEnd
 
+        $argumentAssembler = new ArgumentAssembler();
         $factory->register($fileMatcher, new FileAssembler());
         $factory->register($constantMatcher, new ConstantAssembler());
         $factory->register($traitMatcher, new TraitAssembler());
         $factory->register($classMatcher, new ClassAssembler());
         $factory->register($interfaceMatcher, new InterfaceAssembler());
         $factory->register($propertyMatcher, new PropertyAssembler());
-        $factory->register($methodMatcher, new MethodAssembler());
-        $factory->register($argumentMatcher, new ArgumentAssembler());
-        $factory->register($functionMatcher, new FunctionAssembler());
+        $factory->register($argumentMatcher, $argumentAssembler);
+        $factory->register($methodMatcher, new MethodAssembler($argumentAssembler));
+        $factory->register($functionMatcher, new FunctionAssembler($argumentAssembler));
 
         $factory->register($authorMatcher, new AuthorAssembler());
         $factory->register($deprecatedMatcher, new DeprecatedAssembler());
         $factory->register($linkMatcher, new LinkAssembler());
         $factory->register($methodTagMatcher, new MethodTagAssembler());
         $factory->register($propertyTagMatcher, new PropertyTagAssembler());
+        $factory->register($varMatcher, new VarAssembler());
         $factory->register($paramMatcher, new ParamAssembler());
         $factory->register($throwsMatcher, new ThrowsAssembler());
         $factory->register($returnMatcher, new ReturnAssembler());
         $factory->register($usesMatcher, new UsesAssembler());
         $factory->register($seeMatcher, new SeeAssembler());
         $factory->register($sinceMatcher, new SinceAssembler());
-        $factory->register($varMatcher, new VarAssembler());
         $factory->register($versionMatcher, new VersionAssembler());
+
+        $factory->register($typeCollectionMatcher, new TypeCollectionAssembler());
 
         $factory->registerFallback($tagFallbackMatcher, new GenericTagAssembler());
 
@@ -174,6 +182,7 @@ class ServiceProvider implements ServiceProviderInterface
      */
     public function attachFiltersToManager(Filter $filterManager, Application $app)
     {
+        $stripOnVisibility = new StripOnVisibility($app['descriptor.builder']);
         $filtersOnAllDescriptors = array(
             new StripInternal($app['descriptor.builder']),
             new StripIgnore($app['descriptor.builder'])
@@ -188,6 +197,9 @@ class ServiceProvider implements ServiceProviderInterface
             $filterManager->attach('phpDocumentor\Descriptor\PropertyDescriptor', $filter);
             $filterManager->attach('phpDocumentor\Descriptor\MethodDescriptor', $filter);
         }
+
+        $filterManager->attach('phpDocumentor\Descriptor\PropertyDescriptor', $stripOnVisibility);
+        $filterManager->attach('phpDocumentor\Descriptor\MethodDescriptor', $stripOnVisibility);
 
         return $filterManager;
     }

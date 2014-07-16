@@ -20,6 +20,7 @@ use phpDocumentor\Plugin\Core\Transformer\Writer\Xml\MethodConverter;
 use phpDocumentor\Plugin\Core\Transformer\Writer\Xml\PropertyConverter;
 use phpDocumentor\Plugin\Core\Transformer\Writer\Xml\TagConverter;
 use phpDocumentor\Plugin\Core\Transformer\Writer\Xml\TraitConverter;
+use phpDocumentor\Transformer\Router\RouterAbstract;
 use phpDocumentor\Transformer\Writer\WriterAbstract;
 use phpDocumentor\Transformer\Writer\Translatable;
 use phpDocumentor\Application;
@@ -44,7 +45,7 @@ use phpDocumentor\Plugin\Core\Transformer\Behaviour\Tag\VarTag;
 use phpDocumentor\Reflection\DocBlock\Tag;
 use phpDocumentor\Transformer\Transformation;
 use phpDocumentor\Transformer\Transformer;
-use phpDocumentor\Translator;
+use phpDocumentor\Translator\Translator;
 
 /**
  * Converts the structural information of phpDocumentor into an XML file.
@@ -71,9 +72,9 @@ class Xml extends WriterAbstract implements Translatable
 
     protected $traitConverter;
 
-    public function __construct()
+    public function __construct(RouterAbstract $router)
     {
-        $this->docBlockConverter  = new DocBlockConverter(new TagConverter());
+        $this->docBlockConverter  = new DocBlockConverter(new TagConverter(), $router);
         $this->argumentConverter  = new ArgumentConverter();
         $this->methodConverter    = new MethodConverter($this->argumentConverter, $this->docBlockConverter);
         $this->propertyConverter  = new PropertyConverter($this->docBlockConverter);
@@ -216,12 +217,13 @@ class Xml extends WriterAbstract implements Translatable
             }
         }
 
-        if (count($file->getErrors()) > 0) {
+        $errors = $file->getAllErrors();
+        if (count($errors) > 0) {
             $parse_errors = new \DOMElement('parse_markers');
             $child->appendChild($parse_errors);
 
             /** @var Error $error */
-            foreach ($file->getAllErrors() as $error) {
+            foreach ($errors as $error) {
                 $this->createErrorEntry($error, $parse_errors);
             }
         }

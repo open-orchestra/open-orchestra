@@ -63,6 +63,7 @@ return array(
     'Doctrine\\Bundle\\MongoDBBundle' => array($vendorDir . '/doctrine/mongodb-odm-bundle'),
     'Doctrine\\Bundle\\DoctrineBundle' => array($vendorDir . '/doctrine/doctrine-bundle'),
     'Cilex\\Provider\\Console' => array($vendorDir . '/cilex/console-service-provider/src'),
+    'Cilex\\Provider' => array($vendorDir . '/phpdocumentor/phpdocumentor/src'),
     'Cilex' => array($vendorDir . '/cilex/cilex/src'),
     'Assetic' => array($vendorDir . '/kriswallsmith/assetic/src'),
     '' => array($baseDir . '/src'),

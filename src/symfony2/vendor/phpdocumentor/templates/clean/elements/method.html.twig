@@ -5,7 +5,7 @@
             <article class="method">
                 <h3 class="{{ method.visibility }} {% if method.deprecated %}deprecated{% endif %}">{{ method.name }}()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">{{ method.name }}({% for argument in method.arguments %}{{ argument.types|join('|') }} <span class="argument">{{ argument.isVariadic ? '...' }}{{ argument.name }}</span>{% if not loop.last %}, {% endif %}{% endfor %}){% if method.response %} : {{ method.response.types|join('|') }}{% endif %}</pre>
+                <pre class="signature" style="margin-right: 54px;">{{ method.name }}({% for argument in method.arguments %}{{ argument.types ? argument.types|join('|')~' ' }} <span class="argument">{{ argument.isVariadic ? '...' }}{{ argument.name }}{{ argument.default ? ' = '~argument.default }}</span>{% if not loop.last %}, {% endif %}{% endfor %}) {{ method.response.types ? ': '~method.response.types|join('|') }}</pre>
                 <p><em>{{ method.summary }}</em></p>
                 {{ method.description|markdown|raw }}
 
@@ -43,6 +43,16 @@
                         &mdash; {{ method.response.description|markdown|raw }}
                     {% endif %}
                 {% endif %}
+				
+                {% for tagName,tags in method.tags if tagName in ['example'] %}
+                    {% if loop.first %}
+                        <h4>Examples</h4>
+                    {% endif %}
+                    {% for tag in tags %}
+                        <h5>{{ tag.description|escape }}</h5>
+                        <pre class="pre-scrollable">{{ tag.example|escape }}</pre>
+                    {% endfor %}
+                {% endfor %}
             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -90,7 +100,7 @@
             </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
-                {% for tagName,tags in method.tags if tagName not in ['link', 'see', 'abstract', 'param', 'return', 'access', 'deprecated', 'throws', 'throw', 'uses'] %}
+                {% for tagName,tags in method.tags if tagName not in ['link', 'see', 'abstract', 'example', 'param', 'return', 'access', 'deprecated', 'throws', 'throw', 'uses'] %}
                     <tr>
                         <th>
                             {{ tagName }}

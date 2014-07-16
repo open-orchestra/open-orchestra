@@ -1,14 +1,5 @@
 <?php
 
-namespace Sensio\Bundle\FrameworkExtraBundle\EventListener;
-
-use Symfony\Component\HttpKernel\Event\FilterControllerEvent;
-use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
-use Symfony\Component\HttpKernel\KernelEvents;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use Symfony\Component\ExpressionLanguage\ExpressionLanguage;
-
 /*
  * This file is part of the Symfony framework.
  *
@@ -18,10 +9,20 @@ use Symfony\Component\ExpressionLanguage\ExpressionLanguage;
  * with this source code in the file LICENSE.
  */
 
+namespace Sensio\Bundle\FrameworkExtraBundle\EventListener;
+
+use Symfony\Component\HttpKernel\Event\FilterControllerEvent;
+use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
+use Symfony\Component\HttpKernel\KernelEvents;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Symfony\Component\ExpressionLanguage\ExpressionLanguage;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
+
 /**
  * HttpCacheListener handles HTTP cache headers.
  *
- * It can be configured via the @Cache annotation.
+ * It can be configured via the Cache annotation.
  *
  * @author Fabien Potencier <fabien@symfony.com>
  */
@@ -88,7 +89,7 @@ class HttpCacheListener implements EventSubscriberInterface
 
         $response = $event->getResponse();
 
-        if (!$response->isSuccessful()) {
+        if (!in_array($response->getStatusCode(), array(200, 203, 300, 301, 302, 404, 410))) {
             return;
         }
 

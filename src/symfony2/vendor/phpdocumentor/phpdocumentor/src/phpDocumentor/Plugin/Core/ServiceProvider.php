@@ -13,7 +13,7 @@ namespace phpDocumentor\Plugin\Core;
 
 use Cilex\Application;
 use Cilex\ServiceProviderInterface;
-use phpDocumentor\Translator;
+use phpDocumentor\Translator\Translator;
 use phpDocumentor\Plugin\Core\Transformer\Writer;
 use phpDocumentor\Transformer\Writer\Collection;
 
@@ -36,11 +36,14 @@ class ServiceProvider implements ServiceProviderInterface
         $writerCollection['FileIo']     = new Writer\FileIo();
         $writerCollection['checkstyle'] = new Writer\Checkstyle();
         $writerCollection['sourcecode'] = new Writer\Sourcecode();
-        $writerCollection['xml']        = new Writer\Xml();
+        $writerCollection['xml']        = new Writer\Xml($app['transformer.routing.standard']);
         $writerCollection['xsl']        = new Writer\Xsl($app['monolog']);
 
         $writerCollection['checkstyle']->setTranslator($translator);
         $writerCollection['xml']->setTranslator($translator);
+
+        Xslt\Extension::$routers           = $app['transformer.routing.queue'];
+        Xslt\Extension::$descriptorBuilder = $app['descriptor.builder'];
 
         $app->register(new \phpDocumentor\Plugin\Graphs\ServiceProvider());
         $app->register(new \phpDocumentor\Plugin\Twig\ServiceProvider());

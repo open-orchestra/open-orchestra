@@ -27,7 +27,7 @@
             <i class="icon-custom icon-method"></i> Methods
             <ul>
                 {% set specialMethods = node.magicMethods ? node.inheritedMethods.merge(node.magicMethods) : node.inheritedMethods %}
-                {% for item in node.methods.merge(specialMethods) %}
+                {% for item in node.methods.merge(specialMethods)|sort_asc %}
                     {% set type='method' %}
                     {% if item.visibility == '' or item.visibility == 'public' %}
                         {{ block('sidebar_entry') }}
@@ -38,7 +38,7 @@
         <li class="nav-header protected">» Protected
             <ul>
                 {% set specialMethods = node.magicMethods ? node.inheritedMethods.merge(node.magicMethods) : node.inheritedMethods %}
-                {% for method in node.methods.merge(specialMethods) %}
+                {% for method in node.methods.merge(specialMethods)|sort_asc %}
                     {% if method.visibility == 'protected' %}
                         <li class="method {{ method.visibility }}{{ method.parent.name != node.name ? ' inherited' : '' }}">
                             <a href="#method_{{ method.name }}" title="{{ method.name }} :: {{ method.summary }}">
@@ -52,7 +52,7 @@
         <li class="nav-header private">» Private
             <ul>
                 {% set specialMethods = node.magicMethods ? node.inheritedMethods.merge(node.magicMethods) : node.inheritedMethods %}
-                {% for method in node.methods.merge(specialMethods) %}
+                {% for method in node.methods.merge(specialMethods)|sort_asc %}
                     {% if method.visibility == 'private' %}
                         <li class="method {{ method.visibility }}{{ method.parent.name != node.name ? ' inherited' : '' }}">
                             <a href="#method_{{ method.name }}" title="{{ method.name }} :: {{ method.summary }}">
@@ -66,7 +66,7 @@
         <li class="nav-header">
             <i class="icon-custom icon-constant"></i> Constants
             <ul>
-                {% for constant in node.constants.merge(node.inheritedConstants) %}
+                {% for constant in node.constants.merge(node.inheritedConstants)|sort_asc %}
                 <li class="constant {{ constant.visibility }}">
                     <a href="#constant_{{ constant.name }}" title="{{ constant.name }} :: {{ constant.summary }}">
                         <span class="description">{{ constant.summary }}</span><pre>{{ constant.name }}</pre>
