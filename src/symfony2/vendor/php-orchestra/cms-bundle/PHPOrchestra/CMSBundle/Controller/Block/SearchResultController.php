@@ -63,44 +63,6 @@ class SearchResultController extends Controller
             $page = 1;
         }
 
-        // Method POST
-        if (isset($_page_parameters['post']['form'])) {
-            if (is_array($_page_parameters['post']['form'])) {
-                $form = $_page_parameters['post']['form'];
-                if (isset($form['terms'])) {
-                    $data = $form['terms'];
-                    
-                    if (!empty($optionsearch)) {
-                        $optionsearch['start'] = ($page * $nbdoc) - $nbdoc;
-                        $optionsearch['rows'] = $page * $nbdoc;
-                    } else {
-                        $optionsearch = array('start' => ($page * $nbdoc) - $nbdoc, 'rows' => $page * $nbdoc);
-                    }
-                    
-                    // Result of search
-                    $resultSet = $this->callResearch(
-                        $data,
-                        $nbspellcheck,
-                        $optionsearch,
-                        $facets,
-                        $filter,
-                        $optionsdismax
-                    );
-                    
-                    // Call template
-                    return $this->callTemplate(
-                        $data,
-                        $resultSet,
-                        $nodeId,
-                        $page,
-                        $nbdoc,
-                        $fielddisplayed,
-                        $facets
-                    );
-        
-                }
-            }
-        }
         // Method GET
         if (isset($_page_parameters['query'])) {
             if (is_array($_page_parameters['query'])) {
