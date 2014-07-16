@@ -17,7 +17,7 @@
         <testsuite name="Project Test Suite">
             <directory>../src/*/*Bundle/Tests</directory>
             <directory>../src/*/Bundle/*Bundle/Tests</directory>
-            <directory>../vendor/php-orchestra/*/*/*Bundle/Test</directory>
+            <directory>../vendor/itkg/*/*/*Bundle/Test</directory>
         </testsuite>
     </testsuites>
 
