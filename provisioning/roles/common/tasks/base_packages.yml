@@ -1,0 +1,27 @@
+---
+# basic system packages installation
+- name: apt - install basic system packages
+  apt: name={{item}} state=latest update-cache=yes cache_valid_time=3600
+  with_items:
+    - curl
+    - git
+    - g++
+    - gcc # for make install
+    - ifupdown-extra
+    - iotop
+    - libfontconfig1
+    - libwww-perl
+    - libpq-dev # needed by ansible module postgresql_db
+    - lynx
+    - make
+    - netcat-openbsd
+    - ntp
+    - python-pycurl # needed by ansible module apt_repository
+    - python-psycopg2 # needed by ansible module postgresql_db
+    - socat
+    - strace
+    - sysstat
+    - tig
+    - tree
+    - tzdata
+    - vim
