@@ -44,6 +44,9 @@ abstract class TableViewController extends Controller
         
     public function init()
     {
+        $request = $this->container->get('request');
+        $this->routeParameters = $request->attributes->get('_route_params');
+        
         $this->setColumns();
     }
 
@@ -178,7 +181,7 @@ abstract class TableViewController extends Controller
     public function indexAction(Request $request, $action, $id = null)
     {
         $this->init();
-        $this->routeParameters = $request->attributes->get('_route_params');
+        
         return call_user_func(array($this, $action.'Action'), $request, $id);
     }
     

@@ -2,14 +2,18 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
     <file source-language="en" datatype="plaintext" original="file.ext">
         <body>
-            
+
+<!-- GENERAL -->
+
             <group id="general">
                 <trans-unit id="loading">
                     <source>loading</source>
                     <target>Loading ...</target>
                 </trans-unit>
             </group>
-            
+
+<!-- TOP MENU -->
+
             <group id="topMenu">
                 <trans-unit id="site">
                     <source>site</source>
@@ -36,7 +40,9 @@
                     <target>language flag</target>
                 </trans-unit>
             </group>
-            
+
+<!-- LEFT MENU -->
+
             <group id="leftMenu">
                 
                 <group id="editorial">
@@ -88,7 +94,9 @@
                         <target>The routing cache was successfully purged.</target>
                     </trans-unit>
                 </group>
-                
+
+<!-- TABLE VIEW -->
+
                 <group id="tableView">
                     <trans-unit id="tableView.deleteDialog.title">
                         <source>tableView.deleteDialog.title</source>
@@ -133,7 +141,9 @@
                 </group>
                 
             </group>
-            
+
+<!-- CONTENT TYPES -->
+
             <group id="contentTypes">
                 
                 <trans-unit id="contentTypes.mainTitle">
@@ -212,6 +222,55 @@
                     <trans-unit id="contentTypes.form.removeField">
                         <source>contentTypes.form.removeField</source>
                         <target>Remove field</target>
+                    </trans-unit>
+                </group>
+                
+            </group>
+
+<!-- CONTENTS -->
+
+            <group id="contents">
+                
+                <trans-unit id="contents.mainTitleX">
+                    <source>contents.mainTitle%contentType%</source>
+                    <target>Contents type contentType</target>
+                </trans-unit>
+                
+                <group id="contents.list">
+                    <trans-unit id="contents.list.contentId">
+                        <source>contents.list.contentId</source>
+                        <target>Identifier</target>
+                    </trans-unit>
+                    <trans-unit id="contents.list.label">
+                        <source>contents.list.label</source>
+                        <target>Label</target>
+                    </trans-unit>
+                    <trans-unit id="contents.list.language">
+                        <source>contents.list.language</source>
+                        <target>Language</target>
+                    </trans-unit>
+                    <trans-unit id="contents.list.version">
+                        <source>contents.list.version</source>
+                        <target>Version</target>
+                    </trans-unit>
+                </group>
+                
+                <group id="contents.form">
+                    <trans-unit id="contents.form.name">
+                        <source>contents.form.name</source>
+                        <target>Content label</target>
+                    </trans-unit>
+                    <trans-unit id="contents.form.version">
+                        <source>contents.form.version</source>
+                        <target>Version</target>
+                    </trans-unit>
+                    <trans-unit id="contents.form.newVersion">
+                        <source>contents.form.newVersion</source>
+                        <target>Create a new version</target>
+                    </trans-unit>
+                    <trans-unit id="contents.form.versX">
+                        <source>contents.form.version%versionNumber%</source>
+                        <target>Version versionNumber</target>
                     </trans-unit>
                 </group>
                 
