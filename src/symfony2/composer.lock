@@ -940,12 +940,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-cms-bundle.git",
-                "reference": "f6d22b37894328f31bf9754ff67c4a15dd99d402"
+                "reference": "0fe87627b948695b3f646244df9fd27919c6a639"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/f6d22b37894328f31bf9754ff67c4a15dd99d402",
-                "reference": "f6d22b37894328f31bf9754ff67c4a15dd99d402",
+                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/0fe87627b948695b3f646244df9fd27919c6a639",
+                "reference": "0fe87627b948695b3f646244df9fd27919c6a639",
                 "shasum": ""
             },
             "type": "library",
@@ -967,7 +967,7 @@
                 "source": "https://github.com/itkg/phporchestra-cms-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-cms-bundle/issues"
             },
-            "time": "2014-07-17 07:49:35"
+            "time": "2014-07-17 09:09:00"
         },
         {
             "name": "itkg/phporchestra-model-bundle",
@@ -4844,9 +4844,7 @@
             "time": "2013-12-19 11:40:00"
         }
     ],
-    "aliases": [
-
-    ],
+    "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
         "mandango/mandango-bundle": 20,
@@ -4862,7 +4860,5 @@
     "platform": {
         "php": ">=5.3.3"
     },
-    "platform-dev": [
-
-    ]
+    "platform-dev": []
 }
