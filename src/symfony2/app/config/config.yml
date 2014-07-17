@@ -112,3 +112,7 @@ nelmio_solarium:
     clients:
         default:
             endpoints: [default]
+
+php_orchestra_indexation:
+    indexation:
+        - solr
