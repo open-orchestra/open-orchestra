@@ -15,7 +15,7 @@
 
     <testsuites>
         <testsuite name="PhpOrchestra Test Suite">
-            <directory>./vendor/php-orchestra/*-bundle/PHPOrchestra/*Bundle/Test</directory>
+            <directory>./vendor/itkg/*-bundle/PHPOrchestra/*Bundle/Test</directory>
         </testsuite>
     </testsuites>
 
@@ -27,11 +27,11 @@
 
     <filter>
         <whitelist addUncoveredFilesFromWhitelist="true">
-            <directory suffix=".php">./vendor/php-orchestra</directory>
+            <directory suffix=".php">./vendor/itkg</directory>
             <exclude>
-                <directory suffix=".php">./vendor/php-orchestra/*-bundle/PHPOrchestra/*Bundle/Controller</directory>
-                <directory suffix=".php">./vendor/php-orchestra/*-bundle/PHPOrchestra/*Bundle/Test</directory>
-                <directory suffix=".php">./vendor/php-orchestra/*-bundle/PHPOrchestra/*Bundle/Resources</directory>
+                <directory suffix=".php">./vendor/itkg/*-bundle/PHPOrchestra/*Bundle/Controller</directory>
+                <directory suffix=".php">./vendor/itkg/*-bundle/PHPOrchestra/*Bundle/Test</directory>
+                <directory suffix=".php">./vendor/itkg/*-bundle/PHPOrchestra/*Bundle/Resources</directory>
             </exclude>
         </whitelist>
     </filter>
