@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ae2f5b0fb2d28c49ce0ec42cf0f05fe1",
+    "hash": "7b5e44382889bdc98c0cf257598e91ef",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -672,7 +672,7 @@
                     "homepage": "http://avalanche123.com"
                 },
                 {
-                    "name": "Jonathan H. Wage",
+                    "name": "Jonathan Wage",
                     "email": "jonwage@gmail.com",
                     "homepage": "http://www.jwage.com/",
                     "role": "Creator"
@@ -904,12 +904,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-block-bundle.git",
-                "reference": "d819836422b1493586c1082767dea916c33ae93e"
+                "reference": "66b7adf7f5ab8da264bb7a958657ae48c547fb3e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-block-bundle/zipball/d819836422b1493586c1082767dea916c33ae93e",
-                "reference": "d819836422b1493586c1082767dea916c33ae93e",
+                "url": "https://api.github.com/repos/itkg/phporchestra-block-bundle/zipball/66b7adf7f5ab8da264bb7a958657ae48c547fb3e",
+                "reference": "66b7adf7f5ab8da264bb7a958657ae48c547fb3e",
                 "shasum": ""
             },
             "type": "library",
@@ -931,7 +931,7 @@
                 "source": "https://github.com/itkg/phporchestra-block-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-block-bundle/issues"
             },
-            "time": "2014-07-17 07:46:49"
+            "time": "2014-07-17 16:09:24"
         },
         {
             "name": "itkg/phporchestra-cms-bundle",
@@ -940,12 +940,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-cms-bundle.git",
-                "reference": "0fe87627b948695b3f646244df9fd27919c6a639"
+                "reference": "24b0140be1fca8fbd7168f82c9ce04997860b373"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/0fe87627b948695b3f646244df9fd27919c6a639",
-                "reference": "0fe87627b948695b3f646244df9fd27919c6a639",
+                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/24b0140be1fca8fbd7168f82c9ce04997860b373",
+                "reference": "24b0140be1fca8fbd7168f82c9ce04997860b373",
                 "shasum": ""
             },
             "type": "library",
@@ -967,7 +967,7 @@
                 "source": "https://github.com/itkg/phporchestra-cms-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-cms-bundle/issues"
             },
-            "time": "2014-07-17 09:09:00"
+            "time": "2014-07-17 16:22:32"
         },
         {
             "name": "itkg/phporchestra-model-bundle",
@@ -976,18 +976,19 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-model-bundle.git",
-                "reference": "8391a9d40ec141af76029230053d8f65409f4105"
+                "reference": "05a9bc6ff904387e58ab51fbd23a14db843724fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-model-bundle/zipball/8391a9d40ec141af76029230053d8f65409f4105",
-                "reference": "8391a9d40ec141af76029230053d8f65409f4105",
+                "url": "https://api.github.com/repos/itkg/phporchestra-model-bundle/zipball/05a9bc6ff904387e58ab51fbd23a14db843724fc",
+                "reference": "05a9bc6ff904387e58ab51fbd23a14db843724fc",
                 "shasum": ""
             },
             "type": "library",
             "autoload": {
                 "psr-0": {
-                    "PHPOrchestra\\ModelBundle": ""
+                    "PHPOrchestra\\ModelBundle": "",
+                    "PHPOrchestra\\IndexationBundle": ""
                 }
             },
             "license": [
@@ -1003,7 +1004,7 @@
                 "source": "https://github.com/itkg/phporchestra-model-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-model-bundle/issues"
             },
-            "time": "2014-07-17 07:39:31"
+            "time": "2014-07-17 16:14:25"
         },
         {
             "name": "itkg/phporchestra-theme-bundle",
@@ -2755,6 +2756,56 @@
                 "php"
             ],
             "time": "2013-08-25 17:11:40"
+        },
+        {
+            "name": "phake/phake",
+            "version": "v1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mlively/Phake.git",
+                "reference": "14e4788698e4a21774220c22f3dcaa2e97648b61"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mlively/Phake/zipball/14e4788698e4a21774220c22f3dcaa2e97648b61",
+                "reference": "14e4788698e4a21774220c22f3dcaa2e97648b61",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.0"
+            },
+            "require-dev": {
+                "doctrine/common": "2.3.*",
+                "ext-soap": "*",
+                "hamcrest/hamcrest-php": "1.1.*",
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "include-path": [
+                "src"
+            ],
+            "license": [
+                "BSD"
+            ],
+            "authors": [
+                {
+                    "name": "Mike Lively",
+                    "email": "m@digitalsandwich.com"
+                }
+            ],
+            "description": "The Phake mock testing library",
+            "homepage": "https://github.com/mlively/Phake",
+            "keywords": [
+                "mock",
+                "testing"
+            ],
+            "time": "2014-04-16 14:49:56"
         },
         {
             "name": "phenx/php-font-lib",
@@ -4844,7 +4895,9 @@
             "time": "2013-12-19 11:40:00"
         }
     ],
-    "aliases": [],
+    "aliases": [
+
+    ],
     "minimum-stability": "dev",
     "stability-flags": {
         "mandango/mandango-bundle": 20,
@@ -4860,5 +4913,7 @@
     "platform": {
         "php": ">=5.3.3"
     },
-    "platform-dev": []
+    "platform-dev": [
+
+    ]
 }

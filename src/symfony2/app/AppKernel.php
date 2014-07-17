@@ -30,6 +30,7 @@ class AppKernel extends Kernel
             new PHPOrchestra\ThemeBundle\PHPOrchestraThemeBundle(),
             new PHPOrchestra\ModelBundle\PHPOrchestraModelBundle(),
             new PHPOrchestraModel\MongoBundle\PHPOrchestraModelMongoBundle(),
+            new PHPOrchestra\IndexationBundle\PHPOrchestraIndexationBundle(),
             );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
