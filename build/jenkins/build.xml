@@ -30,7 +30,7 @@
     <target name="lint">
         <exec executable="bash" failonerror="true">
             <arg value="-c" />
-            <arg value="find -L ${basedir}/${appli.src.project.path}/src ${basedir}/${appli.src.project.path}/vendor/php-orchestra -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l" />
+            <arg value="find -L ${basedir}/${appli.src.project.path}/src ${basedir}/${appli.src.project.path}/vendor/itkg -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l" />
         </exec>
     </target>
 
@@ -39,7 +39,7 @@
         <exec executable="phploc">
             <arg value="--log-csv" />
             <arg value="${basedir}/build/logs/phploc.csv" />
-            <arg path="${basedir}/${appli.src.project.path}/vendor/php-orchestra" />
+            <arg path="${basedir}/${appli.src.project.path}/vendor/itkg" />
         </exec>
     </target>
 
@@ -49,14 +49,14 @@
             <arg value="--jdepend-xml=${basedir}/build/logs/jdepend.xml" />
             <arg value="--jdepend-chart=${basedir}/build/pdepend/dependencies.svg" />
             <arg value="--overview-pyramid=${basedir}/build/pdepend/overview-pyramid.svg" />
-            <arg path="${basedir}/${appli.src.project.path}/vendor/php-orchestra" />
+            <arg path="${basedir}/${appli.src.project.path}/vendor/itkg" />
         </exec>
     </target>
 
     <!-- PHP Mess Detector -->
     <target name="phpmd" description="Perform project mess detection using PHPMD" unless="appli.disable.phpmd">
         <exec executable="phpmd">
-            <arg path="${basedir}/${appli.src.project.path}/vendor/php-orchestra,${basedir}/${appli.src.project.path}/src" />
+            <arg path="${basedir}/${appli.src.project.path}/vendor/itkg,${basedir}/${appli.src.project.path}/src" />
             <arg value="text" />
             <arg value="${basedir}/build/jenkins/phpmd.xml" />
             <arg value="--exclude" />
@@ -67,7 +67,7 @@
     <!-- PHP Mess Detector for CI (generate report file) -->
     <target name="phpmd-ci" description="Perform project mess detection using PHPMD" unless="appli.disable.phpmd">
         <exec executable="phpmd">
-            <arg path="${basedir}/${appli.src.project.path}/vendor/php-orchestra,${basedir}/${appli.src.project.path}/src" />
+            <arg path="${basedir}/${appli.src.project.path}/vendor/itkg,${basedir}/${appli.src.project.path}/src" />
             <arg value="xml" />
             <arg value="${basedir}/build/jenkins/phpmd.xml" />
             <arg value="--reportfile" />
@@ -82,7 +82,7 @@
         <exec executable="phpcs">
             <arg value="--standard=PSR2" />
             <arg value="--extensions=php" />
-            <arg path="${basedir}/${appli.src.project.path}/vendor/php-orchestra" />
+            <arg path="${basedir}/${appli.src.project.path}/vendor/itkg" />
             <arg path="${basedir}/${appli.src.project.path}/src" />
         </exec>
     </target>
@@ -94,7 +94,7 @@
             <arg value="--report-file=${basedir}/build/logs/checkstyle.xml" />
             <arg value="--standard=PSR2" />
             <arg value="--extensions=php" />
-            <arg path="${basedir}/${appli.src.project.path}/vendor/php-orchestra" />
+            <arg path="${basedir}/${appli.src.project.path}/vendor/itkg" />
             <arg path="${basedir}/${appli.src.project.path}/src" />
         </exec>
     </target>
@@ -106,7 +106,7 @@
             <arg value="${basedir}/build/logs/pmd-cpd.xml" />
             <arg value="--exclude" />
             <arg value="Base" />
-            <arg path="${basedir}/${appli.src.project.path}/vendor/php-orchestra" />
+            <arg path="${basedir}/${appli.src.project.path}/vendor/itkg" />
             <arg path="${basedir}/${appli.src.project.path}/src" />
         </exec>
     </target>
@@ -134,7 +134,7 @@
         <exec executable="${basedir}/${appli.src.project.path}/bin/phpdoc.php">
             <arg value="--extensions=php" />
             <arg value="--directory" />
-            <arg path="${basedir}/${appli.src.project.path}/vendor/php-orchestra" />
+            <arg path="${basedir}/${appli.src.project.path}/vendor/itkg" />
             <arg value="--target" />
             <arg path="${basedir}/build/api" />
         </exec>

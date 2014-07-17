@@ -15,7 +15,7 @@
 
     <testsuites>
         <testsuite name="PhpOrchestra Test Suite">
-            <directory>../../src/symfony2/vendor/php-orchestra/*-bundle/PHPOrchestra/*Bundle/Test</directory>
+            <directory>../../src/symfony2/vendor/itkg/*-bundle/PHPOrchestra/*Bundle/Test</directory>
         </testsuite>
     </testsuites>
 
@@ -27,11 +27,11 @@
 
     <filter>
         <whitelist addUncoveredFilesFromWhitelist="true">
-            <directory suffix=".php">../../src/symfony2/vendor/php-orchestra</directory>
+            <directory suffix=".php">../../src/symfony2/vendor/itkg</directory>
             <exclude>
-                <directory suffix=".php">../../src/symfony2/vendor/php-orchestra/*-bundle/PHPOrchestra/*Bundle/Controller</directory>
-                <directory suffix=".php">../../src/symfony2/vendor/php-orchestra/*-bundle/PHPOrchestra/*Bundle/Test</directory>
-                <directory suffix=".php">../../src/symfony2/vendor/php-orchestra/*-bundle/PHPOrchestra/*Bundle/Resources</directory>
+                <directory suffix=".php">../../src/symfony2/vendor/itkg/*-bundle/PHPOrchestra/*Bundle/Controller</directory>
+                <directory suffix=".php">../../src/symfony2/vendor/itkg/*-bundle/PHPOrchestra/*Bundle/Test</directory>
+                <directory suffix=".php">../../src/symfony2/vendor/itkg/*-bundle/PHPOrchestra/*Bundle/Resources</directory>
             </exclude>
         </whitelist>
     </filter>
