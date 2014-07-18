@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7b5e44382889bdc98c0cf257598e91ef",
+    "hash": "6dc0dfa54f3d96bec592978c88204713",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -672,7 +672,7 @@
                     "homepage": "http://avalanche123.com"
                 },
                 {
-                    "name": "Jonathan Wage",
+                    "name": "Jonathan H. Wage",
                     "email": "jonwage@gmail.com",
                     "homepage": "http://www.jwage.com/",
                     "role": "Creator"
@@ -904,12 +904,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-block-bundle.git",
-                "reference": "66b7adf7f5ab8da264bb7a958657ae48c547fb3e"
+                "reference": "d0d0ac24919ff245e053249cb7f428a5e03464e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-block-bundle/zipball/66b7adf7f5ab8da264bb7a958657ae48c547fb3e",
-                "reference": "66b7adf7f5ab8da264bb7a958657ae48c547fb3e",
+                "url": "https://api.github.com/repos/itkg/phporchestra-block-bundle/zipball/d0d0ac24919ff245e053249cb7f428a5e03464e3",
+                "reference": "d0d0ac24919ff245e053249cb7f428a5e03464e3",
                 "shasum": ""
             },
             "type": "library",
@@ -931,7 +931,7 @@
                 "source": "https://github.com/itkg/phporchestra-block-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-block-bundle/issues"
             },
-            "time": "2014-07-17 16:09:24"
+            "time": "2014-07-18 10:13:38"
         },
         {
             "name": "itkg/phporchestra-cms-bundle",
@@ -976,12 +976,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-model-bundle.git",
-                "reference": "05a9bc6ff904387e58ab51fbd23a14db843724fc"
+                "reference": "5114e84b63c2aea19c89edd11c2c1a0ebd0d7df7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-model-bundle/zipball/05a9bc6ff904387e58ab51fbd23a14db843724fc",
-                "reference": "05a9bc6ff904387e58ab51fbd23a14db843724fc",
+                "url": "https://api.github.com/repos/itkg/phporchestra-model-bundle/zipball/5114e84b63c2aea19c89edd11c2c1a0ebd0d7df7",
+                "reference": "5114e84b63c2aea19c89edd11c2c1a0ebd0d7df7",
                 "shasum": ""
             },
             "type": "library",
@@ -1004,7 +1004,7 @@
                 "source": "https://github.com/itkg/phporchestra-model-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-model-bundle/issues"
             },
-            "time": "2014-07-17 16:14:25"
+            "time": "2014-07-18 09:48:10"
         },
         {
             "name": "itkg/phporchestra-theme-bundle",
