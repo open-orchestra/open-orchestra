@@ -24,6 +24,7 @@ class AppKernel extends Kernel
             new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),
             new FakeApp\ThemeBundle\FakeAppThemeBundle(),
             new Nelmio\SolariumBundle\NelmioSolariumBundle(),
+            new JMS\SerializerBundle\JMSSerializerBundle(),
 
             new PHPOrchestra\CMSBundle\PHPOrchestraCMSBundle(),
             new PHPOrchestra\BlockBundle\PHPOrchestraBlockBundle(),
