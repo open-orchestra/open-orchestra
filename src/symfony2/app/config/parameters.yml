@@ -14,3 +14,5 @@ parameters:
     secret: $php-orchestra$
     indexation:
         - solr
+    router.request_context.host: phporchestra.dev
+    router.request_context.base_url: /app_dev.php
