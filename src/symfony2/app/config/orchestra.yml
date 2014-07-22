@@ -1,5 +1,5 @@
 parameters:
-    php_orchestra.languages.availables :
+    php_orchestra_cms.languages.availables :
         - en
         - fr
         - de
@@ -14,8 +14,8 @@ twig:
         resources:
             - 'PHPOrchestraCMSBundle:Form:contentTypeFields.html.twig'
     globals:
-        available_languages: %php_orchestra.languages.availables%
-        context: @phporchestra_cms.contextmanager
+        available_languages: %php_orchestra_cms.languages.availables%
+        context: @php_orchestra_cms.context_manager
 
 php_orchestra_theme:
     themes: 
