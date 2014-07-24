@@ -11,10 +11,6 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/itkg/phporchestra-block-bundle"
-        },
-        {
-            "type": "vcs",
             "url": "https://github.com/itkg/phporchestra-cms-bundle"
         },
         {
@@ -48,7 +44,6 @@
         "doctrine/mongodb-odm-bundle" : "3.0.*@dev",
         "nelmio/solarium-bundle" : "v2.0.4",
         "jms/serializer-bundle" : "0.13.*@dev",
-        "itkg/phporchestra-block-bundle": "dev-master",
         "itkg/phporchestra-cms-bundle": "dev-master",
         "itkg/phporchestra-model-bundle": "dev-master",
         "itkg/phporchestra-theme-bundle": "dev-master"

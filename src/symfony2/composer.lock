@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5ab0fdf1d949b6cb4dda3871559589cb",
+    "hash": "dbc1144c54cf706d8e8d5be768cad300",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -672,7 +672,7 @@
                     "homepage": "http://avalanche123.com"
                 },
                 {
-                    "name": "Jonathan H. Wage",
+                    "name": "Jonathan Wage",
                     "email": "jonwage@gmail.com",
                     "homepage": "http://www.jwage.com/",
                     "role": "Creator"
@@ -898,54 +898,18 @@
             "time": "2013-12-07 10:10:39"
         },
         {
-            "name": "itkg/phporchestra-block-bundle",
-            "version": "dev-master",
-            "target-dir": "PHPOrchestra",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:itkg/phporchestra-block-bundle.git",
-                "reference": "438529dde1b00c0c615a86f1672ce825e68f0e56"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-block-bundle/zipball/438529dde1b00c0c615a86f1672ce825e68f0e56",
-                "reference": "438529dde1b00c0c615a86f1672ce825e68f0e56",
-                "shasum": ""
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "PHPOrchestra\\BlockBundle": ""
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nicolas Thal",
-                    "email": "nico.th4l@gmail.com"
-                }
-            ],
-            "support": {
-                "source": "https://github.com/itkg/phporchestra-block-bundle/tree/master",
-                "issues": "https://github.com/itkg/phporchestra-block-bundle/issues"
-            },
-            "time": "2014-07-22 09:37:32"
-        },
-        {
             "name": "itkg/phporchestra-cms-bundle",
             "version": "dev-master",
             "target-dir": "PHPOrchestra",
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-cms-bundle.git",
-                "reference": "17f735fced849ba2954c56aac24dfdb512a7f8ad"
+                "reference": "bea43bb625ef24496acd9113fafc985fd29c9588"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/17f735fced849ba2954c56aac24dfdb512a7f8ad",
-                "reference": "17f735fced849ba2954c56aac24dfdb512a7f8ad",
+                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/bea43bb625ef24496acd9113fafc985fd29c9588",
+                "reference": "bea43bb625ef24496acd9113fafc985fd29c9588",
                 "shasum": ""
             },
             "type": "library",
@@ -967,7 +931,7 @@
                 "source": "https://github.com/itkg/phporchestra-cms-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-cms-bundle/issues"
             },
-            "time": "2014-07-22 12:29:55"
+            "time": "2014-07-23 14:19:58"
         },
         {
             "name": "itkg/phporchestra-model-bundle",
@@ -4973,7 +4937,6 @@
         "doctrine/mongodb-odm": 20,
         "doctrine/mongodb-odm-bundle": 20,
         "jms/serializer-bundle": 20,
-        "itkg/phporchestra-block-bundle": 20,
         "itkg/phporchestra-cms-bundle": 20,
         "itkg/phporchestra-model-bundle": 20,
         "itkg/phporchestra-theme-bundle": 20
