@@ -27,7 +27,6 @@ class AppKernel extends Kernel
             new JMS\SerializerBundle\JMSSerializerBundle(),
 
             new PHPOrchestra\CMSBundle\PHPOrchestraCMSBundle(),
-            new PHPOrchestra\BlockBundle\PHPOrchestraBlockBundle(),
             new PHPOrchestra\ThemeBundle\PHPOrchestraThemeBundle(),
             new PHPOrchestra\ModelBundle\PHPOrchestraModelBundle(),
             new PHPOrchestraModel\MongoBundle\PHPOrchestraModelMongoBundle(),
