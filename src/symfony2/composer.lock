@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "dbc1144c54cf706d8e8d5be768cad300",
+    "hash": "87036c879b9ba45ab262d07ede23661e",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1005,6 +1005,43 @@
                 "issues": "https://github.com/itkg/phporchestra-theme-bundle/issues"
             },
             "time": "2014-07-17 07:44:40"
+        },
+        {
+            "name": "itkg/phporchestra-translation-bundle",
+            "version": "dev-master",
+            "target-dir": "PHPOrchestra",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:itkg/phporchestra-translation-bundle.git",
+                "reference": "1978777998777920be37485dee082c94a69b7882"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/itkg/phporchestra-translation-bundle/zipball/1978777998777920be37485dee082c94a69b7882",
+                "reference": "1978777998777920be37485dee082c94a69b7882",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "PHPOrchestra\\TranslationBundle": ""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Thal",
+                    "email": "nico.th4l@gmail.com"
+                }
+            ],
+            "description": "The phporchestra translation bundle",
+            "support": {
+                "source": "https://github.com/itkg/phporchestra-translation-bundle/tree/master",
+                "issues": "https://github.com/itkg/phporchestra-translation-bundle/issues"
+            },
+            "time": "2014-07-24 08:48:27"
         },
         {
             "name": "jdorn/sql-formatter",
@@ -4938,6 +4975,7 @@
         "doctrine/mongodb-odm-bundle": 20,
         "jms/serializer-bundle": 20,
         "itkg/phporchestra-cms-bundle": 20,
+        "itkg/phporchestra-translation-bundle": 20,
         "itkg/phporchestra-model-bundle": 20,
         "itkg/phporchestra-theme-bundle": 20
     },
