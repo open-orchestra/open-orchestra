@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5ab0fdf1d949b6cb4dda3871559589cb",
+    "hash": "c8851a579058513e2efaf46b6b6c98b3",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -940,12 +940,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-cms-bundle.git",
-                "reference": "17f735fced849ba2954c56aac24dfdb512a7f8ad"
+                "reference": "04bf5e0448f294e7103cfa675282c98f2ea13c67"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/17f735fced849ba2954c56aac24dfdb512a7f8ad",
-                "reference": "17f735fced849ba2954c56aac24dfdb512a7f8ad",
+                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/04bf5e0448f294e7103cfa675282c98f2ea13c67",
+                "reference": "04bf5e0448f294e7103cfa675282c98f2ea13c67",
                 "shasum": ""
             },
             "type": "library",
@@ -967,7 +967,7 @@
                 "source": "https://github.com/itkg/phporchestra-cms-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-cms-bundle/issues"
             },
-            "time": "2014-07-22 12:29:55"
+            "time": "2014-07-22 14:33:58"
         },
         {
             "name": "itkg/phporchestra-model-bundle",
@@ -1389,6 +1389,64 @@
                 "minification"
             ],
             "time": "2013-07-19 00:03:27"
+        },
+        {
+            "name": "lexik/translation-bundle",
+            "version": "v2.0.1",
+            "target-dir": "Lexik/Bundle/TranslationBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lexik/LexikTranslationBundle.git",
+                "reference": "3452ef96e11c59ecd4881e9948ea91238dcd0e94"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lexik/LexikTranslationBundle/zipball/3452ef96e11c59ecd4881e9948ea91238dcd0e94",
+                "reference": "3452ef96e11c59ecd4881e9948ea91238dcd0e94",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "symfony/framework-bundle": "~2.3"
+            },
+            "suggest": {
+                "doctrine/mongodb-odm": "1.0.*@dev",
+                "doctrine/orm": ">=2.1"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.x.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Lexik\\Bundle\\TranslationBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dev Lexik",
+                    "email": "dev@lexik.fr"
+                },
+                {
+                    "name": "Cedric Girard",
+                    "email": "c.girard@lexik.fr"
+                }
+            ],
+            "description": "This bundle allow to import translation files content into the database and provide a GUI to edit translations.",
+            "homepage": "https://github.com/lexik/LexikTranslationBundle",
+            "keywords": [
+                "Symfony2",
+                "bundle",
+                "i18n",
+                "translation"
+            ],
+            "time": "2014-05-13 12:55:00"
         },
         {
             "name": "mandango/mandango",
@@ -4973,6 +5031,7 @@
         "doctrine/mongodb-odm": 20,
         "doctrine/mongodb-odm-bundle": 20,
         "jms/serializer-bundle": 20,
+        "lexik/translation-bundle": 20,
         "itkg/phporchestra-block-bundle": 20,
         "itkg/phporchestra-cms-bundle": 20,
         "itkg/phporchestra-model-bundle": 20,
