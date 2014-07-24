@@ -202,21 +202,27 @@
    <copyField source="title" dest="text"/>
    <copyField source="name" dest="text"/>
    <copyField source="*_t" dest="text"/>
-   <copyField source="txt_en" dest="text"/>
-   <copyField source="txt_fr" dest="text"/>
+   <copyField source="*_en" dest="text"/>
+   <copyField source="*_fr" dest="text"/>
    <copyField source="*_s" dest="text"/>
+   <copyField source="*_txt" dest="text"/>
+   <copyField source="*_ss" dest="text"/>
 
    <copyField source="title" dest="spell_word"/>
    <copyField source="name" dest="spell_word"/>
    <copyField source="*_t" dest="spell_word"/>
-   <copyField source="txt_en" dest="spell_word"/>
-   <copyField source="txt_fr" dest="spell_word"/>
+   <copyField source="*_en" dest="spell_word"/>
+   <copyField source="*_fr" dest="spell_word"/>
    <copyField source="*_s" dest="spell_word"/>
+   <copyField source="*_txt" dest="text"/>
+   <copyField source="*_ss" dest="text"/>
 
    <copyField source="title" dest="suggest"/>
    <copyField source="name" dest="suggest"/>
    <copyField source="*_t" dest="suggest"/>
    <copyField source="*_s" dest="suggest"/>
+   <copyField source="*_txt" dest="text"/>
+   <copyField source="*_ss" dest="text"/>
  
   
     <!-- field type definitions. The "name" attribute is
