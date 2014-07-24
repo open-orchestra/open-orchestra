@@ -11,6 +11,10 @@
     "repositories": [
         {
             "type": "vcs",
+            "url": "https://github.com/itkg/phporchestra-translation-bundle"
+        },
+        {
+            "type": "vcs",
             "url": "https://github.com/itkg/phporchestra-cms-bundle"
         },
         {
@@ -45,6 +49,7 @@
         "nelmio/solarium-bundle" : "v2.0.4",
         "jms/serializer-bundle" : "0.13.*@dev",
         "itkg/phporchestra-cms-bundle": "dev-master",
+        "itkg/phporchestra-translation-bundle": "dev-master",
         "itkg/phporchestra-model-bundle": "dev-master",
         "itkg/phporchestra-theme-bundle": "dev-master"
     },
