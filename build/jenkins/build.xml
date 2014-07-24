@@ -6,7 +6,7 @@
     <property name="appli.src.project.path" value="src/symfony2" />
 
     <!-- Default target: build -->
-    <target name="build" depends="prepare,lint,phploc,pdepend,phpmd-ci,phpcs-ci,phpcpd,phpunit,phpcb,phpdoc" />
+    <target name="build" depends="prepare,composer,lint,phploc,pdepend,phpmd-ci,phpcs-ci,phpcpd,phpunit,phpcb,phpdoc" />
 
     <!-- Cleanup task -->
     <target name="clean" description="Cleanup build artifacts">
@@ -24,6 +24,14 @@
         <mkdir dir="${basedir}/build/coverage" />
         <mkdir dir="${basedir}/build/logs" />
         <mkdir dir="${basedir}/build/pdepend" />
+    </target>
+
+    <!-- Composer install -->
+    <target name="composer">
+        <exec executable="./composer.phar" failonerror="true" dir="${basedir}/${appli.src.project.path}">
+            <arg value="install" />
+            <arg value="--prefer-dist" />
+        </exec>
     </target>
 
     <!-- Check PHP files syntax -->
