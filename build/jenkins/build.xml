@@ -28,7 +28,7 @@
 
     <!-- Composer install -->
     <target name="composer">
-        <exec executable="./composer.phar" failonerror="true" dir="${basedir}/${appli.src.project.path}">
+        <exec executable="./composer.phar" dir="${basedir}/${appli.src.project.path}">
             <arg value="install" />
             <arg value="--prefer-dist" />
         </exec>
@@ -36,9 +36,9 @@
 
     <!-- Check PHP files syntax -->
     <target name="lint">
-        <exec executable="bash" failonerror="true">
+        <exec executable="bash">
             <arg value="-c" />
-            <arg value="find -L ${basedir}/${appli.src.project.path}/src ${basedir}/${appli.src.project.path}/vendor/itkg -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l" />
+            <arg value="find -L '${basedir}/${appli.src.project.path}/src' '${basedir}/${appli.src.project.path}/vendor/itkg' -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l" />
         </exec>
     </target>
 
