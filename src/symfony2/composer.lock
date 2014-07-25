@@ -300,6 +300,62 @@
             "time": "2014-05-21 19:28:51"
         },
         {
+            "name": "doctrine/data-fixtures",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/data-fixtures.git",
+                "reference": "b4a135c7db56ecc4602b54a2184368f440cac33e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/data-fixtures/zipball/b4a135c7db56ecc4602b54a2184368f440cac33e",
+                "reference": "b4a135c7db56ecc4602b54a2184368f440cac33e",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/common": ">=2.2,<2.5-dev",
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "doctrine/orm": ">=2.2,<2.5-dev"
+            },
+            "suggest": {
+                "doctrine/mongodb-odm": "For loading MongoDB ODM fixtures",
+                "doctrine/orm": "For loading ORM fixtures",
+                "doctrine/phpcr-odm": "For loading PHPCR ODM fixtures"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Doctrine\\Common\\DataFixtures": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com",
+                    "homepage": "http://www.jwage.com/",
+                    "role": "Creator"
+                }
+            ],
+            "description": "Data Fixtures for all Doctrine Object Managers",
+            "homepage": "http://www.doctrine-project.org",
+            "keywords": [
+                "database"
+            ],
+            "time": "2013-07-10 17:04:07"
+        },
+        {
             "name": "doctrine/dbal",
             "version": "v2.4.2",
             "source": {
@@ -436,6 +492,66 @@
                 "persistence"
             ],
             "time": "2013-03-25 20:13:59"
+        },
+        {
+            "name": "doctrine/doctrine-fixtures-bundle",
+            "version": "v2.2.0",
+            "target-dir": "Doctrine/Bundle/FixturesBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/DoctrineFixturesBundle.git",
+                "reference": "c811f96f0cf83b997e3a3ed037cac729bbe3e803"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/DoctrineFixturesBundle/zipball/c811f96f0cf83b997e3a3ed037cac729bbe3e803",
+                "reference": "c811f96f0cf83b997e3a3ed037cac729bbe3e803",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/data-fixtures": "~1.0",
+                "doctrine/doctrine-bundle": "~1.0",
+                "php": ">=5.3.2",
+                "symfony/doctrine-bridge": "~2.1"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Doctrine\\Bundle\\FixturesBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com",
+                    "homepage": "http://fabien.potencier.org",
+                    "role": "Lead Developer"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                },
+                {
+                    "name": "Doctrine Project",
+                    "homepage": "http://www.doctrine-project.org"
+                }
+            ],
+            "description": "Symfony DoctrineFixturesBundle",
+            "homepage": "http://www.doctrine-project.org",
+            "keywords": [
+                "Fixture",
+                "persistence"
+            ],
+            "time": "2013-09-05 11:23:37"
         },
         {
             "name": "doctrine/inflector",
@@ -904,12 +1020,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-cms-bundle.git",
-                "reference": "bea43bb625ef24496acd9113fafc985fd29c9588"
+                "reference": "9d48d0f8d9ce43917c5d491ec82f36cad8027519"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/bea43bb625ef24496acd9113fafc985fd29c9588",
-                "reference": "bea43bb625ef24496acd9113fafc985fd29c9588",
+                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/9d48d0f8d9ce43917c5d491ec82f36cad8027519",
+                "reference": "9d48d0f8d9ce43917c5d491ec82f36cad8027519",
                 "shasum": ""
             },
             "type": "library",
@@ -931,7 +1047,7 @@
                 "source": "https://github.com/itkg/phporchestra-cms-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-cms-bundle/issues"
             },
-            "time": "2014-07-23 14:19:58"
+            "time": "2014-07-25 08:02:33"
         },
         {
             "name": "itkg/phporchestra-model-bundle",
@@ -940,13 +1056,18 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-model-bundle.git",
-                "reference": "b330cb79b7eb62ac93ab209762338cfdc8f4c23f"
+                "reference": "a3c4194452d52491ccc8cf14585b29fad2df48ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-model-bundle/zipball/b330cb79b7eb62ac93ab209762338cfdc8f4c23f",
-                "reference": "b330cb79b7eb62ac93ab209762338cfdc8f4c23f",
+                "url": "https://api.github.com/repos/itkg/phporchestra-model-bundle/zipball/a3c4194452d52491ccc8cf14585b29fad2df48ea",
+                "reference": "a3c4194452d52491ccc8cf14585b29fad2df48ea",
                 "shasum": ""
+            },
+            "require": {
+                "doctrine/doctrine-fixtures-bundle": "2.2.*",
+                "doctrine/mongodb-odm": "1.0.*@dev",
+                "doctrine/mongodb-odm-bundle": "3.0.*@dev"
             },
             "type": "library",
             "autoload": {
@@ -968,7 +1089,7 @@
                 "source": "https://github.com/itkg/phporchestra-model-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-model-bundle/issues"
             },
-            "time": "2014-07-18 15:43:36"
+            "time": "2014-07-24 13:50:54"
         },
         {
             "name": "itkg/phporchestra-theme-bundle",
@@ -1013,13 +1134,16 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-translation-bundle.git",
-                "reference": "1978777998777920be37485dee082c94a69b7882"
+                "reference": "664c0dc2da24a810b9d4c43881ce5ebef9a5e30a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-translation-bundle/zipball/1978777998777920be37485dee082c94a69b7882",
-                "reference": "1978777998777920be37485dee082c94a69b7882",
+                "url": "https://api.github.com/repos/itkg/phporchestra-translation-bundle/zipball/664c0dc2da24a810b9d4c43881ce5ebef9a5e30a",
+                "reference": "664c0dc2da24a810b9d4c43881ce5ebef9a5e30a",
                 "shasum": ""
+            },
+            "require": {
+                "lexik/translation-bundle": "2.*@dev"
             },
             "type": "library",
             "autoload": {
@@ -1041,7 +1165,7 @@
                 "source": "https://github.com/itkg/phporchestra-translation-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-translation-bundle/issues"
             },
-            "time": "2014-07-24 08:48:27"
+            "time": "2014-07-24 15:31:21"
         },
         {
             "name": "jdorn/sql-formatter",
@@ -1390,6 +1514,64 @@
                 "minification"
             ],
             "time": "2013-07-19 00:03:27"
+        },
+        {
+            "name": "lexik/translation-bundle",
+            "version": "v2.0.1",
+            "target-dir": "Lexik/Bundle/TranslationBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lexik/LexikTranslationBundle.git",
+                "reference": "3452ef96e11c59ecd4881e9948ea91238dcd0e94"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lexik/LexikTranslationBundle/zipball/3452ef96e11c59ecd4881e9948ea91238dcd0e94",
+                "reference": "3452ef96e11c59ecd4881e9948ea91238dcd0e94",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "symfony/framework-bundle": "~2.3"
+            },
+            "suggest": {
+                "doctrine/mongodb-odm": "1.0.*@dev",
+                "doctrine/orm": ">=2.1"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.x.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Lexik\\Bundle\\TranslationBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dev Lexik",
+                    "email": "dev@lexik.fr"
+                },
+                {
+                    "name": "Cedric Girard",
+                    "email": "c.girard@lexik.fr"
+                }
+            ],
+            "description": "This bundle allow to import translation files content into the database and provide a GUI to edit translations.",
+            "homepage": "https://github.com/lexik/LexikTranslationBundle",
+            "keywords": [
+                "Symfony2",
+                "bundle",
+                "i18n",
+                "translation"
+            ],
+            "time": "2014-05-13 12:55:00"
         },
         {
             "name": "mandango/mandango",
