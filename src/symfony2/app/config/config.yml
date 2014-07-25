@@ -49,15 +49,15 @@ assetic:
         #yui_css:
         #    jar: "%kernel.root_dir%/Resources/java/yuicompressor-2.4.7.jar"
 
-#doctrine_mongodb:
-#    connections:
-#        default:
-#            server: mongodb://localhost:27017
-#            options: {}
-#    default_database: php_orchestra
-#    document_managers:
-#        default:
-#            auto_mapping: true
+doctrine_mongodb:
+    connections:
+        default:
+            server: "%php_orchestra_cms.mongodb.server%"
+            options: {}
+    default_database: "%php_orchestra_cms.mongodb.database%"
+    document_managers:
+        default:
+            auto_mapping: true
 
 # Swiftmailer Configuration
 swiftmailer:
@@ -71,8 +71,8 @@ mandango:
     default_connection: local
     connections:
         local:
-            server:   mongodb://localhost:27017
-            database: symfony2_local_%kernel.environment%
+            server: "%php_orchestra_cms.mongodb.server%"
+            database: "%php_orchestra_cms.mongodb.database%"
             
 snc_redis:
     clients:

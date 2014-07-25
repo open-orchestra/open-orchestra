@@ -9,3 +9,6 @@ parameters:
 
     router.request_context.host: phporchestra.dev
     router.request_context.base_url: /app_dev.php
+
+    php_orchestra_cms.mongodb.server: mongodb://localhost:27017
+    php_orchestra_cms.mongodb.database: phporchestra_%kernel.environment%

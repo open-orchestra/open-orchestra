@@ -6,6 +6,13 @@ parameters:
         - es
     kernel.default_locale : en
         
+lexik_translation:
+    fallback_locale: "%kernel.default_locale%"
+    managed_locales: "%php_orchestra_cms.languages.availables%"
+    storage:
+        type: mongodb
+        object_manager: default
+
 framework:
     translator: { fallback: "%kernel.default_locale%" }
 
