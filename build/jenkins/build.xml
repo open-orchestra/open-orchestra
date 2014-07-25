@@ -44,7 +44,7 @@
 
     <!-- Project size stats -->
     <target name="phploc" description="Measure project size using PHPLOC">
-        <exec executable="phploc">
+        <exec executable="/usr/local/bin/phploc">
             <arg value="--log-csv" />
             <arg value="${basedir}/build/logs/phploc.csv" />
             <arg path="${basedir}/${appli.src.project.path}/vendor/itkg" />
