@@ -71,7 +71,7 @@ mandango:
     default_connection: local
     connections:
         local:
-            server: "%php_orchestra_cms.mongodb.server%"
+            server:   "%php_orchestra_cms.mongodb.server%"
             database: "%php_orchestra_cms.mongodb.database%"
             
 snc_redis:
@@ -98,3 +98,22 @@ nelmio_solarium:
 php_orchestra_indexation:
     indexation:
         - solr
+
+# Default configuration for extension with alias: "php_orchestra_model"
+php_orchestra_model:
+    content:
+        class:                'PHPOrchestra\ModelBundle\Document\Content'
+        repository:           PHPOrchestra\ModelBundle\Repository\ContentRepository
+    content_type:
+        class:                'PHPOrchestra\ModelBundle\Document\ContentType'
+        repository:           PHPOrchestra\ModelBundle\Repository\ContentTypeRepository
+    node:
+        class:                'PHPOrchestra\ModelBundle\Document\Node'
+        repository:           PHPOrchestra\ModelBundle\Repository\NodeRepository
+    site:
+        class:                'PHPOrchestra\ModelBundle\Document\Site'
+        repository:           PHPOrchestra\ModelBundle\Repository\SiteRepository
+    template:
+        class:                'PHPOrchestra\ModelBundle\Document\Template'
+        repository:           PHPOrchestra\ModelBundle\Repository\TemplateRepository
+
