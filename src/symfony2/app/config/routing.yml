@@ -2,3 +2,6 @@ php_orchestra_cms:
     resource: "@PHPOrchestraCMSBundle/Resources/config/routing.yml"
     prefix:   /
 
+php_orchestra_api:
+    resource: "@PHPOrchestraApiBundle/Resources/config/routing.yml"
+    prefix: /api

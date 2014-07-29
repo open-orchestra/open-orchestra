@@ -16,7 +16,6 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
 
-            new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Doctrine\Bundle\MongoDBBundle\DoctrineMongoDBBundle(),
             new Mandango\MandangoBundle\MandangoBundle(),
             new Snc\RedisBundle\SncRedisBundle(),
@@ -32,6 +31,7 @@ class AppKernel extends Kernel
             new PHPOrchestra\ModelBundle\PHPOrchestraModelBundle(),
             new PHPOrchestra\IndexationBundle\PHPOrchestraIndexationBundle(),
             new PHPOrchestra\TranslationBundle\PHPOrchestraTranslationBundle(),
+            new PHPOrchestra\ApiBundle\PHPOrchestraApiBundle(),
             );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

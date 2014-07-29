@@ -31,8 +31,6 @@
     "require" : {
         "php" : ">=5.3.3",
         "symfony/symfony" : "~2.4",
-        "doctrine/orm" : "~2.2,>=2.2.3",
-        "doctrine/doctrine-bundle" : "~1.2",
         "twig/extensions" : "~1.0",
         "symfony/assetic-bundle" : "~2.3",
         "symfony/swiftmailer-bundle" : "~2.3",
@@ -44,8 +42,6 @@
         "mandango/mandango-bundle" : "dev-master",
         "snc/redis-bundle" : "1.1.x-dev",
         "stfalcon/tinymce-bundle" : "0.3.*@dev",
-        "doctrine/mongodb-odm" : "1.0.*@dev",
-        "doctrine/mongodb-odm-bundle" : "3.0.*@dev",
         "nelmio/solarium-bundle" : "v2.0.4",
         "jms/serializer-bundle" : "0.13.*@dev",
         "itkg/phporchestra-cms-bundle": "dev-master",
