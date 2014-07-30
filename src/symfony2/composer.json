@@ -47,6 +47,7 @@
         "itkg/phporchestra-cms-bundle": "dev-master",
         "itkg/phporchestra-translation-bundle": "dev-master",
         "itkg/phporchestra-model-bundle": "dev-master",
+        "doctrine/data-fixtures":"1.0.0",
         "itkg/phporchestra-theme-bundle": "dev-master"
     },
     "require-dev" : {
