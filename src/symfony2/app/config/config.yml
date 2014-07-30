@@ -116,4 +116,9 @@ php_orchestra_model:
     template:
         class:                'PHPOrchestra\ModelBundle\Document\Template'
         repository:           PHPOrchestra\ModelBundle\Repository\TemplateRepository
-
+    field_index:
+        class:                'PHPOrchestra\ModelBundle\Document\FieldIndex'
+        repository:           PHPOrchestra\ModelBundle\Repository\FieldIndexRepository
+    list_index:
+        class:                'PHPOrchestra\ModelBundle\Document\ListIndex'
+        repository:           PHPOrchestra\ModelBundle\Repository\ListIndexRepository
