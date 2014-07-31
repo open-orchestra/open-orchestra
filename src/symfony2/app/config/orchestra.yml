@@ -11,11 +11,6 @@ lexik_translation:
 framework:
     translator: { fallback: "%kernel.default_locale%" }
 
-twig:
-    form:
-        resources:
-            - 'PHPOrchestraCMSBundle:Form:contentTypeFields.html.twig'
-
 php_orchestra_theme:
     themes: 
         sample:
