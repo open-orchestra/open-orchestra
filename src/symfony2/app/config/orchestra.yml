@@ -3,7 +3,7 @@ parameters:
         
 lexik_translation:
     fallback_locale: "%kernel.default_locale%"
-    managed_locales: "%php_orchestra_cms.languages.availables%"
+    managed_locales: %php_orchestra_cms.languages_availables%
     storage:
         type: mongodb
         object_manager: default
