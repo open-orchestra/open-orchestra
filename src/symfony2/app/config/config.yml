@@ -4,7 +4,7 @@ imports:
 
 framework:
     esi:             { enabled: true }
-    #translator:      { fallback: "%locale%" }
+    translator:      { fallback: "%default_locale%" }
     secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -15,7 +15,7 @@ framework:
     templating:
         engines: ['twig']
         #assets_version: SomeVersionScheme
-    default_locale:  "%locale%"
+    default_locale:  "%default_locale%"
     trusted_hosts:   ~
     trusted_proxies: ~
     session:
@@ -66,14 +66,14 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
-    
+
 mandango:
     default_connection: local
     connections:
         local:
             server:   "%php_orchestra_cms.mongodb.server%"
             database: "%php_orchestra_cms.mongodb.database%"
-            
+
 snc_redis:
     clients:
         default:
@@ -81,7 +81,6 @@ snc_redis:
             alias: default
             dsn: redis://localhost
             logging: %kernel.debug%
-
 
 nelmio_solarium:
     endpoints:
@@ -94,6 +93,13 @@ nelmio_solarium:
     clients:
         default:
             endpoints: [default]
+
+lexik_translation:
+    fallback_locale: "%kernel.default_locale%"
+    managed_locales: %php_orchestra_cms.languages_availables%
+    storage:
+        type: mongodb
+        object_manager: default
 
 php_orchestra_indexation:
     indexation:
