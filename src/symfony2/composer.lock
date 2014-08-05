@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d316acfc7207c7de4361df194e4ee255",
+    "hash": "3ec1835cca9d8bdf83d43f7260f4ac8c",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -740,19 +740,79 @@
             "time": "2013-12-07 10:10:39"
         },
         {
+            "name": "itkg/phporchestra-base-bundle",
+            "version": "dev-master",
+            "target-dir": "PHPOrchestra",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:itkg/phporchestra-base-bundle.git",
+                "reference": "b4493409a8248ef2d39ad7f68f8cfc94a3b90567"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/itkg/phporchestra-base-bundle/zipball/b4493409a8248ef2d39ad7f68f8cfc94a3b90567",
+                "reference": "b4493409a8248ef2d39ad7f68f8cfc94a3b90567",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "sensio/distribution-bundle": "~2.3",
+                "sensio/framework-extra-bundle": "~3.0",
+                "sensio/generator-bundle": "~2.3",
+                "symfony/assetic-bundle": "~2.3",
+                "symfony/monolog-bundle": "~2.4",
+                "symfony/swiftmailer-bundle": "~2.3",
+                "symfony/symfony": "~2.4",
+                "twig/extensions": "~1.0"
+            },
+            "require-dev": {
+                "phake/phake": "*",
+                "phpunit/phpunit": "4.0.14"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "PHPOrchestra\\BaseBundle": ""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Thal",
+                    "email": "nico.th4l@gmail.com"
+                }
+            ],
+            "description": "The phpOrchestra base bundle",
+            "support": {
+                "source": "https://github.com/itkg/phporchestra-base-bundle/tree/master",
+                "issues": "https://github.com/itkg/phporchestra-base-bundle/issues"
+            },
+            "time": "2014-08-05 13:52:40"
+        },
+        {
             "name": "itkg/phporchestra-cms-bundle",
             "version": "dev-master",
             "target-dir": "PHPOrchestra",
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-cms-bundle.git",
-                "reference": "840cc28311389ab5b318a8a10ade7439301694e5"
+                "reference": "57ec2fccb7ec2cb05777f1dcecf39ccf939ce5f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/840cc28311389ab5b318a8a10ade7439301694e5",
-                "reference": "840cc28311389ab5b318a8a10ade7439301694e5",
+                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/57ec2fccb7ec2cb05777f1dcecf39ccf939ce5f5",
+                "reference": "57ec2fccb7ec2cb05777f1dcecf39ccf939ce5f5",
                 "shasum": ""
+            },
+            "require": {
+                "itkg/phporchestra-base-bundle": "dev-master",
+                "itkg/phporchestra-display-bundle": "dev-master",
+                "itkg/phporchestra-indexation-bundle": "dev-master",
+                "itkg/phporchestra-model-bundle": "dev-master",
+                "itkg/phporchestra-theme-bundle": "dev-master",
+                "itkg/phporchestra-translation-bundle": "dev-master"
             },
             "type": "library",
             "autoload": {
@@ -774,7 +834,105 @@
                 "source": "https://github.com/itkg/phporchestra-cms-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-cms-bundle/issues"
             },
-            "time": "2014-07-29 16:20:05"
+            "time": "2014-08-05 14:54:54"
+        },
+        {
+            "name": "itkg/phporchestra-display-bundle",
+            "version": "dev-master",
+            "target-dir": "PHPOrchestra",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:itkg/phporchestra-display-bundle.git",
+                "reference": "8325a9bc8c7e01de80ca0c724cb8020dbb3b4c5b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/itkg/phporchestra-display-bundle/zipball/8325a9bc8c7e01de80ca0c724cb8020dbb3b4c5b",
+                "reference": "8325a9bc8c7e01de80ca0c724cb8020dbb3b4c5b",
+                "shasum": ""
+            },
+            "require": {
+                "itkg/phporchestra-base-bundle": "dev-master",
+                "itkg/phporchestra-model-bundle": "dev-master"
+            },
+            "require-dev": {
+                "phake/phake": "*",
+                "phpunit/phpunit": "4.0.14"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "PHPOrchestra\\DisplayBundle": ""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Thal",
+                    "email": "nico.th4l@gmail.com"
+                },
+                {
+                    "name": "Benjamin Fouche",
+                    "email": "benjamin.fouche@businessdecision.com"
+                }
+            ],
+            "description": "The bundle to display all bricks",
+            "support": {
+                "source": "https://github.com/itkg/phporchestra-display-bundle/tree/master",
+                "issues": "https://github.com/itkg/phporchestra-display-bundle/issues"
+            },
+            "time": "2014-08-05 14:32:53"
+        },
+        {
+            "name": "itkg/phporchestra-indexation-bundle",
+            "version": "dev-master",
+            "target-dir": "PHPOrchestra",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:itkg/phporchestra-indexation-bundle.git",
+                "reference": "f5091c3aa06080a90bdf439d8da0ee38af30e694"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/itkg/phporchestra-indexation-bundle/zipball/f5091c3aa06080a90bdf439d8da0ee38af30e694",
+                "reference": "f5091c3aa06080a90bdf439d8da0ee38af30e694",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "itkg/phporchestra-model-bundle": "dev-master",
+                "nelmio/solarium-bundle": "2.0.4"
+            },
+            "require-dev": {
+                "phake/phake": "*",
+                "phpunit/phpunit": "4.0.14"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "PHPOrchestra\\IndexationBundle": ""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Thal",
+                    "email": "nico.th4l@gmail.com"
+                },
+                {
+                    "name": "Benjamin Fouche",
+                    "email": "benjamin.fouche@businessdecision.com"
+                }
+            ],
+            "support": {
+                "source": "https://github.com/itkg/phporchestra-indexation-bundle/tree/master",
+                "issues": "https://github.com/itkg/phporchestra-indexation-bundle/issues"
+            },
+            "time": "2014-08-05 13:29:34"
         },
         {
             "name": "itkg/phporchestra-model-bundle",
@@ -783,23 +941,27 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-model-bundle.git",
-                "reference": "fb7d4129a850c93f518ce339b90d185528db30b5"
+                "reference": "2fe8eadaecbd2cfb09544a01b0a24ffccfb13793"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-model-bundle/zipball/fb7d4129a850c93f518ce339b90d185528db30b5",
-                "reference": "fb7d4129a850c93f518ce339b90d185528db30b5",
+                "url": "https://api.github.com/repos/itkg/phporchestra-model-bundle/zipball/2fe8eadaecbd2cfb09544a01b0a24ffccfb13793",
+                "reference": "2fe8eadaecbd2cfb09544a01b0a24ffccfb13793",
                 "shasum": ""
             },
             "require": {
-                "doctrine/mongodb-odm": "1.0.*@dev",
-                "doctrine/mongodb-odm-bundle": "3.0.*@dev"
+                "doctrine/data-fixtures": "1.0.0",
+                "doctrine/mongodb-odm": "~1.0",
+                "doctrine/mongodb-odm-bundle": "~3.0"
+            },
+            "require-dev": {
+                "phake/phake": "*",
+                "phpunit/phpunit": "4.0.14"
             },
             "type": "library",
             "autoload": {
                 "psr-0": {
-                    "PHPOrchestra\\ModelBundle": "",
-                    "PHPOrchestra\\IndexationBundle": ""
+                    "PHPOrchestra\\ModelBundle": ""
                 }
             },
             "license": [
@@ -815,7 +977,7 @@
                 "source": "https://github.com/itkg/phporchestra-model-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-model-bundle/issues"
             },
-            "time": "2014-07-30 09:23:50"
+            "time": "2014-08-05 13:31:50"
         },
         {
             "name": "itkg/phporchestra-theme-bundle",
@@ -824,13 +986,18 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-theme-bundle.git",
-                "reference": "d8cfdc8405e5d5fdb213b9b33ceb1befc6c88fcb"
+                "reference": "4e9b7f43232371a0b8146754b5d1d98f65a124a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-theme-bundle/zipball/d8cfdc8405e5d5fdb213b9b33ceb1befc6c88fcb",
-                "reference": "d8cfdc8405e5d5fdb213b9b33ceb1befc6c88fcb",
+                "url": "https://api.github.com/repos/itkg/phporchestra-theme-bundle/zipball/4e9b7f43232371a0b8146754b5d1d98f65a124a9",
+                "reference": "4e9b7f43232371a0b8146754b5d1d98f65a124a9",
                 "shasum": ""
+            },
+            "require-dev": {
+                "phake/phake": "*",
+                "phpunit/phpunit": "4.0.14",
+                "symfony/symfony": "~2.5"
             },
             "type": "library",
             "autoload": {
@@ -851,7 +1018,7 @@
                 "source": "https://github.com/itkg/phporchestra-theme-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-theme-bundle/issues"
             },
-            "time": "2014-07-17 07:44:40"
+            "time": "2014-08-05 13:56:02"
         },
         {
             "name": "itkg/phporchestra-translation-bundle",
@@ -4830,14 +4997,11 @@
         "snc/redis-bundle": 20,
         "stfalcon/tinymce-bundle": 20,
         "jms/serializer-bundle": 20,
-        "itkg/phporchestra-cms-bundle": 20,
-        "itkg/phporchestra-translation-bundle": 20,
-        "itkg/phporchestra-model-bundle": 20,
-        "itkg/phporchestra-theme-bundle": 20
+        "itkg/phporchestra-cms-bundle": 20
     },
-    "platform": {
-        "php": ">=5.3.3"
-    },
+    "platform": [
+
+    ],
     "platform-dev": [
 
     ]
