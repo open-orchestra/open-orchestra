@@ -24,15 +24,17 @@ class AppKernel extends Kernel
             new FakeApp\ThemeBundle\FakeAppThemeBundle(),
             new Nelmio\SolariumBundle\NelmioSolariumBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle(),
-            new Lexik\Bundle\TranslationBundle\LexikTranslationBundle(),
-            
+
             new PHPOrchestra\CMSBundle\PHPOrchestraCMSBundle(),
             new PHPOrchestra\ThemeBundle\PHPOrchestraThemeBundle(),
             new PHPOrchestra\ModelBundle\PHPOrchestraModelBundle(),
             new PHPOrchestra\IndexationBundle\PHPOrchestraIndexationBundle(),
             new PHPOrchestra\TranslationBundle\PHPOrchestraTranslationBundle(),
             new PHPOrchestra\ApiBundle\PHPOrchestraApiBundle(),
-            );
+
+            // Need parameters set by some of our bundles
+            new Lexik\Bundle\TranslationBundle\LexikTranslationBundle(),
+        );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();

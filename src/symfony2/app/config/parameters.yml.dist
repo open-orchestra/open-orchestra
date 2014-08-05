@@ -4,7 +4,7 @@ parameters:
     mailer_user:       ~
     mailer_password:   ~
 
-    locale:            en
+    default_locale:            en
     secret:            ThisTokenIsNotSoSecretChangeIt
 
     router.request_context.host: phporchestra.dev

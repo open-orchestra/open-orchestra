@@ -1,29 +1,3 @@
-parameters:
-    php_orchestra_cms.languages.availables :
-        - en
-        - fr
-        - de
-        - es
-    kernel.default_locale : en
-        
-lexik_translation:
-    fallback_locale: "%kernel.default_locale%"
-    managed_locales: "%php_orchestra_cms.languages.availables%"
-    storage:
-        type: mongodb
-        object_manager: default
-
-framework:
-    translator: { fallback: "%kernel.default_locale%" }
-
-twig:
-    form:
-        resources:
-            - 'PHPOrchestraCMSBundle:Form:contentTypeFields.html.twig'
-    globals:
-        available_languages: %php_orchestra_cms.languages.availables%
-        context: @php_orchestra_cms.context_manager
-
 php_orchestra_theme:
     themes: 
         sample:
