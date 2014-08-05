@@ -31,6 +31,7 @@ class AppKernel extends Kernel
             new PHPOrchestra\IndexationBundle\PHPOrchestraIndexationBundle(),
             new PHPOrchestra\TranslationBundle\PHPOrchestraTranslationBundle(),
             new PHPOrchestra\ApiBundle\PHPOrchestraApiBundle(),
+            new PHPOrchestra\DisplayBundle\PHPOrchestraDisplayBundle(),
 
             // Need parameters set by some of our bundles
             new Lexik\Bundle\TranslationBundle\LexikTranslationBundle(),
