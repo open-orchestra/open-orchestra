@@ -141,7 +141,7 @@
                 {
                     "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -187,7 +187,7 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan Wage",
+                    "name": "Jonathan H. Wage",
                     "email": "jonwage@gmail.com",
                     "homepage": "http://www.jwage.com/",
                     "role": "Creator"
@@ -284,7 +284,7 @@
                 {
                     "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -403,9 +403,9 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
-                    "name": "Johannes Schmitt",
+                    "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -459,7 +459,7 @@
                 {
                     "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -513,7 +513,7 @@
                     "homepage": "http://avalanche123.com"
                 },
                 {
-                    "name": "Jonathan H. Wage",
+                    "name": "Jonathan Wage",
                     "email": "jonwage@gmail.com",
                     "homepage": "http://www.jwage.com/",
                     "role": "Creator"
@@ -746,12 +746,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-base-bundle.git",
-                "reference": "e00dbf605acb688be4bf60ef2d2a9b700f2a41e2"
+                "reference": "43df2b426dd1ea8e1968a90d301a1815ef0ef82e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-base-bundle/zipball/e00dbf605acb688be4bf60ef2d2a9b700f2a41e2",
-                "reference": "e00dbf605acb688be4bf60ef2d2a9b700f2a41e2",
+                "url": "https://api.github.com/repos/itkg/phporchestra-base-bundle/zipball/43df2b426dd1ea8e1968a90d301a1815ef0ef82e",
+                "reference": "43df2b426dd1ea8e1968a90d301a1815ef0ef82e",
                 "shasum": ""
             },
             "require": {
@@ -789,7 +789,7 @@
                 "source": "https://github.com/itkg/phporchestra-base-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-base-bundle/issues"
             },
-            "time": "2014-08-06 09:06:36"
+            "time": "2014-08-06 12:28:31"
         },
         {
             "name": "itkg/phporchestra-cms-bundle",
@@ -798,12 +798,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-cms-bundle.git",
-                "reference": "1383d063a9c9f6f083e42932c299b8d941b54376"
+                "reference": "ffd495ef8bdaf2c63a8fdbaccc3014f73a27503b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/1383d063a9c9f6f083e42932c299b8d941b54376",
-                "reference": "1383d063a9c9f6f083e42932c299b8d941b54376",
+                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/ffd495ef8bdaf2c63a8fdbaccc3014f73a27503b",
+                "reference": "ffd495ef8bdaf2c63a8fdbaccc3014f73a27503b",
                 "shasum": ""
             },
             "require": {
@@ -836,7 +836,7 @@
                 "source": "https://github.com/itkg/phporchestra-cms-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-cms-bundle/issues"
             },
-            "time": "2014-08-06 09:06:56"
+            "time": "2014-08-06 12:36:04"
         },
         {
             "name": "itkg/phporchestra-display-bundle",
@@ -845,12 +845,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-display-bundle.git",
-                "reference": "e8bf5dab1b72c9e7fe04fb6069b580c1a494da9d"
+                "reference": "b1ba21d92d0819fc90be560a56c8da10237753ad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-display-bundle/zipball/e8bf5dab1b72c9e7fe04fb6069b580c1a494da9d",
-                "reference": "e8bf5dab1b72c9e7fe04fb6069b580c1a494da9d",
+                "url": "https://api.github.com/repos/itkg/phporchestra-display-bundle/zipball/b1ba21d92d0819fc90be560a56c8da10237753ad",
+                "reference": "b1ba21d92d0819fc90be560a56c8da10237753ad",
                 "shasum": ""
             },
             "require": {
@@ -885,7 +885,7 @@
                 "source": "https://github.com/itkg/phporchestra-display-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-display-bundle/issues"
             },
-            "time": "2014-08-06 08:55:48"
+            "time": "2014-08-06 13:15:23"
         },
         {
             "name": "itkg/phporchestra-indexation-bundle",
@@ -894,16 +894,17 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-indexation-bundle.git",
-                "reference": "50401b8810f34f2eba1dc3ed30f20c1a314dca2d"
+                "reference": "6bc528cdc1b2ef294a10541de9fba42735b4a42b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-indexation-bundle/zipball/50401b8810f34f2eba1dc3ed30f20c1a314dca2d",
-                "reference": "50401b8810f34f2eba1dc3ed30f20c1a314dca2d",
+                "url": "https://api.github.com/repos/itkg/phporchestra-indexation-bundle/zipball/6bc528cdc1b2ef294a10541de9fba42735b4a42b",
+                "reference": "6bc528cdc1b2ef294a10541de9fba42735b4a42b",
                 "shasum": ""
             },
             "require": {
                 "ext-curl": "*",
+                "itkg/phporchestra-display-bundle": "dev-master",
                 "itkg/phporchestra-model-bundle": "dev-master",
                 "nelmio/solarium-bundle": "2.0.4"
             },
@@ -934,7 +935,7 @@
                 "source": "https://github.com/itkg/phporchestra-indexation-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-indexation-bundle/issues"
             },
-            "time": "2014-08-06 08:13:33"
+            "time": "2014-08-06 12:41:04"
         },
         {
             "name": "itkg/phporchestra-model-bundle",
@@ -2261,20 +2262,22 @@
         },
         {
             "name": "symfony/icu",
-            "version": "v1.0.1",
+            "version": "v1.2.2",
             "target-dir": "Symfony/Component/Icu",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Icu.git",
-                "reference": "fdba214b1e087c149843bde976263c53ac10c975"
+                "reference": "d4d85d6055b87f394d941b45ddd3a9173e1e3d2a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Icu/zipball/fdba214b1e087c149843bde976263c53ac10c975",
-                "reference": "fdba214b1e087c149843bde976263c53ac10c975",
+                "url": "https://api.github.com/repos/symfony/Icu/zipball/d4d85d6055b87f394d941b45ddd3a9173e1e3d2a",
+                "reference": "d4d85d6055b87f394d941b45ddd3a9173e1e3d2a",
                 "shasum": ""
             },
             "require": {
+                "ext-intl": "*",
+                "lib-icu": ">=4.4",
                 "php": ">=5.3.3",
                 "symfony/intl": "~2.3"
             },
@@ -2304,7 +2307,7 @@
                 "icu",
                 "intl"
             ],
-            "time": "2013-10-04 09:12:07"
+            "time": "2014-07-25 09:58:17"
         },
         {
             "name": "symfony/monolog-bundle",
@@ -2424,16 +2427,16 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v2.5.2",
+            "version": "v2.5.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "e66ee967571b89234c90946fe0d50dad195ad29c"
+                "reference": "f077a238c781f845487a7c81fea8033ccd0e6a02"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/e66ee967571b89234c90946fe0d50dad195ad29c",
-                "reference": "e66ee967571b89234c90946fe0d50dad195ad29c",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/f077a238c781f845487a7c81fea8033ccd0e6a02",
+                "reference": "f077a238c781f845487a7c81fea8033ccd0e6a02",
                 "shasum": ""
             },
             "require": {
@@ -2521,14 +2524,12 @@
             ],
             "authors": [
                 {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com",
-                    "homepage": "http://fabien.potencier.org",
-                    "role": "Lead Developer"
-                },
-                {
                     "name": "Symfony Community",
                     "homepage": "http://symfony.com/contributors"
+                },
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
                 }
             ],
             "description": "The Symfony PHP framework",
@@ -2536,7 +2537,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2014-07-15 15:39:46"
+            "time": "2014-08-06 07:03:01"
         },
         {
             "name": "twig/extensions",
@@ -3652,16 +3653,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "2.0.9",
+            "version": "2.0.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "ed8ac99ce38c3fd134128c898f7ca74665abef7f"
+                "reference": "6d196af48e8c100a3ae881940123e693da5a9217"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/ed8ac99ce38c3fd134128c898f7ca74665abef7f",
-                "reference": "ed8ac99ce38c3fd134128c898f7ca74665abef7f",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/6d196af48e8c100a3ae881940123e693da5a9217",
+                "reference": "6d196af48e8c100a3ae881940123e693da5a9217",
                 "shasum": ""
             },
             "require": {
@@ -3713,7 +3714,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2014-06-29 08:14:40"
+            "time": "2014-08-06 06:39:42"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -4990,9 +4991,7 @@
             "time": "2013-12-19 11:40:00"
         }
     ],
-    "aliases": [
-
-    ],
+    "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
         "mandango/mandango-bundle": 20,
@@ -5001,10 +5000,6 @@
         "jms/serializer-bundle": 20,
         "itkg/phporchestra-cms-bundle": 20
     },
-    "platform": [
-
-    ],
-    "platform-dev": [
-
-    ]
+    "platform": [],
+    "platform-dev": []
 }

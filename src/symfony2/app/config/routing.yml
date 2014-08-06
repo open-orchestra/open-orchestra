@@ -10,3 +10,6 @@ php_orchestra_api:
     resource: "@PHPOrchestraApiBundle/Resources/config/routing.yml"
     prefix: /api
 
+php_orchestra_indexation:
+    resource: "@PHPOrchestraIndexationBundle/Controller"
+    type: annotation
