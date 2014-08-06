@@ -41,6 +41,7 @@ assetic:
     use_controller: false
     bundles:
         - PHPOrchestraCMSBundle
+        - PHPOrchestraIndexationBundle
     #java: /usr/bin/java
     filters:
         cssrewrite: ~
