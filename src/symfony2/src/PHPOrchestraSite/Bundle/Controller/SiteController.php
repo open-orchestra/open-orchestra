@@ -3,6 +3,7 @@
 namespace PHPOrchestraSite\Bundle\Controller;
 
 
+use PHPOrchestra\CMSBundle\Controller\NodeController;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -11,7 +12,6 @@ use Symfony\Component\CssSelector\XPath\Extension\NodeExtension;
 use PHPOrchestra\CMSBundle\Form\Type\NodeType;
 use PHPOrchestra\CMSBundle\Helper\NodesHelper;
 use PHPOrchestra\CMSBundle\Form\Type\BlockChoiceType;
-use PHPOrchestra\CMSBundle\Controller\NodeController;
 use PHPOrchestra\CMSBundle\Model\Area;
 use PHPOrchestra\CMSBundle\Exception\NonExistingDocumentException;
 use Model\PHPOrchestraCMSBundle\Base\Block;
