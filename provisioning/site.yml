@@ -39,6 +39,10 @@
       shell: rm -f /etc/php5/apache2/conf.d/30-redis.ini && ln -s /etc/php5/mods-available/redis.ini /etc/php5/apache2/conf.d/30-redis.ini
     - name: Activate redis for cli
       shell: rm -f /etc/php5/cli/conf.d/30-redis.ini && ln -s /etc/php5/mods-available/redis.ini /etc/php5/cli/conf.d/30-redis.ini
+    - name: Create conf apache
+      shell: cp /vagrant/conf/apache2/php-orchestra.vagrant.conf /etc/apache2/sites-available/php-orchestra.conf
+    - name: Create symbolic link
+      shell: ln -s /etc/apache2/sites-available/php-orchestra.conf /etc/apache2/sites-enabled/php-orchestra.conf
     - name: stop tomcat6
       service: name=tomcat6 state=stoped
   handlers:
