@@ -6,6 +6,10 @@ php_orchestra_front:
     resource: "@PHPOrchestraFrontBundle/Controller"
     type: annotation
 
+php_orchestra_display:
+    resource: "@PHPOrchestraDisplayBundle/Controller"
+    type: annotation
+
 php_orchestra_api:
     resource: "@PHPOrchestraApiBundle/Resources/config/routing.yml"
     prefix: /api

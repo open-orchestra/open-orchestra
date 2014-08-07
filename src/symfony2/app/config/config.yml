@@ -41,6 +41,8 @@ assetic:
     use_controller: false
     bundles:
         - PHPOrchestraCMSBundle
+        - PHPOrchestraFrontBundle
+        - PHPOrchestraDisplayBundle
         - PHPOrchestraIndexationBundle
     #java: /usr/bin/java
     filters:
@@ -97,7 +99,7 @@ nelmio_solarium:
 
 lexik_translation:
     fallback_locale: "%kernel.default_locale%"
-    managed_locales: %php_orchestra_cms.languages_availables%
+    managed_locales: %php_orchestra_base.languages_availables%
     storage:
         type: mongodb
         object_manager: default

@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3ec1835cca9d8bdf83d43f7260f4ac8c",
+    "hash": "10815e8532b53090b3da01b9fe3b75a0",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -141,7 +141,7 @@
                 {
                     "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
+                    "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -187,7 +187,7 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan H. Wage",
+                    "name": "Jonathan Wage",
                     "email": "jonwage@gmail.com",
                     "homepage": "http://www.jwage.com/",
                     "role": "Creator"
@@ -284,7 +284,7 @@
                 {
                     "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
+                    "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -403,9 +403,9 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
-                    "name": "Johannes M. Schmitt",
+                    "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
+                    "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -459,7 +459,7 @@
                 {
                     "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
+                    "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -513,7 +513,7 @@
                     "homepage": "http://avalanche123.com"
                 },
                 {
-                    "name": "Jonathan Wage",
+                    "name": "Jonathan H. Wage",
                     "email": "jonwage@gmail.com",
                     "homepage": "http://www.jwage.com/",
                     "role": "Creator"
@@ -746,12 +746,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-base-bundle.git",
-                "reference": "43df2b426dd1ea8e1968a90d301a1815ef0ef82e"
+                "reference": "f7f4543a0997f9849339e72dbeab5f6f12513cf8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-base-bundle/zipball/43df2b426dd1ea8e1968a90d301a1815ef0ef82e",
-                "reference": "43df2b426dd1ea8e1968a90d301a1815ef0ef82e",
+                "url": "https://api.github.com/repos/itkg/phporchestra-base-bundle/zipball/f7f4543a0997f9849339e72dbeab5f6f12513cf8",
+                "reference": "f7f4543a0997f9849339e72dbeab5f6f12513cf8",
                 "shasum": ""
             },
             "require": {
@@ -759,9 +759,9 @@
                 "sensio/distribution-bundle": "~2.3",
                 "sensio/framework-extra-bundle": "~3.0",
                 "sensio/generator-bundle": "~2.3",
+                "snc/redis-bundle": "1.1.*",
                 "symfony/assetic-bundle": "~2.3",
                 "symfony/monolog-bundle": "~2.4",
-                "symfony/swiftmailer-bundle": "~2.3",
                 "symfony/symfony": "~2.4",
                 "twig/extensions": "~1.0"
             },
@@ -789,7 +789,7 @@
                 "source": "https://github.com/itkg/phporchestra-base-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-base-bundle/issues"
             },
-            "time": "2014-08-06 12:28:31"
+            "time": "2014-08-07 08:47:33"
         },
         {
             "name": "itkg/phporchestra-cms-bundle",
@@ -798,12 +798,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-cms-bundle.git",
-                "reference": "ffd495ef8bdaf2c63a8fdbaccc3014f73a27503b"
+                "reference": "a6186183588acc4d2e5e74ab2bf3b0c46e8a7b1b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/ffd495ef8bdaf2c63a8fdbaccc3014f73a27503b",
-                "reference": "ffd495ef8bdaf2c63a8fdbaccc3014f73a27503b",
+                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/a6186183588acc4d2e5e74ab2bf3b0c46e8a7b1b",
+                "reference": "a6186183588acc4d2e5e74ab2bf3b0c46e8a7b1b",
                 "shasum": ""
             },
             "require": {
@@ -818,7 +818,6 @@
             "autoload": {
                 "psr-0": {
                     "PHPOrchestra\\CMSBundle": "",
-                    "PHPOrchestra\\FrontBundle": "",
                     "PHPOrchestra\\BackofficeBundle": "",
                     "PHPOrchestra\\ApiBundle": ""
                 }
@@ -836,7 +835,7 @@
                 "source": "https://github.com/itkg/phporchestra-cms-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-cms-bundle/issues"
             },
-            "time": "2014-08-06 12:36:04"
+            "time": "2014-08-07 09:23:17"
         },
         {
             "name": "itkg/phporchestra-display-bundle",
@@ -845,17 +844,18 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-display-bundle.git",
-                "reference": "b1ba21d92d0819fc90be560a56c8da10237753ad"
+                "reference": "731df9e5c6cf92b9d50d266b696b96d4a71edf63"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-display-bundle/zipball/b1ba21d92d0819fc90be560a56c8da10237753ad",
-                "reference": "b1ba21d92d0819fc90be560a56c8da10237753ad",
+                "url": "https://api.github.com/repos/itkg/phporchestra-display-bundle/zipball/731df9e5c6cf92b9d50d266b696b96d4a71edf63",
+                "reference": "731df9e5c6cf92b9d50d266b696b96d4a71edf63",
                 "shasum": ""
             },
             "require": {
                 "itkg/phporchestra-base-bundle": "dev-master",
-                "itkg/phporchestra-model-bundle": "dev-master"
+                "itkg/phporchestra-model-bundle": "dev-master",
+                "symfony/swiftmailer-bundle": "~2.3"
             },
             "require-dev": {
                 "phake/phake": "*",
@@ -885,7 +885,50 @@
                 "source": "https://github.com/itkg/phporchestra-display-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-display-bundle/issues"
             },
-            "time": "2014-08-06 13:15:23"
+            "time": "2014-08-07 08:56:17"
+        },
+        {
+            "name": "itkg/phporchestra-front-bundle",
+            "version": "dev-master",
+            "target-dir": "PHPOrchestra",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:itkg/phporchestra-front-bundle.git",
+                "reference": "e696b7bc4804cae49b84751aecb212ab6e6e3753"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/itkg/phporchestra-front-bundle/zipball/e696b7bc4804cae49b84751aecb212ab6e6e3753",
+                "reference": "e696b7bc4804cae49b84751aecb212ab6e6e3753",
+                "shasum": ""
+            },
+            "require": {
+                "itkg/phporchestra-base-bundle": "dev-master",
+                "itkg/phporchestra-display-bundle": "dev-master",
+                "itkg/phporchestra-indexation-bundle": "dev-master",
+                "itkg/phporchestra-model-bundle": "dev-master",
+                "itkg/phporchestra-theme-bundle": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "PHPOrchestra\\FrontBundle": ""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Thal",
+                    "email": "nico.th4l@gmail.com"
+                }
+            ],
+            "support": {
+                "source": "https://github.com/itkg/phporchestra-front-bundle/tree/master",
+                "issues": "https://github.com/itkg/phporchestra-front-bundle/issues"
+            },
+            "time": "2014-08-07 09:19:52"
         },
         {
             "name": "itkg/phporchestra-indexation-bundle",
@@ -894,12 +937,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-indexation-bundle.git",
-                "reference": "6bc528cdc1b2ef294a10541de9fba42735b4a42b"
+                "reference": "52dac13393c448c098f820439938d68b76ab43b3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-indexation-bundle/zipball/6bc528cdc1b2ef294a10541de9fba42735b4a42b",
-                "reference": "6bc528cdc1b2ef294a10541de9fba42735b4a42b",
+                "url": "https://api.github.com/repos/itkg/phporchestra-indexation-bundle/zipball/52dac13393c448c098f820439938d68b76ab43b3",
+                "reference": "52dac13393c448c098f820439938d68b76ab43b3",
                 "shasum": ""
             },
             "require": {
@@ -935,7 +978,7 @@
                 "source": "https://github.com/itkg/phporchestra-indexation-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-indexation-bundle/issues"
             },
-            "time": "2014-08-06 12:41:04"
+            "time": "2014-08-06 13:41:14"
         },
         {
             "name": "itkg/phporchestra-model-bundle",
@@ -4991,15 +5034,21 @@
             "time": "2013-12-19 11:40:00"
         }
     ],
-    "aliases": [],
+    "aliases": [
+
+    ],
     "minimum-stability": "dev",
     "stability-flags": {
         "mandango/mandango-bundle": 20,
-        "snc/redis-bundle": 20,
         "stfalcon/tinymce-bundle": 20,
         "jms/serializer-bundle": 20,
-        "itkg/phporchestra-cms-bundle": 20
+        "itkg/phporchestra-cms-bundle": 20,
+        "itkg/phporchestra-front-bundle": 20
     },
-    "platform": [],
-    "platform-dev": []
+    "platform": [
+
+    ],
+    "platform-dev": [
+
+    ]
 }
