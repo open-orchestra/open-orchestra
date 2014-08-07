@@ -25,6 +25,7 @@ class AppKernel extends Kernel
             new Nelmio\SolariumBundle\NelmioSolariumBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle(),
 
+            new PHPOrchestra\BaseBundle\PHPOrchestraBaseBundle(),
             new PHPOrchestra\CMSBundle\PHPOrchestraCMSBundle(),
             new PHPOrchestra\ThemeBundle\PHPOrchestraThemeBundle(),
             new PHPOrchestra\ModelBundle\PHPOrchestraModelBundle(),
