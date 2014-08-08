@@ -9,6 +9,12 @@
 
 #==[Vendor]=========================#
 /src/symfony2/vendor/*
+/src/symfony2/node_modules/*
+/src/symfony2/bower_components/*
+/src/symfony2/web/built/*
+/src/symfony2/web/js/*
+/src/symfony2/web/css/*
+/src/symfony2/web/fonts/*
 
 #==[IDE]==============================#
 .buildpath
@@ -23,3 +29,4 @@
 /build/logs
 /build/pdepend
 /src/symfony2/cov
+
