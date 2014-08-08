@@ -1,3 +1,0 @@
----
- - name: change file permissions
-   shell: chmod 777 /etc/init.d/solr

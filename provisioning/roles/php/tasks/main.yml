@@ -1,6 +1,10 @@
 ---
- - include: php_lastest_version.yml
+ - include: php_latest_version.yml
+ - include: xdebug_latest_version.yml
  - include: copy_xdebug_ini.yml
-# - include: install_extension.yml
-# - include: activate_apache.yml
-# - include: activate_cli.yml
+ - include: install_redis_extension.yml
+ - include: install_mongo_extension.yml
+ - include: activate_redis_apache.yml
+ - include: activate_mongo_apache.yml
+ - include: activate_redis_cli.yml
+ - include: activate_mongo_cli.yml

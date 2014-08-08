@@ -1,5 +1,4 @@
 ---
  - include: copy_conf.yml
-# - include: stop_tomcat.yml
-# - include: change_permission.yml
-# - include: start_solr.yml
+ - include: copy_txt_filter.yml
+ - include: copy_directory.yml

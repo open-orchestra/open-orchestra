@@ -1,7 +1,0 @@
----
-# - name: Start solr
-#   shell: cd /opt/solr/example/ && /usr/bin/java -jar start.jar &
-# - name: Prise en charge du script solr dans init.d
-#   shell: update-rc.d solr defaults
-# - name: launch solr
-#   service: name=solr state=started

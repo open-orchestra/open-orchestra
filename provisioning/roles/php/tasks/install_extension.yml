@@ -1,9 +1,0 @@
----
- - name: Install php-redis extension
-   shell: pecl install -f redis
- - name: Create the redis extension
-   shell: echo "extension=redis.so" > /etc/php5/mods-available/redis.ini
- - name: Install php-mongo extension
-   shell: printf "\n" | pecl install -f mongo
- - name: Create the mongo extension
-   shell: echo "extension=mongo.so" > /etc/php5/mods-available/mongo.ini

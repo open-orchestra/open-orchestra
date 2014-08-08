@@ -1,0 +1,5 @@
+---
+ - name: Install php-redis extension
+   shell: pecl install -f redis
+ - name: Create the redis extension
+   shell: echo "extension=redis.so" > /etc/php5/mods-available/redis.ini
