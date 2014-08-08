@@ -1,0 +1,5 @@
+---
+ - name: Activate redis for cli
+   shell: rm -f /etc/php5/cli/conf.d/30-redis.ini
+ - name: Create symbolic link redis.ini
+   file: src=/etc/php5/mods-available/redis.ini dest=/etc/php5/cli/conf.d/30-redis.ini state=link

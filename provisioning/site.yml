@@ -1,46 +1,16 @@
 ---
 - hosts: all
-  vars_files:
-    - vars/main.yml
   vars:
     http_port: 80
     max_clients: 200
   remote_user: vagrant
   sudo: yes
   pre_tasks:
-    - shell: mkdir -p /etc/php5/conf.d
-  tasks:
-  - name: ensure apache is at the latest version
-    apt: pkg=apache2 state=latest
-  - name: ensure that php5-xsl is at the last version
-    apt: pkg=php5-xsl state=latest
-  - name: ensure apache is running
-    service: name=apache2 state=started
+    - name: Create a directory for php conf
+      shell: mkdir -p /etc/php5/conf.d
   roles:
-  - common
-  - lesmyrmidons.mongodb
-  - geerlingguy.solr
-  - geerlingguy.php
-  - DavidWittman.redis
-  post_tasks:
-    - name: Install php-mongo extension
-      shell: printf "\n" | pecl install -f mongo
-    - name: Create the mongo extension
-      shell: echo "extension=mongo.so" > /etc/php5/mods-available/mongo.ini
-    - name: Activate mongo for apache
-      shell: rm -f /etc/php5/apache2/conf.d/30-mongo.ini && ln -s /etc/php5/mods-available/mongo.ini /etc/php5/apache2/conf.d/30-mongo.ini
-    - name: Activate mongo for cli
-      shell: rm -f /etc/php5/cli/conf.d/30-mongo.ini && ln -s /etc/php5/mods-available/mongo.ini /etc/php5/cli/conf.d/30-mongo.ini
-    - name: Install php-redis extension
-      shell: pecl install -f redis
-    - name: Create the redis extension
-      shell: echo "extension=redis.so" > /etc/php5/mods-available/redis.ini
-    - name: Activate redis for apache
-      shell: rm -f /etc/php5/apache2/conf.d/30-redis.ini && ln -s /etc/php5/mods-available/redis.ini /etc/php5/apache2/conf.d/30-redis.ini
-    - name: Activate redis for cli
-      shell: rm -f /etc/php5/cli/conf.d/30-redis.ini && ln -s /etc/php5/mods-available/redis.ini /etc/php5/cli/conf.d/30-redis.ini
-    - name: stop tomcat6
-      service: name=tomcat6 state=stoped
-  handlers:
-    - name: restart apache
-      service: name=apache2 state=restarted
+    - DavidWittman.redis
+    - lesmyrmidons.mongodb
+    - php
+    - web
+    - solr

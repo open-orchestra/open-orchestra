@@ -1,0 +1,5 @@
+---
+ - name: Activate mongo for apache
+   shell: rm -f /etc/php5/apache2/conf.d/30-mongo.ini
+ - name: Create a symbolic links mongo.ini
+   file: src=/etc/php5/mods-available/mongo.ini dest=/etc/php5/apache2/conf.d/30-mongo.ini state=link

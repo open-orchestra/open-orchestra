@@ -1,0 +1,5 @@
+---
+ - name: Activate mongo for cli
+   shell: rm -f /etc/php5/cli/conf.d/30-mongo.ini
+ - name: Create a symbolic link mongo.ini
+   file: src=/etc/php5/mods-available/mongo.ini dest=/etc/php5/cli/conf.d/30-mongo.ini state=link
