@@ -1,4 +1,4 @@
 ---
- - include: copy_conf.yml
+ - include: copy_xml_conf.yml
  - include: copy_txt_filter.yml
  - include: copy_directory.yml
