@@ -1,7 +1,5 @@
 ---
 - hosts: all
-  vars_files:
-    - vars/main.yml
   vars:
     http_port: 80
     max_clients: 200
