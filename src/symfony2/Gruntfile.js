@@ -123,7 +123,8 @@ module.exports = function(grunt) {
                     'web/built/bower.css',
                     'web/bundles/*/css/*.css',
                     'web/bundles/*/css/*/*.css',
-                    'web/bundles/*/css/*/*/*.css'
+                    'web/bundles/*/css/*/*/*.css',
+                    'web/built/*/css/**.css'
                 ],
                 dest: 'web/built/all.css'
             }
