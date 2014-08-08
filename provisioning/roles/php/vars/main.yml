@@ -1,0 +1,22 @@
+php_memory_limit: "128M"
+php_max_execution_time: "90"
+php_upload_max_filesize: "256M"
+php_enable_php_fpm: false
+php_webserver_daemon: "apache2"
+php_date_timezone: "Europe/Paris"
+php_packages:
+  - php
+  - php-cli
+  - php-common
+  - php-devel
+  - php-gd
+  - php-mbstring
+  - php-pdo
+  - php-xml
+  - php-xsl
+php_xdebug_module_path: /usr/lib/php5/20121212
+php_xdebug_remote_enable: true
+php_xdebug_remote_connect_back: 1
+php_xdebug_remote_host: 192.168.33.1
+php_xdebug_remote_autostart: 0
+php_xdebug_idekey: phpStorm-idekey

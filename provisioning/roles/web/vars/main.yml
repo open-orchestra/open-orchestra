@@ -1,0 +1,5 @@
+port: 80
+serverName: phporchestra.dev
+docRoot: /var/www/phporchestra/web
+errorLog: phporchestraError.log
+accessLog: phporchestraAccess.log

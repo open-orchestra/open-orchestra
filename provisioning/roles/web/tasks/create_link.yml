@@ -1,0 +1,3 @@
+---
+ - name: Create symbolic link php-orchestra.conf
+   file: src=/etc/apache2/sites-available/php-orchestra.conf dest=/etc/apache2/sites-enabled/php-orchestra.conf state=link

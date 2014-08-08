@@ -1,0 +1,5 @@
+---
+ - name: ensure that php5-xsl is at the last version
+   apt: pkg=php5-xsl state=latest
+ - name: ensure that php5-xdebug is at the last version
+   apt: pkg=php5-xdebug state=latest

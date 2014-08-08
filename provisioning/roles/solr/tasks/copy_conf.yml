@@ -1,0 +1,19 @@
+---
+ - name: Copy schema.xml
+   copy: src=../conf/solr/schema.xml dest=/usr/local/src/solr-4.9.0/example/solr/collection1/conf/schema.xml force=yes
+ - name: Copy solrconfig.xml
+   copy: src=../conf/solr/solrconfig.xml dest=/usr/local/src/solr-4.9.0/example/solr/collection1/conf/solrconfig.xml force=yes
+ - name: Copy protwords.txt
+   copy: src=../conf/solr/protwords.txt dest=/usr/local/src/solr-4.9.0/example/solr/collection1/conf/protwords.txt force=yes
+ - name: Copy stopwords.txt
+   copy: src=../conf/solr/stopwords.txt dest=/usr/local/src/solr-4.9.0/example/solr/collection1/conf/stopwords.txt force=yes
+ - name: Copy synonyms.txt
+   copy: src=../conf/solr/synonyms.txt dest=/usr/local/src/solr-4.9.0/example/solr/collection1/conf/synonyms.txt force=yes
+ - name: Copy lang
+   copy: src=../conf/solr/lang dest=/usr/local/src/solr-4.9.0/example/solr/collection1/conf/lang force=yes
+# - name: Copy script to launch solr
+#   copy: src=../conf/solr/solr.sh dest=/etc/init.d/solr
+
+
+
+

@@ -1,0 +1,6 @@
+---
+ - include: php_lastest_version.yml
+ - include: copy_xdebug_ini.yml
+# - include: install_extension.yml
+# - include: activate_apache.yml
+# - include: activate_cli.yml
