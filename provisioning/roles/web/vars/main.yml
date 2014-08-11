@@ -3,3 +3,7 @@ serverName: phporchestra.dev
 docRoot: /var/www/phporchestra/web
 errorLog: phporchestraError.log
 accessLog: phporchestraAccess.log
+serverNameFront: front-phporchestra.dev
+docRootFront: /var/www/front-phporchestra/web
+errorLogFront: front-phporchestraError.log
+accessLogFront: front-phporchestraAccess.log
