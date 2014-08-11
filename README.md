@@ -1,7 +1,12 @@
 PHP Orchestra
 =============
 
-[![Build Status](https://magnum.travis-ci.com/itkg/phporchestra.svg?token=zUmkkzeKcfEj4VpHHRaZ&branch=php-orchestra-1.0)](https://magnum.travis-ci.com/itkg/phporchestra)
+| Service       | Badge         |
+| ------------- |:-------------:|
+| Travis | [![Build Status](https://magnum.travis-ci.com/itkg/phporchestra.svg?token=zUmkkzeKcfEj4VpHHRaZ&branch=php-orchestra-1.0)](https://magnum.travis-ci.com/itkg/phporchestra) |
+| Scrutinizer (Quality score) | none |
+| Scrutinizer (Coverage) | none |
+
 
 1. Spécifications
 -----------------
