@@ -2,3 +2,5 @@
  - include: apache_latest_version.yml
  - include: copy_apache_conf.yml
  - include: create_link.yml
+ - include: copy_apache_front_conf.yml
+ - include: create_front_link.yml

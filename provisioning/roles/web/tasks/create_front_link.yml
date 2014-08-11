@@ -1,0 +1,3 @@
+---
+ - name: Create symbolic link front-orchestra.conf
+   file: src=/etc/apache2/sites-available/front-orchestra.conf dest=/etc/apache2/sites-enabled/front-orchestra.conf state=link
