@@ -1,7 +1,7 @@
 PHP Orchestra
 =============
 
-[![Build Status](https://magnum.travis-ci.com/itkg/phporchestra.svg?token=jFMwikTSYoZgNjR86FGs)](http://magnum.travis-ci.com/itkg/phporchestra)
+[![Build Status](https://magnum.travis-ci.com/itkg/phporchestra.svg?token=zUmkkzeKcfEj4VpHHRaZ&branch=php-orchestra-1.0)](https://magnum.travis-ci.com/itkg/phporchestra)
 
 1. Spécifications
 -----------------
