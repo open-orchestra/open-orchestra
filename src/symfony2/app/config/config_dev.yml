@@ -1,6 +1,5 @@
 imports:
     - { resource: config.yml }
-    - { resource: orchestra.yml }
 
 framework:
     router:

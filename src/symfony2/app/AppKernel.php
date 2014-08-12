@@ -27,7 +27,6 @@ class AppKernel extends Kernel
 
             new PHPOrchestra\BaseBundle\PHPOrchestraBaseBundle(),
             new PHPOrchestra\CMSBundle\PHPOrchestraCMSBundle(),
-            new PHPOrchestra\ThemeBundle\PHPOrchestraThemeBundle(),
             new PHPOrchestra\ModelBundle\PHPOrchestraModelBundle(),
             new PHPOrchestra\IndexationBundle\PHPOrchestraIndexationBundle(),
             new PHPOrchestra\TranslationBundle\PHPOrchestraTranslationBundle(),

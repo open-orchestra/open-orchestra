@@ -23,10 +23,6 @@
         },
         {
             "type": "vcs",
-            "url": "https://github.com/itkg/phporchestra-theme-bundle"
-        },
-        {
-            "type": "vcs",
             "url": "https://github.com/itkg/phporchestra-indexation-bundle"
         },
         {
@@ -45,7 +41,7 @@
         "mandango/mandango-bundle" : "dev-master",
         "stfalcon/tinymce-bundle" : "0.3.*@dev",
         "jms/serializer-bundle" : "0.13.*@dev",
-        "itkg/phporchestra-cms-bundle": "dev-master",
+        "itkg/phporchestra-cms-bundle": "dev-master"
     },
     "require-dev" : {
         "phpunit/phpunit" : "4.0.14",
