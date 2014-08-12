@@ -10,6 +10,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network "private_network", ip: "192.168.33.10"
 
   config.vm.synced_folder "./src/symfony2", "/var/www/phporchestra", type: "nfs"
+  config.vm.synced_folder "../phporchestra-front-demo", "/var/www/front-phporchestra", type: "nfs"
 
 # Ansible
   config.vm.provision "ansible" do |ansible|
