@@ -41,7 +41,6 @@ assetic:
     use_controller: false
     bundles:
         - PHPOrchestraCMSBundle
-        - PHPOrchestraFrontBundle
         - PHPOrchestraDisplayBundle
         - PHPOrchestraIndexationBundle
     #java: /usr/bin/java
