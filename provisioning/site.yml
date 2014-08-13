@@ -9,8 +9,7 @@
     - name: Create a directory for php conf
       shell: mkdir -p /etc/php5/conf.d
   roles:
-    - DavidWittman.redis
-    - lesmyrmidons.mongodb
     - php
     - web
+    - databases
     - solr

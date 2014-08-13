@@ -1,0 +1,5 @@
+---
+ - name: ensure npm is installed
+   apt: pkg=npm state=latest
+ - name: Create symbolic link for node
+   file: src=/usr/bin/nodejs dest=/usr/bin/node state=link
