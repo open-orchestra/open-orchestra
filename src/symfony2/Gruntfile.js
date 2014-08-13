@@ -96,7 +96,9 @@ module.exports = function(grunt) {
                     'bower_components/jquery/dist/jquery.js',
                     'bower_components/jquery-ui/ui/jquery-ui.js',
                     'bower_components/bootstrap/dist/js/bootstrap.js',
-                    'bower_components/angular/angular.js'
+                    'bower_components/angular/angular.js',
+                    'bower_components/underscore/underscore.js',
+                    'bower_components/backbone/backbone.js'
                 ],
                 dest: 'web/built/bower.js'
             },
