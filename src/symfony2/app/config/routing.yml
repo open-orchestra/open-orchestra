@@ -6,12 +6,17 @@ php_orchestra_backoffice:
     resource: "@PHPOrchestraBackofficeBundle/Controller"
     type: annotation
 
+php_orchestra_backoffice:
+    resource: "@PHPOrchestraBackofficeBundle/Controller"
+    type: annotation
+
 php_orchestra_display:
     resource: "@PHPOrchestraDisplayBundle/Controller"
     type: annotation
 
 php_orchestra_api:
-    resource: "@PHPOrchestraApiBundle/Resources/config/routing.yml"
+    resource: "@PHPOrchestraApiBundle/Controller"
+    type: annotation
     prefix: /api
 
 php_orchestra_indexation:
