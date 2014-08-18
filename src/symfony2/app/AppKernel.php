@@ -21,7 +21,6 @@ class AppKernel extends Kernel
             new Snc\RedisBundle\SncRedisBundle(),
 
             new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),
-            new FakeApp\ThemeBundle\FakeAppThemeBundle(),
             new Nelmio\SolariumBundle\NelmioSolariumBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle(),
 
