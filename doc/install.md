@@ -17,6 +17,15 @@ We are going to use the vagrant project to manage all the vitualbox
     wget https://dl.bintray.com/mitchellh/vagrant/vagrant_1.6.3_x86_64.deb
     dpkg -i vagrant_1.6.3_x86_64.deb
 
+## Install ansible
+All the project server configuration is going to be handled by ansible
+
+    git clone git://github.com/ansible/ansible.git
+    cd ./ansible
+    source ./hacking/env-setup
+
+Go on the project page for more inforation : http://www.ansible.com
+
 ## Clone the front repository
 In the parent directory of the current directory run
 
