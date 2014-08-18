@@ -1,5 +1,0 @@
-parameters:
-    php_orchestra.themes:
-        fromApp :
-            location: "FakeAppBundle:fromApp"
-            name: "App bundle theme"

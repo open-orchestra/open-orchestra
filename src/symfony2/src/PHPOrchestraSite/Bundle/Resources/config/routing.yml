@@ -1,7 +1,0 @@
-orchestra_page_node: 
-    path:  /{nodeId}
-    defaults: { _controller: "PHPOrchestraSiteBundle:Site:nodePage", nodeId: fixture_page_home }
-
-orchestra_page_home:
-    path:  /fixture_page_home
-    defaults: { _controller: "PHPOrchestraSiteBundle:Site:nodePage"}
