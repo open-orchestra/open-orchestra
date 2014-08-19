@@ -4,7 +4,7 @@
 This tutorial is going to describe the step by step installation for the phpOrchestra global environment:
 
 ## Install OS
-It is a requirement that every developper run under an unix OS
+It is a requirement that every developper run under an unix OS, 64 bits version.
 
 ## Install Virtualbox
 The project is running on a virtual environment to be production ready
