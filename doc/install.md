@@ -54,6 +54,12 @@ Install the npm dependancies
 
     npm install
 
+The npm should have also installed the bower component.
+
+Launch the grunt command to generate all assets
+
+    ./node_modules/.bin/grunt
+
 ## Load the fixtures
 In the symfony project directory
 
