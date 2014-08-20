@@ -39,6 +39,13 @@ Run all the provisionning scripts
 
     vagrant up
 
+## Prepare the projet
+You need to install all the php dependancies before starting the project
+
+    vagrant ssh
+    cd /var/www/phporchestra
+    ./composer.phar install
+
 ## Install the assets
 We are using npm to manage some server side javascript librairies and bower to manage the client side librairies
 
