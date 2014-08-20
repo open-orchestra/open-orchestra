@@ -20,6 +20,8 @@ PHP Orchestra
 
 * [Installation pour Debian](doc/debian-install.md)
 
+* [Installation avec une vagrant box](doc/install.md)
+
 3. Développement
 ----------------
 
