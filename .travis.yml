@@ -8,8 +8,14 @@ services:
 php:
   - 5.4
 
-before_script:
+cache:
+  directories:
+    - ~/.composer/cache
+
+before_install:
   - phpenv config-add build/travis/php.ini
+
+install:
   - cd src/symfony2
   - composer install
   - cd ../../
