@@ -1,3 +1,4 @@
 ---
  - name: Create symbolic link php-orchestra.conf
-   file: src=/etc/apache2/sites-available/php-orchestra.conf dest=/etc/apache2/sites-enabled/php-orchestra.conf state=link
+   file: src=/etc/apache2/sites-available/{{ item.key }} dest=/etc/apache2/sites-enabled/{{ item.key }} state=link
+   with_dict: apache_conf

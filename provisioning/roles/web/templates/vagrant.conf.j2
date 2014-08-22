@@ -1,13 +1,13 @@
-<VirtualHost *:{{ port }}>
+<VirtualHost *:{{ item.value.port }}>
 	ServerAdmin webmaster@localhost
-	ServerName {{ serverName }}
+	ServerName {{ item.value.serverName }}
 
-	DocumentRoot {{ docRoot }}
+	DocumentRoot {{ item.value.docRoot }}
 	<Directory />
 		Options FollowSymLinks
 		AllowOverride None
 	</Directory>
-	<Directory {{ docRoot }}>
+	<Directory {{ item.value.docRoot }}>
 		Options Indexes FollowSymLinks MultiViews
 		AllowOverride None
 		Order allow,deny
@@ -22,11 +22,11 @@
 		Allow from all
 	</Directory>
 
-	ErrorLog /var/log/apache2/{{ errorLog }}
+	ErrorLog /var/log/apache2/{{ item.value.errorLog }}
 
 	# Possible values include: debug, info, notice, warn, error, crit,
 	# alert, emerg.
 	LogLevel warn
 
-	CustomLog /var/log/apache2/{{ accessLog }} combined
+	CustomLog /var/log/apache2/{{ item.value.accessLog }} combined
 </VirtualHost>
