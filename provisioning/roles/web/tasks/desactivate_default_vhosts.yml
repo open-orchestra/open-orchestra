@@ -1,0 +1,6 @@
+---
+ - name: Desactivate default vhosts
+   shell: a2dissite {{ item }}
+   with_items:
+     - 000-default.conf
+     - default-ssl.conf
