@@ -32,7 +32,7 @@ In the parent directory of the current directory run
     git clone git@github.com:itkg/phporchestra-front-demo.git
 
 ## Install roles from ansible-galaxy
-Install roles needed for launch the box
+Install roles needed to launch the box
 
     ansible-galaxy install --role-file=provisioning/galaxy.yml
 
