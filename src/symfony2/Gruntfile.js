@@ -98,7 +98,8 @@ module.exports = function(grunt) {
                     'bower_components/bootstrap/dist/js/bootstrap.js',
                     'bower_components/angular/angular.js',
                     'bower_components/underscore/underscore.js',
-                    'bower_components/backbone/backbone.js'
+                    'bower_components/backbone/backbone.js',
+                    'bower_components/datatables/media/js/jquery.dataTables.js'
                 ],
                 dest: 'web/built/bower.js'
             },
@@ -116,7 +117,8 @@ module.exports = function(grunt) {
                 src: [
                     'bower_components/bootstrap/dist/css/bootstrap.css',
                     'bower_components/jquery-ui/themes/base/jquery-ui.css',
-                    'bower_components/font-awesome/css/font-awesome.css'
+                    'bower_components/font-awesome/css/font-awesome.css',
+                    'bower_components/datatables/media/css/jquery.dataTables.css'
                 ],
                 dest: 'web/built/bower.css'
             },
