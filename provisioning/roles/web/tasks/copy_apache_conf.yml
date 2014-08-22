@@ -1,3 +1,4 @@
 ---
  - name: Copy config apache
-   template: src=vagrant.conf.j2 dest=/etc/apache2/sites-available/php-orchestra.conf
+   template: src=vagrant.conf.j2 dest=/etc/apache2/sites-available/{{ item.key }}
+   with_dict: apache_conf

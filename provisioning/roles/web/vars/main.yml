@@ -1,9 +1,14 @@
-port: 80
-serverName: phporchestra.dev
-docRoot: /var/www/phporchestra/web
-errorLog: phporchestraError.log
-accessLog: phporchestraAccess.log
-serverNameFront: front-phporchestra.dev
-docRootFront: /var/www/front-phporchestra/web
-errorLogFront: front-phporchestraError.log
-accessLogFront: front-phporchestraAccess.log
+---
+apache_conf:
+  php-orchestra.conf:
+    port: 80
+    serverName: phporchestra.dev
+    docRoot: /var/www/phporchestra/web
+    errorLog: phporchestraError.log
+    accessLog: phporchestraAccess.log
+  front-orchestra.conf:
+    port: 80
+    serverName: front-phporchestra.dev
+    docRoot: /var/www/front-phporchestra/web
+    errorLog: ront-phporchestraError.log
+    accessLog: front-phporchestraAccess.log
