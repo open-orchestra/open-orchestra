@@ -56,6 +56,18 @@ module.exports = function(grunt) {
             smartadmin_bg: {
                 src: 'web/bundles/phporchestracms/img/mybg.png',
                 dest: 'web/img/mybg.png'
+            },
+            datatable_img_sort_asc: {
+                src: 'bower_components/datatables/media/images/sort_asc.png',
+                dest: 'web/images/sort_asc.png'
+            },
+            datatable_img_sort_both: {
+                src: 'bower_components/datatables/media/images/sort_both.png',
+                dest: 'web/images/sort_both.png'
+            },
+            datatable_img_sort_desc: {
+                src: 'bower_components/datatables/media/images/sort_desc.png',
+                dest: 'web/images/sort_desc.png'
             }
         },
 
