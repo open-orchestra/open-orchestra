@@ -105,10 +105,14 @@ module.exports = function(grunt) {
             js: {
                 src: [
                     'web/built/bower.js',
-                    'web/bundles/*/js/*.js',
-                    'web/bundles/*/js/*/*.js',
                     'web/built/*/js/*.js',
-                    'web/built/*/js/*/*.js'
+                    'web/built/*/js/*/*.js',
+                    'web/bundles/lexiktranslation/ng-table/*.js',
+                    'web/bundles/phporchestracms/js/*.js',
+                    'web/bundles/phporchestracms/js/*/*.js',
+                    'web/bundles/phporchestraindexation/js/*.js',
+                    'web/bundles/stfalcontinymce/js/*.js',
+                    'web/bundles/stfalcontinymce/vendor/tinymce/*.js'
                 ],
                 dest: 'web/built/all.js'
             },
@@ -123,10 +127,9 @@ module.exports = function(grunt) {
             css: {
                 src: [
                     'web/built/bower.css',
-                    'web/bundles/*/css/*.css',
-                    'web/bundles/*/css/*/*.css',
-                    'web/bundles/*/css/*/*/*.css',
-                    'web/built/*/css/**.css'
+                    'web/built/*/css/**.css',
+                    'web/bundles/lexiktranslation/ng-table/*.css',
+                    'web/bundles/lexiktranslation/css/*.css'
                 ],
                 dest: 'web/built/all.css'
             }
@@ -156,7 +159,7 @@ module.exports = function(grunt) {
     // Default task(s).
     grunt.registerTask('default', ['clean', 'command:assets_install', 'symlink', 'concat:bowercss', 'css', 'concat:bowerjs', 'javascript', 'command:assetic_dump']);
     grunt.registerTask('css', ['less:discovering', 'less', 'concat:css', 'cssmin']);
-    grunt.registerTask('javascript', ['coffee:discovering', 'coffee', 'concat:js', 'uglify']);
+    grunt.registerTask('javascript', ['coffee:discovering', 'coffee', 'concat:js'/*, 'uglify'*/]);
     grunt.registerTask('less:discovering', 'This is a function', function() {
         // LESS Files management
         // Source LESS files are located inside : bundles/[bundle]/less/
