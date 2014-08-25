@@ -157,9 +157,10 @@ module.exports = function(grunt) {
     });
 
     // Default task(s).
-    grunt.registerTask('default', ['clean', 'command:assets_install', 'symlink', 'concat:bowercss', 'css', 'concat:bowerjs', 'javascript', 'command:assetic_dump']);
+    grunt.registerTask('default', ['clean', 'command:assets_install', 'symlink', 'concat:bowercss', 'css', 'concat:bowerjs', 'javascript', 'javascriptProd', 'command:assetic_dump']);
     grunt.registerTask('css', ['less:discovering', 'less', 'concat:css', 'cssmin']);
-    grunt.registerTask('javascript', ['coffee:discovering', 'coffee', 'concat:js'/*, 'uglify'*/]);
+    grunt.registerTask('javascript', ['coffee:discovering', 'coffee', 'concat:js']);
+    grunt.registerTask('javascriptProd', ['uglify']);
     grunt.registerTask('less:discovering', 'This is a function', function() {
         // LESS Files management
         // Source LESS files are located inside : bundles/[bundle]/less/
