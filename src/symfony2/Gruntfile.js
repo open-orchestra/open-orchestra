@@ -52,6 +52,18 @@ module.exports = function(grunt) {
             bootstrap_font_woff: {
                 src: 'bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.woff',
                 dest: 'web/fonts/glyphicons-halflings-regular.woff'
+            },
+            datatable_img_sort_asc: {
+                src: 'bower_components/datatables/media/images/sort_asc.png',
+                dest: 'web/images/sort_asc.png'
+            },
+            datatable_img_sort_both: {
+                src: 'bower_components/datatables/media/images/sort_both.png',
+                dest: 'web/images/sort_both.png'
+            },
+            datatable_img_sort_desc: {
+                src: 'bower_components/datatables/media/images/sort_desc.png',
+                dest: 'web/images/sort_desc.png'
             }
         },
 
@@ -98,7 +110,8 @@ module.exports = function(grunt) {
                     'bower_components/bootstrap/dist/js/bootstrap.js',
                     'bower_components/angular/angular.js',
                     'bower_components/underscore/underscore.js',
-                    'bower_components/backbone/backbone.js'
+                    'bower_components/backbone/backbone.js',
+                    'bower_components/datatables/media/js/jquery.dataTables.js'
                 ],
                 dest: 'web/built/bower.js'
             },
@@ -116,7 +129,8 @@ module.exports = function(grunt) {
                 src: [
                     'bower_components/bootstrap/dist/css/bootstrap.css',
                     'bower_components/jquery-ui/themes/base/jquery-ui.css',
-                    'bower_components/font-awesome/css/font-awesome.css'
+                    'bower_components/font-awesome/css/font-awesome.css',
+                    'bower_components/datatables/media/css/jquery.dataTables.css'
                 ],
                 dest: 'web/built/bower.css'
             },
