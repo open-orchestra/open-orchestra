@@ -52,6 +52,10 @@ module.exports = function(grunt) {
             bootstrap_font_woff: {
                 src: 'bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.woff',
                 dest: 'web/fonts/glyphicons-halflings-regular.woff'
+            },
+            smartadmin_bg: {
+                src: 'web/bundles/phporchestracms/img/mybg.png',
+                dest: 'web/img/mybg.png'
             }
         },
 
