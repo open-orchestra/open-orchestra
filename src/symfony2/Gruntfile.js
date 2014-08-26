@@ -93,7 +93,7 @@ module.exports = function(grunt) {
         concat: {
             bowerjs: {
                 src: [
-                    'bower_components/jquery/dist/jquery.js',
+                    'bower_components/jquery/jquery.js',
                     'bower_components/jquery-ui/ui/jquery-ui.js',
                     'bower_components/bootstrap/dist/js/bootstrap.js',
                     'bower_components/angular/angular.js',
@@ -109,6 +109,7 @@ module.exports = function(grunt) {
                     'web/built/*/js/*/*.js',
                     'web/bundles/lexiktranslation/ng-table/*.js',
                     'web/bundles/phporchestracms/js/*.js',
+                    '!web/bundles/phporchestracms/js/ribbon.js',
                     'web/bundles/phporchestracms/js/*/*.js',
                     'web/bundles/phporchestraindexation/js/*.js',
                     'web/bundles/stfalcontinymce/js/*.js',
@@ -128,6 +129,13 @@ module.exports = function(grunt) {
                 src: [
                     'web/built/bower.css',
                     'web/built/*/css/**.css',
+                    '!web/built/phporchestracms/css/ribbon.css',
+                    '!web/built/phporchestracms/css/phpfactory.css',
+                    /*'web/bundles/phporchestrabackoffice/smartadmin-css/bootstrap.min.css',*/
+                    'web/bundles/phporchestrabackoffice/smartadmin/smartadmin-production.css',
+                    'web/bundles/phporchestrabackoffice/smartadmin/smartadmin-skins.css',
+                    'web/built/phporchestracms/css/ribbon.css',
+                    'web/built/phporchestracms/css/phpfactory.css',
                     'web/bundles/lexiktranslation/ng-table/*.css',
                     'web/bundles/lexiktranslation/css/*.css'
                 ],
