@@ -1,14 +1,7 @@
-php_orchestra_cms:
-    resource: "@PHPOrchestraCMSBundle/Resources/config/routing.yml"
-    prefix:   /
-
 php_orchestra_backoffice:
     resource: "@PHPOrchestraBackofficeBundle/Controller"
     type: annotation
-
-php_orchestra_backoffice:
-    resource: "@PHPOrchestraBackofficeBundle/Controller"
-    type: annotation
+    prefix: /admin
 
 php_orchestra_display:
     resource: "@PHPOrchestraDisplayBundle/Controller"
