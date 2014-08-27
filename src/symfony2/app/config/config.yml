@@ -69,13 +69,6 @@ swiftmailer:
     password:  "%mailer_password%"
     spool:     { type: memory }
 
-mandango:
-    default_connection: local
-    connections:
-        local:
-            server:   "%php_orchestra_cms.mongodb.server%"
-            database: "%php_orchestra_cms.mongodb.database%"
-
 snc_redis:
     clients:
         default:

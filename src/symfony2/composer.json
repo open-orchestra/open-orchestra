@@ -38,9 +38,7 @@
     "prefer-stable" : true,
     "require" : {
         "incenteev/composer-parameter-handler" : "~2.0",
-        "mandango/mandango-bundle" : "dev-master",
         "stfalcon/tinymce-bundle" : "0.3.*@dev",
-        "jms/serializer-bundle" : "0.13.*@dev",
         "itkg/phporchestra-cms-bundle": "dev-master"
     },
     "require-dev" : {
