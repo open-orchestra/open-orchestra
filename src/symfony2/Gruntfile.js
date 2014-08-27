@@ -108,17 +108,31 @@ module.exports = function(grunt) {
             },
             js: {
                 src: [
+                    // BOWER + LESS
                     'web/built/bower.js',
-                    'web/built/*/js/*.js',
-                    'web/built/*/js/*/*.js',
-                    'web/bundles/lexiktranslation/ng-table/*.js',
-                    'web/bundles/phporchestracms/js/*.js',
-                    '!web/bundles/phporchestracms/js/ribbon.js',
-                    'web/bundles/phporchestracms/js/*/*.js',
+                    
+                    // PHPORCHESTRACMS
+                    'web/bundles/phporchestracms/js/confirmDialog.js',
+                    'web/bundles/phporchestracms/js/phporchestra.js',
+                    'web/bundles/phporchestrabackoffice/smartadmin/notification/SmartNotification.js',
+                    'web/bundles/phporchestrabackoffice/smartadmin/smartwigdets/jarvis.widget.js',
+                    'web/bundles/phporchestracms/js/app0.js',
+                    
+                    // PHPORCHESTRAINDEXATION
                     'web/bundles/phporchestraindexation/js/*.js',
+                    
+                    // STFALCONTINYMCE
                     'web/bundles/stfalcontinymce/js/*.js',
-                    'web/bundles/stfalcontinymce/vendor/tinymce/*.js'
-                ],
+                    'web/bundles/stfalcontinymce/vendor/tinymce/*.js',
+                    
+                    // LEXIKTRANSLATION
+                    'web/bundles/lexiktranslation/ng-table/ng-table.min.js',
+
+                    'web/built/*/js/*.js',
+                    'web/built/*/js/*/*.js'
+                    
+                    
+                    ],
                 dest: 'web/built/all.js'
             },
             bowercss: {
@@ -132,16 +146,18 @@ module.exports = function(grunt) {
             css: {
                 src: [
                     'web/built/bower.css',
-                    'web/built/*/css/**.css',
-                    '!web/built/phporchestracms/css/ribbon.css',
-                    '!web/built/phporchestracms/css/phpfactory.css',
-                    /*'web/bundles/phporchestrabackoffice/smartadmin-css/bootstrap.min.css',*/
+                    //'web/built/*/css/**.css',
+                    //'!web/built/phporchestracms/css/ribbon.css',
+                    //'!web/built/phporchestracms/css/phpfactory.css',
+                    //'web/bundles/phporchestrabackoffice/smartadmin-css/bootstrap.min.css',
                     'web/bundles/phporchestrabackoffice/smartadmin/smartadmin-production.css',
                     'web/bundles/phporchestrabackoffice/smartadmin/smartadmin-skins.css',
                     'web/built/phporchestracms/css/ribbon.css',
                     'web/built/phporchestracms/css/phpfactory.css',
-                    'web/bundles/lexiktranslation/ng-table/*.css',
-                    'web/bundles/lexiktranslation/css/*.css'
+                    'web/built/phporchestracms/css/template.css',
+                    'web/bundles/lexiktranslation/ng-table/ng-table.min.css',
+                    
+                    
                 ],
                 dest: 'web/built/all.css'
             }
