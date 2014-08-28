@@ -108,7 +108,7 @@ module.exports = function(grunt) {
             },
             js: {
                 src: [
-                    // BOWER + LESS
+                    // BOWER
                     'web/built/bower.js',
                     
                     // PHPORCHESTRACMS
@@ -127,11 +127,10 @@ module.exports = function(grunt) {
                     
                     // LEXIKTRANSLATION
                     'web/bundles/lexiktranslation/ng-table/ng-table.min.js',
-
+                    
+                    // COFFEE
                     'web/built/*/js/*.js',
                     'web/built/*/js/*/*.js'
-                    
-                    
                     ],
                 dest: 'web/built/all.js'
             },
@@ -147,17 +146,12 @@ module.exports = function(grunt) {
                 src: [
                     'web/built/bower.css',
                     //'web/built/*/css/**.css',
-                    //'!web/built/phporchestracms/css/ribbon.css',
-                    //'!web/built/phporchestracms/css/phpfactory.css',
-                    //'web/bundles/phporchestrabackoffice/smartadmin-css/bootstrap.min.css',
                     'web/bundles/phporchestrabackoffice/smartadmin/smartadmin-production.css',
                     'web/bundles/phporchestrabackoffice/smartadmin/smartadmin-skins.css',
                     'web/built/phporchestracms/css/ribbon.css',
                     'web/built/phporchestracms/css/phpfactory.css',
                     'web/built/phporchestracms/css/template.css',
                     'web/bundles/lexiktranslation/ng-table/ng-table.min.css',
-                    
-                    
                 ],
                 dest: 'web/built/all.css'
             }
