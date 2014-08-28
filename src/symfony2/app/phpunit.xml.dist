@@ -14,10 +14,13 @@
     bootstrap                   = "bootstrap.php.cache" >
 
     <testsuites>
-        <testsuite name="Project Test Suite">
+        <testsuite name="unit">
             <directory>../src/*/*Bundle/Tests</directory>
             <directory>../src/*/Bundle/*Bundle/Tests</directory>
             <directory>../vendor/itkg/*/*/*Bundle/Test</directory>
+        </testsuite>
+        <testsuite name="functional">
+            <directory>../vendor/itkg/*/*/*Bundle/FunctionalTest</directory>
         </testsuite>
     </testsuites>
 

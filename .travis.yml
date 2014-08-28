@@ -4,6 +4,7 @@ source_key: "LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQ0KTUlJRW93SUJBQUtDQVFFQXV
 
 services:
   - redis-server
+  - mongodb
 
 php:
   - 5.4
@@ -19,6 +20,9 @@ before_install:
 install:
   - cd src/symfony2
   - composer install
+
+before_script:
+  - php app/console doc:mo:f:l -e=test
   - cd ../../
 
-script: phpunit --configuration build/jenkins/phpunit.xml
+script: phpunit -c src/symfony2/app/
