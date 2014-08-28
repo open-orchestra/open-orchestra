@@ -22,3 +22,6 @@ php_orchestra_api:
 php_orchestra_indexation:
     resource: "@PHPOrchestraIndexationBundle/Controller"
     type: annotation
+
+php_orchestra_translation:
+    resource: "@PHPOrchestraTranslationBundle/Resources/config/routing.yml"
