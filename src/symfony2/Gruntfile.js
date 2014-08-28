@@ -68,6 +68,7 @@ module.exports = function(grunt) {
             datatable_img_sort_desc: {
                 src: 'bower_components/datatables/media/images/sort_desc.png',
                 dest: 'web/images/sort_desc.png'
+            },
             smartadmin_bg: {
                 src: 'web/bundles/phporchestracms/img/mybg.png',
                 dest: 'web/img/mybg.png'
