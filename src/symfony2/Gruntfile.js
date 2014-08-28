@@ -64,6 +64,26 @@ module.exports = function(grunt) {
             datatable_img_sort_desc: {
                 src: 'bower_components/datatables/media/images/sort_desc.png',
                 dest: 'web/images/sort_desc.png'
+            },
+            smartadmin_bg: {
+                src: 'web/bundles/phporchestracms/img/mybg.png',
+                dest: 'web/img/mybg.png'
+            },
+            datatable_img_sort_asc: {
+                src: 'bower_components/datatables/media/images/sort_asc.png',
+                dest: 'web/images/sort_asc.png'
+            },
+            datatable_img_sort_both: {
+                src: 'bower_components/datatables/media/images/sort_both.png',
+                dest: 'web/images/sort_both.png'
+            },
+            datatable_img_sort_desc: {
+                src: 'bower_components/datatables/media/images/sort_desc.png',
+                dest: 'web/images/sort_desc.png'
+            },
+            smartadmin_bg: {
+                src: 'web/bundles/phporchestracms/img/mybg.png',
+                dest: 'web/img/mybg.png'
             }
         },
 
@@ -105,7 +125,7 @@ module.exports = function(grunt) {
         concat: {
             bowerjs: {
                 src: [
-                    'bower_components/jquery/dist/jquery.js',
+                    'bower_components/jquery/jquery.js',
                     'bower_components/jquery-ui/ui/jquery-ui.js',
                     'bower_components/bootstrap/dist/js/bootstrap.js',
                     'bower_components/angular/angular.js',
@@ -117,12 +137,30 @@ module.exports = function(grunt) {
             },
             js: {
                 src: [
+                    // BOWER
                     'web/built/bower.js',
-                    'web/bundles/*/js/*.js',
-                    'web/bundles/*/js/*/*.js',
+                    
+                    // PHPORCHESTRACMS
+                    'web/bundles/phporchestracms/js/confirmDialog.js',
+                    'web/bundles/phporchestracms/js/phporchestra.js',
+                    'web/bundles/phporchestrabackoffice/smartadmin/notification/SmartNotification.js',
+                    'web/bundles/phporchestrabackoffice/smartadmin/smartwigdets/jarvis.widget.js',
+                    'web/bundles/phporchestracms/js/app0.js',
+                    
+                    // PHPORCHESTRAINDEXATION
+                    'web/bundles/phporchestraindexation/js/*.js',
+                    
+                    // STFALCONTINYMCE
+                    'web/bundles/stfalcontinymce/js/*.js',
+                    'web/bundles/stfalcontinymce/vendor/tinymce/*.js',
+                    
+                    // LEXIKTRANSLATION
+                    'web/bundles/lexiktranslation/ng-table/ng-table.min.js',
+                    
+                    // COFFEE
                     'web/built/*/js/*.js',
                     'web/built/*/js/*/*.js'
-                ],
+                    ],
                 dest: 'web/built/all.js'
             },
             bowercss: {
@@ -137,10 +175,13 @@ module.exports = function(grunt) {
             css: {
                 src: [
                     'web/built/bower.css',
-                    'web/bundles/*/css/*.css',
-                    'web/bundles/*/css/*/*.css',
-                    'web/bundles/*/css/*/*/*.css',
-                    'web/built/*/css/**.css'
+                    //'web/built/*/css/**.css',
+                    'web/bundles/phporchestrabackoffice/smartadmin/smartadmin-production.css',
+                    'web/bundles/phporchestrabackoffice/smartadmin/smartadmin-skins.css',
+                    'web/built/phporchestracms/css/ribbon.css',
+                    'web/built/phporchestracms/css/phpfactory.css',
+                    'web/built/phporchestracms/css/template.css',
+                    'web/bundles/lexiktranslation/ng-table/ng-table.min.css',
                 ],
                 dest: 'web/built/all.css'
             }
@@ -168,9 +209,10 @@ module.exports = function(grunt) {
     });
 
     // Default task(s).
-    grunt.registerTask('default', ['clean', 'command:assets_install', 'symlink', 'concat:bowercss', 'css', 'concat:bowerjs', 'javascript', 'command:assetic_dump']);
+    grunt.registerTask('default', ['clean', 'command:assets_install', 'symlink', 'concat:bowercss', 'css', 'concat:bowerjs', 'javascript', 'javascriptProd', 'command:assetic_dump']);
     grunt.registerTask('css', ['less:discovering', 'less', 'concat:css', 'cssmin']);
-    grunt.registerTask('javascript', ['coffee:discovering', 'coffee', 'concat:js', 'uglify']);
+    grunt.registerTask('javascript', ['coffee:discovering', 'coffee', 'concat:js']);
+    grunt.registerTask('javascriptProd', ['uglify']);
     grunt.registerTask('less:discovering', 'This is a function', function() {
         // LESS Files management
         // Source LESS files are located inside : bundles/[bundle]/less/
