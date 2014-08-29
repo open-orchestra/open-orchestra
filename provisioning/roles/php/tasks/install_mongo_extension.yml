@@ -1,5 +1,8 @@
 ---
  - name: Install php-mongo extension
-   shell: printf "\n" | pecl install -f mongo
+   shell: printf "\n" | pecl install mongo
+   register: pecl_mongo_result
+   failed_when: pecl_mongo_result.rc > 1
+   changed_when: "'pecl/mongo is already installed' not in pecl_mongo_result.stdout"
  - name: Create the mongo extension
    shell: echo "extension=mongo.so" > /etc/php5/mods-available/mongo.ini
