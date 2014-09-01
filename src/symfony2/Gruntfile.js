@@ -68,22 +68,6 @@ module.exports = function(grunt) {
             smartadmin_bg: {
                 src: 'web/bundles/phporchestracms/img/mybg.png',
                 dest: 'web/img/mybg.png'
-            },
-            datatable_img_sort_asc: {
-                src: 'bower_components/datatables/media/images/sort_asc.png',
-                dest: 'web/images/sort_asc.png'
-            },
-            datatable_img_sort_both: {
-                src: 'bower_components/datatables/media/images/sort_both.png',
-                dest: 'web/images/sort_both.png'
-            },
-            datatable_img_sort_desc: {
-                src: 'bower_components/datatables/media/images/sort_desc.png',
-                dest: 'web/images/sort_desc.png'
-            },
-            smartadmin_bg: {
-                src: 'web/bundles/phporchestracms/img/mybg.png',
-                dest: 'web/img/mybg.png'
             }
         },
 
@@ -131,7 +115,9 @@ module.exports = function(grunt) {
                     'bower_components/angular/angular.js',
                     'bower_components/underscore/underscore.js',
                     'bower_components/backbone/backbone.js',
-                    'bower_components/datatables/media/js/jquery.dataTables.js'
+                    'bower_components/datatables/media/js/jquery.dataTables.js',
+                    'bower_components/jquery.easypiechart.js/dist/jquery.easypiechart.js',
+                    'bower_components/fancytree/dist/jquery.fancytree.js'
                 ],
                 dest: 'web/built/bower.js'
             },
@@ -168,7 +154,8 @@ module.exports = function(grunt) {
                     'bower_components/bootstrap/dist/css/bootstrap.css',
                     'bower_components/jquery-ui/themes/base/jquery-ui.css',
                     'bower_components/font-awesome/css/font-awesome.css',
-                    'bower_components/datatables/media/css/jquery.dataTables.css'
+                    'bower_components/datatables/media/css/jquery.dataTables.css',
+                    'bower_components/fancytree/dist/skin-bootstrap/ui.fancytree.css'
                 ],
                 dest: 'web/built/bower.css'
             },
