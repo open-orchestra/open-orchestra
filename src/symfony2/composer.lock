@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6a534f8f5e3304e6ceae41c35944f3e5",
+    "hash": "a2b0c6aef1ee94b1e99bfee16872513d",
     "packages": [
         {
             "name": "braincrafted/bootstrap-bundle",
@@ -858,15 +858,16 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-cms-bundle.git",
-                "reference": "a0381e85cc722e957922ae8e349e53c7d29ec2d5"
+                "reference": "2b0a7683fd465a5083b6d7ed0e45a46809624ada"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/a0381e85cc722e957922ae8e349e53c7d29ec2d5",
-                "reference": "a0381e85cc722e957922ae8e349e53c7d29ec2d5",
+                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/2b0a7683fd465a5083b6d7ed0e45a46809624ada",
+                "reference": "2b0a7683fd465a5083b6d7ed0e45a46809624ada",
                 "shasum": ""
             },
             "require": {
+                "braincrafted/bootstrap-bundle": "dev-master",
                 "itkg/phporchestra-base-bundle": "dev-master",
                 "itkg/phporchestra-display-bundle": "dev-master",
                 "itkg/phporchestra-indexation-bundle": "dev-master",
@@ -900,7 +901,7 @@
                 "source": "https://github.com/itkg/phporchestra-cms-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-cms-bundle/issues"
             },
-            "time": "2014-09-01 12:22:12"
+            "time": "2014-09-02 15:51:52"
         },
         {
             "name": "itkg/phporchestra-display-bundle",
@@ -1009,12 +1010,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-model-bundle.git",
-                "reference": "273477fc22c2a84f2e2ee53631ab39db4d2c1291"
+                "reference": "633b21f1cbfc57672603bebb47c0f55871ccc7f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-model-bundle/zipball/273477fc22c2a84f2e2ee53631ab39db4d2c1291",
-                "reference": "273477fc22c2a84f2e2ee53631ab39db4d2c1291",
+                "url": "https://api.github.com/repos/itkg/phporchestra-model-bundle/zipball/633b21f1cbfc57672603bebb47c0f55871ccc7f9",
+                "reference": "633b21f1cbfc57672603bebb47c0f55871ccc7f9",
                 "shasum": ""
             },
             "require": {
@@ -1045,7 +1046,7 @@
                 "source": "https://github.com/itkg/phporchestra-model-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-model-bundle/issues"
             },
-            "time": "2014-08-27 08:46:32"
+            "time": "2014-09-02 14:36:26"
         },
         {
             "name": "itkg/phporchestra-translation-bundle",
@@ -1054,16 +1055,16 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-translation-bundle.git",
-                "reference": "664c0dc2da24a810b9d4c43881ce5ebef9a5e30a"
+                "reference": "7ad4f3ea3448f614ad3b0e4b2206bbabda2aaae8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-translation-bundle/zipball/664c0dc2da24a810b9d4c43881ce5ebef9a5e30a",
-                "reference": "664c0dc2da24a810b9d4c43881ce5ebef9a5e30a",
+                "url": "https://api.github.com/repos/itkg/phporchestra-translation-bundle/zipball/7ad4f3ea3448f614ad3b0e4b2206bbabda2aaae8",
+                "reference": "7ad4f3ea3448f614ad3b0e4b2206bbabda2aaae8",
                 "shasum": ""
             },
             "require": {
-                "lexik/translation-bundle": "2.*@dev"
+                "lexik/translation-bundle": "dev-master"
             },
             "type": "library",
             "autoload": {
@@ -1085,7 +1086,7 @@
                 "source": "https://github.com/itkg/phporchestra-translation-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-translation-bundle/issues"
             },
-            "time": "2014-07-24 15:31:21"
+            "time": "2014-09-02 15:23:56"
         },
         {
             "name": "jms/metadata",
@@ -1387,26 +1388,30 @@
         },
         {
             "name": "lexik/translation-bundle",
-            "version": "v2.0.2",
+            "version": "dev-master",
             "target-dir": "Lexik/Bundle/TranslationBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lexik/LexikTranslationBundle.git",
-                "reference": "dd98da7d49c8b993d6a527f67145f3958c7f597d"
+                "reference": "e677c0221aaa532d40e5e555ca433792bf10e87c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lexik/LexikTranslationBundle/zipball/dd98da7d49c8b993d6a527f67145f3958c7f597d",
-                "reference": "dd98da7d49c8b993d6a527f67145f3958c7f597d",
+                "url": "https://api.github.com/repos/lexik/LexikTranslationBundle/zipball/e677c0221aaa532d40e5e555ca433792bf10e87c",
+                "reference": "e677c0221aaa532d40e5e555ca433792bf10e87c",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2",
                 "symfony/framework-bundle": "~2.3"
             },
+            "require-dev": {
+                "propel/propel-bundle": "~1.2"
+            },
             "suggest": {
                 "doctrine/mongodb-odm": "1.0.*@dev",
-                "doctrine/orm": ">=2.1"
+                "doctrine/orm": ">=2.1",
+                "propel/propel-bundle": "~1.2"
             },
             "type": "symfony-bundle",
             "extra": {
@@ -1441,7 +1446,7 @@
                 "i18n",
                 "translation"
             ],
-            "time": "2014-08-07 07:03:46"
+            "time": "2014-08-25 14:44:48"
         },
         {
             "name": "monolog/monolog",
@@ -3164,8 +3169,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "stfalcon/tinymce-bundle": 20,
-        "itkg/phporchestra-cms-bundle": 20,
-        "braincrafted/bootstrap-bundle": 20
+        "itkg/phporchestra-cms-bundle": 20
     },
     "prefer-stable": true,
     "platform": [
