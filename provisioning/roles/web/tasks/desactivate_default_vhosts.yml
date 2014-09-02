@@ -1,6 +1,8 @@
 ---
  - name: Desactivate default vhosts
    shell: a2dissite {{ item }}
+   register: a2dissite_result
+   changed_when: "'already disabled' not in a2dissite_result.stdout"
    with_items:
      - 000-default.conf
      - default-ssl.conf

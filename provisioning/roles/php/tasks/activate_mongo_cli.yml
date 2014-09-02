@@ -1,5 +1,7 @@
 ---
- - name: Activate mongo for cli
-   shell: rm -f /etc/php5/cli/conf.d/30-mongo.ini
+ - name: Check if file cli mongo exists
+   stat: path=/etc/php5/cli/conf.d/30-mongo.ini
+   register: cli_mongo
  - name: Create a symbolic link mongo.ini
    file: src=/etc/php5/mods-available/mongo.ini dest=/etc/php5/cli/conf.d/30-mongo.ini state=link
+   when: cli_mongo.stat.exists == false

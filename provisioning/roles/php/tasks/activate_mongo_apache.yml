@@ -1,5 +1,7 @@
 ---
- - name: Activate mongo for apache
-   shell: rm -f /etc/php5/apache2/conf.d/30-mongo.ini
+ - name: Check if file apache mongo exists
+   stat: path=/etc/php5/apache2/conf.d/30-mongo.ini
+   register: apache_mongo
  - name: Create a symbolic links mongo.ini
    file: src=/etc/php5/mods-available/mongo.ini dest=/etc/php5/apache2/conf.d/30-mongo.ini state=link
+   when: apache_mongo.stat.exists == false
