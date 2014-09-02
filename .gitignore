@@ -9,7 +9,7 @@
 !/src/symfony2/app/cache/.gitkeep
 !/src/symfony2/app/logs/.gitkeep
 
-#==[Vendor]=========================#
+#==[Vendor]===========================#
 /src/symfony2/vendor/*
 /src/symfony2/node_modules/*
 /src/symfony2/bower_components/*
@@ -31,4 +31,10 @@
 /build/logs
 /build/pdepend
 /src/symfony2/cov
+
+#==[MOADMIN]==========================#
+/src/symfony2/moadmin.php
+
+#==[VAGRANT]==========================#
+.vagrant/
 
