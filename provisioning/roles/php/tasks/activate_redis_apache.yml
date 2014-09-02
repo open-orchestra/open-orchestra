@@ -1,5 +1,8 @@
 ---
- - name: Activate redis for apache
-   shell: rm -f /etc/php5/apache2/conf.d/30-redis.ini
+ - name: Check if file apache redis exists
+   stat: path=/etc/php5/apache2/conf.d/30-redis.ini
+   register: apache_redis
  - name: create symbolic link redis.ini
    file: src=/etc/php5/mods-available/redis.ini dest=/etc/php5/apache2/conf.d/30-redis.ini state=link
+   when: apache_redis.stat.exists == false
+
