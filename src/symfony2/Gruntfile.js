@@ -101,7 +101,8 @@ module.exports = function(grunt) {
         uglify: {
             dist: {
                 files: {
-                    'web/built/all.min.js': ['web/built/all.js']
+                    'web/built/all.min.js': ['web/built/all.js'],
+                    'web/built/translation.min.js': ['web/built/translation.js']
                 }
             }
         },
@@ -112,7 +113,6 @@ module.exports = function(grunt) {
                     'bower_components/jquery/jquery.js',
                     'bower_components/jquery-ui/ui/jquery-ui.js',
                     'bower_components/bootstrap/dist/js/bootstrap.js',
-                    'bower_components/angular/angular.js',
                     'bower_components/underscore/underscore.js',
                     'bower_components/backbone/backbone.js',
                     'bower_components/datatables/media/js/jquery.dataTables.js',
@@ -120,6 +120,14 @@ module.exports = function(grunt) {
                     'bower_components/fancytree/dist/jquery.fancytree.js'
                 ],
                 dest: 'web/built/bower.js'
+            },
+            translationjs: {
+                src: [
+                    'bower_components/jquery/jquery.js',
+                    'bower_components/angular/angular.js',
+                    'web/bundles/lexiktranslation/ng-table/ng-table.min.js'
+                ],
+                dest: 'web/built/translation.js'
             },
             js: {
                 src: [
@@ -139,9 +147,6 @@ module.exports = function(grunt) {
                     // STFALCONTINYMCE
                     'web/bundles/stfalcontinymce/js/*.js',
                     'web/bundles/stfalcontinymce/vendor/tinymce/*.js',
-                    
-                    // LEXIKTRANSLATION
-                    'web/bundles/lexiktranslation/ng-table/ng-table.min.js',
                     
                     // COFFEE
                     'web/built/*/js/*.js',
@@ -198,7 +203,7 @@ module.exports = function(grunt) {
     // Default task(s).
     grunt.registerTask('default', ['clean', 'command:assets_install', 'symlink', 'concat:bowercss', 'css', 'concat:bowerjs', 'javascript', 'javascriptProd', 'command:assetic_dump']);
     grunt.registerTask('css', ['less:discovering', 'less', 'concat:css', 'cssmin']);
-    grunt.registerTask('javascript', ['coffee:discovering', 'coffee', 'concat:js']);
+    grunt.registerTask('javascript', ['coffee:discovering', 'coffee', 'concat:js', 'concat:translationjs']);
     grunt.registerTask('javascriptProd', ['uglify']);
     grunt.registerTask('less:discovering', 'This is a function', function() {
         // LESS Files management

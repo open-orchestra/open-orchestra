@@ -49,6 +49,7 @@ assetic:
         - PHPOrchestraCMSBundle
         - PHPOrchestraDisplayBundle
         - PHPOrchestraIndexationBundle
+        - LexikTranslationBundle
     #java: /usr/bin/java
     filters:
         cssrewrite: ~
