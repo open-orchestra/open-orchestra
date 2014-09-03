@@ -14,7 +14,7 @@ php_packages:
   - php-pdo
   - php-xml
   - php-xsl
-php_xdebug_module_path: /usr/lib/php5/20121212
+php_xdebug_module_path: /usr/lib/php5/20100525
 php_xdebug_remote_enable: true
 php_xdebug_remote_connect_back: 1
 php_xdebug_remote_host: 192.168.33.1

@@ -3,3 +3,5 @@
    apt: pkg=php5-xsl state=latest
  - name: ensure that php5-intl is at the last version
    apt: pkg=php5-intl state=latest
+ - name: ensure that php-pear is at the last version
+   apt: pkg=php-pear state=latest

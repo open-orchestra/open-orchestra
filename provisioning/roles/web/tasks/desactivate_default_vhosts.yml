@@ -5,6 +5,4 @@
    changed_when: "'already disabled' not in a2dissite_result.stdout"
    ignore_errors: yes
    with_items:
-     - 000-default.conf
      - 000-default
-     - default-ssl.conf
