@@ -117,7 +117,8 @@ module.exports = function(grunt) {
                     'bower_components/backbone/backbone.js',
                     'bower_components/datatables/media/js/jquery.dataTables.js',
                     'bower_components/jquery.easypiechart.js/dist/jquery.easypiechart.js',
-                    'bower_components/fancytree/dist/jquery.fancytree.js'
+                    'bower_components/fancytree/dist/jquery.fancytree.js',
+                    'bower_components/jquery-form/jquery.form.js'
                 ],
                 dest: 'web/built/bower.js'
             },
