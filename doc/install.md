@@ -77,6 +77,11 @@ In the symfony project directory
 
     php app/console doctrine:mongo:fixture:load
 
+## Import the translations
+In the symfony project directory
+
+    php app/console lexik:translations:import
+
 ## Override the dns redirection
 In the `/etc/hosts` file of your computer add the following lines :
 
