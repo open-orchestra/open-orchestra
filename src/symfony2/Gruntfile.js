@@ -115,19 +115,13 @@ module.exports = function(grunt) {
                     'bower_components/bootstrap/dist/js/bootstrap.js',
                     'bower_components/underscore/underscore.js',
                     'bower_components/backbone/backbone.js',
+                    'bower_components/angular/angular.js',
                     'bower_components/datatables/media/js/jquery.dataTables.js',
                     'bower_components/jquery.easypiechart.js/dist/jquery.easypiechart.js',
-                    'bower_components/fancytree/dist/jquery.fancytree.js'
+                    'bower_components/fancytree/dist/jquery.fancytree.js',
+                    'bower_components/jquery-form/jquery.form.js'
                 ],
                 dest: 'web/built/bower.js'
-            },
-            translationjs: {
-                src: [
-                    'bower_components/jquery/jquery.js',
-                    'bower_components/angular/angular.js',
-                    'web/bundles/lexiktranslation/ng-table/ng-table.min.js'
-                ],
-                dest: 'web/built/translation.js'
             },
             js: {
                 src: [
@@ -150,8 +144,11 @@ module.exports = function(grunt) {
                     
                     // COFFEE
                     'web/built/*/js/*.js',
-                    'web/built/*/js/*/*.js'
-                    ],
+                    'web/built/*/js/*/*.js',
+                    
+                    // LEXIKTRANSLATION
+                    'web/bundles/lexiktranslation/ng-table/ng-table.min.js'
+                ],
                 dest: 'web/built/all.js'
             },
             bowercss: {
@@ -203,7 +200,7 @@ module.exports = function(grunt) {
     // Default task(s).
     grunt.registerTask('default', ['clean', 'command:assets_install', 'symlink', 'concat:bowercss', 'css', 'concat:bowerjs', 'javascript', 'javascriptProd', 'command:assetic_dump']);
     grunt.registerTask('css', ['less:discovering', 'less', 'concat:css', 'cssmin']);
-    grunt.registerTask('javascript', ['coffee:discovering', 'coffee', 'concat:js', 'concat:translationjs']);
+    grunt.registerTask('javascript', ['coffee:discovering', 'coffee', 'concat:js']);
     grunt.registerTask('javascriptProd', ['uglify']);
     grunt.registerTask('less:discovering', 'This is a function', function() {
         // LESS Files management

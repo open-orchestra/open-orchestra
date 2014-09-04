@@ -12,3 +12,9 @@ apache_conf:
     docRoot: /var/www/front-phporchestra/web
     errorLog: ront-phporchestraError.log
     accessLog: front-phporchestraAccess.log
+  inte-backoffice-phporchestra.conf:
+    port: 80
+    serverName: 10.0.1.246
+    docRoot: /var/www/phporchestra/src/symfony2/web
+    errorLog: phporchestra_backoffice_error.log
+    accessLog: phporchestra_backoffice_access.log
