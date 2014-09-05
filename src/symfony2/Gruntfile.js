@@ -147,8 +147,12 @@ module.exports = function(grunt) {
                     'web/built/*/js/*/*.js',
                     
                     // LEXIKTRANSLATION
-                    'web/bundles/lexiktranslation/ng-table/ng-table.min.js'
-                ],
+                    'web/bundles/lexiktranslation/ng-table/ng-table.min.js',
+
+                    // BACKBONE BO ROUTER
+                    'web/bundles/phporchestrabackoffice/js/backboneRouter.js'
+
+                    ],
                 dest: 'web/built/all.js'
             },
             bowercss: {
