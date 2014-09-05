@@ -118,7 +118,6 @@ module.exports = function(grunt) {
                     'bower_components/angular/angular.js',
                     'bower_components/datatables/media/js/jquery.dataTables.js',
                     'bower_components/jquery.easypiechart.js/dist/jquery.easypiechart.js',
-                    'bower_components/fancytree/dist/jquery.fancytree.js',
                     'bower_components/jquery-form/jquery.form.js'
                 ],
                 dest: 'web/built/bower.js'
@@ -160,9 +159,7 @@ module.exports = function(grunt) {
                     'bower_components/bootstrap/dist/css/bootstrap.css',
                     'bower_components/jquery-ui/themes/base/jquery-ui.css',
                     'bower_components/font-awesome/css/font-awesome.css',
-                    'bower_components/datatables/media/css/jquery.dataTables.css',
-                    'bower_components/fancytree/dist/skin-bootstrap/ui.fancytree.css'
-                ],
+                    'bower_components/datatables/media/css/jquery.dataTables.css'                ],
                 dest: 'web/built/bower.css'
             },
             css: {
