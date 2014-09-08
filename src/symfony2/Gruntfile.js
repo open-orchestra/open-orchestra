@@ -66,7 +66,7 @@ module.exports = function(grunt) {
                 dest: 'web/images/sort_desc.png'
             },
             smartadmin_bg: {
-                src: 'web/bundles/phporchestracms/img/mybg.png',
+                src: 'web/bundles/phporchestrabackoffice/smartadmin/img/mybg.png',
                 dest: 'web/img/mybg.png'
             }
         },
@@ -84,7 +84,7 @@ module.exports = function(grunt) {
         cssmin: {
             minify: {
                 expand: true,
-                src: ['web/built/all.css'],
+                src: ['web/css/all.css'],
                 ext: '.min.css'
             }
         },
@@ -101,8 +101,7 @@ module.exports = function(grunt) {
         uglify: {
             dist: {
                 files: {
-                    'web/built/all.min.js': ['web/built/all.js'],
-                    'web/built/translation.min.js': ['web/built/translation.js']
+                    'web/js/all.min.js': ['web/js/all.js']
                 }
             }
         },
@@ -117,7 +116,6 @@ module.exports = function(grunt) {
                     'bower_components/backbone/backbone.js',
                     'bower_components/angular/angular.js',
                     'bower_components/datatables/media/js/jquery.dataTables.js',
-                    'bower_components/jquery.easypiechart.js/dist/jquery.easypiechart.js',
                     'bower_components/jquery-form/jquery.form.js'
                 ],
                 dest: 'web/built/bower.js'
@@ -128,11 +126,25 @@ module.exports = function(grunt) {
                     'web/built/bower.js',
                     
                     // PHPORCHESTRACMS
-                    'web/bundles/phporchestracms/js/confirmDialog.js',
-                    'web/bundles/phporchestracms/js/phporchestra.js',
+                    'web/bundles/phporchestrabackoffice/js/phporchestra.js',
                     'web/bundles/phporchestrabackoffice/smartadmin/notification/SmartNotification.js',
                     'web/bundles/phporchestrabackoffice/smartadmin/smartwigdets/jarvis.widget.js',
-                    'web/bundles/phporchestracms/js/app0.js',
+                    'web/bundles/phporchestrabackoffice/smartadmin/app0.js',
+                    // built
+                    'web/built/phporchestrabackoffice/js/include.js',
+                    'web/built/phporchestrabackoffice/js/addPrototype.js',
+                    'web/built/phporchestrabackoffice/js/modelBackbone.js',
+                    'web/built/phporchestrabackoffice/js/adminFormView.js',
+                    'web/built/phporchestrabackoffice/js/areaView.js',
+                    'web/built/phporchestrabackoffice/js/blockView.js',
+                    'web/built/phporchestrabackoffice/js/nodeView.js',
+                    'web/built/phporchestrabackoffice/js/TableviewView.js',
+                    'web/built/phporchestrabackoffice/js/templateView.js',
+                    'web/built/phporchestrabackoffice/js/showNode.js',
+                    'web/built/phporchestrabackoffice/js/showTemplate.js',
+                    'web/built/phporchestrabackoffice/js/tableviewLoader.js',
+                    'web/built/phporchestrabackoffice/js/nodeConstructor.js',
+                    'web/built/phporchestrabackoffice/js/treeAjaxDelete.js',
                     
                     // PHPORCHESTRAINDEXATION
                     'web/bundles/phporchestraindexation/js/*.js',
@@ -141,31 +153,27 @@ module.exports = function(grunt) {
                     'web/bundles/stfalcontinymce/js/*.js',
                     'web/bundles/stfalcontinymce/vendor/tinymce/*.js',
                     
-                    // COFFEE
-                    'web/built/*/js/*.js',
-                    'web/built/*/js/*/*.js',
-                    
                     // LEXIKTRANSLATION
                     'web/bundles/lexiktranslation/ng-table/ng-table.min.js',
-
+                    'web/built/phporchestratranslation/js/translationView.js',
+                    
                     // BACKBONE BO ROUTER
                     'web/bundles/phporchestrabackoffice/js/backboneRouter.js'
-
-                    ],
-                dest: 'web/built/all.js'
+                ],
+                dest: 'web/js/all.js'
             },
             bowercss: {
                 src: [
                     'bower_components/bootstrap/dist/css/bootstrap.css',
                     'bower_components/jquery-ui/themes/base/jquery-ui.css',
                     'bower_components/font-awesome/css/font-awesome.css',
-                    'bower_components/datatables/media/css/jquery.dataTables.css'                ],
+                    'bower_components/datatables/media/css/jquery.dataTables.css'
+                ],
                 dest: 'web/built/bower.css'
             },
             css: {
                 src: [
                     'web/built/bower.css',
-                    //'web/built/*/css/**.css',
                     'web/bundles/phporchestrabackoffice/smartadmin/smartadmin-production.css',
                     'web/bundles/phporchestrabackoffice/smartadmin/smartadmin-skins.css',
                     'web/built/phporchestracms/css/ribbon.css',
@@ -173,7 +181,7 @@ module.exports = function(grunt) {
                     'web/built/phporchestracms/css/template.css',
                     'web/bundles/lexiktranslation/ng-table/ng-table.min.css',
                 ],
-                dest: 'web/built/all.css'
+                dest: 'web/css/all.css'
             }
         },
 
