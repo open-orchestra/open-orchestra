@@ -858,12 +858,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-cms-bundle.git",
-                "reference": "2b0a7683fd465a5083b6d7ed0e45a46809624ada"
+                "reference": "6cd7c34200533ba75a95060d29165bd4ad896b17"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/2b0a7683fd465a5083b6d7ed0e45a46809624ada",
-                "reference": "2b0a7683fd465a5083b6d7ed0e45a46809624ada",
+                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/6cd7c34200533ba75a95060d29165bd4ad896b17",
+                "reference": "6cd7c34200533ba75a95060d29165bd4ad896b17",
                 "shasum": ""
             },
             "require": {
@@ -901,7 +901,7 @@
                 "source": "https://github.com/itkg/phporchestra-cms-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-cms-bundle/issues"
             },
-            "time": "2014-09-02 15:51:52"
+            "time": "2014-09-08 12:25:51"
         },
         {
             "name": "itkg/phporchestra-display-bundle",
@@ -1010,12 +1010,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-model-bundle.git",
-                "reference": "633b21f1cbfc57672603bebb47c0f55871ccc7f9"
+                "reference": "7f1f7389760e5bf4c57e792bff101931d7c543b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-model-bundle/zipball/633b21f1cbfc57672603bebb47c0f55871ccc7f9",
-                "reference": "633b21f1cbfc57672603bebb47c0f55871ccc7f9",
+                "url": "https://api.github.com/repos/itkg/phporchestra-model-bundle/zipball/7f1f7389760e5bf4c57e792bff101931d7c543b0",
+                "reference": "7f1f7389760e5bf4c57e792bff101931d7c543b0",
                 "shasum": ""
             },
             "require": {
@@ -1046,7 +1046,7 @@
                 "source": "https://github.com/itkg/phporchestra-model-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-model-bundle/issues"
             },
-            "time": "2014-09-02 14:36:26"
+            "time": "2014-09-05 15:16:59"
         },
         {
             "name": "itkg/phporchestra-translation-bundle",
@@ -1055,12 +1055,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-translation-bundle.git",
-                "reference": "7ad4f3ea3448f614ad3b0e4b2206bbabda2aaae8"
+                "reference": "c58412984e2d2c2224de91cd0244b82e9ad686c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-translation-bundle/zipball/7ad4f3ea3448f614ad3b0e4b2206bbabda2aaae8",
-                "reference": "7ad4f3ea3448f614ad3b0e4b2206bbabda2aaae8",
+                "url": "https://api.github.com/repos/itkg/phporchestra-translation-bundle/zipball/c58412984e2d2c2224de91cd0244b82e9ad686c9",
+                "reference": "c58412984e2d2c2224de91cd0244b82e9ad686c9",
                 "shasum": ""
             },
             "require": {
@@ -1086,7 +1086,7 @@
                 "source": "https://github.com/itkg/phporchestra-translation-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-translation-bundle/issues"
             },
-            "time": "2014-09-02 15:23:56"
+            "time": "2014-09-05 14:23:10"
         },
         {
             "name": "jms/metadata",
@@ -1969,17 +1969,17 @@
         },
         {
             "name": "stfalcon/tinymce-bundle",
-            "version": "v0.3.7",
+            "version": "v0.3.8",
             "target-dir": "Stfalcon/Bundle/TinymceBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stfalcon/TinymceBundle.git",
-                "reference": "94e8dc741321c34f5ed3612bbc88d12bdd9fdba0"
+                "reference": "773cc577f4f0770c2f6dd25928e0f08576b7f2d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stfalcon/TinymceBundle/zipball/94e8dc741321c34f5ed3612bbc88d12bdd9fdba0",
-                "reference": "94e8dc741321c34f5ed3612bbc88d12bdd9fdba0",
+                "url": "https://api.github.com/repos/stfalcon/TinymceBundle/zipball/773cc577f4f0770c2f6dd25928e0f08576b7f2d5",
+                "reference": "773cc577f4f0770c2f6dd25928e0f08576b7f2d5",
                 "shasum": ""
             },
             "require": {
@@ -2023,7 +2023,7 @@
                 "tinymce",
                 "wysiwyg"
             ],
-            "time": "2014-03-05 08:00:52"
+            "time": "2014-09-08 12:54:20"
         },
         {
             "name": "swiftmailer/swiftmailer",
