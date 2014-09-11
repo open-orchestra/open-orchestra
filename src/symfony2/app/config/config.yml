@@ -34,6 +34,7 @@ braincrafted_bootstrap:
         assetic: false
         knp_menu: false
         knp_paginator: false
+        twig: false
 
 services:
     twig.extension.text:
