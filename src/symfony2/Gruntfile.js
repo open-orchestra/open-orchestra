@@ -145,6 +145,7 @@ module.exports = function(grunt) {
                     'web/built/phporchestrabackoffice/js/tableviewLoader.js',
                     'web/built/phporchestrabackoffice/js/nodeConstructor.js',
                     'web/built/phporchestrabackoffice/js/treeAjaxDelete.js',
+                    'web/built/phporchestrabackoffice/js/configurableContentFormListener.js',
                     
                     // PHPORCHESTRAINDEXATION
                     'web/bundles/phporchestraindexation/js/*.js',
