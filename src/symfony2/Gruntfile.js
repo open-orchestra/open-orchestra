@@ -180,6 +180,7 @@ module.exports = function(grunt) {
                     'web/built/phporchestracms/css/ribbon.css',
                     'web/built/phporchestracms/css/phpfactory.css',
                     'web/built/phporchestracms/css/template.css',
+                    'web/built/phporchestrabackoffice/css/phporchestra.css',
                     'web/bundles/lexiktranslation/ng-table/ng-table.min.css',
                 ],
                 dest: 'web/css/all.css'
