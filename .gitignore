@@ -38,3 +38,5 @@
 #==[VAGRANT]==========================#
 .vagrant/
 
+#==[CODE COVERAGE]====================#
+/src/symfony2/coverage/
