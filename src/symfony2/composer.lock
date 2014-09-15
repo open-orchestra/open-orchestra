@@ -858,12 +858,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-cms-bundle.git",
-                "reference": "6cd7c34200533ba75a95060d29165bd4ad896b17"
+                "reference": "299c1753b7aeb74a6d57dfd29e6bd12b54075dca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/6cd7c34200533ba75a95060d29165bd4ad896b17",
-                "reference": "6cd7c34200533ba75a95060d29165bd4ad896b17",
+                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/299c1753b7aeb74a6d57dfd29e6bd12b54075dca",
+                "reference": "299c1753b7aeb74a6d57dfd29e6bd12b54075dca",
                 "shasum": ""
             },
             "require": {
@@ -877,7 +877,8 @@
             },
             "require-dev": {
                 "phake/phake": "*",
-                "phpunit/phpunit": "4.0.14"
+                "phpunit/phpunit": "4.0.14",
+                "scrutinizer/ocular": "1.1.1"
             },
             "type": "library",
             "autoload": {
@@ -901,7 +902,7 @@
                 "source": "https://github.com/itkg/phporchestra-cms-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-cms-bundle/issues"
             },
-            "time": "2014-09-08 12:25:51"
+            "time": "2014-09-15 09:08:12"
         },
         {
             "name": "itkg/phporchestra-display-bundle",
@@ -910,12 +911,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-display-bundle.git",
-                "reference": "e50b9418882659f2a90908ea4aec6fc4dd6ca5ca"
+                "reference": "cd01db97c7eabd0f1ab468c84cf47c36887da410"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-display-bundle/zipball/e50b9418882659f2a90908ea4aec6fc4dd6ca5ca",
-                "reference": "e50b9418882659f2a90908ea4aec6fc4dd6ca5ca",
+                "url": "https://api.github.com/repos/itkg/phporchestra-display-bundle/zipball/cd01db97c7eabd0f1ab468c84cf47c36887da410",
+                "reference": "cd01db97c7eabd0f1ab468c84cf47c36887da410",
                 "shasum": ""
             },
             "require": {
@@ -925,7 +926,8 @@
             },
             "require-dev": {
                 "phake/phake": "*",
-                "phpunit/phpunit": "4.0.14"
+                "phpunit/phpunit": "4.0.14",
+                "scrutinizer/ocular": "1.1.1"
             },
             "type": "library",
             "autoload": {
@@ -951,7 +953,7 @@
                 "source": "https://github.com/itkg/phporchestra-display-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-display-bundle/issues"
             },
-            "time": "2014-08-29 09:21:50"
+            "time": "2014-09-12 13:20:49"
         },
         {
             "name": "itkg/phporchestra-indexation-bundle",
@@ -960,12 +962,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-indexation-bundle.git",
-                "reference": "966907681d0e403b94588309e6fa4047f568cba0"
+                "reference": "b49994b397a6eef570112bbd4d486423219ee762"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-indexation-bundle/zipball/966907681d0e403b94588309e6fa4047f568cba0",
-                "reference": "966907681d0e403b94588309e6fa4047f568cba0",
+                "url": "https://api.github.com/repos/itkg/phporchestra-indexation-bundle/zipball/b49994b397a6eef570112bbd4d486423219ee762",
+                "reference": "b49994b397a6eef570112bbd4d486423219ee762",
                 "shasum": ""
             },
             "require": {
@@ -976,7 +978,8 @@
             },
             "require-dev": {
                 "phake/phake": "*",
-                "phpunit/phpunit": "4.0.14"
+                "phpunit/phpunit": "4.0.14",
+                "scrutinizer/ocular": "1.1.1"
             },
             "type": "library",
             "autoload": {
@@ -1001,7 +1004,7 @@
                 "source": "https://github.com/itkg/phporchestra-indexation-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-indexation-bundle/issues"
             },
-            "time": "2014-08-27 15:59:51"
+            "time": "2014-09-10 09:38:20"
         },
         {
             "name": "itkg/phporchestra-model-bundle",
@@ -1010,12 +1013,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-model-bundle.git",
-                "reference": "7f1f7389760e5bf4c57e792bff101931d7c543b0"
+                "reference": "0cb773dc472541315928a8387cb3a36b94f92be3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-model-bundle/zipball/7f1f7389760e5bf4c57e792bff101931d7c543b0",
-                "reference": "7f1f7389760e5bf4c57e792bff101931d7c543b0",
+                "url": "https://api.github.com/repos/itkg/phporchestra-model-bundle/zipball/0cb773dc472541315928a8387cb3a36b94f92be3",
+                "reference": "0cb773dc472541315928a8387cb3a36b94f92be3",
                 "shasum": ""
             },
             "require": {
@@ -1046,7 +1049,7 @@
                 "source": "https://github.com/itkg/phporchestra-model-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-model-bundle/issues"
             },
-            "time": "2014-09-05 15:16:59"
+            "time": "2014-09-15 08:43:01"
         },
         {
             "name": "itkg/phporchestra-translation-bundle",
@@ -1317,16 +1320,16 @@
         },
         {
             "name": "kriswallsmith/assetic",
-            "version": "v1.1.2",
+            "version": "v1.2.0-alpha1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kriswallsmith/assetic.git",
-                "reference": "735cffd3982c6e8cdebe292d5db39d077f65890f"
+                "reference": "5bea57990f7ddbeb3d57e7ef96eae9ddd56c4297"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/735cffd3982c6e8cdebe292d5db39d077f65890f",
-                "reference": "735cffd3982c6e8cdebe292d5db39d077f65890f",
+                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/5bea57990f7ddbeb3d57e7ef96eae9ddd56c4297",
+                "reference": "5bea57990f7ddbeb3d57e7ef96eae9ddd56c4297",
                 "shasum": ""
             },
             "require": {
@@ -1341,7 +1344,9 @@
                 "leafo/scssphp": "*",
                 "leafo/scssphp-compass": "*",
                 "mrclay/minify": "*",
+                "patchwork/jsqueeze": "*",
                 "phpunit/phpunit": "~3.7",
+                "psr/log": "~1.0",
                 "ptachoire/cssembed": "*",
                 "twig/twig": "~1.6"
             },
@@ -1349,13 +1354,14 @@
                 "leafo/lessphp": "Assetic provides the integration with the lessphp LESS compiler",
                 "leafo/scssphp": "Assetic provides the integration with the scssphp SCSS compiler",
                 "leafo/scssphp-compass": "Assetic provides the integration with the SCSS compass plugin",
+                "patchwork/jsqueeze": "Assetic provides the integration with the JSqueeze JavaScript compressor",
                 "ptachoire/cssembed": "Assetic provides the integration with phpcssembed to embed data uris",
                 "twig/twig": "Assetic provides the integration with the Twig templating engine"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1-dev"
+                    "dev-master": "1.2-dev"
                 }
             },
             "autoload": {
@@ -1384,7 +1390,7 @@
                 "compression",
                 "minification"
             ],
-            "time": "2013-07-19 00:03:27"
+            "time": "2014-07-08 11:30:40"
         },
         {
             "name": "lexik/translation-bundle",
@@ -1393,12 +1399,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lexik/LexikTranslationBundle.git",
-                "reference": "e677c0221aaa532d40e5e555ca433792bf10e87c"
+                "reference": "b61e87b87e1e664e6ed746ab2d9ffa569e4097bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lexik/LexikTranslationBundle/zipball/e677c0221aaa532d40e5e555ca433792bf10e87c",
-                "reference": "e677c0221aaa532d40e5e555ca433792bf10e87c",
+                "url": "https://api.github.com/repos/lexik/LexikTranslationBundle/zipball/b61e87b87e1e664e6ed746ab2d9ffa569e4097bb",
+                "reference": "b61e87b87e1e664e6ed746ab2d9ffa569e4097bb",
                 "shasum": ""
             },
             "require": {
@@ -1446,7 +1452,7 @@
                 "i18n",
                 "translation"
             ],
-            "time": "2014-08-25 14:44:48"
+            "time": "2014-09-09 07:33:17"
         },
         {
             "name": "monolog/monolog",
@@ -2081,21 +2087,20 @@
         },
         {
             "name": "symfony/assetic-bundle",
-            "version": "v2.3.0",
-            "target-dir": "Symfony/Bundle/AsseticBundle",
+            "version": "v2.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/AsseticBundle.git",
-                "reference": "146dd3cb46b302bd471560471c6aaa930483dac1"
+                "reference": "c07c0e500fe255ac0211eea9d0446c139f12da9c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/AsseticBundle/zipball/146dd3cb46b302bd471560471c6aaa930483dac1",
-                "reference": "146dd3cb46b302bd471560471c6aaa930483dac1",
+                "url": "https://api.github.com/repos/symfony/AsseticBundle/zipball/c07c0e500fe255ac0211eea9d0446c139f12da9c",
+                "reference": "c07c0e500fe255ac0211eea9d0446c139f12da9c",
                 "shasum": ""
             },
             "require": {
-                "kriswallsmith/assetic": "~1.1",
+                "kriswallsmith/assetic": "~1.2",
                 "php": ">=5.3.0",
                 "symfony/framework-bundle": "~2.1"
             },
@@ -2104,22 +2109,22 @@
                 "symfony/console": "~2.1",
                 "symfony/css-selector": "~2.1",
                 "symfony/dom-crawler": "~2.1",
-                "symfony/form": "~2.1",
                 "symfony/twig-bundle": "~2.1",
                 "symfony/yaml": "~2.1"
             },
             "suggest": {
+                "kriswallsmith/spork": "v0.2",
                 "symfony/twig-bundle": "~2.1"
             },
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.1.x-dev"
+                    "dev-master": "2.4-dev"
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Symfony\\Bundle\\AsseticBundle": ""
+                "psr-4": {
+                    "Symfony\\Bundle\\AsseticBundle\\": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -2140,7 +2145,7 @@
                 "compression",
                 "minification"
             ],
-            "time": "2013-05-16 05:32:23"
+            "time": "2014-09-03 23:37:07"
         },
         {
             "name": "symfony/icu",
