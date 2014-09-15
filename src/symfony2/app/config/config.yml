@@ -131,3 +131,6 @@ php_orchestra_model:
     list_index:
         class:                'PHPOrchestra\ModelBundle\Document\ListIndex'
         repository:           PHPOrchestra\ModelBundle\Repository\ListIndexRepository
+    status:
+        class:                PHPOrchestra\ModelBundle\Document\Status
+        repository:           PHPOrchestra\ModelBundle\Repository\StatusRepository
