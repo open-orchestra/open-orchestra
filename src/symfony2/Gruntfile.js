@@ -139,6 +139,8 @@ module.exports = function(grunt) {
                     'web/built/phporchestrabackoffice/js/blockView.js',
                     'web/built/phporchestrabackoffice/js/nodeView.js',
                     'web/built/phporchestrabackoffice/js/TableviewView.js',
+                    'web/built/phporchestrabackoffice/js/TableviewCollectionView.js',
+                    'web/built/phporchestrabackoffice/js/FullPageFormView.js',
                     'web/built/phporchestrabackoffice/js/templateView.js',
                     'web/built/phporchestrabackoffice/js/showNode.js',
                     'web/built/phporchestrabackoffice/js/showTemplate.js',
