@@ -107,3 +107,9 @@ lexik_translation:
 php_orchestra_indexation:
     indexation:
         - solr
+
+fos_user:
+    db_driver: mongodb
+    firewall_name: main
+
+    user_class: PHPOrchestra\UserBundle\Document\User

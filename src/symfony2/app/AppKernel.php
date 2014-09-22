@@ -22,6 +22,7 @@ class AppKernel extends Kernel
             new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),
             new Nelmio\SolariumBundle\NelmioSolariumBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
 
             new Braincrafted\Bundle\BootstrapBundle\BraincraftedBootstrapBundle(),
 
@@ -33,6 +34,7 @@ class AppKernel extends Kernel
             new PHPOrchestra\ApiBundle\PHPOrchestraApiBundle(),
             new PHPOrchestra\DisplayBundle\PHPOrchestraDisplayBundle(),
             new PHPOrchestra\BackofficeBundle\PHPOrchestraBackofficeBundle(),
+            new PHPOrchestra\UserBundle\PHPOrchestraUserBundle(),
 
             // Need parameters set by some of our bundles
             new Lexik\Bundle\TranslationBundle\LexikTranslationBundle(),
