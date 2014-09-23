@@ -21,3 +21,10 @@ php_orchestra_translation:
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+root:
+    pattern: /
+    defaults:
+        _controller: FrameworkBundle:Redirect:urlRedirect
+        path: /admin
+        permanent: true
