@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a2b0c6aef1ee94b1e99bfee16872513d",
+    "hash": "494da9507f781426d24493156ac23a36",
     "packages": [
         {
             "name": "braincrafted/bootstrap-bundle",
@@ -141,16 +141,16 @@
         },
         {
             "name": "doctrine/cache",
-            "version": "v1.3.0",
+            "version": "v1.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "e16d7adf45664a50fa86f515b6d5e7f670130449"
+                "reference": "cf483685798a72c93bf4206e3dd6358ea07d64e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/e16d7adf45664a50fa86f515b6d5e7f670130449",
-                "reference": "e16d7adf45664a50fa86f515b6d5e7f670130449",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/cf483685798a72c93bf4206e3dd6358ea07d64e7",
+                "reference": "cf483685798a72c93bf4206e3dd6358ea07d64e7",
                 "shasum": ""
             },
             "require": {
@@ -166,7 +166,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-master": "1.4.x-dev"
                 }
             },
             "autoload": {
@@ -180,17 +180,6 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan Wage",
-                    "email": "jonwage@gmail.com",
-                    "homepage": "http://www.jwage.com/",
-                    "role": "Creator"
-                },
-                {
-                    "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com",
-                    "homepage": "http://www.instaclick.com"
-                },
-                {
                     "name": "Roman Borschel",
                     "email": "roman@code-factory.org"
                 },
@@ -199,10 +188,16 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com"
+                },
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com"
+                },
+                {
                     "name": "Johannes Schmitt",
-                    "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
-                    "role": "Developer of wrapped JMSSerializerBundle"
+                    "email": "schmittjoh@gmail.com"
                 }
             ],
             "description": "Caching library offering an object-oriented API for many cache backends",
@@ -211,7 +206,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2013-10-25 19:04:14"
+            "time": "2014-09-17 14:24:04"
         },
         {
             "name": "doctrine/collections",
@@ -748,6 +743,154 @@
             "time": "2014-05-19 18:39:02"
         },
         {
+            "name": "friendsofsymfony/user-bundle",
+            "version": "dev-master",
+            "target-dir": "FOS/UserBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfSymfony/FOSUserBundle.git",
+                "reference": "349b637b2a5f6ec1e871d17b79e01b072fbb081c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/349b637b2a5f6ec1e871d17b79e01b072fbb081c",
+                "reference": "349b637b2a5f6ec1e871d17b79e01b072fbb081c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "symfony/form": "~2.1",
+                "symfony/framework-bundle": "~2.1",
+                "symfony/security-bundle": "~2.1"
+            },
+            "require-dev": {
+                "doctrine/doctrine-bundle": "*",
+                "swiftmailer/swiftmailer": ">=4.3, <6.0",
+                "symfony/validator": "~2.1",
+                "symfony/yaml": "~2.1",
+                "twig/twig": "~1.5",
+                "willdurand/propel-typehintable-behavior": "dev-master"
+            },
+            "suggest": {
+                "willdurand/propel-typehintable-behavior": "Needed when using the propel implementation"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "FOS\\UserBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christophe Coevoet",
+                    "email": "stof@notk.org"
+                },
+                {
+                    "name": "FriendsOfSymfony Community",
+                    "homepage": "https://github.com/friendsofsymfony/FOSUserBundle/contributors"
+                },
+                {
+                    "name": "Thibault Duplessis",
+                    "email": "thibault.duplessis@gmail.com"
+                }
+            ],
+            "description": "Symfony FOSUserBundle",
+            "homepage": "http://friendsofsymfony.github.com",
+            "keywords": [
+                "User management"
+            ],
+            "time": "2014-09-20 00:36:25"
+        },
+        {
+            "name": "gedmo/doctrine-extensions",
+            "version": "v2.3.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Atlantic18/DoctrineExtensions.git",
+                "reference": "35adcaae1a3f50d0d5b73aa50ed8fd28ee35ce54"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/35adcaae1a3f50d0d5b73aa50ed8fd28ee35ce54",
+                "reference": "35adcaae1a3f50d0d5b73aa50ed8fd28ee35ce54",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/common": ">=2.2,<2.5-dev",
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "doctrine/common": ">=2.4.0-RC3",
+                "doctrine/dbal": ">=2.4.0-RC1",
+                "doctrine/mongodb": ">=1.0.3",
+                "doctrine/mongodb-odm": ">=1.0.0-BETA9",
+                "doctrine/orm": ">=2.4.0-RC1",
+                "symfony/yaml": "2.3.1"
+            },
+            "suggest": {
+                "doctrine/dbal": ">=2.3.2",
+                "doctrine/mongodb": ">=1.0.1",
+                "doctrine/mongodb-odm": ">=1.0.0-BETA7",
+                "doctrine/orm": ">=2.3.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Gedmo\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David Buchmann",
+                    "email": "david@liip.ch"
+                },
+                {
+                    "name": "Gediminas Morkevicius",
+                    "email": "gediminas.morkevicius@gmail.com"
+                },
+                {
+                    "name": "Gustavo Falco",
+                    "email": "comfortablynumb84@gmail.com"
+                }
+            ],
+            "description": "Doctrine2 behavioral extensions",
+            "homepage": "http://gediminasm.org/",
+            "keywords": [
+                "Blameable",
+                "behaviors",
+                "doctrine2",
+                "extensions",
+                "gedmo",
+                "loggable",
+                "nestedset",
+                "sluggable",
+                "sortable",
+                "timestampable",
+                "translatable",
+                "tree",
+                "uploadable"
+            ],
+            "time": "2014-01-12 16:34:06"
+        },
+        {
             "name": "incenteev/composer-parameter-handler",
             "version": "v2.1.0",
             "target-dir": "Incenteev/ParameterHandler",
@@ -806,12 +949,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-base-bundle.git",
-                "reference": "64a4d52387bda7b1cbbadde4fc0a1c408a99da5a"
+                "reference": "d2075dc1820008d060d10c717d1a4c53433f404b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-base-bundle/zipball/64a4d52387bda7b1cbbadde4fc0a1c408a99da5a",
-                "reference": "64a4d52387bda7b1cbbadde4fc0a1c408a99da5a",
+                "url": "https://api.github.com/repos/itkg/phporchestra-base-bundle/zipball/d2075dc1820008d060d10c717d1a4c53433f404b",
+                "reference": "d2075dc1820008d060d10c717d1a4c53433f404b",
                 "shasum": ""
             },
             "require": {
@@ -849,7 +992,7 @@
                 "source": "https://github.com/itkg/phporchestra-base-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-base-bundle/issues"
             },
-            "time": "2014-08-20 14:57:11"
+            "time": "2014-09-22 15:39:12"
         },
         {
             "name": "itkg/phporchestra-cms-bundle",
@@ -858,16 +1001,17 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-cms-bundle.git",
-                "reference": "1ebc111570d9901df0317ec6828938170f2c247c"
+                "reference": "48b33d2a9244a78b5020870a3b40dce1745f4d25"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/1ebc111570d9901df0317ec6828938170f2c247c",
-                "reference": "1ebc111570d9901df0317ec6828938170f2c247c",
+                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/48b33d2a9244a78b5020870a3b40dce1745f4d25",
+                "reference": "48b33d2a9244a78b5020870a3b40dce1745f4d25",
                 "shasum": ""
             },
             "require": {
                 "braincrafted/bootstrap-bundle": "dev-master",
+                "friendsofsymfony/user-bundle": "~2.0@dev",
                 "itkg/phporchestra-base-bundle": "dev-master",
                 "itkg/phporchestra-display-bundle": "dev-master",
                 "itkg/phporchestra-indexation-bundle": "dev-master",
@@ -886,7 +1030,8 @@
                     "PHPOrchestra\\CMSBundle": "",
                     "PHPOrchestra\\BackofficeBundle": "",
                     "PHPOrchestra\\Backoffice": "",
-                    "PHPOrchestra\\ApiBundle": ""
+                    "PHPOrchestra\\ApiBundle": "",
+                    "PHPOrchestra\\UserBundle": ""
                 }
             },
             "license": [
@@ -902,7 +1047,7 @@
                 "source": "https://github.com/itkg/phporchestra-cms-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-cms-bundle/issues"
             },
-            "time": "2014-09-16 14:38:37"
+            "time": "2014-09-24 16:09:45"
         },
         {
             "name": "itkg/phporchestra-display-bundle",
@@ -911,12 +1056,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-display-bundle.git",
-                "reference": "9979a5384cc2448e8ae82389f1b84270c570f8d2"
+                "reference": "cfaa751bc1eaf210845d42972718c7ea677086b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-display-bundle/zipball/9979a5384cc2448e8ae82389f1b84270c570f8d2",
-                "reference": "9979a5384cc2448e8ae82389f1b84270c570f8d2",
+                "url": "https://api.github.com/repos/itkg/phporchestra-display-bundle/zipball/cfaa751bc1eaf210845d42972718c7ea677086b4",
+                "reference": "cfaa751bc1eaf210845d42972718c7ea677086b4",
                 "shasum": ""
             },
             "require": {
@@ -953,7 +1098,7 @@
                 "source": "https://github.com/itkg/phporchestra-display-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-display-bundle/issues"
             },
-            "time": "2014-09-16 08:08:12"
+            "time": "2014-09-23 14:05:23"
         },
         {
             "name": "itkg/phporchestra-indexation-bundle",
@@ -962,12 +1107,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-indexation-bundle.git",
-                "reference": "b49994b397a6eef570112bbd4d486423219ee762"
+                "reference": "bcae6b6b4c219107388cfa1a41021628765d0c5e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-indexation-bundle/zipball/b49994b397a6eef570112bbd4d486423219ee762",
-                "reference": "b49994b397a6eef570112bbd4d486423219ee762",
+                "url": "https://api.github.com/repos/itkg/phporchestra-indexation-bundle/zipball/bcae6b6b4c219107388cfa1a41021628765d0c5e",
+                "reference": "bcae6b6b4c219107388cfa1a41021628765d0c5e",
                 "shasum": ""
             },
             "require": {
@@ -1004,7 +1149,7 @@
                 "source": "https://github.com/itkg/phporchestra-indexation-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-indexation-bundle/issues"
             },
-            "time": "2014-09-10 09:38:20"
+            "time": "2014-09-22 15:38:46"
         },
         {
             "name": "itkg/phporchestra-model-bundle",
@@ -1013,18 +1158,19 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-model-bundle.git",
-                "reference": "fe89e2efad8e01c8ccf6d9a37df62e5d6277feb5"
+                "reference": "7b6c29b3f91045175a5fbc71a1a6277e6eeca96a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-model-bundle/zipball/fe89e2efad8e01c8ccf6d9a37df62e5d6277feb5",
-                "reference": "fe89e2efad8e01c8ccf6d9a37df62e5d6277feb5",
+                "url": "https://api.github.com/repos/itkg/phporchestra-model-bundle/zipball/7b6c29b3f91045175a5fbc71a1a6277e6eeca96a",
+                "reference": "7b6c29b3f91045175a5fbc71a1a6277e6eeca96a",
                 "shasum": ""
             },
             "require": {
                 "doctrine/data-fixtures": "1.0.0",
                 "doctrine/mongodb-odm": "~1.0",
-                "doctrine/mongodb-odm-bundle": "~3.0"
+                "doctrine/mongodb-odm-bundle": "~3.0",
+                "symfony/validator": "~2"
             },
             "require-dev": {
                 "phake/phake": "*",
@@ -1049,7 +1195,7 @@
                 "source": "https://github.com/itkg/phporchestra-model-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-model-bundle/issues"
             },
-            "time": "2014-09-16 08:42:43"
+            "time": "2014-09-24 16:14:23"
         },
         {
             "name": "itkg/phporchestra-translation-bundle",
@@ -1399,12 +1545,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lexik/LexikTranslationBundle.git",
-                "reference": "b61e87b87e1e664e6ed746ab2d9ffa569e4097bb"
+                "reference": "cfc61384ab113caf9b11690965d9fac270ab8906"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lexik/LexikTranslationBundle/zipball/b61e87b87e1e664e6ed746ab2d9ffa569e4097bb",
-                "reference": "b61e87b87e1e664e6ed746ab2d9ffa569e4097bb",
+                "url": "https://api.github.com/repos/lexik/LexikTranslationBundle/zipball/cfc61384ab113caf9b11690965d9fac270ab8906",
+                "reference": "cfc61384ab113caf9b11690965d9fac270ab8906",
                 "shasum": ""
             },
             "require": {
@@ -1452,7 +1598,7 @@
                 "i18n",
                 "translation"
             ],
-            "time": "2014-09-09 07:33:17"
+            "time": "2014-09-19 07:05:54"
         },
         {
             "name": "monolog/monolog",
@@ -1814,17 +1960,17 @@
         },
         {
             "name": "sensio/generator-bundle",
-            "version": "v2.3.5",
+            "version": "v2.4.0",
             "target-dir": "Sensio/Bundle/GeneratorBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioGeneratorBundle.git",
-                "reference": "8b7a33aa3d22388443b6de0b0cf184122e9f60d2"
+                "reference": "d5c0b996a46276d50943a80f95a46b59215a0e68"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioGeneratorBundle/zipball/8b7a33aa3d22388443b6de0b0cf184122e9f60d2",
-                "reference": "8b7a33aa3d22388443b6de0b0cf184122e9f60d2",
+                "url": "https://api.github.com/repos/sensiolabs/SensioGeneratorBundle/zipball/d5c0b996a46276d50943a80f95a46b59215a0e68",
+                "reference": "d5c0b996a46276d50943a80f95a46b59215a0e68",
                 "shasum": ""
             },
             "require": {
@@ -1854,13 +2000,11 @@
             "authors": [
                 {
                     "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com",
-                    "homepage": "http://fabien.potencier.org",
-                    "role": "Lead Developer"
+                    "email": "fabien@symfony.com"
                 }
             ],
             "description": "This bundle generates code for you",
-            "time": "2014-04-28 14:01:06"
+            "time": "2014-09-22 14:56:14"
         },
         {
             "name": "snc/redis-bundle",
@@ -2032,17 +2176,79 @@
             "time": "2014-09-08 12:54:20"
         },
         {
-            "name": "swiftmailer/swiftmailer",
-            "version": "v5.2.1",
+            "name": "stof/doctrine-extensions-bundle",
+            "version": "v1.1.0",
+            "target-dir": "Stof/DoctrineExtensionsBundle",
             "source": {
                 "type": "git",
-                "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "2b9af56cc676c338d52fca4c657e5bdff73bb7af"
+                "url": "https://github.com/stof/StofDoctrineExtensionsBundle.git",
+                "reference": "0aa21137bcae43241ffa047946bbdd46b91a2b0a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/2b9af56cc676c338d52fca4c657e5bdff73bb7af",
-                "reference": "2b9af56cc676c338d52fca4c657e5bdff73bb7af",
+                "url": "https://api.github.com/repos/stof/StofDoctrineExtensionsBundle/zipball/0aa21137bcae43241ffa047946bbdd46b91a2b0a",
+                "reference": "0aa21137bcae43241ffa047946bbdd46b91a2b0a",
+                "shasum": ""
+            },
+            "require": {
+                "gedmo/doctrine-extensions": "2.3.*",
+                "php": ">=5.3.2",
+                "symfony/framework-bundle": "~2.1"
+            },
+            "suggest": {
+                "doctrine/doctrine-bundle": "to use the ORM extensions",
+                "doctrine/mongodb-odm-bundle": "to use the MongoDB ODM extensions"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Stof\\DoctrineExtensionsBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christophe Coevoet",
+                    "email": "stof@notk.org"
+                }
+            ],
+            "description": "Integration of the gedmo/doctrine-extensions with Symfony2",
+            "homepage": "https://github.com/stof/StofDoctrineExtensionsBundle",
+            "keywords": [
+                "behaviors",
+                "doctrine2",
+                "extensions",
+                "gedmo",
+                "loggable",
+                "nestedset",
+                "sluggable",
+                "sortable",
+                "timestampable",
+                "translatable",
+                "tree"
+            ],
+            "time": "2013-06-23 16:53:41"
+        },
+        {
+            "name": "swiftmailer/swiftmailer",
+            "version": "v5.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/swiftmailer/swiftmailer.git",
+                "reference": "e02f71a35436af4bd58a1bd90116089e632e29e1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/e02f71a35436af4bd58a1bd90116089e632e29e1",
+                "reference": "e02f71a35436af4bd58a1bd90116089e632e29e1",
                 "shasum": ""
             },
             "require": {
@@ -2068,13 +2274,11 @@
             ],
             "authors": [
                 {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com",
-                    "homepage": "http://fabien.potencier.org",
-                    "role": "Lead Developer"
+                    "name": "Chris Corbyn"
                 },
                 {
-                    "name": "Chris Corbyn"
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
                 }
             ],
             "description": "Swiftmailer, free feature-rich PHP mailer",
@@ -2083,7 +2287,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2014-06-13 11:44:54"
+            "time": "2014-09-20 07:17:36"
         },
         {
             "name": "symfony/assetic-bundle",
@@ -3172,6 +3376,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "stfalcon/tinymce-bundle": 20,
+        "stof/doctrine-extensions-bundle": 20,
         "itkg/phporchestra-cms-bundle": 20
     },
     "prefer-stable": true,
