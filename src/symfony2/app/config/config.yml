@@ -111,5 +111,10 @@ php_orchestra_indexation:
 fos_user:
     db_driver: mongodb
     firewall_name: main
-
     user_class: PHPOrchestra\UserBundle\Document\User
+
+stof_doctrine_extensions:
+    mongodb:
+        default:
+            blameable: true
+            timestampable: true

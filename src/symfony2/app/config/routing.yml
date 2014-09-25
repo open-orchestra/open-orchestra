@@ -3,6 +3,11 @@ php_orchestra_backoffice:
     type: annotation
     prefix: /admin
 
+php_orchestra_user:
+    resource: "@PHPOrchestraUserBundle/Controller"
+    type: annotation
+    prefix: /user
+
 php_orchestra_display:
     resource: "@PHPOrchestraDisplayBundle/Controller"
     type: annotation
