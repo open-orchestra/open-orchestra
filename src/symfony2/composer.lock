@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "494da9507f781426d24493156ac23a36",
+    "hash": "893081756cf05ba18b1376948a3280d8",
     "packages": [
         {
             "name": "braincrafted/bootstrap-bundle",
@@ -68,16 +68,16 @@
         },
         {
             "name": "doctrine/annotations",
-            "version": "v1.2.0",
+            "version": "v1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/annotations.git",
-                "reference": "d9b1a37e9351ddde1f19f09a02e3d6ee92e82efd"
+                "reference": "6a6bec0670bb6e71a263b08bc1b98ea242928633"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/annotations/zipball/d9b1a37e9351ddde1f19f09a02e3d6ee92e82efd",
-                "reference": "d9b1a37e9351ddde1f19f09a02e3d6ee92e82efd",
+                "url": "https://api.github.com/repos/doctrine/annotations/zipball/6a6bec0670bb6e71a263b08bc1b98ea242928633",
+                "reference": "6a6bec0670bb6e71a263b08bc1b98ea242928633",
                 "shasum": ""
             },
             "require": {
@@ -105,17 +105,6 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan Wage",
-                    "email": "jonwage@gmail.com",
-                    "homepage": "http://www.jwage.com/",
-                    "role": "Creator"
-                },
-                {
-                    "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com",
-                    "homepage": "http://www.instaclick.com"
-                },
-                {
                     "name": "Roman Borschel",
                     "email": "roman@code-factory.org"
                 },
@@ -124,10 +113,16 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com"
+                },
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com"
+                },
+                {
                     "name": "Johannes Schmitt",
-                    "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
-                    "role": "Developer of wrapped JMSSerializerBundle"
+                    "email": "schmittjoh@gmail.com"
                 }
             ],
             "description": "Docblock Annotations Parser",
@@ -137,7 +132,7 @@
                 "docblock",
                 "parser"
             ],
-            "time": "2014-07-06 15:52:21"
+            "time": "2014-09-25 16:45:30"
         },
         {
             "name": "doctrine/cache",
@@ -949,12 +944,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-base-bundle.git",
-                "reference": "d2075dc1820008d060d10c717d1a4c53433f404b"
+                "reference": "60eb6765423484df8c9800f016b57f165bf219f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-base-bundle/zipball/d2075dc1820008d060d10c717d1a4c53433f404b",
-                "reference": "d2075dc1820008d060d10c717d1a4c53433f404b",
+                "url": "https://api.github.com/repos/itkg/phporchestra-base-bundle/zipball/60eb6765423484df8c9800f016b57f165bf219f5",
+                "reference": "60eb6765423484df8c9800f016b57f165bf219f5",
                 "shasum": ""
             },
             "require": {
@@ -992,7 +987,7 @@
                 "source": "https://github.com/itkg/phporchestra-base-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-base-bundle/issues"
             },
-            "time": "2014-09-22 15:39:12"
+            "time": "2014-09-25 16:08:17"
         },
         {
             "name": "itkg/phporchestra-cms-bundle",
@@ -1001,12 +996,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-cms-bundle.git",
-                "reference": "48b33d2a9244a78b5020870a3b40dce1745f4d25"
+                "reference": "df88def6e230cec3a720170580655f739a0bf268"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/48b33d2a9244a78b5020870a3b40dce1745f4d25",
-                "reference": "48b33d2a9244a78b5020870a3b40dce1745f4d25",
+                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/df88def6e230cec3a720170580655f739a0bf268",
+                "reference": "df88def6e230cec3a720170580655f739a0bf268",
                 "shasum": ""
             },
             "require": {
@@ -1047,7 +1042,7 @@
                 "source": "https://github.com/itkg/phporchestra-cms-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-cms-bundle/issues"
             },
-            "time": "2014-09-24 16:09:45"
+            "time": "2014-09-26 12:21:55"
         },
         {
             "name": "itkg/phporchestra-display-bundle",
@@ -1056,12 +1051,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-display-bundle.git",
-                "reference": "cfaa751bc1eaf210845d42972718c7ea677086b4"
+                "reference": "d7b8e624d5abe112d8ef5c7cf84b2f4a99cc34cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-display-bundle/zipball/cfaa751bc1eaf210845d42972718c7ea677086b4",
-                "reference": "cfaa751bc1eaf210845d42972718c7ea677086b4",
+                "url": "https://api.github.com/repos/itkg/phporchestra-display-bundle/zipball/d7b8e624d5abe112d8ef5c7cf84b2f4a99cc34cc",
+                "reference": "d7b8e624d5abe112d8ef5c7cf84b2f4a99cc34cc",
                 "shasum": ""
             },
             "require": {
@@ -1098,7 +1093,7 @@
                 "source": "https://github.com/itkg/phporchestra-display-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-display-bundle/issues"
             },
-            "time": "2014-09-23 14:05:23"
+            "time": "2014-09-25 16:33:51"
         },
         {
             "name": "itkg/phporchestra-indexation-bundle",
@@ -1107,12 +1102,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-indexation-bundle.git",
-                "reference": "bcae6b6b4c219107388cfa1a41021628765d0c5e"
+                "reference": "2f211afe640c282f182d02917601a1b12f62f9d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-indexation-bundle/zipball/bcae6b6b4c219107388cfa1a41021628765d0c5e",
-                "reference": "bcae6b6b4c219107388cfa1a41021628765d0c5e",
+                "url": "https://api.github.com/repos/itkg/phporchestra-indexation-bundle/zipball/2f211afe640c282f182d02917601a1b12f62f9d6",
+                "reference": "2f211afe640c282f182d02917601a1b12f62f9d6",
                 "shasum": ""
             },
             "require": {
@@ -1149,7 +1144,7 @@
                 "source": "https://github.com/itkg/phporchestra-indexation-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-indexation-bundle/issues"
             },
-            "time": "2014-09-22 15:38:46"
+            "time": "2014-09-26 11:45:25"
         },
         {
             "name": "itkg/phporchestra-model-bundle",
@@ -1158,18 +1153,19 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-model-bundle.git",
-                "reference": "7b6c29b3f91045175a5fbc71a1a6277e6eeca96a"
+                "reference": "1b2360419aaefe266fc7c1f8235c45427d0ff1a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-model-bundle/zipball/7b6c29b3f91045175a5fbc71a1a6277e6eeca96a",
-                "reference": "7b6c29b3f91045175a5fbc71a1a6277e6eeca96a",
+                "url": "https://api.github.com/repos/itkg/phporchestra-model-bundle/zipball/1b2360419aaefe266fc7c1f8235c45427d0ff1a3",
+                "reference": "1b2360419aaefe266fc7c1f8235c45427d0ff1a3",
                 "shasum": ""
             },
             "require": {
                 "doctrine/data-fixtures": "1.0.0",
                 "doctrine/mongodb-odm": "~1.0",
                 "doctrine/mongodb-odm-bundle": "~3.0",
+                "stof/doctrine-extensions-bundle": "~1.1@dev",
                 "symfony/validator": "~2"
             },
             "require-dev": {
@@ -1195,7 +1191,7 @@
                 "source": "https://github.com/itkg/phporchestra-model-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-model-bundle/issues"
             },
-            "time": "2014-09-24 16:14:23"
+            "time": "2014-09-26 12:21:15"
         },
         {
             "name": "itkg/phporchestra-translation-bundle",
@@ -1545,12 +1541,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lexik/LexikTranslationBundle.git",
-                "reference": "cfc61384ab113caf9b11690965d9fac270ab8906"
+                "reference": "087da2bca80011b15957d8f06c57ae308f435f66"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lexik/LexikTranslationBundle/zipball/cfc61384ab113caf9b11690965d9fac270ab8906",
-                "reference": "cfc61384ab113caf9b11690965d9fac270ab8906",
+                "url": "https://api.github.com/repos/lexik/LexikTranslationBundle/zipball/087da2bca80011b15957d8f06c57ae308f435f66",
+                "reference": "087da2bca80011b15957d8f06c57ae308f435f66",
                 "shasum": ""
             },
             "require": {
@@ -1598,7 +1594,7 @@
                 "i18n",
                 "translation"
             ],
-            "time": "2014-09-19 07:05:54"
+            "time": "2014-09-25 09:55:29"
         },
         {
             "name": "monolog/monolog",
@@ -3376,7 +3372,6 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "stfalcon/tinymce-bundle": 20,
-        "stof/doctrine-extensions-bundle": 20,
         "itkg/phporchestra-cms-bundle": 20
     },
     "prefer-stable": true,
