@@ -1,22 +1,23 @@
 #==[Symfony]==========================#
-/src/symfony2/app/bootstrap.php.cache
-/src/symfony2/web/bundles/
-/src/symfony2/web/images/
-/src/symfony2/web/img/
-/src/symfony2/app/cache/*
-/src/symfony2/app/logs/*
-/src/symfony2/app/config/parameters.yml
-!/src/symfony2/app/cache/.gitkeep
-!/src/symfony2/app/logs/.gitkeep
+/app/bootstrap.php.cache
+/bin
+/web/bundles/
+/web/images/
+/web/img/
+/app/cache/*
+/app/logs/*
+/app/config/parameters.yml
+!/app/cache/.gitkeep
+!/app/logs/.gitkeep
 
 #==[Vendor]===========================#
-/src/symfony2/vendor/*
-/src/symfony2/node_modules/*
-/src/symfony2/bower_components/*
-/src/symfony2/web/built/*
-/src/symfony2/web/js/*
-/src/symfony2/web/css/*
-/src/symfony2/web/fonts/*
+/vendor/*
+/node_modules/*
+/bower_components/*
+/web/built/*
+/web/js/*
+/web/css/*
+/web/fonts/*
 
 #==[IDE]==============================#
 .buildpath
@@ -30,13 +31,13 @@
 /build/coverage
 /build/logs
 /build/pdepend
-/src/symfony2/cov
+/cov
 
 #==[MOADMIN]==========================#
-/src/symfony2/moadmin.php
+/moadmin.php
 
 #==[VAGRANT]==========================#
 .vagrant/
 
 #==[CODE COVERAGE]====================#
-/src/symfony2/coverage/
+/coverage/

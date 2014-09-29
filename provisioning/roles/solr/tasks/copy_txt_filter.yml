@@ -1,7 +1,7 @@
 ---
  - name: Copy protwords.txt
-   copy: src=../conf/solr/protwords.txt dest=/usr/local/src/solr-4.9.0/example/solr/collection1/conf/protwords.txt force=yes
+   copy: src=../app/Resources/conf/solr/protwords.txt dest=/usr/local/src/solr-4.9.0/example/solr/collection1/conf/protwords.txt force=yes
  - name: Copy stopwords.txt
-   copy: src=../conf/solr/stopwords.txt dest=/usr/local/src/solr-4.9.0/example/solr/collection1/conf/stopwords.txt force=yes
+   copy: src=../app/Resources/conf/solr/stopwords.txt dest=/usr/local/src/solr-4.9.0/example/solr/collection1/conf/stopwords.txt force=yes
  - name: Copy synonyms.txt
-   copy: src=../conf/solr/synonyms.txt dest=/usr/local/src/solr-4.9.0/example/solr/collection1/conf/synonyms.txt force=yes
+   copy: src=../app/Resources/conf/solr/synonyms.txt dest=/usr/local/src/solr-4.9.0/example/solr/collection1/conf/synonyms.txt force=yes
