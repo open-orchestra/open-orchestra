@@ -14,14 +14,12 @@ cache:
     - ~/.composer/cache
 
 before_install:
-  - phpenv config-add build/travis/php.ini
+  - phpenv config-add .travis.php.ini
 
 install:
-  - cd src/symfony2
   - composer install
 
 before_script:
   - php app/console doc:mo:f:l -e=test
-  - cd ../../
 
-script: phpunit -c src/symfony2/app/
+script: phpunit -c app/
