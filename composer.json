@@ -42,6 +42,7 @@
         "itkg/phporchestra-cms-bundle": "dev-master"
     },
     "require-dev": {
+        "jmikola/geojson": "~1.0",
         "phpunit/phpunit": "4.0.14",
         "phake/phake": "*"
     },
