@@ -1,24 +1,27 @@
 <VirtualHost *:{{ item.value.port }}>
-	ServerAdmin webmaster@localhost
-	ServerName {{ item.value.serverName }}
+    ServerAdmin webmaster@localhost
+    ServerName {{ item.value.serverName }}
 
-	DocumentRoot {{ item.value.docRoot }}
-	<Directory />
-		Options FollowSymLinks
-		AllowOverride None
-	</Directory>
-	<Directory {{ item.value.docRoot }}>
-		Options -Indexes +FollowSymLinks -MultiViews
-		AllowOverride All
-		Order allow,deny
-		allow from all
-	</Directory>
+    DocumentRoot {{ item.value.docRoot }}
+    {% if item.value.siteId is defined %}
+    SetEnv SYMFONY__SITE {{ item.value.siteId }}
+    {% endif %}
+    <Directory />
+        Options FollowSymLinks
+        AllowOverride None
+    </Directory>
+    <Directory {{ item.value.docRoot }}>
+        Options -Indexes +FollowSymLinks -MultiViews
+        AllowOverride All
+        Order allow,deny
+        allow from all
+    </Directory>
 
-	ErrorLog /var/log/apache2/{{ item.value.errorLog }}
+    ErrorLog /var/log/apache2/{{ item.value.errorLog }}
 
-	# Possible values include: debug, info, notice, warn, error, crit,
-	# alert, emerg.
-	LogLevel warn
+    # Possible values include: debug, info, notice, warn, error, crit,
+    # alert, emerg.
+    LogLevel warn
 
-	CustomLog /var/log/apache2/{{ item.value.accessLog }} combined
+    CustomLog /var/log/apache2/{{ item.value.accessLog }} combined
 </VirtualHost>
