@@ -996,12 +996,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-cms-bundle.git",
-                "reference": "c958c0dc63f003b737a5d095f5df8c72f48ad4fb"
+                "reference": "e15da62c3faae3fd4f390cbe973a5724dae75c07"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/c958c0dc63f003b737a5d095f5df8c72f48ad4fb",
-                "reference": "c958c0dc63f003b737a5d095f5df8c72f48ad4fb",
+                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/e15da62c3faae3fd4f390cbe973a5724dae75c07",
+                "reference": "e15da62c3faae3fd4f390cbe973a5724dae75c07",
                 "shasum": ""
             },
             "require": {
@@ -1042,7 +1042,7 @@
                 "source": "https://github.com/itkg/phporchestra-cms-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-cms-bundle/issues"
             },
-            "time": "2014-09-30 15:06:11"
+            "time": "2014-10-03 09:34:40"
         },
         {
             "name": "itkg/phporchestra-display-bundle",
@@ -1051,12 +1051,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-display-bundle.git",
-                "reference": "3ebaa0dc70b7cf3335d48b9082b4e66226aafaa6"
+                "reference": "808964a76e336330858c8c5bfcb700c6531e4ea8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-display-bundle/zipball/3ebaa0dc70b7cf3335d48b9082b4e66226aafaa6",
-                "reference": "3ebaa0dc70b7cf3335d48b9082b4e66226aafaa6",
+                "url": "https://api.github.com/repos/itkg/phporchestra-display-bundle/zipball/808964a76e336330858c8c5bfcb700c6531e4ea8",
+                "reference": "808964a76e336330858c8c5bfcb700c6531e4ea8",
                 "shasum": ""
             },
             "require": {
@@ -1093,7 +1093,7 @@
                 "source": "https://github.com/itkg/phporchestra-display-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-display-bundle/issues"
             },
-            "time": "2014-09-29 12:51:31"
+            "time": "2014-10-02 15:51:08"
         },
         {
             "name": "itkg/phporchestra-indexation-bundle",
@@ -1153,12 +1153,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-model-bundle.git",
-                "reference": "6472e842841a030868e9f3d735c5524487b373ec"
+                "reference": "e81ccba7ed661e17fb7555728783989841d3aecf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-model-bundle/zipball/6472e842841a030868e9f3d735c5524487b373ec",
-                "reference": "6472e842841a030868e9f3d735c5524487b373ec",
+                "url": "https://api.github.com/repos/itkg/phporchestra-model-bundle/zipball/e81ccba7ed661e17fb7555728783989841d3aecf",
+                "reference": "e81ccba7ed661e17fb7555728783989841d3aecf",
                 "shasum": ""
             },
             "require": {
@@ -1192,7 +1192,7 @@
                 "source": "https://github.com/itkg/phporchestra-model-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-model-bundle/issues"
             },
-            "time": "2014-09-30 12:21:55"
+            "time": "2014-10-03 09:34:55"
         },
         {
             "name": "itkg/phporchestra-translation-bundle",
@@ -1542,12 +1542,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lexik/LexikTranslationBundle.git",
-                "reference": "087da2bca80011b15957d8f06c57ae308f435f66"
+                "reference": "4ace7286660e2cfe7546d3fad66588e5eadb0bda"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lexik/LexikTranslationBundle/zipball/087da2bca80011b15957d8f06c57ae308f435f66",
-                "reference": "087da2bca80011b15957d8f06c57ae308f435f66",
+                "url": "https://api.github.com/repos/lexik/LexikTranslationBundle/zipball/4ace7286660e2cfe7546d3fad66588e5eadb0bda",
+                "reference": "4ace7286660e2cfe7546d3fad66588e5eadb0bda",
                 "shasum": ""
             },
             "require": {
@@ -1555,11 +1555,15 @@
                 "symfony/framework-bundle": "~2.3"
             },
             "require-dev": {
+                "doctrine/data-fixtures": "1.0.*",
+                "doctrine/mongodb-odm": "dev-master",
+                "doctrine/mongodb-odm-bundle": "dev-master",
+                "doctrine/orm": "2.4.*",
                 "propel/propel-bundle": "~1.2"
             },
             "suggest": {
                 "doctrine/mongodb-odm": "1.0.*@dev",
-                "doctrine/orm": ">=2.1",
+                "doctrine/orm": ">=2.4",
                 "propel/propel-bundle": "~1.2"
             },
             "type": "symfony-bundle",
@@ -1595,7 +1599,7 @@
                 "i18n",
                 "translation"
             ],
-            "time": "2014-09-25 09:55:29"
+            "time": "2014-10-02 11:22:32"
         },
         {
             "name": "monolog/monolog",
