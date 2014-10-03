@@ -996,12 +996,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-cms-bundle.git",
-                "reference": "e15da62c3faae3fd4f390cbe973a5724dae75c07"
+                "reference": "0da02c33051fa5ed85c637f6836cf71591b546ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/e15da62c3faae3fd4f390cbe973a5724dae75c07",
-                "reference": "e15da62c3faae3fd4f390cbe973a5724dae75c07",
+                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/0da02c33051fa5ed85c637f6836cf71591b546ee",
+                "reference": "0da02c33051fa5ed85c637f6836cf71591b546ee",
                 "shasum": ""
             },
             "require": {
@@ -1042,7 +1042,7 @@
                 "source": "https://github.com/itkg/phporchestra-cms-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-cms-bundle/issues"
             },
-            "time": "2014-10-03 09:34:40"
+            "time": "2014-10-03 13:05:28"
         },
         {
             "name": "itkg/phporchestra-display-bundle",
@@ -3430,19 +3430,13 @@
             "time": "2014-03-07 15:35:33"
         }
     ],
-    "aliases": [
-
-    ],
+    "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
         "stfalcon/tinymce-bundle": 20,
         "itkg/phporchestra-cms-bundle": 20
     },
     "prefer-stable": true,
-    "platform": [
-
-    ],
-    "platform-dev": [
-
-    ]
+    "platform": [],
+    "platform-dev": []
 }
