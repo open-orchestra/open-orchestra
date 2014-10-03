@@ -18,21 +18,30 @@ We are going to use the vagrant project to manage all the vitualbox
     dpkg -i vagrant_1.6.3_x86_64.deb
 
 ## Install ansible
-All the project server configuration is going to be handled by ansible
+All the project server configuration is going to be handled by ansible.
+To avoid version troubles, switch to release 1.7.1
 
     git clone git://github.com/ansible/ansible.git
     cd ./ansible
+    git checkout -b release1.7.1 origin/release1.7.1
     source ./hacking/env-setup
 
 Go on the project page for more inforation : http://www.ansible.com
 
-## Clone the front repository
+## Clone the repositories
 In the parent directory of the current directory run
 
     git clone git@github.com:itkg/phporchestra-front-demo.git
+    git clone git@github.com:itkg/phporchestra.git
 
 ## Install roles from ansible-galaxy
 Install roles needed to launch the box
+As a prerequisite, update your python modules if required with those two
+
+    aptitude install python-yaml
+    aptitude install python-jinja2
+
+Then go into phporchestra directory
 
     ansible-galaxy install --role-file=provisioning/galaxy.yml
 
@@ -46,19 +55,20 @@ Run all the provisionning scripts
 
 ## Prepare the projet
 You need to install all the php dependancies before starting the project
+Start by downloading composer
 
     vagrant ssh
     cd /var/www/phporchestra
+    php -r "readfile('https://getcomposer.org/installer');" | php
+
+Then install the project
+
     ./composer.phar install
 
 ## Install the assets
 We are using npm to manage some server side javascript librairies and bower to manage the client side librairies
 
-Connect to the vagrant box
-
-    vagrant ssh
-
-Go in the project directory
+Still connected to the vagrant box, go in the project directory inside the box
 
     cd /var/www/phporchestra
 
