@@ -14,7 +14,7 @@ set :model_manager, "doctrine"
 # composer settings
 set :composer_bin,      "/usr/local/bin/composer"
 set :use_composer,      true
-set :update_vendors,    true
+set :update_vendors,    false
 
 set :shared_files,      ["app/config/parameters.yml"]
 set :shared_children,     [app_path + "/logs", web_path + "/uploads", "vendor", "node_modules", "bower_components"]
@@ -30,3 +30,18 @@ set :use_set_permissions,   true
 
 # Be more verbose by uncommenting the following line
 # logger.level = Logger::MAX_LEVEL
+
+# deployment tasks
+after "symfony:composer:install", "npm:install"
+after "npm:install", "grunt:generate"
+after "deploy", "deploy:cleanup"
+
+
+namespace :grunt do
+    desc "Generate all assets with grunt"
+    task :generate do
+        capifony_pretty_print "--> Generating all assets with grunt"
+        run "cd #{latest_release} && ./node_modules/grunt-cli/bin/grunt"
+        capifony_puts_ok
+    end
+end
