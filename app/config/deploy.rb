@@ -36,6 +36,14 @@ after "symfony:composer:install", "npm:install"
 after "npm:install", "grunt:generate"
 after "deploy", "deploy:cleanup"
 
+namespace :npm do
+    desc "Install npm packages"
+    task :install do
+        capifony_pretty_print "--> Install npm packages"
+        run "cd #{latest_release} && npm install"
+        capifony_puts_ok
+    end
+end
 
 namespace :grunt do
     desc "Generate all assets with grunt"
