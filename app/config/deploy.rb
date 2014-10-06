@@ -2,7 +2,7 @@ set :application, "PhpOrchestra-front-bundle"
 set :domain,      "php_orchestra_backoffice_inte"
 set :deploy_to,   "/var/www/backoffice-phporchestra"
 set :app_path,    "app"
-set :user,        "root"
+set :user,        "php_orchestra_backoffice_inte"
 
 set :repository,  "git@github.com:itkg/phporchestra.git"
 set :scm,         :git
