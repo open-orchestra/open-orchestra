@@ -6,7 +6,7 @@ php_orchestra_backoffice:
 php_orchestra_user:
     resource: "@PHPOrchestraUserBundle/Controller"
     type: annotation
-    prefix: /user
+    prefix: /admin
 
 php_orchestra_display:
     resource: "@PHPOrchestraDisplayBundle/Controller"
