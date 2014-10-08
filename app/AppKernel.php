@@ -25,7 +25,7 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\MongoDBBundle\DoctrineMongoDBBundle(),
             new Snc\RedisBundle\SncRedisBundle(),
 
-            new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),
+            new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
             new Nelmio\SolariumBundle\NelmioSolariumBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle(),
             new FOS\UserBundle\FOSUserBundle(),

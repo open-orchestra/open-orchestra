@@ -149,13 +149,9 @@ module.exports = function(grunt) {
                     'web/built/phporchestrabackoffice/js/nodeConstructor.js',
                     'web/built/phporchestrabackoffice/js/treeAjaxDelete.js',
                     'web/built/phporchestrabackoffice/js/configurableContentFormListener.js',
-                    
+
                     // PHPORCHESTRAINDEXATION
                     'web/bundles/phporchestraindexation/js/*.js',
-                    
-                    // STFALCONTINYMCE
-                    'web/bundles/stfalcontinymce/js/*.js',
-                    'web/bundles/stfalcontinymce/vendor/tinymce/*.js',
                     
                     // LEXIKTRANSLATION
                     'web/bundles/lexiktranslation/ng-table/ng-table.min.js',
