@@ -149,6 +149,7 @@ module.exports = function(grunt) {
                     'web/built/phporchestrabackoffice/js/nodeConstructor.js',
                     'web/built/phporchestrabackoffice/js/treeAjaxDelete.js',
                     'web/built/phporchestrabackoffice/js/configurableContentFormListener.js',
+                    'web/built/phporchestrabackoffice/js/blocksPanel.js',
 
                     // PHPORCHESTRAINDEXATION
                     'web/bundles/phporchestraindexation/js/*.js',
@@ -181,6 +182,7 @@ module.exports = function(grunt) {
                     'web/built/phporchestracms/css/template.css',
                     'web/built/phporchestrabackoffice/css/phporchestra.css',
                     'web/bundles/lexiktranslation/ng-table/ng-table.min.css',
+                    'web/built/phporchestrabackoffice/css/blocksPanel.css',
                 ],
                 dest: 'web/css/all.css'
             }
