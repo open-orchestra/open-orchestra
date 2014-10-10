@@ -151,6 +151,7 @@ module.exports = function(grunt) {
                     'web/built/phporchestrabackoffice/js/configurableContentFormListener.js',
                     'web/built/phporchestrabackoffice/js/blocksPanel.js',
                     'web/built/phporchestrabackoffice/js/orchestraMediaType.js',
+                    'web/built/phporchestrabackoffice/js/orchestraMediaFormView.js',
 
                     // PHPORCHESTRAINDEXATION
                     'web/bundles/phporchestraindexation/js/*.js',
