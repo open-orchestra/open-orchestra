@@ -124,7 +124,7 @@ module.exports = function(grunt) {
                 src: [
                     // BOWER
                     'web/built/bower.js',
-                    
+                    'web/bundles/phporchestrabackoffice/js/jquery.ba-scrollbarwidth.js',
                     // PHPORCHESTRACMS
                     'web/bundles/phporchestrabackoffice/js/phporchestra.js',
                     'web/bundles/phporchestrabackoffice/smartadmin/notification/SmartNotification.js',
