@@ -130,7 +130,6 @@ module.exports = function(grunt) {
                     'web/bundles/phporchestrabackoffice/smartadmin/notification/SmartNotification.js',
                     'web/bundles/phporchestrabackoffice/smartadmin/smartwigdets/jarvis.widget.js',
                     'web/bundles/phporchestrabackoffice/smartadmin/app0.js',
-                    'web/bundles/phporchestrabackoffice/js/orchestraMediaType.js',
                     // built
                     'web/built/phporchestrabackoffice/js/include.js',
                     'web/built/phporchestrabackoffice/js/addPrototype.js',
@@ -151,6 +150,7 @@ module.exports = function(grunt) {
                     'web/built/phporchestrabackoffice/js/treeAjaxDelete.js',
                     'web/built/phporchestrabackoffice/js/configurableContentFormListener.js',
                     'web/built/phporchestrabackoffice/js/blocksPanel.js',
+                    'web/built/phporchestrabackoffice/js/orchestraMediaType.js',
 
                     // PHPORCHESTRAINDEXATION
                     'web/bundles/phporchestraindexation/js/*.js',
