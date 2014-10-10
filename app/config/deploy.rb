@@ -17,7 +17,7 @@ set :use_composer,      true
 set :update_vendors,    false
 
 set :shared_files,      ["app/config/parameters.yml"]
-set :shared_children,     [app_path + "/logs", web_path + "/uploads", "vendor", "node_modules", "bower_components"]
+set :shared_children,     [app_path + "/logs", web_path + "/upload", "vendor", "node_modules", "bower_components"]
 
 role :web,        domain                         # Your HTTP server, Apache/etc
 role :app,        domain, :primary => true       # This may be the same as your `Web` server
