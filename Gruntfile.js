@@ -150,8 +150,8 @@ module.exports = function(grunt) {
                     'web/built/phporchestrabackoffice/js/treeAjaxDelete.js',
                     'web/built/phporchestrabackoffice/js/configurableContentFormListener.js',
                     'web/built/phporchestrabackoffice/js/blocksPanel.js',
-                    'web/built/phporchestrabackoffice/js/orchestraMediaType.js',
-                    'web/built/phporchestrabackoffice/js/orchestraMediaFormView.js',
+                    'web/built/phporchestrabackoffice/js/orchestraMedia/orchestraMediaType.js',
+                    'web/built/phporchestrabackoffice/js/orchestraMedia/orchestraMediaFormView.js',
 
                     // PHPORCHESTRAINDEXATION
                     'web/bundles/phporchestraindexation/js/*.js',
