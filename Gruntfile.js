@@ -150,7 +150,9 @@ module.exports = function(grunt) {
                     'web/built/phporchestrabackoffice/js/treeAjaxDelete.js',
                     'web/built/phporchestrabackoffice/js/configurableContentFormListener.js',
                     'web/built/phporchestrabackoffice/js/blocksPanel.js',
-                    'web/built/phporchestrabackoffice/js/orchestraMediaType.js',
+                    'web/built/phporchestrabackoffice/js/orchestraMedia/orchestraMediaType.js',
+                    'web/built/phporchestrabackoffice/js/orchestraMedia/orchestraMediaFormView.js',
+                    'web/built/phporchestrabackoffice/js/security.js',
 
                     // PHPORCHESTRAINDEXATION
                     'web/bundles/phporchestraindexation/js/*.js',
@@ -179,11 +181,12 @@ module.exports = function(grunt) {
                     'web/bundles/phporchestrabackoffice/smartadmin/smartadmin-production.css',
                     'web/bundles/phporchestrabackoffice/smartadmin/smartadmin-skins.css',
                     'web/built/phporchestracms/css/ribbon.css',
-                    'web/built/phporchestracms/css/phpfactory.css',
-                    'web/built/phporchestracms/css/template.css',
-                    'web/built/phporchestrabackoffice/css/phporchestra.css',
                     'web/bundles/lexiktranslation/ng-table/ng-table.min.css',
+                    'web/built/phporchestracms/css/phpfactory.css',
+                    'web/built/phporchestrabackoffice/css/phporchestra.css',
+                    'web/built/phporchestracms/css/template.css',
                     'web/built/phporchestrabackoffice/css/blocksPanel.css',
+                    'web/built/phporchestrabackoffice/css/mediaModal.css',
                 ],
                 dest: 'web/css/all.css'
             }
