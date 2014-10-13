@@ -180,11 +180,12 @@ module.exports = function(grunt) {
                     'web/bundles/phporchestrabackoffice/smartadmin/smartadmin-production.css',
                     'web/bundles/phporchestrabackoffice/smartadmin/smartadmin-skins.css',
                     'web/built/phporchestracms/css/ribbon.css',
-                    'web/built/phporchestracms/css/phpfactory.css',
-                    'web/built/phporchestracms/css/template.css',
-                    'web/built/phporchestrabackoffice/css/phporchestra.css',
                     'web/bundles/lexiktranslation/ng-table/ng-table.min.css',
+                    'web/built/phporchestracms/css/phpfactory.css',
+                    'web/built/phporchestrabackoffice/css/phporchestra.css',
+                    'web/built/phporchestracms/css/template.css',
                     'web/built/phporchestrabackoffice/css/blocksPanel.css',
+                    'web/built/phporchestrabackoffice/css/mediaModal.css',
                 ],
                 dest: 'web/css/all.css'
             }
