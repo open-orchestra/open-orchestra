@@ -1,7 +1,7 @@
 # Orchestra deploy on integration environment #
 --------
 
-This tutorial is going to describe step by step how you can deploy the phpOrchesrta project on the integration environment:
+This tutorial is going to describe step by step how you can deploy the phpOrchestra project on the integration environment:
 
 ## Install Gem and bundler
 In order to separate all the project of your computer, we use bundler to execute only the specified version of capifony and capistrano
