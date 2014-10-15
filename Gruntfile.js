@@ -148,7 +148,7 @@ module.exports = function(grunt) {
                     'web/built/phporchestrabackoffice/js/page/showNode.js',
                     'web/built/phporchestrabackoffice/js/page/showTemplate.js',
                     'web/built/phporchestrabackoffice/js/table/tableviewLoader.js',
-                    'web/built/phporchestrabackoffice/js/page/nodeConstructor.js',
+                    'web/built/phporchestrabackoffice/js/nodeConstructor.js',
                     'web/built/phporchestrabackoffice/js/treeAjaxDelete.js',
                     'web/built/phporchestrabackoffice/js/configurableContentFormListener.js',
                     'web/built/phporchestrabackoffice/js/page/blocksPanel.js',
