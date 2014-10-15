@@ -152,7 +152,7 @@ module.exports = function(grunt) {
                     'web/built/phporchestrabackoffice/js/configurableContentFormListener.js',
                     'web/built/phporchestrabackoffice/js/blocksPanel.js',
                     'web/built/phporchestrabackoffice/js/mediatheque/orchestraMediaType.js',
-                    'web/built/phporchestrabackoffice/js/mediatheque/mediaModal.js',
+                    'web/built/phporchestrabackoffice/js/mediatheque/mediaModalListeners.js',
                     'web/built/phporchestrabackoffice/js/mediatheque/mediaModalView.js',
                     'web/built/phporchestrabackoffice/js/mediatheque/mediaFormView.js',
                     'web/built/phporchestrabackoffice/js/security.js',
