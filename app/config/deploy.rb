@@ -24,7 +24,7 @@ role :app,        domain, :primary => true       # This may be the same as your 
 
 set  :keep_releases,  3
 set  :use_sudo,       false
-set :writable_dirs,         ["app/cache", "app/logs"]
+set :writable_dirs,         ["app/cache", "app/logs", "web/upload"]
 set :webserver_user,        "www-data"
 set :use_set_permissions,   true
 
