@@ -158,10 +158,6 @@ module.exports = function(grunt) {
                     'web/built/phporchestrabackoffice/js/mediatheque/mediaFormView.js',
                     'web/built/phporchestrabackoffice/js/security.js',
 
-                    // Tinymce
-                    'web/bundles/stfalcontinymce/js/*.js',
-                    'web/bundles/stfalcontinymce/tinymce/*.js',
-
                     // PHPORCHESTRAINDEXATION
                     'web/bundles/phporchestraindexation/js/*.js',
                     
