@@ -173,20 +173,25 @@ module.exports = function(grunt) {
             bowercss: {
                 src: [
                     'bower_components/bootstrap/dist/css/bootstrap.css',
-                    'bower_components/jquery-ui/themes/base/jquery-ui.css',
                     'bower_components/font-awesome/css/font-awesome.css',
+                    'bower_components/jquery-ui/themes/base/jquery-ui.css',
                     'bower_components/datatables/media/css/jquery.dataTables.css'
                 ],
                 dest: 'web/built/bower.css'
             },
             css: {
                 src: [
+                    // BOWER
                     'web/built/bower.css',
-                    'web/bundles/phporchestrabackoffice/smartadmin/smartadmin-production.css',
-                    'web/bundles/phporchestrabackoffice/smartadmin/smartadmin-skins.css',
-                    'web/built/phporchestracms/css/ribbon.css',
+                    
+                    // SMART ADMIN
+                    'web/bundles/phporchestrabackoffice/smartadmin/css/smartadmin-production.min.css',
+                    'web/bundles/phporchestrabackoffice/smartadmin/css/smartadmin-skins.min.css',
+                    
+                    // MISC
+//                    'web/built/phporchestracms/css/ribbon.css',
                     'web/bundles/lexiktranslation/ng-table/ng-table.min.css',
-                    'web/built/phporchestracms/css/phpfactory.css',
+//                    'web/built/phporchestracms/css/phpfactory.css',
                     'web/built/phporchestrabackoffice/css/phporchestra.css',
                     'web/built/phporchestracms/css/template.css',
                     'web/built/phporchestrabackoffice/css/blocksPanel.css',
