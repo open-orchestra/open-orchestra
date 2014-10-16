@@ -124,7 +124,6 @@ module.exports = function(grunt) {
                 src: [
                     // BOWER
                     'web/built/bower.js',
-                    'web/bundles/phporchestrabackoffice/js/jquery.ba-scrollbarwidth.js',
                     'web/bundles/phporchestrabackoffice/js/latinise.js',
                     // PHPORCHESTRACMS
                     'web/bundles/phporchestrabackoffice/js/phporchestra.js',
@@ -154,7 +153,8 @@ module.exports = function(grunt) {
                     'web/built/phporchestrabackoffice/js/configurableContentFormListener.js',
                     'web/built/phporchestrabackoffice/js/page/blocksPanel.js',
                     'web/built/phporchestrabackoffice/js/mediatheque/orchestraMediaType.js',
-                    'web/built/phporchestrabackoffice/js/mediatheque/mediaModal.js',
+                    'web/built/phporchestrabackoffice/js/mediatheque/mediaModalListeners.js',
+                    'web/built/phporchestrabackoffice/js/mediatheque/mediaModalView.js',
                     'web/built/phporchestrabackoffice/js/mediatheque/mediaFormView.js',
                     'web/built/phporchestrabackoffice/js/security.js',
 
