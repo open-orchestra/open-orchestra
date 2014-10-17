@@ -563,7 +563,7 @@
                     "homepage": "http://avalanche123.com"
                 },
                 {
-                    "name": "Jonathan Wage",
+                    "name": "Jonathan H. Wage",
                     "email": "jonwage@gmail.com",
                     "homepage": "http://www.jwage.com/",
                     "role": "Creator"
@@ -736,113 +736,6 @@
                 "symfony"
             ],
             "time": "2014-05-19 18:39:02"
-        },
-        {
-            "name": "egeloen/ckeditor-bundle",
-            "version": "2.5.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/egeloen/IvoryCKEditorBundle.git",
-                "reference": "a3f595101e571788af94aded9417a90ccbf66496"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/egeloen/IvoryCKEditorBundle/zipball/a3f595101e571788af94aded9417a90ccbf66496",
-                "reference": "a3f595101e571788af94aded9417a90ccbf66496",
-                "shasum": ""
-            },
-            "require": {
-                "egeloen/json-builder": "~1.0.0",
-                "php": ">=5.3.3",
-                "symfony/form": "~2.2",
-                "symfony/framework-bundle": "~2.2"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.0",
-                "satooshi/php-coveralls": "~0.6",
-                "twig/twig": "~1.12"
-            },
-            "suggest": {
-                "twig/twig": "Allows to use twig templates"
-            },
-            "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.5-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Ivory\\CKEditorBundle\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Eric GELOEN",
-                    "email": "geloen.eric@gmail.com"
-                }
-            ],
-            "description": "Provides a CKEditor integration for your Symfony2 Project.",
-            "keywords": [
-                "CKEditor"
-            ],
-            "time": "2014-08-29 16:31:01"
-        },
-        {
-            "name": "egeloen/json-builder",
-            "version": "1.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/egeloen/ivory-json-builder.git",
-                "reference": "0395f06db7bbb3c240667ab5f3152151051fb567"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/egeloen/ivory-json-builder/zipball/0395f06db7bbb3c240667ab5f3152151051fb567",
-                "reference": "0395f06db7bbb3c240667ab5f3152151051fb567",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "php": ">=5.3.0",
-                "symfony/property-access": "~2.2"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.0",
-                "satooshi/php-coveralls": "~0.6"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Ivory\\JsonBuilder\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Eric GELOEN",
-                    "email": "geloen.eric@gmail.com"
-                }
-            ],
-            "description": "JSON builder with escaping control for PHP 5.3+",
-            "keywords": [
-                "Escape",
-                "builder",
-                "json"
-            ],
-            "time": "2014-08-12 00:30:56"
         },
         {
             "name": "friendsofsymfony/user-bundle",
@@ -1103,24 +996,24 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-cms-bundle.git",
-                "reference": "8977c473e2206de6b66eac818660341e47765051"
+                "reference": "f081eacb2c8f4dd7ea2aab5f724667aedd31b735"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/8977c473e2206de6b66eac818660341e47765051",
-                "reference": "8977c473e2206de6b66eac818660341e47765051",
+                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/f081eacb2c8f4dd7ea2aab5f724667aedd31b735",
+                "reference": "f081eacb2c8f4dd7ea2aab5f724667aedd31b735",
                 "shasum": ""
             },
             "require": {
                 "braincrafted/bootstrap-bundle": "dev-master",
-                "egeloen/ckeditor-bundle": "~2.0",
                 "friendsofsymfony/user-bundle": "~2.0@dev",
                 "itkg/phporchestra-base-bundle": "dev-master",
                 "itkg/phporchestra-display-bundle": "dev-master",
                 "itkg/phporchestra-indexation-bundle": "dev-master",
                 "itkg/phporchestra-model-bundle": "dev-master",
                 "itkg/phporchestra-translation-bundle": "dev-master",
-                "jms/serializer-bundle": "0.13.*"
+                "jms/serializer-bundle": "0.13.*",
+                "stfalcon/tinymce-bundle": "~0.3"
             },
             "require-dev": {
                 "phake/phake": "*",
@@ -1150,7 +1043,7 @@
                 "source": "https://github.com/itkg/phporchestra-cms-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-cms-bundle/issues"
             },
-            "time": "2014-10-15 15:16:18"
+            "time": "2014-10-17 08:58:10"
         },
         {
             "name": "itkg/phporchestra-display-bundle",
@@ -1159,12 +1052,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-display-bundle.git",
-                "reference": "808964a76e336330858c8c5bfcb700c6531e4ea8"
+                "reference": "ef738ae8488bca5b358bbaf0b3316197463ac4ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-display-bundle/zipball/808964a76e336330858c8c5bfcb700c6531e4ea8",
-                "reference": "808964a76e336330858c8c5bfcb700c6531e4ea8",
+                "url": "https://api.github.com/repos/itkg/phporchestra-display-bundle/zipball/ef738ae8488bca5b358bbaf0b3316197463ac4ea",
+                "reference": "ef738ae8488bca5b358bbaf0b3316197463ac4ea",
                 "shasum": ""
             },
             "require": {
@@ -1201,7 +1094,7 @@
                 "source": "https://github.com/itkg/phporchestra-display-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-display-bundle/issues"
             },
-            "time": "2014-10-02 15:51:08"
+            "time": "2014-10-16 09:11:39"
         },
         {
             "name": "itkg/phporchestra-indexation-bundle",
@@ -1650,12 +1543,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lexik/LexikTranslationBundle.git",
-                "reference": "4ace7286660e2cfe7546d3fad66588e5eadb0bda"
+                "reference": "3e854302603e383e72a4fe101f0bc098ea375c20"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lexik/LexikTranslationBundle/zipball/4ace7286660e2cfe7546d3fad66588e5eadb0bda",
-                "reference": "4ace7286660e2cfe7546d3fad66588e5eadb0bda",
+                "url": "https://api.github.com/repos/lexik/LexikTranslationBundle/zipball/3e854302603e383e72a4fe101f0bc098ea375c20",
+                "reference": "3e854302603e383e72a4fe101f0bc098ea375c20",
                 "shasum": ""
             },
             "require": {
@@ -1707,7 +1600,7 @@
                 "i18n",
                 "translation"
             ],
-            "time": "2014-10-02 11:22:32"
+            "time": "2014-10-17 07:50:42"
         },
         {
             "name": "monolog/monolog",
@@ -2229,6 +2122,64 @@
                 "solr"
             ],
             "time": "2013-09-13 08:09:42"
+        },
+        {
+            "name": "stfalcon/tinymce-bundle",
+            "version": "v0.3.8",
+            "target-dir": "Stfalcon/Bundle/TinymceBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stfalcon/TinymceBundle.git",
+                "reference": "773cc577f4f0770c2f6dd25928e0f08576b7f2d5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/stfalcon/TinymceBundle/zipball/773cc577f4f0770c2f6dd25928e0f08576b7f2d5",
+                "reference": "773cc577f4f0770c2f6dd25928e0f08576b7f2d5",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "symfony/symfony": ">=2.1"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Stfalcon\\Bundle\\TinymceBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Stepan Tanasiychuk",
+                    "email": "ceo@stfalcon.com",
+                    "homepage": "http://blog.stfalcon.com"
+                },
+                {
+                    "name": "Igor Negrutsa",
+                    "email": "progi2007@gmail.com",
+                    "homepage": "http://igor-negrutsa.info"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://github.com/stfalcon/TinymceBundle/contributors"
+                }
+            ],
+            "description": "This Bundle integrates TinyMCE WYSIWYG editor into a Symfony2 project.",
+            "keywords": [
+                "editor",
+                "tinymce",
+                "wysiwyg"
+            ],
+            "time": "2014-09-08 12:54:20"
         },
         {
             "name": "stof/doctrine-extensions-bundle",
@@ -3479,18 +3430,12 @@
             "time": "2014-03-07 15:35:33"
         }
     ],
-    "aliases": [
-
-    ],
+    "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
         "itkg/phporchestra-cms-bundle": 20
     },
     "prefer-stable": true,
-    "platform": [
-
-    ],
-    "platform-dev": [
-
-    ]
+    "platform": [],
+    "platform-dev": []
 }

@@ -25,7 +25,6 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\MongoDBBundle\DoctrineMongoDBBundle(),
             new Snc\RedisBundle\SncRedisBundle(),
 
-            new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
             new Nelmio\SolariumBundle\NelmioSolariumBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle(),
             new FOS\UserBundle\FOSUserBundle(),
@@ -45,6 +44,7 @@ class AppKernel extends Kernel
 
             // Need parameters set by some of our bundles
             new Lexik\Bundle\TranslationBundle\LexikTranslationBundle(),
+            new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
