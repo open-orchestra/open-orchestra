@@ -996,12 +996,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-cms-bundle.git",
-                "reference": "f081eacb2c8f4dd7ea2aab5f724667aedd31b735"
+                "reference": "5aab87539930e73da162c6d33e74850217aa278f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/f081eacb2c8f4dd7ea2aab5f724667aedd31b735",
-                "reference": "f081eacb2c8f4dd7ea2aab5f724667aedd31b735",
+                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/5aab87539930e73da162c6d33e74850217aa278f",
+                "reference": "5aab87539930e73da162c6d33e74850217aa278f",
                 "shasum": ""
             },
             "require": {
@@ -1043,7 +1043,7 @@
                 "source": "https://github.com/itkg/phporchestra-cms-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-cms-bundle/issues"
             },
-            "time": "2014-10-17 08:58:10"
+            "time": "2014-10-17 11:39:53"
         },
         {
             "name": "itkg/phporchestra-display-bundle",
@@ -2688,16 +2688,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.16.1",
+            "version": "v1.16.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fabpot/Twig.git",
-                "reference": "7c4c01dcf578523cfcddf383641a4f12790270ec"
+                "reference": "42f758d9fe2146d1f0470604fc05ee43580873fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fabpot/Twig/zipball/7c4c01dcf578523cfcddf383641a4f12790270ec",
-                "reference": "7c4c01dcf578523cfcddf383641a4f12790270ec",
+                "url": "https://api.github.com/repos/fabpot/Twig/zipball/42f758d9fe2146d1f0470604fc05ee43580873fc",
+                "reference": "42f758d9fe2146d1f0470604fc05ee43580873fc",
                 "shasum": ""
             },
             "require": {
@@ -2741,7 +2741,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2014-10-10 14:09:53"
+            "time": "2014-10-17 12:53:44"
         }
     ],
     "packages-dev": [
