@@ -39,6 +39,14 @@ Run the following command to test the installation and connection to the server
 ## Deploy
 Before deploying the project, make sure that the composer.lock file is up-to-date on the master branch
 
+    ./composer.phar update
+    git add composer.lock
+    git commit -m "update vendor"
+    git pull --rebase origin master
+    git push origin master:update_vendor
+
+Once the test are green, you can merge the branch into master
+
 Then you can run the deploy commande
 
     bundle exec cap deploy
@@ -48,4 +56,4 @@ Once this is done, you can check the project.
 If it is not running check the right by connecting on the server and put the group back
 
     ssh php_orchestra_root
-    chgrp -R www-data /var/www/backoffice-phporchestra/
+    chgrp -R www-data /var/www/backoffice-phporchestra/ /var/www/front-phporchestra/
