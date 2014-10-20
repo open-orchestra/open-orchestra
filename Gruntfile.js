@@ -196,12 +196,12 @@ module.exports = function(grunt) {
                     
                     // MISC
 //                    'web/built/phporchestracms/css/ribbon.css',
-                    'web/bundles/lexiktranslation/ng-table/ng-table.min.css',
 //                    'web/built/phporchestracms/css/phpfactory.css',
                     'web/built/phporchestrabackoffice/css/phporchestra.css',
                     'web/built/phporchestracms/css/template.css',
                     'web/built/phporchestrabackoffice/css/blocksPanel.css',
                     'web/built/phporchestrabackoffice/css/mediaModal.css',
+                    'web/bundles/lexiktranslation/ng-table/ng-table.min.css',
                 ],
                 dest: 'web/css/all.css'
             }
