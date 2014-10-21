@@ -179,7 +179,7 @@ module.exports = function(grunt) {
             bowercss: {
                 src: [
                     'bower_components/bootstrap/dist/css/bootstrap.css',
-                    'bower_components/font-awesome/css/font-awesome.css',
+                    'bower_components/font-awesome/css/font-awesome.min.css',
                     'bower_components/jquery-ui/themes/base/jquery-ui.css',
                     'bower_components/datatables/media/css/jquery.dataTables.css'
                 ],
