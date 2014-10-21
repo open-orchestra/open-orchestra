@@ -996,12 +996,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-cms-bundle.git",
-                "reference": "de99e686c744ee4a6af61fa322ac9424db3308fb"
+                "reference": "4417489f651e858abf74a709dbb246b4af7e263a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/de99e686c744ee4a6af61fa322ac9424db3308fb",
-                "reference": "de99e686c744ee4a6af61fa322ac9424db3308fb",
+                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/4417489f651e858abf74a709dbb246b4af7e263a",
+                "reference": "4417489f651e858abf74a709dbb246b4af7e263a",
                 "shasum": ""
             },
             "require": {
@@ -1043,7 +1043,7 @@
                 "source": "https://github.com/itkg/phporchestra-cms-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-cms-bundle/issues"
             },
-            "time": "2014-10-17 15:24:52"
+            "time": "2014-10-21 14:41:51"
         },
         {
             "name": "itkg/phporchestra-display-bundle",
@@ -1052,12 +1052,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-display-bundle.git",
-                "reference": "98615b4d41cf12e16ef8b05584976e03587deb1b"
+                "reference": "e0961d6e004c1504773f5534fad17e88f299b527"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-display-bundle/zipball/98615b4d41cf12e16ef8b05584976e03587deb1b",
-                "reference": "98615b4d41cf12e16ef8b05584976e03587deb1b",
+                "url": "https://api.github.com/repos/itkg/phporchestra-display-bundle/zipball/e0961d6e004c1504773f5534fad17e88f299b527",
+                "reference": "e0961d6e004c1504773f5534fad17e88f299b527",
                 "shasum": ""
             },
             "require": {
@@ -1094,7 +1094,7 @@
                 "source": "https://github.com/itkg/phporchestra-display-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-display-bundle/issues"
             },
-            "time": "2014-10-17 15:02:41"
+            "time": "2014-10-20 08:07:22"
         },
         {
             "name": "itkg/phporchestra-indexation-bundle",
@@ -1154,12 +1154,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-model-bundle.git",
-                "reference": "96e164c97a18cc369024a969b0f6349d801ca4f8"
+                "reference": "69636531e5d575802f522e6c3ce243a7e2ec89a4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-model-bundle/zipball/96e164c97a18cc369024a969b0f6349d801ca4f8",
-                "reference": "96e164c97a18cc369024a969b0f6349d801ca4f8",
+                "url": "https://api.github.com/repos/itkg/phporchestra-model-bundle/zipball/69636531e5d575802f522e6c3ce243a7e2ec89a4",
+                "reference": "69636531e5d575802f522e6c3ce243a7e2ec89a4",
                 "shasum": ""
             },
             "require": {
@@ -1194,7 +1194,7 @@
                 "source": "https://github.com/itkg/phporchestra-model-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-model-bundle/issues"
             },
-            "time": "2014-10-17 15:02:34"
+            "time": "2014-10-21 14:40:50"
         },
         {
             "name": "itkg/phporchestra-translation-bundle",
@@ -3431,18 +3431,12 @@
             "time": "2014-03-07 15:35:33"
         }
     ],
-    "aliases": [
-
-    ],
+    "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
         "itkg/phporchestra-cms-bundle": 20
     },
     "prefer-stable": true,
-    "platform": [
-
-    ],
-    "platform-dev": [
-
-    ]
+    "platform": [],
+    "platform-dev": []
 }
