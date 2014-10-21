@@ -156,6 +156,9 @@ module.exports = function(grunt) {
                     'web/built/phporchestrabackoffice/js/mediatheque/mediaModalListeners.js',
                     'web/built/phporchestrabackoffice/js/mediatheque/mediaModalView.js',
                     'web/built/phporchestrabackoffice/js/mediatheque/mediaFormView.js',
+                    'web/built/phporchestrabackoffice/js/mediatheque/GalleryCollectionView.js',
+                    'web/built/phporchestrabackoffice/js/mediatheque/GalleryLoad.js',
+                    'web/built/phporchestrabackoffice/js/mediatheque/GalleryView.js',
                     'web/built/phporchestrabackoffice/js/security.js',
 
                     // PHPORCHESTRAINDEXATION
@@ -188,6 +191,7 @@ module.exports = function(grunt) {
                     'web/bundles/lexiktranslation/ng-table/ng-table.min.css',
                     'web/built/phporchestracms/css/phpfactory.css',
                     'web/built/phporchestrabackoffice/css/phporchestra.css',
+                    'web/built/phporchestrabackoffice/css/mediatheque.css',
                     'web/built/phporchestracms/css/template.css',
                     'web/built/phporchestrabackoffice/css/blocksPanel.css',
                     'web/built/phporchestrabackoffice/css/mediaModal.css',
