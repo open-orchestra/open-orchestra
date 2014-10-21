@@ -111,7 +111,11 @@ module.exports = function(grunt) {
                 src: [
                     'bower_components/jquery/jquery.js',
                     'bower_components/jquery-ui/ui/jquery-ui.js',
+                    'web/bundles/phporchestrabackoffice/smartadmin/js/app.config.js',
                     'bower_components/bootstrap/dist/js/bootstrap.js',
+                    'web/bundles/phporchestrabackoffice/smartadmin/js/notification/SmartNotification.min.js',
+                    'web/bundles/phporchestrabackoffice/smartadmin/js/smartwidgets/jarvis.widget.min.js',
+                    'web/bundles/phporchestrabackoffice/smartadmin/js/app.min.js',
                     'bower_components/underscore/underscore.js',
                     'bower_components/backbone/backbone.js',
                     'bower_components/angular/angular.js',
@@ -126,16 +130,9 @@ module.exports = function(grunt) {
                     'web/built/bower.js',
                     'web/bundles/phporchestrabackoffice/js/latinise.js',
                     
-                    // SMARTADMIN
-                    'web/bundles/phporchestrabackoffice/smartadmin/js/plugin/pace/pace.min.js',
-                    'web/bundles/phporchestrabackoffice/smartadmin/js/app.config.js',
-                    'web/bundles/phporchestrabackoffice/smartadmin/js/notification/SmartNotification.min.js',
-                    'web/bundles/phporchestrabackoffice/smartadmin/js/smartwigdets/jarvis.widget.min.js',
-                    'web/bundles/phporchestrabackoffice/smartadmin/js/app.min.js',
-                    
                     // PHPORCHESTRACMS
                     'web/bundles/phporchestrabackoffice/js/phporchestra.js',
-//                    'web/bundles/phporchestrabackoffice/smartadmin/app0.js',
+                    
                     // built
                     'web/built/phporchestrabackoffice/js/include.js',
                     'web/built/phporchestrabackoffice/js/addPrototype.js',
