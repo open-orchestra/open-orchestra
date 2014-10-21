@@ -45,9 +45,9 @@ Before deploying the project, make sure that the composer.lock file is up-to-dat
     git pull --rebase origin master
     git push origin master:update_vendor
 
-Once the test are green, you can merge the branch into master
+Once the tests are green, you can merge the branch into master
 
-Then you can run the deploy commande
+Then you can run the deploy command in the project directory
 
     bundle exec cap deploy
 
