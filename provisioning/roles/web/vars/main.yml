@@ -19,10 +19,17 @@ apache_conf:
     docRoot: /var/www/phporchestra/web
     errorLog: phporchestra_backoffice_error.log
     accessLog: phporchestra_backoffice_access.log
-  front-demo-orchestra.conf:
+  demo-orchestra.conf:
     port: 80
-    serverName: front-demo-phporchestra.dev
+    serverName: demo-phporchestra-front.inte
     docRoot: /var/www/front-phporchestra/web
-    errorLog: front-demo-phporchestraError.log
-    accessLog: front-demo-phporchestraAccess.log
+    errorLog: demo-phporchestraError.log
+    accessLog: demo-phporchestraAccess.log
+    siteId: 2
+  front-orchestra.conf:
+    port: 80
+    serverName: front-phporchestra-front.inte
+    docRoot: /var/www/front-phporchestra/web
+    errorLog: front-phporchestraError.log
+    accessLog: front-phporchestraAccess.log
     siteId: 1
