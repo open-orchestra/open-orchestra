@@ -17,6 +17,7 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
 
         symlink: {
+            // BOWER COMPONENT
             fontawesome_font_otf: {
                 src: 'bower_components/font-awesome/fonts/FontAwesome.otf',
                 dest: 'web/fonts/FontAwesome.otf'
@@ -65,6 +66,12 @@ module.exports = function(grunt) {
                 src: 'bower_components/datatables/media/images/sort_desc.png',
                 dest: 'web/images/sort_desc.png'
             },
+            pace_js: {
+                src: 'bower_components/pace/pace.min.js',
+                dest: 'web/js/pace.min.js'
+            },
+            
+            // SMARTADMIN ASSETS
             smartadmin_bg: {
                 src: 'web/bundles/phporchestrabackoffice/smartadmin/img/mybg.png',
                 dest: 'web/img/mybg.png'
@@ -128,12 +135,12 @@ module.exports = function(grunt) {
                 src: [
                     // BOWER
                     'web/built/bower.js',
-                    'web/bundles/phporchestrabackoffice/js/latinise.js',
                     
                     // PHPORCHESTRACMS
                     'web/bundles/phporchestrabackoffice/js/phporchestra.js',
                     
-                    // built
+                    // MISC
+                    'web/bundles/phporchestrabackoffice/js/latinise.js',
                     'web/built/phporchestrabackoffice/js/include.js',
                     'web/built/phporchestrabackoffice/js/addPrototype.js',
                     'web/built/phporchestrabackoffice/js/modelBackbone.js',
@@ -168,8 +175,8 @@ module.exports = function(grunt) {
                     'web/bundles/lexiktranslation/ng-table/ng-table.min.js',
                     'web/built/phporchestratranslation/js/translationView.js',
                     
-                    // BACKBONE BO ROUTER
-                    'web/bundles/phporchestrabackoffice/js/backboneRouter.js'
+                    // BACKBONE ROUTER
+                    'web/bundles/phporchestrabackoffice/js/backboneRouter.js',
                 ],
                 dest: 'web/js/all.js'
             },
@@ -192,8 +199,6 @@ module.exports = function(grunt) {
                     'web/bundles/phporchestrabackoffice/smartadmin/css/smartadmin-skins.min.css',
                     
                     // MISC
-//                    'web/built/phporchestracms/css/ribbon.css',
-//                    'web/built/phporchestracms/css/phpfactory.css',
                     'web/built/phporchestrabackoffice/css/phporchestra.css',
                     'web/built/phporchestracms/css/template.css',
                     'web/built/phporchestrabackoffice/css/blocksPanel.css',
