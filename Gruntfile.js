@@ -75,6 +75,10 @@ module.exports = function(grunt) {
             smartadmin_bg: {
                 src: 'web/bundles/phporchestrabackoffice/smartadmin/img/mybg.png',
                 dest: 'web/img/mybg.png'
+            },
+            smartadmin_flags: {
+                src: 'web/bundles/phporchestrabackoffice/smartadmin/img/flags/flags.png',
+                dest: 'web/img/flags/flags.png'
             }
         },
 
@@ -197,6 +201,7 @@ module.exports = function(grunt) {
                     // SMART ADMIN
                     'web/bundles/phporchestrabackoffice/smartadmin/css/smartadmin-production.min.css',
                     'web/bundles/phporchestrabackoffice/smartadmin/css/smartadmin-skins.min.css',
+                    'web/built/phporchestrabackoffice/css/patchFlags.css',
                     
                     // MISC
                     'web/built/phporchestrabackoffice/css/phporchestra.css',
