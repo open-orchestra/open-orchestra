@@ -3,7 +3,6 @@
   vars:
     http_port: 80
     max_clients: 200
-  remote_user: vagrant
   sudo: yes
   pre_tasks:
     - name: Check php conf directory

@@ -1,4 +1,6 @@
 ---
+user_root: vagrant
+
 apache_conf:
   php-orchestra.conf:
     port: 80
@@ -12,24 +14,11 @@ apache_conf:
     docRoot: /var/www/front-phporchestra/web
     errorLog: front-phporchestraError.log
     accessLog: front-phporchestraAccess.log
-    siteId: 2
-  inte-backoffice-phporchestra.conf:
-    port: 80
-    serverName: 10.0.1.246
-    docRoot: /var/www/phporchestra/web
-    errorLog: phporchestra_backoffice_error.log
-    accessLog: phporchestra_backoffice_access.log
+    siteId: 1
   demo-orchestra.conf:
     port: 80
-    serverName: demo-phporchestra-front.inte
+    serverName: demo-phporchestra-front.dev
     docRoot: /var/www/front-phporchestra/web
     errorLog: demo-phporchestraError.log
     accessLog: demo-phporchestraAccess.log
     siteId: 2
-  front-orchestra.conf:
-    port: 80
-    serverName: front-phporchestra-front.inte
-    docRoot: /var/www/front-phporchestra/web
-    errorLog: front-phporchestraError.log
-    accessLog: front-phporchestraAccess.log
-    siteId: 1
