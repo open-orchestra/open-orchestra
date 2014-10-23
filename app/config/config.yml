@@ -49,7 +49,6 @@ assetic:
     bundles:
         - PHPOrchestraBackofficeBundle
         - PHPOrchestraDisplayBundle
-        - PHPOrchestraIndexationBundle
         - LexikTranslationBundle
     #java: /usr/bin/java
     filters:
@@ -103,10 +102,6 @@ lexik_translation:
     storage:
         type: mongodb
         object_manager: default
-
-php_orchestra_indexation:
-    indexation:
-        - solr
 
 fos_user:
     db_driver: mongodb
