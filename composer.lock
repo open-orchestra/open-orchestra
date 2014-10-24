@@ -8,7 +8,7 @@
     "packages": [
         {
             "name": "braincrafted/bootstrap-bundle",
-            "version": "dev-master",
+            "version": "v2.1.0",
             "target-dir": "Braincrafted/Bundle/BootstrapBundle",
             "source": {
                 "type": "git",
@@ -944,27 +944,27 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-base-bundle.git",
-                "reference": "c7704acc657cb2da7f63628e8003ecab0bd036cf"
+                "reference": "de3b5af7d899ee5267474d6018f00f484c5123b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-base-bundle/zipball/c7704acc657cb2da7f63628e8003ecab0bd036cf",
-                "reference": "c7704acc657cb2da7f63628e8003ecab0bd036cf",
+                "url": "https://api.github.com/repos/itkg/phporchestra-base-bundle/zipball/de3b5af7d899ee5267474d6018f00f484c5123b7",
+                "reference": "de3b5af7d899ee5267474d6018f00f484c5123b7",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.4",
-                "sensio/distribution-bundle": "~2.3",
-                "sensio/framework-extra-bundle": "~3.0",
-                "sensio/generator-bundle": "~2.3",
-                "snc/redis-bundle": "1.1.*",
-                "symfony/assetic-bundle": "~2.3",
-                "symfony/monolog-bundle": "~2.4",
-                "symfony/symfony": "~2.4",
-                "twig/extensions": "~1.0"
+                "sensio/distribution-bundle": "3.0.6",
+                "sensio/framework-extra-bundle": "3.0.2",
+                "sensio/generator-bundle": "2.4.0",
+                "snc/redis-bundle": "1.1.8",
+                "symfony/assetic-bundle": "2.5.0",
+                "symfony/monolog-bundle": "2.6.1",
+                "symfony/symfony": "2.5.5",
+                "twig/extensions": "1.1.0"
             },
             "require-dev": {
-                "phake/phake": "*",
+                "phake/phake": "2.0.0-beta2",
                 "phpunit/phpunit": "4.0.14"
             },
             "type": "library",
@@ -987,7 +987,7 @@
                 "source": "https://github.com/itkg/phporchestra-base-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-base-bundle/issues"
             },
-            "time": "2014-10-17 14:46:51"
+            "time": "2014-10-22 16:06:31"
         },
         {
             "name": "itkg/phporchestra-cms-bundle",
@@ -996,27 +996,27 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-cms-bundle.git",
-                "reference": "4417489f651e858abf74a709dbb246b4af7e263a"
+                "reference": "4e4895f3c03cf9d005e94eb875a6074da77856d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/4417489f651e858abf74a709dbb246b4af7e263a",
-                "reference": "4417489f651e858abf74a709dbb246b4af7e263a",
+                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/4e4895f3c03cf9d005e94eb875a6074da77856d8",
+                "reference": "4e4895f3c03cf9d005e94eb875a6074da77856d8",
                 "shasum": ""
             },
             "require": {
-                "braincrafted/bootstrap-bundle": "dev-master",
-                "friendsofsymfony/user-bundle": "~2.0@dev",
+                "braincrafted/bootstrap-bundle": "2.1.0",
+                "friendsofsymfony/user-bundle": "~2.0",
                 "itkg/phporchestra-base-bundle": "dev-master",
                 "itkg/phporchestra-display-bundle": "dev-master",
                 "itkg/phporchestra-indexation-bundle": "dev-master",
                 "itkg/phporchestra-model-bundle": "dev-master",
                 "itkg/phporchestra-translation-bundle": "dev-master",
-                "jms/serializer-bundle": "0.13.*",
-                "stfalcon/tinymce-bundle": "~0.3"
+                "jms/serializer-bundle": "0.13.0",
+                "stfalcon/tinymce-bundle": "0.3.8"
             },
             "require-dev": {
-                "phake/phake": "*",
+                "phake/phake": "2.0.0-beta2",
                 "phpunit/phpunit": "4.0.14",
                 "scrutinizer/ocular": "1.1.1"
             },
@@ -1043,7 +1043,7 @@
                 "source": "https://github.com/itkg/phporchestra-cms-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-cms-bundle/issues"
             },
-            "time": "2014-10-21 14:41:51"
+            "time": "2014-10-23 14:46:20"
         },
         {
             "name": "itkg/phporchestra-display-bundle",
@@ -1052,21 +1052,21 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-display-bundle.git",
-                "reference": "e0961d6e004c1504773f5534fad17e88f299b527"
+                "reference": "a64e7378ff503bf1a55683eab07b9bbb61e15cb8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-display-bundle/zipball/e0961d6e004c1504773f5534fad17e88f299b527",
-                "reference": "e0961d6e004c1504773f5534fad17e88f299b527",
+                "url": "https://api.github.com/repos/itkg/phporchestra-display-bundle/zipball/a64e7378ff503bf1a55683eab07b9bbb61e15cb8",
+                "reference": "a64e7378ff503bf1a55683eab07b9bbb61e15cb8",
                 "shasum": ""
             },
             "require": {
-                "itkg/phporchestra-base-bundle": "dev-master",
                 "itkg/phporchestra-model-bundle": "dev-master",
                 "symfony/swiftmailer-bundle": "~2.3"
             },
             "require-dev": {
-                "phake/phake": "*",
+                "itkg/phporchestra-base-bundle": "dev-master",
+                "phake/phake": "2.0.0-beta2",
                 "phpunit/phpunit": "4.0.14",
                 "scrutinizer/ocular": "1.1.1"
             },
@@ -1094,7 +1094,7 @@
                 "source": "https://github.com/itkg/phporchestra-display-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-display-bundle/issues"
             },
-            "time": "2014-10-20 08:07:22"
+            "time": "2014-10-23 13:15:05"
         },
         {
             "name": "itkg/phporchestra-indexation-bundle",
@@ -1154,26 +1154,27 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-model-bundle.git",
-                "reference": "69636531e5d575802f522e6c3ce243a7e2ec89a4"
+                "reference": "2d02d214e98acb7711d604c28f4292119a619783"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-model-bundle/zipball/69636531e5d575802f522e6c3ce243a7e2ec89a4",
-                "reference": "69636531e5d575802f522e6c3ce243a7e2ec89a4",
+                "url": "https://api.github.com/repos/itkg/phporchestra-model-bundle/zipball/2d02d214e98acb7711d604c28f4292119a619783",
+                "reference": "2d02d214e98acb7711d604c28f4292119a619783",
                 "shasum": ""
             },
             "require": {
                 "doctrine/data-fixtures": "1.0.0",
-                "doctrine/mongodb-odm": "~1.0",
-                "doctrine/mongodb-odm-bundle": "~3.0",
-                "itkg/phporchestra-base-bundle": "dev-master",
-                "stof/doctrine-extensions-bundle": "~1.1@dev",
-                "symfony/validator": "~2"
+                "doctrine/mongodb-odm": "1.0.0-BETA11",
+                "doctrine/mongodb-odm-bundle": "3.0.0-BETA6",
+                "stof/doctrine-extensions-bundle": "1.1.0"
             },
             "require-dev": {
-                "jmikola/geojson": "~1.0",
-                "phake/phake": "*",
-                "phpunit/phpunit": "4.0.14"
+                "itkg/phporchestra-base-bundle": "dev-master",
+                "jmikola/geojson": "1.0.1",
+                "phake/phake": "2.0.0-beta2",
+                "phpunit/phpunit": "4.0.14",
+                "scrutinizer/ocular": "1.1.1",
+                "symfony/validator": "2.5.5"
             },
             "type": "library",
             "autoload": {
@@ -1194,7 +1195,7 @@
                 "source": "https://github.com/itkg/phporchestra-model-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-model-bundle/issues"
             },
-            "time": "2014-10-21 14:40:50"
+            "time": "2014-10-23 12:57:22"
         },
         {
             "name": "itkg/phporchestra-translation-bundle",
@@ -1203,16 +1204,16 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-translation-bundle.git",
-                "reference": "c58412984e2d2c2224de91cd0244b82e9ad686c9"
+                "reference": "b2bf57a76e619b6b09b24848c02f02b124684198"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-translation-bundle/zipball/c58412984e2d2c2224de91cd0244b82e9ad686c9",
-                "reference": "c58412984e2d2c2224de91cd0244b82e9ad686c9",
+                "url": "https://api.github.com/repos/itkg/phporchestra-translation-bundle/zipball/b2bf57a76e619b6b09b24848c02f02b124684198",
+                "reference": "b2bf57a76e619b6b09b24848c02f02b124684198",
                 "shasum": ""
             },
             "require": {
-                "lexik/translation-bundle": "dev-master"
+                "lexik/translation-bundle": "2.1.0"
             },
             "type": "library",
             "autoload": {
@@ -1234,7 +1235,7 @@
                 "source": "https://github.com/itkg/phporchestra-translation-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-translation-bundle/issues"
             },
-            "time": "2014-09-05 14:23:10"
+            "time": "2014-10-22 12:55:45"
         },
         {
             "name": "jms/metadata",
@@ -1539,17 +1540,17 @@
         },
         {
             "name": "lexik/translation-bundle",
-            "version": "dev-master",
+            "version": "v2.1.0",
             "target-dir": "Lexik/Bundle/TranslationBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lexik/LexikTranslationBundle.git",
-                "reference": "3e854302603e383e72a4fe101f0bc098ea375c20"
+                "reference": "07e4a6c693559463f28c670d98df956dae6e61a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lexik/LexikTranslationBundle/zipball/3e854302603e383e72a4fe101f0bc098ea375c20",
-                "reference": "3e854302603e383e72a4fe101f0bc098ea375c20",
+                "url": "https://api.github.com/repos/lexik/LexikTranslationBundle/zipball/07e4a6c693559463f28c670d98df956dae6e61a9",
+                "reference": "07e4a6c693559463f28c670d98df956dae6e61a9",
                 "shasum": ""
             },
             "require": {
@@ -1601,7 +1602,7 @@
                 "i18n",
                 "translation"
             ],
-            "time": "2014-10-17 07:50:42"
+            "time": "2014-10-02 11:16:49"
         },
         {
             "name": "monolog/monolog",
@@ -1866,26 +1867,33 @@
         },
         {
             "name": "sensio/distribution-bundle",
-            "version": "v2.3.5",
+            "version": "v3.0.6",
             "target-dir": "Sensio/Bundle/DistributionBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioDistributionBundle.git",
-                "reference": "715fcb65f9a4841ffaf40c0bf050329d74c84cad"
+                "reference": "e20461e4f8e1afd68f36cf90bdccc06f7aa6a6c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioDistributionBundle/zipball/715fcb65f9a4841ffaf40c0bf050329d74c84cad",
-                "reference": "715fcb65f9a4841ffaf40c0bf050329d74c84cad",
+                "url": "https://api.github.com/repos/sensiolabs/SensioDistributionBundle/zipball/e20461e4f8e1afd68f36cf90bdccc06f7aa6a6c2",
+                "reference": "e20461e4f8e1afd68f36cf90bdccc06f7aa6a6c2",
                 "shasum": ""
             },
             "require": {
-                "symfony/framework-bundle": "~2.2"
+                "php": ">=5.3.3",
+                "sensiolabs/security-checker": "~2.0",
+                "symfony/class-loader": "~2.2",
+                "symfony/form": "~2.2",
+                "symfony/framework-bundle": "~2.4",
+                "symfony/process": "~2.2",
+                "symfony/validator": "~2.2",
+                "symfony/yaml": "~2.2"
             },
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.3.x-dev"
+                    "dev-master": "3.0.x-dev"
                 }
             },
             "autoload": {
@@ -1903,12 +1911,12 @@
                     "email": "fabien@symfony.com"
                 }
             ],
-            "description": "The base bundle for the Symfony Distributions",
+            "description": "Base bundle for Symfony Distributions",
             "keywords": [
                 "configuration",
                 "distribution"
             ],
-            "time": "2014-09-03 12:25:05"
+            "time": "2014-09-24 14:47:46"
         },
         {
             "name": "sensio/framework-extra-bundle",
@@ -2012,6 +2020,51 @@
             ],
             "description": "This bundle generates code for you",
             "time": "2014-09-22 14:56:14"
+        },
+        {
+            "name": "sensiolabs/security-checker",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sensiolabs/security-checker.git",
+                "reference": "5b4eb4743ebe68276c911c84101ecdf4a9ae76ee"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sensiolabs/security-checker/zipball/5b4eb4743ebe68276c911c84101ecdf4a9ae76ee",
+                "reference": "5b4eb4743ebe68276c911c84101ecdf4a9ae76ee",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "symfony/console": "~2.0"
+            },
+            "bin": [
+                "security-checker"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "SensioLabs\\Security": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien.potencier@gmail.com"
+                }
+            ],
+            "description": "A security checker for your composer.lock",
+            "time": "2014-07-19 10:52:35"
         },
         {
             "name": "snc/redis-bundle",
@@ -3282,16 +3335,16 @@
         },
         {
             "name": "sebastian/environment",
-            "version": "1.1.0",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/environment.git",
-                "reference": "6288ebbf6fa3ed2b2ff2d69c356fbaaf4f0971a7"
+                "reference": "0d9bf79554d2a999da194a60416c15cf461eb67d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/6288ebbf6fa3ed2b2ff2d69c356fbaaf4f0971a7",
-                "reference": "6288ebbf6fa3ed2b2ff2d69c356fbaaf4f0971a7",
+                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/0d9bf79554d2a999da194a60416c15cf461eb67d",
+                "reference": "0d9bf79554d2a999da194a60416c15cf461eb67d",
                 "shasum": ""
             },
             "require": {
@@ -3303,7 +3356,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1.x-dev"
+                    "dev-master": "1.2.x-dev"
                 }
             },
             "autoload": {
@@ -3328,7 +3381,7 @@
                 "environment",
                 "hhvm"
             ],
-            "time": "2014-10-07 09:23:16"
+            "time": "2014-10-22 06:38:05"
         },
         {
             "name": "sebastian/exporter",
@@ -3431,12 +3484,18 @@
             "time": "2014-03-07 15:35:33"
         }
     ],
-    "aliases": [],
+    "aliases": [
+
+    ],
     "minimum-stability": "dev",
     "stability-flags": {
         "itkg/phporchestra-cms-bundle": 20
     },
     "prefer-stable": true,
-    "platform": [],
-    "platform-dev": []
+    "platform": [
+
+    ],
+    "platform-dev": [
+
+    ]
 }
