@@ -140,11 +140,15 @@ module.exports = function(grunt) {
                     // BOWER
                     'web/built/bower.js',
                     
+                    // TOOLS
+                    'web/bundles/phporchestrabackoffice/js/latinise.js',
+                    'web/bundles/phporchestrabackoffice/js/jQuery.DOMNodeAppear.js',
+                    
                     // PHPORCHESTRACMS
                     'web/bundles/phporchestrabackoffice/js/phporchestra.js',
+                    'web/built/phporchestrabackoffice/js/orchestraListeners.js',
                     
                     // MISC
-                    'web/bundles/phporchestrabackoffice/js/latinise.js',
                     'web/built/phporchestrabackoffice/js/include.js',
                     'web/built/phporchestrabackoffice/js/addPrototype.js',
                     'web/built/phporchestrabackoffice/js/modelBackbone.js',
