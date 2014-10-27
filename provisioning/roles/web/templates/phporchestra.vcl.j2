@@ -3,15 +3,27 @@
 # 
 # Default backend definition.  Set this to point to your content
 # server.
-# 
-backend default {
-    .host = "{{ varnish_default_backend_host }}";
-    .port = "{{ varnish_default_backend_port }}";
+#
+
+{% for item in backend_conf %}
+backend {{ item.name }} {
+  .host = "{{ item.host }}";
+  .port = "{{ item.port }}";
 }
+
+{% endfor %}
 
 
 sub vcl_recv {
     set req.http.Surrogate-Capability = "abc=ESI/1.0";
+
+    if (req.url ~ "^/phporchestra.dev/") {
+        set req.backend = phporchestra;
+    } elseif (req.url ~ "^/front-phporchestra.dev/") {
+        set req.backend = frontphporchestra;
+    } else {
+        set req.backend = demophporchestra;
+    }
 }
 
 sub vcl_fetch {
