@@ -563,7 +563,7 @@
                     "homepage": "http://avalanche123.com"
                 },
                 {
-                    "name": "Jonathan H. Wage",
+                    "name": "Jonathan Wage",
                     "email": "jonwage@gmail.com",
                     "homepage": "http://www.jwage.com/",
                     "role": "Creator"
@@ -996,12 +996,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-cms-bundle.git",
-                "reference": "4e4895f3c03cf9d005e94eb875a6074da77856d8"
+                "reference": "2f734f4373c4aad7d9186289e4a06d64a2ee4980"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/4e4895f3c03cf9d005e94eb875a6074da77856d8",
-                "reference": "4e4895f3c03cf9d005e94eb875a6074da77856d8",
+                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/2f734f4373c4aad7d9186289e4a06d64a2ee4980",
+                "reference": "2f734f4373c4aad7d9186289e4a06d64a2ee4980",
                 "shasum": ""
             },
             "require": {
@@ -1009,7 +1009,6 @@
                 "friendsofsymfony/user-bundle": "~2.0",
                 "itkg/phporchestra-base-bundle": "dev-master",
                 "itkg/phporchestra-display-bundle": "dev-master",
-                "itkg/phporchestra-indexation-bundle": "dev-master",
                 "itkg/phporchestra-model-bundle": "dev-master",
                 "itkg/phporchestra-translation-bundle": "dev-master",
                 "jms/serializer-bundle": "0.13.0",
@@ -1043,7 +1042,7 @@
                 "source": "https://github.com/itkg/phporchestra-cms-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-cms-bundle/issues"
             },
-            "time": "2014-10-23 14:46:20"
+            "time": "2014-10-27 09:35:45"
         },
         {
             "name": "itkg/phporchestra-display-bundle",
@@ -1097,69 +1096,18 @@
             "time": "2014-10-23 13:15:05"
         },
         {
-            "name": "itkg/phporchestra-indexation-bundle",
-            "version": "dev-master",
-            "target-dir": "PHPOrchestra",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:itkg/phporchestra-indexation-bundle.git",
-                "reference": "2f211afe640c282f182d02917601a1b12f62f9d6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-indexation-bundle/zipball/2f211afe640c282f182d02917601a1b12f62f9d6",
-                "reference": "2f211afe640c282f182d02917601a1b12f62f9d6",
-                "shasum": ""
-            },
-            "require": {
-                "ext-curl": "*",
-                "itkg/phporchestra-display-bundle": "dev-master",
-                "itkg/phporchestra-model-bundle": "dev-master",
-                "nelmio/solarium-bundle": "2.0.4"
-            },
-            "require-dev": {
-                "phake/phake": "*",
-                "phpunit/phpunit": "4.0.14",
-                "scrutinizer/ocular": "1.1.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "PHPOrchestra\\IndexationBundle": ""
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nicolas Thal",
-                    "email": "nico.th4l@gmail.com"
-                },
-                {
-                    "name": "Benjamin Fouche",
-                    "email": "benjamin.fouche@businessdecision.com"
-                }
-            ],
-            "support": {
-                "source": "https://github.com/itkg/phporchestra-indexation-bundle/tree/master",
-                "issues": "https://github.com/itkg/phporchestra-indexation-bundle/issues"
-            },
-            "time": "2014-09-26 11:45:25"
-        },
-        {
             "name": "itkg/phporchestra-model-bundle",
             "version": "dev-master",
             "target-dir": "PHPOrchestra",
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-model-bundle.git",
-                "reference": "2d02d214e98acb7711d604c28f4292119a619783"
+                "reference": "81836d5cfe5177e81bacbbd69d90953bf4945235"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-model-bundle/zipball/2d02d214e98acb7711d604c28f4292119a619783",
-                "reference": "2d02d214e98acb7711d604c28f4292119a619783",
+                "url": "https://api.github.com/repos/itkg/phporchestra-model-bundle/zipball/81836d5cfe5177e81bacbbd69d90953bf4945235",
+                "reference": "81836d5cfe5177e81bacbbd69d90953bf4945235",
                 "shasum": ""
             },
             "require": {
@@ -1195,7 +1143,7 @@
                 "source": "https://github.com/itkg/phporchestra-model-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-model-bundle/issues"
             },
-            "time": "2014-10-23 12:57:22"
+            "time": "2014-10-27 09:30:59"
         },
         {
             "name": "itkg/phporchestra-translation-bundle",
@@ -1677,58 +1625,6 @@
             "time": "2014-09-30 13:30:58"
         },
         {
-            "name": "nelmio/solarium-bundle",
-            "version": "v2.0.4",
-            "target-dir": "Nelmio/SolariumBundle",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/nelmio/NelmioSolariumBundle.git",
-                "reference": "b4b63e0006c7d191811e0f056ff3a8f32e2a973b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/nelmio/NelmioSolariumBundle/zipball/b4b63e0006c7d191811e0f056ff3a8f32e2a973b",
-                "reference": "b4b63e0006c7d191811e0f056ff3a8f32e2a973b",
-                "shasum": ""
-            },
-            "require": {
-                "solarium/solarium": "~3.0",
-                "symfony/framework-bundle": "~2.1"
-            },
-            "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Nelmio\\SolariumBundle": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nelmio",
-                    "homepage": "http://nelm.io"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://github.com/nelmio/NelmioSolariumBundle/contributors"
-                }
-            ],
-            "description": "Integration with solarium solr client.",
-            "keywords": [
-                "search",
-                "solarium",
-                "solr"
-            ],
-            "time": "2013-06-26 15:44:55"
-        },
-        {
             "name": "phpcollection/phpcollection",
             "version": "0.4.0",
             "source": {
@@ -2129,53 +2025,6 @@
                 "symfony"
             ],
             "time": "2014-02-01 09:46:23"
-        },
-        {
-            "name": "solarium/solarium",
-            "version": "3.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/basdenooijer/solarium.git",
-                "reference": "f602c2020d1b57e7a3aa0c75088222ce31438aba"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/basdenooijer/solarium/zipball/f602c2020d1b57e7a3aa0c75088222ce31438aba",
-                "reference": "f602c2020d1b57e7a3aa0c75088222ce31438aba",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.2",
-                "symfony/event-dispatcher": "~2.1"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~3.7",
-                "squizlabs/php_codesniffer": "~1.4"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Solarium\\": "library/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "NewBSD"
-            ],
-            "authors": [
-                {
-                    "name": "See GitHub contributors",
-                    "homepage": "https://github.com/basdenooijer/solarium/contributors"
-                }
-            ],
-            "description": "PHP Solr client",
-            "homepage": "http://www.solarium-project.org",
-            "keywords": [
-                "php",
-                "search",
-                "solr"
-            ],
-            "time": "2013-09-13 08:09:42"
         },
         {
             "name": "stfalcon/tinymce-bundle",
@@ -3484,18 +3333,12 @@
             "time": "2014-03-07 15:35:33"
         }
     ],
-    "aliases": [
-
-    ],
+    "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
         "itkg/phporchestra-cms-bundle": 20
     },
     "prefer-stable": true,
-    "platform": [
-
-    ],
-    "platform-dev": [
-
-    ]
+    "platform": [],
+    "platform-dev": []
 }
