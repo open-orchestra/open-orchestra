@@ -84,18 +84,6 @@ snc_redis:
             dsn: redis://localhost
             logging: %kernel.debug%
 
-nelmio_solarium:
-    endpoints:
-        default:
-            host: localhost
-            port: 8983
-            path: /solr
-            core: collection1
-            timeout: 5
-    clients:
-        default:
-            endpoints: [default]
-
 lexik_translation:
     fallback_locale: "%kernel.default_locale%"
     managed_locales: %php_orchestra_base.languages_availables%
