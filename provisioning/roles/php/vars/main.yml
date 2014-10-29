@@ -17,6 +17,7 @@ php_packages:
   - php5-fpm
   - php5-gd
   - php-apc
+  - php5-imagick
 php_xdebug_module_path: /usr/lib/php5/20100525
 php_xdebug_remote_enable: true
 php_xdebug_remote_connect_back: 1
