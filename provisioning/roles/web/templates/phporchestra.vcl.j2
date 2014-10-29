@@ -59,25 +59,21 @@ sub vcl_recv {
 sub vcl_fetch {
     if ( req.request == "GET" && req.url ~ "/bundles/") {
         unset beresp.http.Set-Cookie;
-        set beresp.ttl = 300m;
         return(deliver);
     }
 
     if ( req.request == "GET" && req.url ~ "/img/") {
         unset beresp.http.Set-Cookie;
-        set beresp.ttl = 300m;
         return(deliver);
     }
 
     if ( req.request == "GET" && req.url ~ "/css/") {
         unset beresp.http.Set-Cookie;
-        set beresp.ttl = 300m;
         return(deliver);
     }
 
     if ( req.request == "GET" && req.url ~ "/js/") {
         unset beresp.http.Set-Cookie;
-        set beresp.ttl = 300m;
         return(deliver);
     }
 
