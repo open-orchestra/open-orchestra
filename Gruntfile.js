@@ -146,6 +146,7 @@ module.exports = function(grunt) {
                     
                     // PHPORCHESTRACMS
                     'web/bundles/phporchestrabackoffice/js/phporchestra.js',
+                    'web/built/phporchestrabackoffice/js/orchestraLib.js',
                     'web/built/phporchestrabackoffice/js/orchestraListeners.js',
                     
                     // MISC
@@ -209,6 +210,7 @@ module.exports = function(grunt) {
                     'web/bundles/phporchestrabackoffice/smartadmin/css/smartadmin-production.min.css',
                     'web/bundles/phporchestrabackoffice/smartadmin/css/smartadmin-skins.min.css',
                     'web/built/phporchestrabackoffice/css/patchFlags.css',
+                    'web/built/phporchestrabackoffice/css/patchTitle.css',
                     
                     // MISC
                     'web/built/phporchestrabackoffice/css/phporchestra.css',
