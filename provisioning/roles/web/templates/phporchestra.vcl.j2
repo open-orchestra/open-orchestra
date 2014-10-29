@@ -5,6 +5,11 @@
 # server.
 #
 
+acl purgers {
+  "127.0.0.1";
+  "192.168.33.10";
+}
+
 {% for item in backend_conf %}
 backend {{ item.name }} {
   .host = "{{ item.host }}";
@@ -17,6 +22,14 @@ backend {{ item.name }} {
 sub vcl_recv {
     set req.http.Surrogate-Capability = "abc=ESI/1.0";
 
+    if (req.request == "BAN") {
+        if (!client.ip ~ purgers) {
+             error 405 "Method not allowed";
+        }
+        ban("req.url ~ "+req.url);
+        error 200 "Cached Cleared Successfully.";
+    }
+
     if (req.url ~ "^/phporchestra.dev/") {
         set req.backend = phporchestra;
     } elseif (req.url ~ "^/front-phporchestra.dev/") {
@@ -24,9 +37,43 @@ sub vcl_recv {
     } else {
         set req.backend = demophporchestra;
     }
+
+    if (req.request == "GET" && req.url ~ "/app"){
+        return(pass);
+    }
+
+    if (req.request == "POST") {
+        return(pass);
+    }
+
+    return(lookup);
 }
 
 sub vcl_fetch {
+    if ( req.request == "GET" && req.url ~ "/bundles/") {
+        unset beresp.http.Set-Cookie;
+        set beresp.ttl = 300m;
+        return(deliver);
+    }
+
+    if ( req.request == "GET" && req.url ~ "/img/") {
+        unset beresp.http.Set-Cookie;
+        set beresp.ttl = 300m;
+        return(deliver);
+    }
+
+    if ( req.request == "GET" && req.url ~ "/css/") {
+        unset beresp.http.Set-Cookie;
+        set beresp.ttl = 300m;
+        return(deliver);
+    }
+
+    if ( req.request == "GET" && req.url ~ "/js/") {
+        unset beresp.http.Set-Cookie;
+        set beresp.ttl = 300m;
+        return(deliver);
+    }
+
     if (beresp.http.Surrogate-Control ~ "ESI/1.0") {
         unset beresp.http.Surrogate-Control;
         set beresp.do_esi = true;
@@ -35,13 +82,14 @@ sub vcl_fetch {
 
 sub vcl_hit {
     if (req.request == "PURGE") {
-        set obj.ttl = 0s;
+        purge;
         error 200 "Purged";
     }
 }
 
 sub vcl_miss {
     if (req.request == "PURGE") {
+        purge;
         error 404 "Not purged";
     }
 }
