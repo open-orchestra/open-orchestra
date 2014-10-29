@@ -22,3 +22,9 @@ apache_conf:
     errorLog: demo-phporchestraError.log
     accessLog: demo-phporchestraAccess.log
     siteId: 2
+  tools.conf:
+    port: 80
+    serverName: clearvarnish.dev
+    docRoot: /var/www/phporchestra/tools
+    errorLog: toolsError.log
+    accessLog: toolsAccess.log
