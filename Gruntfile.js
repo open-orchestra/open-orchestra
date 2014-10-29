@@ -146,7 +146,6 @@ module.exports = function(grunt) {
         
             orchestrajs: {
                 src: [
-                     'web/bundles/phporchestrabackoffice/js/phporchestra.js',
                      'web/built/phporchestrabackoffice/js/orchestraLib.js',
                      'web/built/phporchestrabackoffice/js/orchestraListeners.js',
                      
