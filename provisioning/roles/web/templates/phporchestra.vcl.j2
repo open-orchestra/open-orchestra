@@ -30,6 +30,13 @@ sub vcl_recv {
         error 200 "Cached Cleared Successfully.";
     }
 
+    if (req.request == "PURGE") {
+        if (!client.ip ~ purgers) {
+             error 405 "Method not allowed";
+        }
+        return(lookup);
+     }
+
     if (req.url ~ "^/phporchestra.dev/") {
         set req.backend = phporchestra;
     } elseif (req.url ~ "^/front-phporchestra.dev/") {
