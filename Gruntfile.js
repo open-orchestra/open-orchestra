@@ -118,7 +118,7 @@ module.exports = function(grunt) {
         },
 
         concat: {
-            bowerjs: {
+            smartadminjs: {
                 src: [
                     'bower_components/jquery/jquery.js',
                     'bower_components/jquery-ui/ui/jquery-ui.js',
@@ -127,96 +127,124 @@ module.exports = function(grunt) {
                     'web/bundles/phporchestrabackoffice/smartadmin/js/notification/SmartNotification.min.js',
                     'web/bundles/phporchestrabackoffice/smartadmin/js/smartwidgets/jarvis.widget.min.js',
                     'web/bundles/phporchestrabackoffice/smartadmin/js/app.min.js',
+                ],
+                dest: 'web/built/smartadmin.js'
+            },
+            
+            libjs: {
+                src: [
                     'bower_components/underscore/underscore.js',
                     'bower_components/backbone/backbone.js',
                     'bower_components/angular/angular.js',
                     'bower_components/datatables/media/js/jquery.dataTables.js',
-                    'bower_components/jquery-form/jquery.form.js'
-                ],
-                dest: 'web/built/bower.js'
-            },
-            js: {
-                src: [
-                    // BOWER
-                    'web/built/bower.js',
-                    
-                    // TOOLS
+                    'bower_components/jquery-form/jquery.form.js',
                     'web/bundles/phporchestrabackoffice/js/latinise.js',
                     'web/bundles/phporchestrabackoffice/js/jQuery.DOMNodeAppear.js',
-                    
-                    // PHPORCHESTRACMS
-                    'web/bundles/phporchestrabackoffice/js/phporchestra.js',
-                    'web/built/phporchestrabackoffice/js/orchestraListeners.js',
-                    
-                    // MISC
-                    'web/built/phporchestrabackoffice/js/include.js',
-                    'web/built/phporchestrabackoffice/js/addPrototype.js',
-                    'web/built/phporchestrabackoffice/js/modelBackbone.js',
-                    'web/built/phporchestrabackoffice/js/adminFormView.js',
-                    'web/built/phporchestrabackoffice/js/generateAlias.js',
-                    'web/built/phporchestrabackoffice/js/page/makeSortable.js',
-                    'web/built/phporchestrabackoffice/js/page/areaView.js',
-                    'web/built/phporchestrabackoffice/js/page/blockView.js',
-                    'web/built/phporchestrabackoffice/js/page/nodeView.js',
-                    'web/built/phporchestrabackoffice/js/page/NodeVersionView.js',
-                    'web/built/phporchestrabackoffice/js/table/TableviewView.js',
-                    'web/built/phporchestrabackoffice/js/table/TableviewCollectionView.js',
-                    'web/built/phporchestrabackoffice/js/FullPageFormView.js',
-                    'web/built/phporchestrabackoffice/js/page/templateView.js',
-                    'web/built/phporchestrabackoffice/js/page/showNode.js',
-                    'web/built/phporchestrabackoffice/js/page/showTemplate.js',
-                    'web/built/phporchestrabackoffice/js/table/tableviewLoader.js',
-                    'web/built/phporchestrabackoffice/js/page/nodeConstructor.js',
-                    'web/built/phporchestrabackoffice/js/treeAjaxDelete.js',
-                    'web/built/phporchestrabackoffice/js/configurableContentFormListener.js',
-                    'web/built/phporchestrabackoffice/js/page/blocksPanel.js',
-                    'web/built/phporchestrabackoffice/js/mediatheque/orchestraMediaType.js',
-                    'web/built/phporchestrabackoffice/js/mediatheque/mediaModalListeners.js',
-                    'web/built/phporchestrabackoffice/js/mediatheque/mediaModalView.js',
-                    'web/built/phporchestrabackoffice/js/mediatheque/mediaFormView.js',
-                    'web/built/phporchestrabackoffice/js/mediatheque/GalleryCollectionView.js',
-                    'web/built/phporchestrabackoffice/js/mediatheque/GalleryLoad.js',
-                    'web/built/phporchestrabackoffice/js/mediatheque/GalleryView.js',
-                    'web/built/phporchestrabackoffice/js/security.js',
-
-                    // PHPORCHESTRAINDEXATION
-                    'web/bundles/phporchestraindexation/js/*.js',
-                    
-                    // LEXIKTRANSLATION
-                    'web/bundles/lexiktranslation/ng-table/ng-table.min.js',
-                    'web/built/phporchestratranslation/js/translationView.js',
-                    
-                    // BACKBONE ROUTER
-                    'web/bundles/phporchestrabackoffice/js/backboneRouter.js',
+                ],
+                dest: 'web/built/lib.js'
+            },
+        
+            orchestrajs: {
+                src: [
+                     'web/built/phporchestrabackoffice/js/orchestraLib.js',
+                     'web/built/phporchestrabackoffice/js/orchestraListeners.js',
+                     
+                     // MISC
+                     'web/built/phporchestrabackoffice/js/include.js',
+                     'web/built/phporchestrabackoffice/js/addPrototype.js',
+                     'web/built/phporchestrabackoffice/js/modelBackbone.js',
+                     'web/built/phporchestrabackoffice/js/adminFormView.js',
+                     'web/built/phporchestrabackoffice/js/generateAlias.js',
+                     'web/built/phporchestrabackoffice/js/page/makeSortable.js',
+                     'web/built/phporchestrabackoffice/js/page/areaView.js',
+                     'web/built/phporchestrabackoffice/js/page/blockView.js',
+                     'web/built/phporchestrabackoffice/js/page/nodeView.js',
+                     'web/built/phporchestrabackoffice/js/page/NodeVersionView.js',
+                     'web/built/phporchestrabackoffice/js/table/TableviewView.js',
+                     'web/built/phporchestrabackoffice/js/table/TableviewCollectionView.js',
+                     'web/built/phporchestrabackoffice/js/FullPageFormView.js',
+                     'web/built/phporchestrabackoffice/js/page/templateView.js',
+                     'web/built/phporchestrabackoffice/js/page/showNode.js',
+                     'web/built/phporchestrabackoffice/js/page/showTemplate.js',
+                     'web/built/phporchestrabackoffice/js/table/tableviewLoader.js',
+                     'web/built/phporchestrabackoffice/js/page/nodeConstructor.js',
+                     'web/built/phporchestrabackoffice/js/treeAjaxDelete.js',
+                     'web/built/phporchestrabackoffice/js/configurableContentFormListener.js',
+                     'web/built/phporchestrabackoffice/js/page/blocksPanel.js',
+                     'web/built/phporchestrabackoffice/js/security.js',
+                     
+                     // MEDIATHEQUE
+                     'web/built/phporchestrabackoffice/js/mediatheque/orchestraMediaType.js',
+                     'web/built/phporchestrabackoffice/js/mediatheque/mediaModalListeners.js',
+                     'web/built/phporchestrabackoffice/js/mediatheque/mediaModalView.js',
+                     'web/built/phporchestrabackoffice/js/mediatheque/mediaFormView.js',
+                     'web/built/phporchestrabackoffice/js/mediatheque/GalleryCollectionView.js',
+                     'web/built/phporchestrabackoffice/js/mediatheque/GalleryLoad.js',
+                     'web/built/phporchestrabackoffice/js/mediatheque/GalleryView.js',
+                     
+                     // INDEXATION
+                     'web/bundles/phporchestraindexation/js/*.js',
+                     
+                     // LEXIKTRANSLATION
+                     'web/bundles/lexiktranslation/ng-table/ng-table.min.js',
+                     'web/built/phporchestratranslation/js/translationView.js',
+                     
+                     // BACKBONE ROUTER
+                     'web/bundles/phporchestrabackoffice/js/backboneRouter.js',
+                ],
+                dest: 'web/built/orchestra.js'
+            },
+    
+            js: {
+                src: [
+                    'web/built/smartadmin.js',
+                    'web/built/lib.js',
+                    'web/built/orchestra.js'
                 ],
                 dest: 'web/js/all.js'
             },
-            bowercss: {
+            
+            smartadmincss: {
                 src: [
-                    'bower_components/bootstrap/dist/css/bootstrap.css',
+                    // SMARTADMIN PACKAGE
+//                    'bower_components/bootstrap/dist/css/bootstrap.min.css',
+                    'web/bundles/phporchestrabackoffice/smartadmin/css/bootstrap.min.css',
                     'bower_components/font-awesome/css/font-awesome.min.css',
-                    'bower_components/jquery-ui/themes/base/jquery-ui.css',
-                    'bower_components/datatables/media/css/jquery.dataTables.css'
-                ],
-                dest: 'web/built/bower.css'
-            },
-            css: {
-                src: [
-                    // BOWER
-                    'web/built/bower.css',
-                    
-                    // SMART ADMIN
                     'web/bundles/phporchestrabackoffice/smartadmin/css/smartadmin-production.min.css',
                     'web/bundles/phporchestrabackoffice/smartadmin/css/smartadmin-skins.min.css',
-                    'web/built/phporchestrabackoffice/css/patchFlags.css',
                     
-                    // MISC
-                    'web/built/phporchestrabackoffice/css/phporchestra.css',
-                    'web/built/phporchestrabackoffice/css/mediatheque.css',
-                    'web/built/phporchestracms/css/template.css',
-                    'web/built/phporchestrabackoffice/css/blocksPanel.css',
-                    'web/built/phporchestrabackoffice/css/mediaModal.css',
-                    'web/bundles/lexiktranslation/ng-table/ng-table.min.css',
+                    // ORCHESTRA PATCHES
+                    'web/built/phporchestrabackoffice/css/patchFlags.css',
+                    'web/built/phporchestrabackoffice/css/patchTitle.css'
+                ],
+                dest: 'web/built/smartadmin.css'
+            },
+            
+            libcss: {
+                src: [
+                      'bower_components/jquery-ui/themes/base/jquery-ui.css',
+                      'bower_components/datatables/media/css/jquery.dataTables.css'
+                ],
+                dest: 'web/built/lib.css'
+            },
+            
+            orchestracss: {
+                src: [
+                      'web/built/phporchestrabackoffice/css/phporchestra.css',
+                      'web/built/phporchestrabackoffice/css/mediatheque.css',
+                      'web/built/phporchestracms/css/template.css',
+                      'web/built/phporchestrabackoffice/css/blocksPanel.css',
+                      'web/built/phporchestrabackoffice/css/mediaModal.css',
+                      'web/bundles/lexiktranslation/ng-table/ng-table.min.css'
+                ],
+                dest: 'web/built/orchestra.css'
+            },
+            
+            css: {
+                src: [
+                      'web/built/smartadmin.css',
+                      'web/built/lib.css',
+                      'web/built/orchestra.css'
                 ],
                 dest: 'web/css/all.css'
             }
@@ -244,9 +272,9 @@ module.exports = function(grunt) {
     });
 
     // Default task(s).
-    grunt.registerTask('default', ['clean', 'command:assets_install', 'symlink', 'concat:bowercss', 'css', 'concat:bowerjs', 'javascript', 'javascriptProd', 'command:assetic_dump']);
-    grunt.registerTask('css', ['less:discovering', 'less', 'concat:css', 'cssmin']);
-    grunt.registerTask('javascript', ['coffee:discovering', 'coffee', 'concat:js']);
+    grunt.registerTask('default', ['clean', 'command:assets_install', 'symlink', 'css', 'javascript', 'javascriptProd', 'command:assetic_dump']);
+    grunt.registerTask('css', ['less:discovering', 'less', 'concat:smartadmincss', 'concat:libcss', 'concat:orchestracss', 'concat:css', 'cssmin']);
+    grunt.registerTask('javascript', ['coffee:discovering', 'coffee', 'concat:smartadminjs', 'concat:libjs', 'concat:orchestrajs', 'concat:js']);
     grunt.registerTask('javascriptProd', ['uglify']);
     grunt.registerTask('less:discovering', 'This is a function', function() {
         // LESS Files management
