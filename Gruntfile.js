@@ -192,33 +192,44 @@ module.exports = function(grunt) {
                 ],
                 dest: 'web/js/all.js'
             },
-            bowercss: {
+            smartadmincss: {
                 src: [
-                    'bower_components/bootstrap/dist/css/bootstrap.css',
+                    // SMARTADMIN PACKAGE
+//                    'bower_components/bootstrap/dist/css/bootstrap.min.css',
+                    'web/bundles/phporchestrabackoffice/smartadmin/css/bootstrap.min.css',
                     'bower_components/font-awesome/css/font-awesome.min.css',
-                    'bower_components/jquery-ui/themes/base/jquery-ui.css',
-                    'bower_components/datatables/media/css/jquery.dataTables.css'
+                    'web/bundles/phporchestrabackoffice/smartadmin/css/smartadmin-production.min.css',
+                    'web/bundles/phporchestrabackoffice/smartadmin/css/smartadmin-skins.min.css',
+                    
+                    // ORCHESTRA PATCHES
+                    'web/built/phporchestrabackoffice/css/patchFlags.css',
+                    'web/built/phporchestrabackoffice/css/patchTitle.css'
                 ],
-                dest: 'web/built/bower.css'
+                dest: 'web/built/smartadmin.css'
+            },
+            libcss: {
+                src: [
+                      'bower_components/jquery-ui/themes/base/jquery-ui.css',
+                      'bower_components/datatables/media/css/jquery.dataTables.css'
+                ],
+                dest: 'web/built/lib.css'
+            },
+            orchestracss: {
+                src: [
+                      'web/built/phporchestrabackoffice/css/phporchestra.css',
+                      'web/built/phporchestrabackoffice/css/mediatheque.css',
+                      'web/built/phporchestracms/css/template.css',
+                      'web/built/phporchestrabackoffice/css/blocksPanel.css',
+                      'web/built/phporchestrabackoffice/css/mediaModal.css',
+                      'web/bundles/lexiktranslation/ng-table/ng-table.min.css'
+                ],
+                dest: 'web/built/orchestra.css'
             },
             css: {
                 src: [
-                    // BOWER
-                    'web/built/bower.css',
-                    
-                    // SMART ADMIN
-                    'web/bundles/phporchestrabackoffice/smartadmin/css/smartadmin-production.min.css',
-                    'web/bundles/phporchestrabackoffice/smartadmin/css/smartadmin-skins.min.css',
-                    'web/built/phporchestrabackoffice/css/patchFlags.css',
-                    'web/built/phporchestrabackoffice/css/patchTitle.css',
-                    
-                    // MISC
-                    'web/built/phporchestrabackoffice/css/phporchestra.css',
-                    'web/built/phporchestrabackoffice/css/mediatheque.css',
-                    'web/built/phporchestracms/css/template.css',
-                    'web/built/phporchestrabackoffice/css/blocksPanel.css',
-                    'web/built/phporchestrabackoffice/css/mediaModal.css',
-                    'web/bundles/lexiktranslation/ng-table/ng-table.min.css',
+                      'web/built/smartadmin.css',
+                      'web/built/lib.css',
+                      'web/built/orchestra.css'
                 ],
                 dest: 'web/css/all.css'
             }
@@ -246,8 +257,8 @@ module.exports = function(grunt) {
     });
 
     // Default task(s).
-    grunt.registerTask('default', ['clean', 'command:assets_install', 'symlink', 'concat:bowercss', 'css', 'concat:bowerjs', 'javascript', 'javascriptProd', 'command:assetic_dump']);
-    grunt.registerTask('css', ['less:discovering', 'less', 'concat:css', 'cssmin']);
+    grunt.registerTask('default', ['clean', 'command:assets_install', 'symlink', 'css', 'concat:bowerjs', 'javascript', 'javascriptProd', 'command:assetic_dump']);
+    grunt.registerTask('css', ['less:discovering', 'less', 'concat:smartadmincss', 'concat:libcss', 'concat:orchestracss', 'concat:css', 'cssmin']);
     grunt.registerTask('javascript', ['coffee:discovering', 'coffee', 'concat:js']);
     grunt.registerTask('javascriptProd', ['uglify']);
     grunt.registerTask('less:discovering', 'This is a function', function() {
