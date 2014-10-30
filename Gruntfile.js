@@ -214,8 +214,9 @@ module.exports = function(grunt) {
                     'web/bundles/phporchestrabackoffice/smartadmin/css/smartadmin-skins.min.css',
                     
                     // ORCHESTRA PATCHES
-                    'web/built/phporchestrabackoffice/css/patchFlags.css',
-                    'web/built/phporchestrabackoffice/css/patchTitle.css'
+                    'web/built/phporchestrabackoffice/css/smartadminPatches/flags.css',
+                    'web/built/phporchestrabackoffice/css/smartadminPatches/title.css',
+                    'web/built/phporchestrabackoffice/css/smartadminPatches/modal.css'
                 ],
                 dest: 'web/built/smartadmin.css'
             },
