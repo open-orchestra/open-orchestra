@@ -50,6 +50,6 @@ You can check all the cache present for a repository
 
     bundle exec travis cache -r itkg/phporchestra-cms-bundle
 
-You can decide to delete the cache if needed
+You can decide to delete the cache on one branch if needed
 
-    bundle exec travis cache -r itkg/phporchestra-cms-bundle
+    bundle exec travis cache -r itkg/phporchestra-cms-bundle  -b reduce_deps --delete
