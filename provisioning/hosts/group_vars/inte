@@ -22,10 +22,10 @@ apache_conf:
     errorLog: front-phporchestraError.log
     accessLog: front-phporchestraAccess.log
     siteId: 1
-  echonext-orchestra.conf:
+  echonext.orchestra.conf:
     port: 80
-    serverName: echonext-phporchestra-front.inte
+    serverName: echonext.phporchestra.inte
     docRoot: /var/www/front-phporchestra/current/web
-    errorLog: echonext-phporchestraError.log
-    accessLog: echonext-phporchestraAccess.log
+    errorLog: echonext.phporchestraError.log
+    accessLog: echonext.phporchestraAccess.log
     siteId: 3
