@@ -8,3 +8,4 @@ backend_conf:
   - { name: phporchestra, port: 80, host: phporchestra.dev }
   - { name: frontphporchestra, port: 80, host: front-phporchestra.dev }
   - { name: demophporchestra, port: 80, host: demo-phporchestra-front.dev }
+  - { name: echonextphporchestra, port: 80, host: echonext-phporchestra-front.dev }
