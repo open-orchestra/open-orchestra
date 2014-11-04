@@ -28,7 +28,7 @@ apache_conf:
     docRoot: /var/www/front-phporchestra/web
     errorLog: echonext.phporchestraError.log
     accessLog: echonext.phporchestraAccess.log
-    siteId: 2
+    siteId: 3
   tools.conf:
     port: 80
     serverName: clearvarnish.dev
