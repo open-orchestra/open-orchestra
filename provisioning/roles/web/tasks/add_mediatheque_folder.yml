@@ -1,0 +1,10 @@
+---
+ - name: Check mediatheque folder
+   stat: path=/var/www/mediatheque-phporchestra
+   register: mediatheque_folder
+ - name: Create a directory for the mediatheque
+   shell: mkdir -p /var/www/mediatheque-phporchestra
+   when: mediatheque_folder.stat.exists == false
+ - name: Give the right to write in it
+   shell: chmod a+w /var/www/mediatheque-phporchestra
+   when: mediatheque_folder.stat.exists == false

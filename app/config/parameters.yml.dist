@@ -12,3 +12,4 @@ parameters:
 
     php_orchestra_cms.mongodb.server: mongodb://localhost:27017
     php_orchestra_cms.mongodb.database: phporchestra_%kernel.environment%
+    mediatheque_url: ~

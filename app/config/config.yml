@@ -101,3 +101,6 @@ stof_doctrine_extensions:
         default:
             blameable: true
             timestampable: true
+
+php_orchestra_base:
+    mediatheque_url: %mediatheque_url%
