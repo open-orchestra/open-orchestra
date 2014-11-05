@@ -6,5 +6,5 @@
    shell: mkdir -p /var/www/mediatheque-phporchestra
    when: mediatheque_folder.stat.exists == false
  - name: Give the right to write in it
-   shell: chmod +w /var/www/mediatheque-phporchestra
+   shell: chmod a+w /var/www/mediatheque-phporchestra
    when: mediatheque_folder.stat.exists == false
