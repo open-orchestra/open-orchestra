@@ -29,3 +29,9 @@ apache_conf:
     errorLog: echonext.phporchestraError.log
     accessLog: echonext.phporchestraAccess.log
     siteId: 3
+  mediatheque.conf:
+    port: 80
+    serverName: mediatheque.inte
+    docRoot: /var/www/mediatheque-phporchestra
+    errorLog: mediathequeError.log
+    accessLog: mediathequeAccess.log
