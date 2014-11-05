@@ -41,8 +41,10 @@ sub vcl_recv {
         set req.backend = phporchestra;
     } elseif (req.url ~ "^/front-phporchestra.dev/") {
         set req.backend = frontphporchestra;
-    } else {
+    } elseif (req.url ~ "^/demo-phporchestra-front.dev/") {
         set req.backend = demophporchestra;
+    } else {
+        set req.backend = echonextphporchestra;
     }
 
     if (req.request == "GET" && req.url ~ "/app"){
