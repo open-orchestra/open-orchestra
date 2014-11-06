@@ -97,8 +97,18 @@ In the `/etc/hosts` file of your computer add the following lines :
 
     192.168.33.10   phporchestra.dev
     192.168.33.10   front-phporchestra.dev
+    192.168.33.10   demo-phporchestra-front.dev
     192.168.33.10   echonext.phporchestra.dev
-    192.168.33.10   mediatheque.dev
+    192.168.33.10   media.phporchestra.dev
+
+## Temporary Override the dns redirection for the integration server
+In the `/etc/hosts` file of your computer add the following lines:
+
+    10.0.1.246      demo-phporchestra-front.inte
+    10.0.1.246      front-phporchestra-front.inte
+    10.0.1.246      smartadmin.phporchestra.inte
+    10.0.1.246      echonext.phporchestra.inte
+    10.0.1.246      media.phporchestra.inte
 
 ## Result
 Once this command, all the client side javascripts librairies should have been installed.
