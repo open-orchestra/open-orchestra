@@ -17,14 +17,14 @@ set :use_composer,      true
 set :update_vendors,    false
 
 set :shared_files,      ["app/config/parameters.yml"]
-set :shared_children,     [app_path + "/logs", web_path + "/upload", "vendor", "node_modules", "bower_components"]
+set :shared_children,     [app_path + "/logs", "vendor", "node_modules", "bower_components"]
 
 role :web,        domain                         # Your HTTP server, Apache/etc
 role :app,        domain, :primary => true       # This may be the same as your `Web` server
 
 set  :keep_releases,  3
 set  :use_sudo,       false
-set :writable_dirs,         ["app/cache", "app/logs", "web/upload"]
+set :writable_dirs,         ["app/cache", "app/logs"]
 set :webserver_user,        "www-data"
 set :use_set_permissions,   true
 

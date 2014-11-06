@@ -35,9 +35,9 @@ apache_conf:
     docRoot: /var/www/phporchestra/tools
     errorLog: toolsError.log
     accessLog: toolsAccess.log
-  mediatheque.conf:
+  media.conf:
     port: 80
-    serverName: mediatheque.dev
-    docRoot: /var/www/mediatheque-phporchestra
-    errorLog: mediathequeError.log
-    accessLog: mediathequeAccess.log
+    serverName: media.phporchestra.dev
+    docRoot: /var/www/media-phporchestra
+    errorLog: mediaError.log
+    accessLog: mediaAccess.log
