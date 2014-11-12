@@ -104,3 +104,4 @@ stof_doctrine_extensions:
 
 php_orchestra_base:
     mediatheque_url: %mediatheque_url%
+    encryption_key: %encryption_key%

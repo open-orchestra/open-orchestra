@@ -75,6 +75,7 @@ then
         cd $i/PHPOrchestra
         git status
         git stash
+        git fetch -p
         git pull --rebase origin master
         git stash pop
         git status
