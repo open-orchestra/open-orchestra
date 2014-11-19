@@ -221,7 +221,11 @@ module.exports = function(grunt) {
                     'web/built/phporchestrabackoffice/css/smartadminPatches/modal.css',
                     'web/built/phporchestrabackoffice/css/smartadminPatches/widget.css',
                     'web/built/phporchestrabackoffice/css/smartadminPatches/checkbox.css',
-                    'web/built/phporchestrabackoffice/css/smartadminPatches/tab.css'
+                    'web/built/phporchestrabackoffice/css/smartadminPatches/tab.css',
+
+                    // TINYMCE PATCHES
+                    'web/built/phporchestrabackoffice/css/tinyMCEPatches/floatPanel.css'
+
                 ],
                 dest: 'web/built/smartadmin.css'
             },
