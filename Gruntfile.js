@@ -215,7 +215,7 @@ module.exports = function(grunt) {
                     'web/bundles/phporchestrabackoffice/smartadmin/css/smartadmin-production.min.css',
                     'web/bundles/phporchestrabackoffice/smartadmin/css/smartadmin-skins.min.css',
                     
-                    // ORCHESTRA PATCHES
+                    // ORCHESTRA SMARTADMIN PATCHES
                     'web/built/phporchestrabackoffice/css/smartadminPatches/flags.css',
                     'web/built/phporchestrabackoffice/css/smartadminPatches/title.css',
                     'web/built/phporchestrabackoffice/css/smartadminPatches/modal.css',
@@ -241,7 +241,8 @@ module.exports = function(grunt) {
                       'web/built/phporchestracms/css/template.css',
                       'web/built/phporchestrabackoffice/css/blocksPanel.css',
                       'web/built/phporchestrabackoffice/css/mediaModal.css',
-                      'web/bundles/lexiktranslation/ng-table/ng-table.min.css'
+                      'web/bundles/lexiktranslation/ng-table/ng-table.min.css',
+                      'web/built/phporchestrabackoffice/css/loginPage.css'
                 ],
                 dest: 'web/built/orchestra.css'
             },
