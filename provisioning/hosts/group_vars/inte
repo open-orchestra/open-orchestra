@@ -8,6 +8,12 @@ apache_conf:
     docRoot: /var/www/backoffice-phporchestra/current/web
     errorLog: phporchestra_backoffice_error.log
     accessLog: phporchestra_backoffice_access.log
+  inte-backoffice-admin-phporchestra.conf:
+    port: 80
+    serverName: admin.phporchestra.inte
+    docRoot: /var/www/backoffice-phporchestra/current/web
+    errorLog: phporchestra_backoffice_error.log
+    accessLog: phporchestra_backoffice_access.log
   demo-orchestra.conf:
     port: 80
     serverName: demo-phporchestra-front.inte
