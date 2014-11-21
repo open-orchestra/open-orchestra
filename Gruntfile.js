@@ -140,6 +140,7 @@ module.exports = function(grunt) {
                     'bower_components/jquery-form/jquery.form.js',
                     'web/bundles/phporchestrabackoffice/js/latinise.js',
                     'web/bundles/phporchestrabackoffice/js/jQuery.DOMNodeAppear.js',
+                    'web/bundles/phporchestrabackoffice/js/underscoreTemplateLoader.js'
                 ],
                 dest: 'web/built/lib.js'
             },
@@ -150,6 +151,7 @@ module.exports = function(grunt) {
                      'web/built/phporchestrabackoffice/js/orchestraListeners.js',
                      
                      // MISC
+                     'web/built/phporchestrabackoffice/js/OrchestraView.js',
                      'web/built/phporchestrabackoffice/js/include.js',
                      'web/built/phporchestrabackoffice/js/addPrototype.js',
                      'web/built/phporchestrabackoffice/js/modelBackbone.js',
