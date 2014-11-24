@@ -24,6 +24,8 @@ rebase=false
 message='noMessage'
 branch_name='noBranch'
 force_param=''
+green=`tput setaf 2`
+reset=`tput sgr0`
 
 while getopts "shrafm:b:c:" arg; do
     case $arg in
@@ -59,7 +61,7 @@ then
     for i in $list
     do
         printf "\n"
-        echo $i
+        echo "${green}$i${reset}"
         printf "\n"
         cd $i/PHPOrchestra
         git $command
@@ -70,7 +72,7 @@ then
     for i in $list
     do
         printf "\n"
-        echo $i
+        echo "${green}$i${reset}"
         printf "\n"
         cd $i/PHPOrchestra
         git status
@@ -88,7 +90,7 @@ else
     for i in $list
     do
         printf "\n"
-        echo $i
+        echo "${green}$i${reset}"
         printf "\n"
         cd $i/PHPOrchestra
         git fetch -p
