@@ -249,7 +249,8 @@ module.exports = function(grunt) {
                       'web/built/phporchestrabackoffice/css/blocksPanel.css',
                       'web/built/phporchestrabackoffice/css/mediaModal.css',
                       'web/bundles/lexiktranslation/ng-table/ng-table.min.css',
-                      'web/built/phporchestrabackoffice/css/loginPage.css'
+                      'web/built/phporchestrabackoffice/css/loginPage.css',
+                      'web/built/phporchestrabackoffice/css/editTable.css'
                 ],
                 dest: 'web/built/orchestra.css'
             },
