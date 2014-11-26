@@ -167,6 +167,7 @@ module.exports = function(grunt) {
                      'web/built/phporchestrabackoffice/js/table/TableviewView.js',
                      'web/built/phporchestrabackoffice/js/table/TableviewCollectionView.js',
                      'web/built/phporchestrabackoffice/js/FullPageFormView.js',
+                     'web/built/phporchestrabackoffice/js/ContentTypeChangeTypeListener.js',
                      'web/built/phporchestrabackoffice/js/page/templateView.js',
                      'web/built/phporchestrabackoffice/js/page/showNode.js',
                      'web/built/phporchestrabackoffice/js/page/showTemplate.js',
@@ -245,7 +246,7 @@ module.exports = function(grunt) {
                 src: [
                       'web/built/phporchestrabackoffice/css/phporchestra.css',
                       'web/built/phporchestrabackoffice/css/mediatheque.css',
-                      'web/built/phporchestracms/css/template.css',
+                      'web/built/phporchestrabackoffice/css/template.css',
                       'web/built/phporchestrabackoffice/css/blocksPanel.css',
                       'web/built/phporchestrabackoffice/css/mediaModal.css',
                       'web/bundles/lexiktranslation/ng-table/ng-table.min.css',
