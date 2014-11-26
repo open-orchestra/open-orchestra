@@ -32,7 +32,6 @@ class AppKernel extends Kernel
             new Braincrafted\Bundle\BootstrapBundle\BraincraftedBootstrapBundle(),
 
             new PHPOrchestra\BaseBundle\PHPOrchestraBaseBundle(),
-            new PHPOrchestra\CMSBundle\PHPOrchestraCMSBundle(),
             new PHPOrchestra\ModelBundle\PHPOrchestraModelBundle(),
             new PHPOrchestra\TranslationBundle\PHPOrchestraTranslationBundle(),
             new PHPOrchestra\ApiBundle\PHPOrchestraApiBundle(),
