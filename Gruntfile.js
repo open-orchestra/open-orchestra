@@ -152,7 +152,6 @@ module.exports = function(grunt) {
                      
                      // MISC
                      'web/built/phporchestrabackoffice/js/OrchestraView.js',
-                     'web/built/phporchestrabackoffice/js/include.js',
                      'web/built/phporchestrabackoffice/js/addPrototype.js',
                      'web/built/phporchestrabackoffice/js/modelBackbone.js',
                      'web/built/phporchestrabackoffice/js/adminFormView.js',
