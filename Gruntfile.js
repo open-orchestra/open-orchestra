@@ -126,7 +126,7 @@ module.exports = function(grunt) {
                     'bower_components/bootstrap/dist/js/bootstrap.js',
                     'web/bundles/phporchestrabackoffice/smartadmin/js/notification/SmartNotification.min.js',
                     'web/bundles/phporchestrabackoffice/smartadmin/js/smartwidgets/jarvis.widget.min.js',
-                    'web/bundles/phporchestrabackoffice/smartadmin/js/app.min.js',
+                    'web/bundles/phporchestrabackoffice/smartadmin/js/app.min.js'
                 ],
                 dest: 'web/built/smartadmin.js'
             },
@@ -176,7 +176,8 @@ module.exports = function(grunt) {
                      'web/built/phporchestrabackoffice/js/configurableContentFormListener.js',
                      'web/built/phporchestrabackoffice/js/page/blocksPanel.js',
                      'web/built/phporchestrabackoffice/js/security.js',
-                     
+                     'web/built/phporchestrabackoffice/js/page/blockTrash.js',
+
                      // MEDIATHEQUE
                      'web/built/phporchestrabackoffice/js/mediatheque/orchestraMediaType.js',
                      'web/built/phporchestrabackoffice/js/mediatheque/mediaModalListeners.js',
@@ -194,7 +195,7 @@ module.exports = function(grunt) {
                      'web/built/phporchestratranslation/js/translationView.js',
                      
                      // BACKBONE ROUTER
-                     'web/bundles/phporchestrabackoffice/js/backboneRouter.js',
+                     'web/bundles/phporchestrabackoffice/js/backboneRouter.js'
                 ],
                 dest: 'web/built/orchestra.js'
             },
@@ -251,7 +252,8 @@ module.exports = function(grunt) {
                       'web/bundles/lexiktranslation/ng-table/ng-table.min.css',
                       'web/built/phporchestrabackoffice/css/loginPage.css',
                       'web/built/phporchestrabackoffice/css/editTable.css',
-                      'web/built/phporchestrabackoffice/css/node.css'
+                      'web/built/phporchestrabackoffice/css/node.css',
+                      'web/built/phporchestrabackoffice/css/widget-trash-block.css'
                 ],
                 dest: 'web/built/orchestra.css'
             },
