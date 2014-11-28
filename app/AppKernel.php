@@ -38,10 +38,12 @@ class AppKernel extends Kernel
             new PHPOrchestra\DisplayBundle\PHPOrchestraDisplayBundle(),
             new PHPOrchestra\BackofficeBundle\PHPOrchestraBackofficeBundle(),
             new PHPOrchestra\UserBundle\PHPOrchestraUserBundle(),
+            new PHPOrchestra\MediaBundle\PHPOrchestraMediaBundle(),
 
             // Need parameters set by some of our bundles
             new Lexik\Bundle\TranslationBundle\LexikTranslationBundle(),
             new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),
+            new \Liip\ImagineBundle\LiipImagineBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
