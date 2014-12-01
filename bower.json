@@ -8,15 +8,15 @@
     "components"
   ],
   "dependencies": {
-    "jquery": "2.0.2",
-    "jquery-ui": "1.10.3",
-    "bootstrap": "3.2.0",
-    "jquery-form": "3.37.0",
+    "jquery": "~2.1.1",
+    "jquery-ui": "~1.11.1",
+    "bootstrap": "~3.3.0",
+    "jquery-form": "~3.46.0",
+    "datatables": "~1.10.2",
     "font-awesome": "4.1.0",
     "pace": "v0.5.3",
     "angular": "1.2.13",
     "backbone": "*",
-    "underscore": "*",
-    "datatables": "~1.10.2"
+    "underscore": "*"
   }
 }

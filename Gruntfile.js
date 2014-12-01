@@ -120,8 +120,8 @@ module.exports = function(grunt) {
         concat: {
             smartadminjs: {
                 src: [
-                    'bower_components/jquery/jquery.js',
-                    'bower_components/jquery-ui/ui/jquery-ui.js',
+                    'bower_components/jquery/dist/jquery.js',
+                    'bower_components/jquery-ui/jquery-ui.js',
                     'web/bundles/phporchestrabackoffice/smartadmin/js/app.config.js',
                     'bower_components/bootstrap/dist/js/bootstrap.js',
                     'web/bundles/phporchestrabackoffice/smartadmin/js/notification/SmartNotification.min.js',
@@ -215,8 +215,10 @@ module.exports = function(grunt) {
 //                    'bower_components/bootstrap/dist/css/bootstrap.min.css',
                     'web/bundles/phporchestrabackoffice/smartadmin/css/bootstrap.min.css',
                     'bower_components/font-awesome/css/font-awesome.min.css',
+                    'web/bundles/phporchestrabackoffice/smartadmin/css/smartadmin-production-plugins.min.css',
                     'web/bundles/phporchestrabackoffice/smartadmin/css/smartadmin-production.min.css',
                     'web/bundles/phporchestrabackoffice/smartadmin/css/smartadmin-skins.min.css',
+                    'web/bundles/phporchestrabackoffice/smartadmin/css/smartadmin-rtl.min.css',
                     
                     // ORCHESTRA SMARTADMIN PATCHES
                     'web/built/phporchestrabackoffice/css/smartadminPatches/flags.css',
@@ -236,7 +238,7 @@ module.exports = function(grunt) {
             
             libcss: {
                 src: [
-                      'bower_components/jquery-ui/themes/base/jquery-ui.css',
+                      'bower_components/jquery-ui/themes/base/all.css',
                       'bower_components/datatables/media/css/jquery.dataTables.css'
                 ],
                 dest: 'web/built/lib.css'
