@@ -997,12 +997,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-cms-bundle.git",
-                "reference": "73110a6ef65e1fbc3a5d4e9d9dccc90b7fc508ac"
+                "reference": "3cb2d78f0efd43bbf05eacb0cf8538ecfda817d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/73110a6ef65e1fbc3a5d4e9d9dccc90b7fc508ac",
-                "reference": "73110a6ef65e1fbc3a5d4e9d9dccc90b7fc508ac",
+                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/3cb2d78f0efd43bbf05eacb0cf8538ecfda817d0",
+                "reference": "3cb2d78f0efd43bbf05eacb0cf8538ecfda817d0",
                 "shasum": ""
             },
             "require": {
@@ -1042,7 +1042,7 @@
                 "source": "https://github.com/itkg/phporchestra-cms-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-cms-bundle/issues"
             },
-            "time": "2014-11-28 15:06:05"
+            "time": "2014-12-02 09:33:54"
         },
         {
             "name": "itkg/phporchestra-display-bundle",
@@ -1102,12 +1102,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-model-bundle.git",
-                "reference": "55aa65613f61836f60a393998ae0305c5f6047bf"
+                "reference": "4abfdcbc5d8bec427020601355eea1c48b67fe6d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-model-bundle/zipball/55aa65613f61836f60a393998ae0305c5f6047bf",
-                "reference": "55aa65613f61836f60a393998ae0305c5f6047bf",
+                "url": "https://api.github.com/repos/itkg/phporchestra-model-bundle/zipball/4abfdcbc5d8bec427020601355eea1c48b67fe6d",
+                "reference": "4abfdcbc5d8bec427020601355eea1c48b67fe6d",
                 "shasum": ""
             },
             "require": {
@@ -1145,7 +1145,7 @@
                 "source": "https://github.com/itkg/phporchestra-model-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-model-bundle/issues"
             },
-            "time": "2014-11-28 14:39:21"
+            "time": "2014-12-02 09:41:28"
         },
         {
             "name": "itkg/phporchestra-translation-bundle",
@@ -2421,17 +2421,16 @@
         },
         {
             "name": "symfony/swiftmailer-bundle",
-            "version": "v2.3.7",
-            "target-dir": "Symfony/Bundle/SwiftmailerBundle",
+            "version": "v2.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/SwiftmailerBundle.git",
-                "reference": "e98defd402f72e8b54a029ba4d3ac4cb51dc3577"
+                "reference": "970b13d01871207e81d17b17ddda025e7e21e797"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/SwiftmailerBundle/zipball/e98defd402f72e8b54a029ba4d3ac4cb51dc3577",
-                "reference": "e98defd402f72e8b54a029ba4d3ac4cb51dc3577",
+                "url": "https://api.github.com/repos/symfony/SwiftmailerBundle/zipball/970b13d01871207e81d17b17ddda025e7e21e797",
+                "reference": "970b13d01871207e81d17b17ddda025e7e21e797",
                 "shasum": ""
             },
             "require": {
@@ -2445,6 +2444,9 @@
                 "symfony/http-kernel": "~2.1",
                 "symfony/yaml": "~2.1"
             },
+            "suggest": {
+                "psr/log": "Allows logging"
+            },
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -2452,8 +2454,8 @@
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Symfony\\Bundle\\SwiftmailerBundle": ""
+                "psr-4": {
+                    "Symfony\\Bundle\\SwiftmailerBundle\\": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -2462,19 +2464,17 @@
             ],
             "authors": [
                 {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com",
-                    "homepage": "http://fabien.potencier.org",
-                    "role": "Lead Developer"
-                },
-                {
                     "name": "Symfony Community",
                     "homepage": "http://symfony.com/contributors"
+                },
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
                 }
             ],
             "description": "Symfony SwiftmailerBundle",
             "homepage": "http://symfony.com",
-            "time": "2014-04-05 17:15:52"
+            "time": "2014-12-01 17:44:50"
         },
         {
             "name": "symfony/symfony",
