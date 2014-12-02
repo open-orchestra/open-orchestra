@@ -156,6 +156,7 @@ module.exports = function(grunt) {
                      'web/built/phporchestrabackoffice/js/modelBackbone.js',
                      'web/built/phporchestrabackoffice/js/adminFormView.js',
                      'web/built/phporchestrabackoffice/js/generateAlias.js',
+                     'web/built/phporchestrabackoffice/js/generateContentTypeId.js',
                      'web/built/phporchestrabackoffice/js/page/makeSortable.js',
                      'web/built/phporchestrabackoffice/js/page/areaView.js',
                      'web/built/phporchestrabackoffice/js/page/blockView.js',
