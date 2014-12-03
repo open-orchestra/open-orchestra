@@ -124,6 +124,7 @@ module.exports = function(grunt) {
                     'bower_components/jquery-ui/jquery-ui.js',
                     'web/bundles/phporchestrabackoffice/smartadmin/js/app.config.js',
                     'bower_components/bootstrap/dist/js/bootstrap.js',
+                    'bower_components/Jcrop/js/jquery.Jcrop.js',
                     'web/bundles/phporchestrabackoffice/smartadmin/js/notification/SmartNotification.min.js',
                     'web/bundles/phporchestrabackoffice/smartadmin/js/smartwidgets/jarvis.widget.min.js',
                     'web/bundles/phporchestrabackoffice/smartadmin/js/app.min.js'
@@ -180,14 +181,8 @@ module.exports = function(grunt) {
                      'web/built/phporchestrabackoffice/js/page/blockTrash.js',
 
                      // MEDIATHEQUE
-                     'web/built/phporchestrabackoffice/js/mediatheque/orchestraMediaType.js',
-                     'web/built/phporchestrabackoffice/js/mediatheque/mediaModalListeners.js',
-                     'web/built/phporchestrabackoffice/js/mediatheque/mediaModalView.js',
-                     'web/built/phporchestrabackoffice/js/mediatheque/mediaFormView.js',
-                     'web/built/phporchestrabackoffice/js/mediatheque/GalleryCollectionView.js',
-                     'web/built/phporchestrabackoffice/js/mediatheque/GalleryLoad.js',
-                     'web/built/phporchestrabackoffice/js/mediatheque/GalleryView.js',
-                     
+                     'web/built/phporchestrabackoffice/js/mediatheque/*.js',
+
                      // INDEXATION
                      'web/bundles/phporchestraindexation/js/*.js',
                      
