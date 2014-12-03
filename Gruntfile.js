@@ -79,7 +79,13 @@ module.exports = function(grunt) {
             smartadmin_flags: {
                 src: 'web/bundles/phporchestrabackoffice/smartadmin/img/flags/flags.png',
                 dest: 'web/img/flags/flags.png'
+            },
+
+            no_image: {
+                src: 'web/bundles/phporchestrabackoffice/images/no_image_available.jpg',
+                dest: 'web/img/no_image_available.jpg'
             }
+
         },
 
         clean: {
