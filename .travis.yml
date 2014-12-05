@@ -16,6 +16,7 @@ cache:
 before_install:
   - printf "\n" |pecl install imagick
   - phpenv config-add .travis.php.ini
+  - composer self-update
 
 install:
   - composer install
