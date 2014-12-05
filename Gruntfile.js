@@ -80,7 +80,12 @@ module.exports = function(grunt) {
                 src: 'web/bundles/phporchestrabackoffice/smartadmin/img/flags/flags.png',
                 dest: 'web/img/flags/flags.png'
             },
+            smartadmin_flags: {
+                src: 'web/bundles/phporchestrabackoffice/smartadmin/img/select2-spinner.gif',
+                dest: 'web/img/select2-spinner.gif'
+            },
 
+            // ORCHESTRA ASSET
             no_image: {
                 src: 'web/bundles/phporchestrabackoffice/images/no_image_available.jpg',
                 dest: 'web/img/no_image_available.jpg'
@@ -131,6 +136,7 @@ module.exports = function(grunt) {
                     'web/bundles/phporchestrabackoffice/smartadmin/js/app.config.js',
                     'bower_components/bootstrap/dist/js/bootstrap.js',
                     'bower_components/Jcrop/js/jquery.Jcrop.js',
+                    'bower_components/select2/select2.js',
                     'web/bundles/phporchestrabackoffice/smartadmin/js/notification/SmartNotification.min.js',
                     'web/bundles/phporchestrabackoffice/smartadmin/js/smartwidgets/jarvis.widget.min.js',
                     'web/bundles/phporchestrabackoffice/smartadmin/js/app.min.js'
@@ -221,7 +227,7 @@ module.exports = function(grunt) {
                     'web/bundles/phporchestrabackoffice/smartadmin/css/smartadmin-production.min.css',
                     'web/bundles/phporchestrabackoffice/smartadmin/css/smartadmin-skins.min.css',
                     'web/bundles/phporchestrabackoffice/smartadmin/css/smartadmin-rtl.min.css',
-                    
+
                     // ORCHESTRA SMARTADMIN PATCHES
                     'web/built/phporchestrabackoffice/css/smartadminPatches/flags.css',
                     'web/built/phporchestrabackoffice/css/smartadminPatches/title.css',
