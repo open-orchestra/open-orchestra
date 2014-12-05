@@ -53,3 +53,12 @@ namespace :grunt do
         capifony_puts_ok
     end
 end
+
+namespace :orchestra do
+    desc "Check the consistency of the nodes"
+    task :check do
+        capifony_pretty_print "--> Check all nodes"
+        result = capture("cd #{latest_release} && php app/console -e=prod orchestra:check --nodes")
+        puts result
+    end
+end
