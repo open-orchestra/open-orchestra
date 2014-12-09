@@ -70,7 +70,10 @@ module.exports = function(grunt) {
                 src: 'bower_components/pace/pace.min.js',
                 dest: 'web/js/pace.min.js'
             },
-            
+            jcrop_gif: {
+                src: 'bower_components/jcrop/css/Jcrop.gif',
+                dest: 'web/img/jcrop/Jcrop.gif'
+            },
             // SMARTADMIN ASSETS
             smartadmin_bg: {
                 src: 'web/bundles/phporchestrabackoffice/smartadmin/img/mybg.png',
@@ -135,7 +138,7 @@ module.exports = function(grunt) {
                     'bower_components/jquery-ui/jquery-ui.js',
                     'web/bundles/phporchestrabackoffice/smartadmin/js/app.config.js',
                     'bower_components/bootstrap/dist/js/bootstrap.js',
-                    'bower_components/Jcrop/js/jquery.Jcrop.js',
+                    'bower_components/jcrop/js/jquery.Jcrop.js',
                     'bower_components/select2/select2.js',
                     'web/bundles/phporchestrabackoffice/smartadmin/js/notification/SmartNotification.min.js',
                     'web/bundles/phporchestrabackoffice/smartadmin/js/smartwidgets/jarvis.widget.min.js',
