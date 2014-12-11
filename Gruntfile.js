@@ -83,7 +83,7 @@ module.exports = function(grunt) {
                 src: 'web/bundles/phporchestrabackoffice/smartadmin/img/flags/flags.png',
                 dest: 'web/img/flags/flags.png'
             },
-            smartadmin_flags: {
+            select2_gif: {
                 src: 'web/bundles/phporchestrabackoffice/smartadmin/img/select2-spinner.gif',
                 dest: 'web/img/select2-spinner.gif'
             },
