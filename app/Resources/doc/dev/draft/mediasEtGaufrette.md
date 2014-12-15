@@ -1,8 +1,10 @@
 # I/ PROCESS D'UPLOAD ET DE REDIMMENSIONNEMENT
 
 Les images contribuées dans la médiathèque peuvent être disponibles en front sous plusieurs formats/ratios. Cependant les contributeurs n'ont pas à uploader toutes ces variantes, celles-ci sont automatiquement générées par Orchestra à partir de l'unique média uploadé par le contributeur.
-Pour celà l'intégrateur peut spécifier dans la conf d'Orchestra (conf à décrire) les différents formats dont le front a besoin.
-Si certaines variantes générées ne sont pas satisfaisantes, le contributeur peut utiliser à postériori l'outil de cropping pour générer lui-même la variante.
+Pour celà l'intégrateur peut spécifier dans la conf d'Orchestra *(conf à décrire)* les différents formats dont le front a besoin.
+
+Si certaines variantes générées ne sont pas satisfaisantes, le contributeur peut utiliser à posteriori l'outil de cropping pour générer lui-même la variante.
+
 Le process de base est le suivant :
 * 1/ Upload et paramètrage du media depuis la médiathèque
 * 2/ A la réception du média, Orchestra génère les différentes variantes paramétrées en conf (via Imagik)
