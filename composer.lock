@@ -997,12 +997,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-cms-bundle.git",
-                "reference": "12444b9970e7aec7126b29446159174b445b8758"
+                "reference": "badf06a545348524ee5bdf4ea1b5ea76699425e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/12444b9970e7aec7126b29446159174b445b8758",
-                "reference": "12444b9970e7aec7126b29446159174b445b8758",
+                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/badf06a545348524ee5bdf4ea1b5ea76699425e2",
+                "reference": "badf06a545348524ee5bdf4ea1b5ea76699425e2",
                 "shasum": ""
             },
             "require": {
@@ -1042,7 +1042,7 @@
                 "source": "https://github.com/itkg/phporchestra-cms-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-cms-bundle/issues"
             },
-            "time": "2014-12-11 16:31:18"
+            "time": "2014-12-15 09:25:13"
         },
         {
             "name": "itkg/phporchestra-display-bundle",
@@ -1271,9 +1271,9 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes Schmitt",
+                    "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -1374,9 +1374,9 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes Schmitt",
+                    "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -1444,9 +1444,9 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes Schmitt",
+                    "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -1463,16 +1463,16 @@
         },
         {
             "name": "kriswallsmith/assetic",
-            "version": "v1.2.0",
+            "version": "v1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kriswallsmith/assetic.git",
-                "reference": "df991c124a2212371443b586a1be767500036dee"
+                "reference": "b20efe38845d20458702f97f3ff625d80805897b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/df991c124a2212371443b586a1be767500036dee",
-                "reference": "df991c124a2212371443b586a1be767500036dee",
+                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/b20efe38845d20458702f97f3ff625d80805897b",
+                "reference": "b20efe38845d20458702f97f3ff625d80805897b",
                 "shasum": ""
             },
             "require": {
@@ -1533,7 +1533,7 @@
                 "compression",
                 "minification"
             ],
-            "time": "2014-10-14 14:45:32"
+            "time": "2014-12-12 05:04:05"
         },
         {
             "name": "lexik/translation-bundle",
@@ -1707,9 +1707,9 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes Schmitt",
+                    "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -1757,9 +1757,9 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes Schmitt",
+                    "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -2595,12 +2595,12 @@
             "version": "v1.1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/twigphp/Twig-extensions.git",
+                "url": "https://github.com/fabpot/Twig-extensions.git",
                 "reference": "c0ab818595338dd5569369bfce2552d02cec5d50"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig-extensions/zipball/c0ab818595338dd5569369bfce2552d02cec5d50",
+                "url": "https://api.github.com/repos/fabpot/Twig-extensions/zipball/c0ab818595338dd5569369bfce2552d02cec5d50",
                 "reference": "c0ab818595338dd5569369bfce2552d02cec5d50",
                 "shasum": ""
             },
@@ -2625,7 +2625,9 @@
             "authors": [
                 {
                     "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
+                    "email": "fabien@symfony.com",
+                    "homepage": "http://fabien.potencier.org",
+                    "role": "Lead Developer"
                 }
             ],
             "description": "Common additional features for Twig that do not directly belong in core",
@@ -2641,12 +2643,12 @@
             "version": "v1.16.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/twigphp/Twig.git",
+                "url": "https://github.com/fabpot/Twig.git",
                 "reference": "42f758d9fe2146d1f0470604fc05ee43580873fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/42f758d9fe2146d1f0470604fc05ee43580873fc",
+                "url": "https://api.github.com/repos/fabpot/Twig/zipball/42f758d9fe2146d1f0470604fc05ee43580873fc",
                 "reference": "42f758d9fe2146d1f0470604fc05ee43580873fc",
                 "shasum": ""
             },
