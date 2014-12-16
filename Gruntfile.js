@@ -193,7 +193,6 @@ module.exports = function(grunt) {
                      'web/built/phporchestrabackoffice/js/configurableContentFormListener.js',
                      'web/built/phporchestrabackoffice/js/page/blocksPanel.js',
                      'web/built/phporchestrabackoffice/js/security.js',
-                     'web/built/phporchestrabackoffice/js/page/blockTrash.js',
 
                      // MEDIATHEQUE
                      'web/built/phporchestrabackoffice/js/mediatheque/*.js',
@@ -266,8 +265,7 @@ module.exports = function(grunt) {
                       'web/bundles/lexiktranslation/ng-table/ng-table.min.css',
                       'web/built/phporchestrabackoffice/css/loginPage.css',
                       'web/built/phporchestrabackoffice/css/editTable.css',
-                      'web/built/phporchestrabackoffice/css/node.css',
-                      'web/built/phporchestrabackoffice/css/widget-trash-block.css'
+                      'web/built/phporchestrabackoffice/css/node.css'
                 ],
                 dest: 'web/built/orchestra.css'
             },
