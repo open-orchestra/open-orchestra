@@ -180,7 +180,7 @@ module.exports = function(grunt) {
                      'web/built/phporchestrabackoffice/js/page/NodeVersionView.js',
                      'web/built/phporchestrabackoffice/js/page/NodeLanguageView.js',
                      'web/built/phporchestrabackoffice/js/page/previewLinkView.js',
-                     'web/built/phporchestrabackoffice/js/page/configurationButtonView.js',
+                     'web/built/phporchestrabackoffice/js/page/pageConfigurationButtonView.js',
                      'web/built/phporchestrabackoffice/js/table/TableviewView.js',
                      'web/built/phporchestrabackoffice/js/table/TableviewCollectionView.js',
                      'web/built/phporchestrabackoffice/js/FullPageFormView.js',
