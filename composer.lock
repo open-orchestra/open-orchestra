@@ -997,12 +997,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-cms-bundle.git",
-                "reference": "acab00bad1805f6077d419f1ddb2f71aec2273de"
+                "reference": "8f188ada348850db46452344a500aac939dc65d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/acab00bad1805f6077d419f1ddb2f71aec2273de",
-                "reference": "acab00bad1805f6077d419f1ddb2f71aec2273de",
+                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/8f188ada348850db46452344a500aac939dc65d8",
+                "reference": "8f188ada348850db46452344a500aac939dc65d8",
                 "shasum": ""
             },
             "require": {
@@ -1042,7 +1042,7 @@
                 "source": "https://github.com/itkg/phporchestra-cms-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-cms-bundle/issues"
             },
-            "time": "2014-12-16 11:22:22"
+            "time": "2014-12-18 15:50:55"
         },
         {
             "name": "itkg/phporchestra-display-bundle",
@@ -1102,12 +1102,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-model-bundle.git",
-                "reference": "dc07ece2802b44eb78efc7f756dec8be71b720f5"
+                "reference": "c22991e3be793ecd0404bccb74f6bf8247118dfd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-model-bundle/zipball/dc07ece2802b44eb78efc7f756dec8be71b720f5",
-                "reference": "dc07ece2802b44eb78efc7f756dec8be71b720f5",
+                "url": "https://api.github.com/repos/itkg/phporchestra-model-bundle/zipball/c22991e3be793ecd0404bccb74f6bf8247118dfd",
+                "reference": "c22991e3be793ecd0404bccb74f6bf8247118dfd",
                 "shasum": ""
             },
             "require": {
@@ -1128,6 +1128,7 @@
             "autoload": {
                 "psr-0": {
                     "PHPOrchestra\\ModelBundle": "",
+                    "PHPOrchestra\\ModelInterface": "",
                     "PHPOrchestra\\MediaBundle": "",
                     "PHPOrchestra\\Media": ""
                 }
@@ -1145,7 +1146,7 @@
                 "source": "https://github.com/itkg/phporchestra-model-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-model-bundle/issues"
             },
-            "time": "2014-12-11 16:31:52"
+            "time": "2014-12-18 15:29:44"
         },
         {
             "name": "itkg/phporchestra-translation-bundle",
@@ -1194,12 +1195,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-user-bundle.git",
-                "reference": "554b63e5fefe3d897e9f0406226f128fee0f79a6"
+                "reference": "adc5c43e2e185def2756c595e37b8de7a7848965"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-user-bundle/zipball/554b63e5fefe3d897e9f0406226f128fee0f79a6",
-                "reference": "554b63e5fefe3d897e9f0406226f128fee0f79a6",
+                "url": "https://api.github.com/repos/itkg/phporchestra-user-bundle/zipball/adc5c43e2e185def2756c595e37b8de7a7848965",
+                "reference": "adc5c43e2e185def2756c595e37b8de7a7848965",
                 "shasum": ""
             },
             "require": {
@@ -1232,7 +1233,7 @@
                 "source": "https://github.com/itkg/phporchestra-user-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-user-bundle/issues"
             },
-            "time": "2014-12-05 10:51:22"
+            "time": "2014-12-18 14:40:36"
         },
         {
             "name": "jms/metadata",
