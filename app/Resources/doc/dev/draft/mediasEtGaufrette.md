@@ -6,12 +6,13 @@ Pour celà l'intégrateur peut spécifier dans la conf d'Orchestra *(conf à dé
 Si certaines variantes générées ne sont pas satisfaisantes, le contributeur peut utiliser à posteriori l'outil de cropping pour générer lui-même la variante.
 
 Le process de base est le suivant :
-* 1/ Upload et paramètrage du media depuis la médiathèque
+* 1/ Upload et paramètrage du média depuis la médiathèque
 * 2/ A la réception du média, Orchestra génère les différentes variantes paramétrées en conf (via Imagik)
-* 3/ Les varaiantes ainsi que l'originale sont déplacées dans leur répertoire de stockage, là où elles pourront être consultées par le web
+* 3/ Les variantes ainsi que l'originale sont déplacées dans leur répertoire de stockage, là où elles pourront être consultées par le web
 * 4/ Ultérieurement et en dehors de cette séquence, un contributeur peut utiliser l'outil de cropping de la médiathèque pour surcharger une ou plusieurs des variantes automatiquement générées par Orchestra.
 
 # II/ Stockage des médias
-Basiquement le stockage des médias se fait sur le serveur web. Cependant pour des usages plus avancés (stockage externe dans le cloud par exemple (Amazon S3 ou autre)) le bundle KNPGaufrette peut être activé. Une conf spécifique dans MediaBundle permet d'indiquer si oui ou non le Bundle doit-être activé pour la médiathèque. Dans ce cas la conf de MediaBundle indique également quel adapteur doit être utilisé. L'adapteur lui est configuré dans le app/config.
+Basiquement le stockage des médias se fait sur le serveur web. Cependant pour des usages plus avancés (stockage externe dans le cloud par exemple (Amazon S3 ou autre)) le bundle KNPGaufrette est utilisé. Une conf spécifique dans MediaBundle permet d'indiquer le filesystem utilisé pour la médiathèque. Par défaut Orchestra utilise l'adapter local filesystem.
+Dans la mesure où les médias peuvent potentiellement être stockés ailleurs qu'en local, l'utilisation de la fonctionnalité de crop commence par le rappatriement en local du fichier via la méthode read($key) des adapters.
 
-Le process de contribution des médias décrit en I est alors altéré : si gaufrette est activé, les médias ne sont plus déplacés en local, mais via l'adapteur sélectionné.
+Il reste à étudier le cas de l'affichage des médias, Gaufrette ne fournissant pas de méthode générique pour retrouver l'url à une ressource uploadée.
