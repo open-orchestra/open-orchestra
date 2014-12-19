@@ -140,9 +140,9 @@ module.exports = function(grunt) {
                     'bower_components/bootstrap/dist/js/bootstrap.js',
                     'bower_components/jcrop/js/jquery.Jcrop.js',
                     'bower_components/select2/select2.js',
-                    'web/bundles/phporchestrabackoffice/smartadmin/js/notification/SmartNotification.min.js',
-                    'web/bundles/phporchestrabackoffice/smartadmin/js/smartwidgets/jarvis.widget.min.js',
-                    'web/bundles/phporchestrabackoffice/smartadmin/js/app.min.js'
+                    'web/bundles/phporchestrabackoffice/smartadmin/js/notification/SmartNotification.js',
+                    'web/bundles/phporchestrabackoffice/smartadmin/js/smartwidgets/jarvis.widget.js',
+                    'web/bundles/phporchestrabackoffice/smartadmin/js/app.js'
                 ],
                 dest: 'web/built/smartadmin.js'
             },
@@ -223,13 +223,13 @@ module.exports = function(grunt) {
             smartadmincss: {
                 src: [
                     // SMARTADMIN PACKAGE
-//                    'bower_components/bootstrap/dist/css/bootstrap.min.css',
-                    'web/bundles/phporchestrabackoffice/smartadmin/css/bootstrap.min.css',
-                    'bower_components/font-awesome/css/font-awesome.min.css',
-                    'web/bundles/phporchestrabackoffice/smartadmin/css/smartadmin-production-plugins.min.css',
-                    'web/bundles/phporchestrabackoffice/smartadmin/css/smartadmin-production.min.css',
-                    'web/bundles/phporchestrabackoffice/smartadmin/css/smartadmin-skins.min.css',
-                    'web/bundles/phporchestrabackoffice/smartadmin/css/smartadmin-rtl.min.css',
+//                    'bower_components/bootstrap/dist/css/bootstrap.css',
+                    'web/bundles/phporchestrabackoffice/smartadmin/css/bootstrap.css',
+                    'bower_components/font-awesome/css/font-awesome.css',
+                    'web/bundles/phporchestrabackoffice/smartadmin/css/smartadmin-production-plugins.css',
+                    'web/bundles/phporchestrabackoffice/smartadmin/css/smartadmin-production.css',
+                    'web/bundles/phporchestrabackoffice/smartadmin/css/smartadmin-skins.css',
+                    'web/bundles/phporchestrabackoffice/smartadmin/css/smartadmin-rtl.css',
 
                     // ORCHESTRA SMARTADMIN PATCHES
                     'web/built/phporchestrabackoffice/css/smartadminPatches/flags.css',
