@@ -177,7 +177,7 @@ module.exports = function(grunt) {
                      'web/built/phporchestrabackoffice/js/page/areaView.js',
                      'web/built/phporchestrabackoffice/js/page/blockView.js',
                      'web/built/phporchestrabackoffice/js/page/nodeView.js',
-                     'web/built/phporchestrabackoffice/js/page/NodeVersionView.js',
+                     'web/built/phporchestrabackoffice/js/VersionView.js',
                      'web/built/phporchestrabackoffice/js/LanguageView.js',
                      'web/built/phporchestrabackoffice/js/page/previewLinkView.js',
                      'web/built/phporchestrabackoffice/js/page/pageConfigurationButtonView.js',
