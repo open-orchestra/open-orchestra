@@ -9,6 +9,8 @@ services:
 php:
   - 5.4
 
+sudo: false
+
 cache:
   directories:
     - ~/.composer/cache
