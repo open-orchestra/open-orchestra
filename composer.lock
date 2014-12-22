@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4ecceb2229a9fba8ede24a0e234df91f",
+    "hash": "6d8fd18966dc2626016a4c30b35c2369",
     "packages": [
         {
             "name": "braincrafted/bootstrap-bundle",
@@ -1000,12 +1000,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-cms-bundle.git",
-                "reference": "b36340766ee10961ea52cba87fe2d475662f6a96"
+                "reference": "6a1f83e89958636d66d3c30c9fe30d3b0ff206d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/b36340766ee10961ea52cba87fe2d475662f6a96",
-                "reference": "b36340766ee10961ea52cba87fe2d475662f6a96",
+                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/6a1f83e89958636d66d3c30c9fe30d3b0ff206d3",
+                "reference": "6a1f83e89958636d66d3c30c9fe30d3b0ff206d3",
                 "shasum": ""
             },
             "require": {
@@ -1013,13 +1013,14 @@
                 "friendsofsymfony/user-bundle": "~2.0",
                 "itkg/phporchestra-base-bundle": "dev-master",
                 "itkg/phporchestra-display-bundle": "dev-master",
-                "itkg/phporchestra-model-bundle": "dev-master",
+                "itkg/phporchestra-media-bundle": "dev-master",
                 "itkg/phporchestra-translation-bundle": "dev-master",
                 "itkg/phporchestra-user-bundle": "dev-master",
                 "jms/serializer-bundle": "0.13.0",
                 "stfalcon/tinymce-bundle": "0.3.8"
             },
             "require-dev": {
+                "itkg/phporchestra-model-bundle": "dev-master",
                 "phake/phake": "2.0.0-beta2",
                 "phpunit/phpunit": "4.0.14",
                 "scrutinizer/ocular": "1.1.1"
@@ -1045,7 +1046,7 @@
                 "source": "https://github.com/itkg/phporchestra-cms-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-cms-bundle/issues"
             },
-            "time": "2014-12-22 13:23:06"
+            "time": "2014-12-22 16:36:56"
         },
         {
             "name": "itkg/phporchestra-display-bundle",
@@ -1099,18 +1100,71 @@
             "time": "2014-12-22 09:30:55"
         },
         {
+            "name": "itkg/phporchestra-media-bundle",
+            "version": "dev-master",
+            "target-dir": "PHPOrchestra",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:itkg/phporchestra-media-bundle.git",
+                "reference": "c1ebd606bca753b5d0edd019c74d64c3b79e8b8f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/itkg/phporchestra-media-bundle/zipball/c1ebd606bca753b5d0edd019c74d64c3b79e8b8f",
+                "reference": "c1ebd606bca753b5d0edd019c74d64c3b79e8b8f",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/data-fixtures": "1.0.0",
+                "doctrine/mongodb-odm": "1.0.0-BETA11",
+                "doctrine/mongodb-odm-bundle": "3.0.0-BETA6",
+                "ext-imagick": "*",
+                "itkg/phporchestra-model-bundle": "dev-master",
+                "stof/doctrine-extensions-bundle": "1.1.0"
+            },
+            "require-dev": {
+                "itkg/phporchestra-base-bundle": "dev-master",
+                "jmikola/geojson": "1.0.1",
+                "phake/phake": "2.0.0-beta2",
+                "phpunit/phpunit": "4.0.14",
+                "scrutinizer/ocular": "1.1.1",
+                "symfony/validator": "2.5.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "PHPOrchestra\\MediaBundle": "",
+                    "PHPOrchestra\\Media": ""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Thal",
+                    "email": "nico.th4l@gmail.com"
+                }
+            ],
+            "support": {
+                "source": "https://github.com/itkg/phporchestra-media-bundle/tree/master",
+                "issues": "https://github.com/itkg/phporchestra-media-bundle/issues"
+            },
+            "time": "2014-12-22 16:18:51"
+        },
+        {
             "name": "itkg/phporchestra-model-bundle",
             "version": "dev-master",
             "target-dir": "PHPOrchestra",
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-model-bundle.git",
-                "reference": "5420f8c6c91ad3fd12b58439841244f9ad21a42b"
+                "reference": "c34047a6a3a278d72f1504837a1aeceffd03e9d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-model-bundle/zipball/5420f8c6c91ad3fd12b58439841244f9ad21a42b",
-                "reference": "5420f8c6c91ad3fd12b58439841244f9ad21a42b",
+                "url": "https://api.github.com/repos/itkg/phporchestra-model-bundle/zipball/c34047a6a3a278d72f1504837a1aeceffd03e9d5",
+                "reference": "c34047a6a3a278d72f1504837a1aeceffd03e9d5",
                 "shasum": ""
             },
             "require": {
@@ -1131,9 +1185,7 @@
             "autoload": {
                 "psr-0": {
                     "PHPOrchestra\\ModelBundle": "",
-                    "PHPOrchestra\\ModelInterface": "",
-                    "PHPOrchestra\\MediaBundle": "",
-                    "PHPOrchestra\\Media": ""
+                    "PHPOrchestra\\ModelInterface": ""
                 }
             },
             "license": [
@@ -1149,7 +1201,7 @@
                 "source": "https://github.com/itkg/phporchestra-model-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-model-bundle/issues"
             },
-            "time": "2014-12-22 13:23:11"
+            "time": "2014-12-22 16:05:29"
         },
         {
             "name": "itkg/phporchestra-translation-bundle",
@@ -2599,12 +2651,12 @@
             "version": "v1.1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/twigphp/Twig-extensions.git",
+                "url": "https://github.com/fabpot/Twig-extensions.git",
                 "reference": "c0ab818595338dd5569369bfce2552d02cec5d50"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig-extensions/zipball/c0ab818595338dd5569369bfce2552d02cec5d50",
+                "url": "https://api.github.com/repos/fabpot/Twig-extensions/zipball/c0ab818595338dd5569369bfce2552d02cec5d50",
                 "reference": "c0ab818595338dd5569369bfce2552d02cec5d50",
                 "shasum": ""
             },
@@ -2629,7 +2681,9 @@
             "authors": [
                 {
                     "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
+                    "email": "fabien@symfony.com",
+                    "homepage": "http://fabien.potencier.org",
+                    "role": "Lead Developer"
                 }
             ],
             "description": "Common additional features for Twig that do not directly belong in core",
@@ -2645,12 +2699,12 @@
             "version": "v1.16.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/twigphp/Twig.git",
+                "url": "https://github.com/fabpot/Twig.git",
                 "reference": "42f758d9fe2146d1f0470604fc05ee43580873fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/42f758d9fe2146d1f0470604fc05ee43580873fc",
+                "url": "https://api.github.com/repos/fabpot/Twig/zipball/42f758d9fe2146d1f0470604fc05ee43580873fc",
                 "reference": "42f758d9fe2146d1f0470604fc05ee43580873fc",
                 "shasum": ""
             },
@@ -3387,7 +3441,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "itkg/phporchestra-cms-bundle": 20
+        "itkg/phporchestra-cms-bundle": 20,
+        "itkg/phporchestra-model-bundle": 20
     },
     "prefer-stable": true,
     "platform": [],

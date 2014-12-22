@@ -23,6 +23,10 @@
         },
         {
             "type": "vcs",
+            "url": "https://github.com/itkg/phporchestra-media-bundle"
+        },
+        {
+            "type": "vcs",
             "url": "https://github.com/itkg/phporchestra-indexation-bundle"
         },
         {
@@ -42,7 +46,8 @@
     "prefer-stable": true,
     "require": {
         "incenteev/composer-parameter-handler": "~2.0",
-        "itkg/phporchestra-cms-bundle": "dev-master"
+        "itkg/phporchestra-cms-bundle": "dev-master",
+        "itkg/phporchestra-model-bundle": "dev-master"
     },
     "require-dev": {
         "jmikola/geojson": "~1.0",
