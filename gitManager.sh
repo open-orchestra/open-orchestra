@@ -24,7 +24,7 @@ rebase=false
 message='noMessage'
 branch_name='noBranch'
 force_param=''
-green=`tput setaf 2`
+green=`tput setaf 3`
 reset=`tput sgr0`
 
 while getopts "shrafm:b:c:" arg; do
