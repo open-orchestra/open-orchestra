@@ -64,6 +64,8 @@ doctrine_mongodb:
             server: "%php_orchestra_cms.mongodb.server%"
             options: {}
     default_database: "%php_orchestra_cms.mongodb.database%"
+    resolve_target_documents:
+        PHPOrchestra\ModelInterface\Model\SiteInterface: PHPOrchestra\ModelBundle\Document\Site
     document_managers:
         default:
             auto_mapping: true
