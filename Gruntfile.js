@@ -194,6 +194,8 @@ module.exports = function(grunt) {
                      'web/built/phporchestrabackoffice/js/configurableContentFormListener.js',
                      'web/built/phporchestrabackoffice/js/page/blocksPanel.js',
                      'web/built/phporchestrabackoffice/js/security.js',
+                     'web/built/phporchestrabackoffice/js/smartConfirmTitleView.js',
+                     'web/built/phporchestrabackoffice/js/smartConfirmButtonView.js',
 
                      // MEDIATHEQUE
                      'web/built/phporchestrabackoffice/js/mediatheque/*.js',
