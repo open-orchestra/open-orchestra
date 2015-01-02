@@ -947,12 +947,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-base-bundle.git",
-                "reference": "4fc41dfb47fd36d8ffca04416d3a2d4d36aa8b44"
+                "reference": "ae1c1c9e50f3a8f69018a2c0cf1eb4aa9f5ddd49"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-base-bundle/zipball/4fc41dfb47fd36d8ffca04416d3a2d4d36aa8b44",
-                "reference": "4fc41dfb47fd36d8ffca04416d3a2d4d36aa8b44",
+                "url": "https://api.github.com/repos/itkg/phporchestra-base-bundle/zipball/ae1c1c9e50f3a8f69018a2c0cf1eb4aa9f5ddd49",
+                "reference": "ae1c1c9e50f3a8f69018a2c0cf1eb4aa9f5ddd49",
                 "shasum": ""
             },
             "require": {
@@ -991,7 +991,7 @@
                 "source": "https://github.com/itkg/phporchestra-base-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-base-bundle/issues"
             },
-            "time": "2014-12-23 16:02:32"
+            "time": "2015-01-02 12:52:52"
         },
         {
             "name": "itkg/phporchestra-cms-bundle",
@@ -1000,12 +1000,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-cms-bundle.git",
-                "reference": "cd29bda28ca34749d568dc85f0414494b8a7ba29"
+                "reference": "37ece086a7b307d7890156a4a98c0d6f9706e2e1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/cd29bda28ca34749d568dc85f0414494b8a7ba29",
-                "reference": "cd29bda28ca34749d568dc85f0414494b8a7ba29",
+                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/37ece086a7b307d7890156a4a98c0d6f9706e2e1",
+                "reference": "37ece086a7b307d7890156a4a98c0d6f9706e2e1",
                 "shasum": ""
             },
             "require": {
@@ -1047,7 +1047,7 @@
                 "source": "https://github.com/itkg/phporchestra-cms-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-cms-bundle/issues"
             },
-            "time": "2015-01-02 09:41:24"
+            "time": "2015-01-02 12:52:47"
         },
         {
             "name": "itkg/phporchestra-display-bundle",
@@ -1107,12 +1107,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-media-bundle.git",
-                "reference": "d235a1589e285a3e5ea239ae6b3f083fba0a3e6f"
+                "reference": "6edc90a91c5dd393c3cf1baf14b8e4ebdc391000"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-media-bundle/zipball/d235a1589e285a3e5ea239ae6b3f083fba0a3e6f",
-                "reference": "d235a1589e285a3e5ea239ae6b3f083fba0a3e6f",
+                "url": "https://api.github.com/repos/itkg/phporchestra-media-bundle/zipball/6edc90a91c5dd393c3cf1baf14b8e4ebdc391000",
+                "reference": "6edc90a91c5dd393c3cf1baf14b8e4ebdc391000",
                 "shasum": ""
             },
             "require": {
@@ -1151,7 +1151,7 @@
                 "source": "https://github.com/itkg/phporchestra-media-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-media-bundle/issues"
             },
-            "time": "2015-01-02 09:44:17"
+            "time": "2015-01-02 11:02:39"
         },
         {
             "name": "itkg/phporchestra-model-bundle",
@@ -2698,12 +2698,12 @@
             "version": "v1.1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/twigphp/Twig-extensions.git",
+                "url": "https://github.com/fabpot/Twig-extensions.git",
                 "reference": "c0ab818595338dd5569369bfce2552d02cec5d50"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig-extensions/zipball/c0ab818595338dd5569369bfce2552d02cec5d50",
+                "url": "https://api.github.com/repos/fabpot/Twig-extensions/zipball/c0ab818595338dd5569369bfce2552d02cec5d50",
                 "reference": "c0ab818595338dd5569369bfce2552d02cec5d50",
                 "shasum": ""
             },
@@ -2728,7 +2728,9 @@
             "authors": [
                 {
                     "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
+                    "email": "fabien@symfony.com",
+                    "homepage": "http://fabien.potencier.org",
+                    "role": "Lead Developer"
                 }
             ],
             "description": "Common additional features for Twig that do not directly belong in core",
