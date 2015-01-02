@@ -105,5 +105,7 @@ stof_doctrine_extensions:
             timestampable: true
 
 php_orchestra_base:
-    mediatheque_url: %mediatheque_url%
     encryption_key: %encryption_key%
+
+php_orchestra_media:
+    mediatheque_url: %mediatheque_url%
