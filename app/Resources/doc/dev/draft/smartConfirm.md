@@ -22,4 +22,31 @@ La vue du titre contient un point d'interrogation, il ne faut donc pas que le ti
 
 Pour que les boutons soient traduit dans les différentes langues, nous utilisons une vue, ce qui nous permet d'utiliser le système de traduction de symfony2. Pour ce qui est du titre et de la description, il faut que les textes soit déjà traduit. Par exemple pour la traduction du titre d'un bloc est contenu dans la vue des zones ("areaView._tpl.twig").
 
+# IV/ Exemple
+
+smartConfirm(
+    'fa-trash-o',
+    confirm_title,
+    confirm_text,
+    callBackParams:
+      url: url
+    yesCallback: (params) ->
+      $.ajax
+        url: params.url
+        method: 'DELETE'
+        success: (response) ->
+          if redirectUrl != undefined
+            displayMenu(redirectUrl)
+          else
+            redirectUrl = appRouter.generateUrl 'showHome'
+            Backbone.history.navigate(redirectUrl, {trigger:true})
+            displayMenu(redirectUrl)
+          return
+        error: (response) ->
+          $('.modal-footer', this.el).html response.responseJSON.error.message
+          return
+    noCallback: ->
+      $("#OrchestraBOModal").modal "show"
+  )
+
 
