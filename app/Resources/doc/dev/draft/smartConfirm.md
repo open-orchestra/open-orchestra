@@ -24,29 +24,27 @@ Pour que les boutons soient traduit dans les différentes langues, nous utilison
 
 # IV/ Exemple
 
-smartConfirm(
-    'fa-trash-o',
-    confirm_title,
-    confirm_text,
-    callBackParams:
-      url: url
-    yesCallback: (params) ->
-      $.ajax
-        url: params.url
-        method: 'DELETE'
-        success: (response) ->
-          if redirectUrl != undefined
-            displayMenu(redirectUrl)
-          else
-            redirectUrl = appRouter.generateUrl 'showHome'
-            Backbone.history.navigate(redirectUrl, {trigger:true})
-            displayMenu(redirectUrl)
-          return
-        error: (response) ->
-          $('.modal-footer', this.el).html response.responseJSON.error.message
-          return
-    noCallback: ->
-      $("#OrchestraBOModal").modal "show"
-  )
-
-
+    smartConfirm(
+        'fa-trash-o',
+        confirm_title,
+        confirm_text,
+        callBackParams:
+          url: url
+        yesCallback: (params) ->
+          $.ajax
+            url: params.url
+            method: 'DELETE'
+            success: (response) ->
+              if redirectUrl != undefined
+                displayMenu(redirectUrl)
+              else
+                redirectUrl = appRouter.generateUrl 'showHome'
+                Backbone.history.navigate(redirectUrl, {trigger:true})
+                displayMenu(redirectUrl)
+              return
+            error: (response) ->
+              $('.modal-footer', this.el).html response.responseJSON.error.message
+              return
+        noCallback: ->
+          $("#OrchestraBOModal").modal "show"
+      )
