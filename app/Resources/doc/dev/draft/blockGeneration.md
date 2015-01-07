@@ -46,7 +46,7 @@ Pour l'utiliser simplement dans le cas d'ajout de block dans les vendors, il suf
         --block-name="TestBlock" 
         --form-generator-dir="vendor/itkg/phporchestra-cms-bundle/PHPOrchestra/Backoffice/GenerateForm/Strategies" 
         --front-display-dir="vendor/itkg/phporchestra-display-bundle/PHPOrchestra/DisplayBundle/DisplayBlock/Strategies" 
-        --backoffice-icon-dir="vendor/itkg/phporchestra-cms-bundle/PHPOrchestra/BackofficeBundle/DisplayIcons/Strategies" 
+        --backoffice-icon-dir="vendor/itkg/phporchestra-cms-bundle/PHPOrchestra/BackofficeBundle/DisplayIcon/Strategies" 
         --backoffice-display-dir="vendor/itkg/phporchestra-cms-bundle/PHPOrchestra/BackofficeBundle/DisplayBlock/Strategies" 
         --no-interaction
 
