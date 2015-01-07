@@ -114,7 +114,7 @@ knp_gaufrette:
     adapters:
         media_storage:
             local:
-                directory: /var/www/gaufrette
+                directory: /var/uploaded-files
                 create: true
     filesystems:
         media_storage:
