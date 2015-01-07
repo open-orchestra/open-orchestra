@@ -17,6 +17,11 @@ php_orchestra_api:
     type: annotation
     prefix: /api
 
+php_orchestra_media:
+    resource: "@PHPOrchestraMediaBundle/Controller"
+    type: annotation
+    prefix: /media
+
 php_orchestra_translation:
     resource: "@PHPOrchestraTranslationBundle/Resources/config/routing.yml"
 
