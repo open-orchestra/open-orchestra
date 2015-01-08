@@ -163,52 +163,53 @@ module.exports = function(grunt) {
         
             orchestrajs: {
                 src: [
-                     'web/built/phporchestrabackoffice/js/orchestraLib.js',
-                     'web/built/phporchestrabackoffice/js/orchestraListeners.js',
-                     
-                     // MISC
-                     'web/built/phporchestrabackoffice/js/OrchestraView.js',
-                     'web/built/phporchestrabackoffice/js/addPrototype.js',
-                     'web/built/phporchestrabackoffice/js/modelBackbone.js',
-                     'web/built/phporchestrabackoffice/js/adminFormView.js',
-                     'web/built/phporchestrabackoffice/js/generateAlias.js',
-                     'web/built/phporchestrabackoffice/js/generateContentTypeId.js',
-                     'web/built/phporchestrabackoffice/js/page/makeSortable.js',
-                     'web/built/phporchestrabackoffice/js/page/areaView.js',
-                     'web/built/phporchestrabackoffice/js/page/blockView.js',
-                     'web/built/phporchestrabackoffice/js/page/nodeView.js',
-                     'web/built/phporchestrabackoffice/js/VersionView.js',
-                     'web/built/phporchestrabackoffice/js/LanguageView.js',
-                     'web/built/phporchestrabackoffice/js/page/previewLinkView.js',
-                     'web/built/phporchestrabackoffice/js/page/pageConfigurationButtonView.js',
-                     'web/built/phporchestrabackoffice/js/table/TableviewView.js',
-                     'web/built/phporchestrabackoffice/js/table/TableviewCollectionView.js',
-                     'web/built/phporchestrabackoffice/js/FullPageFormView.js',
-                     'web/built/phporchestrabackoffice/js/ContentTypeChangeTypeListener.js',
-                     'web/built/phporchestrabackoffice/js/page/templateView.js',
-                     'web/built/phporchestrabackoffice/js/page/showNode.js',
-                     'web/built/phporchestrabackoffice/js/page/showTemplate.js',
-                     'web/built/phporchestrabackoffice/js/table/tableviewLoader.js',
-                     'web/built/phporchestrabackoffice/js/page/nodeConstructor.js',
-                     'web/built/phporchestrabackoffice/js/treeAjaxDelete.js',
-                     'web/built/phporchestrabackoffice/js/configurableContentFormListener.js',
-                     'web/built/phporchestrabackoffice/js/page/blocksPanel.js',
-                     'web/built/phporchestrabackoffice/js/security.js',
-                     'web/built/phporchestrabackoffice/js/smartConfirmTitleView.js',
-                     'web/built/phporchestrabackoffice/js/smartConfirmButtonView.js',
+                    'web/built/phporchestrabackoffice/js/orchestraLib.js',
+                    'web/built/phporchestrabackoffice/js/orchestraListeners.js',
 
-                     // MEDIATHEQUE
-                     'web/built/phporchestrabackoffice/js/mediatheque/*.js',
+                    // MISC
+                    'web/built/phporchestrabackoffice/js/OrchestraView.js',
+                    'web/built/phporchestrabackoffice/js/addPrototype.js',
+                    'web/built/phporchestrabackoffice/js/modelBackbone.js',
+                    'web/built/phporchestrabackoffice/js/adminFormView.js',
+                    'web/built/phporchestrabackoffice/js/generateAlias.js',
+                    'web/built/phporchestrabackoffice/js/generateContentTypeId.js',
+                    'web/built/phporchestrabackoffice/js/page/makeSortable.js',
+                    'web/built/phporchestrabackoffice/js/page/areaView.js',
+                    'web/built/phporchestrabackoffice/js/page/blockView.js',
+                    'web/built/phporchestrabackoffice/js/page/nodeView.js',
+                    'web/built/phporchestrabackoffice/js/page/templateView.js',
+                    'web/built/phporchestrabackoffice/js/page/showNode.js',
+                    'web/built/phporchestrabackoffice/js/page/showTemplate.js',
+                    'web/built/phporchestrabackoffice/js/page/orderNode.js',
+                    'web/built/phporchestrabackoffice/js/VersionView.js',
+                    'web/built/phporchestrabackoffice/js/LanguageView.js',
+                    'web/built/phporchestrabackoffice/js/page/previewLinkView.js',
+                    'web/built/phporchestrabackoffice/js/page/pageConfigurationButtonView.js',
+                    'web/built/phporchestrabackoffice/js/table/TableviewView.js',
+                    'web/built/phporchestrabackoffice/js/table/TableviewCollectionView.js',
+                    'web/built/phporchestrabackoffice/js/FullPageFormView.js',
+                    'web/built/phporchestrabackoffice/js/ContentTypeChangeTypeListener.js',
+                    'web/built/phporchestrabackoffice/js/table/tableviewLoader.js',
+                    'web/built/phporchestrabackoffice/js/page/nodeConstructor.js',
+                    'web/built/phporchestrabackoffice/js/treeAjaxDelete.js',
+                    'web/built/phporchestrabackoffice/js/configurableContentFormListener.js',
+                    'web/built/phporchestrabackoffice/js/page/blocksPanel.js',
+                    'web/built/phporchestrabackoffice/js/security.js',
+                    'web/built/phporchestrabackoffice/js/smartConfirmTitleView.js',
+                    'web/built/phporchestrabackoffice/js/smartConfirmButtonView.js',
 
-                     // INDEXATION
-                     'web/bundles/phporchestraindexation/js/*.js',
-                     
-                     // LEXIKTRANSLATION
-                     'web/bundles/lexiktranslation/ng-table/ng-table.min.js',
-                     'web/built/phporchestratranslation/js/translationView.js',
-                     
-                     // BACKBONE ROUTER
-                     'web/bundles/phporchestrabackoffice/js/backboneRouter.js'
+                    // MEDIATHEQUE
+                    'web/built/phporchestrabackoffice/js/mediatheque/*.js',
+
+                    // INDEXATION
+                    'web/bundles/phporchestraindexation/js/*.js',
+
+                    // LEXIKTRANSLATION
+                    'web/bundles/lexiktranslation/ng-table/ng-table.min.js',
+                    'web/built/phporchestratranslation/js/translationView.js',
+
+                    // BACKBONE ROUTER
+                    'web/bundles/phporchestrabackoffice/js/backboneRouter.js'
                 ],
                 dest: 'web/built/orchestra.js'
             },
