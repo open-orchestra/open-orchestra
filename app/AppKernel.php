@@ -33,12 +33,12 @@ class AppKernel extends Kernel
 
             new PHPOrchestra\BaseBundle\PHPOrchestraBaseBundle(),
             new PHPOrchestra\ModelBundle\PHPOrchestraModelBundle(),
+            new PHPOrchestra\MediaBundle\PHPOrchestraMediaBundle(),
             new PHPOrchestra\TranslationBundle\PHPOrchestraTranslationBundle(),
             new PHPOrchestra\ApiBundle\PHPOrchestraApiBundle(),
             new PHPOrchestra\DisplayBundle\PHPOrchestraDisplayBundle(),
             new PHPOrchestra\BackofficeBundle\PHPOrchestraBackofficeBundle(),
             new PHPOrchestra\UserBundle\PHPOrchestraUserBundle(),
-            new PHPOrchestra\MediaBundle\PHPOrchestraMediaBundle(),
 
             // Need parameters set by some of our bundles
             new Lexik\Bundle\TranslationBundle\LexikTranslationBundle(),
