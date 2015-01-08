@@ -35,9 +35,3 @@ apache_conf:
     errorLog: echonext.phporchestraError.log
     accessLog: echonext.phporchestraAccess.log
     siteId: 3
-  media.conf:
-    port: 80
-    serverName: media.phporchestra.inte
-    docRoot: /var/www/media-phporchestra
-    errorLog: mediaError.log
-    accessLog: mediaAccess.log

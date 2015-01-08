@@ -1,10 +1,10 @@
 ---
  - name: Check media folder
-   stat: path=/var/www/media-phporchestra
+   stat: path=/var/uploaded-files
    register: media_folder
  - name: Create a directory for the media
-   shell: mkdir -p /var/www/media-phporchestra
+   shell: mkdir -p /var/uploaded-files
    when: media_folder.stat.exists == false
  - name: Give the right to write in it
-   shell: chmod a+w /var/www/media-phporchestra
+   shell: chmod a+w /var/uploaded-files
    when: media_folder.stat.exists == false
