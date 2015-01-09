@@ -13,3 +13,5 @@ parameters:
     php_orchestra_cms.mongodb.server: mongodb://localhost:27017
     php_orchestra_cms.mongodb.database: phporchestra_%kernel.environment%
     encryption_key: ThisKeyIsNotSecret
+
+    media.directory: /var/uploaded-files
