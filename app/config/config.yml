@@ -107,5 +107,13 @@ stof_doctrine_extensions:
 php_orchestra_base:
     encryption_key: %encryption_key%
 
-php_orchestra_media:
-    mediatheque_url: %mediatheque_url%
+knp_gaufrette:
+    adapters:
+        media_storage:
+            local:
+                directory: %media.directory%
+                create: true
+    filesystems:
+        media_storage:
+            adapter: media_storage
+            alias: media_storage_filesystem
