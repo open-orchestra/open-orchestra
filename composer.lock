@@ -568,7 +568,7 @@
                     "homepage": "http://avalanche123.com"
                 },
                 {
-                    "name": "Jonathan Wage",
+                    "name": "Jonathan H. Wage",
                     "email": "jonwage@gmail.com",
                     "homepage": "http://www.jwage.com/",
                     "role": "Creator"
@@ -949,12 +949,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-base-bundle.git",
-                "reference": "36d84789e19e7ab3627e8983078f10daf327bfe6"
+                "reference": "98ee2cdbc86d9a9c8a29e14114b331160b064400"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-base-bundle/zipball/36d84789e19e7ab3627e8983078f10daf327bfe6",
-                "reference": "36d84789e19e7ab3627e8983078f10daf327bfe6",
+                "url": "https://api.github.com/repos/itkg/phporchestra-base-bundle/zipball/98ee2cdbc86d9a9c8a29e14114b331160b064400",
+                "reference": "98ee2cdbc86d9a9c8a29e14114b331160b064400",
                 "shasum": ""
             },
             "require": {
@@ -993,7 +993,7 @@
                 "source": "https://github.com/itkg/phporchestra-base-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-base-bundle/issues"
             },
-            "time": "2015-01-02 16:19:41"
+            "time": "2015-01-12 17:07:51"
         },
         {
             "name": "itkg/phporchestra-cms-bundle",
@@ -1002,12 +1002,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-cms-bundle.git",
-                "reference": "ed072f6f932f6cf75e5d30ea85b44f7b83b52c2a"
+                "reference": "af8660b23c6ad84c227b0c72ee838638ea704d39"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/ed072f6f932f6cf75e5d30ea85b44f7b83b52c2a",
-                "reference": "ed072f6f932f6cf75e5d30ea85b44f7b83b52c2a",
+                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/af8660b23c6ad84c227b0c72ee838638ea704d39",
+                "reference": "af8660b23c6ad84c227b0c72ee838638ea704d39",
                 "shasum": ""
             },
             "require": {
@@ -1049,7 +1049,7 @@
                 "source": "https://github.com/itkg/phporchestra-cms-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-cms-bundle/issues"
             },
-            "time": "2015-01-12 10:01:20"
+            "time": "2015-01-12 17:14:02"
         },
         {
             "name": "itkg/phporchestra-display-bundle",
@@ -1058,12 +1058,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-display-bundle.git",
-                "reference": "1df512536bf76265f351f616a5c4575222751e63"
+                "reference": "871e3db4b7cc9a1db8d52d40ec33ee7ae19c3f7b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-display-bundle/zipball/1df512536bf76265f351f616a5c4575222751e63",
-                "reference": "1df512536bf76265f351f616a5c4575222751e63",
+                "url": "https://api.github.com/repos/itkg/phporchestra-display-bundle/zipball/871e3db4b7cc9a1db8d52d40ec33ee7ae19c3f7b",
+                "reference": "871e3db4b7cc9a1db8d52d40ec33ee7ae19c3f7b",
                 "shasum": ""
             },
             "require": {
@@ -1100,7 +1100,7 @@
                 "source": "https://github.com/itkg/phporchestra-display-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-display-bundle/issues"
             },
-            "time": "2015-01-09 14:30:22"
+            "time": "2015-01-12 16:03:23"
         },
         {
             "name": "itkg/phporchestra-media-bundle",
@@ -1109,12 +1109,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-media-bundle.git",
-                "reference": "00476d248d3802efefcd873acca1fe25030a473b"
+                "reference": "8bee37cb50b7e4d0c0d7c4c1c6206f02eab335a5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-media-bundle/zipball/00476d248d3802efefcd873acca1fe25030a473b",
-                "reference": "00476d248d3802efefcd873acca1fe25030a473b",
+                "url": "https://api.github.com/repos/itkg/phporchestra-media-bundle/zipball/8bee37cb50b7e4d0c0d7c4c1c6206f02eab335a5",
+                "reference": "8bee37cb50b7e4d0c0d7c4c1c6206f02eab335a5",
                 "shasum": ""
             },
             "require": {
@@ -1123,6 +1123,7 @@
                 "doctrine/mongodb-odm-bundle": "3.0.0-BETA6",
                 "ext-imagick": "*",
                 "itkg/phporchestra-model-interface": "dev-master",
+                "knplabs/knp-gaufrette-bundle": "v0.1.7",
                 "stof/doctrine-extensions-bundle": "1.1.0"
             },
             "require-dev": {
@@ -1153,7 +1154,7 @@
                 "source": "https://github.com/itkg/phporchestra-media-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-media-bundle/issues"
             },
-            "time": "2015-01-08 12:50:49"
+            "time": "2015-01-12 17:04:55"
         },
         {
             "name": "itkg/phporchestra-model-bundle",
@@ -1162,12 +1163,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-model-bundle.git",
-                "reference": "7819b30fb02e6a4fb0ee590087e590442627f97b"
+                "reference": "7f2957e2680e025170cc0a50f79dbd05c6ef922f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-model-bundle/zipball/7819b30fb02e6a4fb0ee590087e590442627f97b",
-                "reference": "7819b30fb02e6a4fb0ee590087e590442627f97b",
+                "url": "https://api.github.com/repos/itkg/phporchestra-model-bundle/zipball/7f2957e2680e025170cc0a50f79dbd05c6ef922f",
+                "reference": "7f2957e2680e025170cc0a50f79dbd05c6ef922f",
                 "shasum": ""
             },
             "require": {
@@ -1204,7 +1205,7 @@
                 "source": "https://github.com/itkg/phporchestra-model-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-model-bundle/issues"
             },
-            "time": "2015-01-09 16:59:34"
+            "time": "2015-01-12 16:31:04"
         },
         {
             "name": "itkg/phporchestra-model-interface",
@@ -1213,12 +1214,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-model-interface.git",
-                "reference": "72e886f99c12c7727da13125429ec9cb225992aa"
+                "reference": "de530b31ca46dfd17f4b080c8f8f983bf28e2671"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-model-interface/zipball/72e886f99c12c7727da13125429ec9cb225992aa",
-                "reference": "72e886f99c12c7727da13125429ec9cb225992aa",
+                "url": "https://api.github.com/repos/itkg/phporchestra-model-interface/zipball/de530b31ca46dfd17f4b080c8f8f983bf28e2671",
+                "reference": "de530b31ca46dfd17f4b080c8f8f983bf28e2671",
                 "shasum": ""
             },
             "require": {
@@ -1250,7 +1251,7 @@
                 "source": "https://github.com/itkg/phporchestra-model-interface/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-model-interface/issues"
             },
-            "time": "2015-01-09 11:00:46"
+            "time": "2015-01-12 16:30:45"
         },
         {
             "name": "itkg/phporchestra-translation-bundle",
@@ -1376,9 +1377,9 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes Schmitt",
+                    "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -1479,9 +1480,9 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes Schmitt",
+                    "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -1549,9 +1550,9 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes Schmitt",
+                    "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -1565,6 +1566,148 @@
                 "xml"
             ],
             "time": "2013-12-05 14:36:11"
+        },
+        {
+            "name": "knplabs/gaufrette",
+            "version": "v0.1.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/KnpLabs/Gaufrette.git",
+                "reference": "b243f8f3ea535b7f080d51be5cc98a3f72c0b627"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/KnpLabs/Gaufrette/zipball/b243f8f3ea535b7f080d51be5cc98a3f72c0b627",
+                "reference": "b243f8f3ea535b7f080d51be5cc98a3f72c0b627",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "amazonwebservices/aws-sdk-for-php": "1.5.*",
+                "aws/aws-sdk-php": "~2",
+                "doctrine/dbal": ">=2.3",
+                "dropbox-php/dropbox-php": "*",
+                "herzult/php-ssh": "*",
+                "microsoft/windowsazure": "dev-master",
+                "mikey179/vfsstream": "~1.2.0",
+                "phpseclib/phpseclib": "dev-master",
+                "phpspec/phpspec": "2.0.*",
+                "phpunit/phpunit": "3.7.*",
+                "rackspace/php-opencloud": "1.9.*"
+            },
+            "suggest": {
+                "amazonwebservices/aws-sdk-for-php": "to use the legacy Amazon S3 adapters",
+                "aws/aws-sdk-php": "to use the Amazon S3 adapter",
+                "doctrine/dbal": "to use the Doctrine DBAL adapter",
+                "dropbox-php/dropbox-php": "to use the Dropbox adapter",
+                "ext-apc": "to use the APC adapter",
+                "ext-curl": "*",
+                "ext-fileinfo": "This extension is used to automatically detect the content-type of a file in the AwsS3, OpenCloud, and AzureBlogStorage adapters",
+                "ext-mbstring": "*",
+                "ext-mongo": "*",
+                "ext-zip": "to use the Zip adapter",
+                "herzult/php-ssh": "to use SFtp adapter",
+                "knplabs/knp-gaufrette-bundle": "to use with Symfony2",
+                "microsoft/windowsazure": "to use Microsoft Azure Blob Storage adapter",
+                "phpseclib/phpseclib": "to use PhpseclibSftp adapter",
+                "rackspace/php-opencloud": "to use Opencloud adapter"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Gaufrette": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "The contributors",
+                    "homepage": "http://github.com/knplabs/Gaufrette/contributors"
+                },
+                {
+                    "name": "KnpLabs Team",
+                    "homepage": "http://knplabs.com"
+                }
+            ],
+            "description": "PHP5 library that provides a filesystem abstraction layer",
+            "homepage": "http://knplabs.com",
+            "keywords": [
+                "abstraction",
+                "file",
+                "filesystem",
+                "media"
+            ],
+            "time": "2014-06-24 08:35:18"
+        },
+        {
+            "name": "knplabs/knp-gaufrette-bundle",
+            "version": "v0.1.7",
+            "target-dir": "Knp/Bundle/GaufretteBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/KnpLabs/KnpGaufretteBundle.git",
+                "reference": "f33008584345452c3122bb4eaac0ded1d6084c51"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/KnpLabs/KnpGaufretteBundle/zipball/f33008584345452c3122bb4eaac0ded1d6084c51",
+                "reference": "f33008584345452c3122bb4eaac0ded1d6084c51",
+                "shasum": ""
+            },
+            "require": {
+                "knplabs/gaufrette": "~0.1.7",
+                "symfony/framework-bundle": "2.*"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*",
+                "symfony/console": "2.*",
+                "symfony/yaml": "2.*"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Knp\\Bundle\\GaufretteBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Antoine Hérault",
+                    "email": "antoine.herault@gmail.com",
+                    "homepage": "https://github.com/Herzult"
+                },
+                {
+                    "name": "The contributors",
+                    "homepage": "https://github.com/knplabs/KnpGaufretteBundle/contributors"
+                }
+            ],
+            "description": "Allows to easily use the Gaufrette library in a Symfony project",
+            "homepage": "http://knplabs.com",
+            "keywords": [
+                "abstraction",
+                "file",
+                "filesystem",
+                "media"
+            ],
+            "time": "2014-03-24 22:15:03"
         },
         {
             "name": "kriswallsmith/assetic",
@@ -1812,9 +1955,9 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes Schmitt",
+                    "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -1862,9 +2005,9 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes Schmitt",
+                    "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
