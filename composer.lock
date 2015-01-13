@@ -568,7 +568,7 @@
                     "homepage": "http://avalanche123.com"
                 },
                 {
-                    "name": "Jonathan H. Wage",
+                    "name": "Jonathan Wage",
                     "email": "jonwage@gmail.com",
                     "homepage": "http://www.jwage.com/",
                     "role": "Creator"
@@ -1002,12 +1002,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-cms-bundle.git",
-                "reference": "af8660b23c6ad84c227b0c72ee838638ea704d39"
+                "reference": "e3a911e31fe9510f8b588d7473cc83c637e3e90d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/af8660b23c6ad84c227b0c72ee838638ea704d39",
-                "reference": "af8660b23c6ad84c227b0c72ee838638ea704d39",
+                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/e3a911e31fe9510f8b588d7473cc83c637e3e90d",
+                "reference": "e3a911e31fe9510f8b588d7473cc83c637e3e90d",
                 "shasum": ""
             },
             "require": {
@@ -1049,7 +1049,7 @@
                 "source": "https://github.com/itkg/phporchestra-cms-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-cms-bundle/issues"
             },
-            "time": "2015-01-12 17:14:02"
+            "time": "2015-01-13 09:39:27"
         },
         {
             "name": "itkg/phporchestra-display-bundle",
@@ -1058,12 +1058,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-display-bundle.git",
-                "reference": "871e3db4b7cc9a1db8d52d40ec33ee7ae19c3f7b"
+                "reference": "d527c8d5e0d465afd0315148863fff13fd303f5f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-display-bundle/zipball/871e3db4b7cc9a1db8d52d40ec33ee7ae19c3f7b",
-                "reference": "871e3db4b7cc9a1db8d52d40ec33ee7ae19c3f7b",
+                "url": "https://api.github.com/repos/itkg/phporchestra-display-bundle/zipball/d527c8d5e0d465afd0315148863fff13fd303f5f",
+                "reference": "d527c8d5e0d465afd0315148863fff13fd303f5f",
                 "shasum": ""
             },
             "require": {
@@ -1100,7 +1100,7 @@
                 "source": "https://github.com/itkg/phporchestra-display-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-display-bundle/issues"
             },
-            "time": "2015-01-12 16:03:23"
+            "time": "2015-01-13 09:38:09"
         },
         {
             "name": "itkg/phporchestra-media-bundle",
@@ -1163,12 +1163,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-model-bundle.git",
-                "reference": "7f2957e2680e025170cc0a50f79dbd05c6ef922f"
+                "reference": "0250d945a40f085a9a8e4b88178e15a03f08a531"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-model-bundle/zipball/7f2957e2680e025170cc0a50f79dbd05c6ef922f",
-                "reference": "7f2957e2680e025170cc0a50f79dbd05c6ef922f",
+                "url": "https://api.github.com/repos/itkg/phporchestra-model-bundle/zipball/0250d945a40f085a9a8e4b88178e15a03f08a531",
+                "reference": "0250d945a40f085a9a8e4b88178e15a03f08a531",
                 "shasum": ""
             },
             "require": {
@@ -1205,7 +1205,7 @@
                 "source": "https://github.com/itkg/phporchestra-model-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-model-bundle/issues"
             },
-            "time": "2015-01-12 16:31:04"
+            "time": "2015-01-13 09:37:08"
         },
         {
             "name": "itkg/phporchestra-model-interface",
@@ -1377,9 +1377,9 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes M. Schmitt",
+                    "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
+                    "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -1480,9 +1480,9 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes M. Schmitt",
+                    "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
+                    "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -1550,9 +1550,9 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes M. Schmitt",
+                    "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
+                    "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -1955,9 +1955,9 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes M. Schmitt",
+                    "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
+                    "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -2005,9 +2005,9 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes M. Schmitt",
+                    "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
+                    "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -3637,6 +3637,7 @@
         "itkg/phporchestra-model-bundle": 20
     },
     "prefer-stable": true,
+    "prefer-lowest": false,
     "platform": [],
     "platform-dev": []
 }
