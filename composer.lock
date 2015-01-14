@@ -1002,12 +1002,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-cms-bundle.git",
-                "reference": "e3a911e31fe9510f8b588d7473cc83c637e3e90d"
+                "reference": "e5b2203fcc1b3d803e44e1d8b00c2bcbb6a0d7d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/e3a911e31fe9510f8b588d7473cc83c637e3e90d",
-                "reference": "e3a911e31fe9510f8b588d7473cc83c637e3e90d",
+                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/e5b2203fcc1b3d803e44e1d8b00c2bcbb6a0d7d3",
+                "reference": "e5b2203fcc1b3d803e44e1d8b00c2bcbb6a0d7d3",
                 "shasum": ""
             },
             "require": {
@@ -1049,7 +1049,7 @@
                 "source": "https://github.com/itkg/phporchestra-cms-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-cms-bundle/issues"
             },
-            "time": "2015-01-13 09:39:27"
+            "time": "2015-01-14 15:02:58"
         },
         {
             "name": "itkg/phporchestra-display-bundle",
@@ -1058,12 +1058,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-display-bundle.git",
-                "reference": "d527c8d5e0d465afd0315148863fff13fd303f5f"
+                "reference": "0ff38dacdc60706ff5733862a9fff973709dc2b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-display-bundle/zipball/d527c8d5e0d465afd0315148863fff13fd303f5f",
-                "reference": "d527c8d5e0d465afd0315148863fff13fd303f5f",
+                "url": "https://api.github.com/repos/itkg/phporchestra-display-bundle/zipball/0ff38dacdc60706ff5733862a9fff973709dc2b6",
+                "reference": "0ff38dacdc60706ff5733862a9fff973709dc2b6",
                 "shasum": ""
             },
             "require": {
@@ -1100,7 +1100,7 @@
                 "source": "https://github.com/itkg/phporchestra-display-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-display-bundle/issues"
             },
-            "time": "2015-01-13 09:38:09"
+            "time": "2015-01-14 15:02:51"
         },
         {
             "name": "itkg/phporchestra-media-bundle",
@@ -1163,12 +1163,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-model-bundle.git",
-                "reference": "0250d945a40f085a9a8e4b88178e15a03f08a531"
+                "reference": "f3167f424b47c13eac5eb792329997690618ce42"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-model-bundle/zipball/0250d945a40f085a9a8e4b88178e15a03f08a531",
-                "reference": "0250d945a40f085a9a8e4b88178e15a03f08a531",
+                "url": "https://api.github.com/repos/itkg/phporchestra-model-bundle/zipball/f3167f424b47c13eac5eb792329997690618ce42",
+                "reference": "f3167f424b47c13eac5eb792329997690618ce42",
                 "shasum": ""
             },
             "require": {
@@ -1205,7 +1205,7 @@
                 "source": "https://github.com/itkg/phporchestra-model-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-model-bundle/issues"
             },
-            "time": "2015-01-13 09:37:08"
+            "time": "2015-01-14 15:02:55"
         },
         {
             "name": "itkg/phporchestra-model-interface",
@@ -1214,12 +1214,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-model-interface.git",
-                "reference": "de530b31ca46dfd17f4b080c8f8f983bf28e2671"
+                "reference": "8333c86a89d8e7644941b56c6a18f5c823aa23d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-model-interface/zipball/de530b31ca46dfd17f4b080c8f8f983bf28e2671",
-                "reference": "de530b31ca46dfd17f4b080c8f8f983bf28e2671",
+                "url": "https://api.github.com/repos/itkg/phporchestra-model-interface/zipball/8333c86a89d8e7644941b56c6a18f5c823aa23d8",
+                "reference": "8333c86a89d8e7644941b56c6a18f5c823aa23d8",
                 "shasum": ""
             },
             "require": {
@@ -1251,7 +1251,7 @@
                 "source": "https://github.com/itkg/phporchestra-model-interface/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-model-interface/issues"
             },
-            "time": "2015-01-12 16:30:45"
+            "time": "2015-01-14 15:02:47"
         },
         {
             "name": "itkg/phporchestra-translation-bundle",
@@ -2888,16 +2888,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.16.3",
+            "version": "v1.17.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "6dc11a1e8ecfc30e2c68aaeb218148409d8e68af"
+                "reference": "2493970fa4d587eca73f77e6d8bd48a8bdd4c608"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/6dc11a1e8ecfc30e2c68aaeb218148409d8e68af",
-                "reference": "6dc11a1e8ecfc30e2c68aaeb218148409d8e68af",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/2493970fa4d587eca73f77e6d8bd48a8bdd4c608",
+                "reference": "2493970fa4d587eca73f77e6d8bd48a8bdd4c608",
                 "shasum": ""
             },
             "require": {
@@ -2906,7 +2906,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.16-dev"
+                    "dev-master": "1.17-dev"
                 }
             },
             "autoload": {
@@ -2941,7 +2941,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2014-12-25 19:58:19"
+            "time": "2015-01-14 10:15:49"
         }
     ],
     "packages-dev": [
