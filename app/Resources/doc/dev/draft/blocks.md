@@ -12,7 +12,7 @@ Afin de pouvoir facilement le reconnaitre et les configurer nous avons mis en pl
 
 Il existe une commande permettant de générer automatiquement des blocs, voir blockGeneration
 
-# III/ Formulaire
+# II/ Formulaire
 
 Il existe des champ de formulaires utiliser seulement pour les blocs.
 
