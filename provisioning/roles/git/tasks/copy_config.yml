@@ -1,0 +1,3 @@
+---
+ - name: Copy .gitconfig
+   copy: src=../app/Resources/conf/git/gitconfig dest=~/.gitconfig force=yes
