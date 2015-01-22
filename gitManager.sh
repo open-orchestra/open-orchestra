@@ -5,7 +5,8 @@ function usage(){
     printf " -h     Print script help\n"
     printf " -c     Give the git command to execute on all repository\n"
     printf " -r     Do only a rebase of all the repos\n"
-    printf " -m     Add a commit message (mandatory to commit)\n"
+    printf " -t     Give the tag version\n"
+    printf " -m     Add a commit or tag message (mandatory to commit or tag)\n"
     printf " -b     Add a branch name (mandatory to commit)\n"
     printf " -a     Add all the modified file to the commit\n"
     printf " -f     Do a force commit\n"
@@ -21,13 +22,14 @@ fi
 all=false
 command=false
 rebase=false
+tag=false
 message='noMessage'
 branch_name='noBranch'
 force_param=''
-green=`tput setaf 3`
+titleColor=`tput setaf 3`
 reset=`tput sgr0`
 
-while getopts "shrafm:b:c:" arg; do
+while getopts "shrafm:b:c:t:" arg; do
     case $arg in
         h)
             usage
@@ -50,6 +52,9 @@ while getopts "shrafm:b:c:" arg; do
         f)
             force_param=' -f'
             ;;
+        t)
+            tag=$OPTARG
+            ;;
         esac
     done
 
@@ -61,7 +66,7 @@ then
     for i in $list
     do
         printf "\n"
-        echo "${green}$i${reset}"
+        echo "${titleColor}$i${reset}"
         printf "\n"
         cd $i/PHPOrchestra
         git $command
@@ -72,7 +77,7 @@ then
     for i in $list
     do
         printf "\n"
-        echo "${green}$i${reset}"
+        echo "${titleColor}$i${reset}"
         printf "\n"
         cd $i/PHPOrchestra
         git status
@@ -86,11 +91,24 @@ then
 elif [ $message = 'noMessage' ] && [ $branch_name = 'noBranch' ]
 then
     printf "Impossible d'utiliser le script avec les parametres '${message}' et '${branch_name}' \n"
+elif [ $tag != false ]
+then
+    for i in $list
+    do
+        printf "\n"
+        echo "${titleColor}$i${reset}"
+        printf "\n"
+        cd $i/PHPOrchestra
+        git status
+        git tag -a $tag -m "$message"
+        git push origin --tags
+        cd ../..
+    done
 else
     for i in $list
     do
         printf "\n"
-        echo "${green}$i${reset}"
+        echo "${titleColor}$i${reset}"
         printf "\n"
         cd $i/PHPOrchestra
         git fetch -p
