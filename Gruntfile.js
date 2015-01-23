@@ -83,6 +83,10 @@ module.exports = function(grunt) {
                 src: 'web/bundles/phporchestrabackoffice/smartadmin/img/flags/flags.png',
                 dest: 'web/img/flags/flags.png'
             },
+            jquery_minicolors: {
+                src: 'bower_components/jquery-minicolors/jquery.minicolors.png',
+                dest: 'web/css/images/jquery.minicolors.png'
+            },
             select2_gif: {
                 src: 'web/bundles/phporchestrabackoffice/smartadmin/img/select2-spinner.gif',
                 dest: 'web/img/select2-spinner.gif'
@@ -140,6 +144,7 @@ module.exports = function(grunt) {
                     'bower_components/bootstrap/dist/js/bootstrap.js',
                     'bower_components/jcrop/js/jquery.Jcrop.js',
                     'bower_components/select2/select2.js',
+                    'bower_components/jquery-minicolors/jquery.minicolors.js',
                     'web/bundles/phporchestrabackoffice/smartadmin/js/notification/SmartNotification.js',
                     'web/bundles/phporchestrabackoffice/smartadmin/js/smartwidgets/jarvis.widget.js',
                     'web/bundles/phporchestrabackoffice/smartadmin/js/app.js'
@@ -227,6 +232,7 @@ module.exports = function(grunt) {
                 src: [
                     // SMARTADMIN PACKAGE
 //                    'bower_components/bootstrap/dist/css/bootstrap.css',
+                    'bower_components/jquery-minicolors/jquery.minicolors.css',
                     'web/bundles/phporchestrabackoffice/smartadmin/css/bootstrap.css',
                     'bower_components/font-awesome/css/font-awesome.css',
                     'web/bundles/phporchestrabackoffice/smartadmin/css/smartadmin-production-plugins.css',
@@ -242,6 +248,7 @@ module.exports = function(grunt) {
                     'web/built/phporchestrabackoffice/css/smartadminPatches/checkbox.css',
                     'web/built/phporchestrabackoffice/css/smartadminPatches/tab.css',
                     'web/built/phporchestrabackoffice/css/smartadminPatches/form.css',
+                    'web/built/phporchestrabackoffice/css/smartadminPatches/minicolors.css',
 
                     // TINYMCE PATCHES
                     'web/built/phporchestrabackoffice/css/tinyMCEPatches/floatPanel.css'
