@@ -1030,7 +1030,7 @@
             ],
             "description": "The phpOrchestra base bundle",
             "support": {
-                "source": "https://github.com/itkg/phporchestra-base-bundle/tree/master",
+                "source": "https://github.com/itkg/phporchestra-base-bundle/tree/v0.0.3",
                 "issues": "https://github.com/itkg/phporchestra-base-bundle/issues"
             },
             "time": "2015-01-21 11:21:12"
@@ -1042,12 +1042,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-cms-bundle.git",
-                "reference": "6f8268585a340c2a6235de3e5a0da99649da8465"
+                "reference": "5f29d33a043302c76b9ebdf9b96662d913d653a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/6f8268585a340c2a6235de3e5a0da99649da8465",
-                "reference": "6f8268585a340c2a6235de3e5a0da99649da8465",
+                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/5f29d33a043302c76b9ebdf9b96662d913d653a3",
+                "reference": "5f29d33a043302c76b9ebdf9b96662d913d653a3",
                 "shasum": ""
             },
             "require": {
@@ -1089,7 +1089,7 @@
                 "source": "https://github.com/itkg/phporchestra-cms-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-cms-bundle/issues"
             },
-            "time": "2015-01-23 11:58:23"
+            "time": "2015-01-26 09:41:58"
         },
         {
             "name": "itkg/phporchestra-display-bundle",
@@ -1203,12 +1203,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-model-bundle.git",
-                "reference": "f0ff2284628d2fe7c48500f806d3b25cf48f9636"
+                "reference": "96984201e9c728c53bdf4e5d9ca070e2297dd7d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-model-bundle/zipball/f0ff2284628d2fe7c48500f806d3b25cf48f9636",
-                "reference": "f0ff2284628d2fe7c48500f806d3b25cf48f9636",
+                "url": "https://api.github.com/repos/itkg/phporchestra-model-bundle/zipball/96984201e9c728c53bdf4e5d9ca070e2297dd7d6",
+                "reference": "96984201e9c728c53bdf4e5d9ca070e2297dd7d6",
                 "shasum": ""
             },
             "require": {
@@ -1245,7 +1245,7 @@
                 "source": "https://github.com/itkg/phporchestra-model-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-model-bundle/issues"
             },
-            "time": "2015-01-23 10:51:01"
+            "time": "2015-01-26 10:49:28"
         },
         {
             "name": "itkg/phporchestra-model-interface",
@@ -1288,7 +1288,7 @@
                 }
             ],
             "support": {
-                "source": "https://github.com/itkg/phporchestra-model-interface/tree/master",
+                "source": "https://github.com/itkg/phporchestra-model-interface/tree/v0.0.3",
                 "issues": "https://github.com/itkg/phporchestra-model-interface/issues"
             },
             "time": "2015-01-22 10:03:56"
@@ -1328,7 +1328,7 @@
             ],
             "description": "The phporchestra translation bundle",
             "support": {
-                "source": "https://github.com/itkg/phporchestra-translation-bundle/tree/master",
+                "source": "https://github.com/itkg/phporchestra-translation-bundle/tree/v0.0.3",
                 "issues": "https://github.com/itkg/phporchestra-translation-bundle/issues"
             },
             "time": "2015-01-21 11:16:59"
@@ -1417,9 +1417,9 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes Schmitt",
+                    "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -1520,9 +1520,9 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes Schmitt",
+                    "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -1590,9 +1590,9 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes Schmitt",
+                    "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -1995,9 +1995,9 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes Schmitt",
+                    "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -2045,9 +2045,9 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes Schmitt",
+                    "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -2928,16 +2928,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.17.0",
+            "version": "v1.18.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "2493970fa4d587eca73f77e6d8bd48a8bdd4c608"
+                "reference": "4cf7464348e7f9893a93f7096a90b73722be99cf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/2493970fa4d587eca73f77e6d8bd48a8bdd4c608",
-                "reference": "2493970fa4d587eca73f77e6d8bd48a8bdd4c608",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/4cf7464348e7f9893a93f7096a90b73722be99cf",
+                "reference": "4cf7464348e7f9893a93f7096a90b73722be99cf",
                 "shasum": ""
             },
             "require": {
@@ -2946,7 +2946,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.17-dev"
+                    "dev-master": "1.18-dev"
                 }
             },
             "autoload": {
@@ -2981,7 +2981,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2015-01-14 10:15:49"
+            "time": "2015-01-25 17:32:08"
         }
     ],
     "packages-dev": [
@@ -3040,16 +3040,16 @@
         },
         {
             "name": "phake/phake",
-            "version": "v1.0.5",
+            "version": "v1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mlively/Phake.git",
-                "reference": "14e4788698e4a21774220c22f3dcaa2e97648b61"
+                "reference": "004b5bc1668381e21882402f74908045fd30edda"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mlively/Phake/zipball/14e4788698e4a21774220c22f3dcaa2e97648b61",
-                "reference": "14e4788698e4a21774220c22f3dcaa2e97648b61",
+                "url": "https://api.github.com/repos/mlively/Phake/zipball/004b5bc1668381e21882402f74908045fd30edda",
+                "reference": "004b5bc1668381e21882402f74908045fd30edda",
                 "shasum": ""
             },
             "require": {
@@ -3058,7 +3058,7 @@
             "require-dev": {
                 "doctrine/common": "2.3.*",
                 "ext-soap": "*",
-                "hamcrest/hamcrest-php": "1.1.*",
+                "hamcrest/hamcrest-php": "1.1.0",
                 "phpunit/phpunit": "3.7.*"
             },
             "type": "library",
@@ -3086,20 +3086,20 @@
                 "mock",
                 "testing"
             ],
-            "time": "2014-04-16 14:49:56"
+            "time": "2015-01-26 07:50:43"
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "2.0.14",
+            "version": "2.0.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "ca158276c1200cc27f5409a5e338486bc0b4fc94"
+                "reference": "34cc484af1ca149188d0d9e91412191e398e0b67"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/ca158276c1200cc27f5409a5e338486bc0b4fc94",
-                "reference": "ca158276c1200cc27f5409a5e338486bc0b4fc94",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/34cc484af1ca149188d0d9e91412191e398e0b67",
+                "reference": "34cc484af1ca149188d0d9e91412191e398e0b67",
                 "shasum": ""
             },
             "require": {
@@ -3112,7 +3112,7 @@
             },
             "require-dev": {
                 "ext-xdebug": ">=2.1.4",
-                "phpunit/phpunit": "~4.1"
+                "phpunit/phpunit": "~4"
             },
             "suggest": {
                 "ext-dom": "*",
@@ -3131,9 +3131,6 @@
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
-            "include-path": [
-                ""
-            ],
             "license": [
                 "BSD-3-Clause"
             ],
@@ -3151,7 +3148,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2014-12-26 13:28:33"
+            "time": "2015-01-24 10:06:35"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -3677,7 +3674,6 @@
         "itkg/phporchestra-model-bundle": 20
     },
     "prefer-stable": true,
-    "prefer-lowest": false,
     "platform": [],
     "platform-dev": []
 }
