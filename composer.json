@@ -47,7 +47,6 @@
         }
     ],
     "minimum-stability": "dev",
-    "prefer-stable": true,
     "require": {
         "incenteev/composer-parameter-handler": "~2.0",
         "itkg/phporchestra-cms-bundle": "dev-master",
