@@ -1038,12 +1038,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-cms-bundle.git",
-                "reference": "7d09abae3cb555745cb43ebc1b01774f25574bdf"
+                "reference": "6b14f40ee7039424f70941be47820919996d2b63"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/7d09abae3cb555745cb43ebc1b01774f25574bdf",
-                "reference": "7d09abae3cb555745cb43ebc1b01774f25574bdf",
+                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/6b14f40ee7039424f70941be47820919996d2b63",
+                "reference": "6b14f40ee7039424f70941be47820919996d2b63",
                 "shasum": ""
             },
             "require": {
@@ -1085,7 +1085,7 @@
                 "source": "https://github.com/itkg/phporchestra-cms-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-cms-bundle/issues"
             },
-            "time": "2015-01-27 12:32:14"
+            "time": "2015-01-27 15:49:02"
         },
         {
             "name": "itkg/phporchestra-display-bundle",
@@ -1583,9 +1583,9 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes Schmitt",
+                    "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -2038,9 +2038,9 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes Schmitt",
+                    "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -2999,12 +2999,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mlively/Phake.git",
-                "reference": "bf565aaaa0c4f46d1f63bf963ed94a3f0e95bd43"
+                "reference": "6ee1a4cca7b01786ef386af9a52a668b4286b0b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mlively/Phake/zipball/bf565aaaa0c4f46d1f63bf963ed94a3f0e95bd43",
-                "reference": "bf565aaaa0c4f46d1f63bf963ed94a3f0e95bd43",
+                "url": "https://api.github.com/repos/mlively/Phake/zipball/6ee1a4cca7b01786ef386af9a52a668b4286b0b7",
+                "reference": "6ee1a4cca7b01786ef386af9a52a668b4286b0b7",
                 "shasum": ""
             },
             "require": {
@@ -3047,7 +3047,7 @@
                 "mock",
                 "testing"
             ],
-            "time": "2015-01-26 15:23:26"
+            "time": "2015-01-27 15:41:12"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -3635,7 +3635,6 @@
         "itkg/phporchestra-model-bundle": 20
     },
     "prefer-stable": false,
-    "prefer-lowest": false,
     "platform": [],
     "platform-dev": []
 }
