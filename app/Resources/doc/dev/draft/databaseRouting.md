@@ -16,3 +16,9 @@ Activation : (dans le fichier `routing.yml`)
     php_orchestra_database:
         resource: '.'
         type: database
+
+Lors de la mise en place d'une route dans le node l'utilisateur doit suivre les prérequis Symfony :
+
+ - un / en début de ligne
+ - les variables dont il veut disposer entre {} ex : `/constructeur/{voiture}/blog`
+ - deux nodes sur deux sites différents doivent avoir le même pattern de route
