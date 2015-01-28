@@ -26,7 +26,7 @@ Multi-language and versioned content management
 
 ## New features
 
-New form type : Color picker
+[New form type : Color picker](https://trello.com/c/BbMn2yj8/504-2-etq-ubo-j-ai-acces-a-un-color-picker-pour-choisir-une-couleur)
 
 [New block : Gallery](https://trello.com/c/NWHlXpp4/372-2-etq-ubo-je-peux-saisir-une-liste-d-image-pour-une-galerie)
 
@@ -36,4 +36,4 @@ New Twig helper : navigator to render a stylisable pagination
 
 For the content list, we provide a method to disable object hydration
 
-Keyword are now checked with the server before being displayed
+[Keyword](https://trello.com/c/SW8MQ9XM/405-2-etq-ubo-lorsque-je-saisi-un-keyword-avec-des-caracteres-speciaux-le-serveur-fait-le-clean-avant-la-sauvegarde) are now checked with the server before being displayed
