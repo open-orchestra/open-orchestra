@@ -2,27 +2,27 @@
 
 Url to see changes : 
 
- - https://github.com/itkg/phporchestra-cms-bundle/compare/v0.0.3...v0.0.4
- - https://github.com/itkg/phporchestra-display-bundle/compare/v0.0.3...v0.0.4
- - https://github.com/itkg/phporchestra-model-bundle/compare/v0.0.3...v0.0.4
- - https://github.com/itkg/phporchestra-model-interface/compare/v0.0.3...v0.0.4
- - https://github.com/itkg/phporchestra-front-bundle/compare/v0.0.3...v0.0.4
- - https://github.com/itkg/phporchestra-base-bundle/compare/v0.0.3...v0.0.4
- - https://github.com/itkg/phporchestra-media-bundle/compare/v0.0.3...v0.0.4
- - https://github.com/itkg/phporchestra-translation-bundle/compare/v0.0.3...v0.0.4
- - https://github.com/itkg/phporchestra-user-bundle/compare/v0.0.3...v0.0.4
- - https://github.com/itkg/phporchestra-theme-bundle/compare/v0.0.3...v0.0.4
- - https://github.com/itkg/phporchestra-indexation-bundle/compare/v0.0.3...v0.0.4
+ - [Cms bundle](https://github.com/itkg/phporchestra-cms-bundle/compare/v0.0.3...v0.0.4)
+ - [Display bundle](https://github.com/itkg/phporchestra-display-bundle/compare/v0.0.3...v0.0.4)
+ - [Model bundle](https://github.com/itkg/phporchestra-model-bundle/compare/v0.0.3...v0.0.4)
+ - [Model interface](https://github.com/itkg/phporchestra-model-interface/compare/v0.0.3...v0.0.4)
+ - [Front bundle](https://github.com/itkg/phporchestra-front-bundle/compare/v0.0.3...v0.0.4)
+ - [Base bundle](https://github.com/itkg/phporchestra-base-bundle/compare/v0.0.3...v0.0.4)
+ - [Media bundle](https://github.com/itkg/phporchestra-media-bundle/compare/v0.0.3...v0.0.4)
+ - [Translation bundle](https://github.com/itkg/phporchestra-translation-bundle/compare/v0.0.3...v0.0.4)
+ - [User bundle](https://github.com/itkg/phporchestra-user-bundle/compare/v0.0.3...v0.0.4)
+ - [Theme bundle](https://github.com/itkg/phporchestra-theme-bundle/compare/v0.0.3...v0.0.4)
+ - [Indexation bundle](https://github.com/itkg/phporchestra-indexation-bundle/compare/v0.0.3...v0.0.4)
 
 ## Possible BC breaker
 
-Url are now stored in the nodes and the router generate the cache according to these informations
+[Url are now stored in the nodes and the router generate the cache according to these informations](https://trello.com/c/2UMlEc9C/493-3-etq-ufront-j-ai-les-pattern-d-url-mis-par-les-nodes-dans-le-routeur-symfony-directement)
 
-Symfony is installed in version 2.6.3
+[Symfony is installed in version 2.6.3](https://trello.com/c/IlZzbNzk/440-migration-a-symfony2-6)
 
 ## Bug fixes
 
-Multi-language and versioned content management
+[Multi-language and versioned content management](https://trello.com/c/lKpfGtDe/388-2-etq-ubo-je-peux-creer-une-nouvelle-version-d-un-content)
 
 ## New features
 
