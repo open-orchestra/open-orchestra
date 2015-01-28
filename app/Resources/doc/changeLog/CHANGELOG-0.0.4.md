@@ -28,7 +28,7 @@ Multi-language and versioned content management
 
 New form type : Color picker
 
-New block : Gallery
+[New block : Gallery](https://trello.com/c/NWHlXpp4/372-2-etq-ubo-je-peux-saisir-une-liste-d-image-pour-une-galerie)
 
 New Twig helper : navigator to render a stylisable pagination
 
