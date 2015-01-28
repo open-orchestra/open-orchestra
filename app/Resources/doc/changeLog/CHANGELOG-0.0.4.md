@@ -24,10 +24,16 @@ Symfony is installed in version 2.6.3
 
 Multi-language and versioned content management
 
+## New features
+
+New form type : Color picker
+
+New block : Gallery
+
+New Twig helper : navigator to render a stylisable pagination
+
 ## Other changes
 
 For the content list, we provide a method to disable object hydration
-
-There is now a color picker available
 
 Keyword are now checked with the server before being displayed
