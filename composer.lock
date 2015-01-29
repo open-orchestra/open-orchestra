@@ -1038,12 +1038,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-cms-bundle.git",
-                "reference": "2abb0e30daab0395c1b1d65a9c068b64e3846252"
+                "reference": "eaff5e6b4ecc342b9dd1d6b2bd23193892f44596"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/2abb0e30daab0395c1b1d65a9c068b64e3846252",
-                "reference": "2abb0e30daab0395c1b1d65a9c068b64e3846252",
+                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/eaff5e6b4ecc342b9dd1d6b2bd23193892f44596",
+                "reference": "eaff5e6b4ecc342b9dd1d6b2bd23193892f44596",
                 "shasum": ""
             },
             "require": {
@@ -1085,7 +1085,7 @@
                 "source": "https://github.com/itkg/phporchestra-cms-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-cms-bundle/issues"
             },
-            "time": "2015-01-28 11:16:47"
+            "time": "2015-01-29 09:15:29"
         },
         {
             "name": "itkg/phporchestra-display-bundle",
@@ -2887,16 +2887,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "6b434f4521e74bb5022e7e9e441189356fea137b"
+                "reference": "5a5a640cbca8885f972746ec298743a8b378d0df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/6b434f4521e74bb5022e7e9e441189356fea137b",
-                "reference": "6b434f4521e74bb5022e7e9e441189356fea137b",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/5a5a640cbca8885f972746ec298743a8b378d0df",
+                "reference": "5a5a640cbca8885f972746ec298743a8b378d0df",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.2.4"
+                "php": ">=5.2.7"
             },
             "type": "library",
             "extra": {
@@ -2936,7 +2936,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2015-01-25 17:35:14"
+            "time": "2015-01-29 09:43:27"
         }
     ],
     "packages-dev": [
