@@ -180,12 +180,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "dbeacc7bf5bcec39f7e02aa751adac2cb1ff256a"
+                "reference": "15334410a781da60f861df536b460f24c8f01eeb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/dbeacc7bf5bcec39f7e02aa751adac2cb1ff256a",
-                "reference": "dbeacc7bf5bcec39f7e02aa751adac2cb1ff256a",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/15334410a781da60f861df536b460f24c8f01eeb",
+                "reference": "15334410a781da60f861df536b460f24c8f01eeb",
                 "shasum": ""
             },
             "require": {
@@ -242,7 +242,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2015-01-17 21:05:51"
+            "time": "2015-02-01 04:40:53"
         },
         {
             "name": "doctrine/collections",
@@ -571,12 +571,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/mongodb.git",
-                "reference": "f50fc49f3a34b95d2c561540b95af5844d60f77b"
+                "reference": "3b97082b1526406a3e8ddc294713b89d6f460f59"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/mongodb/zipball/f50fc49f3a34b95d2c561540b95af5844d60f77b",
-                "reference": "f50fc49f3a34b95d2c561540b95af5844d60f77b",
+                "url": "https://api.github.com/repos/doctrine/mongodb/zipball/3b97082b1526406a3e8ddc294713b89d6f460f59",
+                "reference": "3b97082b1526406a3e8ddc294713b89d6f460f59",
                 "shasum": ""
             },
             "require": {
@@ -630,7 +630,7 @@
                 "mongodb",
                 "persistence"
             ],
-            "time": "2015-01-23 11:39:34"
+            "time": "2015-01-30 15:43:45"
         },
         {
             "name": "doctrine/mongodb-odm",
@@ -854,12 +854,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Atlantic18/DoctrineExtensions.git",
-                "reference": "5e19886a64ef7e3540bb362eacfdf7d60c5608e6"
+                "reference": "acbf585de09e1ec44b3e362291b9db4eb6cfca6c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/5e19886a64ef7e3540bb362eacfdf7d60c5608e6",
-                "reference": "5e19886a64ef7e3540bb362eacfdf7d60c5608e6",
+                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/acbf585de09e1ec44b3e362291b9db4eb6cfca6c",
+                "reference": "acbf585de09e1ec44b3e362291b9db4eb6cfca6c",
                 "shasum": ""
             },
             "require": {
@@ -924,7 +924,7 @@
                 "tree",
                 "uploadable"
             ],
-            "time": "2015-01-28 09:12:46"
+            "time": "2015-01-29 15:01:49"
         },
         {
             "name": "incenteev/composer-parameter-handler",
@@ -1038,12 +1038,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-cms-bundle.git",
-                "reference": "eaff5e6b4ecc342b9dd1d6b2bd23193892f44596"
+                "reference": "46a54f8a1d0fba5d2ed0b12eb0d4e2c4f752bab5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/eaff5e6b4ecc342b9dd1d6b2bd23193892f44596",
-                "reference": "eaff5e6b4ecc342b9dd1d6b2bd23193892f44596",
+                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/46a54f8a1d0fba5d2ed0b12eb0d4e2c4f752bab5",
+                "reference": "46a54f8a1d0fba5d2ed0b12eb0d4e2c4f752bab5",
                 "shasum": ""
             },
             "require": {
@@ -1085,7 +1085,7 @@
                 "source": "https://github.com/itkg/phporchestra-cms-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-cms-bundle/issues"
             },
-            "time": "2015-01-29 09:15:29"
+            "time": "2015-01-30 14:10:09"
         },
         {
             "name": "itkg/phporchestra-display-bundle",
@@ -1094,12 +1094,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-display-bundle.git",
-                "reference": "c2d70626c4541dda1c0990f66851f9c04633061d"
+                "reference": "863eede49f3930d32247dbcb035e687ccde7e729"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-display-bundle/zipball/c2d70626c4541dda1c0990f66851f9c04633061d",
-                "reference": "c2d70626c4541dda1c0990f66851f9c04633061d",
+                "url": "https://api.github.com/repos/itkg/phporchestra-display-bundle/zipball/863eede49f3930d32247dbcb035e687ccde7e729",
+                "reference": "863eede49f3930d32247dbcb035e687ccde7e729",
                 "shasum": ""
             },
             "require": {
@@ -1136,7 +1136,7 @@
                 "source": "https://github.com/itkg/phporchestra-display-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-display-bundle/issues"
             },
-            "time": "2015-01-28 09:15:14"
+            "time": "2015-01-29 10:11:23"
         },
         {
             "name": "itkg/phporchestra-media-bundle",
@@ -1199,12 +1199,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-model-bundle.git",
-                "reference": "0e38c284c11dff0ed3504c1ee0ae7ae5c40c9423"
+                "reference": "58080afd0331ac5d92905b9e85be1a3ac208cd9c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-model-bundle/zipball/0e38c284c11dff0ed3504c1ee0ae7ae5c40c9423",
-                "reference": "0e38c284c11dff0ed3504c1ee0ae7ae5c40c9423",
+                "url": "https://api.github.com/repos/itkg/phporchestra-model-bundle/zipball/58080afd0331ac5d92905b9e85be1a3ac208cd9c",
+                "reference": "58080afd0331ac5d92905b9e85be1a3ac208cd9c",
                 "shasum": ""
             },
             "require": {
@@ -1241,7 +1241,7 @@
                 "source": "https://github.com/itkg/phporchestra-model-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-model-bundle/issues"
             },
-            "time": "2015-01-28 10:28:13"
+            "time": "2015-01-30 13:44:45"
         },
         {
             "name": "itkg/phporchestra-model-interface",
@@ -1250,12 +1250,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-model-interface.git",
-                "reference": "3f8379b107417b3d4db675f1cfe76e73403136b1"
+                "reference": "252d5703b108921aa8ffe04bc8c7b4256a5ba6fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-model-interface/zipball/3f8379b107417b3d4db675f1cfe76e73403136b1",
-                "reference": "3f8379b107417b3d4db675f1cfe76e73403136b1",
+                "url": "https://api.github.com/repos/itkg/phporchestra-model-interface/zipball/252d5703b108921aa8ffe04bc8c7b4256a5ba6fc",
+                "reference": "252d5703b108921aa8ffe04bc8c7b4256a5ba6fc",
                 "shasum": ""
             },
             "require": {
@@ -1287,7 +1287,7 @@
                 "source": "https://github.com/itkg/phporchestra-model-interface/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-model-interface/issues"
             },
-            "time": "2015-01-23 10:50:56"
+            "time": "2015-01-30 13:39:47"
         },
         {
             "name": "itkg/phporchestra-translation-bundle",
@@ -1888,12 +1888,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "ba31b79fa540d68da0e9e3269c0f85c1756ff10a"
+                "reference": "7583a2b96b9fda7ece90e34a23cd46e4858b3352"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/ba31b79fa540d68da0e9e3269c0f85c1756ff10a",
-                "reference": "ba31b79fa540d68da0e9e3269c0f85c1756ff10a",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/7583a2b96b9fda7ece90e34a23cd46e4858b3352",
+                "reference": "7583a2b96b9fda7ece90e34a23cd46e4858b3352",
                 "shasum": ""
             },
             "require": {
@@ -1952,7 +1952,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2015-01-20 10:31:44"
+            "time": "2015-01-29 16:05:08"
         },
         {
             "name": "phpcollection/phpcollection",
@@ -2887,12 +2887,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "5a5a640cbca8885f972746ec298743a8b378d0df"
+                "reference": "74a8bddec4e8fbea8b3f497bc7cc4bdf1a498330"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/5a5a640cbca8885f972746ec298743a8b378d0df",
-                "reference": "5a5a640cbca8885f972746ec298743a8b378d0df",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/74a8bddec4e8fbea8b3f497bc7cc4bdf1a498330",
+                "reference": "74a8bddec4e8fbea8b3f497bc7cc4bdf1a498330",
                 "shasum": ""
             },
             "require": {
@@ -2936,7 +2936,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2015-01-29 09:43:27"
+            "time": "2015-01-30 11:04:23"
         }
     ],
     "packages-dev": [
