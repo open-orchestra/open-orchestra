@@ -1,0 +1,27 @@
+parameters:
+    php_orchestra_log.processor.log_user.class: PHPOrchestra\LogBundle\Processor\LogUserProcessor
+
+services:
+    php_orchestra_log.processor.log_user:
+        class: %php_orchestra_log.processor.log_user.class%
+        arguments:
+            - @session
+            - @request_stack
+        tags:
+            - { name: monolog.processor, method: processRecord, channel: phporchestra }
+
+monolog:
+    handlers:
+        main:
+            type: stream
+            level: 200
+            channels: phporchestra
+            handler: mongo
+        mongo:
+            type: mongo
+            level: 200
+            mongo:
+                host: "localhost"
+                database: "%php_orchestra_cms.mongodb.database%"
+                collection: "logs"
+            channels: phporchestra
