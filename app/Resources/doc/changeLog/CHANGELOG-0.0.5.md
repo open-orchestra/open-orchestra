@@ -22,7 +22,7 @@ Url to see changes :
 
 ## New features
 
- - New block : [Audience Analysis](https://trello.com/c/llF7Qzlf/516-3-etq-ubo-je-peux-configurer-un-block-analytics-sachant-gerer-googleanalytics-et-xiti) to configure Xiti / Google Analytics tags]
+ - New block : [Audience Analysis](https://trello.com/c/llF7Qzlf/516-3-etq-ubo-je-peux-configurer-un-block-analytics-sachant-gerer-googleanalytics-et-xiti) to configure Xiti / Google Analytics tags
 
 ## Other changes
 
