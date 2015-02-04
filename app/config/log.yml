@@ -11,5 +11,5 @@ monolog:
             mongo:
                 host: "localhost"
                 database: "%php_orchestra_cms.mongodb.database%"
-                collection: "logs"
+                collection: log
             channels: phporchestra
