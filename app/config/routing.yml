@@ -17,6 +17,11 @@ php_orchestra_api:
     type: annotation
     prefix: /api
 
+php_orchestra_log:
+    resource: "@PHPOrchestraLogBundle/Controller"
+    type: annotation
+    prefix: /api
+
 php_orchestra_media:
     resource: "@PHPOrchestraMediaBundle/Controller"
     type: annotation
