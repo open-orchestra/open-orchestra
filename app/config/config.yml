@@ -50,7 +50,6 @@ assetic:
     bundles:
         - PHPOrchestraBackofficeBundle
         - PHPOrchestraDisplayBundle
-        - LexikTranslationBundle
     #java: /usr/bin/java
     filters:
         cssrewrite: ~
@@ -86,13 +85,6 @@ snc_redis:
             alias: default
             dsn: redis://localhost
             logging: %kernel.debug%
-
-lexik_translation:
-    fallback_locale: "%kernel.default_locale%"
-    managed_locales: %php_orchestra_base.languages_availables%
-    storage:
-        type: mongodb
-        object_manager: default
 
 fos_user:
     db_driver: mongodb
