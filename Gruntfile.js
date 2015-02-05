@@ -156,6 +156,7 @@ module.exports = function(grunt) {
                 src: [
                     'bower_components/underscore/underscore.js',
                     'bower_components/backbone/backbone.js',
+                    'bower_components/backbone.wreqr/lib/backbone.wreqr.min.js',
                     'bower_components/angular/angular.js',
                     'bower_components/datatables/media/js/jquery.dataTables.js',
                     'bower_components/jquery-form/jquery.form.js',
@@ -170,8 +171,12 @@ module.exports = function(grunt) {
                 src: [
                     'web/built/phporchestrabackoffice/js/orchestraLib.js',
                     'web/built/phporchestrabackoffice/js/orchestraListeners.js',
-
                     // MISC
+                    'web/built/phporchestrabackoffice/js/wreqr/widget.js',
+                    'web/built/phporchestrabackoffice/js/wreqr/multiLanguage.js',
+                    'web/built/phporchestrabackoffice/js/wreqr/multiStatus.js',
+                    'web/built/phporchestrabackoffice/js/wreqr/multiVersion.js',
+                    'web/built/phporchestrabackoffice/js/wreqr/duplicate.js',
                     'web/built/phporchestrabackoffice/js/OrchestraView.js',
                     'web/built/phporchestrabackoffice/js/addPrototype.js',
                     'web/built/phporchestrabackoffice/js/modelBackbone.js',
