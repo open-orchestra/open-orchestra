@@ -15,7 +15,7 @@ Url to see changes :
  - [Indexation bundle](https://github.com/itkg/phporchestra-indexation-bundle/compare/v0.0.4...v0.0.5)
 
 ## Possible BC breaker
-
+ - The block contain [all the parameter](https://trello.com/c/x89P1REE/496-5-5-etq-dev-je-peux-specifier-de-quel-parametre-a-besoin-mon-block) needed to display himself
 
 ## Bug fixes
  - No more crash when trying to switch node status ([media references extraction from blocks fixed](https://trello.com/c/OBiPxr5i/526-1-bo-extractreferencefromnodestrategy))
