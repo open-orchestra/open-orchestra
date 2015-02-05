@@ -34,7 +34,6 @@ class AppKernel extends Kernel
             new PHPOrchestra\BaseBundle\PHPOrchestraBaseBundle(),
             new PHPOrchestra\ModelBundle\PHPOrchestraModelBundle(),
             new PHPOrchestra\MediaBundle\PHPOrchestraMediaBundle(),
-            new PHPOrchestra\TranslationBundle\PHPOrchestraTranslationBundle(),
             new PHPOrchestra\ApiBundle\PHPOrchestraApiBundle(),
             new PHPOrchestra\DisplayBundle\PHPOrchestraDisplayBundle(),
             new PHPOrchestra\BackofficeBundle\PHPOrchestraBackofficeBundle(),
@@ -42,7 +41,6 @@ class AppKernel extends Kernel
             new PHPOrchestra\LogBundle\PHPOrchestraLogBundle(),
 
             // Need parameters set by some of our bundles
-            new Lexik\Bundle\TranslationBundle\LexikTranslationBundle(),
             new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),
             new Knp\Bundle\GaufretteBundle\KnpGaufretteBundle(),
         );

@@ -27,9 +27,6 @@ php_orchestra_media:
     type: annotation
     prefix: /media
 
-php_orchestra_translation:
-    resource: "@PHPOrchestraTranslationBundle/Resources/config/routing.yml"
-
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
 

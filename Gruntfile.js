@@ -209,10 +209,6 @@ module.exports = function(grunt) {
                     // INDEXATION
                     'web/bundles/phporchestraindexation/js/*.js',
 
-                    // LEXIKTRANSLATION
-                    'web/bundles/lexiktranslation/ng-table/ng-table.min.js',
-                    'web/built/phporchestratranslation/js/translationView.js',
-
                     // BACKBONE ROUTER
                     'web/bundles/phporchestrabackoffice/js/backboneRouter.js'
                 ],
@@ -274,7 +270,6 @@ module.exports = function(grunt) {
                       'web/built/phporchestrabackoffice/css/blocksPanel.css',
                       'web/built/phporchestrabackoffice/css/blocksIcon.css',
                       'web/built/phporchestrabackoffice/css/mediaModal.css',
-                      'web/bundles/lexiktranslation/ng-table/ng-table.min.css',
                       'web/built/phporchestrabackoffice/css/loginPage.css',
                       'web/built/phporchestrabackoffice/css/editTable.css',
                       'web/built/phporchestrabackoffice/css/node.css'
