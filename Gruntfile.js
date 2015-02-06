@@ -156,6 +156,7 @@ module.exports = function(grunt) {
                 src: [
                     'bower_components/underscore/underscore.js',
                     'bower_components/backbone/backbone.js',
+                    'bower_components/backbone.wreqr/lib/backbone.wreqr.min.js',
                     'bower_components/angular/angular.js',
                     'bower_components/datatables/media/js/jquery.dataTables.js',
                     'bower_components/jquery-form/jquery.form.js',
@@ -170,8 +171,12 @@ module.exports = function(grunt) {
                 src: [
                     'web/built/phporchestrabackoffice/js/orchestraLib.js',
                     'web/built/phporchestrabackoffice/js/orchestraListeners.js',
-
                     // MISC
+                    'web/built/phporchestrabackoffice/js/wreqr/widget.js',
+                    'web/built/phporchestrabackoffice/js/wreqr/widget/multiLanguage.js',
+                    'web/built/phporchestrabackoffice/js/wreqr/widget/multiStatus.js',
+                    'web/built/phporchestrabackoffice/js/wreqr/widget/multiVersion.js',
+                    'web/built/phporchestrabackoffice/js/wreqr/widget/duplicate.js',
                     'web/built/phporchestrabackoffice/js/OrchestraView.js',
                     'web/built/phporchestrabackoffice/js/addPrototype.js',
                     'web/built/phporchestrabackoffice/js/modelBackbone.js',
@@ -188,6 +193,7 @@ module.exports = function(grunt) {
                     'web/built/phporchestrabackoffice/js/page/orderNode.js',
                     'web/built/phporchestrabackoffice/js/VersionView.js',
                     'web/built/phporchestrabackoffice/js/LanguageView.js',
+                    'web/built/phporchestrabackoffice/js/WidgetStatusView.js',
                     'web/built/phporchestrabackoffice/js/page/previewLinkView.js',
                     'web/built/phporchestrabackoffice/js/page/pageConfigurationButtonView.js',
                     'web/built/phporchestrabackoffice/js/table/TableviewView.js',
@@ -336,7 +342,7 @@ module.exports = function(grunt) {
         // Source COFFEE files are located inside : bundles/[bundle]/coffee/
         // Destination JS files are located inside : built/[bundle]/js/
         var mappingFileCoffee = grunt.file.expandMapping(
-            ['*/coffee/*.coffee', '*/coffee/*/*.coffee'],
+            ['*/coffee/*.coffee', '*/coffee/*/*.coffee', '*/coffee/*/*/*.coffee'],
             'web/built/', {
                 cwd: 'web/bundles/',
                 rename: function(dest, matchedSrcPath, options) {
