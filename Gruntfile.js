@@ -173,10 +173,10 @@ module.exports = function(grunt) {
                     'web/built/phporchestrabackoffice/js/orchestraListeners.js',
                     // MISC
                     'web/built/phporchestrabackoffice/js/wreqr/widget.js',
-                    'web/built/phporchestrabackoffice/js/wreqr/multiLanguage.js',
-                    'web/built/phporchestrabackoffice/js/wreqr/multiStatus.js',
-                    'web/built/phporchestrabackoffice/js/wreqr/multiVersion.js',
-                    'web/built/phporchestrabackoffice/js/wreqr/duplicate.js',
+                    'web/built/phporchestrabackoffice/js/wreqr/widget/multiLanguage.js',
+                    'web/built/phporchestrabackoffice/js/wreqr/widget/multiStatus.js',
+                    'web/built/phporchestrabackoffice/js/wreqr/widget/multiVersion.js',
+                    'web/built/phporchestrabackoffice/js/wreqr/widget/duplicate.js',
                     'web/built/phporchestrabackoffice/js/OrchestraView.js',
                     'web/built/phporchestrabackoffice/js/addPrototype.js',
                     'web/built/phporchestrabackoffice/js/modelBackbone.js',
@@ -341,7 +341,7 @@ module.exports = function(grunt) {
         // Source COFFEE files are located inside : bundles/[bundle]/coffee/
         // Destination JS files are located inside : built/[bundle]/js/
         var mappingFileCoffee = grunt.file.expandMapping(
-            ['*/coffee/*.coffee', '*/coffee/*/*.coffee'],
+            ['*/coffee/*.coffee', '*/coffee/*/*.coffee', '*/coffee/*/*/*.coffee'],
             'web/built/', {
                 cwd: 'web/bundles/',
                 rename: function(dest, matchedSrcPath, options) {
