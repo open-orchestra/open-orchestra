@@ -193,6 +193,7 @@ module.exports = function(grunt) {
                     'web/built/phporchestrabackoffice/js/page/orderNode.js',
                     'web/built/phporchestrabackoffice/js/VersionView.js',
                     'web/built/phporchestrabackoffice/js/LanguageView.js',
+                    'web/built/phporchestrabackoffice/js/WidgetStatusView.js',
                     'web/built/phporchestrabackoffice/js/page/previewLinkView.js',
                     'web/built/phporchestrabackoffice/js/page/pageConfigurationButtonView.js',
                     'web/built/phporchestrabackoffice/js/table/TableviewView.js',
