@@ -24,3 +24,6 @@ Url to see changes :
 
  - [Validation on the routePattern creation](https://trello.com/c/T2Y3fQl5/535-2-etq-ufront-une-url-pointe-sur-un-seul-node-dans-une-seule-langue-quelque-soit-la-version-pour-un-host-donne)
 ## Other changes
+
+## Deprecated method
+ - NodeRepositoryInterface : [findOneByParendIdAndAliasAndSiteId](https://github.com/itkg/phporchestra-model-interface/blob/master/ModelInterface/Repository/NodeRepositoryInterface.php#L19)
