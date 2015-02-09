@@ -12,4 +12,4 @@ monolog:
                 host: "localhost"
                 database: "%php_orchestra_cms.mongodb.database%"
                 collection: log
-            channels: phporchestra
+            channels: [phporchestra, security]
