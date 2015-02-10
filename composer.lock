@@ -1038,12 +1038,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-cms-bundle.git",
-                "reference": "b8bb92725ddd19e8923e9f299da99f7025576172"
+                "reference": "0803ea396cb9d407883253effc412b10d86f3772"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/b8bb92725ddd19e8923e9f299da99f7025576172",
-                "reference": "b8bb92725ddd19e8923e9f299da99f7025576172",
+                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/0803ea396cb9d407883253effc412b10d86f3772",
+                "reference": "0803ea396cb9d407883253effc412b10d86f3772",
                 "shasum": ""
             },
             "require": {
@@ -1081,11 +1081,12 @@
                     "email": "nico.th4l@gmail.com"
                 }
             ],
+            "description": "This bundle provide the backoffice part of phporchestra",
             "support": {
                 "source": "https://github.com/itkg/phporchestra-cms-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-cms-bundle/issues"
             },
-            "time": "2015-02-09 15:31:29"
+            "time": "2015-02-10 08:58:37"
         },
         {
             "name": "itkg/phporchestra-display-bundle",
@@ -1145,12 +1146,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-media-bundle.git",
-                "reference": "f9df291f4d511cc7f74a38945e6ea5f148d8d0dc"
+                "reference": "2df0da10ceba7526ce1ccf687a0875924ce7db53"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-media-bundle/zipball/f9df291f4d511cc7f74a38945e6ea5f148d8d0dc",
-                "reference": "f9df291f4d511cc7f74a38945e6ea5f148d8d0dc",
+                "url": "https://api.github.com/repos/itkg/phporchestra-media-bundle/zipball/2df0da10ceba7526ce1ccf687a0875924ce7db53",
+                "reference": "2df0da10ceba7526ce1ccf687a0875924ce7db53",
                 "shasum": ""
             },
             "require": {
@@ -1190,7 +1191,7 @@
                 "source": "https://github.com/itkg/phporchestra-media-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-media-bundle/issues"
             },
-            "time": "2015-02-09 14:05:35"
+            "time": "2015-02-10 08:52:11"
         },
         {
             "name": "itkg/phporchestra-model-bundle",
@@ -1199,12 +1200,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-model-bundle.git",
-                "reference": "fc2f180df50c08b78992e11e47a5e3a1340cc294"
+                "reference": "022dc025b88bc75c895fec9aaa27a3bb3a9e122b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-model-bundle/zipball/fc2f180df50c08b78992e11e47a5e3a1340cc294",
-                "reference": "fc2f180df50c08b78992e11e47a5e3a1340cc294",
+                "url": "https://api.github.com/repos/itkg/phporchestra-model-bundle/zipball/022dc025b88bc75c895fec9aaa27a3bb3a9e122b",
+                "reference": "022dc025b88bc75c895fec9aaa27a3bb3a9e122b",
                 "shasum": ""
             },
             "require": {
@@ -1241,7 +1242,7 @@
                 "source": "https://github.com/itkg/phporchestra-model-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-model-bundle/issues"
             },
-            "time": "2015-02-09 10:42:07"
+            "time": "2015-02-09 15:41:09"
         },
         {
             "name": "itkg/phporchestra-model-interface",
@@ -1250,12 +1251,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-model-interface.git",
-                "reference": "3ecb1089df841359ba2c4d76254789c93dd46c1c"
+                "reference": "c03570899583282cd238de6cfa587b14a52db97e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-model-interface/zipball/3ecb1089df841359ba2c4d76254789c93dd46c1c",
-                "reference": "3ecb1089df841359ba2c4d76254789c93dd46c1c",
+                "url": "https://api.github.com/repos/itkg/phporchestra-model-interface/zipball/c03570899583282cd238de6cfa587b14a52db97e",
+                "reference": "c03570899583282cd238de6cfa587b14a52db97e",
                 "shasum": ""
             },
             "require": {
@@ -1287,7 +1288,7 @@
                 "source": "https://github.com/itkg/phporchestra-model-interface/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-model-interface/issues"
             },
-            "time": "2015-02-09 14:04:33"
+            "time": "2015-02-09 15:41:05"
         },
         {
             "name": "itkg/phporchestra-user-bundle",
@@ -1708,12 +1709,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kriswallsmith/assetic.git",
-                "reference": "0c958a762ad8f513b19a0f7c285bc8385b1649e7"
+                "reference": "138dd4b5ffa430e9fd74822cce436753fcb15e99"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/0c958a762ad8f513b19a0f7c285bc8385b1649e7",
-                "reference": "0c958a762ad8f513b19a0f7c285bc8385b1649e7",
+                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/138dd4b5ffa430e9fd74822cce436753fcb15e99",
+                "reference": "138dd4b5ffa430e9fd74822cce436753fcb15e99",
                 "shasum": ""
             },
             "require": {
@@ -1774,7 +1775,7 @@
                 "compression",
                 "minification"
             ],
-            "time": "2015-02-08 23:13:24"
+            "time": "2015-02-09 21:28:43"
         },
         {
             "name": "monolog/monolog",
