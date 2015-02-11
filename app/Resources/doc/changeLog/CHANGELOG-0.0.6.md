@@ -23,12 +23,13 @@ Url to see changes :
 ## Bug fixes
 
  - [BO left menu is now operationnal after an automatic refresh](https://trello.com/c/X72fvY4d/530-2-etq-ubo-les-ne-disparaissent-pas-apres-un-rechargement-du-left-menu)
- - [The crop preview is now invisible](https://trello.com/c/c0EuDFjM/521-0-5-etq-ubo-je-ne-vois-plus-la-preview-dans-la-mediatheque)
+ - [The crop preview is now disable](https://trello.com/c/c0EuDFjM/521-0-5-etq-ubo-je-ne-vois-plus-la-preview-dans-la-mediatheque)
 
 ## New features
 
  - [Validation on the routePattern creation](https://trello.com/c/T2Y3fQl5/535-2-etq-ufront-une-url-pointe-sur-un-seul-node-dans-une-seule-langue-quelque-soit-la-version-pour-un-host-donne)
  - [Display the site name in the log table](https://trello.com/c/TuJrzEjV/558-1-etq-ubo-dans-le-listing-de-log-je-vois-le-site-courant-utilise-au-moment-de-la-creation-du-log)
+ 
 ## Other changes
 
 ## Deprecated method
