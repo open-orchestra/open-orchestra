@@ -3,15 +3,15 @@
 Un tableau de log s'affiche dans la partie administration du backoffice.
 Il affiche la date et l'heure, l'ip de l'utilisateur, le nom de l'utilisateur, le nom du site courrant et le message de log.
 
-Le LogBundle est dans dans phporchestra-cmsbundle.
+Le LogBundle est dans phporchestra-cmsbundle.
 
 # II/ Configuration
 
-Dans app/config/log.yml ce trouve la configuration des logs. Ce fichier de configuration nous permet de déclarer des handlers.
-Les handlers détermine ou enregistrer les logs, le type d'information a enregistrer et des channels.
+Dans app/config/log.yml se trouve la configuration des logs. Ce fichier de configuration nous permet de déclarer des handlers.
+Les handlers détermine où enregistrer les logs, le type d'information à enregistrer et les channels.
 
-Nous enregistrons les logs dans mongoDB nous avons donc un handler de type mongo, avec les informations de connection à la base et
-la collection dans laquelle enregistrer les logs. Le level détermine le type d'information enregistrer dans les logs, 200 correspond
+Afin d'enregistrer les logs dans mongoDb, il nous faut définir un handler avec les informations de connections à la base et le nom de la collection.
+Le level détermine le type d'information enregistrer dans les logs, 200 correspond
 à information, mais il y a aussi debug, erreur etc...
 
     mongo:
@@ -25,9 +25,9 @@ la collection dans laquelle enregistrer les logs. Le level détermine le type d'
 
 # III/ Processor
 
-Le logger qui permet d'enregistrer les logs à toujour la date et l'heure, mais pour pouvoir enregistrer l'adresse ip et le nom
-de l'utilisateur nous avons créé un processor. Nous avons donné le channel phporchestra au processor pour qu'à chaque que des
-logs vont être écrit dans ce channel il passe dans le processor.
+Le logger qui permet d'enregistrer les logs a toujours la date et l'heure, pour enregistrer l'adresse ip et le nom
+de l'utilisateur nous avons créé un processor. Nous avons donné le channel phporchestra au processor pour qu'à chaque log
+écrit dans ce channel il passe dans le processor.
 
 Le processor doit être taggé par:
 
