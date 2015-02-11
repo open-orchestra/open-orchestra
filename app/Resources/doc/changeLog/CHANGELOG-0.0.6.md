@@ -20,6 +20,8 @@ Url to see changes :
 
 ## Bug fixes
 
+ - [BO left menu is now operationnal after an automatic refresh](https://trello.com/c/X72fvY4d/530-2-etq-ubo-les-ne-disparaissent-pas-apres-un-rechargement-du-left-menu)
+
 ## New features
 
  - [Validation on the routePattern creation](https://trello.com/c/T2Y3fQl5/535-2-etq-ufront-une-url-pointe-sur-un-seul-node-dans-une-seule-langue-quelque-soit-la-version-pour-un-host-donne)
