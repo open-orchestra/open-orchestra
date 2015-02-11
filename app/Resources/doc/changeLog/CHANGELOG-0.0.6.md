@@ -17,6 +17,8 @@ Url to see changes :
 ## Possible BC breaker
 
  - [Modify the way route are created and analyzed](https://trello.com/c/V4qUttd6/547-5-etq-ufront-je-vois-l-url-comprenant-le-pattern-du-node-ainsi-que-la-concatenation-des-pattern-de-tous-ses-parents-dans-la-dern)
+ - [The website has multiple alias](https://trello.com/c/320DdPIj/561-2-etq-ubo-tous-les-alias-d-un-site-n-ont-qu-une-langue-et-un-prefix-possiblement-vide)
+ - [Each website alias can provide an url prefix](https://trello.com/c/320DdPIj/561-2-etq-ubo-tous-les-alias-d-un-site-n-ont-qu-une-langue-et-un-prefix-possiblement-vide)
 
 ## Bug fixes
 
