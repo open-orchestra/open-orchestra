@@ -8,10 +8,10 @@ Le LogBundle est dans phporchestra-cmsbundle.
 # II/ Configuration
 
 Dans app/config/log.yml se trouve la configuration des logs. Ce fichier de configuration nous permet de déclarer des handlers.
-Les handlers détermine où enregistrer les logs, le type d'information à enregistrer et les channels.
+Les handlers déterminent où enregistrer les logs, le type d'information à enregistrer et les channels.
 
-Afin d'enregistrer les logs dans mongoDb, il nous faut définir un handler avec les informations de connections à la base et le nom de la collection.
-Le level détermine le type d'information enregistrer dans les logs, 200 correspond
+Afin d'enregistrer les logs dans mongoDb, il nous faut définir un handler avec les informations de connection à la base et le nom de la collection.
+Le level détermine le type d'information enregistrée dans les logs, 200 correspond
 à information, mais il y a aussi debug, erreur etc...
 
     mongo:
@@ -22,6 +22,10 @@ Le level détermine le type d'information enregistrer dans les logs, 200 corresp
             database: "%php_orchestra_cms.mongodb.database%"
             collection: log
         channels: [phporchestra]
+
+Les channels correspondent aux canaux dans lesquels sont écrit les logs, si aucun channel est enregistré alors les logs sont écrit dans tous les
+canaux. Il est possible de mettre plusieurs canaux, ou d'exclure certain canaux.
+Les services qui ont le channel phporchestra écrivent que dans ce canal et notre handler affiche que ce qui est écrit dans le canal phporchestra.
 
 # III/ Processor
 
@@ -38,22 +42,22 @@ Le processor doit être taggé par:
 
 Les services qui écrivent les logs doivent avoir : `Symfony\Bridge\Monolog\Logger`
 
-Et être taggé par :
+Et être taggés par :
 
     tags:
         - { name: monolog.logger, channel: phporchestra }
 
-Dans PhpOrchestra lorsqu'un action comme la modification d'un noeud est effectué un évènement est créé et c'est lui qui écrit les messages des logs.
-Le message des logs prends une clé de traduction et un tableau de context, ensuite dans les fichiers de traduction nous écrivons les messages.
+Dans PhpOrchestra lorsqu'un action comme la modification d'un noeud est effectuée un évènement est créé et c'est lui qui écrit les messages des logs.
+Le message des logs prend une clé de traduction et un tableau de context, ensuite dans les fichiers de traduction nous écrivons les messages.
 
 Comme suit : `Update a node with node id node_id, node version node_version and node language node_language`
 
-Les variables comme node_id sont les clé du tableau de context et sera remplacé par la valeur lors de l'affichage.
+Les variables comme node_id sont les clés du tableau de context et seront remplacées par la valeur lors de l'affichage.
 
-Les évènement qui écrivent dans les logs sont dans : `LogBundle\EventSubscriber`
+Les évènements qui écrivent dans les logs sont dans : `LogBundle\EventSubscriber`
 
 # V/ L'affichage
 
 Le fichier de vue du tableau qui affiche les logs est dans : `BackofficeBundle\Resources\views\AdministrationPanel\logs.html.twig`
 
-Les facades et transformer sont dans : `LogBundle\Facade` et `LogBundle\Transformer`
+Les facades et transformers sont dans : `LogBundle\Facade` et `LogBundle\Transformer`
