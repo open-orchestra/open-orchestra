@@ -5,7 +5,7 @@ parameters:
     mailer_password:   ~
 
     default_locale:            en
-    secret:            ThisTokenIsNotSoSecretChangeIt
+    secret:            SRiesraIEURNSTeiuRnsAIErnsEA
 
     router.request_context.host: phporchestra.dev
     router.request_context.base_url: /app_dev.php
