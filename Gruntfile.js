@@ -18,6 +18,46 @@ module.exports = function(grunt) {
 
         symlink: {
             // BOWER COMPONENT
+            open_sans_fonts_bold: {
+                src: 'bower_components/open-sans/fonts/bold',
+                dest: 'web/fonts/bold'
+            },
+            open_sans_fonts_bold_italic: {
+                src: 'bower_components/open-sans/fonts/bold-italic',
+                dest: 'web/fonts/bold-italic'
+            },
+            open_sans_fonts_extrabold: {
+                src: 'bower_components/open-sans/fonts/extrabold',
+                dest: 'web/fonts/extrabold'
+            },
+            open_sans_fonts_extrabold_italic: {
+                src: 'bower_components/open-sans/fonts/extrabold-italic',
+                dest: 'web/fonts/extrabold-italic'
+            },
+            open_sans_fonts_italic: {
+                src: 'bower_components/open-sans/fonts/italic',
+                dest: 'web/fonts/italic'
+            },
+            open_sans_fonts_light: {
+                src: 'bower_components/open-sans/fonts/light',
+                dest: 'web/fonts/light'
+            },
+            open_sans_fonts_light_italic: {
+                src: 'bower_components/open-sans/fonts/light-italic',
+                dest: 'web/fonts/light-italic'
+            },
+            open_sans_fonts_regular: {
+                src: 'bower_components/open-sans/fonts/regular',
+                dest: 'web/fonts/regular'
+            },
+            open_sans_fonts_semibold: {
+                src: 'bower_components/open-sans/fonts/semibold',
+                dest: 'web/fonts/semibold'
+            },
+            open_sans_fontssemibold_italic: {
+                src: 'bower_components/open-sans/fonts/semibold-italic',
+                dest: 'web/fonts/semibold-italic'
+            },
             fontawesome_font_otf: {
                 src: 'bower_components/font-awesome/fonts/FontAwesome.otf',
                 dest: 'web/fonts/FontAwesome.otf'
@@ -166,7 +206,7 @@ module.exports = function(grunt) {
                 ],
                 dest: 'web/built/lib.js'
             },
-        
+            
             orchestrajs: {
                 src: [
                     'web/built/phporchestrabackoffice/js/orchestraLib.js',
@@ -233,6 +273,7 @@ module.exports = function(grunt) {
                 src: [
                     // SMARTADMIN PACKAGE
 //                    'bower_components/bootstrap/dist/css/bootstrap.css',
+                    'bower_components/open-sans/css/open-sans.css',
                     'bower_components/jquery-minicolors/jquery.minicolors.css',
                     'web/bundles/phporchestrabackoffice/smartadmin/css/bootstrap.css',
                     'bower_components/font-awesome/css/font-awesome.css',
