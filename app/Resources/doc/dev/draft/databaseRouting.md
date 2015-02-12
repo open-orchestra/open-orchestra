@@ -20,4 +20,4 @@ Activation : (dans le fichier `routing.yml`)
 Lors de la mise en place d'une route dans le node l'utilisateur doit suivre les prérequis Symfony :
 
  - Les variables dont il veut disposer entre {} ex : `/constructeur/{voiture}/blog`
- - Il y a un check sur l'unicité du routePattern avec tous les frêres d'un nœud
+ - Il y a un check sur l'unicité du routePattern avec tous les frères d'un nœud
