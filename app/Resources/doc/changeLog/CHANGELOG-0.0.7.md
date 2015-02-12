@@ -18,8 +18,12 @@ Url to see changes :
 
 ## Bug fixes
 
+ - [Sitemap Generation is operationnal again](https://trello.com/c/rljOEviq/589-etq-ufront-je-peux-avoir-la-generation-du-sitemap)
+
 ## New features
 
 ## Other changes
+
+ - Back Office : [Open sans font familly is now loaded via Bower](https://trello.com/c/4ioDDQLt/484-0-5-etq-que-dev-j-ai-fonts-googleapis-dans-bower)
 
 ## Deprecated method
