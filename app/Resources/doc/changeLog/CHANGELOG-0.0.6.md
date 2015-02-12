@@ -31,6 +31,7 @@ Url to see changes :
  - [Display the site name in the log table](https://trello.com/c/TuJrzEjV/558-1-etq-ubo-dans-le-listing-de-log-je-vois-le-site-courant-utilise-au-moment-de-la-creation-du-log)
  
 ## Other changes
+ - Apc is not anymore required by baseBundle
 
 ## Deprecated method
  - NodeRepositoryInterface : [findOneByParendIdAndAliasAndSiteId](https://github.com/itkg/phporchestra-model-interface/blob/master/ModelInterface/Repository/NodeRepositoryInterface.php#L19)
