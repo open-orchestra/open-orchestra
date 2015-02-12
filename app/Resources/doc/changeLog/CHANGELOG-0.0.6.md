@@ -29,9 +29,12 @@ Url to see changes :
 
  - [Validation on the routePattern creation](https://trello.com/c/T2Y3fQl5/535-2-etq-ufront-une-url-pointe-sur-un-seul-node-dans-une-seule-langue-quelque-soit-la-version-pour-un-host-donne)
  - [Display the site name in the log table](https://trello.com/c/TuJrzEjV/558-1-etq-ubo-dans-le-listing-de-log-je-vois-le-site-courant-utilise-au-moment-de-la-creation-du-log)
+ - [Start to use Wreqr to dispatch event in Js](https://trello.com/c/SI1nGWb6/438-3-event-en-javascript)
  
 ## Other changes
+
  - Apc is not anymore required by baseBundle
 
 ## Deprecated method
+
  - NodeRepositoryInterface : [findOneByParendIdAndAliasAndSiteId](https://github.com/itkg/phporchestra-model-interface/blob/master/ModelInterface/Repository/NodeRepositoryInterface.php#L19)
