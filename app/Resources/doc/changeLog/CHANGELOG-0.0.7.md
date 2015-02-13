@@ -19,6 +19,7 @@ Url to see changes :
 ## Bug fixes
 
  - [Sitemap Generation is operationnal again](https://trello.com/c/rljOEviq/589-etq-ufront-je-peux-avoir-la-generation-du-sitemap)
+ - [Provisionning fixed](https://trello.com/c/mjNqr6uy/566-2-etq-dev-je-peux-provisionner-ma-machine)
 
 ## New features
 
