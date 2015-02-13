@@ -33,3 +33,9 @@ Url to see changes :
  - PhpOrchestraUrlGenerator::dynamicGenerate()
  - DynamicRoutingManager::getRouteParameterFromRequestPathInfo()
  - DynamicRoutingSubscriber::onKernelException()
+
+## Suppressed method
+
+ - NodeInterface::getAlias()
+ - NodeInterface::setAlias()
+ - NodeRepositoryInterface::findOneByParendIdAndAliasAndSiteId()
