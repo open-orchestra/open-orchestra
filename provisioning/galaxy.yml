@@ -1,6 +1,11 @@
-geerlingguy.php,1.2.9
-DavidWittman.redis,1.0.2
-geerlingguy.varnish,1.1.1
-perlmonkey.apache_solr,master
-briancoca.oracle_java7,master
-JasonGiedymin.nodejs,master
+- src: geerlingguy.php
+  version: 1.2.9
+
+- src: DavidWittman.redis
+  version: 1.0.2
+
+- src: geerlingguy.varnish
+  version: 1.1.1
+
+- src: JasonGiedymin.nodejs
+  version: master
