@@ -23,6 +23,8 @@ Url to see changes :
 
 ## New features
 
+ - [Redirection are stored in the database to feed the front router](https://trello.com/c/KiZmddVh/536-etq-ufront-si-j-accede-a-une-url-d-un-node-qui-n-est-plus-publie-je-recois-une-redirection-301-sur-le-node-publie-6)
+
 ## Other changes
 
  - Back Office > [Open sans font familly is now loaded via Bower](https://trello.com/c/4ioDDQLt/484-0-5-etq-que-dev-j-ai-fonts-googleapis-dans-bower)
