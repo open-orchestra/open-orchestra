@@ -25,8 +25,10 @@ Url to see changes :
 
 ## Other changes
 
- - Back Office : [Open sans font familly is now loaded via Bower](https://trello.com/c/4ioDDQLt/484-0-5-etq-que-dev-j-ai-fonts-googleapis-dans-bower)
- - Back Office : [Dans l'édition d'un node, seuls les blocks paramétrés pour le site sont disponibles](https://trello.com/c/feVdcqK9/482-1-etq-ubo-je-prends-en-compte-la-liste-des-blocks-dispo-pour-le-site-courant-quand-je-construit-la-liste-des-blocks-sur-la-colon)
+ - Back Office > [Open sans font familly is now loaded via Bower](https://trello.com/c/4ioDDQLt/484-0-5-etq-que-dev-j-ai-fonts-googleapis-dans-bower)
+ - Back Office > [In node edition, only allowed blocks for the current site are availables](https://trello.com/c/feVdcqK9/482-1-etq-ubo-je-prends-en-compte-la-liste-des-blocks-dispo-pour-le-site-courant-quand-je-construit-la-liste-des-blocks-sur-la-colon)
+ - Back Office > [Mediatheque : thumbnail formats are exploited a new way](https://trello.com/c/GUJnf6Mo/523-2-etq-ubo-lorsque-je-crop-l-image-doit-tenir-dans-le-rectangle-defini-il-peut-y-avoir-du-vide-autour)
+ - Back Office > Mediatheque : contribution interface is a bit more friendly user
 
 ## Deprecated method
 
