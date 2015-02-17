@@ -24,7 +24,6 @@ To avoid version troubles, switch to release 1.7.1
     git clone git://github.com/ansible/ansible.git --recursive
     cd ./ansible
     git checkout -b release1.8.2 origin/release1.8.2
-    git submodule init
     git submodule update --recursive
     source ./hacking/env-setup
 
