@@ -20,11 +20,13 @@ Url to see changes :
 
  - [Sitemap Generation is operationnal again](https://trello.com/c/rljOEviq/589-etq-ufront-je-peux-avoir-la-generation-du-sitemap)
  - [Provisionning fixed](https://trello.com/c/mjNqr6uy/566-2-etq-dev-je-peux-provisionner-ma-machine)
+ - [Keywords are now selectables in form that require it](https://trello.com/c/gUPgOx5B/575-1-bo-bloc-contentlist-choix-du-mot-cle-masque)
 
 ## New features
 
  - [Redirection are stored in the database to feed the front router](https://trello.com/c/KiZmddVh/536-etq-ufront-si-j-accede-a-une-url-d-un-node-qui-n-est-plus-publie-je-recois-une-redirection-301-sur-le-node-publie-6)
  - [Ability to define a template to display a content](https://trello.com/c/UtJuPz5R/567-3-etq-ubo-j-ai-acces-a-un-champ-de-type-wysiwyg-dans-le-block-contentlist-permettant-de-definir-le-template-a-utiliser-pour-affi)
+ - [Scheme of sites and pages is now configurable (used only on BO preview for now)](https://trello.com/c/Y0cCzHg7/555-1-etq-ubo-je-peux-acceder-a-la-preview-en-https-si-specifier-comme-tel-dans-le-site-ou-le-node)
 
 ## Other changes
 
