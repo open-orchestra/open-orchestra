@@ -1,3 +1,0 @@
----
- - name: Copy lang
-   copy: src=../app/Resources/conf/solr/lang dest=/usr/local/src/solr-4.9.0/example/solr/collection1/conf/lang force=yes
