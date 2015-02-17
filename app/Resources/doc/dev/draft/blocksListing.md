@@ -1,7 +1,7 @@
 ## Contenu
 * ContentList
     * Affiche une liste de contenus répondant à des critères paramétrés
-    * Back : [On ne peut pas sélectionner de mot-clé dans le paramétrage](https://trello.com/c/gUPgOx5B/575-bo-block-contentlist-choix-du-mot-cle-masque)
+    * Back : [Erreur à la soumission du formulaire](https://trello.com/c/ySA4rltQ/597-bo-bloc-contentlist-plantage-a-la-soumission)
     * Front :
         * [Symfony plante si la conf en BO est incomplète](https://trello.com/c/yl7JIpzs/578-fo-bloc-contentlist-plantage-symfony-si-bloc-mal-configure)
         * A rechecker quand le form sera réparé
@@ -39,7 +39,7 @@
         * A rechecker quand le form sera réparé
 
 * Dailymotion
-    * Affichage d'une vidéo Daylimotion
+    * Affichage d'une vidéo Dailymotion
     * Front : Ok
 
 * Vimeo
@@ -48,7 +48,7 @@
 
 * MediaListByKeyword
     * Affiche une liste de médias selon un mot clé
-    * Back : [Bloc non sauvegardable car le select des mots-clés passe en dessous du formulaire](https://trello.com/c/gUPgOx5B/575-bo-bloc-contentlist-choix-du-mot-cle-masque)
+    * Back : [Erreur à la soumission du formulaire](https://trello.com/c/ySA4rltQ/597-bo-bloc-contentlist-plantage-a-la-soumission)
     * Front :
         * Le bloc plante parce qu'il n'y a pas de check sur l'existence des attributs
         * A rechecker quand le form sera réparé
