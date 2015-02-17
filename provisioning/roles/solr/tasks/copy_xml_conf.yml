@@ -1,5 +1,0 @@
----
- - name: Copy schema.xml
-   copy: src=../app/Resources/conf/solr/schema.xml dest=/usr/local/src/solr-4.9.0/example/solr/collection1/conf/schema.xml force=yes
- - name: Copy solrconfig.xml
-   copy: src=../app/Resources/conf/solr/solrconfig.xml dest=/usr/local/src/solr-4.9.0/example/solr/collection1/conf/solrconfig.xml force=yes
