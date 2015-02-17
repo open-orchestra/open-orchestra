@@ -24,6 +24,7 @@ Url to see changes :
 ## New features
 
  - [Redirection are stored in the database to feed the front router](https://trello.com/c/KiZmddVh/536-etq-ufront-si-j-accede-a-une-url-d-un-node-qui-n-est-plus-publie-je-recois-une-redirection-301-sur-le-node-publie-6)
+ - [Ability to define a template to display a content](https://trello.com/c/UtJuPz5R/567-3-etq-ubo-j-ai-acces-a-un-champ-de-type-wysiwyg-dans-le-block-contentlist-permettant-de-definir-le-template-a-utiliser-pour-affi)
 
 ## Other changes
 
