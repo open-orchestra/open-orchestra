@@ -32,6 +32,7 @@ fos_user:
 
 root:
     pattern: /
+    methods: ['GET']
     defaults:
         _controller: FrameworkBundle:Redirect:urlRedirect
         path: /admin
