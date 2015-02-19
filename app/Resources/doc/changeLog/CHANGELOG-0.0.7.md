@@ -35,8 +35,8 @@ Url to see changes :
  - Back Office > [In node edition, only allowed blocks for the current site are availables](https://trello.com/c/feVdcqK9/482-1-etq-ubo-je-prends-en-compte-la-liste-des-blocks-dispo-pour-le-site-courant-quand-je-construit-la-liste-des-blocks-sur-la-colon)
  - Back Office > [Mediatheque : thumbnail formats are exploited a new way](https://trello.com/c/GUJnf6Mo/523-2-etq-ubo-lorsque-je-crop-l-image-doit-tenir-dans-le-rectangle-defini-il-peut-y-avoir-du-vide-autour)
  - Back Office > Mediatheque : contribution interface is a bit more friendly user
- - [Add current site name in logs](https://trello.com/c/TuJrzEjV/558-1-etq-ubo-dans-le-listing-de-log-je-vois-le-site-courant-utilise-au-moment-de-la-creation-du-log)
- - [Remove media preview](https://trello.com/c/c0EuDFjM/521-0-5-etq-ubo-je-ne-vois-plus-la-preview-dans-la-mediatheque)
+ - Back Office > Logs : [Add current site name in logs](https://trello.com/c/TuJrzEjV/558-1-etq-ubo-dans-le-listing-de-log-je-vois-le-site-courant-utilise-au-moment-de-la-creation-du-log)
+ - Back Office > Mediathèque : [Remove media preview](https://trello.com/c/c0EuDFjM/521-0-5-etq-ubo-je-ne-vois-plus-la-preview-dans-la-mediatheque)
 
 ## Deprecated method
 
