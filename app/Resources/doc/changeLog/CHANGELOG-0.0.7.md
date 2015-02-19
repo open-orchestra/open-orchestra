@@ -21,6 +21,7 @@ Url to see changes :
  - [Sitemap Generation is operationnal again](https://trello.com/c/rljOEviq/589-etq-ufront-je-peux-avoir-la-generation-du-sitemap)
  - [Provisionning fixed](https://trello.com/c/mjNqr6uy/566-2-etq-dev-je-peux-provisionner-ma-machine)
  - [Keywords are now selectables in form that require it](https://trello.com/c/gUPgOx5B/575-1-bo-bloc-contentlist-choix-du-mot-cle-masque)
+ - [Change the block form generation](https://trello.com/c/XJi3yUQ3/533-5-etq-ubo-je-peux-utiliser-des-bouton-de-type-radio-dans-les-formulaires-de-blocks)
 
 ## New features
 
@@ -34,6 +35,8 @@ Url to see changes :
  - Back Office > [In node edition, only allowed blocks for the current site are availables](https://trello.com/c/feVdcqK9/482-1-etq-ubo-je-prends-en-compte-la-liste-des-blocks-dispo-pour-le-site-courant-quand-je-construit-la-liste-des-blocks-sur-la-colon)
  - Back Office > [Mediatheque : thumbnail formats are exploited a new way](https://trello.com/c/GUJnf6Mo/523-2-etq-ubo-lorsque-je-crop-l-image-doit-tenir-dans-le-rectangle-defini-il-peut-y-avoir-du-vide-autour)
  - Back Office > Mediatheque : contribution interface is a bit more friendly user
+ - [Add current site name in logs](https://trello.com/c/TuJrzEjV/558-1-etq-ubo-dans-le-listing-de-log-je-vois-le-site-courant-utilise-au-moment-de-la-creation-du-log)
+ - [Remove media preview](https://trello.com/c/c0EuDFjM/521-0-5-etq-ubo-je-ne-vois-plus-la-preview-dans-la-mediatheque)
 
 ## Deprecated method
 
