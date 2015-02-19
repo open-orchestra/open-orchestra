@@ -37,6 +37,7 @@ Url to see changes :
  - Back Office > Mediatheque : contribution interface is a bit more friendly user
  - Back Office > Logs : [Add current site name in logs](https://trello.com/c/TuJrzEjV/558-1-etq-ubo-dans-le-listing-de-log-je-vois-le-site-courant-utilise-au-moment-de-la-creation-du-log)
  - Back Office > Mediathèque : [Remove media preview](https://trello.com/c/c0EuDFjM/521-0-5-etq-ubo-je-ne-vois-plus-la-preview-dans-la-mediatheque)
+ - [Update to symfony 2.6.4](https://github.com/itkg/phporchestra-base-bundle/pull/20)
 
 ## Deprecated method
 
