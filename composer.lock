@@ -984,12 +984,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-base-bundle.git",
-                "reference": "c4367e1877ab6bf5bb2ff317069293bfb05f7b81"
+                "reference": "731fef106aeb1506d015e07ee6fd889db9c59b12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-base-bundle/zipball/c4367e1877ab6bf5bb2ff317069293bfb05f7b81",
-                "reference": "c4367e1877ab6bf5bb2ff317069293bfb05f7b81",
+                "url": "https://api.github.com/repos/itkg/phporchestra-base-bundle/zipball/731fef106aeb1506d015e07ee6fd889db9c59b12",
+                "reference": "731fef106aeb1506d015e07ee6fd889db9c59b12",
                 "shasum": ""
             },
             "require": {
@@ -1000,7 +1000,7 @@
                 "snc/redis-bundle": "~2",
                 "symfony/assetic-bundle": "2.6.0",
                 "symfony/monolog-bundle": "2.7.1",
-                "symfony/symfony": "2.6.3",
+                "symfony/symfony": "2.6.4",
                 "twig/extensions": "~1"
             },
             "require-dev": {
@@ -1028,7 +1028,7 @@
                 "source": "https://github.com/itkg/phporchestra-base-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-base-bundle/issues"
             },
-            "time": "2015-02-11 13:42:53"
+            "time": "2015-02-19 09:28:05"
         },
         {
             "name": "itkg/phporchestra-cms-bundle",
@@ -1037,12 +1037,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-cms-bundle.git",
-                "reference": "05055322a2ea2a664e3b23b7ca54df762abbf550"
+                "reference": "c70baa4d54c90935b6817d4971aeca46163f947c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/05055322a2ea2a664e3b23b7ca54df762abbf550",
-                "reference": "05055322a2ea2a664e3b23b7ca54df762abbf550",
+                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/c70baa4d54c90935b6817d4971aeca46163f947c",
+                "reference": "c70baa4d54c90935b6817d4971aeca46163f947c",
                 "shasum": ""
             },
             "require": {
@@ -1085,7 +1085,7 @@
                 "source": "https://github.com/itkg/phporchestra-cms-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-cms-bundle/issues"
             },
-            "time": "2015-02-18 09:31:49"
+            "time": "2015-02-19 09:20:49"
         },
         {
             "name": "itkg/phporchestra-display-bundle",
@@ -1094,12 +1094,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-display-bundle.git",
-                "reference": "42624b5f15a8ff19cdbe38d0bce0120edf05d2eb"
+                "reference": "721148be4496c028a4814ec31a9189105ea4324f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-display-bundle/zipball/42624b5f15a8ff19cdbe38d0bce0120edf05d2eb",
-                "reference": "42624b5f15a8ff19cdbe38d0bce0120edf05d2eb",
+                "url": "https://api.github.com/repos/itkg/phporchestra-display-bundle/zipball/721148be4496c028a4814ec31a9189105ea4324f",
+                "reference": "721148be4496c028a4814ec31a9189105ea4324f",
                 "shasum": ""
             },
             "require": {
@@ -1136,7 +1136,7 @@
                 "source": "https://github.com/itkg/phporchestra-display-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-display-bundle/issues"
             },
-            "time": "2015-02-18 09:18:18"
+            "time": "2015-02-19 09:07:46"
         },
         {
             "name": "itkg/phporchestra-media-bundle",
@@ -2611,16 +2611,16 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v2.6.3",
+            "version": "v2.6.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "c34ef418015793a4653f2670afb69dd167ebf578"
+                "reference": "23b647f1e4eeb24a457d3c47f5f5046377d5a3bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/c34ef418015793a4653f2670afb69dd167ebf578",
-                "reference": "c34ef418015793a4653f2670afb69dd167ebf578",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/23b647f1e4eeb24a457d3c47f5f5046377d5a3bf",
+                "reference": "23b647f1e4eeb24a457d3c47f5f5046377d5a3bf",
                 "shasum": ""
             },
             "require": {
@@ -2723,7 +2723,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2015-01-07 14:47:29"
+            "time": "2015-02-02 18:02:30"
         },
         {
             "name": "twig/extensions",
