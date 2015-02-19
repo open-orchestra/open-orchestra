@@ -35,3 +35,11 @@ apache_conf:
     errorLog: echonext.phporchestraError.log
     accessLog: echonext.phporchestraAccess.log
     siteId: 3
+  https.echonext.orchestra.conf:
+    port: 443
+    serverName: echonext.phporchestra.inte
+    docRoot: /var/www/front-phporchestra/current/web
+    errorLog: echonext.phporchestraError.log
+    accessLog: echonext.phporchestraAccess.log
+    siteId: 3
+    sslCertificateFileDir: /usr/local/apache/conf
