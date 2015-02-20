@@ -1025,7 +1025,7 @@
             ],
             "description": "The phpOrchestra base bundle",
             "support": {
-                "source": "https://github.com/itkg/phporchestra-base-bundle/tree/master",
+                "source": "https://github.com/itkg/phporchestra-base-bundle/tree/v0.0.7",
                 "issues": "https://github.com/itkg/phporchestra-base-bundle/issues"
             },
             "time": "2015-02-19 09:28:05"
@@ -1037,12 +1037,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-cms-bundle.git",
-                "reference": "4c7c417fc5e29025a56e23e171a84711a9689477"
+                "reference": "eff346dfc262cbc005c4faed6978d889bbb0aad3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/4c7c417fc5e29025a56e23e171a84711a9689477",
-                "reference": "4c7c417fc5e29025a56e23e171a84711a9689477",
+                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/eff346dfc262cbc005c4faed6978d889bbb0aad3",
+                "reference": "eff346dfc262cbc005c4faed6978d889bbb0aad3",
                 "shasum": ""
             },
             "require": {
@@ -1085,7 +1085,7 @@
                 "source": "https://github.com/itkg/phporchestra-cms-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-cms-bundle/issues"
             },
-            "time": "2015-02-19 14:10:48"
+            "time": "2015-02-20 13:02:53"
         },
         {
             "name": "itkg/phporchestra-display-bundle",
@@ -1133,7 +1133,7 @@
             ],
             "description": "The bundle to display all bricks",
             "support": {
-                "source": "https://github.com/itkg/phporchestra-display-bundle/tree/master",
+                "source": "https://github.com/itkg/phporchestra-display-bundle/tree/v0.0.7",
                 "issues": "https://github.com/itkg/phporchestra-display-bundle/issues"
             },
             "time": "2015-02-19 09:07:46"
@@ -1188,7 +1188,7 @@
             ],
             "description": "A media bundle for the PhpOrchestra Project",
             "support": {
-                "source": "https://github.com/itkg/phporchestra-media-bundle/tree/master",
+                "source": "https://github.com/itkg/phporchestra-media-bundle/tree/v0.0.7",
                 "issues": "https://github.com/itkg/phporchestra-media-bundle/issues"
             },
             "time": "2015-02-17 16:36:56"
@@ -1200,12 +1200,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-model-bundle.git",
-                "reference": "f749f5a045232b678379f55e744500884dd7e77a"
+                "reference": "e0a2d8c1d1e4eafb36f00d09ac0c2935305658c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-model-bundle/zipball/f749f5a045232b678379f55e744500884dd7e77a",
-                "reference": "f749f5a045232b678379f55e744500884dd7e77a",
+                "url": "https://api.github.com/repos/itkg/phporchestra-model-bundle/zipball/e0a2d8c1d1e4eafb36f00d09ac0c2935305658c4",
+                "reference": "e0a2d8c1d1e4eafb36f00d09ac0c2935305658c4",
                 "shasum": ""
             },
             "require": {
@@ -1243,7 +1243,7 @@
                 "source": "https://github.com/itkg/phporchestra-model-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-model-bundle/issues"
             },
-            "time": "2015-02-19 14:08:20"
+            "time": "2015-02-20 12:42:35"
         },
         {
             "name": "itkg/phporchestra-model-interface",
@@ -1252,12 +1252,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-model-interface.git",
-                "reference": "7369336d6d66f0ef000baf6e488a80197c53e1b7"
+                "reference": "6746130c91b4602062a7e377f332dd96949fb1be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-model-interface/zipball/7369336d6d66f0ef000baf6e488a80197c53e1b7",
-                "reference": "7369336d6d66f0ef000baf6e488a80197c53e1b7",
+                "url": "https://api.github.com/repos/itkg/phporchestra-model-interface/zipball/6746130c91b4602062a7e377f332dd96949fb1be",
+                "reference": "6746130c91b4602062a7e377f332dd96949fb1be",
                 "shasum": ""
             },
             "require": {
@@ -1289,7 +1289,7 @@
                 "source": "https://github.com/itkg/phporchestra-model-interface/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-model-interface/issues"
             },
-            "time": "2015-02-19 10:02:22"
+            "time": "2015-02-20 10:28:10"
         },
         {
             "name": "itkg/phporchestra-user-bundle",
@@ -1545,9 +1545,9 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes Schmitt",
+                    "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -1934,9 +1934,9 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes Schmitt",
+                    "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -3531,7 +3531,6 @@
         "itkg/phporchestra-model-bundle": 20
     },
     "prefer-stable": false,
-    "prefer-lowest": false,
     "platform": [],
     "platform-dev": []
 }
