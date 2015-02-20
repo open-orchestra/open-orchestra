@@ -1025,7 +1025,7 @@
             ],
             "description": "The phpOrchestra base bundle",
             "support": {
-                "source": "https://github.com/itkg/phporchestra-base-bundle/tree/v0.0.7",
+                "source": "https://github.com/itkg/phporchestra-base-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-base-bundle/issues"
             },
             "time": "2015-02-19 09:28:05"
@@ -1037,12 +1037,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-cms-bundle.git",
-                "reference": "eff346dfc262cbc005c4faed6978d889bbb0aad3"
+                "reference": "db1e72a2047c6359ef8037a49d125ee2af0a545b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/eff346dfc262cbc005c4faed6978d889bbb0aad3",
-                "reference": "eff346dfc262cbc005c4faed6978d889bbb0aad3",
+                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/db1e72a2047c6359ef8037a49d125ee2af0a545b",
+                "reference": "db1e72a2047c6359ef8037a49d125ee2af0a545b",
                 "shasum": ""
             },
             "require": {
@@ -1085,7 +1085,7 @@
                 "source": "https://github.com/itkg/phporchestra-cms-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-cms-bundle/issues"
             },
-            "time": "2015-02-20 13:02:53"
+            "time": "2015-02-20 15:59:50"
         },
         {
             "name": "itkg/phporchestra-display-bundle",
@@ -1094,12 +1094,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-display-bundle.git",
-                "reference": "721148be4496c028a4814ec31a9189105ea4324f"
+                "reference": "3cc336cf11d1db54c7e50dfda80a4aed896340dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-display-bundle/zipball/721148be4496c028a4814ec31a9189105ea4324f",
-                "reference": "721148be4496c028a4814ec31a9189105ea4324f",
+                "url": "https://api.github.com/repos/itkg/phporchestra-display-bundle/zipball/3cc336cf11d1db54c7e50dfda80a4aed896340dc",
+                "reference": "3cc336cf11d1db54c7e50dfda80a4aed896340dc",
                 "shasum": ""
             },
             "require": {
@@ -1133,10 +1133,10 @@
             ],
             "description": "The bundle to display all bricks",
             "support": {
-                "source": "https://github.com/itkg/phporchestra-display-bundle/tree/v0.0.7",
+                "source": "https://github.com/itkg/phporchestra-display-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-display-bundle/issues"
             },
-            "time": "2015-02-19 09:07:46"
+            "time": "2015-02-20 14:54:04"
         },
         {
             "name": "itkg/phporchestra-media-bundle",
@@ -1145,12 +1145,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-media-bundle.git",
-                "reference": "912a9cfa1f7a402904090bb536de4ee37392147f"
+                "reference": "5bb2fb2b6eb5553afd38ae29952dd8c6d3c65bcd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-media-bundle/zipball/912a9cfa1f7a402904090bb536de4ee37392147f",
-                "reference": "912a9cfa1f7a402904090bb536de4ee37392147f",
+                "url": "https://api.github.com/repos/itkg/phporchestra-media-bundle/zipball/5bb2fb2b6eb5553afd38ae29952dd8c6d3c65bcd",
+                "reference": "5bb2fb2b6eb5553afd38ae29952dd8c6d3c65bcd",
                 "shasum": ""
             },
             "require": {
@@ -1188,10 +1188,10 @@
             ],
             "description": "A media bundle for the PhpOrchestra Project",
             "support": {
-                "source": "https://github.com/itkg/phporchestra-media-bundle/tree/v0.0.7",
+                "source": "https://github.com/itkg/phporchestra-media-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-media-bundle/issues"
             },
-            "time": "2015-02-17 16:36:56"
+            "time": "2015-02-20 15:40:05"
         },
         {
             "name": "itkg/phporchestra-model-bundle",
@@ -1200,12 +1200,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/phporchestra-model-bundle.git",
-                "reference": "e0a2d8c1d1e4eafb36f00d09ac0c2935305658c4"
+                "reference": "7bec3c633a2c3182aa9ac864cb7e5254d2502b54"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-model-bundle/zipball/e0a2d8c1d1e4eafb36f00d09ac0c2935305658c4",
-                "reference": "e0a2d8c1d1e4eafb36f00d09ac0c2935305658c4",
+                "url": "https://api.github.com/repos/itkg/phporchestra-model-bundle/zipball/7bec3c633a2c3182aa9ac864cb7e5254d2502b54",
+                "reference": "7bec3c633a2c3182aa9ac864cb7e5254d2502b54",
                 "shasum": ""
             },
             "require": {
@@ -1243,7 +1243,7 @@
                 "source": "https://github.com/itkg/phporchestra-model-bundle/tree/master",
                 "issues": "https://github.com/itkg/phporchestra-model-bundle/issues"
             },
-            "time": "2015-02-20 12:42:35"
+            "time": "2015-02-20 16:13:37"
         },
         {
             "name": "itkg/phporchestra-model-interface",
@@ -1545,9 +1545,9 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes M. Schmitt",
+                    "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
+                    "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -1934,9 +1934,9 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes M. Schmitt",
+                    "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
+                    "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -3531,6 +3531,7 @@
         "itkg/phporchestra-model-bundle": 20
     },
     "prefer-stable": false,
+    "prefer-lowest": false,
     "platform": [],
     "platform-dev": []
 }
