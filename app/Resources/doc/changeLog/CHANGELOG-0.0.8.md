@@ -22,7 +22,7 @@ Url to see changes :
 
  - [You can access https pages in https only](https://trello.com/c/LUXRWePC/599-1-etq-dev-front-je-vois-le-scheme-ability-dans-le-routing)
  - [Multiple alias preview](https://trello.com/c/FvnDfj9C/595-2-etq-ubo-je-peux-choisir-sur-quel-alias-je-vais-voir-la-preview)
-
+ - [Merge dailymotion, youtube and vimeo blocks into video block](https://trello.com/c/0dH1cjHj/457-1-refacto-des-block-video-youtube-dailymotion-et-vimeo-en-un-block-configurable-qui-permet-de-choisir-le-type-de-video)
 ## Other changes
 
  - [Add doc describing Front integration of blocks](https://trello.com/c/JdwlCv9j/601-1-etq-dev-integrateur-j-ai-acces-a-un-peu-de-doc-sur-l-insertion-de-js-et-css-propre-au-block)
