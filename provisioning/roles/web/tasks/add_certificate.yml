@@ -1,0 +1,11 @@
+---
+ - name: Check ssl conf directory
+   stat: path=/usr/local/apache/conf
+   register: ssl_conf_directory
+ - name: Create a directory for ssl conf
+   shell: mkdir -p /usr/local/apache/conf
+   when: ssl_conf_directory.stat.exists == false
+ - name: Copy ssl crt
+   template: src=ssl.crt.j2 dest=/usr/local/apache/conf/ssl.crt
+ - name: Copy ssl key
+   template: src=ssl.key.j2 dest=/usr/local/apache/conf/ssl.key

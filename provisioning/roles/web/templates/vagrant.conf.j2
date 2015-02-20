@@ -6,6 +6,11 @@
     {% if item.value.siteId is defined %}
     SetEnv SYMFONY__SITE {{ item.value.siteId }}
     {% endif %}
+    {% if item.value.sslCertificateFileDir is defined %}
+    SSLEngine on
+    SSLCertificateFile {{ item.value.sslCertificateFileDir }}/ssl.crt
+    SSLCertificateKeyFile {{ item.value.sslCertificateFileDir }}/ssl.key
+    {% endif %}
     <Directory />
         Options FollowSymLinks
         AllowOverride None
