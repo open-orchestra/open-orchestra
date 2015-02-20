@@ -25,6 +25,8 @@ Url to see changes :
 
 ## Other changes
 
+ - [Add doc describing Front integration of blocks](https://trello.com/c/JdwlCv9j/601-1-etq-dev-integrateur-j-ai-acces-a-un-peu-de-doc-sur-l-insertion-de-js-et-css-propre-au-block)
+
 ## Deprecated method
 
 ## Suppressed method
