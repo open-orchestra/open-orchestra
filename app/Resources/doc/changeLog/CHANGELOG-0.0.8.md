@@ -20,6 +20,9 @@ Url to see changes :
 
 ## New features
 
+ - [You can access https pages in https only](https://trello.com/c/LUXRWePC/599-1-etq-dev-front-je-vois-le-scheme-ability-dans-le-routing)
+ - [Multiple alias preview](https://trello.com/c/FvnDfj9C/595-2-etq-ubo-je-peux-choisir-sur-quel-alias-je-vais-voir-la-preview)
+
 ## Other changes
 
 ## Deprecated method
