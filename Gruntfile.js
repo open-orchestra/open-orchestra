@@ -217,7 +217,6 @@ module.exports = function(grunt) {
                     'web/built/phporchestrabackoffice/js/wreqr/widget/multiStatus.js',
                     'web/built/phporchestrabackoffice/js/wreqr/widget/multiVersion.js',
                     'web/built/phporchestrabackoffice/js/wreqr/widget/duplicate.js',
-                    'web/built/phporchestrabackoffice/js/wreqr/viewport.js',
                     'web/built/phporchestrabackoffice/js/OrchestraView.js',
                     'web/built/phporchestrabackoffice/js/addPrototype.js',
                     'web/built/phporchestrabackoffice/js/modelBackbone.js',
