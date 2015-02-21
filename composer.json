@@ -1,8 +1,8 @@
 {
-    "name": "symfony/framework-standard-edition",
+    "name": "itkg/open-orchestra",
     "license": "MIT",
     "type": "project",
-    "description": "The \"Symfony Standard Edition\" distribution",
+    "description": "Example of OpenOrchestra backoffice implementation",
     "autoload": {
         "psr-0": {
             "": "src/"
@@ -49,8 +49,8 @@
     "minimum-stability": "dev",
     "require": {
         "incenteev/composer-parameter-handler": "~2.0",
-        "itkg/phporchestra-cms-bundle": "dev-master",
-        "itkg/phporchestra-model-bundle": "dev-master"
+        "itkg/open-orchestra-cms-bundle": "dev-master",
+        "itkg/open-orchestra-model-bundle": "dev-master"
     },
     "require-dev": {
         "jmikola/geojson": "~1.0",

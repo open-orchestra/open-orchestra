@@ -31,14 +31,14 @@ class AppKernel extends Kernel
 
             new Braincrafted\Bundle\BootstrapBundle\BraincraftedBootstrapBundle(),
 
-            new PHPOrchestra\BaseBundle\PHPOrchestraBaseBundle(),
-            new PHPOrchestra\ModelBundle\PHPOrchestraModelBundle(),
-            new PHPOrchestra\MediaBundle\PHPOrchestraMediaBundle(),
-            new PHPOrchestra\ApiBundle\PHPOrchestraApiBundle(),
-            new PHPOrchestra\DisplayBundle\PHPOrchestraDisplayBundle(),
-            new PHPOrchestra\BackofficeBundle\PHPOrchestraBackofficeBundle(),
-            new PHPOrchestra\UserBundle\PHPOrchestraUserBundle(),
-            new PHPOrchestra\LogBundle\PHPOrchestraLogBundle(),
+            new OpenOrchestra\BaseBundle\OpenOrchestraBaseBundle(),
+            new OpenOrchestra\ModelBundle\OpenOrchestraModelBundle(),
+            new OpenOrchestra\MediaBundle\OpenOrchestraMediaBundle(),
+            new OpenOrchestra\ApiBundle\OpenOrchestraApiBundle(),
+            new OpenOrchestra\DisplayBundle\OpenOrchestraDisplayBundle(),
+            new OpenOrchestra\BackofficeBundle\OpenOrchestraBackofficeBundle(),
+            new OpenOrchestra\UserBundle\OpenOrchestraUserBundle(),
+            new OpenOrchestra\LogBundle\OpenOrchestraLogBundle(),
 
             // Need parameters set by some of our bundles
             new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),
