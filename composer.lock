@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6d8bf42a02bb2c24e5e604024247275d",
+    "hash": "e942c857d6ad2f011a9090411013a19a",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -1036,13 +1036,13 @@
             "target-dir": "OpenOrchestra",
             "source": {
                 "type": "git",
-                "url": "git@github.com:itkg/phporchestra-cms-bundle.git",
-                "reference": "bcb1c049741521727fc080ea32fa7124abddca31"
+                "url": "git@github.com:itkg/open-orchestra-cms-bundle.git",
+                "reference": "304f0c06e7d7074e808213368c16989a8f5b9d8f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-cms-bundle/zipball/bcb1c049741521727fc080ea32fa7124abddca31",
-                "reference": "bcb1c049741521727fc080ea32fa7124abddca31",
+                "url": "https://api.github.com/repos/itkg/open-orchestra-cms-bundle/zipball/304f0c06e7d7074e808213368c16989a8f5b9d8f",
+                "reference": "304f0c06e7d7074e808213368c16989a8f5b9d8f",
                 "shasum": ""
             },
             "require": {
@@ -1082,10 +1082,10 @@
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
             "support": {
-                "source": "https://github.com/itkg/phporchestra-cms-bundle/tree/master",
-                "issues": "https://github.com/itkg/phporchestra-cms-bundle/issues"
+                "source": "https://github.com/itkg/open-orchestra-cms-bundle/tree/master",
+                "issues": "https://github.com/itkg/open-orchestra-cms-bundle/issues"
             },
-            "time": "2015-02-21 15:38:52"
+            "time": "2015-02-22 14:52:44"
         },
         {
             "name": "itkg/open-orchestra-display-bundle",
@@ -1093,13 +1093,13 @@
             "target-dir": "OpenOrchestra",
             "source": {
                 "type": "git",
-                "url": "git@github.com:itkg/phporchestra-display-bundle.git",
-                "reference": "7548661f0e36577fbf4b98361ec9ed8f9212aa41"
+                "url": "git@github.com:itkg/open-orchestra-display-bundle.git",
+                "reference": "a64b4358bf3e1cdc443d86bc989986db9dc00440"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-display-bundle/zipball/7548661f0e36577fbf4b98361ec9ed8f9212aa41",
-                "reference": "7548661f0e36577fbf4b98361ec9ed8f9212aa41",
+                "url": "https://api.github.com/repos/itkg/open-orchestra-display-bundle/zipball/a64b4358bf3e1cdc443d86bc989986db9dc00440",
+                "reference": "a64b4358bf3e1cdc443d86bc989986db9dc00440",
                 "shasum": ""
             },
             "require": {
@@ -1133,10 +1133,10 @@
             ],
             "description": "The bundle to display all bricks",
             "support": {
-                "source": "https://github.com/itkg/phporchestra-display-bundle/tree/master",
-                "issues": "https://github.com/itkg/phporchestra-display-bundle/issues"
+                "source": "https://github.com/itkg/open-orchestra-display-bundle/tree/master",
+                "issues": "https://github.com/itkg/open-orchestra-display-bundle/issues"
             },
-            "time": "2015-02-21 15:17:05"
+            "time": "2015-02-22 14:53:30"
         },
         {
             "name": "itkg/open-orchestra-media-bundle",
@@ -1144,13 +1144,13 @@
             "target-dir": "OpenOrchestra",
             "source": {
                 "type": "git",
-                "url": "git@github.com:itkg/phporchestra-media-bundle.git",
-                "reference": "aa16531be4a483cffc6ab6df27280e471d7cb841"
+                "url": "git@github.com:itkg/open-orchestra-media-bundle.git",
+                "reference": "ca01846f1ebc9b4f08060fd3742068486fd6a12d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-media-bundle/zipball/aa16531be4a483cffc6ab6df27280e471d7cb841",
-                "reference": "aa16531be4a483cffc6ab6df27280e471d7cb841",
+                "url": "https://api.github.com/repos/itkg/open-orchestra-media-bundle/zipball/ca01846f1ebc9b4f08060fd3742068486fd6a12d",
+                "reference": "ca01846f1ebc9b4f08060fd3742068486fd6a12d",
                 "shasum": ""
             },
             "require": {
@@ -1188,10 +1188,10 @@
             ],
             "description": "A media bundle for the OpenOrchestra Project",
             "support": {
-                "source": "https://github.com/itkg/phporchestra-media-bundle/tree/master",
-                "issues": "https://github.com/itkg/phporchestra-media-bundle/issues"
+                "source": "https://github.com/itkg/open-orchestra-media-bundle/tree/master",
+                "issues": "https://github.com/itkg/open-orchestra-media-bundle/issues"
             },
-            "time": "2015-02-21 15:17:01"
+            "time": "2015-02-22 14:54:33"
         },
         {
             "name": "itkg/open-orchestra-model-bundle",
@@ -1199,13 +1199,13 @@
             "target-dir": "OpenOrchestra",
             "source": {
                 "type": "git",
-                "url": "git@github.com:itkg/phporchestra-model-bundle.git",
-                "reference": "3bf764d96c063ca1149f16aa4b1cc23ff705e953"
+                "url": "git@github.com:itkg/open-orchestra-model-bundle.git",
+                "reference": "bf6595c7c98ab6cc9b036362ce2264842f2ee071"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-model-bundle/zipball/3bf764d96c063ca1149f16aa4b1cc23ff705e953",
-                "reference": "3bf764d96c063ca1149f16aa4b1cc23ff705e953",
+                "url": "https://api.github.com/repos/itkg/open-orchestra-model-bundle/zipball/bf6595c7c98ab6cc9b036362ce2264842f2ee071",
+                "reference": "bf6595c7c98ab6cc9b036362ce2264842f2ee071",
                 "shasum": ""
             },
             "require": {
@@ -1240,10 +1240,10 @@
             ],
             "description": "An implemantation of the model-interface for OpenOrchestra on mongo",
             "support": {
-                "source": "https://github.com/itkg/phporchestra-model-bundle/tree/master",
-                "issues": "https://github.com/itkg/phporchestra-model-bundle/issues"
+                "source": "https://github.com/itkg/open-orchestra-model-bundle/tree/master",
+                "issues": "https://github.com/itkg/open-orchestra-model-bundle/issues"
             },
-            "time": "2015-02-21 15:14:08"
+            "time": "2015-02-22 14:53:48"
         },
         {
             "name": "itkg/open-orchestra-model-interface",
@@ -1298,13 +1298,13 @@
             "target-dir": "OpenOrchestra",
             "source": {
                 "type": "git",
-                "url": "git@github.com:itkg/phporchestra-user-bundle.git",
-                "reference": "bf0c024971eda1b2c42dae6bbd7249c610b3a949"
+                "url": "git@github.com:itkg/open-orchestra-user-bundle.git",
+                "reference": "87787759e3d866fc514f86b851e2af484115c223"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/phporchestra-user-bundle/zipball/bf0c024971eda1b2c42dae6bbd7249c610b3a949",
-                "reference": "bf0c024971eda1b2c42dae6bbd7249c610b3a949",
+                "url": "https://api.github.com/repos/itkg/open-orchestra-user-bundle/zipball/87787759e3d866fc514f86b851e2af484115c223",
+                "reference": "87787759e3d866fc514f86b851e2af484115c223",
                 "shasum": ""
             },
             "require": {
@@ -1335,10 +1335,10 @@
             ],
             "description": "An override of FosUserBundle to provide authentication on OpenOrchestra",
             "support": {
-                "source": "https://github.com/itkg/phporchestra-user-bundle/tree/master",
-                "issues": "https://github.com/itkg/phporchestra-user-bundle/issues"
+                "source": "https://github.com/itkg/open-orchestra-user-bundle/tree/master",
+                "issues": "https://github.com/itkg/open-orchestra-user-bundle/issues"
             },
-            "time": "2015-02-21 15:25:32"
+            "time": "2015-02-22 14:54:13"
         },
         {
             "name": "jms/metadata",
