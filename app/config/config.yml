@@ -49,8 +49,8 @@ assetic:
     debug:          "%kernel.debug%"
     use_controller: false
     bundles:
-        - PHPOrchestraBackofficeBundle
-        - PHPOrchestraDisplayBundle
+        - OpenOrchestraBackofficeBundle
+        - OpenOrchestraDisplayBundle
     #java: /usr/bin/java
     filters:
         cssrewrite: ~
@@ -62,11 +62,11 @@ assetic:
 doctrine_mongodb:
     connections:
         default:
-            server: "%php_orchestra_cms.mongodb.server%"
+            server: "%open_orchestra_cms.mongodb.server%"
             options: {}
-    default_database: "%php_orchestra_cms.mongodb.database%"
+    default_database: "%open_orchestra_cms.mongodb.database%"
     resolve_target_documents:
-        PHPOrchestra\ModelInterface\Model\SiteInterface: PHPOrchestra\ModelBundle\Document\Site
+        OpenOrchestra\ModelInterface\Model\SiteInterface: OpenOrchestra\ModelBundle\Document\Site
     document_managers:
         default:
             auto_mapping: true
@@ -90,7 +90,7 @@ snc_redis:
 fos_user:
     db_driver: mongodb
     firewall_name: main
-    user_class: PHPOrchestra\UserBundle\Document\User
+    user_class: OpenOrchestra\UserBundle\Document\User
 
 stof_doctrine_extensions:
     mongodb:
@@ -98,7 +98,7 @@ stof_doctrine_extensions:
             blameable: true
             timestampable: true
 
-php_orchestra_base:
+open_orchestra_base:
     encryption_key: %encryption_key%
 
 knp_gaufrette:

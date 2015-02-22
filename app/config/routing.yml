@@ -1,29 +1,29 @@
-php_orchestra_backoffice:
-    resource: "@PHPOrchestraBackofficeBundle/Controller"
+open_orchestra_backoffice:
+    resource: "@OpenOrchestraBackofficeBundle/Controller"
     type: annotation
     prefix: /admin
 
-php_orchestra_user:
-    resource: "@PHPOrchestraUserBundle/Controller"
+open_orchestra_user:
+    resource: "@OpenOrchestraUserBundle/Controller"
     type: annotation
     prefix: /admin
 
-php_orchestra_display:
-    resource: "@PHPOrchestraDisplayBundle/Controller"
+open_orchestra_display:
+    resource: "@OpenOrchestraDisplayBundle/Controller"
     type: annotation
 
-php_orchestra_api:
-    resource: "@PHPOrchestraApiBundle/Controller"
-    type: annotation
-    prefix: /api
-
-php_orchestra_log:
-    resource: "@PHPOrchestraLogBundle/Controller"
+open_orchestra_api:
+    resource: "@OpenOrchestraApiBundle/Controller"
     type: annotation
     prefix: /api
 
-php_orchestra_media:
-    resource: "@PHPOrchestraMediaBundle/Controller"
+open_orchestra_log:
+    resource: "@OpenOrchestraLogBundle/Controller"
+    type: annotation
+    prefix: /api
+
+open_orchestra_media:
+    resource: "@OpenOrchestraMediaBundle/Controller"
     type: annotation
     prefix: /media
 

@@ -10,6 +10,6 @@ monolog:
             level: 200
             mongo:
                 host: "localhost"
-                database: "%php_orchestra_cms.mongodb.database%"
+                database: "%open_orchestra_cms.mongodb.database%"
                 collection: log
             channels: [phporchestra]

@@ -59,7 +59,7 @@ while getopts "shrafm:b:c:t:" arg; do
     done
 
 cd vendor/itkg
-list=`ls | grep phporchestra`
+list=`ls | grep open-orchestra`
 
 if [ $command != false ]
 then
@@ -68,7 +68,7 @@ then
         printf "\n"
         echo "${titleColor}$i${reset}"
         printf "\n"
-        cd $i/PHPOrchestra
+        cd $i/OpenOrchestra
         git $command
         cd ../..
     done
@@ -79,7 +79,7 @@ then
         printf "\n"
         echo "${titleColor}$i${reset}"
         printf "\n"
-        cd $i/PHPOrchestra
+        cd $i/OpenOrchestra
         git status
         git stash
         git fetch -p
@@ -98,7 +98,7 @@ then
         printf "\n"
         echo "${titleColor}$i${reset}"
         printf "\n"
-        cd $i/PHPOrchestra
+        cd $i/OpenOrchestra
         git status
         git tag -a $tag -m "$message"
         git push origin --tags
@@ -110,7 +110,7 @@ else
         printf "\n"
         echo "${titleColor}$i${reset}"
         printf "\n"
-        cd $i/PHPOrchestra
+        cd $i/OpenOrchestra
         git fetch -p
         git status
         git add -p
