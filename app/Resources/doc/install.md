@@ -98,16 +98,16 @@ In the symfony project directory
 In the `/etc/hosts` file of your computer add the following lines :
 
     192.168.33.10   openorchestra.dev
-    192.168.33.10   front-openorchestra.dev
-    192.168.33.10   demo-openorchestra-front.dev
+    192.168.33.10   front.openorchestra.dev
+    192.168.33.10   demo.openorchestra.dev
     192.168.33.10   echonext.openorchestra.dev
     192.168.33.10   media.openorchestra.dev
 
 ## Temporary Override the dns redirection for the integration server
 In the `/etc/hosts` file of your computer add the following lines:
 
-    10.0.1.246      demo-openorchestra-front.inte
-    10.0.1.246      front-openorchestra-front.inte
+    10.0.1.246      demo.openorchestra.inte
+    10.0.1.246      front.openorchestra.inte
     10.0.1.246      smartadmin.openorchestra.inte
     10.0.1.246      echonext.openorchestra.inte
     10.0.1.246      media.openorchestra.inte
