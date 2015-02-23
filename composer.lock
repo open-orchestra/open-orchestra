@@ -1037,12 +1037,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/open-orchestra-cms-bundle.git",
-                "reference": "47ffb4851bc5e292924d4fc7d475f03e171e774b"
+                "reference": "6ffa1baf5a857a920274d0e37f0de29168019d0a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/open-orchestra-cms-bundle/zipball/47ffb4851bc5e292924d4fc7d475f03e171e774b",
-                "reference": "47ffb4851bc5e292924d4fc7d475f03e171e774b",
+                "url": "https://api.github.com/repos/itkg/open-orchestra-cms-bundle/zipball/6ffa1baf5a857a920274d0e37f0de29168019d0a",
+                "reference": "6ffa1baf5a857a920274d0e37f0de29168019d0a",
                 "shasum": ""
             },
             "require": {
@@ -1085,7 +1085,7 @@
                 "source": "https://github.com/itkg/open-orchestra-cms-bundle/tree/master",
                 "issues": "https://github.com/itkg/open-orchestra-cms-bundle/issues"
             },
-            "time": "2015-02-23 10:37:17"
+            "time": "2015-02-23 11:40:48"
         },
         {
             "name": "itkg/open-orchestra-display-bundle",
@@ -1200,12 +1200,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/open-orchestra-model-bundle.git",
-                "reference": "62258600940b0e38f7fc1854536ead55cde9161f"
+                "reference": "baa688bd2b37b2ed4033aa4bea4b2665ebc60b45"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/open-orchestra-model-bundle/zipball/62258600940b0e38f7fc1854536ead55cde9161f",
-                "reference": "62258600940b0e38f7fc1854536ead55cde9161f",
+                "url": "https://api.github.com/repos/itkg/open-orchestra-model-bundle/zipball/baa688bd2b37b2ed4033aa4bea4b2665ebc60b45",
+                "reference": "baa688bd2b37b2ed4033aa4bea4b2665ebc60b45",
                 "shasum": ""
             },
             "require": {
@@ -1243,7 +1243,7 @@
                 "source": "https://github.com/itkg/open-orchestra-model-bundle/tree/master",
                 "issues": "https://github.com/itkg/open-orchestra-model-bundle/issues"
             },
-            "time": "2015-02-22 15:23:59"
+            "time": "2015-02-23 11:40:44"
         },
         {
             "name": "itkg/open-orchestra-model-interface",
