@@ -1,7 +1,7 @@
 # Orchestra deploy on integration environment #
 --------
 
-This tutorial is going to describe step by step how you can deploy the phpOrchestra project on the integration environment:
+This tutorial is going to describe step by step how you can deploy the openOrchestra project on the integration environment:
 
 ## Install Gem and bundler
 In order to separate all the project of your computer, we use bundler to execute only the specified version of capifony and capistrano
@@ -18,17 +18,17 @@ In the root directory of your project, run the command
 Make sur that your ssh configuration is ready and your personnal key is installed on the integration server
 
     # ~/.ssh/config
-    Host php_orchestra_root
+    Host open_orchestra_root
         Hostname 10.0.1.246
         User root
         ForwardAgent yes
-    Host php_orchestra_front_inte
+    Host open_orchestra_front_inte
         Hostname 10.0.1.246
-        User php_orchestra_front_inte
+        User open_orchestra_front_inte
         ForwardAgent yes
-    Host php_orchestra_backoffice_inte
+    Host open_orchestra_backoffice_inte
         Hostname 10.0.1.246
-        User php_orchestra_backoffice_inte
+        User open_orchestra_backoffice_inte
         ForwardAgent yes
 
 ## Test the command
@@ -55,5 +55,5 @@ Once this is done, you can check the project.
 
 If it is not running check the right by connecting on the server and put the group back
 
-    ssh php_orchestra_root
-    chgrp -R www-data /var/www/backoffice-phporchestra/ /var/www/front-phporchestra/
+    ssh open_orchestra_root
+    chgrp -R www-data /var/www/backoffice-openorchestra/ /var/www/front-openorchestra/

@@ -13,7 +13,7 @@ Sur le site front, il suffit d'activer le routing par base de données pour que 
 
 Activation : (dans le fichier `routing.yml`)
 
-    php_orchestra_database:
+    open_orchestra_database:
         resource: '.'
         type: database
 

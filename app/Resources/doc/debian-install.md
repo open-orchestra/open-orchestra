@@ -60,11 +60,11 @@ To configure Varnish to listen on port 80, edit file **/etc/default/varnish** an
     # fixed-size cache file.
     # DAEMON_OPTS="-a :80 \
               -T localhost:6082 \
-              -f /etc/varnish/phporchestra.vcl \
+              -f /etc/varnish/openorchestra.vcl \
               -S /etc/varnish/secret \
               -s malloc,256m"
 
-To make Varnish request Apache on port 8080, first create a specific varnish conf file for phporchestra located at **/etc/varnish/phporchestra.vcl**. Then edit that file and copy that lines :
+To make Varnish request Apache on port 8080, first create a specific varnish conf file for openorchestra located at **/etc/varnish/openorchestra.vcl**. Then edit that file and copy that lines :
 
     backend default {
      .host = "127.0.0.1";
@@ -151,7 +151,7 @@ You can see **conf/apache2/php-orchestra** for a vhost sample
 
 To install Solr download solr-4.8.0 in http://archive.apache.org/dist/lucene/solr/4.8.0/.
 
-Then extract folder to the package and replace the files in solr-4.8.0/example/solr/collection1/conf by the files in github phporchestra/conf/solr 
+Then extract folder to the package and replace the files in solr-4.8.0/example/solr/collection1/conf by the files in github openorchestra/conf/solr 
 
 To run solr use java -jar start.jar in sor-4.8.0/example
 
@@ -166,4 +166,4 @@ To use solr and solarium you need:
 ----------   
 
 **Additional info :**  
-The secret token chosen during the symfony installation procss is $php-orchestra$
+The secret token chosen during the symfony installation procss is $open-orchestra$

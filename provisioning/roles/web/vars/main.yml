@@ -1,11 +1,11 @@
 ---
-varnish_default_backend_host: phporchestra.dev
+varnish_default_backend_host: openorchestra.dev
 varnish_default_backend_port: 80
 varnish_listen_port: 6081
 varnish_use_default_vcl: false
-varnish_conf: phporchestra.vcl
+varnish_conf: openorchestra.vcl
 backend_conf:
-  - { name: phporchestra, port: 80, host: phporchestra.dev }
-  - { name: frontphporchestra, port: 80, host: front-phporchestra.dev }
-  - { name: demophporchestra, port: 80, host: demo-phporchestra-front.dev }
-  - { name: echonextphporchestra, port: 80, host: echonext-phporchestra-front.dev }
+  - { name: openorchestra, port: 80, host: openorchestra.dev }
+  - { name: frontopenorchestra, port: 80, host: front-openorchestra.dev }
+  - { name: demoopenorchestra, port: 80, host: demo-openorchestra-front.dev }
+  - { name: echonextopenorchestra, port: 80, host: echonext-openorchestra-front.dev }

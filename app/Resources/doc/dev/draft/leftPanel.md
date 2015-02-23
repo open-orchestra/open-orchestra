@@ -4,12 +4,12 @@ Dans le cadre du left Panel, il doit être possible pour un intégrateur de rajo
 
 # II/ Usage
 
-Pour cela il faut créer un service qui implement : `PHPOrchestra\Backoffice\LeftPanel\LeftPanelInterface`
+Pour cela il faut créer un service qui implement : `OpenOrchestra\Backoffice\LeftPanel\LeftPanelInterface`
 
 Puis le tagger : 
     
     tags:
-        - { name: php_orchestra_backoffice.left_panel.strategy }
+        - { name: open_orchestra_backoffice.left_panel.strategy }
 
 # III/ Spécificité
 

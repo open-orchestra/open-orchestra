@@ -1,8 +1,8 @@
 ---
-- name: Copy Varnish phporchestra VCL.
+- name: Copy Varnish openorchestra VCL.
   template: >
-    src=phporchestra.vcl.j2
-    dest={{ varnish_config_path }}/phporchestra.vcl
+    src=openorchestra.vcl.j2
+    dest={{ varnish_config_path }}/openorchestra.vcl
     owner=root group=root mode=644
   notify: restart varnish
 

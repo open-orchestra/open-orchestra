@@ -3,35 +3,100 @@
 # 
 # Default backend definition.  Set this to point to your content
 # server.
-# 
-backend default {
-    .host = "127.0.0.1";
-    .port = "8080";
+#
+
+acl purgers {
+  "127.0.0.1";
+  "192.168.33.10";
 }
+
+{% for item in backend_conf %}
+backend {{ item.name }} {
+  .host = "{{ item.host }}";
+  .port = "{{ item.port }}";
+}
+
+{% endfor %}
 
 
 sub vcl_recv {
     set req.http.Surrogate-Capability = "abc=ESI/1.0";
+
+    if (req.request == "BAN") {
+        if (!client.ip ~ purgers) {
+             error 405 "Method not allowed";
+        }
+        ban("req.url ~ "+req.url);
+        error 200 "Cached Cleared Successfully.";
+    }
+
+    if (req.request == "PURGE") {
+        if (!client.ip ~ purgers) {
+             error 405 "Method not allowed";
+        }
+        return(lookup);
+     }
+
+    if (req.url ~ "^/openorchestra.dev/") {
+        set req.backend = openorchestra;
+    } elseif (req.url ~ "^/front-openorchestra.dev/") {
+        set req.backend = frontopenorchestra;
+    } elseif (req.url ~ "^/demo-openorchestra-front.dev/") {
+        set req.backend = demoopenorchestra;
+    } else {
+        set req.backend = echonextopenorchestra;
+    }
+
+    if (req.request == "GET" && req.url ~ "/app"){
+        return(pass);
+    }
+
+    if (req.request == "POST") {
+        return(pass);
+    }
+
+    return(lookup);
 }
 
 sub vcl_fetch {
-	if (beresp.http.Surrogate-Control ~ "ESI/1.0") {
-		unset beresp.http.Surrogate-Control;
-		set beresp.do_esi = true;
-	}
+    if ( req.request == "GET" && req.url ~ "/bundles/") {
+        unset beresp.http.Set-Cookie;
+        return(deliver);
+    }
+
+    if ( req.request == "GET" && req.url ~ "/img/") {
+        unset beresp.http.Set-Cookie;
+        return(deliver);
+    }
+
+    if ( req.request == "GET" && req.url ~ "/css/") {
+        unset beresp.http.Set-Cookie;
+        return(deliver);
+    }
+
+    if ( req.request == "GET" && req.url ~ "/js/") {
+        unset beresp.http.Set-Cookie;
+        return(deliver);
+    }
+
+    if (beresp.http.Surrogate-Control ~ "ESI/1.0") {
+        unset beresp.http.Surrogate-Control;
+        set beresp.do_esi = true;
+    }
 }
 
 sub vcl_hit {
-	if (req.request == "PURGE") {
-		set obj.ttl = 0s;
-		error 200 "Purged";
-	}
+    if (req.request == "PURGE") {
+        purge;
+        error 200 "Purged";
+    }
 }
 
 sub vcl_miss {
-	if (req.request == "PURGE") {
-		error 404 "Not purged";
-	}
+    if (req.request == "PURGE") {
+        purge;
+        error 404 "Not purged";
+    }
 }
 
 # 
@@ -40,12 +105,12 @@ sub vcl_miss {
 # appended to your code.
 # sub vcl_recv {
 #     if (req.restarts == 0) {
-# 	if (req.http.x-forwarded-for) {
-# 	    set req.http.X-Forwarded-For =
-# 		req.http.X-Forwarded-For + ", " + client.ip;
-# 	} else {
-# 	    set req.http.X-Forwarded-For = client.ip;
-# 	}
+#     if (req.http.x-forwarded-for) {
+#         set req.http.X-Forwarded-For =
+#         req.http.X-Forwarded-For + ", " + client.ip;
+#     } else {
+#         set req.http.X-Forwarded-For = client.ip;
+#     }
 #     }
 #     if (req.request != "GET" &&
 #       req.request != "HEAD" &&
@@ -104,11 +169,11 @@ sub vcl_miss {
 #     if (beresp.ttl <= 0s ||
 #         beresp.http.Set-Cookie ||
 #         beresp.http.Vary == "*") {
-# 		/*
-# 		 * Mark as "Hit-For-Pass" for the next 2 minutes
-# 		 */
-# 		set beresp.ttl = 120 s;
-# 		return (hit_for_pass);
+#         /*
+#          * Mark as "Hit-For-Pass" for the next 2 minutes
+#          */
+#         set beresp.ttl = 120 s;
+#         return (hit_for_pass);
 #     }
 #     return (deliver);
 # }
@@ -142,9 +207,9 @@ sub vcl_miss {
 # }
 # 
 # sub vcl_init {
-# 	return (ok);
+#     return (ok);
 # }
 # 
 # sub vcl_fini {
-# 	return (ok);
+#     return (ok);
 # }

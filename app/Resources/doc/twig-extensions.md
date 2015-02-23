@@ -3,8 +3,8 @@
 
 PHPOrchestra comes with several new twig functions. Here is a small doc about them.
 
-##### 1. phpOrchestra Themes
-phpOrchestra provides two functions to add all css and js html tags related to a theme in a single call. These functions are phpOrchestraCss and phpOrchestraJs.
+##### 1. openOrchestra Themes
+phpOrchestra provides two functions to add all css and js html tags related to a theme in a single call. These functions are openOrchestraCss and openOrchestraJs.
 
 A theme is a set of css and js files. A theme can be put in any bundle, but must  be located in a directory of the theme name. This directory must be located under the resources/public/themes folder.
 
@@ -43,22 +43,22 @@ A theme is set in a config file by describing all the files it is composed by. A
 
 A theme must be set as following :
 
-	php_orchestra_theme:
+	open_orchestra_theme:
     	themes: 
     	    sample: /* Theme id, must be unique */
     	        name: "Exemple" /* Theme name */
     	        stylesheets: /* array of stylesheets, optional */
-    	            - PHPOrchestraThemeBundle:sample:css/master.css
-    	            - PHPOrchestraThemeBundle:sample:css/fo.css
+    	            - OpenOrchestraThemeBundle:sample:css/master.css
+    	            - OpenOrchestraThemeBundle:sample:css/fo.css
             	javascripts : /* array of javascripts, optional */
-                	- PHPOrchestraThemeBundle:theme1:js/empty.js
+                	- OpenOrchestraThemeBundle:theme1:js/empty.js
 
 Note that you can design complexes themes by selecting files from several other themes as you specify each files that compose it, and they don't necessarly have to be located at the same place.
 
 To generate stylesheets html tags in a twig template, use the following code :
 
-    {{ phpOrchestraCss(ThemeId) }}
+    {{ openOrchestraCss(ThemeId) }}
 
 and this one for javascripts files :
 
-    {{ phpOrchestraJs(ThemeId) }}
+    {{ openOrchestraJs(ThemeId) }}

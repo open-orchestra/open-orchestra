@@ -11,11 +11,11 @@ Dans le DisplayBundle, le répertoire Ressources/views/Block contient les templa
 Le fichier Gallery/show.html.twig se termine par deux lignes permettant le chargement dynamique des fichiers js et css associés à l'affichage du bloc Gallery.
 La première fait un appel explicite à requireJs et indique de charger, une fois requireJs chargé, le fichier de comportement du bloc : loadJs.js.
 
-    [script data-main="{{ asset('/bundles/phporchestradisplay/block/Gallery/js/loadJs.js') }}" src="{{ asset('/bundles/phporchestradisplay/libs/require.js') }}"][/script]
+    [script data-main="{{ asset('/bundles/openorchestradisplay/block/Gallery/js/loadJs.js') }}" src="{{ asset('/bundles/openorchestradisplay/libs/require.js') }}"][/script]
 
 La seconde ligne charge directement le fichier de gestion des css : loadCss.
 
-    [script src="{{ asset('/bundles/phporchestradisplay/block/Gallery/js/loadCss.js') }}"][/script]
+    [script src="{{ asset('/bundles/openorchestradisplay/block/Gallery/js/loadCss.js') }}"][/script]
 
 Chacun de ces deux fichiers utilise la fonction requireJs. Celle-ci permet de spécifier dans un premier temps les fichiers nécessaires à l'éxecution du code principal, puis de décrire ce code principal à éxecuter quand tous les prérequis sont chargés.
 

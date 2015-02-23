@@ -2,44 +2,44 @@
 user_root: vagrant
 
 apache_conf:
-  php-orchestra.conf:
+  open-orchestra.conf:
     port: 80
-    serverName: phporchestra.dev
-    docRoot: /var/www/phporchestra/web
-    errorLog: phporchestraError.log
-    accessLog: phporchestraAccess.log
+    serverName: openorchestra.dev
+    docRoot: /var/www/openorchestra/web
+    errorLog: openorchestraError.log
+    accessLog: openorchestraAccess.log
   front-orchestra.conf:
     port: 80
-    serverName: front-phporchestra.dev
-    docRoot: /var/www/front-phporchestra/web
-    errorLog: front-phporchestraError.log
-    accessLog: front-phporchestraAccess.log
+    serverName: front-openorchestra.dev
+    docRoot: /var/www/front-openorchestra/web
+    errorLog: front-openorchestraError.log
+    accessLog: front-openorchestraAccess.log
     siteId: 1
   demo-orchestra.conf:
     port: 80
-    serverName: demo-phporchestra-front.dev
-    docRoot: /var/www/front-phporchestra/web
-    errorLog: demo-phporchestraError.log
-    accessLog: demo-phporchestraAccess.log
+    serverName: demo-openorchestra-front.dev
+    docRoot: /var/www/front-openorchestra/web
+    errorLog: demo-openorchestraError.log
+    accessLog: demo-openorchestraAccess.log
     siteId: 2
   echonext.orchestra.conf:
     port: 80
-    serverName: echonext.phporchestra.dev
-    docRoot: /var/www/front-phporchestra/web
-    errorLog: echonext.phporchestraError.log
-    accessLog: echonext.phporchestraAccess.log
+    serverName: echonext.openorchestra.dev
+    docRoot: /var/www/front-openorchestra/web
+    errorLog: echonext.openorchestraError.log
+    accessLog: echonext.openorchestraAccess.log
     siteId: 3
   https.echonext.orchestra.conf:
     port: 443
-    serverName: echonext.phporchestra.dev
-    docRoot: /var/www/front-phporchestra/web
-    errorLog: echonext.phporchestraError.log
-    accessLog: echonext.phporchestraAccess.log
+    serverName: echonext.openorchestra.dev
+    docRoot: /var/www/front-openorchestra/web
+    errorLog: echonext.openorchestraError.log
+    accessLog: echonext.openorchestraAccess.log
     siteId: 3
     sslCertificateFileDir: /usr/local/apache/conf
   tools.conf:
     port: 80
     serverName: clearvarnish.dev
-    docRoot: /var/www/phporchestra/tools
+    docRoot: /var/www/openorchestra/tools
     errorLog: toolsError.log
     accessLog: toolsAccess.log
