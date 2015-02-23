@@ -1,10 +1,10 @@
 set :application, "PhpOrchestra-front-bundle"
 set :domain,      "php_orchestra_backoffice_inte"
-set :deploy_to,   "/var/www/backoffice-phporchestra"
+set :deploy_to,   "/var/www/backoffice-open-orchestra"
 set :app_path,    "app"
-set :user,        "php_orchestra_backoffice_inte"
+set :user,        "open_orchestra_backoffice_inte"
 
-set :repository,  "git@github.com:itkg/phporchestra.git"
+set :repository,  "git@github.com:itkg/open-orchestra.git"
 set :scm,         :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `subversion`, `mercurial`, `perforce`, or `none`
 
