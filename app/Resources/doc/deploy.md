@@ -56,4 +56,4 @@ Once this is done, you can check the project.
 If it is not running check the right by connecting on the server and put the group back
 
     ssh open_orchestra_root
-    chgrp -R www-data /var/www/backoffice-openorchestra/ /var/www/front-openorchestra/
+    chgrp -R www-data /var/www/backoffice-open-orchestra/ /var/www/front-open-orchestra/
