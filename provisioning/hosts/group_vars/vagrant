@@ -10,14 +10,14 @@ apache_conf:
     accessLog: openorchestraAccess.log
   front-orchestra.conf:
     port: 80
-    serverName: front-openorchestra.dev
+    serverName: front.openorchestra.dev
     docRoot: /var/www/front-openorchestra/web
     errorLog: front-openorchestraError.log
     accessLog: front-openorchestraAccess.log
     siteId: 1
   demo-orchestra.conf:
     port: 80
-    serverName: demo-openorchestra-front.dev
+    serverName: demo.openorchestra.dev
     docRoot: /var/www/front-openorchestra/web
     errorLog: demo-openorchestraError.log
     accessLog: demo-openorchestraAccess.log
