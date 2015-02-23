@@ -116,11 +116,11 @@ module.exports = function(grunt) {
             },
             // SMARTADMIN ASSETS
             smartadmin_bg: {
-                src: 'web/bundles/phporchestrabackoffice/smartadmin/img/mybg.png',
+                src: 'web/bundles/openorchestrabackoffice/smartadmin/img/mybg.png',
                 dest: 'web/img/mybg.png'
             },
             smartadmin_flags: {
-                src: 'web/bundles/phporchestrabackoffice/smartadmin/img/flags/flags.png',
+                src: 'web/bundles/openorchestrabackoffice/smartadmin/img/flags/flags.png',
                 dest: 'web/img/flags/flags.png'
             },
             jquery_minicolors: {
@@ -128,13 +128,13 @@ module.exports = function(grunt) {
                 dest: 'web/css/images/jquery.minicolors.png'
             },
             select2_gif: {
-                src: 'web/bundles/phporchestrabackoffice/smartadmin/img/select2-spinner.gif',
+                src: 'web/bundles/openorchestrabackoffice/smartadmin/img/select2-spinner.gif',
                 dest: 'web/img/select2-spinner.gif'
             },
 
             // ORCHESTRA ASSET
             no_image: {
-                src: 'web/bundles/phporchestrabackoffice/images/no_image_available.jpg',
+                src: 'web/bundles/openorchestrabackoffice/images/no_image_available.jpg',
                 dest: 'web/img/no_image_available.jpg'
             }
 
@@ -180,14 +180,14 @@ module.exports = function(grunt) {
                 src: [
                     'bower_components/jquery/dist/jquery.js',
                     'bower_components/jquery-ui/jquery-ui.js',
-                    'web/bundles/phporchestrabackoffice/smartadmin/js/app.config.js',
+                    'web/bundles/openorchestrabackoffice/smartadmin/js/app.config.js',
                     'bower_components/bootstrap/dist/js/bootstrap.js',
                     'bower_components/jcrop/js/jquery.Jcrop.js',
                     'bower_components/select2/select2.js',
                     'bower_components/jquery-minicolors/jquery.minicolors.js',
-                    'web/bundles/phporchestrabackoffice/smartadmin/js/notification/SmartNotification.js',
-                    'web/bundles/phporchestrabackoffice/smartadmin/js/smartwidgets/jarvis.widget.js',
-                    'web/bundles/phporchestrabackoffice/smartadmin/js/app.js'
+                    'web/bundles/openorchestrabackoffice/smartadmin/js/notification/SmartNotification.js',
+                    'web/bundles/openorchestrabackoffice/smartadmin/js/smartwidgets/jarvis.widget.js',
+                    'web/bundles/openorchestrabackoffice/smartadmin/js/app.js'
                 ],
                 dest: 'web/built/smartadmin.js'
             },
@@ -200,60 +200,60 @@ module.exports = function(grunt) {
                     'bower_components/angular/angular.js',
                     'bower_components/datatables/media/js/jquery.dataTables.js',
                     'bower_components/jquery-form/jquery.form.js',
-                    'web/bundles/phporchestrabackoffice/js/latinise.js',
-                    'web/bundles/phporchestrabackoffice/js/jQuery.DOMNodeAppear.js',
-                    'web/bundles/phporchestrabackoffice/js/underscoreTemplateLoader.js'
+                    'web/bundles/openorchestrabackoffice/js/latinise.js',
+                    'web/bundles/openorchestrabackoffice/js/jQuery.DOMNodeAppear.js',
+                    'web/bundles/openorchestrabackoffice/js/underscoreTemplateLoader.js'
                 ],
                 dest: 'web/built/lib.js'
             },
             
             orchestrajs: {
                 src: [
-                    'web/built/phporchestrabackoffice/js/orchestraLib.js',
-                    'web/built/phporchestrabackoffice/js/orchestraListeners.js',
+                    'web/built/openorchestrabackoffice/js/orchestraLib.js',
+                    'web/built/openorchestrabackoffice/js/orchestraListeners.js',
                     // MISC
-                    'web/built/phporchestrabackoffice/js/wreqr/widget.js',
-                    'web/built/phporchestrabackoffice/js/wreqr/viewport.js',
-                    'web/built/phporchestrabackoffice/js/wreqr/widget/*.js',
-                    'web/built/phporchestrabackoffice/js/OrchestraView.js',
-                    'web/built/phporchestrabackoffice/js/addPrototype.js',
-                    'web/built/phporchestrabackoffice/js/modelBackbone.js',
-                    'web/built/phporchestrabackoffice/js/adminFormView.js',
-                    'web/built/phporchestrabackoffice/js/generateId.js',
-                    'web/built/phporchestrabackoffice/js/page/makeSortable.js',
-                    'web/built/phporchestrabackoffice/js/page/areaView.js',
-                    'web/built/phporchestrabackoffice/js/page/blockView.js',
-                    'web/built/phporchestrabackoffice/js/page/nodeView.js',
-                    'web/built/phporchestrabackoffice/js/page/templateView.js',
-                    'web/built/phporchestrabackoffice/js/page/showNode.js',
-                    'web/built/phporchestrabackoffice/js/page/showTemplate.js',
-                    'web/built/phporchestrabackoffice/js/page/orderNode.js',
-                    'web/built/phporchestrabackoffice/js/VersionView.js',
-                    'web/built/phporchestrabackoffice/js/LanguageView.js',
-                    'web/built/phporchestrabackoffice/js/WidgetStatusView.js',
-                    'web/built/phporchestrabackoffice/js/page/previewLinkView.js',
-                    'web/built/phporchestrabackoffice/js/page/pageConfigurationButtonView.js',
-                    'web/built/phporchestrabackoffice/js/table/TableviewView.js',
-                    'web/built/phporchestrabackoffice/js/table/TableviewCollectionView.js',
-                    'web/built/phporchestrabackoffice/js/FullPageFormView.js',
-                    'web/built/phporchestrabackoffice/js/ContentTypeChangeTypeListener.js',
-                    'web/built/phporchestrabackoffice/js/table/tableviewLoader.js',
-                    'web/built/phporchestrabackoffice/js/page/nodeConstructor.js',
-                    'web/built/phporchestrabackoffice/js/treeAjaxDelete.js',
-                    'web/built/phporchestrabackoffice/js/configurableContentFormListener.js',
-                    'web/built/phporchestrabackoffice/js/page/blocksPanel.js',
-                    'web/built/phporchestrabackoffice/js/security.js',
-                    'web/built/phporchestrabackoffice/js/smartConfirmView.js',
-                    'web/built/phporchestrabackoffice/js/block/video.js',
+                    'web/built/openorchestrabackoffice/js/wreqr/widget.js',
+                    'web/built/openorchestrabackoffice/js/wreqr/viewport.js',
+                    'web/built/openorchestrabackoffice/js/wreqr/widget/*.js',
+                    'web/built/openorchestrabackoffice/js/OrchestraView.js',
+                    'web/built/openorchestrabackoffice/js/addPrototype.js',
+                    'web/built/openorchestrabackoffice/js/modelBackbone.js',
+                    'web/built/openorchestrabackoffice/js/adminFormView.js',
+                    'web/built/openorchestrabackoffice/js/generateId.js',
+                    'web/built/openorchestrabackoffice/js/page/makeSortable.js',
+                    'web/built/openorchestrabackoffice/js/page/areaView.js',
+                    'web/built/openorchestrabackoffice/js/page/blockView.js',
+                    'web/built/openorchestrabackoffice/js/page/nodeView.js',
+                    'web/built/openorchestrabackoffice/js/page/templateView.js',
+                    'web/built/openorchestrabackoffice/js/page/showNode.js',
+                    'web/built/openorchestrabackoffice/js/page/showTemplate.js',
+                    'web/built/openorchestrabackoffice/js/page/orderNode.js',
+                    'web/built/openorchestrabackoffice/js/VersionView.js',
+                    'web/built/openorchestrabackoffice/js/LanguageView.js',
+                    'web/built/openorchestrabackoffice/js/WidgetStatusView.js',
+                    'web/built/openorchestrabackoffice/js/page/previewLinkView.js',
+                    'web/built/openorchestrabackoffice/js/page/pageConfigurationButtonView.js',
+                    'web/built/openorchestrabackoffice/js/table/TableviewView.js',
+                    'web/built/openorchestrabackoffice/js/table/TableviewCollectionView.js',
+                    'web/built/openorchestrabackoffice/js/FullPageFormView.js',
+                    'web/built/openorchestrabackoffice/js/ContentTypeChangeTypeListener.js',
+                    'web/built/openorchestrabackoffice/js/table/tableviewLoader.js',
+                    'web/built/openorchestrabackoffice/js/page/nodeConstructor.js',
+                    'web/built/openorchestrabackoffice/js/treeAjaxDelete.js',
+                    'web/built/openorchestrabackoffice/js/configurableContentFormListener.js',
+                    'web/built/openorchestrabackoffice/js/page/blocksPanel.js',
+                    'web/built/openorchestrabackoffice/js/security.js',
+                    'web/built/openorchestrabackoffice/js/smartConfirmView.js',
+                    'web/built/openorchestrabackoffice/js/block/video.js',
 
                     // MEDIATHEQUE
-                    'web/built/phporchestrabackoffice/js/mediatheque/*.js',
+                    'web/built/openorchestrabackoffice/js/mediatheque/*.js',
 
                     // INDEXATION
-                    'web/bundles/phporchestraindexation/js/*.js',
+                    'web/bundles/openorchestraindexation/js/*.js',
 
                     // BACKBONE ROUTER
-                    'web/bundles/phporchestrabackoffice/js/backboneRouter.js'
+                    'web/bundles/openorchestrabackoffice/js/backboneRouter.js'
                 ],
                 dest: 'web/built/orchestra.js'
             },
@@ -273,25 +273,25 @@ module.exports = function(grunt) {
 //                    'bower_components/bootstrap/dist/css/bootstrap.css',
                     'bower_components/open-sans/css/open-sans.css',
                     'bower_components/jquery-minicolors/jquery.minicolors.css',
-                    'web/bundles/phporchestrabackoffice/smartadmin/css/bootstrap.css',
+                    'web/bundles/openorchestrabackoffice/smartadmin/css/bootstrap.css',
                     'bower_components/font-awesome/css/font-awesome.css',
-                    'web/bundles/phporchestrabackoffice/smartadmin/css/smartadmin-production-plugins.css',
-                    'web/bundles/phporchestrabackoffice/smartadmin/css/smartadmin-production.css',
-                    'web/bundles/phporchestrabackoffice/smartadmin/css/smartadmin-skins.css',
-                    'web/bundles/phporchestrabackoffice/smartadmin/css/smartadmin-rtl.css',
+                    'web/bundles/openorchestrabackoffice/smartadmin/css/smartadmin-production-plugins.css',
+                    'web/bundles/openorchestrabackoffice/smartadmin/css/smartadmin-production.css',
+                    'web/bundles/openorchestrabackoffice/smartadmin/css/smartadmin-skins.css',
+                    'web/bundles/openorchestrabackoffice/smartadmin/css/smartadmin-rtl.css',
 
                     // ORCHESTRA SMARTADMIN PATCHES
-                    'web/built/phporchestrabackoffice/css/smartadminPatches/flags.css',
-                    'web/built/phporchestrabackoffice/css/smartadminPatches/title.css',
-                    'web/built/phporchestrabackoffice/css/smartadminPatches/modal.css',
-                    'web/built/phporchestrabackoffice/css/smartadminPatches/widget.css',
-                    'web/built/phporchestrabackoffice/css/smartadminPatches/checkbox.css',
-                    'web/built/phporchestrabackoffice/css/smartadminPatches/tab.css',
-                    'web/built/phporchestrabackoffice/css/smartadminPatches/form.css',
-                    'web/built/phporchestrabackoffice/css/smartadminPatches/minicolors.css',
+                    'web/built/openorchestrabackoffice/css/smartadminPatches/flags.css',
+                    'web/built/openorchestrabackoffice/css/smartadminPatches/title.css',
+                    'web/built/openorchestrabackoffice/css/smartadminPatches/modal.css',
+                    'web/built/openorchestrabackoffice/css/smartadminPatches/widget.css',
+                    'web/built/openorchestrabackoffice/css/smartadminPatches/checkbox.css',
+                    'web/built/openorchestrabackoffice/css/smartadminPatches/tab.css',
+                    'web/built/openorchestrabackoffice/css/smartadminPatches/form.css',
+                    'web/built/openorchestrabackoffice/css/smartadminPatches/minicolors.css',
 
                     // TINYMCE PATCHES
-                    'web/built/phporchestrabackoffice/css/tinyMCEPatches/floatPanel.css'
+                    'web/built/openorchestrabackoffice/css/tinyMCEPatches/floatPanel.css'
 
                 ],
                 dest: 'web/built/smartadmin.css'
@@ -308,15 +308,15 @@ module.exports = function(grunt) {
             
             orchestracss: {
                 src: [
-                      'web/built/phporchestrabackoffice/css/phporchestra.css',
-                      'web/built/phporchestrabackoffice/css/mediatheque.css',
-                      'web/built/phporchestrabackoffice/css/template.css',
-                      'web/built/phporchestrabackoffice/css/blocksPanel.css',
-                      'web/built/phporchestrabackoffice/css/blocksIcon.css',
-                      'web/built/phporchestrabackoffice/css/mediaModal.css',
-                      'web/built/phporchestrabackoffice/css/loginPage.css',
-                      'web/built/phporchestrabackoffice/css/editTable.css',
-                      'web/built/phporchestrabackoffice/css/node.css'
+                      'web/built/openorchestrabackoffice/css/openorchestra.css',
+                      'web/built/openorchestrabackoffice/css/mediatheque.css',
+                      'web/built/openorchestrabackoffice/css/template.css',
+                      'web/built/openorchestrabackoffice/css/blocksPanel.css',
+                      'web/built/openorchestrabackoffice/css/blocksIcon.css',
+                      'web/built/openorchestrabackoffice/css/mediaModal.css',
+                      'web/built/openorchestrabackoffice/css/loginPage.css',
+                      'web/built/openorchestrabackoffice/css/editTable.css',
+                      'web/built/openorchestrabackoffice/css/node.css'
                 ],
                 dest: 'web/built/orchestra.css'
             },
