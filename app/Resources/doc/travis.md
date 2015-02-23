@@ -48,8 +48,8 @@ Check the login by listing all the repositories
 ## Cache management
 You can check all the cache present for a repository 
 
-    bundle exec travis cache -r itkg/phporchestra-cms-bundle
+    bundle exec travis cache -r itkg/openorchestra-cms-bundle
 
 You can decide to delete the cache on one branch if needed
 
-    bundle exec travis cache -r itkg/phporchestra-cms-bundle  -b reduce_deps --delete
+    bundle exec travis cache -r itkg/openorchestra-cms-bundle  -b reduce_deps --delete

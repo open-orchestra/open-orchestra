@@ -1,7 +1,7 @@
 # Orchestra install on dev environment #
 --------
 
-This tutorial is going to describe the step by step installation for the phpOrchestra global environment:
+This tutorial is going to describe the step by step installation for the openOrchestra global environment:
 
 ## Install OS
 It is a requirement that every developper run under an unix OS, 64 bits version.
@@ -43,7 +43,7 @@ As a prerequisite, update your python modules if required with those two
     aptitude install python-yaml
     aptitude install python-jinja2
 
-Then go into phporchestra directory
+Then go into openorchestra directory
 
     ansible-galaxy install --role-file=provisioning/galaxy.yml
 

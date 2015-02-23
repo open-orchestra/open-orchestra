@@ -6,7 +6,7 @@ Si le projet nécessite de changer la méthode de stockage des fichiers uploadé
 
 1. Paramétrer l'adapteur de Gaufrette au niveau de l'application ([cf documentation de KnpGaufretteBundle](https://github.com/KnpLabs/KnpGaufretteBundle#configuration))
 2. Paramétrer Orchestra pour indiquer à la médiathèque l'adapteur à utiliser (d'autres adapteurs pourraient être utilisés dans l'application pour des besoins indépendants de la médiathèque)
-Pour celà, il faut surcharger le paramètre php_orchestra_media.filesystem en indiquant le nom du filesystem défini pour la médiathèque dans la conf de gaufrette au point précédent
+Pour celà, il faut surcharger le paramètre open_orchestra_media.filesystem en indiquant le nom du filesystem défini pour la médiathèque dans la conf de gaufrette au point précédent
 
 ## Process d'upload et redimmensionnement
 Les images contribuées dans la médiathèque peuvent être disponibles en front sous plusieurs formats/ratios. Cependant les contributeurs n'ont pas à uploader toutes ces variantes, celles-ci sont automatiquement générées par Orchestra à partir de l'unique média uploadé par le contributeur.
@@ -23,5 +23,5 @@ Dans ce cas Orchestra commence par récupérer en local dans le /tmp le média o
 
 ## Affichage en front
 Dans la mesure où la méthode de stockage des médias peut ou ne peut pas autoriser l'accès direct aux médias depuis un navigateur web, le process d'affichage est un peu plus complexe qu'un simple lien vers la ressource désirée.
-Ce travail de récupération de média est effectué par le contrôleur PHPOrchestra\MediaBundle\Controller\MediaController, par la méthode getAction(). Cette méthode reçoit l'identifiant de stockage du média désiré et retourne le contenu du média avec les entêtes nécessaires à son affichage.
+Ce travail de récupération de média est effectué par le contrôleur OpenOrchestra\MediaBundle\Controller\MediaController, par la méthode getAction(). Cette méthode reçoit l'identifiant de stockage du média désiré et retourne le contenu du média avec les entêtes nécessaires à son affichage.
 Quelque soit le fichier issu de la médiathèque qu'on cherche à servir, il suffit donc de générer un lien sur la route 'php_orchestra_media_get' en indiquant la clé de stockage du média pour que celui-ci soit renvoyé au client.

@@ -1,5 +1,5 @@
 
-Architecture PHP Orchestra
+Architecture OpenOrchestra
 ==========================
 
 1 Introduction
@@ -11,7 +11,7 @@ avant que toute architecture ne soit validée.
 2 Fonctionnalités attendues
 ---------------------------
 
-Liste des fonctionnalités qui sont souhaitées pour PHP Orchestra, qu'elles
+Liste des fonctionnalités qui sont souhaitées pour OpenOrchestra, qu'elles
 soient héritées ou non de PHP Factory.
 
 | Fonctionnalité    | Commentaire                                              |
@@ -50,7 +50,7 @@ soient héritées ou non de PHP Factory.
 
 Les développements Symfony2 seront placés en tant que bundles dans le répertoire
 vendor de Symfony2 :
-`./src/symfony2/vendor/php-orchestra/nom-du-bundle-en-minuscules-et-tirets`
+`./src/symfony2/vendor/open-orchestra/nom-du-bundle-en-minuscules-et-tirets`
 
 ### 3.3 Autoloading
 
@@ -102,7 +102,7 @@ La base de données principale sera en MongoDB
 
 ### 4.2 Modèle de données
 
-![uml_model](php-orchestra-cms-uml.png "PHP Orchestra UML class model")
+![uml_model](open-orchestra-cms-uml.png "OpenOrchestra UML class model")
 
 #### 4.2.1 Collection site
 

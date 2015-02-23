@@ -16,25 +16,25 @@ Pour l'affichage, le service doit être taggé par :
     tags:
         - { name: php_orchestra_display.display_block.strategy }
 
-Et étendre : `PHPOrchestra\DisplayBundle\DisplayBlock\DisplayBlockInterface`
+Et étendre : `OpenOrchestra\DisplayBundle\DisplayBlock\DisplayBlockInterface`
 
 # III/ Stratégie pour le logo
 
 Pour l'affichage, le service doit être taggé par : 
 
     tags:
-        - { name: php_orchestra_backoffice.display_icon.strategy }
+        - { name: open_orchestra_backoffice.display_icon.strategy }
 
-Et étendre : `PHPOrchestra\BackofficeBundle\DisplayIcon\DisplayInterface`
+Et étendre : `OpenOrchestra\BackofficeBundle\DisplayIcon\DisplayInterface`
 
 # IV/ Stratégie pour le formulaire
 
 Pour l'affichage, le service doit être taggé par : 
 
     tags:
-        - { name: php_orchestra_backoffice.generate_form.strategy }
+        - { name: open_orchestra_backoffice.generate_form.strategy }
 
-Et étendre : `PHPOrchestra\Backoffice\GenerateForm\GenerateFormInterface`
+Et étendre : `OpenOrchestra\Backoffice\GenerateForm\GenerateFormInterface`
 
 # V/ Commande de génération
 
@@ -44,10 +44,10 @@ Pour l'utiliser simplement dans le cas d'ajout de block dans les vendors, il suf
 
     php app/console orchestra:generate:block 
         --block-name="TestBlock" 
-        --form-generator-dir="vendor/itkg/phporchestra-cms-bundle/PHPOrchestra/Backoffice/GenerateForm/Strategies" 
-        --front-display-dir="vendor/itkg/phporchestra-display-bundle/PHPOrchestra/DisplayBundle/DisplayBlock/Strategies" 
-        --backoffice-icon-dir="vendor/itkg/phporchestra-cms-bundle/PHPOrchestra/BackofficeBundle/DisplayIcon/Strategies" 
-        --backoffice-display-dir="vendor/itkg/phporchestra-cms-bundle/PHPOrchestra/BackofficeBundle/DisplayBlock/Strategies" 
+        --form-generator-dir="vendor/itkg/openorchestra-cms-bundle/OpenOrchestra/Backoffice/GenerateForm/Strategies" 
+        --front-display-dir="vendor/itkg/openorchestra-display-bundle/OpenOrchestra/DisplayBundle/DisplayBlock/Strategies" 
+        --backoffice-icon-dir="vendor/itkg/openorchestra-cms-bundle/OpenOrchestra/BackofficeBundle/DisplayIcon/Strategies" 
+        --backoffice-display-dir="vendor/itkg/openorchestra-cms-bundle/OpenOrchestra/BackofficeBundle/DisplayBlock/Strategies" 
         --no-interaction
 
 Pour une génération dans d'autre bundle, il est nécessaire de spécifier le namespace du bundle ainsi que le nom du fichier de conf dans le bundle.
