@@ -3,9 +3,6 @@
     ServerName {{ item.value.serverName }}
 
     DocumentRoot {{ item.value.docRoot }}
-    {% if item.value.siteId is defined %}
-    SetEnv SYMFONY__SITE {{ item.value.siteId }}
-    {% endif %}
     {% if item.value.sslCertificateFileDir is defined %}
     SSLEngine on
     SSLCertificateFile {{ item.value.sslCertificateFileDir }}/ssl.crt
@@ -21,6 +18,13 @@
         Order allow,deny
         allow from all
     </Directory>
+
+    <IfModule mod_rewrite.c>
+        RewriteEngine On
+        {% if item.value.siteId is defined %}
+        RewriteRule ^/sitemap.xml /{{ item.value.siteId }}/sitemap.xml [L]
+        {% endif %}
+    </IfModule>
 
     ErrorLog /var/log/apache2/{{ item.value.errorLog }}
 
