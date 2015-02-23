@@ -5,3 +5,5 @@
    service: name=apache2 state=started
  - name: ensure ssl mod is loaded
    apache2_module: state=present name=ssl
+ - name: ensure rewrite mod is loaded
+   apache2_module: state=present name=rewrite
