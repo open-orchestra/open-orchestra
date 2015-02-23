@@ -3,7 +3,7 @@ monolog:
         main:
             type: stream
             level: 200
-            channels: phporchestra
+            channels: openorchestra
             handler: mongo
         mongo:
             type: mongo
@@ -12,4 +12,4 @@ monolog:
                 host: "localhost"
                 database: "%open_orchestra_cms.mongodb.database%"
                 collection: log
-            channels: [phporchestra]
+            channels: [openorchestra]
