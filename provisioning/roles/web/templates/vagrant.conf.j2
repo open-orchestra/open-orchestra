@@ -23,6 +23,7 @@
         RewriteEngine On
         {% if item.value.siteId is defined %}
         RewriteRule ^/sitemap.xml /{{ item.value.siteId }}/sitemap.xml [L]
+        RewriteRule ^/robots.txt /{{ item.value.siteId }}/robots.txt [L]
         {% endif %}
     </IfModule>
 
