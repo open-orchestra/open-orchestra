@@ -111,6 +111,7 @@ In the `/etc/hosts` file of your computer add the following lines:
     10.0.1.246      smartadmin.openorchestra.inte
     10.0.1.246      echonext.openorchestra.inte
     10.0.1.246      media.openorchestra.inte
+    10.0.1.246      admin.openorchestra.inte
 
 ## Result
 Once this command, all the client side javascripts librairies should have been installed.
