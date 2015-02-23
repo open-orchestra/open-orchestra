@@ -37,14 +37,14 @@ sub vcl_recv {
         return(lookup);
      }
 
-    if (req.url ~ "^/phporchestra.dev/") {
-        set req.backend = phporchestra;
-    } elseif (req.url ~ "^/front-phporchestra.dev/") {
-        set req.backend = frontphporchestra;
-    } elseif (req.url ~ "^/demo-phporchestra-front.dev/") {
-        set req.backend = demophporchestra;
+    if (req.url ~ "^/openorchestra.dev/") {
+        set req.backend = openorchestra;
+    } elseif (req.url ~ "^/front-openorchestra.dev/") {
+        set req.backend = frontopenorchestra;
+    } elseif (req.url ~ "^/demo-openorchestra-front.dev/") {
+        set req.backend = demoopenorchestra;
     } else {
-        set req.backend = echonextphporchestra;
+        set req.backend = echonextopenorchestra;
     }
 
     if (req.request == "GET" && req.url ~ "/app"){
