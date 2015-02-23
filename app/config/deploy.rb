@@ -1,5 +1,5 @@
-set :application, "PhpOrchestra-front-bundle"
-set :domain,      "php_orchestra_backoffice_inte"
+set :application, "OpenOrchestra"
+set :domain,      "open_orchestra_backoffice_inte"
 set :deploy_to,   "/var/www/backoffice-open-orchestra"
 set :app_path,    "app"
 set :user,        "open_orchestra_backoffice_inte"

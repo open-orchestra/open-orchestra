@@ -5,40 +5,40 @@ apache_conf:
   inte-backoffice-openorchestra.conf:
     port: 80
     serverName: 10.0.1.246
-    docRoot: /var/www/backoffice-openorchestra/current/web
+    docRoot: /var/www/backoffice-open-orchestra/current/web
     errorLog: openorchestra_backoffice_error.log
     accessLog: openorchestra_backoffice_access.log
   inte-backoffice-admin-openorchestra.conf:
     port: 80
     serverName: admin.openorchestra.inte
-    docRoot: /var/www/backoffice-openorchestra/current/web
+    docRoot: /var/www/backoffice-open-orchestra/current/web
     errorLog: openorchestra_backoffice_error.log
     accessLog: openorchestra_backoffice_access.log
   demo-orchestra.conf:
     port: 80
-    serverName: demo-openorchestra-front.inte
-    docRoot: /var/www/front-openorchestra/current/web
+    serverName: demo.openorchestra.inte
+    docRoot: /var/www/front-open-orchestra/current/web
     errorLog: demo-openorchestraError.log
     accessLog: demo-openorchestraAccess.log
     siteId: 2
   front-orchestra.conf:
     port: 80
-    serverName: front-openorchestra-front.inte
-    docRoot: /var/www/front-openorchestra/current/web
+    serverName: front.openorchestra.inte
+    docRoot: /var/www/front-open-orchestra/current/web
     errorLog: front-openorchestraError.log
     accessLog: front-openorchestraAccess.log
     siteId: 1
   echonext.orchestra.conf:
     port: 80
     serverName: echonext.openorchestra.inte
-    docRoot: /var/www/front-openorchestra/current/web
+    docRoot: /var/www/front-open-orchestra/current/web
     errorLog: echonext.openorchestraError.log
     accessLog: echonext.openorchestraAccess.log
     siteId: 3
   https.echonext.orchestra.conf:
     port: 443
     serverName: echonext.openorchestra.inte
-    docRoot: /var/www/front-openorchestra/current/web
+    docRoot: /var/www/front-open-orchestra/current/web
     errorLog: echonext.openorchestraError.log
     accessLog: echonext.openorchestraAccess.log
     siteId: 3
