@@ -273,6 +273,7 @@ module.exports = function(grunt) {
 //                    'bower_components/bootstrap/dist/css/bootstrap.css',
                     'bower_components/open-sans/css/open-sans.css',
                     'bower_components/jquery-minicolors/jquery.minicolors.css',
+                    'bower_components/select2/select2.css',
                     'web/bundles/openorchestrabackoffice/smartadmin/css/bootstrap.css',
                     'bower_components/font-awesome/css/font-awesome.css',
                     'web/bundles/openorchestrabackoffice/smartadmin/css/smartadmin-production-plugins.css',
