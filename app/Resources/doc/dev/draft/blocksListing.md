@@ -1,10 +1,7 @@
 ## Contenu
 * ContentList
     * Affiche une liste de contenus répondant à des critères paramétrés
-    * Back : [Erreur à la soumission du formulaire](https://trello.com/c/ySA4rltQ/597-bo-bloc-contentlist-plantage-a-la-soumission)
-    * Front :
-        * [Symfony plante si la conf en BO est incomplète](https://trello.com/c/yl7JIpzs/578-fo-bloc-contentlist-plantage-symfony-si-bloc-mal-configure)
-        * A rechecker quand le form sera réparé
+    * Front : Ok
 
 * Content
     * Affiche un contenu en pleine page dont l'id est passé dans l'url
@@ -12,9 +9,8 @@
 
 * ConfigurableContent
     * Choix d'un contenu spécifique à afficher
-    * Back : [Le formulaire ne passe plus la validation](https://trello.com/c/QBs5IudQ/576-bo-bloc-configurablecontent-choix-du-contenu-invalidable)
     * Front : 
-        * [plantage si mal bloc configuré](https://trello.com/c/PFuzdYny/580-fo-bloc-configurablecontent-pas-de-contribution-bo-plantage-de-symfony-en-front)
+        * [plantage bien que bloc paramétré correctement](https://trello.com/c/pCQQlph4/621-bo-fo-bloc-configurable-content-plantage-front)
         * A rechecker quand le form sera réparé
 
 * TinyMCEWysiwyg
@@ -32,18 +28,8 @@
     * Médiathèque paginée constituée de plusieurs images contribuées dans la médiathèque
     * Front : Ok mais point de contribution à revoir sur l'intégration front : nombre de col + largeur VS uniquement images flottantes
 
-* Youtube
-    * Affichage d'une vidéo Youtube
-    * Front :
-        * [Plante sur des paramètres absent alors que bien contribués](https://trello.com/c/tbLKZ7Wu/583-fo-bloc-carrousel-plantage-pas-de-carrouselid-alors-que-bien-contribue)
-        * A rechecker quand le form sera réparé
-
-* Dailymotion
-    * Affichage d'une vidéo Dailymotion
-    * Front : Ok
-
-* Vimeo
-    * Affichage d'une vidéo Vimeo
+* Video
+    * Back Office : [L'ajout d'un bloc video fait planter la page BO](https://trello.com/c/c4fbyVej/622-bo-bloc-video-plantage-a-l-ajout)
     * Front : Ok
 
 * MediaListByKeyword
@@ -67,8 +53,7 @@
 
 * SubMenu
     * Menu avec racine et profondeur
-    * Back : [La sauvegarde fait planter l'affichage du noeud qu'on ne donc plus jamais contribuer](https://trello.com/c/HSSPTdVC/585-bo-bloc-submenu-affichage-plante)
-    * Front : A rechecker quand le Back sera corrigé
+    * Front : [Le front plante systématiquement](https://trello.com/c/LJxf5nje/623-fo-bloc-submenu-plantage-error-call-to-a-member-function-getnodeid-on-a-non-object)
 
 * Search
     * Affiche un outil de recherche
@@ -97,9 +82,7 @@
 * AddThis
     * Partage social via AddThis
     * Back : contribution peu explicite (Ajout de doc ?)
-    * Front :
-        * [Symfony plante sur l'absence de l'attribut class bien que contribué en BO](https://trello.com/c/tbLKZ7Wu/583-fo-bloc-carrousel-plantage-pas-de-carrouselid-alors-que-bien-contribue)
-        * A rechecker quand cette erreur sera corrigée
+    * Front : Ok
 
 * AudienceAnalysis
     * Taggage Xiti/Google Analytics
