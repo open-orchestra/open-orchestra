@@ -33,8 +33,8 @@ Go on the project page for more inforation : http://www.ansible.com
 ## Clone the repositories
 In the parent directory of the current directory run
 
-    git clone git@github.com:itkg/phporchestra-front-demo.git
-    git clone git@github.com:itkg/phporchestra.git
+    git clone git@github.com:itkg/open-orchestra-front-demo.git
+    git clone git@github.com:itkg/open-orchestra.git
 
 ## Install roles from ansible-galaxy
 Install roles needed to launch the box
@@ -60,7 +60,7 @@ You need to install all the php dependancies before starting the project
 Start by downloading composer
 
     vagrant ssh
-    cd /var/www/phporchestra
+    cd /var/www/open-orchestra
     php -r "readfile('https://getcomposer.org/installer');" | php
 
 Then install the project
@@ -72,7 +72,7 @@ We are using npm to manage some server side javascript librairies and bower to m
 
 Still connected to the vagrant box, go in the project directory inside the box
 
-    cd /var/www/phporchestra
+    cd /var/www/open-orchestra
 
 Install the npm dependancies
 
@@ -97,21 +97,21 @@ In the symfony project directory
 ## Override the dns redirection
 In the `/etc/hosts` file of your computer add the following lines :
 
-    192.168.33.10   phporchestra.dev
-    192.168.33.10   front-phporchestra.dev
-    192.168.33.10   demo-phporchestra-front.dev
-    192.168.33.10   echonext.phporchestra.dev
-    192.168.33.10   media.phporchestra.dev
+    192.168.33.10   openorchestra.dev
+    192.168.33.10   front-openorchestra.dev
+    192.168.33.10   demo-openorchestra-front.dev
+    192.168.33.10   echonext.openorchestra.dev
+    192.168.33.10   media.openorchestra.dev
 
 ## Temporary Override the dns redirection for the integration server
 In the `/etc/hosts` file of your computer add the following lines:
 
-    10.0.1.246      demo-phporchestra-front.inte
-    10.0.1.246      front-phporchestra-front.inte
-    10.0.1.246      smartadmin.phporchestra.inte
-    10.0.1.246      echonext.phporchestra.inte
-    10.0.1.246      media.phporchestra.inte
+    10.0.1.246      demo-openorchestra-front.inte
+    10.0.1.246      front-openorchestra-front.inte
+    10.0.1.246      smartadmin.openorchestra.inte
+    10.0.1.246      echonext.openorchestra.inte
+    10.0.1.246      media.openorchestra.inte
 
 ## Result
 Once this command, all the client side javascripts librairies should have been installed.
-You can now go on the website on the url : http://phporchestra.dev/app_dev.php/admin
+You can now go on the website on the url : http://openorchestra.dev/app_dev.php/admin
