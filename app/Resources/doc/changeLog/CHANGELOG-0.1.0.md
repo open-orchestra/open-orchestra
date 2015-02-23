@@ -25,6 +25,7 @@ Url to see changes :
  - [You can access https pages in https only](https://trello.com/c/LUXRWePC/599-1-etq-dev-front-je-vois-le-scheme-ability-dans-le-routing)
  - [Multiple alias preview](https://trello.com/c/FvnDfj9C/595-2-etq-ubo-je-peux-choisir-sur-quel-alias-je-vais-voir-la-preview)
  - [Merge dailymotion, youtube and vimeo blocks into video block](https://trello.com/c/0dH1cjHj/457-1-refacto-des-block-video-youtube-dailymotion-et-vimeo-en-un-block-configurable-qui-permet-de-choisir-le-type-de-video)
+ - [sitemap.xml & robots.txt have their own rewrite rules](https://trello.com/c/2LmACsUX/490-1-etq-ufront-je-peux-acceder-au-sitemap-et-robots)
 
 ## Other changes
 
