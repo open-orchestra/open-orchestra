@@ -9,9 +9,7 @@
 
 * ConfigurableContent
     * Choix d'un contenu spécifique à afficher
-    * Front : 
-        * [plantage bien que bloc paramétré correctement](https://trello.com/c/pCQQlph4/621-bo-fo-bloc-configurable-content-plantage-front)
-        * A rechecker quand le form sera réparé
+    * Front : Pas d'habillage, brut de décoffrage attribute : value
 
 * TinyMCEWysiwyg
     * Contribution de Rich Text
@@ -29,7 +27,7 @@
     * Front : Ok mais point de contribution à revoir sur l'intégration front : nombre de col + largeur VS uniquement images flottantes
 
 * Video
-    * Back Office : [L'ajout d'un bloc video fait planter la page BO](https://trello.com/c/c4fbyVej/622-bo-bloc-video-plantage-a-l-ajout)
+    * Contribution d'une vidéo youtube, dailymotion ou vimeo
     * Front : Ok
 
 * MediaListByKeyword
