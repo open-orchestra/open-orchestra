@@ -26,7 +26,7 @@ Url to see changes :
  - [Multiple alias preview](https://trello.com/c/FvnDfj9C/595-2-etq-ubo-je-peux-choisir-sur-quel-alias-je-vais-voir-la-preview)
  - [Merge dailymotion, youtube and vimeo blocks into video block](https://trello.com/c/0dH1cjHj/457-1-refacto-des-block-video-youtube-dailymotion-et-vimeo-en-un-block-configurable-qui-permet-de-choisir-le-type-de-video)
  - [sitemap.xml & robots.txt have their own rewrite rules](https://trello.com/c/2LmACsUX/490-1-etq-ufront-je-peux-acceder-au-sitemap-et-robots)
-
+ - [New empty Dashboard to fix problem in certain circumstances](https://trello.com/c/mPB9Wsv5/428-2-bo-refresh-du-poucet-pas-toujours-operationnel)
 ## Other changes
 
  - [Add doc describing Front integration of blocks](https://trello.com/c/JdwlCv9j/601-1-etq-dev-integrateur-j-ai-acces-a-un-peu-de-doc-sur-l-insertion-de-js-et-css-propre-au-block)
