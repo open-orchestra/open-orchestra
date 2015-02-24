@@ -1037,12 +1037,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/open-orchestra-cms-bundle.git",
-                "reference": "6ffa1baf5a857a920274d0e37f0de29168019d0a"
+                "reference": "ebfe3e0fa1f0015b139d47e7a8c562469cb490ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/open-orchestra-cms-bundle/zipball/6ffa1baf5a857a920274d0e37f0de29168019d0a",
-                "reference": "6ffa1baf5a857a920274d0e37f0de29168019d0a",
+                "url": "https://api.github.com/repos/itkg/open-orchestra-cms-bundle/zipball/ebfe3e0fa1f0015b139d47e7a8c562469cb490ee",
+                "reference": "ebfe3e0fa1f0015b139d47e7a8c562469cb490ee",
                 "shasum": ""
             },
             "require": {
@@ -1085,7 +1085,7 @@
                 "source": "https://github.com/itkg/open-orchestra-cms-bundle/tree/master",
                 "issues": "https://github.com/itkg/open-orchestra-cms-bundle/issues"
             },
-            "time": "2015-02-23 11:40:48"
+            "time": "2015-02-23 17:44:07"
         },
         {
             "name": "itkg/open-orchestra-display-bundle",
@@ -1094,12 +1094,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/open-orchestra-display-bundle.git",
-                "reference": "acf1856a018da449b4459dbccd266f04f4d9e04c"
+                "reference": "4d117b13728b46e6de22283e61b37ba6bdee775c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/open-orchestra-display-bundle/zipball/acf1856a018da449b4459dbccd266f04f4d9e04c",
-                "reference": "acf1856a018da449b4459dbccd266f04f4d9e04c",
+                "url": "https://api.github.com/repos/itkg/open-orchestra-display-bundle/zipball/4d117b13728b46e6de22283e61b37ba6bdee775c",
+                "reference": "4d117b13728b46e6de22283e61b37ba6bdee775c",
                 "shasum": ""
             },
             "require": {
@@ -1136,7 +1136,7 @@
                 "source": "https://github.com/itkg/open-orchestra-display-bundle/tree/master",
                 "issues": "https://github.com/itkg/open-orchestra-display-bundle/issues"
             },
-            "time": "2015-02-23 10:02:58"
+            "time": "2015-02-23 17:47:05"
         },
         {
             "name": "itkg/open-orchestra-media-bundle",
@@ -1145,12 +1145,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/open-orchestra-media-bundle.git",
-                "reference": "7d96a8e431f2e5f54663750f7a18cf149290f884"
+                "reference": "717e684bdacfcd1532ffadf53707a95b2f979fd5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/open-orchestra-media-bundle/zipball/7d96a8e431f2e5f54663750f7a18cf149290f884",
-                "reference": "7d96a8e431f2e5f54663750f7a18cf149290f884",
+                "url": "https://api.github.com/repos/itkg/open-orchestra-media-bundle/zipball/717e684bdacfcd1532ffadf53707a95b2f979fd5",
+                "reference": "717e684bdacfcd1532ffadf53707a95b2f979fd5",
                 "shasum": ""
             },
             "require": {
@@ -1191,7 +1191,7 @@
                 "source": "https://github.com/itkg/open-orchestra-media-bundle/tree/master",
                 "issues": "https://github.com/itkg/open-orchestra-media-bundle/issues"
             },
-            "time": "2015-02-22 15:24:26"
+            "time": "2015-02-23 17:44:56"
         },
         {
             "name": "itkg/open-orchestra-model-bundle",
@@ -1200,12 +1200,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/open-orchestra-model-bundle.git",
-                "reference": "baa688bd2b37b2ed4033aa4bea4b2665ebc60b45"
+                "reference": "7678b1c29f33aa1984d7b4d0c73983826b5f508a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/open-orchestra-model-bundle/zipball/baa688bd2b37b2ed4033aa4bea4b2665ebc60b45",
-                "reference": "baa688bd2b37b2ed4033aa4bea4b2665ebc60b45",
+                "url": "https://api.github.com/repos/itkg/open-orchestra-model-bundle/zipball/7678b1c29f33aa1984d7b4d0c73983826b5f508a",
+                "reference": "7678b1c29f33aa1984d7b4d0c73983826b5f508a",
                 "shasum": ""
             },
             "require": {
@@ -1243,7 +1243,7 @@
                 "source": "https://github.com/itkg/open-orchestra-model-bundle/tree/master",
                 "issues": "https://github.com/itkg/open-orchestra-model-bundle/issues"
             },
-            "time": "2015-02-23 11:40:44"
+            "time": "2015-02-23 13:01:59"
         },
         {
             "name": "itkg/open-orchestra-model-interface",
@@ -1547,9 +1547,9 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes Schmitt",
+                    "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -1936,9 +1936,9 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes Schmitt",
+                    "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -3533,7 +3533,6 @@
         "itkg/open-orchestra-model-bundle": 20
     },
     "prefer-stable": false,
-    "prefer-lowest": false,
     "platform": [],
     "platform-dev": []
 }
