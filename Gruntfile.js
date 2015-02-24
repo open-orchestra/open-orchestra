@@ -216,6 +216,7 @@ module.exports = function(grunt) {
                     'web/built/openorchestrabackoffice/js/wreqr/viewport.js',
                     'web/built/openorchestrabackoffice/js/wreqr/widget/*.js',
                     'web/built/openorchestrabackoffice/js/OrchestraView.js',
+                    'web/built/openorchestrabackoffice/js/dashboard/dashboardView.js',
                     'web/built/openorchestrabackoffice/js/addPrototype.js',
                     'web/built/openorchestrabackoffice/js/modelBackbone.js',
                     'web/built/openorchestrabackoffice/js/adminFormView.js',
