@@ -19,6 +19,11 @@ Url to see changes :
  - [All bundles have been renamed](https://trello.com/c/p4mhzWGt/441-2-refacto-des-namespaces-constante-traduction-au-nouveau-nom)
 
 ## Bug fixes
+ - [Fix blocks Carrousel, youtube, search and addThis if id was'nt contributed](https://trello.com/c/tbLKZ7Wu/583-1-fo-bloc-carrousel-plantage-pas-de-carrouselid-alors-que-bien-contribue)
+ - [Return ContentNotFoundEcxeption if there are no nodeId in the url for blockContent](https://trello.com/c/tVDlIjW1/579-0-5-fo-bloc-content-plantage-symfony-strategy-not-found)
+ - [Fix Configurable Content block](https://trello.com/c/PFuzdYny/580-0-5-fo-bloc-configurablecontent-pas-de-contribution-bo-plantage-de-symfony-en-front)
+ - [Modify Block list in siteType](https://trello.com/c/jKQssTyK/588-1-bo-site-modification-des-blocs-disponibles)
+ - [I can use radio button](https://trello.com/c/XJi3yUQ3/533-5-etq-ubo-je-peux-utiliser-des-bouton-de-type-radio-dans-les-formulaires-de-blocks)
 
 ## New features
 
@@ -27,10 +32,12 @@ Url to see changes :
  - [Merge dailymotion, youtube and vimeo blocks into video block](https://trello.com/c/0dH1cjHj/457-1-refacto-des-block-video-youtube-dailymotion-et-vimeo-en-un-block-configurable-qui-permet-de-choisir-le-type-de-video)
  - [sitemap.xml & robots.txt have their own rewrite rules](https://trello.com/c/2LmACsUX/490-1-etq-ufront-je-peux-acceder-au-sitemap-et-robots)
  - [New empty Dashboard to fix problem in certain circumstances](https://trello.com/c/mPB9Wsv5/428-2-bo-refresh-du-poucet-pas-toujours-operationnel)
+ - [WebSite id is now unique and you can't modify it](https://trello.com/c/ZXVSt5L0/602-1-etq-ubo-je-ne-peux-pas-modifier-le-website-id-une-fois-contribue)
 ## Other changes
 
  - [Add doc describing Front integration of blocks](https://trello.com/c/JdwlCv9j/601-1-etq-dev-integrateur-j-ai-acces-a-un-peu-de-doc-sur-l-insertion-de-js-et-css-propre-au-block)
  - [BO > Crop > Remove black borders on rectangle format](https://trello.com/c/GUJnf6Mo/523-0-5-etq-ubo-lorsque-je-crop-l-image-doit-tenir-dans-le-rectangle-defini-il-peut-y-avoir-du-vide-autour)
+ - [Display save button on the modal footer if there is a delete button](https://trello.com/c/GlgHI4n0/461-1-etq-ubo-je-vois-le-btn-save-dans-le-modal-footer-sur-la-gauche-lors-du-click-sur-le-btn-save-le-formulaire-est-sauvegarde)
 
 ## Deprecated method
 
