@@ -571,16 +571,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/mongodb.git",
-                "reference": "d9b284bfaa702d325516e741e585f19ac742beb5"
+                "reference": "f1ccea5c72714686ef72b29e5cc9b4f907300f61"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/mongodb/zipball/d9b284bfaa702d325516e741e585f19ac742beb5",
-                "reference": "d9b284bfaa702d325516e741e585f19ac742beb5",
+                "url": "https://api.github.com/repos/doctrine/mongodb/zipball/f1ccea5c72714686ef72b29e5cc9b4f907300f61",
+                "reference": "f1ccea5c72714686ef72b29e5cc9b4f907300f61",
                 "shasum": ""
             },
             "require": {
-                "doctrine/common": ">=2.1.0,<2.5-dev",
+                "doctrine/common": "~2.1",
                 "ext-mongo": ">=1.2.12,<1.7-dev",
                 "php": ">=5.3.2"
             },
@@ -630,7 +630,7 @@
                 "mongodb",
                 "persistence"
             ],
-            "time": "2015-02-02 22:45:01"
+            "time": "2015-02-25 00:44:57"
         },
         {
             "name": "doctrine/mongodb-odm",
@@ -854,12 +854,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Atlantic18/DoctrineExtensions.git",
-                "reference": "61a13a7d5febaae676519c595b6caeda1e23ff4c"
+                "reference": "c3ff3c73c95b01e107af33d4fe3abf80794e2df9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/61a13a7d5febaae676519c595b6caeda1e23ff4c",
-                "reference": "61a13a7d5febaae676519c595b6caeda1e23ff4c",
+                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/c3ff3c73c95b01e107af33d4fe3abf80794e2df9",
+                "reference": "c3ff3c73c95b01e107af33d4fe3abf80794e2df9",
                 "shasum": ""
             },
             "require": {
@@ -924,7 +924,7 @@
                 "tree",
                 "uploadable"
             ],
-            "time": "2015-02-10 16:59:37"
+            "time": "2015-02-24 21:41:37"
         },
         {
             "name": "incenteev/composer-parameter-handler",
@@ -1037,12 +1037,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/open-orchestra-cms-bundle.git",
-                "reference": "ebfe3e0fa1f0015b139d47e7a8c562469cb490ee"
+                "reference": "219097157f0a2b24e8cf22e9e947c8f746cfc342"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/open-orchestra-cms-bundle/zipball/ebfe3e0fa1f0015b139d47e7a8c562469cb490ee",
-                "reference": "ebfe3e0fa1f0015b139d47e7a8c562469cb490ee",
+                "url": "https://api.github.com/repos/itkg/open-orchestra-cms-bundle/zipball/219097157f0a2b24e8cf22e9e947c8f746cfc342",
+                "reference": "219097157f0a2b24e8cf22e9e947c8f746cfc342",
                 "shasum": ""
             },
             "require": {
@@ -1085,7 +1085,7 @@
                 "source": "https://github.com/itkg/open-orchestra-cms-bundle/tree/master",
                 "issues": "https://github.com/itkg/open-orchestra-cms-bundle/issues"
             },
-            "time": "2015-02-23 17:44:07"
+            "time": "2015-02-25 09:20:09"
         },
         {
             "name": "itkg/open-orchestra-display-bundle",
@@ -1094,12 +1094,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/open-orchestra-display-bundle.git",
-                "reference": "4d117b13728b46e6de22283e61b37ba6bdee775c"
+                "reference": "560dc1b16b19350556e43a32af1223549bbdbf17"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/open-orchestra-display-bundle/zipball/4d117b13728b46e6de22283e61b37ba6bdee775c",
-                "reference": "4d117b13728b46e6de22283e61b37ba6bdee775c",
+                "url": "https://api.github.com/repos/itkg/open-orchestra-display-bundle/zipball/560dc1b16b19350556e43a32af1223549bbdbf17",
+                "reference": "560dc1b16b19350556e43a32af1223549bbdbf17",
                 "shasum": ""
             },
             "require": {
@@ -1136,7 +1136,7 @@
                 "source": "https://github.com/itkg/open-orchestra-display-bundle/tree/master",
                 "issues": "https://github.com/itkg/open-orchestra-display-bundle/issues"
             },
-            "time": "2015-02-23 17:47:05"
+            "time": "2015-02-25 09:22:55"
         },
         {
             "name": "itkg/open-orchestra-media-bundle",
@@ -1200,12 +1200,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/open-orchestra-model-bundle.git",
-                "reference": "7678b1c29f33aa1984d7b4d0c73983826b5f508a"
+                "reference": "7072f10bed4826f5e299d73f594d64417d82fc90"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/open-orchestra-model-bundle/zipball/7678b1c29f33aa1984d7b4d0c73983826b5f508a",
-                "reference": "7678b1c29f33aa1984d7b4d0c73983826b5f508a",
+                "url": "https://api.github.com/repos/itkg/open-orchestra-model-bundle/zipball/7072f10bed4826f5e299d73f594d64417d82fc90",
+                "reference": "7072f10bed4826f5e299d73f594d64417d82fc90",
                 "shasum": ""
             },
             "require": {
@@ -1243,7 +1243,7 @@
                 "source": "https://github.com/itkg/open-orchestra-model-bundle/tree/master",
                 "issues": "https://github.com/itkg/open-orchestra-model-bundle/issues"
             },
-            "time": "2015-02-23 13:01:59"
+            "time": "2015-02-24 16:49:49"
         },
         {
             "name": "itkg/open-orchestra-model-interface",
@@ -1547,9 +1547,9 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes M. Schmitt",
+                    "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
+                    "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -1936,9 +1936,9 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes M. Schmitt",
+                    "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
+                    "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -3533,6 +3533,7 @@
         "itkg/open-orchestra-model-bundle": 20
     },
     "prefer-stable": false,
+    "prefer-lowest": false,
     "platform": [],
     "platform-dev": []
 }
