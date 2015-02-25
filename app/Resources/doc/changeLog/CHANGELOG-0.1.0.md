@@ -24,6 +24,7 @@ Url to see changes :
  - [Fix Configurable Content block](https://trello.com/c/PFuzdYny/580-0-5-fo-bloc-configurablecontent-pas-de-contribution-bo-plantage-de-symfony-en-front)
  - [Modify Block list in siteType](https://trello.com/c/jKQssTyK/588-1-bo-site-modification-des-blocs-disponibles)
  - [I can use radio button](https://trello.com/c/XJi3yUQ3/533-5-etq-ubo-je-peux-utiliser-des-bouton-de-type-radio-dans-les-formulaires-de-blocks)
+ - [Templates can now be deleted](https://trello.com/c/8MNH6Hze/631-2-bo-supression-de-template-la-suppression-n-est-pas-effective)
 
 ## New features
 
