@@ -35,6 +35,7 @@ set :use_set_permissions,   true
 after "symfony:composer:install", "npm:install"
 after "npm:install", "grunt:generate"
 after "deploy", "deploy:cleanup"
+after "deploy", "symfony:assets:update_version"
 
 namespace :npm do
     desc "Install npm packages"
