@@ -854,12 +854,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Atlantic18/DoctrineExtensions.git",
-                "reference": "c3ff3c73c95b01e107af33d4fe3abf80794e2df9"
+                "reference": "54d080e6862d41a6b0294710e721550de6380d17"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/c3ff3c73c95b01e107af33d4fe3abf80794e2df9",
-                "reference": "c3ff3c73c95b01e107af33d4fe3abf80794e2df9",
+                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/54d080e6862d41a6b0294710e721550de6380d17",
+                "reference": "54d080e6862d41a6b0294710e721550de6380d17",
                 "shasum": ""
             },
             "require": {
@@ -924,7 +924,7 @@
                 "tree",
                 "uploadable"
             ],
-            "time": "2015-02-24 21:41:37"
+            "time": "2015-02-25 20:53:08"
         },
         {
             "name": "incenteev/composer-parameter-handler",
@@ -1037,17 +1037,16 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/open-orchestra-cms-bundle.git",
-                "reference": "219097157f0a2b24e8cf22e9e947c8f746cfc342"
+                "reference": "53e1cd609e612ac74f67d358738775def742e4f0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/open-orchestra-cms-bundle/zipball/219097157f0a2b24e8cf22e9e947c8f746cfc342",
-                "reference": "219097157f0a2b24e8cf22e9e947c8f746cfc342",
+                "url": "https://api.github.com/repos/itkg/open-orchestra-cms-bundle/zipball/53e1cd609e612ac74f67d358738775def742e4f0",
+                "reference": "53e1cd609e612ac74f67d358738775def742e4f0",
                 "shasum": ""
             },
             "require": {
                 "braincrafted/bootstrap-bundle": "2.1.0",
-                "friendsofsymfony/user-bundle": "~2.0",
                 "itkg/open-orchestra-base-bundle": "*",
                 "itkg/open-orchestra-display-bundle": "*",
                 "itkg/open-orchestra-media-bundle": "*",
@@ -1085,7 +1084,7 @@
                 "source": "https://github.com/itkg/open-orchestra-cms-bundle/tree/master",
                 "issues": "https://github.com/itkg/open-orchestra-cms-bundle/issues"
             },
-            "time": "2015-02-25 09:20:09"
+            "time": "2015-02-26 09:22:33"
         },
         {
             "name": "itkg/open-orchestra-display-bundle",
@@ -1786,12 +1785,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "fa3bc975c2ff42a40c4c565b191a31a7e7ca08b1"
+                "reference": "bba433ac380c47523fab495a1322368381df0996"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/fa3bc975c2ff42a40c4c565b191a31a7e7ca08b1",
-                "reference": "fa3bc975c2ff42a40c4c565b191a31a7e7ca08b1",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/bba433ac380c47523fab495a1322368381df0996",
+                "reference": "bba433ac380c47523fab495a1322368381df0996",
                 "shasum": ""
             },
             "require": {
@@ -1850,7 +1849,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2015-02-23 00:57:27"
+            "time": "2015-02-25 16:48:53"
         },
         {
             "name": "phpcollection/phpcollection",
@@ -2953,12 +2952,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "34cc484af1ca149188d0d9e91412191e398e0b67"
+                "reference": "3d0b2a3341a8bd4070504ef0609291d89fcfb59c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/34cc484af1ca149188d0d9e91412191e398e0b67",
-                "reference": "34cc484af1ca149188d0d9e91412191e398e0b67",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/3d0b2a3341a8bd4070504ef0609291d89fcfb59c",
+                "reference": "3d0b2a3341a8bd4070504ef0609291d89fcfb59c",
                 "shasum": ""
             },
             "require": {
@@ -3007,7 +3006,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-01-24 10:06:35"
+            "time": "2015-02-26 08:10:32"
         },
         {
             "name": "phpunit/php-file-iterator",
