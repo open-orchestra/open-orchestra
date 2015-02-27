@@ -29,6 +29,7 @@ Url to see changes :
 
 ## Other changes
 
+ - [Content can have a personal template](https://trello.com/c/1YrjTd58/615-1-etq-ubo-je-peux-avoir-un-template-personnalise-wysiwyg-sur-l-affichage-d-un-block-content)
 
 ## Deprecated method
 
