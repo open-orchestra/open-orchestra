@@ -1,15 +1,6 @@
 ---
-- name: Download selenium on 'master' if we don't have it
-  get_url: url={{download_url}}  dest={{selenium_dir}}/{{jar_file}} force=no
-
-- name: Download chrome driver if we don't have it
-  get_url: url={{download_driver}} dest={{cur_dir}}/{{driver}} force=no
-
-- name: Install unzip if not installed
-  apt: name=unzip state=present
-
-- name: Unzip chrome driver
-  unarchive: src={{cur_dir}}/{{driver}} dest={{cur_dir}} copy=no
-
-- name: Lunch selenium
-  shell: java -jar {{selenium_dir}}/{{jar_file}} -Dwebdriver.chrome.driver={{driver_exec}} &
+ - include: download_selenium.yml
+ - include: install_firefox.yml
+ - include: chrome_driver.yml
+ - include: install_xvfb.yml
+ - include: start_selenium.yml

@@ -5,11 +5,13 @@ use Behat\Behat\Context\SnippetAcceptingContext;
 use Behat\Gherkin\Node\PyStringNode;
 use Behat\Gherkin\Node\TableNode;
 use Behat\MinkExtension\Context\MinkContext;
+use Behat\Symfony2Extension\Context\KernelAwareContext;
+use Symfony\Component\HttpKernel\KernelInterface;
 
 /**
  * Defines application features from the specific context.
  */
-class FeatureContext extends MinkContext
+class FeatureContext extends MinkContext implements KernelAwareContext
 {
     /**
      * Initializes context.
@@ -20,5 +22,67 @@ class FeatureContext extends MinkContext
      */
     public function __construct()
     {
+    }
+
+    /** Click on the element with the provided xpath query
+     *
+     * @When /^(?:|I )click on the element with xpath "([^"]*)"$/
+     */
+    public function iClickOnTheElementWithXPath($xpath)
+    {
+        $session = $this->getSession(); // get the mink session
+        $element = $session->getPage()->find(
+            'xpath',
+            $session->getSelectorsHandler()->selectorToXpath('xpath', $xpath)
+        ); // runs the actual query and returns the element
+
+        // errors must not pass silently
+        if (null === $element) {
+            throw new \InvalidArgumentException(sprintf('Could not evaluate XPath: "%s"', $xpath));
+        }
+
+        // ok, let's click on it
+        $element->click();
+    }
+
+    /**
+     * Click on the element with the provided Css Selector
+     *
+     * @When /^I click on the element with css selector "([^"]*)"$/
+     */
+    public function iClickOnTheElementWithCssSelector($cssSelector)
+    {
+        $session = $this->getSession();
+        $element = $session->getPage()->find(
+            'xpath',
+            $session->getSelectorsHandler()->selectorToXpath('css', $cssSelector) // just changed xpath to css
+        );
+        if (null === $element) {
+            throw new \InvalidArgumentException(sprintf('Could not evaluate CSS Selector: "%s"', $cssSelector));
+        }
+
+        $element->click();
+    }
+
+    /**
+     * Wait some second
+     *
+     * @param $time
+     *
+     * @When /^I wait some second "(\d+)"$/
+     */
+    public function iWaitSomeSecond($time)
+    {
+        sleep($time);
+    }
+
+    /**
+     * Sets Kernel instance.
+     *
+     * @param KernelInterface $kernel
+     */
+    public function setKernel(KernelInterface $kernel)
+    {
+        // TODO: Implement setKernel() method.
     }
 }

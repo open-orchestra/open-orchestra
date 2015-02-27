@@ -25,12 +25,5 @@ install:
 
 before_script:
   - php app/console doc:mo:f:l -e=test
-  - curl http://selenium-release.storage.googleapis.com/2.4/selenium-server-standalone-2.44.0.jar > selenium.jar
-  - curl http://chromedriver.storage.googleapis.com/2.9/chromedriver_linux64.zip > chromedriver_linux64.zip
-  - unzip chromedriver_linux64.zip
-  - java -jar selenium.jar -Dwebdriver.chrome.driver=chromedriver
-  - sleep 5
 
-script:
-  - phpunit -c app/
-  - bin/behat
+script: phpunit -c app/

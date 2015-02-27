@@ -1,3 +1,3 @@
 ---
 - name: add hosts.
-  lineinfile: dest=/etc/hosts regexp='^127\.0\.1\.1' line='127.0.1.1 openorchestra.dev openorchestra front-openorchestra.dev demo-openorchestra-front.dev echonext.openorchestra.dev clearvarnish.dev'
+  lineinfile: dest=/etc/hosts regexp='^127\.0\.1\.1' line='127.0.1.1 openorchestra.dev openorchestra.test openorchestra front-openorchestra.dev demo-openorchestra-front.dev echonext.openorchestra.dev clearvarnish.dev'

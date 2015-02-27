@@ -7,7 +7,7 @@ parameters:
     default_locale:            en
     secret:            SRiesraIEURNSTeiuRnsAIErnsEA
 
-    router.request_context.host: phporchestra.dev
+    router.request_context.host: openorchestra.dev
     router.request_context.base_url: /app_dev.php
 
     open_orchestra_cms.mongodb.server: mongodb://localhost:27017
@@ -16,4 +16,4 @@ parameters:
 
     media.directory: /var/uploaded-files
 
-    session_name: php_orchestra_session
+    session_name: open_orchestra_session
