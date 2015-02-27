@@ -51,7 +51,13 @@
     "require-dev": {
         "jmikola/geojson": "~1.0",
         "phpunit/phpunit": "4.0.14",
-        "phake/phake": "*"
+        "phake/phake": "*",
+        "behat/behat": "~3.0.15",
+        "behat/symfony2-extension": "2.0.0",
+        "behat/mink": "1.6.0",
+        "behat/mink-extension": "2.0.0",
+        "behat/mink-browserkit-driver": "1.2.0",
+        "behat/mink-selenium2-driver": "~1.2"
     },
     "scripts": {
         "post-install-cmd": [
