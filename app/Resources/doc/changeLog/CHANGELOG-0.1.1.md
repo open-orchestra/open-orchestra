@@ -18,7 +18,7 @@ Url to see changes :
 
 
 ## Bug fixes
-
+ - [Keywords field opened in a block form is now correctly closed when closing the form](https://trello.com/c/gnqUFELt/634-1-etq-ubo-quand-j-edite-un-block-avec-des-keywords-et-que-je-ferme-la-popup-sans-fermer-le-listing-des-keyword-il-ne-se-retrouve)
 
 ## New features
 
