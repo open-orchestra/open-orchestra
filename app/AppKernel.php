@@ -36,8 +36,8 @@ class AppKernel extends Kernel
             new OpenOrchestra\MediaBundle\OpenOrchestraMediaBundle(),
             new OpenOrchestra\ApiBundle\OpenOrchestraApiBundle(),
             new OpenOrchestra\DisplayBundle\OpenOrchestraDisplayBundle(),
-            new OpenOrchestra\BackofficeBundle\OpenOrchestraBackofficeBundle(),
             new OpenOrchestra\UserBundle\OpenOrchestraUserBundle(),
+            new OpenOrchestra\BackofficeBundle\OpenOrchestraBackofficeBundle(),
             new OpenOrchestra\LogBundle\OpenOrchestraLogBundle(),
 
             // Need parameters set by some of our bundles
