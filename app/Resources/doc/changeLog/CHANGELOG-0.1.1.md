@@ -30,6 +30,7 @@ Url to see changes :
 ## Other changes
 
  - [Content can have a personal template](https://trello.com/c/1YrjTd58/615-1-etq-ubo-je-peux-avoir-un-template-personnalise-wysiwyg-sur-l-affichage-d-un-block-content)
+ - [BO > Mediatheque is redesigned and have a better interface](https://trello.com/c/duBO39lq/572-2-etq-ubo-je-ne-vois-qu-un-seul-btn-save-dans-la-mediatheque-crop-ou-override)
 
 ## Deprecated method
 
