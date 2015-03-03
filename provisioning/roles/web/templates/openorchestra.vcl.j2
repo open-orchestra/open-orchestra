@@ -39,9 +39,9 @@ sub vcl_recv {
 
     if (req.url ~ "^/openorchestra.dev/") {
         set req.backend = openorchestra;
-    } elseif (req.url ~ "^/front-openorchestra.dev/") {
+    } elseif (req.url ~ "^/front.openorchestra.dev/") {
         set req.backend = frontopenorchestra;
-    } elseif (req.url ~ "^/demo-openorchestra-front.dev/") {
+    } elseif (req.url ~ "^/demo.openorchestra.dev/") {
         set req.backend = demoopenorchestra;
     } else {
         set req.backend = echonextopenorchestra;
