@@ -1,6 +1,7 @@
 ---
 user_root: vagrant
 
+apache_main_port: 80
 apache_conf:
   open-orchestra.conf:
     port: 80
@@ -49,3 +50,10 @@ apache_conf:
     docRoot: /var/www/openorchestra/web
     errorLog: openorchestra-testError.log
     accessLog: openorchestra-testAccess.log
+
+varnish_listen_port: 6081
+backend_conf:
+  - { name: openorchestra, port: 80, host: openorchestra.dev }
+  - { name: frontopenorchestra, port: 80, host: front.openorchestra.dev }
+  - { name: demoopenorchestra, port: 80, host: demo.openorchestra.dev }
+  - { name: echonextopenorchestra, port: 80, host: echonext.openorchestra.dev }

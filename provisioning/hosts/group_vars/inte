@@ -1,6 +1,7 @@
 ---
 user_root: root
 
+apache_main_port: 8000
 apache_conf:
   inte-backoffice-openorchestra.conf:
     port: 80
@@ -49,3 +50,10 @@ apache_conf:
     docRoot: /var/www/backoffice-open-orchestra/web
     errorLog: openorchestra_backoffice_test_error.log
     accessLog: openorchestra_backoffice_test_access.log
+
+varnish_listen_port: 80
+backend_conf:
+  - { name: openorchestra, port: 8000, host: admin.openorchestra.inte }
+  - { name: frontopenorchestra, port: 8000, host: front.openorchestra.inte }
+  - { name: demoopenorchestra, port: 8000, host: demo.openorchestra.inte }
+  - { name: echonextopenorchestra, port: 8000, host: echonext.openorchestra.inte }
