@@ -4,33 +4,33 @@ user_root: root
 apache_main_port: 8000
 apache_conf:
   inte-backoffice-openorchestra.conf:
-    port: 80
+    port: 8000
     serverName: 10.0.1.246
     docRoot: /var/www/backoffice-open-orchestra/current/web
     errorLog: openorchestra_backoffice_error.log
     accessLog: openorchestra_backoffice_access.log
   inte-backoffice-admin-openorchestra.conf:
-    port: 80
+    port: 8000
     serverName: admin.openorchestra.inte
     docRoot: /var/www/backoffice-open-orchestra/current/web
     errorLog: openorchestra_backoffice_error.log
     accessLog: openorchestra_backoffice_access.log
   demo-orchestra.conf:
-    port: 80
+    port: 8000
     serverName: demo.openorchestra.inte
     docRoot: /var/www/front-open-orchestra/current/web
     errorLog: demo-openorchestraError.log
     accessLog: demo-openorchestraAccess.log
     siteId: 2
   front-orchestra.conf:
-    port: 80
+    port: 8000
     serverName: front.openorchestra.inte
     docRoot: /var/www/front-open-orchestra/current/web
     errorLog: front-openorchestraError.log
     accessLog: front-openorchestraAccess.log
     siteId: 1
   echonext.orchestra.conf:
-    port: 80
+    port: 8000
     serverName: echonext.openorchestra.inte
     docRoot: /var/www/front-open-orchestra/current/web
     errorLog: echonext.openorchestraError.log
