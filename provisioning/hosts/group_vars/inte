@@ -53,7 +53,7 @@ apache_conf:
 
 varnish_listen_port: 80
 backend_conf:
-  - { name: openorchestra, port: 8000, host: admin.openorchestra.inte }
+  - { name: openorchestra, port: 8000, host: admin.openorchestra.inte, admin: true }
   - { name: frontopenorchestra, port: 8000, host: front.openorchestra.inte }
   - { name: demoopenorchestra, port: 8000, host: demo.openorchestra.inte }
   - { name: echonextopenorchestra, port: 8000, host: echonext.openorchestra.inte }
