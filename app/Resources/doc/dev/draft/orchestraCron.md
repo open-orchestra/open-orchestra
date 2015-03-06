@@ -6,6 +6,6 @@
 ## Robots
  La tâche robots génère automatiquement le robots.txt de tous les sites. Cette tâche est lancé tous les jour à 2h du matin.
 
- Pour plus d'information sur la commande qui génère le sitemap.xml voir la doc sitemapAndRobotsFiles
+ Pour plus d'information sur la commande qui génère le sitemap.xml et le robots.txt voir la doc sitemapAndRobotsFiles
 
  Pour modifier le moment où chaque tâche sera éxecuté, modifiez les variables dans `provisioning/roles/orchestraCron/vars/main.yml`
