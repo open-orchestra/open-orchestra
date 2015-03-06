@@ -1,5 +1,6 @@
 ---
 user_root: root
+path_front: /var/www/front-open-orchestra/current
 
 apache_main_port: 8000
 apache_conf:
