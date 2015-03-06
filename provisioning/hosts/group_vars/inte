@@ -43,3 +43,9 @@ apache_conf:
     accessLog: echonext.openorchestraAccess.log
     siteId: 3
     sslCertificateFileDir: /usr/local/apache/conf
+  open-orchestra-test.conf:
+    port: 80
+    serverName: openorchestra.test
+    docRoot: /var/www/backoffice-open-orchestra/web
+    errorLog: openorchestra_backoffice_test_error.log
+    accessLog: openorchestra_backoffice_test_access.log

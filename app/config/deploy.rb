@@ -37,6 +37,9 @@ after "npm:install", "grunt:generate"
 after "deploy", "deploy:cleanup"
 after "deploy", "symfony:assets:update_version"
 
+before "orchestra:behat", "orchestra:selenium:start"
+after "orchestra:behat", "orchestra:selenium:stop"
+
 namespace :npm do
     desc "Install npm packages"
     task :install do
@@ -61,5 +64,43 @@ namespace :orchestra do
         capifony_pretty_print "--> Check all nodes"
         result = capture("cd #{latest_release} && php app/console -e=prod orchestra:check --nodes")
         puts result
+    end
+
+    desc "Run behat test"
+    task :behat do
+        capifony_pretty_print "--> load fixtures test"
+        run "cd #{latest_release} && php app/console doctrine:mongodb:fixtures:load -e=test"
+        capifony_puts_ok
+        capifony_pretty_print "--> Run behat tests"
+        result = capture("cd #{latest_release} && ./bin/behat")
+        puts result
+    end
+
+    namespace :selenium do
+        desc "Run selenium"
+        task :start do
+            capifony_pretty_print "--> Run Xvfb"
+            run "sudo /etc/init.d/Xvfb start"
+            capifony_puts_ok
+            capifony_pretty_print "--> Wait 2 second"
+            run "sleep 2"
+            capifony_puts_ok
+            capifony_pretty_print "--> Run selenium server"
+            run "sudo /etc/init.d/selenium start"
+            capifony_puts_ok
+            capifony_pretty_print "--> Wait 5 second"
+            run "sleep 5"
+            capifony_puts_ok
+        end
+
+        desc "Stop Xvfb"
+        task :stop do
+            capifony_pretty_print "--> Close selenium server"
+            run "sudo /etc/init.d/selenium stop"
+            capifony_puts_ok
+            capifony_pretty_print "--> Close xvfb"
+            run "sudo /etc/init.d/Xvfb start"
+            capifony_puts_ok
+        end
     end
 end

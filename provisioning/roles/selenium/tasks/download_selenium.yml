@@ -1,0 +1,5 @@
+---
+- name: Download selenium on 'master' if not installed
+  get_url: url={{download_url}}  dest={{selenium_dir}}/{{jar_file}} force=no
+- name: Copy selenium ini
+  template: src=selenium.ini.j2 dest=/etc/init.d/selenium owner=root group=root mode=0755

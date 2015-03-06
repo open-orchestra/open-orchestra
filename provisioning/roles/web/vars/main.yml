@@ -9,3 +9,4 @@ backend_conf:
   - { name: frontopenorchestra, port: 80, host: front-openorchestra.dev }
   - { name: demoopenorchestra, port: 80, host: demo-openorchestra-front.dev }
   - { name: echonextopenorchestra, port: 80, host: echonext-openorchestra-front.dev }
+  - { name: openorchestra-test, port: 80, host: openorchestra.test }
