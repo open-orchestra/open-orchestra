@@ -1,4 +1,8 @@
 ---
+ - name: Copy apache ports config
+   template: src=ports.conf.j2 dest=/etc/apache2/ports.conf
+   notify: restart apache
  - name: Copy config apache
    template: src=vagrant.conf.j2 dest=/etc/apache2/sites-available/{{ item.key }}
    with_dict: apache_conf
+   notify: restart apache
