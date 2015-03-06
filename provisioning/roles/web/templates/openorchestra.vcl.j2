@@ -50,15 +50,20 @@ sub vcl_recv {
         }
     }
 
-    if (req.http.host ~ "(openorchestra.dev)" || req.http.host ~ "(admin.openorchestra.inte)") {
-        return (pass);
-    } elseif (req.http.host ~ "(front.openorchestra.dev)" || req.http.host ~ "(front.openorchestra.inte)") {
-        set req.backend = frontopenorchestra;
-    } elseif (req.http.host ~ "(demo.openorchestra.dev)" || req.http.host ~ "(demo.openorchestra.inte)") {
-        set req.backend = demoopenorchestra;
-    } elseif (req.http.host ~ "(echonext.openorchestra.dev)" || req.http.host ~ "(echonext.openorchestra.inte)") {
-        set req.backend = echonextopenorchestra;
-    }
+    {% for item in backend_conf %}
+        {% if loop.first -%}
+            if
+        {%- else -%}
+            elseif
+        {%- endif -%}
+        (req.http.host ~ "({{ item.host }})") {
+            {% if item.admin is defined and item.admin is sameas true %}
+                return (pass);
+            {% else %}
+                set req.backend = {{ item.name }};
+            {% endif %}
+        }
+    {% endfor %}
 
     if (req.request == "POST") {
         return(pass);

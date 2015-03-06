@@ -45,7 +45,7 @@ apache_conf:
     siteId: 3
     sslCertificateFileDir: /usr/local/apache/conf
   open-orchestra-test.conf:
-    port: 80
+    port: 8000
     serverName: openorchestra.test
     docRoot: /var/www/backoffice-open-orchestra/web
     errorLog: openorchestra_backoffice_test_error.log
@@ -57,3 +57,4 @@ backend_conf:
   - { name: frontopenorchestra, port: 8000, host: front.openorchestra.inte }
   - { name: demoopenorchestra, port: 8000, host: demo.openorchestra.inte }
   - { name: echonextopenorchestra, port: 8000, host: echonext.openorchestra.inte }
+  - { name: openorchestratest, port: 8000, host: openorchestra.test }
