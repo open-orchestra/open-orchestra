@@ -24,6 +24,7 @@ Url to see changes :
  - [Preview link](https://trello.com/c/shYgNwkg/613-1-etq-ubo-je-peux-utiliser-la-preview)
  - [render_esi on blocks fixed when used with varnish](https://trello.com/c/OBRAyIeO/648-0-5-etq-ufront-je-recupere-le-siteid-par-l-url-quand-j-affiche-un-block)
  - [Blocks Menu and SubMenu deal with dynamic node pattern](https://trello.com/c/LJxf5nje/623-1-etq-fo-le-bloc-submenu-ne-plante-pas-avec-le-message-error-call-to-a-member-function-getnodeid-on-a-non-object)
+ - [BO > F5 on media edit now works](https://trello.com/c/VAitrnjq/641-2-etq-bo-lorsque-je-fais-f5-sur-la-page-d-edition-d-un-media-celle-ci-se-rafraichit-correctement)
 
 ## New features
 
