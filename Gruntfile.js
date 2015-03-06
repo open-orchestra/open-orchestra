@@ -292,7 +292,8 @@ module.exports = function(grunt) {
                     'web/built/openorchestrabackoffice/css/smartadminPatches/minicolors.css',
 
                     // TINYMCE PATCHES
-                    'web/built/openorchestrabackoffice/css/tinyMCEPatches/floatPanel.css'
+                    'web/built/openorchestrabackoffice/css/tinyMCEPatches/floatPanel.css',
+                    'web/built/openorchestrabackoffice/css/tinyMCEPatches/modal.css'
 
                 ],
                 dest: 'web/built/smartadmin.css'
