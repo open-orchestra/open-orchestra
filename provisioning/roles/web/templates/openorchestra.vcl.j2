@@ -7,7 +7,6 @@
 
 acl purgers {
   "127.0.0.1";
-  "192.168.33.10";
 }
 
 {% for item in backend_conf %}
@@ -53,47 +52,32 @@ sub vcl_recv {
 
     if (req.http.host ~ "(openorchestra.dev)" || req.http.host ~ "(admin.openorchestra.inte)") {
         return (pass);
-    } elseif (req.http.host ~ "(front.openorchestra.dev) || req.http.host ~ "(front.openorchestra.inte)"") {
+    } elseif (req.http.host ~ "(front.openorchestra.dev)" || req.http.host ~ "(front.openorchestra.inte)") {
         set req.backend = frontopenorchestra;
-    } elseif (req.http.host ~ "(demo.openorchestra.dev) || req.http.host ~ "(demo.openorchestra.inte)"") {
+    } elseif (req.http.host ~ "(demo.openorchestra.dev)" || req.http.host ~ "(demo.openorchestra.inte)") {
         set req.backend = demoopenorchestra;
-    } elseif (req.http.host ~ "(echonext.openorchestra.dev) || req.http.host ~ "(echonext.openorchestra.inte)"") {
+    } elseif (req.http.host ~ "(echonext.openorchestra.dev)" || req.http.host ~ "(echonext.openorchestra.inte)") {
         set req.backend = echonextopenorchestra;
-    }
-
-    if (req.request == "GET" && req.url ~ "/app_dev"){
-        return(pass);
     }
 
     if (req.request == "POST") {
         return(pass);
     }
 
-    unset req.http.cookie;
-    unset req.http.Authorization;
-
     return(lookup);
 }
 
 sub vcl_fetch {
-    if ( req.request == "GET" && req.url ~ "/bundles/") {
-        unset beresp.http.Set-Cookie;
-        return(deliver);
-    }
 
-    if ( req.request == "GET" && req.url ~ "/img/") {
-        unset beresp.http.Set-Cookie;
-        return(deliver);
-    }
-
-    if ( req.request == "GET" && req.url ~ "/css/") {
-        unset beresp.http.Set-Cookie;
-        return(deliver);
-    }
-
-    if ( req.request == "GET" && req.url ~ "/js/") {
-        unset beresp.http.Set-Cookie;
-        return(deliver);
+    if ( req.request == "GET") {
+        if (req.url ~ "/img/" ||
+            req.url ~ "/css/" ||
+            req.url ~ "/js/" ||
+            req.url ~ "/bundles/"
+        ) {
+            unset beresp.http.Set-Cookie;
+            return(deliver);
+        }
     }
 
     if (beresp.http.Surrogate-Control ~ "ESI/1.0") {
