@@ -1,5 +1,6 @@
 ---
 user_root: vagrant
+path_front: /var/www/front-openorchestra
 
 apache_main_port: 80
 apache_conf:

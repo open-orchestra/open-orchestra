@@ -1,0 +1,13 @@
+---
+sitemap_minute: 0
+sitemap_hour: 2
+sitemap_task: "{{command_php}} {{path_front}}/app/console {{sitemap_command}}"
+sitemap_command: "-e={{env}} orchestra:sitemaps:generate"
+
+robots_minute: 0
+robots_hour: 2
+robots_task: "{{command_php}} {{path_front}}/app/console {{robots_command}}"
+robots_command: "-e={{env}} orchestra:robots:generate"
+
+env: prod
+command_php: php

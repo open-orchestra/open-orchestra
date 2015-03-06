@@ -1,0 +1,3 @@
+---
+- name: generate sitemap.xml
+  cron: name="generate sitemap" minute={{sitemap_minute}} hour={{sitemap_hour}} job="{{sitemap_task}}"
