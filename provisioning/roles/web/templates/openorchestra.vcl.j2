@@ -68,21 +68,14 @@ sub vcl_recv {
 }
 
 sub vcl_fetch {
-
-    if ( req.request == "GET") {
-        if (req.url ~ "/img/" ||
-            req.url ~ "/css/" ||
-            req.url ~ "/js/" ||
-            req.url ~ "/bundles/"
-        ) {
-            unset beresp.http.Set-Cookie;
-            return(deliver);
-        }
-    }
-
     if (beresp.http.Surrogate-Control ~ "ESI/1.0") {
         unset beresp.http.Surrogate-Control;
         set beresp.do_esi = true;
+    }
+
+    if (beresp.ttl > 0s) {
+      unset beresp.http.Set-Cookie;
+      return(deliver);
     }
 }
 
