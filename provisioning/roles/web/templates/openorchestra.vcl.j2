@@ -87,6 +87,10 @@ sub vcl_recv {
 }
 
 sub vcl_fetch {
+    if (beresp.status == 404 || beresp.status == 500 || beresp.status == 503) {
+        return (hit_for_pass);
+    }
+
     if (beresp.http.Surrogate-Control ~ "ESI/1.0") {
         unset beresp.http.Surrogate-Control;
         set beresp.do_esi = true;
