@@ -59,3 +59,5 @@ backend_conf:
   - { name: demoopenorchestra, port: 8000, host: demo.openorchestra.inte }
   - { name: echonextopenorchestra, port: 8000, host: echonext.openorchestra.inte }
   - { name: openorchestratest, port: 8000, host: openorchestra.test }
+
+selenium_current_directory: /home/provision

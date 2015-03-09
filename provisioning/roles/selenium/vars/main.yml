@@ -3,7 +3,6 @@ download_url: http://selenium-release.storage.googleapis.com/{{directory_version
 jar_file: selenium-server-standalone-{{server_version}}.jar
 server_version: 2.44.0
 directory_version: 2.44
-cur_dir: /home/vagrant
 driver_version: 2.9
 download_driver: http://chromedriver.storage.googleapis.com/{{driver_version}}/{{driver}}
 driver: "{{driver_exec}}_linux64.zip"

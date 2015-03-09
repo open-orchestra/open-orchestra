@@ -4,11 +4,11 @@
   register: package
 
 - name: Download firefox if not installed
-  get_url: url={{firefox_url}} dest={{cur_dir}}
+  get_url: url={{firefox_url}} dest={{selenium_current_directory}}
   when: package.stat.exists == False
 
 - name: Unarchive firefox
-  shell: tar -xjvf {{cur_dir}}/{{firefox_package}}
+  shell: tar -xjvf {{selenium_current_directory}}/{{firefox_package}}
   when: package.stat.exists == False
 
 - name: Move firefox
