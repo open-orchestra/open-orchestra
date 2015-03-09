@@ -79,6 +79,10 @@ sub vcl_recv {
         return(pass);
     }
 
+    if (req.url ~ "^/preview") {
+        return (pass);
+    }
+
     return(lookup);
 }
 
