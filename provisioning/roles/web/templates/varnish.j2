@@ -90,7 +90,7 @@ VARNISH_STORAGE_FILE=/var/lib/varnish/varnish_storage.bin
 #
 # # Cache file size: in bytes, optionally using k / M / G / T suffix,
 # # or in percentage of available disk space using the % suffix.
-VARNISH_STORAGE_SIZE=256M
+VARNISH_STORAGE_SIZE=1G
 #
 # # Backend storage specification
 VARNISH_STORAGE="file,${VARNISH_STORAGE_FILE},${VARNISH_STORAGE_SIZE}"
@@ -109,8 +109,3 @@ DAEMON_OPTS="-a ${VARNISH_LISTEN_ADDRESS}:${VARNISH_LISTEN_PORT} \
              -S ${VARNISH_SECRET_FILE} \
              -s ${VARNISH_STORAGE}"
 #
-
-
-## Alternative 4, Do It Yourself. See varnishd(1) for more information.
-#
-# DAEMON_OPTS=""
