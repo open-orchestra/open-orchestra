@@ -36,6 +36,7 @@ Url to see changes :
  - [BO > Mediatheque is redesigned and have a better interface](https://trello.com/c/duBO39lq/572-2-etq-ubo-je-ne-vois-qu-un-seul-btn-save-dans-la-mediatheque-crop-ou-override)
  - [Add test behat and provision it](https://trello.com/c/KC19uTkl/636-8-je-realise-un-test-behat-avec-un-navigateur-et-celui-s-execute-sur-travis)
  - [Provision a cron task](https://trello.com/c/mAhTr951/639-0-5-etq-dev-je-provisionne-la-vm-avec-une-tache-cron-quotidienne-pour-la-generation-des-sitemap-xml-et-une-autre-pour-les-robots) to generate sitemap.xml and robots.txt
+ - [Add an example of varnish usage](https://trello.com/c/gx3EwdkA/649-3-etq-ufront-lorsque-je-visualise-le-front-je-passe-par-varnish)
 
 ## Deprecated method
 
