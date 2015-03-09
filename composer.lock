@@ -787,12 +787,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSUserBundle.git",
-                "reference": "f54031a652846cd8e7b12119fe713eae90e24cf9"
+                "reference": "2684b0dddff35b4de40920b11972b71ae386b9f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/f54031a652846cd8e7b12119fe713eae90e24cf9",
-                "reference": "f54031a652846cd8e7b12119fe713eae90e24cf9",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/2684b0dddff35b4de40920b11972b71ae386b9f5",
+                "reference": "2684b0dddff35b4de40920b11972b71ae386b9f5",
                 "shasum": ""
             },
             "require": {
@@ -846,7 +846,7 @@
             "keywords": [
                 "User management"
             ],
-            "time": "2015-01-20 09:35:03"
+            "time": "2015-03-06 14:51:30"
         },
         {
             "name": "gedmo/doctrine-extensions",
@@ -1037,12 +1037,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/open-orchestra-cms-bundle.git",
-                "reference": "f7b6da74ca361bdd4159479a892269492f15e5e8"
+                "reference": "d9088e2dbd137a1a597d7670ee1e048a8597f05c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/open-orchestra-cms-bundle/zipball/f7b6da74ca361bdd4159479a892269492f15e5e8",
-                "reference": "f7b6da74ca361bdd4159479a892269492f15e5e8",
+                "url": "https://api.github.com/repos/itkg/open-orchestra-cms-bundle/zipball/d9088e2dbd137a1a597d7670ee1e048a8597f05c",
+                "reference": "d9088e2dbd137a1a597d7670ee1e048a8597f05c",
                 "shasum": ""
             },
             "require": {
@@ -1084,7 +1084,7 @@
                 "source": "https://github.com/itkg/open-orchestra-cms-bundle/tree/master",
                 "issues": "https://github.com/itkg/open-orchestra-cms-bundle/issues"
             },
-            "time": "2015-03-06 09:02:03"
+            "time": "2015-03-06 16:41:51"
         },
         {
             "name": "itkg/open-orchestra-display-bundle",
@@ -1093,12 +1093,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/open-orchestra-display-bundle.git",
-                "reference": "95d1bdcc8cb8031d137bb0bd717b3437e22626d1"
+                "reference": "caf5f74f00ee9640bafcd81949034acb7eae5efb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/open-orchestra-display-bundle/zipball/95d1bdcc8cb8031d137bb0bd717b3437e22626d1",
-                "reference": "95d1bdcc8cb8031d137bb0bd717b3437e22626d1",
+                "url": "https://api.github.com/repos/itkg/open-orchestra-display-bundle/zipball/caf5f74f00ee9640bafcd81949034acb7eae5efb",
+                "reference": "caf5f74f00ee9640bafcd81949034acb7eae5efb",
                 "shasum": ""
             },
             "require": {
@@ -1135,7 +1135,7 @@
                 "source": "https://github.com/itkg/open-orchestra-display-bundle/tree/master",
                 "issues": "https://github.com/itkg/open-orchestra-display-bundle/issues"
             },
-            "time": "2015-03-05 13:52:35"
+            "time": "2015-03-06 15:48:56"
         },
         {
             "name": "itkg/open-orchestra-media-bundle",
@@ -1199,12 +1199,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/open-orchestra-model-bundle.git",
-                "reference": "77c694ef80c09656fa27297fb959b2f5f40a19fd"
+                "reference": "ca65f6d2de4e5199addef824320251f8b3ef0489"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/open-orchestra-model-bundle/zipball/77c694ef80c09656fa27297fb959b2f5f40a19fd",
-                "reference": "77c694ef80c09656fa27297fb959b2f5f40a19fd",
+                "url": "https://api.github.com/repos/itkg/open-orchestra-model-bundle/zipball/ca65f6d2de4e5199addef824320251f8b3ef0489",
+                "reference": "ca65f6d2de4e5199addef824320251f8b3ef0489",
                 "shasum": ""
             },
             "require": {
@@ -1242,7 +1242,7 @@
                 "source": "https://github.com/itkg/open-orchestra-model-bundle/tree/master",
                 "issues": "https://github.com/itkg/open-orchestra-model-bundle/issues"
             },
-            "time": "2015-03-06 09:01:59"
+            "time": "2015-03-06 15:49:03"
         },
         {
             "name": "itkg/open-orchestra-model-interface",
@@ -1251,12 +1251,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/open-orchestra-model-interface.git",
-                "reference": "aa3d2e957193e9d53c6a9c78391bc984f331d3c6"
+                "reference": "aaa4adf318adcf08b622d8cc7e06f92473772809"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/open-orchestra-model-interface/zipball/aa3d2e957193e9d53c6a9c78391bc984f331d3c6",
-                "reference": "aa3d2e957193e9d53c6a9c78391bc984f331d3c6",
+                "url": "https://api.github.com/repos/itkg/open-orchestra-model-interface/zipball/aaa4adf318adcf08b622d8cc7e06f92473772809",
+                "reference": "aaa4adf318adcf08b622d8cc7e06f92473772809",
                 "shasum": ""
             },
             "require": {
@@ -1289,7 +1289,7 @@
                 "source": "https://github.com/itkg/open-orchestra-model-interface/tree/master",
                 "issues": "https://github.com/itkg/open-orchestra-model-interface/issues"
             },
-            "time": "2015-03-06 08:59:28"
+            "time": "2015-03-06 15:48:59"
         },
         {
             "name": "itkg/open-orchestra-user-bundle",
@@ -1298,12 +1298,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/open-orchestra-user-bundle.git",
-                "reference": "62b7b70ce1b5b4e4541fc9721ed436c5068925b8"
+                "reference": "76d27e6960aa55dbc737211073718ed9db1bde63"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/open-orchestra-user-bundle/zipball/62b7b70ce1b5b4e4541fc9721ed436c5068925b8",
-                "reference": "62b7b70ce1b5b4e4541fc9721ed436c5068925b8",
+                "url": "https://api.github.com/repos/itkg/open-orchestra-user-bundle/zipball/76d27e6960aa55dbc737211073718ed9db1bde63",
+                "reference": "76d27e6960aa55dbc737211073718ed9db1bde63",
                 "shasum": ""
             },
             "require": {
@@ -1337,7 +1337,7 @@
                 "source": "https://github.com/itkg/open-orchestra-user-bundle/tree/master",
                 "issues": "https://github.com/itkg/open-orchestra-user-bundle/issues"
             },
-            "time": "2015-02-23 09:26:35"
+            "time": "2015-03-06 16:17:15"
         },
         {
             "name": "jms/metadata",
@@ -3437,12 +3437,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "3d0b2a3341a8bd4070504ef0609291d89fcfb59c"
+                "reference": "74cf128bd0f643957c076cc67121dbff445755fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/3d0b2a3341a8bd4070504ef0609291d89fcfb59c",
-                "reference": "3d0b2a3341a8bd4070504ef0609291d89fcfb59c",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/74cf128bd0f643957c076cc67121dbff445755fe",
+                "reference": "74cf128bd0f643957c076cc67121dbff445755fe",
                 "shasum": ""
             },
             "require": {
@@ -3491,7 +3491,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-02-26 08:10:32"
+            "time": "2015-03-06 11:27:25"
         },
         {
             "name": "phpunit/php-file-iterator",
