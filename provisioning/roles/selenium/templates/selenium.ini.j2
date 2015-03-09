@@ -6,7 +6,7 @@ case "${1:-''}" in
                 then
                         echo "Selenium is already running."
                 else
-                        DISPLAY=:99 java -jar /usr/local/lib/{{ jar_file }} -Dwebdriver.chrome.driver={{ cur_dir }}/{{ driver_exec }} > /var/log/selenium-output.log 2> /var/log/selenium-error.log & echo $! > /tmp/selenium.pid
+                        DISPLAY=:99 java -jar /usr/local/lib/{{ jar_file }} -Dwebdriver.chrome.driver={{ selenium_current_directory }}/{{ driver_exec }} > /var/log/selenium-output.log 2> /var/log/selenium-error.log & echo $! > /tmp/selenium.pid
                         echo "Starting Selenium..."
 
                         error=$?
@@ -39,7 +39,7 @@ case "${1:-''}" in
                         kill -HUP `cat /tmp/selenium.pid`
                         test -f /tmp/selenium.pid && rm -f /tmp/selenium.pid
                         sleep 1
-                        java -jar /usr/local/lib/{{ jar_file }} -Dwebdriver.chrome.driver={{ cur_dir }}/{{ driver_exec }} > /var/log/selenium-output.log 2> /var/log/selenium-error.log & echo $! > /tmp/selenium.pid
+                        java -jar /usr/local/lib/{{ jar_file }} -Dwebdriver.chrome.driver={{ selenium_current_directory }}/{{ driver_exec }} > /var/log/selenium-output.log 2> /var/log/selenium-error.log & echo $! > /tmp/selenium.pid
                         echo "Reload Selenium..."
                 else
                         echo "Selenium isn't running..."

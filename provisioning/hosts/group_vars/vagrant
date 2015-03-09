@@ -59,3 +59,5 @@ backend_conf:
   - { name: demoopenorchestra, port: 80, host: demo.openorchestra.dev }
   - { name: echonextopenorchestra, port: 80, host: echonext.openorchestra.dev }
   - { name: openorchestratest, port: 80, host: openorchestra.test }
+
+selenium_current_directory: /home/vagrant
