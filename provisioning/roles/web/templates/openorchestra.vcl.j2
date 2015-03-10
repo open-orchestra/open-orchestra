@@ -9,17 +9,28 @@ acl purgers {
   "127.0.0.1";
 }
 
-{% for item in backend_conf %}
-backend {{ item.name }} {
-  .host = "{{ item.host }}";
-  .port = "{{ item.port }}";
+backend f1 {
+  .host = "127.0.1.1";
+  .port = "8000";
 }
 
-{% endfor %}
+backend f2 {
+  .host = "127.0.1.1";
+  .port = "{{ apache_main_port }}";
+}
 
+director front round-robin {
+    {
+        .backend = f1;
+    }
+    {
+        .backend = f2;
+    }
+}
 
 sub vcl_recv {
     set req.http.Surrogate-Capability = "abc=ESI/1.0";
+    set req.backend = front;
 
     if (req.request == "BAN") {
         if (!client.ip ~ purgers) {
@@ -51,28 +62,35 @@ sub vcl_recv {
     }
 
     {% for item in backend_conf %}
-        {% if loop.first -%}
-            if
-        {%- else -%}
-            elseif
-        {%- endif -%}
-        (req.http.host ~ "({{ item.host }})") {
-            {% if item.admin is defined and item.admin is sameas true %}
+        {% if item.admin is defined and item.admin is sameas true %}
+            {% if loop.first -%}
+                if
+            {%- else -%}
+                elseif
+            {%- endif -%}
+             (req.http.host ~ "({{ item.host }})") {
+
                 return (pass);
-            {% else %}
-                set req.backend = {{ item.name }};
-            {% endif %}
-        }
+            }
+        {% endif %}
     {% endfor %}
 
     if (req.request == "POST") {
         return(pass);
     }
 
+    if (req.url ~ "^/preview") {
+        return (pass);
+    }
+
     return(lookup);
 }
 
 sub vcl_fetch {
+    if (beresp.status == 404 || beresp.status == 500 || beresp.status == 503) {
+        return (hit_for_pass);
+    }
+
     if (beresp.http.Surrogate-Control ~ "ESI/1.0") {
         unset beresp.http.Surrogate-Control;
         set beresp.do_esi = true;
@@ -102,6 +120,4 @@ sub vcl_hash {
     if (req.http.X-UA-Device) {
         hash_data(req.http.X-UA-Device);
     }
-
-    return (hash);
 }
