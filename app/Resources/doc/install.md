@@ -97,7 +97,7 @@ In the symfony project directory
 ## Override the dns redirection
 In the `/etc/hosts` file of your computer add the following lines :
 
-    192.168.33.10   openorchestra.dev
+    192.168.33.10   admin.openorchestra.dev
     192.168.33.10   front.openorchestra.dev
     192.168.33.10   demo.openorchestra.dev
     192.168.33.10   echonext.openorchestra.dev
@@ -115,4 +115,4 @@ In the `/etc/hosts` file of your computer add the following lines:
 
 ## Result
 Once this command, all the client side javascripts librairies should have been installed.
-You can now go on the website on the url : http://openorchestra.dev/app_dev.php/admin
+You can now go on the website on the url : http://admin.openorchestra.dev/app_dev.php/admin
