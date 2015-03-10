@@ -15,6 +15,7 @@ set :model_manager, "doctrine"
 set :composer_bin,      "/usr/local/bin/composer"
 set :use_composer,      true
 set :update_vendors,    false
+set :composer_options,  "--dev"
 
 set :shared_files,      ["app/config/parameters.yml"]
 set :shared_children,     [app_path + "/logs", "vendor", "node_modules", "bower_components"]
