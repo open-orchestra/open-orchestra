@@ -2,8 +2,8 @@ Feature: Login
 
   Scenario: Failed login
     Given I am on "/login"
-    When I fill in "username" with "test"
-    And I fill in "password" with "test"
+    When I fill in "username" with "zezze15"
+    And I fill in "password" with "azeopfjaop"
     And I press "_submit"
     Then I should see "Bienvenue sur PHP Orchestra"
 

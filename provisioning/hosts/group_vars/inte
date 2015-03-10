@@ -48,7 +48,7 @@ apache_conf:
   open-orchestra-test.conf:
     port: 8000
     serverName: openorchestra.test
-    docRoot: /var/www/backoffice-open-orchestra/web
+    docRoot: /var/www/backoffice-open-orchestra/current/web
     errorLog: openorchestra_backoffice_test_error.log
     accessLog: openorchestra_backoffice_test_access.log
 
