@@ -6,23 +6,23 @@ apache_main_port: 80
 apache_conf:
   open-orchestra.conf:
     port: 80
-    serverName: openorchestra.dev
+    serverName: admin.openorchestra.dev
     docRoot: /var/www/openorchestra/web
-    errorLog: openorchestraError.log
-    accessLog: openorchestraAccess.log
+    errorLog: admin.openorchestraError.log
+    accessLog: admin.openorchestraAccess.log
   front-orchestra.conf:
     port: 80
     serverName: front.openorchestra.dev
     docRoot: /var/www/front-openorchestra/web
-    errorLog: front-openorchestraError.log
-    accessLog: front-openorchestraAccess.log
+    errorLog: front.openorchestraError.log
+    accessLog: front.openorchestraAccess.log
     siteId: 1
   demo-orchestra.conf:
     port: 80
     serverName: demo.openorchestra.dev
     docRoot: /var/www/front-openorchestra/web
-    errorLog: demo-openorchestraError.log
-    accessLog: demo-openorchestraAccess.log
+    errorLog: demo.openorchestraError.log
+    accessLog: demo.openorchestraAccess.log
     siteId: 2
   echonext.orchestra.conf:
     port: 80
@@ -54,7 +54,7 @@ apache_conf:
 
 varnish_listen_port: 6081
 backend_conf:
-  - { name: openorchestra, port: 80, host: openorchestra.dev, admin: true }
+  - { name: openorchestra, port: 80, host: admin.openorchestra.dev, admin: true }
   - { name: frontopenorchestra, port: 80, host: front.openorchestra.dev }
   - { name: demoopenorchestra, port: 80, host: demo.openorchestra.dev }
   - { name: echonextopenorchestra, port: 80, host: echonext.openorchestra.dev }
