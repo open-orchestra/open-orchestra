@@ -7,7 +7,7 @@ parameters:
     default_locale:            en
     secret:            SRiesraIEURNSTeiuRnsAIErnsEA
 
-    router.request_context.host: openorchestra.dev
+    router.request_context.host: admin.openorchestra.dev
     router.request_context.base_url: /app_dev.php
 
     open_orchestra_cms.mongodb.server: mongodb://localhost:27017
