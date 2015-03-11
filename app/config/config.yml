@@ -52,6 +52,7 @@ assetic:
     bundles:
         - OpenOrchestraBackofficeBundle
         - OpenOrchestraDisplayBundle
+        - OpenOrchestraUserBundle
     #java: /usr/bin/java
     filters:
         cssrewrite: ~
