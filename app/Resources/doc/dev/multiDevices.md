@@ -7,7 +7,7 @@
     FrontBundle\Twig\OrchestraTimedTwigEngine
     FrontBundle\Twig\OrchestraTwigEngine
  
- Appelez le trait `FrontBundle\Twig\Renderable` qui surcharge la méthode `render()` et ajouter l'extension de votre moteur de template dans la méthode `replaceTemplateExtension()` :
+ Appelez le trait `FrontBundle\Twig\Renderable` qui surcharge la méthode `render()` et ajoutez l'extension de votre moteur de template dans la méthode `replaceTemplateExtension()` :
 
     if (strstr($name, 'twig'))
     {
@@ -35,13 +35,13 @@
 
  Récupérez les devices qui sont dans `app\config\config.yml` avec l'argument `%open_orchestra_front.devices%`.
  
- Pour que ce soit votre classe qui soit appelée plutôt que le moteur de template de base utilisez un alias :
+ Pour que votre classe soit appelée plutôt que le moteur de template de base utilisez un alias :
  
  Soit dans l'extension du bundle `FrontBundle\DependencyInjection\OpenOrchestraFrontExtension` :
 
     $container->setAlias('templating', 'open_orchestra_front.twig.orchestra_twig_engine');
 
- Soit dans lorsque vous déclarez votre classe en tant que service :
+ Soit lorsque vous déclarez votre classe en tant que service :
 
     open_orchestra_front.twig.orchestra_twig_engine:
         class: %open_orchestra_front.twig.orchestra_twig_engine.class%
