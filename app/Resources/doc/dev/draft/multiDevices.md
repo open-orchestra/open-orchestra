@@ -1,7 +1,5 @@
 # I/ Le multi device
 
- OpenOrchestra gère le multi device.
- 
  Lorsque la Request contient 'X-UA-Device' et le nom d'un device par exemple mobile, nous cherchons alors les templates qui ont le nom du device dans leurs noms.
 
  Pour activer le multi device ajoutez dans `app/config/config.yml` de open-orchestra-front-demo les noms des devices.
