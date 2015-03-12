@@ -787,12 +787,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSUserBundle.git",
-                "reference": "2684b0dddff35b4de40920b11972b71ae386b9f5"
+                "reference": "808672b01f6aa6777417551c72a0be2c3545eafe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/2684b0dddff35b4de40920b11972b71ae386b9f5",
-                "reference": "2684b0dddff35b4de40920b11972b71ae386b9f5",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/808672b01f6aa6777417551c72a0be2c3545eafe",
+                "reference": "808672b01f6aa6777417551c72a0be2c3545eafe",
                 "shasum": ""
             },
             "require": {
@@ -846,7 +846,7 @@
             "keywords": [
                 "User management"
             ],
-            "time": "2015-03-06 14:51:30"
+            "time": "2015-03-12 11:42:34"
         },
         {
             "name": "gedmo/doctrine-extensions",
@@ -1037,12 +1037,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/open-orchestra-cms-bundle.git",
-                "reference": "fc6616471b35b4f58ce6215edf17a45151f4c1dc"
+                "reference": "dc11c35d2b0d2238e1322254bbd14def7464e062"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/open-orchestra-cms-bundle/zipball/fc6616471b35b4f58ce6215edf17a45151f4c1dc",
-                "reference": "fc6616471b35b4f58ce6215edf17a45151f4c1dc",
+                "url": "https://api.github.com/repos/itkg/open-orchestra-cms-bundle/zipball/dc11c35d2b0d2238e1322254bbd14def7464e062",
+                "reference": "dc11c35d2b0d2238e1322254bbd14def7464e062",
                 "shasum": ""
             },
             "require": {
@@ -1084,7 +1084,7 @@
                 "source": "https://github.com/itkg/open-orchestra-cms-bundle/tree/master",
                 "issues": "https://github.com/itkg/open-orchestra-cms-bundle/issues"
             },
-            "time": "2015-03-09 17:41:48"
+            "time": "2015-03-12 15:50:24"
         },
         {
             "name": "itkg/open-orchestra-display-bundle",
@@ -1093,12 +1093,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/open-orchestra-display-bundle.git",
-                "reference": "06dc760cac00140fe7031942193ecb260124e38e"
+                "reference": "ccc45cd3a266a7da816d7f7aa23d46975a153a0e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/open-orchestra-display-bundle/zipball/06dc760cac00140fe7031942193ecb260124e38e",
-                "reference": "06dc760cac00140fe7031942193ecb260124e38e",
+                "url": "https://api.github.com/repos/itkg/open-orchestra-display-bundle/zipball/ccc45cd3a266a7da816d7f7aa23d46975a153a0e",
+                "reference": "ccc45cd3a266a7da816d7f7aa23d46975a153a0e",
                 "shasum": ""
             },
             "require": {
@@ -1135,7 +1135,7 @@
                 "source": "https://github.com/itkg/open-orchestra-display-bundle/tree/master",
                 "issues": "https://github.com/itkg/open-orchestra-display-bundle/issues"
             },
-            "time": "2015-03-09 13:39:40"
+            "time": "2015-03-12 15:31:27"
         },
         {
             "name": "itkg/open-orchestra-media-bundle",
@@ -1144,12 +1144,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/open-orchestra-media-bundle.git",
-                "reference": "102db6c8e3a089891343ad8c43de5f3f31b5a0dc"
+                "reference": "ca68de672c65797bd655c9bf1b3fa7628d945b0a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/open-orchestra-media-bundle/zipball/102db6c8e3a089891343ad8c43de5f3f31b5a0dc",
-                "reference": "102db6c8e3a089891343ad8c43de5f3f31b5a0dc",
+                "url": "https://api.github.com/repos/itkg/open-orchestra-media-bundle/zipball/ca68de672c65797bd655c9bf1b3fa7628d945b0a",
+                "reference": "ca68de672c65797bd655c9bf1b3fa7628d945b0a",
                 "shasum": ""
             },
             "require": {
@@ -1190,7 +1190,7 @@
                 "source": "https://github.com/itkg/open-orchestra-media-bundle/tree/master",
                 "issues": "https://github.com/itkg/open-orchestra-media-bundle/issues"
             },
-            "time": "2015-03-09 16:08:16"
+            "time": "2015-03-12 10:51:55"
         },
         {
             "name": "itkg/open-orchestra-model-bundle",
@@ -1199,12 +1199,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/open-orchestra-model-bundle.git",
-                "reference": "840b4485a1dac6e66dd1bfcba3ff5b43a17c41b3"
+                "reference": "eedec987dbbd759ff7282cdaf0299b3f8d3e4546"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/open-orchestra-model-bundle/zipball/840b4485a1dac6e66dd1bfcba3ff5b43a17c41b3",
-                "reference": "840b4485a1dac6e66dd1bfcba3ff5b43a17c41b3",
+                "url": "https://api.github.com/repos/itkg/open-orchestra-model-bundle/zipball/eedec987dbbd759ff7282cdaf0299b3f8d3e4546",
+                "reference": "eedec987dbbd759ff7282cdaf0299b3f8d3e4546",
                 "shasum": ""
             },
             "require": {
@@ -1242,7 +1242,7 @@
                 "source": "https://github.com/itkg/open-orchestra-model-bundle/tree/master",
                 "issues": "https://github.com/itkg/open-orchestra-model-bundle/issues"
             },
-            "time": "2015-03-09 13:30:51"
+            "time": "2015-03-12 09:25:43"
         },
         {
             "name": "itkg/open-orchestra-model-interface",
@@ -1298,12 +1298,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/open-orchestra-user-bundle.git",
-                "reference": "25d9b28c7bad46852f9891538183924896765865"
+                "reference": "d106f51ce8bf151a01a22f8daf2637ec0d792de1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/open-orchestra-user-bundle/zipball/25d9b28c7bad46852f9891538183924896765865",
-                "reference": "25d9b28c7bad46852f9891538183924896765865",
+                "url": "https://api.github.com/repos/itkg/open-orchestra-user-bundle/zipball/d106f51ce8bf151a01a22f8daf2637ec0d792de1",
+                "reference": "d106f51ce8bf151a01a22f8daf2637ec0d792de1",
                 "shasum": ""
             },
             "require": {
@@ -1337,7 +1337,7 @@
                 "source": "https://github.com/itkg/open-orchestra-user-bundle/tree/master",
                 "issues": "https://github.com/itkg/open-orchestra-user-bundle/issues"
             },
-            "time": "2015-03-09 17:42:16"
+            "time": "2015-03-12 10:52:10"
         },
         {
             "name": "jms/metadata",
