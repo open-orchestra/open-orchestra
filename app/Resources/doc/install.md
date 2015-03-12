@@ -47,6 +47,25 @@ Then go into openorchestra directory
 
     ansible-galaxy install --role-file=provisioning/galaxy.yml
 
+## Override the dns redirection
+In the `/etc/hosts` file of your computer add the following lines :
+
+    192.168.33.10   admin.openorchestra.dev
+    192.168.33.10   front.openorchestra.dev
+    192.168.33.10   demo.openorchestra.dev
+    192.168.33.10   echonext.openorchestra.dev
+    192.168.33.10   media.openorchestra.dev
+
+## Temporary Override the dns redirection for the integration server
+In the `/etc/hosts` file of your computer add the following lines:
+
+    10.0.1.246      demo.openorchestra.inte
+    10.0.1.246      front.openorchestra.inte
+    10.0.1.246      smartadmin.openorchestra.inte
+    10.0.1.246      echonext.openorchestra.inte
+    10.0.1.246      media.openorchestra.inte
+    10.0.1.246      admin.openorchestra.inte
+
 ## Launch the box
 When you launch the box, it will take some time to :
 Import the base box,
@@ -89,29 +108,6 @@ In the symfony project directory
 
     php app/console doctrine:mongo:fixture:load
 
-## Import the translations
-In the symfony project directory
-
-    php app/console lexik:translations:import
-
-## Override the dns redirection
-In the `/etc/hosts` file of your computer add the following lines :
-
-    192.168.33.10   admin.openorchestra.dev
-    192.168.33.10   front.openorchestra.dev
-    192.168.33.10   demo.openorchestra.dev
-    192.168.33.10   echonext.openorchestra.dev
-    192.168.33.10   media.openorchestra.dev
-
-## Temporary Override the dns redirection for the integration server
-In the `/etc/hosts` file of your computer add the following lines:
-
-    10.0.1.246      demo.openorchestra.inte
-    10.0.1.246      front.openorchestra.inte
-    10.0.1.246      smartadmin.openorchestra.inte
-    10.0.1.246      echonext.openorchestra.inte
-    10.0.1.246      media.openorchestra.inte
-    10.0.1.246      admin.openorchestra.inte
 
 ## Result
 Once this command, all the client side javascripts librairies should have been installed.
