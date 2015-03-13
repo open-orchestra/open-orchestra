@@ -30,6 +30,9 @@ Url to see changes :
 ## New features
 
  - [Route pattern starting with "/" are absolute](https://trello.com/c/jaU88Adl/632-1-etq-ubo-si-je-mets-un-en-debut-de-route-pattern-je-ne-fait-pas-de-completion-avec-le-pattern-du-parent)
+ - ReverseProxy cache : [Open Orchestra now uses httpfoscachebundle](https://trello.com/c/cfswEacm/635-2-poc-sur-foshttpcachebundle)
+ - [Blocks can have specific tags used as cache keys](https://trello.com/c/9fUNhgGn/660-3-etq-dev-chaque-bloc-peut-ajouter-des-tags-specifiques)
+ - [Node cache has specific tags](https://trello.com/c/brTwfwaK/654-0-5-etq-ufront-le-node-en-cache-a-comme-tags-systematiques-le-nodeid-le-siteid-et-la-langue)
 
 ## Other changes
 
