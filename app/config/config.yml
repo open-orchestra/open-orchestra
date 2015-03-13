@@ -69,6 +69,7 @@ doctrine_mongodb:
     default_database: "%open_orchestra_cms.mongodb.database%"
     resolve_target_documents:
         OpenOrchestra\ModelInterface\Model\SiteInterface: OpenOrchestra\ModelBundle\Document\Site
+        FOS\UserBundle\Model\GroupInterface: OpenOrchestra\UserBundle\Document\Group
     document_managers:
         default:
             auto_mapping: true
@@ -93,6 +94,8 @@ fos_user:
     db_driver: mongodb
     firewall_name: main
     user_class: OpenOrchestra\UserBundle\Document\User
+    group:
+        group_class: OpenOrchestra\UserBundle\Document\Group
 
 stof_doctrine_extensions:
     mongodb:
