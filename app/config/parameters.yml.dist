@@ -17,3 +17,6 @@ parameters:
     media.directory: /var/uploaded-files
 
     session_name: open_orchestra_session
+
+    fos_http_cache.proxy_client.varnish.servers: [127.0.0.1]
+    fos_http_cache.proxy_client.varnish.base_url: %router.request_context.host%
