@@ -27,6 +27,7 @@ class AppKernel extends Kernel
 
             new JMS\SerializerBundle\JMSSerializerBundle(),
             new FOS\UserBundle\FOSUserBundle(),
+            new FOS\HttpCacheBundle\FOSHttpCacheBundle(),
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
 
             new Braincrafted\Bundle\BootstrapBundle\BraincraftedBootstrapBundle(),
