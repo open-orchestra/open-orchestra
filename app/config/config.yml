@@ -114,7 +114,6 @@ knp_gaufrette:
             adapter: media_storage
             alias: media_storage_filesystem
 
-
 fos_http_cache:
     proxy_client:
         varnish:
