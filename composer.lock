@@ -1388,12 +1388,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/open-orchestra-cms-bundle.git",
-                "reference": "06e09cdc92caa2087e79a899c59afc63f20e378c"
+                "reference": "4ad11cef84cbbb882bb7bda17d00b6d9f1ee260c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/open-orchestra-cms-bundle/zipball/06e09cdc92caa2087e79a899c59afc63f20e378c",
-                "reference": "06e09cdc92caa2087e79a899c59afc63f20e378c",
+                "url": "https://api.github.com/repos/itkg/open-orchestra-cms-bundle/zipball/4ad11cef84cbbb882bb7bda17d00b6d9f1ee260c",
+                "reference": "4ad11cef84cbbb882bb7bda17d00b6d9f1ee260c",
                 "shasum": ""
             },
             "require": {
@@ -1435,7 +1435,7 @@
                 "source": "https://github.com/itkg/open-orchestra-cms-bundle/tree/master",
                 "issues": "https://github.com/itkg/open-orchestra-cms-bundle/issues"
             },
-            "time": "2015-03-16 09:12:51"
+            "time": "2015-03-16 09:29:13"
         },
         {
             "name": "itkg/open-orchestra-display-bundle",
@@ -1650,12 +1650,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/open-orchestra-user-bundle.git",
-                "reference": "7791180d55ae1669383061944a90aeae68d0d47e"
+                "reference": "edde59adc364721b1b81f3394f7ab8b4d4f6901c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/open-orchestra-user-bundle/zipball/7791180d55ae1669383061944a90aeae68d0d47e",
-                "reference": "7791180d55ae1669383061944a90aeae68d0d47e",
+                "url": "https://api.github.com/repos/itkg/open-orchestra-user-bundle/zipball/edde59adc364721b1b81f3394f7ab8b4d4f6901c",
+                "reference": "edde59adc364721b1b81f3394f7ab8b4d4f6901c",
                 "shasum": ""
             },
             "require": {
@@ -1691,7 +1691,7 @@
                 "source": "https://github.com/itkg/open-orchestra-user-bundle/tree/master",
                 "issues": "https://github.com/itkg/open-orchestra-user-bundle/issues"
             },
-            "time": "2015-03-13 16:47:25"
+            "time": "2015-03-16 09:29:23"
         },
         {
             "name": "jms/metadata",
