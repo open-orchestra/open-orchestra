@@ -787,12 +787,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSHttpCache.git",
-                "reference": "6efe6b33ae1e17379e3f8af31d8f1d0c516150c2"
+                "reference": "d488a2db3cdba03d500396fba1087fe19cc45432"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSHttpCache/zipball/6efe6b33ae1e17379e3f8af31d8f1d0c516150c2",
-                "reference": "6efe6b33ae1e17379e3f8af31d8f1d0c516150c2",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSHttpCache/zipball/d488a2db3cdba03d500396fba1087fe19cc45432",
+                "reference": "d488a2db3cdba03d500396fba1087fe19cc45432",
                 "shasum": ""
             },
             "require": {
@@ -852,7 +852,7 @@
                 "purge",
                 "varnish"
             ],
-            "time": "2015-02-26 09:59:30"
+            "time": "2015-03-16 08:47:06"
         },
         {
             "name": "friendsofsymfony/http-cache-bundle",
@@ -1376,7 +1376,7 @@
             ],
             "description": "The OpenOrchestra base bundle",
             "support": {
-                "source": "https://github.com/itkg/open-orchestra-base-bundle/tree/v0.1.0",
+                "source": "https://github.com/itkg/open-orchestra-base-bundle/tree/master",
                 "issues": "https://github.com/itkg/open-orchestra-base-bundle/issues"
             },
             "time": "2015-02-22 15:23:01"
@@ -1388,12 +1388,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/open-orchestra-cms-bundle.git",
-                "reference": "fb8638bcf39aa7c5100115ec3c3c60733f7a31dc"
+                "reference": "06e09cdc92caa2087e79a899c59afc63f20e378c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/open-orchestra-cms-bundle/zipball/fb8638bcf39aa7c5100115ec3c3c60733f7a31dc",
-                "reference": "fb8638bcf39aa7c5100115ec3c3c60733f7a31dc",
+                "url": "https://api.github.com/repos/itkg/open-orchestra-cms-bundle/zipball/06e09cdc92caa2087e79a899c59afc63f20e378c",
+                "reference": "06e09cdc92caa2087e79a899c59afc63f20e378c",
                 "shasum": ""
             },
             "require": {
@@ -1435,7 +1435,7 @@
                 "source": "https://github.com/itkg/open-orchestra-cms-bundle/tree/master",
                 "issues": "https://github.com/itkg/open-orchestra-cms-bundle/issues"
             },
-            "time": "2015-03-13 09:38:10"
+            "time": "2015-03-16 09:12:51"
         },
         {
             "name": "itkg/open-orchestra-display-bundle",
@@ -1551,12 +1551,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/open-orchestra-model-bundle.git",
-                "reference": "f0d38589177bea030795d383eeeda023895c6625"
+                "reference": "096eb7d7ef2a26869bf0dec7cfbdb141e73bf05c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/open-orchestra-model-bundle/zipball/f0d38589177bea030795d383eeeda023895c6625",
-                "reference": "f0d38589177bea030795d383eeeda023895c6625",
+                "url": "https://api.github.com/repos/itkg/open-orchestra-model-bundle/zipball/096eb7d7ef2a26869bf0dec7cfbdb141e73bf05c",
+                "reference": "096eb7d7ef2a26869bf0dec7cfbdb141e73bf05c",
                 "shasum": ""
             },
             "require": {
@@ -1594,7 +1594,7 @@
                 "source": "https://github.com/itkg/open-orchestra-model-bundle/tree/master",
                 "issues": "https://github.com/itkg/open-orchestra-model-bundle/issues"
             },
-            "time": "2015-03-13 09:53:40"
+            "time": "2015-03-13 16:47:40"
         },
         {
             "name": "itkg/open-orchestra-model-interface",
@@ -1650,12 +1650,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/open-orchestra-user-bundle.git",
-                "reference": "a1cf24290cc3452a14bad88a1863774dc7f8ab75"
+                "reference": "7791180d55ae1669383061944a90aeae68d0d47e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/open-orchestra-user-bundle/zipball/a1cf24290cc3452a14bad88a1863774dc7f8ab75",
-                "reference": "a1cf24290cc3452a14bad88a1863774dc7f8ab75",
+                "url": "https://api.github.com/repos/itkg/open-orchestra-user-bundle/zipball/7791180d55ae1669383061944a90aeae68d0d47e",
+                "reference": "7791180d55ae1669383061944a90aeae68d0d47e",
                 "shasum": ""
             },
             "require": {
@@ -1664,10 +1664,12 @@
             "require-dev": {
                 "itkg/open-orchestra-base-bundle": "dev-master",
                 "itkg/open-orchestra-display-bundle": "dev-master",
-                "itkg/open-orchestra-model-interface": "dev-master",
                 "phake/phake": "2.0.0-beta2",
                 "phpunit/phpunit": "4.0.14",
                 "scrutinizer/ocular": "1.1.1"
+            },
+            "suggest": {
+                "itkg/open-orchestra-display-bundle": "In order to use all the functionality offered by the OpenOrchestra project"
             },
             "type": "library",
             "autoload": {
@@ -1689,7 +1691,7 @@
                 "source": "https://github.com/itkg/open-orchestra-user-bundle/tree/master",
                 "issues": "https://github.com/itkg/open-orchestra-user-bundle/issues"
             },
-            "time": "2015-03-13 09:57:50"
+            "time": "2015-03-13 16:47:25"
         },
         {
             "name": "jms/metadata",
@@ -1898,9 +1900,9 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes M. Schmitt",
+                    "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
+                    "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -2290,9 +2292,9 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes M. Schmitt",
+                    "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
+                    "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -2739,12 +2741,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "db95cfa68a8bc91d1c54f75c416f481c9a8bd100"
+                "reference": "048be6f7c19944d604e321347990543bc2bbe10b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/db95cfa68a8bc91d1c54f75c416f481c9a8bd100",
-                "reference": "db95cfa68a8bc91d1c54f75c416f481c9a8bd100",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/048be6f7c19944d604e321347990543bc2bbe10b",
+                "reference": "048be6f7c19944d604e321347990543bc2bbe10b",
                 "shasum": ""
             },
             "require": {
@@ -2756,7 +2758,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "5.3-dev"
+                    "dev-master": "5.4-dev"
                 }
             },
             "autoload": {
@@ -2783,7 +2785,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2015-01-18 13:49:36"
+            "time": "2015-03-14 06:07:26"
         },
         {
             "name": "symfony/assetic-bundle",
@@ -4371,6 +4373,7 @@
         "itkg/open-orchestra-model-bundle": 20
     },
     "prefer-stable": false,
+    "prefer-lowest": false,
     "platform": [],
     "platform-dev": []
 }
