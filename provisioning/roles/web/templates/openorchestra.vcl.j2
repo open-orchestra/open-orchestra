@@ -9,6 +9,10 @@ acl purgers {
   "127.0.0.1";
 }
 
+acl invalidators {
+  "127.0.0.1";
+}
+
 backend f1 {
   .host = "127.0.1.1";
   .port = "{{ apache_main_port }}";
@@ -32,17 +36,36 @@ sub vcl_recv {
     set req.http.Surrogate-Capability = "abc=ESI/1.0";
     set req.backend = front;
 
+    unset req.http.cookie;
+
+    if (req.http.Cache-Control ~ "no-cache" && client.ip ~ invalidators) {
+        set req.hash_always_miss = true;
+    }
+
     if (req.request == "BAN") {
-        if (!client.ip ~ purgers) {
-             error 405 "Method not allowed";
+        if (!client.ip ~ invalidators) {
+             error 405 "Ban not allowed";
         }
-        ban("req.url ~ "+req.url);
-        error 200 "Cached Cleared Successfully.";
+
+        if (req.http.X-Cache-Tags) {
+            ban("obj.http.X-Host ~ " + req.http.X-Host
+                + " && obj.http.X-Url ~ " + req.http.X-Url
+                + " && obj.http.content-type ~ " + req.http.X-Content-Type
+                + " && obj.http.X-Cache-Tags ~ " + req.http.X-Cache-Tags
+            );
+        } else {
+          ban("obj.http.X-Host ~ " + req.http.X-Host
+              + " && obj.http.X-Url ~ " + req.http.X-Url
+              + " && obj.http.content-type ~ " + req.http.X-Content-Type
+          );
+        }
+
+        error 200 "Ban added";
     }
 
     if (req.request == "PURGE") {
         if (!client.ip ~ purgers) {
-             error 405 "Method not allowed";
+             error 405 "Purge not allowed";
         }
         return(lookup);
      }
@@ -64,9 +87,9 @@ sub vcl_recv {
     {% for item in backend_conf %}
         {% if item.admin is defined and item.admin is sameas true %}
             {% if loop.first -%}
-                if
+                if 
             {%- else -%}
-                elseif
+                elseif 
             {%- endif -%}
              (req.http.host ~ "({{ item.host }})") {
 
@@ -87,8 +110,12 @@ sub vcl_recv {
 }
 
 sub vcl_fetch {
+    # Set ban-lurker friendly custom headers
+    set beresp.http.X-Url = req.url;
+    set beresp.http.X-Host = req.http.host;
+
     if (beresp.status == 404 || beresp.status == 500 || beresp.status == 503) {
-        return (hit_for_pass);
+        set beresp.ttl = 30s;
     }
 
     if (beresp.http.Surrogate-Control ~ "ESI/1.0") {
@@ -102,17 +129,27 @@ sub vcl_fetch {
     }
 }
 
+sub vcl_deliver {
+    # Keep ban-lurker headers only if debugging is enabled
+    if (!resp.http.X-Cache-Debug) {
+        # Remove ban-lurker friendly custom headers when delivering to client
+        unset resp.http.X-Url;
+        unset resp.http.X-Host;
+        unset resp.http.X-Cache-Tags;
+    }
+}
+
 sub vcl_hit {
     if (req.request == "PURGE") {
         purge;
-        error 200 "Purged";
+        error 204 "Purged";
     }
 }
 
 sub vcl_miss {
     if (req.request == "PURGE") {
         purge;
-        error 404 "Not purged";
+        error 204 "Purged (Not in cache)";
     }
 }
 
