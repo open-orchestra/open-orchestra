@@ -31,6 +31,7 @@ class FeatureContext extends MinkContext implements KernelAwareContext
      */
     public function iAmAuthenticatedAs($userName)
     {
+        $this->iAmOnHomepage('/logout');
         $this->iAmOnHomepage('/login');
 
         $this->fillField('username', $userName);
