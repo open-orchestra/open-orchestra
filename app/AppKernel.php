@@ -33,11 +33,11 @@ class AppKernel extends Kernel
             new Braincrafted\Bundle\BootstrapBundle\BraincraftedBootstrapBundle(),
 
             new OpenOrchestra\BaseBundle\OpenOrchestraBaseBundle(),
+            new OpenOrchestra\UserBundle\OpenOrchestraUserBundle(),
             new OpenOrchestra\ModelBundle\OpenOrchestraModelBundle(),
             new OpenOrchestra\MediaBundle\OpenOrchestraMediaBundle(),
             new OpenOrchestra\ApiBundle\OpenOrchestraApiBundle(),
             new OpenOrchestra\DisplayBundle\OpenOrchestraDisplayBundle(),
-            new OpenOrchestra\UserBundle\OpenOrchestraUserBundle(),
             new OpenOrchestra\BackofficeBundle\OpenOrchestraBackofficeBundle(),
             new OpenOrchestra\LogBundle\OpenOrchestraLogBundle(),
 
