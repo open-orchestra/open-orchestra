@@ -33,6 +33,7 @@ Url to see changes :
  - ReverseProxy cache : [Open Orchestra now uses httpfoscachebundle](https://trello.com/c/cfswEacm/635-2-poc-sur-foshttpcachebundle)
  - [Blocks can have specific tags used as cache keys](https://trello.com/c/9fUNhgGn/660-3-etq-dev-chaque-bloc-peut-ajouter-des-tags-specifiques)
  - [Node cache has specific tags](https://trello.com/c/brTwfwaK/654-0-5-etq-ufront-le-node-en-cache-a-comme-tags-systematiques-le-nodeid-le-siteid-et-la-langue)
+ - [User are related to a group for the right](https://trello.com/c/upLhlVle/674-5-etq-utilisateur-bo-je-peux-gerer-les-groupes-d-utilisateurs-creation-modification-suppression)
 
 ## Other changes
 
