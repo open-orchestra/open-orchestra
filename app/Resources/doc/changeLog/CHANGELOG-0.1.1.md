@@ -36,6 +36,8 @@ Url to see changes :
  - [Node cache has specific tags](https://trello.com/c/brTwfwaK/654-0-5-etq-ufront-le-node-en-cache-a-comme-tags-systematiques-le-nodeid-le-siteid-et-la-langue)
  - [User are related to a group for the right](https://trello.com/c/upLhlVle/674-5-etq-utilisateur-bo-je-peux-gerer-les-groupes-d-utilisateurs-creation-modification-suppression)
  - [Content preview is now handled by a fake object](https://trello.com/c/ZCFLwsmb/644-2-et-ubo-lorsque-je-previsualise-un-block-qui-attend-un-parametre-dans-l-url-content-celui-ci-affiche-un-contenu-bidon)
+ - [You can create users group](https://trello.com/c/hmQYFjMt/675-5-etq-utilisateur-bo-je-peux-gerer-les-utilisateurs-creation-modification-suppression)
+ - [User are now related to groups](https://trello.com/c/upLhlVle/674-5-etq-utilisateur-bo-je-peux-gerer-les-groupes-d-utilisateurs-creation-modification-suppression)
 
 ## Other changes
 
