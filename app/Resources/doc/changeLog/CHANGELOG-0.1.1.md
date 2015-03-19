@@ -42,6 +42,9 @@ Url to see changes :
  - [Add test behat and provision it](https://trello.com/c/KC19uTkl/636-8-je-realise-un-test-behat-avec-un-navigateur-et-celui-s-execute-sur-travis)
  - [Provision a cron task](https://trello.com/c/mAhTr951/639-0-5-etq-dev-je-provisionne-la-vm-avec-une-tache-cron-quotidienne-pour-la-generation-des-sitemap-xml-et-une-autre-pour-les-robots) to generate sitemap.xml and robots.txt
  - [Add an example of varnish usage](https://trello.com/c/gx3EwdkA/649-3-etq-ufront-lorsque-je-visualise-le-front-je-passe-par-varnish)
+ - [Add an asterisk if field are required](https://trello.com/c/IK5LraBb/689-1-etq-ubo-je-vois-les-champs-obligatoires-des-formulaires-accompagnes-d-une-asterisque)
+ - [Add help for form fields](https://trello.com/c/pETcYNlk/690-2-etq-ubo-je-vois-une-aide-pour-les-champs-des-formulaires-au-format-smartadmin-un-point-d-interrogation-dans-le-input)
+ - [DataGrid have bootstrap button](https://trello.com/c/oa1V3CHH/677-1-etq-utilisateur-bo-les-listes-datagrid-utilisent-des-boutons-bootstrap-pour-les-actions-add-edit-remove)
 
 ## Deprecated method
 
