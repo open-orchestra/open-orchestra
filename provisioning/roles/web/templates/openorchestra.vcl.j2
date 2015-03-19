@@ -84,6 +84,10 @@ sub vcl_recv {
         }
     }
 
+    if (req.http.User-Agent ~ "(?i)android") {
+        set req.http.X-UA-Device = "android";
+    }
+
     {% for item in backend_conf %}
         {% if item.admin is defined and item.admin is sameas true %}
             {% if loop.first -%}
