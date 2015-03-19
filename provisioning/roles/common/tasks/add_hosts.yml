@@ -1,0 +1,3 @@
+---
+- name: add hosts.
+  lineinfile: dest=/etc/hosts regexp='^127\.0\.0\.1' line='127.0.0.1 localhost openorchestra'
