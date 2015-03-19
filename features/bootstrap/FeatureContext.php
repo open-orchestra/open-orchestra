@@ -25,7 +25,27 @@ class FeatureContext extends MinkContext implements KernelAwareContext
     }
 
     /**
+     * @param $userName
+     *
+     * @Given /^I am authenticated as "([^"]*)"$/
+     */
+    public function iAmAuthenticatedAs($userName)
+    {
+        $this->iAmOnHomepage('/logout');
+        $this->iAmOnHomepage('/login');
+
+        $this->fillField('username', $userName);
+        $this->fillField('password', $userName);
+
+        $this->pressButton('_submit');
+
+        $this->assertPageContainsText('Dashboard');
+    }
+
+    /**
      * Click on the element with the provided Css Selector
+     *
+     * @param string $cssSelector
      *
      * @When /^I click on the element with css selector "([^"]*)"$/
      */
@@ -38,6 +58,28 @@ class FeatureContext extends MinkContext implements KernelAwareContext
         );
         if (null === $element) {
             throw new \InvalidArgumentException(sprintf('Could not evaluate CSS Selector: "%s"', $cssSelector));
+        }
+
+        $element->click();
+    }
+
+    /**
+     * Click on the element with the provided Css query
+     *
+     * @param string $css
+     *
+     * @When /^I click on the last element "([^"]*)"$/
+     */
+    public function iClickOnTheLastElement($css)
+    {
+        $session = $this->getSession();
+
+        $elements = $session->getPage()->findAll('css', $css);
+
+        $element = end($elements);
+
+        if (null === $element) {
+            throw new \InvalidArgumentException(sprintf('Could not evaluate CSS query: "%s"', $css));
         }
 
         $element->click();
