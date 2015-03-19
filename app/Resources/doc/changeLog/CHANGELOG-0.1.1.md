@@ -45,6 +45,7 @@ Url to see changes :
  - [Add an asterisk if field are required](https://trello.com/c/IK5LraBb/689-1-etq-ubo-je-vois-les-champs-obligatoires-des-formulaires-accompagnes-d-une-asterisque)
  - [Add help for form fields](https://trello.com/c/pETcYNlk/690-2-etq-ubo-je-vois-une-aide-pour-les-champs-des-formulaires-au-format-smartadmin-un-point-d-interrogation-dans-le-input)
  - [DataGrid have bootstrap button](https://trello.com/c/oa1V3CHH/677-1-etq-utilisateur-bo-les-listes-datagrid-utilisent-des-boutons-bootstrap-pour-les-actions-add-edit-remove)
+ - [Block can specify cache management properties](https://trello.com/c/cEnsoyLl/651-1-etq-ubo-lorsque-j-edite-un-block-je-peux-surcharger-les-valeurs-de-cache-max-age)
 
 ## Deprecated method
 
