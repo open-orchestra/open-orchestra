@@ -17,6 +17,7 @@ Url to see changes :
 ## Possible BC breaker
 
  - [Suppress dynamic routing maganement](https://trello.com/c/0da29mg0/628-1-etq-u-je-vois-une-erreur-404-lorsque-j-essaie-d-acceder-a-une-page-ou-un-site-qui-n-existe-pas)
+ - [Strategies header, mediaList and Gallery have been moved](https://trello.com/c/dpP1TBpJ/695-0-5-etq-dev-je-vois-les-strategies-header-medialist-et-gallery-dans-le-mediabundle)
 
 ## Bug fixes
  - [Keywords field opened in a block form is now correctly closed when closing the form](https://trello.com/c/gnqUFELt/634-1-etq-ubo-quand-j-edite-un-block-avec-des-keywords-et-que-je-ferme-la-popup-sans-fermer-le-listing-des-keyword-il-ne-se-retrouve)
