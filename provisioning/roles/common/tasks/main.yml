@@ -1,4 +1,3 @@
 ---
-# wrapper for common tasks
-
-- include: base_packages.yml
+ - include: add_hosts.yml
+ - include: base_packages.yml
