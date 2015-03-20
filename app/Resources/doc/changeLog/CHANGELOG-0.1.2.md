@@ -19,10 +19,12 @@ Url to see changes :
 
 ## Bug fixes
 
+- [Status creation](https://trello.com/c/WUhokb8A/702-0-5-creation-d-un-status)
 
 ## New features
 
 - [Concerned caches banned on Node/Content status changes](https://trello.com/c/y514TduH/685-3-etq-ubo-la-publication-d-un-node-d-un-contenu-entraine-le-decache-des-tags-correspondant)
+- [Multi devices](https://trello.com/c/l6dczoPt/86-1-etq-fo-je-peux-voir-un-template-different-entre-le-web-et-le-mobile-si-le-template-mobile-existe)
 
 
 ## Other changes
