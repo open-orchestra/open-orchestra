@@ -25,7 +25,7 @@ Url to see changes :
 
 - [Concerned caches banned on Node/Content status changes](https://trello.com/c/y514TduH/685-3-etq-ubo-la-publication-d-un-node-d-un-contenu-entraine-le-decache-des-tags-correspondant)
 - [Multi devices](https://trello.com/c/l6dczoPt/86-1-etq-fo-je-peux-voir-un-template-different-entre-le-web-et-le-mobile-si-le-template-mobile-existe)
-
+- [Blocks cache are tagged according their content](https://trello.com/c/xxdxxEbc/657-2-etq-dev-je-repasse-sur-tous-les-blocks-pour-mettre-a-jour-les-tags-et-les-status-de-cache)
 
 ## Other changes
 
