@@ -10,6 +10,9 @@ security:
         fos_userbundle:
             id: fos_user.user_provider.username
 
+    access_decision_manager:
+        strategy: unanimous
+
     firewalls:
         dev:
             pattern:  ^/(_(profiler|wdt)|css|images|js)/
