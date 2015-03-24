@@ -26,9 +26,12 @@ Url to see changes :
 - [Concerned caches banned on Node/Content status changes](https://trello.com/c/y514TduH/685-3-etq-ubo-la-publication-d-un-node-d-un-contenu-entraine-le-decache-des-tags-correspondant)
 - [Multi devices](https://trello.com/c/l6dczoPt/86-1-etq-fo-je-peux-voir-un-template-different-entre-le-web-et-le-mobile-si-le-template-mobile-existe)
 - [Blocks cache are tagged according their content](https://trello.com/c/xxdxxEbc/657-2-etq-dev-je-repasse-sur-tous-les-blocks-pour-mettre-a-jour-les-tags-et-les-status-de-cache)
+- [Check twig syntax error in contents templates](https://trello.com/c/CTTIJVod/714-1-etq-ubo-je-vois-une-erreur-quand-mon-template-twig-n-est-pas-valide)
 
 ## Other changes
 
+- [Rename Editorial/template.html.twig into form.html.twig](https://trello.com/c/s4OfBV2g/715-1-renommer-le-fichier-editorial-template-html-twig)
+- [Move blocks constants into blocks strategies](https://trello.com/c/rvRcW0fd/699-2-refacto-la-displayblockinterface-ne-devrait-pas-porter-l-exhaustivite-des-blocks)
 
 ## Deprecated method
 
