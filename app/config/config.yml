@@ -68,6 +68,7 @@ doctrine_mongodb:
             options: {}
     default_database: "%open_orchestra_cms.mongodb.database%"
     resolve_target_documents:
+        OpenOrchestra\ModelInterface\Model\TranslatedValueInterface: OpenOrchestra\ModelBundle\Document\TranslatedValue
         OpenOrchestra\ModelInterface\Model\SiteInterface: OpenOrchestra\ModelBundle\Document\Site
         FOS\UserBundle\Model\GroupInterface: OpenOrchestra\BackofficeBundle\Document\Group
     document_managers:
