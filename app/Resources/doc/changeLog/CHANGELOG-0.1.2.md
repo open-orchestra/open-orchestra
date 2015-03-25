@@ -27,6 +27,7 @@ Url to see changes :
 - [Multi devices](https://trello.com/c/l6dczoPt/86-1-etq-fo-je-peux-voir-un-template-different-entre-le-web-et-le-mobile-si-le-template-mobile-existe)
 - [Blocks cache are tagged according their content](https://trello.com/c/xxdxxEbc/657-2-etq-dev-je-repasse-sur-tous-les-blocks-pour-mettre-a-jour-les-tags-et-les-status-de-cache)
 - [Check twig syntax error in contents templates](https://trello.com/c/CTTIJVod/714-1-etq-ubo-je-vois-une-erreur-quand-mon-template-twig-n-est-pas-valide)
+- [Add new specific tags to blocks](https://trello.com/c/A520Wqxr/712-0-5-bo-modif-d-un-bloc-ban-du-cache-varnish-du-bloc-a-mettre-en-place)
 
 ## Other changes
 
