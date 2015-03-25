@@ -11,22 +11,78 @@ Grâce au bundle [foshttpcache](http://foshttpcachebundle.readthedocs.org), le c
 Dans le cas d'un node, et donc d'une page, le cache est taggué par le nodeId, le nodeLanguage et le siteId.
 
 #### Bloc
-Tous les blocs sont taggués basiquement avec le tag 'block', ce qui permet de distinguer leurs caches des caches de node. Ensuite, chaque type de bloc peut ajouter ses propres tags spécifiques, qu'ils soient génériques, ou qu'ils prennent en compte les contributions associées.
+Tous les blocs sont taggués selon deux axes : une série de tags génériques communs à tous les blocs, et une série de tags spécifiques à chacun d'entre eux.
 
+##### Tags génériques
+Chaque bloc est taggué par le type de celui-ci (block-gallery, block-content, etc ...) Les blocs sont également taggués de manière systématique par les id des nodes qui les utilisent. Comme les blocs s'affichent différement selon les langues, la langue d'affichage est également utilisée comme tag. Enfin le site utilisé pour le rendu du bloc définit le dernier tag générique.
+
+##### Tags spécifiques
 Un bloc dont le cache doit être taggué spécifiquement peut le faire grâce à sa stratégie d'affichage, quand celle-ci surcharge la méthode getTags de l'abstractController.
 
-De même par défaut les caches des blocs sont privés pour éviter qu'un oubli de configuration ne mette en cache des données personnelles. Cependant un bloc peut aisément se déclarer public et ainsi autoriser le cache dans la passerelle de cache. Dans ce cas sa stratégie d'affichage doit surcharger la méthode isPublic.
+Par défaut les caches des blocs sont privés pour éviter qu'un oubli de configuration ne mette en cache des données personnelles. Cependant un bloc peut aisément se déclarer public et ainsi autoriser le cache dans la passerelle de cache. Dans ce cas sa stratégie d'affichage doit surcharger la méthode isPublic.
 
 Voici bloc par bloc, les spécifications de cache.
 
-* Bloc Gallery
-    * Bloc public
-    * Cache taggué par l'ensemble des mediaId qui le composent
+* Bloc AddThis
+    * Type : privé
+    * Tags : -
+
+* Bloc AudienceAnalysis
+    * Type : public
+    * Tags : -
+
+* Bloc Carrousel
+    * Type : TODO
+    * Tags : TODO
 
 * Bloc Configurable Content
-    * Bloc public
-    * Cache taggué par le content type et le contentId du contenu
+    * Type : public
+    * Tags : contentType et contentId du contenu sélectionné
 
-* Bloc Content List
-    * Bloc public
-    * Bloc taggué par les contentId qui le composent ainsi que les content types correspondant
+* Bloc Contact
+    * Type : private
+    * Tags : -
+
+* Bloc ContentList
+    * Type : public
+    * Tags : contentId de chaque contenu correspondant et contentType de tous les types de contenus correspondant
+
+* Bloc Content
+    * Type : public
+    * Tags : contentType et contentId du contenu affiché
+
+* Bloc Footer
+    * Type : public
+    * Tags : nodeId de tous les noeuds présents dans le footer
+
+* Bloc Gmap
+    * Type : public
+    * Tags : -
+
+* Bloc LanguageList
+    * Type : public
+    * Tags : -
+
+* Bloc Menu
+    * Type : public
+    * Tags : nodeId de tous les éléments présents dans le sous-menu
+
+* Bloc SubMenu
+    * Type : public
+    * Tags : nodeId de tous les éléments présents dans le menu
+
+* Bloc TinyMceWysiwyg
+    * Type : public
+    * Tags : -
+
+* Bloc Video
+    * Type : public
+    * Tags : -
+
+* Bloc Gallery
+    * Type : public
+    * Tags : mediaId de tous les éléments qui la compose (pas seulement sur la page courante)
+
+* Bloc MediaListByKeyword
+    * Type : public
+    * Tags : mediaId de tous les éléments qui la compose
