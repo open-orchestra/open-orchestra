@@ -6,7 +6,7 @@ This tutorial is going to describe step by step how you can deploy the openOrche
 ## Install Gem and bundler
 In order to separate all the project of your computer, we use bundler to execute only the specified version of capifony and capistrano
 
-    aptitude install ruby
+    aptitude install ruby ruby-dev
     gem install bundler
 
 ## Install capifony
