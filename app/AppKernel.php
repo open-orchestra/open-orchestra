@@ -39,6 +39,7 @@ class AppKernel extends Kernel
             new OpenOrchestra\ApiBundle\OpenOrchestraApiBundle(),
             new OpenOrchestra\DisplayBundle\OpenOrchestraDisplayBundle(),
             new OpenOrchestra\BackofficeBundle\OpenOrchestraBackofficeBundle(),
+            new OpenOrchestra\GroupBundle\OpenOrchestraGroupBundle(),
             new OpenOrchestra\LogBundle\OpenOrchestraLogBundle(),
 
             // Need parameters set by some of our bundles
@@ -47,6 +48,7 @@ class AppKernel extends Kernel
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
+            $bundles[] = new Symfony\Bundle\DebugBundle\DebugBundle();
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
             $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
