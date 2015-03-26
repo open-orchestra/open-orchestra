@@ -211,6 +211,7 @@ module.exports = function(grunt) {
                 src: [
                     'web/built/openorchestrabackoffice/js/orchestraLib.js',
                     'web/built/openorchestrabackoffice/js/orchestraListeners.js',
+                    'web/built/openorchestrabackoffice/js/setUpCallAjax.js',
                     // MISC
                     'web/built/openorchestrabackoffice/js/wreqr/widget.js',
                     'web/built/openorchestrabackoffice/js/wreqr/viewport.js',
