@@ -16,6 +16,7 @@ Url to see changes :
 
 ## Possible BC breaker
 
+ - [All interfaces have been split into Interfaces and ReadInterfaces](https://trello.com/c/LTW12l5I/680-2-split-des-interfaces-de-document)
 
 ## Bug fixes
 
