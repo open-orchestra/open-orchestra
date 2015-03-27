@@ -29,6 +29,7 @@ Url to see changes :
 - [Blocks cache are tagged according their content](https://trello.com/c/xxdxxEbc/657-2-etq-dev-je-repasse-sur-tous-les-blocks-pour-mettre-a-jour-les-tags-et-les-status-de-cache)
 - [Check twig syntax error in contents templates](https://trello.com/c/CTTIJVod/714-1-etq-ubo-je-vois-une-erreur-quand-mon-template-twig-n-est-pas-valide)
 - [Add new specific tags to blocks](https://trello.com/c/A520Wqxr/712-0-5-bo-modif-d-un-bloc-ban-du-cache-varnish-du-bloc-a-mettre-en-place)
+- [Oauth2 authentication on the api](https://trello.com/c/G5BWkEY4/661-8-5-delier-la-connexion-a-l-api-de-la-connexion-au-bo)
 
 ## Other changes
 
