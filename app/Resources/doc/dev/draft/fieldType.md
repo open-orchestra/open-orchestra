@@ -1,7 +1,7 @@
 # I/ Context
 Le but de ce document est de pouvoir ajouter un nouveau type de champ dans le formulaire de création/édition d'un contenu.
 
-Le formulaire des contenus est crée à l'aide d'un formulaire de création/édition de type de contenu.
+Le formulaire des contenus est créé à l'aide d'un formulaire de création/édition de type de contenu.
 Dans ce formulaire, il est possible d'ajouter autant de champs que nécessaires à la saisie d'un contenu et de caractériser chacun de ces champs.
 Ex :
   un type de contenu voiture avec un champ nom et un champ motorisation.
@@ -11,9 +11,10 @@ Ex :
 Il existe déjà dans OpenOrchestra un certain nombre de types de champs : text, textarea, tinymce, integer, email, orchestra_media.
 
 Imaginons :
+ - que les motorisations soient caractérisées par un booléen malus.
  - que le champ motorisation soit un type complexe, un menu déroulant renseigné dynamiquement par des données en base,
- - que l'on veuille caractériser si ce champ est nécessaire ou non dans le formulaire de contenu où il sera ajouter,
- - que l'on veuille paramétrer ce menu déroulant en fonction d'une donnée en base, par exemple malus qui correspondrait à motorisation avec ou sans malus écologique (cette option permet suivant la valeur sélectionnée de retourner un menu déroulant avec les motorisation sans malus, un menu déroulant avec les motorisation avec malus et un menu déroulant avec toutes les motorisation).
+ - que l'on veuille caractériser si ce champ est nécessaire ou non dans le formulaire de contenu où il sera ajouté,
+ - que l'on veuille paramétrer ce menu pour obtenir le menu déroulant des motorisations avec malus, le menu déroulant des motorisations sans malus ou le menu déroulant de toutes les motorisations.
 
 # II/ Ajout d'un champ
 Dans un premier temps, on ajoute une entrée dans parameters.open_orchestra_backoffice.custom_types sous la forme :
