@@ -50,6 +50,7 @@ Url to see changes :
  - [Add help for form fields](https://trello.com/c/pETcYNlk/690-2-etq-ubo-je-vois-une-aide-pour-les-champs-des-formulaires-au-format-smartadmin-un-point-d-interrogation-dans-le-input)
  - [DataGrid have bootstrap button](https://trello.com/c/oa1V3CHH/677-1-etq-utilisateur-bo-les-listes-datagrid-utilisent-des-boutons-bootstrap-pour-les-actions-add-edit-remove)
  - [Block can specify cache management properties](https://trello.com/c/cEnsoyLl/651-1-etq-ubo-lorsque-j-edite-un-block-je-peux-surcharger-les-valeurs-de-cache-max-age)
+ - [Move the Group document into a new Group Bundle](https://trello.com/c/2A3vWfsM/735-2-etq-dev-je-vois-le-document-group-du-bobundle-dans-le-groupbundle)
 
 ## Deprecated method
 
