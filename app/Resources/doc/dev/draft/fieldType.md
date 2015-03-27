@@ -29,7 +29,7 @@ Si cette entrée est sélectionnée, alors dans le formulaire des contenus, on a
 Ce nouveau champ correspond au FormType référencé au niveau du form.yml par motorisation_choice_type.
             
 # III/ Ajout des options du champ
-Maintenant on désire ajouter les deux options définies pour caractériser le menu déroulant des motorisation, à savoir nécessaire ou non, avec malus, sans malus, tous.
+Maintenant on désire ajouter les deux options définies pour caractériser le menu déroulant des motorisations, à savoir nécessaire ou non, avec malus, sans malus, tous.
 
 parameters:
     open_orchestra_backoffice.custom_types:
