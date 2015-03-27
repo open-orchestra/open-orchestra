@@ -30,6 +30,9 @@ open_orchestra_media:
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
 
+open_orchestra_api_oauth2:
+    resource: "@OpenOrchestraApiBundle/Resources/config/oauth2routing.yml"
+
 root:
     pattern: /
     methods: ['GET']
