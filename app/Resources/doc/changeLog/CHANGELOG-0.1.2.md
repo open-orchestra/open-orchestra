@@ -40,3 +40,7 @@ Url to see changes :
 
 
 ## Suppressed method
+
+## Configuration modification
+
+ - The interface split modify the `resolve_target_documents`, you need to put the new read interfaces instead
