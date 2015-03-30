@@ -1003,12 +1003,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Atlantic18/DoctrineExtensions.git",
-                "reference": "067143f6e360e9526be5dbab9972f4735912fbc6"
+                "reference": "1b44a827cb1bc9f9acaacdb57f6a5a87658e4626"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/067143f6e360e9526be5dbab9972f4735912fbc6",
-                "reference": "067143f6e360e9526be5dbab9972f4735912fbc6",
+                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/1b44a827cb1bc9f9acaacdb57f6a5a87658e4626",
+                "reference": "1b44a827cb1bc9f9acaacdb57f6a5a87658e4626",
                 "shasum": ""
             },
             "require": {
@@ -1074,7 +1074,7 @@
                 "tree",
                 "uploadable"
             ],
-            "time": "2015-03-26 21:05:11"
+            "time": "2015-03-28 09:17:43"
         },
         {
             "name": "guzzle/common",
@@ -1553,12 +1553,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/open-orchestra-model-bundle.git",
-                "reference": "a67596cf73b11c71b580e00b779e59e11d14031c"
+                "reference": "37d0abc725a524483d93dc808f7f8ddcb8de5cb1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/open-orchestra-model-bundle/zipball/a67596cf73b11c71b580e00b779e59e11d14031c",
-                "reference": "a67596cf73b11c71b580e00b779e59e11d14031c",
+                "url": "https://api.github.com/repos/itkg/open-orchestra-model-bundle/zipball/37d0abc725a524483d93dc808f7f8ddcb8de5cb1",
+                "reference": "37d0abc725a524483d93dc808f7f8ddcb8de5cb1",
                 "shasum": ""
             },
             "require": {
@@ -1596,7 +1596,7 @@
                 "source": "https://github.com/itkg/open-orchestra-model-bundle/tree/master",
                 "issues": "https://github.com/itkg/open-orchestra-model-bundle/issues"
             },
-            "time": "2015-03-27 15:38:57"
+            "time": "2015-03-30 08:26:34"
         },
         {
             "name": "itkg/open-orchestra-model-interface",
@@ -1652,12 +1652,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itkg/open-orchestra-user-bundle.git",
-                "reference": "b4f2da8a9e2c58972b210587ae5d7891f4714278"
+                "reference": "5ecdf3a326d7285550c59491c2e3f0841b0cc60d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itkg/open-orchestra-user-bundle/zipball/b4f2da8a9e2c58972b210587ae5d7891f4714278",
-                "reference": "b4f2da8a9e2c58972b210587ae5d7891f4714278",
+                "url": "https://api.github.com/repos/itkg/open-orchestra-user-bundle/zipball/5ecdf3a326d7285550c59491c2e3f0841b0cc60d",
+                "reference": "5ecdf3a326d7285550c59491c2e3f0841b0cc60d",
                 "shasum": ""
             },
             "require": {
@@ -1693,7 +1693,7 @@
                 "source": "https://github.com/itkg/open-orchestra-user-bundle/tree/master",
                 "issues": "https://github.com/itkg/open-orchestra-user-bundle/issues"
             },
-            "time": "2015-03-27 16:11:58"
+            "time": "2015-03-27 16:49:02"
         },
         {
             "name": "jms/metadata",
