@@ -24,13 +24,13 @@ L'ajout se fait directement par le formulaire d'ajout, le couple clé/secret ét
 
 ## I/ Introduction
 
-Le protocole Oauth2 décrit 5 stratégie pour obtenir un token, nous en avons implémenté 2 au sein de l'api d'openOrchestra.
+Le protocole Oauth2 décrit 5 stratégies pour obtenir un token, nous en avons implémenté 2 au sein de l'api d'openOrchestra.
 
 ## II/ Client credentials
 
 Cette stratégie permet d'obtenir un token lié uniquement à un client.
 
-Pour l'obtenir envoyez la requète :
+Pour l'obtenir envoyez la requête :
 
     /oauth/access_token?grant_type=client_credentials
 
@@ -44,7 +44,7 @@ Vous obtiendrez un token pour accéder à l'api.
 
 Cette stratégie permet d'obtenir un token lié à un client et à un utilisateur.
 
-Pour l'obtenir envoyez la requète :
+Pour l'obtenir envoyez la requête :
 
     /oauth/access_token?grant_type=password&username=username&password=password
 
@@ -74,11 +74,11 @@ Ajoutez les lignes pour créer un firewall:
         security: true
         stateless: true
 
-Ce faisant, l'api sera sécurisé en utilisant le protocole oauth2 et stateless
+Ce faisant, l'api sera sécurisé en utilisant le protocole oauth2 et sera stateless
 
 ## II/ Fonctionnement global
 
-Dans le cas du fonctionnement avec le backoffice, il est essentiel de pouvoir faire des requètes sur l'api
+Dans le cas du fonctionnement avec le backoffice, il est essentiel de pouvoir faire des requêtes sur l'api
  en étant déjà authentifié sur le reste de l'application.
 
 Pour cela, l'api ne peut plus être stateless.
@@ -103,4 +103,4 @@ Ajoutez les lignes pour crée 2 firewalls :
             path:   /logout
             target: /admin
 
-Ce faisant, l'api est sécurisé, il est aussi possible d'y acceder après avoir crée un token et les accès depuis le backoffice sont fonctionnels.
+Ce faisant, l'api sera sécurisé d'une part par un accès en oauth2, mais aussi en utilisant la connextion depuis le backoffice.
