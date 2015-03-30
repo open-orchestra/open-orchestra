@@ -1,7 +1,7 @@
 # Les évènements OpenOrchestra
 
-OpenOrchestra a plusieurs évènements que vous pouvez utiliser en créant des listener ou subscriber qui écouteront ces évènements.
-Ces évènements sont dispatchés la plupart du temps dans les controllers et sont beaucoup utilisé dans `LogBundle\EventSubscriber`
+OpenOrchestra dispatch plusieurs évènements que vous pouvez utiliser en créant des listeners ou subscribers qui écouteront ces évènements.
+Ces évènements sont dispatchés la plupart du temps dans les controllers et sont beaucoup utilisés dans `LogBundle\EventSubscriber`
 Il vous faut créer une méthode qui prend en paramètre l'évènement que vous écoutez et vous devez rattacher le nom de l'évènement que vous voulez catcher à votre méthode.
 
 Par exemple dans votre subscriber :
@@ -100,7 +100,7 @@ Les fichiers des évènements des contenus sont dans `OpenOrchestra\ModelInterfa
 
 ### Type de contenu
 
-Les fichiers des évènements des types de contenus dans `OpenOrchestra\ModelInterface\ContentTypeEvents` et `OpenOrchestra\ModelInterface\Event\ContentTypeEvent`.
+Les fichiers des évènements des types de contenus sont dans `OpenOrchestra\ModelInterface\ContentTypeEvents` et `OpenOrchestra\ModelInterface\Event\ContentTypeEvent`.
 
 * ContentTypeEvent
     * Création d'un type de contenu : CONTENT_TYPE_CREATE
@@ -117,7 +117,7 @@ Les fichiers des évènements des tags dans `OpenOrchestra\ModelInterface\Keywor
 
 ### Redirection
 
-Les fichiers des évènements des redirections dans `OpenOrchestra\ModelInterface\RedirectionEvents` et `OpenOrchestra\ModelInterface\Event\RedirectionEvent`.
+Les fichiers des évènements des redirections sont dans `OpenOrchestra\ModelInterface\RedirectionEvents` et `OpenOrchestra\ModelInterface\Event\RedirectionEvent`.
 
 * RedirectionEvent
     * Création d'une redirection : REDIRECTION_CREATE
@@ -126,7 +126,7 @@ Les fichiers des évènements des redirections dans `OpenOrchestra\ModelInterfac
 
 ### Rôle
 
-Les fichiers des évènements des rôles dans `OpenOrchestra\ModelInterface\RoleEvents` et `OpenOrchestra\ModelInterface\Event\RoleEvent`.
+Les fichiers des évènements des rôles sont dans `OpenOrchestra\ModelInterface\RoleEvents` et `OpenOrchestra\ModelInterface\Event\RoleEvent`.
 
 * RoleEvent
     * Création d'un rôle : ROLE_CREATE
@@ -135,7 +135,7 @@ Les fichiers des évènements des rôles dans `OpenOrchestra\ModelInterface\Role
 
 ### Site
 
-Les fichiers des évènements des sites dans `OpenOrchestra\ModelInterface\SiteEvents` et `OpenOrchestra\ModelInterface\Event\SiteEvent`.
+Les fichiers des évènements des sites sont dans `OpenOrchestra\ModelInterface\SiteEvents` et `OpenOrchestra\ModelInterface\Event\SiteEvent`.
 
 * SiteEvent
     * Création d'un site : SITE_CREATE
@@ -144,7 +144,7 @@ Les fichiers des évènements des sites dans `OpenOrchestra\ModelInterface\SiteE
 
 ### Status
 
-Les fichiers des évènements des status dans `OpenOrchestra\ModelInterface\StatusEvents` et `OpenOrchestra\ModelInterface\Event\StatusEvent`.
+Les fichiers des évènements des status sont dans `OpenOrchestra\ModelInterface\StatusEvents` et `OpenOrchestra\ModelInterface\Event\StatusEvent`.
 
 * StatusEvent
     * Création d'un status : STATUS_CREATE
@@ -159,7 +159,7 @@ StatusableEvent est utilisé lors du changement de status des noeuds, contenus e
 
 ### Thème
 
-Les fichiers des évènements des thèmes dans `OpenOrchestra\ModelInterface\ThemeEvents` et `OpenOrchestra\ModelInterface\Event\ThemeEvent`.
+Les fichiers des évènements des thèmes sont dans `OpenOrchestra\ModelInterface\ThemeEvents` et `OpenOrchestra\ModelInterface\Event\ThemeEvent`.
 
 * ThemeEvent
     * Création d'un thème : THEME_CREATE
@@ -181,7 +181,7 @@ Les évènements sont dans `OpenOrchestra\UserBundle\Event\GroupEvent` et `OpenO
     * Suppression d'un utilisateur : USER_DELETE
     * Modification d'un utilisateur : USER_UPDATE
 
-## Exemple d'utilisation d'un évènement
+## Exemple de dispatch d'un évènement
 
 Utilisation d'un NodeEvent :
 
