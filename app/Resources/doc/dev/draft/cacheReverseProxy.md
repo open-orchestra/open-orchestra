@@ -86,3 +86,13 @@ Voici bloc par bloc, les spécifications de cache.
 * Bloc MediaListByKeyword
     * Type : public
     * Tags : mediaId de tous les éléments qui la compose
+
+#### X-UA-Device
+
+Dans le fichier `openorchestra.vcl` de Varnish nous testons le User-Agent pour renvoyer le tag X-UA-Device correspondant: 
+
+    if (req.http.User-Agent ~ "(?i)android") {
+            set req.http.X-UA-Device = "android";
+    }
+
+Ainsi lors de l'affichage de la page du site nous cherchons si les templates android existent. [Voir aussi la documentation sur le multi-devices](https://github.com/itkg/open-orchestra/blob/master/app/Resources/doc/dev/draft/multiDevices.md)
