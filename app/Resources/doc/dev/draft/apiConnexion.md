@@ -44,7 +44,7 @@ Vous obtiendrez un token pour accéder à l'api.
 
 Cette stratégie permet d'obtenir un token lié à un client et à un utilisateur.
 
-Pour l'obtenir envoyz la requète :
+Pour l'obtenir envoyez la requète :
 
     /oauth/access_token?grant_type=password&username=username&password=password
 
@@ -56,7 +56,7 @@ Vous obtiendrez un token pour accéder à l'api connecté avec l'utilisateur en 
 
 ## IV/ Utilisation
 
-Pour pourvoir utiliser l'api, ajouter le paramètre access_token=token dans votre query string directement.
+Pour pouvoir utiliser l'api, ajoutez le paramètre access_token=token dans votre query string directement.
 
 # III/ Mise en place des firewall
 
