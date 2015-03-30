@@ -17,12 +17,19 @@ security:
         dev:
             pattern:  ^/(_(profiler|wdt)|css|images|js)/
             security: false
+        api:
+            pattern: ^/api/
+            oauth2: ~
+            anonymous: false
+            security: true
+            context: openorchestra
         main:
             pattern: ^/
             form_login:
                 provider: fos_userbundle
                 csrf_provider: form.csrf_provider
             anonymous: true
+            context: openorchestra
             logout:
                 path:   /logout
                 target: /admin
