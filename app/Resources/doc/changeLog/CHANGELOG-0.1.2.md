@@ -45,3 +45,4 @@ Url to see changes :
 ## Configuration modification
 
  - The interface split modify the `resolve_target_documents`, you need to put the new read interfaces instead
+ - [Change the firewall configuration for the api connexion](https://github.com/itkg/open-orchestra/blob/master/app/Resources/doc/dev/draft/apiConnexion.md)
