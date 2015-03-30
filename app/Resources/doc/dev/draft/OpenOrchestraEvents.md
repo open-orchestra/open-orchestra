@@ -1,8 +1,31 @@
 # Les évènements OpenOrchestra
 
-OpenOrchestra a plusieurs évènements que vous pouvez utiliser avec la méthode `dispatch`, par exemple dans un controller :
+OpenOrchestra a plusieurs évènements que vous pouvez utiliser en créant des listener ou subscriber qui écouteront ces évènements.
+Ces évènements sont dispatchés la plupart du temps dans les controllers et sont beaucoup utilisé dans `LogBundle\EventSubscriber`
+Il vous faut créer une méthode qui prend en paramètre l'évènement que vous écoutez et vous devez rattacher le nom de l'évènement que vous voulez catcher à votre méthode.
 
-    $this->get('event_dispatcher')->dispatch($eventName, $event);
+Par exemple dans votre subscriber :
+
+    class ExempleSubscriber implements EventSubscriberInterface
+    {
+        /**
+         * @param NodeEvent $event
+         */
+        public function nodeUpdate(NodeEvent $event)
+        {
+            $this->info('open_orchestra_log.node.update', $event->getNode());
+        }
+        
+        /**
+         * @return array The event names to listen to
+         */
+        public static function getSubscribedEvents()
+        {
+            return array(
+                NodeEvents::NODE_UPDATE => 'nodeUpdate'
+            );
+        }
+    }
 
 
 ## Editorial
