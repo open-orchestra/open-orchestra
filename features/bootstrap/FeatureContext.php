@@ -51,10 +51,9 @@ class FeatureContext extends MinkContext implements KernelAwareContext
      */
     public function iClickOnTheElementWithCssSelector($cssSelector)
     {
-        $session = $this->getSession();
-        $element = $session->getPage()->find(
+        $element = $this->getPage()->find(
             'xpath',
-            $session->getSelectorsHandler()->selectorToXpath('css', $cssSelector) // just changed xpath to css
+            $this->getSession()->getSelectorsHandler()->selectorToXpath('css', $cssSelector) // just changed xpath to css
         );
         if (null === $element) {
             throw new \InvalidArgumentException(sprintf('Could not evaluate CSS Selector: "%s"', $cssSelector));
@@ -72,9 +71,7 @@ class FeatureContext extends MinkContext implements KernelAwareContext
      */
     public function iClickOnTheLastElement($css)
     {
-        $session = $this->getSession();
-
-        $elements = $session->getPage()->findAll('css', $css);
+        $elements = $this->getPage()->findAll('css', $css);
 
         $element = end($elements);
 
@@ -86,15 +83,57 @@ class FeatureContext extends MinkContext implements KernelAwareContext
     }
 
     /**
-     * Wait some second
+     * Wait for an element to appear
      *
-     * @param $time
+     * @param string $element
      *
-     * @When /^I wait some second "(\d+)"$/
+     * @When /^I wait for element "([^"]*)"$/
      */
-    public function iWaitSomeSecond($time)
+    public function iWaitForElement($element)
     {
-        sleep($time);
+        $this->getSession()->wait(5000, $element);
+    }
+
+    /**
+     * @param string $text
+     *
+     * @Then /^I should wait until i see "(?P<text>(?:[^"]|\\")*)"$/
+     */
+    public function iShouldWaitUntilISee($text)
+    {
+        $result = $this->waitForText($text);
+
+        if (false == $result) {
+            throw new \InvalidArgumentException(sprintf('Could not found text: "%s"', $text));
+        }
+    }
+
+    /**
+     * @param string $text
+     * @param int    $wait
+     *
+     * @return boolean
+     */
+    protected function waitForText($text, $wait = 5)
+    {
+        for ($i = 0; $i < $wait; $i++) {
+            try {
+                $this->assertPageContainsText($text);
+                return true;
+            } catch (Exception $e) {
+            }
+            sleep(1);
+        }
+
+        return false;
+    }
+
+    /**
+     * @return \Behat\Mink\Element\DocumentElement
+     */
+    protected function getPage()
+    {
+        return $this->getSession()->getPage();
     }
 
     /**
