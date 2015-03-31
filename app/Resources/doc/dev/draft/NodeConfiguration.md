@@ -39,6 +39,7 @@ L'attribut footer permet de définir si cette page sera visible dans le pied de 
 ## Meta
 
 Les attributs meta permettant de fournir des informations sur la nature et le contenu de la page web, ils sont ajoutés dans l'entête de la page avec des balises meta.
+Ces attributs sont aussi renseignés dans la configuration du site. Lors de l'affichage de la page si ces attributs sont vides alors ce sont les attributs correspondants du site qui sont utilisés
 
 ### Meta keywords
 
