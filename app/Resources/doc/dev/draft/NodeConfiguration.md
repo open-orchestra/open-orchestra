@@ -12,8 +12,8 @@ Cet attribut est requis pour pouvoir créer la page.
 
 ## Protocole
 
-L'attribut protocole permet de définir par quel protocole vous pouvez accéder à cette page (http, https, etc...).
-Cet attribut est requis pour pouvoir créer la page. Si rien n'est sélectionné le protocole du site est pris par défaut.
+L'attribut protocole permet de définir par quel protocole la page est accessible (http, https, etc...).
+Cet attribut est requis pour pouvoir créer la page. Par défaut OpenOrchestra prend le protocole renseigné dans la configuration du site.
 
 ## Fréquence de modification indicative (pour le sitemap)
 
@@ -58,7 +58,7 @@ Cet attribut permet de définir si le moteur de recherche peut suivre les liens 
 
 ## Rôle nécessaire pour afficher la page
 
-L'attribut rôle permet de définir quel rôle permet d'accéder à cette page. Par défaut la page est publique, si un rôle est sélectionné il faudra alors qu'un utilisateur avec les rôles nécessaires se connecte sur le site pour pouvoir voir cette page.
+L'attribut rôle permet de définir quel rôle permet d'accéder à cette page. Par défaut la page est publique, si un rôle est sélectionné seul un utilisateur avec les rôles nécessaires peut voir cette page.
 
 ## Max age pour le cache de la réponse de la page
 
@@ -66,7 +66,7 @@ L'attribut max age permet de définir le temps durant lequel cette page restera 
 
 ## Page source
 
-L'attribut page source permet de copier une page déjà créée.
+L'attribut page source permet de créer une nouvelle page en copiant une page déjà créée.
 
 ## Identifiant du template
 
