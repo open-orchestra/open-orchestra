@@ -26,6 +26,4 @@ Un Content est défini par :
 * un état de suppression : les contenus supprimés depuis le Back Office le sont de manière logique et non physique. Cet attribut indique l'état de suppression logique.
 * des fields : la liste des attributs spécifiques du content issus du Content Type.
 
-Là encore c'est l'aspect NoSql de MongoDB qui permet d'avoir une collection générique de content dans laquelle chaque document dispose pourtant de sa propre structure.
-
-### Content Attributes
+Là encore c'est l'aspect NoSql de MongoDB qui permet d'avoir une collection générique de Contents dans laquelle chaque document dispose pourtant de sa propre structure.
