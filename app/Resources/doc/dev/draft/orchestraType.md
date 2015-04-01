@@ -22,7 +22,7 @@ Nom : 'orchestra_color_picker'
 
 ## OrchestraContentTypeChoiceType
 
-La classe OrchestraContentTypeChoiceType permet de créer une liste déroulante de type de contenu.
+La classe OrchestraContentTypeChoiceType permet de créer une liste déroulante de types de contenu.
 
 Nom : 'orchestra_content_type_choice'
 
@@ -46,13 +46,13 @@ Nom : 'orchestra_media'
 
 ## OrchestraNodeChoiceType
 
-La classe OrchestraNodeChoiceType permet de créer une liste déroulante de noeuds. Les noeuds sont ordonnés comme dans le menu de gauche.
+La classe OrchestraNodeChoiceType permet de créer une liste déroulante de noeuds. Les noeuds sont ordonnés comme dans le menu de navigation en Back Office.
 
 Nom : 'orchestra_node_choice'
 
 ## OrchestraRoleChoiceType
 
-La classe OrchestraRoleChoiceType permet de créer une liste déroulante de rôle.
+La classe OrchestraRoleChoiceType permet de créer une liste déroulante de rôles.
 
 Nom : 'orchestra_role_choice'
 
@@ -83,7 +83,7 @@ Ajoutez le nom du type de champ :
         'label' => 'open_orchestra_backoffice.form.node.theme'
     ));
 
-Dans cet exemple "orchestra_theme_choice" est le nom du type de champ OrchestraVideoType.
+Dans cet exemple "orchestra_theme_choice" est le nom du type de champ OrchestraThemeChoiceType.
 
 OrchestraMediaType est utilisé dans une collection, pour ajouter plusieurs médias : 
 
