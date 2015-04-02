@@ -34,7 +34,7 @@ Go on the project page for more inforation : http://www.ansible.com
 In the parent directory of the current directory run
 
     git clone git@github.com:itkg/open-orchestra-front-demo.git
-    git clone git@github.com:itkg/open-orchestra.git
+    git clone git@github.com:open-orchestra/open-orchestra.git
 
 ## Install roles from ansible-galaxy
 Install roles needed to launch the box
@@ -53,7 +53,6 @@ In the `/etc/hosts` file of your computer add the following lines :
     192.168.33.10   admin.openorchestra.dev
     192.168.33.10   front.openorchestra.dev
     192.168.33.10   demo.openorchestra.dev
-    192.168.33.10   echonext.openorchestra.dev
     192.168.33.10   media.openorchestra.dev
 
 ## Temporary Override the dns redirection for the integration server
@@ -63,7 +62,6 @@ In the `/etc/hosts` file of your computer add the following lines:
     10.0.1.246      front.openorchestra.inte
     10.0.1.246      smartadmin.openorchestra.inte
     10.0.1.246      echonext.openorchestra.inte
-    10.0.1.246      media.openorchestra.inte
     10.0.1.246      admin.openorchestra.inte
 
 ## Launch the box
