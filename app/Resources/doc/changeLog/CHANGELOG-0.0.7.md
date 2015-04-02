@@ -2,17 +2,15 @@
 
 Url to see changes : 
 
- - [Cms bundle](https://github.com/itkg/phporchestra-cms-bundle/compare/v0.0.6...v0.0.7)
- - [Display bundle](https://github.com/itkg/phporchestra-display-bundle/compare/v0.0.6...v0.0.7)
- - [Model bundle](https://github.com/itkg/phporchestra-model-bundle/compare/v0.0.6...v0.0.7)
- - [Model interface](https://github.com/itkg/phporchestra-model-interface/compare/v0.0.6...v0.0.7)
- - [Front bundle](https://github.com/itkg/phporchestra-front-bundle/compare/v0.0.6...v0.0.7)
- - [Base bundle](https://github.com/itkg/phporchestra-base-bundle/compare/v0.0.6...v0.0.7)
- - [Media bundle](https://github.com/itkg/phporchestra-media-bundle/compare/v0.0.6...v0.0.7)
- - [Translation bundle](https://github.com/itkg/phporchestra-translation-bundle/compare/v0.0.6...v0.0.7)
- - [User bundle](https://github.com/itkg/phporchestra-user-bundle/compare/v0.0.6...v0.0.7)
- - [Theme bundle](https://github.com/itkg/phporchestra-theme-bundle/compare/v0.0.6...v0.0.7)
- - [Indexation bundle](https://github.com/itkg/phporchestra-indexation-bundle/compare/v0.0.6...v0.0.7)
+ - [Cms bundle](https://github.com/open-orchestra/phporchestra-cms-bundle/compare/v0.0.6...v0.0.7)
+ - [Display bundle](https://github.com/open-orchestra/phporchestra-display-bundle/compare/v0.0.6...v0.0.7)
+ - [Model bundle](https://github.com/open-orchestra/phporchestra-model-bundle/compare/v0.0.6...v0.0.7)
+ - [Model interface](https://github.com/open-orchestra/phporchestra-model-interface/compare/v0.0.6...v0.0.7)
+ - [Front bundle](https://github.com/open-orchestra/phporchestra-front-bundle/compare/v0.0.6...v0.0.7)
+ - [Base bundle](https://github.com/open-orchestra/phporchestra-base-bundle/compare/v0.0.6...v0.0.7)
+ - [Media bundle](https://github.com/open-orchestra/phporchestra-media-bundle/compare/v0.0.6...v0.0.7)
+ - [User bundle](https://github.com/open-orchestra/phporchestra-user-bundle/compare/v0.0.6...v0.0.7)
+ - [Theme bundle](https://github.com/open-orchestra/phporchestra-theme-bundle/compare/v0.0.6...v0.0.7)
 
 ## Possible BC breaker
 
@@ -37,7 +35,7 @@ Url to see changes :
  - Back Office > Mediatheque : contribution interface is a bit more friendly user
  - Back Office > Logs : [Add current site name in logs](https://trello.com/c/TuJrzEjV/558-1-etq-ubo-dans-le-listing-de-log-je-vois-le-site-courant-utilise-au-moment-de-la-creation-du-log)
  - Back Office > Mediathèque : [Remove media preview](https://trello.com/c/c0EuDFjM/521-0-5-etq-ubo-je-ne-vois-plus-la-preview-dans-la-mediatheque)
- - [Update to symfony 2.6.4](https://github.com/itkg/phporchestra-base-bundle/pull/20)
+ - [Update to symfony 2.6.4](https://github.com/open-orchestra/phporchestra-base-bundle/pull/20)
 
 ## Deprecated method
 
