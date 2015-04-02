@@ -86,7 +86,7 @@ Then install the admin project
 
 And the front project
 
-    cd ../front-openorchestra*
+    cd ../front-openorchestra
     ../openorchestra/composer.phar install
 
 ## Install the assets
