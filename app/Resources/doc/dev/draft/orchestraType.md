@@ -1,6 +1,6 @@
 # OrchestraType
 
-OpenOrchestra propose plusieurs types de champs de formulaire custom pour créer des éléments composites comme des listes déroulantes ou des champs textes utilisant du Javascript spécifique (color picker et keyword).
+OpenOrchestra propose plusieurs types de champs de formulaire par défaut pour créer des éléments composites comme des listes déroulantes ou des champs textes utilisant du Javascript spécifique (palette de couleur et mot-clé).
 
 ## OrchestraChoiceType
 
@@ -16,7 +16,7 @@ Nom : 'orchestra_color_choice'
 
 ## OrchestraColorPickerType
 
-La classe OrchestraColorPickerType permet de créer un champ avec un color picker.
+La classe OrchestraColorPickerType permet de créer un champ avec une palette de couleurs.
 
 Nom : 'orchestra_color_picker'
 
@@ -34,7 +34,7 @@ Nom : 'orchestra_frequence_choice'
 
 ## OrchestraKeywordstype
 
-La classe OrchestraKeywordstype permet de créer un champ pour taguer par keywords.
+La classe OrchestraKeywordstype permet de créer un champ pour taguer par mot-clé.
 
 Nom : 'orchestra_keywords'
 
@@ -46,7 +46,7 @@ Nom : 'orchestra_media'
 
 ## OrchestraNodeChoiceType
 
-La classe OrchestraNodeChoiceType permet de créer une liste déroulante de noeuds. Les noeuds sont ordonnés comme dans le menu de navigation en Back Office.
+La classe OrchestraNodeChoiceType permet de créer une liste déroulante des pages existantes. Les pages sont ordonnés comme dans le menu de navigation en Back Office.
 
 Nom : 'orchestra_node_choice'
 
