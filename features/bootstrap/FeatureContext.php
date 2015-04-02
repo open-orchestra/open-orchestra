@@ -101,31 +101,8 @@ class FeatureContext extends MinkContext implements KernelAwareContext
      */
     public function iShouldWaitUntilISee($text)
     {
-        $result = $this->waitForText($text);
-
-        if (false == $result) {
-            throw new \InvalidArgumentException(sprintf('Could not found text: "%s"', $text));
-        }
-    }
-
-    /**
-     * @param string $text
-     * @param int    $wait
-     *
-     * @return boolean
-     */
-    protected function waitForText($text, $wait = 5)
-    {
-        for ($i = 0; $i < $wait; $i++) {
-            try {
-                $this->assertPageContainsText($text);
-                return true;
-            } catch (Exception $e) {
-            }
-            sleep(1);
-        }
-
-        return false;
+        $this->iWaitForElement('(0 === jQuery.active)');
+        $this->assertPageContainsText($text);
     }
 
     /**
