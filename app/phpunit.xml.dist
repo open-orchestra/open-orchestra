@@ -17,15 +17,15 @@
         <testsuite name="unit">
             <directory>../src/*/*Bundle/Tests</directory>
             <directory>../src/*/Bundle/*Bundle/Tests</directory>
-            <directory>../vendor/itkg/*/*/*Bundle/Tests</directory>
-            <exclude>../vendor/itkg/open-orchestra-cms-bundle/OpenOrchestra/ApiBundle/Tests/Functional</exclude>
-            <exclude>../vendor/itkg/open-orchestra-cms-bundle/OpenOrchestra/BackofficeBundle/Tests/Functional</exclude>
-            <exclude>../vendor/itkg/open-orchestra-media-bundle/OpenOrchestra/MediaBundle/Tests/Functional</exclude>
-            <exclude>../vendor/itkg/open-orchestra-model-bundle/OpenOrchestra/ModelBundle/Tests/Functional</exclude>
-            <exclude>../vendor/itkg/open-orchestra-user-bundle/OpenOrchestra/UserBundle/Tests/Functional</exclude>
+            <directory>../vendor/open-orchestra/*/*/*Bundle/Tests</directory>
+            <exclude>../vendor/open-orchestra/open-orchestra-cms-bundle/OpenOrchestra/ApiBundle/Tests/Functional</exclude>
+            <exclude>../vendor/open-orchestra/open-orchestra-cms-bundle/OpenOrchestra/BackofficeBundle/Tests/Functional</exclude>
+            <exclude>../vendor/open-orchestra/open-orchestra-media-bundle/OpenOrchestra/MediaBundle/Tests/Functional</exclude>
+            <exclude>../vendor/open-orchestra/open-orchestra-model-bundle/OpenOrchestra/ModelBundle/Tests/Functional</exclude>
+            <exclude>../vendor/open-orchestra/open-orchestra-user-bundle/OpenOrchestra/UserBundle/Tests/Functional</exclude>
         </testsuite>
         <testsuite name="functional">
-            <directory>../vendor/itkg/*/*/*Bundle/Tests/Functional</directory>
+            <directory>../vendor/open-orchestra/*/*/*Bundle/Tests/Functional</directory>
         </testsuite>
     </testsuites>
 
