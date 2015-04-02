@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b64c3ecd7bd9feae1c3cfe5a48ac2966",
+    "hash": "1b2598c2bfd4442cb3ab51e17ca76c1a",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -787,16 +787,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSHttpCache.git",
-                "reference": "d488a2db3cdba03d500396fba1087fe19cc45432"
+                "reference": "262307126bcef526aa8da0d5bf8daee933d0ef1c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSHttpCache/zipball/d488a2db3cdba03d500396fba1087fe19cc45432",
-                "reference": "d488a2db3cdba03d500396fba1087fe19cc45432",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSHttpCache/zipball/262307126bcef526aa8da0d5bf8daee933d0ef1c",
+                "reference": "262307126bcef526aa8da0d5bf8daee933d0ef1c",
                 "shasum": ""
             },
             "require": {
-                "guzzle/http": "3.*",
+                "guzzle/guzzle": "~3.0",
                 "php": ">=5.3.3",
                 "symfony/event-dispatcher": "~2.3",
                 "symfony/options-resolver": "~2.3"
@@ -852,7 +852,7 @@
                 "purge",
                 "varnish"
             ],
-            "time": "2015-03-16 08:47:06"
+            "time": "2015-04-02 06:11:40"
         },
         {
             "name": "friendsofsymfony/http-cache-bundle",
@@ -1077,83 +1077,70 @@
             "time": "2015-03-30 09:21:01"
         },
         {
-            "name": "guzzle/common",
-            "version": "v3.9.2",
-            "target-dir": "Guzzle/Common",
+            "name": "guzzle/guzzle",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Guzzle3/common.git",
-                "reference": "2e36af7cf2ce3ea1f2d7c2831843b883a8e7b7dc"
+                "url": "https://github.com/guzzle/guzzle3.git",
+                "reference": "0645b70d953bc1c067bbc8d5bc53194706b628d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Guzzle3/common/zipball/2e36af7cf2ce3ea1f2d7c2831843b883a8e7b7dc",
-                "reference": "2e36af7cf2ce3ea1f2d7c2831843b883a8e7b7dc",
+                "url": "https://api.github.com/repos/guzzle/guzzle3/zipball/0645b70d953bc1c067bbc8d5bc53194706b628d9",
+                "reference": "0645b70d953bc1c067bbc8d5bc53194706b628d9",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.2",
-                "symfony/event-dispatcher": ">=2.1"
+                "ext-curl": "*",
+                "php": ">=5.3.3",
+                "symfony/event-dispatcher": "~2.1"
             },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.7-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Guzzle\\Common": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Common libraries used by Guzzle",
-            "homepage": "http://guzzlephp.org/",
-            "keywords": [
-                "collection",
-                "common",
-                "event",
-                "exception"
-            ],
-            "abandoned": "guzzle/guzzle",
-            "time": "2014-08-11 04:32:36"
-        },
-        {
-            "name": "guzzle/http",
-            "version": "v3.9.2",
-            "target-dir": "Guzzle/Http",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Guzzle3/http.git",
-                "reference": "1e8dd1e2ba9dc42332396f39fbfab950b2301dc5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Guzzle3/http/zipball/1e8dd1e2ba9dc42332396f39fbfab950b2301dc5",
-                "reference": "1e8dd1e2ba9dc42332396f39fbfab950b2301dc5",
-                "shasum": ""
-            },
-            "require": {
+            "replace": {
+                "guzzle/batch": "self.version",
+                "guzzle/cache": "self.version",
                 "guzzle/common": "self.version",
+                "guzzle/http": "self.version",
+                "guzzle/inflection": "self.version",
+                "guzzle/iterator": "self.version",
+                "guzzle/log": "self.version",
                 "guzzle/parser": "self.version",
-                "guzzle/stream": "self.version",
-                "php": ">=5.3.2"
+                "guzzle/plugin": "self.version",
+                "guzzle/plugin-async": "self.version",
+                "guzzle/plugin-backoff": "self.version",
+                "guzzle/plugin-cache": "self.version",
+                "guzzle/plugin-cookie": "self.version",
+                "guzzle/plugin-curlauth": "self.version",
+                "guzzle/plugin-error-response": "self.version",
+                "guzzle/plugin-history": "self.version",
+                "guzzle/plugin-log": "self.version",
+                "guzzle/plugin-md5": "self.version",
+                "guzzle/plugin-mock": "self.version",
+                "guzzle/plugin-oauth": "self.version",
+                "guzzle/service": "self.version",
+                "guzzle/stream": "self.version"
+            },
+            "require-dev": {
+                "doctrine/cache": "~1.3",
+                "monolog/monolog": "~1.0",
+                "phpunit/phpunit": "3.7.*",
+                "psr/log": "~1.0",
+                "symfony/class-loader": "~2.1",
+                "zendframework/zend-cache": "2.*,<2.3",
+                "zendframework/zend-log": "2.*,<2.3"
             },
             "suggest": {
-                "ext-curl": "*"
+                "guzzlehttp/guzzle": "Guzzle 5 has moved to a new package name. The package you have installed, Guzzle 3, is deprecated."
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.7-dev"
+                    "dev-master": "3.9-dev"
                 }
             },
             "autoload": {
                 "psr-0": {
-                    "Guzzle\\Http": ""
+                    "Guzzle": "src/",
+                    "Guzzle\\Tests": "tests/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1165,118 +1152,24 @@
                     "name": "Michael Dowling",
                     "email": "mtdowling@gmail.com",
                     "homepage": "https://github.com/mtdowling"
+                },
+                {
+                    "name": "Guzzle Community",
+                    "homepage": "https://github.com/guzzle/guzzle/contributors"
                 }
             ],
-            "description": "HTTP libraries used by Guzzle",
+            "description": "PHP HTTP client. This library is deprecated in favor of https://packagist.org/packages/guzzlehttp/guzzle",
             "homepage": "http://guzzlephp.org/",
             "keywords": [
-                "Guzzle",
                 "client",
                 "curl",
+                "framework",
                 "http",
-                "http client"
+                "http client",
+                "rest",
+                "web service"
             ],
-            "abandoned": "guzzle/guzzle",
-            "time": "2014-08-11 04:32:36"
-        },
-        {
-            "name": "guzzle/parser",
-            "version": "v3.9.2",
-            "target-dir": "Guzzle/Parser",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Guzzle3/parser.git",
-                "reference": "6874d171318a8e93eb6d224cf85e4678490b625c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Guzzle3/parser/zipball/6874d171318a8e93eb6d224cf85e4678490b625c",
-                "reference": "6874d171318a8e93eb6d224cf85e4678490b625c",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.2"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.7-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Guzzle\\Parser": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Interchangeable parsers used by Guzzle",
-            "homepage": "http://guzzlephp.org/",
-            "keywords": [
-                "URI Template",
-                "cookie",
-                "http",
-                "message",
-                "url"
-            ],
-            "abandoned": "guzzle/guzzle",
-            "time": "2014-02-05 18:29:46"
-        },
-        {
-            "name": "guzzle/stream",
-            "version": "v3.9.2",
-            "target-dir": "Guzzle/Stream",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Guzzle3/stream.git",
-                "reference": "60c7fed02e98d2c518dae8f97874c8f4622100f0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Guzzle3/stream/zipball/60c7fed02e98d2c518dae8f97874c8f4622100f0",
-                "reference": "60c7fed02e98d2c518dae8f97874c8f4622100f0",
-                "shasum": ""
-            },
-            "require": {
-                "guzzle/common": "self.version",
-                "php": ">=5.3.2"
-            },
-            "suggest": {
-                "guzzle/http": "To convert Guzzle request objects to PHP streams"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.7-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Guzzle\\Stream": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Michael Dowling",
-                    "email": "mtdowling@gmail.com",
-                    "homepage": "https://github.com/mtdowling"
-                }
-            ],
-            "description": "Guzzle stream wrapper component",
-            "homepage": "http://guzzlephp.org/",
-            "keywords": [
-                "Guzzle",
-                "component",
-                "stream"
-            ],
-            "abandoned": "guzzle/guzzle",
-            "time": "2014-05-01 21:36:02"
+            "time": "2015-03-18 18:23:50"
         },
         {
             "name": "incenteev/composer-parameter-handler",
@@ -1328,372 +1221,6 @@
                 "parameters management"
             ],
             "time": "2014-12-17 16:24:52"
-        },
-        {
-            "name": "itkg/open-orchestra-base-bundle",
-            "version": "dev-master",
-            "target-dir": "OpenOrchestra",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:itkg/open-orchestra-base-bundle.git",
-                "reference": "15c5d06102458a8b241c591ef45de9f6396448e0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/itkg/open-orchestra-base-bundle/zipball/15c5d06102458a8b241c591ef45de9f6396448e0",
-                "reference": "15c5d06102458a8b241c591ef45de9f6396448e0",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4",
-                "sensio/distribution-bundle": "3.0.15",
-                "sensio/framework-extra-bundle": "3.0.4",
-                "sensio/generator-bundle": "2.5.1",
-                "snc/redis-bundle": "~2",
-                "symfony/assetic-bundle": "2.6.0",
-                "symfony/monolog-bundle": "2.7.1",
-                "symfony/symfony": "2.6.4",
-                "twig/extensions": "~1"
-            },
-            "require-dev": {
-                "phake/phake": "2.0.0-beta2",
-                "phpunit/phpunit": "4.0.14",
-                "scrutinizer/ocular": "1.1.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "OpenOrchestra\\BaseBundle": ""
-                }
-            },
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Nicolas Thal",
-                    "email": "nico.th4l@gmail.com"
-                }
-            ],
-            "description": "The OpenOrchestra base bundle",
-            "support": {
-                "source": "https://github.com/itkg/open-orchestra-base-bundle/tree/master",
-                "issues": "https://github.com/itkg/open-orchestra-base-bundle/issues"
-            },
-            "time": "2015-03-30 09:54:44"
-        },
-        {
-            "name": "itkg/open-orchestra-cms-bundle",
-            "version": "dev-master",
-            "target-dir": "OpenOrchestra",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:itkg/open-orchestra-cms-bundle.git",
-                "reference": "1069b9c62575c888d07d3feb8db926e99e714a73"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/itkg/open-orchestra-cms-bundle/zipball/1069b9c62575c888d07d3feb8db926e99e714a73",
-                "reference": "1069b9c62575c888d07d3feb8db926e99e714a73",
-                "shasum": ""
-            },
-            "require": {
-                "braincrafted/bootstrap-bundle": "2.1.0",
-                "itkg/open-orchestra-base-bundle": "*",
-                "itkg/open-orchestra-display-bundle": "*",
-                "itkg/open-orchestra-media-bundle": "*",
-                "itkg/open-orchestra-model-interface": "*",
-                "itkg/open-orchestra-user-bundle": "*",
-                "jms/serializer-bundle": "0.13.0",
-                "stfalcon/tinymce-bundle": "0.3.8"
-            },
-            "require-dev": {
-                "itkg/open-orchestra-model-bundle": "dev-master",
-                "phake/phake": "2.0.0-beta2",
-                "phpunit/phpunit": "4.0.14",
-                "scrutinizer/ocular": "1.1.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "OpenOrchestra\\LogBundle": "",
-                    "OpenOrchestra\\BackofficeBundle": "",
-                    "OpenOrchestra\\Backoffice": "",
-                    "OpenOrchestra\\GroupBundle": "",
-                    "OpenOrchestra\\ApiBundle": ""
-                }
-            },
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Nicolas Thal",
-                    "email": "nico.th4l@gmail.com"
-                }
-            ],
-            "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "support": {
-                "source": "https://github.com/itkg/open-orchestra-cms-bundle/tree/master",
-                "issues": "https://github.com/itkg/open-orchestra-cms-bundle/issues"
-            },
-            "time": "2015-03-31 07:54:55"
-        },
-        {
-            "name": "itkg/open-orchestra-display-bundle",
-            "version": "dev-master",
-            "target-dir": "OpenOrchestra",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:itkg/open-orchestra-display-bundle.git",
-                "reference": "0ccfc14b41e61e06dd92c015560f73d83e6dc6b1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/itkg/open-orchestra-display-bundle/zipball/0ccfc14b41e61e06dd92c015560f73d83e6dc6b1",
-                "reference": "0ccfc14b41e61e06dd92c015560f73d83e6dc6b1",
-                "shasum": ""
-            },
-            "require": {
-                "friendsofsymfony/http-cache-bundle": "1.1",
-                "itkg/open-orchestra-model-interface": "*",
-                "symfony/swiftmailer-bundle": "~2.3"
-            },
-            "require-dev": {
-                "itkg/open-orchestra-base-bundle": "dev-master",
-                "phake/phake": "2.0.0-beta2",
-                "phpunit/phpunit": "4.0.14",
-                "scrutinizer/ocular": "1.1.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "OpenOrchestra\\DisplayBundle": ""
-                }
-            },
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Nicolas Thal",
-                    "email": "nico.th4l@gmail.com"
-                },
-                {
-                    "name": "Benjamin Fouche",
-                    "email": "benjamin.fouche@businessdecision.com"
-                }
-            ],
-            "description": "The bundle to display all bricks",
-            "support": {
-                "source": "https://github.com/itkg/open-orchestra-display-bundle/tree/master",
-                "issues": "https://github.com/itkg/open-orchestra-display-bundle/issues"
-            },
-            "time": "2015-03-30 15:00:28"
-        },
-        {
-            "name": "itkg/open-orchestra-media-bundle",
-            "version": "dev-master",
-            "target-dir": "OpenOrchestra",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:itkg/open-orchestra-media-bundle.git",
-                "reference": "7d55c7bc156c3129d98a7740440f793254194a76"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/itkg/open-orchestra-media-bundle/zipball/7d55c7bc156c3129d98a7740440f793254194a76",
-                "reference": "7d55c7bc156c3129d98a7740440f793254194a76",
-                "shasum": ""
-            },
-            "require": {
-                "doctrine/data-fixtures": "1.0.0",
-                "doctrine/mongodb-odm": "1.0.0-BETA11",
-                "doctrine/mongodb-odm-bundle": "3.0.0-BETA6",
-                "ext-imagick": "*",
-                "itkg/open-orchestra-model-interface": "*",
-                "knplabs/knp-gaufrette-bundle": "v0.1.7",
-                "stof/doctrine-extensions-bundle": "1.1.0"
-            },
-            "require-dev": {
-                "itkg/open-orchestra-base-bundle": "dev-master",
-                "jmikola/geojson": "1.0.1",
-                "phake/phake": "2.0.0-beta2",
-                "phpunit/phpunit": "4.0.14",
-                "scrutinizer/ocular": "1.1.1",
-                "symfony/validator": "2.5.5"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "OpenOrchestra\\MediaBundle": "",
-                    "OpenOrchestra\\Media": ""
-                }
-            },
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Nicolas Thal",
-                    "email": "nico.th4l@gmail.com"
-                }
-            ],
-            "description": "A media bundle for the OpenOrchestra Project",
-            "support": {
-                "source": "https://github.com/itkg/open-orchestra-media-bundle/tree/master",
-                "issues": "https://github.com/itkg/open-orchestra-media-bundle/issues"
-            },
-            "time": "2015-03-30 15:29:36"
-        },
-        {
-            "name": "itkg/open-orchestra-model-bundle",
-            "version": "dev-master",
-            "target-dir": "OpenOrchestra",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:itkg/open-orchestra-model-bundle.git",
-                "reference": "efa8da6dfd57468b034ed601ff0e74616d43c5c7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/itkg/open-orchestra-model-bundle/zipball/efa8da6dfd57468b034ed601ff0e74616d43c5c7",
-                "reference": "efa8da6dfd57468b034ed601ff0e74616d43c5c7",
-                "shasum": ""
-            },
-            "require": {
-                "doctrine/data-fixtures": "1.0.0",
-                "doctrine/mongodb-odm": "1.0.0-BETA11",
-                "doctrine/mongodb-odm-bundle": "3.0.0-BETA6",
-                "itkg/open-orchestra-model-interface": "*",
-                "stof/doctrine-extensions-bundle": "1.1.0"
-            },
-            "require-dev": {
-                "itkg/open-orchestra-base-bundle": "dev-master",
-                "jmikola/geojson": "1.0.1",
-                "phake/phake": "2.0.0-beta2",
-                "phpunit/phpunit": "4.0.14",
-                "scrutinizer/ocular": "1.1.1",
-                "symfony/validator": "2.5.5"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "OpenOrchestra\\ModelBundle": ""
-                }
-            },
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Nicolas Thal",
-                    "email": "nico.th4l@gmail.com"
-                }
-            ],
-            "description": "An implemantation of the model-interface for OpenOrchestra on mongo",
-            "support": {
-                "source": "https://github.com/itkg/open-orchestra-model-bundle/tree/master",
-                "issues": "https://github.com/itkg/open-orchestra-model-bundle/issues"
-            },
-            "time": "2015-03-30 15:29:08"
-        },
-        {
-            "name": "itkg/open-orchestra-model-interface",
-            "version": "dev-master",
-            "target-dir": "OpenOrchestra",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:itkg/open-orchestra-model-interface.git",
-                "reference": "78a4406d4b7879639bf9f537d223877a3e45ab32"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/itkg/open-orchestra-model-interface/zipball/78a4406d4b7879639bf9f537d223877a3e45ab32",
-                "reference": "78a4406d4b7879639bf9f537d223877a3e45ab32",
-                "shasum": ""
-            },
-            "require": {
-                "doctrine/collections": "*",
-                "symfony/form": "*"
-            },
-            "require-dev": {
-                "jmikola/geojson": "1.0.1",
-                "phake/phake": "2.0.0-beta2",
-                "phpunit/phpunit": "4.0.14",
-                "scrutinizer/ocular": "1.1.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "OpenOrchestra\\ModelInterface": ""
-                }
-            },
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Nicolas Thal",
-                    "email": "nico.th4l@gmail.com"
-                }
-            ],
-            "description": "Describe all entity and repository to implement for the whole OpenOrchestra project",
-            "support": {
-                "source": "https://github.com/itkg/open-orchestra-model-interface/tree/master",
-                "issues": "https://github.com/itkg/open-orchestra-model-interface/issues"
-            },
-            "time": "2015-03-30 14:24:01"
-        },
-        {
-            "name": "itkg/open-orchestra-user-bundle",
-            "version": "dev-master",
-            "target-dir": "OpenOrchestra",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:itkg/open-orchestra-user-bundle.git",
-                "reference": "262be1a2c17fe9c60f25c494936c29ee26914daf"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/itkg/open-orchestra-user-bundle/zipball/262be1a2c17fe9c60f25c494936c29ee26914daf",
-                "reference": "262be1a2c17fe9c60f25c494936c29ee26914daf",
-                "shasum": ""
-            },
-            "require": {
-                "friendsofsymfony/user-bundle": "~2.0"
-            },
-            "require-dev": {
-                "itkg/open-orchestra-base-bundle": "dev-master",
-                "itkg/open-orchestra-display-bundle": "dev-master",
-                "phake/phake": "2.0.0-beta2",
-                "phpunit/phpunit": "4.0.14",
-                "scrutinizer/ocular": "1.1.1"
-            },
-            "suggest": {
-                "itkg/open-orchestra-display-bundle": "In order to use all the functionality offered by the OpenOrchestra project"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "OpenOrchestra\\UserBundle": ""
-                }
-            },
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Nicolas Thal",
-                    "email": "nico.th4l@gmail.com"
-                }
-            ],
-            "description": "An override of FosUserBundle to provide authentication on OpenOrchestra",
-            "support": {
-                "source": "https://github.com/itkg/open-orchestra-user-bundle/tree/master",
-                "issues": "https://github.com/itkg/open-orchestra-user-bundle/issues"
-            },
-            "time": "2015-03-30 15:28:39"
         },
         {
             "name": "jms/metadata",
@@ -2143,12 +1670,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "df7da8a5550eb94cb885df6be7ffebe2768c10fd"
+                "reference": "875cfb91e1ffb9a7fda4dddfdbc7ed529e52164a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/df7da8a5550eb94cb885df6be7ffebe2768c10fd",
-                "reference": "df7da8a5550eb94cb885df6be7ffebe2768c10fd",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/875cfb91e1ffb9a7fda4dddfdbc7ed529e52164a",
+                "reference": "875cfb91e1ffb9a7fda4dddfdbc7ed529e52164a",
                 "shasum": ""
             },
             "require": {
@@ -2208,7 +1735,352 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2015-03-26 18:30:54"
+            "time": "2015-03-31 21:43:29"
+        },
+        {
+            "name": "open-orchestra/open-orchestra-base-bundle",
+            "version": "dev-master",
+            "target-dir": "OpenOrchestra",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/open-orchestra/open-orchestra-base-bundle.git",
+                "reference": "8681dea73b0ebef98cc40372f255ad20c571aab7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-bundle/zipball/8681dea73b0ebef98cc40372f255ad20c571aab7",
+                "reference": "8681dea73b0ebef98cc40372f255ad20c571aab7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4",
+                "sensio/distribution-bundle": "3.0.15",
+                "sensio/framework-extra-bundle": "3.0.4",
+                "sensio/generator-bundle": "2.5.1",
+                "snc/redis-bundle": "~2",
+                "symfony/assetic-bundle": "2.6.0",
+                "symfony/monolog-bundle": "2.7.1",
+                "symfony/symfony": "2.6.4",
+                "twig/extensions": "~1"
+            },
+            "require-dev": {
+                "phake/phake": "2.0.0-beta2",
+                "phpunit/phpunit": "4.0.14",
+                "scrutinizer/ocular": "1.1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "OpenOrchestra\\BaseBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Thal",
+                    "email": "nico.th4l@gmail.com"
+                }
+            ],
+            "description": "The OpenOrchestra base bundle",
+            "time": "2015-04-02 07:22:34"
+        },
+        {
+            "name": "open-orchestra/open-orchestra-cms-bundle",
+            "version": "dev-master",
+            "target-dir": "OpenOrchestra",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
+                "reference": "4d65e389b77a580156ed9f2590d753c885773826"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/4d65e389b77a580156ed9f2590d753c885773826",
+                "reference": "4d65e389b77a580156ed9f2590d753c885773826",
+                "shasum": ""
+            },
+            "require": {
+                "braincrafted/bootstrap-bundle": "2.1.0",
+                "jms/serializer-bundle": "0.13.0",
+                "open-orchestra/open-orchestra-base-bundle": "*",
+                "open-orchestra/open-orchestra-display-bundle": "*",
+                "open-orchestra/open-orchestra-media-bundle": "*",
+                "open-orchestra/open-orchestra-model-interface": "*",
+                "open-orchestra/open-orchestra-user-bundle": "*",
+                "stfalcon/tinymce-bundle": "0.3.8"
+            },
+            "require-dev": {
+                "open-orchestra/open-orchestra-model-bundle": "dev-master",
+                "phake/phake": "2.0.0-beta2",
+                "phpunit/phpunit": "4.0.14",
+                "scrutinizer/ocular": "1.1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "OpenOrchestra\\LogBundle": "",
+                    "OpenOrchestra\\BackofficeBundle": "",
+                    "OpenOrchestra\\Backoffice": "",
+                    "OpenOrchestra\\GroupBundle": "",
+                    "OpenOrchestra\\ApiBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Thal",
+                    "email": "nico.th4l@gmail.com"
+                }
+            ],
+            "description": "This bundle provide the backoffice part of OpenOrchestra",
+            "time": "2015-04-02 07:47:32"
+        },
+        {
+            "name": "open-orchestra/open-orchestra-display-bundle",
+            "version": "dev-master",
+            "target-dir": "OpenOrchestra",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/open-orchestra/open-orchestra-display-bundle.git",
+                "reference": "f2e5761be7d18bbc879f4289a65178dee8f8dd20"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-display-bundle/zipball/f2e5761be7d18bbc879f4289a65178dee8f8dd20",
+                "reference": "f2e5761be7d18bbc879f4289a65178dee8f8dd20",
+                "shasum": ""
+            },
+            "require": {
+                "friendsofsymfony/http-cache-bundle": "1.1",
+                "open-orchestra/open-orchestra-model-interface": "*",
+                "symfony/swiftmailer-bundle": "~2.3"
+            },
+            "require-dev": {
+                "open-orchestra/open-orchestra-base-bundle": "dev-master",
+                "phake/phake": "2.0.0-beta2",
+                "phpunit/phpunit": "4.0.14",
+                "scrutinizer/ocular": "1.1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "OpenOrchestra\\DisplayBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Thal",
+                    "email": "nico.th4l@gmail.com"
+                },
+                {
+                    "name": "Benjamin Fouche",
+                    "email": "benjamin.fouche@businessdecision.com"
+                }
+            ],
+            "description": "The bundle to display all bricks",
+            "time": "2015-04-02 07:26:32"
+        },
+        {
+            "name": "open-orchestra/open-orchestra-media-bundle",
+            "version": "dev-master",
+            "target-dir": "OpenOrchestra",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/open-orchestra/open-orchestra-media-bundle.git",
+                "reference": "d6aab57d681ed6d040f372ccd6a9cea08200ea58"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/d6aab57d681ed6d040f372ccd6a9cea08200ea58",
+                "reference": "d6aab57d681ed6d040f372ccd6a9cea08200ea58",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/data-fixtures": "1.0.0",
+                "doctrine/mongodb-odm": "1.0.0-BETA11",
+                "doctrine/mongodb-odm-bundle": "3.0.0-BETA6",
+                "ext-imagick": "*",
+                "knplabs/knp-gaufrette-bundle": "v0.1.7",
+                "open-orchestra/open-orchestra-model-interface": "*",
+                "stof/doctrine-extensions-bundle": "1.1.0"
+            },
+            "require-dev": {
+                "jmikola/geojson": "1.0.1",
+                "open-orchestra/open-orchestra-base-bundle": "dev-master",
+                "phake/phake": "2.0.0-beta2",
+                "phpunit/phpunit": "4.0.14",
+                "scrutinizer/ocular": "1.1.1",
+                "symfony/validator": "2.5.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "OpenOrchestra\\MediaBundle": "",
+                    "OpenOrchestra\\Media": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Thal",
+                    "email": "nico.th4l@gmail.com"
+                }
+            ],
+            "description": "A media bundle for the OpenOrchestra Project",
+            "time": "2015-04-02 07:34:40"
+        },
+        {
+            "name": "open-orchestra/open-orchestra-model-bundle",
+            "version": "dev-master",
+            "target-dir": "OpenOrchestra",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
+                "reference": "0444c035b17f68ab0a50d8b440b69ddb82f13786"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/0444c035b17f68ab0a50d8b440b69ddb82f13786",
+                "reference": "0444c035b17f68ab0a50d8b440b69ddb82f13786",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/data-fixtures": "1.0.0",
+                "doctrine/mongodb-odm": "1.0.0-BETA11",
+                "doctrine/mongodb-odm-bundle": "3.0.0-BETA6",
+                "open-orchestra/open-orchestra-model-interface": "*",
+                "stof/doctrine-extensions-bundle": "1.1.0"
+            },
+            "require-dev": {
+                "jmikola/geojson": "1.0.1",
+                "open-orchestra/open-orchestra-base-bundle": "dev-master",
+                "phake/phake": "2.0.0-beta2",
+                "phpunit/phpunit": "4.0.14",
+                "scrutinizer/ocular": "1.1.1",
+                "symfony/validator": "2.5.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "OpenOrchestra\\ModelBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Thal",
+                    "email": "nico.th4l@gmail.com"
+                }
+            ],
+            "description": "An implemantation of the model-interface for OpenOrchestra on mongo",
+            "time": "2015-04-02 07:25:21"
+        },
+        {
+            "name": "open-orchestra/open-orchestra-model-interface",
+            "version": "dev-master",
+            "target-dir": "OpenOrchestra",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/open-orchestra/open-orchestra-model-interface.git",
+                "reference": "ea68c5078ec5d0c3bfd7951b79a7bed751643a33"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/ea68c5078ec5d0c3bfd7951b79a7bed751643a33",
+                "reference": "ea68c5078ec5d0c3bfd7951b79a7bed751643a33",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/collections": "*",
+                "symfony/form": "*"
+            },
+            "require-dev": {
+                "jmikola/geojson": "1.0.1",
+                "phake/phake": "2.0.0-beta2",
+                "phpunit/phpunit": "4.0.14",
+                "scrutinizer/ocular": "1.1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "OpenOrchestra\\ModelInterface": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Thal",
+                    "email": "nico.th4l@gmail.com"
+                }
+            ],
+            "description": "Describe all entity and repository to implement for the whole OpenOrchestra project",
+            "time": "2015-04-02 07:23:47"
+        },
+        {
+            "name": "open-orchestra/open-orchestra-user-bundle",
+            "version": "dev-master",
+            "target-dir": "OpenOrchestra",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/open-orchestra/open-orchestra-user-bundle.git",
+                "reference": "779934a089a4fba34bd5bd89aed52cef1b612012"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-user-bundle/zipball/779934a089a4fba34bd5bd89aed52cef1b612012",
+                "reference": "779934a089a4fba34bd5bd89aed52cef1b612012",
+                "shasum": ""
+            },
+            "require": {
+                "friendsofsymfony/user-bundle": "~2.0"
+            },
+            "require-dev": {
+                "open-orchestra/open-orchestra-base-bundle": "dev-master",
+                "open-orchestra/open-orchestra-display-bundle": "dev-master",
+                "phake/phake": "2.0.0-beta2",
+                "phpunit/phpunit": "4.0.14",
+                "scrutinizer/ocular": "1.1.1"
+            },
+            "suggest": {
+                "open-orchestra/open-orchestra-display-bundle": "In order to use all the functionality offered by the OpenOrchestra project"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "OpenOrchestra\\UserBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Thal",
+                    "email": "nico.th4l@gmail.com"
+                }
+            ],
+            "description": "An override of FosUserBundle to provide authentication on OpenOrchestra",
+            "time": "2015-04-02 07:28:10"
         },
         {
             "name": "phpcollection/phpcollection",
@@ -4366,8 +4238,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "itkg/open-orchestra-cms-bundle": 20,
-        "itkg/open-orchestra-model-bundle": 20
+        "open-orchestra/open-orchestra-cms-bundle": 20,
+        "open-orchestra/open-orchestra-model-bundle": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
