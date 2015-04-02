@@ -2,17 +2,15 @@
 
 Url to see changes : 
 
- - [Cms bundle](https://github.com/itkg/phporchestra-cms-bundle/compare/v0.0.5...v0.0.6)
- - [Display bundle](https://github.com/itkg/phporchestra-display-bundle/compare/v0.0.5...v0.0.6)
- - [Model bundle](https://github.com/itkg/phporchestra-model-bundle/compare/v0.0.5...v0.0.6)
- - [Model interface](https://github.com/itkg/phporchestra-model-interface/compare/v0.0.5...v0.0.6)
- - [Front bundle](https://github.com/itkg/phporchestra-front-bundle/compare/v0.0.5...v0.0.6)
- - [Base bundle](https://github.com/itkg/phporchestra-base-bundle/compare/v0.0.5...v0.0.6)
- - [Media bundle](https://github.com/itkg/phporchestra-media-bundle/compare/v0.0.5...v0.0.6)
- - [Translation bundle](https://github.com/itkg/phporchestra-translation-bundle/compare/v0.0.5...v0.0.6)
- - [User bundle](https://github.com/itkg/phporchestra-user-bundle/compare/v0.0.5...v0.0.6)
- - [Theme bundle](https://github.com/itkg/phporchestra-theme-bundle/compare/v0.0.5...v0.0.6)
- - [Indexation bundle](https://github.com/itkg/phporchestra-indexation-bundle/compare/v0.0.5...v0.0.6)
+ - [Cms bundle](https://github.com/open-orchestra/phporchestra-cms-bundle/compare/v0.0.5...v0.0.6)
+ - [Display bundle](https://github.com/open-orchestra/phporchestra-display-bundle/compare/v0.0.5...v0.0.6)
+ - [Model bundle](https://github.com/open-orchestra/phporchestra-model-bundle/compare/v0.0.5...v0.0.6)
+ - [Model interface](https://github.com/open-orchestra/phporchestra-model-interface/compare/v0.0.5...v0.0.6)
+ - [Front bundle](https://github.com/open-orchestra/phporchestra-front-bundle/compare/v0.0.5...v0.0.6)
+ - [Base bundle](https://github.com/open-orchestra/phporchestra-base-bundle/compare/v0.0.5...v0.0.6)
+ - [Media bundle](https://github.com/open-orchestra/phporchestra-media-bundle/compare/v0.0.5...v0.0.6)
+ - [User bundle](https://github.com/open-orchestra/phporchestra-user-bundle/compare/v0.0.5...v0.0.6)
+ - [Theme bundle](https://github.com/open-orchestra/phporchestra-theme-bundle/compare/v0.0.5...v0.0.6)
 
 ## Possible BC breaker
 
@@ -37,4 +35,4 @@ Url to see changes :
 
 ## Deprecated method
 
- - NodeRepositoryInterface : [findOneByParendIdAndAliasAndSiteId](https://github.com/itkg/phporchestra-model-interface/blob/master/ModelInterface/Repository/NodeRepositoryInterface.php#L19)
+ - NodeRepositoryInterface : [findOneByParendIdAndAliasAndSiteId](https://github.com/open-orchestra/phporchestra-model-interface/blob/master/ModelInterface/Repository/NodeRepositoryInterface.php#L19)

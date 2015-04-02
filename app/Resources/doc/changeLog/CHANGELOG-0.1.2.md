@@ -2,17 +2,15 @@
 
 Url to see changes : 
 
- - [Cms bundle](https://github.com/itkg/open-orchestra-cms-bundle/compare/v0.1.1...v0.1.2)
- - [Display bundle](https://github.com/itkg/open-orchestra-display-bundle/compare/v0.1.1...v0.1.2)
- - [Model bundle](https://github.com/itkg/open-orchestra-model-bundle/compare/v0.1.1...v0.1.2)
- - [Model interface](https://github.com/itkg/open-orchestra-model-interface/compare/v0.1.1...v0.1.2)
- - [Front bundle](https://github.com/itkg/open-orchestra-front-bundle/compare/v0.1.1...v0.1.2)
- - [Base bundle](https://github.com/itkg/open-orchestra-base-bundle/compare/v0.1.1...v0.1.2)
- - [Media bundle](https://github.com/itkg/open-orchestra-media-bundle/compare/v0.1.1...v0.1.2)
- - [Translation bundle](https://github.com/itkg/open-orchestra-translation-bundle/compare/v0.1.1...v0.1.2)
- - [User bundle](https://github.com/itkg/open-orchestra-user-bundle/compare/v0.1.1...v0.1.2)
- - [Theme bundle](https://github.com/itkg/open-orchestra-theme-bundle/compare/v0.1.1...v0.1.2)
- - [Indexation bundle](https://github.com/itkg/open-orchestra-indexation-bundle/compare/v0.1.1...v0.1.2)
+ - [Cms bundle](https://github.com/open-orchestra/open-orchestra-cms-bundle/compare/v0.1.1...v0.1.2)
+ - [Display bundle](https://github.com/open-orchestra/open-orchestra-display-bundle/compare/v0.1.1...v0.1.2)
+ - [Model bundle](https://github.com/open-orchestra/open-orchestra-model-bundle/compare/v0.1.1...v0.1.2)
+ - [Model interface](https://github.com/open-orchestra/open-orchestra-model-interface/compare/v0.1.1...v0.1.2)
+ - [Front bundle](https://github.com/open-orchestra/open-orchestra-front-bundle/compare/v0.1.1...v0.1.2)
+ - [Base bundle](https://github.com/open-orchestra/open-orchestra-base-bundle/compare/v0.1.1...v0.1.2)
+ - [Media bundle](https://github.com/open-orchestra/open-orchestra-media-bundle/compare/v0.1.1...v0.1.2)
+ - [User bundle](https://github.com/open-orchestra/open-orchestra-user-bundle/compare/v0.1.1...v0.1.2)
+ - [Theme bundle](https://github.com/open-orchestra/open-orchestra-theme-bundle/compare/v0.1.1...v0.1.2)
 
 ## Possible BC breaker
 
@@ -45,4 +43,4 @@ Url to see changes :
 ## Configuration modification
 
  - The interface split modify the `resolve_target_documents`, you need to put the new read interfaces instead
- - [Change the firewall configuration for the api connexion](https://github.com/itkg/open-orchestra/blob/master/app/Resources/doc/dev/draft/apiConnexion.md)
+ - [Change the firewall configuration for the api connexion](https://github.com/open-orchestra/open-orchestra/blob/master/app/Resources/doc/dev/draft/apiConnexion.md)
