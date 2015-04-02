@@ -77,19 +77,24 @@ You need to install all the php dependancies before starting the project
 Start by downloading composer
 
     vagrant ssh
-    cd /var/www/open-orchestra
+    cd /var/www/openorchestra
     php -r "readfile('https://getcomposer.org/installer');" | php
-
-Then install the project
+    
+Then install the admin project
 
     ./composer.phar install
+
+And the front project
+
+    cd ../front-openorchestra
+    ../openorchestra/composer.phar install
 
 ## Install the assets
 We are using npm to manage some server side javascript librairies and bower to manage the client side librairies
 
 Still connected to the vagrant box, go in the project directory inside the box
 
-    cd /var/www/open-orchestra
+    cd /var/www/openorchestra
 
 Install the npm dependancies
 
@@ -106,7 +111,9 @@ In the symfony project directory
 
     php app/console doctrine:mongo:fixture:load
 
-
 ## Result
 Once this command, all the client side javascripts librairies should have been installed.
-You can now go on the website on the url : http://admin.openorchestra.dev/app_dev.php/admin
+
+You can now go on the website admin on the url : http://admin.openorchestra.dev/app_dev.php/admin
+
+and show result at : http://demo.openorchestra.dev/app_dev.php
