@@ -58,7 +58,7 @@ while getopts "shrafm:b:c:t:" arg; do
         esac
     done
 
-cd vendor/itkg
+cd vendor/open-orchestra
 list=`ls | grep open-orchestra`
 
 if [ $command != false ]
