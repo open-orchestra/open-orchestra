@@ -19,7 +19,7 @@ We are going to use the vagrant project to manage all the vitualbox
 
 ## Install ansible
 All the project server configuration is going to be handled by ansible.
-To avoid version troubles, switch to release 1.7.1
+To avoid version troubles, switch to release 1.8.2
 
     git clone git://github.com/ansible/ansible.git --recursive
     cd ./ansible
