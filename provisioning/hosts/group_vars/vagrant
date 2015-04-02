@@ -24,21 +24,6 @@ apache_conf:
     errorLog: demo.openorchestraError.log
     accessLog: demo.openorchestraAccess.log
     siteId: 2
-  echonext.orchestra.conf:
-    port: 80
-    serverName: echonext.openorchestra.dev
-    docRoot: /var/www/front-openorchestra/web
-    errorLog: echonext.openorchestraError.log
-    accessLog: echonext.openorchestraAccess.log
-    siteId: 3
-  https.echonext.orchestra.conf:
-    port: 443
-    serverName: echonext.openorchestra.dev
-    docRoot: /var/www/front-openorchestra/web
-    errorLog: echonext.openorchestraError.log
-    accessLog: echonext.openorchestraAccess.log
-    siteId: 3
-    sslCertificateFileDir: /usr/local/apache/conf
   tools.conf:
     port: 80
     serverName: clearvarnish.dev
