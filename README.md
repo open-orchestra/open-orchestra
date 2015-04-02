@@ -7,6 +7,7 @@ Open Orchestra
 | Scrutinizer (Quality score) | [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/open-orchestra/open-orchestra/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/open-orchestra/open-orchestra/?branch=master) |
 | Scrutinizer (Coverage) | none |
 | Sensio insight | [![SensioLabsInsight](https://insight.sensiolabs.com/projects/0becefa5-5b35-4db8-9ddf-e0ade4da7262/big.png)](https://insight.sensiolabs.com/projects/0becefa5-5b35-4db8-9ddf-e0ade4da7262) |
+| Version Eye | [![Dependency Status](https://www.versioneye.com/user/projects/551d532afd613a9ea3000002/badge.svg?style=flat)](https://www.versioneye.com/user/projects/551d532afd613a9ea3000002) |
 
 1. Spécifications
 -----------------
