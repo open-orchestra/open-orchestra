@@ -1,5 +1,5 @@
 {
-    "name": "itkg/open-orchestra",
+    "name": "open-orchestra/open-orchestra",
     "license": "MIT",
     "type": "project",
     "description": "Example of OpenOrchestra backoffice implementation",
@@ -8,45 +8,11 @@
             "": "src/"
         }
     },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/itkg/open-orchestra-cms-bundle"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/itkg/open-orchestra-model-bundle"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/itkg/open-orchestra-model-interface"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/itkg/open-orchestra-media-bundle"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/itkg/open-orchestra-indexation-bundle"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/itkg/open-orchestra-user-bundle"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/itkg/open-orchestra-base-bundle"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/itkg/open-orchestra-display-bundle"
-        }
-    ],
     "minimum-stability": "dev",
     "require": {
         "incenteev/composer-parameter-handler": "~2.0",
-        "itkg/open-orchestra-cms-bundle": "dev-master",
-        "itkg/open-orchestra-model-bundle": "dev-master"
+        "open-orchestra/open-orchestra-cms-bundle": "dev-master",
+        "open-orchestra/open-orchestra-model-bundle": "dev-master"
     },
     "require-dev": {
         "jmikola/geojson": "~1.0",
