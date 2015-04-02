@@ -4,7 +4,7 @@ set :deploy_to,   "/var/www/backoffice-open-orchestra"
 set :app_path,    "app"
 set :user,        "open_orchestra_backoffice_inte"
 
-set :repository,  "git@github.com:itkg/open-orchestra.git"
+set :repository,  "git@github.com:open-orchestra/open-orchestra.git"
 set :scm,         :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `subversion`, `mercurial`, `perforce`, or `none`
 
