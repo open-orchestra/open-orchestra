@@ -12,7 +12,7 @@ Open Orchestra
 1. Spécifications
 -----------------
 
-* [Architecture, spécifications techniques](doc/dev/architecture.md)
+* [Architecture, spécifications techniques](app/Resources/doc/dev/architecture.md)
 
 2. Installation
 ---------------
