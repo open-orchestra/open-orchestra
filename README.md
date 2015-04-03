@@ -12,18 +12,18 @@ Open Orchestra
 1. Spécifications
 -----------------
 
-* [Architecture, spécifications techniques](doc/dev/architecture.md)
+* [Architecture, spécifications techniques](app/Resources/doc/dev/architecture.md)
 
 2. Installation
 ---------------
 
-* [Pré-requis](doc/requirements.md)
+* [Pré-requis](app/Resources/doc/requirements.md)
 
-* [Installation pour Debian](doc/debian-install.md)
+* [Installation pour Debian](app/Resources/doc/debian-install.md)
 
-* [Installation avec une vagrant box](doc/install.md)
+* [Installation avec une vagrant box](app/Resources/doc/install.md)
 
 3. Développement
 ----------------
 
-* [Extensions TWIG pour la gestion des thèmes](doc/twig-extensions.md)
+* [Extensions TWIG pour la gestion des thèmes](app/Resources/doc/twig-extensions.md)
