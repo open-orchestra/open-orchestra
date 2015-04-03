@@ -30,21 +30,6 @@ apache_conf:
     errorLog: front-openorchestraError.log
     accessLog: front-openorchestraAccess.log
     siteId: 1
-  echonext.orchestra.conf:
-    port: 8000
-    serverName: echonext.openorchestra.inte
-    docRoot: /var/www/front-open-orchestra/current/web
-    errorLog: echonext.openorchestraError.log
-    accessLog: echonext.openorchestraAccess.log
-    siteId: 3
-  https.echonext.orchestra.conf:
-    port: 443
-    serverName: echonext.openorchestra.inte
-    docRoot: /var/www/front-open-orchestra/current/web
-    errorLog: echonext.openorchestraError.log
-    accessLog: echonext.openorchestraAccess.log
-    siteId: 3
-    sslCertificateFileDir: /usr/local/apache/conf
   open-orchestra-test.conf:
     port: 8000
     serverName: openorchestra.test
