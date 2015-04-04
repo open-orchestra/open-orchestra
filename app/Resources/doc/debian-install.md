@@ -11,14 +11,6 @@ Apache is used in pre-fork mode. To install it on debian :
 
     apt-get install apache2-mpm-prefork
 
-##### 3. Install MySQL
-To install the last version of MySQL :
-
-    apt-get install mysql-server
-Once install is done, you can run the following script to secure your MySQL server :
-
-    mysql_secure_installation
-
 ##### 4. Install PHP
 To install the last version of PHP :
 
