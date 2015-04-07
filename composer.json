@@ -11,13 +11,13 @@
     "minimum-stability": "dev",
     "require": {
         "incenteev/composer-parameter-handler": "~2.0",
-        "open-orchestra/open-orchestra-cms-bundle": "dev-master",
-        "open-orchestra/open-orchestra-model-bundle": "dev-master"
+        "open-orchestra/open-orchestra-cms-bundle": "*",
+        "open-orchestra/open-orchestra-model-bundle": "*"
     },
     "require-dev": {
         "jmikola/geojson": "~1.0",
-        "phpunit/phpunit": "4.5.1",
-        "phake/phake": "*",
+        "phpunit/phpunit": "4.6.1",
+        "phake/phake": "2.0.2",
         "behat/behat": "~3.0.15",
         "behat/symfony2-extension": "2.0.0",
         "behat/mink": "1.6.1",
