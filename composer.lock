@@ -250,12 +250,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/collections.git",
-                "reference": "c63f2e637c6ac759d83002906c30e6c96d91e5f3"
+                "reference": "856cb378598f57b3ab6499b1abeb05836feb5725"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/collections/zipball/c63f2e637c6ac759d83002906c30e6c96d91e5f3",
-                "reference": "c63f2e637c6ac759d83002906c30e6c96d91e5f3",
+                "url": "https://api.github.com/repos/doctrine/collections/zipball/856cb378598f57b3ab6499b1abeb05836feb5725",
+                "reference": "856cb378598f57b3ab6499b1abeb05836feb5725",
                 "shasum": ""
             },
             "require": {
@@ -308,7 +308,7 @@
                 "collections",
                 "iterator"
             ],
-            "time": "2015-01-21 05:12:54"
+            "time": "2015-04-04 16:54:49"
         },
         {
             "name": "doctrine/common",
@@ -787,12 +787,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSHttpCache.git",
-                "reference": "262307126bcef526aa8da0d5bf8daee933d0ef1c"
+                "reference": "6cbcd8327fcb4b2415c7939f02927616fafd7464"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSHttpCache/zipball/262307126bcef526aa8da0d5bf8daee933d0ef1c",
-                "reference": "262307126bcef526aa8da0d5bf8daee933d0ef1c",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSHttpCache/zipball/6cbcd8327fcb4b2415c7939f02927616fafd7464",
+                "reference": "6cbcd8327fcb4b2415c7939f02927616fafd7464",
                 "shasum": ""
             },
             "require": {
@@ -852,7 +852,7 @@
                 "purge",
                 "varnish"
             ],
-            "time": "2015-04-02 06:11:40"
+            "time": "2015-04-06 18:51:54"
         },
         {
             "name": "friendsofsymfony/http-cache-bundle",
@@ -1670,12 +1670,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "875cfb91e1ffb9a7fda4dddfdbc7ed529e52164a"
+                "reference": "a54d460500aeaf653cabc1059cc33d07e7b544ad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/875cfb91e1ffb9a7fda4dddfdbc7ed529e52164a",
-                "reference": "875cfb91e1ffb9a7fda4dddfdbc7ed529e52164a",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/a54d460500aeaf653cabc1059cc33d07e7b544ad",
+                "reference": "a54d460500aeaf653cabc1059cc33d07e7b544ad",
                 "shasum": ""
             },
             "require": {
@@ -1735,7 +1735,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2015-03-31 21:43:29"
+            "time": "2015-04-04 10:50:52"
         },
         {
             "name": "open-orchestra/open-orchestra-base-bundle",
@@ -1744,12 +1744,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-base-bundle.git",
-                "reference": "bc229bfc118f8ca3b395404f4b5fe3c12cae58f9"
+                "reference": "2d6fda3371dd00745392fc91ed91ca2ad39a71f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-bundle/zipball/bc229bfc118f8ca3b395404f4b5fe3c12cae58f9",
-                "reference": "bc229bfc118f8ca3b395404f4b5fe3c12cae58f9",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-bundle/zipball/2d6fda3371dd00745392fc91ed91ca2ad39a71f5",
+                "reference": "2d6fda3371dd00745392fc91ed91ca2ad39a71f5",
                 "shasum": ""
             },
             "require": {
@@ -1780,12 +1780,12 @@
             ],
             "authors": [
                 {
-                    "name": "Nicolas Thal",
-                    "email": "nico.th4l@gmail.com"
+                    "name": "OpenOrchestra community",
+                    "homepage": "https://github.com/open-orchestra/open-orchestra-base-bundle/graphs/contributors"
                 }
             ],
             "description": "The OpenOrchestra base bundle",
-            "time": "2015-04-03 09:25:15"
+            "time": "2015-04-07 08:48:45"
         },
         {
             "name": "open-orchestra/open-orchestra-cms-bundle",
@@ -1794,12 +1794,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "da373fe92d2fa7a05236c25ece31bf62f59d6410"
+                "reference": "fbf9f3fcdf21bb2e721e2efc1dbb62fcdb5da97b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/da373fe92d2fa7a05236c25ece31bf62f59d6410",
-                "reference": "da373fe92d2fa7a05236c25ece31bf62f59d6410",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/fbf9f3fcdf21bb2e721e2efc1dbb62fcdb5da97b",
+                "reference": "fbf9f3fcdf21bb2e721e2efc1dbb62fcdb5da97b",
                 "shasum": ""
             },
             "require": {
@@ -1834,12 +1834,12 @@
             ],
             "authors": [
                 {
-                    "name": "Nicolas Thal",
-                    "email": "nico.th4l@gmail.com"
+                    "name": "OpenOrchestra community",
+                    "homepage": "https://github.com/open-orchestra/open-orchestra-cms-bundle/graphs/contributors"
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2015-04-02 15:20:36"
+            "time": "2015-04-07 08:49:07"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -1848,12 +1848,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-display-bundle.git",
-                "reference": "7fd649b558f197bac1b52d7728d90e714a9ef71b"
+                "reference": "69df5e1c34addd4d65e59f69e96c3cf1a59e046d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-display-bundle/zipball/7fd649b558f197bac1b52d7728d90e714a9ef71b",
-                "reference": "7fd649b558f197bac1b52d7728d90e714a9ef71b",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-display-bundle/zipball/69df5e1c34addd4d65e59f69e96c3cf1a59e046d",
+                "reference": "69df5e1c34addd4d65e59f69e96c3cf1a59e046d",
                 "shasum": ""
             },
             "require": {
@@ -1879,16 +1879,12 @@
             ],
             "authors": [
                 {
-                    "name": "Nicolas Thal",
-                    "email": "nico.th4l@gmail.com"
-                },
-                {
-                    "name": "Benjamin Fouche",
-                    "email": "benjamin.fouche@businessdecision.com"
+                    "name": "OpenOrchestra community",
+                    "homepage": "https://github.com/open-orchestra/open-orchestra-display-bundle/graphs/contributors"
                 }
             ],
             "description": "The bundle to display all bricks",
-            "time": "2015-04-02 13:37:20"
+            "time": "2015-04-07 08:49:27"
         },
         {
             "name": "open-orchestra/open-orchestra-media-bundle",
@@ -1897,12 +1893,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-bundle.git",
-                "reference": "1151212ac7704c4ccf4cecd343833b61b632d8dd"
+                "reference": "a4e16ad913e6c9ffe12f1a3bf438ec3dc5194dc9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/1151212ac7704c4ccf4cecd343833b61b632d8dd",
-                "reference": "1151212ac7704c4ccf4cecd343833b61b632d8dd",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/a4e16ad913e6c9ffe12f1a3bf438ec3dc5194dc9",
+                "reference": "a4e16ad913e6c9ffe12f1a3bf438ec3dc5194dc9",
                 "shasum": ""
             },
             "require": {
@@ -1935,12 +1931,12 @@
             ],
             "authors": [
                 {
-                    "name": "Nicolas Thal",
-                    "email": "nico.th4l@gmail.com"
+                    "name": "OpenOrchestra community",
+                    "homepage": "https://github.com/open-orchestra/open-orchestra-media-bundle/graphs/contributors"
                 }
             ],
             "description": "A media bundle for the OpenOrchestra Project",
-            "time": "2015-04-02 13:50:50"
+            "time": "2015-04-07 08:50:08"
         },
         {
             "name": "open-orchestra/open-orchestra-model-bundle",
@@ -1949,12 +1945,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
-                "reference": "ee8793666e83770e50e5661f84bc7bbb0a8d2178"
+                "reference": "e4ef360090845f82fe244f79196304ac7c6bfd5b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/ee8793666e83770e50e5661f84bc7bbb0a8d2178",
-                "reference": "ee8793666e83770e50e5661f84bc7bbb0a8d2178",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/e4ef360090845f82fe244f79196304ac7c6bfd5b",
+                "reference": "e4ef360090845f82fe244f79196304ac7c6bfd5b",
                 "shasum": ""
             },
             "require": {
@@ -1984,12 +1980,12 @@
             ],
             "authors": [
                 {
-                    "name": "Nicolas Thal",
-                    "email": "nico.th4l@gmail.com"
+                    "name": "OpenOrchestra community",
+                    "homepage": "https://github.com/open-orchestra/open-orchestra-model-bundle/graphs/contributors"
                 }
             ],
             "description": "An implemantation of the model-interface for OpenOrchestra on mongo",
-            "time": "2015-04-02 13:53:05"
+            "time": "2015-04-07 08:50:23"
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
@@ -1998,12 +1994,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-interface.git",
-                "reference": "c98667c9e35f4b1638a7df62c4462c6411b195c2"
+                "reference": "0718acbf0d2d866bed3769a2d64197535d63cd85"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/c98667c9e35f4b1638a7df62c4462c6411b195c2",
-                "reference": "c98667c9e35f4b1638a7df62c4462c6411b195c2",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/0718acbf0d2d866bed3769a2d64197535d63cd85",
+                "reference": "0718acbf0d2d866bed3769a2d64197535d63cd85",
                 "shasum": ""
             },
             "require": {
@@ -2028,12 +2024,12 @@
             ],
             "authors": [
                 {
-                    "name": "Nicolas Thal",
-                    "email": "nico.th4l@gmail.com"
+                    "name": "OpenOrchestra community",
+                    "homepage": "https://github.com/open-orchestra/open-orchestra-model-interface/graphs/contributors"
                 }
             ],
             "description": "Describe all entity and repository to implement for the whole OpenOrchestra project",
-            "time": "2015-04-02 13:35:32"
+            "time": "2015-04-07 08:50:48"
         },
         {
             "name": "open-orchestra/open-orchestra-user-bundle",
@@ -2042,12 +2038,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-user-bundle.git",
-                "reference": "bbf89cca95e023eb807d260fa1c33a7ec8974df3"
+                "reference": "7d2931f3bbdc04a0b996e1ee86322c7c256aaedf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-user-bundle/zipball/bbf89cca95e023eb807d260fa1c33a7ec8974df3",
-                "reference": "bbf89cca95e023eb807d260fa1c33a7ec8974df3",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-user-bundle/zipball/7d2931f3bbdc04a0b996e1ee86322c7c256aaedf",
+                "reference": "7d2931f3bbdc04a0b996e1ee86322c7c256aaedf",
                 "shasum": ""
             },
             "require": {
@@ -2075,12 +2071,12 @@
             ],
             "authors": [
                 {
-                    "name": "Nicolas Thal",
-                    "email": "nico.th4l@gmail.com"
+                    "name": "OpenOrchestra community",
+                    "homepage": "https://github.com/open-orchestra/open-orchestra-user-bundle/graphs/contributors"
                 }
             ],
             "description": "An override of FosUserBundle to provide authentication on OpenOrchestra",
-            "time": "2015-04-02 08:40:45"
+            "time": "2015-04-07 08:51:23"
         },
         {
             "name": "phpcollection/phpcollection",
@@ -3563,12 +3559,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/instaclick/php-webdriver.git",
-                "reference": "488c5ca4314b2060c4f67ebbb7675a0eba05bbdd"
+                "reference": "6aa16bbc02a5897200ab70316e0d2a01664afc51"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/instaclick/php-webdriver/zipball/488c5ca4314b2060c4f67ebbb7675a0eba05bbdd",
-                "reference": "488c5ca4314b2060c4f67ebbb7675a0eba05bbdd",
+                "url": "https://api.github.com/repos/instaclick/php-webdriver/zipball/6aa16bbc02a5897200ab70316e0d2a01664afc51",
+                "reference": "6aa16bbc02a5897200ab70316e0d2a01664afc51",
                 "shasum": ""
             },
             "require": {
@@ -3613,7 +3609,7 @@
                 "webdriver",
                 "webtest"
             ],
-            "time": "2015-03-23 16:07:02"
+            "time": "2015-04-05 19:52:55"
         },
         {
             "name": "jmikola/geojson",
