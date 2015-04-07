@@ -1,14 +1,14 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.3.7)
+    addressable (2.3.8)
     backports (3.6.4)
-    capifony (2.3.0)
+    capifony (2.8.3)
       capistrano (>= 2.13.5, <= 2.16.0)
       capistrano-maintenance (= 0.0.3)
       colored (>= 1.2.0)
-      inifile (>= 2.0.2)
-      ruby-progressbar (= 1.0.2)
+      inifile (>= 2.0.2, < 3.0.0)
+      ruby-progressbar (= 1.4.1)
     capistrano (2.15.5)
       highline
       net-scp (>= 1.0.0)
@@ -34,7 +34,7 @@ GEM
       net-http-persistent (>= 2.7)
       net-http-pipeline
     highline (1.7.1)
-    inifile (3.0.0)
+    inifile (2.0.2)
     json (1.8.2)
     launchy (2.4.3)
       addressable (~> 2.3)
@@ -47,7 +47,7 @@ GEM
       net-ssh (>= 2.6.5)
     net-sftp (2.1.2)
       net-ssh (>= 2.6.5)
-    net-ssh (2.7.0)
+    net-ssh (2.9.2)
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
     pry (0.9.12.6)
@@ -57,7 +57,7 @@ GEM
     pusher-client (0.6.0)
       json
       websocket (~> 1.0)
-    ruby-progressbar (1.0.2)
+    ruby-progressbar (1.4.1)
     slop (3.6.0)
     travis (1.7.5)
       addressable (~> 2.3)
@@ -78,7 +78,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  capifony (~> 2.3.0)
+  capifony (~> 2.8.0)
   capistrano (~> 2.15.5)
-  net-ssh (~> 2.7.0)
+  net-ssh (~> 2.9.0)
   travis (~> 1.7.2)
