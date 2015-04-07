@@ -1,7 +1,7 @@
 Feature: Roles
 
   Scenario: Add role and delete it
-    Given I am authenticated as "nicolas"
+    Given I am authenticated as "admin"
     When I click on the element with css selector ".fa-desktop"
     And I click on the element with css selector "#nav-role"
     And I wait for element "$('.bh-button-add').length > 0"

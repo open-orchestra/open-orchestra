@@ -1,7 +1,7 @@
 Feature: Rights
 
   Scenario: Edit Group change rights and check
-    Given I am authenticated as "nicolas"
+    Given I am authenticated as "admin"
     When I click on the element with css selector ".fa-desktop"
     Then I should wait until i see "Content type"
     And I click on the element with css selector "#nav-group"
