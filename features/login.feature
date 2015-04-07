@@ -9,8 +9,8 @@ Feature: Login
 
   Scenario: Login success
     Given I am on "/login"
-    When I fill in "_username" with "nicolas"
-    And I fill in "_password" with "nicolas"
+    When I fill in "_username" with "admin"
+    And I fill in "_password" with "admin"
     And I press "_submit"
     Then I should see "Dashboard"
     When I click on the element with css selector "#refresh"
