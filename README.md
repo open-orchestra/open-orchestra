@@ -19,11 +19,9 @@ Open Orchestra
 
 * [Pré-requis](app/Resources/doc/requirements.md)
 
-* [Installation pour Debian](app/Resources/doc/debian-install.md)
-
 * [Installation avec une vagrant box](app/Resources/doc/install.md)
 
 3. Développement
 ----------------
 
-* [Extensions TWIG pour la gestion des thèmes](app/Resources/doc/twig-extensions.md)
+* [Extensions TWIG pour la gestion des thèmes](app/Resources/doc/dev/draft/twig-extensions.md)

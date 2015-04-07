@@ -52,8 +52,3 @@ Then you can run the deploy command in the project directory
     bundle exec cap deploy
 
 Once this is done, you can check the project.
-
-If it is not running check the right by connecting on the server and put the group back
-
-    ssh open_orchestra_root
-    chgrp -R www-data /var/www/backoffice-open-orchestra/ /var/www/front-open-orchestra/
