@@ -197,7 +197,6 @@ module.exports = function(grunt) {
                     'bower_components/underscore/underscore.js',
                     'bower_components/backbone/backbone.js',
                     'bower_components/backbone.wreqr/lib/backbone.wreqr.js',
-                    'bower_components/angular/angular.js',
                     'bower_components/datatables/media/js/jquery.dataTables.js',
                     'bower_components/jquery-form/jquery.form.js',
                     'web/bundles/openorchestrabackoffice/js/latinise.js',
