@@ -1050,12 +1050,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Atlantic18/DoctrineExtensions.git",
-                "reference": "53b8b1d768343d0811bf3ce7f9106c0b93d76eb2"
+                "reference": "251c0a1a2160a08b3d5f4f500d90b23d1676ba7c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/53b8b1d768343d0811bf3ce7f9106c0b93d76eb2",
-                "reference": "53b8b1d768343d0811bf3ce7f9106c0b93d76eb2",
+                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/251c0a1a2160a08b3d5f4f500d90b23d1676ba7c",
+                "reference": "251c0a1a2160a08b3d5f4f500d90b23d1676ba7c",
                 "shasum": ""
             },
             "require": {
@@ -1121,7 +1121,7 @@
                 "tree",
                 "uploadable"
             ],
-            "time": "2015-03-30 09:21:01"
+            "time": "2015-04-07 15:20:18"
         },
         {
             "name": "guzzle/guzzle",
@@ -1841,12 +1841,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "54ea7637b109e624047caa93311e7c2de4a935ed"
+                "reference": "8283a9dfd0fe3c51c538fd562d7abb1f5b67a6d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/54ea7637b109e624047caa93311e7c2de4a935ed",
-                "reference": "54ea7637b109e624047caa93311e7c2de4a935ed",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/8283a9dfd0fe3c51c538fd562d7abb1f5b67a6d6",
+                "reference": "8283a9dfd0fe3c51c538fd562d7abb1f5b67a6d6",
                 "shasum": ""
             },
             "require": {
@@ -1886,7 +1886,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2015-04-07 13:00:28"
+            "time": "2015-04-08 08:31:58"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -1895,12 +1895,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-display-bundle.git",
-                "reference": "7b83f1c3bca7e7ac64c4e0c1797bacc6deb8d5e4"
+                "reference": "09715e3c9f3d721d91664a5b9747dfcc4aa80d90"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-display-bundle/zipball/7b83f1c3bca7e7ac64c4e0c1797bacc6deb8d5e4",
-                "reference": "7b83f1c3bca7e7ac64c4e0c1797bacc6deb8d5e4",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-display-bundle/zipball/09715e3c9f3d721d91664a5b9747dfcc4aa80d90",
+                "reference": "09715e3c9f3d721d91664a5b9747dfcc4aa80d90",
                 "shasum": ""
             },
             "require": {
@@ -1931,7 +1931,7 @@
                 }
             ],
             "description": "The bundle to display all bricks",
-            "time": "2015-04-07 12:45:46"
+            "time": "2015-04-07 15:38:34"
         },
         {
             "name": "open-orchestra/open-orchestra-media-bundle",
@@ -1940,12 +1940,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-bundle.git",
-                "reference": "1d90e360a0a68581fd29bd7b29559f697b2a8e73"
+                "reference": "ab6c831c64f1c445f450080c31678d974a4bc2ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/1d90e360a0a68581fd29bd7b29559f697b2a8e73",
-                "reference": "1d90e360a0a68581fd29bd7b29559f697b2a8e73",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/ab6c831c64f1c445f450080c31678d974a4bc2ac",
+                "reference": "ab6c831c64f1c445f450080c31678d974a4bc2ac",
                 "shasum": ""
             },
             "require": {
@@ -1983,7 +1983,7 @@
                 }
             ],
             "description": "A media bundle for the OpenOrchestra Project",
-            "time": "2015-04-07 12:40:33"
+            "time": "2015-04-07 16:19:01"
         },
         {
             "name": "open-orchestra/open-orchestra-model-bundle",
@@ -4026,12 +4026,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-token-stream.git",
-                "reference": "db32c18eba00b121c145575fcbcd4d4d24e6db74"
+                "reference": "eab81d02569310739373308137284e0158424330"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/db32c18eba00b121c145575fcbcd4d4d24e6db74",
-                "reference": "db32c18eba00b121c145575fcbcd4d4d24e6db74",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/eab81d02569310739373308137284e0158424330",
+                "reference": "eab81d02569310739373308137284e0158424330",
                 "shasum": ""
             },
             "require": {
@@ -4067,7 +4067,7 @@
             "keywords": [
                 "tokenizer"
             ],
-            "time": "2015-01-17 09:51:32"
+            "time": "2015-04-08 04:46:07"
         },
         {
             "name": "phpunit/phpunit",
