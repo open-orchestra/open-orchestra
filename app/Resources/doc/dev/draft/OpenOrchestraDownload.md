@@ -47,12 +47,12 @@ Install open-orchestra with composer:
 
 ## Install roles from ansible-galaxy
 Install roles needed to launch the box
-As a prerequisite, update your python modules if required with those two
+as a prerequisite, update your python modules if required with those two
 
     aptitude install python-yaml
     aptitude install python-jinja2
 
-Then go into openorchestra directory
+then go into openorchestra directory
 
     ansible-galaxy install --role-file=provisioning/galaxy.yml
 
@@ -92,8 +92,8 @@ Launch the grunt command to generate all assets
 ## Load the fixtures
 In the symfony project directory `/var/www/openorchestra`
 
-    php app/console doctrine:mongo:fixture:load -env=prod
+    php app/console doctrine:mongo:fixture:load --env=prod
 
-Now you can log on `http://admin.openorchestra.dev/login` for the CMS and see the result on `http://demo.openorchestra.dev`.
+Now you can log on `http://admin.openorchestra.dev/login` with username=admin and password=admin for the CMS and see the result on `http://demo.openorchestra.dev`.
 
 
