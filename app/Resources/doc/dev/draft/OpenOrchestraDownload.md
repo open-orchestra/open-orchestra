@@ -8,8 +8,8 @@ To install OpenOrchestra you need:
 
 * Apache2 `sudo aptitude install apache2`
 * PHP `sudo aptitude install php5-dev php5-cli php-pear`
-* Mongo  `sudo pecl install mongo`
-* PHP extension copy `extension=mongo.so` on your php.ini
+* php-mongo  `sudo pecl install mongo`
+* Activate php mongo extension copy `extension=mongo.so` on your php.ini
 
 ## Install Virtualbox
 The project is running on a virtual environment to be production ready
