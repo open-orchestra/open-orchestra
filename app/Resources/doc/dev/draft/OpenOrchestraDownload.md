@@ -2,6 +2,15 @@
 
 Open Orchestra is composed of two projects, open-orchestra which is the CMS and open-orchestra-front-demo which will display the sites and pages created in the CMS.
 
+## Requirements
+
+To install OpenOrchestra you need:
+
+* Apache2 `sudo aptitude install apache2`
+* PHP `sudo aptitude install php5-dev php5-cli php-pear`
+* Mongo  `sudo pecl install mongo`
+* PHP extension copy `extension=mongo.so` on your php.ini
+
 ## Install Virtualbox
 The project is running on a virtual environment to be production ready
 
@@ -95,5 +104,3 @@ In the symfony project directory `/var/www/openorchestra`
     php app/console doctrine:mongo:fixture:load --env=prod
 
 Now you can log on `http://admin.openorchestra.dev/login` with username=admin and password=admin for the CMS and see the result on `http://demo.openorchestra.dev`.
-
-
