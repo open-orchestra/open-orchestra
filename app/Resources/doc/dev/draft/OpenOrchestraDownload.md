@@ -1,24 +1,22 @@
 # Download OpenOrchestra
 
-Open Orchestra is composed of two projects, open-orchestra which is the CMS and open-orchestra-front-demo which will display the sites and pages created in the CMS.
+Open Orchestra is composed of two projects : _open-orchestra_ which is the CMS Backoffice and _open-orchestra-front-demo_ which is the Frontoffice part that will display the sites and pages created in the CMS.
 
 ## Requirements
 
-To install OpenOrchestra you need:
+To install Open Orchestra you need to have installed the following software on your server:
 
 * Apache2 `sudo aptitude install apache2`
 * PHP `sudo aptitude install php5-dev php5-cli php-pear`
 * php-mongo  `sudo pecl install mongo`
 * Activate php mongo extension copy `extension=mongo.so` on your php.ini
 
-## Install Virtualbox
-The project is running on a virtual environment to be production ready
-
-    aptitude install virtualbox
+For developers, we provide a Vagrant-powered environment with provisionning so you get minimal setup actions to do.
 
 ## Install Vagrant
-We are going to use the vagrant project to manage all the vitualbox
+The project is running on a Vagrant virtual environment built on VirtualBox to be production ready.
 
+    aptitude install virtualbox
     wget https://dl.bintray.com/mitchellh/vagrant/vagrant_1.6.3_x86_64.deb
     dpkg -i vagrant_1.6.3_x86_64.deb
 
@@ -42,7 +40,7 @@ To install composer with curl:
 
     curl -sS https://getcomposer.org/installer | php
 
-If you don't have curl installed, you can also download with php:
+If you don't have curl installed, you can also download it with php:
 
     php -r "readfile('https://getcomposer.org/installer');" | php
 
@@ -75,16 +73,18 @@ In the `/etc/hosts` file of your computer add the following lines :
 
 ## Launch the box
 When you launch the box, it will take some time to :
-Import the base box,
-Launch it,
-Run all the provisionning scripts
+
+* Import the base box
+* Launch it
+* Run all the provisionning scripts
+
 
     vagrant up
 
 ## Install the assets
 We are using npm to manage some server side javascript librairies and bower to manage the client side librairies
 
-Still connected to the vagrant box, go in the project directory inside the box
+Connect to the vagrant box using `vagrant ssh`, then go in the project directory inside the box
 
     cd /var/www/openorchestra
 
@@ -94,12 +94,10 @@ Install the npm dependancies
 
 The npm should have also installed the bower component.
 
-Launch the grunt command to generate all assets
-
     ./node_modules/.bin/grunt
 
 ## Load the fixtures
-In the symfony project directory `/var/www/openorchestra`
+In the symfony project directory `/var/www/openorchestra` you can load the fixtures provided :
 
     php app/console doctrine:mongo:fixture:load --env=prod
 
