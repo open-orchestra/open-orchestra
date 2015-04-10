@@ -78,8 +78,9 @@ When you launch the box, it will take some time to :
 * Launch it
 * Run all the provisionning scripts
 
-
+```
     vagrant up
+```
 
 ## Install the assets
 We are using npm to manage some server side javascript librairies and bower to manage the client side librairies
@@ -93,6 +94,8 @@ Install the npm dependancies
     npm install
 
 The npm should have also installed the bower component.
+
+Launch the grunt command to generate all assets
 
     ./node_modules/.bin/grunt
 
