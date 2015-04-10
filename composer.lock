@@ -1050,12 +1050,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Atlantic18/DoctrineExtensions.git",
-                "reference": "251c0a1a2160a08b3d5f4f500d90b23d1676ba7c"
+                "reference": "0f130d2b0ad96914fb3e251bdfd835eb7c853660"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/251c0a1a2160a08b3d5f4f500d90b23d1676ba7c",
-                "reference": "251c0a1a2160a08b3d5f4f500d90b23d1676ba7c",
+                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/0f130d2b0ad96914fb3e251bdfd835eb7c853660",
+                "reference": "0f130d2b0ad96914fb3e251bdfd835eb7c853660",
                 "shasum": ""
             },
             "require": {
@@ -1121,7 +1121,7 @@
                 "tree",
                 "uploadable"
             ],
-            "time": "2015-04-07 15:20:18"
+            "time": "2015-04-08 20:13:25"
         },
         {
             "name": "guzzle/guzzle",
@@ -1791,12 +1791,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-base-bundle.git",
-                "reference": "70e9f8a4c12510b7e6b7fc253f1f1bdc355a9295"
+                "reference": "284ca88a01934a5774a9748c8df43d4fad99a16c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-bundle/zipball/70e9f8a4c12510b7e6b7fc253f1f1bdc355a9295",
-                "reference": "70e9f8a4c12510b7e6b7fc253f1f1bdc355a9295",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-bundle/zipball/284ca88a01934a5774a9748c8df43d4fad99a16c",
+                "reference": "284ca88a01934a5774a9748c8df43d4fad99a16c",
                 "shasum": ""
             },
             "require": {
@@ -1832,7 +1832,7 @@
                 }
             ],
             "description": "The OpenOrchestra base bundle",
-            "time": "2015-04-07 12:46:31"
+            "time": "2015-04-10 08:26:38"
         },
         {
             "name": "open-orchestra/open-orchestra-cms-bundle",
@@ -1841,12 +1841,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "8283a9dfd0fe3c51c538fd562d7abb1f5b67a6d6"
+                "reference": "360a3e35d5a00df2ee48333ca452c03187b87e19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/8283a9dfd0fe3c51c538fd562d7abb1f5b67a6d6",
-                "reference": "8283a9dfd0fe3c51c538fd562d7abb1f5b67a6d6",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/360a3e35d5a00df2ee48333ca452c03187b87e19",
+                "reference": "360a3e35d5a00df2ee48333ca452c03187b87e19",
                 "shasum": ""
             },
             "require": {
@@ -1886,7 +1886,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2015-04-08 08:31:58"
+            "time": "2015-04-08 14:17:13"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -3829,12 +3829,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "4676604b851bfc6fc02bf3394bf350c727bcebf4"
+                "reference": "c3f911d777b5bade9fb0d3cbd8d0f2ee91a87844"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/4676604b851bfc6fc02bf3394bf350c727bcebf4",
-                "reference": "4676604b851bfc6fc02bf3394bf350c727bcebf4",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/c3f911d777b5bade9fb0d3cbd8d0f2ee91a87844",
+                "reference": "c3f911d777b5bade9fb0d3cbd8d0f2ee91a87844",
                 "shasum": ""
             },
             "require": {
@@ -3883,7 +3883,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-03-19 05:49:08"
+            "time": "2015-04-09 11:59:54"
         },
         {
             "name": "phpunit/php-file-iterator",
