@@ -1,6 +1,6 @@
 # I/ Système de blocs
 
-Dans Open Orchestra, les pages sont composées de blocs représentant chacun élément de page à afficher.
+Dans Open Orchestra, les pages sont composées de blocs représentant chacun un élément de page à afficher.
 
 Afin de pouvoir facilement les configurer et en ajouter, nous avons mis en place des stratégies pour chaque bloc sous forme de services : 
 
