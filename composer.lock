@@ -1476,9 +1476,9 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes Schmitt",
+                    "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -1791,12 +1791,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-base-bundle.git",
-                "reference": "284ca88a01934a5774a9748c8df43d4fad99a16c"
+                "reference": "5396eb7266fe1efbc2f3d6037cb64b965a1daf68"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-bundle/zipball/284ca88a01934a5774a9748c8df43d4fad99a16c",
-                "reference": "284ca88a01934a5774a9748c8df43d4fad99a16c",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-bundle/zipball/5396eb7266fe1efbc2f3d6037cb64b965a1daf68",
+                "reference": "5396eb7266fe1efbc2f3d6037cb64b965a1daf68",
                 "shasum": ""
             },
             "require": {
@@ -1832,7 +1832,7 @@
                 }
             ],
             "description": "The OpenOrchestra base bundle",
-            "time": "2015-04-10 08:26:38"
+            "time": "2015-04-10 08:30:38"
         },
         {
             "name": "open-orchestra/open-orchestra-cms-bundle",
@@ -1841,12 +1841,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "360a3e35d5a00df2ee48333ca452c03187b87e19"
+                "reference": "dea39f9362b90b02c19e8c65de3424f937b1ca0c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/360a3e35d5a00df2ee48333ca452c03187b87e19",
-                "reference": "360a3e35d5a00df2ee48333ca452c03187b87e19",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/dea39f9362b90b02c19e8c65de3424f937b1ca0c",
+                "reference": "dea39f9362b90b02c19e8c65de3424f937b1ca0c",
                 "shasum": ""
             },
             "require": {
@@ -1886,7 +1886,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2015-04-08 14:17:13"
+            "time": "2015-04-10 08:56:01"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -1895,12 +1895,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-display-bundle.git",
-                "reference": "09715e3c9f3d721d91664a5b9747dfcc4aa80d90"
+                "reference": "4b737e48fdf909ed01c0518b9c6b01b3022310c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-display-bundle/zipball/09715e3c9f3d721d91664a5b9747dfcc4aa80d90",
-                "reference": "09715e3c9f3d721d91664a5b9747dfcc4aa80d90",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-display-bundle/zipball/4b737e48fdf909ed01c0518b9c6b01b3022310c5",
+                "reference": "4b737e48fdf909ed01c0518b9c6b01b3022310c5",
                 "shasum": ""
             },
             "require": {
@@ -1931,7 +1931,7 @@
                 }
             ],
             "description": "The bundle to display all bricks",
-            "time": "2015-04-07 15:38:34"
+            "time": "2015-04-10 08:32:54"
         },
         {
             "name": "open-orchestra/open-orchestra-media-bundle",
@@ -1940,12 +1940,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-bundle.git",
-                "reference": "ab6c831c64f1c445f450080c31678d974a4bc2ac"
+                "reference": "70567413bcf3e6e5b011ddaed398b486bee3f3e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/ab6c831c64f1c445f450080c31678d974a4bc2ac",
-                "reference": "ab6c831c64f1c445f450080c31678d974a4bc2ac",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/70567413bcf3e6e5b011ddaed398b486bee3f3e8",
+                "reference": "70567413bcf3e6e5b011ddaed398b486bee3f3e8",
                 "shasum": ""
             },
             "require": {
@@ -1983,7 +1983,7 @@
                 }
             ],
             "description": "A media bundle for the OpenOrchestra Project",
-            "time": "2015-04-07 16:19:01"
+            "time": "2015-04-10 08:56:00"
         },
         {
             "name": "open-orchestra/open-orchestra-model-bundle",
@@ -1992,12 +1992,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
-                "reference": "b78ab89d16139236456ea0a7d33f67988071575e"
+                "reference": "8c3004f302d7d425f543f428e0bb05ecdd75e6fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/b78ab89d16139236456ea0a7d33f67988071575e",
-                "reference": "b78ab89d16139236456ea0a7d33f67988071575e",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/8c3004f302d7d425f543f428e0bb05ecdd75e6fe",
+                "reference": "8c3004f302d7d425f543f428e0bb05ecdd75e6fe",
                 "shasum": ""
             },
             "require": {
@@ -2032,7 +2032,7 @@
                 }
             ],
             "description": "An implemantation of the model-interface for OpenOrchestra on mongo",
-            "time": "2015-04-07 12:47:12"
+            "time": "2015-04-10 08:33:32"
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
@@ -2041,12 +2041,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-interface.git",
-                "reference": "be96635243e86cc65bc96288462f026c73df23e2"
+                "reference": "ec642845fd2a76e530c6b3592ce2bb2dbaa7e500"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/be96635243e86cc65bc96288462f026c73df23e2",
-                "reference": "be96635243e86cc65bc96288462f026c73df23e2",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/ec642845fd2a76e530c6b3592ce2bb2dbaa7e500",
+                "reference": "ec642845fd2a76e530c6b3592ce2bb2dbaa7e500",
                 "shasum": ""
             },
             "require": {
@@ -2076,7 +2076,7 @@
                 }
             ],
             "description": "Describe all entity and repository to implement for the whole OpenOrchestra project",
-            "time": "2015-04-07 12:30:21"
+            "time": "2015-04-10 08:31:40"
         },
         {
             "name": "open-orchestra/open-orchestra-user-bundle",
@@ -2085,12 +2085,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-user-bundle.git",
-                "reference": "a061ee468eb63ec1250c9517e860369c1180fa80"
+                "reference": "a023fe031e11089e73015eb1476a3e6b68229aba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-user-bundle/zipball/a061ee468eb63ec1250c9517e860369c1180fa80",
-                "reference": "a061ee468eb63ec1250c9517e860369c1180fa80",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-user-bundle/zipball/a023fe031e11089e73015eb1476a3e6b68229aba",
+                "reference": "a023fe031e11089e73015eb1476a3e6b68229aba",
                 "shasum": ""
             },
             "require": {
@@ -2123,7 +2123,7 @@
                 }
             ],
             "description": "An override of FosUserBundle to provide authentication on OpenOrchestra",
-            "time": "2015-04-07 12:56:22"
+            "time": "2015-04-10 08:32:16"
         },
         {
             "name": "phpcollection/phpcollection",
@@ -2209,9 +2209,9 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes Schmitt",
+                    "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
