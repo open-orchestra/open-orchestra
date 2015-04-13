@@ -53,7 +53,6 @@ In the `/etc/hosts` file of your computer add the following lines :
     192.168.33.10   admin.openorchestra.dev
     192.168.33.10   front.openorchestra.dev
     192.168.33.10   demo.openorchestra.dev
-    192.168.33.10   media.openorchestra.dev
 
 ## Launch the box
 When you launch the box, it will take some time to :
