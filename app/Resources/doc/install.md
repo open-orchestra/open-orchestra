@@ -38,10 +38,16 @@ In the parent directory of the current directory run
 
 ## Install roles from ansible-galaxy
 Install roles needed to launch the box
+
 As a prerequisite, update your python modules if required with those two
 
     aptitude install python-yaml
     aptitude install python-jinja2
+
+If running under Mac OS X, you would install them through `pip`
+
+    easy_install pip
+    pip install pyyaml jinja2
 
 Then go into openorchestra directory
 
