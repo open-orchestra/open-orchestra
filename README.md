@@ -9,21 +9,17 @@ Open Orchestra
 | Sensio insight | [![SensioLabsInsight](https://insight.sensiolabs.com/projects/0becefa5-5b35-4db8-9ddf-e0ade4da7262/big.png)](https://insight.sensiolabs.com/projects/0becefa5-5b35-4db8-9ddf-e0ade4da7262) |
 | Version Eye (composer.lock) | [![Dependency Status](https://www.versioneye.com/user/projects/551e85f5971f781c480000c4/badge.svg?style=flat)](https://www.versioneye.com/user/projects/551e85f5971f781c480000c4) |
 
-1. Spécifications
------------------
+[Official website][website]
+[Documentation][documentation]
 
-* [Architecture, spécifications techniques](app/Resources/doc/dev/architecture.md)
+Installation
+------------
 
-2. Installation
----------------
+* [Requirements][requirements]
 
-* [Pré-requis](app/Resources/doc/requirements.md)
+* [Installation using a vagrant box][install]
 
-* [Installation avec une vagrant box][install]
-
-3. Développement
-----------------
-
-* [Extensions TWIG pour la gestion des thèmes](app/Resources/doc/dev/draft/twig-extensions.md)
-
+[website]: http://www.open-orchestra.com
+[documentation]: https://github.com/open-orchestra/open-orchestra-docs
+[requirements]: https://github.com/open-orchestra/open-orchestra-docs/blob/master/en/hosting_guide/requirements.rst
 [install]: https://github.com/open-orchestra/open-orchestra-docs/blob/master/en/developer_guide/install.rst
