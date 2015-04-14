@@ -15,11 +15,8 @@ Open Orchestra
 Installation
 ------------
 
-* [Requirements][requirements]
-
 * [Installation using a vagrant box][install]
 
 [website]: http://www.open-orchestra.com
 [documentation]: https://github.com/open-orchestra/open-orchestra-docs
-[requirements]: https://github.com/open-orchestra/open-orchestra-docs/blob/master/en/hosting_guide/requirements.rst
 [install]: https://github.com/open-orchestra/open-orchestra-docs/blob/master/en/developer_guide/install.rst
