@@ -10,6 +10,7 @@ Open Orchestra
 | Version Eye (composer.lock) | [![Dependency Status](https://www.versioneye.com/user/projects/551e85f5971f781c480000c4/badge.svg?style=flat)](https://www.versioneye.com/user/projects/551e85f5971f781c480000c4) |
 
 [Official website][website]
+
 [Documentation][documentation]
 
 Installation
