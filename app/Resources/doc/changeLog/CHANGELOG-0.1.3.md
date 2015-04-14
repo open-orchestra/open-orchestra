@@ -14,6 +14,7 @@ Url to see changes :
 
 ## Possible BC breaker
 
+ - Repositories interfaces have been split into read and full for the front installation
 
 ## Bug fixes
 
