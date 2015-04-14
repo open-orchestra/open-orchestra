@@ -22,6 +22,7 @@ Url to see changes :
 
  - [Ban media related caches on media update](https://trello.com/c/wZfcZBoQ/713-1-bo-modif-d-un-media-ban-des-caches-utilsant-ce-mediaid-a-mettre-en-place)
  - [Update the routing cache if the route is not found](https://trello.com/c/vkDe8awb/753-1-etq-ufront-je-vois-le-routing-qui-se-mets-a-jour-quand-je-mets-a-jour-le-bo)
+ - [Add api authentication](https://trello.com/c/G5BWkEY4/661-8-5-delier-la-connexion-a-l-api-de-la-connexion-au-bo)
 
 ## Other changes
 
@@ -30,3 +31,7 @@ Url to see changes :
 
 
 ## Suppressed method
+
+## Configuration changes
+
+ - It is now possible to add an extra firewall for the api only
