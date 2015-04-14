@@ -19,7 +19,7 @@ Open Orchestra
 
 * [Pré-requis](app/Resources/doc/requirements.md)
 
-* [Installation avec une vagrant box](app/Resources/doc/install.md)
+* [Installation avec une vagrant box](https://github.com/open-orchestra/open-orchestra-docs/blob/master/en/developer_guide/install.rst)
 
 3. Développement
 ----------------
