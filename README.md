@@ -19,9 +19,11 @@ Open Orchestra
 
 * [Pré-requis](app/Resources/doc/requirements.md)
 
-* [Installation avec une vagrant box](app/Resources/doc/install.md)
+* [Installation avec une vagrant box][install]
 
 3. Développement
 ----------------
 
 * [Extensions TWIG pour la gestion des thèmes](app/Resources/doc/dev/draft/twig-extensions.md)
+
+[install]: https://github.com/open-orchestra/open-orchestra-docs/blob/master/en/developer_guide/install.rst
