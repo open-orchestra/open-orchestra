@@ -109,7 +109,7 @@ sub vcl_recv {
         return (pass);
     }
 
-    set req.http.Surrogate-Capability = "abc=ESI/1.0";
+    set req.http.Surrogate-Capability = "varnish=ESI/1.0";
     
     return(lookup);
 }
