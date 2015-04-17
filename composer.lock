@@ -180,12 +180,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "6c5c32eb6c596993d04e13b95d0c1e8153783d7a"
+                "reference": "c9eadeb743ac6199f7eec423cb9426bc518b7b03"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/6c5c32eb6c596993d04e13b95d0c1e8153783d7a",
-                "reference": "6c5c32eb6c596993d04e13b95d0c1e8153783d7a",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/c9eadeb743ac6199f7eec423cb9426bc518b7b03",
+                "reference": "c9eadeb743ac6199f7eec423cb9426bc518b7b03",
                 "shasum": ""
             },
             "require": {
@@ -242,20 +242,20 @@
                 "cache",
                 "caching"
             ],
-            "time": "2015-02-16 12:24:01"
+            "time": "2015-04-15 00:11:59"
         },
         {
             "name": "doctrine/collections",
-            "version": "dev-master",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/collections.git",
-                "reference": "856cb378598f57b3ab6499b1abeb05836feb5725"
+                "reference": "6c1e4eef75f310ea1b3e30945e9f06e652128b8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/collections/zipball/856cb378598f57b3ab6499b1abeb05836feb5725",
-                "reference": "856cb378598f57b3ab6499b1abeb05836feb5725",
+                "url": "https://api.github.com/repos/doctrine/collections/zipball/6c1e4eef75f310ea1b3e30945e9f06e652128b8a",
+                "reference": "6c1e4eef75f310ea1b3e30945e9f06e652128b8a",
                 "shasum": ""
             },
             "require": {
@@ -308,7 +308,7 @@
                 "collections",
                 "iterator"
             ],
-            "time": "2015-04-04 16:54:49"
+            "time": "2015-04-14 22:21:58"
         },
         {
             "name": "doctrine/common",
@@ -513,12 +513,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/instantiator.git",
-                "reference": "3d9669e597439e8d205baf315efb757038fb4dea"
+                "reference": "fc999e2f0508e434645ec2bfadeb89d39fa6453c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/instantiator/zipball/3d9669e597439e8d205baf315efb757038fb4dea",
-                "reference": "3d9669e597439e8d205baf315efb757038fb4dea",
+                "url": "https://api.github.com/repos/doctrine/instantiator/zipball/fc999e2f0508e434645ec2bfadeb89d39fa6453c",
+                "reference": "fc999e2f0508e434645ec2bfadeb89d39fa6453c",
                 "shasum": ""
             },
             "require": {
@@ -559,7 +559,7 @@
                 "constructor",
                 "instantiate"
             ],
-            "time": "2015-01-16 19:29:51"
+            "time": "2015-04-12 20:59:10"
         },
         {
             "name": "doctrine/lexer",
@@ -833,12 +833,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSHttpCache.git",
-                "reference": "6cbcd8327fcb4b2415c7939f02927616fafd7464"
+                "reference": "a691122ae9f4c0ae18e779dc9d9cb8546243ab23"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSHttpCache/zipball/6cbcd8327fcb4b2415c7939f02927616fafd7464",
-                "reference": "6cbcd8327fcb4b2415c7939f02927616fafd7464",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSHttpCache/zipball/a691122ae9f4c0ae18e779dc9d9cb8546243ab23",
+                "reference": "a691122ae9f4c0ae18e779dc9d9cb8546243ab23",
                 "shasum": ""
             },
             "require": {
@@ -898,7 +898,7 @@
                 "purge",
                 "varnish"
             ],
-            "time": "2015-04-06 18:51:54"
+            "time": "2015-04-10 18:23:56"
         },
         {
             "name": "friendsofsymfony/http-cache-bundle",
@@ -983,12 +983,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSUserBundle.git",
-                "reference": "808672b01f6aa6777417551c72a0be2c3545eafe"
+                "reference": "192c53916942847aee687722af54f431aead0b70"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/808672b01f6aa6777417551c72a0be2c3545eafe",
-                "reference": "808672b01f6aa6777417551c72a0be2c3545eafe",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/192c53916942847aee687722af54f431aead0b70",
+                "reference": "192c53916942847aee687722af54f431aead0b70",
                 "shasum": ""
             },
             "require": {
@@ -1042,7 +1042,7 @@
             "keywords": [
                 "User management"
             ],
-            "time": "2015-03-12 11:42:34"
+            "time": "2015-04-16 23:14:14"
         },
         {
             "name": "gedmo/doctrine-extensions",
@@ -1476,9 +1476,9 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes M. Schmitt",
+                    "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
+                    "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -1717,12 +1717,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "a54d460500aeaf653cabc1059cc33d07e7b544ad"
+                "reference": "03fc68ca1419c7e16050e96c15c7f7e1f2fc26ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/a54d460500aeaf653cabc1059cc33d07e7b544ad",
-                "reference": "a54d460500aeaf653cabc1059cc33d07e7b544ad",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/03fc68ca1419c7e16050e96c15c7f7e1f2fc26ff",
+                "reference": "03fc68ca1419c7e16050e96c15c7f7e1f2fc26ff",
                 "shasum": ""
             },
             "require": {
@@ -1782,7 +1782,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2015-04-04 10:50:52"
+            "time": "2015-04-15 18:23:25"
         },
         {
             "name": "open-orchestra/open-orchestra-base-bundle",
@@ -1841,12 +1841,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "dea39f9362b90b02c19e8c65de3424f937b1ca0c"
+                "reference": "f0835b39835c34b776e7ea305a45224199bc1221"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/dea39f9362b90b02c19e8c65de3424f937b1ca0c",
-                "reference": "dea39f9362b90b02c19e8c65de3424f937b1ca0c",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/f0835b39835c34b776e7ea305a45224199bc1221",
+                "reference": "f0835b39835c34b776e7ea305a45224199bc1221",
                 "shasum": ""
             },
             "require": {
@@ -1886,7 +1886,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2015-04-10 08:56:01"
+            "time": "2015-04-16 12:35:46"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -1895,12 +1895,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-display-bundle.git",
-                "reference": "4b737e48fdf909ed01c0518b9c6b01b3022310c5"
+                "reference": "52fdeb7f81a79038f48ddb349d3623ca445f2612"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-display-bundle/zipball/4b737e48fdf909ed01c0518b9c6b01b3022310c5",
-                "reference": "4b737e48fdf909ed01c0518b9c6b01b3022310c5",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-display-bundle/zipball/52fdeb7f81a79038f48ddb349d3623ca445f2612",
+                "reference": "52fdeb7f81a79038f48ddb349d3623ca445f2612",
                 "shasum": ""
             },
             "require": {
@@ -1931,7 +1931,7 @@
                 }
             ],
             "description": "The bundle to display all bricks",
-            "time": "2015-04-10 08:32:54"
+            "time": "2015-04-15 15:19:29"
         },
         {
             "name": "open-orchestra/open-orchestra-media-bundle",
@@ -1992,12 +1992,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
-                "reference": "8c3004f302d7d425f543f428e0bb05ecdd75e6fe"
+                "reference": "43661ffc991629398b80d5d1bf1d85b2fb93afdc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/8c3004f302d7d425f543f428e0bb05ecdd75e6fe",
-                "reference": "8c3004f302d7d425f543f428e0bb05ecdd75e6fe",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/43661ffc991629398b80d5d1bf1d85b2fb93afdc",
+                "reference": "43661ffc991629398b80d5d1bf1d85b2fb93afdc",
                 "shasum": ""
             },
             "require": {
@@ -2032,7 +2032,7 @@
                 }
             ],
             "description": "An implemantation of the model-interface for OpenOrchestra on mongo",
-            "time": "2015-04-10 08:33:32"
+            "time": "2015-04-16 13:56:04"
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
@@ -2041,12 +2041,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-interface.git",
-                "reference": "ec642845fd2a76e530c6b3592ce2bb2dbaa7e500"
+                "reference": "90e466cb355b0ad052d40ea2e290702d88377b68"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/ec642845fd2a76e530c6b3592ce2bb2dbaa7e500",
-                "reference": "ec642845fd2a76e530c6b3592ce2bb2dbaa7e500",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/90e466cb355b0ad052d40ea2e290702d88377b68",
+                "reference": "90e466cb355b0ad052d40ea2e290702d88377b68",
                 "shasum": ""
             },
             "require": {
@@ -2076,7 +2076,7 @@
                 }
             ],
             "description": "Describe all entity and repository to implement for the whole OpenOrchestra project",
-            "time": "2015-04-10 08:31:40"
+            "time": "2015-04-16 13:24:19"
         },
         {
             "name": "open-orchestra/open-orchestra-user-bundle",
@@ -2209,9 +2209,9 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes M. Schmitt",
+                    "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
+                    "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -3829,12 +3829,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "c3f911d777b5bade9fb0d3cbd8d0f2ee91a87844"
+                "reference": "1678cee3b7f93f994da6acf7e998b23a98e955f1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/c3f911d777b5bade9fb0d3cbd8d0f2ee91a87844",
-                "reference": "c3f911d777b5bade9fb0d3cbd8d0f2ee91a87844",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/1678cee3b7f93f994da6acf7e998b23a98e955f1",
+                "reference": "1678cee3b7f93f994da6acf7e998b23a98e955f1",
                 "shasum": ""
             },
             "require": {
@@ -3857,7 +3857,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.0.x-dev"
+                    "dev-master": "2.1.x-dev"
                 }
             },
             "autoload": {
@@ -3883,7 +3883,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-04-09 11:59:54"
+            "time": "2015-04-16 05:00:01"
         },
         {
             "name": "phpunit/php-file-iterator",
