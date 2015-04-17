@@ -33,7 +33,6 @@ director front round-robin {
 }
 
 sub vcl_recv {
-    set req.http.Surrogate-Capability = "abc=ESI/1.0";
     set req.backend = front;
 
     unset req.http.cookie;
@@ -110,6 +109,8 @@ sub vcl_recv {
         return (pass);
     }
 
+    set req.http.Surrogate-Capability = "varnish=ESI/1.0";
+    
     return(lookup);
 }
 
