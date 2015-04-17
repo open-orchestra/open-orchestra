@@ -8,10 +8,6 @@ open_orchestra_user:
     type: annotation
     prefix: /admin
 
-open_orchestra_display:
-    resource: "@OpenOrchestraDisplayBundle/Controller"
-    type: annotation
-
 open_orchestra_api:
     resource: "@OpenOrchestraApiBundle/Controller"
     type: annotation
