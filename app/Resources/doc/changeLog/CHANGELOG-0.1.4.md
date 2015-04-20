@@ -16,7 +16,7 @@ Url to see changes :
 
 
 ## Bug fixes
-
+- [Blocks contentList and configurable content displays the lastest content published in the language considered](https://trello.com/c/soVPYDii/763-2-etq-ufront-lorsque-je-liste-les-contents-je-ne-prends-que-les-derniers-content-publie-dans-la-langue-considere)
 
 ## New features
 - [BO Content Edit forms can now be personalized by Content Type](https://trello.com/c/m5DCUGSd/769-2-psa-caen-possibilite-de-personnalisation-du-template-d-affichage-d-un-formulaire-de-contenu)
