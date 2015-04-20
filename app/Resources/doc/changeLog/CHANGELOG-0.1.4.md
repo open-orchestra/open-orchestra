@@ -19,7 +19,7 @@ Url to see changes :
 
 
 ## New features
-
+- [BO Content Edit forms can now be personalized by Content Type](https://trello.com/c/m5DCUGSd/769-2-psa-caen-possibilite-de-personnalisation-du-template-d-affichage-d-un-formulaire-de-contenu)
 
 ## Other changes
 
