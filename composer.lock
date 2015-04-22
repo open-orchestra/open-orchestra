@@ -1477,9 +1477,9 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes Schmitt",
+                    "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -1842,12 +1842,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "b58243ab64d4c7c10f5d06d0d24c0862a1499ef9"
+                "reference": "4a1ae1f1097f90f2da64c0a9f73e62b860111a7c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/b58243ab64d4c7c10f5d06d0d24c0862a1499ef9",
-                "reference": "b58243ab64d4c7c10f5d06d0d24c0862a1499ef9",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/4a1ae1f1097f90f2da64c0a9f73e62b860111a7c",
+                "reference": "4a1ae1f1097f90f2da64c0a9f73e62b860111a7c",
                 "shasum": ""
             },
             "require": {
@@ -1887,7 +1887,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2015-04-17 16:04:40"
+            "time": "2015-04-22 09:40:17"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -1896,12 +1896,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-display-bundle.git",
-                "reference": "96cfe5c53cb05e9dbbb32f125089dd010799b5dc"
+                "reference": "c4b6708ea9b72587f120671dddde9f805667d501"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-display-bundle/zipball/96cfe5c53cb05e9dbbb32f125089dd010799b5dc",
-                "reference": "96cfe5c53cb05e9dbbb32f125089dd010799b5dc",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-display-bundle/zipball/c4b6708ea9b72587f120671dddde9f805667d501",
+                "reference": "c4b6708ea9b72587f120671dddde9f805667d501",
                 "shasum": ""
             },
             "require": {
@@ -1932,7 +1932,7 @@
                 }
             ],
             "description": "The bundle to display all bricks",
-            "time": "2015-04-17 16:04:46"
+            "time": "2015-04-22 07:57:02"
         },
         {
             "name": "open-orchestra/open-orchestra-media-bundle",
@@ -1941,12 +1941,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-bundle.git",
-                "reference": "41ab5ba2d5813ff679ae1c1bbcbab1a87ea38994"
+                "reference": "b9b3fb0a76426a99a7aa466ff74e61641426f111"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/41ab5ba2d5813ff679ae1c1bbcbab1a87ea38994",
-                "reference": "41ab5ba2d5813ff679ae1c1bbcbab1a87ea38994",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/b9b3fb0a76426a99a7aa466ff74e61641426f111",
+                "reference": "b9b3fb0a76426a99a7aa466ff74e61641426f111",
                 "shasum": ""
             },
             "require": {
@@ -1984,7 +1984,7 @@
                 }
             ],
             "description": "A media bundle for the OpenOrchestra Project",
-            "time": "2015-04-17 13:53:10"
+            "time": "2015-04-21 08:23:32"
         },
         {
             "name": "open-orchestra/open-orchestra-model-bundle",
@@ -2210,9 +2210,9 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes Schmitt",
+                    "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -2437,12 +2437,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/security-checker.git",
-                "reference": "134cecf1c61256bd8e973e11376891a724543820"
+                "reference": "cecb1397087dc9c733796eda6e9d121336039cdc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/security-checker/zipball/134cecf1c61256bd8e973e11376891a724543820",
-                "reference": "134cecf1c61256bd8e973e11376891a724543820",
+                "url": "https://api.github.com/repos/sensiolabs/security-checker/zipball/cecb1397087dc9c733796eda6e9d121336039cdc",
+                "reference": "cecb1397087dc9c733796eda6e9d121336039cdc",
                 "shasum": ""
             },
             "require": {
@@ -2474,7 +2474,7 @@
                 }
             ],
             "description": "A security checker for your composer.lock",
-            "time": "2015-01-26 16:25:19"
+            "time": "2015-04-21 07:52:05"
         },
         {
             "name": "snc/redis-bundle",
@@ -3127,12 +3127,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Behat/Behat.git",
-                "reference": "a0198655b1a3dd169e4f5f9440822d6ec6dcd015"
+                "reference": "d4c821ca70c600ddeb75fcd365e3bd30eaba7194"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Behat/Behat/zipball/a0198655b1a3dd169e4f5f9440822d6ec6dcd015",
-                "reference": "a0198655b1a3dd169e4f5f9440822d6ec6dcd015",
+                "url": "https://api.github.com/repos/Behat/Behat/zipball/d4c821ca70c600ddeb75fcd365e3bd30eaba7194",
+                "reference": "d4c821ca70c600ddeb75fcd365e3bd30eaba7194",
                 "shasum": ""
             },
             "require": {
@@ -3200,7 +3200,7 @@
                 "symfony",
                 "testing"
             ],
-            "time": "2015-03-20 10:31:41"
+            "time": "2015-04-21 14:59:58"
         },
         {
             "name": "behat/gherkin",
