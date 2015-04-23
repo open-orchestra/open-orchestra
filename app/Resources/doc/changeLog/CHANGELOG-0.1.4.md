@@ -26,6 +26,7 @@ Url to see changes :
 - [Delete media with gaufrette](https://trello.com/c/2gS8iiT4/732-check-lors-de-la-suppression-d-un-media-est-ce-que-gaufrette-fait-une-action-de-delete-sur-le-repertoire-distant)
 - [I don't see header in the query string](https://trello.com/c/GVlPZ9Md/719-1-etq-ufront-je-ne-vois-pas-de-header-dans-la-querystring)
 - [UserBundle is now required in FrontDemo](https://trello.com/c/mez7LKvJ/791-0-5-les-fixtures-du-model-bundle-creent-une-page-avec-un-bloc-login-mais-il-n-y-a-pas-de-strategie-login-dans-le-projet-front-de)
+- [Suppress cid in widget](https://trello.com/c/yeVDAiug/646-3-suppression-des-cid-sur-le-modele-du-tableview)
 
 ## Deprecated method
 
