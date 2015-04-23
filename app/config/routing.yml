@@ -3,13 +3,18 @@ open_orchestra_backoffice:
     type: annotation
     prefix: /admin
 
-open_orchestra_user:
-    resource: "@OpenOrchestraUserBundle/Controller"
+open_orchestra_user_admin:
+    resource: "@OpenOrchestraUserAdminBundle/Controller/Admin"
     type: annotation
     prefix: /admin
 
 open_orchestra_api:
     resource: "@OpenOrchestraApiBundle/Controller"
+    type: annotation
+    prefix: /api
+
+open_orchestra_user_api:
+    resource: "@OpenOrchestraUserAdminBundle/Controller/Api"
     type: annotation
     prefix: /api
 
