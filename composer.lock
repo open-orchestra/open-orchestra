@@ -833,12 +833,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSHttpCache.git",
-                "reference": "a691122ae9f4c0ae18e779dc9d9cb8546243ab23"
+                "reference": "93803c6eab9d6b02006d878224a2a4f00e143f18"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSHttpCache/zipball/a691122ae9f4c0ae18e779dc9d9cb8546243ab23",
-                "reference": "a691122ae9f4c0ae18e779dc9d9cb8546243ab23",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSHttpCache/zipball/93803c6eab9d6b02006d878224a2a4f00e143f18",
+                "reference": "93803c6eab9d6b02006d878224a2a4f00e143f18",
                 "shasum": ""
             },
             "require": {
@@ -898,7 +898,7 @@
                 "purge",
                 "varnish"
             ],
-            "time": "2015-04-10 18:23:56"
+            "time": "2015-04-23 08:37:43"
         },
         {
             "name": "friendsofsymfony/http-cache-bundle",
@@ -1477,9 +1477,9 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes M. Schmitt",
+                    "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
+                    "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -1718,12 +1718,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "03fc68ca1419c7e16050e96c15c7f7e1f2fc26ff"
+                "reference": "aa90882a389dc7101efca47c781e8c4ba5842276"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/03fc68ca1419c7e16050e96c15c7f7e1f2fc26ff",
-                "reference": "03fc68ca1419c7e16050e96c15c7f7e1f2fc26ff",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/aa90882a389dc7101efca47c781e8c4ba5842276",
+                "reference": "aa90882a389dc7101efca47c781e8c4ba5842276",
                 "shasum": ""
             },
             "require": {
@@ -1737,6 +1737,7 @@
                 "aws/aws-sdk-php": "~2.4, >2.4.8",
                 "doctrine/couchdb": "~1.0@dev",
                 "graylog2/gelf-php": "~1.0",
+                "php-console/php-console": "~3.1, >3.1.2",
                 "phpunit/phpunit": "~4.0",
                 "raven/raven": "~0.5",
                 "ruflin/elastica": "0.90.*",
@@ -1749,6 +1750,7 @@
                 "ext-amqp": "Allow sending log messages to an AMQP server (1.0+ required)",
                 "ext-mongo": "Allow sending log messages to a MongoDB server",
                 "graylog2/gelf-php": "Allow sending log messages to a GrayLog2 server",
+                "php-console/php-console": "Allow sending log messages to Google Chrome",
                 "raven/raven": "Allow sending log messages to a Sentry server",
                 "rollbar/rollbar": "Allow sending log messages to Rollbar",
                 "ruflin/elastica": "Allow sending log messages to an Elastic Search server",
@@ -1783,7 +1785,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2015-04-15 18:23:25"
+            "time": "2015-04-23 14:22:42"
         },
         {
             "name": "open-orchestra/open-orchestra-base-bundle",
@@ -1842,12 +1844,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "4a1ae1f1097f90f2da64c0a9f73e62b860111a7c"
+                "reference": "27377305ba10dc8840876b14fe41d124a0bf99d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/4a1ae1f1097f90f2da64c0a9f73e62b860111a7c",
-                "reference": "4a1ae1f1097f90f2da64c0a9f73e62b860111a7c",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/27377305ba10dc8840876b14fe41d124a0bf99d5",
+                "reference": "27377305ba10dc8840876b14fe41d124a0bf99d5",
                 "shasum": ""
             },
             "require": {
@@ -1873,7 +1875,9 @@
                     "OpenOrchestra\\BackofficeBundle": "",
                     "OpenOrchestra\\Backoffice": "",
                     "OpenOrchestra\\GroupBundle": "",
-                    "OpenOrchestra\\ApiBundle": ""
+                    "OpenOrchestra\\ApiBundle": "",
+                    "OpenOrchestra\\UserAdminBundle": "",
+                    "OpenOrchestra\\MediaAdminBundle": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1887,7 +1891,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2015-04-22 09:40:17"
+            "time": "2015-04-24 14:56:24"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -1993,12 +1997,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
-                "reference": "334909a1cd6b5a91dfadf493caeb55e803789ada"
+                "reference": "e2e89a01055dde36e113b1549eecfddc773202df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/334909a1cd6b5a91dfadf493caeb55e803789ada",
-                "reference": "334909a1cd6b5a91dfadf493caeb55e803789ada",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/e2e89a01055dde36e113b1549eecfddc773202df",
+                "reference": "e2e89a01055dde36e113b1549eecfddc773202df",
                 "shasum": ""
             },
             "require": {
@@ -2033,7 +2037,7 @@
                 }
             ],
             "description": "An implemantation of the model-interface for OpenOrchestra on mongo",
-            "time": "2015-04-17 14:48:10"
+            "time": "2015-04-23 09:21:59"
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
@@ -2086,12 +2090,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-user-bundle.git",
-                "reference": "a023fe031e11089e73015eb1476a3e6b68229aba"
+                "reference": "9b22bf45e9c59ba6d480b563311bffe153f6e13f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-user-bundle/zipball/a023fe031e11089e73015eb1476a3e6b68229aba",
-                "reference": "a023fe031e11089e73015eb1476a3e6b68229aba",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-user-bundle/zipball/9b22bf45e9c59ba6d480b563311bffe153f6e13f",
+                "reference": "9b22bf45e9c59ba6d480b563311bffe153f6e13f",
                 "shasum": ""
             },
             "require": {
@@ -2124,7 +2128,7 @@
                 }
             ],
             "description": "An override of FosUserBundle to provide authentication on OpenOrchestra",
-            "time": "2015-04-10 08:32:16"
+            "time": "2015-04-24 14:56:11"
         },
         {
             "name": "phpcollection/phpcollection",
@@ -2210,9 +2214,9 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes M. Schmitt",
+                    "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
+                    "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -3770,12 +3774,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "c58c6dc07d1f76fd66e661418f66eecef931c2b1"
+                "reference": "08c0d7d648efdaa1491ce8f9ad5df4ec79b3d099"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/c58c6dc07d1f76fd66e661418f66eecef931c2b1",
-                "reference": "c58c6dc07d1f76fd66e661418f66eecef931c2b1",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/08c0d7d648efdaa1491ce8f9ad5df4ec79b3d099",
+                "reference": "08c0d7d648efdaa1491ce8f9ad5df4ec79b3d099",
                 "shasum": ""
             },
             "require": {
@@ -3822,7 +3826,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2015-04-17 14:44:34"
+            "time": "2015-04-23 08:18:32"
         },
         {
             "name": "phpunit/php-code-coverage",
