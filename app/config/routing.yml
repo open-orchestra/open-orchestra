@@ -8,6 +8,11 @@ open_orchestra_user_admin:
     type: annotation
     prefix: /admin
 
+open_orchestra_media_admin:
+    resource: "@OpenOrchestraMediaAdminBundle/Controller/Admin"
+    type: annotation
+    prefix: /admin
+
 open_orchestra_api:
     resource: "@OpenOrchestraApiBundle/Controller"
     type: annotation
@@ -15,6 +20,11 @@ open_orchestra_api:
 
 open_orchestra_user_api:
     resource: "@OpenOrchestraUserAdminBundle/Controller/Api"
+    type: annotation
+    prefix: /api
+
+open_orchestra_media_api:
+    resource: "@OpenOrchestraMediaAdminBundle/Controller/Api"
     type: annotation
     prefix: /api
 

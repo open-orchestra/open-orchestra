@@ -42,6 +42,7 @@ class AppKernel extends Kernel
             new OpenOrchestra\GroupBundle\OpenOrchestraGroupBundle(),
             new OpenOrchestra\LogBundle\OpenOrchestraLogBundle(),
             new OpenOrchestra\UserAdminBundle\OpenOrchestraUserAdminBundle(),
+            new OpenOrchestra\MediaAdminBundle\OpenOrchestraMediaAdminBundle(),
 
             // Need parameters set by some of our bundles
             new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),
