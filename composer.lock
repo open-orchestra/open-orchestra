@@ -1844,12 +1844,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "3546b57edef7feec03040909025e38fc7841dea4"
+                "reference": "b8d80804690fabfa5d52675ad1d8af292ca4d778"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/3546b57edef7feec03040909025e38fc7841dea4",
-                "reference": "3546b57edef7feec03040909025e38fc7841dea4",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/b8d80804690fabfa5d52675ad1d8af292ca4d778",
+                "reference": "b8d80804690fabfa5d52675ad1d8af292ca4d778",
                 "shasum": ""
             },
             "require": {
@@ -1876,7 +1876,8 @@
                     "OpenOrchestra\\Backoffice": "",
                     "OpenOrchestra\\GroupBundle": "",
                     "OpenOrchestra\\ApiBundle": "",
-                    "OpenOrchestra\\UserAdminBundle": ""
+                    "OpenOrchestra\\UserAdminBundle": "",
+                    "OpenOrchestra\\MediaAdminBundle": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1890,7 +1891,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2015-04-24 14:34:03"
+            "time": "2015-04-24 14:43:19"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
