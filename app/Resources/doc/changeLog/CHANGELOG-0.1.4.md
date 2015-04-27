@@ -13,7 +13,8 @@ Url to see changes :
  - [Theme bundle](https://github.com/open-orchestra/open-orchestra-theme-bundle/compare/v0.1.3...v0.1.4)
 
 ## Possible BC breaker
-
+- The ContactController in the DisplayBundle has been removed. Therefore there are no more controller in
+  this bundle so any reference to it in the routing file should be removed.
 
 ## Bug fixes
 - [Blocks contentList and configurable content displays the lastest content published in the language considered](https://trello.com/c/soVPYDii/763-2-etq-ufront-lorsque-je-liste-les-contents-je-ne-prends-que-les-derniers-content-publie-dans-la-langue-considere)
