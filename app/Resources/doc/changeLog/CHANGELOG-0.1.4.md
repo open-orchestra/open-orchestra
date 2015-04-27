@@ -35,3 +35,5 @@ Url to see changes :
 ## Suppressed method
 
 ## Configuration changes
+- The controller reference under the `open_orchestra_display` key in the routing should not be used
+  as there is no more controller in this bundle.
