@@ -15,6 +15,7 @@ Url to see changes :
 ## Possible BC breaker
 - The ContactController in the DisplayBundle has been removed. Therefore there are no more controller in
   this bundle so any reference to it in the routing file should be removed.
+ - We have moved the FieldAutoGenerableRepositoryInterface from the model-bundle to the model-interface
 
 ## Bug fixes
 - [Blocks contentList and configurable content displays the lastest content published in the language considered](https://trello.com/c/soVPYDii/763-2-etq-ufront-lorsque-je-liste-les-contents-je-ne-prends-que-les-derniers-content-publie-dans-la-langue-considere)
