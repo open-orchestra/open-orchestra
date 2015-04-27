@@ -25,6 +25,8 @@ Url to see changes :
 
 ## Deprecated method
 
+ - In the contentRepositoryInterface, the method findAllNews is deprecated and will be suppressed in 0.2.1
+
 ## Suppressed method
 
 ## Configuration changes
