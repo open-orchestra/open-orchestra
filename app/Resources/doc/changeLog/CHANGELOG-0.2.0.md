@@ -22,6 +22,7 @@ Url to see changes :
 ## New features
 
 ## Other changes
+ - [Content Type List block now have a generic template](https://trello.com/c/BwV1cldJ/859-2-etq-ufront-je-vois-un-block-contentlist-avec-un-template-generique)
 
 ## Deprecated method
 
