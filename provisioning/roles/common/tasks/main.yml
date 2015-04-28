@@ -1,3 +1,4 @@
 ---
  - include: add_hosts.yml
+ - include: add_default_locale.yml
  - include: base_packages.yml

@@ -1,0 +1,5 @@
+---
+- name: add hosts.
+  lineinfile: dest=/etc/default/locale regexp='LC_ALL' line='LC_ALL=en_US.UTF-8'
+- name: export locale
+  shell: export LC_ALL=en_US.UTF-8

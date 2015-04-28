@@ -1,3 +1,5 @@
 ---
-#dependencies:
+dependencies:
+  - { role: common }
 #  - { role: DavidWittman.redis }
+  - { role: greendayonfire.mongodb }

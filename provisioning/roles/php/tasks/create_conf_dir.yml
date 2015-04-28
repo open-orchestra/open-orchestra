@@ -1,0 +1,7 @@
+---
+ - name: Check php conf directory
+   stat: path=/etc/php5/conf.d
+   register: php_conf_directory
+ - name: Create a directory for php conf
+   shell: mkdir -p /etc/php5/conf.d
+   when: php_conf_directory.stat.exists == false

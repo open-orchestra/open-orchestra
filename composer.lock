@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "22e8b17e6876aeedbc7871209343de89",
+    "hash": "59fdfba8931d7a3440c745bf35a30b14",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -2543,6 +2543,84 @@
                 "symfony"
             ],
             "time": "2014-02-01 09:46:23"
+        },
+        {
+            "name": "solution/mongo-odm-aggregation-bundle",
+            "version": "dev-master",
+            "target-dir": "Solution/MongoAggregationBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/f1nder/SolutionMongoAggregationBundle.git",
+                "reference": "410d25e2c6e910d963d371996b283a4e4126d84d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/f1nder/SolutionMongoAggregationBundle/zipball/410d25e2c6e910d963d371996b283a4e4126d84d",
+                "reference": "410d25e2c6e910d963d371996b283a4e4126d84d",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/mongodb-odm-bundle": "~3.0",
+                "php": ">=5.4.0",
+                "solution/pipeline-builder": "dev-master",
+                "symfony/symfony": "~2.3"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-0": {
+                    "Solution\\MongoAggregationBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Aleksandr Moroz",
+                    "email": "netstroix@gmail.com",
+                    "homepage": "http://comingsoon.com"
+                }
+            ],
+            "description": "This Bundle integrates mongo aggregation queries into you Symfony2 project.",
+            "keywords": [
+                "aggregation",
+                "mongo",
+                "pipeline",
+                "query"
+            ],
+            "time": "2014-02-28 09:09:04"
+        },
+        {
+            "name": "solution/pipeline-builder",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/f1nder/SolutionPipelineBuilder.git",
+                "reference": "aca3cdfb2262fb3ceea82310b903c908c4c9b983"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/f1nder/SolutionPipelineBuilder/zipball/aca3cdfb2262fb3ceea82310b903c908c4c9b983",
+                "reference": "aca3cdfb2262fb3ceea82310b903c908c4c9b983",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Aleksandr Moroz",
+                    "email": "netstroix@gmail.com",
+                    "homepage": "http://comingsoon.com"
+                }
+            ],
+            "description": "Build pipeline for Mongo Aggregation Query",
+            "time": "2014-04-09 13:17:40"
         },
         {
             "name": "stfalcon/tinymce-bundle",

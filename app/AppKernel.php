@@ -47,6 +47,7 @@ class AppKernel extends Kernel
             // Need parameters set by some of our bundles
             new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),
             new Knp\Bundle\GaufretteBundle\KnpGaufretteBundle(),
+            new Solution\MongoAggregationBundle\SolutionMongoAggregationBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
