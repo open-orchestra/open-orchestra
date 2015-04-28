@@ -18,6 +18,7 @@ Url to see changes :
  - [Creation of MediaAdminBundle](https://trello.com/c/sJljqlue/740-3-etq-dev-j-ai-acces-a-un-useradminbundle-mediaadminbundle-dans-le-cms-bundle)
 
 ## Bug fixes
+ - [Car content type fixtures are functionnal](https://trello.com/c/4VASdtmr/835-1-etq-ubo-je-peux-editer-les-car-des-fixtures)
 
 ## New features
 
