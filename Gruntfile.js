@@ -226,6 +226,10 @@ module.exports = function(grunt) {
                     'web/built/openorchestrabackoffice/js/block/video.js',
                     'web/built/openorchestrabackoffice/js/adminFormView.js',
                     'web/built/openorchestrabackoffice/js/generateId.js',
+                    // EXTEND VIEW
+                    'web/built/openorchestrabackoffice/js/extendView/addArea.js',
+                    'web/built/openorchestrabackoffice/js/extendView/commonPage.js',
+                    'web/built/openorchestrabackoffice/js/extendView/generateId.js',
                     // WIDGET
                     'web/built/openorchestrabackoffice/js/widget/widgetChannel.js',
                     'web/built/openorchestrabackoffice/js/widget/duplicateChannel.js',
