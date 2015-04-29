@@ -2047,12 +2047,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-interface.git",
-                "reference": "6081b07832d8d64fe16ef0542ec0e4e6c7940b6e"
+                "reference": "7e8f0f9ace69acfeda23a2f52ec34889cbe2a58c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/6081b07832d8d64fe16ef0542ec0e4e6c7940b6e",
-                "reference": "6081b07832d8d64fe16ef0542ec0e4e6c7940b6e",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/7e8f0f9ace69acfeda23a2f52ec34889cbe2a58c",
+                "reference": "7e8f0f9ace69acfeda23a2f52ec34889cbe2a58c",
                 "shasum": ""
             },
             "require": {
@@ -2082,7 +2082,7 @@
                 }
             ],
             "description": "Describe all entity and repository to implement for the whole OpenOrchestra project",
-            "time": "2015-04-28 15:46:57"
+            "time": "2015-04-29 09:16:15"
         },
         {
             "name": "open-orchestra/open-orchestra-user-bundle",
