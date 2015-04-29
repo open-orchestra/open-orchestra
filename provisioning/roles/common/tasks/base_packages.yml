@@ -6,18 +6,15 @@
     - curl
     - git
     - g++
-    - gcc # for make install
+    - gcc # to make install
     - ifupdown-extra
     - iotop
     - libfontconfig1
-    - libwww-perl
-    - libpq-dev # needed by ansible module postgresql_db
     - lynx
     - make
     - netcat-openbsd
     - ntp
     - python-pycurl # needed by ansible module apt_repository
-    - python-psycopg2 # needed by ansible module postgresql_db
     - socat
     - strace
     - sysstat

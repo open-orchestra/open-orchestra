@@ -1,3 +1,0 @@
----
- - name: ensure mongo is installed
-   apt: pkg=mongodb state=latest

@@ -1,4 +1,5 @@
 ---
+ - include: create_conf_dir.yml
  - include: php_latest_version.yml
  - include: xdebug_latest_version.yml
  - include: copy_xdebug_ini.yml

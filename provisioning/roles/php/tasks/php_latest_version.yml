@@ -1,7 +1,7 @@
 ---
- - name: ensure that php5-xsl is at the last version
-   apt: pkg=php5-xsl state=latest
- - name: ensure that php5-intl is at the last version
-   apt: pkg=php5-intl state=latest
- - name: ensure that php-pear is at the last version
-   apt: pkg=php-pear state=latest
+ - name: ensure that php extensions are in the last version
+   apt: pkg={{ item }} state=latest
+   with_items:
+     - php5-xsl
+     - php5-intl
+     - php-pear
