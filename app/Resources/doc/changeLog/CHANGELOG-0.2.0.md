@@ -24,10 +24,12 @@ Url to see changes :
 
 ## Other changes
  - [Content Type List block now have a generic template](https://trello.com/c/BwV1cldJ/859-2-etq-ufront-je-vois-un-block-contentlist-avec-un-template-generique)
+ - [In the back office / mediatheque, the media format tab is shown only for images, not for pdfs or videos](https://trello.com/c/YAQFAdN4/839-1-etq-ubo-je-vois-l-onglet-crop-uniquement-pour-les-images)
 
 ## Deprecated method
 
  - In the contentRepositoryInterface, the method findAllNews is deprecated and will be suppressed in 0.2.1
+ - In the contentTypeRepositoryInterface, the method findOneByContentTypeIdAndVersion is deprecated and will be suppressed in 0.2.1
 
 ## Suppressed method
 
