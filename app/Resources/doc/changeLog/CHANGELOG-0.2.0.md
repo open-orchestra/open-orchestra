@@ -49,3 +49,5 @@ Url to see changes :
     - `Symfony\Component\Security\Core\User\UserInterface: OpenOrchestra\UserBundle\Document\User`
  - Add the relation to the `ApiClientInterface` :
     - `OpenOrchestra\UserBundle\Model\ApiClientInterface: OpenOrchestra\UserBundle\Document\ApiClient`
+ - We use a new bundle to use aggregation query with mongodb, activate the bundle :
+    - `new Solution\MongoAggregationBundle\SolutionMongoAggregationBundle(),`
