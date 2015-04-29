@@ -71,6 +71,8 @@ doctrine_mongodb:
         OpenOrchestra\ModelInterface\Model\TranslatedValueInterface: OpenOrchestra\ModelBundle\Document\TranslatedValue
         OpenOrchestra\ModelInterface\Model\ReadSiteInterface: OpenOrchestra\ModelBundle\Document\Site
         FOS\UserBundle\Model\GroupInterface: OpenOrchestra\GroupBundle\Document\Group
+        Symfony\Component\Security\Core\User\UserInterface: OpenOrchestra\UserBundle\Document\User
+        OpenOrchestra\UserBundle\Model\ApiClientInterface: OpenOrchestra\UserBundle\Document\ApiClient
     document_managers:
         default:
             auto_mapping: true
