@@ -21,12 +21,15 @@ Url to see changes :
  - [Car content type fixtures are functionnal](https://trello.com/c/4VASdtmr/835-1-etq-ubo-je-peux-editer-les-car-des-fixtures)
  - AccessToken was linked to the `User` document, it is now linked to the `UserInterface`
  - AccessToken was linked to the `ApiClient` document, it is now linked to the `ApiClientInterface`
+ - [Content type with content field which have not options are functionnal](https://trello.com/c/J9VMmP8e/842-0-5-bo-content-type-parametrage-content-attribute-option-necessaire-sinon-plantage)
 
 ## New features
 
 ## Other changes
  - [Content Type List block now have a generic template](https://trello.com/c/BwV1cldJ/859-2-etq-ufront-je-vois-un-block-contentlist-avec-un-template-generique)
  - [In the back office / mediatheque, the media format tab is shown only for images, not for pdfs or videos](https://trello.com/c/YAQFAdN4/839-1-etq-ubo-je-vois-l-onglet-crop-uniquement-pour-les-images)
+ - [In the creation of a site form, by default the index parameter and the follow parameter are checked](https://trello.com/c/T4qUcjsp/855-0-5-etq-ubo-lors-de-la-creation-d-un-site-index-follow-true-par-defaut)
+ - [Content Type have no status](https://trello.com/c/tDfjsN1z/836-0-5-etq-ubo-je-ne-peux-pas-mettre-de-status-sur-les-contenttypes)
 
 ## Deprecated method
 
