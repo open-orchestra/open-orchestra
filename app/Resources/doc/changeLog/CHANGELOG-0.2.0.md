@@ -44,6 +44,27 @@ Url to see changes :
     - `new OpenOrchestra\UserAdminBundle\OpenOrchestraUserAdminBundle(),`
     - `new OpenOrchestra\MediaAdminBundle\OpenOrchestraMediaAdminBundle(),`
  - Load the routing for those bundles
+
+        open_orchestra_user_admin:
+            resource: "@OpenOrchestraUserAdminBundle/Controller/Admin"
+            type: annotation
+            prefix: /admin
+
+        open_orchestra_media_admin:
+            resource: "@OpenOrchestraMediaAdminBundle/Controller/Admin"
+            type: annotation
+            prefix: /admin
+
+        open_orchestra_user_api:
+            resource: "@OpenOrchestraUserAdminBundle/Controller/Api"
+            type: annotation
+            prefix: /api
+
+        open_orchestra_media_api:
+            resource: "@OpenOrchestraMediaAdminBundle/Controller/Api"
+            type: annotation
+            prefix: /api
+
  - Do not use the UserBundle routes
  - Add the relation to the `UserInterface` :
     - `Symfony\Component\Security\Core\User\UserInterface: OpenOrchestra\UserBundle\Document\User`
