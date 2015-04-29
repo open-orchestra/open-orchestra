@@ -19,6 +19,8 @@ Url to see changes :
 
 ## Bug fixes
  - [Car content type fixtures are functionnal](https://trello.com/c/4VASdtmr/835-1-etq-ubo-je-peux-editer-les-car-des-fixtures)
+ - AccessToken was linked to the `User` document, it is now linked to the `UserInterface`
+ - AccessToken was linked to the `ApiClient` document, it is now linked to the `ApiClientInterface`
 
 ## New features
 
@@ -40,3 +42,7 @@ Url to see changes :
     - `new OpenOrchestra\MediaAdminBundle\OpenOrchestraMediaAdminBundle(),`
  - Load the routing for those bundles
  - Do not use the UserBundle routes
+ - Add the relation to the `UserInterface` :
+    - `Symfony\Component\Security\Core\User\UserInterface: OpenOrchestra\UserBundle\Document\User`
+ - Add the relation to the `ApiClientInterface` :
+    - `OpenOrchestra\UserBundle\Model\ApiClientInterface: OpenOrchestra\UserBundle\Document\ApiClient`
