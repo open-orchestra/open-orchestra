@@ -1,0 +1,3 @@
+---
+- name: Copy hosts config
+  template: src=hosts.conf.j2 dest=/etc/hosts

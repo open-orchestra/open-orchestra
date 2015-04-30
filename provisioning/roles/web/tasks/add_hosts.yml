@@ -1,3 +1,0 @@
----
-- name: add hosts.
-  lineinfile: dest=/etc/hosts regexp='^127\.0\.1\.1' line='127.0.1.1 admin.openorchestra.dev openorchestra.test front.openorchestra.dev demo.openorchestra.dev echonext.openorchestra.dev admin.openorchestra.inte front.openorchestra.inte demo.openorchestra.inte echonext.openorchestra.inte'

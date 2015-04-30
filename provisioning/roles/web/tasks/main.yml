@@ -1,9 +1,10 @@
 ---
  - include: add_certificate.yml
- - include: add_hosts.yml
+ - include: create_hosts.yml
  - include: add_mediatheque_folder.yml
  - include: copy_varnish_file.yml
  - include: apache_latest_version.yml
  - include: copy_apache_conf.yml
  - include: create_link.yml
  - include: desactivate_default_vhosts.yml
+ - include: copy_apache_conf.yml
