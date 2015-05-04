@@ -25,6 +25,7 @@ Url to see changes :
 
 ## New features
  - Possibility of using fullname (bundle:controller:twig) for underscore template in coffee
+ - [Application developpers can now add new custom content attributes](https://trello.com/c/1Yn20BSP/846-2-etq-ubo-je-peux-ajouter-des-contents-attributs-specifique)
 
 ## Other changes
  - [Content Type List block now have a generic template](https://trello.com/c/BwV1cldJ/859-2-etq-ufront-je-vois-un-block-contentlist-avec-un-template-generique)
