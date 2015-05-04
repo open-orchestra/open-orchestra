@@ -24,6 +24,7 @@ Url to see changes :
  - [Content type with content field which have not options are functionnal](https://trello.com/c/J9VMmP8e/842-0-5-bo-content-type-parametrage-content-attribute-option-necessaire-sinon-plantage)
 
 ## New features
+ - Possibility of using fullname (bundle:controller:twig) for underscore template in coffee
 
 ## Other changes
  - [Content Type List block now have a generic template](https://trello.com/c/BwV1cldJ/859-2-etq-ufront-je-vois-un-block-contentlist-avec-un-template-generique)
