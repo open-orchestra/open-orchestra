@@ -31,13 +31,13 @@ Url to see changes :
 
  - There are now only relations on interfaces :
 
-        OpenOrchestra\ModelInterface\Model\EmbedStatusInterface: OpenOrchestra\ModelInterface\Model\EmbedStatus
-        OpenOrchestra\ModelInterface\Model\RoleInterface: OpenOrchestra\ModelBundle\Model\Role
-        OpenOrchestra\ModelInterface\Model\AreaInterface: OpenOrchestra\ModelBundle\Model\Area
-        OpenOrchestra\ModelInterface\Model\BlockInterface: OpenOrchestra\ModelBundle\Model\Block
-        OpenOrchestra\ModelInterface\Model\StatusInterface: OpenOrchestra\ModelBundle\Model\Status
-        OpenOrchestra\ModelInterface\Model\ThemeInterface: OpenOrchestra\ModelBundle\Model\Theme
-        OpenOrchestra\ModelInterface\Model\SiteAliasInterface: OpenOrchestra\ModelBundle\Model\SiteAlias
-        OpenOrchestra\ModelInterface\Model\ContentAttributeInterface: OpenOrchestra\ModelBundle\Model\ContentAttribute
-        OpenOrchestra\ModelInterface\Model\FieldTypeInterface: OpenOrchestra\ModelBundle\Model\FieldType
-        OpenOrchestra\ModelInterface\Model\FieldOptionInterface: OpenOrchestra\ModelBundle\Model\FieldOption
+        OpenOrchestra\ModelInterface\Model\EmbedStatusInterface: OpenOrchestra\ModelBundle\Document\EmbedStatus
+        OpenOrchestra\ModelInterface\Model\RoleInterface: OpenOrchestra\ModelBundle\Document\Role
+        OpenOrchestra\ModelInterface\Model\AreaInterface: OpenOrchestra\ModelBundle\Document\Area
+        OpenOrchestra\ModelInterface\Model\BlockInterface: OpenOrchestra\ModelBundle\Document\Block
+        OpenOrchestra\ModelInterface\Model\StatusInterface: OpenOrchestra\ModelBundle\Document\Status
+        OpenOrchestra\ModelInterface\Model\ThemeInterface: OpenOrchestra\ModelBundle\Document\Theme
+        OpenOrchestra\ModelInterface\Model\SiteAliasInterface: OpenOrchestra\ModelBundle\Document\SiteAlias
+        OpenOrchestra\ModelInterface\Model\ContentAttributeInterface: OpenOrchestra\ModelBundle\Document\ContentAttribute
+        OpenOrchestra\ModelInterface\Model\FieldTypeInterface: OpenOrchestra\ModelBundle\Document\FieldType
+        OpenOrchestra\ModelInterface\Model\FieldOptionInterface: OpenOrchestra\ModelBundle\Document\FieldOption
