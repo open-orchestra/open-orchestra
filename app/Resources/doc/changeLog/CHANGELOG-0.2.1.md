@@ -14,6 +14,7 @@ Url to see changes :
 
 ## Possible BC breaker
 
+ - The ApiBundle has been split in ApiBundle and BaseApiBundle
 
 ## Bug fixes
 
@@ -24,8 +25,23 @@ Url to see changes :
 ## Deprecated method
 
  - The Statusable trait was in the model-bundle, it has been moved to model-interface
+ - We have moved the following classes from the ApiBundle, they are now deprecated and will be
+removed in the 0.2.2 version : 
+   - GroupContext
+   - Annotation\Serializer
+   - Annotation\Group
+   - BaseController
+   - TransformerManaer
+   - AbstractTransformer
+   - TransformerInterface
+   - AbstractFacade
+   - FacadeInterface
+   - ApiException
+   - HttpException\ApiException
 
 ## Suppressed method
+
+ - The class `OpenOrchestra\ApiBundle\Controller\BaseController` has been removed
 
 ## Configuration changes
 
