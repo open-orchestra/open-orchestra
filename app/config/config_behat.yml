@@ -1,9 +1,5 @@
 imports:
-    - { resource: config_dev.yml }
+    - { resource: config.yml }
 
 framework:
     default_locale: en
-
-web_profiler:
-    toolbar: false
-    intercept_redirects: false
