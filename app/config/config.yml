@@ -51,6 +51,7 @@ assetic:
     use_controller: false
     bundles:
         - OpenOrchestraBackofficeBundle
+        - OpenOrchestraMediaAdminBundle
         - OpenOrchestraDisplayBundle
         - OpenOrchestraUserBundle
     #java: /usr/bin/java
