@@ -45,6 +45,10 @@ removed in the 0.2.2 version :
 
 ## Configuration changes
 
+ - Activate the BaseApiBundle in the AppKernel : 
+
+        new OpenOrchestra\BaseApiBundle\OpenOrchestraBaseApiBundle(),
+
  - There are now only relations on interfaces :
 
         OpenOrchestra\ModelInterface\Model\EmbedStatusInterface: OpenOrchestra\ModelBundle\Document\EmbedStatus
