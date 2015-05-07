@@ -3,7 +3,7 @@ default:
         Behat\Symfony2Extension:
         Behat\MinkExtension:
             default_session: selenium2
-            base_url: 'http://openorchestra.test:8000/app_test.php'
+            base_url: 'http://openorchestra.test:8000/app_behat.php'
             browser_name: chrome
             selenium2:
                 capabilities: { "browser": "firefox", "version": "34"}
