@@ -1,3 +1,0 @@
----
-- name: generate robots.txt
-  cron: name="generate robots.txt" minute={{robots_minute}} hour={{robots_hour}} job="{{robots_task}}"

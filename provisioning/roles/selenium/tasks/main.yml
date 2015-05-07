@@ -1,6 +1,0 @@
----
- - include: download_selenium.yml
- - include: install_firefox.yml
- - include: chrome_driver.yml
- - include: install_xvfb.yml
- - include: start_selenium.yml

@@ -1,3 +1,0 @@
----
- - name: Copy xdebug.ini in etc/php5/mods-availables
-   template: src=xdebug.ini.j2 dest=/etc/php5/mods-available/xdebug.ini

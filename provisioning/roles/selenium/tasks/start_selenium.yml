@@ -1,5 +1,0 @@
----
-- name: Start xvfb
-  service: name=Xvfb state=started
-- name: Start selenium
-  service: name=selenium state=started
