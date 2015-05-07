@@ -20,7 +20,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     ansible.sudo = true
     ansible.limit = "vagrant"
     ansible.inventory_path = "provisioning/hosts/vagrant"
-    ansible.playbook = "provisioning/site.yml"
+    ansible.playbook = "../open-orchestra-provision/site.yml"
     ansible.verbose = "v"
   end
 end
