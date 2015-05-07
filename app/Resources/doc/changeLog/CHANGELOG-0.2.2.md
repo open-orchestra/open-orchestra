@@ -18,6 +18,8 @@ Url to see changes :
 
 ## Bug fixes
 
+ - [Blocks js & css files are now correctly loaded](https://trello.com/c/lEJM8l6C/868-3-fo-chargement-autonome-des-css-de-blocs-le-chargement-semble-ne-fonctionner-que-pour-le-premier-bloc-de-la-page-et-il-est-igno)
+
 ## New features
 
 ## Other changes
