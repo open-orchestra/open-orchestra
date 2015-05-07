@@ -33,6 +33,7 @@ class AppKernel extends Kernel
             new Braincrafted\Bundle\BootstrapBundle\BraincraftedBootstrapBundle(),
 
             new OpenOrchestra\BaseBundle\OpenOrchestraBaseBundle(),
+            new OpenOrchestra\BaseApiBundle\OpenOrchestraBaseApiBundle(),
             new OpenOrchestra\UserBundle\OpenOrchestraUserBundle(),
             new OpenOrchestra\ModelBundle\OpenOrchestraModelBundle(),
             new OpenOrchestra\MediaBundle\OpenOrchestraMediaBundle(),

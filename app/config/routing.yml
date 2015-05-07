@@ -13,6 +13,9 @@ open_orchestra_media_admin:
     type: annotation
     prefix: /admin
 
+open_orchestra_api_oauth2:
+    resource: "@OpenOrchestraBaseApiBundle/Resources/config/oauth2routing.yml"
+
 open_orchestra_api:
     resource: "@OpenOrchestraApiBundle/Controller"
     type: annotation
@@ -40,9 +43,6 @@ open_orchestra_media:
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
-
-open_orchestra_api_oauth2:
-    resource: "@OpenOrchestraApiBundle/Resources/config/oauth2routing.yml"
 
 root:
     pattern: /

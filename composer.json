@@ -12,6 +12,7 @@
     "require": {
         "incenteev/composer-parameter-handler": "~2.0",
         "open-orchestra/open-orchestra-cms-bundle": "*",
+        "open-orchestra/open-orchestra-base-api-bundle": "*",
         "open-orchestra/open-orchestra-model-bundle": "*"
     },
     "require-dev": {
