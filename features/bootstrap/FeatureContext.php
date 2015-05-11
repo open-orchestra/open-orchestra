@@ -91,7 +91,7 @@ class FeatureContext extends MinkContext implements KernelAwareContext
      */
     public function iWaitForElement($element)
     {
-        $this->getSession()->wait(5000, $element);
+        $this->getSession()->wait(10000, $element);
     }
 
     /**
@@ -101,8 +101,87 @@ class FeatureContext extends MinkContext implements KernelAwareContext
      */
     public function iShouldWaitUntilISee($text)
     {
-        $this->iWaitForElement('(0 === jQuery.active)');
+        $this->iWaitForAjaxToFinish();
         $this->assertPageContainsText($text);
+    }
+
+    /**
+     * Wait for AJAX to finish.
+     *
+     * @Given /^I wait for AJAX to finish$/
+     */
+    public function iWaitForAjaxToFinish()
+    {
+        $this->iWaitForElement('(typeof(jQuery)=="undefined" || (0 === jQuery.active && 0 === jQuery(\':animated\').length))');
+    }
+
+    /**
+     * Clicks link with specified id|title|alt|text.
+     *
+     * @When /^(?:|I )follow last "(?P<link>(?:[^"]|\\")*)"$/
+     */
+    public function clickLastLink($link)
+    {
+        $link = $this->fixStepArgument($link);
+
+        $links = $this->getSession()->getPage()->findAll('named', array(
+            'link', $this->getSession()->getSelectorsHandler()->xpathLiteral($link),
+        ));
+
+        $link = end($links);
+
+        if (null === $link) {
+            throw new \InvalidArgumentException(sprintf('Could not found link: "%s"', $link));
+        }
+
+        $link->click();
+    }
+
+    /**
+     * Fills in last form field with specified id|name|label|value.
+     *
+     * @When /^(?:|I )fill in last "(?P<field>(?:[^"]|\\")*)" with "(?P<value>(?:[^"]|\\")*)"$/
+     * @When /^(?:|I )fill in last "(?P<field>(?:[^"]|\\")*)" with:$/
+     * @When /^(?:|I )fill in last "(?P<value>(?:[^"]|\\")*)" for "(?P<field>(?:[^"]|\\")*)"$/
+     */
+    public function fillLastField($field, $value)
+    {
+        $field = $this->fixStepArgument($field);
+        $value = $this->fixStepArgument($value);
+
+        $fields = $this->getSession()->getPage()->findAll('named', array(
+            'field', $this->getSession()->getSelectorsHandler()->xpathLiteral($field),
+        ));
+
+        $field = end($fields);
+
+        if (null === $field) {
+            throw new \InvalidArgumentException(sprintf('Could not found field: "%s"', $field));
+        }
+
+        $field->setValue($value);
+    }
+
+    /**
+     * Presses last button with specified id|name|title|alt|value.
+     *
+     * @When /^(?:|I )press last "(?P<button>(?:[^"]|\\")*)"$/
+     */
+    public function pressLastButton($button)
+    {
+        $button = $this->fixStepArgument($button);
+
+        $buttons = $this->getSession()->getPage()->findAll('named', array(
+            'button', $this->getSession()->getSelectorsHandler()->xpathLiteral($button),
+        ));
+
+        $button = end($buttons);
+
+        if (null === $button) {
+            throw new \InvalidArgumentException(sprintf('Could not found button: "%s"', $button));
+        }
+
+        $button->press();
     }
 
     /**
