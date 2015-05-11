@@ -78,6 +78,10 @@ module.exports = function(grunt) {
                 src: 'bower_components/font-awesome/fonts/fontawesome-webfont.woff',
                 dest: 'web/fonts/fontawesome-webfont.woff'
             },
+            fontawesome_font_woff: {
+                src: 'bower_components/font-awesome/fonts/fontawesome-webfont.woff2',
+                dest: 'web/fonts/fontawesome-webfont.woff2'
+            },
             bootstrap_font_eot: {
                 src: 'bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.eot',
                 dest: 'web/fonts/glyphicons-halflings-regular.eot'
@@ -118,6 +122,10 @@ module.exports = function(grunt) {
             smartadmin_bg: {
                 src: 'web/bundles/openorchestrabackoffice/smartadmin/img/mybg.png',
                 dest: 'web/img/mybg.png'
+            },
+            smartadmin_bg: {
+                src: 'web/bundles/openorchestrabackoffice/smartadmin/img/pattern/overlay-pattern.png',
+                dest: 'web/img/pattern/overlay-pattern.png'
             },
             smartadmin_flags: {
                 src: 'web/bundles/openorchestrabackoffice/smartadmin/img/flags/flags.png',
