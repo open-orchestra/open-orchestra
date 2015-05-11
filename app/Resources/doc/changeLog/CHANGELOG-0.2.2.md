@@ -24,6 +24,8 @@ Url to see changes :
 
 ## Other changes
 
+ - In the Backoffice, all the display strategies should be tagged with `open_orchestra_backoffice.display_block.strategy`
+
 ## Deprecated method
 
 ## Suppressed method
