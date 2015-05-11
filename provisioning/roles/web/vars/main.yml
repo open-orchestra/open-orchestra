@@ -1,5 +1,0 @@
----
-varnish_default_backend_host: admin.openorchestra.dev
-varnish_default_backend_port: 8000
-varnish_conf: openorchestra.vcl
-varnish_use_default_vcl: false

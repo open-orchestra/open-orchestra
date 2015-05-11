@@ -1,5 +1,0 @@
----
-- name: Install xvfb if not installed
-  apt: name=xvfb state=present
-- name: Copy init xvfb
-  template: src=xvfb.init.j2 dest=/etc/init.d/Xvfb owner=root group=root mode=0755

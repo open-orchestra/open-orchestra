@@ -1,7 +1,0 @@
----
- - name: ensure that php extensions are in the last version
-   apt: pkg={{ item }} state=latest
-   with_items:
-     - php5-xsl
-     - php5-intl
-     - php-pear
