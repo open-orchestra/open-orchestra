@@ -833,12 +833,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSHttpCache.git",
-                "reference": "d39c132754ca0818952951873003cad615bb5ddf"
+                "reference": "b56f5454b3a937acc1507b831893eecacf3a51b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSHttpCache/zipball/d39c132754ca0818952951873003cad615bb5ddf",
-                "reference": "d39c132754ca0818952951873003cad615bb5ddf",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSHttpCache/zipball/b56f5454b3a937acc1507b831893eecacf3a51b7",
+                "reference": "b56f5454b3a937acc1507b831893eecacf3a51b7",
                 "shasum": ""
             },
             "require": {
@@ -897,7 +897,7 @@
                 "purge",
                 "varnish"
             ],
-            "time": "2015-05-10 10:05:54"
+            "time": "2015-05-12 05:57:01"
         },
         {
             "name": "friendsofsymfony/http-cache-bundle",
@@ -1717,12 +1717,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "72123e3d6c7bf8f1454fe12deb69db2f783dd220"
+                "reference": "bf2bff61743f20a13dc46ff1e3bbd0f19c997d2b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/72123e3d6c7bf8f1454fe12deb69db2f783dd220",
-                "reference": "72123e3d6c7bf8f1454fe12deb69db2f783dd220",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/bf2bff61743f20a13dc46ff1e3bbd0f19c997d2b",
+                "reference": "bf2bff61743f20a13dc46ff1e3bbd0f19c997d2b",
                 "shasum": ""
             },
             "require": {
@@ -1784,7 +1784,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2015-05-09 17:17:49"
+            "time": "2015-05-11 14:51:05"
         },
         {
             "name": "open-orchestra/open-orchestra-base-api-bundle",
@@ -1793,12 +1793,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-base-api-bundle.git",
-                "reference": "c03f9b94117d8df1e814ef97b0c88ef8755abe38"
+                "reference": "e4c69433f276395b50afdf1b9e43d1d020eed724"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-api-bundle/zipball/c03f9b94117d8df1e814ef97b0c88ef8755abe38",
-                "reference": "c03f9b94117d8df1e814ef97b0c88ef8755abe38",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-api-bundle/zipball/e4c69433f276395b50afdf1b9e43d1d020eed724",
+                "reference": "e4c69433f276395b50afdf1b9e43d1d020eed724",
                 "shasum": ""
             },
             "require": {
@@ -1828,7 +1828,7 @@
                 }
             ],
             "description": "This bundle provide the base bricks for the OpenOrchestra Api",
-            "time": "2015-05-11 08:01:14"
+            "time": "2015-05-11 14:37:05"
         },
         {
             "name": "open-orchestra/open-orchestra-base-bundle",
@@ -1887,12 +1887,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "b28f06f16051ff936fe24da93b2ef4a96c0862cf"
+                "reference": "d695bb797964b607ba57f7d4ea2a82d98dd94511"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/b28f06f16051ff936fe24da93b2ef4a96c0862cf",
-                "reference": "b28f06f16051ff936fe24da93b2ef4a96c0862cf",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/d695bb797964b607ba57f7d4ea2a82d98dd94511",
+                "reference": "d695bb797964b607ba57f7d4ea2a82d98dd94511",
                 "shasum": ""
             },
             "require": {
@@ -1935,7 +1935,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2015-05-11 08:01:01"
+            "time": "2015-05-12 12:25:17"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2041,12 +2041,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
-                "reference": "436de57830166664caaf4922300f88a4b66d2562"
+                "reference": "ab145f77543f6e8039411590b2ebaf8510e2f698"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/436de57830166664caaf4922300f88a4b66d2562",
-                "reference": "436de57830166664caaf4922300f88a4b66d2562",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/ab145f77543f6e8039411590b2ebaf8510e2f698",
+                "reference": "ab145f77543f6e8039411590b2ebaf8510e2f698",
                 "shasum": ""
             },
             "require": {
@@ -2082,7 +2082,7 @@
                 }
             ],
             "description": "An implemantation of the model-interface for OpenOrchestra on mongo",
-            "time": "2015-05-07 15:54:10"
+            "time": "2015-05-12 09:59:06"
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
@@ -3847,12 +3847,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
-                "reference": "d1da796ba5565789a623052eb9f2cf59d57fec60"
+                "reference": "ae15da2ce234d3ffe5d7fafcdad19c7f1acf3568"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/d1da796ba5565789a623052eb9f2cf59d57fec60",
-                "reference": "d1da796ba5565789a623052eb9f2cf59d57fec60",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/ae15da2ce234d3ffe5d7fafcdad19c7f1acf3568",
+                "reference": "ae15da2ce234d3ffe5d7fafcdad19c7f1acf3568",
                 "shasum": ""
             },
             "require": {
@@ -3862,7 +3862,6 @@
                 "phpunit/phpunit": "~4.0"
             },
             "suggest": {
-                "dflydev/markdown": "~1.0",
                 "erusev/parsedown": "~1.0",
                 "league/commonmark": "*"
             },
@@ -3889,7 +3888,7 @@
                     "email": "mike.vanriel@naenius.com"
                 }
             ],
-            "time": "2015-02-27 09:28:18"
+            "time": "2015-05-12 07:21:12"
         },
         {
             "name": "phpspec/prophecy",
