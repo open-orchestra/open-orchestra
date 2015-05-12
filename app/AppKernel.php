@@ -37,6 +37,8 @@ class AppKernel extends Kernel
             new OpenOrchestra\UserBundle\OpenOrchestraUserBundle(),
             new OpenOrchestra\ModelBundle\OpenOrchestraModelBundle(),
             new OpenOrchestra\MediaBundle\OpenOrchestraMediaBundle(),
+            new OpenOrchestra\FonctionBundle\OpenOrchestraFonctionBundle(),
+
             new OpenOrchestra\ApiBundle\OpenOrchestraApiBundle(),
             new OpenOrchestra\DisplayBundle\OpenOrchestraDisplayBundle(),
             new OpenOrchestra\BackofficeBundle\OpenOrchestraBackofficeBundle(),
@@ -44,6 +46,7 @@ class AppKernel extends Kernel
             new OpenOrchestra\LogBundle\OpenOrchestraLogBundle(),
             new OpenOrchestra\UserAdminBundle\OpenOrchestraUserAdminBundle(),
             new OpenOrchestra\MediaAdminBundle\OpenOrchestraMediaAdminBundle(),
+            new OpenOrchestra\WorkflowAdminBundle\OpenOrchestraWorkflowAdminBundle(),
 
             // Need parameters set by some of our bundles
             new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),
