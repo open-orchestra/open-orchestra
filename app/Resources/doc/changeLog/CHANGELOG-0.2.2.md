@@ -22,6 +22,8 @@ Url to see changes :
 
 ## New features
 
+ - In the BackOffice, adding new form type (choice, hidden, money and date) for the contentType.
+
 ## Other changes
 
  - In the BackOffice, we modified the way we interact with the blocks and area (js and css modification only). 
