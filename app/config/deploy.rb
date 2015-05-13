@@ -1,8 +1,14 @@
 set :application, "OpenOrchestra"
+
+# multiple stages
+set :stages,                ["inte", "prod"]
+set :default_stage,         "inte"
+set :stage_dir,             "app/config/deploy"
+require 'capistrano/ext/multistage'
+
 set :domain,      "open_orchestra_backoffice_inte"
-set :deploy_to,   "/var/www/backoffice-open-orchestra"
+set :deploy_to,   "/var/www/admin-open-orchestra-com"
 set :app_path,    "app"
-set :user,        "open_orchestra_backoffice_inte"
 
 set :repository,  "git@github.com:open-orchestra/open-orchestra.git"
 set :scm,         :git
