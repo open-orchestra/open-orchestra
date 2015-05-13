@@ -24,6 +24,7 @@ Url to see changes :
 
 ## Other changes
 
+ - In the BackOffice, we modified the way we interact with the blocks and area (js and css modification only). 
  - In the Backoffice, all the display strategies should be tagged with `open_orchestra_backoffice.display_block.strategy`
 
 ## Deprecated method
