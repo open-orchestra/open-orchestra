@@ -28,6 +28,9 @@ Url to see changes :
 
 ## Deprecated method
 
+ - The `VersionnableInterface` and `Versionnable` trait have been renamed to `VersionableInterface` and
+`Versionable` respectively
+
 ## Suppressed method
 
  - The following class have been removed from the ApiBundle : 
