@@ -1269,6 +1269,51 @@
             "time": "2014-12-17 16:24:52"
         },
         {
+            "name": "innocead/captcha-bundle",
+            "version": "dev-master",
+            "target-dir": "Innocead/CaptchaBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/innocead/CaptchaBundle.git",
+                "reference": "96f40d4b2d69093fbc16919600782db0fdd03cdc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/innocead/CaptchaBundle/zipball/96f40d4b2d69093fbc16919600782db0fdd03cdc",
+                "reference": "96f40d4b2d69093fbc16919600782db0fdd03cdc",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "symfony/framework-bundle": ">=2.1.0"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-0": {
+                    "Innocead\\CaptchaBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Innocead",
+                    "homepage": "http://github.com/innocead"
+                }
+            ],
+            "description": "Symfony InnoceadCaptchaBundle",
+            "homepage": "https://github.com/innocead/CaptchaBundle",
+            "keywords": [
+                "Symfony2",
+                "captcha",
+                "security",
+                "spam"
+            ],
+            "time": "2013-08-27 22:10:38"
+        },
+        {
             "name": "jms/metadata",
             "version": "dev-master",
             "source": {
@@ -1476,9 +1521,9 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes Schmitt",
+                    "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -1887,12 +1932,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "2f772a11386aa1cd4a3ad12688138261a00d8820"
+                "reference": "24e6ea94df0617b322d653c3b2ebb62f1786c63e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/2f772a11386aa1cd4a3ad12688138261a00d8820",
-                "reference": "2f772a11386aa1cd4a3ad12688138261a00d8820",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/24e6ea94df0617b322d653c3b2ebb62f1786c63e",
+                "reference": "24e6ea94df0617b322d653c3b2ebb62f1786c63e",
                 "shasum": ""
             },
             "require": {
@@ -1904,6 +1949,7 @@
                 "open-orchestra/open-orchestra-media-bundle": "*",
                 "open-orchestra/open-orchestra-model-interface": "*",
                 "open-orchestra/open-orchestra-user-bundle": "*",
+                "open-orchestra/open-orchestra-workflow-function-bundle": "*",
                 "stfalcon/tinymce-bundle": "0.3.8"
             },
             "require-dev": {
@@ -1921,7 +1967,8 @@
                     "OpenOrchestra\\GroupBundle": "",
                     "OpenOrchestra\\ApiBundle": "",
                     "OpenOrchestra\\UserAdminBundle": "",
-                    "OpenOrchestra\\MediaAdminBundle": ""
+                    "OpenOrchestra\\MediaAdminBundle": "",
+                    "OpenOrchestra\\WorkflowFunctionAdminBundle": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1935,7 +1982,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2015-05-18 08:49:28"
+            "time": "2015-05-18 14:22:01"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -1944,16 +1991,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-display-bundle.git",
-                "reference": "3d1e9b91b815891c878fa9698b3c932ed62bb8d7"
+                "reference": "ca1adc98cb461a26578981b61f9c84cb012b7939"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-display-bundle/zipball/3d1e9b91b815891c878fa9698b3c932ed62bb8d7",
-                "reference": "3d1e9b91b815891c878fa9698b3c932ed62bb8d7",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-display-bundle/zipball/ca1adc98cb461a26578981b61f9c84cb012b7939",
+                "reference": "ca1adc98cb461a26578981b61f9c84cb012b7939",
                 "shasum": ""
             },
             "require": {
                 "friendsofsymfony/http-cache-bundle": "1.2.1",
+                "innocead/captcha-bundle": "*",
                 "open-orchestra/open-orchestra-model-interface": "*",
                 "symfony/swiftmailer-bundle": "~2.3"
             },
@@ -1980,7 +2028,7 @@
                 }
             ],
             "description": "The bundle to display all bricks",
-            "time": "2015-05-13 10:36:57"
+            "time": "2015-05-18 13:31:59"
         },
         {
             "name": "open-orchestra/open-orchestra-media-bundle",
@@ -1989,12 +2037,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-bundle.git",
-                "reference": "455950194f9613dde46c490ffdbcae98cead97b9"
+                "reference": "5175afb559f315627adb6d715f7186347445ba0c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/455950194f9613dde46c490ffdbcae98cead97b9",
-                "reference": "455950194f9613dde46c490ffdbcae98cead97b9",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/5175afb559f315627adb6d715f7186347445ba0c",
+                "reference": "5175afb559f315627adb6d715f7186347445ba0c",
                 "shasum": ""
             },
             "require": {
@@ -2032,7 +2080,7 @@
                 }
             ],
             "description": "A media bundle for the OpenOrchestra Project",
-            "time": "2015-05-07 15:15:16"
+            "time": "2015-05-18 10:22:25"
         },
         {
             "name": "open-orchestra/open-orchestra-model-bundle",
@@ -2041,12 +2089,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
-                "reference": "291b8923736b5a32c9dec91a9e38f3b14616db33"
+                "reference": "c7391a46c9d4961a42f9ada9a2f80aaa6c5c2af6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/291b8923736b5a32c9dec91a9e38f3b14616db33",
-                "reference": "291b8923736b5a32c9dec91a9e38f3b14616db33",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/c7391a46c9d4961a42f9ada9a2f80aaa6c5c2af6",
+                "reference": "c7391a46c9d4961a42f9ada9a2f80aaa6c5c2af6",
                 "shasum": ""
             },
             "require": {
@@ -2082,7 +2130,7 @@
                 }
             ],
             "description": "An implemantation of the model-interface for OpenOrchestra on mongo",
-            "time": "2015-05-13 10:37:07"
+            "time": "2015-05-18 12:21:34"
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
@@ -2091,12 +2139,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-interface.git",
-                "reference": "1ad3fc0d6d244b387ffbc8c3f6feaa0a18b80dc4"
+                "reference": "0fe240b5002488a49ebfc01d6adfa799e1689781"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/1ad3fc0d6d244b387ffbc8c3f6feaa0a18b80dc4",
-                "reference": "1ad3fc0d6d244b387ffbc8c3f6feaa0a18b80dc4",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/0fe240b5002488a49ebfc01d6adfa799e1689781",
+                "reference": "0fe240b5002488a49ebfc01d6adfa799e1689781",
                 "shasum": ""
             },
             "require": {
@@ -2126,7 +2174,7 @@
                 }
             ],
             "description": "Describe all entity and repository to implement for the whole OpenOrchestra project",
-            "time": "2015-05-13 08:48:12"
+            "time": "2015-05-18 10:01:22"
         },
         {
             "name": "open-orchestra/open-orchestra-user-bundle",
@@ -2174,6 +2222,56 @@
             ],
             "description": "An override of FosUserBundle to provide authentication on OpenOrchestra",
             "time": "2015-04-29 13:18:53"
+        },
+        {
+            "name": "open-orchestra/open-orchestra-workflow-function-bundle",
+            "version": "dev-master",
+            "target-dir": "OpenOrchestra",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/open-orchestra/open-orchestra-workflow-function-bundle.git",
+                "reference": "38ee7d26aac7bc8575b6bbdd7590a6a82c65359d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-workflow-function-bundle/zipball/38ee7d26aac7bc8575b6bbdd7590a6a82c65359d",
+                "reference": "38ee7d26aac7bc8575b6bbdd7590a6a82c65359d",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/data-fixtures": "1.1.1",
+                "doctrine/mongodb-odm": "1.0.0-BETA12",
+                "doctrine/mongodb-odm-bundle": "3.0.0-BETA6",
+                "open-orchestra/open-orchestra-model-interface": "*",
+                "stof/doctrine-extensions-bundle": "1.1.0"
+            },
+            "require-dev": {
+                "jmikola/geojson": "1.0.1",
+                "open-orchestra/open-orchestra-base-bundle": "dev-master",
+                "phake/phake": "2.0.2",
+                "phpunit/phpunit": "4.6.1",
+                "scrutinizer/ocular": "1.1.1",
+                "symfony/validator": "2.6.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "OpenOrchestra\\WorkflowFunctionBundle": "",
+                    "OpenOrchestra\\WorkflowFunction": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "OpenOrchestra community",
+                    "homepage": "https://github.com/open-orchestra/open-orchestra-function-bundle/graphs/contributors"
+                }
+            ],
+            "description": "A workflow function bundle for the OpenOrchestra Project",
+            "time": "2015-05-18 12:44:59"
         },
         {
             "name": "phpcollection/phpcollection",
@@ -2257,9 +2355,9 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes Schmitt",
+                    "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
