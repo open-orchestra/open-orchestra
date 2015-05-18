@@ -1,4 +1,4 @@
-# CHANGELOG for 0.2.2
+# CHANGELOG for 0.2.3
 
 Url to see changes : 
 
