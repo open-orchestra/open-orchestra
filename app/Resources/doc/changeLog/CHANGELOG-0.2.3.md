@@ -14,6 +14,12 @@ Url to see changes :
 
 ## Possible BC breaker
 
+  - In the ContentRepositoryInterface, the parameters of these methods are change (default value are deleted) :
+    - findLastPublishedVersionByContentIdAndLanguage
+    - findByContentIdAndLanguage
+    - findOneByContentIdAndLanguageAndVersion
+  - In the FolderRepositoryInterface, the parameter of findAllRootFolderBySiteId are change (add siteId parameter)
+
 ## Bug fixes
 
 ## New features
@@ -21,6 +27,9 @@ Url to see changes :
 ## Other changes
 
 ## Deprecated method
+
+ - In the ReadContentRepositoryInterface, the method findByContentTypeAndChoiceTypeAndKeywords is deprecated and will be suppressed in 0.2.4
+ - In the FolderRepositoryInterface, the method setCurrentSiteManager is deprecated and will be suppressed in 0.2.4
 
 ## Suppressed method
 
