@@ -19,10 +19,13 @@ Url to see changes :
 ## Bug fixes
 
  - [Blocks js & css files are now correctly loaded](https://trello.com/c/lEJM8l6C/868-3-fo-chargement-autonome-des-css-de-blocs-le-chargement-semble-ne-fonctionner-que-pour-le-premier-bloc-de-la-page-et-il-est-igno)
+ - [Missing BO assets are fixed](https://trello.com/c/K7nZSGMu/906-0-5-bo-erreur-500-sur-fontawesome)
 
 ## New features
 
  - In the BackOffice, adding new form type (choice, hidden, money and date) for the contentType.
+ - [Content type fields list can now be extended in app config](https://trello.com/c/1Yn20BSP/846-2-etq-ubo-je-peux-ajouter-des-contents-attributs-specifique)
+ - [The content type field definition has changed](https://trello.com/c/vWPgkOOz/897-1-refacto-definition-yaml-des-field-types-content-attributes)
 
 ## Other changes
 
