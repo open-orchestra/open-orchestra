@@ -14,7 +14,7 @@ open_orchestra_media_admin:
     prefix: /admin
 
 open_orchestra_workflow_admin:
-    resource: "@OpenOrchestraWorkflowFonctionAdminBundle/Controller/Admin"
+    resource: "@OpenOrchestraWorkflowFunctionAdminBundle/Controller/Admin"
     type: annotation
     prefix: /admin
 
@@ -37,7 +37,7 @@ open_orchestra_media_api:
     prefix: /api
 
 open_orchestra_workflow_api:
-    resource: "@OpenOrchestraWorkflowFonctionAdminBundle/Controller/Api"
+    resource: "@OpenOrchestraWorkflowFunctionAdminBundle/Controller/Api"
     type: annotation
     prefix: /api
 
