@@ -180,6 +180,7 @@ Les évènements sont dans `OpenOrchestra\UserBundle\Event\GroupEvent` et `OpenO
     * Création d'un utilisateur : USER_CREATE
     * Suppression d'un utilisateur : USER_DELETE
     * Modification d'un utilisateur : USER_UPDATE
+    * Modification du mot de passe d'un utilisateur : USER_CHANGE_PASSWORD
 
 ## Exemple de dispatch d'un évènement
 
