@@ -19,6 +19,17 @@ Url to see changes :
     - findByContentIdAndLanguage
     - findOneByContentIdAndLanguageAndVersion
   - In the FolderRepositoryInterface, the parameter of findAllRootFolderBySiteId are change (add siteId parameter)
+  - In the NodeRepositoryInterface, the parameters of these methods are change (default value are deleted) :
+    - findByParentIdAndSiteId
+    - findOneByNodeIdAndLanguageAndSiteIdAndLastVersion
+    - findByNodeIdAndLanguageAndSiteId
+    - findByNodeIdAndLanguageAndSiteIdAndPublishedOrderedByVersion
+    - findLastVersionBySiteId
+    - findLastVersionByDeletedAndSiteId
+    - findByNodeIdAndSiteId
+    - findOneByNodeIdAndLanguageAndVersionAndSiteId
+  - In the ReadNodeRepositoryInterface, the parameters of these methods are change (default value are deleted) :
+    - findOneByNodeIdAndLanguageWithPublishedAndLastVersionAndSiteId
 
 ## Bug fixes
 
@@ -30,6 +41,13 @@ Url to see changes :
 
  - In the ReadContentRepositoryInterface, the method findByContentTypeAndChoiceTypeAndKeywords is deprecated and will be suppressed in 0.2.4
  - In the FolderRepositoryInterface, the method setCurrentSiteManager is deprecated and will be suppressed in 0.2.4
+ - In the NodeRepositoryInterface, these methods are deprecated and will be suppressed in 0.2.4 :
+    - findChildsByPath
+    - findByParentIdAndRoutePatternAndNotNodeId
+ - In the ReadNodeRepositoryInterface, these methods are deprecated and will be suppressed in 0.2.4 :
+    - getFooterTree
+    - getMenuTree
+    - getSubMenu
 
 ## Suppressed method
 
