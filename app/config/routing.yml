@@ -13,6 +13,11 @@ open_orchestra_media_admin:
     type: annotation
     prefix: /admin
 
+open_orchestra_workflow_admin:
+    resource: "@OpenOrchestraWorkflowFunctionAdminBundle/Controller/Admin"
+    type: annotation
+    prefix: /admin
+
 open_orchestra_api_oauth2:
     resource: "@OpenOrchestraBaseApiBundle/Resources/config/oauth2routing.yml"
 
@@ -28,6 +33,11 @@ open_orchestra_user_api:
 
 open_orchestra_media_api:
     resource: "@OpenOrchestraMediaAdminBundle/Controller/Api"
+    type: annotation
+    prefix: /api
+
+open_orchestra_workflow_api:
+    resource: "@OpenOrchestraWorkflowFunctionAdminBundle/Controller/Api"
     type: annotation
     prefix: /api
 
