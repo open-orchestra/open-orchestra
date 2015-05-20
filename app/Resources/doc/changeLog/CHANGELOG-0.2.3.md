@@ -48,6 +48,7 @@ Url to see changes :
     - getFooterTree
     - getMenuTree
     - getSubMenu
+ - In the TokenFacade, the parameters expiresIn has been renamed
 
 ## Suppressed method
 
