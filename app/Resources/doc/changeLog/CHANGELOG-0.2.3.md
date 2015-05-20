@@ -39,16 +39,18 @@ Url to see changes :
 
 ## Deprecated method
 
- - In the ReadContentRepositoryInterface, the method findByContentTypeAndChoiceTypeAndKeywords is deprecated and will be suppressed in 0.2.4
- - In the FolderRepositoryInterface, the method setCurrentSiteManager is deprecated and will be suppressed in 0.2.4
- - In the NodeRepositoryInterface, these methods are deprecated and will be suppressed in 0.2.4 :
+ - In the ReadContentRepositoryInterface, the method findByContentTypeAndChoiceTypeAndKeywords is deprecated
+ - In the FolderRepositoryInterface, the method setCurrentSiteManager is deprecated
+ - In the NodeRepositoryInterface, these methods are deprecated :
     - findChildsByPath
     - findByParentIdAndRoutePatternAndNotNodeId
- - In the ReadNodeRepositoryInterface, these methods are deprecated and will be suppressed in 0.2.4 :
+ - In the ReadNodeRepositoryInterface, these methods are deprecated :
     - getFooterTree
     - getMenuTree
     - getSubMenu
  - In the TokenFacade, the parameters expiresIn has been renamed
+ - The DisplayedElementCollectionTransformer is deprecated, the _translate link is replace by translation in data attribute data-translated-header in template.
+ - The TranslateController is deprecated.
 
 ## Suppressed method
 
