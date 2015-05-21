@@ -26,4 +26,15 @@ Url to see changes :
 
 ## Suppressed method
 
+ - In the ReadContentRepositoryInterface, the method findByContentTypeAndChoiceTypeAndKeywords is suppressed
+ - In the FolderRepositoryInterface, the method setCurrentSiteManager is suppressed
+ - In the NodeRepositoryInterface, these methods are suppressed :
+    - findChildsByPath
+    - findByParentIdAndRoutePatternAndNotNodeId
+ - In the ReadNodeRepositoryInterface, these methods are suppressed :
+    - getFooterTree
+    - getMenuTree
+    - getSubMenu
+ - The DisplayedElementCollectionTransformer is suppressed.
+ - The TranslateController is suppressed.
 ## Configuration changes
