@@ -74,6 +74,8 @@ doctrine_mongodb:
         FOS\UserBundle\Model\GroupInterface: OpenOrchestra\GroupBundle\Document\Group
         Symfony\Component\Security\Core\User\UserInterface: OpenOrchestra\UserBundle\Document\User
         OpenOrchestra\UserBundle\Model\ApiClientInterface: OpenOrchestra\UserBundle\Document\ApiClient
+        OpenOrchestra\WorkflowFunction\Model\WorkflowFunctionInterface: OpenOrchestra\WorkflowFunctionBundle\Document\WorkflowFunction
+        OpenOrchestra\UserBundle\Model\AuthorizationInterface: OpenOrchestra\UserBundle\Document\Authorization
         OpenOrchestra\ModelInterface\Model\EmbedStatusInterface: OpenOrchestra\ModelBundle\Document\EmbedStatus
         OpenOrchestra\ModelInterface\Model\RoleInterface: OpenOrchestra\ModelBundle\Document\Role
         OpenOrchestra\ModelInterface\Model\AreaInterface: OpenOrchestra\ModelBundle\Document\Area
