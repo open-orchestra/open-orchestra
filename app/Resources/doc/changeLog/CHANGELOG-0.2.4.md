@@ -15,6 +15,8 @@ Url to see changes :
 ## Possible BC breaker
 
 ## Bug fixes
+ - [In Back Office, restore broken translations](https://trello.com/c/1oMQI2mk/948-1-etq-ubo-je-vois-tous-les-libelles-traduits)
+ - [In Back Office, restore mybg.png](https://trello.com/c/SbGB3K4k/949-0-5-bo-404-sur-mybg-png)
 
 ## New features
 
