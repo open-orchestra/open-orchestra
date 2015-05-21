@@ -123,7 +123,7 @@ module.exports = function(grunt) {
                 src: 'web/bundles/openorchestrabackoffice/smartadmin/img/mybg.png',
                 dest: 'web/img/mybg.png'
             },
-            smartadmin_bg: {
+            smartadmin_overlay_pattern: {
                 src: 'web/bundles/openorchestrabackoffice/smartadmin/img/pattern/overlay-pattern.png',
                 dest: 'web/img/pattern/overlay-pattern.png'
             },
