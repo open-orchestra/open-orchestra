@@ -3,6 +3,16 @@ user_root: root
 
 path_front: /var/www/front-open-orchestra/current
 
+hosts_localhost: 127.0.0.1 localhost openorchestra
+
+hosts_site: 127.0.1.1 admin.openorchestra.inte front.openorchestra.inte demo.openorchestra.inte openorchestra.test
+
+hosts_other: |
+               # The following lines are desirable for IPv6 capable hosts
+               ::1 localhost ip6-localhost ip6-loopback
+               ff02::1 ip6-allnodes
+               ff02::2 ip6-allrouters
+
 apache_main_port: 8000
 
 apache_conf:

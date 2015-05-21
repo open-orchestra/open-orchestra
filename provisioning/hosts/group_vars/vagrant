@@ -5,7 +5,7 @@ path_front: /var/www/front-openorchestra
 
 hosts_localhost: 127.0.0.1 localhost openorchestra
 
-hosts_site: 127.0.1.1 admin.openorchestra.dev openorchestra.test front.openorchestra.dev demo.openorchestra.dev admin.openorchestra.inte front.openorchestra.inte demo.openorchestra.inte
+hosts_site: 127.0.1.1 admin.openorchestra.dev openorchestra.test front.openorchestra.dev demo.openorchestra.dev
 
 hosts_other: |
                # The following lines are desirable for IPv6 capable hosts
