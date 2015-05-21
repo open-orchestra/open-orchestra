@@ -1,8 +1,20 @@
 ---
 user_root: vagrant
+
 path_front: /var/www/front-openorchestra
 
+hosts_localhost: 127.0.0.1 localhost openorchestra
+
+hosts_site: 127.0.1.1 admin.openorchestra.dev openorchestra.test front.openorchestra.dev demo.openorchestra.dev admin.openorchestra.inte front.openorchestra.inte demo.openorchestra.inte
+
+hosts_other: |
+               # The following lines are desirable for IPv6 capable hosts
+               ::1 localhost ip6-localhost ip6-loopback
+               ff02::1 ip6-allnodes
+               ff02::2 ip6-allrouters
+
 apache_main_port: 80
+
 apache_conf:
   open-orchestra.conf:
     port: 80
@@ -38,11 +50,11 @@ apache_conf:
     accessLog: openorchestra-testAccess.log
 
 varnish_listen_port: 6081
+
 backend_conf:
   - { name: openorchestra, port: 80, host: admin.openorchestra.dev, admin: true }
   - { name: frontopenorchestra, port: 80, host: front.openorchestra.dev }
   - { name: demoopenorchestra, port: 80, host: demo.openorchestra.dev }
-  - { name: echonextopenorchestra, port: 80, host: echonext.openorchestra.dev }
   - { name: openorchestratest, port: 80, host: openorchestra.test }
 
 selenium_current_directory: /home/vagrant

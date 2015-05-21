@@ -1,8 +1,10 @@
 ---
 user_root: root
+
 path_front: /var/www/front-open-orchestra/current
 
 apache_main_port: 8000
+
 apache_conf:
   inte-backoffice-openorchestra.conf:
     port: 8000
@@ -38,11 +40,11 @@ apache_conf:
     accessLog: openorchestra_backoffice_test_access.log
 
 varnish_listen_port: 80
+
 backend_conf:
   - { name: openorchestra, port: 8000, host: admin.openorchestra.inte, admin: true }
   - { name: frontopenorchestra, port: 8000, host: front.openorchestra.inte }
   - { name: demoopenorchestra, port: 8000, host: demo.openorchestra.inte }
-  - { name: echonextopenorchestra, port: 8000, host: echonext.openorchestra.inte }
   - { name: openorchestratest, port: 8000, host: openorchestra.test }
 
 selenium_current_directory: /home/provision
