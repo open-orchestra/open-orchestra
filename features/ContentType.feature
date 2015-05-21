@@ -47,6 +47,18 @@ Feature: ContentType
     Then I should wait until i see "The content type has been modified"
     And I should see "format"
     But I should not see "Max length"
+    When I select "Money" from "Type"
+    Then I should wait until i see "Precision"
+    When I fill in "Precision" with "10"
+    And I press "Save"
+    Then I should wait until i see "The content type has been modified"
+    And the "Precision" field should contain "10"
+    When I follow "Back to list"
+    And I wait for AJAX to finish
+    And I follow last "Edit"
+    And I wait for AJAX to finish
+    Then I should wait until i see "Precision"
+    And the "Precision" field should contain "10"
     When I follow "Back to list"
     And I wait for AJAX to finish
     And I should be on "/admin/#content_types/list"
