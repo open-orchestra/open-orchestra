@@ -26,6 +26,8 @@ Url to see changes :
 
 ## Deprecated method
 
+ - The constant `NodeInterface::TYPE_GENERAL` as been rename `TYPE_TRANSVERSE`
+
 ## Suppressed method
 
  - In the ReadContentRepositoryInterface, the method findByContentTypeAndChoiceTypeAndKeywords is suppressed
