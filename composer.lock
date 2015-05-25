@@ -1940,12 +1940,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "8b5a878aefd49d5f797b7a27c5ac5091c3793e70"
+                "reference": "2e0fe1d1610962fe77671b88a4fd1dbd5c7ccf08"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/8b5a878aefd49d5f797b7a27c5ac5091c3793e70",
-                "reference": "8b5a878aefd49d5f797b7a27c5ac5091c3793e70",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/2e0fe1d1610962fe77671b88a4fd1dbd5c7ccf08",
+                "reference": "2e0fe1d1610962fe77671b88a4fd1dbd5c7ccf08",
                 "shasum": ""
             },
             "require": {
@@ -1990,7 +1990,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2015-05-22 13:11:54"
+            "time": "2015-05-25 09:59:01"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2097,12 +2097,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
-                "reference": "7b418f91ae4328ef195687f0e6064f7b8a3e4f5e"
+                "reference": "f2c76d7d579aa3d72f0dec5154e3f87eef93faee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/7b418f91ae4328ef195687f0e6064f7b8a3e4f5e",
-                "reference": "7b418f91ae4328ef195687f0e6064f7b8a3e4f5e",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/f2c76d7d579aa3d72f0dec5154e3f87eef93faee",
+                "reference": "f2c76d7d579aa3d72f0dec5154e3f87eef93faee",
                 "shasum": ""
             },
             "require": {
@@ -2138,7 +2138,7 @@
                 }
             ],
             "description": "An implemantation of the model-interface for OpenOrchestra on mongo",
-            "time": "2015-05-22 09:57:59"
+            "time": "2015-05-25 09:57:57"
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
@@ -2147,12 +2147,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-interface.git",
-                "reference": "12703410cb15cbd7c7924f5b57d8111d49192367"
+                "reference": "7b7004d09b379d04e9313daba819741b9d45fd9d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/12703410cb15cbd7c7924f5b57d8111d49192367",
-                "reference": "12703410cb15cbd7c7924f5b57d8111d49192367",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/7b7004d09b379d04e9313daba819741b9d45fd9d",
+                "reference": "7b7004d09b379d04e9313daba819741b9d45fd9d",
                 "shasum": ""
             },
             "require": {
@@ -2182,7 +2182,7 @@
                 }
             ],
             "description": "Describe all entity and repository to implement for the whole OpenOrchestra project",
-            "time": "2015-05-21 08:51:05"
+            "time": "2015-05-25 08:24:50"
         },
         {
             "name": "open-orchestra/open-orchestra-user-bundle",
@@ -2590,12 +2590,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/security-checker.git",
-                "reference": "cecb1397087dc9c733796eda6e9d121336039cdc"
+                "reference": "cde03c48d490d805ef1349e5108f8b3085981ead"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/security-checker/zipball/cecb1397087dc9c733796eda6e9d121336039cdc",
-                "reference": "cecb1397087dc9c733796eda6e9d121336039cdc",
+                "url": "https://api.github.com/repos/sensiolabs/security-checker/zipball/cde03c48d490d805ef1349e5108f8b3085981ead",
+                "reference": "cde03c48d490d805ef1349e5108f8b3085981ead",
                 "shasum": ""
             },
             "require": {
@@ -2627,7 +2627,7 @@
                 }
             ],
             "description": "A security checker for your composer.lock",
-            "time": "2015-04-21 07:52:05"
+            "time": "2015-05-22 14:21:04"
         },
         {
             "name": "snc/redis-bundle",
@@ -3073,12 +3073,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/SwiftmailerBundle.git",
-                "reference": "b5281c8cacdea3eab8c80c88df9e00fde1ea2b34"
+                "reference": "a77136d0b51593fd498d0bc2b738673723247d9f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/SwiftmailerBundle/zipball/b5281c8cacdea3eab8c80c88df9e00fde1ea2b34",
-                "reference": "b5281c8cacdea3eab8c80c88df9e00fde1ea2b34",
+                "url": "https://api.github.com/repos/symfony/SwiftmailerBundle/zipball/a77136d0b51593fd498d0bc2b738673723247d9f",
+                "reference": "a77136d0b51593fd498d0bc2b738673723247d9f",
                 "shasum": ""
             },
             "require": {
@@ -3122,7 +3122,7 @@
             ],
             "description": "Symfony SwiftmailerBundle",
             "homepage": "http://symfony.com",
-            "time": "2014-12-20 09:22:58"
+            "time": "2015-05-23 12:01:43"
         },
         {
             "name": "symfony/symfony",
@@ -4060,12 +4060,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "9ef4b8cbf3e839a44a9b375d8c59e109ac7aa020"
+                "reference": "855a7d197f35ebd59708d0e08d9852670185190f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/9ef4b8cbf3e839a44a9b375d8c59e109ac7aa020",
-                "reference": "9ef4b8cbf3e839a44a9b375d8c59e109ac7aa020",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/855a7d197f35ebd59708d0e08d9852670185190f",
+                "reference": "855a7d197f35ebd59708d0e08d9852670185190f",
                 "shasum": ""
             },
             "require": {
@@ -4114,7 +4114,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-05-09 04:40:58"
+            "time": "2015-05-25 12:56:57"
         },
         {
             "name": "phpunit/php-file-iterator",
