@@ -19,10 +19,12 @@ Url to see changes :
  - [In Back Office, restore mybg.png](https://trello.com/c/SbGB3K4k/949-0-5-bo-404-sur-mybg-png)
  - [In Back Office, the title of a newly created blocks is translated](https://trello.com/c/6ZE1YnjY/959-1-etq-ubo-je-vois-le-libelle-du-bloc-dans-la-toolbar-lorsque-je-cree-un-nouveau-bloc)
  - [In the vagrant box, the bug with the binding on localhost is fixed](https://trello.com/c/7TYFS8WG/771-2-le-provisionning-n-ajoute-pas-toujours-le-bind-127-0-0-1-localhost-openorchestra-dans-le-fichier-hosts)
+ - [In the Back Office, the bug with field options in edit form of the content type is fixed](https://trello.com/c/bhiccqSU/969-2-etq-ubo-je-peux-sauvegarder-les-fieldsoptions)
 
 ## New features
 
 ## Other changes
+ - In the Back Office, Add validator for the fieldId of the content type
 
 ## Deprecated method
 
