@@ -29,6 +29,7 @@ Url to see changes :
  - The constant `NodeInterface::TYPE_GENERAL` as been rename `TYPE_TRANSVERSE`
  - The Form Type `OrchestraColorChoiceType` will be suppressed, a configuration `available_color` will allow
  the integrator to setUp the colors
+ - The class `AbstractBlockContentTypeSubscriber` will be renamed as `AbstractModulableTypeSubscriber`
 
 ## Suppressed method
 
