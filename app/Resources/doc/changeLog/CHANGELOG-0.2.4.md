@@ -28,6 +28,8 @@ Url to see changes :
 
 ## Other changes
 
+ - Symfony has been upgraded to the 2.6.7 version
+
 ## Deprecated method
 
  - The constant `NodeInterface::TYPE_GENERAL` as been rename `TYPE_TRANSVERSE`
