@@ -218,6 +218,7 @@ module.exports = function(grunt) {
                 src: [
                     // MAIN
                     'web/built/openorchestrabackoffice/js/orchestraLib.js',
+                    'web/built/openorchestrabackoffice/js/viewConfigurator.js',
                     'web/built/openorchestrabackoffice/js/orchestraListeners.js',
                     'web/built/openorchestrabackoffice/js/setUpCallAjax.js',
                     'web/built/openorchestrabackoffice/js/OrchestraView.js',
