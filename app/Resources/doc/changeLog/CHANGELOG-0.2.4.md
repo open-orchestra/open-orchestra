@@ -15,6 +15,8 @@ Url to see changes :
 ## Possible BC breaker
 
  - The form type `open_orchestra_user.type.user` has been renamed to `open_orchestra_user_admin.type.user`
+ - The entities `AccessToken` and `ApiClient` have been moved from the `UserBundle` to the `BaseApiBundle`.
+ Please check with us directly to help you migrate
 
 ## Bug fixes
  - [In Back Office, restore broken translations](https://trello.com/c/1oMQI2mk/948-1-etq-ubo-je-vois-tous-les-libelles-traduits)
