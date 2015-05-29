@@ -206,6 +206,7 @@ module.exports = function(grunt) {
                     'bower_components/backbone/backbone.js',
                     'bower_components/backbone.wreqr/lib/backbone.wreqr.js',
                     'bower_components/datatables/media/js/jquery.dataTables.js',
+                    'bower_components/datatables-colvis/js/dataTables.colVis.js',
                     'bower_components/jquery-form/jquery.form.js',
                     'web/bundles/openorchestrabackoffice/js/latinise.js',
                     'web/bundles/openorchestrabackoffice/js/jQuery.DOMNodeAppear.js',
