@@ -19,7 +19,7 @@ Url to see changes :
 ## Bug fixes
 
 ## New features
-- added DataTable Colvis to Bower and Grunt
+- added DataTable Colvis to Bower and Grunt to enable column choice visibility in dataTable
 
 ## Other changes
 
