@@ -19,6 +19,7 @@ Url to see changes :
 ## Bug fixes
 
 ## New features
+- added DataTable Colvis to Bower and Grunt
 
 ## Other changes
 
