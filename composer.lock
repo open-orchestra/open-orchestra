@@ -841,12 +841,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSHttpCache.git",
-                "reference": "d3274be5f14b4d0a1108a9c312591695163d2fcb"
+                "reference": "6d27bc03de5f2ba18c0802463c8a5845a1b93c5c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSHttpCache/zipball/d3274be5f14b4d0a1108a9c312591695163d2fcb",
-                "reference": "d3274be5f14b4d0a1108a9c312591695163d2fcb",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSHttpCache/zipball/6d27bc03de5f2ba18c0802463c8a5845a1b93c5c",
+                "reference": "6d27bc03de5f2ba18c0802463c8a5845a1b93c5c",
                 "shasum": ""
             },
             "require": {
@@ -905,7 +905,7 @@
                 "purge",
                 "varnish"
             ],
-            "time": "2015-05-27 11:07:01"
+            "time": "2015-05-29 11:23:48"
         },
         {
             "name": "friendsofsymfony/http-cache-bundle",
@@ -1940,12 +1940,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "b252cbe06ccb706541198e1bc8d70f6616484072"
+                "reference": "8e3cbcbe7edf195f30c7ccd2f6067d758b518d6d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/b252cbe06ccb706541198e1bc8d70f6616484072",
-                "reference": "b252cbe06ccb706541198e1bc8d70f6616484072",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/8e3cbcbe7edf195f30c7ccd2f6067d758b518d6d",
+                "reference": "8e3cbcbe7edf195f30c7ccd2f6067d758b518d6d",
                 "shasum": ""
             },
             "require": {
@@ -1990,7 +1990,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2015-05-28 10:25:07"
+            "time": "2015-05-29 09:50:33"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
