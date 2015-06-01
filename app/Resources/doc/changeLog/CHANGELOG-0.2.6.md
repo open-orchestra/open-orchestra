@@ -17,6 +17,7 @@ Url to see changes :
 ## Possible BC breaker
 
 ## Bug fixes
+ - [Fix broken sitemaps generation](https://trello.com/c/7X4nEDb2/980-3-fo-la-commande-de-generation-de-sitemap-plante)
 
 ## New features
 - added DataTable Colvis to Bower and Grunt to enable column choice visibility in dataTable
