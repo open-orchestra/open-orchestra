@@ -1947,12 +1947,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "dc2656d000e47a7b20d61354f494437e45d5b6ac"
+                "reference": "2224fc7d897a1095d3413365f6edc3dd1f619aad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/dc2656d000e47a7b20d61354f494437e45d5b6ac",
-                "reference": "dc2656d000e47a7b20d61354f494437e45d5b6ac",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/2224fc7d897a1095d3413365f6edc3dd1f619aad",
+                "reference": "2224fc7d897a1095d3413365f6edc3dd1f619aad",
                 "shasum": ""
             },
             "require": {
@@ -1997,7 +1997,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2015-06-02 12:46:29"
+            "time": "2015-06-02 16:10:48"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2052,12 +2052,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-bundle.git",
-                "reference": "b248f0aff1c7ee7dd2fcc503cd3f69b6e3ce194d"
+                "reference": "872b01ec098100db744533feba4877f2ca85e285"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/b248f0aff1c7ee7dd2fcc503cd3f69b6e3ce194d",
-                "reference": "b248f0aff1c7ee7dd2fcc503cd3f69b6e3ce194d",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/872b01ec098100db744533feba4877f2ca85e285",
+                "reference": "872b01ec098100db744533feba4877f2ca85e285",
                 "shasum": ""
             },
             "require": {
@@ -2095,7 +2095,7 @@
                 }
             ],
             "description": "A media bundle for the OpenOrchestra Project",
-            "time": "2015-06-02 13:12:50"
+            "time": "2015-06-02 16:26:04"
         },
         {
             "name": "open-orchestra/open-orchestra-model-bundle",
@@ -2104,12 +2104,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
-                "reference": "35f51bd46298cc5fdf2192e78e5dbbcd757e43d9"
+                "reference": "02130d62d386ca5cd30070d3219c8c314222aedc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/35f51bd46298cc5fdf2192e78e5dbbcd757e43d9",
-                "reference": "35f51bd46298cc5fdf2192e78e5dbbcd757e43d9",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/02130d62d386ca5cd30070d3219c8c314222aedc",
+                "reference": "02130d62d386ca5cd30070d3219c8c314222aedc",
                 "shasum": ""
             },
             "require": {
@@ -2145,7 +2145,7 @@
                 }
             ],
             "description": "An implemantation of the model-interface for OpenOrchestra on mongo",
-            "time": "2015-06-02 13:02:31"
+            "time": "2015-06-02 16:25:57"
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
@@ -2154,12 +2154,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-interface.git",
-                "reference": "b928ccd500f945bc69e1da09c96c25d9460edf49"
+                "reference": "65dea89fa81e56c8713e2bbe2e17d5023ee09d40"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/b928ccd500f945bc69e1da09c96c25d9460edf49",
-                "reference": "b928ccd500f945bc69e1da09c96c25d9460edf49",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/65dea89fa81e56c8713e2bbe2e17d5023ee09d40",
+                "reference": "65dea89fa81e56c8713e2bbe2e17d5023ee09d40",
                 "shasum": ""
             },
             "require": {
@@ -2189,7 +2189,7 @@
                 }
             ],
             "description": "Describe all entity and repository to implement for the whole OpenOrchestra project",
-            "time": "2015-06-02 08:48:11"
+            "time": "2015-06-02 15:48:51"
         },
         {
             "name": "open-orchestra/open-orchestra-user-bundle",
@@ -2245,12 +2245,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-workflow-function-bundle.git",
-                "reference": "5a9caaebc792cc56a1e2be15579a880322f64e81"
+                "reference": "ee12c536a55778ac8d0ab510209955a656385c77"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-workflow-function-bundle/zipball/5a9caaebc792cc56a1e2be15579a880322f64e81",
-                "reference": "5a9caaebc792cc56a1e2be15579a880322f64e81",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-workflow-function-bundle/zipball/ee12c536a55778ac8d0ab510209955a656385c77",
+                "reference": "ee12c536a55778ac8d0ab510209955a656385c77",
                 "shasum": ""
             },
             "require": {
@@ -2286,7 +2286,7 @@
                 }
             ],
             "description": "A workflow function bundle for the OpenOrchestra Project",
-            "time": "2015-06-02 13:09:19"
+            "time": "2015-06-02 16:26:37"
         },
         {
             "name": "phpcollection/phpcollection",
@@ -2391,13 +2391,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "bf2c13de4300e227d7b2fd08027673a79c519987"
+                "reference": "9e45edca52cc9c954680072c93e621f8b71fab26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/bf2c13de4300e227d7b2fd08027673a79c519987",
-                "reference": "bf2c13de4300e227d7b2fd08027673a79c519987",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/9e45edca52cc9c954680072c93e621f8b71fab26",
+                "reference": "9e45edca52cc9c954680072c93e621f8b71fab26",
                 "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
             },
             "type": "library",
             "extra": {
@@ -2426,7 +2429,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2015-03-26 14:39:45"
+            "time": "2015-06-02 13:48:41"
         },
         {
             "name": "sensio/distribution-bundle",
@@ -2904,12 +2907,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "ac8b475454c120bfb31f5bef475233dd4fb6b626"
+                "reference": "b11f0054d96fa49200d10401e34d879e46c2a2c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/ac8b475454c120bfb31f5bef475233dd4fb6b626",
-                "reference": "ac8b475454c120bfb31f5bef475233dd4fb6b626",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/b11f0054d96fa49200d10401e34d879e46c2a2c6",
+                "reference": "b11f0054d96fa49200d10401e34d879e46c2a2c6",
                 "shasum": ""
             },
             "require": {
@@ -2945,10 +2948,11 @@
             "description": "Swiftmailer, free feature-rich PHP mailer",
             "homepage": "http://swiftmailer.org",
             "keywords": [
+                "email",
                 "mail",
                 "mailer"
             ],
-            "time": "2015-05-06 16:40:00"
+            "time": "2015-06-02 14:34:12"
         },
         {
             "name": "symfony/assetic-bundle",
@@ -3311,12 +3315,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "d63ac2088e8d30137cde10f310ab89b06dab916b"
+                "reference": "dfddd2e0ef39fd39e201fd89f469769740d5a4a1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/d63ac2088e8d30137cde10f310ab89b06dab916b",
-                "reference": "d63ac2088e8d30137cde10f310ab89b06dab916b",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/dfddd2e0ef39fd39e201fd89f469769740d5a4a1",
+                "reference": "dfddd2e0ef39fd39e201fd89f469769740d5a4a1",
                 "shasum": ""
             },
             "require": {
@@ -3360,7 +3364,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2015-05-16 14:17:41"
+            "time": "2015-06-02 14:50:15"
         }
     ],
     "packages-dev": [
@@ -4072,12 +4076,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "6b7d2094ca2a685a2cad846cb7cd7a30e8b9470f"
+                "reference": "3b58cb7bc6d9be58ba35ba72a6e5c65ebb81687d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/6b7d2094ca2a685a2cad846cb7cd7a30e8b9470f",
-                "reference": "6b7d2094ca2a685a2cad846cb7cd7a30e8b9470f",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/3b58cb7bc6d9be58ba35ba72a6e5c65ebb81687d",
+                "reference": "3b58cb7bc6d9be58ba35ba72a6e5c65ebb81687d",
                 "shasum": ""
             },
             "require": {
@@ -4126,7 +4130,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-06-01 07:35:26"
+            "time": "2015-06-02 15:27:47"
         },
         {
             "name": "phpunit/php-file-iterator",
