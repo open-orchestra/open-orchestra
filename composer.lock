@@ -246,16 +246,16 @@
         },
         {
             "name": "doctrine/collections",
-            "version": "v1.3.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/collections.git",
-                "reference": "6c1e4eef75f310ea1b3e30945e9f06e652128b8a"
+                "reference": "b2c6ca857d6e0caed9ed199d2d8ff1d179a95d15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/collections/zipball/6c1e4eef75f310ea1b3e30945e9f06e652128b8a",
-                "reference": "6c1e4eef75f310ea1b3e30945e9f06e652128b8a",
+                "url": "https://api.github.com/repos/doctrine/collections/zipball/b2c6ca857d6e0caed9ed199d2d8ff1d179a95d15",
+                "reference": "b2c6ca857d6e0caed9ed199d2d8ff1d179a95d15",
                 "shasum": ""
             },
             "require": {
@@ -308,7 +308,7 @@
                 "collections",
                 "iterator"
             ],
-            "time": "2015-04-14 22:21:58"
+            "time": "2015-05-13 13:33:57"
         },
         {
             "name": "doctrine/common",
@@ -692,16 +692,16 @@
         },
         {
             "name": "doctrine/mongodb-odm",
-            "version": "1.0.0-BETA12",
+            "version": "1.0.0-BETA13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/mongodb-odm.git",
-                "reference": "89bb1af203e85019b97b0994818454d2ca8ccb52"
+                "reference": "f9d26e2839c657659dc129fe5b4aaa7f87d0ea55"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/mongodb-odm/zipball/89bb1af203e85019b97b0994818454d2ca8ccb52",
-                "reference": "89bb1af203e85019b97b0994818454d2ca8ccb52",
+                "url": "https://api.github.com/repos/doctrine/mongodb-odm/zipball/f9d26e2839c657659dc129fe5b4aaa7f87d0ea55",
+                "reference": "f9d26e2839c657659dc129fe5b4aaa7f87d0ea55",
                 "shasum": ""
             },
             "require": {
@@ -713,10 +713,10 @@
                 "doctrine/instantiator": "~1.0.1",
                 "doctrine/mongodb": ">=1.1.5,<2.0",
                 "php": ">=5.3.2",
-                "symfony/console": "~2.0"
+                "symfony/console": "~2.3|~3.0"
             },
             "require-dev": {
-                "symfony/yaml": "~2.0"
+                "symfony/yaml": "~2.3|~3.0"
             },
             "suggest": {
                 "symfony/yaml": "Enables the YAML metadata mapping driver"
@@ -752,6 +752,14 @@
                 {
                     "name": "Kris Wallsmith",
                     "email": "kris.wallsmith@gmail.com"
+                },
+                {
+                    "name": "Maciej Malarz",
+                    "email": "malarzm@gmail.com"
+                },
+                {
+                    "name": "Andreas Braun",
+                    "email": "alcaeus@alcaeus.org"
                 }
             ],
             "description": "Doctrine MongoDB Object Document Mapper",
@@ -762,33 +770,35 @@
                 "odm",
                 "persistence"
             ],
-            "time": "2015-02-25 00:55:38"
+            "time": "2015-05-22 07:35:15"
         },
         {
             "name": "doctrine/mongodb-odm-bundle",
-            "version": "v3.0.0-BETA6",
-            "target-dir": "Doctrine/Bundle/MongoDBBundle",
+            "version": "v3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/DoctrineMongoDBBundle.git",
-                "reference": "b06c06e72136f662d0cf604952fcc4238b1e9cb9"
+                "reference": "f28d770d804bf5fc3175fdbc243b790210818140"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/DoctrineMongoDBBundle/zipball/b06c06e72136f662d0cf604952fcc4238b1e9cb9",
-                "reference": "b06c06e72136f662d0cf604952fcc4238b1e9cb9",
+                "url": "https://api.github.com/repos/doctrine/DoctrineMongoDBBundle/zipball/f28d770d804bf5fc3175fdbc243b790210818140",
+                "reference": "f28d770d804bf5fc3175fdbc243b790210818140",
                 "shasum": ""
             },
             "require": {
                 "doctrine/mongodb-odm": "~1.0.0-beta10@dev",
                 "php": ">=5.3.2",
+                "symfony/config": "~2.2",
+                "symfony/console": "~2.1",
+                "symfony/dependency-injection": "~2.2",
                 "symfony/doctrine-bridge": "~2.1",
                 "symfony/framework-bundle": "~2.1",
                 "symfony/options-resolver": "~2.1"
             },
             "require-dev": {
                 "doctrine/data-fixtures": "@dev",
-                "symfony/form": "~2.1",
+                "symfony/form": "~2.3",
                 "symfony/yaml": "~2.1"
             },
             "suggest": {
@@ -801,8 +811,8 @@
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Doctrine\\Bundle\\MongoDBBundle": ""
+                "psr-4": {
+                    "Doctrine\\Bundle\\MongoDBBundle\\": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -811,19 +821,16 @@
             ],
             "authors": [
                 {
-                    "name": "Bulat Shakirzyanov",
-                    "email": "mallluhuct@gmail.com",
-                    "homepage": "http://avalanche123.com"
-                },
-                {
-                    "name": "Jonathan Wage",
-                    "email": "jonwage@gmail.com",
-                    "homepage": "http://www.jwage.com/",
-                    "role": "Creator"
-                },
-                {
                     "name": "Kris Wallsmith",
                     "email": "kris@symfony.com"
+                },
+                {
+                    "name": "Jonathan H. Wage",
+                    "email": "jonwage@gmail.com"
+                },
+                {
+                    "name": "Bulat Shakirzyanov",
+                    "email": "mallluhuct@gmail.com"
                 }
             ],
             "description": "Symfony2 Doctrine MongoDB Bundle",
@@ -833,7 +840,7 @@
                 "persistence",
                 "symfony"
             ],
-            "time": "2014-05-19 18:39:02"
+            "time": "2015-05-22 08:14:36"
         },
         {
             "name": "friendsofsymfony/http-cache",
@@ -1053,16 +1060,16 @@
         },
         {
             "name": "gedmo/doctrine-extensions",
-            "version": "dev-master",
+            "version": "v2.3.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Atlantic18/DoctrineExtensions.git",
-                "reference": "0f130d2b0ad96914fb3e251bdfd835eb7c853660"
+                "reference": "c3ff3c73c95b01e107af33d4fe3abf80794e2df9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/0f130d2b0ad96914fb3e251bdfd835eb7c853660",
-                "reference": "0f130d2b0ad96914fb3e251bdfd835eb7c853660",
+                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/c3ff3c73c95b01e107af33d4fe3abf80794e2df9",
+                "reference": "c3ff3c73c95b01e107af33d4fe3abf80794e2df9",
                 "shasum": ""
             },
             "require": {
@@ -1071,12 +1078,11 @@
                 "php": ">=5.3.2"
             },
             "require-dev": {
-                "doctrine/common": ">=2.5.0-BETA1",
-                "doctrine/mongodb-odm": ">=1.0.0-BETA12",
-                "doctrine/orm": ">=2.5.0-RC1",
+                "doctrine/mongodb-odm": ">=1.0.0-BETA11",
+                "doctrine/orm": "~2.4",
                 "phpunit/phpunit": "~4.4",
                 "phpunit/phpunit-mock-objects": "~2.3",
-                "symfony/yaml": "~2.6"
+                "symfony/yaml": "~2.3"
             },
             "suggest": {
                 "doctrine/mongodb-odm": "to use the extensions with the MongoDB ODM",
@@ -1128,7 +1134,7 @@
                 "tree",
                 "uploadable"
             ],
-            "time": "2015-04-08 20:13:25"
+            "time": "2015-02-24 21:41:37"
         },
         {
             "name": "guzzle/guzzle",
@@ -2046,18 +2052,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-bundle.git",
-                "reference": "1406faecbdbf40b9ea49196b5e15417d8b210d33"
+                "reference": "b248f0aff1c7ee7dd2fcc503cd3f69b6e3ce194d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/1406faecbdbf40b9ea49196b5e15417d8b210d33",
-                "reference": "1406faecbdbf40b9ea49196b5e15417d8b210d33",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/b248f0aff1c7ee7dd2fcc503cd3f69b6e3ce194d",
+                "reference": "b248f0aff1c7ee7dd2fcc503cd3f69b6e3ce194d",
                 "shasum": ""
             },
             "require": {
                 "doctrine/data-fixtures": "1.1.1",
-                "doctrine/mongodb-odm": "1.0.0-BETA12",
-                "doctrine/mongodb-odm-bundle": "3.0.0-BETA6",
+                "doctrine/mongodb-odm": "1.0.0-BETA13",
+                "doctrine/mongodb-odm-bundle": "3.0.0",
                 "ext-imagick": "*",
                 "knplabs/knp-gaufrette-bundle": "v0.1.7",
                 "open-orchestra/open-orchestra-model-interface": "*",
@@ -2089,7 +2095,7 @@
                 }
             ],
             "description": "A media bundle for the OpenOrchestra Project",
-            "time": "2015-05-29 15:05:24"
+            "time": "2015-06-02 13:12:50"
         },
         {
             "name": "open-orchestra/open-orchestra-model-bundle",
@@ -2098,18 +2104,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
-                "reference": "c46bcfba8c2fc8aa306d1a62dfa6a106bab11529"
+                "reference": "35f51bd46298cc5fdf2192e78e5dbbcd757e43d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/c46bcfba8c2fc8aa306d1a62dfa6a106bab11529",
-                "reference": "c46bcfba8c2fc8aa306d1a62dfa6a106bab11529",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/35f51bd46298cc5fdf2192e78e5dbbcd757e43d9",
+                "reference": "35f51bd46298cc5fdf2192e78e5dbbcd757e43d9",
                 "shasum": ""
             },
             "require": {
                 "doctrine/data-fixtures": "1.1.1",
-                "doctrine/mongodb-odm": "1.0.0-BETA12",
-                "doctrine/mongodb-odm-bundle": "3.0.0-BETA6",
+                "doctrine/mongodb-odm": "1.0.0-BETA13",
+                "doctrine/mongodb-odm-bundle": "3.0.0",
                 "open-orchestra/open-orchestra-model-interface": "*",
                 "solution/mongo-odm-aggregation-bundle": "*",
                 "stof/doctrine-extensions-bundle": "1.1.0"
@@ -2139,7 +2145,7 @@
                 }
             ],
             "description": "An implemantation of the model-interface for OpenOrchestra on mongo",
-            "time": "2015-06-01 15:40:13"
+            "time": "2015-06-02 13:02:31"
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
@@ -2239,18 +2245,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-workflow-function-bundle.git",
-                "reference": "359593acdf0b7eca9dabe5b56b40069f577f6f82"
+                "reference": "5a9caaebc792cc56a1e2be15579a880322f64e81"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-workflow-function-bundle/zipball/359593acdf0b7eca9dabe5b56b40069f577f6f82",
-                "reference": "359593acdf0b7eca9dabe5b56b40069f577f6f82",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-workflow-function-bundle/zipball/5a9caaebc792cc56a1e2be15579a880322f64e81",
+                "reference": "5a9caaebc792cc56a1e2be15579a880322f64e81",
                 "shasum": ""
             },
             "require": {
                 "doctrine/data-fixtures": "1.1.1",
-                "doctrine/mongodb-odm": "1.0.0-BETA12",
-                "doctrine/mongodb-odm-bundle": "3.0.0-BETA6",
+                "doctrine/mongodb-odm": "1.0.0-BETA13",
+                "doctrine/mongodb-odm-bundle": "3.0.0",
                 "open-orchestra/open-orchestra-model-interface": "*",
                 "stof/doctrine-extensions-bundle": "1.1.0"
             },
@@ -2280,7 +2286,7 @@
                 }
             ],
             "description": "A workflow function bundle for the OpenOrchestra Project",
-            "time": "2015-06-01 14:37:28"
+            "time": "2015-06-02 13:09:19"
         },
         {
             "name": "phpcollection/phpcollection",
@@ -4057,16 +4063,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "dev-master",
+            "version": "2.1.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "672248f49a25fcca46aa6c73612d6731d6b83c4a"
+                "reference": "6b7d2094ca2a685a2cad846cb7cd7a30e8b9470f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/672248f49a25fcca46aa6c73612d6731d6b83c4a",
-                "reference": "672248f49a25fcca46aa6c73612d6731d6b83c4a",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/6b7d2094ca2a685a2cad846cb7cd7a30e8b9470f",
+                "reference": "6b7d2094ca2a685a2cad846cb7cd7a30e8b9470f",
                 "shasum": ""
             },
             "require": {
@@ -4115,7 +4121,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-05-25 16:40:23"
+            "time": "2015-06-01 07:35:26"
         },
         {
             "name": "phpunit/php-file-iterator",
