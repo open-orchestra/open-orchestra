@@ -9,8 +9,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-commands');
 
-    var filesLess = {},
-        filesCoffee = {};
+    grunt.loadTasks('grunt_tasks');
 
     // Configuration
     grunt.initConfig({
@@ -152,26 +151,11 @@ module.exports = function(grunt) {
             built: ["web/built"]
         },
 
-        less: {
-            bundles: {
-                files: filesLess
-            }
-        },
-
         cssmin: {
             minify: {
                 expand: true,
                 src: ['web/css/all.css'],
                 ext: '.min.css'
-            }
-        },
-
-        coffee: {
-            compileBare: {
-                options: {
-                    bare: true
-                },
-                files: filesCoffee
             }
         },
 
@@ -199,7 +183,7 @@ module.exports = function(grunt) {
                 ],
                 dest: 'web/built/smartadmin.js'
             },
-            
+
             libjs: {
                 src: [
                     'bower_components/underscore/underscore.js',
@@ -214,7 +198,7 @@ module.exports = function(grunt) {
                 ],
                 dest: 'web/built/lib.js'
             },
-            
+
             orchestrajs: {
                 src: [
                     // MAIN
@@ -283,7 +267,7 @@ module.exports = function(grunt) {
                 ],
                 dest: 'web/built/orchestra.js'
             },
-    
+
             js: {
                 src: [
                     'web/built/smartadmin.js',
@@ -292,7 +276,7 @@ module.exports = function(grunt) {
                 ],
                 dest: 'web/js/all.js'
             },
-            
+
             smartadmincss: {
                 src: [
                     // SMARTADMIN PACKAGE
@@ -323,7 +307,7 @@ module.exports = function(grunt) {
                 ],
                 dest: 'web/built/smartadmin.css'
             },
-            
+
             libcss: {
                 src: [
                       'bower_components/jquery-ui/themes/base/base.css',
@@ -332,7 +316,7 @@ module.exports = function(grunt) {
                 ],
                 dest: 'web/built/lib.css'
             },
-            
+
             orchestracss: {
                 src: [
                       'web/built/openorchestrabackoffice/css/openorchestra.css',
@@ -347,7 +331,7 @@ module.exports = function(grunt) {
                 ],
                 dest: 'web/built/orchestra.css'
             },
-            
+
             css: {
                 src: [
                       'web/built/smartadmin.css',
@@ -377,47 +361,5 @@ module.exports = function(grunt) {
                 cmd  : 'php app/console assetic:dump'
             }
         }
-    });
-
-    // Default task(s).
-    grunt.registerTask('default', ['clean', 'command:assets_install', 'symlink', 'css', 'javascript', 'javascriptProd', 'command:assetic_dump']);
-    grunt.registerTask('css', ['less:discovering', 'less', 'concat:smartadmincss', 'concat:libcss', 'concat:orchestracss', 'concat:css', 'cssmin']);
-    grunt.registerTask('javascript', ['coffee:discovering', 'coffee', 'concat:smartadminjs', 'concat:libjs', 'concat:orchestrajs', 'concat:js']);
-    grunt.registerTask('javascriptProd', ['uglify']);
-    grunt.registerTask('less:discovering', 'This is a function', function() {
-        // LESS Files management
-        // Source LESS files are located inside : bundles/[bundle]/less/
-        // Destination CSS files are located inside : built/[bundle]/css/
-        var mappingFileLess = grunt.file.expandMapping(
-            ['*/less/*.less', '*/less/*/*.less'],
-            'web/built/', {
-                cwd: 'web/bundles/',
-                rename: function(dest, matchedSrcPath, options) {
-                    return dest + matchedSrcPath.replace(/less/g, 'css');
-                }
-            });
-
-        grunt.util._.each(mappingFileLess, function(value) {
-            // Why value.src is an array ??
-            filesLess[value.dest] = value.src[0];
-        });
-    });
-    grunt.registerTask('coffee:discovering', 'This is a function', function() {
-        // COFFEE Files management
-        // Source COFFEE files are located inside : bundles/[bundle]/coffee/
-        // Destination JS files are located inside : built/[bundle]/js/
-        var mappingFileCoffee = grunt.file.expandMapping(
-            ['*/coffee/*.coffee', '*/coffee/*/*.coffee', '*/coffee/*/*/*.coffee'],
-            'web/built/', {
-                cwd: 'web/bundles/',
-                rename: function(dest, matchedSrcPath, options) {
-                    return dest + matchedSrcPath.replace(/coffee/g, 'js');
-                }
-            });
-
-        grunt.util._.each(mappingFileCoffee, function(value) {
-            // Why value.src is an array ??
-            filesCoffee[value.dest] = value.src[0];
-        });
     });
 };
