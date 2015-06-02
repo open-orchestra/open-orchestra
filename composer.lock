@@ -1853,12 +1853,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-base-api-bundle.git",
-                "reference": "9be096d9211df3430ed987e8179e364a1473a4d4"
+                "reference": "1645ee9caf0ee3326e498f6d3c021debd128f90c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-api-bundle/zipball/9be096d9211df3430ed987e8179e364a1473a4d4",
-                "reference": "9be096d9211df3430ed987e8179e364a1473a4d4",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-api-bundle/zipball/1645ee9caf0ee3326e498f6d3c021debd128f90c",
+                "reference": "1645ee9caf0ee3326e498f6d3c021debd128f90c",
                 "shasum": ""
             },
             "require": {
@@ -1888,7 +1888,7 @@
                 }
             ],
             "description": "This bundle provide the base bricks for the OpenOrchestra Api",
-            "time": "2015-06-02 16:26:46"
+            "time": "2015-06-02 16:30:39"
         },
         {
             "name": "open-orchestra/open-orchestra-base-bundle",
