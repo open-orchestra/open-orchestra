@@ -268,7 +268,7 @@ module.exports = function(grunt) {
                     'web/built/openorchestrabackoffice/js/page/pageConfigurationButtonView.js',
                     'web/built/openorchestrabackoffice/js/page/viewportChannel.js',
                     // TABLE
-                    'web/built/openorchestrabackoffice/js/table/TableviewView.js',
+                    'web/built/openorchestrabackoffice/js/table/TableviewAction.js',
                     'web/built/openorchestrabackoffice/js/table/TableviewCollectionView.js',
                     'web/built/openorchestrabackoffice/js/table/tableviewLoader.js',
                     // MEDIATHEQUE
