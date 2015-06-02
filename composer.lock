@@ -1947,12 +1947,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "767e56d282c393021575d405a716c6c7eebd0888"
+                "reference": "baad26cc73f14ff9b46ed7a504dc1bdd6f41a66e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/767e56d282c393021575d405a716c6c7eebd0888",
-                "reference": "767e56d282c393021575d405a716c6c7eebd0888",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/baad26cc73f14ff9b46ed7a504dc1bdd6f41a66e",
+                "reference": "baad26cc73f14ff9b46ed7a504dc1bdd6f41a66e",
                 "shasum": ""
             },
             "require": {
@@ -1997,7 +1997,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2015-06-02 16:26:51"
+            "time": "2015-06-02 16:30:17"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
