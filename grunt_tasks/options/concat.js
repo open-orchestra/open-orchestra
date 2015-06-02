@@ -170,4 +170,4 @@ module.exports = {
         ],
         dest: 'web/css/all.css'
     }
-}
+};

@@ -4,4 +4,4 @@ module.exports = {
         src: ['web/css/all.css'],
         ext: '.min.css'
     }
-}
+};

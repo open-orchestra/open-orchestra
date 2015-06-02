@@ -5,4 +5,4 @@ module.exports = {
     assetic_dump: {
         cmd  : 'php app/console assetic:dump'
     }
-}
+};

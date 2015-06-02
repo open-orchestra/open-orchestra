@@ -130,4 +130,4 @@ module.exports = {
         dest: 'web/img/no_image_available.jpg'
     }
 
-}
+};

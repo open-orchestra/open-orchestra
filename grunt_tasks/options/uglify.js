@@ -4,4 +4,4 @@ module.exports = {
             'web/js/all.min.js': ['web/js/all.js']
         }
     }
-}
+};

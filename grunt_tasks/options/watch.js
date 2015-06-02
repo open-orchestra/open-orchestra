@@ -7,4 +7,4 @@ module.exports = {
         files: ['web/bundles/*/coffee/*.coffee'],
         tasks: ['javascript', 'command:assetic_dump']
     }
-}
+};
