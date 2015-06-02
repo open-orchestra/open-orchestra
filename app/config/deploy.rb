@@ -41,7 +41,7 @@ set :use_set_permissions,   true
 after "symfony:composer:install", "npm:install"
 after "npm:install", "grunt:generate"
 after "deploy", "deploy:cleanup"
-after "deploy", "symfony:assets:update_version"
+after "symfony:composer:install", "symfony:assets:update_version"
 
 before "orchestra:behat", "orchestra:selenium:start"
 after "orchestra:behat", "orchestra:selenium:stop"
