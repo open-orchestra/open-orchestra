@@ -21,6 +21,7 @@ Url to see changes :
 
 ## New features
 - added DataTable Colvis to Bower and Grunt to enable column choice visibility in dataTable
+- added possibility to manage right on content and node change status
 
 ## Other changes
 
