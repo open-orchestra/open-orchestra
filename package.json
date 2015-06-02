@@ -21,6 +21,7 @@
     "grunt-contrib-watch": "~0.4",
     "grunt-contrib-clean": "~0.5",
     "grunt-contrib-commands": "~0.1",
-    "coffee-script": "~1.9.1"
+    "coffee-script": "~1.9.1",
+    "glob": "~5.0.10"
   }
 }
