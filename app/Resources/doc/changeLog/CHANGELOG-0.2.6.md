@@ -20,8 +20,9 @@ Url to see changes :
  - [Fix broken sitemaps generation](https://trello.com/c/7X4nEDb2/980-3-fo-la-commande-de-generation-de-sitemap-plante)
 
 ## New features
-- added DataTable Colvis to Bower and Grunt to enable column choice visibility in dataTable
-- added possibility to manage right on content and node change status
+ - added DataTable Colvis to Bower and Grunt to enable column choice visibility in dataTable
+ - added possibility to manage right on content and node change status
+ - [new custom types options can be added in the app/config.yml](https://trello.com/c/OVJGTlNM/922-1-bo-creation-d-un-content-attribute-possibilite-de-creer-de-nouvelles-options)
 
 ## Other changes
 
