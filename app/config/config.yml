@@ -122,4 +122,3 @@ fos_http_cache:
             servers: "%fos_http_cache.proxy_client.varnish.servers%"
             base_url: "%fos_http_cache.proxy_client.varnish.base_url%"
         default: varnish
-
