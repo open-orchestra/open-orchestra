@@ -19,6 +19,7 @@ Url to see changes :
  - Symfony version has been upgraded to 2.7.0
 
 ## Bug fixes
+
  - [Fix broken sitemaps generation](https://trello.com/c/7X4nEDb2/980-3-fo-la-commande-de-generation-de-sitemap-plante)
 
 ## New features
@@ -29,6 +30,8 @@ Url to see changes :
 ## Other changes
 
 ## Deprecated method
+
+ - The method `eventElligible` from the `AbstractSubscriber` in the `BaseApi` is replaced by `isEventEligible`
 
 ## Suppressed method
 
