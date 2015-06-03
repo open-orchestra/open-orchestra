@@ -28,6 +28,7 @@ Url to see changes :
  - [new custom types options can be added in the app/config.yml](https://trello.com/c/OVJGTlNM/922-1-bo-creation-d-un-content-attribute-possibilite-de-creer-de-nouvelles-options)
 
 ## Other changes
+ - [Refacto on the grunt tasks](https://trello.com/c/UmvUjjsD/947-2-etq-dev-je-ne-suis-pas-oblige-de-chercher-les-mises-a-jour-du-gruntfile-quand-mon-bo-plante)
 
 ## Deprecated method
 
@@ -36,3 +37,9 @@ Url to see changes :
 ## Suppressed method
 
 ## Configuration changes
+The grunt tasks managment has been changed to be more user friendly in case of Open Orchestra updates
+and/or application specific modifications. Tasks and configiguration are now splitted into multiples
+files placed in OpenOrchestraBundle for the generic ones and in CmsBundle for the specific ones. To
+be compatible with that change, projects must update their actual grunt files. The gruntfile must be
+updated. The folder grunt_tasks must be created and the tasks it's containing must be added. See
+(https://github.com/open-orchestra/open-orchestra/pull/492) for more information.
