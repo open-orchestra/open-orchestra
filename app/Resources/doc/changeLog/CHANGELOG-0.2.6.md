@@ -16,6 +16,8 @@ Url to see changes :
 
 ## Possible BC breaker
 
+ - Symfony version has been upgraded to 2.7.0
+
 ## Bug fixes
  - [Fix broken sitemaps generation](https://trello.com/c/7X4nEDb2/980-3-fo-la-commande-de-generation-de-sitemap-plante)
 
