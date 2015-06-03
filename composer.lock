@@ -1237,12 +1237,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Incenteev/ParameterHandler.git",
-                "reference": "8f9608d4bcbfbc9ccc6878e8068341e127037e76"
+                "reference": "e5d11f57113e55c4d58dd28ba11af8960b606b76"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Incenteev/ParameterHandler/zipball/8f9608d4bcbfbc9ccc6878e8068341e127037e76",
-                "reference": "8f9608d4bcbfbc9ccc6878e8068341e127037e76",
+                "url": "https://api.github.com/repos/Incenteev/ParameterHandler/zipball/e5d11f57113e55c4d58dd28ba11af8960b606b76",
+                "reference": "e5d11f57113e55c4d58dd28ba11af8960b606b76",
                 "shasum": ""
             },
             "require": {
@@ -1280,7 +1280,7 @@
             "keywords": [
                 "parameters management"
             ],
-            "time": "2014-12-17 16:24:52"
+            "time": "2015-06-03 08:03:47"
         },
         {
             "name": "innocead/captcha-bundle",
@@ -1853,12 +1853,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-base-api-bundle.git",
-                "reference": "1645ee9caf0ee3326e498f6d3c021debd128f90c"
+                "reference": "21ea338f404a57551a1b4b074e5ba4a729bb9cfa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-api-bundle/zipball/1645ee9caf0ee3326e498f6d3c021debd128f90c",
-                "reference": "1645ee9caf0ee3326e498f6d3c021debd128f90c",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-api-bundle/zipball/21ea338f404a57551a1b4b074e5ba4a729bb9cfa",
+                "reference": "21ea338f404a57551a1b4b074e5ba4a729bb9cfa",
                 "shasum": ""
             },
             "require": {
@@ -1888,7 +1888,7 @@
                 }
             ],
             "description": "This bundle provide the base bricks for the OpenOrchestra Api",
-            "time": "2015-06-02 16:30:39"
+            "time": "2015-06-03 08:13:00"
         },
         {
             "name": "open-orchestra/open-orchestra-base-bundle",
@@ -2052,12 +2052,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-bundle.git",
-                "reference": "872b01ec098100db744533feba4877f2ca85e285"
+                "reference": "70a38df845194e227c32920ccc9265115dd58e0c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/872b01ec098100db744533feba4877f2ca85e285",
-                "reference": "872b01ec098100db744533feba4877f2ca85e285",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/70a38df845194e227c32920ccc9265115dd58e0c",
+                "reference": "70a38df845194e227c32920ccc9265115dd58e0c",
                 "shasum": ""
             },
             "require": {
@@ -2095,7 +2095,7 @@
                 }
             ],
             "description": "A media bundle for the OpenOrchestra Project",
-            "time": "2015-06-02 16:26:04"
+            "time": "2015-06-03 08:13:23"
         },
         {
             "name": "open-orchestra/open-orchestra-model-bundle",
@@ -4076,12 +4076,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "3b58cb7bc6d9be58ba35ba72a6e5c65ebb81687d"
+                "reference": "28a6b34e91d789b2608072ab3c82eaae7cdb973c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/3b58cb7bc6d9be58ba35ba72a6e5c65ebb81687d",
-                "reference": "3b58cb7bc6d9be58ba35ba72a6e5c65ebb81687d",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/28a6b34e91d789b2608072ab3c82eaae7cdb973c",
+                "reference": "28a6b34e91d789b2608072ab3c82eaae7cdb973c",
                 "shasum": ""
             },
             "require": {
@@ -4130,7 +4130,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-06-02 15:27:47"
+            "time": "2015-06-03 07:01:01"
         },
         {
             "name": "phpunit/php-file-iterator",
