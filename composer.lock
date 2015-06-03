@@ -246,16 +246,16 @@
         },
         {
             "name": "doctrine/collections",
-            "version": "dev-master",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/collections.git",
-                "reference": "b2c6ca857d6e0caed9ed199d2d8ff1d179a95d15"
+                "reference": "6c1e4eef75f310ea1b3e30945e9f06e652128b8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/collections/zipball/b2c6ca857d6e0caed9ed199d2d8ff1d179a95d15",
-                "reference": "b2c6ca857d6e0caed9ed199d2d8ff1d179a95d15",
+                "url": "https://api.github.com/repos/doctrine/collections/zipball/6c1e4eef75f310ea1b3e30945e9f06e652128b8a",
+                "reference": "6c1e4eef75f310ea1b3e30945e9f06e652128b8a",
                 "shasum": ""
             },
             "require": {
@@ -308,7 +308,7 @@
                 "collections",
                 "iterator"
             ],
-            "time": "2015-05-13 13:33:57"
+            "time": "2015-04-14 22:21:58"
         },
         {
             "name": "doctrine/common",
@@ -2104,12 +2104,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
-                "reference": "02130d62d386ca5cd30070d3219c8c314222aedc"
+                "reference": "8282bc028e3916e8df50c7324555748ad1f58ef1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/02130d62d386ca5cd30070d3219c8c314222aedc",
-                "reference": "02130d62d386ca5cd30070d3219c8c314222aedc",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/8282bc028e3916e8df50c7324555748ad1f58ef1",
+                "reference": "8282bc028e3916e8df50c7324555748ad1f58ef1",
                 "shasum": ""
             },
             "require": {
@@ -2145,7 +2145,7 @@
                 }
             ],
             "description": "An implemantation of the model-interface for OpenOrchestra on mongo",
-            "time": "2015-06-02 16:25:57"
+            "time": "2015-06-03 08:13:35"
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
@@ -2245,12 +2245,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-workflow-function-bundle.git",
-                "reference": "ee12c536a55778ac8d0ab510209955a656385c77"
+                "reference": "b4a55ed0d8ce1bd1c720dd10d6fbc25ad8f06d45"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-workflow-function-bundle/zipball/ee12c536a55778ac8d0ab510209955a656385c77",
-                "reference": "ee12c536a55778ac8d0ab510209955a656385c77",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-workflow-function-bundle/zipball/b4a55ed0d8ce1bd1c720dd10d6fbc25ad8f06d45",
+                "reference": "b4a55ed0d8ce1bd1c720dd10d6fbc25ad8f06d45",
                 "shasum": ""
             },
             "require": {
@@ -2286,7 +2286,7 @@
                 }
             ],
             "description": "A workflow function bundle for the OpenOrchestra Project",
-            "time": "2015-06-02 16:26:37"
+            "time": "2015-06-03 08:13:54"
         },
         {
             "name": "phpcollection/phpcollection",
