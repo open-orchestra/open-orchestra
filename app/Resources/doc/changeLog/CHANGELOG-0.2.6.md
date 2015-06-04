@@ -38,8 +38,10 @@ Url to see changes :
 
 ## Configuration changes
 The grunt tasks managment has been changed to be more user friendly in case of Open Orchestra updates
-and/or application specific modifications. Tasks and configiguration are now splitted into multiples
+and/or application specific modifications. Tasks and configuration are now splitted into multiples
 files placed in OpenOrchestraBundle for the generic ones and in CmsBundle for the specific ones. To
 be compatible with that change, projects must update their actual grunt files. The gruntfile must be
 updated. The folder grunt_tasks must be created and the tasks it's containing must be added. See
 (https://github.com/open-orchestra/open-orchestra/pull/492) for more information.
+
+As new npm modules are required, a npm install must also be done.
