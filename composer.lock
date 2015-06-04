@@ -848,12 +848,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSHttpCache.git",
-                "reference": "54117e25b9a0ac4568d33f349d62ef83d2301b76"
+                "reference": "4ed126e951d831517769de5334106964e74fa698"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSHttpCache/zipball/54117e25b9a0ac4568d33f349d62ef83d2301b76",
-                "reference": "54117e25b9a0ac4568d33f349d62ef83d2301b76",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSHttpCache/zipball/4ed126e951d831517769de5334106964e74fa698",
+                "reference": "4ed126e951d831517769de5334106964e74fa698",
                 "shasum": ""
             },
             "require": {
@@ -912,7 +912,7 @@
                 "purge",
                 "varnish"
             ],
-            "time": "2015-06-02 07:31:35"
+            "time": "2015-06-04 06:59:48"
         },
         {
             "name": "friendsofsymfony/http-cache-bundle",
@@ -1853,12 +1853,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-base-api-bundle.git",
-                "reference": "05becabee0b9694d653d37a74d86827eb7d041a5"
+                "reference": "81d1282c53cab5da7e865f041714b583758062b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-api-bundle/zipball/05becabee0b9694d653d37a74d86827eb7d041a5",
-                "reference": "05becabee0b9694d653d37a74d86827eb7d041a5",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-api-bundle/zipball/81d1282c53cab5da7e865f041714b583758062b0",
+                "reference": "81d1282c53cab5da7e865f041714b583758062b0",
                 "shasum": ""
             },
             "require": {
@@ -1888,7 +1888,7 @@
                 }
             ],
             "description": "This bundle provide the base bricks for the OpenOrchestra Api",
-            "time": "2015-06-03 15:51:27"
+            "time": "2015-06-04 07:56:32"
         },
         {
             "name": "open-orchestra/open-orchestra-base-bundle",
@@ -1947,12 +1947,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "d202730321fc962e965ac6c926eb3dfaf1fd7083"
+                "reference": "9075f5bf21fa6b6392eed779188f2030f775ff32"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/d202730321fc962e965ac6c926eb3dfaf1fd7083",
-                "reference": "d202730321fc962e965ac6c926eb3dfaf1fd7083",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/9075f5bf21fa6b6392eed779188f2030f775ff32",
+                "reference": "9075f5bf21fa6b6392eed779188f2030f775ff32",
                 "shasum": ""
             },
             "require": {
@@ -1997,7 +1997,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2015-06-03 15:51:32"
+            "time": "2015-06-04 07:57:42"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
