@@ -22,6 +22,8 @@ Url to see changes :
 
 ## Other changes
  - [In Mongo, the Content documents index their content attributes by their names](https://trello.com/c/188mQ8ig/994-0-5-refacto-mongo-contents-indexer-les-attributes-dans-la-collection-attributes-par-leur-getname-plutot-qu-un-index-numerique)
+ - [In the Back Office, the content menu shows content types ordered by their name according to the BO language](https://trello.com/c/LFHNCJfI/991-1-etq-ubo-sur-le-left-menu-les-content-type-sont-ordonnees-par-langue)
+ - [The method FolderRepository->findallrootfolderbysiteid() has been rewrote](https://trello.com/c/9Da2dW6K/992-3-refacto-remplacer-le-foreach-de-folderrepository-findallrootfolderbysiteid-par-un-aggregat)
 
 ## Deprecated method
 
