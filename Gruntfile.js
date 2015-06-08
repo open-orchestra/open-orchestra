@@ -3,12 +3,13 @@ module.exports = function(grunt) {
     grunt.loadTasks('./grunt_tasks');
     grunt.loadTasks('./vendor/open-orchestra/open-orchestra-cms-bundle/OpenOrchestra/GruntTasks');
 
+    var merge = require('merge');
     var config = {
         pkg: grunt.file.readJSON('package.json'),
         env: process.env
     };
-    grunt.util._.extend(config, loadConfig('./grunt_tasks/options/'));
-    grunt.util._.extend(config, loadConfig('./vendor/open-orchestra/open-orchestra-cms-bundle/OpenOrchestra/GruntTasks/Options/'));
+    config = merge.recursive(true, config, loadConfig('./grunt_tasks/options/'));
+    config = merge.recursive(true, config, loadConfig('./vendor/open-orchestra/open-orchestra-cms-bundle/OpenOrchestra/GruntTasks/Options/'));
 
     grunt.initConfig(config);
 };
