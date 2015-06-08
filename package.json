@@ -23,6 +23,7 @@
     "grunt-contrib-commands": "~0.1",
     "coffee-script": "~1.9.1",
     "load-grunt-tasks": "~3.2.0",
-    "glob": "~5.0.10"
+    "glob": "~5.0.10",
+    "merge": "*"
   }
 }
