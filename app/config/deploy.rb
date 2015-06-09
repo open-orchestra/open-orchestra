@@ -42,6 +42,7 @@ after "symfony:composer:install", "npm:install"
 after "npm:install", "grunt:generate"
 after "deploy", "deploy:cleanup"
 after "symfony:composer:install", "symfony:assets:update_version"
+after "symfony:project:clear_controllers", "orchestra:second_symlink"
 
 before "orchestra:behat", "orchestra:selenium:start"
 after "orchestra:behat", "orchestra:selenium:stop"
@@ -108,5 +109,11 @@ namespace :orchestra do
             run "sudo /etc/init.d/Xvfb start"
             capifony_puts_ok
         end
+    end
+
+    desc "Add a second symlink to the current version"
+    task :second_symlink do
+        run "ln -s #{latest_release} #{latest_release}/../../second_version"
+        capifony_puts_ok
     end
 end

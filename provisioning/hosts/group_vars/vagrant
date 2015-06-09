@@ -7,7 +7,8 @@ hosts_localhost: 127.0.0.1 localhost openorchestra
 
 hosts_site: 127.0.1.1 admin.openorchestra.dev openorchestra.test front.openorchestra.dev demo.openorchestra.dev
 
-apache_main_port: 80
+apache_main_ports:
+  - 80
 
 apache_conf:
   open-orchestra.conf:
