@@ -113,6 +113,7 @@ namespace :orchestra do
 
     desc "Add a second symlink to the current version"
     task :second_symlink do
+        run "rm #{latest_release}/../../second_version"
         run "ln -s #{latest_release} #{latest_release}/../../second_version"
         capifony_puts_ok
     end
