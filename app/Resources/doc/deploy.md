@@ -34,7 +34,7 @@ Make sur that your ssh configuration is ready and your personnal key is installe
 ## Test the command
 Run the following command to test the installation and connection to the server
 
-    bundle exec cap symfony:logs:tail
+    cap inte deploy:log_revision
 
 ## Deploy
 Before deploying the project, make sure that the composer.lock file is up-to-date on the master branch
@@ -49,6 +49,6 @@ Once the tests are green, you can merge the branch into master
 
 Then you can run the deploy command in the project directory
 
-    bundle exec cap deploy
+    cap inte deploy
 
 Once this is done, you can check the project.
