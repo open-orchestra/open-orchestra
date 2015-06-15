@@ -29,3 +29,5 @@ Url to see changes :
 ## Suppressed method
 
 ## Configuration changes
+
+ - In the `ModelBundle` the class definition is under the `document` entry
