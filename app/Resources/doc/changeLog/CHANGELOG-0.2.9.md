@@ -19,10 +19,13 @@ Url to see changes :
 ## Bug fixes
  - [Content versions van be naviguated through and created](https://trello.com/c/SxiViJWk/1009-2-bug-etq-ubo-je-peux-changer-de-version)
  - [Current site can be switched to a site created in the Back Office, not only in the fixtures](https://trello.com/c/XIfOxq4G/1040-hot-issue-le-site-switcher-du-bo-ne-fonctionne-pas-pour-les-sites-dont-l-id-est-de-type-string-en-gros-des-qu-on-cree-un-site-da)
+ - [Content type can be deleted](https://trello.com/c/Vgw5oPlC/1028-1-etq-ubo-je-peux-supprimer-un-content-type)
+ - [The deleted contents are not visible in the list](https://trello.com/c/ioIi4KI3/1029-0-5-bo-lorsque-je-supprime-un-content-il-n-apparait-plus-dans-la-liste)
 
 ## New features
 
 ## Other changes
+ - Method findLastPublishedVersionByContentIdAndLanguage of ContentRepositoryInterface is moved in ReadContentRepositoryInterface
 
 ## Deprecated method
 
