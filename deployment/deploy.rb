@@ -8,5 +8,4 @@ set :composer_install_flags, '--no-dev --prefer-dist --no-interaction --optimize
 set :linked_files, %w{app/config/parameters.yml}
 set :linked_dirs, %w{app/logs web/uploads vendor bower_components node_modules}
 
-after 'npm:install', 'orchestra:grunt'
 after 'deploy:finishing', 'deploy:cleanup'

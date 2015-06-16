@@ -5,4 +5,5 @@ namespace :orchestra do
             execute "cd #{fetch(:release_path)} && ./node_modules/grunt-cli/bin/grunt"
         end
     end
+    after 'npm:install', 'orchestra:grunt'
 end
