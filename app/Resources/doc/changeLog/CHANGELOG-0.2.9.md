@@ -21,8 +21,13 @@ Url to see changes :
  - [Current site can be switched to a site created in the Back Office, not only in the fixtures](https://trello.com/c/XIfOxq4G/1040-hot-issue-le-site-switcher-du-bo-ne-fonctionne-pas-pour-les-sites-dont-l-id-est-de-type-string-en-gros-des-qu-on-cree-un-site-da)
  - [Content type can be deleted](https://trello.com/c/Vgw5oPlC/1028-1-etq-ubo-je-peux-supprimer-un-content-type)
  - [The deleted contents are not visible in the list](https://trello.com/c/ioIi4KI3/1029-0-5-bo-lorsque-je-supprime-un-content-il-n-apparait-plus-dans-la-liste)
+ - [The media folder are now visible if they are not linked to a website](https://trello.com/c/GnnBizGK/1042-0-5-bug-etq-ubo-le-site-d-appartenance-d-un-folder-est-optionnel-y-compris-dans-la-modale-pas-de-site-tous-les-sites)
+ - [The media folder can be editable](https://trello.com/c/CgOw48np/1041-1-bug-etq-ubo-je-peux-modifier-un-folder-de-mediatheque-et-sauvegarder)
 
 ## New features
+
+ - [A content can be linked to the current website](https://trello.com/c/A1QrgMlg/957-5-etq-ubo-le-contenu-au-sens-type-de-contenu-que-je-cree-doit-etre-lie-a-un-et-un-seul-site)
+ - [Some properties and content attributes can be the always the same on all content](https://trello.com/c/A1QrgMlg/957-5-etq-ubo-le-contenu-au-sens-type-de-contenu-que-je-cree-doit-etre-lie-a-un-et-un-seul-site)
 
 ## Other changes
  - Method findLastPublishedVersionByContentIdAndLanguage of ContentRepositoryInterface is moved in ReadContentRepositoryInterface
