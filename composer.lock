@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
     "hash": "213167f1b26ce7cf69af433c78c2fce3",
@@ -112,12 +112,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/annotations.git",
-                "reference": "735b6c591925226b2a42e84dbfde5d8180b68a62"
+                "reference": "f4a91702ca3cd2e568c3736aa031ed00c3752af4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/annotations/zipball/735b6c591925226b2a42e84dbfde5d8180b68a62",
-                "reference": "735b6c591925226b2a42e84dbfde5d8180b68a62",
+                "url": "https://api.github.com/repos/doctrine/annotations/zipball/f4a91702ca3cd2e568c3736aa031ed00c3752af4",
+                "reference": "f4a91702ca3cd2e568c3736aa031ed00c3752af4",
                 "shasum": ""
             },
             "require": {
@@ -172,7 +172,7 @@
                 "docblock",
                 "parser"
             ],
-            "time": "2015-06-16 14:15:23"
+            "time": "2015-06-17 12:21:22"
         },
         {
             "name": "doctrine/cache",
@@ -246,16 +246,16 @@
         },
         {
             "name": "doctrine/collections",
-            "version": "v1.3.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/collections.git",
-                "reference": "6c1e4eef75f310ea1b3e30945e9f06e652128b8a"
+                "reference": "b2c6ca857d6e0caed9ed199d2d8ff1d179a95d15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/collections/zipball/6c1e4eef75f310ea1b3e30945e9f06e652128b8a",
-                "reference": "6c1e4eef75f310ea1b3e30945e9f06e652128b8a",
+                "url": "https://api.github.com/repos/doctrine/collections/zipball/b2c6ca857d6e0caed9ed199d2d8ff1d179a95d15",
+                "reference": "b2c6ca857d6e0caed9ed199d2d8ff1d179a95d15",
                 "shasum": ""
             },
             "require": {
@@ -308,7 +308,7 @@
                 "collections",
                 "iterator"
             ],
-            "time": "2015-04-14 22:21:58"
+            "time": "2015-05-13 13:33:57"
         },
         {
             "name": "doctrine/common",
@@ -1534,9 +1534,9 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes M. Schmitt",
+                    "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
+                    "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -1946,12 +1946,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "de0c68ed52357959993b777548662dd264dd0379"
+                "reference": "18460809c53003bf1fd1815613f5ec2a5828b38f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/de0c68ed52357959993b777548662dd264dd0379",
-                "reference": "de0c68ed52357959993b777548662dd264dd0379",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/18460809c53003bf1fd1815613f5ec2a5828b38f",
+                "reference": "18460809c53003bf1fd1815613f5ec2a5828b38f",
                 "shasum": ""
             },
             "require": {
@@ -1996,7 +1996,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2015-06-17 10:14:03"
+            "time": "2015-06-17 14:29:20"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2051,12 +2051,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-bundle.git",
-                "reference": "e7ffcba3e5392f5c3664618c65f1d91218c10373"
+                "reference": "e81d433ed78a9ba6600e21e62dc8afedf20db51b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/e7ffcba3e5392f5c3664618c65f1d91218c10373",
-                "reference": "e7ffcba3e5392f5c3664618c65f1d91218c10373",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/e81d433ed78a9ba6600e21e62dc8afedf20db51b",
+                "reference": "e81d433ed78a9ba6600e21e62dc8afedf20db51b",
                 "shasum": ""
             },
             "require": {
@@ -2094,7 +2094,7 @@
                 }
             ],
             "description": "A media bundle for the OpenOrchestra Project",
-            "time": "2015-06-17 09:33:12"
+            "time": "2015-06-17 14:57:46"
         },
         {
             "name": "open-orchestra/open-orchestra-model-bundle",
@@ -2367,9 +2367,9 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes M. Schmitt",
+                    "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
+                    "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
