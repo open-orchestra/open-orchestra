@@ -15,6 +15,7 @@ Url to see changes :
  - [Worflow function bundle](https://github.com/open-orchestra/open-orchestra-worflow-function-bundle/compare/v0.2.8...v0.2.9)
 
 ## Possible BC breaker
+ - In ContentRepositoryInterface and FieldAutoGenerableRepositoryInterface the method testUnicityInContext is rename by testUniquenessInContext
 
 ## Bug fixes
 
@@ -34,8 +35,7 @@ Url to see changes :
 ## Other changes
  - Method findLastPublishedVersionByContentIdAndLanguage of ContentRepositoryInterface is moved in ReadContentRepositoryInterface
  - [Remove all deprecated calls related to Symfony 2.7](https://trello.com/c/Lk2pITZd/1008-suite-au-passage-de-symfony-en-2-7-plusieurs-methodes-utilisees-dans-orchestra-sont-tagguees-deprecated)
- - In ContentRepositoryInterface and FieldAutoGenerableRepositoryInterface the method testUnicityInContext is rename by testUniquenessInContext
- 
+
 ## Deprecated method
 
 ## Suppressed method
