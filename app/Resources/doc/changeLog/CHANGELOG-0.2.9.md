@@ -17,12 +17,14 @@ Url to see changes :
 ## Possible BC breaker
 
 ## Bug fixes
+
  - [Content versions van be naviguated through and created](https://trello.com/c/SxiViJWk/1009-2-bug-etq-ubo-je-peux-changer-de-version)
  - [Current site can be switched to a site created in the Back Office, not only in the fixtures](https://trello.com/c/XIfOxq4G/1040-hot-issue-le-site-switcher-du-bo-ne-fonctionne-pas-pour-les-sites-dont-l-id-est-de-type-string-en-gros-des-qu-on-cree-un-site-da)
  - [Content type can be deleted](https://trello.com/c/Vgw5oPlC/1028-1-etq-ubo-je-peux-supprimer-un-content-type)
  - [The deleted contents are not visible in the list](https://trello.com/c/ioIi4KI3/1029-0-5-bo-lorsque-je-supprime-un-content-il-n-apparait-plus-dans-la-liste)
  - [The media folder are now visible if they are not linked to a website](https://trello.com/c/GnnBizGK/1042-0-5-bug-etq-ubo-le-site-d-appartenance-d-un-folder-est-optionnel-y-compris-dans-la-modale-pas-de-site-tous-les-sites)
  - [The media folder can be editable](https://trello.com/c/CgOw48np/1041-1-bug-etq-ubo-je-peux-modifier-un-folder-de-mediatheque-et-sauvegarder)
+ - In the content submission, the order in which the transformer are used has been changed (for the reverseTransformation)
 
 ## New features
  - [Wysiwyg blocks have a button to add image from Media Library to content](https://trello.com/c/vXStLA3i/638-3-etq-ubo-je-peux-inserer-un-media-de-la-mediatheque-dans-le-wysiwyg-tinymce-et-il-s-affiche-correctement-en-front)
