@@ -34,7 +34,8 @@ Url to see changes :
 ## Other changes
  - Method findLastPublishedVersionByContentIdAndLanguage of ContentRepositoryInterface is moved in ReadContentRepositoryInterface
  - [Remove all deprecated calls related to Symfony 2.7](https://trello.com/c/Lk2pITZd/1008-suite-au-passage-de-symfony-en-2-7-plusieurs-methodes-utilisees-dans-orchestra-sont-tagguees-deprecated)
-
+ - In ContentRepositoryInterface and FieldAutoGenerableRepositoryInterface the method testUnicityInContext is rename by testUniquenessInContext
+ 
 ## Deprecated method
 
 ## Suppressed method
