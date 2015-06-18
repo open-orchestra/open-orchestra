@@ -25,7 +25,7 @@ Url to see changes :
  - [The media folder can be editable](https://trello.com/c/CgOw48np/1041-1-bug-etq-ubo-je-peux-modifier-un-folder-de-mediatheque-et-sauvegarder)
 
 ## New features
-
+ - [Wysiwyg blocks have a button to add image from Media Library to content](https://trello.com/c/vXStLA3i/638-3-etq-ubo-je-peux-inserer-un-media-de-la-mediatheque-dans-le-wysiwyg-tinymce-et-il-s-affiche-correctement-en-front)
  - [A content can be linked to the current website](https://trello.com/c/A1QrgMlg/957-5-etq-ubo-le-contenu-au-sens-type-de-contenu-que-je-cree-doit-etre-lie-a-un-et-un-seul-site)
  - [Some properties and content attributes can be the always the same on all content](https://trello.com/c/A1QrgMlg/957-5-etq-ubo-le-contenu-au-sens-type-de-contenu-que-je-cree-doit-etre-lie-a-un-et-un-seul-site)
 
