@@ -15,8 +15,10 @@ Url to see changes :
  - [Worflow function bundle](https://github.com/open-orchestra/open-orchestra-worflow-function-bundle/compare/v0.2.9...v0.2.10)
 
 ## Possible BC breaker
-    - Backbone model site, block, Node, Template, VersionviewModel are rename by SiteModel, BlockModel, NodeMode, TemplateModel and VersionModel
-    - Backbone Collection TableviewCollection is deleted, Backbone model NodeCollectionElement, TableviewElement, VersionviewElement are deleted
+ - Backbone model site, block, Node, Template, VersionviewModel are rename by
+ SiteModel, BlockModel, NodeMode, TemplateModel and VersionModel
+ - Backbone Collection TableviewCollection is deleted,
+ Backbone model NodeCollectionElement, TableviewElement, VersionviewElement are deleted
 
 ## Bug fixes
 
