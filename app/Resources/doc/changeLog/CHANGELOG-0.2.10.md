@@ -19,6 +19,7 @@ Url to see changes :
  SiteModel, BlockModel, NodeMode, TemplateModel and VersionModel
  - Backbone Collection TableviewCollection is deleted,
  Backbone model NodeCollectionElement, TableviewElement, VersionviewElement are deleted
+- The mongo group_document collection have been renamed into users_group
 
 ## Bug fixes
 
