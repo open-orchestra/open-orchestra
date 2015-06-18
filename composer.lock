@@ -1896,23 +1896,23 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-base-bundle.git",
-                "reference": "7195ef329ada3e52ff5dcb58b2b6e6fccfe0ecce"
+                "reference": "68746636d797584e4b8f0d93a16d53fc9f32b00a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-bundle/zipball/7195ef329ada3e52ff5dcb58b2b6e6fccfe0ecce",
-                "reference": "7195ef329ada3e52ff5dcb58b2b6e6fccfe0ecce",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-bundle/zipball/68746636d797584e4b8f0d93a16d53fc9f32b00a",
+                "reference": "68746636d797584e4b8f0d93a16d53fc9f32b00a",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.4",
-                "sensio/distribution-bundle": "3.0.30",
+                "sensio/distribution-bundle": "4.0.0",
                 "sensio/framework-extra-bundle": "3.0.9",
                 "sensio/generator-bundle": "2.5.3",
                 "snc/redis-bundle": "1.1.8",
                 "symfony/assetic-bundle": "2.6.1",
                 "symfony/monolog-bundle": "2.7.1",
-                "symfony/symfony": "2.7.0",
+                "symfony/symfony": "2.7.1",
                 "twig/extensions": "1.2.0"
             },
             "require-dev": {
@@ -1937,7 +1937,7 @@
                 }
             ],
             "description": "The OpenOrchestra base bundle",
-            "time": "2015-06-12 15:39:10"
+            "time": "2015-06-18 09:02:51"
         },
         {
             "name": "open-orchestra/open-orchestra-cms-bundle",
@@ -1946,12 +1946,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "230f36928b818af6fe835dbf39a4eab920f22b4c"
+                "reference": "5d8b3cbec7825434c0db42f6435676a7081b994a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/230f36928b818af6fe835dbf39a4eab920f22b4c",
-                "reference": "230f36928b818af6fe835dbf39a4eab920f22b4c",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/5d8b3cbec7825434c0db42f6435676a7081b994a",
+                "reference": "5d8b3cbec7825434c0db42f6435676a7081b994a",
                 "shasum": ""
             },
             "require": {
@@ -1996,7 +1996,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2015-06-17 15:48:12"
+            "time": "2015-06-18 08:43:19"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2430,21 +2430,21 @@
         },
         {
             "name": "sensio/distribution-bundle",
-            "version": "v3.0.30",
+            "version": "v4.0.0",
             "target-dir": "Sensio/Bundle/DistributionBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioDistributionBundle.git",
-                "reference": "f1758b30096202aeede61f79a1dffd69da091517"
+                "reference": "97929c0a642977acead3d911b2c5c1a944739d40"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioDistributionBundle/zipball/f1758b30096202aeede61f79a1dffd69da091517",
-                "reference": "f1758b30096202aeede61f79a1dffd69da091517",
+                "url": "https://api.github.com/repos/sensiolabs/SensioDistributionBundle/zipball/97929c0a642977acead3d911b2c5c1a944739d40",
+                "reference": "97929c0a642977acead3d911b2c5c1a944739d40",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3",
+                "php": ">=5.3.9",
                 "sensiolabs/security-checker": "~2.0",
                 "symfony/class-loader": "~2.2",
                 "symfony/framework-bundle": "~2.3",
@@ -2463,7 +2463,7 @@
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0.x-dev"
+                    "dev-master": "4.0.x-dev"
                 }
             },
             "autoload": {
@@ -2486,7 +2486,7 @@
                 "configuration",
                 "distribution"
             ],
-            "time": "2015-06-05 22:32:22"
+            "time": "2015-06-11 20:55:01"
         },
         {
             "name": "sensio/framework-extra-bundle",
@@ -3134,16 +3134,16 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v2.7.0",
+            "version": "v2.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "9975b1eca3de4db792a2c3e4e16f676a4aadcd46"
+                "reference": "932b6e7499c670f4db6d0b871477a4a3ca161e74"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/9975b1eca3de4db792a2c3e4e16f676a4aadcd46",
-                "reference": "9975b1eca3de4db792a2c3e4e16f676a4aadcd46",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/932b6e7499c670f4db6d0b871477a4a3ca161e74",
+                "reference": "932b6e7499c670f4db6d0b871477a4a3ca161e74",
                 "shasum": ""
             },
             "require": {
@@ -3252,7 +3252,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2015-05-30 16:52:28"
+            "time": "2015-06-11 21:15:28"
         },
         {
             "name": "twig/extensions",
