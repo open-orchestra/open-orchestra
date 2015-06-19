@@ -15,6 +15,7 @@ Url to see changes :
  - [Worflow function bundle](https://github.com/open-orchestra/open-orchestra-worflow-function-bundle/compare/v0.2.9...v0.2.10)
 
 ## Possible BC breaker
+
  - Backbone model `site`, `block`, `Node`, `Template`, `VersionviewModel` are rename by
  `SiteModel`, `BlockModel`, `NodeMode`, `TemplateModel` and `VersionModel`
  - Backbone Collection `TableviewCollection` is deleted,
@@ -24,11 +25,15 @@ Url to see changes :
 ## Bug fixes
 
  - Do not force a string for the linearized attributes
+ - In tinyMCE media modal, adding original format image work  
 
 ## New features
 
  - Add the name as key in the `ContentFacade` for the `ContentAttributeFacade` 
+
 ## Other changes
+
+- Database fixture contains more credible content
 
 ## Deprecated method
 
