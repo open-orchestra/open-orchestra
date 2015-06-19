@@ -17,6 +17,7 @@ Url to see changes :
 ## Possible BC breaker
 
 ## Bug fixes
+ - [The Navigation menu is refreshed and operationnal when a media folder is created within a modal](https://trello.com/c/bGFbI3z8/1020-3-etq-ubo-lorsque-je-cree-un-folder-dans-la-modal-de-mediatheque-celui-ci-apparait-dans-le-menu-de-gauche)
 
 ## New features
 
