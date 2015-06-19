@@ -1852,12 +1852,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-base-api-bundle.git",
-                "reference": "8127b83cfd61b179776599711a10f7317ece5e6b"
+                "reference": "fad52c4e2aabf90107d78c04de9d38ef501b4b2e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-api-bundle/zipball/8127b83cfd61b179776599711a10f7317ece5e6b",
-                "reference": "8127b83cfd61b179776599711a10f7317ece5e6b",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-api-bundle/zipball/fad52c4e2aabf90107d78c04de9d38ef501b4b2e",
+                "reference": "fad52c4e2aabf90107d78c04de9d38ef501b4b2e",
                 "shasum": ""
             },
             "require": {
@@ -1867,8 +1867,7 @@
             "require-dev": {
                 "codeclimate/php-test-reporter": "dev-master",
                 "phake/phake": "2.1.0",
-                "phpunit/phpunit": "4.7.2",
-                "scrutinizer/ocular": "1.1.1"
+                "phpunit/phpunit": "4.7.2"
             },
             "type": "library",
             "autoload": {
@@ -1888,7 +1887,7 @@
                 }
             ],
             "description": "This bundle provide the base bricks for the OpenOrchestra Api",
-            "time": "2015-06-18 15:39:35"
+            "time": "2015-06-19 09:06:19"
         },
         {
             "name": "open-orchestra/open-orchestra-base-bundle",
@@ -1897,12 +1896,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-base-bundle.git",
-                "reference": "140c7261d844957806d5f900c1d9c5010fb0c204"
+                "reference": "c759560172269d1ef3421efdf67327e542f6f8ad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-bundle/zipball/140c7261d844957806d5f900c1d9c5010fb0c204",
-                "reference": "140c7261d844957806d5f900c1d9c5010fb0c204",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-bundle/zipball/c759560172269d1ef3421efdf67327e542f6f8ad",
+                "reference": "c759560172269d1ef3421efdf67327e542f6f8ad",
                 "shasum": ""
             },
             "require": {
@@ -1919,7 +1918,8 @@
             "require-dev": {
                 "codeclimate/php-test-reporter": "dev-master",
                 "phake/phake": "2.1.0",
-                "phpunit/phpunit": "4.7.2"
+                "phpunit/phpunit": "4.7.2",
+                "psr/log": "1.0.0"
             },
             "type": "library",
             "autoload": {
@@ -1938,7 +1938,7 @@
                 }
             ],
             "description": "The OpenOrchestra base bundle",
-            "time": "2015-06-18 16:01:55"
+            "time": "2015-06-19 09:00:25"
         },
         {
             "name": "open-orchestra/open-orchestra-cms-bundle",
@@ -2104,12 +2104,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
-                "reference": "2e9ea2d250e52d9ae85244fc0ac9fb99420a150a"
+                "reference": "20f2b064bdbf68a157f0b9a4fae7ed207c08c4ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/2e9ea2d250e52d9ae85244fc0ac9fb99420a150a",
-                "reference": "2e9ea2d250e52d9ae85244fc0ac9fb99420a150a",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/20f2b064bdbf68a157f0b9a4fae7ed207c08c4ab",
+                "reference": "20f2b064bdbf68a157f0b9a4fae7ed207c08c4ab",
                 "shasum": ""
             },
             "require": {
@@ -2145,7 +2145,7 @@
                 }
             ],
             "description": "An implemantation of the model-interface for OpenOrchestra on mongo",
-            "time": "2015-06-17 08:50:08"
+            "time": "2015-06-19 08:56:37"
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
