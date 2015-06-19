@@ -22,4 +22,7 @@ before_script:
   - until nc -z localhost 27017; do echo Waiting for MongoDB; sleep 1; done
   - php app/console doc:mo:f:l -e=test
 
-script: phpunit -c app/
+script: phpunit -c app/ --coverage-clover build/logs/clover.xml
+
+after_script:
+  - CODECLIMATE_REPO_TOKEN=80da7fe449f831ae2940a4c6918f325bbcba1fd0888220b9ae0e3649284989e3 ./bin/test-reporter
