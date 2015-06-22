@@ -25,6 +25,8 @@ Url to see changes :
 
 ## Deprecated method
 
+ - In the media bundle, all the displayBlockStrategies have been moved in the Media Folder
+
 ## Suppressed method
 
 ModelBundle/MongoTrait/Statusable.php is deleted 
