@@ -27,4 +27,6 @@ Url to see changes :
 
 ## Suppressed method
 
+ModelBundle/MongoTrait/Statusable.php is deleted 
+
 ## Configuration changes
