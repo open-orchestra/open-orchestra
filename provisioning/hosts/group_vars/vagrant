@@ -53,3 +53,5 @@ backend_conf:
   - { name: openorchestratest, port: 80, host: openorchestra.test }
 
 selenium_current_directory: /home/vagrant
+
+mail_to: cron@open-orchestra.com

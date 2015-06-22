@@ -53,3 +53,5 @@ backend_conf:
   - { name: openorchestratest, port: 8000, host: openorchestra.test }
 
 selenium_current_directory: /home/provision
+
+mail_to: cron@open-orchestra.com
