@@ -18,6 +18,7 @@
             <directory>../src/*/*Bundle/Tests</directory>
             <directory>../src/*/Bundle/*Bundle/Tests</directory>
             <directory>../vendor/open-orchestra/*/*/*Bundle/Tests</directory>
+            <directory>../vendor/open-orchestra/*/*/*Interface/Tests</directory>
             <exclude>../vendor/open-orchestra/open-orchestra-base-api-bundle/OpenOrchestra/BaseApiBundle/Tests/Functional</exclude>
             <exclude>../vendor/open-orchestra/open-orchestra-cms-bundle/OpenOrchestra/ApiBundle/Tests/Functional</exclude>
             <exclude>../vendor/open-orchestra/open-orchestra-cms-bundle/OpenOrchestra/BackofficeBundle/Tests/Functional</exclude>
