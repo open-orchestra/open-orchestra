@@ -16,8 +16,12 @@ Url to see changes :
 
 ## Possible BC breaker
 
+ - [The parameter `open_orchestra_base.languages_availables` has been renamed 
+ to `open_orchestra_base.back_office_languages`](https://trello.com/c/yw7sJM8X/1047-0-5-refacto-basebundle-renommer-le-parametre-open-orchestra-base-languages-availables-en-open-orchestra-base-back-office-languag)
+
 ## Bug fixes
  - [The Navigation menu is refreshed and operationnal when a media folder is created within a modal](https://trello.com/c/bGFbI3z8/1020-3-etq-ubo-lorsque-je-cree-un-folder-dans-la-modal-de-mediatheque-celui-ci-apparait-dans-le-menu-de-gauche)
+ - Multiple TinyMce can be displayed on a single page
 
 ## New features
 
@@ -29,6 +33,6 @@ Url to see changes :
 
 ## Suppressed method
 
-ModelBundle/MongoTrait/Statusable.php is deleted 
+ - ModelBundle/MongoTrait/Statusable.php has been deleted
 
 ## Configuration changes
