@@ -26,4 +26,6 @@ Url to see changes :
 
 ## Suppressed method
 
+ - All the display block classes from the MediaBundle have been removed
+
 ## Configuration changes
