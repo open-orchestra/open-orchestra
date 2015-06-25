@@ -15,6 +15,7 @@ Url to see changes :
  - [Worflow function bundle](https://github.com/open-orchestra/open-orchestra-worflow-function-bundle/compare/v0.2.11...v0.2.12)
 
 ## Possible BC breaker
+ - The namespace of trait `ListStatus` is now `OpenOrchestra\ApiBundle\Controller\ControllerTrait`
 
 ## Bug fixes
 
