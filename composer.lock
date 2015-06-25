@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "213167f1b26ce7cf69af433c78c2fce3",
+    "hash": "9eafce2aee81ab60e7d0217b4d78e4ac",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -1949,12 +1949,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "82b84d7ed4e833efcfd55b648c309325008b70d6"
+                "reference": "3cf52b50322ba8b042442de1d664aadd49a25871"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/82b84d7ed4e833efcfd55b648c309325008b70d6",
-                "reference": "82b84d7ed4e833efcfd55b648c309325008b70d6",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/3cf52b50322ba8b042442de1d664aadd49a25871",
+                "reference": "3cf52b50322ba8b042442de1d664aadd49a25871",
                 "shasum": ""
             },
             "require": {
@@ -2000,7 +2000,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2015-06-24 15:45:16"
+            "time": "2015-06-25 09:38:09"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2109,12 +2109,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
-                "reference": "2b212531fd44a5835a50567b7ec5d885840e004c"
+                "reference": "9f614923f2e7f0721bad982e2ea18abfee4e81d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/2b212531fd44a5835a50567b7ec5d885840e004c",
-                "reference": "2b212531fd44a5835a50567b7ec5d885840e004c",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/9f614923f2e7f0721bad982e2ea18abfee4e81d3",
+                "reference": "9f614923f2e7f0721bad982e2ea18abfee4e81d3",
                 "shasum": ""
             },
             "require": {
@@ -2151,7 +2151,7 @@
                 }
             ],
             "description": "An implemantation of the model-interface for OpenOrchestra on mongo",
-            "time": "2015-06-25 08:58:24"
+            "time": "2015-06-25 09:37:09"
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
