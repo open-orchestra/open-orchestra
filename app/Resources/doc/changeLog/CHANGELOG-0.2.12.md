@@ -26,15 +26,44 @@ Url to see changes :
 
 ## Deprecated method
 
- - Most part of ``ContentTypeRepository``, ``ContentRepository``, ``Site Repository`` and ``PaginateAndSearchFilterTrait`` methods are deprecated to use new methods with ``FinderConfiguration``
- - 
- - 
+ - In ``ContentRepositoryInterface`` :
+   - ``findByContentTypeInLastVersionForPaginateAndSearchAndSiteId`` replace by ``findByContentTypeInLastVersionForPaginateAndSearchAndSiteId``
+   - ``countByDeletedInLastVersionWithSearchFilter`` replace by ``countNotDeletedInLastVersionWithSearchFilter``
+   - ``countByContentTypeInLastVersionWithSearchFilter```replace by ``countByContentTypeInLastVersionWithFilter``
+ - In ``ContentTypeRepositoryInterface`` :
+   - ``findAllByDeletedInLastVersionForPaginateAndSearch`` replace by ``findAllNotDeletedInLastVersionForPaginate``
+   - ``countByDeletedInLastVersionWithSearchFilter`` replace by ``countDeletedInLastVersionWithSearchFilter``
+   - ``findAllByDeletedInLastVersion`` replace by ``findAllNotDeletedInLastVersion``
+ - In ``PaginateRepositoryInterface`` :
+   - ``findForPaginateAndSearch`` replace by ``findForPaginate``
+   - ``countWithSearchFilter`` replace by ``countWithFilter``
+ - In ``SiteRepositoryInterfaceInterface`` :
+   - ``findByDeletedForPaginateAndSearch`` replace by ``findByDeletedForPaginate``
+   - ``countByDeletedWithSearchFilter`` replace by ``countWithSearchFilterByDeleted``
+ - In ``NodeRepositoryInterface`` :
+   - ``findOneByNodeIdAndLanguageAndSiteIdAndLastVersion`` replace by ``findOneByNodeIdAndLanguageAndSiteIdInLastVersion``
+   - ``findLastVersionByDeletedAndSiteId`` replace by ``findDeletedInLastVersionBySiteId``
+   - ``findLastVersionByDeletedAndSiteId``  replace by ``findDeletedInLastVersionBySiteId``
+   - ``findChildsByPathAndSiteIdAndLanguage`` replace by ``findChildrenByPathAndSiteIdAndLanguage``
+   - ``findByParentIdAndRoutePatternAndNotNodeIdAndSiteId`` replace by ``findByParentIdAndRoutePatternAndNodeIdAndSiteId``
+   - ``findOneByNodeIdAndLanguageAndVersionAndSiteId`` replace by ``findOneByNodeIdAndLanguageAndSiteIdAndVersion``
+ - In ``ReadNodeRepositoryInterface`` :
+   - ``findOneByNodeIdAndLanguageWithPublishedAndLastVersionAndSiteId`` replace by ``findOnePublishedByNodeIdAndLanguageAndSiteIdInLastVersion``
+
 ## Suppressed method
 
  - All the display block classes from the MediaBundle have been removed
- - ``findOneByContentTypeIdAndVersion`` and ``findOneByContentTypeIdAndVersionfrom`` from  ``ContentTypeRepositoryInterface``
- - ``findByContentTypeInLastVersion`` from ``ContentRepositoryInterface``
- - ``findOneByParendIdAndRoutePatternAndSiteId`` from ``NodeRepositoryInterface``
+ -  ``ModelInterface/Form/Type/AbstractOrchestraRoleType`` has been removed
+ -  ``ModelInterface/MongoTrait/Versionnable`` has been removed. Replace by ``ModelInterface/MongoTrait/Versionable``
+ - In ``AreaInterface`` :
+   - ``setClasses`` replace by ``setHtmlClass``
+   - ``getClasses`` replace by ``getHtmlClass``
+ - In ``ReadAreaInterface`` : ``getClasses`` replace by ``getHtmlClass``
+ - In ``ContentTypeRepositoryInterface`` :
+   - ``findOneByContentTypeIdAndVersion``
+   - ``findOneByContentTypeIdAndVersionfrom``
+ - In ``ContentRepositoryInterface`` : ``findByContentTypeInLastVersion``
+ - In ``NodeRepositoryInterface`` : ``findOneByParendIdAndRoutePatternAndSiteId``
 
 ## Configuration changes
  - In order to get the new routing conf, Back Office configuration requires to be updated. In app/config/routing.yml of your back application, add the following lines :
