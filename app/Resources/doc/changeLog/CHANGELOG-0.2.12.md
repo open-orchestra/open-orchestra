@@ -25,8 +25,14 @@ Url to see changes :
 
 ## Deprecated method
 
+ - Most part of ``ContentTypeRepository``, ``ContentRepository``, ``Site Repository`` and ``PaginateAndSearchFilterTrait`` methods are deprecated to use new methods with ``FinderConfiguration``
+ - 
+ - 
 ## Suppressed method
 
  - All the display block classes from the MediaBundle have been removed
+ - ``findOneByContentTypeIdAndVersion`` and ``findOneByContentTypeIdAndVersionfrom`` from  ``ContentTypeRepositoryInterface``
+ - ``findByContentTypeInLastVersion`` from ``ContentRepositoryInterface``
+ - ``findOneByParendIdAndRoutePatternAndSiteId`` from ``NodeRepositoryInterface``
 
 ## Configuration changes
