@@ -55,7 +55,7 @@ fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
 
 root:
-    pattern: /
+    path: /
     methods: ['GET']
     defaults:
         _controller: FrameworkBundle:Redirect:urlRedirect
