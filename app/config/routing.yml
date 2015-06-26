@@ -61,3 +61,6 @@ root:
         _controller: FrameworkBundle:Redirect:urlRedirect
         path: /admin
         permanent: true
+
+open_orchestra_base:
+    resource: "@OpenOrchestraBaseBundle/Resources/config/routing.yml"
