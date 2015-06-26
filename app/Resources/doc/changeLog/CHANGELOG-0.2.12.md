@@ -18,6 +18,7 @@ Url to see changes :
  - The namespace of trait `ListStatus` is now `OpenOrchestra\ApiBundle\Controller\ControllerTrait`
 
 ## Bug fixes
+ - [Node preview has been fixed, see configuration changes for more info](https://trello.com/c/RtRaYALE/1090-2-etq-ubo-je-peux-voir-les-previsu-fr-en-fr)
 
 ## New features
 
@@ -36,3 +37,15 @@ Url to see changes :
  - ``findOneByParendIdAndRoutePatternAndSiteId`` from ``NodeRepositoryInterface``
 
 ## Configuration changes
+ - In order to get the new routing conf, Back Office configuration requires to be updated. In app/config/routing.yml of your back application, add the following lines :
+
+    open_orchestra_base:
+        resource: "@OpenOrchestraBaseBundle/Resources/config/routing.yml"
+
+ - The front configuration must also be updated. In app/config/routing.yml of your front application, add the following lines :
+
+    open_orchestra_base:
+        resource: "@OpenOrchestraBaseBundle/Resources/config/routing.yml"
+
+    open_orchestra_front_preview:
+        resource: "@OpenOrchestraFrontBundle/Resources/config/preview_routing.yml"
