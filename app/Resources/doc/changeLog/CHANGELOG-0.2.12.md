@@ -78,3 +78,6 @@ Url to see changes :
 
     open_orchestra_front_preview:
         resource: "@OpenOrchestraFrontBundle/Resources/config/preview_routing.yml"
+  - We have create a `MediaModeBundle` to store the media document, you should activate the bundle : 
+
+    new OpenOrchestra\MediaModelBundle\OpenOrchestraMediaModelBundle(),
