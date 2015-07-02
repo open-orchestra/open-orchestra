@@ -1853,12 +1853,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-base-api-bundle.git",
-                "reference": "bef3c0e0d50b06817b0fc86f87ad63fd4e7778fb"
+                "reference": "607be282c6fc10581bf1cc35f6ba53262b5b501d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-api-bundle/zipball/bef3c0e0d50b06817b0fc86f87ad63fd4e7778fb",
-                "reference": "bef3c0e0d50b06817b0fc86f87ad63fd4e7778fb",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-api-bundle/zipball/607be282c6fc10581bf1cc35f6ba53262b5b501d",
+                "reference": "607be282c6fc10581bf1cc35f6ba53262b5b501d",
                 "shasum": ""
             },
             "require": {
@@ -1874,6 +1874,7 @@
             "type": "library",
             "autoload": {
                 "psr-0": {
+                    "OpenOrchestra\\BaseApiModelBundle": "",
                     "OpenOrchestra\\BaseApiBundle": "",
                     "OpenOrchestra\\BaseApi": ""
                 }
@@ -1889,7 +1890,7 @@
                 }
             ],
             "description": "This bundle provide the base bricks for the OpenOrchestra Api",
-            "time": "2015-06-30 14:39:48"
+            "time": "2015-07-02 14:11:59"
         },
         {
             "name": "open-orchestra/open-orchestra-base-bundle",
@@ -1949,12 +1950,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "a745065ae836a032f0e6f978affc814fa450c4c7"
+                "reference": "700785ffd1863f934d9db99b967f55dfac7972c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/a745065ae836a032f0e6f978affc814fa450c4c7",
-                "reference": "a745065ae836a032f0e6f978affc814fa450c4c7",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/700785ffd1863f934d9db99b967f55dfac7972c9",
+                "reference": "700785ffd1863f934d9db99b967f55dfac7972c9",
                 "shasum": ""
             },
             "require": {
@@ -1998,7 +1999,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2015-07-01 08:17:55"
+            "time": "2015-07-02 14:11:50"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2054,12 +2055,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-bundle.git",
-                "reference": "dc70e424dabccb37ae7a0a2291ea98d5c62871e6"
+                "reference": "9b0f6b3b1397412f0a590a8483275b8039f8902f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/dc70e424dabccb37ae7a0a2291ea98d5c62871e6",
-                "reference": "dc70e424dabccb37ae7a0a2291ea98d5c62871e6",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/9b0f6b3b1397412f0a590a8483275b8039f8902f",
+                "reference": "9b0f6b3b1397412f0a590a8483275b8039f8902f",
                 "shasum": ""
             },
             "require": {
@@ -2083,6 +2084,7 @@
             "type": "library",
             "autoload": {
                 "psr-0": {
+                    "OpenOrchestra\\MediaModelBundle": "",
                     "OpenOrchestra\\MediaBundle": "",
                     "OpenOrchestra\\Media": ""
                 }
@@ -2098,7 +2100,7 @@
                 }
             ],
             "description": "A media bundle for the OpenOrchestra Project",
-            "time": "2015-06-30 14:39:42"
+            "time": "2015-07-02 14:10:02"
         },
         {
             "name": "open-orchestra/open-orchestra-model-bundle",
@@ -2107,12 +2109,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
-                "reference": "2659419de45de31c718e0805ed681e956a26c49b"
+                "reference": "0008e6268480c04bc3c7240d2099a73e811d16a1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/2659419de45de31c718e0805ed681e956a26c49b",
-                "reference": "2659419de45de31c718e0805ed681e956a26c49b",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/0008e6268480c04bc3c7240d2099a73e811d16a1",
+                "reference": "0008e6268480c04bc3c7240d2099a73e811d16a1",
                 "shasum": ""
             },
             "require": {
@@ -2149,7 +2151,7 @@
                 }
             ],
             "description": "An implemantation of the model-interface for OpenOrchestra on mongo",
-            "time": "2015-07-01 08:40:12"
+            "time": "2015-07-02 14:02:13"
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
@@ -2158,12 +2160,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-interface.git",
-                "reference": "49ebc4b123fcecfc66512b7b246915fa8a5ad818"
+                "reference": "ab4000da4381f66cfc16eeb9d1b0b0c7af5d4c64"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/49ebc4b123fcecfc66512b7b246915fa8a5ad818",
-                "reference": "49ebc4b123fcecfc66512b7b246915fa8a5ad818",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/ab4000da4381f66cfc16eeb9d1b0b0c7af5d4c64",
+                "reference": "ab4000da4381f66cfc16eeb9d1b0b0c7af5d4c64",
                 "shasum": ""
             },
             "require": {
@@ -2195,7 +2197,7 @@
                 }
             ],
             "description": "Describe all entity and repository to implement for the whole OpenOrchestra project",
-            "time": "2015-06-30 11:36:12"
+            "time": "2015-07-02 09:16:01"
         },
         {
             "name": "open-orchestra/open-orchestra-user-bundle",
@@ -2204,12 +2206,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-user-bundle.git",
-                "reference": "0ded0f433b4558d0bffb8cd6422470a9e9a355a1"
+                "reference": "3070fa308ea6e50dfeb03e03855fdddd9c69059e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-user-bundle/zipball/0ded0f433b4558d0bffb8cd6422470a9e9a355a1",
-                "reference": "0ded0f433b4558d0bffb8cd6422470a9e9a355a1",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-user-bundle/zipball/3070fa308ea6e50dfeb03e03855fdddd9c69059e",
+                "reference": "3070fa308ea6e50dfeb03e03855fdddd9c69059e",
                 "shasum": ""
             },
             "require": {
@@ -2243,7 +2245,7 @@
                 }
             ],
             "description": "An override of FosUserBundle to provide authentication on OpenOrchestra",
-            "time": "2015-06-30 14:39:33"
+            "time": "2015-07-01 16:17:18"
         },
         {
             "name": "open-orchestra/open-orchestra-workflow-function-bundle",
@@ -3322,12 +3324,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "12bf70d9addf613260056f9840aee23b151073f7"
+                "reference": "ae448f3ae2839f6e52c5b13887756260f3dc90b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/12bf70d9addf613260056f9840aee23b151073f7",
-                "reference": "12bf70d9addf613260056f9840aee23b151073f7",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/ae448f3ae2839f6e52c5b13887756260f3dc90b9",
+                "reference": "ae448f3ae2839f6e52c5b13887756260f3dc90b9",
                 "shasum": ""
             },
             "require": {
@@ -3371,7 +3373,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2015-06-24 16:24:09"
+            "time": "2015-07-01 14:40:16"
         }
     ],
     "packages-dev": [
