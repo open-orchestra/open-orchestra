@@ -25,7 +25,7 @@ Url to see changes :
 ## Other changes
 
 ## Deprecated method
-
+ - The trait TranslatedValueFilter is deprecated will be removed in 0.3.0
  - In ``ContentRepositoryInterface`` :
    - ``findByContentTypeInLastVersionForPaginateAndSearchAndSiteId`` replace by ``findByContentTypeInLastVersionForPaginateAndSearchAndSiteId``
    - ``countByDeletedInLastVersionWithSearchFilter`` replace by ``countNotDeletedInLastVersionWithSearchFilter``
