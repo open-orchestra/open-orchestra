@@ -1418,12 +1418,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/serializer.git",
-                "reference": "a29d9a204efc3ca3f39a9d182a83fd34462fef3f"
+                "reference": "363186a46c1187df048158945ea429cc5247ad77"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/serializer/zipball/a29d9a204efc3ca3f39a9d182a83fd34462fef3f",
-                "reference": "a29d9a204efc3ca3f39a9d182a83fd34462fef3f",
+                "url": "https://api.github.com/repos/schmittjoh/serializer/zipball/363186a46c1187df048158945ea429cc5247ad77",
+                "reference": "363186a46c1187df048158945ea429cc5247ad77",
                 "shasum": ""
             },
             "require": {
@@ -1480,7 +1480,7 @@
                 "serialization",
                 "xml"
             ],
-            "time": "2015-06-16 11:50:24"
+            "time": "2015-05-01 09:53:28"
         },
         {
             "name": "jms/serializer-bundle",
@@ -3325,12 +3325,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "641090378dfff2913929306fbbf227269ba318c3"
+                "reference": "82636dc93d9f910f9abb7b3c7afe115b4cd0217c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/641090378dfff2913929306fbbf227269ba318c3",
-                "reference": "641090378dfff2913929306fbbf227269ba318c3",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/82636dc93d9f910f9abb7b3c7afe115b4cd0217c",
+                "reference": "82636dc93d9f910f9abb7b3c7afe115b4cd0217c",
                 "shasum": ""
             },
             "require": {
@@ -3374,7 +3374,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2015-07-03 09:46:19"
+            "time": "2015-07-03 10:11:52"
         }
     ],
     "packages-dev": [
