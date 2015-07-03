@@ -2109,12 +2109,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
-                "reference": "473615d097fc8d39a5c2315c312afde0afe916e4"
+                "reference": "a948936cb6f3d21cba5387f8184b6d11604ec223"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/473615d097fc8d39a5c2315c312afde0afe916e4",
-                "reference": "473615d097fc8d39a5c2315c312afde0afe916e4",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/a948936cb6f3d21cba5387f8184b6d11604ec223",
+                "reference": "a948936cb6f3d21cba5387f8184b6d11604ec223",
                 "shasum": ""
             },
             "require": {
@@ -2151,7 +2151,7 @@
                 }
             ],
             "description": "An implemantation of the model-interface for OpenOrchestra on mongo",
-            "time": "2015-07-03 08:06:06"
+            "time": "2015-07-03 09:44:51"
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
@@ -3325,12 +3325,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "793ea7e37d48c3ad9f1e7f3af663fb2544d0c36f"
+                "reference": "641090378dfff2913929306fbbf227269ba318c3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/793ea7e37d48c3ad9f1e7f3af663fb2544d0c36f",
-                "reference": "793ea7e37d48c3ad9f1e7f3af663fb2544d0c36f",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/641090378dfff2913929306fbbf227269ba318c3",
+                "reference": "641090378dfff2913929306fbbf227269ba318c3",
                 "shasum": ""
             },
             "require": {
@@ -3374,7 +3374,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2015-07-03 09:41:40"
+            "time": "2015-07-03 09:46:19"
         }
     ],
     "packages-dev": [
