@@ -55,3 +55,9 @@ backend_conf:
 selenium_current_directory: /home/provision
 
 mail_to: cron@open-orchestra.com
+
+sudoers:
+  - provision
+  - open_orchestra_front_inte
+  - open_orchestra_backoffice_inte
+  - open_orchestra_com_front_inte

@@ -1,0 +1,8 @@
+namespace :symfony do
+    desc 'Restart Varnish'
+    task :varnish do
+        on roles(:app) do
+            execute "sudo service varnish restart"
+        end
+    end
+end
