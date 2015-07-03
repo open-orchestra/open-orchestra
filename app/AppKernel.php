@@ -39,6 +39,7 @@ class AppKernel extends Kernel
             new OpenOrchestra\ModelBundle\OpenOrchestraModelBundle(),
             new OpenOrchestra\MediaBundle\OpenOrchestraMediaBundle(),
             new OpenOrchestra\MediaModelBundle\OpenOrchestraMediaModelBundle(),
+            new OpenOrchestra\WorkflowFunctionModelBundle\OpenOrchestraWorkflowFunctionModelBundle(),
             new OpenOrchestra\WorkflowFunctionBundle\OpenOrchestraWorkflowFunctionBundle(),
 
             new OpenOrchestra\ApiBundle\OpenOrchestraApiBundle(),
