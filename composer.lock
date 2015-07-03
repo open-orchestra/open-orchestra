@@ -246,16 +246,16 @@
         },
         {
             "name": "doctrine/collections",
-            "version": "dev-master",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/collections.git",
-                "reference": "b2c6ca857d6e0caed9ed199d2d8ff1d179a95d15"
+                "reference": "6c1e4eef75f310ea1b3e30945e9f06e652128b8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/collections/zipball/b2c6ca857d6e0caed9ed199d2d8ff1d179a95d15",
-                "reference": "b2c6ca857d6e0caed9ed199d2d8ff1d179a95d15",
+                "url": "https://api.github.com/repos/doctrine/collections/zipball/6c1e4eef75f310ea1b3e30945e9f06e652128b8a",
+                "reference": "6c1e4eef75f310ea1b3e30945e9f06e652128b8a",
                 "shasum": ""
             },
             "require": {
@@ -308,7 +308,7 @@
                 "collections",
                 "iterator"
             ],
-            "time": "2015-05-13 13:33:57"
+            "time": "2015-04-14 22:21:58"
         },
         {
             "name": "doctrine/common",
@@ -621,12 +621,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/mongodb.git",
-                "reference": "a7ee4e6c679c0a95db4a0f33c7ce1fa6b654ecff"
+                "reference": "350447749274cdf4fb6500e12985d582cb79d86a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/mongodb/zipball/a7ee4e6c679c0a95db4a0f33c7ce1fa6b654ecff",
-                "reference": "a7ee4e6c679c0a95db4a0f33c7ce1fa6b654ecff",
+                "url": "https://api.github.com/repos/doctrine/mongodb/zipball/350447749274cdf4fb6500e12985d582cb79d86a",
+                "reference": "350447749274cdf4fb6500e12985d582cb79d86a",
                 "shasum": ""
             },
             "require": {
@@ -688,7 +688,7 @@
                 "mongodb",
                 "persistence"
             ],
-            "time": "2015-06-05 22:53:53"
+            "time": "2015-07-03 05:54:11"
         },
         {
             "name": "doctrine/mongodb-odm",
@@ -2109,12 +2109,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
-                "reference": "0008e6268480c04bc3c7240d2099a73e811d16a1"
+                "reference": "a948936cb6f3d21cba5387f8184b6d11604ec223"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/0008e6268480c04bc3c7240d2099a73e811d16a1",
-                "reference": "0008e6268480c04bc3c7240d2099a73e811d16a1",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/a948936cb6f3d21cba5387f8184b6d11604ec223",
+                "reference": "a948936cb6f3d21cba5387f8184b6d11604ec223",
                 "shasum": ""
             },
             "require": {
@@ -2151,7 +2151,7 @@
                 }
             ],
             "description": "An implemantation of the model-interface for OpenOrchestra on mongo",
-            "time": "2015-07-02 14:02:13"
+            "time": "2015-07-03 09:44:51"
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
@@ -2254,12 +2254,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-workflow-function-bundle.git",
-                "reference": "b27bcb25d148219a3ca6ce44fcf1649587c7550b"
+                "reference": "049e6ce9d5bc96084918979b0ce63d14da984b9c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-workflow-function-bundle/zipball/b27bcb25d148219a3ca6ce44fcf1649587c7550b",
-                "reference": "b27bcb25d148219a3ca6ce44fcf1649587c7550b",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-workflow-function-bundle/zipball/049e6ce9d5bc96084918979b0ce63d14da984b9c",
+                "reference": "049e6ce9d5bc96084918979b0ce63d14da984b9c",
                 "shasum": ""
             },
             "require": {
@@ -2280,6 +2280,7 @@
             "autoload": {
                 "psr-0": {
                     "OpenOrchestra\\WorkflowFunctionBundle": "",
+                    "OpenOrchestra\\WorkflowFunctionModelBundle": "",
                     "OpenOrchestra\\WorkflowFunction": "",
                     "OpenOrchestra\\WorkflowFunctionAdminBundle": ""
                 }
@@ -2295,7 +2296,7 @@
                 }
             ],
             "description": "A workflow function bundle for the OpenOrchestra Project",
-            "time": "2015-06-30 14:45:43"
+            "time": "2015-07-03 09:24:46"
         },
         {
             "name": "phpcollection/phpcollection",
@@ -3324,12 +3325,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "ae448f3ae2839f6e52c5b13887756260f3dc90b9"
+                "reference": "641090378dfff2913929306fbbf227269ba318c3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/ae448f3ae2839f6e52c5b13887756260f3dc90b9",
-                "reference": "ae448f3ae2839f6e52c5b13887756260f3dc90b9",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/641090378dfff2913929306fbbf227269ba318c3",
+                "reference": "641090378dfff2913929306fbbf227269ba318c3",
                 "shasum": ""
             },
             "require": {
@@ -3373,7 +3374,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2015-07-01 14:40:16"
+            "time": "2015-07-03 09:46:19"
         }
     ],
     "packages-dev": [
