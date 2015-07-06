@@ -1,0 +1,10 @@
+
+namespace :symfony do
+    desc 'Update assets version'
+    task :asset_version do
+        on roles(:app) do
+            execute 'cd ~/current && sed -i "s/\(\s*version\).*/\1: `date +%s`/g" app/config/config.yml'
+        end
+    end
+    after 'deploy:finished', 'symfony:asset_version'
+end
