@@ -56,4 +56,5 @@ selenium_current_directory: /home/vagrant
 
 mail_to: cron@open-orchestra.com
 
-sudoers: ~
+sudoers:
+  - vagrant
