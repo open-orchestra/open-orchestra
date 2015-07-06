@@ -2,7 +2,7 @@ namespace :web do
     desc 'Restart Varnish'
     task :varnish do
         on roles(:app) do
-            execute "sudo service varnish restart"
+            execute "sudo /etc/init.d/varnish restart"
         end
     end
 end
