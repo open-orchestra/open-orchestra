@@ -49,6 +49,7 @@ Url to see changes :
    - ``findOneByNodeIdAndLanguageAndVersionAndSiteId`` replace by ``findOneByNodeIdAndLanguageAndSiteIdAndVersion``
  - In ``ReadNodeRepositoryInterface`` :
    - ``findOneByNodeIdAndLanguageWithPublishedAndLastVersionAndSiteId`` replace by ``findOnePublishedByNodeIdAndLanguageAndSiteIdInLastVersion``
+ - The `linearized_attributes` from the `ContentFacade` are not use anymore
 
 ## Suppressed method
 
