@@ -2,7 +2,7 @@ namespace :orchestra do
     desc 'Grunt task runner'
     task :grunt do
         on roles(:app) do
-            execute "cd #{fetch(:release_path)} && ./node_modules/grunt-cli/bin/grunt"
+            execute "cd #{fetch(:deploy_to)}/current && ./node_modules/grunt-cli/bin/grunt"
         end
     end
     after 'npm:install', 'orchestra:grunt'
