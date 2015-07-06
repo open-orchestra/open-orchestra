@@ -6,3 +6,5 @@ namespace :web do
         end
     end
 end
+
+after 'deploy:finishing', 'web:apache'

@@ -9,5 +9,3 @@ set :linked_files, %w{app/config/parameters.yml}
 set :linked_dirs, %w{app/logs web/uploads vendor bower_components node_modules}
 
 after 'deploy:finishing', 'deploy:cleanup'
-after 'deploy:finishing', 'web:apache'
-after 'deploy:finishing', 'web:varnish'
