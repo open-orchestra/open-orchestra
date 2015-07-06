@@ -1,5 +1,5 @@
 namespace :orchestra do
-    desc 'Jmeter task runner'
+    desc 'Jmeter task runner ex: "orchestra:jmeter[plan_test.jmx]"'
     task :jmeter, :plan_jmx, :args_plan do |task, args|
         on roles(:app) do
             name_tmp_file = "res_temp.jtl"
