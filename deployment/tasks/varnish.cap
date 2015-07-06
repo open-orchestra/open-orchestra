@@ -1,4 +1,4 @@
-namespace :symfony do
+namespace :web do
     desc 'Restart Varnish'
     task :varnish do
         on roles(:app) do

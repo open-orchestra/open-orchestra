@@ -1,4 +1,4 @@
-namespace :symfony do
+namespace :web do
     desc 'Restart Apache'
     task :apache do
         on roles(:app) do
