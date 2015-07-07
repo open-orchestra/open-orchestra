@@ -3,7 +3,7 @@ namespace :symfony do
         desc 'Load fixtures'
         task :load_fixtures do
             on roles(:app) do
-                execute :php, "#{fetch(:deploy_to)}/current/app/console doctrine:mongodb:fixtures:load --env=prod "
+                execute "cd #{fetch(:deploy_to)}/current && php app/console doctrine:mongodb:fixtures:load --env=prod "
             end
         end
     end
