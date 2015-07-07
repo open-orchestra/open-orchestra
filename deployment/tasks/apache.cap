@@ -1,0 +1,10 @@
+namespace :web do
+    desc 'Restart Apache'
+    task :apache do
+        on roles(:app) do
+            execute "sudo /etc/init.d/apache2 graceful"
+        end
+    end
+end
+
+after 'deploy:finishing', 'web:apache'
