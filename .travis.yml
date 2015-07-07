@@ -15,8 +15,8 @@ before_install:
   - sudo apt-get update
 
 install:
-  - composer install
   - sudo apt-get install mongodb-org-server
+  - composer install
 
 before_script:
   - sudo mkdir -p /var/uploaded-files && sudo chmod -R a+w /var/uploaded-files
