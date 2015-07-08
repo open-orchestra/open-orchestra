@@ -15,6 +15,7 @@ Url to see changes :
  - [Worflow function bundle](https://github.com/open-orchestra/open-orchestra-worflow-function-bundle/compare/v0.2.11...v0.2.12)
 
 ## Possible BC breaker
+ - The parameters sent by the dataTable are changed (https://github.com/open-orchestra/open-orchestra-docs/blob/master/en/developer_guide/entity_list_ajax_pagination.rst)
  - The namespace of trait `ListStatus` is now `OpenOrchestra\ApiBundle\Controller\ControllerTrait`
  - In ``ContentRepositoryInterface`` :
      - ``findByContentTypeInLastVersionForPaginateAndSearch`` is deleted and replace by ``findByContentTypeAndSiteIdInLastVersionForPaginate``
