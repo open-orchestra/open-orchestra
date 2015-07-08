@@ -16,6 +16,23 @@ Url to see changes :
 
 ## Possible BC breaker
  - The namespace of trait `ListStatus` is now `OpenOrchestra\ApiBundle\Controller\ControllerTrait`
+ - In ``ContentRepositoryInterface`` :
+     - ``findByContentTypeInLastVersionForPaginateAndSearch`` is deleted and replace by ``findByContentTypeAndSiteIdInLastVersionForPaginate``
+     - ``findByContentTypeInLastVersionForPaginateAndSearchAndSiteId`` is deleted and replace by ``findByContentTypeInLastVersionForPaginateAndSearchAndSiteId``
+     - ``countByContentTypeInLastVersionWithSearchFilter`` is deleted and replace by ``countByContentTypeInLastVersionWithFilter``
+ - In ``ApiClientRepositoryInterface`` :
+    - ``findForPaginateAndSearch`` is deleted and replace by ``findForPaginate``
+    - ``countWithSearchFilter`` is deleted and replace by ``countWithFilter``
+ - In ``WorkflowFunctionRepositoryInterface`` :
+    - ``findForPaginateAndSearch`` is deleted and replace by ``findForPaginate``
+    - ``countWithSearchFilter`` is deleted and replace by ``countWithFilter``
+ - In ``PaginateRepositoryInterface`` :
+   - ``findForPaginateAndSearch`` is deleted and replace by ``findForPaginate``
+   - ``countWithSearchFilter`` is deleted and replace by ``countWithFilter``
+ - In ``SiteRepositoryInterfaceInterface`` :
+   - ``findByDeletedForPaginateAndSearch`` is deleted and replace by ``findByDeletedForPaginate``
+   - ``countByDeletedWithSearchFilter`` is deleted and replace by ``countWithSearchFilterByDeleted``
+ - ``PaginateAndSearchFilterTrait`` is deleted and replace by ``PaginationTrait``
 
 ## Bug fixes
  - [Node preview has been fixed, see configuration changes for more info](https://trello.com/c/RtRaYALE/1090-2-etq-ubo-je-peux-voir-les-previsu-fr-en-fr)
@@ -25,21 +42,14 @@ Url to see changes :
 ## Other changes
 
 ## Deprecated method
- - The trait TranslatedValueFilter is deprecated will be removed in 0.3.0
+ - ``ModelBundle/Repository/AbstractRepository`` is deprecated will be removed in 0.3.0
+ - The trait ``TranslatedValueFilter`` is deprecated will be removed in 0.3.0
  - In ``ContentRepositoryInterface`` :
-   - ``findByContentTypeInLastVersionForPaginateAndSearchAndSiteId`` replace by ``findByContentTypeInLastVersionForPaginateAndSearchAndSiteId``
    - ``countByDeletedInLastVersionWithSearchFilter`` replace by ``countNotDeletedInLastVersionWithSearchFilter``
-   - ``countByContentTypeInLastVersionWithSearchFilter```replace by ``countByContentTypeInLastVersionWithFilter``
  - In ``ContentTypeRepositoryInterface`` :
    - ``findAllByDeletedInLastVersionForPaginateAndSearch`` replace by ``findAllNotDeletedInLastVersionForPaginate``
    - ``countByDeletedInLastVersionWithSearchFilter`` replace by ``countDeletedInLastVersionWithSearchFilter``
    - ``findAllByDeletedInLastVersion`` replace by ``findAllNotDeletedInLastVersion``
- - In ``PaginateRepositoryInterface`` :
-   - ``findForPaginateAndSearch`` replace by ``findForPaginate``
-   - ``countWithSearchFilter`` replace by ``countWithFilter``
- - In ``SiteRepositoryInterfaceInterface`` :
-   - ``findByDeletedForPaginateAndSearch`` replace by ``findByDeletedForPaginate``
-   - ``countByDeletedWithSearchFilter`` replace by ``countWithSearchFilterByDeleted``
  - In ``NodeRepositoryInterface`` :
    - ``findOneByNodeIdAndLanguageAndSiteIdAndLastVersion`` replace by ``findOneByNodeIdAndLanguageAndSiteIdInLastVersion``
    - ``findLastVersionByDeletedAndSiteId`` replace by ``findDeletedInLastVersionBySiteId``
