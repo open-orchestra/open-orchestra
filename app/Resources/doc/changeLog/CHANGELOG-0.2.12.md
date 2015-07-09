@@ -85,11 +85,14 @@ Url to see changes :
 
  - The front configuration must also be updated. In app/config/routing.yml of your front application, add the following lines :
 
-    open_orchestra_base:
-        resource: "@OpenOrchestraBaseBundle/Resources/config/routing.yml"
-
     open_orchestra_front_preview:
         resource: "@OpenOrchestraFrontBundle/Resources/config/preview_routing.yml"
-  - We have create a `MediaModeBundle` to store the media document, you should activate the bundle : 
+  - A `MediaModeBundle` has been created to store the media document, you should activate the bundle :
 
     new OpenOrchestra\MediaModelBundle\OpenOrchestraMediaModelBundle(),
+  - A `BaseApiModeBundle` has been created to store the BaseApi document, you should activate the bundle :
+
+    new OpenOrchestra\BaseApiModelBundle\OpenOrchestraBaseApiModelBundle(),
+  - A `WorkflowFunctionModeBundle` has been created to store the WorkflowFunction document, you should activate the bundle :
+
+    new OpenOrchestra\WorkflowFunctionModelBundle\OpenOrchestraWorkflowFunctionModelBundle(),
