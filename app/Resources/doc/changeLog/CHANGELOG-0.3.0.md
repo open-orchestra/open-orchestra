@@ -15,10 +15,16 @@ Url to see changes :
  - [Worflow function bundle](https://github.com/open-orchestra/open-orchestra-worflow-function-bundle/compare/v0.2.12...v0.3.0)
 
 ## Possible BC breaker
+ - Add four methods in ``ContentRepositoryInterface`` :
+     - ``getDefaultListable()``
+     - ``addDefaultListable($name, $value)``
+     - ``removeDefaultListable($name)``
+     - ``setDefaultListable(array $defaultListable)``
 
 ## Bug fixes
 
 ## New features
+ - [Possibility to hide the default columns in the dataTable](https://trello.com/c/1XZeixzR/1143-2-etq-ubo-je-peux-specifier-quels-sont-les-colonnes-que-je-veux-afficher-dans-les-content-champs-de-base-pas-les-attributs)
 
 ## Other changes
 
