@@ -7,11 +7,16 @@ services:
 php:
   - 5.4
 
+env:
+  matrix:
+    - MONGO_REPO="http://repo.mongodb.org/apt/ubuntu $(lsb_release -sc)/mongodb-org/3.0 multiverse"
+    - MONGO_REPO="http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen"
+
 before_install:
   - printf "\n" |pecl install imagick
   - phpenv config-add .travis.php.ini
   - sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
-  - echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/mongodb.list
+  - echo "deb ${MONGO_REPO}" | sudo tee /etc/apt/sources.list.d/mongodb.list
   - sudo apt-get update
 
 install:
