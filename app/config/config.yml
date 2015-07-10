@@ -55,7 +55,6 @@ assetic:
         - OpenOrchestraMediaAdminBundle
         - OpenOrchestraDisplayBundle
         - OpenOrchestraUserBundle
-        - OpenOrchestraWorkflowFunctionAdminBundle
     #java: /usr/bin/java
     filters:
         cssrewrite: ~
