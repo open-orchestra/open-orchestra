@@ -31,5 +31,6 @@ Url to see changes :
 ## Deprecated method
 
 ## Suppressed method
-
+ - ``AddLinearize`` method and ``linearize`` attribute from ``ContentFacade`` are removed
+ 
 ## Configuration changes
