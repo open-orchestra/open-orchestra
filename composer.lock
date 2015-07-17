@@ -1900,12 +1900,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-base-bundle.git",
-                "reference": "ae7c098a3640da776220926901e75d29b71cbd02"
+                "reference": "6d92e6c2c4ab0a0fbb5c9f5c3a592d430dc04037"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-bundle/zipball/ae7c098a3640da776220926901e75d29b71cbd02",
-                "reference": "ae7c098a3640da776220926901e75d29b71cbd02",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-bundle/zipball/6d92e6c2c4ab0a0fbb5c9f5c3a592d430dc04037",
+                "reference": "6d92e6c2c4ab0a0fbb5c9f5c3a592d430dc04037",
                 "shasum": ""
             },
             "require": {
@@ -1916,7 +1916,7 @@
                 "snc/redis-bundle": "1.1.8",
                 "symfony/assetic-bundle": "2.6.1",
                 "symfony/monolog-bundle": "2.7.1",
-                "symfony/symfony": "2.7.1",
+                "symfony/symfony": "2.7.2",
                 "twig/extensions": "1.2.0"
             },
             "require-dev": {
@@ -1942,7 +1942,7 @@
                 }
             ],
             "description": "The OpenOrchestra base bundle",
-            "time": "2015-07-15 13:12:07"
+            "time": "2015-07-17 15:15:40"
         },
         {
             "name": "open-orchestra/open-orchestra-cms-bundle",
@@ -1951,12 +1951,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "a1d0334af63aa41d163116b5003cb8d4c2e6c271"
+                "reference": "7e9ef91d25c7165b5882917fe843fec80546412d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/a1d0334af63aa41d163116b5003cb8d4c2e6c271",
-                "reference": "a1d0334af63aa41d163116b5003cb8d4c2e6c271",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/7e9ef91d25c7165b5882917fe843fec80546412d",
+                "reference": "7e9ef91d25c7165b5882917fe843fec80546412d",
                 "shasum": ""
             },
             "require": {
@@ -2000,7 +2000,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2015-07-17 09:33:04"
+            "time": "2015-07-17 13:29:16"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -3200,16 +3200,16 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v2.7.1",
+            "version": "v2.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "932b6e7499c670f4db6d0b871477a4a3ca161e74"
+                "reference": "969d709ad428076bf1084e386dc26dd904d9fb84"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/932b6e7499c670f4db6d0b871477a4a3ca161e74",
-                "reference": "932b6e7499c670f4db6d0b871477a4a3ca161e74",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/969d709ad428076bf1084e386dc26dd904d9fb84",
+                "reference": "969d709ad428076bf1084e386dc26dd904d9fb84",
                 "shasum": ""
             },
             "require": {
@@ -3318,7 +3318,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2015-06-11 21:15:28"
+            "time": "2015-07-13 19:27:49"
         },
         {
             "name": "twig/extensions",
