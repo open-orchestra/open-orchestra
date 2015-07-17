@@ -25,6 +25,7 @@ Url to see changes :
 
 ## New features
  - [Possibility to hide the default columns in the dataTable](https://trello.com/c/1XZeixzR/1143-2-etq-ubo-je-peux-specifier-quels-sont-les-colonnes-que-je-veux-afficher-dans-les-content-champs-de-base-pas-les-attributs)
+ - [Content attributes from other format than string can be display on datatable thanks to transformer](https://trello.com/c/kfPjUfqP/1099-5-bo-datatable-les-attributs-complexes-dont-la-value-est-un-array-ou-autre-ne-sont-pas-rendus-correctement-dans-la-liste-array-p)
 
 ## Other changes
  - [site 1 (front site) is removed of fixtures](https://trello.com/c/a4qKLD2V/542-1-etq-dev-je-n-ai-plus-de-test-qui-porte-sur-le-site-1-des-fixtures)
