@@ -27,6 +27,7 @@ Url to see changes :
  - [Possibility to hide the default columns in the dataTable](https://trello.com/c/1XZeixzR/1143-2-etq-ubo-je-peux-specifier-quels-sont-les-colonnes-que-je-veux-afficher-dans-les-content-champs-de-base-pas-les-attributs)
 
 ## Other changes
+ - [site 1 (front site) is removed of fixtures](https://trello.com/c/a4qKLD2V/542-1-etq-dev-je-n-ai-plus-de-test-qui-porte-sur-le-site-1-des-fixtures)
 
 ## Deprecated method
 
