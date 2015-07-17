@@ -246,16 +246,16 @@
         },
         {
             "name": "doctrine/collections",
-            "version": "v1.3.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/collections.git",
-                "reference": "6c1e4eef75f310ea1b3e30945e9f06e652128b8a"
+                "reference": "b2c6ca857d6e0caed9ed199d2d8ff1d179a95d15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/collections/zipball/6c1e4eef75f310ea1b3e30945e9f06e652128b8a",
-                "reference": "6c1e4eef75f310ea1b3e30945e9f06e652128b8a",
+                "url": "https://api.github.com/repos/doctrine/collections/zipball/b2c6ca857d6e0caed9ed199d2d8ff1d179a95d15",
+                "reference": "b2c6ca857d6e0caed9ed199d2d8ff1d179a95d15",
                 "shasum": ""
             },
             "require": {
@@ -308,7 +308,7 @@
                 "collections",
                 "iterator"
             ],
-            "time": "2015-04-14 22:21:58"
+            "time": "2015-05-13 13:33:57"
         },
         {
             "name": "doctrine/common",
@@ -1951,12 +1951,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "fa400de47a1ef04e07683a5defa9731a4ca1c1d7"
+                "reference": "a321b98beaf0d6159b7ee221a295c45f2e41106b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/fa400de47a1ef04e07683a5defa9731a4ca1c1d7",
-                "reference": "fa400de47a1ef04e07683a5defa9731a4ca1c1d7",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/a321b98beaf0d6159b7ee221a295c45f2e41106b",
+                "reference": "a321b98beaf0d6159b7ee221a295c45f2e41106b",
                 "shasum": ""
             },
             "require": {
@@ -2000,7 +2000,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2015-07-17 07:07:23"
+            "time": "2015-07-17 08:13:37"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2104,12 +2104,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-bundle.git",
-                "reference": "b3b7effdf991a424c8342371f84c1a8c4a90d82b"
+                "reference": "a310c0dbb04550a9c3fbd8007d97d59d18e4aa6f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/b3b7effdf991a424c8342371f84c1a8c4a90d82b",
-                "reference": "b3b7effdf991a424c8342371f84c1a8c4a90d82b",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/a310c0dbb04550a9c3fbd8007d97d59d18e4aa6f",
+                "reference": "a310c0dbb04550a9c3fbd8007d97d59d18e4aa6f",
                 "shasum": ""
             },
             "require": {
@@ -2149,7 +2149,7 @@
                 }
             ],
             "description": "A media bundle for the OpenOrchestra Project",
-            "time": "2015-07-15 13:44:28"
+            "time": "2015-07-17 08:14:53"
         },
         {
             "name": "open-orchestra/open-orchestra-model-bundle",
@@ -2158,12 +2158,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
-                "reference": "f84dbb10ff7eb8052a931eb439ca5aa259517aa7"
+                "reference": "4d3ee924d1ba7d16d8f6009fb2f05734b6e19a30"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/f84dbb10ff7eb8052a931eb439ca5aa259517aa7",
-                "reference": "f84dbb10ff7eb8052a931eb439ca5aa259517aa7",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/4d3ee924d1ba7d16d8f6009fb2f05734b6e19a30",
+                "reference": "4d3ee924d1ba7d16d8f6009fb2f05734b6e19a30",
                 "shasum": ""
             },
             "require": {
@@ -2200,7 +2200,7 @@
                 }
             ],
             "description": "An implemantation of the model-interface for OpenOrchestra on mongo",
-            "time": "2015-07-16 16:21:17"
+            "time": "2015-07-17 08:13:55"
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
@@ -2306,12 +2306,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-workflow-function-bundle.git",
-                "reference": "83fbb9e449011bd23484dbe2b7b586539da1edcf"
+                "reference": "7902043eef1488912a657b5919708fb5ff21c13a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-workflow-function-bundle/zipball/83fbb9e449011bd23484dbe2b7b586539da1edcf",
-                "reference": "83fbb9e449011bd23484dbe2b7b586539da1edcf",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-workflow-function-bundle/zipball/7902043eef1488912a657b5919708fb5ff21c13a",
+                "reference": "7902043eef1488912a657b5919708fb5ff21c13a",
                 "shasum": ""
             },
             "require": {
@@ -2349,7 +2349,7 @@
                 }
             ],
             "description": "A workflow function bundle for the OpenOrchestra Project",
-            "time": "2015-07-10 12:49:50"
+            "time": "2015-07-17 08:14:48"
         },
         {
             "name": "phpcollection/phpcollection",
