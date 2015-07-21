@@ -8,10 +8,10 @@ open_orchestra_user_admin:
     type: annotation
     prefix: /admin
 
-open_orchestra_media_admin:
-    resource: "@OpenOrchestraMediaAdminBundle/Controller/Admin"
-    type: annotation
-    prefix: /admin
+#open_orchestra_media_admin:
+#    resource: "@OpenOrchestraMediaAdminBundle/Controller/Admin"
+#    type: annotation
+#    prefix: /admin
 
 open_orchestra_workflow_admin:
     resource: "@OpenOrchestraWorkflowFunctionAdminBundle/Controller/Admin"
@@ -31,10 +31,10 @@ open_orchestra_user_api:
     type: annotation
     prefix: /api
 
-open_orchestra_media_api:
-    resource: "@OpenOrchestraMediaAdminBundle/Controller/Api"
-    type: annotation
-    prefix: /api
+#open_orchestra_media_api:
+#    resource: "@OpenOrchestraMediaAdminBundle/Controller/Api"
+#    type: annotation
+#    prefix: /api
 
 open_orchestra_workflow_api:
     resource: "@OpenOrchestraWorkflowFunctionAdminBundle/Controller/Api"
@@ -46,10 +46,10 @@ open_orchestra_log:
     type: annotation
     prefix: /api
 
-open_orchestra_media:
-    resource: "@OpenOrchestraMediaBundle/Controller"
-    type: annotation
-    prefix: /media
+#open_orchestra_media:
+#    resource: "@OpenOrchestraMediaBundle/Controller"
+#    type: annotation
+#    prefix: /media
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
