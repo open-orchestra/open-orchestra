@@ -37,8 +37,8 @@ class AppKernel extends Kernel
             new OpenOrchestra\BaseApiBundle\OpenOrchestraBaseApiBundle(),
             new OpenOrchestra\UserBundle\OpenOrchestraUserBundle(),
             new OpenOrchestra\ModelBundle\OpenOrchestraModelBundle(),
-            new OpenOrchestra\MediaBundle\OpenOrchestraMediaBundle(),
-            new OpenOrchestra\MediaModelBundle\OpenOrchestraMediaModelBundle(),
+//            new OpenOrchestra\MediaBundle\OpenOrchestraMediaBundle(),
+//            new OpenOrchestra\MediaModelBundle\OpenOrchestraMediaModelBundle(),
             new OpenOrchestra\WorkflowFunctionModelBundle\OpenOrchestraWorkflowFunctionModelBundle(),
             new OpenOrchestra\WorkflowFunctionBundle\OpenOrchestraWorkflowFunctionBundle(),
 
@@ -48,12 +48,12 @@ class AppKernel extends Kernel
             new OpenOrchestra\GroupBundle\OpenOrchestraGroupBundle(),
             new OpenOrchestra\LogBundle\OpenOrchestraLogBundle(),
             new OpenOrchestra\UserAdminBundle\OpenOrchestraUserAdminBundle(),
-            new OpenOrchestra\MediaAdminBundle\OpenOrchestraMediaAdminBundle(),
+//            new OpenOrchestra\MediaAdminBundle\OpenOrchestraMediaAdminBundle(),
             new OpenOrchestra\WorkflowFunctionAdminBundle\OpenOrchestraWorkflowFunctionAdminBundle(),
 
             // Need parameters set by some of our bundles
             new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),
-            new Knp\Bundle\GaufretteBundle\KnpGaufretteBundle(),
+//            new Knp\Bundle\GaufretteBundle\KnpGaufretteBundle(),
             new Solution\MongoAggregationBundle\SolutionMongoAggregationBundle(),
         );
 
