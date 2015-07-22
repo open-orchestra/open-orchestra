@@ -2,6 +2,7 @@ module.exports = function(grunt) {
     require('load-grunt-tasks')(grunt);
     grunt.loadTasks('./grunt_tasks');
     grunt.loadTasks('./vendor/open-orchestra/open-orchestra-cms-bundle/OpenOrchestra/GruntTasks');
+    grunt.loadTasks('./vendor/open-orchestra/open-orchestra-media-admin-bundle/OpenOrchestra/GruntTasks');
 
     var merge = require('merge');
     var config = {
@@ -10,6 +11,7 @@ module.exports = function(grunt) {
     };
     config = merge.recursive(true, config, loadConfig('./grunt_tasks/options/'));
     config = merge.recursive(true, config, loadConfig('./vendor/open-orchestra/open-orchestra-cms-bundle/OpenOrchestra/GruntTasks/Options/'));
+    config = merge.recursive(true, config, loadConfig('./vendor/open-orchestra/open-orchestra-media-admin-bundle/OpenOrchestra/GruntTasks/Options/'));
 
     grunt.initConfig(config);
 };
