@@ -28,6 +28,7 @@
             <exclude>../vendor/open-orchestra/open-orchestra-model-bundle/OpenOrchestra/ModelBundle/Tests/Functional</exclude>
             <exclude>../vendor/open-orchestra/open-orchestra-user-bundle/OpenOrchestra/UserBundle/Tests/Functional</exclude>
             <exclude>../vendor/open-orchestra/open-orchestra-workflow-function-bundle/OpenOrchestra/WorkflowFunctionBundle/Tests/Functional</exclude>
+            <exclude>../vendor/open-orchestra/open-orchestra-workflow-function-bundle/OpenOrchestra/WorkflowFunctionModelBundle/Tests/Functional</exclude>
         </testsuite>
         <testsuite name="functional">
             <directory>../vendor/open-orchestra/*/*/*Bundle/Tests/Functional</directory>

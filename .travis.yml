@@ -27,6 +27,7 @@ install:
 before_script:
   - sudo mkdir -p /var/uploaded-files && sudo chmod -R a+w /var/uploaded-files
   - until nc -z localhost 27017; do echo Waiting for MongoDB; sleep 1; done
+  - php app/console m:m:m -e=test -n
   - php app/console doc:mo:f:l -e=test
 
 script: phpunit -c app/
