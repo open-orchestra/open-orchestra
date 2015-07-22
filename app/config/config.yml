@@ -123,3 +123,11 @@ fos_http_cache:
             servers: "%fos_http_cache.proxy_client.varnish.servers%"
             base_url: "%fos_http_cache.proxy_client.varnish.base_url%"
         default: varnish
+
+mongo_db_migrations:
+    collection_name: "migration_versions"
+    database_name: "%open_orchestra_cms.mongodb.database%"
+    dir_name: "%kernel.root_dir%/../vendor/open-orchestra/open-orchestra-model-bundle/OpenOrchestra/ModelBundle/Migrations/MongoDB"
+    script_dir_name: "%kernel.root_dir%/../vendor/open-orchestra/open-orchestra-model-bundle/OpenOrchestra/ModelBundle/Migrations/MongoDB/scripts"
+    name: "Open Orchestra MongoDB Migrations"
+    namespace: "OpenOrchestra\ModelBundle\Migrations\MongoDB"
