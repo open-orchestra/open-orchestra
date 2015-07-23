@@ -6,6 +6,7 @@ module.exports = function(grunt) {
             'concat:smartadmincss',
             'concat:libcss',
             'concat:orchestracss',
+            'concat:mediacss',
             'concat:css',
             'cssmin'
         ]

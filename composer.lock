@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9eafce2aee81ab60e7d0217b4d78e4ac",
+    "hash": "34c045668f0c430c410040b9ed306da7",
     "packages": [
         {
             "name": "antimattr/mongodb-migrations",
@@ -2067,12 +2067,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "d054830309e1cd08c27df1579a52701a7f808552"
+                "reference": "cb8c6cd555a99ed0050ff1e84ae53b47d631351d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/d054830309e1cd08c27df1579a52701a7f808552",
-                "reference": "d054830309e1cd08c27df1579a52701a7f808552",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/cb8c6cd555a99ed0050ff1e84ae53b47d631351d",
+                "reference": "cb8c6cd555a99ed0050ff1e84ae53b47d631351d",
                 "shasum": ""
             },
             "require": {
@@ -2080,7 +2080,6 @@
                 "open-orchestra/open-orchestra-base-api-bundle": "*",
                 "open-orchestra/open-orchestra-base-bundle": "*",
                 "open-orchestra/open-orchestra-display-bundle": "*",
-                "open-orchestra/open-orchestra-media-bundle": "*",
                 "open-orchestra/open-orchestra-model-interface": "*",
                 "open-orchestra/open-orchestra-user-bundle": "*",
                 "solution/mongo-odm-aggregation-bundle": "*",
@@ -2101,8 +2100,7 @@
                     "OpenOrchestra\\Backoffice": "",
                     "OpenOrchestra\\GroupBundle": "",
                     "OpenOrchestra\\ApiBundle": "",
-                    "OpenOrchestra\\UserAdminBundle": "",
-                    "OpenOrchestra\\MediaAdminBundle": ""
+                    "OpenOrchestra\\UserAdminBundle": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -2116,7 +2114,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2015-07-22 14:38:41"
+            "time": "2015-07-23 09:16:58"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2212,6 +2210,51 @@
             ],
             "description": "Some library for the Open Orchestra project",
             "time": "2015-07-09 16:16:59"
+        },
+        {
+            "name": "open-orchestra/open-orchestra-media-admin-bundle",
+            "version": "dev-master",
+            "target-dir": "OpenOrchestra",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/open-orchestra/open-orchestra-media-admin-bundle.git",
+                "reference": "c3e364b8633a7e3c4039751ce56f09e565d6dc01"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/c3e364b8633a7e3c4039751ce56f09e565d6dc01",
+                "reference": "c3e364b8633a7e3c4039751ce56f09e565d6dc01",
+                "shasum": ""
+            },
+            "require": {
+                "open-orchestra/open-orchestra-cms-bundle": "*",
+                "open-orchestra/open-orchestra-media-bundle": "*"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "dev-master",
+                "open-orchestra/open-orchestra-model-bundle": "dev-master",
+                "phake/phake": "2.1.0",
+                "phpunit/phpunit": "4.7.2",
+                "psr/log": "1.0.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "OpenOrchestra\\MediaAdminBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "OpenOrchestra community",
+                    "homepage": "https://github.com/open-orchestra/open-orchestra-media-admin-bundle/graphs/contributors"
+                }
+            ],
+            "description": "This bundle provide the backoffice part for the media of OpenOrchestra",
+            "time": "2015-07-23 09:09:53"
         },
         {
             "name": "open-orchestra/open-orchestra-media-bundle",
