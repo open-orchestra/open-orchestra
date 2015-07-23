@@ -4,7 +4,6 @@ module.exports = function(grunt) {
             'clean',
             'command:assets_install',
             'symlink',
-            'symlink_media',
             'css',
             'javascript',
             'javascriptProd',
