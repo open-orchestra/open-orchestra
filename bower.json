@@ -9,7 +9,7 @@
   ],
   "dependencies": {
     "jquery": "~2.1.1",
-    "jquery-ui": "~1.11.1",
+    "jquery-ui": "~1.11.2",
     "bootstrap": "~3.3.0",
     "jquery-form": "3.51",
     "jcrop": "~0.9.12",
@@ -24,6 +24,7 @@
     "underscore": "*",
     "jquery-minicolors": "*",
     "backbone.wreqr": "*",
-    "gridstack": "0.2.2"
+    "lodash": ">= 3.5.0",
+    "gridstack": "0.2.3"
   }
 }
