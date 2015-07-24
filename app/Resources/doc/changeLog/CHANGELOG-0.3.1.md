@@ -22,6 +22,8 @@ Url to see changes :
 
 ## Other changes
 
+ - `getContentType` has been moved from `ContentInterface` to `ReadContentInterface`
+
 ## Deprecated method
 
 ## Suppressed method
