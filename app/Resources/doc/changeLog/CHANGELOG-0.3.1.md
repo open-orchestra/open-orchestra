@@ -16,9 +16,13 @@ Url to see changes :
 
 ## Possible BC breaker
 
+ - In DisplayBlockInterface `getTags` is renamed to `getCacheTags`.
+
 ## Bug fixes
 
 ## New features
+
+ - [Possibility to custom field default value in content attribute](https://trello.com/c/w8EXOG08/1166-3-bo-contenttype-je-peux-ajouter-des-fields-par-defaut-au-choice-sans-casser-l-affichage-en-datatable)
 
 ## Other changes
 
