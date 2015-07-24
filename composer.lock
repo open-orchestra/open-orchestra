@@ -2067,12 +2067,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "e2cc827c0b8c60567375dc25a75d6bbaaadf312d"
+                "reference": "dab86732298682bd88a6250b8a482163ba7a71b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/e2cc827c0b8c60567375dc25a75d6bbaaadf312d",
-                "reference": "e2cc827c0b8c60567375dc25a75d6bbaaadf312d",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/dab86732298682bd88a6250b8a482163ba7a71b4",
+                "reference": "dab86732298682bd88a6250b8a482163ba7a71b4",
                 "shasum": ""
             },
             "require": {
@@ -2114,7 +2114,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2015-07-24 09:19:53"
+            "time": "2015-07-24 14:16:18"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2123,12 +2123,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-display-bundle.git",
-                "reference": "cf9f14f44e55d0b5af7ccea82e2e1ff2bf3dfead"
+                "reference": "1dcf3c6ace007c73ab2b7af2613e798910521438"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-display-bundle/zipball/cf9f14f44e55d0b5af7ccea82e2e1ff2bf3dfead",
-                "reference": "cf9f14f44e55d0b5af7ccea82e2e1ff2bf3dfead",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-display-bundle/zipball/1dcf3c6ace007c73ab2b7af2613e798910521438",
+                "reference": "1dcf3c6ace007c73ab2b7af2613e798910521438",
                 "shasum": ""
             },
             "require": {
@@ -2161,7 +2161,7 @@
                 }
             ],
             "description": "The bundle to display all bricks",
-            "time": "2015-07-24 09:20:08"
+            "time": "2015-07-24 12:15:03"
         },
         {
             "name": "open-orchestra/open-orchestra-libs",
@@ -2263,12 +2263,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-bundle.git",
-                "reference": "a310c0dbb04550a9c3fbd8007d97d59d18e4aa6f"
+                "reference": "321b886c2a4b91167f383d960494c20ca03dc057"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/a310c0dbb04550a9c3fbd8007d97d59d18e4aa6f",
-                "reference": "a310c0dbb04550a9c3fbd8007d97d59d18e4aa6f",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/321b886c2a4b91167f383d960494c20ca03dc057",
+                "reference": "321b886c2a4b91167f383d960494c20ca03dc057",
                 "shasum": ""
             },
             "require": {
@@ -2308,7 +2308,7 @@
                 }
             ],
             "description": "A media bundle for the OpenOrchestra Project",
-            "time": "2015-07-17 08:14:53"
+            "time": "2015-07-24 12:14:44"
         },
         {
             "name": "open-orchestra/open-orchestra-model-bundle",
@@ -2317,12 +2317,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
-                "reference": "f54eb6cb8454bd44cad48fb58726c846276969e0"
+                "reference": "28a3dc61399221d00906f918ea7058df94e5898b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/f54eb6cb8454bd44cad48fb58726c846276969e0",
-                "reference": "f54eb6cb8454bd44cad48fb58726c846276969e0",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/28a3dc61399221d00906f918ea7058df94e5898b",
+                "reference": "28a3dc61399221d00906f918ea7058df94e5898b",
                 "shasum": ""
             },
             "require": {
@@ -2361,7 +2361,7 @@
                 }
             ],
             "description": "An implemantation of the model-interface for OpenOrchestra on mongo",
-            "time": "2015-07-24 09:19:58"
+            "time": "2015-07-24 12:42:28"
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
@@ -2370,12 +2370,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-interface.git",
-                "reference": "090e871e35bf863d2ae15fb914ed3d461304ee1e"
+                "reference": "a072faf906c7cb819c796640aee6b2fdf38d7adf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/090e871e35bf863d2ae15fb914ed3d461304ee1e",
-                "reference": "090e871e35bf863d2ae15fb914ed3d461304ee1e",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/a072faf906c7cb819c796640aee6b2fdf38d7adf",
+                "reference": "a072faf906c7cb819c796640aee6b2fdf38d7adf",
                 "shasum": ""
             },
             "require": {
@@ -2408,7 +2408,7 @@
                 }
             ],
             "description": "Describe all entity and repository to implement for the whole OpenOrchestra project",
-            "time": "2015-07-24 09:20:03"
+            "time": "2015-07-24 12:43:08"
         },
         {
             "name": "open-orchestra/open-orchestra-user-bundle",
