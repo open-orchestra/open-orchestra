@@ -87,12 +87,12 @@ Url to see changes :
 
     open_orchestra_front_preview:
         resource: "@OpenOrchestraFrontBundle/Resources/config/preview_routing.yml"
-  - A `MediaModeBundle` has been created to store the media document, you should activate the bundle :
+ - A `MediaModelBundle` has been created to store the media document, you should activate the bundle :
 
     new OpenOrchestra\MediaModelBundle\OpenOrchestraMediaModelBundle(),
-  - A `BaseApiModeBundle` has been created to store the BaseApi document, you should activate the bundle :
+ - A `BaseApiModelBundle` has been created to store the BaseApi document, you should activate the bundle :
 
     new OpenOrchestra\BaseApiModelBundle\OpenOrchestraBaseApiModelBundle(),
-  - A `WorkflowFunctionModeBundle` has been created to store the WorkflowFunction document, you should activate the bundle :
+ - A `WorkflowFunctionModelBundle` has been created to store the WorkflowFunction document, you should activate the bundle :
 
     new OpenOrchestra\WorkflowFunctionModelBundle\OpenOrchestraWorkflowFunctionModelBundle(),
