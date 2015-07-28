@@ -31,5 +31,8 @@ Url to see changes :
 ## Deprecated method
 
 ## Suppressed method
- 
+
+ - ``ModelBundle/Repository/AbstractRepository`` is suppressed
+ - The trait ``TranslatedValueFilter`` is suppressed
+
 ## Configuration changes
