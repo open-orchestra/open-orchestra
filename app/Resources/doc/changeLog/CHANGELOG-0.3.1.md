@@ -27,6 +27,7 @@ Url to see changes :
 ## Other changes
 
  - `getContentType` has been moved from `ContentInterface` to `ReadContentInterface`
+ - add datatables-bootstrap3, lodash and gridstack to bower.json
 
 ## Deprecated method
 
