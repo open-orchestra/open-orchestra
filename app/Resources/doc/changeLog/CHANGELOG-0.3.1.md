@@ -24,11 +24,14 @@ Url to see changes :
 
  - [Possibility to custom field default value in content attribute](https://trello.com/c/w8EXOG08/1166-3-bo-contenttype-je-peux-ajouter-des-fields-par-defaut-au-choice-sans-casser-l-affichage-en-datatable)
  - [Possibility to define a tempalte wysiwyg for the block configurable content](https://trello.com/c/CFX1aopU/856-0-5-etq-ubo-je-peux-definir-un-template-par-wysiwyg-pour-le-bloc-configurablecontent)
+ - [Custom pages for 503 errors are now availables in Back Office](https://trello.com/c/vWmk60YN/548-3-etq-ufront-je-vois-une-page-d-attente-dont-l-url-est-parametree-en-bo-avec-code-http-503-quand-le-site-est-mis-en-maintenance-)
+ - [Custom pages for 404 errors are now availables in Back Office](https://trello.com/c/DDpDAQNC/1195-2-etq-ufront-je-vois-une-page-404-contribuee-dans-le-bo)
 
 ## Other changes
 
  - `getContentType` has been moved from `ContentInterface` to `ReadContentInterface`
  - add datatables-bootstrap3, lodash and gridstack to bower.json
+ - [FosHttpCacheBundle requirement has been changed to 1.3.2](https://trello.com/c/ur1o05Ol/1030-2-update-de-version-foshttpcachebundle)
 
 ## Deprecated method
 
