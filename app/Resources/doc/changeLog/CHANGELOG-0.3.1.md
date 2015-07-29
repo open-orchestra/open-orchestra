@@ -23,6 +23,7 @@ Url to see changes :
 ## New features
 
  - [Possibility to custom field default value in content attribute](https://trello.com/c/w8EXOG08/1166-3-bo-contenttype-je-peux-ajouter-des-fields-par-defaut-au-choice-sans-casser-l-affichage-en-datatable)
+ - [Possibility to define a tempalte wysiwyg for the block configurable content](https://trello.com/c/CFX1aopU/856-0-5-etq-ubo-je-peux-definir-un-template-par-wysiwyg-pour-le-bloc-configurablecontent)
 
 ## Other changes
 
