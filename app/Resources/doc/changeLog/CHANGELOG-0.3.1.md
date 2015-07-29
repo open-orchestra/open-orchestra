@@ -37,7 +37,29 @@ Url to see changes :
 
 ## Suppressed method
 
- - ``ModelBundle/Repository/AbstractRepository`` is suppressed
+- ``ModelBundle/Repository/AbstractRepository`` is suppressed
  - The trait ``TranslatedValueFilter`` is suppressed
+ - The interface ``VersionnableInterface`` is suppressed, use ``VersionableInterface`` instead
+ - ``ModelInterface/Model/NodeInterface/getInFooter`` is suppressed, use ``ModelInterface/Model/NodeInterface/isInFooter`` instead
+ - ``ModelInterface/Model/NodeInterface/getInMenu`` is suppressed, use ``ModelInterface/Model/NodeInterface/isInMenu`` instead
+ - ``ModelInterface/Model/SiteInterface/getDeleted`` is suppressed, use ``ModelInterface/Model/SiteInterface/isDeleted`` instead
+ - ``ModelInterface/Repository/ContentTypeRepositoryInterface/findAllByDeletedInLastVersion`` is suppressed,
+    use ``ModelInterface/Repository/ContentTypeRepositoryInterface/findAllNotDeletedInLastVersion`` instead
+ - ``ModelInterface/Repository/ContentTypeRepositoryInterface/findAllByDeletedInLastVersionForPaginateAndSearch`` is suppressed,
+    use ``ModelInterface/Repository/ContentTypeRepositoryInterface/findAllNotDeletedInLastVersionForPaginate`` instead
+ - ``ModelInterface/Repository/NodeRepositoryInterface/findOneByNodeIdAndLanguageAndSiteIdAndLastVersion`` is suppressed, 
+    use ``ModelInterface/Repository/NodeRepositoryInterface/findOneByNodeIdAndLanguageAndSiteIdInLastVersion`` instead
+ - ``ModelInterface/Repository/NodeRepositoryInterface/findChildsByPathAndSiteIdAndLanguage`` is suppressed, 
+    use ``ModelInterface/Repository/NodeRepositoryInterface/findChildrenByPathAndSiteIdAndLanguage`` instead
+ - ``ModelInterface/Repository/NodeRepositoryInterface/findOneByNodeIdAndLanguageAndVersionAndSiteId`` is suppressed, 
+    use ``ModelInterface/Repository/NodeRepositoryInterface/findOneByNodeIdAndLanguageAndSiteIdAndVersion`` instead
+ - `` ModelInterface/Repository/ReadNodeRepositoryInterface/findOneByNodeIdAndLanguageWithPublishedAndLastVersionAndSiteId`` is suppressed, 
+    use ``ModelInterface/Repository/ReadNodeRepositoryInterface/findOnePublishedByNodeIdAndLanguageAndSiteIdInLastVersion`` instead
+ - ``ModelBundle/Document/Area/setClasses`` is suppressed, use ``ModelBundle/Document/Area/setHtmlClass`` instead
+ - ``ModelBundle/Document/Area/getClasses`` is suppressed, use ``ModelBundle/Document/Area/getHtmlClass`` instead
+ - ``ModelBundle/Repository/ContentRepository/findByContentTypeInLastVersion`` is suppressed, 
+    use ``ModelBundle/Repository/ContentRepository/findByContentTypeInLastVersionForPaginate`` instead
+ - `` ModelBundle/Repository/ContentTypeRepository/createAggregateQueryByDeletedAndLastVersion`` is suppressed, 
+     use `` ModelBundle/Repository/ContentTypeRepository/createAggregateQueryNotDeletedInLastVersion`` instead
 
 ## Configuration changes
