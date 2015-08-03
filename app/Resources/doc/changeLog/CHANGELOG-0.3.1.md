@@ -32,6 +32,8 @@ Url to see changes :
  - `getContentType` has been moved from `ContentInterface` to `ReadContentInterface`
  - add datatables-bootstrap3, lodash and gridstack to bower.json
  - [FosHttpCacheBundle requirement has been changed to 1.3.2](https://trello.com/c/ur1o05Ol/1030-2-update-de-version-foshttpcachebundle)
+ - [Update smartadmin to 1.6.1] (https://trello.com/c/ly16tT52/1231-3-etq-ubo-je-vois-la-derniere-version-de-smartadmin-utilisee)
+ - Update bootstrap to 3.3.4 in bower.json
 
 ## Deprecated method
 
