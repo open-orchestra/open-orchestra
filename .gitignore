@@ -42,8 +42,14 @@
 #==[VAGRANT]==========================#
 .vagrant/
 
+#==[CAPISTRANO]==========================#
+.capistrano/
+
 #==[CODE COVERAGE]====================#
 /coverage/
 
 #==[COMPOSER]=========================#
 /composer.phar
+
+#==[JMETER]==========================#
+jmeter.log
