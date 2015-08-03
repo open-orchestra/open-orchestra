@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenOrchestra\DataFixtures\MongoDB;
+namespace OpenOrchestra\jmeter\DataFixtures;
 
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
