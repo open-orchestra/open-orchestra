@@ -17,13 +17,6 @@ apache_conf:
     docRoot: /var/www/openorchestra/web
     errorLog: admin.openorchestraError.log
     accessLog: admin.openorchestraAccess.log
-  front-orchestra.conf:
-    port: 80
-    serverName: front.openorchestra.dev
-    docRoot: /var/www/front-openorchestra/web
-    errorLog: front.openorchestraError.log
-    accessLog: front.openorchestraAccess.log
-    siteId: 1
   demo-orchestra.conf:
     port: 80
     serverName: demo.openorchestra.dev
@@ -31,12 +24,6 @@ apache_conf:
     errorLog: demo.openorchestraError.log
     accessLog: demo.openorchestraAccess.log
     siteId: 2
-  tools.conf:
-    port: 80
-    serverName: clearvarnish.dev
-    docRoot: /var/www/openorchestra/tools
-    errorLog: toolsError.log
-    accessLog: toolsAccess.log
   open-orchestra-test.conf:
     port: 80
     serverName: openorchestra.test
