@@ -20,3 +20,5 @@ parameters:
 
     fos_http_cache.proxy_client.varnish.servers: [127.0.0.1:6081]
     fos_http_cache.proxy_client.varnish.base_url: %router.request_context.host%:6081
+
+    media_domain: media.openorchestra.inte
