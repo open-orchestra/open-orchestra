@@ -3,10 +3,11 @@ namespace :orchestra do
     task :jmeter, :plan_jmx, :args_plan do |task, args|
         on roles(:app) do
             name_tmp_file = "res_temp.jtl"
-            load_db = "php app/console d:m:f:l --env=load_test"
-            load_test_db = "#{load_db}  --append --fixtures=jmeter/DataFixtures"
-            load_stored_procedure = "php app/console m:m:m"
-            execute "cd ~/current && #{load_db} && #{load_test_db} && #{load_stored_procedure} && jmeter", "-n -t #{release_path}/jmeter/#{args[:plan_jmx]} -l /tmp/#{name_tmp_file}", args[:args_plan]
+            base_command = "php app/console -e=load_test "
+            load_db = "#{base_command} d:m:f:l"
+            load_test_db = "#{base_command} d:m:f:l  --append --fixtures=jmeter/DataFixtures"
+            load_stored_procedure = "#{base_command} m:m:m"
+            execute "cd ~/current && #{load_db} && #{load_test_db} && #{load_stored_procedure} && jmeter -n -t #{release_path}/jmeter/#{args[:plan_jmx]} -l /tmp/#{name_tmp_file}", args[:args_plan]
             download! "/tmp/#{name_tmp_file}", "jmeter_res.jtl"
             execute "rm /tmp/#{name_tmp_file}"
         end
