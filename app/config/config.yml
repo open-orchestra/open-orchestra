@@ -131,3 +131,6 @@ mongo_db_migrations:
     script_dir_name: "%kernel.root_dir%/../vendor/open-orchestra/open-orchestra-model-bundle/OpenOrchestra/ModelBundle/Migrations/MongoDB/scripts"
     name: "Open Orchestra MongoDB Migrations"
     namespace: "OpenOrchestra\ModelBundle\Migrations\MongoDB"
+
+open_orchestra_media:
+    media_domain: %media_domain%

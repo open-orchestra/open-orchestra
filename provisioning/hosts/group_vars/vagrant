@@ -5,7 +5,7 @@ path_front: /var/www/front-openorchestra
 
 hosts_localhost: 127.0.0.1 localhost openorchestra
 
-hosts_site: 127.0.1.1 admin.openorchestra.dev openorchestra.test front.openorchestra.dev demo.openorchestra.dev
+hosts_site: 127.0.1.1 admin.openorchestra.dev openorchestra.test front.openorchestra.dev demo.openorchestra.dev media.openorchestra.dev
 
 apache_main_ports:
   - 80
@@ -24,6 +24,12 @@ apache_conf:
     errorLog: demo.openorchestraError.log
     accessLog: demo.openorchestraAccess.log
     siteId: 2
+  media-orchestra.conf:
+    port: 80
+    serverName: media.openorchestra.dev
+    docRoot: /var/www/media-openorchestra/web
+    errorLog: media.openorchestraError.log
+    accessLog: media.openorchestraAccess.log
   open-orchestra-test.conf:
     port: 80
     serverName: openorchestra.test
@@ -38,6 +44,7 @@ backend_conf:
   - { name: frontopenorchestra, port: 80, host: front.openorchestra.dev }
   - { name: demoopenorchestra, port: 80, host: demo.openorchestra.dev }
   - { name: openorchestratest, port: 80, host: openorchestra.test }
+  - { name: mediaopenorchestra, port: 80, host: media.openorchestra.dev }
 
 selenium_current_directory: /home/vagrant
 
