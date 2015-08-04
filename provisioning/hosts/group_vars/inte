@@ -5,7 +5,7 @@ path_front: /var/www/front-open-orchestra/current
 
 hosts_localhost: 127.0.0.1 localhost openorchestra
 
-hosts_site: 127.0.1.1 admin.openorchestra.inte front.openorchestra.inte demo.openorchestra.inte openorchestra.test
+hosts_site: 127.0.1.1 admin.openorchestra.inte media.openorchestra.inte demo.openorchestra.inte openorchestra.test
 
 apache_main_ports:
   - 8000
@@ -30,19 +30,18 @@ apache_conf:
     errorLog: demo-openorchestraError.log
     accessLog: demo-openorchestraAccess.log
     siteId: 2
-  front-orchestra.conf:
-    port: 8000
-    serverName: front.openorchestra.inte
-    docRoot: /var/www/front-open-orchestra/current/web
-    errorLog: front-openorchestraError.log
-    accessLog: front-openorchestraAccess.log
-    siteId: 1
   open-orchestra-test.conf:
     port: 8000
     serverName: openorchestra.test
     docRoot: /var/www/backoffice-open-orchestra/current/web
     errorLog: openorchestra_backoffice_test_error.log
     accessLog: openorchestra_backoffice_test_access.log
+  media-orchestra.conf:
+    port: 8000
+    serverName: media.openorchestra.inte
+    docRoot: /var/www/media-open-orchestra/current/web
+    errorLog: media.openorchestraError.log
+    accessLog: media.openorchestraAccess.log
 
 varnish_listen_port: 80
 
@@ -51,6 +50,7 @@ backend_conf:
   - { name: frontopenorchestra, port: 8000, host: front.openorchestra.inte }
   - { name: demoopenorchestra, port: 8000, host: demo.openorchestra.inte }
   - { name: openorchestratest, port: 8000, host: openorchestra.test }
+  - { name: mediaopenorchestra, port: 80, host: media.openorchestra.inte }
 
 selenium_current_directory: /home/provision
 
@@ -61,3 +61,4 @@ sudoers:
   - open_orchestra_front_inte
   - open_orchestra_backoffice_inte
   - open_orchestra_com_front_inte
+  - open_orchestra_media_inte
