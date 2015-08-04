@@ -39,6 +39,8 @@ Url to see changes :
 
 ## Deprecated method
 
+ - ``GaufretteManager`` is deprecated and will be removed in 0.3.2 , used ``UploadMediaManager``
+ 
 ## Suppressed method
 
 - ``ModelBundle/Repository/AbstractRepository`` is suppressed
