@@ -366,12 +366,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/collections.git",
-                "reference": "b2c6ca857d6e0caed9ed199d2d8ff1d179a95d15"
+                "reference": "3661cd8bc5152598dbe6772e98b78d1fa8281a67"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/collections/zipball/b2c6ca857d6e0caed9ed199d2d8ff1d179a95d15",
-                "reference": "b2c6ca857d6e0caed9ed199d2d8ff1d179a95d15",
+                "url": "https://api.github.com/repos/doctrine/collections/zipball/3661cd8bc5152598dbe6772e98b78d1fa8281a67",
+                "reference": "3661cd8bc5152598dbe6772e98b78d1fa8281a67",
                 "shasum": ""
             },
             "require": {
@@ -383,7 +383,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.2.x-dev"
+                    "dev-master": "1.3.x-dev"
                 }
             },
             "autoload": {
@@ -424,7 +424,7 @@
                 "collections",
                 "iterator"
             ],
-            "time": "2015-05-13 13:33:57"
+            "time": "2015-08-05 11:14:49"
         },
         {
             "name": "doctrine/common",
@@ -1817,12 +1817,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kriswallsmith/assetic.git",
-                "reference": "0023c5e18f4a03c6ba72706dea6514d45c7136d7"
+                "reference": "cba8311072155d3be4ab6b6366de171a0a3d100b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/0023c5e18f4a03c6ba72706dea6514d45c7136d7",
-                "reference": "0023c5e18f4a03c6ba72706dea6514d45c7136d7",
+                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/cba8311072155d3be4ab6b6366de171a0a3d100b",
+                "reference": "cba8311072155d3be4ab6b6366de171a0a3d100b",
                 "shasum": ""
             },
             "require": {
@@ -1883,7 +1883,7 @@
                 "compression",
                 "minification"
             ],
-            "time": "2015-07-08 20:36:44"
+            "time": "2015-08-05 10:16:31"
         },
         {
             "name": "monolog/monolog",
@@ -1968,12 +1968,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-base-api-bundle.git",
-                "reference": "f1a3e9968fd6a3445d306f69724d2c6a878a7664"
+                "reference": "97b204ef7c011c7adbd024e62ca33c45544210b1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-api-bundle/zipball/f1a3e9968fd6a3445d306f69724d2c6a878a7664",
-                "reference": "f1a3e9968fd6a3445d306f69724d2c6a878a7664",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-api-bundle/zipball/97b204ef7c011c7adbd024e62ca33c45544210b1",
+                "reference": "97b204ef7c011c7adbd024e62ca33c45544210b1",
                 "shasum": ""
             },
             "require": {
@@ -1988,10 +1988,12 @@
                 "phpunit/phpunit": "4.7.2",
                 "psr/log": "1.0.0"
             },
+            "suggest": {
+                "open-orchestra/open-orchestra-mongo-model-bundle": "*"
+            },
             "type": "library",
             "autoload": {
                 "psr-0": {
-                    "OpenOrchestra\\BaseApiModelBundle": "",
                     "OpenOrchestra\\BaseApiBundle": "",
                     "OpenOrchestra\\BaseApi": ""
                 }
@@ -2007,7 +2009,7 @@
                 }
             ],
             "description": "This bundle provide the base bricks for the OpenOrchestra Api",
-            "time": "2015-08-03 08:38:02"
+            "time": "2015-08-05 09:07:30"
         },
         {
             "name": "open-orchestra/open-orchestra-base-api-mongo-model-bundle",
