@@ -17,6 +17,8 @@ Url to see changes :
 
 ## Possible BC breaker
 
+ - The `Api\Serialize()` annotation should be given to the full class now
+
 ## Bug fixes
 
 ## New features
