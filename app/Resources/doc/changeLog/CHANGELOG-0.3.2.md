@@ -24,6 +24,7 @@ Url to see changes :
 ## Other changes
 
  - You can now duplicate the node version you want
+ - You can use the annotation `OpenOrchestra\Mapping\Annotations\Search` for the mapping your entity for the dataTable search, [futher informations in the documentation](https://github.com/open-orchestra/open-orchestra-docs/blob/add_doc_server_search_list/en/developer_guide/entity_list_ajax_pagination.rst)
 
 ## Deprecated method
 
