@@ -2267,12 +2267,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-admin-bundle.git",
-                "reference": "91a3eecac3939e67be4888c29b1aaac66c99ef7a"
+                "reference": "ca43ee88042b5550dece54a1f7f132dd48335508"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/91a3eecac3939e67be4888c29b1aaac66c99ef7a",
-                "reference": "91a3eecac3939e67be4888c29b1aaac66c99ef7a",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/ca43ee88042b5550dece54a1f7f132dd48335508",
+                "reference": "ca43ee88042b5550dece54a1f7f132dd48335508",
                 "shasum": ""
             },
             "require": {
@@ -2303,7 +2303,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part for the media of OpenOrchestra",
-            "time": "2015-08-11 16:17:40"
+            "time": "2015-08-12 08:15:17"
         },
         {
             "name": "open-orchestra/open-orchestra-media-bundle",
