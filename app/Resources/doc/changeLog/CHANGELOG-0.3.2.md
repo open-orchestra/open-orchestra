@@ -18,6 +18,7 @@ Url to see changes :
 ## Possible BC breaker
 
  - The `Api\Serialize()` annotation should be given to the full class now
+ - Reference to ``LeftPanel`` in class are replace by ``NavigationPanel``
 
 ## Bug fixes
 
