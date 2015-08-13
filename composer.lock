@@ -1968,12 +1968,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-base-api-bundle.git",
-                "reference": "9ab915c17b28c98ce843ee14de5db045724971a7"
+                "reference": "5ddc2ec380ae0a9f247920cb2835367438313a82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-api-bundle/zipball/9ab915c17b28c98ce843ee14de5db045724971a7",
-                "reference": "9ab915c17b28c98ce843ee14de5db045724971a7",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-api-bundle/zipball/5ddc2ec380ae0a9f247920cb2835367438313a82",
+                "reference": "5ddc2ec380ae0a9f247920cb2835367438313a82",
                 "shasum": ""
             },
             "require": {
@@ -2010,7 +2010,7 @@
                 }
             ],
             "description": "This bundle provide the base bricks for the OpenOrchestra Api",
-            "time": "2015-08-12 09:02:40"
+            "time": "2015-08-13 13:49:26"
         },
         {
             "name": "open-orchestra/open-orchestra-base-api-mongo-model-bundle",
@@ -2115,12 +2115,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "85559170da917161093a2b7260d2f2bf51b217e2"
+                "reference": "aba5096276b058ee4ef93aeb5a2d1ff872ac3273"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/85559170da917161093a2b7260d2f2bf51b217e2",
-                "reference": "85559170da917161093a2b7260d2f2bf51b217e2",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/aba5096276b058ee4ef93aeb5a2d1ff872ac3273",
+                "reference": "aba5096276b058ee4ef93aeb5a2d1ff872ac3273",
                 "shasum": ""
             },
             "require": {
@@ -2162,7 +2162,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2015-08-13 13:35:34"
+            "time": "2015-08-13 13:49:19"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
