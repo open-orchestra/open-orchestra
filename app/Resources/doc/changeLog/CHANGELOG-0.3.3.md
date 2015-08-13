@@ -17,8 +17,9 @@ Url to see changes :
 
 ## Possible BC breaker
 
- - The api authentication strategies should only return either a `FacadeInterface` or a `ConstraintViolationListInterface` oject.
+ - The api authentication strategies should only return either a `FacadeInterface` or a `ConstraintViolationListInterface` object.
    The serialization of the result is done through the same subscriber every other api request
+- configuration files are rename to snake case. exemple : ``oauth2touter`` become ``oauth2_router``
 
 ## Bug fixes
 
