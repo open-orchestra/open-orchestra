@@ -25,6 +25,9 @@ Url to see changes :
 
 ## New features
 
+ - You can use the command `orchestra:mongo:fixtures:load` to load only the fixtures implementing the
+   interface `OpenOrchestra\ModelInterface\DataFixtures\OrchestraProductionFixturesInterface`.
+
 ## Other changes
 
 ## Deprecated method
