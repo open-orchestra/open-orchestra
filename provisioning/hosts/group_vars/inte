@@ -32,12 +32,12 @@ apache_conf:
     accessLog: demo-openorchestraAccess.log
     siteId: 2
   demo-orchestra2.conf:
-      port: 8888
-      serverName: demo.openorchestra.inte
-      docRoot: /var/www/front-open-orchestra2/current/web
-      errorLog: demo-openorchestraError.log
-      accessLog: demo-openorchestraAccess.log
-      siteId: 2
+    port: 8888
+    serverName: demo.openorchestra.inte
+    docRoot: /var/www/front-open-orchestra2/current/web
+    errorLog: demo-openorchestraError.log
+    accessLog: demo-openorchestraAccess.log
+    siteId: 2
   open-orchestra-test.conf:
     port: 8000
     serverName: openorchestra.test

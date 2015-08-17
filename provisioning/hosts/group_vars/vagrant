@@ -9,6 +9,7 @@ hosts_site: 127.0.1.1 admin.openorchestra.dev openorchestra.test front.openorche
 
 apache_main_ports:
   - 80
+  - 8888
 
 apache_conf:
   open-orchestra.conf:
@@ -23,6 +24,13 @@ apache_conf:
     docRoot: /var/www/front-openorchestra/web
     errorLog: demo.openorchestraError.log
     accessLog: demo.openorchestraAccess.log
+    siteId:
+  demo-orchestra2.conf:
+    port: 8888
+    serverName: demo.openorchestra.dev
+    docRoot: /var/www/front-openorchestra2/web
+    errorLog: demo-openorchestraError.log
+    accessLog: demo-openorchestraAccess.log
     siteId: 2
   media-orchestra.conf:
     port: 80
@@ -43,6 +51,7 @@ backend_conf:
   - { name: openorchestra, port: 80, host: admin.openorchestra.dev, admin: true }
   - { name: frontopenorchestra, port: 80, host: front.openorchestra.dev }
   - { name: demoopenorchestra, port: 80, host: demo.openorchestra.dev }
+  - { name: frontopenorchestra2, port: 8888, host: demo.openorchestra.dev }
   - { name: openorchestratest, port: 80, host: openorchestra.test }
   - { name: mediaopenorchestra, port: 80, host: media.openorchestra.dev }
 
