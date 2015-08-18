@@ -32,6 +32,8 @@ Url to see changes :
 
 ## Deprecated method
 
+ - The `PreventPublishedDocumentSave` has been replaced by the `AuthorizeEdition` constraint.
+
 ## Suppressed method
 
 ## Configuration changes
