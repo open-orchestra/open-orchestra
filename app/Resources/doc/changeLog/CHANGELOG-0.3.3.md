@@ -22,6 +22,7 @@ Url to see changes :
  - Configuration files are rename to snake case. exemple : ``oauth2touter`` become ``oauth2_router``
  - The backbone router has been refactored to contain only the generation and route matching, every
    route should now be declared separetly
+ - The backbone view ``FullPagePanelView`` is removed replace by the generic view for tabs ``TabView`` and ``TabElementFormView``
 
 ## Bug fixes
 
@@ -29,6 +30,7 @@ Url to see changes :
 
  - You can use the command `orchestra:mongo:fixtures:load` to load only the fixtures implementing the
    interface `OpenOrchestra\ModelInterface\DataFixtures\OrchestraProductionFixturesInterface`.
+ - You can filter the content attributes in the contents dataTable
 
 ## Other changes
 
