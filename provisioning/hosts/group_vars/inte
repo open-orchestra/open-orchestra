@@ -11,6 +11,9 @@ apache_main_ports:
   - 8000
   - 8888
 
+back_ports:
+  - 8000
+
 apache_conf:
   inte-backoffice-openorchestra.conf:
     port: 8000
@@ -44,8 +47,20 @@ apache_conf:
     docRoot: /var/www/backoffice-open-orchestra/current/web
     errorLog: openorchestra_backoffice_test_error.log
     accessLog: openorchestra_backoffice_test_access.log
+  open-orchestra-test2.conf:
+    port: 8888
+    serverName: openorchestra.test
+    docRoot: /var/www/backoffice-open-orchestra/current/web
+    errorLog: openorchestra_backoffice_test_error.log
+    accessLog: openorchestra_backoffice_test_access.log
   media-orchestra.conf:
     port: 8000
+    serverName: media.openorchestra.inte
+    docRoot: /var/www/media-open-orchestra/current/web
+    errorLog: media.openorchestraError.log
+    accessLog: media.openorchestraAccess.log
+  media-orchestra2.conf:
+    port: 8888
     serverName: media.openorchestra.inte
     docRoot: /var/www/media-open-orchestra/current/web
     errorLog: media.openorchestraError.log
@@ -59,7 +74,9 @@ backend_conf:
   - { name: demoopenorchestra2, port: 8888, host: demo.openorchestra.inte }
   - { name: demoopenorchestra, port: 8000, host: demo.openorchestra.inte }
   - { name: openorchestratest, port: 8000, host: openorchestra.test }
-  - { name: mediaopenorchestra, port: 80, host: media.openorchestra.inte }
+  - { name: openorchestratest2, port: 8888, host: openorchestra.test }
+  - { name: mediaopenorchestra, port: 8000, host: media.openorchestra.inte }
+  - { name: mediaopenorchestra2, port: 8888, host: media.openorchestra.inte }
 
 selenium_current_directory: /home/provision
 
