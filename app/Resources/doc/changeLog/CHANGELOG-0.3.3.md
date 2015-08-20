@@ -19,7 +19,7 @@ Url to see changes :
 
  - The api authentication strategies should only return either a `FacadeInterface` or a `ConstraintViolationListInterface` object.
  -The serialization of the result is done through the same subscriber every other api request
- - Configuration files are rename to snake case. exemple : ``oauth2touter`` become ``oauth2_router``
+ - Configuration files are rename to snake case. exemple : ``oauth2routing.yml`` become ``oauth2_routing.yml``
  - The backbone router has been refactored to contain only the generation and route matching, every
    route should now be declared separetly
  - The backbone view ``FullPagePanelView`` is removed replace by the generic view for tabs ``TabView`` and ``TabElementFormView``
