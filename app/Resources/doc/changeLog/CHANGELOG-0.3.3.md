@@ -32,8 +32,10 @@ Url to see changes :
    interface `OpenOrchestra\ModelInterface\DataFixtures\OrchestraProductionFixturesInterface`.
  - You can filter the content attributes in the contents dataTable
  - An Api client can now have some base role that will be merged with the user role
+ - Only last version of node and content can be change now.
 
 ## Other changes
+  - Media use a new thumbnail format to display media
 
 ## Deprecated method
 
@@ -42,3 +44,5 @@ Url to see changes :
 ## Suppressed method
 
 ## Configuration changes
+ - Thumbnail configuration is always `max_width` and `max_height` and not `width` and `height` for rectangle
+ - `object_manager` is defined in ``open-orchestra-base-bundle`` and not in ``base-api-mongo-bundle``
