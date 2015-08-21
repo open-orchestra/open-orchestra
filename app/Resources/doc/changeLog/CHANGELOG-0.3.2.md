@@ -19,6 +19,10 @@ Url to see changes :
 
  - The `Api\Serialize()` annotation should be given to the full class now
  - Reference to ``LeftPanel`` in class are replace by ``NavigationPanel``
+ - You can use the annotation `OpenOrchestra\Mapping\Annotations\Search` for the mapping your entity for the dataTable search, [futher informations in the documentation](https://github.com/open-orchestra/open-orchestra-docs/blob/add_doc_server_search_list/en/developer_guide/entity_list_ajax_pagination.rst)
+ - The annotation `OpenOrchestra\ModelInterface\Mapping\Annotations\Document` is moved to `open-orchestra-libs` (`OpenOrchestra\Mapping\Annotations\Document`)
+ - `OpenOrchestra\ModelInterface\Exceptions\MethodNotFoundException` is moved to `Mapping\Exceptions\MethodNotFoundException`
+ - `OpenOrchestra\ModelInterface\Exceptions\PropertyNotFoundException` is moved to `Mapping\Exceptions\PropertyNotFoundException`
 
 ## Bug fixes
 
@@ -27,7 +31,6 @@ Url to see changes :
 ## Other changes
 
  - You can now duplicate the node version you want
- - You can use the annotation `OpenOrchestra\Mapping\Annotations\Search` for the mapping your entity for the dataTable search, [futher informations in the documentation](https://github.com/open-orchestra/open-orchestra-docs/blob/add_doc_server_search_list/en/developer_guide/entity_list_ajax_pagination.rst)
  - You can duplicate the current version of the node
  - I can specify that you have the workflow right on the content you have created
 
