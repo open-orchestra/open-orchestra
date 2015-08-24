@@ -18,20 +18,21 @@ module.exports = function(grunt) {
 
 function loadConfig(path) {
     var glob = require('glob');
+    var merge = require('merge');
     var object = {};
-    var key;
 
-    glob.sync('*', {cwd: path}).forEach(function(option) {
-        key = option.replace(/\.js$/,'');
-        keys =  key.split('.');
-        if (1 == keys.length) {
-            object[keys[0]] = require(path + option);
-        } else {
-            if (!object[keys[0]]) {
-                object[keys[0]] = {};
-            }
-            object[keys[0]][keys[1]] = require(path + option);
-        }
+    glob.sync('*', {cwd: path}).forEach(function(filename) {
+        var config = require(path + filename);
+        var stringOfKeys = filename.replace(/\.js$/,'');
+        var keys =  stringOfKeys.split('.');
+        var index = 'object';
+
+        keys.forEach(function(key) {
+            index += "['" + key + "']";
+            eval("if (!" + index + ") " + index + " = {};");
+        });
+
+        eval(index + "= merge.recursive(true, " + index + ", config);");
     });
 
     return object;
