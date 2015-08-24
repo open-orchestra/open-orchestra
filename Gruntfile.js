@@ -19,11 +19,10 @@ module.exports = function(grunt) {
 function loadConfig(path) {
     var glob = require('glob');
     var object = {};
-    var key;
 
     glob.sync('*', {cwd: path}).forEach(function(option) {
-        key = option.replace(/\.js$/,'');
-        keys =  key.split('.');
+        var key = option.replace(/\.js$/,'');
+        var keys =  key.split('.');
         if (1 == keys.length) {
             object[keys[0]] = require(path + option);
         } else {
