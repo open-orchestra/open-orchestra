@@ -9,30 +9,40 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
         env: process.env
     };
-    config = merge.recursive(true, config, loadConfig('./grunt_tasks/options/'));
-    config = merge.recursive(true, config, loadConfig('./vendor/open-orchestra/open-orchestra-cms-bundle/OpenOrchestra/GruntTasks/Options/'));
-    config = merge.recursive(true, config, loadConfig('./vendor/open-orchestra/open-orchestra-media-admin-bundle/OpenOrchestra/GruntTasks/Options/'));
+    config = merge.recursive(true, config, loadDirConfig('./grunt_tasks/options/'));
+    config = merge.recursive(true, config, loadDirConfig('./vendor/open-orchestra/open-orchestra-cms-bundle/OpenOrchestra/GruntTasks/Options/'));
+    config = merge.recursive(true, config, loadDirConfig('./vendor/open-orchestra/open-orchestra-media-admin-bundle/OpenOrchestra/GruntTasks/Options/'));
 
     grunt.initConfig(config);
 };
 
-function loadConfig(path) {
+function loadDirConfig(path) {
     var glob = require('glob');
-    var object = {};
-    var key;
+    var merge = require('merge');
+    var dirConfig = {};
 
-    glob.sync('*', {cwd: path}).forEach(function(option) {
-        key = option.replace(/\.js$/,'');
-        keys =  key.split('.');
-        if (1 == keys.length) {
-            object[keys[0]] = require(path + option);
-        } else {
-            if (!object[keys[0]]) {
-                object[keys[0]] = {};
-            }
-            object[keys[0]][keys[1]] = require(path + option);
-        }
+    glob.sync('*', {cwd: path}).forEach(function(filename) {
+        var fileConfig = loadFileConfig(path, filename);
+        dirConfig = merge.recursive(true, dirConfig, fileConfig);
     });
 
-    return object;
+    return dirConfig;
+}
+
+function loadFileConfig(path, filename) {
+    var keys =  filename.replace(/\.js$/,'').split('.');
+
+    var buildFileConfig = function(keys, filepath) {
+        if (keys.length == 0) {
+            return require(filepath);
+        } else {
+            var subArray = {};
+            var index = keys[0];
+            keys.shift();
+            subArray[index] = buildFileConfig(keys, filepath);
+            return subArray;
+        }
+    }
+
+    return buildFileConfig(keys, path + filename);
 }
