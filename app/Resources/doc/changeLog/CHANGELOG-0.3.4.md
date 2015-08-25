@@ -27,6 +27,11 @@ Url to see changes :
 
 ## Suppressed method
 
+- The constraint `PreventSavedPublishedDocument` will be removed, you should use the `AuthorizeEditionManager`
+  instead.
+- The listener `SavePublishedDocumentListener` will be removed, you should use the `AuthorizeEditionManager`
+  instead
+
 ## Configuration changes
  - [The gruntfile.js has been refactored](https://trello.com/c/H2W9iYDR/1259-2-gruntfile-revoir-le-loadconfig-pour-enlever-la-limitation-sur-l-ajout-de-taches-dans-des-bundles-externes-rencontree-par-nicot)
  to enhance its capabilities and ease its usage. He presents now two functions to load a single
