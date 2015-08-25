@@ -8,10 +8,13 @@ php:
   - 5.4
 
 env:
-  matrix:
-    - MONGO_REPO="http://repo.mongodb.org/apt/ubuntu $(lsb_release -sc)/mongodb-org/3.0 multiverse"
-    - MONGO_REPO="http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen"
+  - MONGO_REPO="http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen"
+  - MONGO_REPO="http://repo.mongodb.org/apt/ubuntu $(lsb_release -sc)/mongodb-org/3.0 multiverse"
+
+matrix:
   fast_finish: true
+  allow_failures:
+    - env: MONGO_REPO="http://repo.mongodb.org/apt/ubuntu $(lsb_release -sc)/mongodb-org/3.0 multiverse"
 
 before_install:
   - printf "\n" |pecl install imagick
