@@ -17,18 +17,24 @@ Url to see changes :
 
 ## Possible BC breaker
 
-## Bug fixes
+- `ContentInterface`, `NodeInterface` extend `TrashCanDisplayableInterface`
+- `ContentTypeInterface`, `SiteInterface` extend `SoftDeleteableInterface`
+- The method  `getDeleted` of `ContentInterface`, `ContentTypeInterface` `NodeInterface` is removed and replace by method `isDeleted` of `SoftDeleteableInterface`
+- In `ApiBundle` `DeletedController` is replaced by `TrashCanController`
 
-- Image are cropping is fix
+## Bug fixes
 
 ## New features
 
 ## Other changes
 
-- The Api errors are display in a smart notification box 
-- SuperAdmin can always acces to Group and Workflo
+ - you can now use search and pagination in trash can 
+ - add `TrashCanListener` which creates a trashItem when a document which implements `TrashCanDisplayableInterface` is deleted
 
 ## Deprecated method
+
+- The method `findAllDeleted` of `ContentRepositoryInterface` is deprecated and will be removed in 0.3.5.
+- The method `findDeletedInLastVersionBySiteId` of `NodeRepositoryInterface` is deprecated and will be removed in 0.3.5.
 
 ## Suppressed method
 
@@ -36,8 +42,10 @@ Url to see changes :
   instead.
 - The listener `SavePublishedDocumentListener` will be removed, you should use the `AuthorizeEditionManager`
   instead
+- The method `findLastVersionByDeletedAndSiteId` of `NodeRepositoryInterface` is removed.
 
 ## Configuration changes
+
  - [The gruntfile.js has been refactored](https://trello.com/c/H2W9iYDR/1259-2-gruntfile-revoir-le-loadconfig-pour-enlever-la-limitation-sur-l-ajout-de-taches-dans-des-bundles-externes-rencontree-par-nicot)
  to enhance its capabilities and ease its usage. He presents now two functions to load a single
  config file or a full config dir. The task options files do not have anymore limitation on their
