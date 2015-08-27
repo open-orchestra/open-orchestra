@@ -24,12 +24,15 @@ Url to see changes :
 
 ## Bug fixes
 
+- Image are cropping is fix
+
 ## New features
 
 ## Other changes
 
  - you can now use search and pagination in trash can 
  - add `TrashCanListener` which creates a trashItem when a document which implements `TrashCanDisplayableInterface` is deleted
+ - The Api errors are display in a smart notification box 
 
 ## Deprecated method
 
