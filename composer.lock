@@ -2119,12 +2119,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "323b432bb219a2ec2d29e8705a821199a030a790"
+                "reference": "c682478643a682545d548c7d96c7ab78427e10ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/323b432bb219a2ec2d29e8705a821199a030a790",
-                "reference": "323b432bb219a2ec2d29e8705a821199a030a790",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/c682478643a682545d548c7d96c7ab78427e10ec",
+                "reference": "c682478643a682545d548c7d96c7ab78427e10ec",
                 "shasum": ""
             },
             "require": {
@@ -2134,7 +2134,6 @@
                 "open-orchestra/open-orchestra-display-bundle": "*",
                 "open-orchestra/open-orchestra-model-interface": "*",
                 "open-orchestra/open-orchestra-user-bundle": "*",
-                "solution/mongo-odm-aggregation-bundle": "*",
                 "stfalcon/tinymce-bundle": "0.3.8"
             },
             "require-dev": {
@@ -2147,6 +2146,7 @@
             "type": "library",
             "autoload": {
                 "psr-0": {
+                    "OpenOrchestra\\ModelLogBundle": "",
                     "OpenOrchestra\\LogBundle": "",
                     "OpenOrchestra\\BackofficeBundle": "",
                     "OpenOrchestra\\Backoffice": "",
@@ -2166,7 +2166,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2015-08-27 08:49:16"
+            "time": "2015-08-27 13:44:35"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
