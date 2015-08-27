@@ -24,7 +24,7 @@ Url to see changes :
 
 ## Bug fixes
 
-- Image are cropping is fix
+- Image are cropping is fixed
 
 ## New features
 
