@@ -19,9 +19,14 @@ Url to see changes :
 
 ## Bug fixes
 
+- Image are cropping is fix
+
 ## New features
 
 ## Other changes
+
+- The Api errors are display in a smart notification box 
+- SuperAdmin can always acces to Group and Workflo
 
 ## Deprecated method
 
