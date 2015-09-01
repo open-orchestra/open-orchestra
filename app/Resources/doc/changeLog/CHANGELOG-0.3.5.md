@@ -23,6 +23,8 @@ Url to see changes :
 
 ## Other changes
 
+ - Mongo-odm requirement is updated to 1.0.1
+ 
 ## Deprecated method
 
 ## Suppressed method
