@@ -19,11 +19,14 @@ Url to see changes :
 
 ## Bug fixes
 
+- [Search with hidden columns in dataTable](https://trello.com/c/LrDN9srA/1285-1-etq-ubo-je-peux-faire-une-recherche-sur-la-bonne-colonne-dans-le-datatable-lorsque-qu-une-colonne-est-cache)
+
 ## New features
 
 ## Other changes
 
  - Mongo-odm requirement is updated to 1.0.1
+ - Remove MongoDBMigrationsBundle
  
 ## Deprecated method
 
