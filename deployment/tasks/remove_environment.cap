@@ -2,7 +2,7 @@ namespace :symfony do
     desc "remove development environment"
     task :remove_dev_environment do
         on roles(:env) do
-            execute :php, "rm -f #{fetch(:deploy_to)}/current/web/app_*.php"
+            execute "rm -f #{fetch(:deploy_to)}/current/web/app_*.php"
         end
     end
 end
