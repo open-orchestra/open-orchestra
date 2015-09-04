@@ -316,12 +316,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/common.git",
-                "reference": "4ecde650cf135b25375a47c9469c00ebf5afe324"
+                "reference": "9b792f308aef6b267743047e2ec96ef99de450cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/common/zipball/4ecde650cf135b25375a47c9469c00ebf5afe324",
-                "reference": "4ecde650cf135b25375a47c9469c00ebf5afe324",
+                "url": "https://api.github.com/repos/doctrine/common/zipball/9b792f308aef6b267743047e2ec96ef99de450cd",
+                "reference": "9b792f308aef6b267743047e2ec96ef99de450cd",
                 "shasum": ""
             },
             "require": {
@@ -381,7 +381,7 @@
                 "persistence",
                 "spl"
             ],
-            "time": "2015-08-31 20:15:24"
+            "time": "2015-09-03 13:52:00"
         },
         {
             "name": "doctrine/data-fixtures",
@@ -446,12 +446,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/inflector.git",
-                "reference": "63c61ba4f8f20c9a013e0fb5b6c0a8d0002f87a9"
+                "reference": "a081a0c2f14486254464f1a657595f5a6b3092f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/inflector/zipball/63c61ba4f8f20c9a013e0fb5b6c0a8d0002f87a9",
-                "reference": "63c61ba4f8f20c9a013e0fb5b6c0a8d0002f87a9",
+                "url": "https://api.github.com/repos/doctrine/inflector/zipball/a081a0c2f14486254464f1a657595f5a6b3092f4",
+                "reference": "a081a0c2f14486254464f1a657595f5a6b3092f4",
                 "shasum": ""
             },
             "require": {
@@ -505,7 +505,7 @@
                 "singularize",
                 "string"
             ],
-            "time": "2015-08-26 14:31:47"
+            "time": "2015-09-02 15:55:05"
         },
         {
             "name": "doctrine/instantiator",
@@ -997,16 +997,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSUserBundle.git",
-                "reference": "336d9cd8ba0c5a462b3e70be144a7bef5377b219"
+                "reference": "5bc36484f70c9e8e41e4135407a2efbec3500eca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/336d9cd8ba0c5a462b3e70be144a7bef5377b219",
-                "reference": "336d9cd8ba0c5a462b3e70be144a7bef5377b219",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/5bc36484f70c9e8e41e4135407a2efbec3500eca",
+                "reference": "5bc36484f70c9e8e41e4135407a2efbec3500eca",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.2",
+                "php": ">=5.3.9",
                 "symfony/form": "~2.3",
                 "symfony/framework-bundle": "~2.3",
                 "symfony/security-bundle": "~2.3",
@@ -1056,20 +1056,20 @@
             "keywords": [
                 "User management"
             ],
-            "time": "2015-08-14 09:45:59"
+            "time": "2015-09-04 07:24:39"
         },
         {
             "name": "gedmo/doctrine-extensions",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Atlantic18/DoctrineExtensions.git",
-                "reference": "df429676f995c31d0cdc3c3956c2752263065b7b"
+                "url": "git@github.com:Atlantic18/DoctrineExtensions.git",
+                "reference": "a147d31b6299e83c5b93abefac8e4f2aaae043a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/df429676f995c31d0cdc3c3956c2752263065b7b",
-                "reference": "df429676f995c31d0cdc3c3956c2752263065b7b",
+                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/a147d31b6299e83c5b93abefac8e4f2aaae043a7",
+                "reference": "a147d31b6299e83c5b93abefac8e4f2aaae043a7",
                 "shasum": ""
             },
             "require": {
@@ -1135,7 +1135,7 @@
                 "tree",
                 "uploadable"
             ],
-            "time": "2015-09-02 05:11:18"
+            "time": "2015-09-03 08:40:33"
         },
         {
             "name": "guzzle/guzzle",
@@ -1327,6 +1327,52 @@
                 "spam"
             ],
             "time": "2013-08-27 22:10:38"
+        },
+        {
+            "name": "jbbcode/jbbcode",
+            "version": "v1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jbowens/jBBCode.git",
+                "reference": "645b6a1c0afa92b7d029d3417ebd8b60a5c578b3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jbowens/jBBCode/zipball/645b6a1c0afa92b7d029d3417ebd8b60a5c578b3",
+                "reference": "645b6a1c0afa92b7d029d3417ebd8b60a5c578b3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "JBBCode": "."
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jackson Owens",
+                    "email": "jackson_owens@alumni.brown.edu",
+                    "homepage": "http://jbowens.org/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A lightweight but extensible BBCode parser written in PHP 5.3.",
+            "homepage": "http://jbbcode.com/",
+            "keywords": [
+                "BB",
+                "bbcode"
+            ],
+            "time": "2014-07-06 05:48:20"
         },
         {
             "name": "jms/metadata",
@@ -1955,12 +2001,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-base-bundle.git",
-                "reference": "00ad13ffd7264c6d626821eeec7cd9834b2fda41"
+                "reference": "f4f59817885c1dde85e257236ca079581ec06e8f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-bundle/zipball/00ad13ffd7264c6d626821eeec7cd9834b2fda41",
-                "reference": "00ad13ffd7264c6d626821eeec7cd9834b2fda41",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-bundle/zipball/f4f59817885c1dde85e257236ca079581ec06e8f",
+                "reference": "f4f59817885c1dde85e257236ca079581ec06e8f",
                 "shasum": ""
             },
             "require": {
@@ -1997,7 +2043,7 @@
                 }
             ],
             "description": "The OpenOrchestra base bundle",
-            "time": "2015-08-28 14:11:17"
+            "time": "2015-09-04 10:30:09"
         },
         {
             "name": "open-orchestra/open-orchestra-cms-bundle",
@@ -2062,17 +2108,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-display-bundle.git",
-                "reference": "a1e9106f82bf67dc30ce7bc310f50b2b05937b4d"
+                "reference": "7c4c9d32415a0c7ef2928f6c8fc7e1ff7dc89534"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-display-bundle/zipball/a1e9106f82bf67dc30ce7bc310f50b2b05937b4d",
-                "reference": "a1e9106f82bf67dc30ce7bc310f50b2b05937b4d",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-display-bundle/zipball/7c4c9d32415a0c7ef2928f6c8fc7e1ff7dc89534",
+                "reference": "7c4c9d32415a0c7ef2928f6c8fc7e1ff7dc89534",
                 "shasum": ""
             },
             "require": {
                 "friendsofsymfony/http-cache-bundle": "1.3.2",
                 "innocead/captcha-bundle": "*",
+                "jbbcode/jbbcode": "1.3.0",
                 "open-orchestra/open-orchestra-model-interface": "*",
                 "symfony/swiftmailer-bundle": "~2.3"
             },
@@ -2086,7 +2133,8 @@
             "type": "library",
             "autoload": {
                 "psr-0": {
-                    "OpenOrchestra\\DisplayBundle": ""
+                    "OpenOrchestra\\DisplayBundle": "",
+                    "OpenOrchestra\\BBcodeBundle": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -2100,7 +2148,7 @@
                 }
             ],
             "description": "The bundle to display all bricks",
-            "time": "2015-08-28 14:24:57"
+            "time": "2015-09-03 12:36:48"
         },
         {
             "name": "open-orchestra/open-orchestra-libs",
@@ -2109,12 +2157,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-libs.git",
-                "reference": "38c584907ef90b92bbed43c454565c8b9c5942a6"
+                "reference": "1639a1e0fa9388d2988dc2a92c84bd7dd771cae0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-libs/zipball/38c584907ef90b92bbed43c454565c8b9c5942a6",
-                "reference": "38c584907ef90b92bbed43c454565c8b9c5942a6",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-libs/zipball/1639a1e0fa9388d2988dc2a92c84bd7dd771cae0",
+                "reference": "1639a1e0fa9388d2988dc2a92c84bd7dd771cae0",
                 "shasum": ""
             },
             "require": {
@@ -2149,7 +2197,7 @@
                 }
             ],
             "description": "Some library for the Open Orchestra project",
-            "time": "2015-09-02 08:17:42"
+            "time": "2015-09-03 12:48:39"
         },
         {
             "name": "open-orchestra/open-orchestra-media-admin-bundle",
@@ -2203,12 +2251,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-bundle.git",
-                "reference": "3ec2dd6b9750aac1512f880754271d730e05bb2a"
+                "reference": "815e51856ca78ae548e98d8ece27258e92e59090"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/3ec2dd6b9750aac1512f880754271d730e05bb2a",
-                "reference": "3ec2dd6b9750aac1512f880754271d730e05bb2a",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/815e51856ca78ae548e98d8ece27258e92e59090",
+                "reference": "815e51856ca78ae548e98d8ece27258e92e59090",
                 "shasum": ""
             },
             "require": {
@@ -2248,7 +2296,7 @@
                 }
             ],
             "description": "A media bundle for the OpenOrchestra Project",
-            "time": "2015-09-02 09:30:56"
+            "time": "2015-09-03 13:32:35"
         },
         {
             "name": "open-orchestra/open-orchestra-model-bundle",
@@ -3065,12 +3113,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "a16e5a75aa8c3b97f224f42dbbad5b379ce14659"
+                "reference": "6522539daf0a7bdada1cc2dccb7ec37dc0712136"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/a16e5a75aa8c3b97f224f42dbbad5b379ce14659",
-                "reference": "a16e5a75aa8c3b97f224f42dbbad5b379ce14659",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/6522539daf0a7bdada1cc2dccb7ec37dc0712136",
+                "reference": "6522539daf0a7bdada1cc2dccb7ec37dc0712136",
                 "shasum": ""
             },
             "require": {
@@ -3110,7 +3158,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2015-08-30 17:08:54"
+            "time": "2015-09-04 05:47:20"
         },
         {
             "name": "symfony/assetic-bundle",
