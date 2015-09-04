@@ -17,6 +17,9 @@ Url to see changes :
 
 ## Possible BC breaker
 
+ - ``open_orchestra_model.annotation_reader`` is renamed by ``open_orchestra.annotation_reader`
+ - ``open_orchestra_base.annotation_search_reader`` is moved to orchestra-libs and renamed by ``open_orchestra.annotation_search_reader``
+
 ## Bug fixes
 
 - [Search with hidden columns in dataTable](https://trello.com/c/LrDN9srA/1285-1-etq-ubo-je-peux-faire-une-recherche-sur-la-bonne-colonne-dans-le-datatable-lorsque-qu-une-colonne-est-cache)
