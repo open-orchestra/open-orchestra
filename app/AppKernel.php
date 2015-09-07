@@ -44,6 +44,7 @@ class AppKernel extends Kernel
 
             new OpenOrchestra\ApiBundle\OpenOrchestraApiBundle(),
             new OpenOrchestra\DisplayBundle\OpenOrchestraDisplayBundle(),
+            new OpenOrchestra\BBcodeBundle\OpenOrchestraBBcodeBundle(),
             new OpenOrchestra\BackofficeBundle\OpenOrchestraBackofficeBundle(),
             new OpenOrchestra\GroupBundle\OpenOrchestraGroupBundle(),
             new OpenOrchestra\LogBundle\OpenOrchestraLogBundle(),
