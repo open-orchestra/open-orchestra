@@ -30,6 +30,7 @@ Url to see changes :
 
  - Mongo-odm requirement is updated to 1.0.1
  - Remove MongoDBMigrationsBundle
+ - Add dynamic load on media navigation (change folder repository method)
  
 ## Deprecated method
 
