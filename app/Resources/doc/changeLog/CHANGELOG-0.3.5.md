@@ -19,6 +19,7 @@ Url to see changes :
 
  - ``open_orchestra_model.annotation_reader`` is renamed by ``open_orchestra.annotation_reader`
  - ``open_orchestra_base.annotation_search_reader`` is moved to orchestra-libs and renamed by ``open_orchestra.annotation_search_reader``
+ - Adding new bundle (OpenOrchestraMongoBundle)
 
 ## Bug fixes
 
