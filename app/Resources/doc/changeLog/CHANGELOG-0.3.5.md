@@ -20,12 +20,15 @@ Url to see changes :
  - ``open_orchestra_model.annotation_reader`` is renamed by ``open_orchestra.annotation_reader`
  - ``open_orchestra_base.annotation_search_reader`` is moved to orchestra-libs and renamed by ``open_orchestra.annotation_search_reader``
  - Adding new bundle (OpenOrchestraMongoBundle)
+ - The parameter ``descriptionEntity`` in ``FinderConfiguration`` is now composed of array (``Array("key" => "", "field" => "", "type" => "")`` futher information [documentation] (https://github.com/open-orchestra/open-orchestra-docs/blob/master/en/developer_guide/entity_list_ajax_pagination.rst)
 
 ## Bug fixes
 
 - [Search with hidden columns in dataTable](https://trello.com/c/LrDN9srA/1285-1-etq-ubo-je-peux-faire-une-recherche-sur-la-bonne-colonne-dans-le-datatable-lorsque-qu-une-colonne-est-cache)
 
 ## New features
+
+- You can describe the mapping for search in Yaml and XMl, futher information in [documentation] (https://github.com/open-orchestra/open-orchestra-docs/blob/master/en/developer_guide/entity_list_ajax_pagination.rst) 
 
 ## Other changes
 
