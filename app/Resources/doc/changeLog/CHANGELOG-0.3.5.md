@@ -29,12 +29,15 @@ Url to see changes :
 ## New features
 
 - You can describe the mapping for search in Yaml and XMl, futher information in [documentation] (https://github.com/open-orchestra/open-orchestra-docs/blob/master/en/developer_guide/entity_list_ajax_pagination.rst) 
+- [A BBcode bundle is introduced to allow you to extend the rich text editor](https://trello.com/c/7ZaSD82H/1289-3-etq-dev-j-ai-acces-a-un-bundle-qui-wrap-la-lib-jbbcode)
+- [A new BBcode tag is available for media](https://trello.com/c/xS32c3Rd/1326-3-ajout-des-tags-du-mediabundle)
 
 ## Other changes
 
  - Mongo-odm requirement is updated to 1.0.1
  - Remove MongoDBMigrationsBundle
  - Add dynamic load on media navigation (change folder repository method)
+ - [A refacto has been made to simplify the navigation](https://trello.com/c/7oj9DRod/1347-2-faire-une-mecanique-de-strategie-pour-les-liens-de-niveau-0-du-menu-de-navigation)
  
 ## Deprecated method
 
