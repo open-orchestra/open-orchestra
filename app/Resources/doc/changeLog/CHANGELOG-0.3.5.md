@@ -37,10 +37,14 @@ Url to see changes :
 
  - Mongo-odm requirement is updated to 1.0.1
  - Remove MongoDBMigrationsBundle
- - Add dynamic load on media navigation (change folder repository method)
  - [A refacto has been made to simplify the navigation](https://trello.com/c/7oj9DRod/1347-2-faire-une-mecanique-de-strategie-pour-les-liens-de-niveau-0-du-menu-de-navigation)
  - Upgrade to mongo-odm 1.0.2, mongo-odm-bundle 3.0.1
  - Acces Token no more revoked
+ - Upgrade to symfony 2.7.4
+ - Upgrade to twig/extensions 1.3.0
+ - Upgrade to symfony/assetic-bundle 2.7.0
+ - Upgrade to friendsofsymfony/http-cache-bundle 1.3.3
+ - Upgrade to phpunit/phpunit 4.8.8
  
 ## Deprecated method
 
