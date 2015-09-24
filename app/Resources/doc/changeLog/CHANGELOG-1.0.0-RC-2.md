@@ -16,13 +16,23 @@ Url to see changes :
  - [Worflow function bundle](https://github.com/open-orchestra/open-orchestra-worflow-function-bundle/compare/v1.0.0-RC1...v1.0.0-RC2)
 
 ## Possible BC breaker
+  
+  - In ``NodeManager``, parameter ``siteRepository`` must implement ``ReadSiteRepositoryInterface``
+  - In ``LanguageListStrategy``, parameter ``siteRepository`` must implement ``ReadSiteRepositoryInterface``
+  - In ``KernelExceptionSubscriber``, parameter ``siteRepository`` must implement ``ReadSiteRepositoryInterface``
+  - In ``DatabaseRouteLoader``, parameter ``siteRepository`` must implement ``ReadSiteRepositoryInterface``
+  - In ``RedirectionLoader``, parameter ``siteRepository`` must implement  ``ReadSiteRepositoryInterface``
 
 ## Bug fixes
 
 ## New features
-
+ 
+ - [ SaveMediaManager can upload multiple files](https://trello.com/c/C3PQxhLm/1297-1-etq-ubo-je-peux-uploader-plusieurs-fichier-en-meme-temps) 
+ 
 ## Other changes
-
+ 
+ - ``SiteRepositoryInterface`` is split in ``SiteRepositoryInterface`` and ``ReadSiteRepositoryInterface``
+ 
 ## Deprecated method
 
 ## Suppressed method
