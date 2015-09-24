@@ -32,6 +32,7 @@ Url to see changes :
 ## Other changes
  
  - ``SiteRepositoryInterface`` is split in ``SiteRepositoryInterface`` and ``ReadSiteRepositoryInterface``
+ - [The Back Office navigation pannel mechanism has been refactored to allow the creation of level 1 strategies](https://trello.com/c/7oj9DRod/1347-2-faire-une-mecanique-de-strategie-pour-les-liens-de-niveau-0-du-menu-de-navigation)
  
 ## Deprecated method
 
