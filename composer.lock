@@ -2053,12 +2053,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "21862eed6f7a23b9b077bb237d932cd6e72b561a"
+                "reference": "5f8a1832a02238bc4802c1163a2ae69c96863a94"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/21862eed6f7a23b9b077bb237d932cd6e72b561a",
-                "reference": "21862eed6f7a23b9b077bb237d932cd6e72b561a",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/5f8a1832a02238bc4802c1163a2ae69c96863a94",
+                "reference": "5f8a1832a02238bc4802c1163a2ae69c96863a94",
                 "shasum": ""
             },
             "require": {
@@ -2100,7 +2100,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2015-09-24 08:31:25"
+            "time": "2015-09-25 07:37:09"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2254,12 +2254,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-bundle.git",
-                "reference": "f3c0ced4147e1cfa5b17c7ed9452a891cda1607a"
+                "reference": "a22a012538062142f5e1257cca69d7695057932b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/f3c0ced4147e1cfa5b17c7ed9452a891cda1607a",
-                "reference": "f3c0ced4147e1cfa5b17c7ed9452a891cda1607a",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/a22a012538062142f5e1257cca69d7695057932b",
+                "reference": "a22a012538062142f5e1257cca69d7695057932b",
                 "shasum": ""
             },
             "require": {
@@ -2300,7 +2300,7 @@
                 }
             ],
             "description": "A media bundle for the OpenOrchestra Project",
-            "time": "2015-09-24 08:12:25"
+            "time": "2015-09-24 12:27:05"
         },
         {
             "name": "open-orchestra/open-orchestra-model-bundle",
@@ -3169,12 +3169,12 @@
             "version": "v2.7.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/AsseticBundle.git",
+                "url": "https://github.com/symfony/assetic-bundle.git",
                 "reference": "3ae5c8ca3079b6e0033cc9fbfb6500e2bc964da5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/AsseticBundle/zipball/3ae5c8ca3079b6e0033cc9fbfb6500e2bc964da5",
+                "url": "https://api.github.com/repos/symfony/assetic-bundle/zipball/3ae5c8ca3079b6e0033cc9fbfb6500e2bc964da5",
                 "reference": "3ae5c8ca3079b6e0033cc9fbfb6500e2bc964da5",
                 "shasum": ""
             },
