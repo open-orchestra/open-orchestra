@@ -5,6 +5,7 @@
         "This file is @generated automatically"
     ],
     "hash": "387f51c3ab4756f312412576c3348bd4",
+    "content-hash": "ff8ebb23dbf090f0f785267b6db296d8",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -12,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Behat/Transliterator.git",
-                "reference": "d198b77951fe55523a39528cedbc11bf99db9eca"
+                "reference": "868e05be3a9f25ba6424c2dd4849567f50715003"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Behat/Transliterator/zipball/d198b77951fe55523a39528cedbc11bf99db9eca",
-                "reference": "d198b77951fe55523a39528cedbc11bf99db9eca",
+                "url": "https://api.github.com/repos/Behat/Transliterator/zipball/868e05be3a9f25ba6424c2dd4849567f50715003",
+                "reference": "868e05be3a9f25ba6424c2dd4849567f50715003",
                 "shasum": ""
             },
             "require": {
@@ -44,7 +45,7 @@
                 "slug",
                 "transliterator"
             ],
-            "time": "2015-08-04 14:55:57"
+            "time": "2015-09-28 16:26:35"
         },
         {
             "name": "braincrafted/bootstrap-bundle",
@@ -1064,12 +1065,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Atlantic18/DoctrineExtensions.git",
-                "reference": "e94b30342810d028559dade3e4bac13520e93ba1"
+                "reference": "1a86ba1c7426238b4f765089e0af51174a38af7f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/e94b30342810d028559dade3e4bac13520e93ba1",
-                "reference": "e94b30342810d028559dade3e4bac13520e93ba1",
+                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/1a86ba1c7426238b4f765089e0af51174a38af7f",
+                "reference": "1a86ba1c7426238b4f765089e0af51174a38af7f",
                 "shasum": ""
             },
             "require": {
@@ -1079,7 +1080,7 @@
             },
             "require-dev": {
                 "doctrine/common": ">=2.5.0",
-                "doctrine/mongodb-odm": "dev-master",
+                "doctrine/mongodb-odm": ">=1.0.2",
                 "doctrine/orm": ">=2.5.0",
                 "phpunit/phpunit": "~4.4",
                 "phpunit/phpunit-mock-objects": "~2.3",
@@ -1135,7 +1136,7 @@
                 "tree",
                 "uploadable"
             ],
-            "time": "2015-09-20 18:22:37"
+            "time": "2015-09-28 16:39:27"
         },
         {
             "name": "guzzle/guzzle",
@@ -2053,12 +2054,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "5f8a1832a02238bc4802c1163a2ae69c96863a94"
+                "reference": "5abddc15f58b3cab70a09f2dbb7e6f69434b2423"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/5f8a1832a02238bc4802c1163a2ae69c96863a94",
-                "reference": "5f8a1832a02238bc4802c1163a2ae69c96863a94",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/5abddc15f58b3cab70a09f2dbb7e6f69434b2423",
+                "reference": "5abddc15f58b3cab70a09f2dbb7e6f69434b2423",
                 "shasum": ""
             },
             "require": {
@@ -2100,7 +2101,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2015-09-25 07:37:09"
+            "time": "2015-09-28 16:04:06"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2209,12 +2210,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-admin-bundle.git",
-                "reference": "44398cd52873f5d97a933f1b26f46e6ca25f186a"
+                "reference": "d114e9d9a29149d34ed54b1abb5917ecdcdf64ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/44398cd52873f5d97a933f1b26f46e6ca25f186a",
-                "reference": "44398cd52873f5d97a933f1b26f46e6ca25f186a",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/d114e9d9a29149d34ed54b1abb5917ecdcdf64ea",
+                "reference": "d114e9d9a29149d34ed54b1abb5917ecdcdf64ea",
                 "shasum": ""
             },
             "require": {
@@ -2245,7 +2246,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part for the media of OpenOrchestra",
-            "time": "2015-09-24 09:49:47"
+            "time": "2015-09-28 12:27:25"
         },
         {
             "name": "open-orchestra/open-orchestra-media-bundle",
@@ -2254,12 +2255,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-bundle.git",
-                "reference": "a22a012538062142f5e1257cca69d7695057932b"
+                "reference": "d9d2063015ca1eb49000a819ff0cc3d36357ccba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/a22a012538062142f5e1257cca69d7695057932b",
-                "reference": "a22a012538062142f5e1257cca69d7695057932b",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/d9d2063015ca1eb49000a819ff0cc3d36357ccba",
+                "reference": "d9d2063015ca1eb49000a819ff0cc3d36357ccba",
                 "shasum": ""
             },
             "require": {
@@ -2300,7 +2301,7 @@
                 }
             ],
             "description": "A media bundle for the OpenOrchestra Project",
-            "time": "2015-09-24 12:27:05"
+            "time": "2015-09-28 12:17:13"
         },
         {
             "name": "open-orchestra/open-orchestra-model-bundle",
@@ -2309,12 +2310,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
-                "reference": "2f1d1d3cfbd765bc79af860e7e303ac3a456861e"
+                "reference": "7d8432f8710eba83b929218d0c559bcce8b6a5fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/2f1d1d3cfbd765bc79af860e7e303ac3a456861e",
-                "reference": "2f1d1d3cfbd765bc79af860e7e303ac3a456861e",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/7d8432f8710eba83b929218d0c559bcce8b6a5fb",
+                "reference": "7d8432f8710eba83b929218d0c559bcce8b6a5fb",
                 "shasum": ""
             },
             "require": {
@@ -2351,7 +2352,7 @@
                 }
             ],
             "description": "An implemantation of the model-interface for OpenOrchestra on mongo",
-            "time": "2015-09-22 15:30:48"
+            "time": "2015-09-29 15:48:26"
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
@@ -2360,12 +2361,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-interface.git",
-                "reference": "f579886f4c993d54075c34c8b93e5f919b093d6f"
+                "reference": "85d7c948c25214cd4ac0755ed15cd11dd8535145"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/f579886f4c993d54075c34c8b93e5f919b093d6f",
-                "reference": "f579886f4c993d54075c34c8b93e5f919b093d6f",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/85d7c948c25214cd4ac0755ed15cd11dd8535145",
+                "reference": "85d7c948c25214cd4ac0755ed15cd11dd8535145",
                 "shasum": ""
             },
             "require": {
@@ -2398,7 +2399,7 @@
                 }
             ],
             "description": "Describe all entity and repository to implement for the whole OpenOrchestra project",
-            "time": "2015-09-24 08:19:54"
+            "time": "2015-09-28 16:40:59"
         },
         {
             "name": "open-orchestra/open-orchestra-user-bundle",
@@ -3239,12 +3240,12 @@
             "version": "v2.7.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/MonologBundle.git",
+                "url": "https://github.com/symfony/monolog-bundle.git",
                 "reference": "9320b6863404c70ebe111e9040dab96f251de7ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/MonologBundle/zipball/9320b6863404c70ebe111e9040dab96f251de7ac",
+                "url": "https://api.github.com/repos/symfony/monolog-bundle/zipball/9320b6863404c70ebe111e9040dab96f251de7ac",
                 "reference": "9320b6863404c70ebe111e9040dab96f251de7ac",
                 "shasum": ""
             },
@@ -3298,13 +3299,13 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/SwiftmailerBundle.git",
-                "reference": "456395511e37ecdbfc5777fb78ae6d69ee07ef98"
+                "url": "https://github.com/symfony/swiftmailer-bundle.git",
+                "reference": "c7c15cab65f2c36090e9a1533adcefe1381bc6f6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/SwiftmailerBundle/zipball/456395511e37ecdbfc5777fb78ae6d69ee07ef98",
-                "reference": "456395511e37ecdbfc5777fb78ae6d69ee07ef98",
+                "url": "https://api.github.com/repos/symfony/swiftmailer-bundle/zipball/c7c15cab65f2c36090e9a1533adcefe1381bc6f6",
+                "reference": "c7c15cab65f2c36090e9a1533adcefe1381bc6f6",
                 "shasum": ""
             },
             "require": {
@@ -3348,7 +3349,7 @@
             ],
             "description": "Symfony SwiftmailerBundle",
             "homepage": "http://symfony.com",
-            "time": "2015-09-22 15:47:37"
+            "time": "2015-09-28 14:45:50"
         },
         {
             "name": "symfony/symfony",
@@ -3674,12 +3675,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Behat/Gherkin.git",
-                "reference": "9c8fcf2600a12c982b7b31e7151335c11e67cfeb"
+                "reference": "6b3f8cf3560dc4909c4cddd4f1af3e1f6e9d80af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Behat/Gherkin/zipball/9c8fcf2600a12c982b7b31e7151335c11e67cfeb",
-                "reference": "9c8fcf2600a12c982b7b31e7151335c11e67cfeb",
+                "url": "https://api.github.com/repos/Behat/Gherkin/zipball/6b3f8cf3560dc4909c4cddd4f1af3e1f6e9d80af",
+                "reference": "6b3f8cf3560dc4909c4cddd4f1af3e1f6e9d80af",
                 "shasum": ""
             },
             "require": {
@@ -3724,7 +3725,7 @@
                 "gherkin",
                 "parser"
             ],
-            "time": "2014-11-17 17:13:12"
+            "time": "2015-09-29 13:41:19"
         },
         {
             "name": "behat/mink",
@@ -4077,12 +4078,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jmikola/geojson.git",
-                "reference": "086963e4fa5276a47d079b6b288a64f525196bce"
+                "reference": "6ec3016cc0215667b7775f6ead7bd0337ad66eee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jmikola/geojson/zipball/086963e4fa5276a47d079b6b288a64f525196bce",
-                "reference": "086963e4fa5276a47d079b6b288a64f525196bce",
+                "url": "https://api.github.com/repos/jmikola/geojson/zipball/6ec3016cc0215667b7775f6ead7bd0337ad66eee",
+                "reference": "6ec3016cc0215667b7775f6ead7bd0337ad66eee",
                 "shasum": ""
             },
             "require": {
@@ -4122,7 +4123,7 @@
                 "geojson",
                 "geospatial"
             ],
-            "time": "2014-09-03 15:22:39"
+            "time": "2015-09-27 15:35:21"
         },
         {
             "name": "phake/phake",
