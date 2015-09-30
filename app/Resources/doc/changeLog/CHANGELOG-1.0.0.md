@@ -19,6 +19,8 @@ Url to see changes :
   
 ## Bug fixes
 
+ - I can now duplicate a node with area inside other areas with no interaction with the duplicated node
+
 ## New features
 
  - [The routing can be now done from the database](https://trello.com/c/fMWCiGF8/1352-8-perf-etq-u-le-routing-est-resolu-par-tokens)
