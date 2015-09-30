@@ -21,7 +21,7 @@ Url to see changes :
 
 ## New features
 
- - [The routing can be now done from the database]()
+ - [The routing can be now done from the database](https://trello.com/c/fMWCiGF8/1352-8-perf-etq-u-le-routing-est-resolu-par-tokens)
  
 ## Other changes
 
