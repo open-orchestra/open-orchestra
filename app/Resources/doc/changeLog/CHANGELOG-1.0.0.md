@@ -24,7 +24,8 @@ Url to see changes :
 ## New features
 
  - [The routing can be now done from the database](https://trello.com/c/fMWCiGF8/1352-8-perf-etq-u-le-routing-est-resolu-par-tokens)
- 
+ - [New restriction on media upload based on the mime-type](https://trello.com/c/biKf4OhR/1377-2-etq-que-dev-je-bloque-l-upload-de-fichier-non-image-video-ou-pdf)
+
 ## Other changes
 
 ## Deprecated method
