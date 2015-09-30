@@ -13,13 +13,30 @@ use OpenOrchestra\ModelBundle\Document\Status;
 use OpenOrchestra\ModelBundle\Document\TranslatedValue;
 use OpenOrchestra\ModelInterface\Model\NodeInterface;
 use OpenOrchestra\ModelInterface\Model\AreaInterface;
+use Symfony\Component\DependencyInjection\ContainerAwareInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use OpenOrchestra\BackofficeBundle\Manager\RouteDocumentManager;
 
 /**
  * Class LoadNodeData
  */
-class LoadNodeData extends AbstractFixture implements OrderedFixtureInterface
+class LoadNodeData extends AbstractFixture implements OrderedFixtureInterface, ContainerAwareInterface
 {
+    /**
+     * @var RouteDocumentManager
+     */
+    private $updateRoute;
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setContainer(ContainerInterface $container = null)
+    {
+        $this->updateRoute = $container->get('open_orchestra_backoffice.manager.route_document');
+    }
+
     const NUMBER_OF_NODE = 100;
+
     /**
      * @param ObjectManager $manager
      */
@@ -80,6 +97,11 @@ class LoadNodeData extends AbstractFixture implements OrderedFixtureInterface
         $node->addBlock($titleBlock);
         $node->addBlock($contentBlock);
         $node->setInMenu(true);
+
+        $routes = $this->updateRoute->createForNode($node);
+        foreach ($routes as $route) {
+            $manager->persist($route);
+        }
 
         $manager->persist($node);
     }
