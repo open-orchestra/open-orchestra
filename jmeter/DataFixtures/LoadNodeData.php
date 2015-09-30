@@ -23,11 +23,6 @@ use OpenOrchestra\BackofficeBundle\Manager\RouteDocumentManager;
 class LoadNodeData extends AbstractFixture implements OrderedFixtureInterface, ContainerAwareInterface
 {
     /**
-     * @var ContainerInterface
-     */
-    private $container;
-
-    /**
      * @var RouteDocumentManager
      */
     private $updateRoute;
@@ -37,9 +32,7 @@ class LoadNodeData extends AbstractFixture implements OrderedFixtureInterface, C
      */
     public function setContainer(ContainerInterface $container = null)
     {
-        $this->container = $container;
-        $this->updateRoute = $this->container->get('open_orchestra_backoffice.manager.route_document');
-
+        $this->updateRoute = $container->get('open_orchestra_backoffice.manager.route_document');
     }
 
     const NUMBER_OF_NODE = 100;
