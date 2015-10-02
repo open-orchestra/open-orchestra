@@ -42,7 +42,7 @@ function loadFileConfig(path, filename) {
             subArray[index] = buildFileConfig(keys, filepath);
             return subArray;
         }
-    }
+    };
 
     return buildFileConfig(keys, path + filename);
 }
