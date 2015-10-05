@@ -1,8 +1,8 @@
 module.exports = function(grunt) {
     require('load-grunt-tasks')(grunt);
     grunt.loadTasks('./grunt_tasks');
-    grunt.loadTasks('./vendor/open-orchestra/open-orchestra-cms-bundle/OpenOrchestra/GruntTasks');
-    grunt.loadTasks('./vendor/open-orchestra/open-orchestra-media-admin-bundle/OpenOrchestra/GruntTasks');
+    grunt.loadTasks('./vendor/open-orchestra/open-orchestra-cms-bundle/GruntTasks');
+    grunt.loadTasks('./vendor/open-orchestra/open-orchestra-media-admin-bundle/GruntTasks');
 
     var merge = require('merge');
     var config = {
@@ -10,8 +10,8 @@ module.exports = function(grunt) {
         env: process.env
     };
     config = merge.recursive(true, config, loadDirConfig('./grunt_tasks/options/'));
-    config = merge.recursive(true, config, loadDirConfig('./vendor/open-orchestra/open-orchestra-cms-bundle/OpenOrchestra/GruntTasks/Options/'));
-    config = merge.recursive(true, config, loadDirConfig('./vendor/open-orchestra/open-orchestra-media-admin-bundle/OpenOrchestra/GruntTasks/Options/'));
+    config = merge.recursive(true, config, loadDirConfig('./vendor/open-orchestra/open-orchestra-cms-bundle/GruntTasks/Options/'));
+    config = merge.recursive(true, config, loadDirConfig('./vendor/open-orchestra/open-orchestra-media-admin-bundle/GruntTasks/Options/'));
 
     grunt.initConfig(config);
 };
@@ -42,7 +42,7 @@ function loadFileConfig(path, filename) {
             subArray[index] = buildFileConfig(keys, filepath);
             return subArray;
         }
-    }
+    };
 
     return buildFileConfig(keys, path + filename);
 }
