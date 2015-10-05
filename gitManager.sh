@@ -68,9 +68,9 @@ then
         printf "\n"
         echo "${titleColor}$i${reset}"
         printf "\n"
-        cd $i/OpenOrchestra
+        cd $i
         git $command
-        cd ../..
+        cd ..
     done
 elif $rebase = true
 then
@@ -79,14 +79,14 @@ then
         printf "\n"
         echo "${titleColor}$i${reset}"
         printf "\n"
-        cd $i/OpenOrchestra
+        cd $i
         git status
         git stash
         git fetch -p
         git pull --rebase origin master
         git stash pop
         git status
-        cd ../..
+        cd ..
     done
 elif [ $message = 'noMessage' ] && [ $branch_name = 'noBranch' ]
 then
@@ -98,11 +98,11 @@ then
         printf "\n"
         echo "${titleColor}$i${reset}"
         printf "\n"
-        cd $i/OpenOrchestra
+        cd $i
         git status
         git tag -a $tag -m "$message"
         git push origin --tags
-        cd ../..
+        cd ..
     done
 else
     for i in $list
@@ -110,7 +110,7 @@ else
         printf "\n"
         echo "${titleColor}$i${reset}"
         printf "\n"
-        cd $i/OpenOrchestra
+        cd $i
         git fetch -p
         git status
         git add -p
@@ -121,6 +121,6 @@ else
         git commit -m "$message"
         git pull --rebase origin master
         git push origin master:$branch_name $force_param
-        cd ../..
+        cd ..
     done
 fi

@@ -49,10 +49,10 @@ Pour l'utiliser simplement dans le cas d'ajout de block dans les vendors, il suf
 
     php app/console orchestra:generate:block 
         --block-name="TestBlock" 
-        --form-generator-dir="vendor/itkg/openorchestra-cms-bundle/OpenOrchestra/Backoffice/GenerateForm/Strategies" 
-        --front-display-dir="vendor/itkg/openorchestra-display-bundle/OpenOrchestra/DisplayBundle/DisplayBlock/Strategies" 
-        --backoffice-icon-dir="vendor/itkg/openorchestra-cms-bundle/OpenOrchestra/BackofficeBundle/DisplayIcon/Strategies" 
-        --backoffice-display-dir="vendor/itkg/openorchestra-cms-bundle/OpenOrchestra/BackofficeBundle/DisplayBlock/Strategies" 
+        --form-generator-dir="vendor/itkg/openorchestra-cms-bundle/Backoffice/GenerateForm/Strategies" 
+        --front-display-dir="vendor/itkg/openorchestra-display-bundle/DisplayBundle/DisplayBlock/Strategies" 
+        --backoffice-icon-dir="vendor/itkg/openorchestra-cms-bundle/BackofficeBundle/DisplayIcon/Strategies" 
+        --backoffice-display-dir="vendor/itkg/openorchestra-cms-bundle/BackofficeBundle/DisplayBlock/Strategies" 
         --no-interaction
 
 Pour une génération dans d'autres bundles, il est nécessaire de spécifier le namespace du bundle ainsi que le nom du fichier de configuration dans le bundle.
