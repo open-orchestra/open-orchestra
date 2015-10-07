@@ -9,6 +9,7 @@
         }
     },
     "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
         "incenteev/composer-parameter-handler": "~2.0",
         "open-orchestra/open-orchestra-cms-bundle": "~1.0.0",
