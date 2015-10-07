@@ -9,8 +9,6 @@ use OpenOrchestra\DisplayBundle\DisplayBlock\Strategies\TinyMCEWysiwygStrategy;
 use OpenOrchestra\ModelBundle\Document\Area;
 use OpenOrchestra\ModelBundle\Document\Block;
 use OpenOrchestra\ModelBundle\Document\Node;
-use OpenOrchestra\ModelBundle\Document\Status;
-use OpenOrchestra\ModelBundle\Document\TranslatedValue;
 use OpenOrchestra\ModelInterface\Model\NodeInterface;
 use OpenOrchestra\ModelInterface\Model\AreaInterface;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
@@ -26,6 +24,7 @@ class LoadNodeData extends AbstractFixture implements OrderedFixtureInterface, C
      * @var RouteDocumentManager
      */
     private $updateRoute;
+    private $statusPublished;
 
     /**
      * {@inheritDoc}
@@ -33,6 +32,7 @@ class LoadNodeData extends AbstractFixture implements OrderedFixtureInterface, C
     public function setContainer(ContainerInterface $container = null)
     {
         $this->updateRoute = $container->get('open_orchestra_backoffice.manager.route_document');
+        $this->statusPublished = $container->get('open_orchestra_model.repository.status')->findOneBy(array('name' => 'published'));
     }
 
     const NUMBER_OF_NODE = 100;
@@ -170,17 +170,6 @@ class LoadNodeData extends AbstractFixture implements OrderedFixtureInterface, C
      */
     protected function generateNode($nodeId, $parentId, $routePattern, $name, $language, $type = NodeInterface::TYPE_DEFAULT)
     {
-        $label = new TranslatedValue();
-        $label->setLanguage($language);
-        $label->setValue("published");
-
-        $value = new Status();
-        $value->setName("published");
-        $value->setPublished(true);
-        $value->setInitial(false);
-        $value->addLabel($label);
-        $value->setDisplayColor("red");
-
         $node = new Node();
         $node->setNodeId($nodeId);
         $node->setNodeType($type);
@@ -194,7 +183,7 @@ class LoadNodeData extends AbstractFixture implements OrderedFixtureInterface, C
         $node->setDeleted(false);
         $node->setCreatedAt(new \Datetime());
         $node->setUpdatedAt(new \Datetime());
-        $node->setStatus($value);
+        $node->setStatus($this->statusPublished);
 
         return $node;
     }
