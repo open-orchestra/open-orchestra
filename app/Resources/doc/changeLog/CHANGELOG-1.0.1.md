@@ -20,6 +20,7 @@ Url to see changes :
 ## Bug fixes
 
   - In the Back Office some dashboard widgets were inverted
+  - Fix tinyMce in case of multiple popin opens
 
 ## New features
 
