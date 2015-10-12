@@ -19,6 +19,8 @@ Url to see changes :
 
 ## Bug fixes
 
+ - In the dashboard, the deleted elements are not displayed
+
 ## New features
 
  - It is now possible to configure the Back Office dashboard and to create new widgets for it.
