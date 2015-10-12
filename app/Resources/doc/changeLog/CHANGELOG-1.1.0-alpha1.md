@@ -29,6 +29,8 @@ Url to see changes :
 
 ## Deprecated method
 
+ - [Some method from the `NodeRepositoryInterface` and `ContentRepositoryInterface` have been deprecated](https://github.com/open-orchestra/open-orchestra-model-interface/pull/119)
+
 ## Suppressed method
 
 ## Configuration changes
