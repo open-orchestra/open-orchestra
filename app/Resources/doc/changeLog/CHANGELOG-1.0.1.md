@@ -22,6 +22,7 @@ Url to see changes :
   - In the Back Office some dashboard widgets were inverted
   - Fix tinyMce in case of multiple popin opens
   - Databases routes are now linked to the last published version of a node
+  - In the dashboard, the deleted elements are not displayed
 
 ## New features
 
