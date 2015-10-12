@@ -65,6 +65,24 @@ apache_conf:
     docRoot: /var/www/media-open-orchestra/current/web
     errorLog: media.openorchestraError.log
     accessLog: media.openorchestraAccess.log
+  stable-backoffice-admin-openorchestra.conf:
+    port: 8000
+    serverName: admin.openorchestra.stable
+    docRoot: /var/www/stable-backoffice-open-orchestra/current/web
+    errorLog: stable_openorchestra_backoffice_error.log
+    accessLog: stable_openorchestra_backoffice_access.log
+  stable-demo-orchestra.conf:
+    port: 8000
+    serverName: demo.openorchestra.stable
+    docRoot: /var/www/stable-front-open-orchestra/current/web
+    errorLog: stable-demo-openorchestraError.log
+    accessLog: stable-demo-openorchestraAccess.log
+  stable-media-orchestra.conf:
+    port: 8000
+    serverName: media.openorchestra.stable
+    docRoot: /var/www/stable-media-open-orchestra/current/web
+    errorLog: stable-media.openorchestraError.log
+    accessLog: stable-media.openorchestraAccess.log
 
 varnish_listen_port: 80
 
@@ -89,3 +107,6 @@ sudoers:
   - open_orchestra_backoffice_inte
   - open_orchestra_com_front_inte
   - open_orchestra_media_inte
+  - open_orchestra_backoffice_stable
+  - open_orchestra_front_stable
+  - open_orchestra_media_stable
