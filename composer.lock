@@ -2050,12 +2050,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "d9bc025207aee02423ce47fd8a23484d081ec242"
+                "reference": "15cb11f3ebdcc08a62f5635983baf2beaedeadf0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/d9bc025207aee02423ce47fd8a23484d081ec242",
-                "reference": "d9bc025207aee02423ce47fd8a23484d081ec242",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/15cb11f3ebdcc08a62f5635983baf2beaedeadf0",
+                "reference": "15cb11f3ebdcc08a62f5635983baf2beaedeadf0",
                 "shasum": ""
             },
             "require": {
@@ -2071,7 +2071,7 @@
                 "codeclimate/php-test-reporter": "dev-master",
                 "open-orchestra/open-orchestra-model-bundle": "dev-master",
                 "phake/phake": "2.1.0",
-                "phpunit/phpunit": "4.7.2",
+                "phpunit/phpunit": "4.8.9",
                 "psr/log": "1.0.0"
             },
             "type": "library",
@@ -2097,7 +2097,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2015-10-07 13:01:06"
+            "time": "2015-10-12 08:30:20"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2301,12 +2301,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
-                "reference": "1d2d7d32fcd481bced00d16963f655a42611df82"
+                "reference": "61172da186cad766004c67ff7395831b91e9c347"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/1d2d7d32fcd481bced00d16963f655a42611df82",
-                "reference": "1d2d7d32fcd481bced00d16963f655a42611df82",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/61172da186cad766004c67ff7395831b91e9c347",
+                "reference": "61172da186cad766004c67ff7395831b91e9c347",
                 "shasum": ""
             },
             "require": {
@@ -2343,7 +2343,7 @@
                 }
             ],
             "description": "An implemantation of the model-interface for OpenOrchestra on mongo",
-            "time": "2015-10-07 14:51:49"
+            "time": "2015-10-12 08:28:18"
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
@@ -2351,12 +2351,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-interface.git",
-                "reference": "339e4bcc848a98f9772db1bb6c9db6dc5525ece1"
+                "reference": "948b0709df5fc9092749c5f2a0fd7de1a3b7dd86"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/339e4bcc848a98f9772db1bb6c9db6dc5525ece1",
-                "reference": "339e4bcc848a98f9772db1bb6c9db6dc5525ece1",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/948b0709df5fc9092749c5f2a0fd7de1a3b7dd86",
+                "reference": "948b0709df5fc9092749c5f2a0fd7de1a3b7dd86",
                 "shasum": ""
             },
             "require": {
@@ -2389,7 +2389,7 @@
                 }
             ],
             "description": "Describe all entity and repository to implement for the whole OpenOrchestra project",
-            "time": "2015-10-07 12:40:56"
+            "time": "2015-10-12 08:22:51"
         },
         {
             "name": "open-orchestra/open-orchestra-user-bundle",
@@ -4877,16 +4877,16 @@
         },
         {
             "name": "sebastian/global-state",
-            "version": "dev-master",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/global-state.git",
-                "reference": "23af31f402993cfd94e99cbc4b782e9a78eb0e97"
+                "reference": "bc37d50fea7d017d3d340f230811c9f1d7280af4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/global-state/zipball/23af31f402993cfd94e99cbc4b782e9a78eb0e97",
-                "reference": "23af31f402993cfd94e99cbc4b782e9a78eb0e97",
+                "url": "https://api.github.com/repos/sebastianbergmann/global-state/zipball/bc37d50fea7d017d3d340f230811c9f1d7280af4",
+                "reference": "bc37d50fea7d017d3d340f230811c9f1d7280af4",
                 "shasum": ""
             },
             "require": {
@@ -4924,7 +4924,7 @@
             "keywords": [
                 "global state"
             ],
-            "time": "2015-06-21 15:11:22"
+            "time": "2015-10-12 03:26:01"
         },
         {
             "name": "sebastian/recursion-context",
