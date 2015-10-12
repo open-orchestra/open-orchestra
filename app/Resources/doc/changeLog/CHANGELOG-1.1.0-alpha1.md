@@ -22,6 +22,8 @@ Url to see changes :
 ## New features
 
  - It is now possible to configure the Back Office dashboard and to create new widgets for it.
+ - Routes stored in the database are now linked to the last published version of a node
+ - Each time you updaet a site, the routes in the database related to this site are updated
 
 ## Other changes
 
