@@ -29,6 +29,8 @@ Url to see changes :
 
 ## Other changes
 
+ - Bundles are now using the PSR-4 syntax to be loaded, you should update the `Gruntfile` to follow this path modification
+
 ## Deprecated method
 
  - [Some method from the `NodeRepositoryInterface` and `ContentRepositoryInterface` have been deprecated](https://github.com/open-orchestra/open-orchestra-model-interface/pull/119)
