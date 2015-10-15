@@ -26,6 +26,8 @@ Url to see changes :
 
 ## New features
 
+ - You can now add the author, last contributor and contribution date in the content listing
+
 ## Other changes
 
 ## Deprecated method
