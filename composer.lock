@@ -1752,12 +1752,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kriswallsmith/assetic.git",
-                "reference": "37bcae173f2ca774ee125ea378690d192596aa29"
+                "reference": "cb92b179dddfb8a3f341d53bd27e088f24d9c2e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/37bcae173f2ca774ee125ea378690d192596aa29",
-                "reference": "37bcae173f2ca774ee125ea378690d192596aa29",
+                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/cb92b179dddfb8a3f341d53bd27e088f24d9c2e5",
+                "reference": "cb92b179dddfb8a3f341d53bd27e088f24d9c2e5",
                 "shasum": ""
             },
             "require": {
@@ -1822,20 +1822,20 @@
                 "compression",
                 "minification"
             ],
-            "time": "2015-10-01 14:26:07"
+            "time": "2015-10-15 01:33:42"
         },
         {
             "name": "monolog/monolog",
-            "version": "1.17.1",
+            "version": "1.17.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "0524c87587ab85bc4c2d6f5b41253ccb930a5422"
+                "reference": "bee7f0dc9c3e0b69a6039697533dca1e845c8c24"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/0524c87587ab85bc4c2d6f5b41253ccb930a5422",
-                "reference": "0524c87587ab85bc4c2d6f5b41253ccb930a5422",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/bee7f0dc9c3e0b69a6039697533dca1e845c8c24",
+                "reference": "bee7f0dc9c3e0b69a6039697533dca1e845c8c24",
                 "shasum": ""
             },
             "require": {
@@ -1849,10 +1849,11 @@
                 "aws/aws-sdk-php": "^2.4.9",
                 "doctrine/couchdb": "~1.0@dev",
                 "graylog2/gelf-php": "~1.0",
+                "jakub-onderka/php-parallel-lint": "0.9",
                 "php-console/php-console": "^3.1.3",
                 "phpunit/phpunit": "~4.5",
                 "phpunit/phpunit-mock-objects": "2.3.0",
-                "raven/raven": "~0.11",
+                "raven/raven": "^0.13",
                 "ruflin/elastica": ">=0.90 <3.0",
                 "swiftmailer/swiftmailer": "~5.3",
                 "videlalvaro/php-amqplib": "~2.4"
@@ -1898,7 +1899,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2015-08-31 09:17:37"
+            "time": "2015-10-14 12:51:02"
         },
         {
             "name": "open-orchestra/open-orchestra-base-api-bundle",
@@ -2054,12 +2055,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "1001ae040943a1ea182c67d50e5777f20ad4baea"
+                "reference": "8e545b6bb7348e2c0342b9f592853df4fc28c54a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/1001ae040943a1ea182c67d50e5777f20ad4baea",
-                "reference": "1001ae040943a1ea182c67d50e5777f20ad4baea",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/8e545b6bb7348e2c0342b9f592853df4fc28c54a",
+                "reference": "8e545b6bb7348e2c0342b9f592853df4fc28c54a",
                 "shasum": ""
             },
             "require": {
@@ -2101,7 +2102,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2015-10-12 12:49:53"
+            "time": "2015-10-15 15:37:09"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2159,12 +2160,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-libs.git",
-                "reference": "187b2aa4346967cfbd423c16b0d7387bd156c5c6"
+                "reference": "48a75d5ea55bf3e6bdd773406457377a7bdfab03"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-libs/zipball/187b2aa4346967cfbd423c16b0d7387bd156c5c6",
-                "reference": "187b2aa4346967cfbd423c16b0d7387bd156c5c6",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-libs/zipball/48a75d5ea55bf3e6bdd773406457377a7bdfab03",
+                "reference": "48a75d5ea55bf3e6bdd773406457377a7bdfab03",
                 "shasum": ""
             },
             "require": {
@@ -2201,7 +2202,7 @@
                 }
             ],
             "description": "Some library for the Open Orchestra project",
-            "time": "2015-09-22 15:25:58"
+            "time": "2015-10-15 12:21:19"
         },
         {
             "name": "open-orchestra/open-orchestra-media-admin-bundle",
@@ -2310,12 +2311,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
-                "reference": "854d4acc2039136bed37842064299168a9f2543a"
+                "reference": "ebddb36159a76135482d904270048999d3d67b64"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/854d4acc2039136bed37842064299168a9f2543a",
-                "reference": "854d4acc2039136bed37842064299168a9f2543a",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/ebddb36159a76135482d904270048999d3d67b64",
+                "reference": "ebddb36159a76135482d904270048999d3d67b64",
                 "shasum": ""
             },
             "require": {
@@ -2352,7 +2353,7 @@
                 }
             ],
             "description": "An implemantation of the model-interface for OpenOrchestra on mongo",
-            "time": "2015-10-12 12:49:45"
+            "time": "2015-10-15 15:37:50"
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
