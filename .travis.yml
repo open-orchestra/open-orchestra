@@ -23,7 +23,7 @@ before_install:
 
 install:
   - sudo apt-get install mongodb-org-server
-  - composer install
+  - composer install --prefer-dist
 
 before_script:
   - sudo mkdir -p /var/uploaded-files && sudo chmod -R a+w /var/uploaded-files
