@@ -2160,12 +2160,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-libs.git",
-                "reference": "48a75d5ea55bf3e6bdd773406457377a7bdfab03"
+                "reference": "2e6aae9dcc19854ead4d6fbcfad31b0cc0f5fd15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-libs/zipball/48a75d5ea55bf3e6bdd773406457377a7bdfab03",
-                "reference": "48a75d5ea55bf3e6bdd773406457377a7bdfab03",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-libs/zipball/2e6aae9dcc19854ead4d6fbcfad31b0cc0f5fd15",
+                "reference": "2e6aae9dcc19854ead4d6fbcfad31b0cc0f5fd15",
                 "shasum": ""
             },
             "require": {
@@ -2202,7 +2202,7 @@
                 }
             ],
             "description": "Some library for the Open Orchestra project",
-            "time": "2015-10-15 12:21:19"
+            "time": "2015-10-15 15:54:23"
         },
         {
             "name": "open-orchestra/open-orchestra-media-admin-bundle",
