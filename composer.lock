@@ -5,7 +5,6 @@
         "This file is @generated automatically"
     ],
     "hash": "f3cfd520a296874f63490224a6c4a90c",
-    "content-hash": "0bc995af7b42d27888f7b6ba40b992dd",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -2055,12 +2054,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "8e545b6bb7348e2c0342b9f592853df4fc28c54a"
+                "reference": "564b24b12e37bcb06553e9d674352019dd5fe9ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/8e545b6bb7348e2c0342b9f592853df4fc28c54a",
-                "reference": "8e545b6bb7348e2c0342b9f592853df4fc28c54a",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/564b24b12e37bcb06553e9d674352019dd5fe9ca",
+                "reference": "564b24b12e37bcb06553e9d674352019dd5fe9ca",
                 "shasum": ""
             },
             "require": {
@@ -2102,7 +2101,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2015-10-15 15:37:09"
+            "time": "2015-10-16 12:56:26"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
