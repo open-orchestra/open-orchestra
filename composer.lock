@@ -5,7 +5,6 @@
         "This file is @generated automatically"
     ],
     "hash": "387f51c3ab4756f312412576c3348bd4",
-    "content-hash": "ff8ebb23dbf090f0f785267b6db296d8",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -1907,12 +1906,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-base-api-bundle.git",
-                "reference": "1f229a73576335e731fcb0ce50ac31b7596e5b1f"
+                "reference": "b46979fb0e90bc2ba5c5d736511b163c9a505883"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-api-bundle/zipball/1f229a73576335e731fcb0ce50ac31b7596e5b1f",
-                "reference": "1f229a73576335e731fcb0ce50ac31b7596e5b1f",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-api-bundle/zipball/b46979fb0e90bc2ba5c5d736511b163c9a505883",
+                "reference": "b46979fb0e90bc2ba5c5d736511b163c9a505883",
                 "shasum": ""
             },
             "require": {
@@ -1948,7 +1947,7 @@
                 }
             ],
             "description": "This bundle provide the base bricks for the OpenOrchestra Api",
-            "time": "2015-10-05 13:38:45"
+            "time": "2015-10-16 08:42:59"
         },
         {
             "name": "open-orchestra/open-orchestra-base-api-mongo-model-bundle",
@@ -2093,12 +2092,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "c6b64b0db083cd985e070e6c0e7146ac2ba3b2ed"
+                "reference": "be29f70ebbfc18693bbc08c591513853edc92454"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/c6b64b0db083cd985e070e6c0e7146ac2ba3b2ed",
-                "reference": "c6b64b0db083cd985e070e6c0e7146ac2ba3b2ed",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/be29f70ebbfc18693bbc08c591513853edc92454",
+                "reference": "be29f70ebbfc18693bbc08c591513853edc92454",
                 "shasum": ""
             },
             "require": {
@@ -2140,7 +2139,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2015-10-15 15:37:03"
+            "time": "2015-10-16 08:47:51"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2286,12 +2285,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-bundle.git",
-                "reference": "8b7c853b6d5f306c9972e47ef55eaaae659d8a35"
+                "reference": "f5c69ee4302f3c536e39710ee763438ffd7e3800"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/8b7c853b6d5f306c9972e47ef55eaaae659d8a35",
-                "reference": "8b7c853b6d5f306c9972e47ef55eaaae659d8a35",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/f5c69ee4302f3c536e39710ee763438ffd7e3800",
+                "reference": "f5c69ee4302f3c536e39710ee763438ffd7e3800",
                 "shasum": ""
             },
             "require": {
@@ -2300,8 +2299,10 @@
                 "doctrine/mongodb-odm-bundle": "3.0.1",
                 "ext-imagick": "*",
                 "knplabs/knp-gaufrette-bundle": "v0.1.7",
+                "open-orchestra/open-orchestra-bbcode-bundle": "*",
                 "open-orchestra/open-orchestra-display-bundle": "*",
                 "open-orchestra/open-orchestra-model-interface": "*",
+                "open-orchestra/open-orchestra-mongo-libs": "*",
                 "stof/doctrine-extensions-bundle": "1.2.1"
             },
             "require-dev": {
@@ -2332,7 +2333,7 @@
                 }
             ],
             "description": "A media bundle for the OpenOrchestra Project",
-            "time": "2015-10-14 09:02:58"
+            "time": "2015-10-16 10:11:38"
         },
         {
             "name": "open-orchestra/open-orchestra-model-bundle",
