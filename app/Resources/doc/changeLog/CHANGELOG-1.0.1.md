@@ -19,10 +19,10 @@ Url to see changes :
   
 ## Bug fixes
 
-  - In the Back Office some dashboard widgets were inverted
-  - Fix tinyMce in case of multiple popin opens
+  - In the Back Office dashboard, some widgets were inverted and the deleted elements are no more displayed
+  - Fix tinyMce in case of multiple popin openings
   - Databases routes are now linked to the last published version of a node
-  - In the dashboard, the deleted elements are not displayed
+  - The Video Block can now be correctly edited and saved
 
 ## New features
 
