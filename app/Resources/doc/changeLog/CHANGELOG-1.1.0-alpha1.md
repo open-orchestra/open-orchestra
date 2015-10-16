@@ -19,14 +19,14 @@ Url to see changes :
 
 ## Bug fixes
 
- - In the dashboard, the deleted elements are not displayed
+ - Each time you update a site, the routes in the database related to this site are updated
 
 ## New features
 
  - It is now possible to configure the Back Office dashboard and to create new widgets for it.
  - Routes stored in the database are now linked to the last published version of a node
- - Each time you updaet a site, the routes in the database related to this site are updated
  - You can now add the author, last contributor and contribution date in the content listing
+ - 2 new events are availables in the block rendering process: PRE_BLOCK_CREATION and POST_BLOCK_CREATION
 
 ## Other changes
 
