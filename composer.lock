@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "387f51c3ab4756f312412576c3348bd4",
-    "content-hash": "ff8ebb23dbf090f0f785267b6db296d8",
+    "hash": "8e1eb8846a4943012d218dba6178fc3e",
+    "content-hash": "572ded1354dc91f73ab1a6c5809e64ba",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -2093,12 +2093,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "ae7598cf1a5df1f33374a1c77c176c041f79940a"
+                "reference": "24fe3990fba459f1b6dcc1268179d3eb45b55817"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/ae7598cf1a5df1f33374a1c77c176c041f79940a",
-                "reference": "ae7598cf1a5df1f33374a1c77c176c041f79940a",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/24fe3990fba459f1b6dcc1268179d3eb45b55817",
+                "reference": "24fe3990fba459f1b6dcc1268179d3eb45b55817",
                 "shasum": ""
             },
             "require": {
@@ -2114,7 +2114,7 @@
                 "codeclimate/php-test-reporter": "dev-master",
                 "open-orchestra/open-orchestra-model-bundle": "dev-master",
                 "phake/phake": "2.1.0",
-                "phpunit/phpunit": "4.8.9",
+                "phpunit/phpunit": "4.8.12",
                 "psr/log": "1.0.0"
             },
             "type": "library",
@@ -2140,7 +2140,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2015-10-19 15:08:49"
+            "time": "2015-10-20 14:49:44"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2286,12 +2286,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-bundle.git",
-                "reference": "3a8e7069c09cc41673e7a6da354476cb2f510513"
+                "reference": "f66e21f408f51c1f3cef2dfec94637791ab7b888"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/3a8e7069c09cc41673e7a6da354476cb2f510513",
-                "reference": "3a8e7069c09cc41673e7a6da354476cb2f510513",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/f66e21f408f51c1f3cef2dfec94637791ab7b888",
+                "reference": "f66e21f408f51c1f3cef2dfec94637791ab7b888",
                 "shasum": ""
             },
             "require": {
@@ -2334,7 +2334,7 @@
                 }
             ],
             "description": "A media bundle for the OpenOrchestra Project",
-            "time": "2015-10-19 12:41:01"
+            "time": "2015-10-20 09:06:50"
         },
         {
             "name": "open-orchestra/open-orchestra-model-bundle",
@@ -2728,6 +2728,60 @@
                 "psr-3"
             ],
             "time": "2015-06-02 13:48:41"
+        },
+        {
+            "name": "pyrech/composer-changelogs",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pyrech/composer-changelogs.git",
+                "reference": "3f82b46b096df4f400266c1f8cb4a8005b98fce2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pyrech/composer-changelogs/zipball/3f82b46b096df4f400266c1f8cb4a8005b98fce2",
+                "reference": "3f82b46b096df4f400266c1f8cb4a8005b98fce2",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "composer/composer": "~1.0.0-alpha10@dev",
+                "fabpot/php-cs-fixer": "~1.5",
+                "phpunit/phpunit": "^4.8"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Pyrech\\ComposerChangelogs\\ChangelogsPlugin",
+                "branch-alias": {
+                    "dev-master": "1.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Pyrech\\ComposerChangelogs\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Loïck Piera",
+                    "email": "pyrech@gmail.com"
+                }
+            ],
+            "description": "Display changelogs after each composer update",
+            "keywords": [
+                "changelog",
+                "composer",
+                "plugin",
+                "update"
+            ],
+            "time": "2015-10-14 08:17:36"
         },
         {
             "name": "sensio/distribution-bundle",
@@ -5110,7 +5164,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "pyrech/composer-changelogs": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
