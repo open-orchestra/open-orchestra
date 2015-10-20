@@ -15,8 +15,7 @@
         "open-orchestra/open-orchestra-workflow-function-bundle": "*",
         "open-orchestra/open-orchestra-media-admin-bundle": "*",
         "open-orchestra/open-orchestra-model-bundle": "*",
-        "open-orchestra/open-orchestra-base-api-mongo-model-bundle": "*",
-        "pyrech/composer-changelogs": "^1.2@dev"
+        "open-orchestra/open-orchestra-base-api-mongo-model-bundle": "*"
     },
     "require-dev": {
         "jmikola/geojson": "~1.0",
