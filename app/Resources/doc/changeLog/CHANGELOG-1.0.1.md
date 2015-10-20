@@ -27,6 +27,7 @@ Url to see changes :
 ## New features
 
  - You can now add the author, last contributor and contribution date in the content listing
+ - In the Back Office, media modals have been enhanced with scrollbars
 
 ## Other changes
 
