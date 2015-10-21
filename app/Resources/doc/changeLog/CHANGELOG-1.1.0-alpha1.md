@@ -27,6 +27,7 @@ Url to see changes :
  - Routes stored in the database are now linked to the last published version of a node
  - You can now add the author, last contributor and contribution date in the content listing
  - 2 new events are availables in the block rendering process: PRE_BLOCK_CREATION and POST_BLOCK_CREATION
+ - It is now possible to filter a column which contains a type `date` in dataTable 
 
 ## Other changes
 
