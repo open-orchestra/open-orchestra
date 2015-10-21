@@ -1065,12 +1065,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Atlantic18/DoctrineExtensions.git",
-                "reference": "33778a4dd886734077c491056862653f81b2dbdd"
+                "reference": "14ab29adc905b80e1197fe4cf00b5ba74db5750d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/33778a4dd886734077c491056862653f81b2dbdd",
-                "reference": "33778a4dd886734077c491056862653f81b2dbdd",
+                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/14ab29adc905b80e1197fe4cf00b5ba74db5750d",
+                "reference": "14ab29adc905b80e1197fe4cf00b5ba74db5750d",
                 "shasum": ""
             },
             "require": {
@@ -1136,7 +1136,7 @@
                 "tree",
                 "uploadable"
             ],
-            "time": "2015-10-02 13:27:34"
+            "time": "2015-10-21 05:15:12"
         },
         {
             "name": "guzzle/guzzle",
@@ -2211,12 +2211,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-admin-bundle.git",
-                "reference": "add7c962723151e45c22f577fd43f1b7631c2596"
+                "reference": "f7bd4391d50776f96bbfc5367194f256a56892d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/add7c962723151e45c22f577fd43f1b7631c2596",
-                "reference": "add7c962723151e45c22f577fd43f1b7631c2596",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/f7bd4391d50776f96bbfc5367194f256a56892d8",
+                "reference": "f7bd4391d50776f96bbfc5367194f256a56892d8",
                 "shasum": ""
             },
             "require": {
@@ -2247,7 +2247,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part for the media of OpenOrchestra",
-            "time": "2015-10-09 12:29:37"
+            "time": "2015-10-20 08:07:43"
         },
         {
             "name": "open-orchestra/open-orchestra-media-bundle",
