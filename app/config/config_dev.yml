@@ -10,6 +10,7 @@ framework:
 web_profiler:
     toolbar: true
     intercept_redirects: false
+    excluded_ajax_paths:  /_wdt
 
 monolog:
     handlers:
