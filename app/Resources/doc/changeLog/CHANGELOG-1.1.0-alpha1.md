@@ -27,7 +27,9 @@ Url to see changes :
  - Routes stored in the database are now linked to the last published version of a node
  - You can now add the author, last contributor and contribution date in the content listing
  - 2 new events are availables in the block rendering process: PRE_BLOCK_CREATION and POST_BLOCK_CREATION
- - It is now possible to filter a column which contains a type `date` in dataTable 
+ - It is now possible to filter a column which contains a type `date` in dataTable
+ - Transverse block are now created on all transverse nodes
+ - When you add a language to a website, the transverse node is created with all the transverse blocks
 
 ## Other changes
 
@@ -36,6 +38,7 @@ Url to see changes :
 ## Deprecated method
 
  - [Some method from the `NodeRepositoryInterface` and `ContentRepositoryInterface` have been deprecated](https://github.com/open-orchestra/open-orchestra-model-interface/pull/119)
+ - The method `findByNodeType` has been deprecated
 
 ## Suppressed method
 
