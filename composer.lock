@@ -181,12 +181,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "1c3483678ab767c3e21d3a96d6dd1006b327d425"
+                "reference": "2a73ce166d5e02f0b09ceb10776027d5b63de823"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/1c3483678ab767c3e21d3a96d6dd1006b327d425",
-                "reference": "1c3483678ab767c3e21d3a96d6dd1006b327d425",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/2a73ce166d5e02f0b09ceb10776027d5b63de823",
+                "reference": "2a73ce166d5e02f0b09ceb10776027d5b63de823",
                 "shasum": ""
             },
             "require": {
@@ -207,8 +207,8 @@
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Doctrine\\Common\\Cache\\": "lib/"
+                "psr-4": {
+                    "Doctrine\\Common\\Cache\\": "lib/Doctrine/Common/Cache"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -243,7 +243,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2015-10-08 07:32:30"
+            "time": "2015-10-25 10:46:21"
         },
         {
             "name": "doctrine/collections",
@@ -317,12 +317,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/common.git",
-                "reference": "9f35e74fcbe9011b660e0b423e98c83b7a8699c0"
+                "reference": "69e04b3f654787712ffb83124cf25aaa1bb8dbf4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/common/zipball/9f35e74fcbe9011b660e0b423e98c83b7a8699c0",
-                "reference": "9f35e74fcbe9011b660e0b423e98c83b7a8699c0",
+                "url": "https://api.github.com/repos/doctrine/common/zipball/69e04b3f654787712ffb83124cf25aaa1bb8dbf4",
+                "reference": "69e04b3f654787712ffb83124cf25aaa1bb8dbf4",
                 "shasum": ""
             },
             "require": {
@@ -343,8 +343,8 @@
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Doctrine\\Common\\": "lib/"
+                "psr-4": {
+                    "Doctrine\\Common\\": "lib/Doctrine/Common"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -382,7 +382,7 @@
                 "persistence",
                 "spl"
             ],
-            "time": "2015-09-16 13:21:47"
+            "time": "2015-10-25 10:22:09"
         },
         {
             "name": "doctrine/data-fixtures",
@@ -1466,12 +1466,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/serializer.git",
-                "reference": "4835aa3f88f337cc1b902243eb3a67381f521f11"
+                "reference": "fe13a1f993ea3456e195b7820692f2eb2b6bbb48"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/serializer/zipball/4835aa3f88f337cc1b902243eb3a67381f521f11",
-                "reference": "4835aa3f88f337cc1b902243eb3a67381f521f11",
+                "url": "https://api.github.com/repos/schmittjoh/serializer/zipball/fe13a1f993ea3456e195b7820692f2eb2b6bbb48",
+                "reference": "fe13a1f993ea3456e195b7820692f2eb2b6bbb48",
                 "shasum": ""
             },
             "require": {
@@ -1531,7 +1531,7 @@
                 "serialization",
                 "xml"
             ],
-            "time": "2015-09-14 10:53:30"
+            "time": "2015-10-27 09:24:41"
         },
         {
             "name": "jms/serializer-bundle",
@@ -2055,12 +2055,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "13fa9aace548ff0cc6801800202a21ff16153ae2"
+                "reference": "cfd5cb4a41f781d45ec1c212ce28054622b7f072"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/13fa9aace548ff0cc6801800202a21ff16153ae2",
-                "reference": "13fa9aace548ff0cc6801800202a21ff16153ae2",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/cfd5cb4a41f781d45ec1c212ce28054622b7f072",
+                "reference": "cfd5cb4a41f781d45ec1c212ce28054622b7f072",
                 "shasum": ""
             },
             "require": {
@@ -2102,7 +2102,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2015-10-23 08:51:07"
+            "time": "2015-10-27 09:05:47"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
