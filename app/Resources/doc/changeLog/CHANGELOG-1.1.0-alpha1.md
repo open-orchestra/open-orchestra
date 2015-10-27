@@ -20,6 +20,7 @@ Url to see changes :
 ## Bug fixes
 
  - Each time you update a site, the routes in the database related to this site are updated
+ - Sorts by attributes in content and content type view are fully functional
 
 ## New features
 
