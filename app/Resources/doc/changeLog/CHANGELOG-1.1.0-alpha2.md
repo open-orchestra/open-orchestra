@@ -22,7 +22,9 @@ Url to see changes :
 ## New features
 
 ## Other changes
-
+  
+  - In differents dataTable, the global search is disabled. To reactivate it, you can use the data attribute ``display-global-search=true`` in the link in navigation panel.  
+  
 ## Deprecated method
 
 ## Suppressed method
