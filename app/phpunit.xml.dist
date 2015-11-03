@@ -30,6 +30,7 @@
             <exclude>../vendor/open-orchestra/open-orchestra-user-bundle/UserBundle/Tests/Functional</exclude>
             <exclude>../vendor/open-orchestra/open-orchestra-workflow-function-bundle/WorkflowFunctionBundle/Tests/Functional</exclude>
             <exclude>../vendor/open-orchestra/open-orchestra-workflow-function-bundle/WorkflowFunctionModelBundle/Tests/Functional</exclude>
+            <exclude>../vendor/open-orchestra/open-orchestra-workflow-function-bundle/WorkflowFunctionAdminBundle/Tests/Functional</exclude>
             <exclude>../vendor/open-orchestra/open-orchestra-base-bundle/BaseBundle/Tests/Functional</exclude>
             <exclude>../vendor/open-orchestra/open-orchestra-libs/Mapping/Tests/Functional</exclude>
         </testsuite>
