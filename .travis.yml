@@ -42,3 +42,4 @@ script:
   - phpunit -c app/ --group media
   - phpunit -c app/ --group securityCheck
   - phpunit -c app/ --group apiFunctional
+  - phpunit -c app/ --group backofficeTest
