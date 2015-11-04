@@ -181,12 +181,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "eb8a73619af4f1c8711e2ce482f5de3643258a1f"
+                "reference": "f69c21c5cea834def1664a73a1b7cd5fcdfbd23e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/eb8a73619af4f1c8711e2ce482f5de3643258a1f",
-                "reference": "eb8a73619af4f1c8711e2ce482f5de3643258a1f",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/f69c21c5cea834def1664a73a1b7cd5fcdfbd23e",
+                "reference": "f69c21c5cea834def1664a73a1b7cd5fcdfbd23e",
                 "shasum": ""
             },
             "require": {
@@ -203,7 +203,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.5.x-dev"
+                    "dev-master": "1.6.x-dev"
                 }
             },
             "autoload": {
@@ -243,7 +243,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2015-10-28 11:27:45"
+            "time": "2015-11-02 18:32:40"
         },
         {
             "name": "doctrine/collections",
@@ -317,12 +317,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/common.git",
-                "reference": "69e04b3f654787712ffb83124cf25aaa1bb8dbf4"
+                "reference": "79fdef35a79a3694e5ae552575d23fd7dc8482c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/common/zipball/69e04b3f654787712ffb83124cf25aaa1bb8dbf4",
-                "reference": "69e04b3f654787712ffb83124cf25aaa1bb8dbf4",
+                "url": "https://api.github.com/repos/doctrine/common/zipball/79fdef35a79a3694e5ae552575d23fd7dc8482c2",
+                "reference": "79fdef35a79a3694e5ae552575d23fd7dc8482c2",
                 "shasum": ""
             },
             "require": {
@@ -382,7 +382,7 @@
                 "persistence",
                 "spl"
             ],
-            "time": "2015-10-25 10:22:09"
+            "time": "2015-10-30 18:43:38"
         },
         {
             "name": "doctrine/data-fixtures",
@@ -622,12 +622,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/mongodb.git",
-                "reference": "556287acc8020c5dd0042c6c150c845fdbf9458b"
+                "reference": "f21bff9cc50dd565d8f52da0452666380859b5d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/mongodb/zipball/556287acc8020c5dd0042c6c150c845fdbf9458b",
-                "reference": "556287acc8020c5dd0042c6c150c845fdbf9458b",
+                "url": "https://api.github.com/repos/doctrine/mongodb/zipball/f21bff9cc50dd565d8f52da0452666380859b5d0",
+                "reference": "f21bff9cc50dd565d8f52da0452666380859b5d0",
                 "shasum": ""
             },
             "require": {
@@ -689,7 +689,7 @@
                 "mongodb",
                 "persistence"
             ],
-            "time": "2015-08-18 08:33:29"
+            "time": "2015-10-31 11:22:05"
         },
         {
             "name": "doctrine/mongodb-odm",
@@ -998,12 +998,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSUserBundle.git",
-                "reference": "d5b28c367d393f9d9fbc48c4138b2a74d51c0c83"
+                "reference": "45d6f40178216a840885b4ca6d7de9e67068568a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/d5b28c367d393f9d9fbc48c4138b2a74d51c0c83",
-                "reference": "d5b28c367d393f9d9fbc48c4138b2a74d51c0c83",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/45d6f40178216a840885b4ca6d7de9e67068568a",
+                "reference": "45d6f40178216a840885b4ca6d7de9e67068568a",
                 "shasum": ""
             },
             "require": {
@@ -1057,7 +1057,7 @@
             "keywords": [
                 "User management"
             ],
-            "time": "2015-09-15 13:15:07"
+            "time": "2015-11-03 10:24:23"
         },
         {
             "name": "gedmo/doctrine-extensions",
@@ -1065,12 +1065,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Atlantic18/DoctrineExtensions.git",
-                "reference": "e899830607a4e13d73f9cee4cb91bd55fec648d6"
+                "reference": "ae8974e4920a20c27b3a660ab89580b260b569a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/e899830607a4e13d73f9cee4cb91bd55fec648d6",
-                "reference": "e899830607a4e13d73f9cee4cb91bd55fec648d6",
+                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/ae8974e4920a20c27b3a660ab89580b260b569a8",
+                "reference": "ae8974e4920a20c27b3a660ab89580b260b569a8",
                 "shasum": ""
             },
             "require": {
@@ -1136,7 +1136,7 @@
                 "tree",
                 "uploadable"
             ],
-            "time": "2015-10-23 06:34:45"
+            "time": "2015-11-03 10:52:13"
         },
         {
             "name": "guzzle/guzzle",
@@ -2211,12 +2211,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-admin-bundle.git",
-                "reference": "3275b088db4cf080d2083f5ea8d9fbb92d1a8b9d"
+                "reference": "d924738519afe6a5cb0bed03250b0a2b94bda6f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/3275b088db4cf080d2083f5ea8d9fbb92d1a8b9d",
-                "reference": "3275b088db4cf080d2083f5ea8d9fbb92d1a8b9d",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/d924738519afe6a5cb0bed03250b0a2b94bda6f4",
+                "reference": "d924738519afe6a5cb0bed03250b0a2b94bda6f4",
                 "shasum": ""
             },
             "require": {
@@ -2247,7 +2247,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part for the media of OpenOrchestra",
-            "time": "2015-10-27 10:25:16"
+            "time": "2015-10-30 15:59:23"
         },
         {
             "name": "open-orchestra/open-orchestra-media-bundle",
@@ -2311,12 +2311,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
-                "reference": "ebddb36159a76135482d904270048999d3d67b64"
+                "reference": "8d6defaa8e9da83fd65d62c73a835551ad6be956"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/ebddb36159a76135482d904270048999d3d67b64",
-                "reference": "ebddb36159a76135482d904270048999d3d67b64",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/8d6defaa8e9da83fd65d62c73a835551ad6be956",
+                "reference": "8d6defaa8e9da83fd65d62c73a835551ad6be956",
                 "shasum": ""
             },
             "require": {
@@ -2353,7 +2353,7 @@
                 }
             ],
             "description": "An implemantation of the model-interface for OpenOrchestra on mongo",
-            "time": "2015-10-15 15:37:50"
+            "time": "2015-10-30 15:44:51"
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
