@@ -2409,12 +2409,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-user-bundle.git",
-                "reference": "4bb63a2c0a84d5ac335567826c1f692d1c070a25"
+                "reference": "7471af6b8a0ea840f47f35db67492b418853cc52"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-user-bundle/zipball/4bb63a2c0a84d5ac335567826c1f692d1c070a25",
-                "reference": "4bb63a2c0a84d5ac335567826c1f692d1c070a25",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-user-bundle/zipball/7471af6b8a0ea840f47f35db67492b418853cc52",
+                "reference": "7471af6b8a0ea840f47f35db67492b418853cc52",
                 "shasum": ""
             },
             "require": {
@@ -2451,7 +2451,7 @@
                 }
             ],
             "description": "An override of FosUserBundle to provide authentication on OpenOrchestra",
-            "time": "2015-09-30 14:39:53"
+            "time": "2015-11-05 10:11:16"
         },
         {
             "name": "open-orchestra/open-orchestra-workflow-function-bundle",
@@ -2923,19 +2923,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/f1nder/SolutionMongoAggregationBundle.git",
-                "reference": "1f2c02d166392e0443386aeb2471d311d1cef2e8"
+                "reference": "198e92c5a1edbdb41da97ed5a45d1d89d6d324b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/f1nder/SolutionMongoAggregationBundle/zipball/1f2c02d166392e0443386aeb2471d311d1cef2e8",
-                "reference": "1f2c02d166392e0443386aeb2471d311d1cef2e8",
+                "url": "https://api.github.com/repos/f1nder/SolutionMongoAggregationBundle/zipball/198e92c5a1edbdb41da97ed5a45d1d89d6d324b5",
+                "reference": "198e92c5a1edbdb41da97ed5a45d1d89d6d324b5",
                 "shasum": ""
             },
             "require": {
                 "doctrine/mongodb-odm-bundle": "~3.0",
                 "php": ">=5.4.0",
-                "solution/pipeline-builder": "dev-master",
-                "symfony/symfony": "~2.3"
+                "solution/pipeline-builder": "dev-master"
             },
             "type": "symfony-bundle",
             "autoload": {
@@ -2961,7 +2960,7 @@
                 "pipeline",
                 "query"
             ],
-            "time": "2015-09-30 17:03:45"
+            "time": "2015-11-04 13:25:43"
         },
         {
             "name": "solution/pipeline-builder",
