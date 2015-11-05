@@ -2055,12 +2055,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "701e7436172bc2a095602048dc2269de7bdce466"
+                "reference": "5e1a967c9923a1675dfac961c245604b22f0a0a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/701e7436172bc2a095602048dc2269de7bdce466",
-                "reference": "701e7436172bc2a095602048dc2269de7bdce466",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/5e1a967c9923a1675dfac961c245604b22f0a0a6",
+                "reference": "5e1a967c9923a1675dfac961c245604b22f0a0a6",
                 "shasum": ""
             },
             "require": {
@@ -2102,7 +2102,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2015-10-29 10:14:00"
+            "time": "2015-11-05 11:01:35"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2460,12 +2460,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-workflow-function-bundle.git",
-                "reference": "7dd909fb5729fdb4e2c1c1d72dada61cd3dca137"
+                "reference": "6fa0f046edfe8d4f54e86776478ef56714877240"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-workflow-function-bundle/zipball/7dd909fb5729fdb4e2c1c1d72dada61cd3dca137",
-                "reference": "7dd909fb5729fdb4e2c1c1d72dada61cd3dca137",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-workflow-function-bundle/zipball/6fa0f046edfe8d4f54e86776478ef56714877240",
+                "reference": "6fa0f046edfe8d4f54e86776478ef56714877240",
                 "shasum": ""
             },
             "require": {
@@ -2503,7 +2503,7 @@
                 }
             ],
             "description": "A workflow function bundle for the OpenOrchestra Project",
-            "time": "2015-09-30 14:39:53"
+            "time": "2015-11-05 10:56:04"
         },
         {
             "name": "phpcollection/phpcollection",
