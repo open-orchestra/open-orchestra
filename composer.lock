@@ -2093,12 +2093,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "2a28165b06157267a5b10fee97d6b431016cb3e7"
+                "reference": "8087cdfc0ba93994da7e07531b2b89404563e647"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/2a28165b06157267a5b10fee97d6b431016cb3e7",
-                "reference": "2a28165b06157267a5b10fee97d6b431016cb3e7",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/8087cdfc0ba93994da7e07531b2b89404563e647",
+                "reference": "8087cdfc0ba93994da7e07531b2b89404563e647",
                 "shasum": ""
             },
             "require": {
@@ -2140,7 +2140,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2015-11-04 12:47:05"
+            "time": "2015-11-05 10:11:54"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2489,12 +2489,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-user-bundle.git",
-                "reference": "c7e5aa6635d55c697a53251fd367b503d129de10"
+                "reference": "c7c8c62052c3818cb752ff3e774759d93c65174d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-user-bundle/zipball/c7e5aa6635d55c697a53251fd367b503d129de10",
-                "reference": "c7e5aa6635d55c697a53251fd367b503d129de10",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-user-bundle/zipball/c7c8c62052c3818cb752ff3e774759d93c65174d",
+                "reference": "c7c8c62052c3818cb752ff3e774759d93c65174d",
                 "shasum": ""
             },
             "require": {
@@ -2532,7 +2532,7 @@
                 }
             ],
             "description": "An override of FosUserBundle to provide authentication on OpenOrchestra",
-            "time": "2015-10-19 12:41:36"
+            "time": "2015-11-05 10:11:37"
         },
         {
             "name": "open-orchestra/open-orchestra-workflow-function-bundle",
@@ -3003,19 +3003,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/f1nder/SolutionMongoAggregationBundle.git",
-                "reference": "1f2c02d166392e0443386aeb2471d311d1cef2e8"
+                "reference": "198e92c5a1edbdb41da97ed5a45d1d89d6d324b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/f1nder/SolutionMongoAggregationBundle/zipball/1f2c02d166392e0443386aeb2471d311d1cef2e8",
-                "reference": "1f2c02d166392e0443386aeb2471d311d1cef2e8",
+                "url": "https://api.github.com/repos/f1nder/SolutionMongoAggregationBundle/zipball/198e92c5a1edbdb41da97ed5a45d1d89d6d324b5",
+                "reference": "198e92c5a1edbdb41da97ed5a45d1d89d6d324b5",
                 "shasum": ""
             },
             "require": {
                 "doctrine/mongodb-odm-bundle": "~3.0",
                 "php": ">=5.4.0",
-                "solution/pipeline-builder": "dev-master",
-                "symfony/symfony": "~2.3"
+                "solution/pipeline-builder": "dev-master"
             },
             "type": "symfony-bundle",
             "autoload": {
@@ -3041,7 +3040,7 @@
                 "pipeline",
                 "query"
             ],
-            "time": "2015-09-30 17:03:45"
+            "time": "2015-11-04 13:25:43"
         },
         {
             "name": "solution/pipeline-builder",
