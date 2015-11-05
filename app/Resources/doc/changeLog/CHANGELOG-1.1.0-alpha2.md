@@ -14,10 +14,12 @@ Url to see changes :
  - [User bundle](https://github.com/open-orchestra/open-orchestra-user-bundle/compare/v1.0.0...v1.1.0-alpha2)
  - [Theme bundle](https://github.com/open-orchestra/open-orchestra-theme-bundle/compare/v1.0.0...v1.1.0-alpha2)
  - [Worflow function bundle](https://github.com/open-orchestra/open-orchestra-worflow-function-bundle/compare/v1.0.0...v1.1.0-alpha2)
+ - [Medai admin bundle](https://github.com/open-orchestra/open-orchestra-media-admin-bundle/compare/v1.0.0...v1.1.0-alpha2)
 
 ## Possible BC breaker
 
 ## Bug fixes
+ - User is now able to delete a media folder when the last media is deleted, without having to refresh the page.
 
 ## New features
 
