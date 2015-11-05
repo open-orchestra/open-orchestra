@@ -36,4 +36,10 @@ before_script:
   - until nc -z localhost 27017; do echo Waiting for MongoDB; sleep 1; done
   - php app/console orchestra:mongodb:fixtures:load --type=functional -e=test
 
-script: phpunit -c app/
+script:
+  - phpunit -c app/ --testsuite=unit
+  - phpunit -c app/ --group integrationTest
+  - phpunit -c app/ --group media
+  - phpunit -c app/ --group securityCheck
+  - phpunit -c app/ --group apiFunctional
+  - phpunit -c app/ --group backofficeTest
