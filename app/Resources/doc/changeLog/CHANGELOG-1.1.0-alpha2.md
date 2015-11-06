@@ -13,8 +13,8 @@ Url to see changes :
  - [Media bundle](https://github.com/open-orchestra/open-orchestra-media-bundle/compare/v1.0.0...v1.1.0-alpha2)
  - [User bundle](https://github.com/open-orchestra/open-orchestra-user-bundle/compare/v1.0.0...v1.1.0-alpha2)
  - [Theme bundle](https://github.com/open-orchestra/open-orchestra-theme-bundle/compare/v1.0.0...v1.1.0-alpha2)
- - [Worflow function bundle](https://github.com/open-orchestra/open-orchestra-worflow-function-bundle/compare/v1.0.0...v1.1.0-alpha2)
- - [Medai admin bundle](https://github.com/open-orchestra/open-orchestra-media-admin-bundle/compare/v1.0.0...v1.1.0-alpha2)
+ - [Workflow function bundle](https://github.com/open-orchestra/open-orchestra-worflow-function-bundle/compare/v1.0.0...v1.1.0-alpha2)
+ - [Media admin bundle](https://github.com/open-orchestra/open-orchestra-media-admin-bundle/compare/v1.0.0...v1.1.0-alpha2)
 
 ## Possible BC breaker
 
@@ -33,12 +33,22 @@ Url to see changes :
  - Adding roles for nodes (CREATE, UPDATE, MOVE, DELETE)
  - Adding roles for content types (CREATE, UPDATE, DELETE)
  - Adding roles for keywords (CREATE, UPDATE, DELETE)
- - Adding roles for redirection (CREATE, UPDATE, DELETE)
+ - Adding roles for redirections (CREATE, UPDATE, DELETE)
  - Adding roles for trashcan (RESTORE)
+ - Adding roles for api accesses (CREATE, UPDATE, DELETE)
+ - Adding roles for contents (CREATE, UPDATE, DELETE)
+ - Adding roles for medias (CREATE, UPDATE, DELETE)
+ - Adding roles for roles (CREATE, UPDATE, DELETE)
+ - Adding roles for sites (CREATE, UPDATE, DELETE)
+ - Adding roles for users (CREATE, UPDATE, DELETE)
+ - Adding roles for transverse nodes (UPDATE)
+ - Adding roles for workflow status (CREATE, UPDATE, DELETE)
+ - Adding roles for workflow functions (CREATE, UPDATE, DELETE)
+
 
 ## Other changes
   
-  - In differents dataTable, the global search is disabled. To reactivate it, you can use the data attribute ``display-global-search=true`` in the link in navigation panel.  
+  - In differents dataTable, the global search is disabled. To reactivate it, you can use the data attribute ``display-global-search=true`` in the link in navigation panel.
   
 ## Deprecated method
 
