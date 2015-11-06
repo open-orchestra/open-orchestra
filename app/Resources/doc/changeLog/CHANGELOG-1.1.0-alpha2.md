@@ -23,6 +23,35 @@ Url to see changes :
  - The name of `OpenOrchestra\BackofficeBundle\Form\Type\BlockType` is now `oo_block`
  - The name of `OpenOrchestra\BackofficeBundle\Form\Type\ExistingBlockChoiceType` is now `oo_existing_block`
  - The name of `OpenOrchestra\BackofficeBundle\Form\Type\NodeType` is now `oo_node`
+ - The name of `OpenOrchestra\BackofficeBundle\Form\Type\ApiClientType` is now `oo_api_client`
+ - The class `OpenOrchestra\BackofficeBundle\Form\Type\OrchestraColorPickerType` is deleted and replaced by `OpenOrchestra\BackofficeBundle\Form\Type\ColorPickerType`
+ - The class `OpenOrchestra\BackofficeBundle\Form\Type\OrchestraChoicesOption` is deleted and replaced by `OpenOrchestra\BackofficeBundle\Form\Type\Component\ChoicesOptionType`
+ - The class `OpenOrchestra\BackofficeBundle\Form\Type\OrchestraContentTypeChoiceType` is deleted and replaced by `OpenOrchestra\BackofficeBundle\Form\Type\Component\ContentTypeChoiceType`
+ - The class `OpenOrchestra\BackofficeBundle\Form\Type\OrchestraDateWidgetOption` is deleted and replaced by `OpenOrchestra\BackofficeBundle\Form\Type\Component\DateWidgetOptionType`
+ - The class `OpenOrchestra\BackofficeBundle\Form\Type\OrchestraFieldChoice` is deleted and replaced by `OpenOrchestra\BackofficeBundle\Form\Type\Component\FieldChoiceType`
+ - The class `OpenOrchestra\BackofficeBundle\Form\Type\OrchestraKeywordsType` is deleted and replaced by `OpenOrchestra\BackofficeBundle\Form\Type\Component\KeywordsChoiceType`
+ - The class `OpenOrchestra\BackofficeBundle\Form\Type\OrchestraNodeChoiceType` is deleted and replaced by `OpenOrchestra\BackofficeBundle\Form\Type\Component\NodeChoiceType`
+ - The class `OpenOrchestra\BackofficeBundle\Form\Type\OrchestraRoleChoiceType` is deleted and replaced by `OpenOrchestra\BackofficeBundle\Form\Type\Component\RoleChoiceType`
+ - The class `OpenOrchestra\BackofficeBundle\Form\Type\OrchestraSiteChoiceType` is deleted and replaced by `OpenOrchestra\BackofficeBundle\Form\Type\Component\SiteChoiceType`
+ - The class `OpenOrchestra\BackofficeBundle\Form\Type\OrchestraThemeChoiceType` is deleted and replaced by `OpenOrchestra\BackofficeBundle\Form\Type\Component\ThemeChoiceType`
+ - The class `OpenOrchestra\BackofficeBundle\Form\Type\OrchestraVideoType` is deleted and replaced `OpenOrchestra\BackofficeBundle\Form\Type\VideoType`
+ - The name of `OpenOrchestra\BackofficeBundle\Form\Type\ContentType` is now `oo_content`
+ - The name of `OpenOrchestra\BackofficeBundle\Form\Type\ContentTypeType` is now `oo_content_type`
+ - The name of `OpenOrchestra\BackofficeBundle\Form\Type\FieldOptionType` is now `oo_field_option`
+ - The name of `OpenOrchestra\BackofficeBundle\Form\Type\FieldTypeType` is now `oo_field_type`
+ - The name of `OpenOrchestra\BackofficeBundle\Form\Type\GroupType` is now `oo_group`
+ - The name of `OpenOrchestra\BackofficeBundle\Form\Type\KeywordType` is now `oo_keyword`
+ - The name of `OpenOrchestra\BackofficeBundle\Form\Type\RedirectionType` is now `oo_redirection`
+ - The name of `OpenOrchestra\BackofficeBundle\Form\Type\RoleType` is now `oo_role`
+ - The name of `OpenOrchestra\BackofficeBundle\Form\Type\SiteAliasType` is now `oo_site_alias`
+ - The name of `OpenOrchestra\BackofficeBundle\Form\Type\SiteType` is now `oo_site`
+ - The name of `OpenOrchestra\BackofficeBundle\Form\Type\StatusType` is now `oo_status`
+ - The name of `OpenOrchestra\BackofficeBundle\Form\Type\TemplateType` is now `oo_template`
+ - The name of `OpenOrchestra\BackofficeBundle\Form\Type\ThemeType` is now `oo_theme`
+ - The name of `OpenOrchestra\BackofficeBundle\Form\Type\TinymceType` is now `oo_tinymce`
+ - The name of `OpenOrchestra\BackofficeBundle\Form\Type\TranslatedValueCollectionType` is now `oo_translated_value_collection`
+ - The name of `OpenOrchestra\BackofficeBundle\Form\Type\TranslatedValueType` is now `oo_translated_value`
+ - The class `OpenOrchestra\BackofficeBundle\Form\Type\OrchestraGroupType` is deleted and replaced `OpenOrchestra\GroupBundle\Form\Type\GroupDocumentType`
 
 ## Bug fixes
 
