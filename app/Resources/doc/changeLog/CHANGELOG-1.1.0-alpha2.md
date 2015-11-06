@@ -19,9 +19,16 @@ Url to see changes :
 ## Possible BC breaker
 
 ## Bug fixes
+
  - User is now able to delete a media folder when the last media is deleted, without having to refresh the page.
 
 ## New features
+
+ - Adding roles for nodes (CREATE, UPDATE, MOVE, DELETE)
+ - Adding roles for content types (CREATE, UPDATE, DELETE)
+ - Adding roles for keywords (CREATE, UPDATE, DELETE)
+ - Adding roles for redirection (CREATE, UPDATE, DELETE)
+ - Adding roles for trashcan (RESTORE)
 
 ## Other changes
   
