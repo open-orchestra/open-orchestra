@@ -18,6 +18,12 @@ Url to see changes :
 
 ## Possible BC breaker
 
+ - The name of `OpenOrchestra\BackofficeBundle\Form\Type\AreaType` is now `oo_area`
+ - The name of `OpenOrchestra\BackofficeBundle\Form\Type\BlockChoiceType` is now `oo_block_choice`
+ - The name of `OpenOrchestra\BackofficeBundle\Form\Type\BlockType` is now `oo_block`
+ - The name of `OpenOrchestra\BackofficeBundle\Form\Type\ExistingBlockChoiceType` is now `oo_existing_block`
+ - The name of `OpenOrchestra\BackofficeBundle\Form\Type\NodeType` is now `oo_node`
+
 ## Bug fixes
 
  - User is now able to delete a media folder when the last media is deleted, without having to refresh the page.
