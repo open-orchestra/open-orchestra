@@ -1065,12 +1065,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Atlantic18/DoctrineExtensions.git",
-                "reference": "a2af10c61943832149c11ca61963b5f4502c09a4"
+                "reference": "51360a4c289045a2713b68d0b97fb19a4a8dd2c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/a2af10c61943832149c11ca61963b5f4502c09a4",
-                "reference": "a2af10c61943832149c11ca61963b5f4502c09a4",
+                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/51360a4c289045a2713b68d0b97fb19a4a8dd2c7",
+                "reference": "51360a4c289045a2713b68d0b97fb19a4a8dd2c7",
                 "shasum": ""
             },
             "require": {
@@ -1136,7 +1136,7 @@
                 "tree",
                 "uploadable"
             ],
-            "time": "2015-11-05 13:21:34"
+            "time": "2015-11-06 08:54:35"
         },
         {
             "name": "guzzle/guzzle",
@@ -2093,12 +2093,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "b6a6d01e25c4206d87673c4c77461a704ae2fc7e"
+                "reference": "a17f570a9a49ba31bdd9803abc2db9ec9731fff5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/b6a6d01e25c4206d87673c4c77461a704ae2fc7e",
-                "reference": "b6a6d01e25c4206d87673c4c77461a704ae2fc7e",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/a17f570a9a49ba31bdd9803abc2db9ec9731fff5",
+                "reference": "a17f570a9a49ba31bdd9803abc2db9ec9731fff5",
                 "shasum": ""
             },
             "require": {
@@ -2140,7 +2140,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2015-11-05 13:21:35"
+            "time": "2015-11-06 14:20:05"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2242,12 +2242,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-admin-bundle.git",
-                "reference": "4bdc0cc562cd6bfab42aa2d04fb313d4f14b66ea"
+                "reference": "88d996496f8bf6aaa214944f0a832b799c8471dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/4bdc0cc562cd6bfab42aa2d04fb313d4f14b66ea",
-                "reference": "4bdc0cc562cd6bfab42aa2d04fb313d4f14b66ea",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/88d996496f8bf6aaa214944f0a832b799c8471dd",
+                "reference": "88d996496f8bf6aaa214944f0a832b799c8471dd",
                 "shasum": ""
             },
             "require": {
@@ -2278,7 +2278,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part for the media of OpenOrchestra",
-            "time": "2015-11-05 15:41:37"
+            "time": "2015-11-06 09:56:33"
         },
         {
             "name": "open-orchestra/open-orchestra-media-bundle",
@@ -2540,12 +2540,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-workflow-function-bundle.git",
-                "reference": "6b4146d37eb76b6724379e52928e5c7238238d8c"
+                "reference": "fb8fdadf2f9c701fcd17eee75ec5f9a24061be6c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-workflow-function-bundle/zipball/6b4146d37eb76b6724379e52928e5c7238238d8c",
-                "reference": "6b4146d37eb76b6724379e52928e5c7238238d8c",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-workflow-function-bundle/zipball/fb8fdadf2f9c701fcd17eee75ec5f9a24061be6c",
+                "reference": "fb8fdadf2f9c701fcd17eee75ec5f9a24061be6c",
                 "shasum": ""
             },
             "require": {
@@ -2583,7 +2583,7 @@
                 }
             ],
             "description": "A workflow function bundle for the OpenOrchestra Project",
-            "time": "2015-11-04 12:49:06"
+            "time": "2015-11-06 09:56:29"
         },
         {
             "name": "phpcollection/phpcollection",
