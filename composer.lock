@@ -2540,12 +2540,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-workflow-function-bundle.git",
-                "reference": "fb8fdadf2f9c701fcd17eee75ec5f9a24061be6c"
+                "reference": "413d9814f7589455121c8f6db6a5ccb67d0930ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-workflow-function-bundle/zipball/fb8fdadf2f9c701fcd17eee75ec5f9a24061be6c",
-                "reference": "fb8fdadf2f9c701fcd17eee75ec5f9a24061be6c",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-workflow-function-bundle/zipball/413d9814f7589455121c8f6db6a5ccb67d0930ec",
+                "reference": "413d9814f7589455121c8f6db6a5ccb67d0930ec",
                 "shasum": ""
             },
             "require": {
@@ -2583,7 +2583,7 @@
                 }
             ],
             "description": "A workflow function bundle for the OpenOrchestra Project",
-            "time": "2015-11-06 09:56:29"
+            "time": "2015-11-09 10:11:40"
         },
         {
             "name": "phpcollection/phpcollection",
