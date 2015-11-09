@@ -59,6 +59,17 @@ Url to see changes :
  - The class `OpenOrchestra\MediaAdminBundle\Form\DataTransformer\OrchestraMediaTransformer` is deleted and replaced by `OpenOrchestra\MediaAdminBundle\Form\DataTransformer\MediaChoiceTransformer`
  - The class `OpenOrchestra\MediaAdminBundle\Form\Type\OrchestraMediaType` is deleted and replaced by `OpenOrchestra\MediaAdminBundle\Form\Type\Component\MediaChoiceType`
  - The class `OpenOrchestra\MediaAdminBundle\Form\Type\OrchestraSiteForFolderChoiceType` is deleted and replaced by `OpenOrchestra\MediaAdminBundle\Form\Type\SiteForFolderChoiceType`
+ - The name of `OpenOrchestra\ModelInterface\Form\Type\AbstractOrchestraRoleType` is now `oo_orchestra_role`
+ - The name of `OpenOrchestra\ModelInterface\Form\Type\AbstractOrchestraSiteType` is now `oo_orchestra_site`
+ - The name of `OpenOrchestra\ModelInterface\Form\Type\AbstractOrchestraStatusType` is now `oo_orchestra_status`
+ - The name of `OpenOrchestra\ModelInterface\Form\Type\AbstractOrchestraThemeType` is now `oo_orchestra_theme`
+ - The name of `OpenOrchestra\AdminBundle\Form\Type\RegistrationUserType` is now `oo_registration_user`
+ - The name of `OpenOrchestra\AdminBundle\Form\Type\UserType` is now `oo_user`
+ - The name of `OpenOrchestra\UserBundle\Form\Type\ChangePasswordUserType` is now `oo_user_change_password`
+ - The class `OpenOrchestra\WorkflowFunctionAdminBundle\Form\Type\AuthorizationType` is deleted and replaced by `OpenOrchestra\WorkflowFunctionAdminBundle\Form\Type\Component\AuthorizationType`
+ - The class `OpenOrchestra\WorkflowFunctionAdminBundle\Form\Type\OrchestraWorkflowFunctionType` is deleted and replaced by `OpenOrchestra\WorkflowFunctionAdminBundle\Form\Type\Component\WorkflowFunctionChoiceType`
+ - The name of `OpenOrchestra\WorkflowFunctionAdminBundle\Form\Type\WorkflowRightType` is now `oo_workflow_right`
+ - The name of `OpenOrchestra\WorkflowFunctionAdminBundle\Form\Type\WorkflowFunctionType` is now `oo_workflow_function`
 
 ## Bug fixes
 
