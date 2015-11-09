@@ -51,7 +51,14 @@ Url to see changes :
  - The name of `OpenOrchestra\BackofficeBundle\Form\Type\TinymceType` is now `oo_tinymce`
  - The name of `OpenOrchestra\BackofficeBundle\Form\Type\TranslatedValueCollectionType` is now `oo_translated_value_collection`
  - The name of `OpenOrchestra\BackofficeBundle\Form\Type\TranslatedValueType` is now `oo_translated_value`
- - The class `OpenOrchestra\BackofficeBundle\Form\Type\OrchestraGroupType` is deleted and replaced `OpenOrchestra\GroupBundle\Form\Type\GroupDocumentType`
+ - The class `OpenOrchestra\BackofficeBundle\Form\Type\OrchestraGroupType` is deleted and replaced by `OpenOrchestra\GroupBundle\Form\Type\GroupDocumentType`
+ - The name of `OpenOrchestra\MediaAdminBundle\Form\Type\FolderType` is now `oo_folder`
+ - The name of `OpenOrchestra\MediaAdminBundle\Form\Type\MediaCropType` is now `oo_media_crop`
+ - The name of `OpenOrchestra\MediaAdminBundle\Form\Type\MediaMetaType` is now `oo_media_meta`
+ - The name of `OpenOrchestra\MediaAdminBundle\Form\Type\MediaType` is now `oo_media`
+ - The class `OpenOrchestra\MediaAdminBundle\Form\DataTransformer\OrchestraMediaTransformer` is deleted and replaced by `OpenOrchestra\MediaAdminBundle\Form\DataTransformer\MediaChoiceTransformer`
+ - The class `OpenOrchestra\MediaAdminBundle\Form\Type\OrchestraMediaType` is deleted and replaced by `OpenOrchestra\MediaAdminBundle\Form\Type\Component\MediaChoiceType`
+ - The class `OpenOrchestra\MediaAdminBundle\Form\Type\OrchestraSiteForFolderChoiceType` is deleted and replaced by `OpenOrchestra\MediaAdminBundle\Form\Type\SiteForFolderChoiceType`
 
 ## Bug fixes
 
