@@ -39,4 +39,4 @@ before_script:
 
 script:
   - phpunit -c app/ --testsuite=unit
-  - for group in $groups ;do echo $group; phpunit -c app/ --group $group; done
+  - for group in $groups ;do echo $group; phpunit -c app/ --process-isolation --group $group; done
