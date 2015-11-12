@@ -1748,16 +1748,16 @@
         },
         {
             "name": "kriswallsmith/assetic",
-            "version": "dev-master",
+            "version": "v1.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kriswallsmith/assetic.git",
-                "reference": "63c1f0dac8e144a6f9b4b139da5202cd12e0891d"
+                "reference": "cb92b179dddfb8a3f341d53bd27e088f24d9c2e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/63c1f0dac8e144a6f9b4b139da5202cd12e0891d",
-                "reference": "63c1f0dac8e144a6f9b4b139da5202cd12e0891d",
+                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/cb92b179dddfb8a3f341d53bd27e088f24d9c2e5",
+                "reference": "cb92b179dddfb8a3f341d53bd27e088f24d9c2e5",
                 "shasum": ""
             },
             "require": {
@@ -1822,7 +1822,7 @@
                 "compression",
                 "minification"
             ],
-            "time": "2015-11-05 12:48:13"
+            "time": "2015-10-15 01:33:42"
         },
         {
             "name": "monolog/monolog",
@@ -2242,12 +2242,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-admin-bundle.git",
-                "reference": "0d1290326df243489fd0ebf987dc2a1267281ed5"
+                "reference": "1e2cdafaea32018279a089743453896e3e720c6f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/0d1290326df243489fd0ebf987dc2a1267281ed5",
-                "reference": "0d1290326df243489fd0ebf987dc2a1267281ed5",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/1e2cdafaea32018279a089743453896e3e720c6f",
+                "reference": "1e2cdafaea32018279a089743453896e3e720c6f",
                 "shasum": ""
             },
             "require": {
@@ -2278,7 +2278,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part for the media of OpenOrchestra",
-            "time": "2015-11-10 15:02:18"
+            "time": "2015-11-12 10:12:08"
         },
         {
             "name": "open-orchestra/open-orchestra-media-bundle",
