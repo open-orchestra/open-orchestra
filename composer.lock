@@ -1239,17 +1239,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Incenteev/ParameterHandler.git",
-                "reference": "f7b677a5f9bfd8bf5f165a0ff96ce7426b870312"
+                "reference": "d7ce7f06136109e81d1cb9d57066c4d4a99cf1cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Incenteev/ParameterHandler/zipball/f7b677a5f9bfd8bf5f165a0ff96ce7426b870312",
-                "reference": "f7b677a5f9bfd8bf5f165a0ff96ce7426b870312",
+                "url": "https://api.github.com/repos/Incenteev/ParameterHandler/zipball/d7ce7f06136109e81d1cb9d57066c4d4a99cf1cc",
+                "reference": "d7ce7f06136109e81d1cb9d57066c4d4a99cf1cc",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3",
-                "symfony/yaml": "~2.0"
+                "symfony/yaml": "~2.3|~3.0"
             },
             "require-dev": {
                 "composer/composer": "1.0.*@dev",
@@ -1282,7 +1282,7 @@
             "keywords": [
                 "parameters management"
             ],
-            "time": "2015-10-07 14:51:08"
+            "time": "2015-11-10 17:04:01"
         },
         {
             "name": "innocead/captcha-bundle",
@@ -2093,12 +2093,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "493ec6ded053036891da3ac73cee4b69279d9f96"
+                "reference": "2a17c0a1b2dd9e5e888b062d9a094f278281cac0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/493ec6ded053036891da3ac73cee4b69279d9f96",
-                "reference": "493ec6ded053036891da3ac73cee4b69279d9f96",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/2a17c0a1b2dd9e5e888b062d9a094f278281cac0",
+                "reference": "2a17c0a1b2dd9e5e888b062d9a094f278281cac0",
                 "shasum": ""
             },
             "require": {
@@ -2140,7 +2140,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2015-11-10 10:32:54"
+            "time": "2015-11-12 09:18:31"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2439,12 +2439,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-mongo-libs.git",
-                "reference": "bac901c2041897df2bd230fb0c84cf0463f986f1"
+                "reference": "d305355970f2cd0dc1e6a548c936a8a7a801dc35"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-mongo-libs/zipball/bac901c2041897df2bd230fb0c84cf0463f986f1",
-                "reference": "bac901c2041897df2bd230fb0c84cf0463f986f1",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-mongo-libs/zipball/d305355970f2cd0dc1e6a548c936a8a7a801dc35",
+                "reference": "d305355970f2cd0dc1e6a548c936a8a7a801dc35",
                 "shasum": ""
             },
             "require": {
@@ -2481,7 +2481,7 @@
                 }
             ],
             "description": "Some library to use the Open Orchestra project with mongo",
-            "time": "2015-10-23 14:31:34"
+            "time": "2015-11-12 09:10:26"
         },
         {
             "name": "open-orchestra/open-orchestra-user-bundle",
@@ -2489,12 +2489,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-user-bundle.git",
-                "reference": "d4f567dc3a1fcd44f7bec44bc5ce3052f8ef3866"
+                "reference": "9fe7d0dc24a41b4aa54cf81e454c3b1ca576127f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-user-bundle/zipball/d4f567dc3a1fcd44f7bec44bc5ce3052f8ef3866",
-                "reference": "d4f567dc3a1fcd44f7bec44bc5ce3052f8ef3866",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-user-bundle/zipball/9fe7d0dc24a41b4aa54cf81e454c3b1ca576127f",
+                "reference": "9fe7d0dc24a41b4aa54cf81e454c3b1ca576127f",
                 "shasum": ""
             },
             "require": {
@@ -2532,7 +2532,7 @@
                 }
             ],
             "description": "An override of FosUserBundle to provide authentication on OpenOrchestra",
-            "time": "2015-11-10 10:31:53"
+            "time": "2015-11-12 09:18:58"
         },
         {
             "name": "open-orchestra/open-orchestra-workflow-function-bundle",
@@ -2540,12 +2540,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-workflow-function-bundle.git",
-                "reference": "a30452accb34e535ff66792df310fa0f913054bc"
+                "reference": "ad32d02b7fb55c4e0cbf609fe674eb208b9bb5da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-workflow-function-bundle/zipball/a30452accb34e535ff66792df310fa0f913054bc",
-                "reference": "a30452accb34e535ff66792df310fa0f913054bc",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-workflow-function-bundle/zipball/ad32d02b7fb55c4e0cbf609fe674eb208b9bb5da",
+                "reference": "ad32d02b7fb55c4e0cbf609fe674eb208b9bb5da",
                 "shasum": ""
             },
             "require": {
@@ -2583,7 +2583,7 @@
                 }
             ],
             "description": "A workflow function bundle for the OpenOrchestra Project",
-            "time": "2015-11-10 10:29:34"
+            "time": "2015-11-12 09:18:24"
         },
         {
             "name": "phpcollection/phpcollection",
