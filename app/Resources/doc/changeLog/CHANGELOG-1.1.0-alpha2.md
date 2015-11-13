@@ -24,6 +24,7 @@ Url to see changes :
  - The name of `OpenOrchestra\BackofficeBundle\Form\Type\ExistingBlockChoiceType` is now `oo_existing_block`
  - The name of `OpenOrchestra\BackofficeBundle\Form\Type\NodeType` is now `oo_node`
  - The name of `OpenOrchestra\BackofficeBundle\Form\Type\ApiClientType` is now `oo_api_client`
+ - The class `OpenOrchestra\BackofficeBundle\Form\Type\AbstractOrchestraGroupType` is deleted and replaced by `OpenOrchestra\BackofficeBundle\Form\Type\AbstractGroupChoiceType`
  - The class `OpenOrchestra\BackofficeBundle\Form\Type\OrchestraColorPickerType` is deleted and replaced by `OpenOrchestra\BackofficeBundle\Form\Type\ColorPickerType`
  - The class `OpenOrchestra\BackofficeBundle\Form\Type\OrchestraChoicesOption` is deleted and replaced by `OpenOrchestra\BackofficeBundle\Form\Type\Component\ChoicesOptionType`
  - The class `OpenOrchestra\BackofficeBundle\Form\Type\OrchestraContentTypeChoiceType` is deleted and replaced by `OpenOrchestra\BackofficeBundle\Form\Type\Component\ContentTypeChoiceType`
@@ -34,7 +35,7 @@ Url to see changes :
  - The class `OpenOrchestra\BackofficeBundle\Form\Type\OrchestraRoleChoiceType` is deleted and replaced by `OpenOrchestra\BackofficeBundle\Form\Type\Component\RoleChoiceType`
  - The class `OpenOrchestra\BackofficeBundle\Form\Type\OrchestraSiteChoiceType` is deleted and replaced by `OpenOrchestra\BackofficeBundle\Form\Type\Component\SiteChoiceType`
  - The class `OpenOrchestra\BackofficeBundle\Form\Type\OrchestraThemeChoiceType` is deleted and replaced by `OpenOrchestra\BackofficeBundle\Form\Type\Component\ThemeChoiceType`
- - The class `OpenOrchestra\BackofficeBundle\Form\Type\OrchestraVideoType` is deleted and replaced `OpenOrchestra\BackofficeBundle\Form\Type\VideoType`
+ - The class `OpenOrchestra\BackofficeBundle\Form\Type\OrchestraVideoType` is deleted and replaced by `OpenOrchestra\BackofficeBundle\Form\Type\VideoType`
  - The name of `OpenOrchestra\BackofficeBundle\Form\Type\ContentType` is now `oo_content`
  - The name of `OpenOrchestra\BackofficeBundle\Form\Type\ContentTypeType` is now `oo_content_type`
  - The name of `OpenOrchestra\BackofficeBundle\Form\Type\FieldOptionType` is now `oo_field_option`
@@ -59,10 +60,14 @@ Url to see changes :
  - The class `OpenOrchestra\MediaAdminBundle\Form\DataTransformer\OrchestraMediaTransformer` is deleted and replaced by `OpenOrchestra\MediaAdminBundle\Form\DataTransformer\MediaChoiceTransformer`
  - The class `OpenOrchestra\MediaAdminBundle\Form\Type\OrchestraMediaType` is deleted and replaced by `OpenOrchestra\MediaAdminBundle\Form\Type\Component\MediaChoiceType`
  - The class `OpenOrchestra\MediaAdminBundle\Form\Type\OrchestraSiteForFolderChoiceType` is deleted and replaced by `OpenOrchestra\MediaAdminBundle\Form\Type\SiteForFolderChoiceType`
- - The name of `OpenOrchestra\ModelInterface\Form\Type\AbstractOrchestraRoleType` is now `oo_orchestra_role`
- - The name of `OpenOrchestra\ModelInterface\Form\Type\AbstractOrchestraSiteType` is now `oo_orchestra_site`
- - The name of `OpenOrchestra\ModelInterface\Form\Type\AbstractOrchestraStatusType` is now `oo_orchestra_status`
- - The name of `OpenOrchestra\ModelInterface\Form\Type\AbstractOrchestraThemeType` is now `oo_orchestra_theme`
+ - The class `OpenOrchestra\ModelBundle\Form\Type\OrchestraRoleType` is deleted and replaced by `OpenOrchestra\ModelBundle\Form\Type\WorkflowRoleChoiceType`
+ - The class `OpenOrchestra\ModelBundle\Form\Type\OrchestraSiteType` is deleted and replaced by `OpenOrchestra\ModelBundle\Form\Type\GroupSiteChoiceType`
+ - The class `OpenOrchestra\ModelBundle\Form\Type\OrchestraStatusType` is deleted and replaced by `OpenOrchestra\ModelBundle\Form\Type\StatusChoiceType`
+ - The class `OpenOrchestra\ModelBundle\Form\Type\OrchestraThemeType` is deleted and replaced by `OpenOrchestra\ModelBundle\Form\Type\SiteThemeChoiceType`
+ - The class `OpenOrchestra\ModelInterface\Form\Type\AbstractOrchestraRoleType` is deleted and replaced by `OpenOrchestra\ModelInterface\Form\Type\AbstractWorkflowRoleChoiceType`
+ - The class `OpenOrchestra\ModelInterface\Form\Type\AbstractOrchestraSiteType` is deleted and replaced by `OpenOrchestra\ModelInterface\Form\Type\AbstractGroupSiteChoiceType`
+ - The class `OpenOrchestra\ModelInterface\Form\Type\AbstractOrchestraStatusType` is deleted and replaced by `OpenOrchestra\ModelInterface\Form\Type\AbstractStatusChoiceType`
+ - The class `OpenOrchestra\ModelInterface\Form\Type\AbstractOrchestraThemeType` is deleted and replaced by `OpenOrchestra\ModelInterface\Form\Type\AbstractSiteThemeChoiceType`
  - The name of `OpenOrchestra\AdminBundle\Form\Type\RegistrationUserType` is now `oo_registration_user`
  - The name of `OpenOrchestra\AdminBundle\Form\Type\UserType` is now `oo_user`
  - The name of `OpenOrchestra\UserBundle\Form\Type\ChangePasswordUserType` is now `oo_user_change_password`
