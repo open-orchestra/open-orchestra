@@ -32,7 +32,6 @@ install:
   - composer install --prefer-dist
 
 before_script:
-  - phpenv config-add .travis.php.ini
   - sudo mkdir -p /var/uploaded-files && sudo chmod -R a+w /var/uploaded-files
   - until nc -z localhost 27017; do echo Waiting for MongoDB; sleep 1; done
   - php app/console orchestra:mongodb:fixtures:load --type=functional -e=test
