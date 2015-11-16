@@ -1065,12 +1065,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Atlantic18/DoctrineExtensions.git",
-                "reference": "cda1ee6d5897c65d19279e243b39b8dc9cb4b602"
+                "reference": "eb01e2cf6492ecb2990d6d2ac996812835fd470d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/cda1ee6d5897c65d19279e243b39b8dc9cb4b602",
-                "reference": "cda1ee6d5897c65d19279e243b39b8dc9cb4b602",
+                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/eb01e2cf6492ecb2990d6d2ac996812835fd470d",
+                "reference": "eb01e2cf6492ecb2990d6d2ac996812835fd470d",
                 "shasum": ""
             },
             "require": {
@@ -1136,7 +1136,7 @@
                 "tree",
                 "uploadable"
             ],
-            "time": "2015-11-13 05:40:29"
+            "time": "2015-11-13 13:46:39"
         },
         {
             "name": "guzzle/guzzle",
@@ -2055,12 +2055,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "508befec2893bb105651742cd6eb7353a1bd4ca9"
+                "reference": "c8609174f01817c81795c3175a2fef120b763155"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/508befec2893bb105651742cd6eb7353a1bd4ca9",
-                "reference": "508befec2893bb105651742cd6eb7353a1bd4ca9",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/c8609174f01817c81795c3175a2fef120b763155",
+                "reference": "c8609174f01817c81795c3175a2fef120b763155",
                 "shasum": ""
             },
             "require": {
@@ -2102,7 +2102,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2015-11-13 08:44:10"
+            "time": "2015-11-13 13:07:24"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
