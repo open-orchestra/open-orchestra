@@ -103,6 +103,7 @@ Url to see changes :
   - In differents dataTable, the global search is disabled. To reactivate it, you can use the data attribute ``display-global-search=true`` in the link in navigation panel.
   
 ## Deprecated method
+ - The method `findByAuthor` has been deprecated in both NodeRepository and ContentRepository
 
 ## Suppressed method
 
