@@ -1065,12 +1065,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Atlantic18/DoctrineExtensions.git",
-                "reference": "eb01e2cf6492ecb2990d6d2ac996812835fd470d"
+                "reference": "f40f71fb62230a1de2c92c16acb14e38950b6464"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/eb01e2cf6492ecb2990d6d2ac996812835fd470d",
-                "reference": "eb01e2cf6492ecb2990d6d2ac996812835fd470d",
+                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/f40f71fb62230a1de2c92c16acb14e38950b6464",
+                "reference": "f40f71fb62230a1de2c92c16acb14e38950b6464",
                 "shasum": ""
             },
             "require": {
@@ -1136,7 +1136,7 @@
                 "tree",
                 "uploadable"
             ],
-            "time": "2015-11-13 13:46:39"
+            "time": "2015-11-17 17:17:21"
         },
         {
             "name": "guzzle/guzzle",
@@ -2055,12 +2055,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "c8609174f01817c81795c3175a2fef120b763155"
+                "reference": "9ed64c83adef5c8b8ddc8a2ab6b8d896faa3af2a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/c8609174f01817c81795c3175a2fef120b763155",
-                "reference": "c8609174f01817c81795c3175a2fef120b763155",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/9ed64c83adef5c8b8ddc8a2ab6b8d896faa3af2a",
+                "reference": "9ed64c83adef5c8b8ddc8a2ab6b8d896faa3af2a",
                 "shasum": ""
             },
             "require": {
@@ -2102,7 +2102,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2015-11-13 13:07:24"
+            "time": "2015-11-17 09:57:04"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2211,12 +2211,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-admin-bundle.git",
-                "reference": "2982b12ebed3088b89c8196b9b4d23e0bcb94ad8"
+                "reference": "9d89a8c14cd5870e44624f2b43a76a2da5459d89"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/2982b12ebed3088b89c8196b9b4d23e0bcb94ad8",
-                "reference": "2982b12ebed3088b89c8196b9b4d23e0bcb94ad8",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/9d89a8c14cd5870e44624f2b43a76a2da5459d89",
+                "reference": "9d89a8c14cd5870e44624f2b43a76a2da5459d89",
                 "shasum": ""
             },
             "require": {
@@ -2247,7 +2247,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part for the media of OpenOrchestra",
-            "time": "2015-11-12 16:49:52"
+            "time": "2015-11-16 16:27:04"
         },
         {
             "name": "open-orchestra/open-orchestra-media-bundle",
@@ -2409,17 +2409,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-user-bundle.git",
-                "reference": "8a37b30798e0c21ca51573b25e15b8f71bbfcba9"
+                "reference": "e4b8307074e2d265c03ab1fa1dc9c196f4cddfd6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-user-bundle/zipball/8a37b30798e0c21ca51573b25e15b8f71bbfcba9",
-                "reference": "8a37b30798e0c21ca51573b25e15b8f71bbfcba9",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-user-bundle/zipball/e4b8307074e2d265c03ab1fa1dc9c196f4cddfd6",
+                "reference": "e4b8307074e2d265c03ab1fa1dc9c196f4cddfd6",
                 "shasum": ""
             },
             "require": {
                 "friendsofsymfony/user-bundle": "~2.0",
-                "open-orchestra/open-orchestra-libs": "*"
+                "open-orchestra/open-orchestra-libs": "~1.0.0"
             },
             "require-dev": {
                 "codeclimate/php-test-reporter": "dev-master",
@@ -2451,7 +2451,7 @@
                 }
             ],
             "description": "An override of FosUserBundle to provide authentication on OpenOrchestra",
-            "time": "2015-11-09 15:42:20"
+            "time": "2015-11-18 11:05:44"
         },
         {
             "name": "open-orchestra/open-orchestra-workflow-function-bundle",
@@ -3594,12 +3594,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Behat/Behat.git",
-                "reference": "149f8881a1df56496c37094f32d05b53e0cde37b"
+                "reference": "2059cbe4bb8055c8555fa3365c6ea3b4b30288f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Behat/Behat/zipball/149f8881a1df56496c37094f32d05b53e0cde37b",
-                "reference": "149f8881a1df56496c37094f32d05b53e0cde37b",
+                "url": "https://api.github.com/repos/Behat/Behat/zipball/2059cbe4bb8055c8555fa3365c6ea3b4b30288f5",
+                "reference": "2059cbe4bb8055c8555fa3365c6ea3b4b30288f5",
                 "shasum": ""
             },
             "require": {
@@ -3607,18 +3607,18 @@
                 "behat/transliterator": "~1.0",
                 "ext-mbstring": "*",
                 "php": ">=5.3.3",
-                "symfony/class-loader": "~2.1",
-                "symfony/config": "~2.3",
-                "symfony/console": "~2.1",
-                "symfony/dependency-injection": "~2.1",
-                "symfony/event-dispatcher": "~2.1",
-                "symfony/translation": "~2.3",
-                "symfony/yaml": "~2.1"
+                "symfony/class-loader": "~2.1|~3.0",
+                "symfony/config": "~2.3|~3.0",
+                "symfony/console": "~2.1|~3.0",
+                "symfony/dependency-injection": "~2.1|~3.0",
+                "symfony/event-dispatcher": "~2.1|~3.0",
+                "symfony/translation": "~2.3|~3.0",
+                "symfony/yaml": "~2.1|~3.0"
             },
             "require-dev": {
                 "phpspec/prophecy-phpunit": "~1.0",
                 "phpunit/phpunit": "~4.0",
-                "symfony/process": "~2.1"
+                "symfony/process": "~2.1|~3.0"
             },
             "suggest": {
                 "behat/mink-extension": "for integration with Mink testing framework",
@@ -3667,7 +3667,7 @@
                 "symfony",
                 "testing"
             ],
-            "time": "2015-11-07 19:03:37"
+            "time": "2015-11-16 18:19:22"
         },
         {
             "name": "behat/gherkin",
