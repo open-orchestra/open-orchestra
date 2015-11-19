@@ -39,4 +39,4 @@ before_script:
 
 script:
   - phpunit -c app/ --testsuite=unit
-  - phpunit -c app/ --testsuite=functional --process-isolation
+  - phpunit -c app/ --testsuite=functional
