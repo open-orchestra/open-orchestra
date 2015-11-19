@@ -101,9 +101,12 @@ Url to see changes :
 ## Other changes
   
   - In differents dataTable, the global search is disabled. To reactivate it, you can use the data attribute ``display-global-search=true`` in the link in navigation panel.
+  - Every repository that should be paginated are now implementing `OpenOrchestra\Pagination\Configuration\PaginationRepositoryInterface`
   
 ## Deprecated method
  - The method `findByAuthor` has been deprecated in both NodeRepository and ContentRepository
+ - The class `OpenOrchestra\ModelInterface\Repository\PaginateRepositoryInterface` has been replaced by
+   `OpenOrchestra\Pagination\Configuration\PaginationRepositoryInterface`
 
 ## Suppressed method
 
