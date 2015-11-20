@@ -82,6 +82,7 @@ Url to see changes :
 
 ## New features
 
+ - Replace the media upload GUI with a new component allowing multi-upload
  - Adding roles for nodes (CREATE, UPDATE, MOVE, DELETE)
  - Adding roles for content types (CREATE, UPDATE, DELETE)
  - Adding roles for keywords (CREATE, UPDATE, DELETE)
