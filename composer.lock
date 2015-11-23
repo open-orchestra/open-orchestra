@@ -8,6 +8,63 @@
     "content-hash": "ff8ebb23dbf090f0f785267b6db296d8",
     "packages": [
         {
+            "name": "alchemy/binary-driver",
+            "version": "1.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/alchemy-fr/BinaryDriver.git",
+                "reference": "b32c03d4b56ce29f783051eac55887adae654b41"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/alchemy-fr/BinaryDriver/zipball/b32c03d4b56ce29f783051eac55887adae654b41",
+                "reference": "b32c03d4b56ce29f783051eac55887adae654b41",
+                "shasum": ""
+            },
+            "require": {
+                "evenement/evenement": "~1.0",
+                "monolog/monolog": "~1.3",
+                "php": ">=5.3.3",
+                "psr/log": "~1.0",
+                "symfony/process": "~2.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~3.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Alchemy": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Romain Neutron",
+                    "email": "imprec@gmail.com",
+                    "homepage": "http://www.lickmychip.com/"
+                },
+                {
+                    "name": "Phraseanet Team",
+                    "email": "info@alchemy.fr",
+                    "homepage": "http://www.phraseanet.com/"
+                },
+                {
+                    "name": "Nicolas Le Goff",
+                    "email": "legoff.n@gmail.com"
+                }
+            ],
+            "description": "A set of tools to build binary drivers",
+            "keywords": [
+                "binary",
+                "driver"
+            ],
+            "time": "2013-06-21 15:51:20"
+        },
+        {
             "name": "behat/transliterator",
             "version": "dev-master",
             "source": {
@@ -842,6 +899,51 @@
                 "symfony"
             ],
             "time": "2015-08-31 13:07:17"
+        },
+        {
+            "name": "evenement/evenement",
+            "version": "1.0.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/igorw/evenement.git",
+                "reference": "8b0918f8374327dfed4408fe467980ab41d556dd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/igorw/evenement/zipball/8b0918f8374327dfed4408fe467980ab41d556dd",
+                "reference": "8b0918f8374327dfed4408fe467980ab41d556dd",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Evenement": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Igor Wiedler",
+                    "email": "igor@wiedler.ch",
+                    "homepage": "http://wiedler.ch/igor/"
+                }
+            ],
+            "description": "Événement is a very simple event dispatching library for PHP 5.3",
+            "keywords": [
+                "event-dispatcher"
+            ],
+            "time": "2012-12-29 17:04:52"
         },
         {
             "name": "flowjs/flow-php-server",
@@ -1882,12 +1984,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "7d20351afc85aa23c5795309c9984a1e93d81c27"
+                "reference": "055125a98d92ce5fa8946e5f80cdf52405244120"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/7d20351afc85aa23c5795309c9984a1e93d81c27",
-                "reference": "7d20351afc85aa23c5795309c9984a1e93d81c27",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/055125a98d92ce5fa8946e5f80cdf52405244120",
+                "reference": "055125a98d92ce5fa8946e5f80cdf52405244120",
                 "shasum": ""
             },
             "require": {
@@ -1952,7 +2054,47 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2015-11-18 18:03:10"
+            "time": "2015-11-21 00:43:47"
+        },
+        {
+            "name": "neutron/temporary-filesystem",
+            "version": "2.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/romainneutron/Temporary-Filesystem.git",
+                "reference": "6b21fa99fd452efea16b9a7adb7304ccfff854d0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/romainneutron/Temporary-Filesystem/zipball/6b21fa99fd452efea16b9a7adb7304ccfff854d0",
+                "reference": "6b21fa99fd452efea16b9a7adb7304ccfff854d0",
+                "shasum": ""
+            },
+            "require": {
+                "symfony/filesystem": "~2.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~3.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Neutron": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Romain Neutron",
+                    "email": "imprec@gmail.com",
+                    "homepage": "http://www.lickmychip.com/"
+                }
+            ],
+            "description": "Symfony filesystem extension to handle temporary files",
+            "time": "2013-10-10 10:58:09"
         },
         {
             "name": "open-orchestra/open-orchestra-base-api-bundle",
@@ -2052,12 +2194,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-base-bundle.git",
-                "reference": "df66756a5573d0d650d41282c6e025b3e1d76bdc"
+                "reference": "221ada501584ebf0194269834e7b6ea45c755347"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-bundle/zipball/df66756a5573d0d650d41282c6e025b3e1d76bdc",
-                "reference": "df66756a5573d0d650d41282c6e025b3e1d76bdc",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-bundle/zipball/221ada501584ebf0194269834e7b6ea45c755347",
+                "reference": "221ada501584ebf0194269834e7b6ea45c755347",
                 "shasum": ""
             },
             "require": {
@@ -2095,7 +2237,7 @@
                 }
             ],
             "description": "The OpenOrchestra base bundle",
-            "time": "2015-11-06 16:38:24"
+            "time": "2015-11-20 14:59:20"
         },
         {
             "name": "open-orchestra/open-orchestra-bbcode-bundle",
@@ -2146,12 +2288,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "ffed5829d8671de915f8b4a1e275d6ff06374a8b"
+                "reference": "9d2343ed6914a81d8a98371d530f87bd456b15b3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/ffed5829d8671de915f8b4a1e275d6ff06374a8b",
-                "reference": "ffed5829d8671de915f8b4a1e275d6ff06374a8b",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/9d2343ed6914a81d8a98371d530f87bd456b15b3",
+                "reference": "9d2343ed6914a81d8a98371d530f87bd456b15b3",
                 "shasum": ""
             },
             "require": {
@@ -2193,7 +2335,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2015-11-19 16:59:56"
+            "time": "2015-11-20 16:26:12"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2295,12 +2437,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-admin-bundle.git",
-                "reference": "e94dae0ab61d99c73432e3ae7285bc25e8857bbe"
+                "reference": "12d004fde7e9bbf7178e2c65747836203066d70b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/e94dae0ab61d99c73432e3ae7285bc25e8857bbe",
-                "reference": "e94dae0ab61d99c73432e3ae7285bc25e8857bbe",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/12d004fde7e9bbf7178e2c65747836203066d70b",
+                "reference": "12d004fde7e9bbf7178e2c65747836203066d70b",
                 "shasum": ""
             },
             "require": {
@@ -2332,7 +2474,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part for the media of OpenOrchestra",
-            "time": "2015-11-19 09:56:05"
+            "time": "2015-11-20 13:37:35"
         },
         {
             "name": "open-orchestra/open-orchestra-media-bundle",
@@ -2340,12 +2482,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-bundle.git",
-                "reference": "433a07fef4e5fc593e3db0861864a7a8193bd355"
+                "reference": "b4392a0b1fbb97e6f77f9d0eda276f1104dd5dc8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/433a07fef4e5fc593e3db0861864a7a8193bd355",
-                "reference": "433a07fef4e5fc593e3db0861864a7a8193bd355",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/b4392a0b1fbb97e6f77f9d0eda276f1104dd5dc8",
+                "reference": "b4392a0b1fbb97e6f77f9d0eda276f1104dd5dc8",
                 "shasum": ""
             },
             "require": {
@@ -2358,6 +2500,7 @@
                 "open-orchestra/open-orchestra-display-bundle": "*",
                 "open-orchestra/open-orchestra-model-interface": "*",
                 "open-orchestra/open-orchestra-mongo-libs": "*",
+                "php-ffmpeg/php-ffmpeg": "~0.6",
                 "stof/doctrine-extensions-bundle": "1.2.1"
             },
             "require-dev": {
@@ -2388,7 +2531,7 @@
                 }
             ],
             "description": "A media bundle for the OpenOrchestra Project",
-            "time": "2015-11-18 15:06:51"
+            "time": "2015-11-23 08:29:43"
         },
         {
             "name": "open-orchestra/open-orchestra-model-bundle",
@@ -2638,6 +2781,75 @@
             ],
             "description": "A workflow function bundle for the OpenOrchestra Project",
             "time": "2015-11-13 15:18:26"
+        },
+        {
+            "name": "php-ffmpeg/php-ffmpeg",
+            "version": "0.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHP-FFMpeg/PHP-FFMpeg.git",
+                "reference": "6e3134e4ecc96852b1205e6c88ceffdb8cf17d34"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHP-FFMpeg/PHP-FFMpeg/zipball/6e3134e4ecc96852b1205e6c88ceffdb8cf17d34",
+                "reference": "6e3134e4ecc96852b1205e6c88ceffdb8cf17d34",
+                "shasum": ""
+            },
+            "require": {
+                "alchemy/binary-driver": "~1.5",
+                "doctrine/cache": "~1.0",
+                "evenement/evenement": "~1.0",
+                "neutron/temporary-filesystem": "~2.1, >=2.1.1",
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~3.7",
+                "sami/sami": "~1.0",
+                "silex/silex": "~1.0"
+            },
+            "suggest": {
+                "php-ffmpeg/extras": "A compilation of common audio & video drivers for PHP-FFMpeg"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.5-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "FFMpeg": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Romain Neutron",
+                    "email": "imprec@gmail.com",
+                    "homepage": "http://www.lickmychip.com/"
+                },
+                {
+                    "name": "Phraseanet Team",
+                    "email": "info@alchemy.fr",
+                    "homepage": "http://www.phraseanet.com/"
+                }
+            ],
+            "description": "FFMpeg PHP, an Object Oriented library to communicate with AVconv / ffmpeg",
+            "keywords": [
+                "audio",
+                "audio processing",
+                "avconv",
+                "avprobe",
+                "ffmpeg",
+                "ffprobe",
+                "video",
+                "video processing"
+            ],
+            "time": "2015-01-30 19:07:38"
         },
         {
             "name": "phpcollection/phpcollection",
