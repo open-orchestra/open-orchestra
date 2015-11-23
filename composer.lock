@@ -1830,12 +1830,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "7d20351afc85aa23c5795309c9984a1e93d81c27"
+                "reference": "055125a98d92ce5fa8946e5f80cdf52405244120"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/7d20351afc85aa23c5795309c9984a1e93d81c27",
-                "reference": "7d20351afc85aa23c5795309c9984a1e93d81c27",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/055125a98d92ce5fa8946e5f80cdf52405244120",
+                "reference": "055125a98d92ce5fa8946e5f80cdf52405244120",
                 "shasum": ""
             },
             "require": {
@@ -1900,7 +1900,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2015-11-18 18:03:10"
+            "time": "2015-11-21 00:43:47"
         },
         {
             "name": "open-orchestra/open-orchestra-base-api-bundle",
@@ -2161,12 +2161,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-libs.git",
-                "reference": "f7fd7be5e06de69ff4cff5d81096968a75fb5a41"
+                "reference": "c60bf098a198d6171a0ee71271cecb4ab858b497"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-libs/zipball/f7fd7be5e06de69ff4cff5d81096968a75fb5a41",
-                "reference": "f7fd7be5e06de69ff4cff5d81096968a75fb5a41",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-libs/zipball/c60bf098a198d6171a0ee71271cecb4ab858b497",
+                "reference": "c60bf098a198d6171a0ee71271cecb4ab858b497",
                 "shasum": ""
             },
             "require": {
@@ -2203,7 +2203,7 @@
                 }
             ],
             "description": "Some library for the Open Orchestra project",
-            "time": "2015-10-22 14:29:02"
+            "time": "2015-11-20 16:41:18"
         },
         {
             "name": "open-orchestra/open-orchestra-media-admin-bundle",
@@ -2312,12 +2312,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
-                "reference": "8d6defaa8e9da83fd65d62c73a835551ad6be956"
+                "reference": "c958bbfdc6e420b8eff517ee3b89b3d2414913c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/8d6defaa8e9da83fd65d62c73a835551ad6be956",
-                "reference": "8d6defaa8e9da83fd65d62c73a835551ad6be956",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/c958bbfdc6e420b8eff517ee3b89b3d2414913c0",
+                "reference": "c958bbfdc6e420b8eff517ee3b89b3d2414913c0",
                 "shasum": ""
             },
             "require": {
@@ -2354,7 +2354,7 @@
                 }
             ],
             "description": "An implemantation of the model-interface for OpenOrchestra on mongo",
-            "time": "2015-10-30 15:44:51"
+            "time": "2015-11-23 10:05:04"
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
@@ -4233,12 +4233,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "4f9b1eaf0a7da77c362f8d91cbc68ab1f4718d62"
+                "reference": "8887e24c7a9fe8fea1b785df05b4558988d26cec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/4f9b1eaf0a7da77c362f8d91cbc68ab1f4718d62",
-                "reference": "4f9b1eaf0a7da77c362f8d91cbc68ab1f4718d62",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/8887e24c7a9fe8fea1b785df05b4558988d26cec",
+                "reference": "8887e24c7a9fe8fea1b785df05b4558988d26cec",
                 "shasum": ""
             },
             "require": {
@@ -4285,7 +4285,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2015-09-22 14:49:23"
+            "time": "2015-11-23 11:20:20"
         },
         {
             "name": "phpunit/php-code-coverage",
