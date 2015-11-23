@@ -83,7 +83,7 @@ then
         git status
         git stash
         git fetch -p
-        git pull --rebase origin master
+        git pull --rebase origin 1.0
         git stash pop
         git status
         cd ../..
@@ -119,8 +119,8 @@ else
             git add ./
         fi
         git commit -m "$message"
-        git pull --rebase origin master
-        git push origin master:$branch_name $force_param
+        git pull --rebase origin 1.0
+        git push origin 1.0:$branch_name $force_param
         cd ../..
     done
 fi
