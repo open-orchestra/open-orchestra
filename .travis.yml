@@ -29,6 +29,7 @@ before_install:
 
 install:
   - sudo apt-get install mongodb-org-server
+  - sudo apt-get install libav-tools
   - composer install --prefer-dist
 
 before_script:
