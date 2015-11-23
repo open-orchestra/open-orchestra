@@ -103,6 +103,8 @@ Url to see changes :
   
   - In differents dataTable, the global search is disabled. To reactivate it, you can use the data attribute ``display-global-search=true`` in the link in navigation panel.
   - Every repository that should be paginated are now implementing `OpenOrchestra\Pagination\Configuration\PaginationRepositoryInterface`
+  - The version of Symfony is updated to 2.7.6
+  - Module php5-ffmpeg is replaced by [PHP driver PHP-FFMpeg](https://github.com/PHP-FFMpeg/PHP-FFMpeg)
   
 ## Deprecated method
  - The method `findByAuthor` has been deprecated in both NodeRepository and ContentRepository
