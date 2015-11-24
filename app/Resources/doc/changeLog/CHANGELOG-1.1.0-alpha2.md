@@ -79,6 +79,7 @@ Url to see changes :
 ## Bug fixes
 
  - User is now able to delete a media folder when the last media is deleted, without having to refresh the page.
+ - When creating a new media folder, menu is now automatically refreshed.
 
 ## New features
 
