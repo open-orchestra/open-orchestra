@@ -2288,12 +2288,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "5c3234aebcee11205bfb9cb7ef13b9ff90ed53d1"
+                "reference": "e7d2ae5d7634a162a38b7fd4d9b130379ceae9b3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/5c3234aebcee11205bfb9cb7ef13b9ff90ed53d1",
-                "reference": "5c3234aebcee11205bfb9cb7ef13b9ff90ed53d1",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/e7d2ae5d7634a162a38b7fd4d9b130379ceae9b3",
+                "reference": "e7d2ae5d7634a162a38b7fd4d9b130379ceae9b3",
                 "shasum": ""
             },
             "require": {
@@ -2335,7 +2335,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2015-11-26 09:23:38"
+            "time": "2015-11-26 14:24:15"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2437,12 +2437,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-admin-bundle.git",
-                "reference": "cb5b598f73aafe6bf79f8e69b364860d50e5f5e4"
+                "reference": "f7ff76795bb6fa8b04aa70bb1f1707804931516c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/cb5b598f73aafe6bf79f8e69b364860d50e5f5e4",
-                "reference": "cb5b598f73aafe6bf79f8e69b364860d50e5f5e4",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/f7ff76795bb6fa8b04aa70bb1f1707804931516c",
+                "reference": "f7ff76795bb6fa8b04aa70bb1f1707804931516c",
                 "shasum": ""
             },
             "require": {
@@ -2475,7 +2475,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part for the media of OpenOrchestra",
-            "time": "2015-11-26 09:03:17"
+            "time": "2015-11-26 10:47:30"
         },
         {
             "name": "open-orchestra/open-orchestra-media-bundle",
@@ -2575,45 +2575,6 @@
             ],
             "description": "This bundle provide the file management part for the media feature of OpenOrchestra",
             "time": "2015-11-26 09:02:13"
-        },
-        {
-            "name": "open-orchestra/open-orchestra-media-file-bundle",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/open-orchestra/open-orchestra-media-file-bundle.git",
-                "reference": "db428f0a5287a3704fb7ac4f06f0c7dccba873af"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-file-bundle/zipball/db428f0a5287a3704fb7ac4f06f0c7dccba873af",
-                "reference": "db428f0a5287a3704fb7ac4f06f0c7dccba873af",
-                "shasum": ""
-            },
-            "require-dev": {
-                "codeclimate/php-test-reporter": "dev-master",
-                "phake/phake": "2.1.0",
-                "phpunit/phpunit": "4.7.2",
-                "psr/log": "1.0.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "OpenOrchestra\\MediaFileBundle\\": "MediaFileBundle/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "OpenOrchestra community",
-                    "homepage": "https://github.com/open-orchestra/open-orchestra-media-file-bundle/graphs/contributors"
-                }
-            ],
-            "description": "This bundle provide the file management part for the media feature of OpenOrchestra",
-            "time": "2015-11-25 14:55:56"
         },
         {
             "name": "open-orchestra/open-orchestra-model-bundle",
