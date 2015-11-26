@@ -2483,12 +2483,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-bundle.git",
-                "reference": "9796f289d81bda10220c241c84f684505ccec04e"
+                "reference": "3c6ba37b9e13eacdf5038fe3ee90fbd4b8912b72"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/9796f289d81bda10220c241c84f684505ccec04e",
-                "reference": "9796f289d81bda10220c241c84f684505ccec04e",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/3c6ba37b9e13eacdf5038fe3ee90fbd4b8912b72",
+                "reference": "3c6ba37b9e13eacdf5038fe3ee90fbd4b8912b72",
                 "shasum": ""
             },
             "require": {
@@ -2496,9 +2496,9 @@
                 "doctrine/mongodb-odm": "1.0.2",
                 "doctrine/mongodb-odm-bundle": "3.0.1",
                 "ext-imagick": "*",
-                "knplabs/knp-gaufrette-bundle": "v0.1.7",
                 "open-orchestra/open-orchestra-bbcode-bundle": "*",
                 "open-orchestra/open-orchestra-display-bundle": "*",
+                "open-orchestra/open-orchestra-media-file-bundle": "*",
                 "open-orchestra/open-orchestra-model-interface": "*",
                 "open-orchestra/open-orchestra-mongo-libs": "*",
                 "php-ffmpeg/php-ffmpeg": "~0.6",
@@ -2532,7 +2532,49 @@
                 }
             ],
             "description": "A media bundle for the OpenOrchestra Project",
-            "time": "2015-11-23 11:17:42"
+            "time": "2015-11-26 09:42:12"
+        },
+        {
+            "name": "open-orchestra/open-orchestra-media-file-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/open-orchestra/open-orchestra-media-file-bundle.git",
+                "reference": "5bb638ccd07bb57d75da6d6dba3715cc0d80fa8a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-file-bundle/zipball/5bb638ccd07bb57d75da6d6dba3715cc0d80fa8a",
+                "reference": "5bb638ccd07bb57d75da6d6dba3715cc0d80fa8a",
+                "shasum": ""
+            },
+            "require": {
+                "knplabs/knp-gaufrette-bundle": "v0.1.7"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "dev-master",
+                "phake/phake": "2.1.0",
+                "phpunit/phpunit": "4.7.2",
+                "psr/log": "1.0.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "OpenOrchestra\\MediaFileBundle\\": "MediaFileBundle/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "OpenOrchestra community",
+                    "homepage": "https://github.com/open-orchestra/open-orchestra-media-file-bundle/graphs/contributors"
+                }
+            ],
+            "description": "This bundle provide the file management part for the media feature of OpenOrchestra",
+            "time": "2015-11-26 09:02:13"
         },
         {
             "name": "open-orchestra/open-orchestra-media-file-bundle",

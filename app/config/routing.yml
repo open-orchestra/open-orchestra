@@ -46,8 +46,8 @@ open_orchestra_log:
     type: annotation
     prefix: /api
 
-open_orchestra_media:
-    resource: "@OpenOrchestraMediaBundle/Controller"
+open_orchestra_media_file:
+    resource: "@OpenOrchestraMediaFileBundle/Controller"
     type: annotation
     prefix: /media
 
