@@ -1984,12 +1984,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "055125a98d92ce5fa8946e5f80cdf52405244120"
+                "reference": "cab3ff71ffc802af272928ff71341cfc51e8ee98"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/055125a98d92ce5fa8946e5f80cdf52405244120",
-                "reference": "055125a98d92ce5fa8946e5f80cdf52405244120",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/cab3ff71ffc802af272928ff71341cfc51e8ee98",
+                "reference": "cab3ff71ffc802af272928ff71341cfc51e8ee98",
                 "shasum": ""
             },
             "require": {
@@ -2054,7 +2054,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2015-11-21 00:43:47"
+            "time": "2015-11-26 23:48:42"
         },
         {
             "name": "neutron/temporary-filesystem",
@@ -2288,12 +2288,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "e7d2ae5d7634a162a38b7fd4d9b130379ceae9b3"
+                "reference": "6146d0b4cf9337b66ec9852c4e78634d79735b6d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/e7d2ae5d7634a162a38b7fd4d9b130379ceae9b3",
-                "reference": "e7d2ae5d7634a162a38b7fd4d9b130379ceae9b3",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/6146d0b4cf9337b66ec9852c4e78634d79735b6d",
+                "reference": "6146d0b4cf9337b66ec9852c4e78634d79735b6d",
                 "shasum": ""
             },
             "require": {
@@ -2335,7 +2335,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2015-11-26 14:24:15"
+            "time": "2015-11-26 17:17:13"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
