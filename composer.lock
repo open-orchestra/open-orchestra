@@ -2291,12 +2291,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "3182801be8b51e535525ea9992f46dcd174562f3"
+                "reference": "96aede1b0538970f65a57a20b6c2b9aed5ff327a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/3182801be8b51e535525ea9992f46dcd174562f3",
-                "reference": "3182801be8b51e535525ea9992f46dcd174562f3",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/96aede1b0538970f65a57a20b6c2b9aed5ff327a",
+                "reference": "96aede1b0538970f65a57a20b6c2b9aed5ff327a",
                 "shasum": ""
             },
             "require": {
@@ -2338,7 +2338,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2015-12-07 11:14:50"
+            "time": "2015-12-08 09:54:32"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -5116,19 +5116,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/diff.git",
-                "reference": "2b0112e42c338afa9ad9dfeb94d66f6d84c2f828"
+                "reference": "13edfd8706462032c2f52b4b862974dd46b71c9e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/2b0112e42c338afa9ad9dfeb94d66f6d84c2f828",
-                "reference": "2b0112e42c338afa9ad9dfeb94d66f6d84c2f828",
+                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/13edfd8706462032c2f52b4b862974dd46b71c9e",
+                "reference": "13edfd8706462032c2f52b4b862974dd46b71c9e",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
             "require-dev": {
-                "phpunit/phpunit": "~5"
+                "phpunit/phpunit": "~4.8"
             },
             "type": "library",
             "extra": {
@@ -5160,7 +5160,7 @@
             "keywords": [
                 "diff"
             ],
-            "time": "2015-12-06 07:21:36"
+            "time": "2015-12-08 07:14:41"
         },
         {
             "name": "sebastian/environment",
