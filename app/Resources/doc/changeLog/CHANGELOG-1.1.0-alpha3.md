@@ -20,13 +20,20 @@ Url to see changes :
  - [Orchestra Mongo libs](https://github.com/open-orchestra/open-orchestra-mongo-libs/compare/v1.1.0-alpha2...v1.1.0-alpha3)
 
 ## Possible BC breaker
+ 
+ - Plugin ``Colvis`` of DataTable is replaced by the ``Buttons extension`` 
 
 ## Bug fixes
 
 ## New features
-
+ 
+ - Possibility to add custom fields for search in the DataTable, further information in [documentation](https://github.com/open-orchestra/open-orchestra-docs/blob/master/en/developer_guide/entity_list_ajax_pagination.rst)
+ - New Backbone view generic ``DataTableView`` for create a list with DataTable, used by ``TableViewCollection``
+ 
 ## Other changes
-  
+
+  - DataTable is updated to version 1.1.0
+
 ## Deprecated method
 
  - `NodeGroupRoleVoter` has been moved in the `Backoffice` folder
