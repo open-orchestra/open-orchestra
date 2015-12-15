@@ -679,18 +679,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/mongodb.git",
-                "reference": "55314b61d0cd9bac1dc9386b36e18238f47c3482"
+                "reference": "3cbdae29a667f69cb5fc11e8a27427d8523ef00d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/mongodb/zipball/55314b61d0cd9bac1dc9386b36e18238f47c3482",
-                "reference": "55314b61d0cd9bac1dc9386b36e18238f47c3482",
+                "url": "https://api.github.com/repos/doctrine/mongodb/zipball/3cbdae29a667f69cb5fc11e8a27427d8523ef00d",
+                "reference": "3cbdae29a667f69cb5fc11e8a27427d8523ef00d",
                 "shasum": ""
             },
             "require": {
                 "doctrine/common": "^2.2",
-                "ext-mongo": "^1.2.12",
-                "php": ">=5.3.2"
+                "ext-mongo": "^1.5",
+                "php": "^5.5"
             },
             "require-dev": {
                 "jmikola/geojson": "^1.0"
@@ -746,7 +746,7 @@
                 "mongodb",
                 "persistence"
             ],
-            "time": "2015-11-24 18:29:09"
+            "time": "2015-12-15 06:33:18"
         },
         {
             "name": "doctrine/mongodb-odm",
@@ -1221,12 +1221,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Atlantic18/DoctrineExtensions.git",
-                "reference": "46e630db2b699f86cc4c98119ba18747d1f26aad"
+                "reference": "dced48e5e4e3ff37d5d4d71a7b0ae7b2a61da92b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/46e630db2b699f86cc4c98119ba18747d1f26aad",
-                "reference": "46e630db2b699f86cc4c98119ba18747d1f26aad",
+                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/dced48e5e4e3ff37d5d4d71a7b0ae7b2a61da92b",
+                "reference": "dced48e5e4e3ff37d5d4d71a7b0ae7b2a61da92b",
                 "shasum": ""
             },
             "require": {
@@ -1292,7 +1292,7 @@
                 "tree",
                 "uploadable"
             ],
-            "time": "2015-12-11 14:01:40"
+            "time": "2015-12-14 19:56:04"
         },
         {
             "name": "guzzle/guzzle",
@@ -2291,12 +2291,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "d18664e91496ecac9ce3d0c6f8ee787c01222fc0"
+                "reference": "f0eab30e3436b9dd4e481e5a6bee50fb114e37ae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/d18664e91496ecac9ce3d0c6f8ee787c01222fc0",
-                "reference": "d18664e91496ecac9ce3d0c6f8ee787c01222fc0",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/f0eab30e3436b9dd4e481e5a6bee50fb114e37ae",
+                "reference": "f0eab30e3436b9dd4e481e5a6bee50fb114e37ae",
                 "shasum": ""
             },
             "require": {
@@ -2338,7 +2338,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2015-12-14 08:23:28"
+            "time": "2015-12-14 10:41:09"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2346,12 +2346,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-display-bundle.git",
-                "reference": "4b8c8b84a4dc255ded955adb2d93dfe1f670dc6e"
+                "reference": "d63f997ba2f39170dd8220640513618f6a61e452"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-display-bundle/zipball/4b8c8b84a4dc255ded955adb2d93dfe1f670dc6e",
-                "reference": "4b8c8b84a4dc255ded955adb2d93dfe1f670dc6e",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-display-bundle/zipball/d63f997ba2f39170dd8220640513618f6a61e452",
+                "reference": "d63f997ba2f39170dd8220640513618f6a61e452",
                 "shasum": ""
             },
             "require": {
@@ -2387,7 +2387,7 @@
                 }
             ],
             "description": "The bundle to display all bricks",
-            "time": "2015-11-30 17:40:47"
+            "time": "2015-12-14 11:08:18"
         },
         {
             "name": "open-orchestra/open-orchestra-libs",
@@ -4623,18 +4623,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "e871a2a0cf62b56c36b4781e99b50c6bf08fab77"
+                "reference": "53e967bf312c21f78ec3a19c530d98e1bdb5b26f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/e871a2a0cf62b56c36b4781e99b50c6bf08fab77",
-                "reference": "e871a2a0cf62b56c36b4781e99b50c6bf08fab77",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/53e967bf312c21f78ec3a19c530d98e1bdb5b26f",
+                "reference": "53e967bf312c21f78ec3a19c530d98e1bdb5b26f",
                 "shasum": ""
             },
             "require": {
                 "doctrine/instantiator": "^1.0.2",
                 "phpdocumentor/reflection-docblock": "~2.0",
-                "sebastian/comparator": "~1.1"
+                "sebastian/comparator": "~1.1",
+                "sebastian/recursion-context": "~1.0"
             },
             "require-dev": {
                 "phpspec/phpspec": "~2.0"
@@ -4675,7 +4676,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2015-12-10 20:38:17"
+            "time": "2015-12-14 17:14:23"
         },
         {
             "name": "phpunit/php-code-coverage",
