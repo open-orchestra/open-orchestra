@@ -2678,16 +2678,16 @@
         },
         {
             "name": "open-orchestra/open-orchestra-mongo-libs",
-            "version": "dev-master",
+            "version": "v1.1.0-alpha2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-mongo-libs.git",
-                "reference": "b1a9ac4876fde1e03080a7c6155a5b7f3cbfece5"
+                "reference": "c4226c5c4b5a01c8a8d803e549bb8de0b95f54eb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-mongo-libs/zipball/b1a9ac4876fde1e03080a7c6155a5b7f3cbfece5",
-                "reference": "b1a9ac4876fde1e03080a7c6155a5b7f3cbfece5",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-mongo-libs/zipball/c4226c5c4b5a01c8a8d803e549bb8de0b95f54eb",
+                "reference": "c4226c5c4b5a01c8a8d803e549bb8de0b95f54eb",
                 "shasum": ""
             },
             "require": {
@@ -2724,7 +2724,7 @@
                 }
             ],
             "description": "Some library to use the Open Orchestra project with mongo",
-            "time": "2015-12-11 15:32:27"
+            "time": "2015-11-19 10:31:50"
         },
         {
             "name": "open-orchestra/open-orchestra-user-bundle",
