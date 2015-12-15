@@ -25,10 +25,14 @@ Url to see changes :
 
 ## Bug fixes
 
+ - The node drag'n'drop has been updated to wait for user's confirmation before sending datas
+
 ## New features
  
  - Possibility to add custom fields for search in the DataTable, further information in [documentation](https://github.com/open-orchestra/open-orchestra-docs/blob/master/en/developer_guide/entity_list_ajax_pagination.rst)
  - New Backbone view generic ``DataTableView`` for create a list with DataTable, used by ``TableViewCollection``
+ - The build of the full project has been moved to the travis container build
+ - 
  
 ## Other changes
 
@@ -38,6 +42,8 @@ Url to see changes :
 
  - `NodeGroupRoleVoter` has been moved in the `Backoffice` folder
  - `GroupSiteVoter` has been moved in the `Backoffice` folder
+ - The `AuthorizeEditionManager` has been deprecated, and all strategies has been transformed has roles
+ - The `VersionableSaver` has been moved in the `Saver` folder
 
 ## Suppressed method
 
