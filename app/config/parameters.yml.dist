@@ -11,7 +11,7 @@ parameters:
     open_orchestra_cms.mongodb.database: open_orchestra_%kernel.environment%
     encryption_key: NStUAIRNUAIs3154rsaierSTR
 
-    media.directory: /tmp/uploaded-files
+    media.directory: /var/uploaded-files
 
     session_name: open_orchestra_session
 
