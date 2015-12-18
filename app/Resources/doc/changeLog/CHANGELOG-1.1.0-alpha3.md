@@ -1,4 +1,4 @@
-# CHANGELOG for 1.1.0-alpha2
+# CHANGELOG for 1.1.0-alpha3
 
 Url to see changes : 
 
@@ -32,7 +32,8 @@ Url to see changes :
  - Possibility to add custom fields for search in the DataTable, further information in [documentation](https://github.com/open-orchestra/open-orchestra-docs/blob/master/en/developer_guide/entity_list_ajax_pagination.rst)
  - New Backbone view generic ``DataTableView`` for create a list with DataTable, used by ``TableViewCollection``
  - The build of the full project has been moved to the travis container build
- - 
+ - Every facades returned by the API are now configurable and can be defined in bundles
+ configuration, further information in [documentation](https://github.com/open-orchestra/open-orchestra-docs/blob/master/en/developer_guide/bundle_configuration.rst)
  
 ## Other changes
 
@@ -44,6 +45,7 @@ Url to see changes :
  - `GroupSiteVoter` has been moved in the `Backoffice` folder
  - The `AuthorizeEditionManager` has been deprecated, and all strategies has been transformed has roles
  - The `VersionableSaver` has been moved in the `Saver` folder
+ - The role constant `ROLE_ACCESS_GENERAL_NODE` has been replaced by `ROLE_ACCESS_TREE_GENERAL_NODE`
 
 ## Suppressed method
 
