@@ -34,6 +34,9 @@ Url to see changes :
  - The build of the full project has been moved to the travis container build
  - Every facades returned by the API are now configurable and can be defined in bundles
  configuration, further information in [documentation](https://github.com/open-orchestra/open-orchestra-docs/blob/master/en/developer_guide/bundle_configuration.rst)
+ - The `RoleCollector` has been split into a collector for the front office and the backoffice
+ - To prevent `Status` suppression, the `StatusUsageFinder` has been created to check in every document using `Status` if
+   they are using it
  
 ## Other changes
 
