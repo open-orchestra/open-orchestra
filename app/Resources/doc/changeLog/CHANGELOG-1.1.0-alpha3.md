@@ -26,6 +26,9 @@ Url to see changes :
 ## Bug fixes
 
  - The node drag'n'drop has been updated to wait for user's confirmation before sending datas
+ - Fix errors on template creating
+ - Clean redirection and route on unpublished node
+ - Fixes on Dashboard, action buttons, order ...
 
 ## New features
  
@@ -37,6 +40,9 @@ Url to see changes :
  - The `RoleCollector` has been split into a collector for the front office and the backoffice
  - To prevent `Status` suppression, the `StatusUsageFinder` has been created to check in every document using `Status` if
    they are using it
+ - Install smartadmin Datepicker
+ - Datatable preferences saving
+ - Add embedded entity to content attributs
  
 ## Other changes
 
