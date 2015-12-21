@@ -2,12 +2,12 @@ module.exports = function(grunt) {
     grunt.registerTask('default',
         [
             'clean',
-            'command:assets_install',
+            'commands:assets_install',
             'symlink',
             'css',
             'javascript',
             'javascriptProd',
-            'command:assetic_dump'
+            'commands:assetic_dump'
          ]
     );
 };
