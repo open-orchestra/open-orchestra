@@ -238,12 +238,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "fb8eaa0b612b543d10f09df8eb16b47dd976e97a"
+                "reference": "bc23e0f46da064cbc53c1b1243472477487ef754"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/fb8eaa0b612b543d10f09df8eb16b47dd976e97a",
-                "reference": "fb8eaa0b612b543d10f09df8eb16b47dd976e97a",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/bc23e0f46da064cbc53c1b1243472477487ef754",
+                "reference": "bc23e0f46da064cbc53c1b1243472477487ef754",
                 "shasum": ""
             },
             "require": {
@@ -300,7 +300,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2015-12-10 07:11:12"
+            "time": "2015-12-19 04:57:29"
         },
         {
             "name": "doctrine/collections",
@@ -1216,12 +1216,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Atlantic18/DoctrineExtensions.git",
-                "reference": "108085fc93f7ef2d19fcbaa72e3f526b31915805"
+                "reference": "7e7fc55fa3fad79031727fbc7d8e418b641be875"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/108085fc93f7ef2d19fcbaa72e3f526b31915805",
-                "reference": "108085fc93f7ef2d19fcbaa72e3f526b31915805",
+                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/7e7fc55fa3fad79031727fbc7d8e418b641be875",
+                "reference": "7e7fc55fa3fad79031727fbc7d8e418b641be875",
                 "shasum": ""
             },
             "require": {
@@ -1287,7 +1287,7 @@
                 "tree",
                 "uploadable"
             ],
-            "time": "2015-12-17 16:58:28"
+            "time": "2015-12-18 20:34:21"
         },
         {
             "name": "guzzle/guzzle",
@@ -1977,16 +1977,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "dev-master",
+            "version": "1.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "205f528f5b23e5b9a3e95991d38da2ef9b2db408"
+                "reference": "592af02d0c9a7f6c8a345958d8db5d068cf51147"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/205f528f5b23e5b9a3e95991d38da2ef9b2db408",
-                "reference": "205f528f5b23e5b9a3e95991d38da2ef9b2db408",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/592af02d0c9a7f6c8a345958d8db5d068cf51147",
+                "reference": "592af02d0c9a7f6c8a345958d8db5d068cf51147",
                 "shasum": ""
             },
             "require": {
@@ -2025,7 +2025,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.18.x-dev"
+                    "dev-master": "2.0.x-dev"
                 }
             },
             "autoload": {
@@ -2051,7 +2051,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2015-12-16 18:41:23"
+            "time": "2015-12-18 18:24:15"
         },
         {
             "name": "neutron/temporary-filesystem",
@@ -2286,12 +2286,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "8233e81d025bf60f4430a14ccbfd5791f2837b2e"
+                "reference": "686974ac3b29c6fb0dd4363f43b7848f0eff0307"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/8233e81d025bf60f4430a14ccbfd5791f2837b2e",
-                "reference": "8233e81d025bf60f4430a14ccbfd5791f2837b2e",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/686974ac3b29c6fb0dd4363f43b7848f0eff0307",
+                "reference": "686974ac3b29c6fb0dd4363f43b7848f0eff0307",
                 "shasum": ""
             },
             "require": {
@@ -2333,7 +2333,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2015-12-18 15:48:20"
+            "time": "2015-12-21 10:00:38"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
