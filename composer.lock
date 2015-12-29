@@ -1147,12 +1147,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSUserBundle.git",
-                "reference": "e39b040e272c72f0a090c67d802e1d3b2d0b0313"
+                "reference": "e5e7a2b8984da8dfedaf44adc7e5f60a62ad280c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/e39b040e272c72f0a090c67d802e1d3b2d0b0313",
-                "reference": "e39b040e272c72f0a090c67d802e1d3b2d0b0313",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/e5e7a2b8984da8dfedaf44adc7e5f60a62ad280c",
+                "reference": "e5e7a2b8984da8dfedaf44adc7e5f60a62ad280c",
                 "shasum": ""
             },
             "require": {
@@ -1208,7 +1208,7 @@
             "keywords": [
                 "User management"
             ],
-            "time": "2015-12-05 09:38:57"
+            "time": "2015-12-28 18:02:43"
         },
         {
             "name": "gedmo/doctrine-extensions",
@@ -1216,12 +1216,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Atlantic18/DoctrineExtensions.git",
-                "reference": "b36cc0016eb9774e4154566f145f1bcb0dae6b23"
+                "reference": "f3bcda50bd6337718ac047fe1d0bd147f52e5e0a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/b36cc0016eb9774e4154566f145f1bcb0dae6b23",
-                "reference": "b36cc0016eb9774e4154566f145f1bcb0dae6b23",
+                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/f3bcda50bd6337718ac047fe1d0bd147f52e5e0a",
+                "reference": "f3bcda50bd6337718ac047fe1d0bd147f52e5e0a",
                 "shasum": ""
             },
             "require": {
@@ -1287,7 +1287,7 @@
                 "tree",
                 "uploadable"
             ],
-            "time": "2015-12-27 20:37:36"
+            "time": "2015-12-28 14:34:58"
         },
         {
             "name": "guzzle/guzzle",
@@ -2286,12 +2286,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "d5e91a6f5d5aa9415ef4cb9cd9eb2ed4ff9e29b1"
+                "reference": "06d82e63541a3a8cf24929c48a50e0f33e9f1a08"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/d5e91a6f5d5aa9415ef4cb9cd9eb2ed4ff9e29b1",
-                "reference": "d5e91a6f5d5aa9415ef4cb9cd9eb2ed4ff9e29b1",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/06d82e63541a3a8cf24929c48a50e0f33e9f1a08",
+                "reference": "06d82e63541a3a8cf24929c48a50e0f33e9f1a08",
                 "shasum": ""
             },
             "require": {
@@ -2333,7 +2333,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2015-12-28 09:07:41"
+            "time": "2015-12-29 08:46:49"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -4617,16 +4617,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "53e967bf312c21f78ec3a19c530d98e1bdb5b26f"
+                "reference": "e55e3e32a870bd4f05425fa4f717b52bd40e5659"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/53e967bf312c21f78ec3a19c530d98e1bdb5b26f",
-                "reference": "53e967bf312c21f78ec3a19c530d98e1bdb5b26f",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/e55e3e32a870bd4f05425fa4f717b52bd40e5659",
+                "reference": "e55e3e32a870bd4f05425fa4f717b52bd40e5659",
                 "shasum": ""
             },
             "require": {
                 "doctrine/instantiator": "^1.0.2",
+                "php": "^5.3|^7.0",
                 "phpdocumentor/reflection-docblock": "~2.0",
                 "sebastian/comparator": "~1.1",
                 "sebastian/recursion-context": "~1.0"
@@ -4670,7 +4671,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2015-12-14 17:14:23"
+            "time": "2015-12-28 13:26:33"
         },
         {
             "name": "phpunit/php-code-coverage",
