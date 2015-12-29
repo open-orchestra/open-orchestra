@@ -22,7 +22,42 @@ Url to see changes :
 ## Possible BC breaker
  
  - Plugin ``Colvis`` of DataTable is replaced by the ``Buttons extension`` 
-
+ - ``UploadedFileManager`` is moved from ``MediaBundle`` to ``MediaFileBundle``
+ -  Class of ``BBcode`` folder are moved from ``MediaBundle`` folder to ``Media`` folder
+ -  Service ``open_orchestra_media.manager.uploaded_media`` is renamed by ``open_orchestra_media_file.manager.storage``
+ -  Application ``open-orchestra-media-demo`` no longer requires this bundles :
+   - ``DoctrineMongoDBBundle``
+   - ``OpenOrchestraBaseBundle``
+   - ``OpenOrchestraMediaModelBundle``
+   - ``OpenOrchestraMongoBundle``
+   - ``OpenOrchestraModelBundle``
+   - ``SolutionMongoAggregationBundle``
+ -  Application ``open-orchestra-media-demo`` requires `MediaFileBundle``
+ -  Route ``open_orchestra_media_get`` is now in ``MediaController`` in ``MediaFileBundle``
+ - Class moved from ``MediaBundle`` to ``MediaAdminBundle`` :
+    - ``FolderEvent`` 
+    - ``ImagickEvent``
+    - ``MediaEvent`` 
+    - `DeleteMediaSubscriber``
+    - ``GenerateImageSubscriber``
+    - ``UploadImageSubscriber``
+    -  ``FolderEvents``
+    -  ``OrchestraImagick``
+    -  ``OrchestraImagickFactory``
+    -  ``OrchestraImagickFactoryInterface``
+    -  ``OrchestraImagickInterface``
+    -  ``ImageResizerManager``
+    -  ``MediaEvents``
+    -  ``ImageToThumbnailManager``
+    -  ``PdfToImageManager``
+    -  ``VideoToImageManager``
+    -  ``ThumbnailInterface``
+    -  ``ThumbnailManager``
+    -  ``FFmpegVideoManager``
+    -  ``VideoManagerInterface``
+    -  ``SaveMediaManager``
+    -  ``SaveMediaManagerInterface``
+ 
 ## Bug fixes
 
  - The node drag'n'drop has been updated to wait for user's confirmation before sending datas
@@ -43,6 +78,8 @@ Url to see changes :
  - Install smartadmin Datepicker
  - Datatable preferences saving
  - Add embedded entity to content attributs
+ - New bundle MediaFileBundle used to managed media files with Gaufrette 
+ - Adding of upload stategies to manage all alternatives of media like thumbnail, futher information in the [documentation](https://github.com/open-orchestra/open-orchestra-docs/blob/master/en/developer_guide/media_gaufrette.rst)
  
 ## Other changes
 
