@@ -47,6 +47,8 @@ Url to see changes :
 ## Other changes
 
   - DataTable is updated to version 1.1.0
+  - Version of doctrine/cache is fixed to 1.5.*
+  - Version of doctrine/commmon is fixed to 2.5.*
 
 ## Deprecated method
 
