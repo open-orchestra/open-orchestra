@@ -83,7 +83,17 @@ Url to see changes :
  
 ## Other changes
 
-  - DataTable is updated to version 1.1.0
+  - DataTable is updated to version 1.1.0.
+    In your `bower.json` file replace lines :
+    ```
+         "datatables": "~1.10.2",
+         "datatables-colvis": "~1.1.2",
+         "datatables-bootstrap3" : "*",
+    ```
+    by
+    ```
+          "datatables.net-buttons-bs": "1.1.0",
+    ```
   - Version of doctrine/cache is fixed to 1.5.*
   - Version of doctrine/commmon is fixed to 2.5.*
 
