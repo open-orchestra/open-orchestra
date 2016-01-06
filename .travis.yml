@@ -39,19 +39,14 @@ matrix:
 before_install:
   - printf "\n" |pecl install imagick
   - phpenv config-add .travis.php.ini
+  - composer config -g github-oauth.github.com $GITHUB_TOKEN
+  - composer self-update
 
 install:
   - composer install --prefer-dist
 
 before_script:
-  - if [[ $TRAVIS_PHP_VERSION = 5.* ]]; then INI_FILE=~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini; fi;
-  - if [[ $TRAVIS_PHP_VERSION = 5.* ]]; then echo extension = mongo.so >> $INI_FILE; fi;
-  - if [[ $TRAVIS_PHP_VERSION = 5.* ]]; then echo extension = memcache.so >> $INI_FILE; fi;
-  - if [[ $TRAVIS_PHP_VERSION = 5.* ]]; then (echo yes | pecl install -f apcu-4.0.10 && echo apc.enable_cli = 1 >> $INI_FILE) || echo "Let's continue without apcu extension"; fi;
-  - composer config -g github-oauth.github.com $GITHUB_TOKEN
-  - composer self-update
   - export PATH="$HOME/.composer/vendor/bin:$PATH"
-  - composer install
   - until nc -z localhost 27017; do echo Waiting for MongoDB; sleep 1; done
   - php app/console orchestra:mongodb:fixtures:load --type=functional -e=test
 
