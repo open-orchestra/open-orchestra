@@ -3,14 +3,23 @@ language: php
 sudo: false
 
 cache:
-  bundler: true
   directories:
     - ~/.composer/cache
+    - .phpunit
+    - php-$MIN_PHP
+
+services:
+  - mongodb
+  - memcached
 
 env:
   secure: b03781d1ae8b937322c57340f24aa22a6493f46f
 
 before_script:
+  - if [[ $TRAVIS_PHP_VERSION = 5.* ]]; then echo extension = mongo.so >> $INI_FILE; fi;
+  - if [[ $TRAVIS_PHP_VERSION = 5.* ]]; then echo extension = memcache.so >> $INI_FILE; fi;
+  - if [[ $TRAVIS_PHP_VERSION = 5.* ]]; then (echo yes | pecl install -f apcu-4.0.10 && echo apc.enable_cli = 1 >> $INI_FILE) || echo "Let's continue without apcu extension"; fi;
+  - if [[ $TRAVIS_PHP_VERSION = 5.* ]]; then pecl install -f memcached-2.1.0 || echo "Let's continue without memcached extension"; fi;
   - composer config -g github-oauth.github.com $GITHUB_TOKEN
   - composer self-update
   - composer install
