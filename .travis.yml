@@ -7,11 +7,7 @@ cache:
     - vendor
     - ~/.composer/cache
     - ./bin/phpunit
-    - php-$MIN_PHP
-
-services:
-  - mongodb
-  - memcached
+    - php-5
 
 matrix:
   include:
@@ -37,7 +33,7 @@ matrix:
             - mongodb-3.0-precise
 
 before_install:
-  - printf "\n" |pecl install imagick
+  - pecl install imagick
   - phpenv config-add .travis.php.ini
   - composer config -g github-oauth.github.com $GITHUB_TOKEN
   - composer self-update
