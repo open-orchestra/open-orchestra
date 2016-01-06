@@ -3,9 +3,14 @@ language: php
 sudo: false
 
 cache:
-  bundler: true
   directories:
     - ~/.composer/cache
+    - .phpunit
+    - php-$MIN_PHP
+
+services:
+  - mongodb
+  - memcached
 
 services:
   - elasticsearch
