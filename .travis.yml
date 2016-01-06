@@ -3,6 +3,7 @@ language: php
 sudo: false
 
 cache:
+  bundler: true
   directories:
     - vendor
     - ~/.composer/cache
