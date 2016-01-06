@@ -12,20 +12,10 @@ services:
   - mongodb
   - memcached
 
-before_script:
-  - if [[ $TRAVIS_PHP_VERSION = 5.* ]]; then echo extension = mongo.so >> $INI_FILE; fi;
-  - if [[ $TRAVIS_PHP_VERSION = 5.* ]]; then echo extension = memcache.so >> $INI_FILE; fi;
-  - if [[ $TRAVIS_PHP_VERSION = 5.* ]]; then (echo yes | pecl install -f apcu-4.0.10 && echo apc.enable_cli = 1 >> $INI_FILE) || echo "Let's continue without apcu extension"; fi;
-  - if [[ $TRAVIS_PHP_VERSION = 5.* ]]; then pecl install -f memcached-2.1.0 || echo "Let's continue without memcached extension"; fi;
-  - composer config -g github-oauth.github.com $GITHUB_TOKEN
-  - composer self-update
-  - composer install
-
 matrix:
   include:
     - env: MONGO=2.6.5.5
       php: 5.6
-      secure: b03781d1ae8b937322c57340f24aa22a6493f46f
       addons:
         apt:
           packages:
@@ -35,7 +25,6 @@ matrix:
             - mongodb-upstart
     - env: MONGOPHP=3.0.5.6
       php: 5.6
-      secure: b03781d1ae8b937322c57340f24aa22a6493f46f
       addons:
         apt:
           packages:
@@ -52,6 +41,12 @@ install:
   - composer install --prefer-dist
 
 before_script:
+  - if [[ $TRAVIS_PHP_VERSION = 5.* ]]; then echo extension = mongo.so >> $INI_FILE; fi;
+  - if [[ $TRAVIS_PHP_VERSION = 5.* ]]; then echo extension = memcache.so >> $INI_FILE; fi;
+  - if [[ $TRAVIS_PHP_VERSION = 5.* ]]; then (echo yes | pecl install -f apcu-4.0.10 && echo apc.enable_cli = 1 >> $INI_FILE) || echo "Let's continue without apcu extension"; fi;
+  - if [[ $TRAVIS_PHP_VERSION = 5.* ]]; then pecl install -f memcached-2.1.0 || echo "Let's continue without memcached extension"; fi;
+  - composer self-update
+  - composer install
   - until nc -z localhost 27017; do echo Waiting for MongoDB; sleep 1; done
   - php app/console orchestra:mongodb:fixtures:load --type=functional -e=test
 
