@@ -33,6 +33,7 @@ matrix:
             - mongodb-3.0-precise
     - env: MONGO=2.6.5.5
       php: 5.6
+      secure: b03781d1ae8b937322c57340f24aa22a6493f46f
       addons:
         apt:
           packages:
@@ -42,6 +43,7 @@ matrix:
             - mongodb-upstart
     - env: MONGOPHP=3.0.5.6
       php: 5.6
+      secure: b03781d1ae8b937322c57340f24aa22a6493f46f
       addons:
         apt:
           packages:
