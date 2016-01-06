@@ -7,7 +7,6 @@ cache:
     - vendor
     - ~/.composer/cache
     - ./bin/phpunit
-    - php-5
 
 services:
   - elasticsearch
@@ -54,7 +53,7 @@ matrix:
             - mongodb-3.0-precise
 
 before_install:
-  - pecl install imagick
+  - printf "\n" |pecl install imagick
   - phpenv config-add .travis.php.ini
   - composer config -g github-oauth.github.com $GITHUB_TOKEN
   - composer self-update
