@@ -3,8 +3,17 @@ language: php
 sudo: false
 
 cache:
+  bundler: true
   directories:
     - ~/.composer/cache
+
+env:
+  secure: b03781d1ae8b937322c57340f24aa22a6493f46f
+
+before_script:
+  - composer config -g github-oauth.github.com $GITHUB_TOKEN
+  - composer self-update
+  - composer install
 
 matrix:
   include:
