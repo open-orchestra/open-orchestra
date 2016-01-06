@@ -41,6 +41,7 @@ install:
   - composer install --prefer-dist
 
 before_script:
+  - if [[ $TRAVIS_PHP_VERSION = 5.* ]]; then INI_FILE=~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini; fi;
   - if [[ $TRAVIS_PHP_VERSION = 5.* ]]; then echo extension = mongo.so >> $INI_FILE; fi;
   - if [[ $TRAVIS_PHP_VERSION = 5.* ]]; then echo extension = memcache.so >> $INI_FILE; fi;
   - if [[ $TRAVIS_PHP_VERSION = 5.* ]]; then (echo yes | pecl install -f apcu-4.0.10 && echo apc.enable_cli = 1 >> $INI_FILE) || echo "Let's continue without apcu extension"; fi;
