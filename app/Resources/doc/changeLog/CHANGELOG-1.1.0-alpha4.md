@@ -21,6 +21,8 @@ Url to see changes :
  - [Media file bundle](https://github.com/open-orchestra/open-orchestra-media-file-bundle/compare/v1.1.0-alpha3...v1.1.0-alpha4)
 
 ## Possible BC breaker
+ - ``NodeGroupRoleTransformer`` implements now ``TransformerWithGroupInterface``
+ - Method ``reverseTransform`` of ``NodeGroupRoleTransformer`` is removed and replaced by ``reverseTransformWithGroup``
 
 ## Bug fixes
 
@@ -36,3 +38,4 @@ Url to see changes :
 ## Suppressed method
 
 ## Configuration changes
+  - ``pace.js`` is removed and replace by a custom component ``OpenOrchestra.AjaxLoader.AjaxLoaderView``
