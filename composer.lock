@@ -2330,12 +2330,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "a1e2cbdaf71c65237354714851c8cb039befa662"
+                "reference": "b6c4301ec4072082e14e2bfc36c2a2ca30b25f02"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/a1e2cbdaf71c65237354714851c8cb039befa662",
-                "reference": "a1e2cbdaf71c65237354714851c8cb039befa662",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/b6c4301ec4072082e14e2bfc36c2a2ca30b25f02",
+                "reference": "b6c4301ec4072082e14e2bfc36c2a2ca30b25f02",
                 "shasum": ""
             },
             "require": {
@@ -2377,7 +2377,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2016-01-07 10:39:20"
+            "time": "2016-01-07 15:05:23"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2868,16 +2868,16 @@
         },
         {
             "name": "paragonie/random_compat",
-            "version": "1.1.4",
+            "version": "1.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "d762ee5b099a29044603cd4649851e81aa66cb47"
+                "reference": "dd8998b7c846f6909f4e7a5f67fabebfc412a4f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/d762ee5b099a29044603cd4649851e81aa66cb47",
-                "reference": "d762ee5b099a29044603cd4649851e81aa66cb47",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/dd8998b7c846f6909f4e7a5f67fabebfc412a4f7",
+                "reference": "dd8998b7c846f6909f4e7a5f67fabebfc412a4f7",
                 "shasum": ""
             },
             "require": {
@@ -2912,7 +2912,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2015-12-10 14:48:13"
+            "time": "2016-01-06 13:31:20"
         },
         {
             "name": "php-ffmpeg/php-ffmpeg",
