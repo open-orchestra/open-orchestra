@@ -993,12 +993,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSUserBundle.git",
-                "reference": "e39b040e272c72f0a090c67d802e1d3b2d0b0313"
+                "reference": "e5e7a2b8984da8dfedaf44adc7e5f60a62ad280c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/e39b040e272c72f0a090c67d802e1d3b2d0b0313",
-                "reference": "e39b040e272c72f0a090c67d802e1d3b2d0b0313",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/e5e7a2b8984da8dfedaf44adc7e5f60a62ad280c",
+                "reference": "e5e7a2b8984da8dfedaf44adc7e5f60a62ad280c",
                 "shasum": ""
             },
             "require": {
@@ -1054,7 +1054,7 @@
             "keywords": [
                 "User management"
             ],
-            "time": "2015-12-05 09:38:57"
+            "time": "2015-12-28 18:02:43"
         },
         {
             "name": "gedmo/doctrine-extensions",
@@ -1062,12 +1062,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Atlantic18/DoctrineExtensions.git",
-                "reference": "b36cc0016eb9774e4154566f145f1bcb0dae6b23"
+                "reference": "59b674773757bb747677da4dfe6437dad7cfb33a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/b36cc0016eb9774e4154566f145f1bcb0dae6b23",
-                "reference": "b36cc0016eb9774e4154566f145f1bcb0dae6b23",
+                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/59b674773757bb747677da4dfe6437dad7cfb33a",
+                "reference": "59b674773757bb747677da4dfe6437dad7cfb33a",
                 "shasum": ""
             },
             "require": {
@@ -1133,7 +1133,7 @@
                 "tree",
                 "uploadable"
             ],
-            "time": "2015-12-27 20:37:36"
+            "time": "2016-01-07 09:45:25"
         },
         {
             "name": "guzzle/guzzle",
@@ -2054,12 +2054,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "b4daf2aed3f8dbea8f43964b3581eedb1e2fda9d"
+                "reference": "ebf0bdcd70946613d086d9f691fdd0bfd056d051"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/b4daf2aed3f8dbea8f43964b3581eedb1e2fda9d",
-                "reference": "b4daf2aed3f8dbea8f43964b3581eedb1e2fda9d",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/ebf0bdcd70946613d086d9f691fdd0bfd056d051",
+                "reference": "ebf0bdcd70946613d086d9f691fdd0bfd056d051",
                 "shasum": ""
             },
             "require": {
@@ -2101,7 +2101,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2015-12-16 08:39:56"
+            "time": "2016-01-05 15:04:11"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2616,12 +2616,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "9e45edca52cc9c954680072c93e621f8b71fab26"
+                "reference": "d8e60a5619fff77f9669da8997697443ef1a1d7e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/9e45edca52cc9c954680072c93e621f8b71fab26",
-                "reference": "9e45edca52cc9c954680072c93e621f8b71fab26",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/d8e60a5619fff77f9669da8997697443ef1a1d7e",
+                "reference": "d8e60a5619fff77f9669da8997697443ef1a1d7e",
                 "shasum": ""
             },
             "require": {
@@ -2649,12 +2649,13 @@
                 }
             ],
             "description": "Common interface for logging libraries",
+            "homepage": "https://github.com/php-fig/log",
             "keywords": [
                 "log",
                 "psr",
                 "psr-3"
             ],
-            "time": "2015-06-02 13:48:41"
+            "time": "2016-01-06 21:40:42"
         },
         {
             "name": "sensio/distribution-bundle",
@@ -3125,12 +3126,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "6522539daf0a7bdada1cc2dccb7ec37dc0712136"
+                "reference": "fffbc0e2a7e376dbb0a4b5f2ff6847330f20ccf9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/6522539daf0a7bdada1cc2dccb7ec37dc0712136",
-                "reference": "6522539daf0a7bdada1cc2dccb7ec37dc0712136",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/fffbc0e2a7e376dbb0a4b5f2ff6847330f20ccf9",
+                "reference": "fffbc0e2a7e376dbb0a4b5f2ff6847330f20ccf9",
                 "shasum": ""
             },
             "require": {
@@ -3170,7 +3171,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2015-09-04 05:47:20"
+            "time": "2016-01-03 15:42:47"
         },
         {
             "name": "symfony/assetic-bundle",
@@ -3601,12 +3602,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Behat/Behat.git",
-                "reference": "2059cbe4bb8055c8555fa3365c6ea3b4b30288f5"
+                "reference": "c6dcbe4511e5881b3d62e77902bcae7b80a39ae9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Behat/Behat/zipball/2059cbe4bb8055c8555fa3365c6ea3b4b30288f5",
-                "reference": "2059cbe4bb8055c8555fa3365c6ea3b4b30288f5",
+                "url": "https://api.github.com/repos/Behat/Behat/zipball/c6dcbe4511e5881b3d62e77902bcae7b80a39ae9",
+                "reference": "c6dcbe4511e5881b3d62e77902bcae7b80a39ae9",
                 "shasum": ""
             },
             "require": {
@@ -3623,8 +3624,7 @@
                 "symfony/yaml": "~2.1|~3.0"
             },
             "require-dev": {
-                "phpspec/prophecy-phpunit": "~1.0",
-                "phpunit/phpunit": "~4.0",
+                "phpunit/phpunit": "~4.5",
                 "symfony/process": "~2.1|~3.0"
             },
             "suggest": {
@@ -3674,7 +3674,7 @@
                 "symfony",
                 "testing"
             ],
-            "time": "2015-11-16 18:19:22"
+            "time": "2016-01-07 12:44:46"
         },
         {
             "name": "behat/gherkin",
@@ -3682,20 +3682,21 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Behat/Gherkin.git",
-                "reference": "6cc874d262e841439651374012c95d62736c2cbb"
+                "reference": "6f005467f571c3c53477fb0a646ba8092aa54bd4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Behat/Gherkin/zipball/6cc874d262e841439651374012c95d62736c2cbb",
-                "reference": "6cc874d262e841439651374012c95d62736c2cbb",
+                "url": "https://api.github.com/repos/Behat/Gherkin/zipball/6f005467f571c3c53477fb0a646ba8092aa54bd4",
+                "reference": "6f005467f571c3c53477fb0a646ba8092aa54bd4",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.1"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.0",
-                "symfony/yaml": "~2.1"
+                "phpunit/phpunit": "~4.5|~5",
+                "symfony/phpunit-bridge": "~2.7|~3",
+                "symfony/yaml": "~2.3|~3"
             },
             "suggest": {
                 "symfony/yaml": "If you want to parse features, represented in YAML files"
@@ -3732,7 +3733,7 @@
                 "gherkin",
                 "parser"
             ],
-            "time": "2015-11-23 12:58:05"
+            "time": "2015-12-31 10:51:34"
         },
         {
             "name": "behat/mink",
@@ -4239,16 +4240,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "53e967bf312c21f78ec3a19c530d98e1bdb5b26f"
+                "reference": "e55e3e32a870bd4f05425fa4f717b52bd40e5659"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/53e967bf312c21f78ec3a19c530d98e1bdb5b26f",
-                "reference": "53e967bf312c21f78ec3a19c530d98e1bdb5b26f",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/e55e3e32a870bd4f05425fa4f717b52bd40e5659",
+                "reference": "e55e3e32a870bd4f05425fa4f717b52bd40e5659",
                 "shasum": ""
             },
             "require": {
                 "doctrine/instantiator": "^1.0.2",
+                "php": "^5.3|^7.0",
                 "phpdocumentor/reflection-docblock": "~2.0",
                 "sebastian/comparator": "~1.1",
                 "sebastian/recursion-context": "~1.0"
@@ -4292,7 +4294,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2015-12-14 17:14:23"
+            "time": "2015-12-28 13:26:33"
         },
         {
             "name": "phpunit/php-code-coverage",
