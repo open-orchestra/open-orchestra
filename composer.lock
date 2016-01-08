@@ -1944,16 +1944,16 @@
         },
         {
             "name": "koala-framework/composer-extra-assets",
-            "version": "v2.0.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/koala-framework/composer-extra-assets.git",
-                "reference": "ffe6f559f56f21ecb2d00b1c916a5310a1e1420f"
+                "reference": "2195c87d380b43379f0f793aacd0d7be01d11676"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/koala-framework/composer-extra-assets/zipball/ffe6f559f56f21ecb2d00b1c916a5310a1e1420f",
-                "reference": "ffe6f559f56f21ecb2d00b1c916a5310a1e1420f",
+                "url": "https://api.github.com/repos/koala-framework/composer-extra-assets/zipball/2195c87d380b43379f0f793aacd0d7be01d11676",
+                "reference": "2195c87d380b43379f0f793aacd0d7be01d11676",
                 "shasum": ""
             },
             "require": {
@@ -1986,7 +1986,7 @@
             ],
             "description": "Composer Plugin for installing Assets using native npm/bower",
             "homepage": "https://github.com/koala-framework/composer-extra-assets",
-            "time": "2015-08-25 15:54:19"
+            "time": "2015-12-07 05:06:33"
         },
         {
             "name": "kriswallsmith/assetic",
@@ -2432,17 +2432,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "04b69368494b15f5d1e2efebbc15dcad3010371b"
+                "reference": "1422c7b4c3a60a7646c96a8c115f2aba3c3bfa78"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/04b69368494b15f5d1e2efebbc15dcad3010371b",
-                "reference": "04b69368494b15f5d1e2efebbc15dcad3010371b",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/1422c7b4c3a60a7646c96a8c115f2aba3c3bfa78",
+                "reference": "1422c7b4c3a60a7646c96a8c115f2aba3c3bfa78",
                 "shasum": ""
             },
             "require": {
                 "braincrafted/bootstrap-bundle": "2.1.2",
-                "koala-framework/composer-extra-assets": "~2.0",
+                "koala-framework/composer-extra-assets": "*",
                 "open-orchestra/open-orchestra-base-api-bundle": "*",
                 "open-orchestra/open-orchestra-base-bundle": "*",
                 "open-orchestra/open-orchestra-display-bundle": "*",
@@ -2519,7 +2519,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2016-01-08 14:51:23"
+            "time": "2016-01-08 16:23:23"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2621,18 +2621,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-admin-bundle.git",
-                "reference": "25a623c28b0e8c23852bb1e13f0dd2fe39cf75a0"
+                "reference": "52eec9cf67ed39c6530a020380b9d6468d6b0906"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/25a623c28b0e8c23852bb1e13f0dd2fe39cf75a0",
-                "reference": "25a623c28b0e8c23852bb1e13f0dd2fe39cf75a0",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/52eec9cf67ed39c6530a020380b9d6468d6b0906",
+                "reference": "52eec9cf67ed39c6530a020380b9d6468d6b0906",
                 "shasum": ""
             },
             "require": {
                 "ext-imagick": "*",
                 "flowjs/flow-php-server": "*",
-                "koala-framework/composer-extra-assets": "~2.0",
+                "koala-framework/composer-extra-assets": "*",
                 "open-orchestra/open-orchestra-cms-bundle": "dev-master",
                 "open-orchestra/open-orchestra-media-bundle": "*",
                 "open-orchestra/open-orchestra-media-file-bundle": "*",
@@ -2693,7 +2693,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part for the media of OpenOrchestra",
-            "time": "2016-01-08 13:46:10"
+            "time": "2016-01-08 16:26:46"
         },
         {
             "name": "open-orchestra/open-orchestra-media-bundle",
