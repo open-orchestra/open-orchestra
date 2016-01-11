@@ -23,10 +23,13 @@ Url to see changes :
 ## Possible BC breaker
  - ``NodeGroupRoleTransformer`` implements now ``TransformerWithGroupInterface``
  - Method ``reverseTransform`` of ``NodeGroupRoleTransformer`` is removed and replaced by ``reverseTransformWithGroup``
+ - Before ``composer install|update`` it's recommanded to removed ``nodes_modules`` and ``bower_components`` folders of your application and ``bower.json`` and ``package.json`` files 
+ - You can move your bower and npm dependencies in ``composer.json`` of your project or bundle
 
 ## Bug fixes
 
 ## New features
+ - You can specify your bower and npm dependencies directly in the composer.json, futher information in the [documentation](https://github.com/open-orchestra/open-orchestra-docs/en/developer_guide/assets_bower_npm.rst)
 
 ## Other changes
  - Version of ``symfony/symfony`` is updated to 2.8.1
