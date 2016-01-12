@@ -29,7 +29,7 @@ Url to see changes :
 ## Bug fixes
 
 ## New features
- - You can specify your bower and npm dependencies directly in the composer.json, futher information in the [documentation](https://github.com/open-orchestra/open-orchestra-docs/en/developer_guide/assets_bower_npm.rst)
+ - You can specify your bower and npm dependencies directly in the composer.json, futher information in the [documentation](https://github.com/open-orchestra/open-orchestra-docs/blob/master/en/developer_guide/assets_bower_npm.rst)
 
 ## Other changes
  - Version of ``symfony/symfony`` is updated to 2.8.1
