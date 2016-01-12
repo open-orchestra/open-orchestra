@@ -3,11 +3,12 @@ module.exports = function(grunt) {
         [
             'less:discovering',
             'less',
-            'concat:smartadmincss',
             'concat:libcss',
+            'concat:smartadminpatchescss',
             'concat:orchestracss',
             'concat:mediacss',
-            'concat:css',
+            'concat:presmartadmincss',
+            'concat:postsmartadmincss',
             'cssmin'
         ]
     );
