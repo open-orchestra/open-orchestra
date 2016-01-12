@@ -23,6 +23,8 @@ Url to see changes :
 
 ## Other changes
 
+ - Adding children direction for the node in the Back Office
+
 ## Deprecated method
 
 ## Suppressed method
