@@ -19,6 +19,10 @@ Url to see changes :
   
 ## Bug fixes
 
+  - Selector version of node tranverse is removed
+  - Duplicate button of node tranverse is removed
+  - Delete button of node tranverse is removed
+
 ## New features
 
 ## Other changes
