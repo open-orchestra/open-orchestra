@@ -46,5 +46,7 @@ Url to see changes :
 
 ## Configuration changes
   - ``pace.js`` is removed and replace by a custom component ``OpenOrchestra.AjaxLoader.AjaxLoaderView``
- - To get the Back Office compatible again with Internet Explorer 9, some grunt tasks have been rewrote. Be
+  - To get the Back Office compatible again with Internet Explorer 9, some grunt tasks have been rewrote. Be
    sure to update your Open Orchestra tasks according to [these Pull Request](https://github.com/open-orchestra/open-orchestra/pull/791/files)
+  - ``gridstack.js `` is removed
+  - ``lodash.js`` is removed
