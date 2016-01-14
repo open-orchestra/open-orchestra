@@ -27,6 +27,7 @@ Url to see changes :
  - You can move your bower and npm dependencies in ``composer.json`` of your project or bundle
 
 ## Bug fixes
+ - The Back Office is compatible again with Internet Explorer 9. See Configurations changes for more info
 
 ## New features
  - You can specify your bower and npm dependencies directly in the composer.json, futher information in the [documentation](https://github.com/open-orchestra/open-orchestra-docs/blob/master/en/developer_guide/assets_bower_npm.rst)
@@ -42,3 +43,5 @@ Url to see changes :
 
 ## Configuration changes
   - ``pace.js`` is removed and replace by a custom component ``OpenOrchestra.AjaxLoader.AjaxLoaderView``
+ - To get the Back Office compatible again with Internet Explorer 9, some grunt tasks have been rewrote. Be
+   sure to update your Open Orchestra tasks according to [these Pull Request](https://github.com/open-orchestra/open-orchestra/pull/791/files)
