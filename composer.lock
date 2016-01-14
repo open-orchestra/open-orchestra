@@ -2432,12 +2432,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "8a8401aa069c43f5db14ab40c74f8e05dafdd909"
+                "reference": "65b3ccd39680f5baed561282fc03a9e360a1599a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/8a8401aa069c43f5db14ab40c74f8e05dafdd909",
-                "reference": "8a8401aa069c43f5db14ab40c74f8e05dafdd909",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/65b3ccd39680f5baed561282fc03a9e360a1599a",
+                "reference": "65b3ccd39680f5baed561282fc03a9e360a1599a",
                 "shasum": ""
             },
             "require": {
@@ -2519,7 +2519,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2016-01-14 10:15:17"
+            "time": "2016-01-14 10:36:17"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -4409,12 +4409,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/swiftmailer-bundle.git",
-                "reference": "470d7e0e7f6b90ddd7be0e9bf243b7c91160d11f"
+                "reference": "de5a2ddcaf91d2e44c19161e0fe8ed88022ceb51"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/swiftmailer-bundle/zipball/470d7e0e7f6b90ddd7be0e9bf243b7c91160d11f",
-                "reference": "470d7e0e7f6b90ddd7be0e9bf243b7c91160d11f",
+                "url": "https://api.github.com/repos/symfony/swiftmailer-bundle/zipball/de5a2ddcaf91d2e44c19161e0fe8ed88022ceb51",
+                "reference": "de5a2ddcaf91d2e44c19161e0fe8ed88022ceb51",
                 "shasum": ""
             },
             "require": {
@@ -4458,7 +4458,7 @@
             ],
             "description": "Symfony SwiftmailerBundle",
             "homepage": "http://symfony.com",
-            "time": "2016-01-14 10:17:10"
+            "time": "2016-01-14 10:25:38"
         },
         {
             "name": "symfony/symfony",
