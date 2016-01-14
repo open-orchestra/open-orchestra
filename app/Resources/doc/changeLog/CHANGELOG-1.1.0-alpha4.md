@@ -39,6 +39,7 @@ Url to see changes :
  - Version of ``symfony/symfony`` is updated to 2.8.1
  - Version of ``twig/twig`` is updated to ~1.23
  - Version of ``friendsofsymfony/http-cache-bundle`` is updated to 1.3.6
+ - Flow.js dependency has been moved from CmsBundle to MediaAdminBundle
 
 ## Deprecated method
 
