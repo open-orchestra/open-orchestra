@@ -31,6 +31,9 @@ Url to see changes :
 
 ## New features
  - You can specify your bower and npm dependencies directly in the composer.json, futher information in the [documentation](https://github.com/open-orchestra/open-orchestra-docs/blob/master/en/developer_guide/assets_bower_npm.rst)
+  - Selector version of node tranverse is removed
+  - Duplicate button of node tranverse is removed
+  - Delete button of node tranverse is removed
 
 ## Other changes
  - Version of ``symfony/symfony`` is updated to 2.8.1
