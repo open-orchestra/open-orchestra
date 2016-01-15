@@ -19,3 +19,5 @@ parameters:
     fos_http_cache.proxy_client.varnish.base_url: %router.request_context.host%:6081
 
     media_domain: media.openorchestra.dev
+
+    host_elastica: 192.168.33.10

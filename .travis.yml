@@ -6,6 +6,9 @@ cache:
   directories:
     - ~/.composer/cache
 
+services:
+  - elasticsearch
+
 matrix:
   include:
     - env: MONGO=2.6.5.5
@@ -41,3 +44,6 @@ before_script:
 script:
   - phpunit -c app/ --testsuite=unit
   - phpunit -c app/ --testsuite=functional
+  - php app/console orchestra:elastica:index:create
+  - php app/console orchestra:elastica:schema:create
+  - php app/console orchestra:elastica:populate

@@ -126,3 +126,6 @@ fos_http_cache:
 
 open_orchestra_media:
     media_domain: %media_domain%
+
+open_orchestra_elastica:
+    host: %host_elastica%
