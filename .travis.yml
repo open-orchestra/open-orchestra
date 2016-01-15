@@ -43,7 +43,7 @@ before_script:
 
 script:
   - curl -XGET 'http://localhost:9200'
-  - php app/console orchestra:elastica:index:create
-  - php app/console orchestra:elastica:schema:create
-  - php app/console orchestra:elastica:populate
+  - php app/console orchestra:elastica:index:create -e=test
+  - php app/console orchestra:elastica:schema:create -e=test
+  - php app/console orchestra:elastica:populate -e=test
   - curl -XGET 'http://localhost:9200/_count?pretty'
