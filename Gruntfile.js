@@ -9,9 +9,9 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     env: process.env
   };
-  config = merge.recursive(true, config, loadDirConfig('./grunt_tasks/subtasks/'));
-  config = merge.recursive(true, config, loadDirConfig('./vendor/open-orchestra/open-orchestra-cms-bundle/GruntTasks/Subtasks/'));
-  config = merge.recursive(true, config, loadDirConfig('./vendor/open-orchestra/open-orchestra-media-admin-bundle/GruntTasks/Subtasks/'));
+  config = merge.recursive(true, config, loadDirConfig('./grunt_tasks/targets/'));
+  config = merge.recursive(true, config, loadDirConfig('./vendor/open-orchestra/open-orchestra-cms-bundle/GruntTasks/Targets/'));
+  config = merge.recursive(true, config, loadDirConfig('./vendor/open-orchestra/open-orchestra-media-admin-bundle/GruntTasks/Targets/'));
 
   grunt.initConfig(config);
 };
