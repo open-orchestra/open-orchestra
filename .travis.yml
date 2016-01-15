@@ -46,4 +46,4 @@ script:
   - php app/console orchestra:elastica:index:create
   - php app/console orchestra:elastica:schema:create
   - php app/console orchestra:elastica:populate
-  - curl -XGET 'http://localhost:9200/_count?pretty' -d '{"query": {"match_all": {}}}'
+  - curl -XGET 'http://localhost:9200/_count?pretty'
