@@ -23,7 +23,7 @@ Url to see changes :
 ## Possible BC breaker
  - ``NodeGroupRoleTransformer`` implements now ``TransformerWithGroupInterface``
  - Method ``reverseTransform`` of ``NodeGroupRoleTransformer`` is removed and replaced by ``reverseTransformWithGroup``
- - Before ``composer install|update`` it's recommanded to removed ``nodes_modules`` and ``bower_components`` folders of your application and ``bower.json`` and ``package.json`` files 
+ - Before ``composer install|update`` it's recommanded to removed ``nodes_modules`` and ``bower_components`` folders of your application and ``bower.json`` and ``package.json`` files. Remove also symlink in ``web/fonts`` 
  - You can move your bower and npm dependencies in ``composer.json`` of your project or bundle
 
 ## Bug fixes
