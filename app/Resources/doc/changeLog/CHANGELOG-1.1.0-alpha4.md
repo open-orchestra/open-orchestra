@@ -28,6 +28,7 @@ Url to see changes :
 
 ## Bug fixes
  - The Back Office is compatible again with Internet Explorer 9. See Configurations changes for more info
+ - Fix a bug when a site declared in Apache conf but not in Orchestra was accessed by a client
 
 ## New features
  - You can specify your bower and npm dependencies directly in the composer.json, futher information in the [documentation](https://github.com/open-orchestra/open-orchestra-docs/blob/master/en/developer_guide/assets_bower_npm.rst)
