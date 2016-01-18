@@ -1,7 +1,7 @@
 module.exports = function(grunt) {
   var merge = require('merge');
   var appConfig = require('./grunt/app_config.js');
-  var configLoader = require('./config_loader.js');
+  var configLoader = require(appConfig.configLoader);
   var config = {
     pkg: grunt.file.readJSON('package.json'),
     env: process.env

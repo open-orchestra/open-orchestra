@@ -1,12 +1,13 @@
 module.exports = {
+  configLoader: '/var/www/openorchestra/vendor/open-orchestra/open-orchestra-cms-bundle/GruntTasks/config_loader.js',
   tasksDir: [
-    './grunt/tasks',
-    './vendor/open-orchestra/open-orchestra-cms-bundle/GruntTasks',
-    './vendor/open-orchestra/open-orchestra-media-admin-bundle/GruntTasks'
+    '/var/www/openorchestra/grunt/tasks',
+    '/var/www/openorchestra/vendor/open-orchestra/open-orchestra-cms-bundle/GruntTasks',
+    '/var/www/openorchestra/vendor/open-orchestra/open-orchestra-media-admin-bundle/GruntTasks'
   ],
   targetsDir: [
-    './targets/',
-    './vendor/open-orchestra/open-orchestra-cms-bundle/GruntTasks/Targets/',
-    './vendor/open-orchestra/open-orchestra-media-admin-bundle/GruntTasks/Targets/'
+    '/var/www/openorchestra/grunt/targets',
+    '/var/www/openorchestra/vendor/open-orchestra/open-orchestra-cms-bundle/GruntTasks/Targets',
+    '/var/www/openorchestra/vendor/open-orchestra/open-orchestra-media-admin-bundle/GruntTasks/Targets'
   ]
 };
