@@ -1219,12 +1219,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Atlantic18/DoctrineExtensions.git",
-                "reference": "d03892f4a697cfc743185498db900dedd0ff2c7d"
+                "reference": "6edc04eea3325032f298ed51ec3b4d6048e08c1c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/d03892f4a697cfc743185498db900dedd0ff2c7d",
-                "reference": "d03892f4a697cfc743185498db900dedd0ff2c7d",
+                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/6edc04eea3325032f298ed51ec3b4d6048e08c1c",
+                "reference": "6edc04eea3325032f298ed51ec3b4d6048e08c1c",
                 "shasum": ""
             },
             "require": {
@@ -1290,7 +1290,7 @@
                 "tree",
                 "uploadable"
             ],
-            "time": "2016-01-14 12:33:55"
+            "time": "2016-01-18 05:52:28"
         },
         {
             "name": "guzzle/guzzle",
@@ -2432,12 +2432,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "a99600e94e57c22efcb115b775b002d35fb1d84e"
+                "reference": "b7fcfb20b0b5c87bfbc2703ec6c1b88214803851"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/a99600e94e57c22efcb115b775b002d35fb1d84e",
-                "reference": "a99600e94e57c22efcb115b775b002d35fb1d84e",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/b7fcfb20b0b5c87bfbc2703ec6c1b88214803851",
+                "reference": "b7fcfb20b0b5c87bfbc2703ec6c1b88214803851",
                 "shasum": ""
             },
             "require": {
@@ -2515,7 +2515,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2016-01-15 08:19:51"
+            "time": "2016-01-18 09:30:58"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -4233,12 +4233,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php70.git",
-                "reference": "28ef2418fe2f1b777831c3bef324bf648337d74e"
+                "reference": "6b102ca141ae58782bfa93a781876c69bfde7ef5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php70/zipball/28ef2418fe2f1b777831c3bef324bf648337d74e",
-                "reference": "28ef2418fe2f1b777831c3bef324bf648337d74e",
+                "url": "https://api.github.com/repos/symfony/polyfill-php70/zipball/6b102ca141ae58782bfa93a781876c69bfde7ef5",
+                "reference": "6b102ca141ae58782bfa93a781876c69bfde7ef5",
                 "shasum": ""
             },
             "require": {
@@ -4284,7 +4284,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2016-01-13 07:16:33"
+            "time": "2016-01-15 10:29:03"
         },
         {
             "name": "symfony/polyfill-util",
@@ -4405,12 +4405,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/swiftmailer-bundle.git",
-                "reference": "de5a2ddcaf91d2e44c19161e0fe8ed88022ceb51"
+                "reference": "5e1a90f28213231ceee19c953bbebc5b5b95c690"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/swiftmailer-bundle/zipball/de5a2ddcaf91d2e44c19161e0fe8ed88022ceb51",
-                "reference": "de5a2ddcaf91d2e44c19161e0fe8ed88022ceb51",
+                "url": "https://api.github.com/repos/symfony/swiftmailer-bundle/zipball/5e1a90f28213231ceee19c953bbebc5b5b95c690",
+                "reference": "5e1a90f28213231ceee19c953bbebc5b5b95c690",
                 "shasum": ""
             },
             "require": {
@@ -4454,7 +4454,7 @@
             ],
             "description": "Symfony SwiftmailerBundle",
             "homepage": "http://symfony.com",
-            "time": "2016-01-14 10:25:38"
+            "time": "2016-01-15 16:41:20"
         },
         {
             "name": "symfony/symfony",
