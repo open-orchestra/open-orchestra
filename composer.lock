@@ -1062,12 +1062,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Atlantic18/DoctrineExtensions.git",
-                "reference": "59b674773757bb747677da4dfe6437dad7cfb33a"
+                "reference": "6edc04eea3325032f298ed51ec3b4d6048e08c1c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/59b674773757bb747677da4dfe6437dad7cfb33a",
-                "reference": "59b674773757bb747677da4dfe6437dad7cfb33a",
+                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/6edc04eea3325032f298ed51ec3b4d6048e08c1c",
+                "reference": "6edc04eea3325032f298ed51ec3b4d6048e08c1c",
                 "shasum": ""
             },
             "require": {
@@ -1133,7 +1133,7 @@
                 "tree",
                 "uploadable"
             ],
-            "time": "2016-01-07 09:45:25"
+            "time": "2016-01-18 05:52:28"
         },
         {
             "name": "guzzle/guzzle",
@@ -2054,12 +2054,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "f455737efee5b0416174338e44da428f68108245"
+                "reference": "bad9310c3d8a28b100b62d8c40cec950c7bf7593"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/f455737efee5b0416174338e44da428f68108245",
-                "reference": "f455737efee5b0416174338e44da428f68108245",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/bad9310c3d8a28b100b62d8c40cec950c7bf7593",
+                "reference": "bad9310c3d8a28b100b62d8c40cec950c7bf7593",
                 "shasum": ""
             },
             "require": {
@@ -2101,7 +2101,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2016-01-14 09:56:37"
+            "time": "2016-01-15 12:46:49"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -3308,12 +3308,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/swiftmailer-bundle.git",
-                "reference": "3d21ada19f23631f558ad6df653b168e35362e78"
+                "reference": "5e1a90f28213231ceee19c953bbebc5b5b95c690"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/swiftmailer-bundle/zipball/3d21ada19f23631f558ad6df653b168e35362e78",
-                "reference": "3d21ada19f23631f558ad6df653b168e35362e78",
+                "url": "https://api.github.com/repos/symfony/swiftmailer-bundle/zipball/5e1a90f28213231ceee19c953bbebc5b5b95c690",
+                "reference": "5e1a90f28213231ceee19c953bbebc5b5b95c690",
                 "shasum": ""
             },
             "require": {
@@ -3357,7 +3357,7 @@
             ],
             "description": "Symfony SwiftmailerBundle",
             "homepage": "http://symfony.com",
-            "time": "2015-11-28 10:59:29"
+            "time": "2016-01-15 16:41:20"
         },
         {
             "name": "symfony/symfony",
