@@ -1,5 +1,6 @@
 module.exports = {
-  configLoader: '/var/www/openorchestra/vendor/open-orchestra/open-orchestra-cms-bundle/GruntTasks/config_loader.js',
+  GruntConfigBuilder:
+    '/var/www/openorchestra/vendor/open-orchestra/open-orchestra-cms-bundle/GruntTasks/GruntConfigBuilder.js',
   tasksDir: [
     '/var/www/openorchestra/grunt/tasks',
     '/var/www/openorchestra/vendor/open-orchestra/open-orchestra-cms-bundle/GruntTasks',
