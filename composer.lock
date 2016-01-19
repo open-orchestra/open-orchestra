@@ -2337,17 +2337,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-base-bundle.git",
-                "reference": "3613d837e0d872f8017f9dc0d1f1f137c71fa4cb"
+                "reference": "0f05e1e8906e4eb95704889db37015514d129483"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-bundle/zipball/3613d837e0d872f8017f9dc0d1f1f137c71fa4cb",
-                "reference": "3613d837e0d872f8017f9dc0d1f1f137c71fa4cb",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-bundle/zipball/0f05e1e8906e4eb95704889db37015514d129483",
+                "reference": "0f05e1e8906e4eb95704889db37015514d129483",
                 "shasum": ""
             },
             "require": {
                 "doctrine/common": "2.5.*",
-                "php": "~5.5.0",
+                "php": "~5.5",
                 "sensio/distribution-bundle": "4.0.1",
                 "sensio/framework-extra-bundle": "3.0.10",
                 "sensio/generator-bundle": "2.5.3",
@@ -2381,7 +2381,7 @@
                 }
             ],
             "description": "The OpenOrchestra base bundle",
-            "time": "2016-01-19 11:17:38"
+            "time": "2016-01-19 14:45:43"
         },
         {
             "name": "open-orchestra/open-orchestra-bbcode-bundle",
