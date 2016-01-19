@@ -2432,12 +2432,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "b7fcfb20b0b5c87bfbc2703ec6c1b88214803851"
+                "reference": "8e74c6770942bb0947f77109aa56af23682c1fa1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/b7fcfb20b0b5c87bfbc2703ec6c1b88214803851",
-                "reference": "b7fcfb20b0b5c87bfbc2703ec6c1b88214803851",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/8e74c6770942bb0947f77109aa56af23682c1fa1",
+                "reference": "8e74c6770942bb0947f77109aa56af23682c1fa1",
                 "shasum": ""
             },
             "require": {
@@ -2515,7 +2515,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2016-01-18 09:30:58"
+            "time": "2016-01-19 09:10:23"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2617,12 +2617,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-admin-bundle.git",
-                "reference": "045fe7876c374158245e947b852447d8b72119f8"
+                "reference": "d0a7ceec28bbf6dc01edcb858312df9bfede7655"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/045fe7876c374158245e947b852447d8b72119f8",
-                "reference": "045fe7876c374158245e947b852447d8b72119f8",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/d0a7ceec28bbf6dc01edcb858312df9bfede7655",
+                "reference": "d0a7ceec28bbf6dc01edcb858312df9bfede7655",
                 "shasum": ""
             },
             "require": {
@@ -2689,7 +2689,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part for the media of OpenOrchestra",
-            "time": "2016-01-14 16:25:31"
+            "time": "2016-01-18 11:06:05"
         },
         {
             "name": "open-orchestra/open-orchestra-media-bundle",
@@ -4710,12 +4710,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Behat/Behat.git",
-                "reference": "c6dcbe4511e5881b3d62e77902bcae7b80a39ae9"
+                "reference": "718159921b1d844b8805b5ab2e7d1be34ca323cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Behat/Behat/zipball/c6dcbe4511e5881b3d62e77902bcae7b80a39ae9",
-                "reference": "c6dcbe4511e5881b3d62e77902bcae7b80a39ae9",
+                "url": "https://api.github.com/repos/Behat/Behat/zipball/718159921b1d844b8805b5ab2e7d1be34ca323cb",
+                "reference": "718159921b1d844b8805b5ab2e7d1be34ca323cb",
                 "shasum": ""
             },
             "require": {
@@ -4746,7 +4746,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0.x-dev"
+                    "dev-master": "3.1.x-dev"
                 }
             },
             "autoload": {
@@ -4782,7 +4782,7 @@
                 "symfony",
                 "testing"
             ],
-            "time": "2016-01-07 12:44:46"
+            "time": "2016-01-18 18:20:53"
         },
         {
             "name": "behat/gherkin",
