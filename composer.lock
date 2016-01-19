@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "387f51c3ab4756f312412576c3348bd4",
-    "content-hash": "ff8ebb23dbf090f0f785267b6db296d8",
+    "hash": "3d7d16c6ac26a259eae9f4317a3cf4e0",
+    "content-hash": "129c842692040251d43df1a2d068b9ff",
     "packages": [
         {
             "name": "alchemy/binary-driver",
@@ -2567,6 +2567,51 @@
             "time": "2016-01-08 12:51:13"
         },
         {
+            "name": "open-orchestra/open-orchestra-elastica-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/open-orchestra/open-orchestra-elastica-bundle.git",
+                "reference": "5de0e69f6588b6103551992c39ce2bf17e8c127b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-elastica-bundle/zipball/5de0e69f6588b6103551992c39ce2bf17e8c127b",
+                "reference": "5de0e69f6588b6103551992c39ce2bf17e8c127b",
+                "shasum": ""
+            },
+            "require": {
+                "open-orchestra/open-orchestra-model-interface": "*",
+                "ruflin/elastica": "~2.1"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "dev-master",
+                "open-orchestra/open-orchestra-base-bundle": "*",
+                "phake/phake": "2.1.0",
+                "phpunit/phpunit": "4.7.2",
+                "psr/log": "1.0.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "OpenOrchestra\\ElasticaBundle\\": "ElasticaBundle/",
+                    "OpenOrchestra\\Elastica\\": "Elastica/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "OpenOrchestra community",
+                    "homepage": "https://github.com/open-orchestra/open-orchestra-elastica-bundle/graphs/contributors"
+                }
+            ],
+            "description": "An bundle to index Open Orchestra element",
+            "time": "2016-01-14 15:50:43"
+        },
+        {
             "name": "open-orchestra/open-orchestra-libs",
             "version": "dev-master",
             "source": {
@@ -3297,6 +3342,63 @@
                 "psr-3"
             ],
             "time": "2016-01-06 21:40:42"
+        },
+        {
+            "name": "ruflin/elastica",
+            "version": "2.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ruflin/Elastica.git",
+                "reference": "0df1d7b513960ba11d3075652dcd71fcab8dd37a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ruflin/Elastica/zipball/0df1d7b513960ba11d3075652dcd71fcab8dd37a",
+                "reference": "0df1d7b513960ba11d3075652dcd71fcab8dd37a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "psr/log": "~1.0"
+            },
+            "require-dev": {
+                "guzzlehttp/guzzle": "5.3.*",
+                "munkie/elasticsearch-thrift-php": "1.4.*"
+            },
+            "suggest": {
+                "egeloen/http-adapter": "Allow using httpadapter transport",
+                "guzzlehttp/guzzle": "Allow using guzzle 5.3.x as the http transport (Requires php 5.4)",
+                "monolog/monolog": "Logging request",
+                "munkie/elasticsearch-thrift-php": "Allow using thrift transport"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Elastica\\": "lib/Elastica/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Ruflin",
+                    "homepage": "http://ruflin.com/"
+                }
+            ],
+            "description": "Elasticsearch Client",
+            "homepage": "http://elastica.io/",
+            "keywords": [
+                "client",
+                "search"
+            ],
+            "time": "2015-10-19 07:09:10"
         },
         {
             "name": "sensio/distribution-bundle",

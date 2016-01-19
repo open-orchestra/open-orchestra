@@ -55,3 +55,15 @@ mail_to: cron@open-orchestra.com
 
 sudoers:
   - vagrant
+
+elasticsearch_version: 1.4
+elasticsearch_config:
+  network.bind_host: 192.168.33.10
+  network.host: 192.168.33.10
+  network.publish_host: 192.168.33.10
+  http.bind_host: 192.168.33.10
+  http.host: 192.168.33.10
+  http.publish_host: 192.168.33.10
+elasticsearch_plugins:
+  - name: mobz/elasticsearch-head
+    check_file: /usr/share/elasticsearch/plugins/head/index.html
