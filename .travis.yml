@@ -12,6 +12,24 @@ services:
 matrix:
   include:
     - env: MONGO=2.6.5.5
+      php: 5.5
+      addons:
+        apt:
+          packages:
+            - libav-tools
+            - mongodb-org-server
+          sources:
+            - mongodb-upstart
+    - env: MONGOPHP=3.0.5.6
+      php: 5.5
+      addons:
+        apt:
+          packages:
+            - libav-tools
+            - mongodb-org-server
+          sources:
+            - mongodb-3.0-precise
+    - env: MONGO=2.6.5.5
       php: 5.6
       addons:
         apt:
