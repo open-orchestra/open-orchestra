@@ -6,9 +6,9 @@ cache:
   apt: true
   directories:
     - vendor
-    - ~/.composer/cache
-    - ./bin/phpunit
-    - ./node_modules
+    - $HOME/.composer/cache
+    - bin/phpunit
+    - node_modules
 
 services:
   - elasticsearch
