@@ -7,8 +7,10 @@ cache:
   directories:
     - vendor
     - $HOME/.composer/cache
+    - $HOME/.npm
     - bin/phpunit
     - node_modules
+    - bower_components
 
 services:
   - elasticsearch
@@ -76,3 +78,6 @@ before_script:
 script:
   - phpunit -c app/ --testsuite=unit
   - phpunit -c app/ --testsuite=functional
+
+after_success:
+  - npm run coveragealls
