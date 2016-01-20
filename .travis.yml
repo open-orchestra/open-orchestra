@@ -3,43 +3,54 @@ language: php
 sudo: false
 
 cache:
+  apt: true
   directories:
-    - ~/.composer/cache
+    - vendor
+    - $HOME/.composer/cache
+    - $HOME/.cache/bower
+    - $HOME/.npm
+    - bin/phpunit
+    - node_modules
+    - bower_components
 
 services:
   - elasticsearch
 
 matrix:
   include:
-    - env: MONGO=2.6.5.5
-      php: 5.5
-      addons:
-        apt:
-          packages:
-            - libav-tools
-            - mongodb-org-server
-          sources:
-            - mongodb-upstart
+    #- env: MONGO=2.6.5.5
+    #  php: 5.5
+    #  secure: b03781d1ae8b937322c57340f24aa22a6493f46f
+    #  addons:
+    #    apt:
+    #      packages:
+    #        - libav-tools
+    #        - mongodb-org-server
+    #      sources:
+    #        - mongodb-upstart
+    #- env: MONGOPHP=3.0.5.6
+    #  php: 5.5
+    #  secure: b03781d1ae8b937322c57340f24aa22a6493f46f
+    #  addons:
+    #    apt:
+    #      packages:
+    #        - libav-tools
+    #        - mongodb-org-server
+    #      sources:
+    #        - mongodb-3.0-precise
+    #- env: MONGO=2.6.5.5
+    #  php: 5.6
+    #  secure: b03781d1ae8b937322c57340f24aa22a6493f46f
+    #  addons:
+    #    apt:
+    #      packages:
+    #        - libav-tools
+    #        - mongodb-org-server
+    #      sources:
+    #        - mongodb-upstart
     - env: MONGOPHP=3.0.5.6
-      php: 5.5
-      addons:
-        apt:
-          packages:
-            - libav-tools
-            - mongodb-org-server
-          sources:
-            - mongodb-3.0-precise
-    - env: MONGO=2.6.5.5
       php: 5.6
-      addons:
-        apt:
-          packages:
-            - libav-tools
-            - mongodb-org-server
-          sources:
-            - mongodb-upstart
-    - env: MONGOPHP=3.0.5.6
-      php: 5.6
+      secure: b03781d1ae8b937322c57340f24aa22a6493f46f
       addons:
         apt:
           packages:
@@ -53,9 +64,12 @@ before_install:
   - phpenv config-add .travis.php.ini
 
 install:
+  - composer self-update && composer --version
+  - export PATH="$HOME/.composer/vendor/bin:$PATH"
   - composer install --prefer-dist
 
 before_script:
+  - export PATH="$HOME/.composer/vendor/bin:$PATH"
   - until nc -z localhost 27017; do echo Waiting for MongoDB; sleep 1; done
   - php app/console orchestra:mongodb:fixtures:load --type=functional -e=test
   - php app/console orchestra:elastica:index:create -e=test
@@ -65,3 +79,6 @@ before_script:
 script:
   - phpunit -c app/ --testsuite=unit
   - phpunit -c app/ --testsuite=functional
+
+after_success:
+  - npm run coveragealls
