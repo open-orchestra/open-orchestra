@@ -8,6 +8,7 @@ cache:
     - vendor
     - ~/.composer/cache
     - ./bin/phpunit
+    - ./node_modules
 
 services:
   - elasticsearch
