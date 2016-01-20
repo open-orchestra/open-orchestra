@@ -3,6 +3,7 @@ language: php
 sudo: false
 
 cache:
+  apt: true
   directories:
     - vendor
     - ~/.composer/cache
@@ -55,10 +56,10 @@ matrix:
 before_install:
   - printf "\n" |pecl install imagick
   - phpenv config-add .travis.php.ini
-  - composer config -g github-oauth.github.com $GITHUB_TOKEN
-  - composer self-update
 
 install:
+  - composer self-update && composer --version
+  - export PATH="$HOME/.composer/vendor/bin:$PATH"
   - composer install --prefer-dist
 
 before_script:
