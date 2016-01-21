@@ -9,7 +9,8 @@ monolog:
             type: mongo
             level: 200
             mongo:
-                host: "localhost"
+                host: %open_orchestra_cms.mongodb.host%
+                port: %open_orchestra_cms.mongodb.port%
                 database: "%open_orchestra_cms.mongodb.database%"
                 collection: log
             channels: [openorchestra]
