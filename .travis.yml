@@ -65,3 +65,4 @@ before_script:
 script:
   - phpunit -c app/ --testsuite=unit
   - phpunit -c app/ --testsuite=functional
+  - ./test-js.sh
