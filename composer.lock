@@ -1219,12 +1219,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Atlantic18/DoctrineExtensions.git",
-                "reference": "6edc04eea3325032f298ed51ec3b4d6048e08c1c"
+                "reference": "be191eab56934f8ca53eda4a62b3344b52ac510f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/6edc04eea3325032f298ed51ec3b4d6048e08c1c",
-                "reference": "6edc04eea3325032f298ed51ec3b4d6048e08c1c",
+                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/be191eab56934f8ca53eda4a62b3344b52ac510f",
+                "reference": "be191eab56934f8ca53eda4a62b3344b52ac510f",
                 "shasum": ""
             },
             "require": {
@@ -1290,7 +1290,7 @@
                 "tree",
                 "uploadable"
             ],
-            "time": "2016-01-18 05:52:28"
+            "time": "2016-01-21 17:33:22"
         },
         {
             "name": "guzzle/guzzle",
@@ -1944,16 +1944,16 @@
         },
         {
             "name": "koala-framework/composer-extra-assets",
-            "version": "dev-master",
+            "version": "v2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/koala-framework/composer-extra-assets.git",
-                "reference": "2195c87d380b43379f0f793aacd0d7be01d11676"
+                "reference": "fe3b4c64d9c0465598a0657747ecb8951293645d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/koala-framework/composer-extra-assets/zipball/2195c87d380b43379f0f793aacd0d7be01d11676",
-                "reference": "2195c87d380b43379f0f793aacd0d7be01d11676",
+                "url": "https://api.github.com/repos/koala-framework/composer-extra-assets/zipball/fe3b4c64d9c0465598a0657747ecb8951293645d",
+                "reference": "fe3b4c64d9c0465598a0657747ecb8951293645d",
                 "shasum": ""
             },
             "require": {
@@ -1986,7 +1986,7 @@
             ],
             "description": "Composer Plugin for installing Assets using native npm/bower",
             "homepage": "https://github.com/koala-framework/composer-extra-assets",
-            "time": "2015-12-07 05:06:33"
+            "time": "2016-01-21 13:47:22"
         },
         {
             "name": "kriswallsmith/assetic",
@@ -2071,12 +2071,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "592af02d0c9a7f6c8a345958d8db5d068cf51147"
+                "reference": "6a35f7387b1b66121c37436e72378d58125cef90"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/592af02d0c9a7f6c8a345958d8db5d068cf51147",
-                "reference": "592af02d0c9a7f6c8a345958d8db5d068cf51147",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/6a35f7387b1b66121c37436e72378d58125cef90",
+                "reference": "6a35f7387b1b66121c37436e72378d58125cef90",
                 "shasum": ""
             },
             "require": {
@@ -2141,7 +2141,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2015-12-18 18:24:15"
+            "time": "2016-01-20 10:14:19"
         },
         {
             "name": "mouf/nodejs-installer",
@@ -2245,12 +2245,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-base-api-bundle.git",
-                "reference": "9b4df45d30e9128dad36f8db4b4e1057160c48db"
+                "reference": "5e32af7f0666e7985d02ee5f9b5ae281ab1d1e04"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-api-bundle/zipball/9b4df45d30e9128dad36f8db4b4e1057160c48db",
-                "reference": "9b4df45d30e9128dad36f8db4b4e1057160c48db",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-api-bundle/zipball/5e32af7f0666e7985d02ee5f9b5ae281ab1d1e04",
+                "reference": "5e32af7f0666e7985d02ee5f9b5ae281ab1d1e04",
                 "shasum": ""
             },
             "require": {
@@ -2286,7 +2286,7 @@
                 }
             ],
             "description": "This bundle provide the base bricks for the OpenOrchestra Api",
-            "time": "2016-01-19 13:11:05"
+            "time": "2016-01-21 15:03:08"
         },
         {
             "name": "open-orchestra/open-orchestra-base-api-mongo-model-bundle",
@@ -2432,17 +2432,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "08dfa866068aa16cbf6d18ae97ecd9f9485eb033"
+                "reference": "f7c119a7cc9ee7d9ebf2b0917827b4617271ef75"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/08dfa866068aa16cbf6d18ae97ecd9f9485eb033",
-                "reference": "08dfa866068aa16cbf6d18ae97ecd9f9485eb033",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/f7c119a7cc9ee7d9ebf2b0917827b4617271ef75",
+                "reference": "f7c119a7cc9ee7d9ebf2b0917827b4617271ef75",
                 "shasum": ""
             },
             "require": {
                 "braincrafted/bootstrap-bundle": "2.1.2",
-                "koala-framework/composer-extra-assets": "*",
+                "koala-framework/composer-extra-assets": "2.0.x",
                 "open-orchestra/open-orchestra-base-api-bundle": "*",
                 "open-orchestra/open-orchestra-base-bundle": "*",
                 "open-orchestra/open-orchestra-display-bundle": "*",
@@ -2471,6 +2471,7 @@
                     "grunt-contrib-concat": "~0.3",
                     "grunt-contrib-watch": "~0.4",
                     "grunt-contrib-clean": "~0.5",
+                    "grunt-js-test": "1.5.x",
                     "grunt-commands": "~0.1",
                     "coffee-script": "~1.9.1",
                     "load-grunt-tasks": "~3.2.0",
@@ -2515,7 +2516,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2016-01-19 17:34:42"
+            "time": "2016-01-22 14:09:52"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2662,18 +2663,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-admin-bundle.git",
-                "reference": "75da79de1d7dbb46fac370edae13e5430758480c"
+                "reference": "debbed311b2759474a1e3646d37f5d3cf3da515e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/75da79de1d7dbb46fac370edae13e5430758480c",
-                "reference": "75da79de1d7dbb46fac370edae13e5430758480c",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/debbed311b2759474a1e3646d37f5d3cf3da515e",
+                "reference": "debbed311b2759474a1e3646d37f5d3cf3da515e",
                 "shasum": ""
             },
             "require": {
                 "ext-imagick": "*",
                 "flowjs/flow-php-server": "*",
-                "koala-framework/composer-extra-assets": "*",
+                "koala-framework/composer-extra-assets": "2.0.x",
                 "open-orchestra/open-orchestra-cms-bundle": "dev-master",
                 "open-orchestra/open-orchestra-media-bundle": "*",
                 "open-orchestra/open-orchestra-media-file-bundle": "*",
@@ -2734,20 +2735,20 @@
                 }
             ],
             "description": "This bundle provide the backoffice part for the media of OpenOrchestra",
-            "time": "2016-01-19 13:49:06"
+            "time": "2016-01-22 14:22:46"
         },
         {
             "name": "open-orchestra/open-orchestra-media-bundle",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/open-orchestra/open-orchestra-media-bundle.git",
-                "reference": "839bf6ecd241c5e920f6e1a5bc49ab0778569d12"
+                "url": "git@github.com:open-orchestra/open-orchestra-media-bundle.git",
+                "reference": "aae3e349daf99c92ed48d28faf88889cf122163d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/839bf6ecd241c5e920f6e1a5bc49ab0778569d12",
-                "reference": "839bf6ecd241c5e920f6e1a5bc49ab0778569d12",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/aae3e349daf99c92ed48d28faf88889cf122163d",
+                "reference": "aae3e349daf99c92ed48d28faf88889cf122163d",
                 "shasum": ""
             },
             "require": {
@@ -2786,7 +2787,7 @@
                 }
             ],
             "description": "A media bundle for the OpenOrchestra Project",
-            "time": "2016-01-19 11:24:58"
+            "time": "2016-01-22 10:43:15"
         },
         {
             "name": "open-orchestra/open-orchestra-media-file-bundle",
@@ -2836,12 +2837,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
-                "reference": "ddf5a4011abbe0caee36451fde22a2e09d851209"
+                "reference": "b6730ae3ea718a24fd39f3e7570bdd0688af033b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/ddf5a4011abbe0caee36451fde22a2e09d851209",
-                "reference": "ddf5a4011abbe0caee36451fde22a2e09d851209",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/b6730ae3ea718a24fd39f3e7570bdd0688af033b",
+                "reference": "b6730ae3ea718a24fd39f3e7570bdd0688af033b",
                 "shasum": ""
             },
             "require": {
@@ -2876,7 +2877,7 @@
                 }
             ],
             "description": "An implemantation of the model-interface for OpenOrchestra on mongo",
-            "time": "2016-01-19 16:45:02"
+            "time": "2016-01-22 10:24:47"
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
@@ -4749,12 +4750,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "eb6e05e7ddc0382cae3ba82d4f519db235a09d4d"
+                "reference": "57cc04b0f61504b9fad6b04946d2d44351019353"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/eb6e05e7ddc0382cae3ba82d4f519db235a09d4d",
-                "reference": "eb6e05e7ddc0382cae3ba82d4f519db235a09d4d",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/57cc04b0f61504b9fad6b04946d2d44351019353",
+                "reference": "57cc04b0f61504b9fad6b04946d2d44351019353",
                 "shasum": ""
             },
             "require": {
@@ -4802,7 +4803,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2016-01-19 12:28:04"
+            "time": "2016-01-21 14:45:18"
         }
     ],
     "packages-dev": [
