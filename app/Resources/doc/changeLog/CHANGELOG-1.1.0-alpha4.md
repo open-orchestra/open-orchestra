@@ -32,9 +32,9 @@ Url to see changes :
 
 ## New features
  - You can specify your bower and npm dependencies directly in the composer.json, futher information in the [documentation](https://github.com/open-orchestra/open-orchestra-docs/blob/master/en/developer_guide/assets_bower_npm.rst)
-  - Selector version of node tranverse is removed
-  - Duplicate button of node tranverse is removed
-  - Delete button of node tranverse is removed
+ - Selector version of node tranverse is removed
+ - Duplicate button of node tranverse is removed
+ - Delete button of node tranverse is removed
 
 ## Other changes
  - PHP requirement has been updated to 5.5 
@@ -54,3 +54,4 @@ Url to see changes :
    sure to update your Open Orchestra tasks according to [these Pull Request](https://github.com/open-orchestra/open-orchestra/pull/791/files)
   - ``gridstack.js `` is removed
   - ``lodash.js`` is removed
+  - Npm package ``grunt-js-test`` is added to composer.json of ``CmsBundle``
