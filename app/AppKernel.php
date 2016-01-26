@@ -60,6 +60,7 @@ class AppKernel extends Kernel
             new Solution\MongoAggregationBundle\SolutionMongoAggregationBundle(),
             new OpenOrchestra\ModelLogBundle\OpenOrchestraModelLogBundle(),
             new OpenOrchestra\ElasticaBundle\OpenOrchestraElasticaBundle(),
+            new OpenOrchestra\ElasticaAdminBundle\OpenOrchestraElasticaAdminBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
