@@ -19,12 +19,15 @@ Url to see changes :
  - [Orchestra libs](https://github.com/open-orchestra/open-orchestra-libs/compare/v1.1.0-alpha3...v1.1.0-alpha4)
  - [Orchestra Mongo libs](https://github.com/open-orchestra/open-orchestra-mongo-libs/compare/v1.1.0-alpha3...v1.1.0-alpha4)
  - [Media file bundle](https://github.com/open-orchestra/open-orchestra-media-file-bundle/compare/v1.1.0-alpha3...v1.1.0-alpha4)
+ - [Elastica bundle](https://github.com/open-orchestra/open-orchestra-elastica-bundle/compare/722ddfb89d696440aa62c7257c6ed0c9933e5b29...v1.1.0-alpha4)
 
 ## Possible BC breaker
  - ``NodeGroupRoleTransformer`` implements now ``TransformerWithGroupInterface``
  - Method ``reverseTransform`` of ``NodeGroupRoleTransformer`` is removed and replaced by ``reverseTransformWithGroup``
  - Before ``composer install|update`` it's recommanded to removed ``nodes_modules`` and ``bower_components`` folders of your application and ``bower.json`` and ``package.json`` files. Remove also symlink in ``web/fonts`` 
  - You can move your bower and npm dependencies in ``composer.json`` of your project or bundle
+ - Datatable configuration have been moved from the `data` tag to a `yaml` configuration
+ - `Grunt` configuration has been modified to be more handled by the bundles
 
 ## Bug fixes
  - The Back Office is compatible again with Internet Explorer 9. See Configurations changes for more info
@@ -35,6 +38,7 @@ Url to see changes :
  - Selector version of node tranverse is removed
  - Duplicate button of node tranverse is removed
  - Delete button of node tranverse is removed
+ - An `Elastica` implementation has been created to index all the `content` in an indexor
 
 ## Other changes
  - PHP requirement has been updated to 5.5 
@@ -43,6 +47,9 @@ Url to see changes :
  - Version of ``friendsofsymfony/http-cache-bundle`` is updated to 1.3.6
  - Flow.js dependency has been moved from CmsBundle to MediaAdminBundle
  - Media alternatives files (mainly images) have new auto-generated names
+ - Deprecation of the `ContainerAware` class have been suppressed
+ - Nodes can have a new options for the theme : use the website default theme
+ - Abstract test classes have been created to help free the memory used in the tests
 
 ## Deprecated method
 
