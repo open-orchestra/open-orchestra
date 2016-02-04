@@ -998,12 +998,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSHttpCache.git",
-                "reference": "eb24688cfc4a553061add8196caf1783c45d450a"
+                "reference": "783f3918d85263e444db02a9e42d0f42aa7c1f43"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSHttpCache/zipball/eb24688cfc4a553061add8196caf1783c45d450a",
-                "reference": "eb24688cfc4a553061add8196caf1783c45d450a",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSHttpCache/zipball/783f3918d85263e444db02a9e42d0f42aa7c1f43",
+                "reference": "783f3918d85263e444db02a9e42d0f42aa7c1f43",
                 "shasum": ""
             },
             "require": {
@@ -1062,7 +1062,7 @@
                 "purge",
                 "varnish"
             ],
-            "time": "2015-12-07 10:41:49"
+            "time": "2016-02-02 12:07:34"
         },
         {
             "name": "friendsofsymfony/http-cache-bundle",
@@ -1219,12 +1219,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Atlantic18/DoctrineExtensions.git",
-                "reference": "e4738a362b1bffcb2d7ec771263ae55873d8ba33"
+                "reference": "08be3017f45cea64d6f10ec1c67c39c96f1e8ac3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/e4738a362b1bffcb2d7ec771263ae55873d8ba33",
-                "reference": "e4738a362b1bffcb2d7ec771263ae55873d8ba33",
+                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/08be3017f45cea64d6f10ec1c67c39c96f1e8ac3",
+                "reference": "08be3017f45cea64d6f10ec1c67c39c96f1e8ac3",
                 "shasum": ""
             },
             "require": {
@@ -1247,7 +1247,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.4.x-dev"
+                    "dev-master": "2.5.x-dev"
                 }
             },
             "autoload": {
@@ -1290,7 +1290,7 @@
                 "tree",
                 "uploadable"
             ],
-            "time": "2016-01-28 09:55:33"
+            "time": "2016-02-03 08:59:26"
         },
         {
             "name": "guzzle/guzzle",
@@ -2431,12 +2431,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "4f186cf875cfb0c856bae11aed99f2b4cf7f4bbe"
+                "reference": "f53eca58e6cdefa974023b15030b9f185a217daf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/4f186cf875cfb0c856bae11aed99f2b4cf7f4bbe",
-                "reference": "4f186cf875cfb0c856bae11aed99f2b4cf7f4bbe",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/f53eca58e6cdefa974023b15030b9f185a217daf",
+                "reference": "f53eca58e6cdefa974023b15030b9f185a217daf",
                 "shasum": ""
             },
             "require": {
@@ -2514,7 +2514,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2016-02-02 10:37:20"
+            "time": "2016-02-03 13:40:33"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2670,12 +2670,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-admin-bundle.git",
-                "reference": "eb79ae01a3ce1a299aaf96aac94ee2f00b2f960e"
+                "reference": "2e8339d67436824f67db799d00a8d72d0910f393"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/eb79ae01a3ce1a299aaf96aac94ee2f00b2f960e",
-                "reference": "eb79ae01a3ce1a299aaf96aac94ee2f00b2f960e",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/2e8339d67436824f67db799d00a8d72d0910f393",
+                "reference": "2e8339d67436824f67db799d00a8d72d0910f393",
                 "shasum": ""
             },
             "require": {
@@ -2741,7 +2741,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part for the media of OpenOrchestra",
-            "time": "2016-02-02 10:27:27"
+            "time": "2016-02-03 13:26:39"
         },
         {
             "name": "open-orchestra/open-orchestra-media-bundle",
