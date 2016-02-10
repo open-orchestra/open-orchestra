@@ -18,11 +18,11 @@
         "grunt-contrib-concat": "~0.3",
         "grunt-contrib-watch": "~0.4",
         "grunt-contrib-clean": "~0.5",
-        "grunt-js-test": "1.5.x",
         "grunt-commands": "~0.1",
         "coffee-script": "~1.9.1",
         "load-grunt-tasks": "~3.2.0",
         "glob": "~5.0.10",
-        "merge": "~1.2.0"
+        "merge": "~1.2.0",
+        "grunt-js-test": "1.5.x"
     }
 }
