@@ -844,12 +844,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSHttpCache.git",
-                "reference": "eb24688cfc4a553061add8196caf1783c45d450a"
+                "reference": "783f3918d85263e444db02a9e42d0f42aa7c1f43"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSHttpCache/zipball/eb24688cfc4a553061add8196caf1783c45d450a",
-                "reference": "eb24688cfc4a553061add8196caf1783c45d450a",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSHttpCache/zipball/783f3918d85263e444db02a9e42d0f42aa7c1f43",
+                "reference": "783f3918d85263e444db02a9e42d0f42aa7c1f43",
                 "shasum": ""
             },
             "require": {
@@ -908,7 +908,7 @@
                 "purge",
                 "varnish"
             ],
-            "time": "2015-12-07 10:41:49"
+            "time": "2016-02-02 12:07:34"
         },
         {
             "name": "friendsofsymfony/http-cache-bundle",
@@ -993,12 +993,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSUserBundle.git",
-                "reference": "8f1fc2273b37c61ddcc1620abf4500320a23763e"
+                "reference": "140cc28026304d3023c880f441689986f99b913b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/8f1fc2273b37c61ddcc1620abf4500320a23763e",
-                "reference": "8f1fc2273b37c61ddcc1620abf4500320a23763e",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/140cc28026304d3023c880f441689986f99b913b",
+                "reference": "140cc28026304d3023c880f441689986f99b913b",
                 "shasum": ""
             },
             "require": {
@@ -1054,7 +1054,7 @@
             "keywords": [
                 "User management"
             ],
-            "time": "2016-01-27 09:36:48"
+            "time": "2016-02-05 08:53:49"
         },
         {
             "name": "gedmo/doctrine-extensions",
@@ -1062,12 +1062,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Atlantic18/DoctrineExtensions.git",
-                "reference": "e4738a362b1bffcb2d7ec771263ae55873d8ba33"
+                "reference": "08be3017f45cea64d6f10ec1c67c39c96f1e8ac3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/e4738a362b1bffcb2d7ec771263ae55873d8ba33",
-                "reference": "e4738a362b1bffcb2d7ec771263ae55873d8ba33",
+                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/08be3017f45cea64d6f10ec1c67c39c96f1e8ac3",
+                "reference": "08be3017f45cea64d6f10ec1c67c39c96f1e8ac3",
                 "shasum": ""
             },
             "require": {
@@ -1090,7 +1090,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.4.x-dev"
+                    "dev-master": "2.5.x-dev"
                 }
             },
             "autoload": {
@@ -1133,7 +1133,7 @@
                 "tree",
                 "uploadable"
             ],
-            "time": "2016-01-28 09:55:33"
+            "time": "2016-02-03 08:59:26"
         },
         {
             "name": "guzzle/guzzle",
@@ -2054,12 +2054,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "eeef429605f0896ff5d927522514beb867cbd4de"
+                "reference": "bdd91f1a128fa12da451b3c55e37f486e6ceca03"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/eeef429605f0896ff5d927522514beb867cbd4de",
-                "reference": "eeef429605f0896ff5d927522514beb867cbd4de",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/bdd91f1a128fa12da451b3c55e37f486e6ceca03",
+                "reference": "bdd91f1a128fa12da451b3c55e37f486e6ceca03",
                 "shasum": ""
             },
             "require": {
@@ -2101,7 +2101,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2016-02-01 11:32:36"
+            "time": "2016-02-10 10:51:00"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2367,12 +2367,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-interface.git",
-                "reference": "315383450ec1abb7432c55f079ceab9b07acb03e"
+                "reference": "8f6171a283d1dda4e449fa410b158d2320cf01a4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/315383450ec1abb7432c55f079ceab9b07acb03e",
-                "reference": "315383450ec1abb7432c55f079ceab9b07acb03e",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/8f6171a283d1dda4e449fa410b158d2320cf01a4",
+                "reference": "8f6171a283d1dda4e449fa410b158d2320cf01a4",
                 "shasum": ""
             },
             "require": {
@@ -2405,7 +2405,7 @@
                 }
             ],
             "description": "Describe all entity and repository to implement for the whole OpenOrchestra project",
-            "time": "2016-01-12 09:34:44"
+            "time": "2016-02-10 09:05:28"
         },
         {
             "name": "open-orchestra/open-orchestra-user-bundle",
@@ -4029,12 +4029,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/instaclick/php-webdriver.git",
-                "reference": "bb2bc96d91e6f8c3312a9f6899bb2370f489a638"
+                "reference": "2f58dd9584d1de8c8878234bb408a78cf4ac706d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/instaclick/php-webdriver/zipball/bb2bc96d91e6f8c3312a9f6899bb2370f489a638",
-                "reference": "bb2bc96d91e6f8c3312a9f6899bb2370f489a638",
+                "url": "https://api.github.com/repos/instaclick/php-webdriver/zipball/2f58dd9584d1de8c8878234bb408a78cf4ac706d",
+                "reference": "2f58dd9584d1de8c8878234bb408a78cf4ac706d",
                 "shasum": ""
             },
             "require": {
@@ -4042,7 +4042,7 @@
                 "php": ">=5.3.2"
             },
             "require-dev": {
-                "satooshi/php-coveralls": "dev-master"
+                "satooshi/php-coveralls": "^1.0||^2.0"
             },
             "type": "library",
             "extra": {
@@ -4079,7 +4079,7 @@
                 "webdriver",
                 "webtest"
             ],
-            "time": "2015-07-03 18:24:04"
+            "time": "2016-02-05 12:35:01"
         },
         {
             "name": "jmikola/geojson",
