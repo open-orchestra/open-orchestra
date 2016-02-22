@@ -51,6 +51,7 @@ class AppKernel extends Kernel
             new OpenOrchestra\LogBundle\OpenOrchestraLogBundle(),
             new OpenOrchestra\UserAdminBundle\OpenOrchestraUserAdminBundle(),
             new OpenOrchestra\MediaAdminBundle\OpenOrchestraMediaAdminBundle(),
+            new OpenOrchestra\MediaAdminModelBundle\OpenOrchestraMediaAdminModelBundle(),
             new OpenOrchestra\MediaFileBundle\OpenOrchestraMediaFileBundle(),
             new OpenOrchestra\WorkflowFunctionAdminBundle\OpenOrchestraWorkflowFunctionAdminBundle(),
 
