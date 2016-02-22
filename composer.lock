@@ -2431,12 +2431,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "4cdd1313e6029803f6385c596f61208b3079cbda"
+                "reference": "050f818be4f5d0b6d6143f5cae99471c0f16038a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/4cdd1313e6029803f6385c596f61208b3079cbda",
-                "reference": "4cdd1313e6029803f6385c596f61208b3079cbda",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/050f818be4f5d0b6d6143f5cae99471c0f16038a",
+                "reference": "050f818be4f5d0b6d6143f5cae99471c0f16038a",
                 "shasum": ""
             },
             "require": {
@@ -2515,7 +2515,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2016-02-19 10:55:39"
+            "time": "2016-02-22 11:08:49"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2673,12 +2673,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-admin-bundle.git",
-                "reference": "f7bae09193c9676dbfb330d45be51384897380b5"
+                "reference": "ce70518425ff25c7af67b6840a053d8f559598fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/f7bae09193c9676dbfb330d45be51384897380b5",
-                "reference": "f7bae09193c9676dbfb330d45be51384897380b5",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/ce70518425ff25c7af67b6840a053d8f559598fd",
+                "reference": "ce70518425ff25c7af67b6840a053d8f559598fd",
                 "shasum": ""
             },
             "require": {
@@ -2729,6 +2729,7 @@
             },
             "autoload": {
                 "psr-4": {
+                    "OpenOrchestra\\MediaAdminModelBundle\\": "MediaAdminModelBundle/",
                     "OpenOrchestra\\MediaAdminBundle\\": "MediaAdminBundle/",
                     "OpenOrchestra\\MediaAdmin\\": "MediaAdmin/"
                 }
@@ -2744,7 +2745,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part for the media of OpenOrchestra",
-            "time": "2016-02-18 14:45:15"
+            "time": "2016-02-22 11:24:40"
         },
         {
             "name": "open-orchestra/open-orchestra-media-bundle",
@@ -2752,12 +2753,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-bundle.git",
-                "reference": "142bb3832a5620b5eff61b4dbd0c1475bbaf26ae"
+                "reference": "7c48bc8ac3c9e804ba2621a8b2f3636f7ddd27c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/142bb3832a5620b5eff61b4dbd0c1475bbaf26ae",
-                "reference": "142bb3832a5620b5eff61b4dbd0c1475bbaf26ae",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/7c48bc8ac3c9e804ba2621a8b2f3636f7ddd27c4",
+                "reference": "7c48bc8ac3c9e804ba2621a8b2f3636f7ddd27c4",
                 "shasum": ""
             },
             "require": {
@@ -2796,7 +2797,7 @@
                 }
             ],
             "description": "A media bundle for the OpenOrchestra Project",
-            "time": "2016-02-12 10:37:11"
+            "time": "2016-02-22 10:32:41"
         },
         {
             "name": "open-orchestra/open-orchestra-media-file-bundle",
@@ -2894,12 +2895,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-interface.git",
-                "reference": "505661d74cab3f70dd101ed866d743b0ea7fe849"
+                "reference": "c71497c649af5784f182584e75d92b99a26866f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/505661d74cab3f70dd101ed866d743b0ea7fe849",
-                "reference": "505661d74cab3f70dd101ed866d743b0ea7fe849",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/c71497c649af5784f182584e75d92b99a26866f5",
+                "reference": "c71497c649af5784f182584e75d92b99a26866f5",
                 "shasum": ""
             },
             "require": {
@@ -2932,7 +2933,7 @@
                 }
             ],
             "description": "Describe all entity and repository to implement for the whole OpenOrchestra project",
-            "time": "2016-02-19 08:24:03"
+            "time": "2016-02-19 13:35:50"
         },
         {
             "name": "open-orchestra/open-orchestra-mongo-libs",
@@ -5465,12 +5466,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "ce91d434b3dc443a3294c4535747765e84d11094"
+                "reference": "b02221e42163be673f9b44a0bc92a8b4907a7c6d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/ce91d434b3dc443a3294c4535747765e84d11094",
-                "reference": "ce91d434b3dc443a3294c4535747765e84d11094",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/b02221e42163be673f9b44a0bc92a8b4907a7c6d",
+                "reference": "b02221e42163be673f9b44a0bc92a8b4907a7c6d",
                 "shasum": ""
             },
             "require": {
@@ -5519,7 +5520,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2016-02-15 13:39:12"
+            "time": "2016-02-21 17:41:21"
         },
         {
             "name": "phpunit/php-code-coverage",
