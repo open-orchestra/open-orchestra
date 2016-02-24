@@ -5,7 +5,7 @@ namespace :composer do
             puts "\n\e[36m\e[1m> Creating temporary folder"
             execute "cd ~;rm -rf ./#{fetch(:update_dir)};mkdir #{fetch(:update_dir)};"
 
-            puts "\n\e[36m\e[1m> Cloning Open Orchestra"
+            puts "\n\e[36m\e[1m> Cloning project"
             execute "cd ~/#{fetch(:update_dir)};git clone #{fetch(:repo_url)};cd #{fetch(:git_project_dir)};git checkout #{fetch(:branch)}"
 
             puts "\n\e[36m\e[1m> Updating dependencies"
