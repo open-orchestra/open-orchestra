@@ -22,7 +22,8 @@
         "open-orchestra/open-orchestra-base-bundle": "1.0.x-dev",
         "open-orchestra/open-orchestra-base-api-bundle": "1.0.x-dev",
         "open-orchestra/open-orchestra-display-bundle": "1.0.x-dev",
-        "open-orchestra/open-orchestra-base-api-mongo-model-bundle": "1.0.x-dev"
+        "open-orchestra/open-orchestra-base-api-mongo-model-bundle": "1.0.x-dev",
+        "doctrine/cache": "1.5.*"
     },
     "require-dev": {
         "jmikola/geojson": "~1.0",
