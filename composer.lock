@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f3cfd520a296874f63490224a6c4a90c",
-    "content-hash": "0bc995af7b42d27888f7b6ba40b992dd",
+    "hash": "47f99158bc20abce1d423358a82c1d17",
+    "content-hash": "b1c7b10d808a195c9315126919efe426",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -993,12 +993,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSUserBundle.git",
-                "reference": "140cc28026304d3023c880f441689986f99b913b"
+                "reference": "e770bfa2fd0fc665f55cd7cfeb34bddeffb892f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/140cc28026304d3023c880f441689986f99b913b",
-                "reference": "140cc28026304d3023c880f441689986f99b913b",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/e770bfa2fd0fc665f55cd7cfeb34bddeffb892f4",
+                "reference": "e770bfa2fd0fc665f55cd7cfeb34bddeffb892f4",
                 "shasum": ""
             },
             "require": {
@@ -1054,7 +1054,7 @@
             "keywords": [
                 "User management"
             ],
-            "time": "2016-02-05 08:53:49"
+            "time": "2016-02-11 16:30:08"
         },
         {
             "name": "gedmo/doctrine-extensions",
@@ -1062,12 +1062,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Atlantic18/DoctrineExtensions.git",
-                "reference": "08be3017f45cea64d6f10ec1c67c39c96f1e8ac3"
+                "reference": "1e3ee30d1f636b38a78cb1372aaa72a2ba769929"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/08be3017f45cea64d6f10ec1c67c39c96f1e8ac3",
-                "reference": "08be3017f45cea64d6f10ec1c67c39c96f1e8ac3",
+                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/1e3ee30d1f636b38a78cb1372aaa72a2ba769929",
+                "reference": "1e3ee30d1f636b38a78cb1372aaa72a2ba769929",
                 "shasum": ""
             },
             "require": {
@@ -1079,9 +1079,8 @@
                 "doctrine/common": ">=2.5.0",
                 "doctrine/mongodb-odm": ">=1.0.2",
                 "doctrine/orm": ">=2.5.0",
-                "phpunit/phpunit": "~4.4",
-                "phpunit/phpunit-mock-objects": "~2.3",
-                "symfony/yaml": "~2.6"
+                "phpunit/phpunit": "*",
+                "symfony/yaml": "~2.6|~3.0"
             },
             "suggest": {
                 "doctrine/mongodb-odm": "to use the extensions with the MongoDB ODM",
@@ -1133,7 +1132,7 @@
                 "tree",
                 "uploadable"
             ],
-            "time": "2016-02-03 08:59:26"
+            "time": "2016-02-24 13:34:27"
         },
         {
             "name": "guzzle/guzzle",
@@ -2054,12 +2053,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "bdd91f1a128fa12da451b3c55e37f486e6ceca03"
+                "reference": "3fef23391c9a68968806b4121e25869311b3385d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/bdd91f1a128fa12da451b3c55e37f486e6ceca03",
-                "reference": "bdd91f1a128fa12da451b3c55e37f486e6ceca03",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/3fef23391c9a68968806b4121e25869311b3385d",
+                "reference": "3fef23391c9a68968806b4121e25869311b3385d",
                 "shasum": ""
             },
             "require": {
@@ -2101,7 +2100,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2016-02-10 10:51:00"
+            "time": "2016-02-24 13:28:45"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2212,12 +2211,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-admin-bundle.git",
-                "reference": "3c1319ee4f3b594018ce4355073a08ee9071d439"
+                "reference": "5c8886a481c75e63d9fd9536dbe125a0b5948271"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/3c1319ee4f3b594018ce4355073a08ee9071d439",
-                "reference": "3c1319ee4f3b594018ce4355073a08ee9071d439",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/5c8886a481c75e63d9fd9536dbe125a0b5948271",
+                "reference": "5c8886a481c75e63d9fd9536dbe125a0b5948271",
                 "shasum": ""
             },
             "require": {
@@ -2248,7 +2247,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part for the media of OpenOrchestra",
-            "time": "2015-11-24 16:06:39"
+            "time": "2016-02-22 13:53:49"
         },
         {
             "name": "open-orchestra/open-orchestra-media-bundle",
@@ -4241,12 +4240,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "e55e3e32a870bd4f05425fa4f717b52bd40e5659"
+                "reference": "b02221e42163be673f9b44a0bc92a8b4907a7c6d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/e55e3e32a870bd4f05425fa4f717b52bd40e5659",
-                "reference": "e55e3e32a870bd4f05425fa4f717b52bd40e5659",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/b02221e42163be673f9b44a0bc92a8b4907a7c6d",
+                "reference": "b02221e42163be673f9b44a0bc92a8b4907a7c6d",
                 "shasum": ""
             },
             "require": {
@@ -4262,7 +4261,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.5.x-dev"
+                    "dev-master": "1.6.x-dev"
                 }
             },
             "autoload": {
@@ -4295,7 +4294,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2015-12-28 13:26:33"
+            "time": "2016-02-21 17:41:21"
         },
         {
             "name": "phpunit/php-code-coverage",
