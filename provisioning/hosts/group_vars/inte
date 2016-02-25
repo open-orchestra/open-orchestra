@@ -110,3 +110,15 @@ sudoers:
   - open_orchestra_backoffice_stable
   - open_orchestra_front_stable
   - open_orchestra_media_stable
+
+elasticsearch_version: 1.4
+elasticsearch_config:
+  network.bind_host: 10.0.1.246
+  network.host: 10.0.1.246
+  network.publish_host: 10.0.1.246
+  http.bind_host: 10.0.1.246
+  http.host: 10.0.1.246
+  http.publish_host: 10.0.1.246
+elasticsearch_plugins:
+  - name: mobz/elasticsearch-head
+    check_file: /usr/share/elasticsearch/plugins/head/index.html
