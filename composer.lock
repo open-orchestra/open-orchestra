@@ -1219,12 +1219,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Atlantic18/DoctrineExtensions.git",
-                "reference": "f63081525ac93b31b5f50268b6fae89b1a8df132"
+                "reference": "9d5bc8afbd07298a4a5b420f29f44da744802ebb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/f63081525ac93b31b5f50268b6fae89b1a8df132",
-                "reference": "f63081525ac93b31b5f50268b6fae89b1a8df132",
+                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/9d5bc8afbd07298a4a5b420f29f44da744802ebb",
+                "reference": "9d5bc8afbd07298a4a5b420f29f44da744802ebb",
                 "shasum": ""
             },
             "require": {
@@ -1289,7 +1289,7 @@
                 "tree",
                 "uploadable"
             ],
-            "time": "2016-02-25 20:23:09"
+            "time": "2016-02-28 10:14:10"
         },
         {
             "name": "guzzle/guzzle",
@@ -2430,12 +2430,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "e94705913fa74437f53d062724013b09628544b0"
+                "reference": "11d3dc98c315336d0d30177810fd41eb6096d012"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/e94705913fa74437f53d062724013b09628544b0",
-                "reference": "e94705913fa74437f53d062724013b09628544b0",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/11d3dc98c315336d0d30177810fd41eb6096d012",
+                "reference": "11d3dc98c315336d0d30177810fd41eb6096d012",
                 "shasum": ""
             },
             "require": {
@@ -2514,7 +2514,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2016-02-26 10:40:23"
+            "time": "2016-02-29 10:20:48"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2846,12 +2846,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
-                "reference": "78d8b76a17216e582c889213909c0f7daf79a78e"
+                "reference": "66134639a560d19e5d424be25a8e2287594684b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/78d8b76a17216e582c889213909c0f7daf79a78e",
-                "reference": "78d8b76a17216e582c889213909c0f7daf79a78e",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/66134639a560d19e5d424be25a8e2287594684b2",
+                "reference": "66134639a560d19e5d424be25a8e2287594684b2",
                 "shasum": ""
             },
             "require": {
@@ -2886,7 +2886,7 @@
                 }
             ],
             "description": "An implemantation of the model-interface for OpenOrchestra on mongo",
-            "time": "2016-02-24 17:01:58"
+            "time": "2016-02-29 13:17:03"
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
@@ -2894,12 +2894,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-interface.git",
-                "reference": "c43fd81628b1034a1ff52cd38f05f61531223b7e"
+                "reference": "90aaab118e7a40b8b3f2c14a5e9834ce8f891131"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/c43fd81628b1034a1ff52cd38f05f61531223b7e",
-                "reference": "c43fd81628b1034a1ff52cd38f05f61531223b7e",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/90aaab118e7a40b8b3f2c14a5e9834ce8f891131",
+                "reference": "90aaab118e7a40b8b3f2c14a5e9834ce8f891131",
                 "shasum": ""
             },
             "require": {
@@ -2932,7 +2932,7 @@
                 }
             ],
             "description": "Describe all entity and repository to implement for the whole OpenOrchestra project",
-            "time": "2016-02-24 16:58:14"
+            "time": "2016-02-26 13:24:05"
         },
         {
             "name": "open-orchestra/open-orchestra-mongo-libs",
@@ -4062,12 +4062,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-intl-icu.git",
-                "reference": "3392ea0037a4bf9230b81363145776e4fdce66a9"
+                "reference": "8328069d9f5322f0e7b3c3518485acfdc94c3942"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-intl-icu/zipball/3392ea0037a4bf9230b81363145776e4fdce66a9",
-                "reference": "3392ea0037a4bf9230b81363145776e4fdce66a9",
+                "url": "https://api.github.com/repos/symfony/polyfill-intl-icu/zipball/8328069d9f5322f0e7b3c3518485acfdc94c3942",
+                "reference": "8328069d9f5322f0e7b3c3518485acfdc94c3942",
                 "shasum": ""
             },
             "require": {
@@ -4112,7 +4112,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2016-02-15 04:08:08"
+            "time": "2016-02-26 16:18:12"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -6011,12 +6011,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/environment.git",
-                "reference": "22aa49baa48886f40b060e061a7967436f44a249"
+                "reference": "dc7a29032cf72b54f36dac15a1ca5b3a1b6029bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/22aa49baa48886f40b060e061a7967436f44a249",
-                "reference": "22aa49baa48886f40b060e061a7967436f44a249",
+                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/dc7a29032cf72b54f36dac15a1ca5b3a1b6029bf",
+                "reference": "dc7a29032cf72b54f36dac15a1ca5b3a1b6029bf",
                 "shasum": ""
             },
             "require": {
@@ -6053,7 +6053,7 @@
                 "environment",
                 "hhvm"
             ],
-            "time": "2016-02-26 11:40:57"
+            "time": "2016-02-26 18:40:46"
         },
         {
             "name": "sebastian/exporter",
