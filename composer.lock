@@ -70,21 +70,25 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Behat/Transliterator.git",
-                "reference": "868e05be3a9f25ba6424c2dd4849567f50715003"
+                "reference": "5617922041771893fb0e9593b67958e411604c09"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Behat/Transliterator/zipball/868e05be3a9f25ba6424c2dd4849567f50715003",
-                "reference": "868e05be3a9f25ba6424c2dd4849567f50715003",
+                "url": "https://api.github.com/repos/Behat/Transliterator/zipball/5617922041771893fb0e9593b67958e411604c09",
+                "reference": "5617922041771893fb0e9593b67958e411604c09",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
+            "require-dev": {
+                "chuyskywalker/rolling-curl": "^3.1",
+                "php-yaoi/php-yaoi": "^1.0"
+            },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1-dev"
+                    "dev-master": "1.2-dev"
                 }
             },
             "autoload": {
@@ -102,7 +106,7 @@
                 "slug",
                 "transliterator"
             ],
-            "time": "2015-09-28 16:26:35"
+            "time": "2016-03-01 09:37:21"
         },
         {
             "name": "braincrafted/bootstrap-bundle",
@@ -2430,12 +2434,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "11d3dc98c315336d0d30177810fd41eb6096d012"
+                "reference": "16d650208309f6c1714585f41ca72cfb1cf4579c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/11d3dc98c315336d0d30177810fd41eb6096d012",
-                "reference": "11d3dc98c315336d0d30177810fd41eb6096d012",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/16d650208309f6c1714585f41ca72cfb1cf4579c",
+                "reference": "16d650208309f6c1714585f41ca72cfb1cf4579c",
                 "shasum": ""
             },
             "require": {
@@ -2514,7 +2518,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2016-02-29 10:20:48"
+            "time": "2016-02-29 16:14:35"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2571,12 +2575,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-elastica-bundle.git",
-                "reference": "fc78b38062a3e5ca490edb9f2ddc6e57e9509e83"
+                "reference": "1694d52512dc1d99a1967d5ae7ee85e18b5c699a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-elastica-bundle/zipball/fc78b38062a3e5ca490edb9f2ddc6e57e9509e83",
-                "reference": "fc78b38062a3e5ca490edb9f2ddc6e57e9509e83",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-elastica-bundle/zipball/1694d52512dc1d99a1967d5ae7ee85e18b5c699a",
+                "reference": "1694d52512dc1d99a1967d5ae7ee85e18b5c699a",
                 "shasum": ""
             },
             "require": {
@@ -2617,7 +2621,7 @@
                 }
             ],
             "description": "An bundle to index Open Orchestra element",
-            "time": "2016-02-25 09:57:53"
+            "time": "2016-03-01 09:28:52"
         },
         {
             "name": "open-orchestra/open-orchestra-libs",
@@ -2940,12 +2944,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-mongo-libs.git",
-                "reference": "6bbf112da45fb6f671c0705da077971bd1562858"
+                "reference": "1d9979a639b18ee90d1c09f394e34641d5e2dc68"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-mongo-libs/zipball/6bbf112da45fb6f671c0705da077971bd1562858",
-                "reference": "6bbf112da45fb6f671c0705da077971bd1562858",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-mongo-libs/zipball/1d9979a639b18ee90d1c09f394e34641d5e2dc68",
+                "reference": "1d9979a639b18ee90d1c09f394e34641d5e2dc68",
                 "shasum": ""
             },
             "require": {
@@ -2985,7 +2989,7 @@
                 }
             ],
             "description": "Some library to use the Open Orchestra project with mongo",
-            "time": "2016-02-24 14:56:39"
+            "time": "2016-03-01 09:28:59"
         },
         {
             "name": "open-orchestra/open-orchestra-user-bundle",
@@ -3094,16 +3098,16 @@
         },
         {
             "name": "paragonie/random_compat",
-            "version": "v1.2.0",
+            "version": "v1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "b0e69d10852716b2ccbdff69c75c477637220790"
+                "reference": "f078eba3bcf140fd69b5fcc3ea5ac809abf729dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/b0e69d10852716b2ccbdff69c75c477637220790",
-                "reference": "b0e69d10852716b2ccbdff69c75c477637220790",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/f078eba3bcf140fd69b5fcc3ea5ac809abf729dc",
+                "reference": "f078eba3bcf140fd69b5fcc3ea5ac809abf729dc",
                 "shasum": ""
             },
             "require": {
@@ -3138,7 +3142,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2016-02-06 03:52:05"
+            "time": "2016-02-29 17:25:04"
         },
         {
             "name": "php-ffmpeg/php-ffmpeg",
