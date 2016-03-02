@@ -9,27 +9,27 @@
     "packages": [
         {
             "name": "alchemy/binary-driver",
-            "version": "1.5.0",
+            "version": "1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/alchemy-fr/BinaryDriver.git",
-                "reference": "b32c03d4b56ce29f783051eac55887adae654b41"
+                "reference": "80c6633890afb71d2417ae851d0ad167d8b00b95"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/alchemy-fr/BinaryDriver/zipball/b32c03d4b56ce29f783051eac55887adae654b41",
-                "reference": "b32c03d4b56ce29f783051eac55887adae654b41",
+                "url": "https://api.github.com/repos/alchemy-fr/BinaryDriver/zipball/80c6633890afb71d2417ae851d0ad167d8b00b95",
+                "reference": "80c6633890afb71d2417ae851d0ad167d8b00b95",
                 "shasum": ""
             },
             "require": {
-                "evenement/evenement": "~1.0",
-                "monolog/monolog": "~1.3",
-                "php": ">=5.3.3",
-                "psr/log": "~1.0",
-                "symfony/process": "~2.0"
+                "evenement/evenement": "^2.0|^1.0",
+                "monolog/monolog": "^1.3",
+                "php": ">=5.5",
+                "psr/log": "^1.0",
+                "symfony/process": "^2.0|^3.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~3.7"
+                "phpunit/phpunit": "^4.0|^5.0"
             },
             "type": "library",
             "autoload": {
@@ -62,7 +62,7 @@
                 "binary",
                 "driver"
             ],
-            "time": "2013-06-21 15:51:20"
+            "time": "2016-03-02 13:49:15"
         },
         {
             "name": "behat/transliterator",
@@ -238,33 +238,32 @@
         },
         {
             "name": "doctrine/cache",
-            "version": "1.5.x-dev",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "fb3f5917781cf95863d3fd4d2595da43da3686c1"
+                "reference": "e0ef9e9833ca024d251e77e8d82a00ca92b0aa71"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/fb3f5917781cf95863d3fd4d2595da43da3686c1",
-                "reference": "fb3f5917781cf95863d3fd4d2595da43da3686c1",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/e0ef9e9833ca024d251e77e8d82a00ca92b0aa71",
+                "reference": "e0ef9e9833ca024d251e77e8d82a00ca92b0aa71",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.2"
+                "php": "~5.5|~7.0"
             },
             "conflict": {
                 "doctrine/common": ">2.2,<2.4"
             },
             "require-dev": {
-                "phpunit/phpunit": ">=3.7",
-                "predis/predis": "~1.0",
-                "satooshi/php-coveralls": "~0.6"
+                "phpunit/phpunit": "~4.8|~5.0",
+                "predis/predis": "~1.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.5.x-dev"
+                    "dev-master": "1.7.x-dev"
                 }
             },
             "autoload": {
@@ -304,7 +303,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2015-12-19 05:04:23"
+            "time": "2016-01-07 23:41:52"
         },
         {
             "name": "doctrine/collections",
@@ -679,30 +678,36 @@
         },
         {
             "name": "doctrine/mongodb",
-            "version": "1.2.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/mongodb.git",
-                "reference": "7a724d9f200b032afc69ee1ad373f6fe5bcbdd9a"
+                "reference": "2e17347ad0a49d60e755ae5702e3841d76df8dc8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/mongodb/zipball/7a724d9f200b032afc69ee1ad373f6fe5bcbdd9a",
-                "reference": "7a724d9f200b032afc69ee1ad373f6fe5bcbdd9a",
+                "url": "https://api.github.com/repos/doctrine/mongodb/zipball/2e17347ad0a49d60e755ae5702e3841d76df8dc8",
+                "reference": "2e17347ad0a49d60e755ae5702e3841d76df8dc8",
                 "shasum": ""
             },
             "require": {
                 "doctrine/common": "^2.2",
-                "ext-mongo": "^1.2.12",
-                "php": ">=5.3.2"
+                "ext-mongo": "^1.5",
+                "php": "^5.5 || ^7.0"
             },
             "require-dev": {
-                "jmikola/geojson": "^1.0"
+                "jmikola/geojson": "^1.0",
+                "phpunit/phpunit": "~4.8|~5.0"
             },
             "suggest": {
                 "jmikola/geojson": "Support GeoJSON geometry objects in 2dsphere queries"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.3.x-dev"
+                }
+            },
             "autoload": {
                 "psr-0": {
                     "Doctrine\\MongoDB": "lib/"
@@ -745,20 +750,20 @@
                 "mongodb",
                 "persistence"
             ],
-            "time": "2015-11-24 13:28:35"
+            "time": "2016-02-29 20:11:27"
         },
         {
             "name": "doctrine/mongodb-odm",
-            "version": "1.0.3",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/mongodb-odm.git",
-                "reference": "cb327d1e15a17159247d70255b7fab6bea5ad4b0"
+                "reference": "8f1c34f0ec338dc95393ea44e8bdceb56df0b413"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/mongodb-odm/zipball/cb327d1e15a17159247d70255b7fab6bea5ad4b0",
-                "reference": "cb327d1e15a17159247d70255b7fab6bea5ad4b0",
+                "url": "https://api.github.com/repos/doctrine/mongodb-odm/zipball/8f1c34f0ec338dc95393ea44e8bdceb56df0b413",
+                "reference": "8f1c34f0ec338dc95393ea44e8bdceb56df0b413",
                 "shasum": ""
             },
             "require": {
@@ -769,10 +774,12 @@
                 "doctrine/inflector": "~1.0",
                 "doctrine/instantiator": "~1.0.1",
                 "doctrine/mongodb": "~1.2",
-                "php": ">=5.3.2",
+                "ext-mongo": "^1.5",
+                "php": "^5.5 || ^7.0",
                 "symfony/console": "~2.3|~3.0"
             },
             "require-dev": {
+                "phpunit/phpunit": "~4.8|~5.0",
                 "symfony/yaml": "~2.3|~3.0"
             },
             "suggest": {
@@ -827,7 +834,7 @@
                 "odm",
                 "persistence"
             ],
-            "time": "2015-11-03 14:58:21"
+            "time": "2016-03-01 19:40:33"
         },
         {
             "name": "doctrine/mongodb-odm-bundle",
@@ -1154,12 +1161,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSUserBundle.git",
-                "reference": "e770bfa2fd0fc665f55cd7cfeb34bddeffb892f4"
+                "reference": "a39d000577d735444bee97de9f5ee382e3f85fa1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/e770bfa2fd0fc665f55cd7cfeb34bddeffb892f4",
-                "reference": "e770bfa2fd0fc665f55cd7cfeb34bddeffb892f4",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/a39d000577d735444bee97de9f5ee382e3f85fa1",
+                "reference": "a39d000577d735444bee97de9f5ee382e3f85fa1",
                 "shasum": ""
             },
             "require": {
@@ -1215,33 +1222,34 @@
             "keywords": [
                 "User management"
             ],
-            "time": "2016-02-11 16:30:08"
+            "time": "2016-03-01 11:42:24"
         },
         {
             "name": "gedmo/doctrine-extensions",
-            "version": "dev-master",
+            "version": "2.4.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Atlantic18/DoctrineExtensions.git",
-                "reference": "9d5bc8afbd07298a4a5b420f29f44da744802ebb"
+                "reference": "5f4b6c848f0d6834a434a62a09a0935d147082e1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/9d5bc8afbd07298a4a5b420f29f44da744802ebb",
-                "reference": "9d5bc8afbd07298a4a5b420f29f44da744802ebb",
+                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/5f4b6c848f0d6834a434a62a09a0935d147082e1",
+                "reference": "5f4b6c848f0d6834a434a62a09a0935d147082e1",
                 "shasum": ""
             },
             "require": {
                 "behat/transliterator": "~1.0",
                 "doctrine/common": "~2.4",
-                "php": ">=5.4"
+                "php": ">=5.3.2"
             },
             "require-dev": {
                 "doctrine/common": ">=2.5.0",
                 "doctrine/mongodb-odm": ">=1.0.2",
                 "doctrine/orm": ">=2.5.0",
-                "phpunit/phpunit": "*",
-                "symfony/yaml": "~2.6|~3.0"
+                "phpunit/phpunit": "~4.4",
+                "phpunit/phpunit-mock-objects": "~2.3",
+                "symfony/yaml": "~2.6"
             },
             "suggest": {
                 "doctrine/mongodb-odm": "to use the extensions with the MongoDB ODM",
@@ -1250,7 +1258,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.5.x-dev"
+                    "dev-master": "2.4.x-dev"
                 }
             },
             "autoload": {
@@ -1293,7 +1301,7 @@
                 "tree",
                 "uploadable"
             ],
-            "time": "2016-02-28 10:14:10"
+            "time": "2016-02-18 15:33:43"
         },
         {
             "name": "guzzle/guzzle",
@@ -2074,12 +2082,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "fb314292abcbfb61782e065fb9b13d5302ecc9e3"
+                "reference": "e19b764b5c855580e8ffa7e615f72c10fd2f99cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/fb314292abcbfb61782e065fb9b13d5302ecc9e3",
-                "reference": "fb314292abcbfb61782e065fb9b13d5302ecc9e3",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/e19b764b5c855580e8ffa7e615f72c10fd2f99cc",
+                "reference": "e19b764b5c855580e8ffa7e615f72c10fd2f99cc",
                 "shasum": ""
             },
             "require": {
@@ -2144,7 +2152,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2016-02-24 18:37:37"
+            "time": "2016-03-01 18:00:40"
         },
         {
             "name": "mouf/nodejs-installer",
@@ -2575,12 +2583,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-elastica-bundle.git",
-                "reference": "1694d52512dc1d99a1967d5ae7ee85e18b5c699a"
+                "reference": "32d9349baf0d7623fb82e2212f14827d29c6b3ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-elastica-bundle/zipball/1694d52512dc1d99a1967d5ae7ee85e18b5c699a",
-                "reference": "1694d52512dc1d99a1967d5ae7ee85e18b5c699a",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-elastica-bundle/zipball/32d9349baf0d7623fb82e2212f14827d29c6b3ee",
+                "reference": "32d9349baf0d7623fb82e2212f14827d29c6b3ee",
                 "shasum": ""
             },
             "require": {
@@ -2621,7 +2629,7 @@
                 }
             ],
             "description": "An bundle to index Open Orchestra element",
-            "time": "2016-03-01 09:28:52"
+            "time": "2016-03-02 14:03:09"
         },
         {
             "name": "open-orchestra/open-orchestra-libs",
@@ -2944,17 +2952,15 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-mongo-libs.git",
-                "reference": "1d9979a639b18ee90d1c09f394e34641d5e2dc68"
+                "reference": "e630a9d3d08d53e378bbca6b3492cbfe212df2b8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-mongo-libs/zipball/1d9979a639b18ee90d1c09f394e34641d5e2dc68",
-                "reference": "1d9979a639b18ee90d1c09f394e34641d5e2dc68",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-mongo-libs/zipball/e630a9d3d08d53e378bbca6b3492cbfe212df2b8",
+                "reference": "e630a9d3d08d53e378bbca6b3492cbfe212df2b8",
                 "shasum": ""
             },
             "require": {
-                "doctrine/mongodb": "1.2.1",
-                "doctrine/mongodb-odm": "1.0.3",
                 "doctrine/mongodb-odm-bundle": "3.0.1",
                 "jms/metadata": "~1.1",
                 "open-orchestra/open-orchestra-libs": "*",
@@ -2989,7 +2995,7 @@
                 }
             ],
             "description": "Some library to use the Open Orchestra project with mongo",
-            "time": "2016-03-01 09:28:59"
+            "time": "2016-03-02 16:00:03"
         },
         {
             "name": "open-orchestra/open-orchestra-user-bundle",
@@ -3048,19 +3054,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-workflow-function-bundle.git",
-                "reference": "64fd1a23d110dfe140b08a0dbeed6fe45ad213a2"
+                "reference": "986ebd967ef0e9cbad7b0153246bfe81ab87a1db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-workflow-function-bundle/zipball/64fd1a23d110dfe140b08a0dbeed6fe45ad213a2",
-                "reference": "64fd1a23d110dfe140b08a0dbeed6fe45ad213a2",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-workflow-function-bundle/zipball/986ebd967ef0e9cbad7b0153246bfe81ab87a1db",
+                "reference": "986ebd967ef0e9cbad7b0153246bfe81ab87a1db",
                 "shasum": ""
             },
             "require": {
-                "doctrine/cache": "1.5.*",
                 "doctrine/data-fixtures": "1.1.1",
-                "doctrine/mongodb": "1.2.1",
-                "doctrine/mongodb-odm": "1.0.3",
                 "doctrine/mongodb-odm-bundle": "3.0.1",
                 "open-orchestra/open-orchestra-base-bundle": "*",
                 "open-orchestra/open-orchestra-cms-bundle": "*",
@@ -3094,7 +3097,7 @@
                 }
             ],
             "description": "A workflow function bundle for the OpenOrchestra Project",
-            "time": "2016-02-17 17:23:44"
+            "time": "2016-03-02 16:24:25"
         },
         {
             "name": "paragonie/random_compat",
