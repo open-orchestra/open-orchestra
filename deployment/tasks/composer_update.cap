@@ -12,7 +12,7 @@ namespace :composer do
             execute "cd ~/#{fetch(:update_dir)}/#{fetch(:git_project_dir)};composer clear-cache;composer update --no-progress;"
 
             puts "\n\e[36m\e[1m> Pushing the composer.lock to a new Git branch"
-            execute "cd ~/#{fetch(:update_dir)}/#{fetch(:git_project_dir)};git add composer.lock;git commit -m \"auto update vendor\";git pull --rebase origin #{fetch(:branch)};git push origin #{fetch(:branch)}:auto_update_vendor_#{fetch(:branch)}"
+            execute "cd ~/#{fetch(:update_dir)}/#{fetch(:git_project_dir)};git add composer.lock bower.json package.json;git commit -m \"auto update vendor\";git pull --rebase origin #{fetch(:branch)};git push origin #{fetch(:branch)}:auto_update_vendor_#{fetch(:branch)}"
 
             puts "\n\e[36m\e[1m> Removing temporary files"
             execute "cd ~;rm -rf #{fetch(:update_dir)}"
