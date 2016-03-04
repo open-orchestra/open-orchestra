@@ -758,12 +758,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/mongodb-odm.git",
-                "reference": "eb8ea0b1df8ab23515922ac7937b860c75ac98e9"
+                "reference": "516574ba1af22065907dc357266fe9721f317c61"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/mongodb-odm/zipball/eb8ea0b1df8ab23515922ac7937b860c75ac98e9",
-                "reference": "eb8ea0b1df8ab23515922ac7937b860c75ac98e9",
+                "url": "https://api.github.com/repos/doctrine/mongodb-odm/zipball/516574ba1af22065907dc357266fe9721f317c61",
+                "reference": "516574ba1af22065907dc357266fe9721f317c61",
                 "shasum": ""
             },
             "require": {
@@ -834,7 +834,7 @@
                 "odm",
                 "persistence"
             ],
-            "time": "2016-03-03 10:59:36"
+            "time": "2016-03-04 08:12:02"
         },
         {
             "name": "doctrine/mongodb-odm-bundle",
@@ -2442,12 +2442,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "40caa96649d0c36f647092f669d40bf139a5edda"
+                "reference": "1afec3a047830c514965b687c31891fa3bc840f0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/40caa96649d0c36f647092f669d40bf139a5edda",
-                "reference": "40caa96649d0c36f647092f669d40bf139a5edda",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/1afec3a047830c514965b687c31891fa3bc840f0",
+                "reference": "1afec3a047830c514965b687c31891fa3bc840f0",
                 "shasum": ""
             },
             "require": {
@@ -2526,7 +2526,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2016-03-03 11:25:32"
+            "time": "2016-03-03 17:13:36"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2534,12 +2534,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-display-bundle.git",
-                "reference": "2938f12c0f2adca85541105247ceba04bb789bbc"
+                "reference": "82cf3ac87236ec03c5b00191907d5134fba84261"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-display-bundle/zipball/2938f12c0f2adca85541105247ceba04bb789bbc",
-                "reference": "2938f12c0f2adca85541105247ceba04bb789bbc",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-display-bundle/zipball/82cf3ac87236ec03c5b00191907d5134fba84261",
+                "reference": "82cf3ac87236ec03c5b00191907d5134fba84261",
                 "shasum": ""
             },
             "require": {
@@ -2575,7 +2575,7 @@
                 }
             ],
             "description": "The bundle to display all bricks",
-            "time": "2016-03-03 09:37:37"
+            "time": "2016-03-03 14:16:55"
         },
         {
             "name": "open-orchestra/open-orchestra-elastica-bundle",
@@ -2583,12 +2583,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-elastica-bundle.git",
-                "reference": "4ad09db559e008778e59d340fa5bccd773502466"
+                "reference": "e81a444fa0373d04f93523f5a4edf4bdbc538a7e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-elastica-bundle/zipball/4ad09db559e008778e59d340fa5bccd773502466",
-                "reference": "4ad09db559e008778e59d340fa5bccd773502466",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-elastica-bundle/zipball/e81a444fa0373d04f93523f5a4edf4bdbc538a7e",
+                "reference": "e81a444fa0373d04f93523f5a4edf4bdbc538a7e",
                 "shasum": ""
             },
             "require": {
@@ -2629,7 +2629,7 @@
                 }
             ],
             "description": "An bundle to index Open Orchestra element",
-            "time": "2016-03-03 10:09:53"
+            "time": "2016-03-03 16:40:32"
         },
         {
             "name": "open-orchestra/open-orchestra-libs",
@@ -4069,12 +4069,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-apcu.git",
-                "reference": "d1911e6caeb4b6a4c8e2d5c46b978a66b3745e4c"
+                "reference": "0c901e4e65a2f7ece68f0fd249b56d6ad3adc214"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-apcu/zipball/d1911e6caeb4b6a4c8e2d5c46b978a66b3745e4c",
-                "reference": "d1911e6caeb4b6a4c8e2d5c46b978a66b3745e4c",
+                "url": "https://api.github.com/repos/symfony/polyfill-apcu/zipball/0c901e4e65a2f7ece68f0fd249b56d6ad3adc214",
+                "reference": "0c901e4e65a2f7ece68f0fd249b56d6ad3adc214",
                 "shasum": ""
             },
             "require": {
@@ -4089,9 +4089,6 @@
             "autoload": {
                 "files": [
                     "bootstrap.php"
-                ],
-                "classmap": [
-                    "Resources/stubs"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -4117,7 +4114,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2016-01-20 09:13:37"
+            "time": "2016-03-03 16:49:40"
         },
         {
             "name": "symfony/polyfill-intl-icu",
