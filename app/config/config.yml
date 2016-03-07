@@ -129,3 +129,11 @@ open_orchestra_media:
 
 open_orchestra_elastica:
     host: %host_elastica%
+
+mongo_db_migrations:
+     collection_name: "migration_versions"
+     database_name: "%open_orchestra_cms.mongodb.database%"
+     dir_name: "%kernel.root_dir%/../vendor/open-orchestra/open-orchestra-model-bundle/ModelBundle/Migrations/MongoDB"
+     script_dir_name: "%kernel.root_dir%/scripts"
+     name: "Open Orchestra MongoDB Migrations"
+     namespace: "OpenOrchestra\ModelBundle\Migrations\MongoDB"

@@ -62,6 +62,7 @@ class AppKernel extends Kernel
             new OpenOrchestra\ModelLogBundle\OpenOrchestraModelLogBundle(),
             new OpenOrchestra\ElasticaBundle\OpenOrchestraElasticaBundle(),
             new OpenOrchestra\ElasticaAdminBundle\OpenOrchestraElasticaAdminBundle(),
+            new AntiMattr\Bundle\MongoDBMigrationsBundle\MongoDBMigrationsBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
