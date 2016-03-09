@@ -1278,12 +1278,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSUserBundle.git",
-                "reference": "88f84f631ee7859c069cf98b475c679e90b16b22"
+                "reference": "16b04c49af05dd3fb381e4abe04f0e5e231ac76d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/88f84f631ee7859c069cf98b475c679e90b16b22",
-                "reference": "88f84f631ee7859c069cf98b475c679e90b16b22",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/16b04c49af05dd3fb381e4abe04f0e5e231ac76d",
+                "reference": "16b04c49af05dd3fb381e4abe04f0e5e231ac76d",
                 "shasum": ""
             },
             "require": {
@@ -1339,7 +1339,7 @@
             "keywords": [
                 "User management"
             ],
-            "time": "2016-03-04 13:20:42"
+            "time": "2016-03-08 11:05:28"
         },
         {
             "name": "gedmo/doctrine-extensions",
@@ -2199,12 +2199,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "5085630fd606c50d9b09efa0f93c0bdd83603d24"
+                "reference": "81045d59740a686121d85281e7de245d49b1236a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/5085630fd606c50d9b09efa0f93c0bdd83603d24",
-                "reference": "5085630fd606c50d9b09efa0f93c0bdd83603d24",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/81045d59740a686121d85281e7de245d49b1236a",
+                "reference": "81045d59740a686121d85281e7de245d49b1236a",
                 "shasum": ""
             },
             "require": {
@@ -2269,7 +2269,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2016-03-07 12:29:57"
+            "time": "2016-03-09 11:43:02"
         },
         {
             "name": "mouf/nodejs-installer",
@@ -2559,12 +2559,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "2a7f6ec75f168e9f5a4d9f4a156693ba872b2f2a"
+                "reference": "40520e8a920c6630fecf2491892fc588204bc35f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/2a7f6ec75f168e9f5a4d9f4a156693ba872b2f2a",
-                "reference": "2a7f6ec75f168e9f5a4d9f4a156693ba872b2f2a",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/40520e8a920c6630fecf2491892fc588204bc35f",
+                "reference": "40520e8a920c6630fecf2491892fc588204bc35f",
                 "shasum": ""
             },
             "require": {
@@ -2643,7 +2643,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2016-03-04 16:36:35"
+            "time": "2016-03-09 07:58:00"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2801,12 +2801,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-admin-bundle.git",
-                "reference": "34d3c8b1c2dd2a0ab7547839ab97319cbc5c7ad7"
+                "reference": "28dae1287c66ffe38fbb7b38c10c9507a5829972"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/34d3c8b1c2dd2a0ab7547839ab97319cbc5c7ad7",
-                "reference": "34d3c8b1c2dd2a0ab7547839ab97319cbc5c7ad7",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/28dae1287c66ffe38fbb7b38c10c9507a5829972",
+                "reference": "28dae1287c66ffe38fbb7b38c10c9507a5829972",
                 "shasum": ""
             },
             "require": {
@@ -2873,7 +2873,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part for the media of OpenOrchestra",
-            "time": "2016-03-07 10:52:47"
+            "time": "2016-03-09 13:40:46"
         },
         {
             "name": "open-orchestra/open-orchestra-media-bundle",
@@ -3271,12 +3271,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHP-FFMpeg/PHP-FFMpeg.git",
-                "reference": "7687be530c0bb22ee92ee8924cb0ff0e5edd5e5d"
+                "reference": "48d40cd9c661ae815cc417edc50cfbdb2bfc27b8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHP-FFMpeg/PHP-FFMpeg/zipball/7687be530c0bb22ee92ee8924cb0ff0e5edd5e5d",
-                "reference": "7687be530c0bb22ee92ee8924cb0ff0e5edd5e5d",
+                "url": "https://api.github.com/repos/PHP-FFMpeg/PHP-FFMpeg/zipball/48d40cd9c661ae815cc417edc50cfbdb2bfc27b8",
+                "reference": "48d40cd9c661ae815cc417edc50cfbdb2bfc27b8",
                 "shasum": ""
             },
             "require": {
@@ -3337,7 +3337,7 @@
                 "video",
                 "video processing"
             ],
-            "time": "2016-03-08 00:47:06"
+            "time": "2016-03-08 23:52:28"
         },
         {
             "name": "phpcollection/phpcollection",
