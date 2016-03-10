@@ -2559,12 +2559,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "40520e8a920c6630fecf2491892fc588204bc35f"
+                "reference": "7f3f1628a316e616d506cdb1162ffd6d70f116b1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/40520e8a920c6630fecf2491892fc588204bc35f",
-                "reference": "40520e8a920c6630fecf2491892fc588204bc35f",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/7f3f1628a316e616d506cdb1162ffd6d70f116b1",
+                "reference": "7f3f1628a316e616d506cdb1162ffd6d70f116b1",
                 "shasum": ""
             },
             "require": {
@@ -2643,7 +2643,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2016-03-09 07:58:00"
+            "time": "2016-03-09 16:27:49"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -3271,12 +3271,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHP-FFMpeg/PHP-FFMpeg.git",
-                "reference": "48d40cd9c661ae815cc417edc50cfbdb2bfc27b8"
+                "reference": "7770b0e361e4a47aa355cca73671605449fe57c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHP-FFMpeg/PHP-FFMpeg/zipball/48d40cd9c661ae815cc417edc50cfbdb2bfc27b8",
-                "reference": "48d40cd9c661ae815cc417edc50cfbdb2bfc27b8",
+                "url": "https://api.github.com/repos/PHP-FFMpeg/PHP-FFMpeg/zipball/7770b0e361e4a47aa355cca73671605449fe57c7",
+                "reference": "7770b0e361e4a47aa355cca73671605449fe57c7",
                 "shasum": ""
             },
             "require": {
@@ -3337,7 +3337,7 @@
                 "video",
                 "video processing"
             ],
-            "time": "2016-03-08 23:52:28"
+            "time": "2016-03-09 19:43:04"
         },
         {
             "name": "phpcollection/phpcollection",
