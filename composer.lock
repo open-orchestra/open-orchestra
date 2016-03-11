@@ -2559,12 +2559,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "7f3f1628a316e616d506cdb1162ffd6d70f116b1"
+                "reference": "1a3998504faa3590cd382671875f8d429dd5c2a5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/7f3f1628a316e616d506cdb1162ffd6d70f116b1",
-                "reference": "7f3f1628a316e616d506cdb1162ffd6d70f116b1",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/1a3998504faa3590cd382671875f8d429dd5c2a5",
+                "reference": "1a3998504faa3590cd382671875f8d429dd5c2a5",
                 "shasum": ""
             },
             "require": {
@@ -2643,7 +2643,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2016-03-09 16:27:49"
+            "time": "2016-03-11 13:11:12"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2700,12 +2700,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-elastica-bundle.git",
-                "reference": "bd081866d4e9c667e0bb5c7d8654f534678550a4"
+                "reference": "037c4087a644c2a15f9e9552a3e488f815efc66b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-elastica-bundle/zipball/bd081866d4e9c667e0bb5c7d8654f534678550a4",
-                "reference": "bd081866d4e9c667e0bb5c7d8654f534678550a4",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-elastica-bundle/zipball/037c4087a644c2a15f9e9552a3e488f815efc66b",
+                "reference": "037c4087a644c2a15f9e9552a3e488f815efc66b",
                 "shasum": ""
             },
             "require": {
@@ -2746,7 +2746,7 @@
                 }
             ],
             "description": "An bundle to index Open Orchestra element",
-            "time": "2016-03-07 14:44:13"
+            "time": "2016-03-11 14:55:12"
         },
         {
             "name": "open-orchestra/open-orchestra-libs",
@@ -3271,12 +3271,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHP-FFMpeg/PHP-FFMpeg.git",
-                "reference": "7770b0e361e4a47aa355cca73671605449fe57c7"
+                "reference": "a1e12ecf3300badc9337f2986ea5ab000a7db6e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHP-FFMpeg/PHP-FFMpeg/zipball/7770b0e361e4a47aa355cca73671605449fe57c7",
-                "reference": "7770b0e361e4a47aa355cca73671605449fe57c7",
+                "url": "https://api.github.com/repos/PHP-FFMpeg/PHP-FFMpeg/zipball/a1e12ecf3300badc9337f2986ea5ab000a7db6e3",
+                "reference": "a1e12ecf3300badc9337f2986ea5ab000a7db6e3",
                 "shasum": ""
             },
             "require": {
@@ -3337,7 +3337,7 @@
                 "video",
                 "video processing"
             ],
-            "time": "2016-03-09 19:43:04"
+            "time": "2016-03-11 00:26:35"
         },
         {
             "name": "phpcollection/phpcollection",
