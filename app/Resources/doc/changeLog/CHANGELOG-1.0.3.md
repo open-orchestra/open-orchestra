@@ -13,7 +13,7 @@ Url to see changes :
  - [Media bundle](https://github.com/open-orchestra/open-orchestra-media-bundle/compare/v1.0.2...v1.0.3)
  - [User bundle](https://github.com/open-orchestra/open-orchestra-user-bundle/compare/v1.0.2...v1.0.3)
  - [Theme bundle](https://github.com/open-orchestra/open-orchestra-theme-bundle/compare/v1.0.2...v1.0.3)
- - [Worflow function bundle](https://github.com/open-orchestra/open-orchestra-worflow-function-bundle/compare/v1.0.2...v1.0.3)
+ - [Worflow function bundle](https://github.com/open-orchestra/open-orchestra-workflow-function-bundle/compare/v1.0.2...v1.0.3)
  - [Orchestra libs](https://github.com/open-orchestra/open-orchestra-libs/compare/v1.0.2...v1.0.3)
  - [Media admin bundle](https://github.com/open-orchestra/open-orchestra-media-admin-bundle/compare/v1.0.2...v1.0.3)
 
