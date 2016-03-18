@@ -29,7 +29,7 @@ class FooBarStrategy extends AbstractStrategy
      */
     public function show()
     {
-        return $this->render('AcmeBackBundle:Block/List:showIcon.html.twig');
+        return $this->render('AcmeBackBundle:Block/Foobar:showIcon.html.twig');
     }
 
     /**

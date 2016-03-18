@@ -8,3 +8,7 @@ services:
         class: Acme\Bundle\BackBundle\DisplayIcon\FooBarStrategy
         tags:
             - { name: open_orchestra_backoffice.display_icon.strategy }
+    acme_back.generate_form.foobar:
+        class: Acme\Bundle\BackBundle\GenerateForm\FooBarStrategy
+        tags:
+            - { name: open_orchestra_backoffice.generate_form.strategy }

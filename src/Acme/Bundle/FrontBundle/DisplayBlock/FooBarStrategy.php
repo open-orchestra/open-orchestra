@@ -35,8 +35,7 @@ class FooBarStrategy extends AbstractStrategy
     public function show(ReadBlockInterface $block)
     {
         return $this->render('AcmeFrontBundle:Block/Foobar:show.html.twig', array(
-            'id' => $block->getId(),
-            'class' => $block->getClass(),
+            'name' => $block->getAttribute('name')
         ));
     }
 
