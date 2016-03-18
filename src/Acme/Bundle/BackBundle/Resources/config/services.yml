@@ -1,0 +1,10 @@
+#
+services:
+    acme_back.display_block.foobar:
+        class: Acme\Bundle\BackBundle\DisplayBlock\FooBarStrategy
+        tags:
+            - { name: open_orchestra_backoffice.display_block.strategy }
+    acme_back.display_icon.foobar:
+        class: Acme\Bundle\BackBundle\DisplayIcon\FooBarStrategy
+        tags:
+            - { name: open_orchestra_backoffice.display_icon.strategy }

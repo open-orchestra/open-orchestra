@@ -1,11 +1,9 @@
 <?php
 
-namespace Acme\Bundle\BackBundle\DisplayBlock;
+namespace Acme\Bundle\BackBundle\DisplayIcon;
 
-use OpenOrchestra\DisplayBundle\DisplayBlock\Strategies\AbstractStrategy;
-use OpenOrchestra\ModelInterface\Model\ReadBlockInterface;
-use Symfony\Component\HttpFoundation\Response;
-use Acme\Bundle\FrontBundle\DisplayBlock\FooBarStrategy as FooBarStrategyBase;
+use OpenOrchestra\Backoffice\DisplayIcon\Strategies\AbstractStrategy;
+use Acme\Bundle\FrontBundle\DisplayBlock\FooBarStrategy as BaseFooBarStrategy;
 
 /**
  * Class FooBarStrategy
@@ -15,38 +13,23 @@ class FooBarStrategy extends AbstractStrategy
     /**
      * Check if the strategy support this block
      *
-     * @param ReadBlockInterface $block
+     * @param string $block
      *
      * @return boolean
      */
-    public function support(ReadBlockInterface $block)
+    public function support($block)
     {
-        return FooBarStrategyBase::NAME == $block->getComponent();
+        return BaseFooBarStrategy::NAME === $block;
     }
 
     /**
      * Perform the show action for a block
      *
-     * @param ReadBlockInterface $block
-     *
-     * @return Response
+     * @return string
      */
-    public function show(ReadBlockInterface $block)
+    public function show()
     {
-        return $this->render('OpenOrchestraElasticaAdminBundle:Block/List:show.html.twig', array(
-            'id' => $block->getId(),
-            'class' => $block->getClass(),
-        ));
-    }
-
-    /**
-     * @param ReadBlockInterface $block
-     *
-     * @return Array
-     */
-    public function getCacheTags(ReadBlockInterface $block)
-    {
-        return array();
+        return $this->render('AcmeBackBundle:Block/List:showIcon.html.twig');
     }
 
     /**
@@ -56,6 +39,6 @@ class FooBarStrategy extends AbstractStrategy
      */
     public function getName()
     {
-        return 'foor_bar';
+        return 'foo_bar';
     }
 }

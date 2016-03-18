@@ -1,3 +1,11 @@
+acme_front:
+    resource: "@AcmeFrontBundle/Resources/config/routing.yml"
+    prefix:   /
+
+acme_back:
+    resource: "@AcmeBackBundle/Resources/config/routing.yml"
+    prefix:   /
+
 open_orchestra_backoffice:
     resource: "@OpenOrchestraBackofficeBundle/Controller"
     type: annotation

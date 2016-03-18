@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenOrchestra\ElasticaAdmin\DisplayBlock;
+namespace Acme\Bundle\FrontBundle\DisplayBlock;
 
 use OpenOrchestra\DisplayBundle\DisplayBlock\Strategies\AbstractStrategy;
 use OpenOrchestra\ModelInterface\Model\ReadBlockInterface;
@@ -11,6 +11,8 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class FooBarStrategy extends AbstractStrategy
 {
+    const NAME = 'foo_bar';
+
     /**
      * Check if the strategy support this block
      *
@@ -20,7 +22,7 @@ class FooBarStrategy extends AbstractStrategy
      */
     public function support(ReadBlockInterface $block)
     {
-        return BaseElasticaListStrategy::NAME == $block->getComponent();
+        return FooBarStrategy::NAME == $block->getComponent();
     }
 
     /**
@@ -32,7 +34,7 @@ class FooBarStrategy extends AbstractStrategy
      */
     public function show(ReadBlockInterface $block)
     {
-        return $this->render('OpenOrchestraElasticaAdminBundle:Block/List:show.html.twig', array(
+        return $this->render('AcmeFrontBundle:Block/Foobar:show.html.twig', array(
             'id' => $block->getId(),
             'class' => $block->getClass(),
         ));
@@ -41,7 +43,7 @@ class FooBarStrategy extends AbstractStrategy
     /**
      * @param ReadBlockInterface $block
      *
-     * @return Array
+     * @return array
      */
     public function getCacheTags(ReadBlockInterface $block)
     {
@@ -55,6 +57,6 @@ class FooBarStrategy extends AbstractStrategy
      */
     public function getName()
     {
-        return 'foor_bar';
+        return 'foo_bar';
     }
 }

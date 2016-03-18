@@ -1,16 +1,16 @@
 <?php
 
-namespace OpenOrchestra\ElasticaAdmin\DisplayBlock;
+namespace Acme\Bundle\BackBundle\DisplayBlock;
 
 use OpenOrchestra\DisplayBundle\DisplayBlock\Strategies\AbstractStrategy;
 use OpenOrchestra\ModelInterface\Model\ReadBlockInterface;
 use Symfony\Component\HttpFoundation\Response;
-use OpenOrchestra\ElasticaFront\DisplayBlock\ElasticaListStrategy as BaseElasticaListStrategy;
+use Acme\Bundle\FrontBundle\DisplayBlock\FooBarStrategy as BaseFooBarStrategy;
 
 /**
- * Class ElasticaListStrategy
+ * Class FooBarStrategy
  */
-class ElasticaListStrategy extends AbstractStrategy
+class FooBarStrategy extends AbstractStrategy
 {
     /**
      * Check if the strategy support this block
@@ -21,7 +21,7 @@ class ElasticaListStrategy extends AbstractStrategy
      */
     public function support(ReadBlockInterface $block)
     {
-        return BaseElasticaListStrategy::NAME == $block->getComponent();
+        return BaseFooBarStrategy::NAME == $block->getComponent();
     }
 
     /**
@@ -33,7 +33,7 @@ class ElasticaListStrategy extends AbstractStrategy
      */
     public function show(ReadBlockInterface $block)
     {
-        return $this->render('OpenOrchestraElasticaAdminBundle:Block/List:show.html.twig', array(
+        return $this->render('AcmeBackBundle:Block/List:show.html.twig', array(
             'id' => $block->getId(),
             'class' => $block->getClass(),
         ));
@@ -42,7 +42,7 @@ class ElasticaListStrategy extends AbstractStrategy
     /**
      * @param ReadBlockInterface $block
      *
-     * @return Array
+     * @return array
      */
     public function getCacheTags(ReadBlockInterface $block)
     {
@@ -56,6 +56,6 @@ class ElasticaListStrategy extends AbstractStrategy
      */
     public function getName()
     {
-        return 'elastica_list';
+        return 'foo_bar';
     }
 }
