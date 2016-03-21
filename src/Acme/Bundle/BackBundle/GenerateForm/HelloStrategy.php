@@ -5,12 +5,12 @@ namespace Acme\Bundle\BackBundle\GenerateForm;
 use OpenOrchestra\Backoffice\GenerateForm\Strategies\AbstractBlockStrategy;
 use OpenOrchestra\ModelInterface\Model\BlockInterface;
 use Symfony\Component\Form\FormBuilderInterface;
-use Acme\Bundle\FrontBundle\DisplayBlock\FooBarStrategy as BaseFooBarStrategy;
+use Acme\Bundle\FrontBundle\DisplayBlock\HelloStrategy as BaseHelloStrategy;
 
 /**
- * Class FooBarStrategy
+ * Class HelloStrategy
  */
-class FooBarStrategy extends AbstractBlockStrategy
+class HelloStrategy extends AbstractBlockStrategy
 {
     /**
      * @param BlockInterface $block
@@ -19,7 +19,7 @@ class FooBarStrategy extends AbstractBlockStrategy
      */
     public function support(BlockInterface $block)
     {
-        return BaseFooBarStrategy::NAME === $block->getComponent();
+        return BaseHelloStrategy::NAME === $block->getComponent();
     }
 
     /**
@@ -35,6 +35,6 @@ class FooBarStrategy extends AbstractBlockStrategy
      */
     public function getName()
     {
-        return 'foo_bar';
+        return 'hello';
     }
 }

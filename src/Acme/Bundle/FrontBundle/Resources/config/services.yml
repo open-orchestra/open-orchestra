@@ -1,5 +1,5 @@
 services:
-    acme_front.display_block.foobar:
-        class: Acme\Bundle\FrontBundle\DisplayBlock\FooBarStrategy
+    acme_front.display_block.hello:
+        class: Acme\Bundle\FrontBundle\DisplayBlock\HelloStrategy
         tags:
             - { name: open_orchestra_display.display_block.strategy }

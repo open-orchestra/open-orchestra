@@ -1,18 +1,17 @@
 <?php
 
-namespace Acme\Bundle\FrontBundle\DisplayBlock;
+namespace Acme\Bundle\BackBundle\DisplayBlock;
 
 use OpenOrchestra\DisplayBundle\DisplayBlock\Strategies\AbstractStrategy;
 use OpenOrchestra\ModelInterface\Model\ReadBlockInterface;
 use Symfony\Component\HttpFoundation\Response;
+use Acme\Bundle\FrontBundle\DisplayBlock\HelloStrategy as BaseHelloStrategy;
 
 /**
- * Class FooBarStrategy
+ * Class HelloStrategy
  */
-class FooBarStrategy extends AbstractStrategy
+class HelloStrategy extends AbstractStrategy
 {
-    const NAME = 'foo_bar';
-
     /**
      * Check if the strategy support this block
      *
@@ -22,7 +21,7 @@ class FooBarStrategy extends AbstractStrategy
      */
     public function support(ReadBlockInterface $block)
     {
-        return FooBarStrategy::NAME == $block->getComponent();
+        return BaseHelloStrategy::NAME == $block->getComponent();
     }
 
     /**
@@ -34,8 +33,9 @@ class FooBarStrategy extends AbstractStrategy
      */
     public function show(ReadBlockInterface $block)
     {
-        return $this->render('AcmeFrontBundle:Block/Foobar:show.html.twig', array(
-            'name' => $block->getAttribute('name')
+        return $this->render('AcmeBackBundle:Block/Hello:show.html.twig', array(
+            'id' => $block->getId(),
+            'class' => $block->getClass(),
         ));
     }
 
@@ -56,6 +56,6 @@ class FooBarStrategy extends AbstractStrategy
      */
     public function getName()
     {
-        return 'foo_bar';
+        return 'hello';
     }
 }

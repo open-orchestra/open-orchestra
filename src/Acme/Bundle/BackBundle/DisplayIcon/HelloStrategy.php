@@ -3,12 +3,12 @@
 namespace Acme\Bundle\BackBundle\DisplayIcon;
 
 use OpenOrchestra\Backoffice\DisplayIcon\Strategies\AbstractStrategy;
-use Acme\Bundle\FrontBundle\DisplayBlock\FooBarStrategy as BaseFooBarStrategy;
+use Acme\Bundle\FrontBundle\DisplayBlock\HelloStrategy as BaseHelloStrategy;
 
 /**
- * Class FooBarStrategy
+ * Class HelloStrategy
  */
-class FooBarStrategy extends AbstractStrategy
+class HelloStrategy extends AbstractStrategy
 {
     /**
      * Check if the strategy support this block
@@ -19,7 +19,7 @@ class FooBarStrategy extends AbstractStrategy
      */
     public function support($block)
     {
-        return BaseFooBarStrategy::NAME === $block;
+        return BaseHelloStrategy::NAME === $block;
     }
 
     /**
@@ -29,7 +29,7 @@ class FooBarStrategy extends AbstractStrategy
      */
     public function show()
     {
-        return $this->render('AcmeBackBundle:Block/Foobar:showIcon.html.twig');
+        return $this->render('AcmeBackBundle:Block/Hello:showIcon.html.twig');
     }
 
     /**
@@ -39,6 +39,6 @@ class FooBarStrategy extends AbstractStrategy
      */
     public function getName()
     {
-        return 'foo_bar';
+        return 'hello';
     }
 }

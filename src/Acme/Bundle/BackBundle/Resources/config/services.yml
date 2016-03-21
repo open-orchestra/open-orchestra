@@ -1,14 +1,14 @@
 #
 services:
-    acme_back.display_block.foobar:
-        class: Acme\Bundle\BackBundle\DisplayBlock\FooBarStrategy
+    acme_back.display_block.hello:
+        class: Acme\Bundle\BackBundle\DisplayBlock\HelloStrategy
         tags:
             - { name: open_orchestra_backoffice.display_block.strategy }
-    acme_back.display_icon.foobar:
-        class: Acme\Bundle\BackBundle\DisplayIcon\FooBarStrategy
+    acme_back.display_icon.hello:
+        class: Acme\Bundle\BackBundle\DisplayIcon\HelloStrategy
         tags:
             - { name: open_orchestra_backoffice.display_icon.strategy }
-    acme_back.generate_form.foobar:
-        class: Acme\Bundle\BackBundle\GenerateForm\FooBarStrategy
+    acme_back.generate_form.hello:
+        class: Acme\Bundle\BackBundle\GenerateForm\HelloStrategy
         tags:
             - { name: open_orchestra_backoffice.generate_form.strategy }
