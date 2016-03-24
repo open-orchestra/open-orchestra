@@ -290,12 +290,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/annotations.git",
-                "reference": "07a9af2d4de5f9ef0bf2d9ae94421e5fc50d7859"
+                "reference": "2e1b1f7597e2f647e99e96e747fcae9718ac817b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/annotations/zipball/07a9af2d4de5f9ef0bf2d9ae94421e5fc50d7859",
-                "reference": "07a9af2d4de5f9ef0bf2d9ae94421e5fc50d7859",
+                "url": "https://api.github.com/repos/doctrine/annotations/zipball/2e1b1f7597e2f647e99e96e747fcae9718ac817b",
+                "reference": "2e1b1f7597e2f647e99e96e747fcae9718ac817b",
                 "shasum": ""
             },
             "require": {
@@ -350,7 +350,7 @@
                 "docblock",
                 "parser"
             ],
-            "time": "2016-02-26 09:54:41"
+            "time": "2016-03-24 07:09:52"
         },
         {
             "name": "doctrine/cache",
@@ -427,12 +427,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/collections.git",
-                "reference": "866e100a425b8b73d15393fd081c6bf067f05bf9"
+                "reference": "e0721034158c1a0b73f984888af833fe1682311e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/collections/zipball/866e100a425b8b73d15393fd081c6bf067f05bf9",
-                "reference": "866e100a425b8b73d15393fd081c6bf067f05bf9",
+                "url": "https://api.github.com/repos/doctrine/collections/zipball/e0721034158c1a0b73f984888af833fe1682311e",
+                "reference": "e0721034158c1a0b73f984888af833fe1682311e",
                 "shasum": ""
             },
             "require": {
@@ -485,7 +485,7 @@
                 "collections",
                 "iterator"
             ],
-            "time": "2015-09-11 15:24:21"
+            "time": "2016-03-24 07:07:41"
         },
         {
             "name": "doctrine/common",
@@ -874,12 +874,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/mongodb-odm.git",
-                "reference": "0573f48b25e16633ad4fd2c1490a0bb65d3c7354"
+                "reference": "82b92c4ce8506048ede7d336c5b37ee4114bec1c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/mongodb-odm/zipball/0573f48b25e16633ad4fd2c1490a0bb65d3c7354",
-                "reference": "0573f48b25e16633ad4fd2c1490a0bb65d3c7354",
+                "url": "https://api.github.com/repos/doctrine/mongodb-odm/zipball/82b92c4ce8506048ede7d336c5b37ee4114bec1c",
+                "reference": "82b92c4ce8506048ede7d336c5b37ee4114bec1c",
                 "shasum": ""
             },
             "require": {
@@ -889,8 +889,7 @@
                 "doctrine/common": "~2.4",
                 "doctrine/inflector": "~1.0",
                 "doctrine/instantiator": "~1.0.1",
-                "doctrine/mongodb": "~1.2",
-                "ext-mongo": "^1.5",
+                "doctrine/mongodb": "~1.3",
                 "php": "^5.5 || ^7.0",
                 "symfony/console": "~2.3|~3.0"
             },
@@ -950,7 +949,7 @@
                 "odm",
                 "persistence"
             ],
-            "time": "2016-03-14 07:00:42"
+            "time": "2016-03-23 19:09:02"
         },
         {
             "name": "doctrine/mongodb-odm-bundle",
@@ -2559,12 +2558,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "539efb85605a682a8459a556e2008f614129ba3b"
+                "reference": "5c1288496ef0a93283e3c866ad8f44913b73d90b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/539efb85605a682a8459a556e2008f614129ba3b",
-                "reference": "539efb85605a682a8459a556e2008f614129ba3b",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/5c1288496ef0a93283e3c866ad8f44913b73d90b",
+                "reference": "5c1288496ef0a93283e3c866ad8f44913b73d90b",
                 "shasum": ""
             },
             "require": {
@@ -2643,7 +2642,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2016-03-21 16:15:49"
+            "time": "2016-03-24 13:43:57"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2801,12 +2800,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-admin-bundle.git",
-                "reference": "1e0baab2b4e24e5d8fbec30d79b36fd67277bcc1"
+                "reference": "74be7d08b9a2de80a5f0c3da7f60a25331cb3b41"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/1e0baab2b4e24e5d8fbec30d79b36fd67277bcc1",
-                "reference": "1e0baab2b4e24e5d8fbec30d79b36fd67277bcc1",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/74be7d08b9a2de80a5f0c3da7f60a25331cb3b41",
+                "reference": "74be7d08b9a2de80a5f0c3da7f60a25331cb3b41",
                 "shasum": ""
             },
             "require": {
@@ -2873,7 +2872,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part for the media of OpenOrchestra",
-            "time": "2016-03-21 16:26:03"
+            "time": "2016-03-24 11:12:05"
         },
         {
             "name": "open-orchestra/open-orchestra-media-bundle",
@@ -2881,12 +2880,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-bundle.git",
-                "reference": "68c3cc12c22fab0a81ef0d8052ef8586674d94cf"
+                "reference": "8a53237d0ffd118ea736e6d629c04578dc4d6eba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/68c3cc12c22fab0a81ef0d8052ef8586674d94cf",
-                "reference": "68c3cc12c22fab0a81ef0d8052ef8586674d94cf",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/8a53237d0ffd118ea736e6d629c04578dc4d6eba",
+                "reference": "8a53237d0ffd118ea736e6d629c04578dc4d6eba",
                 "shasum": ""
             },
             "require": {
@@ -2925,7 +2924,7 @@
                 }
             ],
             "description": "A media bundle for the OpenOrchestra Project",
-            "time": "2016-03-17 09:31:54"
+            "time": "2016-03-24 09:41:32"
         },
         {
             "name": "open-orchestra/open-orchestra-media-file-bundle",
@@ -2975,12 +2974,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
-                "reference": "38b5c73db025d8070617b1433448a17d5f8fe5ae"
+                "reference": "3e1d29dcff1fa2fa8425c28d92eb11ac37d7d330"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/38b5c73db025d8070617b1433448a17d5f8fe5ae",
-                "reference": "38b5c73db025d8070617b1433448a17d5f8fe5ae",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/3e1d29dcff1fa2fa8425c28d92eb11ac37d7d330",
+                "reference": "3e1d29dcff1fa2fa8425c28d92eb11ac37d7d330",
                 "shasum": ""
             },
             "require": {
@@ -3016,7 +3015,7 @@
                 }
             ],
             "description": "An implemantation of the model-interface for OpenOrchestra on mongo",
-            "time": "2016-03-18 15:46:53"
+            "time": "2016-03-24 11:21:05"
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
@@ -3024,12 +3023,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-interface.git",
-                "reference": "45f3c9d2f7df381893ba150e1ba85a782821b15f"
+                "reference": "04e6ce9adef9b27d40ba5a90ae034c5c0a0efc4a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/45f3c9d2f7df381893ba150e1ba85a782821b15f",
-                "reference": "45f3c9d2f7df381893ba150e1ba85a782821b15f",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/04e6ce9adef9b27d40ba5a90ae034c5c0a0efc4a",
+                "reference": "04e6ce9adef9b27d40ba5a90ae034c5c0a0efc4a",
                 "shasum": ""
             },
             "require": {
@@ -3062,7 +3061,7 @@
                 }
             ],
             "description": "Describe all entity and repository to implement for the whole OpenOrchestra project",
-            "time": "2016-03-17 15:17:11"
+            "time": "2016-03-24 10:58:35"
         },
         {
             "name": "open-orchestra/open-orchestra-mongo-libs",
@@ -3271,12 +3270,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHP-FFMpeg/PHP-FFMpeg.git",
-                "reference": "a1e12ecf3300badc9337f2986ea5ab000a7db6e3"
+                "reference": "06d8031b9d00210184ce7c1057d5251f8c8c2724"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHP-FFMpeg/PHP-FFMpeg/zipball/a1e12ecf3300badc9337f2986ea5ab000a7db6e3",
-                "reference": "a1e12ecf3300badc9337f2986ea5ab000a7db6e3",
+                "url": "https://api.github.com/repos/PHP-FFMpeg/PHP-FFMpeg/zipball/06d8031b9d00210184ce7c1057d5251f8c8c2724",
+                "reference": "06d8031b9d00210184ce7c1057d5251f8c8c2724",
                 "shasum": ""
             },
             "require": {
@@ -3337,7 +3336,7 @@
                 "video",
                 "video processing"
             ],
-            "time": "2016-03-11 00:26:35"
+            "time": "2016-03-23 06:57:25"
         },
         {
             "name": "phpcollection/phpcollection",
