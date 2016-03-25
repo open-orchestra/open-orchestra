@@ -427,12 +427,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/collections.git",
-                "reference": "e0721034158c1a0b73f984888af833fe1682311e"
+                "reference": "382cc2c8e1bae7453e8598b5c52c951a9c97d53d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/collections/zipball/e0721034158c1a0b73f984888af833fe1682311e",
-                "reference": "e0721034158c1a0b73f984888af833fe1682311e",
+                "url": "https://api.github.com/repos/doctrine/collections/zipball/382cc2c8e1bae7453e8598b5c52c951a9c97d53d",
+                "reference": "382cc2c8e1bae7453e8598b5c52c951a9c97d53d",
                 "shasum": ""
             },
             "require": {
@@ -485,7 +485,7 @@
                 "collections",
                 "iterator"
             ],
-            "time": "2016-03-24 07:07:41"
+            "time": "2016-03-25 08:33:42"
         },
         {
             "name": "doctrine/common",
@@ -798,12 +798,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/mongodb.git",
-                "reference": "b4eb8683d66d44de4e9e4e974149bdce327dc818"
+                "reference": "77f001ea77e3ab6e8278a94dabe781575aba34a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/mongodb/zipball/b4eb8683d66d44de4e9e4e974149bdce327dc818",
-                "reference": "b4eb8683d66d44de4e9e4e974149bdce327dc818",
+                "url": "https://api.github.com/repos/doctrine/mongodb/zipball/77f001ea77e3ab6e8278a94dabe781575aba34a0",
+                "reference": "77f001ea77e3ab6e8278a94dabe781575aba34a0",
                 "shasum": ""
             },
             "require": {
@@ -821,7 +821,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.3.x-dev"
+                    "dev-master": "1.4.x-dev"
                 }
             },
             "autoload": {
@@ -866,7 +866,7 @@
                 "mongodb",
                 "persistence"
             ],
-            "time": "2016-03-19 18:45:48"
+            "time": "2016-03-24 17:47:46"
         },
         {
             "name": "doctrine/mongodb-odm",
@@ -2558,12 +2558,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "5c1288496ef0a93283e3c866ad8f44913b73d90b"
+                "reference": "7710dbd4db49e2f5e3de7249a3661df16f5dd78e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/5c1288496ef0a93283e3c866ad8f44913b73d90b",
-                "reference": "5c1288496ef0a93283e3c866ad8f44913b73d90b",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/7710dbd4db49e2f5e3de7249a3661df16f5dd78e",
+                "reference": "7710dbd4db49e2f5e3de7249a3661df16f5dd78e",
                 "shasum": ""
             },
             "require": {
@@ -2642,7 +2642,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2016-03-24 13:43:57"
+            "time": "2016-03-25 15:52:01"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2800,12 +2800,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-admin-bundle.git",
-                "reference": "74be7d08b9a2de80a5f0c3da7f60a25331cb3b41"
+                "reference": "b41631da642e784293dca5d7d363332ef5fd5ddb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/74be7d08b9a2de80a5f0c3da7f60a25331cb3b41",
-                "reference": "74be7d08b9a2de80a5f0c3da7f60a25331cb3b41",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/b41631da642e784293dca5d7d363332ef5fd5ddb",
+                "reference": "b41631da642e784293dca5d7d363332ef5fd5ddb",
                 "shasum": ""
             },
             "require": {
@@ -2872,7 +2872,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part for the media of OpenOrchestra",
-            "time": "2016-03-24 11:12:05"
+            "time": "2016-03-25 16:02:11"
         },
         {
             "name": "open-orchestra/open-orchestra-media-bundle",
@@ -3171,12 +3171,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-workflow-function-bundle.git",
-                "reference": "f73b562a5143c025d2ae85f599d88eb31f8045e8"
+                "reference": "e13ec8ef629d0399340e0da61a45aa0d23d77c03"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-workflow-function-bundle/zipball/f73b562a5143c025d2ae85f599d88eb31f8045e8",
-                "reference": "f73b562a5143c025d2ae85f599d88eb31f8045e8",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-workflow-function-bundle/zipball/e13ec8ef629d0399340e0da61a45aa0d23d77c03",
+                "reference": "e13ec8ef629d0399340e0da61a45aa0d23d77c03",
                 "shasum": ""
             },
             "require": {
@@ -3214,7 +3214,7 @@
                 }
             ],
             "description": "A workflow function bundle for the OpenOrchestra Project",
-            "time": "2016-03-15 09:28:42"
+            "time": "2016-03-24 16:12:15"
         },
         {
             "name": "paragonie/random_compat",
