@@ -24,26 +24,10 @@ Url to see changes :
 ## Configuration changes
 
 - Adding bundle ``MongoDBMigrationsBundle`` [#853](https://github.com/open-orchestra/open-orchestra/pull/853)
-- dependencies version are fixed : ``merge ~1.2.0``, ``backbone ~1.2.3``, ``jquery-minicolors ~2.2.3``, ``backbone.wreqr ~1.3.5``. [#1397](https://github.com/open-orchestra/open-orchestra-cms-bundle/pull/1397)
-- bower dependency ``underscore`` is removed, this package is include by ``backbone`` [#1397](https://github.com/open-orchestra/open-orchestra-cms-bundle/pull/1397)
-- dependencies version are fixed : ``merge ~1.2.0``, ``backbone ~1.2.3``, ``backbone.wreqr ~1.3.5``. [#136](https://github.com/open-orchestra/open-orchestra-media-admin-bundle/pull/136)
-
-## Other changes
-
-- New Bundle : MediaAdminModelBundle [#831](https://github.com/open-orchestra/open-orchestra/pull/831)
-- Upgrade to symfony 2.8.3 [#72](https://github.com/open-orchestra/open-orchestra-base-bundle/pull/72)
-- role ``ROLE_ACCESS_MOVE_NODE`` is renamed to ``ROLE_ACCESS_MOVE_TREE`` and is now a global role [#1480](https://github.com/open-orchestra/open-orchestra-cms-bundle/pull/1480)
-- Deleted nodes order is -1 [#1440](https://github.com/open-orchestra/open-orchestra-cms-bundle/pull/1440)
-- Redirect to the user edit form after user creation [#1408](https://github.com/open-orchestra/open-orchestra-cms-bundle/pull/1408)
-- Refacto const display strategies name [#1407](https://github.com/open-orchestra/open-orchestra-cms-bundle/pull/1407)
-- replace strings elastica_search and elastica_list by class constant [#21](https://github.com/open-orchestra/open-orchestra-elastica-bundle/pull/21)
-- Get master request in method where it is used and not in a constructor [#150](https://github.com/open-orchestra/open-orchestra-front-bundle/pull/150)
-- Add the robots meta in the page header [#138](https://github.com/open-orchestra/open-orchestra-front-bundle/pull/138)
-- Unskip a MediaStorageManager unit test [#8](https://github.com/open-orchestra/open-orchestra-media-file-bundle/pull/8)
+- Dependencies versions are fixed in cms bundle: ``merge ~1.2.0``, ``backbone ~1.2.3``, ``jquery-minicolors ~2.2.3``, ``backbone.wreqr ~1.3.5``. [#1397](https://github.com/open-orchestra/open-orchestra-cms-bundle/pull/1397)
+- Bower dependency ``underscore`` is removed, this package is included by ``backbone`` [#1397](https://github.com/open-orchestra/open-orchestra-cms-bundle/pull/1397)
+- Dependencies versions are fixed in admin bundle: ``merge ~1.2.0``, ``backbone ~1.2.3``, ``backbone.wreqr ~1.3.5``. [#136](https://github.com/open-orchestra/open-orchestra-media-admin-bundle/pull/136)
 - Add migration script for update of user groups collection,  futher documation about migration in http://open-orchestra.readthedocs.org/en/latest/hosting_guide/migration.html [#531](https://github.com/open-orchestra/open-orchestra-model-bundle/pull/531)
-- Node order validator don't checks deleted nodes [#526](https://github.com/open-orchestra/open-orchestra-model-bundle/pull/526)
-- Add findByNodeAndSiteSortedByVersion() request in NodeRepository [#514](https://github.com/open-orchestra/open-orchestra-model-bundle/pull/514)
-- Suppression of install of nodeJS by the provisioning, it is now installed by ``composer-extra-assets``. use now ``./bin/grunt`` for grunt and not ``./node_modules/.bin/grunt `` [#34](https://github.com/open-orchestra/open-orchestra-provision/pull/34)
 
 ## Bug fixes
 
@@ -91,25 +75,26 @@ Url to see changes :
 - Media events are not properly dispatched [#156](https://github.com/open-orchestra/open-orchestra-media-admin-bundle/pull/156)
 - Allow recursive merge on tinyMce Stfalcon parameters [#142](https://github.com/open-orchestra/open-orchestra-media-admin-bundle/pull/142)
 - Status of contents containing a media field can now be changed [#138](https://github.com/open-orchestra/open-orchestra-media-admin-bundle/pull/138)
-- Remove media managment in blocks when form is disabled [#137](https://github.com/open-orchestra/open-orchestra-media-admin-bundle/pull/137)
+- Remove media management in blocks when form is disabled [#137](https://github.com/open-orchestra/open-orchestra-media-admin-bundle/pull/137)
 - Fix access denied error on published node access [#524](https://github.com/open-orchestra/open-orchestra-model-bundle/pull/524)
 - Fix broken varnish 4 vcl [#29](https://github.com/open-orchestra/open-orchestra-provision/pull/29)
 - As the pixel developer google chrome is not more accessible, I have suppressed the selenium role from our provisioning [#27](https://github.com/open-orchestra/open-orchestra-provision/pull/27)
+- Fix back-to-list buttons on top in modal upload [#172](https://github.com/open-orchestra/open-orchestra-media-admin-bundle/pull/172)
 
 ## New features
 
-- Block menu are invalidate when a node is removed, moved, restore and the status of a node changes . [#1531](https://github.com/open-orchestra/open-orchestra-cms-bundle/pull/1531)
+- Block menu caches are invalidated when a node is removed, moved, restore and the status of a node changes . [#1531](https://github.com/open-orchestra/open-orchestra-cms-bundle/pull/1531)
 - add voter on role usage [#1530](https://github.com/open-orchestra/open-orchestra-cms-bundle/pull/1530)
 - increase ergo fo group form [#1522](https://github.com/open-orchestra/open-orchestra-cms-bundle/pull/1522)
-- When a content type is deleted, navigation menu is refresh [#1521](https://github.com/open-orchestra/open-orchestra-cms-bundle/pull/1521)
+- When a content type is deleted, navigation menu is refreshed [#1521](https://github.com/open-orchestra/open-orchestra-cms-bundle/pull/1521)
 - When a website is created, an homepage for this site is also created. [#1518](https://github.com/open-orchestra/open-orchestra-cms-bundle/pull/1518)
-- refresh the page after website creation to show it in the fiexed top nav list [#1515](https://github.com/open-orchestra/open-orchestra-cms-bundle/pull/1515)
+- refresh the page after website creation to show it in the fixed top nav list [#1515](https://github.com/open-orchestra/open-orchestra-cms-bundle/pull/1515)
 - fix save & back-to-list buttons on top [#1499](https://github.com/open-orchestra/open-orchestra-cms-bundle/pull/1499)
 - Move template menu entry from Editorial to Administration [#1485](https://github.com/open-orchestra/open-orchestra-cms-bundle/pull/1485)
 - allow to extend js form's behavior [#1473](https://github.com/open-orchestra/open-orchestra-cms-bundle/pull/1473)
 - add loader in group tab view [#1467](https://github.com/open-orchestra/open-orchestra-cms-bundle/pull/1467)
 - change new link to button [#1466](https://github.com/open-orchestra/open-orchestra-cms-bundle/pull/1466)
-- Add sortable option for the datatable [#1451](https://github.com/open-orchestra/open-orchestra-cms-bundle/pull/1451)
+- Add sortable option to the datatable [#1451](https://github.com/open-orchestra/open-orchestra-cms-bundle/pull/1451)
 - add boolean expression in keywords form type filter [#1442](https://github.com/open-orchestra/open-orchestra-cms-bundle/pull/1442)
 - Remove max length option on email field type [#1439](https://github.com/open-orchestra/open-orchestra-cms-bundle/pull/1439)
 - Datatable action buttons are disabled if the user hasn't the rights [#1438](https://github.com/open-orchestra/open-orchestra-cms-bundle/pull/1438)
@@ -123,8 +108,6 @@ Url to see changes :
 - Node cache-control policy differs with or without ESI support [#193](https://github.com/open-orchestra/open-orchestra-display-bundle/pull/193)
 - allow end user to format boolean condition in keywords filter [#41](https://github.com/open-orchestra/open-orchestra-libs/pull/41)
 - Media can be filtered on type when displayed from media folder [#179](https://github.com/open-orchestra/open-orchestra-media-admin-bundle/pull/179)
-- fix the new folder button on media modal [#177](https://github.com/open-orchestra/open-orchestra-media-admin-bundle/pull/177)
-- fix back-to-list buttons on top in modal upload [#172](https://github.com/open-orchestra/open-orchestra-media-admin-bundle/pull/172)
 - Media library: applications can now describe their own specific alternatives image formats [#144](https://github.com/open-orchestra/open-orchestra-media-admin-bundle/pull/144)
 - Add a "Back to list" button on the media upload form in a modal context [#133](https://github.com/open-orchestra/open-orchestra-media-admin-bundle/pull/133)
 - Media selection integrates now the alternative selector [#132](https://github.com/open-orchestra/open-orchestra-media-admin-bundle/pull/132)
@@ -132,7 +115,7 @@ Url to see changes :
 
 ## Deprecated
 
-- ``initializeNewNode``  is deprecated and replace by ``initializeNode`` in class ``OpenOrchestra\Backoffice\Manager\NodeManager``. this method will be removed in 1.2.0 [#1518](https://github.com/open-orchestra/open-orchestra-cms-bundle/pull/1518)
+- ``initializeNewNode``  is deprecated and replaced by ``initializeNode`` in class ``OpenOrchestra\Backoffice\Manager\NodeManager``. this method will be removed in 1.2.0 [#1518](https://github.com/open-orchestra/open-orchestra-cms-bundle/pull/1518)
 - rename class ``UpdateNodeRedirectionSubscriber`` to ``UpdateRedirectionNodeSubscriber`` [#1503](https://github.com/open-orchestra/open-orchestra-cms-bundle/pull/1503)
 - ``OpenOrchestra\Backoffice\Form\DataTransformer\ChoiceArrayToStringTransformer`` is now deprecated will be removed in 1.2.0 [#1472](https://github.com/open-orchestra/open-orchestra-cms-bundle/pull/1472)
 - ``OpenOrchestra\Backoffice\Form\DataTransformer\ChoiceStringToArrayTransformer`` is now deprecated will be removed in 1.2.0 [#1472](https://github.com/open-orchestra/open-orchestra-cms-bundle/pull/1472)
@@ -156,3 +139,19 @@ Url to see changes :
 - Disable multi website in media folder [#185](https://github.com/open-orchestra/open-orchestra-media-admin-bundle/pull/185)
 - Fixtures for production are cleaned [#530](https://github.com/open-orchestra/open-orchestra-model-bundle/pull/530)
 - In the front, the nodes should have the published flag to be displayed [#529](https://github.com/open-orchestra/open-orchestra-model-bundle/pull/529)
+
+## Other changes
+
+- New Bundle : MediaAdminModelBundle [#831](https://github.com/open-orchestra/open-orchestra/pull/831)
+- Upgrade to symfony 2.8.3 [#72](https://github.com/open-orchestra/open-orchestra-base-bundle/pull/72)
+- Role ``ROLE_ACCESS_MOVE_NODE`` is renamed to ``ROLE_ACCESS_MOVE_TREE`` and is now a global role [#1480](https://github.com/open-orchestra/open-orchestra-cms-bundle/pull/1480)
+- Deleted nodes order is -1 [#1440](https://github.com/open-orchestra/open-orchestra-cms-bundle/pull/1440)
+- Redirect to the user edit form after user creation [#1408](https://github.com/open-orchestra/open-orchestra-cms-bundle/pull/1408)
+- Refacto const display strategies name [#1407](https://github.com/open-orchestra/open-orchestra-cms-bundle/pull/1407)
+- Replace strings ``elastica_search`` and ``elastica_list`` by class constant [#21](https://github.com/open-orchestra/open-orchestra-elastica-bundle/pull/21)
+- Get master request in method where it is used and not in a constructor [#150](https://github.com/open-orchestra/open-orchestra-front-bundle/pull/150)
+- Add the robots meta in the page header [#138](https://github.com/open-orchestra/open-orchestra-front-bundle/pull/138)
+- Unskip a MediaStorageManager unit test [#8](https://github.com/open-orchestra/open-orchestra-media-file-bundle/pull/8)
+- Node order validator don't checks deleted nodes [#526](https://github.com/open-orchestra/open-orchestra-model-bundle/pull/526)
+- Add findByNodeAndSiteSortedByVersion() request in NodeRepository [#514](https://github.com/open-orchestra/open-orchestra-model-bundle/pull/514)
+- Suppression of install of nodeJS by the provisioning, it is now installed by ``composer-extra-assets``. use now ``./bin/grunt`` for grunt and not ``./node_modules/.bin/grunt `` [#34](https://github.com/open-orchestra/open-orchestra-provision/pull/34)
