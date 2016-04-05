@@ -2198,12 +2198,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "dec4e574c2efcbbd4b6441ef64334daa79edf8f2"
+                "reference": "064b38c16790249488e7a8b987acf1c9d7383c09"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/dec4e574c2efcbbd4b6441ef64334daa79edf8f2",
-                "reference": "dec4e574c2efcbbd4b6441ef64334daa79edf8f2",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/064b38c16790249488e7a8b987acf1c9d7383c09",
+                "reference": "064b38c16790249488e7a8b987acf1c9d7383c09",
                 "shasum": ""
             },
             "require": {
@@ -2218,13 +2218,13 @@
                 "doctrine/couchdb": "~1.0@dev",
                 "graylog2/gelf-php": "~1.0",
                 "jakub-onderka/php-parallel-lint": "0.9",
+                "php-amqplib/php-amqplib": "~2.4",
                 "php-console/php-console": "^3.1.3",
                 "phpunit/phpunit": "~4.5",
                 "phpunit/phpunit-mock-objects": "2.3.0",
                 "raven/raven": "^0.13",
                 "ruflin/elastica": ">=0.90 <3.0",
-                "swiftmailer/swiftmailer": "~5.3",
-                "videlalvaro/php-amqplib": "~2.4"
+                "swiftmailer/swiftmailer": "~5.3"
             },
             "suggest": {
                 "aws/aws-sdk-php": "Allow sending log messages to AWS services like DynamoDB",
@@ -2233,11 +2233,11 @@
                 "ext-mongo": "Allow sending log messages to a MongoDB server",
                 "graylog2/gelf-php": "Allow sending log messages to a GrayLog2 server",
                 "mongodb/mongodb": "Allow sending log messages to a MongoDB server via PHP Driver",
+                "php-amqplib/php-amqplib": "Allow sending log messages to an AMQP server using php-amqplib",
                 "php-console/php-console": "Allow sending log messages to Google Chrome",
                 "raven/raven": "Allow sending log messages to a Sentry server",
                 "rollbar/rollbar": "Allow sending log messages to Rollbar",
-                "ruflin/elastica": "Allow sending log messages to an Elastic Search server",
-                "videlalvaro/php-amqplib": "Allow sending log messages to an AMQP server using php-amqplib"
+                "ruflin/elastica": "Allow sending log messages to an Elastic Search server"
             },
             "type": "library",
             "extra": {
@@ -2268,7 +2268,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2016-03-26 08:27:31"
+            "time": "2016-04-02 13:12:58"
         },
         {
             "name": "mouf/nodejs-installer",
@@ -2372,12 +2372,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-base-api-bundle.git",
-                "reference": "eaab90c5c6ac135d5ef9e179db3ef381092c9f60"
+                "reference": "b7a67a434282c91bfaa44745874ca54dbec0eab5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-api-bundle/zipball/eaab90c5c6ac135d5ef9e179db3ef381092c9f60",
-                "reference": "eaab90c5c6ac135d5ef9e179db3ef381092c9f60",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-api-bundle/zipball/b7a67a434282c91bfaa44745874ca54dbec0eab5",
+                "reference": "b7a67a434282c91bfaa44745874ca54dbec0eab5",
                 "shasum": ""
             },
             "require": {
@@ -2413,7 +2413,7 @@
                 }
             ],
             "description": "This bundle provide the base bricks for the OpenOrchestra Api",
-            "time": "2016-03-15 09:21:25"
+            "time": "2016-04-04 07:19:41"
         },
         {
             "name": "open-orchestra/open-orchestra-base-api-mongo-model-bundle",
@@ -2558,12 +2558,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "7ad8d79cd648e346b1168886034045d7ffe70ecf"
+                "reference": "684af5b82fb74de9f215f73aad0918ad213b9e27"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/7ad8d79cd648e346b1168886034045d7ffe70ecf",
-                "reference": "7ad8d79cd648e346b1168886034045d7ffe70ecf",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/684af5b82fb74de9f215f73aad0918ad213b9e27",
+                "reference": "684af5b82fb74de9f215f73aad0918ad213b9e27",
                 "shasum": ""
             },
             "require": {
@@ -2642,7 +2642,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2016-03-31 09:01:43"
+            "time": "2016-04-05 09:34:18"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2699,12 +2699,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-elastica-bundle.git",
-                "reference": "a93b8733ebb51bd846356feebb0727c5faca69b3"
+                "reference": "dfedeb7c2fd3d7dfdf39caf9989b741d5147d8d1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-elastica-bundle/zipball/a93b8733ebb51bd846356feebb0727c5faca69b3",
-                "reference": "a93b8733ebb51bd846356feebb0727c5faca69b3",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-elastica-bundle/zipball/dfedeb7c2fd3d7dfdf39caf9989b741d5147d8d1",
+                "reference": "dfedeb7c2fd3d7dfdf39caf9989b741d5147d8d1",
                 "shasum": ""
             },
             "require": {
@@ -2745,7 +2745,7 @@
                 }
             ],
             "description": "An bundle to index Open Orchestra element",
-            "time": "2016-03-21 15:34:15"
+            "time": "2016-04-05 07:10:42"
         },
         {
             "name": "open-orchestra/open-orchestra-libs",
@@ -2800,12 +2800,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-admin-bundle.git",
-                "reference": "e6f3ec95fd232c0023f55ecf2194269d368f7c4c"
+                "reference": "8a6101aacbb1065eb7b6f78df7dfcf3068897cd6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/e6f3ec95fd232c0023f55ecf2194269d368f7c4c",
-                "reference": "e6f3ec95fd232c0023f55ecf2194269d368f7c4c",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/8a6101aacbb1065eb7b6f78df7dfcf3068897cd6",
+                "reference": "8a6101aacbb1065eb7b6f78df7dfcf3068897cd6",
                 "shasum": ""
             },
             "require": {
@@ -2872,7 +2872,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part for the media of OpenOrchestra",
-            "time": "2016-03-31 15:02:10"
+            "time": "2016-04-05 07:57:10"
         },
         {
             "name": "open-orchestra/open-orchestra-media-bundle",
@@ -2974,12 +2974,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
-                "reference": "3e1d29dcff1fa2fa8425c28d92eb11ac37d7d330"
+                "reference": "0c06fd869ea2a6c6fb3f873c27c850c9683b5ab3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/3e1d29dcff1fa2fa8425c28d92eb11ac37d7d330",
-                "reference": "3e1d29dcff1fa2fa8425c28d92eb11ac37d7d330",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/0c06fd869ea2a6c6fb3f873c27c850c9683b5ab3",
+                "reference": "0c06fd869ea2a6c6fb3f873c27c850c9683b5ab3",
                 "shasum": ""
             },
             "require": {
@@ -3015,7 +3015,7 @@
                 }
             ],
             "description": "An implemantation of the model-interface for OpenOrchestra on mongo",
-            "time": "2016-03-24 11:21:05"
+            "time": "2016-04-05 07:22:09"
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
@@ -3023,12 +3023,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-interface.git",
-                "reference": "c73b64848f85ac32ab7369d88d43b00654887ef8"
+                "reference": "b7e5b0d4469787509eb66c026c55459e5d4862fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/c73b64848f85ac32ab7369d88d43b00654887ef8",
-                "reference": "c73b64848f85ac32ab7369d88d43b00654887ef8",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/b7e5b0d4469787509eb66c026c55459e5d4862fc",
+                "reference": "b7e5b0d4469787509eb66c026c55459e5d4862fc",
                 "shasum": ""
             },
             "require": {
@@ -3061,7 +3061,7 @@
                 }
             ],
             "description": "Describe all entity and repository to implement for the whole OpenOrchestra project",
-            "time": "2016-03-30 07:53:08"
+            "time": "2016-04-05 07:22:41"
         },
         {
             "name": "open-orchestra/open-orchestra-mongo-libs",
@@ -3222,12 +3222,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "c7e26a21ba357863de030f0b9e701c7d04593774"
+                "reference": "1115ffa06bad72d01735d91f51eb022db556e205"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/c7e26a21ba357863de030f0b9e701c7d04593774",
-                "reference": "c7e26a21ba357863de030f0b9e701c7d04593774",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/1115ffa06bad72d01735d91f51eb022db556e205",
+                "reference": "1115ffa06bad72d01735d91f51eb022db556e205",
                 "shasum": ""
             },
             "require": {
@@ -3262,7 +3262,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2016-03-18 20:34:03"
+            "time": "2016-04-03 05:47:09"
         },
         {
             "name": "php-ffmpeg/php-ffmpeg",
@@ -4946,12 +4946,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "f0a4fa678465491947554f6687c5fca5e482f8ec"
+                "reference": "3d0afc03892719b7eaa5f2b8d93260a79f8c578e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/f0a4fa678465491947554f6687c5fca5e482f8ec",
-                "reference": "f0a4fa678465491947554f6687c5fca5e482f8ec",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/3d0afc03892719b7eaa5f2b8d93260a79f8c578e",
+                "reference": "3d0afc03892719b7eaa5f2b8d93260a79f8c578e",
                 "shasum": ""
             },
             "require": {
@@ -4999,7 +4999,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2016-01-29 10:45:45"
+            "time": "2016-04-01 06:54:57"
         }
     ],
     "packages-dev": [
