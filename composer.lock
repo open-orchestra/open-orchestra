@@ -1342,30 +1342,29 @@
         },
         {
             "name": "gedmo/doctrine-extensions",
-            "version": "v2.4.x-dev",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Atlantic18/DoctrineExtensions.git",
-                "reference": "585bddb1a3bbf18f7cc57af21631e311f0674876"
+                "reference": "9d5bc8afbd07298a4a5b420f29f44da744802ebb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/585bddb1a3bbf18f7cc57af21631e311f0674876",
-                "reference": "585bddb1a3bbf18f7cc57af21631e311f0674876",
+                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/9d5bc8afbd07298a4a5b420f29f44da744802ebb",
+                "reference": "9d5bc8afbd07298a4a5b420f29f44da744802ebb",
                 "shasum": ""
             },
             "require": {
                 "behat/transliterator": "~1.0",
                 "doctrine/common": "~2.4",
-                "php": ">=5.3.2"
+                "php": ">=5.4"
             },
             "require-dev": {
                 "doctrine/common": ">=2.5.0",
                 "doctrine/mongodb-odm": ">=1.0.2",
                 "doctrine/orm": ">=2.5.0",
-                "phpunit/phpunit": "~4.4",
-                "phpunit/phpunit-mock-objects": "~2.3",
-                "symfony/yaml": "~2.6"
+                "phpunit/phpunit": "*",
+                "symfony/yaml": "~2.6|~3.0"
             },
             "suggest": {
                 "doctrine/mongodb-odm": "to use the extensions with the MongoDB ODM",
@@ -1374,7 +1373,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.4.x-dev"
+                    "dev-master": "2.5.x-dev"
                 }
             },
             "autoload": {
@@ -1417,7 +1416,7 @@
                 "tree",
                 "uploadable"
             ],
-            "time": "2016-03-06 18:05:00"
+            "time": "2016-02-28 10:14:10"
         },
         {
             "name": "guzzle/guzzle",
@@ -2558,12 +2557,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "57e49a7c20c34613a3b38fee158ee81ee88f7cb8"
+                "reference": "c3eb6944d8e2212862c2b4c7bfda3f20f71a9bbc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/57e49a7c20c34613a3b38fee158ee81ee88f7cb8",
-                "reference": "57e49a7c20c34613a3b38fee158ee81ee88f7cb8",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/c3eb6944d8e2212862c2b4c7bfda3f20f71a9bbc",
+                "reference": "c3eb6944d8e2212862c2b4c7bfda3f20f71a9bbc",
                 "shasum": ""
             },
             "require": {
@@ -2642,7 +2641,7 @@
                 }
             ],
             "description": "This bundle provide the backoffice part of OpenOrchestra",
-            "time": "2016-04-06 15:53:41"
+            "time": "2016-04-06 16:34:22"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
