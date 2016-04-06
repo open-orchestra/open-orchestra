@@ -1,4 +1,4 @@
-# CHANGELOG for 1.1.0-RC
+# CHANGELOG from 1.1.0-beta to 1.1.0-RC
 
 Url to see changes : 
 
@@ -25,15 +25,11 @@ Url to see changes :
 ## New features
 
 - Test on mandatory main alias in site form [#1542](https://github.com/open-orchestra/open-orchestra-cms-bundle/pull/1542)
-- Remove permanently a entity in trash can [#1539](https://github.com/open-orchestra/open-orchestra-cms-bundle/pull/1539)
+- Remove permanently an entity in trash can [#1539](https://github.com/open-orchestra/open-orchestra-cms-bundle/pull/1539)
 - Enhance area form in template, node and area [#1537](https://github.com/open-orchestra/open-orchestra-cms-bundle/pull/1537)
-- When a content is deleted, it's removed to elastica index [#25](https://github.com/open-orchestra/open-orchestra-elastica-bundle/pull/25)
-- When a content is restored, it's added to elastica index [#25](https://github.com/open-orchestra/open-orchestra-elastica-bundle/pull/25)
-- A root folder is created when a new website is created [#190](https://github.com/open-orchestra/open-orchestra-media-admin-bundle/pull/190)
-
-## Manual changes
-- The BlockContainerInterface has a nex method: removeBlockWithKey [#173](https://github.com/open-orchestra/open-orchestra-model-interface/pull/173)
-So if you have implemented this interface, you need to update your class
+- When a content is deleted, it's removed from elastica index [#25](https://github.com/open-orchestra/open-orchestra-elastica-bundle/pull/25)
+- When a content is restored, it's added from elastica index [#25](https://github.com/open-orchestra/open-orchestra-elastica-bundle/pull/25)
+- A media root folder is created when a new website is created [#190](https://github.com/open-orchestra/open-orchestra-media-admin-bundle/pull/190)
 
 ## Bug fixes
 
@@ -45,7 +41,7 @@ So if you have implemented this interface, you need to update your class
 - Remove link constraint on media display block [#194](https://github.com/open-orchestra/open-orchestra-media-admin-bundle/pull/194)
 - Method ``testUniquenessInContext`` is now based on ``nodeId`` and not ``name`` [#543](https://github.com/open-orchestra/open-orchestra-model-bundle/pull/543)
 - Demo fixtures are updated to present block usage references [#542](https://github.com/open-orchestra/open-orchestra-model-bundle/pull/542)
-- Path on node is updated only if node isn't deleted [#541](https://github.com/open-orchestra/open-orchestra-model-bundle/pull/541)
+- Path on node is updated only if node is not deleted [#541](https://github.com/open-orchestra/open-orchestra-model-bundle/pull/541)
 
 ## Other changes
 
@@ -56,3 +52,5 @@ So if you have implemented this interface, you need to update your class
 - The `TrashItem` document has a new property `type` [#541](https://github.com/open-orchestra/open-orchestra-model-bundle/pull/541)
 - The `TrashItemInterface` has a new property `type` [#172](https://github.com/open-orchestra/open-orchestra-model-interface/pull/172)
 - The `TrashItemRepositoryInterface` has a new method `findByEntity($entityId)` [#172](https://github.com/open-orchestra/open-orchestra-model-interface/pull/172)
+## Manual changes
+- The `BlockContainerInterface` has a new method: `removeBlockWithKey` [#173](https://github.com/open-orchestra/open-orchestra-model-interface/pull/173)
