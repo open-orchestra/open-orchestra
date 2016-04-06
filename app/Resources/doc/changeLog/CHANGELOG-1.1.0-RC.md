@@ -31,6 +31,10 @@ Url to see changes :
 - When a content is restored, it's added to elastica index [#25](https://github.com/open-orchestra/open-orchestra-elastica-bundle/pull/25)
 - A root folder is created when a new website is created [#190](https://github.com/open-orchestra/open-orchestra-media-admin-bundle/pull/190)
 
+## Manual changes
+- The BlockContainerInterface has a nex method: removeBlockWithKey [#173](https://github.com/open-orchestra/open-orchestra-model-interface/pull/173)
+So if you have implemented this interface, you need to update your class
+
 ## Bug fixes
 
 - Fix position of property `validationGroups` in method `isValid` of `BaseApiBundle/Controller/BaseController` [#76](https://github.com/open-orchestra/open-orchestra-base-api-bundle/pull/76)
@@ -52,8 +56,3 @@ Url to see changes :
 - The `TrashItem` document has a new property `type` [#541](https://github.com/open-orchestra/open-orchestra-model-bundle/pull/541)
 - The `TrashItemInterface` has a new property `type` [#172](https://github.com/open-orchestra/open-orchestra-model-interface/pull/172)
 - The `TrashItemRepositoryInterface` has a new method `findByEntity($entityId)` [#172](https://github.com/open-orchestra/open-orchestra-model-interface/pull/172)
-
-## [OO-INTERFACE-UPDATE]
-
-- Add BlockContainerInterface::removeBlockWithKey [#173](https://github.com/open-orchestra/open-orchestra-model-interface/pull/173)
-
