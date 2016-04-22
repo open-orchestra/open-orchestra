@@ -2,7 +2,7 @@
   "name": "open-orchestra/open-orchestra",
   "license": "MIT",
   "type": "project",
-  "description": "Example of an OpenOrchestra Back Office implementation",
+  "description": "Example of an Open Orchestra Back Office implementation",
   "authors": [
     {
       "name": "OpenOrchestra community",
@@ -33,8 +33,6 @@
     "open-orchestra/open-orchestra-media-bundle": "@dev",
     "open-orchestra/open-orchestra-media-file-bundle": "@dev",
     "open-orchestra/open-orchestra-mongo-libs": "@dev",
-    "solution/mongo-odm-aggregation-bundle": "@dev",
-    "solution/pipeline-builder": "@dev",
     "innocead/captcha-bundle": "@dev",
     "friendsofsymfony/user-bundle": "@dev"
   },
