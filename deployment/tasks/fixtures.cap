@@ -1,26 +1,24 @@
-namespace :symfony do
+namespace :orchestra do
     namespace :mongo do
-        namespace :all_fixtures do
-            desc 'Load all fixtures'
-            task :load do
-                on roles(:app) do
-                    execute "cd #{fetch(:deploy_to)}/current && php app/console orchestra:mongodb:fixtures:load --env=prod --type=all "
+        namespace :fixtures do
+            namespace :load do
+                desc 'Load all fixtures'
+                task :all do
+                    on roles(:app) do
+                        execute "cd #{fetch(:deploy_to)}/current && php app/console orchestra:mongodb:fixtures:load --env=prod --type=all "
+                    end
                 end
-            end
-        end
-        namespace :prod_fixtures do
-            desc 'Load production fixtures'
-            task :load do
-                on roles(:app) do
-                    execute "cd #{fetch(:deploy_to)}/current && php app/console orchestra:mongodb:fixtures:load --env=prod --type=production "
+                desc 'Load production fixtures'
+                task :production do
+                    on roles(:app) do
+                        execute "cd #{fetch(:deploy_to)}/current && php app/console orchestra:mongodb:fixtures:load --env=prod --type=production "
+                    end
                 end
-            end
-        end
-        namespace :functional_fixtures do
-            desc 'Load functional fixtures'
-            task :load do
-                on roles(:app) do
-                    execute "cd #{fetch(:deploy_to)}/current && php app/console orchestra:mongodb:fixtures:load --env=prod --type=functional "
+                desc 'Load functional fixtures'
+                task :functional do
+                    on roles(:app) do
+                        execute "cd #{fetch(:deploy_to)}/current && php app/console orchestra:mongodb:fixtures:load --env=prod --type=functional "
+                    end
                 end
             end
         end
