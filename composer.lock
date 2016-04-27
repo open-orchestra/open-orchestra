@@ -2581,12 +2581,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "3f93e6f7f3e072a7c543f44015db1f1354d054ec"
+                "reference": "d42680f4f6ce0ceb488f4ddb67f0c9933c6ec483"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/3f93e6f7f3e072a7c543f44015db1f1354d054ec",
-                "reference": "3f93e6f7f3e072a7c543f44015db1f1354d054ec",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/d42680f4f6ce0ceb488f4ddb67f0c9933c6ec483",
+                "reference": "d42680f4f6ce0ceb488f4ddb67f0c9933c6ec483",
                 "shasum": ""
             },
             "require": {
@@ -2673,7 +2673,7 @@
                 }
             ],
             "description": "This bundle provide the Back Office part of Open Orchestra",
-            "time": "2016-04-26 15:20:05"
+            "time": "2016-04-27 09:06:38"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -3277,12 +3277,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-workflow-function-bundle.git",
-                "reference": "ae8ddf46063704417dac60b2789fd033f09bc6a2"
+                "reference": "2dee6ee21048c8b8960b3475b84e1d51fb2b1afb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-workflow-function-bundle/zipball/ae8ddf46063704417dac60b2789fd033f09bc6a2",
-                "reference": "ae8ddf46063704417dac60b2789fd033f09bc6a2",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-workflow-function-bundle/zipball/2dee6ee21048c8b8960b3475b84e1d51fb2b1afb",
+                "reference": "2dee6ee21048c8b8960b3475b84e1d51fb2b1afb",
                 "shasum": ""
             },
             "require": {
@@ -3334,7 +3334,7 @@
                 }
             ],
             "description": "A workflow function bundle for Open Orchestra",
-            "time": "2016-04-26 08:17:19"
+            "time": "2016-04-27 09:06:49"
         },
         {
             "name": "paragonie/random_compat",
