@@ -21,7 +21,9 @@
     "open-orchestra/open-orchestra-media-admin-bundle": "~1.1.0",
     "open-orchestra/open-orchestra-model-bundle": "~1.1.0",
     "open-orchestra/open-orchestra-base-api-mongo-model-bundle": "~1.1.0",
-    "open-orchestra/open-orchestra-elastica-bundle": "~1.1.0"
+    "open-orchestra/open-orchestra-elastica-bundle": "~1.1.0",
+    "innocead/captcha-bundle": "@dev",
+    "friendsofsymfony/user-bundle": "@dev"
   },
   "require-dev": {
     "jmikola/geojson": "~1.0",
