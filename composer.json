@@ -16,14 +16,25 @@
   },
   "require": {
     "incenteev/composer-parameter-handler": "~2.0",
-    "open-orchestra/open-orchestra-cms-bundle": "~1.1.0",
-    "open-orchestra/open-orchestra-workflow-function-bundle": "~1.1.0",
-    "open-orchestra/open-orchestra-media-admin-bundle": "~1.1.0",
-    "open-orchestra/open-orchestra-model-bundle": "~1.1.0",
-    "open-orchestra/open-orchestra-base-api-mongo-model-bundle": "~1.1.0",
-    "open-orchestra/open-orchestra-elastica-bundle": "~1.1.0",
+    "open-orchestra/open-orchestra-cms-bundle": "1.1.*@dev",
+    "open-orchestra/open-orchestra-workflow-function-bundle": "1.1.*@dev",
+    "open-orchestra/open-orchestra-media-admin-bundle": "1.1.*@dev",
+    "open-orchestra/open-orchestra-model-bundle": "1.1.*@dev",
+    "open-orchestra/open-orchestra-base-api-mongo-model-bundle": "1.1.*@dev",
+    "open-orchestra/open-orchestra-elastica-bundle": "1.1.*@dev",
     "innocead/captcha-bundle": "@dev",
-    "friendsofsymfony/user-bundle": "@dev"
+    "friendsofsymfony/user-bundle": "@dev",
+
+    "open-orchestra/open-orchestra-base-bundle": "@dev",
+    "open-orchestra/open-orchestra-bbcode-bundle": "@dev",
+    "open-orchestra/open-orchestra-libs": "@dev",
+    "open-orchestra/open-orchestra-base-api-bundle": "@dev",
+    "open-orchestra/open-orchestra-display-bundle": "@dev",
+    "open-orchestra/open-orchestra-user-bundle": "@dev",
+    "open-orchestra/open-orchestra-model-interface": "@dev",
+    "open-orchestra/open-orchestra-media-bundle": "@dev",
+    "open-orchestra/open-orchestra-media-file-bundle": "@dev",
+    "open-orchestra/open-orchestra-mongo-libs": "@dev"
   },
   "require-dev": {
     "jmikola/geojson": "~1.0",
