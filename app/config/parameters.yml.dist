@@ -7,7 +7,7 @@ parameters:
     default_locale:            en
     secret:            SRiesraIEURNSTeiuRnsAIErnsEA
 
-    router.request_context.host: admin.openorchestra.dev
+    router.request_context.host: admin.openorchestra.1-0.dev
     router.request_context.base_url: /app_dev.php
 
     open_orchestra_cms.mongodb.server: mongodb://localhost:27017
@@ -21,4 +21,4 @@ parameters:
     fos_http_cache.proxy_client.varnish.servers: [127.0.0.1:6081]
     fos_http_cache.proxy_client.varnish.base_url: %router.request_context.host%:6081
 
-    media_domain: media.openorchestra.inte
+    media_domain: media.openorchestra.1-0.dev
