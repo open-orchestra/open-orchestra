@@ -2373,12 +2373,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-base-api-bundle.git",
-                "reference": "e3f682bc7cf5efcb4f4c06ff45b88d9ed8715241"
+                "reference": "d304374e9d28a36d9db402644ef36aaf364ce282"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-api-bundle/zipball/e3f682bc7cf5efcb4f4c06ff45b88d9ed8715241",
-                "reference": "e3f682bc7cf5efcb4f4c06ff45b88d9ed8715241",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-api-bundle/zipball/d304374e9d28a36d9db402644ef36aaf364ce282",
+                "reference": "d304374e9d28a36d9db402644ef36aaf364ce282",
                 "shasum": ""
             },
             "require": {
@@ -2419,7 +2419,7 @@
                 }
             ],
             "description": "This bundle provide the base bricks for the OpenOrchestra Api",
-            "time": "2016-04-28 09:06:17"
+            "time": "2016-05-02 12:53:35"
         },
         {
             "name": "open-orchestra/open-orchestra-base-api-mongo-model-bundle",
@@ -2477,12 +2477,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-base-bundle.git",
-                "reference": "90e4d59a1fffbbac9fd9337e0c5a0cc659e3ce66"
+                "reference": "4655c2c3cecf5f255d3f674f29ce45cf93b62225"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-bundle/zipball/90e4d59a1fffbbac9fd9337e0c5a0cc659e3ce66",
-                "reference": "90e4d59a1fffbbac9fd9337e0c5a0cc659e3ce66",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-bundle/zipball/4655c2c3cecf5f255d3f674f29ce45cf93b62225",
+                "reference": "4655c2c3cecf5f255d3f674f29ce45cf93b62225",
                 "shasum": ""
             },
             "require": {
@@ -2525,7 +2525,7 @@
                 }
             ],
             "description": "The OpenOrchestra base bundle",
-            "time": "2016-04-28 09:07:31"
+            "time": "2016-05-02 07:45:55"
         },
         {
             "name": "open-orchestra/open-orchestra-bbcode-bundle",
@@ -2581,12 +2581,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "97d386f3d3ed0e674571691f5b3e830acad35164"
+                "reference": "b3026c593de0fcea69c727287260c03dca183e4c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/97d386f3d3ed0e674571691f5b3e830acad35164",
-                "reference": "97d386f3d3ed0e674571691f5b3e830acad35164",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/b3026c593de0fcea69c727287260c03dca183e4c",
+                "reference": "b3026c593de0fcea69c727287260c03dca183e4c",
                 "shasum": ""
             },
             "require": {
@@ -2673,7 +2673,7 @@
                 }
             ],
             "description": "This bundle provide the Back Office part of Open Orchestra",
-            "time": "2016-04-29 13:23:47"
+            "time": "2016-05-02 14:31:13"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2856,12 +2856,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-admin-bundle.git",
-                "reference": "84bf94ba0a5db5a37331a54012245523b091fe6d"
+                "reference": "f6438a1e306f78f2baae9e7f80af7306e88a778f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/84bf94ba0a5db5a37331a54012245523b091fe6d",
-                "reference": "84bf94ba0a5db5a37331a54012245523b091fe6d",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/f6438a1e306f78f2baae9e7f80af7306e88a778f",
+                "reference": "f6438a1e306f78f2baae9e7f80af7306e88a778f",
                 "shasum": ""
             },
             "require": {
@@ -2942,7 +2942,7 @@
                 }
             ],
             "description": "This bundle integrate the media administration in the Back Office of Open Orchestra",
-            "time": "2016-04-29 08:00:35"
+            "time": "2016-05-02 13:05:37"
         },
         {
             "name": "open-orchestra/open-orchestra-media-bundle",
@@ -4117,16 +4117,16 @@
         },
         {
             "name": "swiftmailer/swiftmailer",
-            "version": "v5.4.1",
+            "version": "v5.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "0697e6aa65c83edf97bb0f23d8763f94e3f11421"
+                "reference": "d8db871a54619458a805229a057ea2af33c753e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/0697e6aa65c83edf97bb0f23d8763f94e3f11421",
-                "reference": "0697e6aa65c83edf97bb0f23d8763f94e3f11421",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/d8db871a54619458a805229a057ea2af33c753e8",
+                "reference": "d8db871a54619458a805229a057ea2af33c753e8",
                 "shasum": ""
             },
             "require": {
@@ -4166,7 +4166,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2015-06-06 14:19:39"
+            "time": "2016-05-01 08:45:47"
         },
         {
             "name": "symfony/assetic-bundle",
