@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "53c5c817114ea7680e8957defebed9ba",
+    "hash": "a8b3880ecf2673578df62bc34a4b9bcd",
     "content-hash": "2baa2509820382f1b1590cb4b97720f2",
     "packages": [
         {
@@ -255,12 +255,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/collections.git",
-                "reference": "9f89fd349fd2b537be8a0a0c41f87f2f640dfc8a"
+                "reference": "4a9f909f73a2f70be8cd8cdd5b72ce376f21db26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/collections/zipball/9f89fd349fd2b537be8a0a0c41f87f2f640dfc8a",
-                "reference": "9f89fd349fd2b537be8a0a0c41f87f2f640dfc8a",
+                "url": "https://api.github.com/repos/doctrine/collections/zipball/4a9f909f73a2f70be8cd8cdd5b72ce376f21db26",
+                "reference": "4a9f909f73a2f70be8cd8cdd5b72ce376f21db26",
                 "shasum": ""
             },
             "require": {
@@ -313,7 +313,7 @@
                 "collections",
                 "iterator"
             ],
-            "time": "2016-03-31 10:10:15"
+            "time": "2016-04-28 05:33:48"
         },
         {
             "name": "doctrine/common",
@@ -997,12 +997,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSUserBundle.git",
-                "reference": "16b04c49af05dd3fb381e4abe04f0e5e231ac76d"
+                "reference": "def27463609e24af410b2606f0062de46fab5662"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/16b04c49af05dd3fb381e4abe04f0e5e231ac76d",
-                "reference": "16b04c49af05dd3fb381e4abe04f0e5e231ac76d",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/def27463609e24af410b2606f0062de46fab5662",
+                "reference": "def27463609e24af410b2606f0062de46fab5662",
                 "shasum": ""
             },
             "require": {
@@ -1058,7 +1058,7 @@
             "keywords": [
                 "User management"
             ],
-            "time": "2016-03-08 11:05:28"
+            "time": "2016-04-28 10:51:07"
         },
         {
             "name": "gedmo/doctrine-extensions",
@@ -1467,12 +1467,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/serializer.git",
-                "reference": "fe13a1f993ea3456e195b7820692f2eb2b6bbb48"
+                "reference": "2b16866a8716b0477309232f169edcadb6997617"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/serializer/zipball/fe13a1f993ea3456e195b7820692f2eb2b6bbb48",
-                "reference": "fe13a1f993ea3456e195b7820692f2eb2b6bbb48",
+                "url": "https://api.github.com/repos/schmittjoh/serializer/zipball/2b16866a8716b0477309232f169edcadb6997617",
+                "reference": "2b16866a8716b0477309232f169edcadb6997617",
                 "shasum": ""
             },
             "require": {
@@ -1532,7 +1532,7 @@
                 "serialization",
                 "xml"
             ],
-            "time": "2015-10-27 09:24:41"
+            "time": "2016-04-29 05:37:44"
         },
         {
             "name": "jms/serializer-bundle",
@@ -1830,12 +1830,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "04dedae4a81eeb2135eeb10b5323935f879ced0a"
+                "reference": "b23ddb363f28b41d790744197c4cf71e3fdccfe4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/04dedae4a81eeb2135eeb10b5323935f879ced0a",
-                "reference": "04dedae4a81eeb2135eeb10b5323935f879ced0a",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/b23ddb363f28b41d790744197c4cf71e3fdccfe4",
+                "reference": "b23ddb363f28b41d790744197c4cf71e3fdccfe4",
                 "shasum": ""
             },
             "require": {
@@ -1900,7 +1900,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2016-04-15 16:52:32"
+            "time": "2016-04-20 19:08:06"
         },
         {
             "name": "open-orchestra/open-orchestra-base-api-bundle",
@@ -2314,12 +2314,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
-                "reference": "d5afc40e03fcc53298045e853b300aae60242e8b"
+                "reference": "c9c1146dc574bb77887b05e6a5830272d7097d52"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/d5afc40e03fcc53298045e853b300aae60242e8b",
-                "reference": "d5afc40e03fcc53298045e853b300aae60242e8b",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/c9c1146dc574bb77887b05e6a5830272d7097d52",
+                "reference": "c9c1146dc574bb77887b05e6a5830272d7097d52",
                 "shasum": ""
             },
             "require": {
@@ -2358,7 +2358,7 @@
                 }
             ],
             "description": "An implemantation of the model-interface for OpenOrchestra on mongo",
-            "time": "2016-04-14 13:40:19"
+            "time": "2016-05-02 11:53:40"
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
@@ -2979,18 +2979,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/f1nder/SolutionMongoAggregationBundle.git",
-                "reference": "198e92c5a1edbdb41da97ed5a45d1d89d6d324b5"
+                "reference": "6b2a64430a567f97a2ec68b8b45da6e196742deb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/f1nder/SolutionMongoAggregationBundle/zipball/198e92c5a1edbdb41da97ed5a45d1d89d6d324b5",
-                "reference": "198e92c5a1edbdb41da97ed5a45d1d89d6d324b5",
+                "url": "https://api.github.com/repos/f1nder/SolutionMongoAggregationBundle/zipball/6b2a64430a567f97a2ec68b8b45da6e196742deb",
+                "reference": "6b2a64430a567f97a2ec68b8b45da6e196742deb",
                 "shasum": ""
             },
             "require": {
                 "doctrine/mongodb-odm-bundle": "~3.0",
                 "php": ">=5.4.0",
-                "solution/pipeline-builder": "dev-master"
+                "solution/pipeline-builder": "~0.1"
             },
             "type": "symfony-bundle",
             "autoload": {
@@ -3016,11 +3016,11 @@
                 "pipeline",
                 "query"
             ],
-            "time": "2015-11-04 13:25:43"
+            "time": "2016-04-22 07:39:15"
         },
         {
             "name": "solution/pipeline-builder",
-            "version": "dev-master",
+            "version": "v0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/f1nder/SolutionPipelineBuilder.git",
@@ -3042,8 +3042,7 @@
             "authors": [
                 {
                     "name": "Aleksandr Moroz",
-                    "email": "netstroix@gmail.com",
-                    "homepage": "http://comingsoon.com"
+                    "email": "netstroix@gmail.com"
                 }
             ],
             "description": "Build pipeline for Mongo Aggregation Query",
@@ -3174,12 +3173,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "fffbc0e2a7e376dbb0a4b5f2ff6847330f20ccf9"
+                "reference": "68f50da0fdd6cb0146d17d6bde20b76e0e57e7fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/fffbc0e2a7e376dbb0a4b5f2ff6847330f20ccf9",
-                "reference": "fffbc0e2a7e376dbb0a4b5f2ff6847330f20ccf9",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/68f50da0fdd6cb0146d17d6bde20b76e0e57e7fb",
+                "reference": "68f50da0fdd6cb0146d17d6bde20b76e0e57e7fb",
                 "shasum": ""
             },
             "require": {
@@ -3219,7 +3218,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2016-01-03 15:42:47"
+            "time": "2016-05-01 08:46:16"
         },
         {
             "name": "symfony/assetic-bundle",
@@ -3525,12 +3524,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "2f0b8f8f3fd751826d48f4b72019d2514c2fd98e"
+                "reference": "fb92d7a04a2779e4bd336c75c4b769980d4f0264"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/2f0b8f8f3fd751826d48f4b72019d2514c2fd98e",
-                "reference": "2f0b8f8f3fd751826d48f4b72019d2514c2fd98e",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/fb92d7a04a2779e4bd336c75c4b769980d4f0264",
+                "reference": "fb92d7a04a2779e4bd336c75c4b769980d4f0264",
                 "shasum": ""
             },
             "require": {
@@ -3644,7 +3643,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2016-04-20 06:32:07"
+            "time": "2016-04-29 10:50:16"
         },
         {
             "name": "twig/extensions",
@@ -3921,12 +3920,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "b02221e42163be673f9b44a0bc92a8b4907a7c6d"
+                "reference": "80138299aadb590ce3fd0b75d30343fff9f8d0a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/b02221e42163be673f9b44a0bc92a8b4907a7c6d",
-                "reference": "b02221e42163be673f9b44a0bc92a8b4907a7c6d",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/80138299aadb590ce3fd0b75d30343fff9f8d0a8",
+                "reference": "80138299aadb590ce3fd0b75d30343fff9f8d0a8",
                 "shasum": ""
             },
             "require": {
@@ -3975,7 +3974,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2016-02-21 17:41:21"
+            "time": "2016-04-29 12:18:42"
         },
         {
             "name": "phpunit/php-code-coverage",
