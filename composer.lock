@@ -2581,12 +2581,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "9fb326baacff304466f34777dcd39c3754229f59"
+                "reference": "db30a75b84f6a0f871af6106a20c49928b90df2a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/9fb326baacff304466f34777dcd39c3754229f59",
-                "reference": "9fb326baacff304466f34777dcd39c3754229f59",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/db30a75b84f6a0f871af6106a20c49928b90df2a",
+                "reference": "db30a75b84f6a0f871af6106a20c49928b90df2a",
                 "shasum": ""
             },
             "require": {
@@ -2616,23 +2616,28 @@
                 "branch-alias": {
                     "dev-master": "1.2.x-dev"
                 },
+                "mouf": {
+                    "nodejs": {
+                        "version": "~4.4.3"
+                    }
+                },
                 "require-npm": {
-                    "bower": "~1.3",
+                    "bower": "~1.7",
                     "grunt": "~0.4",
-                    "grunt-cli": "~0.1",
-                    "grunt-contrib-symlink": "~0.2",
-                    "grunt-contrib-less": "~1.0.0",
-                    "grunt-contrib-cssmin": "~0.7",
-                    "grunt-contrib-coffee": "~0.8",
-                    "grunt-contrib-uglify": "~0.2",
-                    "grunt-contrib-concat": "~0.3",
-                    "grunt-contrib-watch": "~0.4",
-                    "grunt-contrib-clean": "~0.5",
+                    "grunt-cli": "~1.2",
+                    "grunt-contrib-symlink": "~1.0",
+                    "grunt-contrib-less": "~1.3.0",
+                    "grunt-contrib-cssmin": "~1.0",
+                    "grunt-contrib-coffee": "~1.0",
+                    "grunt-contrib-uglify": "~1.0",
+                    "grunt-contrib-concat": "~1.0",
+                    "grunt-contrib-watch": "~1.0",
+                    "grunt-contrib-clean": "~1.0",
                     "grunt-js-test": "1.5.x",
                     "grunt-commands": "~0.1",
-                    "coffee-script": "~1.9.1",
-                    "load-grunt-tasks": "~3.2.0",
-                    "glob": "~5.0.10",
+                    "coffee-script": "~1.10.0",
+                    "load-grunt-tasks": "~3.5.0",
+                    "glob": "~7.0.3",
                     "merge": "~1.2.0"
                 },
                 "expose-npm-packages": true,
@@ -2673,7 +2678,7 @@
                 }
             ],
             "description": "This bundle provide the Back Office part of Open Orchestra",
-            "time": "2016-05-03 09:47:48"
+            "time": "2016-05-09 09:40:02"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2856,12 +2861,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-admin-bundle.git",
-                "reference": "22c7b31a8241ec9d1092bfc758e485927cbe07c2"
+                "reference": "dc23a5b5b54eccdc59e8a76d1d4e82caaa291391"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/22c7b31a8241ec9d1092bfc758e485927cbe07c2",
-                "reference": "22c7b31a8241ec9d1092bfc758e485927cbe07c2",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/dc23a5b5b54eccdc59e8a76d1d4e82caaa291391",
+                "reference": "dc23a5b5b54eccdc59e8a76d1d4e82caaa291391",
                 "shasum": ""
             },
             "require": {
@@ -2896,22 +2901,27 @@
                 "branch-alias": {
                     "dev-master": "1.2.x-dev"
                 },
+                "mouf": {
+                    "nodejs": {
+                        "version": "~4.4.3"
+                    }
+                },
                 "require-npm": {
-                    "bower": "~1.3",
+                    "bower": "~1.7",
                     "grunt": "~0.4",
-                    "grunt-cli": "~0.1",
-                    "grunt-contrib-symlink": "~0.2",
-                    "grunt-contrib-less": "~1.0.0",
-                    "grunt-contrib-cssmin": "~0.7",
-                    "grunt-contrib-coffee": "~0.8",
-                    "grunt-contrib-uglify": "~0.2",
-                    "grunt-contrib-concat": "~0.3",
-                    "grunt-contrib-watch": "~0.4",
-                    "grunt-contrib-clean": "~0.5",
+                    "grunt-cli": "~1.2",
+                    "grunt-contrib-symlink": "~1.0",
+                    "grunt-contrib-less": "~1.3.0",
+                    "grunt-contrib-cssmin": "~1.0",
+                    "grunt-contrib-coffee": "~1.0",
+                    "grunt-contrib-uglify": "~1.0",
+                    "grunt-contrib-concat": "~1.0",
+                    "grunt-contrib-watch": "~1.0",
+                    "grunt-contrib-clean": "~1.0",
                     "grunt-commands": "~0.1",
-                    "coffee-script": "~1.9.1",
-                    "load-grunt-tasks": "~3.2.0",
-                    "glob": "~5.0.10",
+                    "coffee-script": "~1.10.0",
+                    "load-grunt-tasks": "~3.5.0",
+                    "glob": "~7.0.3",
                     "merge": "~1.2.0"
                 },
                 "expose-npm-packages": true,
@@ -2942,7 +2952,7 @@
                 }
             ],
             "description": "This bundle integrate the media administration in the Back Office of Open Orchestra",
-            "time": "2016-05-03 08:52:58"
+            "time": "2016-05-09 09:40:29"
         },
         {
             "name": "open-orchestra/open-orchestra-media-bundle",
@@ -2950,12 +2960,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-bundle.git",
-                "reference": "766eec9e063a6486238f934738e89a200ecd9b9f"
+                "reference": "d40ba89c0d10cdf23f9b3bae3b6f0225537259c8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/766eec9e063a6486238f934738e89a200ecd9b9f",
-                "reference": "766eec9e063a6486238f934738e89a200ecd9b9f",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/d40ba89c0d10cdf23f9b3bae3b6f0225537259c8",
+                "reference": "d40ba89c0d10cdf23f9b3bae3b6f0225537259c8",
                 "shasum": ""
             },
             "require": {
@@ -3001,7 +3011,7 @@
                 }
             ],
             "description": "A media bundle for Open Orchestra",
-            "time": "2016-04-29 07:58:20"
+            "time": "2016-05-09 07:08:59"
         },
         {
             "name": "open-orchestra/open-orchestra-media-file-bundle",
@@ -3277,12 +3287,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-workflow-function-bundle.git",
-                "reference": "8c857c275586a630dcfed5451226e87722e97fef"
+                "reference": "b64b74a5a84773696a35c0ed58d5e533bf20096f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-workflow-function-bundle/zipball/8c857c275586a630dcfed5451226e87722e97fef",
-                "reference": "8c857c275586a630dcfed5451226e87722e97fef",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-workflow-function-bundle/zipball/b64b74a5a84773696a35c0ed58d5e533bf20096f",
+                "reference": "b64b74a5a84773696a35c0ed58d5e533bf20096f",
                 "shasum": ""
             },
             "require": {
@@ -3334,7 +3344,7 @@
                 }
             ],
             "description": "A workflow function bundle for Open Orchestra",
-            "time": "2016-04-28 09:29:03"
+            "time": "2016-05-09 09:40:15"
         },
         {
             "name": "paragonie/random_compat",
@@ -5817,16 +5827,16 @@
         },
         {
             "name": "sebastian/environment",
-            "version": "1.3.5",
+            "version": "1.3.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/environment.git",
-                "reference": "dc7a29032cf72b54f36dac15a1ca5b3a1b6029bf"
+                "reference": "2292b116f43c272ff4328083096114f84ea46a56"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/dc7a29032cf72b54f36dac15a1ca5b3a1b6029bf",
-                "reference": "dc7a29032cf72b54f36dac15a1ca5b3a1b6029bf",
+                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/2292b116f43c272ff4328083096114f84ea46a56",
+                "reference": "2292b116f43c272ff4328083096114f84ea46a56",
                 "shasum": ""
             },
             "require": {
@@ -5863,7 +5873,7 @@
                 "environment",
                 "hhvm"
             ],
-            "time": "2016-02-26 18:40:46"
+            "time": "2016-05-04 07:59:13"
         },
         {
             "name": "sebastian/exporter",
