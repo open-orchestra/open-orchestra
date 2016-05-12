@@ -1,9 +1,25 @@
-namespace :symfony do
+namespace :orchestra do
     namespace :mongo do
-        desc 'Load fixtures'
-        task :load_fixtures do
-            on roles(:app) do
-                execute "cd #{fetch(:deploy_to)}/current && php app/console doctrine:mongodb:fixtures:load --env=prod "
+        namespace :fixtures do
+            namespace :load do
+                desc 'Load all fixtures'
+                task :all do
+                    on roles(:app) do
+                        execute "cd #{fetch(:deploy_to)}/current && php app/console orchestra:mongodb:fixtures:load --env=prod --type=all "
+                    end
+                end
+                desc 'Load production fixtures'
+                task :production do
+                    on roles(:app) do
+                        execute "cd #{fetch(:deploy_to)}/current && php app/console orchestra:mongodb:fixtures:load --env=prod --type=production "
+                    end
+                end
+                desc 'Load functional fixtures'
+                task :functional do
+                    on roles(:app) do
+                        execute "cd #{fetch(:deploy_to)}/current && php app/console orchestra:mongodb:fixtures:load --env=prod --type=functional "
+                    end
+                end
             end
         end
     end
