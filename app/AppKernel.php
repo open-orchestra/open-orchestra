@@ -23,7 +23,6 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
 
             new Doctrine\Bundle\MongoDBBundle\DoctrineMongoDBBundle(),
-            new Snc\RedisBundle\SncRedisBundle(),
 
             new JMS\SerializerBundle\JMSSerializerBundle(),
             new FOS\UserBundle\FOSUserBundle(),
