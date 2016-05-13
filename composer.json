@@ -41,7 +41,9 @@
 
   "require-dev": {
     "phake/phake": "~2.1.0",
-    "phpunit/phpunit" : "~4.8.0"
+    "phpunit/phpunit" : "~4.8.0",
+
+    "sensio/generator-bundle": "~2.5.3"
   },
 
   "scripts": {
