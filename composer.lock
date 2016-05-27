@@ -1276,12 +1276,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSUserBundle.git",
-                "reference": "abb35b94ed8ec78a504c9e1a2cd803d85d3ffad9"
+                "reference": "d1fccc6335b74beca94525551cacc06b256ed261"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/abb35b94ed8ec78a504c9e1a2cd803d85d3ffad9",
-                "reference": "abb35b94ed8ec78a504c9e1a2cd803d85d3ffad9",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/d1fccc6335b74beca94525551cacc06b256ed261",
+                "reference": "d1fccc6335b74beca94525551cacc06b256ed261",
                 "shasum": ""
             },
             "require": {
@@ -1337,7 +1337,7 @@
             "keywords": [
                 "User management"
             ],
-            "time": "2016-05-13 11:27:34"
+            "time": "2016-05-27 12:14:43"
         },
         {
             "name": "gedmo/doctrine-extensions",
@@ -2475,12 +2475,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-base-bundle.git",
-                "reference": "16ffe5437ff4747628d8165bbd5c948a75a60bcc"
+                "reference": "1748fcdbdd6a2d2bf93a69d70069efbe353ac25c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-bundle/zipball/16ffe5437ff4747628d8165bbd5c948a75a60bcc",
-                "reference": "16ffe5437ff4747628d8165bbd5c948a75a60bcc",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-bundle/zipball/1748fcdbdd6a2d2bf93a69d70069efbe353ac25c",
+                "reference": "1748fcdbdd6a2d2bf93a69d70069efbe353ac25c",
                 "shasum": ""
             },
             "require": {
@@ -2519,7 +2519,7 @@
                 }
             ],
             "description": "The OpenOrchestra base bundle",
-            "time": "2016-05-12 14:57:59"
+            "time": "2016-05-27 12:32:07"
         },
         {
             "name": "open-orchestra/open-orchestra-bbcode-bundle",
@@ -2574,12 +2574,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "80d10f72ae74519544612c5145e4217685aea16d"
+                "reference": "d43f91ec5965b2a86e9447eec379de4b9fa89dc1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/80d10f72ae74519544612c5145e4217685aea16d",
-                "reference": "80d10f72ae74519544612c5145e4217685aea16d",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/d43f91ec5965b2a86e9447eec379de4b9fa89dc1",
+                "reference": "d43f91ec5965b2a86e9447eec379de4b9fa89dc1",
                 "shasum": ""
             },
             "require": {
@@ -2671,7 +2671,7 @@
                 }
             ],
             "description": "This bundle provide the Back Office part of Open Orchestra",
-            "time": "2016-05-25 15:03:39"
+            "time": "2016-05-27 14:31:45"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2851,12 +2851,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-admin-bundle.git",
-                "reference": "329829e7edc9b6a13550fc51c7c89e49faf27dc4"
+                "reference": "ac9df439ad3e0ae10dc64fe82093bf7ac8b0664b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/329829e7edc9b6a13550fc51c7c89e49faf27dc4",
-                "reference": "329829e7edc9b6a13550fc51c7c89e49faf27dc4",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/ac9df439ad3e0ae10dc64fe82093bf7ac8b0664b",
+                "reference": "ac9df439ad3e0ae10dc64fe82093bf7ac8b0664b",
                 "shasum": ""
             },
             "require": {
@@ -2941,7 +2941,7 @@
                 }
             ],
             "description": "This bundle integrate the media administration in the Back Office of Open Orchestra",
-            "time": "2016-05-24 07:52:05"
+            "time": "2016-05-27 14:31:56"
         },
         {
             "name": "open-orchestra/open-orchestra-media-bundle",
