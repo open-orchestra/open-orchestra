@@ -2581,12 +2581,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "1e2887d1e31a11990bb6ddedc75b2d48184c07f5"
+                "reference": "b690aeb2b248b025c62a510861bf69e804d9d5e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/1e2887d1e31a11990bb6ddedc75b2d48184c07f5",
-                "reference": "1e2887d1e31a11990bb6ddedc75b2d48184c07f5",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/b690aeb2b248b025c62a510861bf69e804d9d5e7",
+                "reference": "b690aeb2b248b025c62a510861bf69e804d9d5e7",
                 "shasum": ""
             },
             "require": {
@@ -2678,7 +2678,7 @@
                 }
             ],
             "description": "This bundle provide the Back Office part of Open Orchestra",
-            "time": "2016-06-03 09:54:01"
+            "time": "2016-06-07 10:25:57"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -3066,12 +3066,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
-                "reference": "a2e308cb144b217faad5172c2173788ee87b8e9a"
+                "reference": "f1374b799aba02aca21e2685f395574306a17d95"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/a2e308cb144b217faad5172c2173788ee87b8e9a",
-                "reference": "a2e308cb144b217faad5172c2173788ee87b8e9a",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/f1374b799aba02aca21e2685f395574306a17d95",
+                "reference": "f1374b799aba02aca21e2685f395574306a17d95",
                 "shasum": ""
             },
             "require": {
@@ -3113,7 +3113,7 @@
                 }
             ],
             "description": "A MongoDB implemantation of the Open Orchestra Model Interface",
-            "time": "2016-06-02 12:16:33"
+            "time": "2016-06-07 09:40:18"
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
@@ -3121,12 +3121,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-interface.git",
-                "reference": "97b179f32bf83226103d62a7a7176671d1300603"
+                "reference": "19f3bcca7782ef2c54b31a55cb6271e3c1c7fd73"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/97b179f32bf83226103d62a7a7176671d1300603",
-                "reference": "97b179f32bf83226103d62a7a7176671d1300603",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/19f3bcca7782ef2c54b31a55cb6271e3c1c7fd73",
+                "reference": "19f3bcca7782ef2c54b31a55cb6271e3c1c7fd73",
                 "shasum": ""
             },
             "require": {
@@ -3164,7 +3164,7 @@
                 }
             ],
             "description": "Describe all entity and repository to implement for the whole OpenOrchestra project",
-            "time": "2016-05-11 15:28:13"
+            "time": "2016-06-07 09:39:27"
         },
         {
             "name": "open-orchestra/open-orchestra-mongo-libs",
@@ -4878,16 +4878,16 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v2.8.6",
+            "version": "v2.8.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "8408816780215fae055599d100b5385d9a247151"
+                "reference": "663b2d6202c3149515b39cfe50a174a130acb8e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/8408816780215fae055599d100b5385d9a247151",
-                "reference": "8408816780215fae055599d100b5385d9a247151",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/663b2d6202c3149515b39cfe50a174a130acb8e2",
+                "reference": "663b2d6202c3149515b39cfe50a174a130acb8e2",
                 "shasum": ""
             },
             "require": {
@@ -5008,7 +5008,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2016-05-09 21:45:54"
+            "time": "2016-06-06 16:05:37"
         },
         {
             "name": "twig/extensions",
@@ -5281,32 +5281,32 @@
         },
         {
             "name": "phpspec/prophecy",
-            "version": "v1.6.0",
+            "version": "v1.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "3c91bdf81797d725b14cb62906f9a4ce44235972"
+                "reference": "58a8137754bc24b25740d4281399a4a3596058e0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/3c91bdf81797d725b14cb62906f9a4ce44235972",
-                "reference": "3c91bdf81797d725b14cb62906f9a4ce44235972",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/58a8137754bc24b25740d4281399a4a3596058e0",
+                "reference": "58a8137754bc24b25740d4281399a4a3596058e0",
                 "shasum": ""
             },
             "require": {
                 "doctrine/instantiator": "^1.0.2",
                 "php": "^5.3|^7.0",
-                "phpdocumentor/reflection-docblock": "~2.0",
-                "sebastian/comparator": "~1.1",
-                "sebastian/recursion-context": "~1.0"
+                "phpdocumentor/reflection-docblock": "^2.0|^3.0.2",
+                "sebastian/comparator": "^1.1",
+                "sebastian/recursion-context": "^1.0"
             },
             "require-dev": {
-                "phpspec/phpspec": "~2.0"
+                "phpspec/phpspec": "^2.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.5.x-dev"
+                    "dev-master": "1.6.x-dev"
                 }
             },
             "autoload": {
@@ -5339,7 +5339,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2016-02-15 07:46:21"
+            "time": "2016-06-07 08:13:47"
         },
         {
             "name": "phpunit/php-code-coverage",
