@@ -4,7 +4,7 @@ Open Orchestra
 | Service       | Badge         |
 | ------------- |:-------------:|
 | Travis | [![Build Status](https://travis-ci.org/open-orchestra/open-orchestra.svg?branch=1.1)](https://travis-ci.org/open-orchestra/open-orchestra) |
-| Sensio insight | [![SensioLabsInsight](https://insight.sensiolabs.com/projects/a840f7c7-36d4-4b01-b5eb-4cebde281cbe/big.png)](https://insight.sensiolabs.com/projects/a840f7c7-36d4-4b01-b5eb-4cebde281cbe/big.png) |
+| Sensio insight | [![SensioLabsInsight](https://insight.sensiolabs.com/projects/a840f7c7-36d4-4b01-b5eb-4cebde281cbe/big.png)](https://insight.sensiolabs.com/projects/a840f7c7-36d4-4b01-b5eb-4cebde281cbe) |
 | Code Climate | [![Code Climate](https://codeclimate.com/github/open-orchestra/open-orchestra/badges/gpa.svg)](https://codeclimate.com/github/open-orchestra/open-orchestra) |
 | Version Eye (composer.lock) | [![Dependency Status](https://www.versioneye.com/user/projects/575937047757a0004a1de8b2/badge.svg?style=flat)](https://www.versioneye.com/user/projects/575937047757a0004a1de8b2) |
 | Latest Stable Version | [![Latest Stable Version](https://poser.pugx.org/open-orchestra/open-orchestra/v/stable)](https://packagist.org/packages/open-orchestra/open-orchestra) |
