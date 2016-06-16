@@ -3287,12 +3287,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-workflow-function-bundle.git",
-                "reference": "ceee9c9af3e2fe1cd1b3ec430343a10364a3341b"
+                "reference": "e35b6f71297eaba61c80b20ea85e06b9667e595a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-workflow-function-bundle/zipball/ceee9c9af3e2fe1cd1b3ec430343a10364a3341b",
-                "reference": "ceee9c9af3e2fe1cd1b3ec430343a10364a3341b",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-workflow-function-bundle/zipball/e35b6f71297eaba61c80b20ea85e06b9667e595a",
+                "reference": "e35b6f71297eaba61c80b20ea85e06b9667e595a",
                 "shasum": ""
             },
             "require": {
@@ -3344,7 +3344,7 @@
                 }
             ],
             "description": "A workflow function bundle for Open Orchestra",
-            "time": "2016-06-09 14:25:12"
+            "time": "2016-06-15 10:11:38"
         },
         {
             "name": "paragonie/random_compat",
