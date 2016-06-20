@@ -867,16 +867,16 @@
         },
         {
             "name": "doctrine/mongodb-odm",
-            "version": "1.1.0",
+            "version": "1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/mongodb-odm.git",
-                "reference": "1137922032d098a2e284575f2ce30e83abbecea2"
+                "reference": "df0771f572dc3deefa5b36b7509440ce3d791ba6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/mongodb-odm/zipball/1137922032d098a2e284575f2ce30e83abbecea2",
-                "reference": "1137922032d098a2e284575f2ce30e83abbecea2",
+                "url": "https://api.github.com/repos/doctrine/mongodb-odm/zipball/df0771f572dc3deefa5b36b7509440ce3d791ba6",
+                "reference": "df0771f572dc3deefa5b36b7509440ce3d791ba6",
                 "shasum": ""
             },
             "require": {
@@ -886,8 +886,8 @@
                 "doctrine/common": "~2.4",
                 "doctrine/inflector": "~1.0",
                 "doctrine/instantiator": "~1.0.1",
-                "doctrine/mongodb": "~1.3",
-                "php": "^5.6 || ^7.0",
+                "doctrine/mongodb": "~1.2",
+                "php": ">=5.3.2",
                 "symfony/console": "~2.3|~3.0"
             },
             "require-dev": {
@@ -900,7 +900,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1.x-dev"
+                    "dev-master": "1.0.x-dev"
                 }
             },
             "autoload": {
@@ -946,7 +946,7 @@
                 "odm",
                 "persistence"
             ],
-            "time": "2016-06-09 14:21:30"
+            "time": "2016-06-09 13:23:17"
         },
         {
             "name": "doctrine/mongodb-odm-bundle",
@@ -2581,12 +2581,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "40682f132313a709cc9e926333002d6856bbc33a"
+                "reference": "6d05370e97989cd565216279d5871eef614e2cc4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/40682f132313a709cc9e926333002d6856bbc33a",
-                "reference": "40682f132313a709cc9e926333002d6856bbc33a",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/6d05370e97989cd565216279d5871eef614e2cc4",
+                "reference": "6d05370e97989cd565216279d5871eef614e2cc4",
                 "shasum": ""
             },
             "require": {
@@ -2678,7 +2678,7 @@
                 }
             ],
             "description": "This bundle provide the Back Office part of Open Orchestra",
-            "time": "2016-06-09 14:37:34"
+            "time": "2016-06-20 10:02:22"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -3172,15 +3172,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-mongo-libs.git",
-                "reference": "fd25728f9af611226bb906079d339d4555a14ad1"
+                "reference": "ea84cc8995a0d95342be9fe30c4448b4341ac70c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-mongo-libs/zipball/fd25728f9af611226bb906079d339d4555a14ad1",
-                "reference": "fd25728f9af611226bb906079d339d4555a14ad1",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-mongo-libs/zipball/ea84cc8995a0d95342be9fe30c4448b4341ac70c",
+                "reference": "ea84cc8995a0d95342be9fe30c4448b4341ac70c",
                 "shasum": ""
             },
             "require": {
+                "doctrine/mongodb-odm": "~1.0.0",
                 "doctrine/mongodb-odm-bundle": "~3.1.0",
                 "jms/metadata": "~1.1",
                 "open-orchestra/open-orchestra-libs": "1.1.*@dev",
@@ -3220,7 +3221,7 @@
                 }
             ],
             "description": "Some libraries to use MongoDB in Open Orchestra",
-            "time": "2016-05-11 15:28:04"
+            "time": "2016-06-20 08:41:28"
         },
         {
             "name": "open-orchestra/open-orchestra-user-bundle",
@@ -3287,16 +3288,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-workflow-function-bundle.git",
-                "reference": "e35b6f71297eaba61c80b20ea85e06b9667e595a"
+                "reference": "a6046c812a800ab59180a8c49d331b89153ade53"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-workflow-function-bundle/zipball/e35b6f71297eaba61c80b20ea85e06b9667e595a",
-                "reference": "e35b6f71297eaba61c80b20ea85e06b9667e595a",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-workflow-function-bundle/zipball/a6046c812a800ab59180a8c49d331b89153ade53",
+                "reference": "a6046c812a800ab59180a8c49d331b89153ade53",
                 "shasum": ""
             },
             "require": {
                 "doctrine/data-fixtures": "1.1.1",
+                "doctrine/mongodb-odm": "~1.0.0",
                 "doctrine/mongodb-odm-bundle": "3.1.0",
                 "friendsofsymfony/user-bundle": "@dev",
                 "innocead/captcha-bundle": "@dev",
@@ -3344,7 +3346,7 @@
                 }
             ],
             "description": "A workflow function bundle for Open Orchestra",
-            "time": "2016-06-15 10:11:38"
+            "time": "2016-06-20 08:57:41"
         },
         {
             "name": "paragonie/random_compat",
@@ -5880,16 +5882,16 @@
         },
         {
             "name": "sebastian/exporter",
-            "version": "1.2.1",
+            "version": "1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/exporter.git",
-                "reference": "7ae5513327cb536431847bcc0c10edba2701064e"
+                "reference": "42c4c2eec485ee3e159ec9884f95b431287edde4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/exporter/zipball/7ae5513327cb536431847bcc0c10edba2701064e",
-                "reference": "7ae5513327cb536431847bcc0c10edba2701064e",
+                "url": "https://api.github.com/repos/sebastianbergmann/exporter/zipball/42c4c2eec485ee3e159ec9884f95b431287edde4",
+                "reference": "42c4c2eec485ee3e159ec9884f95b431287edde4",
                 "shasum": ""
             },
             "require": {
@@ -5897,12 +5899,13 @@
                 "sebastian/recursion-context": "~1.0"
             },
             "require-dev": {
+                "ext-mbstring": "*",
                 "phpunit/phpunit": "~4.4"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.2.x-dev"
+                    "dev-master": "1.3.x-dev"
                 }
             },
             "autoload": {
@@ -5942,7 +5945,7 @@
                 "export",
                 "exporter"
             ],
-            "time": "2015-06-21 07:55:53"
+            "time": "2016-06-17 09:04:28"
         },
         {
             "name": "sebastian/global-state",
