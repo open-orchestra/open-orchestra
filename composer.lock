@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fe455215e7a9c28364e6c1f7e2739fff",
-    "content-hash": "8f494b7c1ca935faea971f48cd686d72",
+    "hash": "8cdd5bfacf36976acff19a0a1ffc6c6c",
+    "content-hash": "48ab797af3ec759385e18c8d96d9a719",
     "packages": [
         {
             "name": "alchemy/binary-driver",
@@ -2373,18 +2373,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-base-api-bundle.git",
-                "reference": "745fcf1fb67c2b831ba3a2f8df078640ad9d2191"
+                "reference": "6fbd8c27e7d4fd51057ea5ec2e7c3648848150db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-api-bundle/zipball/745fcf1fb67c2b831ba3a2f8df078640ad9d2191",
-                "reference": "745fcf1fb67c2b831ba3a2f8df078640ad9d2191",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-api-bundle/zipball/6fbd8c27e7d4fd51057ea5ec2e7c3648848150db",
+                "reference": "6fbd8c27e7d4fd51057ea5ec2e7c3648848150db",
                 "shasum": ""
             },
             "require": {
                 "jms/serializer-bundle": "~1.0.0",
                 "open-orchestra/open-orchestra-base-bundle": "1.2.*@dev",
                 "open-orchestra/open-orchestra-libs": "1.2.*@dev",
+                "php": "~5.6.0",
                 "symfony/validator": "~2.8.6"
             },
             "require-dev": {
@@ -2418,7 +2419,7 @@
                 }
             ],
             "description": "This bundle provide the base bricks for the OpenOrchestra Api",
-            "time": "2016-06-14 11:59:47"
+            "time": "2016-06-20 08:36:43"
         },
         {
             "name": "open-orchestra/open-orchestra-base-api-mongo-model-bundle",
@@ -2426,19 +2427,20 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-base-api-mongo-model-bundle.git",
-                "reference": "25b573e5515fa5498f578d67292be762e40d45ad"
+                "reference": "9cc82b678617af9b6e62ad6445224c9b791a91be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-api-mongo-model-bundle/zipball/25b573e5515fa5498f578d67292be762e40d45ad",
-                "reference": "25b573e5515fa5498f578d67292be762e40d45ad",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-api-mongo-model-bundle/zipball/9cc82b678617af9b6e62ad6445224c9b791a91be",
+                "reference": "9cc82b678617af9b6e62ad6445224c9b791a91be",
                 "shasum": ""
             },
             "require": {
                 "open-orchestra/open-orchestra-base-api-bundle": "1.2.*@dev",
                 "open-orchestra/open-orchestra-base-bundle": "@dev",
                 "open-orchestra/open-orchestra-libs": "@dev",
-                "open-orchestra/open-orchestra-mongo-libs": "1.2.*@dev"
+                "open-orchestra/open-orchestra-mongo-libs": "1.2.*@dev",
+                "php": "~5.6.0"
             },
             "require-dev": {
                 "codeclimate/php-test-reporter": "~0.3.2",
@@ -2467,7 +2469,7 @@
                 }
             ],
             "description": "This bundle provide the MongoDB implementation of the Open Orchestra base api bundle",
-            "time": "2016-06-14 11:59:25"
+            "time": "2016-06-20 08:35:59"
         },
         {
             "name": "open-orchestra/open-orchestra-base-bundle",
@@ -2475,15 +2477,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-base-bundle.git",
-                "reference": "90852d5858fe9018c8d31112e81d874067b3d708"
+                "reference": "9874c5a010be2b12dd0c6e235904eb0abdd7c9dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-bundle/zipball/90852d5858fe9018c8d31112e81d874067b3d708",
-                "reference": "90852d5858fe9018c8d31112e81d874067b3d708",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-bundle/zipball/9874c5a010be2b12dd0c6e235904eb0abdd7c9dd",
+                "reference": "9874c5a010be2b12dd0c6e235904eb0abdd7c9dd",
                 "shasum": ""
             },
             "require": {
+                "php": "~5.6.0",
                 "sensio/distribution-bundle": "~4.0.6",
                 "sensio/framework-extra-bundle": "~3.0.10",
                 "symfony/assetic-bundle": "~2.7.0",
@@ -2519,7 +2522,7 @@
                 }
             ],
             "description": "The OpenOrchestra base bundle",
-            "time": "2016-06-14 11:59:28"
+            "time": "2016-06-20 08:25:39"
         },
         {
             "name": "open-orchestra/open-orchestra-bbcode-bundle",
@@ -2527,17 +2530,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-bbcode-bundle.git",
-                "reference": "20343b5b1380054ad67083610e68987b1aece74b"
+                "reference": "265695432b879f7d40a48f9b6b7c67957331ca07"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-bbcode-bundle/zipball/20343b5b1380054ad67083610e68987b1aece74b",
-                "reference": "20343b5b1380054ad67083610e68987b1aece74b",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-bbcode-bundle/zipball/265695432b879f7d40a48f9b6b7c67957331ca07",
+                "reference": "265695432b879f7d40a48f9b6b7c67957331ca07",
                 "shasum": ""
             },
             "require": {
                 "jbbcode/jbbcode": "~1.3.0",
-                "open-orchestra/open-orchestra-base-bundle": "1.2.*@dev"
+                "open-orchestra/open-orchestra-base-bundle": "1.2.*@dev",
+                "php": "~5.6.0"
             },
             "require-dev": {
                 "codeclimate/php-test-reporter": "~0.3.2",
@@ -2566,7 +2570,7 @@
                 }
             ],
             "description": "The Open Orchestra bundle wrapping the jbbcode/jbbcode library",
-            "time": "2016-06-14 11:59:21"
+            "time": "2016-06-20 08:35:30"
         },
         {
             "name": "open-orchestra/open-orchestra-cms-bundle",
@@ -2574,12 +2578,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "d1bdc91635c9fed45aa4fc894026b9937a02f215"
+                "reference": "a1ded92be4e8cd2174080b1b7e9b459465baabfe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/d1bdc91635c9fed45aa4fc894026b9937a02f215",
-                "reference": "d1bdc91635c9fed45aa4fc894026b9937a02f215",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/a1ded92be4e8cd2174080b1b7e9b459465baabfe",
+                "reference": "a1ded92be4e8cd2174080b1b7e9b459465baabfe",
                 "shasum": ""
             },
             "require": {
@@ -2595,6 +2599,7 @@
                 "open-orchestra/open-orchestra-model-interface": "1.2.*@dev",
                 "open-orchestra/open-orchestra-mongo-libs": "@dev",
                 "open-orchestra/open-orchestra-user-bundle": "1.2.*@dev",
+                "php": "~5.6.0",
                 "stfalcon/tinymce-bundle": "~0.3.8"
             },
             "require-dev": {
@@ -2671,7 +2676,7 @@
                 }
             ],
             "description": "This bundle provide the Back Office part of Open Orchestra",
-            "time": "2016-06-14 11:10:32"
+            "time": "2016-06-20 10:00:54"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2679,12 +2684,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-display-bundle.git",
-                "reference": "7337ed71ca43581520d6f0eaaad98c727364b2ad"
+                "reference": "f999ae9cc6c283e2ad171d71c7551443fa591607"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-display-bundle/zipball/7337ed71ca43581520d6f0eaaad98c727364b2ad",
-                "reference": "7337ed71ca43581520d6f0eaaad98c727364b2ad",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-display-bundle/zipball/f999ae9cc6c283e2ad171d71c7551443fa591607",
+                "reference": "f999ae9cc6c283e2ad171d71c7551443fa591607",
                 "shasum": ""
             },
             "require": {
@@ -2695,6 +2700,7 @@
                 "open-orchestra/open-orchestra-bbcode-bundle": "1.2.*@dev",
                 "open-orchestra/open-orchestra-libs": "@dev",
                 "open-orchestra/open-orchestra-model-interface": "1.2.*@dev",
+                "php": "~5.6.0",
                 "symfony/swiftmailer-bundle": "~2.3.0"
             },
             "require-dev": {
@@ -2725,7 +2731,7 @@
                 }
             ],
             "description": "The bundle to display all bricks",
-            "time": "2016-06-14 11:59:44"
+            "time": "2016-06-20 08:35:12"
         },
         {
             "name": "open-orchestra/open-orchestra-elastica-bundle",
@@ -2733,17 +2739,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-elastica-bundle.git",
-                "reference": "e9e756c63df01d1fcde38f61ed2708ee04776c16"
+                "reference": "9c5c5f48b4ca82cb4bb4e2aa1efe0bff03759d07"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-elastica-bundle/zipball/e9e756c63df01d1fcde38f61ed2708ee04776c16",
-                "reference": "e9e756c63df01d1fcde38f61ed2708ee04776c16",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-elastica-bundle/zipball/9c5c5f48b4ca82cb4bb4e2aa1efe0bff03759d07",
+                "reference": "9c5c5f48b4ca82cb4bb4e2aa1efe0bff03759d07",
                 "shasum": ""
             },
             "require": {
                 "open-orchestra/open-orchestra-libs": "@dev",
                 "open-orchestra/open-orchestra-model-interface": "1.2.*@dev",
+                "php": "~5.6.0",
                 "ruflin/elastica": "~2.3.1"
             },
             "require-dev": {
@@ -2792,7 +2799,7 @@
                 }
             ],
             "description": "A bundle to index Open Orchestra elements with Elastica Search",
-            "time": "2016-06-14 12:00:13"
+            "time": "2016-06-20 08:34:06"
         },
         {
             "name": "open-orchestra/open-orchestra-libs",
@@ -2800,17 +2807,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-libs.git",
-                "reference": "12838dc6fd696c9163f6423c9e1eef11f49b1bb8"
+                "reference": "aeeae3f3574d17a87cce114c48660a38673ec7c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-libs/zipball/12838dc6fd696c9163f6423c9e1eef11f49b1bb8",
-                "reference": "12838dc6fd696c9163f6423c9e1eef11f49b1bb8",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-libs/zipball/aeeae3f3574d17a87cce114c48660a38673ec7c5",
+                "reference": "aeeae3f3574d17a87cce114c48660a38673ec7c5",
                 "shasum": ""
             },
             "require": {
                 "doctrine/annotations": "~1.2.7",
                 "jms/metadata": "~1.5.1",
+                "php": "~5.6.0",
                 "symfony/form": "~2.8.6",
                 "symfony/http-foundation": "~2.8.6"
             },
@@ -2843,7 +2851,7 @@
                 }
             ],
             "description": "Some library for the Open Orchestra project",
-            "time": "2016-06-14 11:59:40"
+            "time": "2016-06-20 08:34:39"
         },
         {
             "name": "open-orchestra/open-orchestra-media-admin-bundle",
@@ -2851,12 +2859,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-admin-bundle.git",
-                "reference": "66ca30eb823620d191b4e15cc2a98505a5c5aae7"
+                "reference": "bf454e60aae9ff0ce62bbaa817ff5001d83aa59a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/66ca30eb823620d191b4e15cc2a98505a5c5aae7",
-                "reference": "66ca30eb823620d191b4e15cc2a98505a5c5aae7",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/bf454e60aae9ff0ce62bbaa817ff5001d83aa59a",
+                "reference": "bf454e60aae9ff0ce62bbaa817ff5001d83aa59a",
                 "shasum": ""
             },
             "require": {
@@ -2876,6 +2884,7 @@
                 "open-orchestra/open-orchestra-media-file-bundle": "1.2.*@dev",
                 "open-orchestra/open-orchestra-mongo-libs": "@dev",
                 "open-orchestra/open-orchestra-user-bundle": "@dev",
+                "php": "~5.6.0",
                 "php-ffmpeg/php-ffmpeg": "~0.6.1"
             },
             "require-dev": {
@@ -2941,7 +2950,7 @@
                 }
             ],
             "description": "This bundle integrate the media administration in the Back Office of Open Orchestra",
-            "time": "2016-06-14 12:00:02"
+            "time": "2016-06-20 08:33:10"
         },
         {
             "name": "open-orchestra/open-orchestra-media-bundle",
@@ -2949,12 +2958,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-bundle.git",
-                "reference": "b1f4fbb0f931e361983ce67d8c7167ee4888b9a3"
+                "reference": "f3206aa5b3647dd06191fc2c356407e071589afb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/b1f4fbb0f931e361983ce67d8c7167ee4888b9a3",
-                "reference": "b1f4fbb0f931e361983ce67d8c7167ee4888b9a3",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/f3206aa5b3647dd06191fc2c356407e071589afb",
+                "reference": "f3206aa5b3647dd06191fc2c356407e071589afb",
                 "shasum": ""
             },
             "require": {
@@ -2965,6 +2974,7 @@
                 "open-orchestra/open-orchestra-libs": "@dev",
                 "open-orchestra/open-orchestra-model-interface": "1.2.*@dev",
                 "open-orchestra/open-orchestra-mongo-libs": "1.2.*@dev",
+                "php": "~5.6.0",
                 "stof/doctrine-extensions-bundle": "~1.2.1"
             },
             "require-dev": {
@@ -2997,7 +3007,7 @@
                 }
             ],
             "description": "A media bundle for Open Orchestra",
-            "time": "2016-06-14 12:00:19"
+            "time": "2016-06-20 08:32:47"
         },
         {
             "name": "open-orchestra/open-orchestra-media-file-bundle",
@@ -3005,16 +3015,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-file-bundle.git",
-                "reference": "f7edc580bf292564ce0a8a2c21ba8384cd31c0a2"
+                "reference": "df538c5d7e6d00e915b630b9e5292d50cfa070fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-file-bundle/zipball/f7edc580bf292564ce0a8a2c21ba8384cd31c0a2",
-                "reference": "f7edc580bf292564ce0a8a2c21ba8384cd31c0a2",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-file-bundle/zipball/df538c5d7e6d00e915b630b9e5292d50cfa070fb",
+                "reference": "df538c5d7e6d00e915b630b9e5292d50cfa070fb",
                 "shasum": ""
             },
             "require": {
-                "knplabs/knp-gaufrette-bundle": "~0.1.7"
+                "knplabs/knp-gaufrette-bundle": "~0.1.7",
+                "php": "~5.6.0"
             },
             "require-dev": {
                 "codeclimate/php-test-reporter": "~0.3.2",
@@ -3043,7 +3054,7 @@
                 }
             ],
             "description": "This bundle provide the file management part for the media feature of OpenOrchestra",
-            "time": "2016-06-14 11:59:17"
+            "time": "2016-06-20 08:32:27"
         },
         {
             "name": "open-orchestra/open-orchestra-model-bundle",
@@ -3051,12 +3062,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
-                "reference": "ef4be6cd105a2aa5de407e8977bb0ebff2d71101"
+                "reference": "7932d2ec905132a00d661bfac9a16febd629fe27"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/ef4be6cd105a2aa5de407e8977bb0ebff2d71101",
-                "reference": "ef4be6cd105a2aa5de407e8977bb0ebff2d71101",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/7932d2ec905132a00d661bfac9a16febd629fe27",
+                "reference": "7932d2ec905132a00d661bfac9a16febd629fe27",
                 "shasum": ""
             },
             "require": {
@@ -3065,6 +3076,7 @@
                 "open-orchestra/open-orchestra-libs": "@dev",
                 "open-orchestra/open-orchestra-model-interface": "1.2.*@dev",
                 "open-orchestra/open-orchestra-mongo-libs": "1.2.*@dev",
+                "php": "~5.6.0",
                 "stof/doctrine-extensions-bundle": "~1.2.1"
             },
             "require-dev": {
@@ -3095,7 +3107,7 @@
                 }
             ],
             "description": "A MongoDB implemantation of the Open Orchestra Model Interface",
-            "time": "2016-06-14 12:00:23"
+            "time": "2016-06-20 12:43:55"
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
@@ -3103,18 +3115,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-interface.git",
-                "reference": "c3c65459e5c6f45b35b89145759b15c9e918ca98"
+                "reference": "225884c9d5c479dcda51905af0f9ecae944dd159"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/c3c65459e5c6f45b35b89145759b15c9e918ca98",
-                "reference": "c3c65459e5c6f45b35b89145759b15c9e918ca98",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/225884c9d5c479dcda51905af0f9ecae944dd159",
+                "reference": "225884c9d5c479dcda51905af0f9ecae944dd159",
                 "shasum": ""
             },
             "require": {
                 "doctrine/annotations": "~1.2.7",
                 "doctrine/collections": "~1.3.0",
                 "open-orchestra/open-orchestra-libs": "1.2.*@dev",
+                "php": "~5.6.0",
                 "symfony/form": "~2.8.6"
             },
             "require-dev": {
@@ -3144,7 +3157,7 @@
                 }
             ],
             "description": "Describe all entity and repository to implement for the whole OpenOrchestra project",
-            "time": "2016-06-14 12:00:27"
+            "time": "2016-06-20 08:31:51"
         },
         {
             "name": "open-orchestra/open-orchestra-mongo-libs",
@@ -3152,18 +3165,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-mongo-libs.git",
-                "reference": "5318be8a50641c2f22f92f78444a1996f50142c8"
+                "reference": "7a8469385810adfdf3dd7be995f143b4a55eb736"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-mongo-libs/zipball/5318be8a50641c2f22f92f78444a1996f50142c8",
-                "reference": "5318be8a50641c2f22f92f78444a1996f50142c8",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-mongo-libs/zipball/7a8469385810adfdf3dd7be995f143b4a55eb736",
+                "reference": "7a8469385810adfdf3dd7be995f143b4a55eb736",
                 "shasum": ""
             },
             "require": {
                 "doctrine/mongodb-odm-bundle": "~3.1.0",
                 "jms/metadata": "~1.5.1",
                 "open-orchestra/open-orchestra-libs": "1.2.*@dev",
+                "php": "~5.6.0",
                 "solution/mongo-odm-aggregation-bundle": "~0.1.1",
                 "symfony/http-foundation": "~2.8.6"
             },
@@ -3199,7 +3213,7 @@
                 }
             ],
             "description": "Some libraries to use MongoDB in Open Orchestra",
-            "time": "2016-06-14 12:00:06"
+            "time": "2016-06-20 08:31:24"
         },
         {
             "name": "open-orchestra/open-orchestra-user-bundle",
@@ -3207,17 +3221,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-user-bundle.git",
-                "reference": "6a83d0b6d68b4809a1a6531b8edef6ed4a3a43ff"
+                "reference": "a792b7006239573c2a3485470674b4dc97ea3feb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-user-bundle/zipball/6a83d0b6d68b4809a1a6531b8edef6ed4a3a43ff",
-                "reference": "6a83d0b6d68b4809a1a6531b8edef6ed4a3a43ff",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-user-bundle/zipball/a792b7006239573c2a3485470674b4dc97ea3feb",
+                "reference": "a792b7006239573c2a3485470674b4dc97ea3feb",
                 "shasum": ""
             },
             "require": {
                 "friendsofsymfony/user-bundle": "2.0.x-dev",
-                "open-orchestra/open-orchestra-libs": "1.2.*@dev"
+                "open-orchestra/open-orchestra-libs": "1.2.*@dev",
+                "php": "~5.6.0"
             },
             "require-dev": {
                 "codeclimate/php-test-reporter": "~0.3.2",
@@ -3257,7 +3272,7 @@
                 }
             ],
             "description": "An override of FosUserBundle to provide authentication on Open Orchestra",
-            "time": "2016-06-14 11:59:59"
+            "time": "2016-06-20 08:30:28"
         },
         {
             "name": "open-orchestra/open-orchestra-workflow-function-bundle",
@@ -3265,12 +3280,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-workflow-function-bundle.git",
-                "reference": "49cd1164dc8cbeabb7de5aab447ede4d2506d766"
+                "reference": "e4f5cd16280b736f11588b6adfcb9a6105dae0a4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-workflow-function-bundle/zipball/49cd1164dc8cbeabb7de5aab447ede4d2506d766",
-                "reference": "49cd1164dc8cbeabb7de5aab447ede4d2506d766",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-workflow-function-bundle/zipball/e4f5cd16280b736f11588b6adfcb9a6105dae0a4",
+                "reference": "e4f5cd16280b736f11588b6adfcb9a6105dae0a4",
                 "shasum": ""
             },
             "require": {
@@ -3286,6 +3301,7 @@
                 "open-orchestra/open-orchestra-libs": "@dev",
                 "open-orchestra/open-orchestra-mongo-libs": "@dev",
                 "open-orchestra/open-orchestra-user-bundle": "@dev",
+                "php": "~5.6.0",
                 "solution/mongo-odm-aggregation-bundle": "~0.1.1",
                 "stof/doctrine-extensions-bundle": "~1.2.1"
             },
@@ -3321,7 +3337,7 @@
                 }
             ],
             "description": "A workflow function bundle for Open Orchestra",
-            "time": "2016-06-15 09:07:36"
+            "time": "2016-06-20 08:43:21"
         },
         {
             "name": "paragonie/random_compat",
@@ -5854,16 +5870,16 @@
         },
         {
             "name": "sebastian/exporter",
-            "version": "1.2.1",
+            "version": "1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/exporter.git",
-                "reference": "7ae5513327cb536431847bcc0c10edba2701064e"
+                "reference": "42c4c2eec485ee3e159ec9884f95b431287edde4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/exporter/zipball/7ae5513327cb536431847bcc0c10edba2701064e",
-                "reference": "7ae5513327cb536431847bcc0c10edba2701064e",
+                "url": "https://api.github.com/repos/sebastianbergmann/exporter/zipball/42c4c2eec485ee3e159ec9884f95b431287edde4",
+                "reference": "42c4c2eec485ee3e159ec9884f95b431287edde4",
                 "shasum": ""
             },
             "require": {
@@ -5871,12 +5887,13 @@
                 "sebastian/recursion-context": "~1.0"
             },
             "require-dev": {
+                "ext-mbstring": "*",
                 "phpunit/phpunit": "~4.4"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.2.x-dev"
+                    "dev-master": "1.3.x-dev"
                 }
             },
             "autoload": {
@@ -5916,7 +5933,7 @@
                 "export",
                 "exporter"
             ],
-            "time": "2015-06-21 07:55:53"
+            "time": "2016-06-17 09:04:28"
         },
         {
             "name": "sebastian/global-state",
@@ -6131,6 +6148,8 @@
     },
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "php": "~5.6.0"
+    },
     "platform-dev": []
 }
