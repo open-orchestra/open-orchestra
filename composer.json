@@ -26,8 +26,8 @@
   },
 
   "require-dev": {
-    "phake/phake": "~2.1.0",
-    "phpunit/phpunit" : "~4.8.0",
+    "phpunit/phpunit": "~5.4.0",
+    "phake/phake": "~2.3.0",
 
     "open-orchestra/open-orchestra-base-bundle": "self.version",
     "open-orchestra/open-orchestra-base-api-bundle": "self.version",
