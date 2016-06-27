@@ -24,7 +24,7 @@ framework:
     session:
         # handler_id set to null will use default session handler from php.ini
         handler_id:  ~
-        name: %session_name%
+        name: '%session_name%'
     fragments:       { path: /_fragment }
     http_method_override: true
 
@@ -96,13 +96,13 @@ stof_doctrine_extensions:
             timestampable: true
 
 open_orchestra_base:
-    encryption_key: %encryption_key%
+    encryption_key: '%encryption_key%'
 
 knp_gaufrette:
     adapters:
         media_storage:
             local:
-                directory: %media.directory%
+                directory: '%media.directory%'
                 create: true
     filesystems:
         media_storage:
@@ -112,15 +112,15 @@ knp_gaufrette:
 fos_http_cache:
     proxy_client:
         varnish:
-            servers: "%fos_http_cache.proxy_client.varnish.servers%"
-            base_url: "%fos_http_cache.proxy_client.varnish.base_url%"
+            servers: '%fos_http_cache.proxy_client.varnish.servers%'
+            base_url: '%fos_http_cache.proxy_client.varnish.base_url%'
         default: varnish
 
 open_orchestra_media:
-    media_domain: %media_domain%
+    media_domain: '%media_domain%'
 
 open_orchestra_elastica:
-    host: %host_elastica%
+    host: '%host_elastica%'
 
 mongo_db_migrations:
      collection_name: "migration_versions"
@@ -128,4 +128,4 @@ mongo_db_migrations:
      dir_name: "%kernel.root_dir%/../vendor/open-orchestra/open-orchestra-model-bundle/ModelBundle/Migrations/MongoDB"
      script_dir_name: "%kernel.root_dir%/scripts"
      name: "Open Orchestra MongoDB Migrations"
-     namespace: "OpenOrchestra\ModelBundle\Migrations\MongoDB"
+     namespace: OpenOrchestra\ModelBundle\Migrations\MongoDB
