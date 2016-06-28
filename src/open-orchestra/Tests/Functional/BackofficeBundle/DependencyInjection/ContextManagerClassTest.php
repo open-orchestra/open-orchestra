@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenOrchestra\BackofficeBundle\Tests\Functional\DependencyInjection;
+namespace OpenOrchestra\FunctionalTests\BackofficeBundle\DependencyInjection;
 
 use OpenOrchestra\BaseBundle\Tests\AbstractTest\AbstractKernelTestCase;
 

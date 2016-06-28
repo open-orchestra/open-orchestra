@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenOrchestra\Mapping\Tests\Functional\Mapping\Reader;
+namespace OpenOrchestra\FunctionalTests\Mapping\Reader;
 
 use OpenOrchestra\Mapping\Annotations as ORCHESTRA;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenOrchestra\BackofficeBundle\Tests\Functional\Manager;
+namespace OpenOrchestra\FunctionalTests\BackofficeBundle\Manager;
 
 use OpenOrchestra\Backoffice\Manager\ContentTypeManager;
 use OpenOrchestra\BaseBundle\Tests\AbstractTest\AbstractKernelTestCase;

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenOrchestra\ModelBundle\Tests\Functional\Repository;
+namespace OpenOrchestra\FunctionalTests\ModelBundle\Repository;
 
 use OpenOrchestra\BaseBundle\Tests\AbstractTest\AbstractKernelTestCase;
 use OpenOrchestra\ModelBundle\Repository\RouteDocumentRepository;

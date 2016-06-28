@@ -1,8 +1,8 @@
 <?php
 
-namespace OpenOrchestra\MediaAdminBundle\Tests\Functional\Controller;
+namespace OpenOrchestra\FunctionalTests\MediaAdminBundle\Controller;
 
-use OpenOrchestra\ApiBundle\Tests\Functional\Controller\ApiControllersSecurityTest as BaseApiControllersSecurityTest;
+use OpenOrchestra\FunctionalTests\ApiBundle\Controller\ApiControllersSecurityTest as BaseApiControllersSecurityTest;
 
 /**
  * Class ApiControllersSecurityTest

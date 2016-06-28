@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenOrchestra\GroupBundle\Tests\Functional\Repository;
+namespace OpenOrchestra\FunctionalTests\GroupBundle\Repository;
 
 use OpenOrchestra\BaseBundle\Tests\AbstractTest\AbstractKernelTestCase;
 use OpenOrchestra\Pagination\Configuration\FinderConfiguration;

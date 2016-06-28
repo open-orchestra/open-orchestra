@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenOrchestra\WorkflowFunctionModelBundle\Tests\Functional\Repository;
+namespace OpenOrchestra\FunctionalTests\WorkflowFunctionModelBundle\Repository;
 
 use OpenOrchestra\BaseBundle\Tests\AbstractTest\AbstractKernelTestCase;
 use OpenOrchestra\Pagination\Configuration\FinderConfiguration;

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenOrchestra\BackofficeBundle\Tests\Functional\Controller;
+namespace OpenOrchestra\FunctionalTests\BackofficeBundle\Controller;
 
 /**
  * Class FormControllersSecurityTest

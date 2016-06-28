@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenOrchestra\Mapping\Tests\Functional\Mapping\Metadata\Driver;
+namespace OpenOrchestra\FunctionalTests\Mapping\Metadata\Driver;
 
 use Doctrine\Common\Annotations\AnnotationReader;
 use OpenOrchestra\Mapping\Metadata\Driver\AnnotationDriver;

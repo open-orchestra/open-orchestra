@@ -1,8 +1,8 @@
 <?php
 
-namespace OpenOrchestra\MediaAdminBundle\Tests\Functional\Controller;
+namespace OpenOrchestra\FunctionalTests\MediaAdminBundle\Controller;
 
-use OpenOrchestra\BackofficeBundle\Tests\Functional\Controller\FormControllersSecurityTest as BaseFormControllersSecurityTest;
+use OpenOrchestra\FunctionalTests\BackofficeBundle\Controller\FormControllersSecurityTest as BaseFormControllersSecurityTest;
 
 /**
  * Class FormControllersSecurityTest

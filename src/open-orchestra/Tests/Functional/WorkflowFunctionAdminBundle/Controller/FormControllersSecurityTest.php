@@ -1,8 +1,8 @@
 <?php
 
-namespace OpenOrchestra\WorkflowFunctionAdminBundle\Tests\Functional\Controller;
+namespace OpenOrchestra\FunctionalTests\WorkflowFunctionAdminBundle\Controller;
 
-use OpenOrchestra\BackofficeBundle\Tests\Functional\Controller\AbstractControllerTest;
+use OpenOrchestra\FunctionalTests\BackofficeBundle\Controller\AbstractControllerTest;
 
 
 /**

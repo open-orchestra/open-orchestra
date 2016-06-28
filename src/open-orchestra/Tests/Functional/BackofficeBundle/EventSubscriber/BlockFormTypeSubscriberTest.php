@@ -1,8 +1,8 @@
 <?php
 
-namespace OpenOrchestra\BackofficeBundle\Tests\Functional\EventSubscriber;
+namespace OpenOrchestra\FunctionalTests\BackofficeBundle\EventSubscriber;
 
-use OpenOrchestra\BackofficeBundle\Tests\Functional\AbstractAuthentificatedTest;
+use OpenOrchestra\FunctionalTests\BackofficeBundle\AbstractAuthentificatedTest;
 use OpenOrchestra\DisplayBundle\DisplayBlock\Strategies\ConfigurableContentStrategy;
 use OpenOrchestra\DisplayBundle\DisplayBlock\Strategies\ContentListStrategy;
 use OpenOrchestra\DisplayBundle\DisplayBlock\Strategies\VideoStrategy;

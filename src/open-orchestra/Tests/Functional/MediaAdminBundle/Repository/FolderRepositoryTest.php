@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenOrchestra\MediaBundle\Tests\Functional\Repository;
+namespace OpenOrchestra\FunctionalTests\MediaBundle\Repository;
 
 use OpenOrchestra\BaseBundle\Tests\AbstractTest\AbstractKernelTestCase;
 use OpenOrchestra\Media\Repository\FolderRepositoryInterface;

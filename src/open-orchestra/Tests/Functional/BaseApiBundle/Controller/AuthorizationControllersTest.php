@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenOrchestra\BaseApiBundle\Tests\Functional\Controller;
+namespace OpenOrchestra\FunctionalTests\BaseApiBundle\Controller;
 
 use OpenOrchestra\BaseBundle\Tests\AbstractTest\AbstractWebTestCase;
 use Symfony\Bundle\FrameworkBundle\Client;

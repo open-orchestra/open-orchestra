@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenOrchestra\ModelBundle\Tests\Functional\Model;
+namespace OpenOrchestra\FunctionalTests\ModelBundle\Model;
 use OpenOrchestra\BaseBundle\Tests\AbstractTest\AbstractBaseTestCase;
 
 /**

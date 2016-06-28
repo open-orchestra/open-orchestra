@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenOrchestra\BackofficeBundle\Tests\Functional;
+namespace OpenOrchestra\FunctionalTests\BackofficeBundle;
 
 use OpenOrchestra\BaseBundle\Tests\AbstractTest\AbstractWebTestCase;
 use Symfony\Bundle\FrameworkBundle\Client;

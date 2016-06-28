@@ -1,12 +1,12 @@
 <?php
 
-namespace OpenOrchestra\MediaAdminBundle\Tests\Functional\EventSubscriber;
+namespace OpenOrchestra\FunctionalTests\MediaAdminBundle\EventSubscriber;
 
 use OpenOrchestra\Media\Model\MediaInterface;
 use OpenOrchestra\MediaModelBundle\Document\Media;
 use OpenOrchestra\ModelBundle\Document\Block;
 use OpenOrchestra\ModelBundle\Document\Node;
-use OpenOrchestra\BackofficeBundle\Tests\Functional\Controller\AbstractControllerTest;
+use OpenOrchestra\FunctionalTests\BackofficeBundle\Controller\AbstractControllerTest;
 use OpenOrchestra\ModelInterface\Event\NodeEvent;
 use OpenOrchestra\ModelInterface\NodeEvents;
 use Symfony\Component\EventDispatcher\EventDispatcher;

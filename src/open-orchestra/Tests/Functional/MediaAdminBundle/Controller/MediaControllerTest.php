@@ -1,8 +1,8 @@
 <?php
 
-namespace OpenOrchestra\MediaAdminBundle\Tests\Functional\Controller;
+namespace OpenOrchestra\FunctionalTests\MediaAdminBundle\Controller;
 
-use OpenOrchestra\BackofficeBundle\Tests\Functional\Controller\AbstractControllerTest;
+use OpenOrchestra\FunctionalTests\BackofficeBundle\Controller\AbstractControllerTest;
 
 /**
  * Class MediaControllerTest

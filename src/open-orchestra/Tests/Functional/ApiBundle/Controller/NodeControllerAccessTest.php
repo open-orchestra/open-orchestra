@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenOrchestra\ApiBundle\Tests\Functional\Controller;
+namespace OpenOrchestra\FunctionalTests\ApiBundle\Controller;
 
 use OpenOrchestra\Backoffice\NavigationPanel\Strategies\TreeNodesPanelStrategy;
 use OpenOrchestra\Backoffice\Model\ModelGroupRoleInterface;

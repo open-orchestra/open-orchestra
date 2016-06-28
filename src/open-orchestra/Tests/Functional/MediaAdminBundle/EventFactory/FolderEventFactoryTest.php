@@ -1,8 +1,8 @@
 <?php
 
-namespace OpenOrchestra\BackofficeBundle\Tests\Functional\EventFactory;
+namespace OpenOrchestra\FunctionalTests\BackofficeBundle\EventFactory;
 
-use OpenOrchestra\BackofficeBundle\Tests\Functional\AbstractAuthentificatedTest;
+use OpenOrchestra\FunctionalTests\BackofficeBundle\AbstractAuthentificatedTest;
 use Symfony\Component\Form\FormFactoryInterface;
 use OpenOrchestra\MediaModelBundle\Document\MediaFolder;
 

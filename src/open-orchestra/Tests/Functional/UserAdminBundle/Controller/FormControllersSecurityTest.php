@@ -1,8 +1,8 @@
 <?php
 
-namespace OpenOrchestra\UserAdminBundle\Tests\Functional\Controller;
+namespace OpenOrchestra\FunctionalTests\UserAdminBundle\Controller;
 
-use OpenOrchestra\BackofficeBundle\Tests\Functional\Controller\AbstractControllerTest;
+use OpenOrchestra\FunctionalTests\BackofficeBundle\Controller\AbstractControllerTest;
 
 /**
  * Class FormControllersSecurityTest
