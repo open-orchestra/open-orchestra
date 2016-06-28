@@ -1,0 +1,8 @@
+OpenOrchestra\Mapping\Tests\Functional\Mapping\Metadata\Driver\FakeClass\FakeClassMetadata:
+    properties:
+        fakeProperty1:
+            key: fake_property1
+            type: fakeType
+            field: fakeProperty1
+        fakeProperty2:
+            key: [fake_property2, fake_property_multi]

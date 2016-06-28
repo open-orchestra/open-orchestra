@@ -1,0 +1,6 @@
+<search-mapping>
+    <class name="OpenOrchestra\Mapping\Tests\Functional\Mapping\Metadata\Driver\FakeClass\FakeClassMetadata">
+        <field field="fakeProperty1" key="fake_property1" type="fakeType" />
+        <field field="fakeProperty2" key="fake_property2, fake_property_multi"/>
+    </class>
+</search-mapping>
