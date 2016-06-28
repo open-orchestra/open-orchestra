@@ -62,6 +62,12 @@
     "bin-dir": "bin"
   },
 
+  "autoload": {
+    "psr-4": {
+      "OpenOrchestra\\FunctionalTests\\": "src/open-orchestra/Tests/Functional/"
+    }
+  }
+
   "extra": {
     "symfony-app-dir": "app",
     "symfony-web-dir": "web",

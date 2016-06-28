@@ -16,7 +16,7 @@ class XmlDriverTest extends AbstractDriverTest
     public function setUp()
     {
         parent::setUp();
-        $dirs = array('OpenOrchestra\Mapping\Tests\Functional\Mapping\Metadata\Driver\FakeClass' => __DIR__ . '/xml');
+        $dirs = array('OpenOrchestra\FunctionalTests\Mapping\Metadata\Driver\FakeClass' => __DIR__ . '/xml');
         $fileLocaltor = new FileLocator($dirs);
 
         $this->driver = new XmlDriver($fileLocaltor,

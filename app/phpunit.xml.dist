@@ -18,25 +18,9 @@
             <directory>../src/*/*/Tests</directory>
             <directory>../src/*/Bundle/*Bundle/Tests</directory>
             <directory>../vendor/open-orchestra/*/*/Tests</directory>
-            <exclude>../vendor/open-orchestra/open-orchestra-base-api-bundle/BaseApiBundle/Tests/Functional</exclude>
-            <exclude>../vendor/open-orchestra/open-orchestra-cms-bundle/ApiBundle/Tests/Functional</exclude>
-            <exclude>../vendor/open-orchestra/open-orchestra-cms-bundle/BackofficeBundle/Tests/Functional</exclude>
-            <exclude>../vendor/open-orchestra/open-orchestra-cms-bundle/UserAdminBundle/Tests/Functional</exclude>
-            <exclude>../vendor/open-orchestra/open-orchestra-media-admin-bundle/MediaAdminBundle/Tests/Functional</exclude>
-            <exclude>../vendor/open-orchestra/open-orchestra-cms-bundle/GroupBundle/Tests/Functional</exclude>
-            <exclude>../vendor/open-orchestra/open-orchestra-cms-bundle/LogBundle/Tests/Functional</exclude>
-            <exclude>../vendor/open-orchestra/open-orchestra-media-bundle/MediaBundle/Tests/Functional</exclude>
-            <exclude>../vendor/open-orchestra/open-orchestra-model-bundle/ModelBundle/Tests/Functional</exclude>
-            <exclude>../vendor/open-orchestra/open-orchestra-user-bundle/UserBundle/Tests/Functional</exclude>
-            <exclude>../vendor/open-orchestra/open-orchestra-workflow-function-bundle/WorkflowFunctionBundle/Tests/Functional</exclude>
-            <exclude>../vendor/open-orchestra/open-orchestra-workflow-function-bundle/WorkflowFunctionModelBundle/Tests/Functional</exclude>
-            <exclude>../vendor/open-orchestra/open-orchestra-workflow-function-bundle/WorkflowFunctionAdminBundle/Tests/Functional</exclude>
-            <exclude>../vendor/open-orchestra/open-orchestra-base-bundle/BaseBundle/Tests/Functional</exclude>
-            <exclude>../vendor/open-orchestra/open-orchestra-libs/Mapping/Tests/Functional</exclude>
         </testsuite>
         <testsuite name="functional">
-            <directory>../vendor/open-orchestra/*/*Bundle/Tests/Functional</directory>
-            <directory>../vendor/open-orchestra/open-orchestra-libs/Mapping/Tests/Functional</directory>
+            <directory>../src/open-orchestra/Tests/Functional/*</directory>
         </testsuite>
     </testsuites>
 
