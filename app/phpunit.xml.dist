@@ -15,8 +15,6 @@
 
     <testsuites>
         <testsuite name="unit">
-            <directory>../src/*/*/Tests</directory>
-            <directory>../src/*/Bundle/*Bundle/Tests</directory>
             <directory>../vendor/open-orchestra/*/*/Tests</directory>
         </testsuite>
         <testsuite name="functional">
