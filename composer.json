@@ -64,7 +64,7 @@
 
   "autoload": {
     "psr-4": {
-      "OpenOrchestra\\FunctionalTests\\": "src/open-orchestra/Tests/Functional/"
+      "OpenOrchestra\\FunctionalTests\\": "src/OpenOrchestra/Tests/Functional/"
     }
   },
 

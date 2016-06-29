@@ -20,7 +20,7 @@
             <directory>../vendor/open-orchestra/*/*/Tests</directory>
         </testsuite>
         <testsuite name="functional">
-            <directory>../src/open-orchestra/Tests/Functional/*</directory>
+            <directory>../src/OpenOrchestra/Tests/Functional/*</directory>
         </testsuite>
     </testsuites>
 
