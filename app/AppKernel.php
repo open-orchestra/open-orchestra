@@ -62,12 +62,12 @@ class AppKernel extends Kernel
             new OpenOrchestra\ElasticaBundle\OpenOrchestraElasticaBundle(),
             new OpenOrchestra\ElasticaAdminBundle\OpenOrchestraElasticaAdminBundle(),
             new AntiMattr\Bundle\MongoDBMigrationsBundle\MongoDBMigrationsBundle(),
+            new Sensio\Bundle\DistributionBundle\SensioDistributionBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
             $bundles[] = new Symfony\Bundle\DebugBundle\DebugBundle();
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
-            $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
         }
 
