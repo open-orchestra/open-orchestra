@@ -8,10 +8,6 @@
          bootstrap="autoload.php"
 >
 
-    <php>
-        <ini name="error_reporting" value="-1" />
-    </php>
-
     <testsuites>
         <testsuite name="unit">
             <directory>../vendor/open-orchestra/*/*/Tests</directory>
