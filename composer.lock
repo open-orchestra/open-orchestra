@@ -222,34 +222,35 @@
         },
         {
             "name": "braincrafted/bootstrap-bundle",
-            "version": "v2.1.2",
+            "version": "v2.2.0",
             "target-dir": "Braincrafted/Bundle/BootstrapBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/braincrafted/bootstrap-bundle.git",
-                "reference": "c301bae8ba91b1a6f1045919b16f9cb9b62c7e7b"
+                "reference": "23ae42061668d0fdc999b63db55c264265e037ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/braincrafted/bootstrap-bundle/zipball/c301bae8ba91b1a6f1045919b16f9cb9b62c7e7b",
-                "reference": "c301bae8ba91b1a6f1045919b16f9cb9b62c7e7b",
+                "url": "https://api.github.com/repos/braincrafted/bootstrap-bundle/zipball/23ae42061668d0fdc999b63db55c264265e037ab",
+                "reference": "23ae42061668d0fdc999b63db55c264265e037ab",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3",
-                "symfony/console": "~2.3",
-                "symfony/finder": "~2.3",
-                "symfony/form": "~2.3",
-                "symfony/framework-bundle": "~2.3",
-                "symfony/twig-bundle": "~2.3"
+                "symfony/console": "~2.6|~3.0",
+                "symfony/finder": "~2.6|~3.0",
+                "symfony/form": "~2.6|~3.0",
+                "symfony/framework-bundle": "~2.6|~3.0",
+                "symfony/twig-bundle": "~2.6|~3.0",
+                "twig/twig": "~1.12|~2.0@dev"
             },
             "require-dev": {
                 "knplabs/knp-menu": "~2.0@alpha",
                 "knplabs/knp-menu-bundle": "~2.0@alpha",
                 "knplabs/knp-paginator-bundle": "dev-master",
-                "mockery/mockery": "0.9.*",
-                "phpunit/phpunit": "3.7.*",
-                "symfony/assetic-bundle": "~2.3"
+                "mockery/mockery": "~0.9",
+                "phpunit/phpunit": "~3.7",
+                "symfony/assetic-bundle": "~2.6|~3.0"
             },
             "suggest": {
                 "knplabs/knp-menu": "Required to use KnpMenuBundle.",
@@ -278,7 +279,7 @@
             "keywords": [
                 "bootstrap"
             ],
-            "time": "2015-03-06 12:14:13"
+            "time": "2016-01-23 17:44:32"
         },
         {
             "name": "doctrine/annotations",
@@ -952,21 +953,21 @@
         },
         {
             "name": "doctrine/mongodb-odm-bundle",
-            "version": "3.1.0",
+            "version": "3.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/DoctrineMongoDBBundle.git",
-                "reference": "5ecd5d553816a258bb5860a5a2eddb67b4446f75"
+                "reference": "e98a08a0c7ba495ef2436fffea1c225da1d0ac18"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/DoctrineMongoDBBundle/zipball/5ecd5d553816a258bb5860a5a2eddb67b4446f75",
-                "reference": "5ecd5d553816a258bb5860a5a2eddb67b4446f75",
+                "url": "https://api.github.com/repos/doctrine/DoctrineMongoDBBundle/zipball/e98a08a0c7ba495ef2436fffea1c225da1d0ac18",
+                "reference": "e98a08a0c7ba495ef2436fffea1c225da1d0ac18",
                 "shasum": ""
             },
             "require": {
-                "doctrine/mongodb-odm": "^1.0",
-                "php": "^5.5 || ^7.0",
+                "doctrine/mongodb-odm": "^1.1",
+                "php": "^5.6 || ^7.0",
                 "psr/log": "^1.0",
                 "symfony/config": "^2.7 || ^3.0",
                 "symfony/console": "^2.7 || ^3.0",
@@ -1020,7 +1021,7 @@
                 "persistence",
                 "symfony"
             ],
-            "time": "2016-04-10 19:04:45"
+            "time": "2016-06-30 12:19:21"
         },
         {
             "name": "evenement/evenement",
@@ -1918,23 +1919,24 @@
         },
         {
             "name": "jms/serializer-bundle",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "target-dir": "JMS/SerializerBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/JMSSerializerBundle.git",
-                "reference": "0be35615b5bae1ce42567244a321aa1be3ed0280"
+                "reference": "3e396c980545350c2efb65a50041d2a9f9d6562e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/JMSSerializerBundle/zipball/0be35615b5bae1ce42567244a321aa1be3ed0280",
-                "reference": "0be35615b5bae1ce42567244a321aa1be3ed0280",
+                "url": "https://api.github.com/repos/schmittjoh/JMSSerializerBundle/zipball/3e396c980545350c2efb65a50041d2a9f9d6562e",
+                "reference": "3e396c980545350c2efb65a50041d2a9f9d6562e",
                 "shasum": ""
             },
             "require": {
                 "jms/serializer": "^1.0.0",
-                "php": ">=5.3.2",
-                "symfony/framework-bundle": "~2.1"
+                "php": ">=5.4.0",
+                "phpoption/phpoption": "^1.1.0",
+                "symfony/framework-bundle": "~2.3|~3.0"
             },
             "require-dev": {
                 "doctrine/doctrine-bundle": "*",
@@ -1956,7 +1958,7 @@
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.13-dev"
+                    "dev-master": "1.1-dev"
                 }
             },
             "autoload": {
@@ -1983,20 +1985,20 @@
                 "serialization",
                 "xml"
             ],
-            "time": "2015-06-23 19:27:08"
+            "time": "2015-11-10 12:26:42"
         },
         {
             "name": "knplabs/gaufrette",
-            "version": "v0.1.9",
+            "version": "0.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/Gaufrette.git",
-                "reference": "4c73bb66ff41d7c9beb57372a82047cf5dcc6d1c"
+                "reference": "1696386ca66f2f046dea7892cf1f85fd82b5b68e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/Gaufrette/zipball/4c73bb66ff41d7c9beb57372a82047cf5dcc6d1c",
-                "reference": "4c73bb66ff41d7c9beb57372a82047cf5dcc6d1c",
+                "url": "https://api.github.com/repos/KnpLabs/Gaufrette/zipball/1696386ca66f2f046dea7892cf1f85fd82b5b68e",
+                "reference": "1696386ca66f2f046dea7892cf1f85fd82b5b68e",
                 "shasum": ""
             },
             "require": {
@@ -2007,11 +2009,11 @@
                 "aws/aws-sdk-php": "~2",
                 "doctrine/dbal": ">=2.3",
                 "dropbox-php/dropbox-php": "*",
-                "google/apiclient": "~1.1",
+                "google/apiclient": "~1.1.3",
                 "herzult/php-ssh": "*",
                 "microsoft/windowsazure": "dev-master",
                 "mikey179/vfsstream": "~1.2.0",
-                "phpseclib/phpseclib": "dev-master",
+                "phpseclib/phpseclib": "^2.0",
                 "phpspec/phpspec": "2.0.*",
                 "phpunit/phpunit": "3.7.*",
                 "rackspace/php-opencloud": "1.9.*"
@@ -2037,7 +2039,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.2.x-dev"
+                    "dev-master": "0.4.x-dev"
                 }
             },
             "autoload": {
@@ -2067,41 +2069,40 @@
                 "filesystem",
                 "media"
             ],
-            "time": "2015-03-09 08:06:57"
+            "time": "2016-03-03 09:36:22"
         },
         {
             "name": "knplabs/knp-gaufrette-bundle",
-            "version": "v0.1.7",
-            "target-dir": "Knp/Bundle/GaufretteBundle",
+            "version": "0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/KnpGaufretteBundle.git",
-                "reference": "f33008584345452c3122bb4eaac0ded1d6084c51"
+                "reference": "44cf552e14031517516458b0e394f16dd36a131b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/KnpGaufretteBundle/zipball/f33008584345452c3122bb4eaac0ded1d6084c51",
-                "reference": "f33008584345452c3122bb4eaac0ded1d6084c51",
+                "url": "https://api.github.com/repos/KnpLabs/KnpGaufretteBundle/zipball/44cf552e14031517516458b0e394f16dd36a131b",
+                "reference": "44cf552e14031517516458b0e394f16dd36a131b",
                 "shasum": ""
             },
             "require": {
-                "knplabs/gaufrette": "~0.1.7",
-                "symfony/framework-bundle": "2.*"
+                "knplabs/gaufrette": "~0.1.7|~0.2",
+                "symfony/framework-bundle": "~2.0|~3.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "3.7.*",
-                "symfony/console": "2.*",
-                "symfony/yaml": "2.*"
+                "phpunit/phpunit": "~4.2",
+                "symfony/console": "~2.0|~3.0",
+                "symfony/yaml": "~2.0|~3.0"
             },
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.2.x-dev"
+                    "dev-master": "0.4.x-dev"
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Knp\\Bundle\\GaufretteBundle": ""
+                "psr-4": {
+                    "Knp\\Bundle\\GaufretteBundle\\": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -2110,13 +2111,12 @@
             ],
             "authors": [
                 {
-                    "name": "Antoine Hérault",
-                    "email": "antoine.herault@gmail.com",
-                    "homepage": "https://github.com/Herzult"
-                },
-                {
                     "name": "The contributors",
                     "homepage": "https://github.com/knplabs/KnpGaufretteBundle/contributors"
+                },
+                {
+                    "name": "Antoine Hérault",
+                    "email": "antoine.herault@gmail.com"
                 }
             ],
             "description": "Allows to easily use the Gaufrette library in a Symfony project",
@@ -2127,7 +2127,7 @@
                 "filesystem",
                 "media"
             ],
-            "time": "2014-03-24 22:15:03"
+            "time": "2016-01-16 00:12:11"
         },
         {
             "name": "koala-framework/composer-extra-assets",
@@ -2432,16 +2432,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-base-api-bundle.git",
-                "reference": "727c9650ab8cd5d1b5cb6a4f7e500959137bd421"
+                "reference": "5ccbf9a7b215891a1fded7627104a99adcb4991d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-api-bundle/zipball/727c9650ab8cd5d1b5cb6a4f7e500959137bd421",
-                "reference": "727c9650ab8cd5d1b5cb6a4f7e500959137bd421",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-api-bundle/zipball/5ccbf9a7b215891a1fded7627104a99adcb4991d",
+                "reference": "5ccbf9a7b215891a1fded7627104a99adcb4991d",
                 "shasum": ""
             },
             "require": {
-                "jms/serializer-bundle": "~1.0.0",
+                "jms/serializer-bundle": "~1.1.0",
                 "open-orchestra/open-orchestra-base-bundle": "self.version",
                 "open-orchestra/open-orchestra-libs": "self.version",
                 "php": "~5.6.0",
@@ -2470,7 +2470,7 @@
                 }
             ],
             "description": "This bundle provide the base bricks for the OpenOrchestra Api",
-            "time": "2016-07-04 08:53:57"
+            "time": "2016-07-05 10:16:12"
         },
         {
             "name": "open-orchestra/open-orchestra-base-api-mongo-model-bundle",
@@ -2612,16 +2612,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "efcdaa36d5c74c82d70035bfc3950ba13fd08a5a"
+                "reference": "2dfce38effd93cfa67d05aa2357be6b0f0e47e65"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/efcdaa36d5c74c82d70035bfc3950ba13fd08a5a",
-                "reference": "efcdaa36d5c74c82d70035bfc3950ba13fd08a5a",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/2dfce38effd93cfa67d05aa2357be6b0f0e47e65",
+                "reference": "2dfce38effd93cfa67d05aa2357be6b0f0e47e65",
                 "shasum": ""
             },
             "require": {
-                "braincrafted/bootstrap-bundle": "~2.1.2",
+                "braincrafted/bootstrap-bundle": "~2.2.0",
                 "doctrine/data-fixtures": "~1.2.0",
                 "friendsofsymfony/user-bundle": "@dev",
                 "koala-framework/composer-extra-assets": "~2.0.4",
@@ -2631,7 +2631,7 @@
                 "open-orchestra/open-orchestra-model-interface": "self.version",
                 "open-orchestra/open-orchestra-user-bundle": "self.version",
                 "php": "~5.6.0",
-                "sensio/generator-bundle": "~2.5.0",
+                "sensio/generator-bundle": "~3.0.0",
                 "stfalcon/tinymce-bundle": "~0.3.8",
                 "symfony/assetic-bundle": "~2.8.0",
                 "symfony/monolog-bundle": "~2.11.0"
@@ -2709,7 +2709,7 @@
                 }
             ],
             "description": "This bundle provide the Back Office part of Open Orchestra",
-            "time": "2016-07-04 12:51:27"
+            "time": "2016-07-05 11:49:04"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2830,12 +2830,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-libs.git",
-                "reference": "7b6bea0ffa6226c4b959e01bb20180937b70e9dd"
+                "reference": "a1904621be61e0151d88ef87e7bbd65773ef0d2c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-libs/zipball/7b6bea0ffa6226c4b959e01bb20180937b70e9dd",
-                "reference": "7b6bea0ffa6226c4b959e01bb20180937b70e9dd",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-libs/zipball/a1904621be61e0151d88ef87e7bbd65773ef0d2c",
+                "reference": "a1904621be61e0151d88ef87e7bbd65773ef0d2c",
                 "shasum": ""
             },
             "require": {
@@ -2869,7 +2869,7 @@
                 }
             ],
             "description": "Some library for the Open Orchestra project",
-            "time": "2016-07-04 08:52:49"
+            "time": "2016-07-04 15:28:07"
         },
         {
             "name": "open-orchestra/open-orchestra-media-admin-bundle",
@@ -3024,16 +3024,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-file-bundle.git",
-                "reference": "b8c1a2d4c699f26b3d21f1431fc50cf9baca05fe"
+                "reference": "ee37fd980436df5dad7443d669349bce1c1a036e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-file-bundle/zipball/b8c1a2d4c699f26b3d21f1431fc50cf9baca05fe",
-                "reference": "b8c1a2d4c699f26b3d21f1431fc50cf9baca05fe",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-file-bundle/zipball/ee37fd980436df5dad7443d669349bce1c1a036e",
+                "reference": "ee37fd980436df5dad7443d669349bce1c1a036e",
                 "shasum": ""
             },
             "require": {
-                "knplabs/knp-gaufrette-bundle": "~0.1.7",
+                "knplabs/knp-gaufrette-bundle": "~0.3.0",
                 "php": "~5.6.0"
             },
             "require-dev": {
@@ -3058,7 +3058,7 @@
                 }
             ],
             "description": "This bundle provide the file management part for the media feature of OpenOrchestra",
-            "time": "2016-07-04 07:21:10"
+            "time": "2016-07-05 08:45:55"
         },
         {
             "name": "open-orchestra/open-orchestra-model-bundle",
@@ -3159,16 +3159,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-mongo-libs.git",
-                "reference": "11762e71ad4ced588f857f467b8cad89115876b8"
+                "reference": "c91aa60efa08aadd72f6ead546295dfad1f8e313"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-mongo-libs/zipball/11762e71ad4ced588f857f467b8cad89115876b8",
-                "reference": "11762e71ad4ced588f857f467b8cad89115876b8",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-mongo-libs/zipball/c91aa60efa08aadd72f6ead546295dfad1f8e313",
+                "reference": "c91aa60efa08aadd72f6ead546295dfad1f8e313",
                 "shasum": ""
             },
             "require": {
-                "doctrine/mongodb-odm-bundle": "~3.1.0",
+                "doctrine/mongodb-odm-bundle": "~3.2.0",
                 "jms/metadata": "~1.5.1",
                 "open-orchestra/open-orchestra-libs": "self.version",
                 "php": "~5.6.0",
@@ -3202,7 +3202,7 @@
                 }
             ],
             "description": "Some libraries to use MongoDB in Open Orchestra",
-            "time": "2016-07-04 07:21:02"
+            "time": "2016-07-05 09:30:54"
         },
         {
             "name": "open-orchestra/open-orchestra-user-bundle",
@@ -3210,16 +3210,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-user-bundle.git",
-                "reference": "e08cd4ba62d6d48c2053c7b620101dd3df9a8d6c"
+                "reference": "ea460cd517022dfc3092b2dc22d9e6008a3a6b68"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-user-bundle/zipball/e08cd4ba62d6d48c2053c7b620101dd3df9a8d6c",
-                "reference": "e08cd4ba62d6d48c2053c7b620101dd3df9a8d6c",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-user-bundle/zipball/ea460cd517022dfc3092b2dc22d9e6008a3a6b68",
+                "reference": "ea460cd517022dfc3092b2dc22d9e6008a3a6b68",
                 "shasum": ""
             },
             "require": {
-                "friendsofsymfony/user-bundle": "2.0.x-dev",
+                "friendsofsymfony/user-bundle": "~2.0.0@alpha",
                 "open-orchestra/open-orchestra-libs": "self.version",
                 "php": "~5.6.0"
             },
@@ -3255,7 +3255,7 @@
                 }
             ],
             "description": "An override of FosUserBundle to provide authentication on Open Orchestra",
-            "time": "2016-07-04 08:16:07"
+            "time": "2016-07-05 10:05:16"
         },
         {
             "name": "open-orchestra/open-orchestra-workflow-function-bundle",
@@ -3263,17 +3263,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-workflow-function-bundle.git",
-                "reference": "fe237e653ad3db11960ef5e0b7a8a7f450b3f22b"
+                "reference": "d289e98866060c1263d87943dca5b49b5c8ed18c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-workflow-function-bundle/zipball/fe237e653ad3db11960ef5e0b7a8a7f450b3f22b",
-                "reference": "fe237e653ad3db11960ef5e0b7a8a7f450b3f22b",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-workflow-function-bundle/zipball/d289e98866060c1263d87943dca5b49b5c8ed18c",
+                "reference": "d289e98866060c1263d87943dca5b49b5c8ed18c",
                 "shasum": ""
             },
             "require": {
                 "doctrine/data-fixtures": "~1.2.0",
-                "doctrine/mongodb-odm-bundle": "~3.1.0",
+                "doctrine/mongodb-odm-bundle": "~3.2.0",
                 "friendsofsymfony/user-bundle": "@dev",
                 "open-orchestra/open-orchestra-base-bundle": "self.version",
                 "open-orchestra/open-orchestra-cms-bundle": "self.version",
@@ -3313,7 +3313,7 @@
                 }
             ],
             "description": "A workflow function bundle for Open Orchestra",
-            "time": "2016-07-04 10:19:59"
+            "time": "2016-07-05 09:53:03"
         },
         {
             "name": "paragonie/random_compat",
@@ -3748,38 +3748,42 @@
         },
         {
             "name": "sensio/generator-bundle",
-            "version": "v2.5.3",
-            "target-dir": "Sensio/Bundle/GeneratorBundle",
+            "version": "v3.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioGeneratorBundle.git",
-                "reference": "e50108c2133ee5c9c484555faed50c17a61221d3"
+                "reference": "d1be460925376703a470a3ac6ec034eb7eab3892"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioGeneratorBundle/zipball/e50108c2133ee5c9c484555faed50c17a61221d3",
-                "reference": "e50108c2133ee5c9c484555faed50c17a61221d3",
+                "url": "https://api.github.com/repos/sensiolabs/SensioGeneratorBundle/zipball/d1be460925376703a470a3ac6ec034eb7eab3892",
+                "reference": "d1be460925376703a470a3ac6ec034eb7eab3892",
                 "shasum": ""
             },
             "require": {
-                "symfony/console": "~2.5",
-                "symfony/framework-bundle": "~2.2"
+                "symfony/console": "~2.7|~3.0",
+                "symfony/framework-bundle": "~2.7|~3.0",
+                "symfony/process": "~2.7|~3.0",
+                "symfony/yaml": "~2.7|~3.0"
             },
             "require-dev": {
-                "doctrine/orm": "~2.2,>=2.2.3",
-                "symfony/doctrine-bridge": "~2.2",
-                "twig/twig": "~1.11"
+                "doctrine/orm": "~2.4",
+                "symfony/doctrine-bridge": "~2.7|~3.0",
+                "twig/twig": "~1.18"
             },
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.5.x-dev"
+                    "dev-master": "3.0.x-dev"
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Sensio\\Bundle\\GeneratorBundle": ""
-                }
+                "psr-4": {
+                    "Sensio\\Bundle\\GeneratorBundle\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -3792,7 +3796,7 @@
                 }
             ],
             "description": "This bundle generates code for you",
-            "time": "2015-03-17 06:36:52"
+            "time": "2016-06-20 05:58:05"
         },
         {
             "name": "sensiolabs/security-checker",
