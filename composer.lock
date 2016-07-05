@@ -952,21 +952,21 @@
         },
         {
             "name": "doctrine/mongodb-odm-bundle",
-            "version": "3.1.0",
+            "version": "3.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/DoctrineMongoDBBundle.git",
-                "reference": "5ecd5d553816a258bb5860a5a2eddb67b4446f75"
+                "reference": "e98a08a0c7ba495ef2436fffea1c225da1d0ac18"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/DoctrineMongoDBBundle/zipball/5ecd5d553816a258bb5860a5a2eddb67b4446f75",
-                "reference": "5ecd5d553816a258bb5860a5a2eddb67b4446f75",
+                "url": "https://api.github.com/repos/doctrine/DoctrineMongoDBBundle/zipball/e98a08a0c7ba495ef2436fffea1c225da1d0ac18",
+                "reference": "e98a08a0c7ba495ef2436fffea1c225da1d0ac18",
                 "shasum": ""
             },
             "require": {
-                "doctrine/mongodb-odm": "^1.0",
-                "php": "^5.5 || ^7.0",
+                "doctrine/mongodb-odm": "^1.1",
+                "php": "^5.6 || ^7.0",
                 "psr/log": "^1.0",
                 "symfony/config": "^2.7 || ^3.0",
                 "symfony/console": "^2.7 || ^3.0",
@@ -1020,7 +1020,7 @@
                 "persistence",
                 "symfony"
             ],
-            "time": "2016-04-10 19:04:45"
+            "time": "2016-06-30 12:19:21"
         },
         {
             "name": "evenement/evenement",
@@ -1987,16 +1987,16 @@
         },
         {
             "name": "knplabs/gaufrette",
-            "version": "v0.1.9",
+            "version": "0.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/Gaufrette.git",
-                "reference": "4c73bb66ff41d7c9beb57372a82047cf5dcc6d1c"
+                "reference": "1696386ca66f2f046dea7892cf1f85fd82b5b68e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/Gaufrette/zipball/4c73bb66ff41d7c9beb57372a82047cf5dcc6d1c",
-                "reference": "4c73bb66ff41d7c9beb57372a82047cf5dcc6d1c",
+                "url": "https://api.github.com/repos/KnpLabs/Gaufrette/zipball/1696386ca66f2f046dea7892cf1f85fd82b5b68e",
+                "reference": "1696386ca66f2f046dea7892cf1f85fd82b5b68e",
                 "shasum": ""
             },
             "require": {
@@ -2007,11 +2007,11 @@
                 "aws/aws-sdk-php": "~2",
                 "doctrine/dbal": ">=2.3",
                 "dropbox-php/dropbox-php": "*",
-                "google/apiclient": "~1.1",
+                "google/apiclient": "~1.1.3",
                 "herzult/php-ssh": "*",
                 "microsoft/windowsazure": "dev-master",
                 "mikey179/vfsstream": "~1.2.0",
-                "phpseclib/phpseclib": "dev-master",
+                "phpseclib/phpseclib": "^2.0",
                 "phpspec/phpspec": "2.0.*",
                 "phpunit/phpunit": "3.7.*",
                 "rackspace/php-opencloud": "1.9.*"
@@ -2037,7 +2037,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.2.x-dev"
+                    "dev-master": "0.4.x-dev"
                 }
             },
             "autoload": {
@@ -2067,41 +2067,40 @@
                 "filesystem",
                 "media"
             ],
-            "time": "2015-03-09 08:06:57"
+            "time": "2016-03-03 09:36:22"
         },
         {
             "name": "knplabs/knp-gaufrette-bundle",
-            "version": "v0.1.7",
-            "target-dir": "Knp/Bundle/GaufretteBundle",
+            "version": "0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/KnpGaufretteBundle.git",
-                "reference": "f33008584345452c3122bb4eaac0ded1d6084c51"
+                "reference": "44cf552e14031517516458b0e394f16dd36a131b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/KnpGaufretteBundle/zipball/f33008584345452c3122bb4eaac0ded1d6084c51",
-                "reference": "f33008584345452c3122bb4eaac0ded1d6084c51",
+                "url": "https://api.github.com/repos/KnpLabs/KnpGaufretteBundle/zipball/44cf552e14031517516458b0e394f16dd36a131b",
+                "reference": "44cf552e14031517516458b0e394f16dd36a131b",
                 "shasum": ""
             },
             "require": {
-                "knplabs/gaufrette": "~0.1.7",
-                "symfony/framework-bundle": "2.*"
+                "knplabs/gaufrette": "~0.1.7|~0.2",
+                "symfony/framework-bundle": "~2.0|~3.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "3.7.*",
-                "symfony/console": "2.*",
-                "symfony/yaml": "2.*"
+                "phpunit/phpunit": "~4.2",
+                "symfony/console": "~2.0|~3.0",
+                "symfony/yaml": "~2.0|~3.0"
             },
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.2.x-dev"
+                    "dev-master": "0.4.x-dev"
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Knp\\Bundle\\GaufretteBundle": ""
+                "psr-4": {
+                    "Knp\\Bundle\\GaufretteBundle\\": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -2110,13 +2109,12 @@
             ],
             "authors": [
                 {
-                    "name": "Antoine Hérault",
-                    "email": "antoine.herault@gmail.com",
-                    "homepage": "https://github.com/Herzult"
-                },
-                {
                     "name": "The contributors",
                     "homepage": "https://github.com/knplabs/KnpGaufretteBundle/contributors"
+                },
+                {
+                    "name": "Antoine Hérault",
+                    "email": "antoine.herault@gmail.com"
                 }
             ],
             "description": "Allows to easily use the Gaufrette library in a Symfony project",
@@ -2127,7 +2125,7 @@
                 "filesystem",
                 "media"
             ],
-            "time": "2014-03-24 22:15:03"
+            "time": "2016-01-16 00:12:11"
         },
         {
             "name": "koala-framework/composer-extra-assets",
@@ -2830,12 +2828,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-libs.git",
-                "reference": "7b6bea0ffa6226c4b959e01bb20180937b70e9dd"
+                "reference": "a1904621be61e0151d88ef87e7bbd65773ef0d2c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-libs/zipball/7b6bea0ffa6226c4b959e01bb20180937b70e9dd",
-                "reference": "7b6bea0ffa6226c4b959e01bb20180937b70e9dd",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-libs/zipball/a1904621be61e0151d88ef87e7bbd65773ef0d2c",
+                "reference": "a1904621be61e0151d88ef87e7bbd65773ef0d2c",
                 "shasum": ""
             },
             "require": {
@@ -2869,7 +2867,7 @@
                 }
             ],
             "description": "Some library for the Open Orchestra project",
-            "time": "2016-07-04 08:52:49"
+            "time": "2016-07-04 15:28:07"
         },
         {
             "name": "open-orchestra/open-orchestra-media-admin-bundle",
@@ -3024,16 +3022,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-file-bundle.git",
-                "reference": "b8c1a2d4c699f26b3d21f1431fc50cf9baca05fe"
+                "reference": "ee37fd980436df5dad7443d669349bce1c1a036e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-file-bundle/zipball/b8c1a2d4c699f26b3d21f1431fc50cf9baca05fe",
-                "reference": "b8c1a2d4c699f26b3d21f1431fc50cf9baca05fe",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-file-bundle/zipball/ee37fd980436df5dad7443d669349bce1c1a036e",
+                "reference": "ee37fd980436df5dad7443d669349bce1c1a036e",
                 "shasum": ""
             },
             "require": {
-                "knplabs/knp-gaufrette-bundle": "~0.1.7",
+                "knplabs/knp-gaufrette-bundle": "~0.3.0",
                 "php": "~5.6.0"
             },
             "require-dev": {
@@ -3058,7 +3056,7 @@
                 }
             ],
             "description": "This bundle provide the file management part for the media feature of OpenOrchestra",
-            "time": "2016-07-04 07:21:10"
+            "time": "2016-07-05 08:45:55"
         },
         {
             "name": "open-orchestra/open-orchestra-model-bundle",
@@ -3159,16 +3157,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-mongo-libs.git",
-                "reference": "11762e71ad4ced588f857f467b8cad89115876b8"
+                "reference": "c91aa60efa08aadd72f6ead546295dfad1f8e313"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-mongo-libs/zipball/11762e71ad4ced588f857f467b8cad89115876b8",
-                "reference": "11762e71ad4ced588f857f467b8cad89115876b8",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-mongo-libs/zipball/c91aa60efa08aadd72f6ead546295dfad1f8e313",
+                "reference": "c91aa60efa08aadd72f6ead546295dfad1f8e313",
                 "shasum": ""
             },
             "require": {
-                "doctrine/mongodb-odm-bundle": "~3.1.0",
+                "doctrine/mongodb-odm-bundle": "~3.2.0",
                 "jms/metadata": "~1.5.1",
                 "open-orchestra/open-orchestra-libs": "self.version",
                 "php": "~5.6.0",
@@ -3202,7 +3200,7 @@
                 }
             ],
             "description": "Some libraries to use MongoDB in Open Orchestra",
-            "time": "2016-07-04 07:21:02"
+            "time": "2016-07-05 09:30:54"
         },
         {
             "name": "open-orchestra/open-orchestra-user-bundle",
@@ -3263,17 +3261,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-workflow-function-bundle.git",
-                "reference": "fe237e653ad3db11960ef5e0b7a8a7f450b3f22b"
+                "reference": "d289e98866060c1263d87943dca5b49b5c8ed18c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-workflow-function-bundle/zipball/fe237e653ad3db11960ef5e0b7a8a7f450b3f22b",
-                "reference": "fe237e653ad3db11960ef5e0b7a8a7f450b3f22b",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-workflow-function-bundle/zipball/d289e98866060c1263d87943dca5b49b5c8ed18c",
+                "reference": "d289e98866060c1263d87943dca5b49b5c8ed18c",
                 "shasum": ""
             },
             "require": {
                 "doctrine/data-fixtures": "~1.2.0",
-                "doctrine/mongodb-odm-bundle": "~3.1.0",
+                "doctrine/mongodb-odm-bundle": "~3.2.0",
                 "friendsofsymfony/user-bundle": "@dev",
                 "open-orchestra/open-orchestra-base-bundle": "self.version",
                 "open-orchestra/open-orchestra-cms-bundle": "self.version",
@@ -3313,7 +3311,7 @@
                 }
             ],
             "description": "A workflow function bundle for Open Orchestra",
-            "time": "2016-07-04 10:19:59"
+            "time": "2016-07-05 09:53:03"
         },
         {
             "name": "paragonie/random_compat",
