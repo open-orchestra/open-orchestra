@@ -1918,23 +1918,24 @@
         },
         {
             "name": "jms/serializer-bundle",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "target-dir": "JMS/SerializerBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/JMSSerializerBundle.git",
-                "reference": "0be35615b5bae1ce42567244a321aa1be3ed0280"
+                "reference": "3e396c980545350c2efb65a50041d2a9f9d6562e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/JMSSerializerBundle/zipball/0be35615b5bae1ce42567244a321aa1be3ed0280",
-                "reference": "0be35615b5bae1ce42567244a321aa1be3ed0280",
+                "url": "https://api.github.com/repos/schmittjoh/JMSSerializerBundle/zipball/3e396c980545350c2efb65a50041d2a9f9d6562e",
+                "reference": "3e396c980545350c2efb65a50041d2a9f9d6562e",
                 "shasum": ""
             },
             "require": {
                 "jms/serializer": "^1.0.0",
-                "php": ">=5.3.2",
-                "symfony/framework-bundle": "~2.1"
+                "php": ">=5.4.0",
+                "phpoption/phpoption": "^1.1.0",
+                "symfony/framework-bundle": "~2.3|~3.0"
             },
             "require-dev": {
                 "doctrine/doctrine-bundle": "*",
@@ -1956,7 +1957,7 @@
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.13-dev"
+                    "dev-master": "1.1-dev"
                 }
             },
             "autoload": {
@@ -1983,7 +1984,7 @@
                 "serialization",
                 "xml"
             ],
-            "time": "2015-06-23 19:27:08"
+            "time": "2015-11-10 12:26:42"
         },
         {
             "name": "knplabs/gaufrette",
@@ -2430,16 +2431,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-base-api-bundle.git",
-                "reference": "727c9650ab8cd5d1b5cb6a4f7e500959137bd421"
+                "reference": "5ccbf9a7b215891a1fded7627104a99adcb4991d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-api-bundle/zipball/727c9650ab8cd5d1b5cb6a4f7e500959137bd421",
-                "reference": "727c9650ab8cd5d1b5cb6a4f7e500959137bd421",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-api-bundle/zipball/5ccbf9a7b215891a1fded7627104a99adcb4991d",
+                "reference": "5ccbf9a7b215891a1fded7627104a99adcb4991d",
                 "shasum": ""
             },
             "require": {
-                "jms/serializer-bundle": "~1.0.0",
+                "jms/serializer-bundle": "~1.1.0",
                 "open-orchestra/open-orchestra-base-bundle": "self.version",
                 "open-orchestra/open-orchestra-libs": "self.version",
                 "php": "~5.6.0",
@@ -2468,7 +2469,7 @@
                 }
             ],
             "description": "This bundle provide the base bricks for the OpenOrchestra Api",
-            "time": "2016-07-04 08:53:57"
+            "time": "2016-07-05 10:16:12"
         },
         {
             "name": "open-orchestra/open-orchestra-base-api-mongo-model-bundle",
@@ -2610,12 +2611,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "efcdaa36d5c74c82d70035bfc3950ba13fd08a5a"
+                "reference": "0b2637a8a24d05548700aef14e55088f5cf2514d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/efcdaa36d5c74c82d70035bfc3950ba13fd08a5a",
-                "reference": "efcdaa36d5c74c82d70035bfc3950ba13fd08a5a",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/0b2637a8a24d05548700aef14e55088f5cf2514d",
+                "reference": "0b2637a8a24d05548700aef14e55088f5cf2514d",
                 "shasum": ""
             },
             "require": {
@@ -2629,7 +2630,7 @@
                 "open-orchestra/open-orchestra-model-interface": "self.version",
                 "open-orchestra/open-orchestra-user-bundle": "self.version",
                 "php": "~5.6.0",
-                "sensio/generator-bundle": "~2.5.0",
+                "sensio/generator-bundle": "~3.0.0",
                 "stfalcon/tinymce-bundle": "~0.3.8",
                 "symfony/assetic-bundle": "~2.8.0",
                 "symfony/monolog-bundle": "~2.11.0"
@@ -2707,7 +2708,7 @@
                 }
             ],
             "description": "This bundle provide the Back Office part of Open Orchestra",
-            "time": "2016-07-04 12:51:27"
+            "time": "2016-07-05 10:22:13"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -3208,16 +3209,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-user-bundle.git",
-                "reference": "e08cd4ba62d6d48c2053c7b620101dd3df9a8d6c"
+                "reference": "ea460cd517022dfc3092b2dc22d9e6008a3a6b68"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-user-bundle/zipball/e08cd4ba62d6d48c2053c7b620101dd3df9a8d6c",
-                "reference": "e08cd4ba62d6d48c2053c7b620101dd3df9a8d6c",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-user-bundle/zipball/ea460cd517022dfc3092b2dc22d9e6008a3a6b68",
+                "reference": "ea460cd517022dfc3092b2dc22d9e6008a3a6b68",
                 "shasum": ""
             },
             "require": {
-                "friendsofsymfony/user-bundle": "2.0.x-dev",
+                "friendsofsymfony/user-bundle": "~2.0.0@alpha",
                 "open-orchestra/open-orchestra-libs": "self.version",
                 "php": "~5.6.0"
             },
@@ -3253,7 +3254,7 @@
                 }
             ],
             "description": "An override of FosUserBundle to provide authentication on Open Orchestra",
-            "time": "2016-07-04 08:16:07"
+            "time": "2016-07-05 10:05:16"
         },
         {
             "name": "open-orchestra/open-orchestra-workflow-function-bundle",
@@ -3746,38 +3747,42 @@
         },
         {
             "name": "sensio/generator-bundle",
-            "version": "v2.5.3",
-            "target-dir": "Sensio/Bundle/GeneratorBundle",
+            "version": "v3.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioGeneratorBundle.git",
-                "reference": "e50108c2133ee5c9c484555faed50c17a61221d3"
+                "reference": "d1be460925376703a470a3ac6ec034eb7eab3892"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioGeneratorBundle/zipball/e50108c2133ee5c9c484555faed50c17a61221d3",
-                "reference": "e50108c2133ee5c9c484555faed50c17a61221d3",
+                "url": "https://api.github.com/repos/sensiolabs/SensioGeneratorBundle/zipball/d1be460925376703a470a3ac6ec034eb7eab3892",
+                "reference": "d1be460925376703a470a3ac6ec034eb7eab3892",
                 "shasum": ""
             },
             "require": {
-                "symfony/console": "~2.5",
-                "symfony/framework-bundle": "~2.2"
+                "symfony/console": "~2.7|~3.0",
+                "symfony/framework-bundle": "~2.7|~3.0",
+                "symfony/process": "~2.7|~3.0",
+                "symfony/yaml": "~2.7|~3.0"
             },
             "require-dev": {
-                "doctrine/orm": "~2.2,>=2.2.3",
-                "symfony/doctrine-bridge": "~2.2",
-                "twig/twig": "~1.11"
+                "doctrine/orm": "~2.4",
+                "symfony/doctrine-bridge": "~2.7|~3.0",
+                "twig/twig": "~1.18"
             },
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.5.x-dev"
+                    "dev-master": "3.0.x-dev"
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Sensio\\Bundle\\GeneratorBundle": ""
-                }
+                "psr-4": {
+                    "Sensio\\Bundle\\GeneratorBundle\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -3790,7 +3795,7 @@
                 }
             ],
             "description": "This bundle generates code for you",
-            "time": "2015-03-17 06:36:52"
+            "time": "2016-06-20 05:58:05"
         },
         {
             "name": "sensiolabs/security-checker",
