@@ -1,31 +1,24 @@
 <?php
 
-namespace OpenOrchestra\FunctionalTests\ApiBundle\Controller;
+namespace OpenOrchestra\FunctionalTests\Utils;
 
 use OpenOrchestra\BaseBundle\Tests\AbstractTest\AbstractWebTestCase;
-use Phake;
-use OpenOrchestra\ModelInterface\Repository\NodeRepositoryInterface;
 use Symfony\Bundle\FrameworkBundle\Client;
+use Symfony\Component\BrowserKit\Cookie;
+use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
 
 /**
- * Class AbstractControllerTest
+ * Class AbstractAuthentificatedTest
  */
-abstract class AbstractControllerTest extends AbstractWebTestCase
+abstract class AbstractAuthentificatedTest extends AbstractWebTestCase
 {
     /**
      * @var Client
      */
     protected $client;
-
-    protected $currentSiteManager;
+    protected $accessToken = array();
     protected $username = 'admin';
     protected $password = 'admin';
-    protected $accessToken = array();
-
-    /**
-     * @var NodeRepositoryInterface
-     */
-    protected $nodeRepository;
 
     /**
      * Set up the test
@@ -33,13 +26,28 @@ abstract class AbstractControllerTest extends AbstractWebTestCase
     public function setUp()
     {
         $this->client = static::createClient();
+        $this->logIn();
+    }
 
-        $this->currentSiteManager = Phake::mock('OpenOrchestra\Backoffice\Context\ContextManager');
-        Phake::when($this->currentSiteManager)->getCurrentSiteId()->thenReturn('2');
-        Phake::when($this->currentSiteManager)->getCurrentSiteDefaultLanguage()->thenReturn('fr');
-        static::$kernel->getContainer()->set('open_orchestra_backoffice.context_manager', $this->currentSiteManager);
+    /**
+     * Log user with username
+     */
+    protected function logIn()
+    {
+        $container = $this->client->getContainer();
+        $userManager = $container->get('fos_user.user_manager');
 
-        $this->nodeRepository = static::$kernel->getContainer()->get('open_orchestra_model.repository.node');
+        $user = $userManager->findUserByUsername($this->username);
+
+        $session = $this->client->getContainer()->get('session');
+        $firewall = 'openorchestra';
+        $token = new UsernamePasswordToken($user, null, $firewall, $user->getRoles());
+        $session->set('_security_'.$firewall, serialize($token));
+        $session->save();
+        $container->get('fos_user.security.login_manager')->logInUser($firewall, $user);
+
+        $cookie = new Cookie($session->getName(), $session->getId());
+        $this->client->getCookieJar()->set($cookie);
     }
 
     /**

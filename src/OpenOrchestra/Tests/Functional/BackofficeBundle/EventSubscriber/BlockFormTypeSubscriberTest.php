@@ -2,7 +2,7 @@
 
 namespace OpenOrchestra\FunctionalTests\BackofficeBundle\EventSubscriber;
 
-use OpenOrchestra\FunctionalTests\BackofficeBundle\AbstractAuthentificatedTest;
+use OpenOrchestra\FunctionalTests\Utils\AbstractAuthentificatedTest;
 use OpenOrchestra\DisplayBundle\DisplayBlock\Strategies\ConfigurableContentStrategy;
 use OpenOrchestra\DisplayBundle\DisplayBlock\Strategies\ContentListStrategy;
 use OpenOrchestra\DisplayBundle\DisplayBlock\Strategies\VideoStrategy;

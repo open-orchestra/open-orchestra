@@ -2,14 +2,14 @@
 
 namespace OpenOrchestra\FunctionalTests\MediaAdminBundle\Controller;
 
-use OpenOrchestra\FunctionalTests\BackofficeBundle\Controller\AbstractControllerTest;
+use OpenOrchestra\FunctionalTests\Utils\AbstractFormTest;
 
 /**
  * Class MediaControllerTest
  *
  * @group media
  */
-class MediaControllerTest extends AbstractControllerTest
+class MediaControllerTest extends AbstractFormTest
 {
     protected $media;
 

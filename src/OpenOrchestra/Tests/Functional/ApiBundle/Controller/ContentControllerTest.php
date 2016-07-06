@@ -2,13 +2,14 @@
 
 namespace OpenOrchestra\FunctionalTests\ApiBundle\Controller;
 
+use OpenOrchestra\FunctionalTests\Utils\AbstractAuthentificatedTest;
 use OpenOrchestra\ModelInterface\Repository\ContentRepositoryInterface;
 use OpenOrchestra\ModelInterface\Repository\StatusRepositoryInterface;
 
 /**
  * Class ContentControllerTest
  */
-class ContentControllerTest extends AbstractControllerTest
+class ContentControllerTest extends AbstractAuthentificatedTest
 {
     /**
      * @var StatusRepositoryInterface
@@ -25,16 +26,7 @@ class ContentControllerTest extends AbstractControllerTest
      */
     public function setUp()
     {
-        $this->client = static::createClient();
-
-        $crawler = $this->client->request('GET', '/login');
-
-        $form = $crawler->selectButton('Log in')->form();
-        $form['_username'] = $this->username;
-        $form['_password'] = $this->password;
-
-        $this->client->submit($form);
-
+        parent::setUp();
         $this->contentRepository = static::$kernel->getContainer()->get('open_orchestra_model.repository.content');
         $this->statusRepository = static::$kernel->getContainer()->get('open_orchestra_model.repository.status');
     }

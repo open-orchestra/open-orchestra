@@ -2,7 +2,9 @@
 
 namespace OpenOrchestra\FunctionalTests\ApiBundle\Controller;
 
+use OpenOrchestra\FunctionalTests\Utils\AbstractAuthentificatedTest;
 use OpenOrchestra\ModelInterface\Model\NodeInterface;
+use OpenOrchestra\ModelInterface\Repository\NodeRepositoryInterface;
 use OpenOrchestra\ModelInterface\Repository\StatusRepositoryInterface;
 
 /**
@@ -10,7 +12,7 @@ use OpenOrchestra\ModelInterface\Repository\StatusRepositoryInterface;
  *
  * @group apiFunctional
  */
-class NodeControllerTest extends AbstractControllerTest
+class NodeControllerTest extends AbstractAuthentificatedTest
 {
     /**
      * @var StatusRepositoryInterface
@@ -18,20 +20,16 @@ class NodeControllerTest extends AbstractControllerTest
     protected $statusRepository;
 
     /**
+     * @var NodeRepositoryInterface
+     */
+    protected $nodeRepository;
+
+    /**
      * Set up the test
      */
     public function setUp()
     {
-        $this->client = static::createClient();
-
-        $crawler = $this->client->request('GET', '/login');
-
-        $form = $crawler->selectButton('Log in')->form();
-        $form['_username'] = $this->username;
-        $form['_password'] = $this->password;
-
-        $this->client->submit($form);
-
+        parent::setUp();
         $this->nodeRepository = static::$kernel->getContainer()->get('open_orchestra_model.repository.node');
         $this->statusRepository = static::$kernel->getContainer()->get('open_orchestra_model.repository.status');
     }
@@ -57,14 +55,11 @@ class NodeControllerTest extends AbstractControllerTest
         $node->getStatus()->setPublished(false);
         static::$kernel->getContainer()->get('object_manager')->flush();
 
-        $crawler = $this->client->request('GET', '/admin/');
-        $nbLink = $crawler->filter('a')->count();
-
+        $nbNode = count($this->nodeRepository->findLastVersionByType('2'));
         $this->client->request('DELETE', '/api/node/fixture_page_contact/delete');
+        $nodesDelete = $this->nodeRepository->findLastVersionByType('2');
 
-        $crawler = $this->client->request('GET', '/admin/');
-
-        $this->assertCount($nbLink - 2, $crawler->filter('a'));
+        $this->assertCount($nbNode - 1, $nodesDelete);
     }
 
     /**
@@ -115,27 +110,16 @@ class NodeControllerTest extends AbstractControllerTest
      */
     public function testCreateNewLanguageNode()
     {
+        $this->client->request('GET', '/api/node/root/show-or-create', array('language' => 'de'));
+
         $node = $this->nodeRepository
-            ->findInLastVersion('root', 'en', '2');
-        if (!is_null($node)) {
-            $this->markTestIncomplete('The node has already been created');
-        }
+            ->findInLastVersion('root', 'de', '2');
 
-        $nodeTransverse = $this->nodeRepository
-            ->findInLastVersion(NodeInterface::TRANSVERSE_NODE_ID, 'en', '2');
-        $countAreaRef = $this->countAreaRef($nodeTransverse);
-
-        $this->assertSame(null, $node);
-        $this->assertSame(5, $countAreaRef);
-
-        $this->client->request('GET', '/api/node/root/show-or-create', array('language' => 'en'));
-
-
-        $nodeRepository = static::$kernel->getContainer()->get('open_orchestra_model.repository.node');
-        $nodeTransverseAfter = $nodeRepository
-            ->findInLastVersion(NodeInterface::TRANSVERSE_NODE_ID, 'en', '2');
-
-        $this->assertGreaterThan($countAreaRef, $this->countAreaRef($nodeTransverseAfter));
+        $this->assertInstanceOf('OpenOrchestra\ModelInterface\Model\NodeInterface', $node);
+        $this->assertSame(1, $node->getVersion());
+        $this->assertSame('de', $node->getLanguage());
+        static::$kernel->getContainer()->get('object_manager')->remove($node);
+        static::$kernel->getContainer()->get('object_manager')->flush();
     }
 
     /**
@@ -197,11 +181,10 @@ class NodeControllerTest extends AbstractControllerTest
      */
     public function testUpdateNotGranted()
     {
-        $crawler = $this->client->request('GET', '/login');
-        $form = $crawler->selectButton('Log in')->form();
-        $form['_username'] = 'userNoAccess';
-        $form['_password'] = 'userNoAccess';
-        $this->client->submit($form);
+        $this->username = 'userNoAccess';
+        $this->password = 'userNoAccess';
+        $this->logIn();
+
         $node = $this->nodeRepository->findInLastVersion('root', 'fr', '2');
         $this->client->request(
             'POST',

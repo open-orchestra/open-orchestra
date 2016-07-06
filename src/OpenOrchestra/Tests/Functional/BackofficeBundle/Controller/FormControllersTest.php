@@ -2,12 +2,14 @@
 
 namespace OpenOrchestra\FunctionalTests\BackofficeBundle\Controller;
 
+use OpenOrchestra\FunctionalTests\Utils\AbstractFormTest;
+
 /**
  * Class FormControllersTest
  *
  * @group backofficeTest
  */
-class FormControllersTest extends AbstractControllerTest
+class FormControllersTest extends AbstractFormTest
 {
     /**
      * @param string $url

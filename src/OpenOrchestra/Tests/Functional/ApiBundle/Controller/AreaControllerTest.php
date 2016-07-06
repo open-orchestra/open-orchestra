@@ -2,30 +2,34 @@
 
 namespace OpenOrchestra\FunctionalTests\ApiBundle\Controller;
 
+use Phake;
+use OpenOrchestra\FunctionalTests\Utils\AbstractAuthentificatedTest;
+use OpenOrchestra\ModelInterface\Repository\NodeRepositoryInterface;
+
 /**
  * Class AreaControllerTest
  *
  * @group apiFunctional
  */
-class AreaControllerTest extends AbstractControllerTest
+class AreaControllerTest extends AbstractAuthentificatedTest
 {
+    /**
+     * @var NodeRepositoryInterface
+     */
+    protected $nodeRepository;
+    protected $currentSiteManager;
+
     /**
      * Set up the test
      */
     public function setUp()
     {
-        $this->client = static::createClient();
-
-        $crawler = $this->client->request('GET', '/login');
-
-        $form = $crawler->selectButton('Log in')->form();
-        $form['_username'] = $this->username;
-        $form['_password'] = $this->password;
-
-        $this->client->submit($form);
-
-        $this->currentSiteManager = static::$kernel->getContainer()->get('open_orchestra_backoffice.context_manager');
+        parent::setUp();
         $this->nodeRepository = static::$kernel->getContainer()->get('open_orchestra_model.repository.node');
+        $this->currentSiteManager = Phake::mock('OpenOrchestra\Backoffice\Context\ContextManager');
+        Phake::when($this->currentSiteManager)->getCurrentSiteId()->thenReturn('2');
+        Phake::when($this->currentSiteManager)->getCurrentSiteDefaultLanguage()->thenReturn('fr');
+        static::$kernel->getContainer()->set('open_orchestra_backoffice.context_manager', $this->currentSiteManager);
     }
 
     /**

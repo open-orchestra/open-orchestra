@@ -2,13 +2,13 @@
 
 namespace OpenOrchestra\FunctionalTests\UserAdminBundle\Controller;
 
-use OpenOrchestra\FunctionalTests\BackofficeBundle\Controller\AbstractControllerTest;
+use OpenOrchestra\FunctionalTests\Utils\AbstractAuthentificatedTest;
 use OpenOrchestra\UserBundle\Repository\UserRepositoryInterface;
 
 /**
  * Class FormUserSuperAdminControllersTest
  */
-class FormUserSuperAdminControllersTest extends AbstractControllerTest
+class FormUserSuperAdminControllersTest extends AbstractAuthentificatedTest
 {
     /** @var  UserRepositoryInterface */
     protected $userRepository;

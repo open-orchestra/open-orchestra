@@ -2,14 +2,14 @@
 
 namespace OpenOrchestra\FunctionalTests\UserAdminBundle\Controller;
 
-use OpenOrchestra\FunctionalTests\ApiBundle\Controller\AbstractControllerTest;
+use OpenOrchestra\FunctionalTests\Utils\AbstractAuthentificatedTest;
 
 /**
  * Class ApiControllersSecurityTest
  *
  * @group securityCheck
  */
-class ApiControllersSecurityTest extends AbstractControllerTest
+class ApiControllersSecurityTest extends AbstractAuthentificatedTest
 {
     protected $username = "userNoAccess";
     protected $password = "userNoAccess";

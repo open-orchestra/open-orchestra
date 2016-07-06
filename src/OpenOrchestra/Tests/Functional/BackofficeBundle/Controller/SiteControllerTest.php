@@ -2,6 +2,7 @@
 
 namespace OpenOrchestra\FunctionalTests\BackofficeBundle\Controller;
 
+use OpenOrchestra\FunctionalTests\Utils\AbstractFormTest;
 use OpenOrchestra\ModelInterface\Model\NodeInterface;
 use OpenOrchestra\ModelInterface\Repository\NodeRepositoryInterface;
 use OpenOrchestra\ModelInterface\Repository\SiteRepositoryInterface;
@@ -11,7 +12,7 @@ use OpenOrchestra\ModelInterface\Repository\SiteRepositoryInterface;
  *
  * @group backofficeTest
  */
-class SiteControllerTest extends AbstractControllerTest
+class SiteControllerTest extends AbstractFormTest
 {
     /**
      * @var NodeRepositoryInterface
@@ -42,8 +43,6 @@ class SiteControllerTest extends AbstractControllerTest
      */
     public function testCreateSite()
     {
-        $this->markTestSkipped("Form submission broken by refacto on js error");
-
         $this->assertNodeCount(0, 'fr');
         $this->assertNodeCount(0, 'en');
 
@@ -59,7 +58,7 @@ class SiteControllerTest extends AbstractControllerTest
                 $form[$key] = 'en';
             }
         }
-        $this->client->submit($form);
+        $this->submitForm($form);
 
         $this->assertNodeCount(1, 'fr');
         $this->assertNodeCount(1, 'en');
@@ -70,8 +69,6 @@ class SiteControllerTest extends AbstractControllerTest
      */
     public function testUniqueSiteId()
     {
-        $this->markTestSkipped("Form submission broken by refacto on js error");
-
         $this->assertSiteCount(0, $this->siteId);
 
         $this->createSite();
@@ -88,7 +85,7 @@ class SiteControllerTest extends AbstractControllerTest
      */
     protected function createSite()
     {
-       $crawler =  $this->client->request('GET', '/admin/site/new');
+        $crawler =  $this->client->request('GET', '/admin/site/new');
 
         $form = $crawler->selectButton('Save')->form();
         $form['oo_site[siteId]'] = $this->siteId;
@@ -105,7 +102,7 @@ class SiteControllerTest extends AbstractControllerTest
             }
         }
 
-        $this->client->submit($form);
+        $this->submitForm($form);
     }
 
     /**

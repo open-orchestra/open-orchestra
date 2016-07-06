@@ -2,7 +2,7 @@
 
 namespace OpenOrchestra\FunctionalTests\BackofficeBundle\EventFactory;
 
-use OpenOrchestra\FunctionalTests\BackofficeBundle\AbstractAuthentificatedTest;
+use OpenOrchestra\FunctionalTests\Utils\AbstractAuthentificatedTest;
 use Symfony\Component\Form\FormFactoryInterface;
 use OpenOrchestra\MediaModelBundle\Document\MediaFolder;
 

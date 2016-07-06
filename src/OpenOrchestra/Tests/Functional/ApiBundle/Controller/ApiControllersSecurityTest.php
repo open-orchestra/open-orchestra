@@ -2,12 +2,14 @@
 
 namespace OpenOrchestra\FunctionalTests\ApiBundle\Controller;
 
+use OpenOrchestra\FunctionalTests\Utils\AbstractAuthentificatedTest;
+
 /**
  * Class ApiControllersSecurityTest
  *
  * @group apiFunctional
  */
-class ApiControllersSecurityTest extends AbstractControllerTest
+class ApiControllersSecurityTest extends AbstractAuthentificatedTest
 {
     protected $username = "userNoAccess";
     protected $password = "userNoAccess";

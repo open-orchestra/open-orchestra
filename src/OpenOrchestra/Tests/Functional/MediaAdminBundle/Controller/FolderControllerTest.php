@@ -2,7 +2,7 @@
 
 namespace OpenOrchestra\FunctionalTests\MediaAdminBundle\Controller;
 
-use OpenOrchestra\FunctionalTests\BackofficeBundle\Controller\AbstractControllerTest;
+use OpenOrchestra\FunctionalTests\Utils\AbstractFormTest;
 use Symfony\Component\DomCrawler\Crawler;
 
 /**
@@ -10,31 +10,19 @@ use Symfony\Component\DomCrawler\Crawler;
  *
  * @group media
  */
-class FolderControllerTest extends AbstractControllerTest
+class FolderControllerTest extends AbstractFormTest
 {
-    /**
-     * Set up the test
-     */
-    public function setUp()
-    {
-        $this->client = static::createClient();
-    }
-
     /**
      * Test folder form
      */
     public function testMediaFolderFormAdmin()
     {
-        $this->markTestSkipped("Form submission broken by refacto on js error");
-
-        $this->connect("admin", "admin");
-
         $crawler = $this->getCrawler();
         $this->assertForm($this->client->getResponse());
 
         $form = $crawler->selectButton('Save')->form();
 
-        $this->client->submit($form);
+        $this->submitForm($form);
         $this->assertForm($this->client->getResponse());
     }
 
@@ -43,25 +31,14 @@ class FolderControllerTest extends AbstractControllerTest
      */
     public function testMediaFolderFormUserWithCreateRole()
     {
-        $this->connect("userFolderCreate", "userFolderCreate");
+        $this->username = 'userFolderCreate';
+        $this->password = 'userFolderCreate';
+        $this->logIn();
+
         $this->getCrawler();
         $this->assertContains("form-disabled", $this->client->getResponse()->getContent());
     }
 
-    /**
-     * @param string $username
-     * @param string $password
-     */
-    protected function connect($username, $password)
-    {
-        $crawler = $this->client->request('GET', '/login');
-
-        $form = $crawler->selectButton('Log in')->form();
-        $form['_username'] = $username;
-        $form['_password'] = $password;
-
-        $this->client->submit($form);
-    }
 
     /**
      * @return Crawler $crawler

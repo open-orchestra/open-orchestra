@@ -5,6 +5,7 @@ namespace OpenOrchestra\FunctionalTests\ApiBundle\Controller;
 use OpenOrchestra\Backoffice\NavigationPanel\Strategies\TreeNodesPanelStrategy;
 use OpenOrchestra\Backoffice\Model\ModelGroupRoleInterface;
 use OpenOrchestra\Backoffice\Repository\GroupRepositoryInterface;
+use OpenOrchestra\FunctionalTests\Utils\AbstractAuthentificatedTest;
 use OpenOrchestra\ModelInterface\Model\NodeInterface;
 
 /**
@@ -12,7 +13,7 @@ use OpenOrchestra\ModelInterface\Model\NodeInterface;
  *
  * @group apiFunctional
  */
-class NodeControllerAccessTest extends AbstractControllerTest
+class NodeControllerAccessTest extends AbstractAuthentificatedTest
 {
     /**
      * @var GroupRepositoryInterface
@@ -27,16 +28,7 @@ class NodeControllerAccessTest extends AbstractControllerTest
      */
     public function setUp()
     {
-        $this->client = static::createClient();
-
-        $crawler = $this->client->request('GET', '/login');
-
-        $form = $crawler->selectButton('Log in')->form();
-        $form['_username'] = $this->username;
-        $form['_password'] = $this->password;
-
-        $this->client->submit($form);
-
+        parent::setUp();
         $this->groupRepository = static::$kernel->getContainer()->get('open_orchestra_user.repository.group');
     }
 
