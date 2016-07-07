@@ -64,9 +64,9 @@ class ContentControllerTest extends AbstractAuthentificatedTest
     public function provideStatusName()
     {
         return array(
-            array('draft', true),
+            array('draft', false),
             array('pending', false),
-            array('published', false),
+            array('published', true),
         );
     }
 }
