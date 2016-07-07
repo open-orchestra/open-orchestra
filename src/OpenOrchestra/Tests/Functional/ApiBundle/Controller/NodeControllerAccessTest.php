@@ -5,7 +5,7 @@ namespace OpenOrchestra\FunctionalTests\ApiBundle\Controller;
 use OpenOrchestra\Backoffice\NavigationPanel\Strategies\TreeNodesPanelStrategy;
 use OpenOrchestra\Backoffice\Model\ModelGroupRoleInterface;
 use OpenOrchestra\Backoffice\Repository\GroupRepositoryInterface;
-use OpenOrchestra\FunctionalTests\Utils\AbstractAuthentificatedTest;
+use OpenOrchestra\FunctionalTests\Utils\AbstractAuthenticatedTest;
 use OpenOrchestra\ModelInterface\Model\NodeInterface;
 
 /**
@@ -13,7 +13,7 @@ use OpenOrchestra\ModelInterface\Model\NodeInterface;
  *
  * @group apiFunctional
  */
-class NodeControllerAccessTest extends AbstractAuthentificatedTest
+class NodeControllerAccessTest extends AbstractAuthenticatedTest
 {
     /**
      * @var GroupRepositoryInterface

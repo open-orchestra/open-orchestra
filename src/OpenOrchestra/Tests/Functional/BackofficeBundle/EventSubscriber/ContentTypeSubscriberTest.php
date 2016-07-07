@@ -2,7 +2,7 @@
 
 namespace OpenOrchestra\FunctionalTests\BackofficeBundle\EventSubscriber;
 
-use OpenOrchestra\FunctionalTests\Utils\AbstractAuthentificatedTest;
+use OpenOrchestra\FunctionalTests\Utils\AbstractAuthenticatedTest;
 use OpenOrchestra\ModelBundle\Document\Content;
 use OpenOrchestra\ModelBundle\Document\ContentAttribute;
 use Symfony\Component\Form\FormFactoryInterface;
@@ -12,7 +12,7 @@ use Symfony\Component\Form\FormFactoryInterface;
  *
  * @group backofficeTest
  */
-class ContentTypeSubscriberTest extends AbstractAuthentificatedTest
+class ContentTypeSubscriberTest extends AbstractAuthenticatedTest
 {
     /**
      * @var FormFactoryInterface

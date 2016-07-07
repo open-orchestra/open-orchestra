@@ -2,14 +2,14 @@
 
 namespace OpenOrchestra\FunctionalTests\ApiBundle\Controller;
 
-use OpenOrchestra\FunctionalTests\Utils\AbstractAuthentificatedTest;
+use OpenOrchestra\FunctionalTests\Utils\AbstractAuthenticatedTest;
 use OpenOrchestra\ModelInterface\Repository\ContentRepositoryInterface;
 use OpenOrchestra\ModelInterface\Repository\StatusRepositoryInterface;
 
 /**
  * Class ContentControllerTest
  */
-class ContentControllerTest extends AbstractAuthentificatedTest
+class ContentControllerTest extends AbstractAuthenticatedTest
 {
     /**
      * @var StatusRepositoryInterface

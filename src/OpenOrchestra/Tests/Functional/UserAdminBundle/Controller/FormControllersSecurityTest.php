@@ -2,14 +2,14 @@
 
 namespace OpenOrchestra\FunctionalTests\UserAdminBundle\Controller;
 
-use OpenOrchestra\FunctionalTests\Utils\AbstractAuthentificatedTest;
+use OpenOrchestra\FunctionalTests\Utils\AbstractAuthenticatedTest;
 
 /**
  * Class FormControllersSecurityTest
  *
  * @group securityCheck
  */
-class FormControllersSecurityTest extends AbstractAuthentificatedTest
+class FormControllersSecurityTest extends AbstractAuthenticatedTest
 {
     protected $username = 'userNoAccess';
     protected $password = 'userNoAccess';

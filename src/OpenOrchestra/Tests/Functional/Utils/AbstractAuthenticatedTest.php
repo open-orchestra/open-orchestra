@@ -8,9 +8,9 @@ use Symfony\Component\BrowserKit\Cookie;
 use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
 
 /**
- * Class AbstractAuthentificatedTest
+ * Class AbstractAuthenticatedTest
  */
-abstract class AbstractAuthentificatedTest extends AbstractWebTestCase
+abstract class AbstractAuthenticatedTest extends AbstractWebTestCase
 {
     /**
      * @var Client

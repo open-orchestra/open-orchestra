@@ -3,7 +3,7 @@
 namespace OpenOrchestra\FunctionalTests\ApiBundle\Controller;
 
 use Phake;
-use OpenOrchestra\FunctionalTests\Utils\AbstractAuthentificatedTest;
+use OpenOrchestra\FunctionalTests\Utils\AbstractAuthenticatedTest;
 use OpenOrchestra\ModelInterface\Repository\NodeRepositoryInterface;
 
 /**
@@ -11,7 +11,7 @@ use OpenOrchestra\ModelInterface\Repository\NodeRepositoryInterface;
  *
  * @group apiFunctional
  */
-class AreaControllerTest extends AbstractAuthentificatedTest
+class AreaControllerTest extends AbstractAuthenticatedTest
 {
     /**
      * @var NodeRepositoryInterface

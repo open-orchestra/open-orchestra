@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 /**
  * Class AbstractFormTest
  */
-abstract class AbstractFormTest extends AbstractAuthentificatedTest
+abstract class AbstractFormTest extends AbstractAuthenticatedTest
 {
 
     /**

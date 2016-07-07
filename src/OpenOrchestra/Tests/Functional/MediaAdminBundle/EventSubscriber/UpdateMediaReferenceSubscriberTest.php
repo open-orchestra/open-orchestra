@@ -2,7 +2,7 @@
 
 namespace OpenOrchestra\FunctionalTests\MediaAdminBundle\EventSubscriber;
 
-use OpenOrchestra\FunctionalTests\Utils\AbstractAuthentificatedTest;
+use OpenOrchestra\FunctionalTests\Utils\AbstractAuthenticatedTest;
 use OpenOrchestra\Media\Model\MediaInterface;
 use OpenOrchestra\MediaModelBundle\Document\Media;
 use OpenOrchestra\ModelBundle\Document\Block;
@@ -16,7 +16,7 @@ use Symfony\Component\EventDispatcher\EventDispatcher;
  *
  * @group media
  */
-class UpdateMediaReferenceSubscriberTest extends AbstractAuthentificatedTest
+class UpdateMediaReferenceSubscriberTest extends AbstractAuthenticatedTest
 {
     const ATTRIBUTE_ID_SUFFIX = "Id";
     const METHOD_SUFFIX = "BlockConfiguration";
