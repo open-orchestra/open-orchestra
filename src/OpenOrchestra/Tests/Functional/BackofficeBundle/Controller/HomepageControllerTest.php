@@ -2,12 +2,14 @@
 
 namespace OpenOrchestra\FunctionalTests\BackofficeBundle\Controller;
 
+use OpenOrchestra\FunctionalTests\Utils\AbstractFormTest;
+
 /**
  * Class HomepageControllerTest
  *
  * @group backofficeTest
  */
-class HomepageControllerTest extends AbstractControllerTest
+class HomepageControllerTest extends AbstractFormTest
 {
     /**
      * Test fixture_home
@@ -32,8 +34,6 @@ class HomepageControllerTest extends AbstractControllerTest
      */
     public function testNewTemplatePageHome()
     {
-        $this->markTestSkipped("Form submission broken by refacto on js error");
-
         $crawler = $this->client->request('GET', '/admin/');
         $nbLink = $crawler->filter('a')->count();
 
@@ -41,7 +41,7 @@ class HomepageControllerTest extends AbstractControllerTest
 
         $formUser = $crawler->selectButton('Save')->form();
         $formUser['oo_template[name]'] = 'template test ' . time();
-        $this->client->submit($formUser);
+        $this->submitForm($formUser);
 
         $crawler = $this->client->request('GET', '/admin/');
 

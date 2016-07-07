@@ -1,0 +1,19 @@
+parameters:
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: null
+    mailer_password: null
+    default_locale: en
+    secret: SRiesraIEURNSTeiuRnsAIErnsEA
+    open_orchestra_cms.mongodb.host: 127.0.0.1
+    open_orchestra_cms.mongodb.port: 27017
+    open_orchestra_cms.mongodb.server: 'mongodb://%open_orchestra_cms.mongodb.host%:%open_orchestra_cms.mongodb.port%'
+    open_orchestra_cms.mongodb.database: open_orchestra_%kernel.environment%
+    encryption_key: NStUAIRNUAIs3154rsaierSTR
+    media.directory: /var/uploaded-files
+    session_name: open_orchestra_session
+    fos_http_cache.proxy_client.varnish.servers:
+        - '127.0.0.1:6081'
+    fos_http_cache.proxy_client.varnish.base_url: '%router.request_context.host%:6081'
+    media_domain: media.openorchestra.1-2.dev
+    host_elastica: localhost

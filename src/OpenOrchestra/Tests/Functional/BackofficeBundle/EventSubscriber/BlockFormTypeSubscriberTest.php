@@ -2,7 +2,7 @@
 
 namespace OpenOrchestra\FunctionalTests\BackofficeBundle\EventSubscriber;
 
-use OpenOrchestra\FunctionalTests\BackofficeBundle\AbstractAuthentificatedTest;
+use OpenOrchestra\FunctionalTests\Utils\AbstractAuthenticatedTest;
 use OpenOrchestra\DisplayBundle\DisplayBlock\Strategies\ConfigurableContentStrategy;
 use OpenOrchestra\DisplayBundle\DisplayBlock\Strategies\ContentListStrategy;
 use OpenOrchestra\DisplayBundle\DisplayBlock\Strategies\VideoStrategy;
@@ -17,7 +17,7 @@ use OpenOrchestra\ModelInterface\Repository\RepositoryTrait\KeywordableTraitInte
  *
  * @group backofficeTest
  */
-class BlockFormTypeSubscriberTest extends AbstractAuthentificatedTest
+class BlockFormTypeSubscriberTest extends AbstractAuthenticatedTest
 {
     /**
      * @var FormFactoryInterface

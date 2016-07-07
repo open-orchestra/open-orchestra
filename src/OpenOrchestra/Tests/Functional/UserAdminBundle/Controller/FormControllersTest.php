@@ -2,12 +2,12 @@
 
 namespace OpenOrchestra\FunctionalTests\UserAdminBundle\Controller;
 
-use OpenOrchestra\FunctionalTests\BackofficeBundle\Controller\AbstractControllerTest;
+use OpenOrchestra\FunctionalTests\Utils\AbstractAuthenticatedTest;
 
 /**
  * Class FormControllersTest
  */
-class FormControllersTest extends AbstractControllerTest
+class FormControllersTest extends AbstractAuthenticatedTest
 {
     /**
      * Test user form

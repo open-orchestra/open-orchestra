@@ -2,6 +2,7 @@
 
 namespace OpenOrchestra\FunctionalTests\BackofficeBundle\Controller;
 
+use OpenOrchestra\FunctionalTests\Utils\AbstractFormTest;
 use OpenOrchestra\ModelInterface\Model\NodeInterface;
 use OpenOrchestra\ModelInterface\Repository\NodeRepositoryInterface;
 use OpenOrchestra\ModelInterface\Model\StatusInterface;
@@ -11,7 +12,7 @@ use OpenOrchestra\ModelInterface\Model\StatusInterface;
  *
  * @group backofficeTest
  */
-class NodeControllerTest extends AbstractControllerTest
+class NodeControllerTest extends AbstractFormTest
 {
     /**
      * @var NodeRepositoryInterface
@@ -79,14 +80,12 @@ class NodeControllerTest extends AbstractControllerTest
      */
     public function testNodeTransverseEditable()
     {
-        $this->markTestSkipped("Form submission broken by refacto on js error");
-
         $nodeTransverse = $this->nodeRepository->findInLastVersion(NodeInterface::TRANSVERSE_NODE_ID, $this->language, $this->siteId);
 
         $url = '/admin/node/form/' . $nodeTransverse->getId();
         $crawler = $this->client->request('GET', $url);
         $form = $crawler->selectButton('Save')->form();
-        $this->client->submit($form);
+        $this->submitForm($form);
 
         $this->assertForm($this->client->getResponse());
     }
@@ -96,8 +95,6 @@ class NodeControllerTest extends AbstractControllerTest
      */
     public function testNewNodePageHome()
     {
-        $this->markTestSkipped("Form submission broken by refacto on js error");
-
         $crawler = $this->client->request('GET', '/admin/');
         $nbLink = $crawler->filter('a')->count();
 
@@ -111,7 +108,7 @@ class NodeControllerTest extends AbstractControllerTest
         $formNode['oo_node[nodeTemplateSelection][nodeSource]'] = 'root';
         $formNode['oo_node[routePattern]'] = '/page-test' .time();
 
-        $this->client->submit($formNode);
+        $this->submitForm($formNode);
         $crawler = $this->client->request('GET', '/admin/');
 
         $this->assertEquals($nbLink + 2, $crawler->filter('a')->count());

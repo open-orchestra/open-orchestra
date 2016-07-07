@@ -35,6 +35,7 @@ before_install:
   - phpenv config-add .travis.php.ini
 
 install:
+  - cp app/config/parameters.yml.travis app/config/parameters.yml
   - composer install --prefer-dist
 
 before_script:

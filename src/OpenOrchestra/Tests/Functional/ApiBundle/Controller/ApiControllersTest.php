@@ -2,15 +2,18 @@
 
 namespace OpenOrchestra\FunctionalTests\ApiBundle\Controller;
 
+use OpenOrchestra\FunctionalTests\Utils\AbstractAuthenticatedTest;
+
 /**
  * Class ApiControllersTest
  *
  * @group apiFunctional
  */
-class ApiControllersTest extends AbstractControllerTest
+class ApiControllersTest extends AbstractAuthenticatedTest
 {
     /**
      * @param string $url
+     * @param string $getParameter
      *
      * @dataProvider provideApiUrl
      */

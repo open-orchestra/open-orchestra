@@ -2,15 +2,14 @@
 
 namespace OpenOrchestra\FunctionalTests\WorkflowFunctionAdminBundle\Controller;
 
-use OpenOrchestra\FunctionalTests\BackofficeBundle\Controller\AbstractControllerTest;
-
+use OpenOrchestra\FunctionalTests\Utils\AbstractAuthenticatedTest;
 
 /**
  * Class FormControllersSecurityTest
  *
  * @group securityCheck
  */
-class FormControllersSecurityTest extends AbstractControllerTest
+class FormControllersSecurityTest extends AbstractAuthenticatedTest
 {
     protected $username = 'userNoAccess';
     protected $password = 'userNoAccess';

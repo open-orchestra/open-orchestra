@@ -2,12 +2,14 @@
 
 namespace OpenOrchestra\FunctionalTests\BackofficeBundle\Controller;
 
+use OpenOrchestra\FunctionalTests\Utils\AbstractAuthenticatedTest;
+
 /**
  * Class FormControllersSecurityTest
  *
  * @group backofficeTest
  */
-class FormControllersSecurityTest extends AbstractControllerTest
+class FormControllersSecurityTest extends AbstractAuthenticatedTest
 {
     protected $username = 'userNoAccess';
     protected $password = 'userNoAccess';

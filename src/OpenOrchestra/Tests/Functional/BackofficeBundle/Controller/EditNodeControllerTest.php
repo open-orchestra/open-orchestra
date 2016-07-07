@@ -2,6 +2,7 @@
 
 namespace OpenOrchestra\FunctionalTests\BackofficeBundle\Controller;
 
+use OpenOrchestra\FunctionalTests\Utils\AbstractFormTest;
 use OpenOrchestra\ModelInterface\Model\NodeInterface;
 use OpenOrchestra\ModelInterface\Repository\NodeRepositoryInterface;
 
@@ -10,7 +11,7 @@ use OpenOrchestra\ModelInterface\Repository\NodeRepositoryInterface;
  *
  * @group backofficeTest
  */
-class EditNodeControllerTest extends AbstractControllerTest
+class EditNodeControllerTest extends AbstractFormTest
 {
     /**
      * @var NodeRepositoryInterface
@@ -18,8 +19,6 @@ class EditNodeControllerTest extends AbstractControllerTest
     protected $nodeRepository;
     protected $language = 'fr';
     protected $siteId = '2';
-    protected $username = 'admin';
-    protected $password = 'admin';
 
     /**
      * Set up the test
@@ -27,7 +26,6 @@ class EditNodeControllerTest extends AbstractControllerTest
     public function setUp()
     {
         parent::setUp();
-
         $this->nodeRepository = static::$kernel->getContainer()->get('open_orchestra_model.repository.node');
     }
 
@@ -40,15 +38,15 @@ class EditNodeControllerTest extends AbstractControllerTest
      */
     public function testEditNode($expectedMeta, $newMeta, $nodeId)
     {
-        $this->markTestSkipped("Form submission broken by refacto on js error");
-
         $nodeDocument = $this->nodeRepository->findInLastVersion($nodeId, $this->language, $this->siteId);
 
         $url = '/admin/node/form/' . $nodeDocument->getId();
         $crawler = $this->client->request('GET', $url);
         $formNode = $crawler->selectButton('Save')->form();
         $formNode['oo_node[metaKeywords]'] = $newMeta;
-        $crawler = $this->client->submit($formNode);
+
+        $crawler = $this->submitForm($formNode);
+
         $this->assertContains('alert alert-success', $this->client->getResponse()->getContent());
         $formNode = $crawler->selectButton('Save')->form();
         $this->assertSame($expectedMeta, $formNode['oo_node[metaKeywords]']->getValue());
