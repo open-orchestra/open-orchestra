@@ -34,15 +34,16 @@ class FormControllersTest extends AbstractFormTest
             array('/admin/theme/new'),
             array('/admin/keyword/new'),
             array('/admin/template/form/template_full'),
-            array('/admin/template/area/form/template_full/left_menu'),
             array('/admin/content-type/new'),
             array('/admin/role/new'),
             array('/admin/group/new'),
             array('/admin/redirection/new'),
-            array('/admin/template_flex/new'),
-            array('/admin/area_flex/row/new/template_home_flex/root'),
-            array('/admin/area_flex/column/template_home_flex/root_row_2_column_1'),
-            array('/admin/area_flex/row/template_home_flex/root_row_2'),
+            array('/admin/area/template/row/new/template_home/root'),
+            array('/admin/area/template/column/template_home/column-main'),
+            array('/admin/area/template/row/template_home/row_header'),
+            array('/admin/area/node/row/new/2/root/1/fr/root'),
+            array('/admin/area/node/column/2/root/1/fr/column-main'),
+            array('/admin/area/node/row/2/root/1/fr/row_header'),
         );
     }
 }
