@@ -1068,20 +1068,20 @@
         },
         {
             "name": "flowjs/flow-php-server",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/flowjs/flow-php-server.git",
-                "reference": "d52900ee39dab1f16834edb1416d51db5467745d"
+                "reference": "b9da1145d7a46c90ebf8f673af02b0dcdfe31db9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/flowjs/flow-php-server/zipball/d52900ee39dab1f16834edb1416d51db5467745d",
-                "reference": "d52900ee39dab1f16834edb1416d51db5467745d",
+                "url": "https://api.github.com/repos/flowjs/flow-php-server/zipball/b9da1145d7a46c90ebf8f673af02b0dcdfe31db9",
+                "reference": "b9da1145d7a46c90ebf8f673af02b0dcdfe31db9",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.4"
+                "php": ">=5.3"
             },
             "require-dev": {
                 "fabpot/php-cs-fixer": "dev-master",
@@ -1116,7 +1116,7 @@
                 "resumable.js",
                 "upload"
             ],
-            "time": "2015-02-01 15:28:27"
+            "time": "2016-07-13 07:28:23"
         },
         {
             "name": "friendsofsymfony/http-cache",
@@ -1276,12 +1276,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSUserBundle.git",
-                "reference": "298f27ce696deaa6ecd72e6ba563f892a17e0512"
+                "reference": "42ad0730ee22406de20da75fa9a3f4d74c565a83"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/298f27ce696deaa6ecd72e6ba563f892a17e0512",
-                "reference": "298f27ce696deaa6ecd72e6ba563f892a17e0512",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/42ad0730ee22406de20da75fa9a3f4d74c565a83",
+                "reference": "42ad0730ee22406de20da75fa9a3f4d74c565a83",
                 "shasum": ""
             },
             "require": {
@@ -1337,20 +1337,20 @@
             "keywords": [
                 "User management"
             ],
-            "time": "2016-06-21 10:34:42"
+            "time": "2016-07-19 12:01:22"
         },
         {
             "name": "gedmo/doctrine-extensions",
-            "version": "v2.4.13",
+            "version": "v2.4.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Atlantic18/DoctrineExtensions.git",
-                "reference": "5f4b6c848f0d6834a434a62a09a0935d147082e1"
+                "reference": "c453c7d695da0dd1c3e713a27ec71a05da355662"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/5f4b6c848f0d6834a434a62a09a0935d147082e1",
-                "reference": "5f4b6c848f0d6834a434a62a09a0935d147082e1",
+                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/c453c7d695da0dd1c3e713a27ec71a05da355662",
+                "reference": "c453c7d695da0dd1c3e713a27ec71a05da355662",
                 "shasum": ""
             },
             "require": {
@@ -1416,7 +1416,7 @@
                 "tree",
                 "uploadable"
             ],
-            "time": "2016-02-18 15:33:43"
+            "time": "2016-07-19 06:08:11"
         },
         {
             "name": "guzzle/guzzle",
@@ -2824,12 +2824,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-admin-bundle.git",
-                "reference": "118a09f08edee2716207fb77c7f806a58abb94b3"
+                "reference": "83cf3fa76a92981dec0ea236099d55e4d313195a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/118a09f08edee2716207fb77c7f806a58abb94b3",
-                "reference": "118a09f08edee2716207fb77c7f806a58abb94b3",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/83cf3fa76a92981dec0ea236099d55e4d313195a",
+                "reference": "83cf3fa76a92981dec0ea236099d55e4d313195a",
                 "shasum": ""
             },
             "require": {
@@ -2912,7 +2912,7 @@
                 }
             ],
             "description": "This bundle integrate the media administration in the Back Office of Open Orchestra",
-            "time": "2016-06-23 15:40:47"
+            "time": "2016-07-11 08:16:28"
         },
         {
             "name": "open-orchestra/open-orchestra-media-bundle",
@@ -3218,12 +3218,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-workflow-function-bundle.git",
-                "reference": "5c08028fbb20866fffb6ffa6436ce5e063b37591"
+                "reference": "9eaf18d8b9a352b954b91b0a2f6d8c70a17529c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-workflow-function-bundle/zipball/5c08028fbb20866fffb6ffa6436ce5e063b37591",
-                "reference": "5c08028fbb20866fffb6ffa6436ce5e063b37591",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-workflow-function-bundle/zipball/9eaf18d8b9a352b954b91b0a2f6d8c70a17529c1",
+                "reference": "9eaf18d8b9a352b954b91b0a2f6d8c70a17529c1",
                 "shasum": ""
             },
             "require": {
@@ -3271,7 +3271,7 @@
                 }
             ],
             "description": "A workflow function bundle for Open Orchestra",
-            "time": "2016-06-27 08:37:33"
+            "time": "2016-07-08 14:07:17"
         },
         {
             "name": "paragonie/random_compat",
@@ -4054,23 +4054,23 @@
         },
         {
             "name": "swiftmailer/swiftmailer",
-            "version": "v5.4.2",
+            "version": "v5.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "d8db871a54619458a805229a057ea2af33c753e8"
+                "reference": "4cc92842069c2bbc1f28daaaf1d2576ec4dfe153"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/d8db871a54619458a805229a057ea2af33c753e8",
-                "reference": "d8db871a54619458a805229a057ea2af33c753e8",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/4cc92842069c2bbc1f28daaaf1d2576ec4dfe153",
+                "reference": "4cc92842069c2bbc1f28daaaf1d2576ec4dfe153",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
             "require-dev": {
-                "mockery/mockery": "~0.9.1,<0.9.4"
+                "mockery/mockery": "~0.9.1"
             },
             "type": "library",
             "extra": {
@@ -4103,7 +4103,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2016-05-01 08:45:47"
+            "time": "2016-07-08 11:51:25"
         },
         {
             "name": "symfony/assetic-bundle",
