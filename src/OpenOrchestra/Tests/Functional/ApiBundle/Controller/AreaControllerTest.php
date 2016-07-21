@@ -45,7 +45,7 @@ class AreaControllerTest extends AbstractAuthenticatedTest
 
         $json = json_decode($this->client->getResponse()->getContent(), true);
 
-        $area = $json['area']['areas'][1];
+        $area = $json['root_area']['areas'][1];
         $this->assertSame('myMain', $area['area_id']);
         $subArea = $area['areas'][0];
         $this->assertSame('mainContentArea1', $subArea['area_id']);
