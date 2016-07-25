@@ -40,7 +40,13 @@ class AuthorizationControllersTest extends AbstractWebTestCase
         $this->assertSame('application/json', $this->client->getResponse()->headers->get('content-type'));
         $this->assertContains('token.blocked', $this->client->getResponse()->getContent());
 
-        $this->client->request('GET', '/oauth/access_token?grant_type=password&username=admin&password=admin', array(), array(), array('PHP_AUTH_USER' => 'test_key', 'PHP_AUTH_PW' => 'test_secret'));
+        $headers = array(
+            'PHP_AUTH_USER' => 'test_key',
+            'PHP_AUTH_PW' => 'test_secret',
+            'HTTP_username' => 'admin',
+            'HTTP_password' => 'admin',
+        );
+        $this->client->request('GET', '/oauth/access_token?grant_type=password', array(), array(), $headers);
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
         $this->assertSame('application/json', $this->client->getResponse()->headers->get('content-type'));
         $tokenReponse = json_decode($this->client->getResponse()->getContent(), true);
