@@ -359,8 +359,8 @@ class ContentRepositoryTest extends AbstractKernelTestCase
         return array(
             array('car', '1', 2),
             array('car', '2', 3),
-            array('customer', '1', 2),
-            array('customer', '2', 2),
+            array('customer', '1', 1),
+            array('customer', '2', 1),
             array('news', '1', 3),
             array('news', '2', 4),
         );
