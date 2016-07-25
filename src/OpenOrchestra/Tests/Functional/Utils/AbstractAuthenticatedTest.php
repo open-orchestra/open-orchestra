@@ -72,7 +72,14 @@ abstract class AbstractAuthenticatedTest extends AbstractWebTestCase
     protected function getAccessToken()
     {
         if (!array_key_exists($this->getUsername(), $this->accessToken)) {
-            $this->client->request('GET', '/oauth/access_token?grant_type=password&username=' . $this->getUsername() . '&password=' . $this->getPassword(), array(), array(), array('PHP_AUTH_USER' => 'test_key', 'PHP_AUTH_PW' => 'test_secret'));
+            $headers = array(
+                'PHP_AUTH_USER' => 'test_key',
+                'PHP_AUTH_PW' => 'test_secret',
+                'HTTP_username' => $this->getUsername(),
+                'HTTP_password' => $this->getPassword(),
+            );
+
+            $this->client->request('GET', '/oauth/access_token?grant_type=password', array(), array(), $headers);
             $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
             $this->assertSame('application/json', $this->client->getResponse()->headers->get('content-type'));
             $tokenReponse = json_decode($this->client->getResponse()->getContent(), true);
