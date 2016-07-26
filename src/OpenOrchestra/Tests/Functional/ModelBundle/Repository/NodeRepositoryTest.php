@@ -590,8 +590,8 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     }
 
     /**
-     * @param string $nodeId
-     * @param string $language
+     * @param string  $siteId
+     * @param integer $expectedCount
      *
      * @dataProvider provideFindLastVersionByTypeCurrentlyPublished
      */
@@ -599,7 +599,6 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     {
         $this->assertCount($expectedCount, $this->repository->findLastVersionByTypeCurrentlyPublished($siteId));
     }
-
 
     /**
      * @return array
@@ -613,8 +612,9 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     }
 
     /**
-     * @param string $nodeId
-     * @param string $language
+     * @param string  $path
+     * @param string  $siteId
+     * @param integer $expectedCount
      *
      * @dataProvider provideFindByPathCurrentlyPublished
      */
@@ -622,7 +622,6 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     {
         $this->assertCount($expectedCount, $this->repository->findByPathCurrentlyPublished($path, $siteId));
     }
-
 
     /**
      * @return array
