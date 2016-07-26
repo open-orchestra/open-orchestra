@@ -588,4 +588,49 @@ class NodeRepositoryTest extends AbstractKernelTestCase
             'community in en' => array('fixture_page_community', 'en'),
         );
     }
+
+    /**
+     * @param string  $siteId
+     * @param integer $expectedCount
+     *
+     * @dataProvider provideFindLastVersionByTypeCurrentlyPublished
+     */
+    public function testFindLastVersionByTypeCurrentlyPublished($siteId, $expectedCount)
+    {
+        $this->assertCount($expectedCount, $this->repository->findLastVersionByTypeCurrentlyPublished($siteId));
+    }
+
+    /**
+     * @return array
+     */
+    public function provideFindLastVersionByTypeCurrentlyPublished()
+    {
+        return array(
+            array("1", 0),
+            array("2", 5),
+        );
+    }
+
+    /**
+     * @param string  $path
+     * @param string  $siteId
+     * @param integer $expectedCount
+     *
+     * @dataProvider provideFindByPathCurrentlyPublished
+     */
+    public function testFindByPathCurrentlyPublished($path, $siteId, $expectedCount)
+    {
+        $this->assertCount($expectedCount, $this->repository->findByPathCurrentlyPublished($path, $siteId));
+    }
+
+    /**
+     * @return array
+     */
+    public function provideFindByPathCurrentlyPublished()
+    {
+        return array(
+            array("root", "2", 7),
+            array("transverse", "2", 0),
+        );
+    }
 }
