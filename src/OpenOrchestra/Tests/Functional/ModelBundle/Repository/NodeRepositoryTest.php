@@ -607,8 +607,31 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function provideFindLastVersionByTypeCurrentlyPublished()
     {
         return array(
-            array("1", 1),
-            array("2", 1),
+            array("1", 0),
+            array("2", 5),
+        );
+    }
+
+    /**
+     * @param string $nodeId
+     * @param string $language
+     *
+     * @dataProvider provideFindByPathCurrentlyPublished
+     */
+    public function testFindByPathCurrentlyPublished($path, $siteId, $expectedCount)
+    {
+        $this->assertCount($expectedCount, $this->repository->findByPathCurrentlyPublished($path, $siteId));
+    }
+
+
+    /**
+     * @return array
+     */
+    public function provideFindByPathCurrentlyPublished()
+    {
+        return array(
+            array("root", "2", 7),
+            array("transverse", "2", 0),
         );
     }
 }
