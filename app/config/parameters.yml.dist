@@ -9,8 +9,9 @@ parameters:
 
     router.request_context.host: admin.openorchestra.1-0.dev
     router.request_context.base_url: /app_dev.php
-
-    open_orchestra_cms.mongodb.server: mongodb://localhost:27017
+    open_orchestra_cms.mongodb.host: 127.0.0.1
+    open_orchestra_cms.mongodb.port: 27017
+    open_orchestra_cms.mongodb.server: mongodb://%open_orchestra_cms.mongodb.host%:%open_orchestra_cms.mongodb.port%
     open_orchestra_cms.mongodb.database: open_orchestra_%kernel.environment%
     encryption_key: NStUAIRNUAIs3154rsaierSTR
 
