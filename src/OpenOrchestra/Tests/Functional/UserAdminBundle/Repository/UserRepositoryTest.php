@@ -108,10 +108,10 @@ class UserRepositoryTest extends AbstractKernelTestCase
      *
      * @dataProvider provideUserAndGroup
      */
-    public function testFindByUsernameWithoutGroup($username, $groupName, $countUser)
+    public function testFindByIncludedUsernameWithoutGroup($username, $groupName, $countUser)
     {
         $group =  static::$kernel->getContainer()->get('open_orchestra_user.repository.group')->findOneByName($groupName);
-        $users = $this->repository->findByUsernameWithoutGroup($username, $group);
+        $users = $this->repository->findByIncludedUsernameWithoutGroup($username, $group);
 
         $this->assertCount($countUser, $users);
     }
