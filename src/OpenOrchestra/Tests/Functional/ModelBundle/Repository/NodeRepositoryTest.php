@@ -607,7 +607,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     {
         return array(
             array("1", 0),
-            array("2", 5),
+            array("2", 14),
         );
     }
 
@@ -631,6 +631,30 @@ class NodeRepositoryTest extends AbstractKernelTestCase
         return array(
             array("root", "2", 7),
             array("transverse", "2", 0),
+        );
+    }
+
+    /**
+     * @param string  $path
+     * @param string  $siteId
+     * @param string  $language
+     * @param integer $expectedCount
+     *
+     * @dataProvider provideFindByPathCurrentlyPublishedAndLanguage
+     */
+    public function testFindByPathCurrentlyPublishedAndLanguage($path, $siteId, $language, $expectedCount)
+    {
+        $this->assertCount($expectedCount, $this->repository->findByPathCurrentlyPublishedAndLanguage($path, $siteId, $language));
+    }
+
+    /**
+     * @return array
+     */
+    public function provideFindByPathCurrentlyPublishedAndLanguage()
+    {
+        return array(
+            array("root", "2", "en", 7),
+            array("transverse", "2", "en", 0),
         );
     }
 }
