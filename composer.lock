@@ -2524,12 +2524,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-base-bundle.git",
-                "reference": "f4bb681c4daa5aad58e273b9a2bf0e717ff1474b"
+                "reference": "0272df5d4beb7cd37ad3a3393a26fe46ac60f832"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-bundle/zipball/f4bb681c4daa5aad58e273b9a2bf0e717ff1474b",
-                "reference": "f4bb681c4daa5aad58e273b9a2bf0e717ff1474b",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-bundle/zipball/0272df5d4beb7cd37ad3a3393a26fe46ac60f832",
+                "reference": "0272df5d4beb7cd37ad3a3393a26fe46ac60f832",
                 "shasum": ""
             },
             "require": {
@@ -2562,7 +2562,7 @@
                 }
             ],
             "description": "The OpenOrchestra base bundle",
-            "time": "2016-07-04 10:03:25"
+            "time": "2016-08-09 08:41:18"
         },
         {
             "name": "open-orchestra/open-orchestra-bbcode-bundle",
@@ -2613,12 +2613,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "b30e79294b1b7f1bea14ed3cedb066e832a71ba8"
+                "reference": "e545eed66765cf82df90746403e351832a0c4956"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/b30e79294b1b7f1bea14ed3cedb066e832a71ba8",
-                "reference": "b30e79294b1b7f1bea14ed3cedb066e832a71ba8",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/e545eed66765cf82df90746403e351832a0c4956",
+                "reference": "e545eed66765cf82df90746403e351832a0c4956",
                 "shasum": ""
             },
             "require": {
@@ -2710,7 +2710,7 @@
                 }
             ],
             "description": "This bundle provide the Back Office part of Open Orchestra",
-            "time": "2016-08-09 08:22:39"
+            "time": "2016-08-09 12:36:34"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2876,12 +2876,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-admin-bundle.git",
-                "reference": "5640d1f8e7bedaaf09dc6983ec73a89e34496944"
+                "reference": "3987ecd19b946090f3d515f6e19d2f6e6970f598"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/5640d1f8e7bedaaf09dc6983ec73a89e34496944",
-                "reference": "5640d1f8e7bedaaf09dc6983ec73a89e34496944",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/3987ecd19b946090f3d515f6e19d2f6e6970f598",
+                "reference": "3987ecd19b946090f3d515f6e19d2f6e6970f598",
                 "shasum": ""
             },
             "require": {
@@ -2964,7 +2964,7 @@
                 }
             ],
             "description": "This bundle integrate the media administration in the Back Office of Open Orchestra",
-            "time": "2016-08-09 08:21:09"
+            "time": "2016-08-09 09:34:36"
         },
         {
             "name": "open-orchestra/open-orchestra-media-bundle",
@@ -2972,12 +2972,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-bundle.git",
-                "reference": "8fd4731de6ff5415cac49eefc78398f323b60f0c"
+                "reference": "b2d24a2b252284bbe07da6d52218dab2f6bfb8a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/8fd4731de6ff5415cac49eefc78398f323b60f0c",
-                "reference": "8fd4731de6ff5415cac49eefc78398f323b60f0c",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/b2d24a2b252284bbe07da6d52218dab2f6bfb8a7",
+                "reference": "b2d24a2b252284bbe07da6d52218dab2f6bfb8a7",
                 "shasum": ""
             },
             "require": {
@@ -3014,7 +3014,7 @@
                 }
             ],
             "description": "A media bundle for Open Orchestra",
-            "time": "2016-08-01 08:39:44"
+            "time": "2016-08-09 09:42:41"
         },
         {
             "name": "open-orchestra/open-orchestra-media-file-bundle",
@@ -3208,12 +3208,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-user-bundle.git",
-                "reference": "ea460cd517022dfc3092b2dc22d9e6008a3a6b68"
+                "reference": "fe82068e99414843ae3a2a76794e5ae4f1075aad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-user-bundle/zipball/ea460cd517022dfc3092b2dc22d9e6008a3a6b68",
-                "reference": "ea460cd517022dfc3092b2dc22d9e6008a3a6b68",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-user-bundle/zipball/fe82068e99414843ae3a2a76794e5ae4f1075aad",
+                "reference": "fe82068e99414843ae3a2a76794e5ae4f1075aad",
                 "shasum": ""
             },
             "require": {
@@ -3253,7 +3253,7 @@
                 }
             ],
             "description": "An override of FosUserBundle to provide authentication on Open Orchestra",
-            "time": "2016-07-05 10:05:16"
+            "time": "2016-08-09 12:37:14"
         },
         {
             "name": "open-orchestra/open-orchestra-workflow-function-bundle",
