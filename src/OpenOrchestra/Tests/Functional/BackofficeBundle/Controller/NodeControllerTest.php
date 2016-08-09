@@ -66,10 +66,6 @@ class NodeControllerTest extends AbstractFormTest
         $this->client->request('GET', $url);
         $this->assertForm($this->client->getResponse());
 
-        $url = '/admin/area/form/' . $nodeFixtureCommunity->getId() . '/mainContentArea1';
-        $this->client->request('GET', $url);
-        $this->assertForm($this->client->getResponse());
-
         $url = '/admin/block/form/' . $nodeFixtureCommunity->getId();
         $this->client->request('GET', $url);
         $this->assertForm($this->client->getResponse());

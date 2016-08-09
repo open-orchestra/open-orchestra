@@ -70,8 +70,6 @@ class ApiControllersSecurityTest extends AbstractAuthenticatedTest
             array('/api/role/type-node'),
             array('/api/role/type/folder'),
             array('/api/role/root/delete', 'DELETE'),
-            array('/api/template_flex/template_home_flex'),
-            array('/api/template_flex/template_home_flex/delete', 'DELETE'),
         );
     }
 }

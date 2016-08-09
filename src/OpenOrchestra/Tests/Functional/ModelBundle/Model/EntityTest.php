@@ -32,16 +32,12 @@ class EntityTest extends AbstractBaseTestCase
     {
         return array(
             array('Node',             'NodeInterface'),
-            array('Node',             'ReadNodeInterface'),
-            array('Node',             'AreaContainerInterface'),
             array('Node',             'SchemeableInterface'),
             array('Node',             'ReadSchemeableInterface'),
             array('Node',             'VersionableInterface'),
             array('Node',             'SoftDeleteableInterface'),
             array('Area',             'AreaContainerInterface'),
-            array('Template',         'AreaContainerInterface'),
             array('Node',             'BlockContainerInterface'),
-            array('Template',         'BlockContainerInterface'),
             array('Node',             'StatusableInterface'),
             array('Content',          'StatusableInterface'),
             array('Content',          'SoftDeleteableInterface'),

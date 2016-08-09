@@ -55,7 +55,6 @@ class ApiControllersTest extends AbstractAuthenticatedTest
             array('/api/trashcan/list'),
             array('/api/translation/tinymce'),
             array('/api/dashboard'),
-            array('/api/template_flex/template_home_flex'),
         );
     }
 }
