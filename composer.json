@@ -2,7 +2,7 @@
   "name": "open-orchestra/open-orchestra",
   "license": "Apache-2.0",
   "type": "project",
-  "version": "1.1.4",
+  "version": "1.1.x@dev",
   "description": "Example of an Open Orchestra Back Office implementation",
   "authors": [
     {
@@ -30,7 +30,18 @@
     "jmikola/geojson": "~1.0",
     "phpunit/phpunit" : "4.8.8",
     "phake/phake": "2.1.0",
-    "phpdocumentor/reflection-docblock": "2.0.4"
+    "phpdocumentor/reflection-docblock": "2.0.4",
+
+    "open-orchestra/open-orchestra-base-bundle": "self.version",
+    "open-orchestra/open-orchestra-bbcode-bundle": "self.version",
+    "open-orchestra/open-orchestra-libs": "self.version",
+    "open-orchestra/open-orchestra-base-api-bundle": "self.version",
+    "open-orchestra/open-orchestra-display-bundle": "self.version",
+    "open-orchestra/open-orchestra-user-bundle": "self.version",
+    "open-orchestra/open-orchestra-model-interface": "self.version",
+    "open-orchestra/open-orchestra-media-bundle": "self.version",
+    "open-orchestra/open-orchestra-media-file-bundle": "self.version",
+    "open-orchestra/open-orchestra-mongo-libs": "self.version"
   },
   "scripts": {
     "post-install-cmd": [
