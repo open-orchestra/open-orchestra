@@ -2566,12 +2566,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "489224a245478ba12face014dea714a6664cf839"
+                "reference": "796d9e243340e789ed8704949a8afc960195c5be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/489224a245478ba12face014dea714a6664cf839",
-                "reference": "489224a245478ba12face014dea714a6664cf839",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/796d9e243340e789ed8704949a8afc960195c5be",
+                "reference": "796d9e243340e789ed8704949a8afc960195c5be",
                 "shasum": ""
             },
             "require": {
@@ -2660,7 +2660,7 @@
                 }
             ],
             "description": "This bundle provide the Back Office part of Open Orchestra",
-            "time": "2016-08-19 12:29:09"
+            "time": "2016-08-26 10:30:30"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2668,12 +2668,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-display-bundle.git",
-                "reference": "7df64de4f367bc2a4545d857c6a711402dcb7c20"
+                "reference": "68ada84ced6bcf814270e4e93c9e249002e48853"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-display-bundle/zipball/7df64de4f367bc2a4545d857c6a711402dcb7c20",
-                "reference": "7df64de4f367bc2a4545d857c6a711402dcb7c20",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-display-bundle/zipball/68ada84ced6bcf814270e4e93c9e249002e48853",
+                "reference": "68ada84ced6bcf814270e4e93c9e249002e48853",
                 "shasum": ""
             },
             "require": {
@@ -2710,7 +2710,7 @@
                 }
             ],
             "description": "The bundle to display all bricks",
-            "time": "2016-06-23 15:40:15"
+            "time": "2016-08-23 15:48:08"
         },
         {
             "name": "open-orchestra/open-orchestra-elastica-bundle",
