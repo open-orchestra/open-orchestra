@@ -2613,12 +2613,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "eb473b5e782de6e5666303de49e8d29229892721"
+                "reference": "65a465bcc4cba9931d01fb305e4dac41d2cd0a20"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/eb473b5e782de6e5666303de49e8d29229892721",
-                "reference": "eb473b5e782de6e5666303de49e8d29229892721",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/65a465bcc4cba9931d01fb305e4dac41d2cd0a20",
+                "reference": "65a465bcc4cba9931d01fb305e4dac41d2cd0a20",
                 "shasum": ""
             },
             "require": {
@@ -2710,7 +2710,7 @@
                 }
             ],
             "description": "This bundle provide the Back Office part of Open Orchestra",
-            "time": "2016-08-19 13:26:20"
+            "time": "2016-08-26 09:39:41"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2718,12 +2718,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-display-bundle.git",
-                "reference": "e9b8de7c0e83d8eff6bbd56de829ba1edc728aea"
+                "reference": "3b9110029d82a3695f28acae378d050e6c7a7c1e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-display-bundle/zipball/e9b8de7c0e83d8eff6bbd56de829ba1edc728aea",
-                "reference": "e9b8de7c0e83d8eff6bbd56de829ba1edc728aea",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-display-bundle/zipball/3b9110029d82a3695f28acae378d050e6c7a7c1e",
+                "reference": "3b9110029d82a3695f28acae378d050e6c7a7c1e",
                 "shasum": ""
             },
             "require": {
@@ -2760,7 +2760,7 @@
                 }
             ],
             "description": "The bundle to display all bricks",
-            "time": "2016-07-29 12:31:35"
+            "time": "2016-08-23 15:25:41"
         },
         {
             "name": "open-orchestra/open-orchestra-elastica-bundle",
@@ -2768,12 +2768,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-elastica-bundle.git",
-                "reference": "aa11c04543cca48c5f18dfe3ce8c4ab773812932"
+                "reference": "fe75726b58ec45d4fadd48f222a8883a94d60a57"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-elastica-bundle/zipball/aa11c04543cca48c5f18dfe3ce8c4ab773812932",
-                "reference": "aa11c04543cca48c5f18dfe3ce8c4ab773812932",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-elastica-bundle/zipball/fe75726b58ec45d4fadd48f222a8883a94d60a57",
+                "reference": "fe75726b58ec45d4fadd48f222a8883a94d60a57",
                 "shasum": ""
             },
             "require": {
@@ -2821,7 +2821,7 @@
                 }
             ],
             "description": "A bundle to index Open Orchestra elements with Elastica Search",
-            "time": "2016-07-07 08:32:52"
+            "time": "2016-08-26 09:29:55"
         },
         {
             "name": "open-orchestra/open-orchestra-libs",
@@ -2876,12 +2876,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-admin-bundle.git",
-                "reference": "e4a171755a97261c3cd4b8c01c70f74153527041"
+                "reference": "4cc29cf37eea5c0cb75cf5149a8bbae7614f2d71"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/e4a171755a97261c3cd4b8c01c70f74153527041",
-                "reference": "e4a171755a97261c3cd4b8c01c70f74153527041",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/4cc29cf37eea5c0cb75cf5149a8bbae7614f2d71",
+                "reference": "4cc29cf37eea5c0cb75cf5149a8bbae7614f2d71",
                 "shasum": ""
             },
             "require": {
@@ -2964,7 +2964,7 @@
                 }
             ],
             "description": "This bundle integrate the media administration in the Back Office of Open Orchestra",
-            "time": "2016-08-19 10:13:08"
+            "time": "2016-08-26 09:29:51"
         },
         {
             "name": "open-orchestra/open-orchestra-media-bundle",
@@ -2972,12 +2972,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-bundle.git",
-                "reference": "b2d24a2b252284bbe07da6d52218dab2f6bfb8a7"
+                "reference": "8d5bd729fa35a42b94d5dbbc71230864237ef92a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/b2d24a2b252284bbe07da6d52218dab2f6bfb8a7",
-                "reference": "b2d24a2b252284bbe07da6d52218dab2f6bfb8a7",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/8d5bd729fa35a42b94d5dbbc71230864237ef92a",
+                "reference": "8d5bd729fa35a42b94d5dbbc71230864237ef92a",
                 "shasum": ""
             },
             "require": {
@@ -3014,7 +3014,7 @@
                 }
             ],
             "description": "A media bundle for Open Orchestra",
-            "time": "2016-08-09 09:42:41"
+            "time": "2016-08-26 09:14:34"
         },
         {
             "name": "open-orchestra/open-orchestra-media-file-bundle",
@@ -5666,16 +5666,16 @@
         },
         {
             "name": "phpunit/phpunit-mock-objects",
-            "version": "3.2.4",
+            "version": "3.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
-                "reference": "4e83390f64e7ce04fcaec2ce95cd72823b431d19"
+                "reference": "46b249b43fd2ed8e127aa0fdb3cbcf56e9bc0e49"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/4e83390f64e7ce04fcaec2ce95cd72823b431d19",
-                "reference": "4e83390f64e7ce04fcaec2ce95cd72823b431d19",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/46b249b43fd2ed8e127aa0fdb3cbcf56e9bc0e49",
+                "reference": "46b249b43fd2ed8e127aa0fdb3cbcf56e9bc0e49",
                 "shasum": ""
             },
             "require": {
@@ -5721,7 +5721,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2016-08-17 09:33:51"
+            "time": "2016-08-26 05:51:59"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
