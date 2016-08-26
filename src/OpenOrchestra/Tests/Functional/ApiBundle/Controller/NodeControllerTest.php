@@ -83,16 +83,16 @@ class NodeControllerTest extends AbstractAuthenticatedTest
     }
 
     /**
-     * Test node duplicate and references
+     * Test node new version and references
      */
-    public function testDuplicateNode()
+    public function testNewVersioneNode()
     {
         $node = $this->nodeRepository
             ->findInLastVersion('fixture_page_community', 'fr', '2');
         $nodeTransverse = $this->nodeRepository
             ->findInLastVersion(NodeInterface::TRANSVERSE_NODE_ID, 'fr', '2');
 
-        $this->client->request('POST', '/api/node/fixture_page_community/duplicate?language=fr');
+        $this->client->request('POST', '/api/node/fixture_page_community/new-version?language=fr');
 
         $nodeLastVersion = $this->nodeRepository
             ->findInLastVersion('fixture_page_community', 'fr', '2');

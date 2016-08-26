@@ -124,7 +124,7 @@ class NodeControllerTest extends AbstractFormTest
         $this->changeNodeStatusWithRouteRedirectionTest($nodeId, $statuses[2], 1, $routeDocumentCount);
         $this->changeNodeStatusWithRouteRedirectionTest($nodeId, $statuses[1], 1, $routeDocumentCount + 2);
 
-        $this->client->request('POST', '/api/node/' . $nodeName . '/duplicate/1?language=' . $node->language, array());
+        $this->client->request('POST', '/api/node/' . $nodeName . '/new-version/1?language=' . $node->language, array());
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
         $this->assertSame('application/json', $this->client->getResponse()->headers->get('content-type'));
 

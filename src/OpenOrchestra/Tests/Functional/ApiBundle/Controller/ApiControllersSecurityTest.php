@@ -57,6 +57,7 @@ class ApiControllersSecurityTest extends AbstractAuthenticatedTest
             array('/api/content/root/show-or-create'),
             array('/api/content/root/delete', 'DELETE'),
             array('/api/content/root/duplicate', "POST"),
+            array('/api/content/root/new-version', "POST"),
             array('/api/content/root/update', 'POST'),
             array('/api/content/root/list-statuses'),
             array('/api/content/root/list-version'),
