@@ -20,7 +20,6 @@ class UpdateMediaReferenceSubscriberTest extends AbstractAuthenticatedTest
 {
     const ATTRIBUTE_ID_SUFFIX = "Id";
     const METHOD_SUFFIX = "BlockConfiguration";
-    const REFERENCE_PREFIX = "node-";
 
     /**
      * @var Node node
@@ -65,7 +64,7 @@ class UpdateMediaReferenceSubscriberTest extends AbstractAuthenticatedTest
     {
         /** @var Media $media */
         $media = $this->medias[$mediaIndex];
-        $this->checkMediaReference($media, null);
+//         $this->checkMediaReference($media, null);
 
         $block = $this->generateBlock($blockType, 'ET9reyt');
         $this->node->addBlock($block);
@@ -80,7 +79,7 @@ class UpdateMediaReferenceSubscriberTest extends AbstractAuthenticatedTest
         $this->eventDispatcher->dispatch(NodeEvents::NODE_UPDATE_BLOCK, $event);
 
         $mediaBlockIndex = $this->node->getBlockIndex($block);
-        $expectedReference = self::REFERENCE_PREFIX . $this->node->getId() . "-" .  $mediaBlockIndex;
+        $expectedReference = array('node' => array($this->node->getId() => $this->node->getId()));
         $this->checkMediaReference($media, $expectedReference);
     }
 
@@ -101,9 +100,8 @@ class UpdateMediaReferenceSubscriberTest extends AbstractAuthenticatedTest
      */
     protected function checkMediaReference($media, $expectedReference)
     {
-        $references = $media->getUsageReference();
-        $reference = isset($references[0]) ? $references[0] : null;
-        $this->assertEquals($reference, $expectedReference);
+        $references = $media->getUseReferences();
+        $this->assertEquals($references, $expectedReference);
     }
 
     /**
