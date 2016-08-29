@@ -2524,12 +2524,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-base-bundle.git",
-                "reference": "0272df5d4beb7cd37ad3a3393a26fe46ac60f832"
+                "reference": "2dd7c137e6454c4b0861ba02b41f661a3535189a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-bundle/zipball/0272df5d4beb7cd37ad3a3393a26fe46ac60f832",
-                "reference": "0272df5d4beb7cd37ad3a3393a26fe46ac60f832",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-bundle/zipball/2dd7c137e6454c4b0861ba02b41f661a3535189a",
+                "reference": "2dd7c137e6454c4b0861ba02b41f661a3535189a",
                 "shasum": ""
             },
             "require": {
@@ -2562,7 +2562,7 @@
                 }
             ],
             "description": "The OpenOrchestra base bundle",
-            "time": "2016-08-09 08:41:18"
+            "time": "2016-08-29 12:25:54"
         },
         {
             "name": "open-orchestra/open-orchestra-bbcode-bundle",
@@ -2613,12 +2613,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "65a465bcc4cba9931d01fb305e4dac41d2cd0a20"
+                "reference": "3c95f3102f16b431fb6d1cf729331bc556d9cdee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/65a465bcc4cba9931d01fb305e4dac41d2cd0a20",
-                "reference": "65a465bcc4cba9931d01fb305e4dac41d2cd0a20",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/3c95f3102f16b431fb6d1cf729331bc556d9cdee",
+                "reference": "3c95f3102f16b431fb6d1cf729331bc556d9cdee",
                 "shasum": ""
             },
             "require": {
@@ -2710,7 +2710,7 @@
                 }
             ],
             "description": "This bundle provide the Back Office part of Open Orchestra",
-            "time": "2016-08-26 09:39:41"
+            "time": "2016-08-29 12:54:32"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
