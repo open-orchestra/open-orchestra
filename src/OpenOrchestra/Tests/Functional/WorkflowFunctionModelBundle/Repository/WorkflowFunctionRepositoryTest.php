@@ -132,7 +132,7 @@ class WorkflowFunctionRepositoryTest extends AbstractKernelTestCase
     protected function getDescriptionColumnEntity()
     {
         return array(
-            'names' => array('key' => 'name', 'field' => 'names', 'type' => 'translatedValue'),
+            'names' => array('key' => 'name', 'field' => 'names', 'type' => 'multiLanguages'),
         );
     }
 

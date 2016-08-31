@@ -489,7 +489,7 @@ class ContentRepositoryTest extends AbstractKernelTestCase
             array (
                 'key' => 'status_label',
                 'field' => 'status',
-                'type' => 'translatedValue',
+                'type' => 'multiLanguages',
             ),
             'version' =>
             array (
