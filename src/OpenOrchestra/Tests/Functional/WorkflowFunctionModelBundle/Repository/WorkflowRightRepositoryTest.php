@@ -69,7 +69,7 @@ class WorkflowRightRepositoryTest extends AbstractKernelTestCase
      */
     public function testHashElementWithValidWorkflowFunction()
     {
-        $contributorFunction = $this->workflowFunctionRepository->findOneBy(array('names.en.value' => 'Contributor'));
+        $contributorFunction = $this->workflowFunctionRepository->findOneBy(array('names.en' => 'Contributor'));
         $hasElement = $this->repository->hasElementWithWorkflowFunction($contributorFunction);
         $this->assertTrue($hasElement);
     }
