@@ -64,7 +64,7 @@ class UpdateMediaReferenceSubscriberTest extends AbstractAuthenticatedTest
     {
         /** @var Media $media */
         $media = $this->medias[$mediaIndex];
-//         $this->checkMediaReference($media, null);
+        $this->checkMediaReference($media, array());
 
         $block = $this->generateBlock($blockType, 'ET9reyt');
         $this->node->addBlock($block);
