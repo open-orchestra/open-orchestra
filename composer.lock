@@ -1196,16 +1196,16 @@
         },
         {
             "name": "friendsofsymfony/http-cache-bundle",
-            "version": "1.3.8",
+            "version": "1.3.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSHttpCacheBundle.git",
-                "reference": "5ffcbf5c5a8e650488b94fc407be375a0df81bf3"
+                "reference": "04247810151f8721740069f2376bf933ed9a7971"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSHttpCacheBundle/zipball/5ffcbf5c5a8e650488b94fc407be375a0df81bf3",
-                "reference": "5ffcbf5c5a8e650488b94fc407be375a0df81bf3",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSHttpCacheBundle/zipball/04247810151f8721740069f2376bf933ed9a7971",
+                "reference": "04247810151f8721740069f2376bf933ed9a7971",
                 "shasum": ""
             },
             "require": {
@@ -1272,7 +1272,7 @@
                 "purge",
                 "varnish"
             ],
-            "time": "2016-08-31 07:50:34"
+            "time": "2016-09-06 11:30:45"
         },
         {
             "name": "friendsofsymfony/user-bundle",
@@ -2613,12 +2613,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "2afc195edc636a7deb0c855314a3dccbdcaf34dc"
+                "reference": "4154a788c95dbb3b6f4fbc306b50da9c7b3f959e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/2afc195edc636a7deb0c855314a3dccbdcaf34dc",
-                "reference": "2afc195edc636a7deb0c855314a3dccbdcaf34dc",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/4154a788c95dbb3b6f4fbc306b50da9c7b3f959e",
+                "reference": "4154a788c95dbb3b6f4fbc306b50da9c7b3f959e",
                 "shasum": ""
             },
             "require": {
@@ -2710,7 +2710,7 @@
                 }
             ],
             "description": "This bundle provide the Back Office part of Open Orchestra",
-            "time": "2016-09-05 07:57:59"
+            "time": "2016-09-06 12:34:56"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -3064,12 +3064,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
-                "reference": "fcb21fad0035f09a9c13189b148e4f3a4871b7f6"
+                "reference": "9faf867d8ba3be60364121cb65a5a0d2ab7da36e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/fcb21fad0035f09a9c13189b148e4f3a4871b7f6",
-                "reference": "fcb21fad0035f09a9c13189b148e4f3a4871b7f6",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/9faf867d8ba3be60364121cb65a5a0d2ab7da36e",
+                "reference": "9faf867d8ba3be60364121cb65a5a0d2ab7da36e",
                 "shasum": ""
             },
             "require": {
@@ -3104,7 +3104,7 @@
                 }
             ],
             "description": "A MongoDB implemantation of the Open Orchestra Model Interface",
-            "time": "2016-09-05 07:49:09"
+            "time": "2016-09-06 12:17:24"
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
@@ -3112,12 +3112,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-interface.git",
-                "reference": "0a22cd622d207b7c5fc198118962043a0e3c8be7"
+                "reference": "558bb37ee359b7d033c7852c3d3ba254cd6abc0e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/0a22cd622d207b7c5fc198118962043a0e3c8be7",
-                "reference": "0a22cd622d207b7c5fc198118962043a0e3c8be7",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/558bb37ee359b7d033c7852c3d3ba254cd6abc0e",
+                "reference": "558bb37ee359b7d033c7852c3d3ba254cd6abc0e",
                 "shasum": ""
             },
             "require": {
@@ -3149,7 +3149,7 @@
                 }
             ],
             "description": "Describe all entity and repository to implement for the whole OpenOrchestra project",
-            "time": "2016-09-02 15:42:04"
+            "time": "2016-09-06 12:17:21"
         },
         {
             "name": "open-orchestra/open-orchestra-mongo-libs",
@@ -3630,16 +3630,16 @@
         },
         {
             "name": "sensio/distribution-bundle",
-            "version": "v5.0.8",
+            "version": "v5.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioDistributionBundle.git",
-                "reference": "f8ace5c71ee309492b027ef71215577f5a52b4ea"
+                "reference": "e5e0d8d06b07864b2752bd865537b0817edf4c5a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioDistributionBundle/zipball/f8ace5c71ee309492b027ef71215577f5a52b4ea",
-                "reference": "f8ace5c71ee309492b027ef71215577f5a52b4ea",
+                "url": "https://api.github.com/repos/sensiolabs/SensioDistributionBundle/zipball/e5e0d8d06b07864b2752bd865537b0817edf4c5a",
+                "reference": "e5e0d8d06b07864b2752bd865537b0817edf4c5a",
                 "shasum": ""
             },
             "require": {
@@ -3678,7 +3678,7 @@
                 "configuration",
                 "distribution"
             ],
-            "time": "2016-08-17 18:16:49"
+            "time": "2016-09-06 01:05:01"
         },
         {
             "name": "sensio/framework-extra-bundle",
@@ -3744,16 +3744,16 @@
         },
         {
             "name": "sensio/generator-bundle",
-            "version": "v3.0.7",
+            "version": "v3.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioGeneratorBundle.git",
-                "reference": "d1be460925376703a470a3ac6ec034eb7eab3892"
+                "reference": "3c20d16512f37d2be159eca0411b99a141b90fa4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioGeneratorBundle/zipball/d1be460925376703a470a3ac6ec034eb7eab3892",
-                "reference": "d1be460925376703a470a3ac6ec034eb7eab3892",
+                "url": "https://api.github.com/repos/sensiolabs/SensioGeneratorBundle/zipball/3c20d16512f37d2be159eca0411b99a141b90fa4",
+                "reference": "3c20d16512f37d2be159eca0411b99a141b90fa4",
                 "shasum": ""
             },
             "require": {
@@ -3792,7 +3792,7 @@
                 }
             ],
             "description": "This bundle generates code for you",
-            "time": "2016-06-20 05:58:05"
+            "time": "2016-09-06 01:30:19"
         },
         {
             "name": "sensiolabs/security-checker",
