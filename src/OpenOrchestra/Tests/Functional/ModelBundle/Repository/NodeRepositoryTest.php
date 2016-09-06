@@ -381,7 +381,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     {
         return array(
             array('en', '2', 5),
-            array('fr', '2', 5),
+            array('fr', '2', 6),
         );
     }
 
@@ -607,7 +607,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     {
         return array(
             array("1", 0),
-            array("2", 14),
+            array("2", 15),
         );
     }
 
@@ -629,7 +629,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function provideFindByPathCurrentlyPublished()
     {
         return array(
-            array("root", "2", 7),
+            array("root", "2", 8),
             array("transverse", "2", 0),
         );
     }
