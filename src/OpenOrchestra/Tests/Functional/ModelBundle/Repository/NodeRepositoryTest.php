@@ -681,4 +681,26 @@ class NodeRepositoryTest extends AbstractKernelTestCase
             array("transverse", "2", "en", 1),
         );
     }
+
+    /**
+     * @param string  $theme
+     * @param integer $expectedCount
+     *
+     * @dataProvider provideTheme
+     */
+    public function testFindByTheme($theme, $expectedCount)
+    {
+        $this->assertCount($expectedCount, $this->repository->FindByTheme($theme));
+    }
+
+    /**
+     * @return array
+     */
+    public function provideTheme()
+    {
+        return array(
+            array("fakeTheme", 0),
+            array("themePresentation", 27),
+        );
+    }
 }
