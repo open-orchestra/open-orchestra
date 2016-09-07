@@ -116,7 +116,10 @@ class NodeControllerTest extends AbstractFormTest
         $nodeId = $node->id;
 
         $statusRepository = static::$kernel->getContainer()->get('open_orchestra_model.repository.status');
-        $statuses = $statusRepository->findAll();
+        $statuses = array();
+        $statuses[0] = $statusRepository->findOneBy(array("name" => "draft"));
+        $statuses[1] = $statusRepository->findOneBy(array("name" => "published"));
+        $statuses[2] = $statusRepository->findOneBy(array("name" => "pending"));
 
         $this->assertEquals(1, count($this->redirectionRepository->findAll()));
         $routeDocumentCount = count($this->routeDocumentRepository->findAll());
@@ -157,7 +160,6 @@ class NodeControllerTest extends AbstractFormTest
     {
         $this->client->request('POST', '/api/node/' . $nodeId . '/update',
             array(), array(), array(), '{"status_id": "'. $status->getId() .'"}');
-
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
         $this->assertSame('application/json', $this->client->getResponse()->headers->get('content-type'));
         $this->assertEquals($redirectionNumber, count($this->redirectionRepository->findAll()));
