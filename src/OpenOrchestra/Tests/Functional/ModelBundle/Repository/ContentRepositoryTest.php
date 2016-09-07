@@ -428,13 +428,13 @@ class ContentRepositoryTest extends AbstractKernelTestCase
     public function provideFindByAuthorAndsiteId()
     {
         return array(
-            array('admin', '2', null, 10, array('updatedAt' => -1), 6),
+            array('admin', '2', null, 10, array('updatedAt' => -1), 8),
             array('admin', '2', false, 10, null, 0),
-            array('admin', '2', true, 10, null, 6),
+            array('admin', '2', true, 10, null, 8),
             array('fakeContributor', '2', false, 10, null, 0),
             array('fakeContributor', '2', null, 10, null, 0),
-            array('admin', '3', true, 10, null, 5),
-            array('admin', 'not-an-id', true, 10, null, 4),
+            array('admin', '3', true, 10, null, 7),
+            array('admin', 'not-an-id', true, 10, null, 6),
             array('admin', 'not-an-id', true, 3, null, 3),
         );
     }
