@@ -347,10 +347,10 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function provideForGetSubMenu()
     {
         return array(
-            array(NodeInterface::ROOT_NODE_ID, 1, 7, 1, '2', 'fr'),
-            array(NodeInterface::ROOT_NODE_ID, 2, 7, 1, '2', 'fr'),
-            array(NodeInterface::ROOT_NODE_ID, 0, 7, 1, '2', 'fr'),
-            array(NodeInterface::ROOT_NODE_ID, 0, 8, 1, '2', 'en'),
+            array(NodeInterface::ROOT_NODE_ID, 1, 8, 1, '2', 'fr'),
+            array(NodeInterface::ROOT_NODE_ID, 2, 8, 1, '2', 'fr'),
+            array(NodeInterface::ROOT_NODE_ID, 0, 8, 1, '2', 'fr'),
+            array(NodeInterface::ROOT_NODE_ID, 0, 7, 1, '2', 'en'),
             array('fixture_page_community', 1, 1, 1, '2', 'fr'),
             array('fixture_page_community', 1, 1, 1, '2', 'en'),
             array('page_unexistant', 1, 0, 1, '2', 'fr'),
@@ -462,8 +462,8 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function provideLanguage()
     {
         return array(
-            array('en', 7),
-            array('fr', 6),
+            array('en', 6),
+            array('fr', 7),
         );
     }
 
@@ -701,7 +701,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     {
         return array(
             array("fakeTheme", 0),
-            array("themePresentation", 27),
+            array("themePresentation", 29),
         );
     }
 }
