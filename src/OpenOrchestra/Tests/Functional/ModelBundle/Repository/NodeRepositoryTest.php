@@ -347,9 +347,9 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function provideForGetSubMenu()
     {
         return array(
-            array(NodeInterface::ROOT_NODE_ID, 1, 7, 1, '2', 'fr'),
-            array(NodeInterface::ROOT_NODE_ID, 2, 7, 1, '2', 'fr'),
-            array(NodeInterface::ROOT_NODE_ID, 0, 7, 1, '2', 'fr'),
+            array(NodeInterface::ROOT_NODE_ID, 1, 8, 1, '2', 'fr'),
+            array(NodeInterface::ROOT_NODE_ID, 2, 8, 1, '2', 'fr'),
+            array(NodeInterface::ROOT_NODE_ID, 0, 8, 1, '2', 'fr'),
             array(NodeInterface::ROOT_NODE_ID, 0, 7, 1, '2', 'en'),
             array('fixture_page_community', 1, 1, 1, '2', 'fr'),
             array('fixture_page_community', 1, 1, 1, '2', 'en'),
@@ -380,8 +380,8 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function provideLanguageSiteIdAndCount()
     {
         return array(
-            array('en', '2', 5),
-            array('fr', '2', 5),
+            array('en', '2', 6),
+            array('fr', '2', 6),
         );
     }
 
@@ -445,14 +445,15 @@ class NodeRepositoryTest extends AbstractKernelTestCase
 
     /**
      * @param string $language
+     * @apram int    $expectedCount
      *
      * @dataProvider provideLanguage
      */
-    public function testFindSubTreeByPath($language)
+    public function testFindSubTreeByPath($language, $expectedCount)
     {
         $nodes = $this->repository->findSubTreeByPath('root', '2', $language);
 
-        $this->assertCount(6, $nodes);
+        $this->assertCount($expectedCount, $nodes);
     }
 
     /**
@@ -461,8 +462,8 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function provideLanguage()
     {
         return array(
-            array('en'),
-            array('fr'),
+            array('en', 6),
+            array('fr', 7),
         );
     }
 
@@ -534,7 +535,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function provideNodeTypeAndCount()
     {
         return array(
-            array(NodeInterface::TYPE_DEFAULT, 14),
+            array(NodeInterface::TYPE_DEFAULT, 15),
             array(NodeInterface::TYPE_ERROR, 6),
             array(NodeInterface::TYPE_TRANSVERSE, 0),
         );
@@ -607,7 +608,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     {
         return array(
             array("1", 0),
-            array("2", 14),
+            array("2", 16),
         );
     }
 
@@ -629,7 +630,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function provideFindByPathCurrentlyPublished()
     {
         return array(
-            array("root", "2", 7),
+            array("root", "2", 8),
             array("transverse", "2", 0),
         );
     }
@@ -653,7 +654,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function provideFindByPathCurrentlyPublishedAndLanguage()
     {
         return array(
-            array("root", "2", "en", 7),
+            array("root", "2", "en", 8),
             array("transverse", "2", "en", 0),
         );
     }
@@ -677,7 +678,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function provideFindByIncludedPathSiteIdAndLanguage()
     {
         return array(
-            array("root", "2", "en", 7),
+            array("root", "2", "en", 8),
             array("transverse", "2", "en", 1),
         );
     }
@@ -700,7 +701,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     {
         return array(
             array("fakeTheme", 0),
-            array("themePresentation", 27),
+            array("themePresentation", 29),
         );
     }
 }
