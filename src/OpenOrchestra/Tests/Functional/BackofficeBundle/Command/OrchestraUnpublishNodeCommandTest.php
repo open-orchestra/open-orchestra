@@ -60,7 +60,7 @@ class OrchestraUnpublishNodeCommandTest extends AbstractWebTestCase
     }
 
     /**
-     * Provide sites aliases
+     * Provide site id
      */
     public function provideSiteId()
     {
