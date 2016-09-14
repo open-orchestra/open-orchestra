@@ -130,6 +130,6 @@ mongo_db_migrations:
      script_dir_name: "%kernel.root_dir%/scripts"
      name: "Open Orchestra MongoDB Migrations"
      namespace: OpenOrchestra\ModelBundle\Migrations\MongoDB
-#open_orchestra_backoffice:
-#    blocks:
-#      - test
+open_orchestra_backoffice:
+    blocks:
+      - hello
