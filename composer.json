@@ -65,7 +65,8 @@
 
   "autoload": {
     "psr-4": {
-      "OpenOrchestra\\FunctionalTests\\": "src/OpenOrchestra/Tests/Functional/"
+      "OpenOrchestra\\FunctionalTests\\": "src/OpenOrchestra/Tests/Functional/",
+      "FormationBundle\\": "src/FormationBundle/"
     },
     "classmap": [ "app/AppKernel.php", "app/AppCache.php" ]
   },

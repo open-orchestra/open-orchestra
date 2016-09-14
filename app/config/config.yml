@@ -2,6 +2,7 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: log.yml }
+    - { resource: "@FormationBundle/Resources/config/services.yml" }
 
 framework:
     esi:             { enabled: true }
@@ -129,3 +130,6 @@ mongo_db_migrations:
      script_dir_name: "%kernel.root_dir%/scripts"
      name: "Open Orchestra MongoDB Migrations"
      namespace: OpenOrchestra\ModelBundle\Migrations\MongoDB
+#open_orchestra_backoffice:
+#    blocks:
+#      - test
