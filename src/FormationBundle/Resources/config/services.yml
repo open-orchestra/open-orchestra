@@ -31,3 +31,8 @@ services:
             - 'FormationBundle\Facade\ApiClientCollectionFormationFacade'
         tags:
             - { name: open_orchestra_api.transformer.strategy }
+
+  formation.form.genre_type:
+        class: FormationBundle\Form\GenreType
+        tags:
+            - { name: form.type, alias: formation_genre_type }

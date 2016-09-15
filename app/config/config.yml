@@ -133,3 +133,12 @@ mongo_db_migrations:
 open_orchestra_backoffice:
     blocks:
       - hello
+    field_types:
+        genre:
+            label: Genre
+            type: formation_genre_type
+            default_value:
+                type: formation_genre_type
+            options:
+                required:
+                    default_value: false
