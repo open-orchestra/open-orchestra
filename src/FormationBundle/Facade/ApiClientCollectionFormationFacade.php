@@ -5,11 +5,10 @@ namespace FormationBundle\Facade;
 use OpenOrchestra\BaseApi\Facade\FacadeInterface;
 use JMS\Serializer\Annotation as JMS;
 
-class ApiClientCollectionFacade implements FacadeInterface
+class ApiClientCollectionFormationFacade implements FacadeInterface
 {
     /**
-     * @JMS\Type("")
+     * @JMS\Type("array<FormationBundle\Facade\ApiClientFormationFacade>")
      */
-    public $apiClients;
-
+    public $apiClients = array();
 }

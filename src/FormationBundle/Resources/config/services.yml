@@ -17,3 +17,17 @@ services:
         class: FormationBundle\DisplayIcon\HelloBlockDisplayIconStrategy
         tags:
             - { name: open_orchestra_backoffice.display_icon.strategy }
+
+  formation.api_client.transformer:
+        class: FormationBundle\Transformer\ApiClientFormationTransformer
+        arguments:
+            - 'FormationBundle\Facade\ApiClientFormationFacade'
+        tags:
+            - { name: open_orchestra_api.transformer.strategy }
+
+  formation.api_client.collection.transformer:
+        class: FormationBundle\Transformer\ApiClientCollectionFormationTransformer
+        arguments:
+            - 'FormationBundle\Facade\ApiClientCollectionFormationFacade'
+        tags:
+            - { name: open_orchestra_api.transformer.strategy }
