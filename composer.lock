@@ -66,27 +66,27 @@
         },
         {
             "name": "antimattr/mongodb-migrations",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/antimattr/mongodb-migrations.git",
-                "reference": "855636b0e170df3a808b03161b6e0903de217698"
+                "reference": "d553f96ec588ed929ffc75c88f039b26da0d705a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/antimattr/mongodb-migrations/zipball/855636b0e170df3a808b03161b6e0903de217698",
-                "reference": "855636b0e170df3a808b03161b6e0903de217698",
+                "url": "https://api.github.com/repos/antimattr/mongodb-migrations/zipball/d553f96ec588ed929ffc75c88f039b26da0d705a",
+                "reference": "d553f96ec588ed929ffc75c88f039b26da0d705a",
                 "shasum": ""
             },
             "require": {
                 "doctrine/mongodb": "1.*",
                 "php": ">=5.3.2",
-                "symfony/console": "2.*",
-                "symfony/yaml": "2.*"
+                "symfony/console": "~2",
+                "symfony/yaml": "~2"
             },
             "require-dev": {
                 "antimattr/test-case": "~1.0@stable",
-                "fabpot/php-cs-fixer": "0.5.*@dev",
+                "friendsofphp/php-cs-fixer": "~1",
                 "mikey179/vfsstream": "1.*",
                 "phpunit/phpunit": "~4.0"
             },
@@ -113,6 +113,10 @@
                 {
                     "name": "Ryan Catlin",
                     "email": "ryan.catlin@gmail.com"
+                },
+                {
+                    "name": "Jonathon Suggs",
+                    "email": "jsuggs@gmail.com"
                 }
             ],
             "description": "Managed Database Migrations for MongoDB",
@@ -124,28 +128,28 @@
                 "migration",
                 "mongodb"
             ],
-            "time": "2014-09-26 17:18:36"
+            "time": "2016-09-16 17:14:51"
         },
         {
             "name": "antimattr/mongodb-migrations-bundle",
-            "version": "v1.0.1",
+            "version": "v1.0.2",
             "target-dir": "AntiMattr/Bundle/MongoDBMigrationsBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/antimattr/mongodb-migrations-bundle.git",
-                "reference": "f0c53b014ea7ee3e0d315f9a737d634420cab8c8"
+                "reference": "d84d2bf3e7ae4e39b7efd0f5673d58c6605b847a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/antimattr/mongodb-migrations-bundle/zipball/f0c53b014ea7ee3e0d315f9a737d634420cab8c8",
-                "reference": "f0c53b014ea7ee3e0d315f9a737d634420cab8c8",
+                "url": "https://api.github.com/repos/antimattr/mongodb-migrations-bundle/zipball/d84d2bf3e7ae4e39b7efd0f5673d58c6605b847a",
+                "reference": "d84d2bf3e7ae4e39b7efd0f5673d58c6605b847a",
                 "shasum": ""
             },
             "require": {
-                "antimattr/mongodb-migrations": "~1.0@stable",
+                "antimattr/mongodb-migrations": "~1.0.0",
                 "doctrine/mongodb-odm": "1.*",
                 "php": ">=5.3.2",
-                "symfony/framework-bundle": "~2.1"
+                "symfony/framework-bundle": "~2"
             },
             "type": "symfony-bundle",
             "extra": {
@@ -166,6 +170,10 @@
                 {
                     "name": "Matthew Fitzgerald",
                     "email": "matthewfitz@gmail.com"
+                },
+                {
+                    "name": "Jonathon Suggs",
+                    "email": "jsuggs@gmail.com"
                 }
             ],
             "description": "Symfony MongoDBMigrationsBundle",
@@ -178,7 +186,7 @@
                 "mongodb",
                 "symfony"
             ],
-            "time": "2014-10-20 19:03:35"
+            "time": "2016-09-16 20:06:10"
         },
         {
             "name": "behat/transliterator",
@@ -1343,16 +1351,16 @@
         },
         {
             "name": "gedmo/doctrine-extensions",
-            "version": "v2.4.22",
+            "version": "v2.4.23",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Atlantic18/DoctrineExtensions.git",
-                "reference": "b8188801bafc420b86908ee5229a5e92143ce514"
+                "reference": "c2f308fab900090c6c0f5b6f72f34a37b4dd2d84"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/b8188801bafc420b86908ee5229a5e92143ce514",
-                "reference": "b8188801bafc420b86908ee5229a5e92143ce514",
+                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/c2f308fab900090c6c0f5b6f72f34a37b4dd2d84",
+                "reference": "c2f308fab900090c6c0f5b6f72f34a37b4dd2d84",
                 "shasum": ""
             },
             "require": {
@@ -1418,7 +1426,7 @@
                 "tree",
                 "uploadable"
             ],
-            "time": "2016-08-30 18:42:36"
+            "time": "2016-09-22 13:45:22"
         },
         {
             "name": "gregwar/captcha",
@@ -1470,16 +1478,16 @@
         },
         {
             "name": "gregwar/captcha-bundle",
-            "version": "v2.0.2",
+            "version": "v2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Gregwar/CaptchaBundle.git",
-                "reference": "53c25b2e9aaa7ddbdf7e9a6f69007b91a5f1efa0"
+                "reference": "f6c45045f020e2be45b325bced6c36ce51d8075f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Gregwar/CaptchaBundle/zipball/53c25b2e9aaa7ddbdf7e9a6f69007b91a5f1efa0",
-                "reference": "53c25b2e9aaa7ddbdf7e9a6f69007b91a5f1efa0",
+                "url": "https://api.github.com/repos/Gregwar/CaptchaBundle/zipball/f6c45045f020e2be45b325bced6c36ce51d8075f",
+                "reference": "f6c45045f020e2be45b325bced6c36ce51d8075f",
                 "shasum": ""
             },
             "require": {
@@ -1520,7 +1528,7 @@
                 "spam",
                 "visual"
             ],
-            "time": "2016-02-02 22:40:33"
+            "time": "2016-09-21 08:36:55"
         },
         {
             "name": "guzzle/guzzle",
@@ -1615,7 +1623,6 @@
                 "rest",
                 "web service"
             ],
-            "abandoned": "guzzlehttp/guzzle",
             "time": "2015-03-18 18:23:50"
         },
         {
@@ -2613,12 +2620,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "141395d08c4e5db498f631152b4f60bddb66cb67"
+                "reference": "b5b6bf3689c4d194523846e0b3328c1e33f62533"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/141395d08c4e5db498f631152b4f60bddb66cb67",
-                "reference": "141395d08c4e5db498f631152b4f60bddb66cb67",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/b5b6bf3689c4d194523846e0b3328c1e33f62533",
+                "reference": "b5b6bf3689c4d194523846e0b3328c1e33f62533",
                 "shasum": ""
             },
             "require": {
@@ -2710,7 +2717,7 @@
                 }
             ],
             "description": "This bundle provide the Back Office part of Open Orchestra",
-            "time": "2016-09-16 12:46:57"
+            "time": "2016-09-26 12:57:22"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2876,12 +2883,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-admin-bundle.git",
-                "reference": "396224d390dab24b2502545590f98098e651eabd"
+                "reference": "cfc6b3d39e9d80e750873f02753cb46eaac2ffe7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/396224d390dab24b2502545590f98098e651eabd",
-                "reference": "396224d390dab24b2502545590f98098e651eabd",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/cfc6b3d39e9d80e750873f02753cb46eaac2ffe7",
+                "reference": "cfc6b3d39e9d80e750873f02753cb46eaac2ffe7",
                 "shasum": ""
             },
             "require": {
@@ -2964,7 +2971,7 @@
                 }
             ],
             "description": "This bundle integrate the media administration in the Back Office of Open Orchestra",
-            "time": "2016-09-16 12:48:07"
+            "time": "2016-09-21 14:11:38"
         },
         {
             "name": "open-orchestra/open-orchestra-media-bundle",
@@ -3064,12 +3071,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
-                "reference": "33fb3fa7888beae8f60319515dc60714ab1fac61"
+                "reference": "25c53c5eeaeff208ca01e883d3cb2fed17f3b264"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/33fb3fa7888beae8f60319515dc60714ab1fac61",
-                "reference": "33fb3fa7888beae8f60319515dc60714ab1fac61",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/25c53c5eeaeff208ca01e883d3cb2fed17f3b264",
+                "reference": "25c53c5eeaeff208ca01e883d3cb2fed17f3b264",
                 "shasum": ""
             },
             "require": {
@@ -3104,7 +3111,7 @@
                 }
             ],
             "description": "A MongoDB implemantation of the Open Orchestra Model Interface",
-            "time": "2016-09-16 10:26:56"
+            "time": "2016-09-26 10:18:47"
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
@@ -3112,12 +3119,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-interface.git",
-                "reference": "01792ce79d2a60421b71b31a22b1a34841ccd645"
+                "reference": "93290cf8d762db07723db603a55d0fb6de3f5a2b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/01792ce79d2a60421b71b31a22b1a34841ccd645",
-                "reference": "01792ce79d2a60421b71b31a22b1a34841ccd645",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/93290cf8d762db07723db603a55d0fb6de3f5a2b",
+                "reference": "93290cf8d762db07723db603a55d0fb6de3f5a2b",
                 "shasum": ""
             },
             "require": {
@@ -3149,7 +3156,7 @@
                 }
             ],
             "description": "Describe all entity and repository to implement for the whole OpenOrchestra project",
-            "time": "2016-09-16 10:20:29"
+            "time": "2016-09-26 10:18:01"
         },
         {
             "name": "open-orchestra/open-orchestra-mongo-libs",
@@ -3208,12 +3215,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-user-bundle.git",
-                "reference": "fe82068e99414843ae3a2a76794e5ae4f1075aad"
+                "reference": "287006fb67d2c1709e8de352ee6c1aaf1062cbbe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-user-bundle/zipball/fe82068e99414843ae3a2a76794e5ae4f1075aad",
-                "reference": "fe82068e99414843ae3a2a76794e5ae4f1075aad",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-user-bundle/zipball/287006fb67d2c1709e8de352ee6c1aaf1062cbbe",
+                "reference": "287006fb67d2c1709e8de352ee6c1aaf1062cbbe",
                 "shasum": ""
             },
             "require": {
@@ -3253,7 +3260,7 @@
                 }
             ],
             "description": "An override of FosUserBundle to provide authentication on Open Orchestra",
-            "time": "2016-08-09 12:37:14"
+            "time": "2016-09-20 08:03:51"
         },
         {
             "name": "open-orchestra/open-orchestra-workflow-function-bundle",
@@ -3535,22 +3542,30 @@
         },
         {
             "name": "psr/log",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b"
+                "reference": "5277094ed527a1c4477177d102fe4c53551953e0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/fe0936ee26643249e916849d48e3a51d5f5e278b",
-                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/5277094ed527a1c4477177d102fe4c53551953e0",
+                "reference": "5277094ed527a1c4477177d102fe4c53551953e0",
                 "shasum": ""
             },
+            "require": {
+                "php": ">=5.3.0"
+            },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
             "autoload": {
-                "psr-0": {
-                    "Psr\\Log\\": ""
+                "psr-4": {
+                    "Psr\\Log\\": "Psr/Log/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3564,12 +3579,13 @@
                 }
             ],
             "description": "Common interface for logging libraries",
+            "homepage": "https://github.com/php-fig/log",
             "keywords": [
                 "log",
                 "psr",
                 "psr-3"
             ],
-            "time": "2012-12-21 11:40:51"
+            "time": "2016-09-19 16:02:08"
         },
         {
             "name": "ruflin/elastica",
@@ -5033,16 +5049,16 @@
     "packages-dev": [
         {
             "name": "myclabs/deep-copy",
-            "version": "1.5.3",
+            "version": "1.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/myclabs/DeepCopy.git",
-                "reference": "94e5ca3e90aa5b34663780393e10914f7438f991"
+                "reference": "ea74994a3dc7f8d2f65a06009348f2d63c81e61f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/94e5ca3e90aa5b34663780393e10914f7438f991",
-                "reference": "94e5ca3e90aa5b34663780393e10914f7438f991",
+                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/ea74994a3dc7f8d2f65a06009348f2d63c81e61f",
+                "reference": "ea74994a3dc7f8d2f65a06009348f2d63c81e61f",
                 "shasum": ""
             },
             "require": {
@@ -5071,7 +5087,7 @@
                 "object",
                 "object graph"
             ],
-            "time": "2016-09-07 15:34:10"
+            "time": "2016-09-16 13:37:59"
         },
         {
             "name": "phake/phake",
