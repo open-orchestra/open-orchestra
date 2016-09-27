@@ -66,27 +66,27 @@
         },
         {
             "name": "antimattr/mongodb-migrations",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/antimattr/mongodb-migrations.git",
-                "reference": "855636b0e170df3a808b03161b6e0903de217698"
+                "reference": "d553f96ec588ed929ffc75c88f039b26da0d705a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/antimattr/mongodb-migrations/zipball/855636b0e170df3a808b03161b6e0903de217698",
-                "reference": "855636b0e170df3a808b03161b6e0903de217698",
+                "url": "https://api.github.com/repos/antimattr/mongodb-migrations/zipball/d553f96ec588ed929ffc75c88f039b26da0d705a",
+                "reference": "d553f96ec588ed929ffc75c88f039b26da0d705a",
                 "shasum": ""
             },
             "require": {
                 "doctrine/mongodb": "1.*",
                 "php": ">=5.3.2",
-                "symfony/console": "2.*",
-                "symfony/yaml": "2.*"
+                "symfony/console": "~2",
+                "symfony/yaml": "~2"
             },
             "require-dev": {
                 "antimattr/test-case": "~1.0@stable",
-                "fabpot/php-cs-fixer": "0.5.*@dev",
+                "friendsofphp/php-cs-fixer": "~1",
                 "mikey179/vfsstream": "1.*",
                 "phpunit/phpunit": "~4.0"
             },
@@ -113,6 +113,10 @@
                 {
                     "name": "Ryan Catlin",
                     "email": "ryan.catlin@gmail.com"
+                },
+                {
+                    "name": "Jonathon Suggs",
+                    "email": "jsuggs@gmail.com"
                 }
             ],
             "description": "Managed Database Migrations for MongoDB",
@@ -124,28 +128,28 @@
                 "migration",
                 "mongodb"
             ],
-            "time": "2014-09-26 17:18:36"
+            "time": "2016-09-16 17:14:51"
         },
         {
             "name": "antimattr/mongodb-migrations-bundle",
-            "version": "v1.0.1",
+            "version": "v1.0.2",
             "target-dir": "AntiMattr/Bundle/MongoDBMigrationsBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/antimattr/mongodb-migrations-bundle.git",
-                "reference": "f0c53b014ea7ee3e0d315f9a737d634420cab8c8"
+                "reference": "d84d2bf3e7ae4e39b7efd0f5673d58c6605b847a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/antimattr/mongodb-migrations-bundle/zipball/f0c53b014ea7ee3e0d315f9a737d634420cab8c8",
-                "reference": "f0c53b014ea7ee3e0d315f9a737d634420cab8c8",
+                "url": "https://api.github.com/repos/antimattr/mongodb-migrations-bundle/zipball/d84d2bf3e7ae4e39b7efd0f5673d58c6605b847a",
+                "reference": "d84d2bf3e7ae4e39b7efd0f5673d58c6605b847a",
                 "shasum": ""
             },
             "require": {
-                "antimattr/mongodb-migrations": "~1.0@stable",
+                "antimattr/mongodb-migrations": "~1.0.0",
                 "doctrine/mongodb-odm": "1.*",
                 "php": ">=5.3.2",
-                "symfony/framework-bundle": "~2.1"
+                "symfony/framework-bundle": "~2"
             },
             "type": "symfony-bundle",
             "extra": {
@@ -166,6 +170,10 @@
                 {
                     "name": "Matthew Fitzgerald",
                     "email": "matthewfitz@gmail.com"
+                },
+                {
+                    "name": "Jonathon Suggs",
+                    "email": "jsuggs@gmail.com"
                 }
             ],
             "description": "Symfony MongoDBMigrationsBundle",
@@ -178,7 +186,7 @@
                 "mongodb",
                 "symfony"
             ],
-            "time": "2014-10-20 19:03:35"
+            "time": "2016-09-16 20:06:10"
         },
         {
             "name": "behat/transliterator",
@@ -1276,12 +1284,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSUserBundle.git",
-                "reference": "4cb7a29869e4a9bef4f51986d48b1a3af76d3f48"
+                "reference": "7abb0ff366c404f2c2b34fd264693071148351a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/4cb7a29869e4a9bef4f51986d48b1a3af76d3f48",
-                "reference": "4cb7a29869e4a9bef4f51986d48b1a3af76d3f48",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/7abb0ff366c404f2c2b34fd264693071148351a2",
+                "reference": "7abb0ff366c404f2c2b34fd264693071148351a2",
                 "shasum": ""
             },
             "require": {
@@ -1315,7 +1323,10 @@
             "autoload": {
                 "psr-4": {
                     "FOS\\UserBundle\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -1340,20 +1351,20 @@
             "keywords": [
                 "User management"
             ],
-            "time": "2016-09-12 15:04:02"
+            "time": "2016-09-26 07:23:44"
         },
         {
             "name": "gedmo/doctrine-extensions",
-            "version": "v2.4.22",
+            "version": "v2.4.23",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Atlantic18/DoctrineExtensions.git",
-                "reference": "b8188801bafc420b86908ee5229a5e92143ce514"
+                "reference": "c2f308fab900090c6c0f5b6f72f34a37b4dd2d84"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/b8188801bafc420b86908ee5229a5e92143ce514",
-                "reference": "b8188801bafc420b86908ee5229a5e92143ce514",
+                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/c2f308fab900090c6c0f5b6f72f34a37b4dd2d84",
+                "reference": "c2f308fab900090c6c0f5b6f72f34a37b4dd2d84",
                 "shasum": ""
             },
             "require": {
@@ -1419,7 +1430,7 @@
                 "tree",
                 "uploadable"
             ],
-            "time": "2016-08-30 18:42:36"
+            "time": "2016-09-22 13:45:22"
         },
         {
             "name": "guzzle/guzzle",
@@ -2566,12 +2577,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "95a3c0f80f659ff5e090046cc79b8a28dcd56c95"
+                "reference": "c6e29a45e038409e742495f2f34e6eb8efcef561"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/95a3c0f80f659ff5e090046cc79b8a28dcd56c95",
-                "reference": "95a3c0f80f659ff5e090046cc79b8a28dcd56c95",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/c6e29a45e038409e742495f2f34e6eb8efcef561",
+                "reference": "c6e29a45e038409e742495f2f34e6eb8efcef561",
                 "shasum": ""
             },
             "require": {
@@ -2660,7 +2671,7 @@
                 }
             ],
             "description": "This bundle provide the Back Office part of Open Orchestra",
-            "time": "2016-09-16 13:02:48"
+            "time": "2016-09-26 10:15:04"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -3116,12 +3127,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-mongo-libs.git",
-                "reference": "373c10b1c82da7fed6743cb59caf0601929f5f7f"
+                "reference": "0bc2ef8ce1176503aa27f3158b5bb989387e196a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-mongo-libs/zipball/373c10b1c82da7fed6743cb59caf0601929f5f7f",
-                "reference": "373c10b1c82da7fed6743cb59caf0601929f5f7f",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-mongo-libs/zipball/0bc2ef8ce1176503aa27f3158b5bb989387e196a",
+                "reference": "0bc2ef8ce1176503aa27f3158b5bb989387e196a",
                 "shasum": ""
             },
             "require": {
@@ -3160,7 +3171,7 @@
                 }
             ],
             "description": "Some libraries to use MongoDB in Open Orchestra",
-            "time": "2016-06-23 15:41:38"
+            "time": "2016-09-21 12:46:07"
         },
         {
             "name": "open-orchestra/open-orchestra-user-bundle",
@@ -3499,22 +3510,30 @@
         },
         {
             "name": "psr/log",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b"
+                "reference": "5277094ed527a1c4477177d102fe4c53551953e0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/fe0936ee26643249e916849d48e3a51d5f5e278b",
-                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/5277094ed527a1c4477177d102fe4c53551953e0",
+                "reference": "5277094ed527a1c4477177d102fe4c53551953e0",
                 "shasum": ""
             },
+            "require": {
+                "php": ">=5.3.0"
+            },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
             "autoload": {
-                "psr-0": {
-                    "Psr\\Log\\": ""
+                "psr-4": {
+                    "Psr\\Log\\": "Psr/Log/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3528,12 +3547,13 @@
                 }
             ],
             "description": "Common interface for logging libraries",
+            "homepage": "https://github.com/php-fig/log",
             "keywords": [
                 "log",
                 "psr",
                 "psr-3"
             ],
-            "time": "2012-12-21 11:40:51"
+            "time": "2016-09-19 16:02:08"
         },
         {
             "name": "ruflin/elastica",
@@ -4993,16 +5013,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.24.2",
+            "version": "v1.25.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "33093f6e310e6976baeac7b14f3a6ec02f2d79b7"
+                "reference": "f16a634ab08d87e520da5671ec52153d627f10f6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/33093f6e310e6976baeac7b14f3a6ec02f2d79b7",
-                "reference": "33093f6e310e6976baeac7b14f3a6ec02f2d79b7",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/f16a634ab08d87e520da5671ec52153d627f10f6",
+                "reference": "f16a634ab08d87e520da5671ec52153d627f10f6",
                 "shasum": ""
             },
             "require": {
@@ -5015,7 +5035,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.24-dev"
+                    "dev-master": "1.25-dev"
                 }
             },
             "autoload": {
@@ -5050,7 +5070,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2016-09-01 17:50:53"
+            "time": "2016-09-21 23:05:12"
         }
     ],
     "packages-dev": [
