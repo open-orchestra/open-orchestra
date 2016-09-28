@@ -22,7 +22,6 @@ class ContentRepositoryTest extends AbstractKernelTestCase
     protected $repository;
     protected $keywordRepository;
     protected $userRepository;
-    protected $user;
 
     protected $currentsiteManager;
 

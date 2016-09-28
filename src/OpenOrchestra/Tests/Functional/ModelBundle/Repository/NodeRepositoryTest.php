@@ -437,7 +437,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
 
         $this->assertCount(
             $count,
-            $this->repository->findByAuthorAndSiteId($user->getId(), $siteId, $published, $limit, $sort)
+            $this->repository->findByReportAndSiteId($user->getId(), $siteId, $published, $limit, $sort)
         );
     }
 
@@ -448,7 +448,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     {
         return array(
             array('admin', '2', null, 10, array('updatedAt' => -1), 1),
-            array('admin', '2', false, 10, null, 1),
+            array('admin', '2', false, 10, null, 0),
             array('admin', '2', true, 10, null, 1),
         );
     }
