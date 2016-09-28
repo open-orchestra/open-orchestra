@@ -21,6 +21,8 @@ class ContentRepositoryTest extends AbstractKernelTestCase
      */
     protected $repository;
     protected $keywordRepository;
+    protected $userRepository;
+    protected $user;
 
     protected $currentsiteManager;
 
@@ -32,6 +34,7 @@ class ContentRepositoryTest extends AbstractKernelTestCase
         parent::setUp();
         static::bootKernel();
         $this->keywordRepository = static::$kernel->getContainer()->get('open_orchestra_model.repository.keyword');
+        $this->userRepository = static::$kernel->getContainer()->get('open_orchestra_user.repository.user');
         $this->currentsiteManager = Phake::mock('OpenOrchestra\BaseBundle\Context\CurrentSiteIdInterface');
         Phake::when($this->currentsiteManager)->getCurrentSiteId()->thenReturn('2');
         Phake::when($this->currentsiteManager)->getCurrentSiteDefaultLanguage()->thenReturn('fr');
@@ -436,6 +439,36 @@ class ContentRepositoryTest extends AbstractKernelTestCase
             array('admin', '3', true, 10, null, 7),
             array('admin', 'not-an-id', true, 10, null, 6),
             array('admin', 'not-an-id', true, 3, null, 3),
+        );
+    }
+
+    /**
+     * @param string       $user
+     * @param string       $siteId
+     * @param boolean|null $published
+     * @param int          $limit
+     * @param array|null   $sort
+     * @param int          $count
+     *
+     * @dataProvider provideFindByReportAndSiteId
+     */
+    public function testFindByReportAndSiteId($user, $siteId, $published, $limit, $sort, $count)
+    {
+        $user = $this->userRepository->findOneByUsername($user);
+
+        $contents = $this->repository->findByReportAndSiteId($user->getId(), $siteId, $published, $limit, $sort);
+        $this->assertCount($count, $contents);
+    }
+
+    /**
+     * @return array
+     */
+    public function provideFindByReportAndSiteId()
+    {
+        return array(
+            array('admin', '2', null, 10, array('updatedAt' => -1), 4),
+            array('admin', '2', false, 10, null, 0),
+            array('admin', '2', true, 10, null, 4),
         );
     }
 

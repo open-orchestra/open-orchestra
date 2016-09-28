@@ -18,6 +18,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
      * @var NodeRepository
      */
     protected $repository;
+    protected $userRepository;
 
     /**
      * Set up test
@@ -28,6 +29,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
 
         static::bootKernel();
         $this->repository = static::$kernel->getContainer()->get('open_orchestra_model.repository.node');
+        $this->userRepository = static::$kernel->getContainer()->get('open_orchestra_user.repository.user');
     }
 
     /**
@@ -416,6 +418,38 @@ class NodeRepositoryTest extends AbstractKernelTestCase
             array('fake_contributor', '2', false, 10, null, 0),
             array('fake_contributor', '2', null, 10, null, 0),
             array('fake_admin', '3', true, 10, null, 1),
+        );
+    }
+
+    /**
+     * @param string       $user
+     * @param string       $siteId
+     * @param boolean|null $published
+     * @param int          $limit
+     * @param array|null   $sort
+     * @param int          $count
+     *
+     * @dataProvider provideFindByReportAndSiteId
+     */
+    public function testFindByReportAndSiteId($user, $siteId, $published, $limit, $sort, $count)
+    {
+        $user = $this->userRepository->findOneByUsername($user);
+
+        $this->assertCount(
+            $count,
+            $this->repository->findByAuthorAndSiteId($user->getId(), $siteId, $published, $limit, $sort)
+        );
+    }
+
+    /**
+     * @return array
+     */
+    public function provideFindByReportAndSiteId()
+    {
+        return array(
+            array('admin', '2', null, 10, array('updatedAt' => -1), 1),
+            array('admin', '2', false, 10, null, 1),
+            array('admin', '2', true, 10, null, 1),
         );
     }
 
