@@ -449,20 +449,20 @@ class ContentRepositoryTest extends AbstractKernelTestCase
      * @param array|null   $sort
      * @param int          $count
      *
-     * @dataProvider provideFindByReportAndSiteId
+     * @dataProvider provideFindByHistoryAndSiteId
      */
-    public function testFindByReportAndSiteId($user, $siteId, $published, $limit, $sort, $count)
+    public function testFindByHistoryAndSiteId($user, $siteId, $published, $limit, $sort, $count)
     {
         $user = $this->userRepository->findOneByUsername($user);
 
-        $contents = $this->repository->findByReportAndSiteId($user->getId(), $siteId, $published, $limit, $sort);
+        $contents = $this->repository->findByHistoryAndSiteId($user->getId(), $siteId, $published, $limit, $sort);
         $this->assertCount($count, $contents);
     }
 
     /**
      * @return array
      */
-    public function provideFindByReportAndSiteId()
+    public function provideFindByHistoryAndSiteId()
     {
         return array(
             array('admin', '2', null, 10, array('updatedAt' => -1), 4),
