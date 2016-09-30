@@ -2621,12 +2621,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "eb3971484c632fc6d37c0f827feb06854513e8e7"
+                "reference": "33387d4e4884897ce0ae726c674de7fddac84ab7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/eb3971484c632fc6d37c0f827feb06854513e8e7",
-                "reference": "eb3971484c632fc6d37c0f827feb06854513e8e7",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/33387d4e4884897ce0ae726c674de7fddac84ab7",
+                "reference": "33387d4e4884897ce0ae726c674de7fddac84ab7",
                 "shasum": ""
             },
             "require": {
@@ -2718,7 +2718,7 @@
                 }
             ],
             "description": "This bundle provide the Back Office part of Open Orchestra",
-            "time": "2016-09-29 13:33:49"
+            "time": "2016-09-30 12:52:59"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -3072,12 +3072,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
-                "reference": "21c289f2a51a3a9d02985d409c12261ada483415"
+                "reference": "63a836f812c8fd3afeab23a1d030b41883e2d5e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/21c289f2a51a3a9d02985d409c12261ada483415",
-                "reference": "21c289f2a51a3a9d02985d409c12261ada483415",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/63a836f812c8fd3afeab23a1d030b41883e2d5e3",
+                "reference": "63a836f812c8fd3afeab23a1d030b41883e2d5e3",
                 "shasum": ""
             },
             "require": {
@@ -3112,7 +3112,7 @@
                 }
             ],
             "description": "A MongoDB implemantation of the Open Orchestra Model Interface",
-            "time": "2016-09-27 15:29:19"
+            "time": "2016-09-30 12:39:48"
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
@@ -3120,12 +3120,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-interface.git",
-                "reference": "bce9b61ed70117a6a81c514a5681c9fabf3b3f0e"
+                "reference": "f8f423ddd5a95cc54833e8d4fc3757df3fc9734e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/bce9b61ed70117a6a81c514a5681c9fabf3b3f0e",
-                "reference": "bce9b61ed70117a6a81c514a5681c9fabf3b3f0e",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/f8f423ddd5a95cc54833e8d4fc3757df3fc9734e",
+                "reference": "f8f423ddd5a95cc54833e8d4fc3757df3fc9734e",
                 "shasum": ""
             },
             "require": {
@@ -3157,7 +3157,7 @@
                 }
             ],
             "description": "Describe all entity and repository to implement for the whole OpenOrchestra project",
-            "time": "2016-09-29 13:33:46"
+            "time": "2016-09-30 12:23:12"
         },
         {
             "name": "open-orchestra/open-orchestra-mongo-libs",
@@ -3165,12 +3165,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-mongo-libs.git",
-                "reference": "1e218431d09a587b18a4a89de270277a33d97aee"
+                "reference": "cd34ee4056b583ef3cc05295f34c107f6f782341"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-mongo-libs/zipball/1e218431d09a587b18a4a89de270277a33d97aee",
-                "reference": "1e218431d09a587b18a4a89de270277a33d97aee",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-mongo-libs/zipball/cd34ee4056b583ef3cc05295f34c107f6f782341",
+                "reference": "cd34ee4056b583ef3cc05295f34c107f6f782341",
                 "shasum": ""
             },
             "require": {
@@ -3208,7 +3208,7 @@
                 }
             ],
             "description": "Some libraries to use MongoDB in Open Orchestra",
-            "time": "2016-09-27 15:29:30"
+            "time": "2016-09-30 12:40:46"
         },
         {
             "name": "open-orchestra/open-orchestra-user-bundle",
@@ -5204,16 +5204,16 @@
         },
         {
             "name": "phpdocumentor/reflection-docblock",
-            "version": "3.1.0",
+            "version": "3.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
-                "reference": "9270140b940ff02e58ec577c237274e92cd40cdd"
+                "reference": "8331b5efe816ae05461b7ca1e721c01b46bafb3e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/9270140b940ff02e58ec577c237274e92cd40cdd",
-                "reference": "9270140b940ff02e58ec577c237274e92cd40cdd",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/8331b5efe816ae05461b7ca1e721c01b46bafb3e",
+                "reference": "8331b5efe816ae05461b7ca1e721c01b46bafb3e",
                 "shasum": ""
             },
             "require": {
@@ -5245,7 +5245,7 @@
                 }
             ],
             "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
-            "time": "2016-06-10 09:48:41"
+            "time": "2016-09-30 07:12:33"
         },
         {
             "name": "phpdocumentor/type-resolver",

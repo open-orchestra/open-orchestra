@@ -5,9 +5,10 @@ namespace OpenOrchestra\FunctionalTests\ModelBundle\Repository;
 use OpenOrchestra\BaseBundle\Tests\AbstractTest\AbstractKernelTestCase;
 use OpenOrchestra\Pagination\Configuration\FinderConfiguration;
 use OpenOrchestra\Pagination\Configuration\PaginateFinderConfiguration;
-use Phake;
 use OpenOrchestra\ModelInterface\Repository\ContentRepositoryInterface;
 use OpenOrchestra\ModelInterface\Repository\RepositoryTrait\KeywordableTraitInterface;
+use OpenOrchestra\ModelInterface\ContentEvents;
+use Phake;
 
 /**
  * Class ContentRepositoryTest
@@ -21,6 +22,7 @@ class ContentRepositoryTest extends AbstractKernelTestCase
      */
     protected $repository;
     protected $keywordRepository;
+    protected $userRepository;
 
     protected $currentsiteManager;
 
@@ -32,6 +34,7 @@ class ContentRepositoryTest extends AbstractKernelTestCase
         parent::setUp();
         static::bootKernel();
         $this->keywordRepository = static::$kernel->getContainer()->get('open_orchestra_model.repository.keyword');
+        $this->userRepository = static::$kernel->getContainer()->get('open_orchestra_user.repository.user');
         $this->currentsiteManager = Phake::mock('OpenOrchestra\BaseBundle\Context\CurrentSiteIdInterface');
         Phake::when($this->currentsiteManager)->getCurrentSiteId()->thenReturn('2');
         Phake::when($this->currentsiteManager)->getCurrentSiteDefaultLanguage()->thenReturn('fr');
@@ -293,9 +296,9 @@ class ContentRepositoryTest extends AbstractKernelTestCase
         $descriptionEntity = $this->getDescriptionColumnEntity();
 
         return array(
-            array('car', $descriptionEntity, null, array("name" => "name", "dir" => "asc"), null, 0 ,5 , 3, '206 3 portes en'),
+            array('car', $descriptionEntity, null, array("name" => "name", "dir" => "asc"), null, 0 ,5 , 3, '206 3 portes fr'),
             array('car', $descriptionEntity, null, array("name" => "name", "dir" => "desc"), null, 0 ,5 , 3, 'R5 3 portes en'),
-            array('car', $descriptionEntity, null, array("name" => "attributes.car_name.string_value", "dir" => "asc"), null, 0 ,5 , 3, '206 3 portes en'),
+            array('car', $descriptionEntity, null, array("name" => "attributes.car_name.string_value", "dir" => "asc"), null, 0 ,5 , 3, '206 3 portes fr'),
             array('car', $descriptionEntity, null, array("name" => "attributes.car_name.string_value", "dir" => "desc"), null, 0 ,5 , 3, 'R5 3 portes en'),
             array('car', $descriptionEntity, null, null, null, 0 ,1 , 1),
             array('car', $descriptionEntity, $this->generateColumnsProvider(array('name' => '206')), null, null, 0 ,2 , 1),
@@ -436,6 +439,39 @@ class ContentRepositoryTest extends AbstractKernelTestCase
             array('admin', '3', true, 10, null, 7),
             array('admin', 'not-an-id', true, 10, null, 6),
             array('admin', 'not-an-id', true, 3, null, 3),
+        );
+    }
+
+    /**
+     * @param string       $user
+     * @param string       $siteId
+     * @param array        $eventTypes
+     * @param boolean|null $published
+     * @param int          $limit
+     * @param array|null   $sort
+     * @param int          $count
+     *
+     * @dataProvider provideFindByHistoryAndSiteId
+     */
+    public function testFindByHistoryAndSiteId($user, $siteId, array $eventTypes, $published, $limit, $sort, $count)
+    {
+        $user = $this->userRepository->findOneByUsername($user);
+
+        $contents = $this->repository->findByHistoryAndSiteId($user->getId(), $siteId, $eventTypes, $published, $limit, $sort);
+        $this->assertCount($count, $contents);
+    }
+
+    /**
+     * @return array
+     */
+    public function provideFindByHistoryAndSiteId()
+    {
+        return array(
+            array('admin', '2', array(ContentEvents::CONTENT_CREATION), null, 10, array('updatedAt' => -1), 2),
+            array('admin', '2', array(ContentEvents::CONTENT_CREATION), false, 10, null, 0),
+            array('admin', '2', array(ContentEvents::CONTENT_CREATION), true, 10, null, 2),
+            array('admin', '2', array(ContentEvents::CONTENT_UPDATE), true, 10, null, 1),
+            array('admin', '2', array(ContentEvents::CONTENT_CREATION, ContentEvents::CONTENT_UPDATE), true, 10, null, 3),
         );
     }
 

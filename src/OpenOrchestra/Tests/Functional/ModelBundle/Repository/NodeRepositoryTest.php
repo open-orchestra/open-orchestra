@@ -5,6 +5,7 @@ namespace OpenOrchestra\FunctionalTests\ModelBundle\Repository;
 use OpenOrchestra\BaseBundle\Tests\AbstractTest\AbstractKernelTestCase;
 use OpenOrchestra\ModelInterface\Model\NodeInterface;
 use OpenOrchestra\ModelBundle\Repository\NodeRepository;
+use OpenOrchestra\ModelInterface\NodeEvents;
 use Phake;
 
 /**
@@ -18,6 +19,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
      * @var NodeRepository
      */
     protected $repository;
+    protected $userRepository;
 
     /**
      * Set up test
@@ -28,6 +30,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
 
         static::bootKernel();
         $this->repository = static::$kernel->getContainer()->get('open_orchestra_model.repository.node');
+        $this->userRepository = static::$kernel->getContainer()->get('open_orchestra_user.repository.user');
     }
 
     /**
@@ -416,6 +419,40 @@ class NodeRepositoryTest extends AbstractKernelTestCase
             array('fake_contributor', '2', false, 10, null, 0),
             array('fake_contributor', '2', null, 10, null, 0),
             array('fake_admin', '3', true, 10, null, 1),
+        );
+    }
+
+    /**
+     * @param string       $user
+     * @param string       $siteId
+     * @param array        $eventTypes
+     * @param boolean|null $published
+     * @param int          $limit
+     * @param array|null   $sort
+     * @param int          $count
+     *
+     * @dataProvider provideFindByHistoryAndSiteId
+     */
+    public function testFindByHistoryAndSiteId($user, $siteId, array $eventTypes, $published, $limit, $sort, $count)
+    {
+        $user = $this->userRepository->findOneByUsername($user);
+
+        $this->assertCount(
+            $count,
+            $this->repository->findByHistoryAndSiteId($user->getId(), $siteId, $eventTypes, $published, $limit, $sort)
+        );
+    }
+
+    /**
+     * @return array
+     */
+    public function provideFindByHistoryAndSiteId()
+    {
+        return array(
+            array('admin', '2', array(NodeEvents::NODE_CREATION), null, 10, array('updatedAt' => -1), 1),
+            array('admin', '2', array(NodeEvents::NODE_CREATION), false, 10, null, 0),
+            array('admin', '2', array(NodeEvents::NODE_CREATION), true, 10, null, 1),
+            array('admin', '2', array(NodeEvents::NODE_UPDATE, NodeEvents::NODE_CREATION), true, 10, null, 2),
         );
     }
 
