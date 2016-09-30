@@ -452,7 +452,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
             array('admin', '2', array(NodeEvents::NODE_CREATION), null, 10, array('updatedAt' => -1), 1),
             array('admin', '2', array(NodeEvents::NODE_CREATION), false, 10, null, 0),
             array('admin', '2', array(NodeEvents::NODE_CREATION), true, 10, null, 1),
-            array('admin', '2', array(NodeEvents::NODE_UPDATE, NodeEvents::NODE_CREATION), true, 10, null, 1),
+            array('admin', '2', array(NodeEvents::NODE_UPDATE, NodeEvents::NODE_CREATION), true, 10, null, 2),
         );
     }
 
