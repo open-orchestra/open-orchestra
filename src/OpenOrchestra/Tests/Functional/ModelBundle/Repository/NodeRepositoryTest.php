@@ -5,6 +5,7 @@ namespace OpenOrchestra\FunctionalTests\ModelBundle\Repository;
 use OpenOrchestra\BaseBundle\Tests\AbstractTest\AbstractKernelTestCase;
 use OpenOrchestra\ModelInterface\Model\NodeInterface;
 use OpenOrchestra\ModelBundle\Repository\NodeRepository;
+use OpenOrchestra\ModelInterface\NodeEvents;
 use Phake;
 
 /**
@@ -424,6 +425,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     /**
      * @param string       $user
      * @param string       $siteId
+     * @param array        $eventTypes
      * @param boolean|null $published
      * @param int          $limit
      * @param array|null   $sort
@@ -431,13 +433,13 @@ class NodeRepositoryTest extends AbstractKernelTestCase
      *
      * @dataProvider provideFindByHistoryAndSiteId
      */
-    public function testFindByHistoryAndSiteId($user, $siteId, $published, $limit, $sort, $count)
+    public function testFindByHistoryAndSiteId($user, $siteId, array $eventTypes, $published, $limit, $sort, $count)
     {
         $user = $this->userRepository->findOneByUsername($user);
 
         $this->assertCount(
             $count,
-            $this->repository->findByHistoryAndSiteId($user->getId(), $siteId, $published, $limit, $sort)
+            $this->repository->findByHistoryAndSiteId($user->getId(), $siteId, $eventTypes, $published, $limit, $sort)
         );
     }
 
@@ -447,9 +449,10 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function provideFindByHistoryAndSiteId()
     {
         return array(
-            array('admin', '2', null, 10, array('updatedAt' => -1), 1),
-            array('admin', '2', false, 10, null, 0),
-            array('admin', '2', true, 10, null, 1),
+            array('admin', '2', array(NodeEvents::NODE_CREATION), null, 10, array('updatedAt' => -1), 1),
+            array('admin', '2', array(NodeEvents::NODE_CREATION), false, 10, null, 0),
+            array('admin', '2', array(NodeEvents::NODE_CREATION), true, 10, null, 1),
+            array('admin', '2', array(NodeEvents::NODE_UPDATE, NodeEvents::NODE_CREATION), true, 10, null, 1),
         );
     }
 

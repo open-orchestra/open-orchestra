@@ -5,9 +5,10 @@ namespace OpenOrchestra\FunctionalTests\ModelBundle\Repository;
 use OpenOrchestra\BaseBundle\Tests\AbstractTest\AbstractKernelTestCase;
 use OpenOrchestra\Pagination\Configuration\FinderConfiguration;
 use OpenOrchestra\Pagination\Configuration\PaginateFinderConfiguration;
-use Phake;
 use OpenOrchestra\ModelInterface\Repository\ContentRepositoryInterface;
 use OpenOrchestra\ModelInterface\Repository\RepositoryTrait\KeywordableTraitInterface;
+use OpenOrchestra\ModelInterface\ContentEvents;
+use Phake;
 
 /**
  * Class ContentRepositoryTest
@@ -444,6 +445,7 @@ class ContentRepositoryTest extends AbstractKernelTestCase
     /**
      * @param string       $user
      * @param string       $siteId
+     * @param array        $eventTypes
      * @param boolean|null $published
      * @param int          $limit
      * @param array|null   $sort
@@ -451,11 +453,11 @@ class ContentRepositoryTest extends AbstractKernelTestCase
      *
      * @dataProvider provideFindByHistoryAndSiteId
      */
-    public function testFindByHistoryAndSiteId($user, $siteId, $published, $limit, $sort, $count)
+    public function testFindByHistoryAndSiteId($user, $siteId, array $eventTypes, $published, $limit, $sort, $count)
     {
         $user = $this->userRepository->findOneByUsername($user);
 
-        $contents = $this->repository->findByHistoryAndSiteId($user->getId(), $siteId, $published, $limit, $sort);
+        $contents = $this->repository->findByHistoryAndSiteId($user->getId(), $siteId, $eventTypes, $published, $limit, $sort);
         $this->assertCount($count, $contents);
     }
 
@@ -465,9 +467,11 @@ class ContentRepositoryTest extends AbstractKernelTestCase
     public function provideFindByHistoryAndSiteId()
     {
         return array(
-            array('admin', '2', null, 10, array('updatedAt' => -1), 4),
-            array('admin', '2', false, 10, null, 0),
-            array('admin', '2', true, 10, null, 4),
+            array('admin', '2', array(ContentEvents::CONTENT_CREATION), null, 10, array('updatedAt' => -1), 4),
+            array('admin', '2', array(ContentEvents::CONTENT_CREATION), false, 10, null, 0),
+            array('admin', '2', array(ContentEvents::CONTENT_CREATION), true, 10, null, 4),
+            array('admin', '2', array(ContentEvents::CONTENT_UPDATE), true, 10, null, 0),
+            array('admin', '2', array(ContentEvents::CONTENT_CREATION, ContentEvents::CONTENT_UPDATE), true, 10, null, 4),
         );
     }
 
