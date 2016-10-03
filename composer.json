@@ -2,7 +2,7 @@
   "name": "open-orchestra/open-orchestra",
   "license": "Apache-2.0",
   "type": "project",
-  "version": "1.2.0-beta",
+  "version": "1.2.x@dev",
   "description": "Example of an Open Orchestra Back Office implementation",
   "authors": [
     {
@@ -15,12 +15,12 @@
     "php": "~5.6.0",
     "incenteev/composer-parameter-handler": "~2.1.2",
     "sensio/distribution-bundle": "~5.0.0",
-    "open-orchestra/open-orchestra-base-api-mongo-model-bundle": "1.2.0-beta@beta",
-    "open-orchestra/open-orchestra-cms-bundle": "1.2.0-beta@beta",
-    "open-orchestra/open-orchestra-elastica-bundle": "1.2.0-beta@beta",
-    "open-orchestra/open-orchestra-media-admin-bundle": "1.2.0-beta@beta",
-    "open-orchestra/open-orchestra-model-bundle": "1.2.0-beta@beta",
-    "open-orchestra/open-orchestra-workflow-function-bundle": "1.2.0-beta@beta",
+    "open-orchestra/open-orchestra-base-api-mongo-model-bundle": "self.version",
+    "open-orchestra/open-orchestra-cms-bundle": "self.version",
+    "open-orchestra/open-orchestra-elastica-bundle": "self.version",
+    "open-orchestra/open-orchestra-media-admin-bundle": "self.version",
+    "open-orchestra/open-orchestra-model-bundle": "self.version",
+    "open-orchestra/open-orchestra-workflow-function-bundle": "self.version",
     "friendsofsymfony/user-bundle": "@alpha"
   },
 
@@ -28,16 +28,16 @@
     "phpunit/phpunit": "~5.4.0",
     "phake/phake": "~2.3.0",
 
-    "open-orchestra/open-orchestra-base-bundle": "1.2.0-beta@beta",
-    "open-orchestra/open-orchestra-base-api-bundle": "1.2.0-beta@beta",
-    "open-orchestra/open-orchestra-bbcode-bundle": "1.2.0-beta@beta",
-    "open-orchestra/open-orchestra-display-bundle": "1.2.0-beta@beta",
-    "open-orchestra/open-orchestra-libs": "1.2.0-beta@beta",
-    "open-orchestra/open-orchestra-media-bundle": "1.2.0-beta@beta",
-    "open-orchestra/open-orchestra-media-file-bundle": "1.2.0-beta@beta",
-    "open-orchestra/open-orchestra-model-interface": "1.2.0-beta@beta",
-    "open-orchestra/open-orchestra-mongo-libs": "1.2.0-beta@beta",
-    "open-orchestra/open-orchestra-user-bundle": "1.2.0-beta@beta"
+    "open-orchestra/open-orchestra-base-bundle": "self.version",
+    "open-orchestra/open-orchestra-base-api-bundle": "self.version",
+    "open-orchestra/open-orchestra-bbcode-bundle": "self.version",
+    "open-orchestra/open-orchestra-display-bundle": "self.version",
+    "open-orchestra/open-orchestra-libs": "self.version",
+    "open-orchestra/open-orchestra-media-bundle": "self.version",
+    "open-orchestra/open-orchestra-media-file-bundle": "self.version",
+    "open-orchestra/open-orchestra-model-interface": "self.version",
+    "open-orchestra/open-orchestra-mongo-libs": "self.version",
+    "open-orchestra/open-orchestra-user-bundle": "self.version"
   },
 
   "scripts": {
