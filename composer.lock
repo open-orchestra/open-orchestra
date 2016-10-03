@@ -4,8 +4,13 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
+<<<<<<< fb888838a65a2eac175f4d002146f754b9ff78e9
     "hash": "8cbbc8ea53ba9007c0353ddf3a1ae320",
     "content-hash": "124593fe2c51de72250ef7e904285d19",
+=======
+    "hash": "c760f98dc0b913a04d1b84c0af5a44e8",
+    "content-hash": "b4f1ec3c68b568b4dd9241e0d03e61e6",
+>>>>>>> update vendor 2.0
     "packages": [
         {
             "name": "alchemy/binary-driver",
@@ -2436,7 +2441,11 @@
         },
         {
             "name": "open-orchestra/open-orchestra-base-api-bundle",
+<<<<<<< fb888838a65a2eac175f4d002146f754b9ff78e9
             "version": "1.2.x-dev",
+=======
+            "version": "dev-master",
+>>>>>>> update vendor 2.0
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-base-api-bundle.git",
@@ -2482,7 +2491,11 @@
         },
         {
             "name": "open-orchestra/open-orchestra-base-api-mongo-model-bundle",
+<<<<<<< fb888838a65a2eac175f4d002146f754b9ff78e9
             "version": "1.2.x-dev",
+=======
+            "version": "dev-master",
+>>>>>>> update vendor 2.0
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-base-api-mongo-model-bundle.git",
@@ -2527,7 +2540,11 @@
         },
         {
             "name": "open-orchestra/open-orchestra-base-bundle",
+<<<<<<< fb888838a65a2eac175f4d002146f754b9ff78e9
             "version": "1.2.x-dev",
+=======
+            "version": "dev-master",
+>>>>>>> update vendor 2.0
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-base-bundle.git",
@@ -2573,7 +2590,11 @@
         },
         {
             "name": "open-orchestra/open-orchestra-bbcode-bundle",
+<<<<<<< fb888838a65a2eac175f4d002146f754b9ff78e9
             "version": "1.2.x-dev",
+=======
+            "version": "dev-master",
+>>>>>>> update vendor 2.0
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-bbcode-bundle.git",
@@ -2616,7 +2637,11 @@
         },
         {
             "name": "open-orchestra/open-orchestra-cms-bundle",
+<<<<<<< fb888838a65a2eac175f4d002146f754b9ff78e9
             "version": "1.2.x-dev",
+=======
+            "version": "dev-master",
+>>>>>>> update vendor 2.0
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
@@ -2721,7 +2746,11 @@
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
+<<<<<<< fb888838a65a2eac175f4d002146f754b9ff78e9
             "version": "1.2.x-dev",
+=======
+            "version": "dev-master",
+>>>>>>> update vendor 2.0
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-display-bundle.git",
@@ -2771,7 +2800,11 @@
         },
         {
             "name": "open-orchestra/open-orchestra-elastica-bundle",
+<<<<<<< fb888838a65a2eac175f4d002146f754b9ff78e9
             "version": "1.2.x-dev",
+=======
+            "version": "dev-master",
+>>>>>>> update vendor 2.0
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-elastica-bundle.git",
@@ -2832,7 +2865,11 @@
         },
         {
             "name": "open-orchestra/open-orchestra-libs",
+<<<<<<< fb888838a65a2eac175f4d002146f754b9ff78e9
             "version": "1.2.x-dev",
+=======
+            "version": "dev-master",
+>>>>>>> update vendor 2.0
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-libs.git",
@@ -2879,7 +2916,11 @@
         },
         {
             "name": "open-orchestra/open-orchestra-media-admin-bundle",
+<<<<<<< fb888838a65a2eac175f4d002146f754b9ff78e9
             "version": "1.2.x-dev",
+=======
+            "version": "dev-master",
+>>>>>>> update vendor 2.0
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-admin-bundle.git",
@@ -2975,7 +3016,11 @@
         },
         {
             "name": "open-orchestra/open-orchestra-media-bundle",
+<<<<<<< fb888838a65a2eac175f4d002146f754b9ff78e9
             "version": "1.2.x-dev",
+=======
+            "version": "dev-master",
+>>>>>>> update vendor 2.0
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-bundle.git",
@@ -3025,7 +3070,11 @@
         },
         {
             "name": "open-orchestra/open-orchestra-media-file-bundle",
+<<<<<<< fb888838a65a2eac175f4d002146f754b9ff78e9
             "version": "1.2.x-dev",
+=======
+            "version": "dev-master",
+>>>>>>> update vendor 2.0
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-file-bundle.git",
@@ -3067,7 +3116,11 @@
         },
         {
             "name": "open-orchestra/open-orchestra-model-bundle",
+<<<<<<< fb888838a65a2eac175f4d002146f754b9ff78e9
             "version": "1.2.x-dev",
+=======
+            "version": "dev-master",
+>>>>>>> update vendor 2.0
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
@@ -3115,7 +3168,11 @@
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
+<<<<<<< fb888838a65a2eac175f4d002146f754b9ff78e9
             "version": "1.2.x-dev",
+=======
+            "version": "dev-master",
+>>>>>>> update vendor 2.0
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-interface.git",
@@ -3160,7 +3217,11 @@
         },
         {
             "name": "open-orchestra/open-orchestra-mongo-libs",
+<<<<<<< fb888838a65a2eac175f4d002146f754b9ff78e9
             "version": "1.2.x-dev",
+=======
+            "version": "dev-master",
+>>>>>>> update vendor 2.0
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-mongo-libs.git",
@@ -3211,7 +3272,11 @@
         },
         {
             "name": "open-orchestra/open-orchestra-user-bundle",
+<<<<<<< fb888838a65a2eac175f4d002146f754b9ff78e9
             "version": "1.2.x-dev",
+=======
+            "version": "dev-master",
+>>>>>>> update vendor 2.0
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-user-bundle.git",
@@ -3264,7 +3329,11 @@
         },
         {
             "name": "open-orchestra/open-orchestra-workflow-function-bundle",
+<<<<<<< fb888838a65a2eac175f4d002146f754b9ff78e9
             "version": "1.2.x-dev",
+=======
+            "version": "dev-master",
+>>>>>>> update vendor 2.0
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-workflow-function-bundle.git",
@@ -5679,6 +5748,7 @@
         },
         {
             "name": "phpunit/phpunit-mock-objects",
+<<<<<<< fb888838a65a2eac175f4d002146f754b9ff78e9
             "version": "3.4.0",
             "source": {
                 "type": "git",
@@ -5689,6 +5759,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/238d7a2723bce689c79eeac9c7d5e1d623bb9dc2",
                 "reference": "238d7a2723bce689c79eeac9c7d5e1d623bb9dc2",
+=======
+            "version": "3.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
+                "reference": "7462c19bdb9814f6e6bdeb5cad3eb3ce72c6e0da"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/7462c19bdb9814f6e6bdeb5cad3eb3ce72c6e0da",
+                "reference": "7462c19bdb9814f6e6bdeb5cad3eb3ce72c6e0da",
+>>>>>>> update vendor 2.0
                 "shasum": ""
             },
             "require": {
@@ -5734,7 +5816,11 @@
                 "mock",
                 "xunit"
             ],
+<<<<<<< fb888838a65a2eac175f4d002146f754b9ff78e9
             "time": "2016-10-09 07:01:45"
+=======
+            "time": "2016-09-27 03:17:40"
+>>>>>>> update vendor 2.0
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
