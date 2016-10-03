@@ -5,7 +5,7 @@ path_front: /var/www/front-openorchestra
 
 hosts_localhost: 127.0.0.1 localhost openorchestra
 
-hosts_site: 127.0.1.1 admin.openorchestra.1-2.dev demo.openorchestra.1-2.dev media.openorchestra.1-2.dev
+hosts_site: 127.0.1.1 admin.openorchestra.2-0.dev demo.openorchestra.2-0.dev media.openorchestra.2-0.dev
 
 apache_main_ports:
   - 80
@@ -16,20 +16,20 @@ back_ports:
 apache_conf:
   open-orchestra.conf:
     port: 80
-    serverName: admin.openorchestra.1-2.dev
+    serverName: admin.openorchestra.2-0.dev
     docRoot: /var/www/openorchestra/web
     errorLog: admin.openorchestraError.log
     accessLog: admin.openorchestraAccess.log
   demo-orchestra.conf:
     port: 80
-    serverName: demo.openorchestra.1-2.dev
+    serverName: demo.openorchestra.2-0.dev
     docRoot: /var/www/front-openorchestra/web
     errorLog: demo.openorchestraError.log
     accessLog: demo.openorchestraAccess.log
     siteId:
   media-orchestra.conf:
     port: 80
-    serverName: media.openorchestra.1-2.dev
+    serverName: media.openorchestra.2-0.dev
     docRoot: /var/www/media-openorchestra/web
     errorLog: media.openorchestraError.log
     accessLog: media.openorchestraAccess.log
@@ -37,9 +37,9 @@ apache_conf:
 varnish_listen_port: 6081
 
 backend_conf:
-  - { name: openorchestra, port: 80, host: admin.openorchestra.1-2.dev, admin: true }
-  - { name: demoopenorchestra, port: 80, host: demo.openorchestra.1-2.dev }
-  - { name: mediaopenorchestra, port: 80, host: media.openorchestra.1-2.dev }
+  - { name: openorchestra, port: 80, host: admin.openorchestra.2-0.dev, admin: true }
+  - { name: demoopenorchestra, port: 80, host: demo.openorchestra.2-0.dev }
+  - { name: mediaopenorchestra, port: 80, host: media.openorchestra.2-0.dev }
 
 selenium_current_directory: /home/vagrant
 
@@ -50,12 +50,12 @@ sudoers:
 
 elasticsearch_version: 1.4
 elasticsearch_config:
-  network.bind_host: 192.168.33.12
-  network.host: 192.168.33.12
-  network.publish_host: 192.168.33.12
-  http.bind_host: 192.168.33.12
-  http.host: 192.168.33.12
-  http.publish_host: 192.168.33.12
+  network.bind_host: 192.168.33.13
+  network.host: 192.168.33.13
+  network.publish_host: 192.168.33.13
+  http.bind_host: 192.168.33.13
+  http.host: 192.168.33.13
+  http.publish_host: 192.168.33.13
 elasticsearch_plugins:
   - name: mobz/elasticsearch-head
     check_file: /usr/share/elasticsearch/plugins/head/index.html
