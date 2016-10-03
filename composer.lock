@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c518705c261f6855af9f771897f8ca81",
-    "content-hash": "f115bbe3c4c3c24228239ccf0820f490",
+    "hash": "8cbbc8ea53ba9007c0353ddf3a1ae320",
+    "content-hash": "124593fe2c51de72250ef7e904285d19",
     "packages": [
         {
             "name": "alchemy/binary-driver",
@@ -2437,7 +2437,7 @@
         },
         {
             "name": "open-orchestra/open-orchestra-base-api-bundle",
-            "version": "v1.2.0-beta",
+            "version": "1.2.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-base-api-bundle.git",
@@ -2483,7 +2483,7 @@
         },
         {
             "name": "open-orchestra/open-orchestra-base-api-mongo-model-bundle",
-            "version": "v1.2.0-beta",
+            "version": "1.2.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-base-api-mongo-model-bundle.git",
@@ -2528,7 +2528,7 @@
         },
         {
             "name": "open-orchestra/open-orchestra-base-bundle",
-            "version": "v1.2.0-beta",
+            "version": "1.2.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-base-bundle.git",
@@ -2574,7 +2574,7 @@
         },
         {
             "name": "open-orchestra/open-orchestra-bbcode-bundle",
-            "version": "v1.2.0-beta",
+            "version": "1.2.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-bbcode-bundle.git",
@@ -2617,7 +2617,7 @@
         },
         {
             "name": "open-orchestra/open-orchestra-cms-bundle",
-            "version": "v1.2.0-beta",
+            "version": "1.2.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
@@ -2722,7 +2722,7 @@
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
-            "version": "v1.2.0-beta",
+            "version": "1.2.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-display-bundle.git",
@@ -2772,7 +2772,7 @@
         },
         {
             "name": "open-orchestra/open-orchestra-elastica-bundle",
-            "version": "v1.2.0-beta",
+            "version": "1.2.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-elastica-bundle.git",
@@ -2833,7 +2833,7 @@
         },
         {
             "name": "open-orchestra/open-orchestra-libs",
-            "version": "v1.2.0-beta",
+            "version": "1.2.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-libs.git",
@@ -2880,7 +2880,7 @@
         },
         {
             "name": "open-orchestra/open-orchestra-media-admin-bundle",
-            "version": "v1.2.0-beta",
+            "version": "1.2.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-admin-bundle.git",
@@ -2976,7 +2976,7 @@
         },
         {
             "name": "open-orchestra/open-orchestra-media-bundle",
-            "version": "v1.2.0-beta",
+            "version": "1.2.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-bundle.git",
@@ -3026,7 +3026,7 @@
         },
         {
             "name": "open-orchestra/open-orchestra-media-file-bundle",
-            "version": "v1.2.0-beta",
+            "version": "1.2.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-file-bundle.git",
@@ -3068,7 +3068,7 @@
         },
         {
             "name": "open-orchestra/open-orchestra-model-bundle",
-            "version": "v1.2.0-beta",
+            "version": "1.2.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
@@ -3116,7 +3116,7 @@
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
-            "version": "v1.2.0-beta",
+            "version": "1.2.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-interface.git",
@@ -3161,7 +3161,7 @@
         },
         {
             "name": "open-orchestra/open-orchestra-mongo-libs",
-            "version": "v1.2.0-beta",
+            "version": "1.2.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-mongo-libs.git",
@@ -3212,7 +3212,7 @@
         },
         {
             "name": "open-orchestra/open-orchestra-user-bundle",
-            "version": "v1.2.0-beta",
+            "version": "1.2.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-user-bundle.git",
@@ -3265,7 +3265,7 @@
         },
         {
             "name": "open-orchestra/open-orchestra-workflow-function-bundle",
-            "version": "v1.2.0-beta",
+            "version": "1.2.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-workflow-function-bundle.git",
@@ -5680,16 +5680,16 @@
         },
         {
             "name": "phpunit/phpunit-mock-objects",
-            "version": "3.2.7",
+            "version": "3.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
-                "reference": "546898a2c0c356ef2891b39dd7d07f5d82c8ed0a"
+                "reference": "7462c19bdb9814f6e6bdeb5cad3eb3ce72c6e0da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/546898a2c0c356ef2891b39dd7d07f5d82c8ed0a",
-                "reference": "546898a2c0c356ef2891b39dd7d07f5d82c8ed0a",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/7462c19bdb9814f6e6bdeb5cad3eb3ce72c6e0da",
+                "reference": "7462c19bdb9814f6e6bdeb5cad3eb3ce72c6e0da",
                 "shasum": ""
             },
             "require": {
@@ -5735,7 +5735,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2016-09-06 16:07:45"
+            "time": "2016-09-27 03:17:40"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
@@ -6304,23 +6304,23 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "open-orchestra/open-orchestra-base-api-mongo-model-bundle": 10,
-        "open-orchestra/open-orchestra-cms-bundle": 10,
-        "open-orchestra/open-orchestra-elastica-bundle": 10,
-        "open-orchestra/open-orchestra-media-admin-bundle": 10,
-        "open-orchestra/open-orchestra-model-bundle": 10,
-        "open-orchestra/open-orchestra-workflow-function-bundle": 10,
+        "open-orchestra/open-orchestra-base-api-mongo-model-bundle": 20,
+        "open-orchestra/open-orchestra-cms-bundle": 20,
+        "open-orchestra/open-orchestra-elastica-bundle": 20,
+        "open-orchestra/open-orchestra-media-admin-bundle": 20,
+        "open-orchestra/open-orchestra-model-bundle": 20,
+        "open-orchestra/open-orchestra-workflow-function-bundle": 20,
         "friendsofsymfony/user-bundle": 15,
-        "open-orchestra/open-orchestra-base-bundle": 10,
-        "open-orchestra/open-orchestra-base-api-bundle": 10,
-        "open-orchestra/open-orchestra-bbcode-bundle": 10,
-        "open-orchestra/open-orchestra-display-bundle": 10,
-        "open-orchestra/open-orchestra-libs": 10,
-        "open-orchestra/open-orchestra-media-bundle": 10,
-        "open-orchestra/open-orchestra-media-file-bundle": 10,
-        "open-orchestra/open-orchestra-model-interface": 10,
-        "open-orchestra/open-orchestra-mongo-libs": 10,
-        "open-orchestra/open-orchestra-user-bundle": 10
+        "open-orchestra/open-orchestra-base-bundle": 20,
+        "open-orchestra/open-orchestra-base-api-bundle": 20,
+        "open-orchestra/open-orchestra-bbcode-bundle": 20,
+        "open-orchestra/open-orchestra-display-bundle": 20,
+        "open-orchestra/open-orchestra-libs": 20,
+        "open-orchestra/open-orchestra-media-bundle": 20,
+        "open-orchestra/open-orchestra-media-file-bundle": 20,
+        "open-orchestra/open-orchestra-model-interface": 20,
+        "open-orchestra/open-orchestra-mongo-libs": 20,
+        "open-orchestra/open-orchestra-user-bundle": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
