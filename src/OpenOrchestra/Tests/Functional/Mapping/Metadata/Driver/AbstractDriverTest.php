@@ -56,11 +56,17 @@ abstract class AbstractDriverTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertInstanceOf('Metadata\ClassMetadata', $metadata);
         $propertiesMetadata = $metadata->propertyMetadata;
-
         $this->assertArrayHasKey('fakeProperty1', $propertiesMetadata);
-        $this->assertPropertyMetadata($propertiesMetadata['fakeProperty1'], 'fake_property1', 'fakeType', 'fakeProperty1');
         $this->assertArrayHasKey('fakeProperty2', $propertiesMetadata);
-        $this->assertPropertyMetadata($propertiesMetadata['fakeProperty2'], array("fake_property2", "fake_property_multi"), 'string', 'fakeProperty2');
+        $propertyMetadataFakeProperty1 = $propertiesMetadata['fakeProperty1']->propertySearchMetadata[0];
+        $this->assertPropertyMetadata($propertyMetadataFakeProperty1, 'fake_property1', 'fakeType', 'fakeProperty1');
+
+        $this->assertCount(2, $propertiesMetadata['fakeProperty2']->propertySearchMetadata);
+        $propertyMetadataFakeProperty2 = $propertiesMetadata['fakeProperty2']->propertySearchMetadata[0];
+        $this->assertPropertyMetadata($propertyMetadataFakeProperty2, array("fake_property2", "fake_property_multi"), 'string', 'fakeProperty2');
+        $propertyMetadataFakeProperty2Other = $propertiesMetadata['fakeProperty2']->propertySearchMetadata[1];
+        $this->assertPropertyMetadata($propertyMetadataFakeProperty2Other, "fake_property3", 'string', 'fakeProperty2');
+
     }
 
     /**
