@@ -68,7 +68,8 @@ class UserRepositoryTest extends AbstractKernelTestCase
      */
     public function testCount()
     {
-        $users = $this->repository->count();
+        $configuration = FinderConfiguration::generateFromVariable($this->getDescriptionColumnEntity(), array());
+        $users = $this->repository->count($configuration);
         $this->assertEquals(7, $users);
     }
 
