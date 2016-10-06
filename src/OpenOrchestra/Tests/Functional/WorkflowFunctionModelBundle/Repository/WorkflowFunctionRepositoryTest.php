@@ -69,7 +69,8 @@ class WorkflowFunctionRepositoryTest extends AbstractKernelTestCase
      */
     public function testCount()
     {
-        $worflowFunctions = $this->repository->count();
+        $configuration = FinderConfiguration::generateFromVariable($this->getDescriptionColumnEntity(), array());
+        $worflowFunctions = $this->repository->count($configuration);
         $this->assertEquals(2, $worflowFunctions);
     }
 

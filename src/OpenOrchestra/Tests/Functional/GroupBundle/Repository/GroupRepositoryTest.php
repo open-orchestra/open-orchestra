@@ -69,7 +69,8 @@ class GroupRepositoryTest extends AbstractKernelTestCase
      */
     public function testCount()
     {
-        $groups = $this->repository->count();
+        $configuration = PaginateFinderConfiguration::generateFromVariable($this->getDescriptionColumnEntity(), array());
+        $groups = $this->repository->count($configuration);
         $this->assertEquals(7, $groups);
     }
 
