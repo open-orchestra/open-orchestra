@@ -2671,6 +2671,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
+<<<<<<< 8d23481e0defd2c3c3df7b1bcecdb8ecdbfffcdd
 <<<<<<< 28d6210c113f67e3df46e4e7e1e4d0be2447b37d
                 "reference": "9519ac7fc0f5b81e9d6e8b0df2ff149bf1965033"
             },
@@ -2686,6 +2687,14 @@
                 "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/11d789d79272b759cfde5ef28e4d314369456514",
                 "reference": "11d789d79272b759cfde5ef28e4d314369456514",
 >>>>>>> update vendor 2.0
+=======
+                "reference": "62cff456ee13ac6d37f9b7d2eb252bdea86bae73"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/62cff456ee13ac6d37f9b7d2eb252bdea86bae73",
+                "reference": "62cff456ee13ac6d37f9b7d2eb252bdea86bae73",
+>>>>>>> update vendor
                 "shasum": ""
             },
             "require": {
@@ -2777,11 +2786,15 @@
                 }
             ],
             "description": "This bundle provide the Back Office part of Open Orchestra",
+<<<<<<< 8d23481e0defd2c3c3df7b1bcecdb8ecdbfffcdd
 <<<<<<< 28d6210c113f67e3df46e4e7e1e4d0be2447b37d
             "time": "2016-10-19 09:17:17"
 =======
             "time": "2016-10-06 09:39:50"
 >>>>>>> update vendor 2.0
+=======
+            "time": "2016-10-07 08:37:20"
+>>>>>>> update vendor
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2793,6 +2806,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-display-bundle.git",
+<<<<<<< 8d23481e0defd2c3c3df7b1bcecdb8ecdbfffcdd
 <<<<<<< 28d6210c113f67e3df46e4e7e1e4d0be2447b37d
                 "reference": "d93b8a6790fa2da5b8bea9b75fd8be2ab2979f43"
             },
@@ -2808,6 +2822,14 @@
                 "url": "https://api.github.com/repos/open-orchestra/open-orchestra-display-bundle/zipball/7b55708a29feddc90734624e45007989eb504e4d",
                 "reference": "7b55708a29feddc90734624e45007989eb504e4d",
 >>>>>>> update vendor 2.0
+=======
+                "reference": "69236549845ecdc36462d7ce1fdce84d5c5bd4ee"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-display-bundle/zipball/69236549845ecdc36462d7ce1fdce84d5c5bd4ee",
+                "reference": "69236549845ecdc36462d7ce1fdce84d5c5bd4ee",
+>>>>>>> update vendor
                 "shasum": ""
             },
             "require": {
@@ -2844,11 +2866,15 @@
                 }
             ],
             "description": "The bundle to display all bricks",
+<<<<<<< 8d23481e0defd2c3c3df7b1bcecdb8ecdbfffcdd
 <<<<<<< 28d6210c113f67e3df46e4e7e1e4d0be2447b37d
             "time": "2016-10-07 08:55:49"
 =======
             "time": "2016-10-04 15:15:16"
 >>>>>>> update vendor 2.0
+=======
+            "time": "2016-10-07 08:31:19"
+>>>>>>> update vendor
         },
         {
             "name": "open-orchestra/open-orchestra-elastica-bundle",
@@ -2925,6 +2951,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-libs.git",
+<<<<<<< 8d23481e0defd2c3c3df7b1bcecdb8ecdbfffcdd
 <<<<<<< 28d6210c113f67e3df46e4e7e1e4d0be2447b37d
                 "reference": "76a0b3c0f20b0b3c40c17eadc255667b25b6c2d3"
             },
@@ -2940,6 +2967,14 @@
                 "url": "https://api.github.com/repos/open-orchestra/open-orchestra-libs/zipball/84cd89a6e66ff8dd517bc572a2e691300c11114f",
                 "reference": "84cd89a6e66ff8dd517bc572a2e691300c11114f",
 >>>>>>> update vendor 2.0
+=======
+                "reference": "0b4706f2379c6fa1406873b8ac6f3ed55ade02b3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-libs/zipball/0b4706f2379c6fa1406873b8ac6f3ed55ade02b3",
+                "reference": "0b4706f2379c6fa1406873b8ac6f3ed55ade02b3",
+>>>>>>> update vendor
                 "shasum": ""
             },
             "require": {
@@ -2973,11 +3008,15 @@
                 }
             ],
             "description": "Some library for the Open Orchestra project",
+<<<<<<< 8d23481e0defd2c3c3df7b1bcecdb8ecdbfffcdd
 <<<<<<< 28d6210c113f67e3df46e4e7e1e4d0be2447b37d
             "time": "2016-10-07 09:11:23"
 =======
             "time": "2016-10-06 09:26:26"
 >>>>>>> update vendor 2.0
+=======
+            "time": "2016-10-07 08:51:07"
+>>>>>>> update vendor
         },
         {
             "name": "open-orchestra/open-orchestra-media-admin-bundle",
@@ -3215,6 +3254,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
+<<<<<<< 8d23481e0defd2c3c3df7b1bcecdb8ecdbfffcdd
 <<<<<<< 28d6210c113f67e3df46e4e7e1e4d0be2447b37d
                 "reference": "1885acafb44bd12042bc374f08858faea21f760a"
             },
@@ -3230,6 +3270,14 @@
                 "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/44f68cacff1fb79f77d0af3bedec32b1322df4ea",
                 "reference": "44f68cacff1fb79f77d0af3bedec32b1322df4ea",
 >>>>>>> update vendor 2.0
+=======
+                "reference": "44c19bbe34817d7237cbdbf07bf74c048bf86638"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/44c19bbe34817d7237cbdbf07bf74c048bf86638",
+                "reference": "44c19bbe34817d7237cbdbf07bf74c048bf86638",
+>>>>>>> update vendor
                 "shasum": ""
             },
             "require": {
@@ -3264,11 +3312,15 @@
                 }
             ],
             "description": "A MongoDB implemantation of the Open Orchestra Model Interface",
+<<<<<<< 8d23481e0defd2c3c3df7b1bcecdb8ecdbfffcdd
 <<<<<<< 28d6210c113f67e3df46e4e7e1e4d0be2447b37d
             "time": "2016-10-20 14:33:10"
 =======
             "time": "2016-10-06 09:25:21"
 >>>>>>> update vendor 2.0
+=======
+            "time": "2016-10-07 08:35:37"
+>>>>>>> update vendor
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
@@ -3280,6 +3332,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-interface.git",
+<<<<<<< 8d23481e0defd2c3c3df7b1bcecdb8ecdbfffcdd
 <<<<<<< 28d6210c113f67e3df46e4e7e1e4d0be2447b37d
                 "reference": "403880f5f127e616181c17de096fb2a6dcfac088"
             },
@@ -3295,6 +3348,14 @@
                 "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/580a1b887e00fd9be6fb7c47232dfb075d30cd5c",
                 "reference": "580a1b887e00fd9be6fb7c47232dfb075d30cd5c",
 >>>>>>> update vendor 2.0
+=======
+                "reference": "78872de6da0fc3ca1aed35d26065f1c7ded09584"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/78872de6da0fc3ca1aed35d26065f1c7ded09584",
+                "reference": "78872de6da0fc3ca1aed35d26065f1c7ded09584",
+>>>>>>> update vendor
                 "shasum": ""
             },
             "require": {
@@ -3326,11 +3387,15 @@
                 }
             ],
             "description": "Describe all entity and repository to implement for the whole OpenOrchestra project",
+<<<<<<< 8d23481e0defd2c3c3df7b1bcecdb8ecdbfffcdd
 <<<<<<< 28d6210c113f67e3df46e4e7e1e4d0be2447b37d
             "time": "2016-10-07 08:56:22"
 =======
             "time": "2016-10-06 09:24:39"
 >>>>>>> update vendor 2.0
+=======
+            "time": "2016-10-07 08:33:19"
+>>>>>>> update vendor
         },
         {
             "name": "open-orchestra/open-orchestra-mongo-libs",
@@ -3342,6 +3407,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-mongo-libs.git",
+<<<<<<< 8d23481e0defd2c3c3df7b1bcecdb8ecdbfffcdd
 <<<<<<< 28d6210c113f67e3df46e4e7e1e4d0be2447b37d
                 "reference": "2b51595e11ed6e52ca197a010e279a7d4e0a3fc8"
             },
@@ -3357,6 +3423,14 @@
                 "url": "https://api.github.com/repos/open-orchestra/open-orchestra-mongo-libs/zipball/71aea4c0f32c765dec36c47f486e0d4b012f2b3b",
                 "reference": "71aea4c0f32c765dec36c47f486e0d4b012f2b3b",
 >>>>>>> update vendor 2.0
+=======
+                "reference": "39689baeda40523385bf01f1ee5e73055faba972"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-mongo-libs/zipball/39689baeda40523385bf01f1ee5e73055faba972",
+                "reference": "39689baeda40523385bf01f1ee5e73055faba972",
+>>>>>>> update vendor
                 "shasum": ""
             },
             "require": {
@@ -3394,11 +3468,15 @@
                 }
             ],
             "description": "Some libraries to use MongoDB in Open Orchestra",
+<<<<<<< 8d23481e0defd2c3c3df7b1bcecdb8ecdbfffcdd
 <<<<<<< 28d6210c113f67e3df46e4e7e1e4d0be2447b37d
             "time": "2016-10-07 12:38:21"
 =======
             "time": "2016-10-06 09:27:09"
 >>>>>>> update vendor 2.0
+=======
+            "time": "2016-10-07 08:51:11"
+>>>>>>> update vendor
         },
         {
             "name": "open-orchestra/open-orchestra-user-bundle",
