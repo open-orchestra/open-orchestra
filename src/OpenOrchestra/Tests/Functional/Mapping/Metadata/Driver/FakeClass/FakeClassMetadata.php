@@ -20,6 +20,7 @@ class FakeClassMetadata
 
     /**
      * @ORCHESTRA\Search(key={"fake_property2", "fake_property_multi"})
+     * @ORCHESTRA\Search(key="fake_property3")
      */
     protected $fakeProperty2;
 }

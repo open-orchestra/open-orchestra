@@ -5,4 +5,7 @@ OpenOrchestra\FunctionalTests\Mapping\Metadata\Driver\FakeClass\FakeClassMetadat
             type: fakeType
             field: fakeProperty1
         fakeProperty2:
-            key: [fake_property2, fake_property_multi]
+            -
+              key: [fake_property2, fake_property_multi]
+            -
+              key: fake_property3
