@@ -65,7 +65,6 @@ class EntityTest extends AbstractBaseTestCase
             array('SiteAlias',        'ReadSchemeableInterface'),
             array('Template',         'TemplateInterface'),
             array('Template',         'SoftDeleteableInterface'),
-            array('TranslatedValue',  'TranslatedValueInterface'),
             array('Node',             'BlameableInterface'),
             array('Content',          'BlameableInterface'),
             array('ContentType',      'BlameableInterface'),
