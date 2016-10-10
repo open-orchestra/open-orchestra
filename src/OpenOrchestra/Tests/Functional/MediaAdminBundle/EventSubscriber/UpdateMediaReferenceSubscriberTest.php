@@ -78,7 +78,6 @@ class UpdateMediaReferenceSubscriberTest extends AbstractAuthenticatedTest
         $event = new NodeEvent($this->node);
         $this->eventDispatcher->dispatch(NodeEvents::NODE_UPDATE_BLOCK, $event);
 
-        $mediaBlockIndex = $this->node->getBlockIndex($block);
         $expectedReference = array('node' => array($this->node->getId() => $this->node->getId()));
         $this->checkMediaReference($media, $expectedReference);
     }
@@ -140,7 +139,7 @@ class UpdateMediaReferenceSubscriberTest extends AbstractAuthenticatedTest
     protected function generateBlock($blockType, $id)
     {
         $block = new Block();
-        $area = $this->node->getAreas()[0];
+        $area = $this->node->getRootArea()->getAreas()[0];
         $block->setComponent($blockType);
         $block->addArea(array($area->getAreaId()));
         $block->setId($id);

@@ -317,32 +317,6 @@ class ContentRepositoryTest extends AbstractKernelTestCase
 
     /**
      * @param string  $contentType
-     * @param integer $count
-     *
-     * @dataProvider provideContentTypeCount
-     * @deprecated will be removed in 2.0, use countByContentTypeAndSiteInLastVersion
-     */
-    public function testCountByContentTypeInLastVersion($contentType, $count)
-    {
-        @trigger_error('The '.__METHOD__.' method is deprecated since version 1.1.3 and will be removed in 2.0. Use the '.__CLASS__.'::countByContentTypeAndSiteInLastVersion method instead.', E_USER_DEPRECATED);
-        $contents = $this->repository->countByContentTypeInLastVersion($contentType);
-        $this->assertEquals($count, $contents);
-    }
-
-    /**
-     * @return array
-     */
-    public function provideContentTypeCount()
-    {
-        return array(
-            array('car', 3),
-            array('customer', 2),
-            array('news', 4),
-        );
-    }
-
-    /**
-     * @param string  $contentType
      * @param string  $siteId
      * @param integer $count
      *
@@ -406,39 +380,6 @@ class ContentRepositoryTest extends AbstractKernelTestCase
             array('news', $descriptionEntity, $this->generateColumnsProvider(null, 'news'), '2', 0),
             array('news', $descriptionEntity, $this->generateColumnsProvider(null, 'lorem'), '1', 1),
             array('news', $descriptionEntity, $this->generateColumnsProvider(null, 'lorem'), '2', 1),
-        );
-    }
-
-    /**
-     * @param string       $author
-     * @param string       $siteId
-     * @param boolean|null $published
-     * @param int          $limit
-     * @param array|null   $sort
-     * @param int          $count
-     *
-     * @dataProvider provideFindByAuthorAndsiteId
-     */
-    public function testFindByAuthorAndsiteId($author, $siteId, $published, $limit, $sort, $count)
-    {
-        $contents = $this->repository->findByAuthorAndsiteId($author, $siteId, $published, $limit, $sort);
-        $this->assertCount($count, $contents);
-    }
-
-    /**
-     * @return array
-     */
-    public function provideFindByAuthorAndsiteId()
-    {
-        return array(
-            array('admin', '2', null, 10, array('updatedAt' => -1), 8),
-            array('admin', '2', false, 10, null, 0),
-            array('admin', '2', true, 10, null, 8),
-            array('fakeContributor', '2', false, 10, null, 0),
-            array('fakeContributor', '2', null, 10, null, 0),
-            array('admin', '3', true, 10, null, 7),
-            array('admin', 'not-an-id', true, 10, null, 6),
-            array('admin', 'not-an-id', true, 3, null, 3),
         );
     }
 
