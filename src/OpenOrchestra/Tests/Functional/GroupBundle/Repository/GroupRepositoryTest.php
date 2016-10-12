@@ -20,6 +20,11 @@ class GroupRepositoryTest extends AbstractKernelTestCase
     protected $repository;
 
     /**
+     * @var SiteRepository
+     */
+    protected $siteRepository;
+
+    /**
      * Set up test
      */
     protected function setUp()
@@ -28,6 +33,7 @@ class GroupRepositoryTest extends AbstractKernelTestCase
 
         static::bootKernel();
         $this->repository = static::$kernel->getContainer()->get('open_orchestra_user.repository.group');
+        $this->siteRepository = static::$kernel->getContainer()->get('open_orchestra_model.repository.site');
     }
 
     /**
@@ -75,14 +81,39 @@ class GroupRepositoryTest extends AbstractKernelTestCase
     }
 
     /**
-     * find all group with site
-     *
-     * @return array
+     * test findAllWithSite
      */
     public function testFindAllWithSite()
     {
         $groups = $this->repository->findAllWithSite();
         $this->assertCount(6, $groups);
+    }
+
+    /**
+     * test findAllWithSiteId
+     *
+     * @param string $siteId
+     * @param int    $expectedGroupCount
+     *
+     * @dataProvider provideSiteId
+     */
+    public function testFindAllWithSiteId($siteId, $expectedGroupCount)
+    {
+        $site = $this->siteRepository->findOneBySiteId($siteId);
+        $groups = $this->repository->findAllWithSiteId($site->getId());
+
+        $this->assertCount($expectedGroupCount, $groups);
+    }
+
+    /**
+     * Provite site mongoId
+     */
+    public function provideSiteId()
+    {
+        return array(
+             'Empty site' => array('3', 1),
+             'Demo site' => array('2', 5)
+        );
     }
 
     /**
