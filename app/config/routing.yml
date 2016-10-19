@@ -2,6 +2,8 @@ open_orchestra_backoffice:
     resource: "@OpenOrchestraBackofficeBundle/Controller"
     type: annotation
     prefix: /admin
+    options:
+        expose: true
 
 open_orchestra_user_admin:
     resource: "@OpenOrchestraUserAdminBundle/Controller/Admin"
