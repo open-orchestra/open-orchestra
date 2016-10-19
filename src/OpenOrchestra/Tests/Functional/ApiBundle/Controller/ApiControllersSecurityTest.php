@@ -23,7 +23,7 @@ class ApiControllersSecurityTest extends AbstractAuthenticatedTest
     public function testApi($url, $method = 'GET')
     {
         $this->client->request($method, $url . '?access_token=' . $this->getAccessToken());
-
+        var_dump($this->client->getResponse());
         $this->assertEquals(403, $this->client->getResponse()->getStatusCode());
     }
 
