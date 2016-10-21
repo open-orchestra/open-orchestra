@@ -1284,16 +1284,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSUserBundle.git",
-                "reference": "67197694ab1e74b046eebdf4321cae8bed515218"
+                "reference": "b059b674f2db78452e1c8c154afa0a79da5fc30c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/67197694ab1e74b046eebdf4321cae8bed515218",
-                "reference": "67197694ab1e74b046eebdf4321cae8bed515218",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/b059b674f2db78452e1c8c154afa0a79da5fc30c",
+                "reference": "b059b674f2db78452e1c8c154afa0a79da5fc30c",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.3.9 || ^7.0",
+                "php": "^5.5.9 || ^7.0",
                 "symfony/form": "^2.7 || ^3.0",
                 "symfony/framework-bundle": "^2.7 || ^3.0",
                 "symfony/security-bundle": "^2.7 || ^3.0",
@@ -1353,7 +1353,7 @@
             "keywords": [
                 "User management"
             ],
-            "time": "2016-10-12 12:49:21"
+            "time": "2016-10-21 07:58:50"
         },
         {
             "name": "gedmo/doctrine-extensions",
@@ -2578,12 +2578,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "39728a05abab3109c139d7393a3d9338fe3cfb42"
+                "reference": "145ca794c8c7c44f3328d037e50f4f0108d9ab2e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/39728a05abab3109c139d7393a3d9338fe3cfb42",
-                "reference": "39728a05abab3109c139d7393a3d9338fe3cfb42",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/145ca794c8c7c44f3328d037e50f4f0108d9ab2e",
+                "reference": "145ca794c8c7c44f3328d037e50f4f0108d9ab2e",
                 "shasum": ""
             },
             "require": {
@@ -2672,7 +2672,7 @@
                 }
             ],
             "description": "This bundle provide the Back Office part of Open Orchestra",
-            "time": "2016-10-14 08:34:41"
+            "time": "2016-10-20 12:49:46"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -3032,12 +3032,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
-                "reference": "adea93398a813081337749d37c8616e9742fcf0e"
+                "reference": "9684f0a4e6f7db6596bb29044754136a85f5073d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/adea93398a813081337749d37c8616e9742fcf0e",
-                "reference": "adea93398a813081337749d37c8616e9742fcf0e",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/9684f0a4e6f7db6596bb29044754136a85f5073d",
+                "reference": "9684f0a4e6f7db6596bb29044754136a85f5073d",
                 "shasum": ""
             },
             "require": {
@@ -3074,7 +3074,7 @@
                 }
             ],
             "description": "A MongoDB implemantation of the Open Orchestra Model Interface",
-            "time": "2016-10-14 08:27:28"
+            "time": "2016-10-20 12:34:14"
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
@@ -3082,12 +3082,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-interface.git",
-                "reference": "6c0f6dee7b10406e6fc02d1110a740af497b6ba3"
+                "reference": "5e0c132260150dc2d03634547f22155397918d82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/6c0f6dee7b10406e6fc02d1110a740af497b6ba3",
-                "reference": "6c0f6dee7b10406e6fc02d1110a740af497b6ba3",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/5e0c132260150dc2d03634547f22155397918d82",
+                "reference": "5e0c132260150dc2d03634547f22155397918d82",
                 "shasum": ""
             },
             "require": {
@@ -3120,7 +3120,7 @@
                 }
             ],
             "description": "Describe all entity and repository to implement for the whole OpenOrchestra project",
-            "time": "2016-07-26 14:34:36"
+            "time": "2016-10-20 12:08:16"
         },
         {
             "name": "open-orchestra/open-orchestra-mongo-libs",
@@ -3291,16 +3291,16 @@
         },
         {
             "name": "paragonie/random_compat",
-            "version": "v2.0.2",
+            "version": "v2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "088c04e2f261c33bed6ca5245491cfca69195ccf"
+                "reference": "c0125896dbb151380ab47e96c621741e79623beb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/088c04e2f261c33bed6ca5245491cfca69195ccf",
-                "reference": "088c04e2f261c33bed6ca5245491cfca69195ccf",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/c0125896dbb151380ab47e96c621741e79623beb",
+                "reference": "c0125896dbb151380ab47e96c621741e79623beb",
                 "shasum": ""
             },
             "require": {
@@ -3335,7 +3335,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2016-04-03 06:00:07"
+            "time": "2016-10-17 15:23:22"
         },
         {
             "name": "php-ffmpeg/php-ffmpeg",
