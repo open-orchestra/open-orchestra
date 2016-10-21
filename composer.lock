@@ -1623,7 +1623,6 @@
                 "rest",
                 "web service"
             ],
-            "abandoned": "guzzlehttp/guzzle",
             "time": "2015-03-18 18:23:50"
         },
         {
@@ -3072,12 +3071,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
-                "reference": "9b7d246fe4981f11f908bf64b7d1604f43f05983"
+                "reference": "1885acafb44bd12042bc374f08858faea21f760a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/9b7d246fe4981f11f908bf64b7d1604f43f05983",
-                "reference": "9b7d246fe4981f11f908bf64b7d1604f43f05983",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/1885acafb44bd12042bc374f08858faea21f760a",
+                "reference": "1885acafb44bd12042bc374f08858faea21f760a",
                 "shasum": ""
             },
             "require": {
@@ -3112,7 +3111,7 @@
                 }
             ],
             "description": "A MongoDB implemantation of the Open Orchestra Model Interface",
-            "time": "2016-10-17 10:15:48"
+            "time": "2016-10-20 14:33:10"
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
