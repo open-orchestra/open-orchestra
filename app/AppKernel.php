@@ -28,7 +28,8 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new FOS\HttpCacheBundle\FOSHttpCacheBundle(),
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
-
+            new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
+            new Bazinga\Bundle\JsTranslationBundle\BazingaJsTranslationBundle(),
             new Braincrafted\Bundle\BootstrapBundle\BraincraftedBootstrapBundle(),
 
             new OpenOrchestra\BaseBundle\OpenOrchestraBaseBundle(),

@@ -21,7 +21,9 @@
     "open-orchestra/open-orchestra-media-admin-bundle": "self.version",
     "open-orchestra/open-orchestra-model-bundle": "self.version",
     "open-orchestra/open-orchestra-workflow-function-bundle": "self.version",
-    "friendsofsymfony/user-bundle": "@alpha"
+    "friendsofsymfony/user-bundle": "@alpha",
+    "friendsofsymfony/jsrouting-bundle": "~1.6.0",
+    "willdurand/js-translation-bundle": "~2.6.1"
   },
 
   "require-dev": {
@@ -76,6 +78,11 @@
     "symfony-assets-install": "relative",
     "incenteev-parameters": {
       "file": "app/config/parameters.yml"
+    },
+    "require-npm": {
+      "babel-preset-es2015": "~6.3.0",
+      "grunt-babel": "~6.0.0",
+      "grunt-browserify": "~5.0.0"
     }
   }
 }

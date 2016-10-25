@@ -80,7 +80,6 @@ abstract class AbstractAuthenticatedTest extends AbstractWebTestCase
             );
 
             $this->client->request('GET', '/oauth/access_token?grant_type=password', array(), array(), $headers);
-            var_dump($this->client->getResponse()->getContent());
             $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
             $this->assertSame('application/json', $this->client->getResponse()->headers->get('content-type'));
             $tokenReponse = json_decode($this->client->getResponse()->getContent(), true);

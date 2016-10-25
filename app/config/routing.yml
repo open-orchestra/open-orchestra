@@ -2,6 +2,8 @@ open_orchestra_backoffice:
     resource: "@OpenOrchestraBackofficeBundle/Controller"
     type: annotation
     prefix: /admin
+    options:
+        expose: true
 
 open_orchestra_user_admin:
     resource: "@OpenOrchestraUserAdminBundle/Controller/Admin"
@@ -25,34 +27,48 @@ open_orchestra_api:
     resource: "@OpenOrchestraApiBundle/Controller"
     type: annotation
     prefix: /api
+    options:
+        expose: true
 
 open_orchestra_user_api:
     resource: "@OpenOrchestraUserAdminBundle/Controller/Api"
     type: annotation
     prefix: /api
+    options:
+        expose: true
 
 open_orchestra_media_api:
     resource: "@OpenOrchestraMediaAdminBundle/Controller/Api"
     type: annotation
     prefix: /api
+    options:
+        expose: true
 
 open_orchestra_workflow_api:
     resource: "@OpenOrchestraWorkflowFunctionAdminBundle/Controller/Api"
     type: annotation
     prefix: /api
+    options:
+        expose: true
 
 open_orchestra_log:
     resource: "@OpenOrchestraLogBundle/Controller"
     type: annotation
     prefix: /api
+    options:
+        expose: true
 
 open_orchestra_media_file:
     resource: "@OpenOrchestraMediaFileBundle/Controller"
     type: annotation
     prefix: /media
+    options:
+        expose: true
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+    options:
+        expose: true
 
 root:
     path: /
@@ -64,3 +80,6 @@ root:
 
 open_orchestra_base:
     resource: "@OpenOrchestraBaseBundle/Resources/config/routing.yml"
+
+_bazinga_jstranslation:
+    resource: "@BazingaJsTranslationBundle/Resources/config/routing/routing.yml"
