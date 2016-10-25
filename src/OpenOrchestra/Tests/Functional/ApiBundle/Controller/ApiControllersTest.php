@@ -21,11 +21,6 @@ class ApiControllersTest extends AbstractAuthenticatedTest
     {
         $baseGetParameter = '?access_token=' . $this->getAccessToken();
         $this->client->request('GET', $url . $baseGetParameter . $getParameter);
-        var_dump('test');
-        var_dump($this->client->getResponse());
-        var_dump($this->client);
-        var_dump($this->client->getResponse()->getContent());
-        die();
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
         $this->assertSame('application/json', $this->client->getResponse()->headers->get('content-type'));
     }
