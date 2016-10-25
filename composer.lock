@@ -2679,26 +2679,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-<<<<<<< 614aabdd60cd1bde5e0ecc7eb09ed46bd2fddc17
-                "reference": "c9fe04c79d4368a27abeab2bcac67320598eb5d0"
+                "reference": "e31817a3946b7f2a00097da64d24b398db10cdd0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/c9fe04c79d4368a27abeab2bcac67320598eb5d0",
-                "reference": "c9fe04c79d4368a27abeab2bcac67320598eb5d0",
-=======
-                "reference": "4aa25cc68b267f04a0ee9d4d1a4d3f122e69c995"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/4aa25cc68b267f04a0ee9d4d1a4d3f122e69c995",
-                "reference": "4aa25cc68b267f04a0ee9d4d1a4d3f122e69c995",
->>>>>>> add archi es6
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/e31817a3946b7f2a00097da64d24b398db10cdd0",
+                "reference": "e31817a3946b7f2a00097da64d24b398db10cdd0",
                 "shasum": ""
             },
             "require": {
                 "braincrafted/bootstrap-bundle": "~2.2.0",
                 "doctrine/data-fixtures": "~1.2.0",
+                "friendsofsymfony/jsrouting-bundle": "~1.6.0",
                 "friendsofsymfony/user-bundle": "@alpha",
                 "koala-framework/composer-extra-assets": "~2.0.4",
                 "open-orchestra/open-orchestra-base-api-bundle": "self.version",
@@ -2710,7 +2702,8 @@
                 "sensio/generator-bundle": "~3.0.0",
                 "stfalcon/tinymce-bundle": "~1.1.0",
                 "symfony/assetic-bundle": "~2.8.0",
-                "symfony/monolog-bundle": "~2.11.0"
+                "symfony/monolog-bundle": "~2.11.0",
+                "willdurand/js-translation-bundle": "~2.6.1"
             },
             "require-dev": {
                 "codeclimate/php-test-reporter": "~0.3.2",
@@ -2745,7 +2738,10 @@
                     "coffee-script": "~1.10.0",
                     "load-grunt-tasks": "~3.5.0",
                     "glob": "~7.0.3",
-                    "merge": "~1.2.0"
+                    "merge": "~1.2.0",
+                    "babel-preset-es2015": "~6.3.0",
+                    "grunt-babel": "~6.0.0",
+                    "grunt-browserify": "~5.0.0"
                 },
                 "expose-npm-packages": true,
                 "require-bower": {
@@ -2785,11 +2781,7 @@
                 }
             ],
             "description": "This bundle provide the Back Office part of Open Orchestra",
-<<<<<<< 614aabdd60cd1bde5e0ecc7eb09ed46bd2fddc17
-            "time": "2016-10-19 09:35:01"
-=======
-            "time": "2016-10-12 08:27:36"
->>>>>>> add archi es6
+            "time": "2016-10-25 14:24:34"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
