@@ -9,6 +9,8 @@ use OpenOrchestra\ModelInterface\Repository\ContentRepositoryInterface;
 use OpenOrchestra\ModelInterface\Repository\RepositoryTrait\KeywordableTraitInterface;
 use OpenOrchestra\ModelInterface\ContentEvents;
 use Phake;
+use OpenOrchestra\ModelBundle\Document\ContentType;
+use OpenOrchestra\ModelBundle\Document\Content;
 
 /**
  * Class ContentRepositoryTest
@@ -23,6 +25,8 @@ class ContentRepositoryTest extends AbstractKernelTestCase
     protected $repository;
     protected $keywordRepository;
     protected $userRepository;
+    protected $statusRepository;
+    protected $contentTypeRepository;
 
     protected $currentsiteManager;
 
@@ -40,6 +44,8 @@ class ContentRepositoryTest extends AbstractKernelTestCase
         Phake::when($this->currentsiteManager)->getCurrentSiteDefaultLanguage()->thenReturn('fr');
 
         $this->repository = static::$kernel->getContainer()->get('open_orchestra_model.repository.content');
+        $this->statusRepository = static::$kernel->getContainer()->get('open_orchestra_model.repository.status');
+        $this->contentTypeRepository = static::$kernel->getContainer()->get('open_orchestra_model.repository.content_type');
     }
 
     /**
@@ -414,6 +420,42 @@ class ContentRepositoryTest extends AbstractKernelTestCase
             array('admin', '2', array(ContentEvents::CONTENT_UPDATE), true, 10, null, 1),
             array('admin', '2', array(ContentEvents::CONTENT_CREATION, ContentEvents::CONTENT_UPDATE), true, 10, null, 3),
         );
+    }
+
+    /**
+     * test updateStatusByContentType
+     */
+    public function testUpdateStatusByContentType()
+    {
+        $contentTypeId = 'test';
+
+        $outOfWorkflow = $this->statusRepository->findOneByOutOfWorkflow();
+
+        $dm = $this->contentTypeRepository->getDocumentManager();
+
+        $contentType = new ContentType();
+        $contentType->setContentTypeId($contentTypeId);
+        $dm->persist($contentType);
+        $dm->flush();
+
+        $content = new Content();
+        $content->setContentType($contentTypeId);
+        $dm->persist($content);
+        $dm->flush();
+
+        $this->assertEquals('draft', $content->getStatus()->getName());
+
+        $this->repository->updateStatusByContentType($outOfWorkflow, $contentTypeId);
+        $dm->clear();
+
+        $updatedContent = $this->repository->findOneBy(array('_id' => $content->getId()));
+        $this->assertEquals('outOfWorkflow', $updatedContent->getStatus()->getName());
+
+        $contentType = $this->contentTypeRepository->findOneBy(array('contentTypeId' => $contentTypeId));
+
+        $dm->remove($updatedContent);
+        $dm->remove($contentType);
+        $dm->flush();
     }
 
     /**
