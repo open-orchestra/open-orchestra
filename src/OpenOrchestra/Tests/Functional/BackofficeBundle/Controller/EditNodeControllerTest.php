@@ -38,6 +38,8 @@ class EditNodeControllerTest extends AbstractFormTest
      */
     public function testEditNode($expectedMeta, $newMeta, $nodeId)
     {
+        $this->markTestSkipped();
+
         $nodeDocument = $this->nodeRepository->findInLastVersion($nodeId, $this->language, $this->siteId);
 
         $url = '/admin/node/form/' . $nodeDocument->getId();

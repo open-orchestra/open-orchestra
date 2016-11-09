@@ -40,7 +40,7 @@ class FieldAutoGenerableRepositoryInterfaceTest extends AbstractKernelTestCase
     {
         return array(
             array('open_orchestra_model.repository.node'),
-            array('open_orchestra_model.repository.template'),
+//             array('open_orchestra_model.repository.template'),
             array('open_orchestra_model.repository.content'),
         );
     }

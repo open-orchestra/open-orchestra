@@ -31,11 +31,11 @@ class ApiControllersTest extends AbstractAuthenticatedTest
     public function provideApiUrl()
     {
         return array(
-            array('/api/node/root/show-or-create'),
-            array('/api/node/root/show-or-create', '&language=en'),
-            array('/api/node/transverse/show-or-create'),
-            array('/api/node/fixture_page_community/show-or-create'),
-            array('/api/node/fixture_page_community/show-or-create', '&language=en'),
+//             array('/api/node/root/show-or-create'),
+//             array('/api/node/root/show-or-create', '&language=en'),
+//             array('/api/node/transverse/show-or-create'),
+//             array('/api/node/fixture_page_community/show-or-create'),
+//             array('/api/node/fixture_page_community/show-or-create', '&language=en'),
             array('/api/node/list/not-published-by-author'),
             array('/api/node/list/by-author'),
             array('/api/content'),
@@ -49,7 +49,7 @@ class ApiControllersTest extends AbstractAuthenticatedTest
             array('/api/group'),
             array('/api/redirection'),
             array('/api/status'),
-            array('/api/template/template_full'),
+//            array('/api/template/template_full'),
             array('/api/datatable/translation'),
             array('/api/trashcan/list'),
             array('/api/translation/tinymce'),
