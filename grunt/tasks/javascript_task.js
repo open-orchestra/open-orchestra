@@ -11,7 +11,6 @@ module.exports = function(grunt) {
       'babel:es6',
       'browserify:config',
       'browserify',
-      'concat:smartadmin_js',
       'concat:lib_js',
       'concat:orchestra_js',
       'concat:media_js',
