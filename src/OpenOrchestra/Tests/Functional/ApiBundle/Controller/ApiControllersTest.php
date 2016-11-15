@@ -44,6 +44,7 @@ class ApiControllersTest extends AbstractAuthenticatedTest
             array('/api/content', '&content_type=news'),
             array('/api/content-type'),
             array('/api/site'),
+            array('/api/site/list/available'),
             array('/api/theme'),
             array('/api/role'),
             array('/api/group'),
