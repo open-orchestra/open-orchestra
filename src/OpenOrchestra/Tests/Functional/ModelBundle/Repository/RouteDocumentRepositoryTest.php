@@ -145,4 +145,25 @@ class RouteDocumentRepositoryTest extends AbstractKernelTestCase
             ),
         );
     }
+
+    /**
+     * @param string $siteId
+     * @param int    $count
+     *
+     * @dataProvider provideSiteIdCount
+     */
+    public function testFindBySiteId($siteId, $count)
+    {
+        $this->assertCount($count, $this->repository->findBySiteId($siteId));
+    }
+    /**
+     * @return array
+     */
+    public function provideSiteIdCount()
+    {
+        return array(
+            array('2', 1),
+            array('fake2', 0),
+        );
+    }
 }
