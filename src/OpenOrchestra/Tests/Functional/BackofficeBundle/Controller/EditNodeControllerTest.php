@@ -38,11 +38,10 @@ class EditNodeControllerTest extends AbstractFormTest
      */
     public function testEditNode($expectedMeta, $newMeta, $nodeId)
     {
-        $this->markTestSkipped();
-
         $nodeDocument = $this->nodeRepository->findInLastVersion($nodeId, $this->language, $this->siteId);
 
         $url = '/admin/node/form/' . $nodeDocument->getId();
+
         $crawler = $this->client->request('GET', $url);
         $formNode = $crawler->selectButton('Save')->form();
         $formNode['oo_node[metaKeywords]'] = $newMeta;
