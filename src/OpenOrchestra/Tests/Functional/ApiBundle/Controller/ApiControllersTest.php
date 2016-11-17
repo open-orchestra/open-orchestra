@@ -49,6 +49,7 @@ class ApiControllersTest extends AbstractAuthenticatedTest
             array('/api/group'),
             array('/api/redirection'),
             array('/api/status'),
+            array('/api/status/list'),
             array('/api/datatable/translation'),
             array('/api/trashcan/list'),
             array('/api/translation/tinymce'),
