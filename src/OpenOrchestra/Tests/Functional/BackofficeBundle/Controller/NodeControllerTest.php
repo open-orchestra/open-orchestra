@@ -43,48 +43,23 @@ class NodeControllerTest extends AbstractFormTest
     public function testNodeForms()
     {
         $nodeRoot = $this->nodeRepository->findInLastVersion(NodeInterface::ROOT_NODE_ID, $this->language, $this->siteId);
-//        $nodeTransverse = $this->nodeRepository->findInLastVersion(NodeInterface::TRANSVERSE_NODE_ID, $this->language, $this->siteId);
         $nodeFixtureCommunity = $this->nodeRepository->findInLastVersion('fixture_page_community', $this->language, $this->siteId);
 
-//         $url = '/admin/node/form/' . $nodeRoot->getId();
-//         $this->client->request('GET', $url);
-//         $this->assertForm($this->client->getResponse());
+         $url = '/admin/node/form/' . $nodeRoot->getId();
+         $this->client->request('GET', $url);
+         $this->assertForm($this->client->getResponse());
 
-        $url = '/admin/node/new/' . $nodeRoot->getNodeId();
-        $this->client->request('GET', $url);
-//        $this->assertForm($this->client->getResponse());
+         $url = '/admin/node/new/' . $nodeRoot->getNodeId();
+         $this->client->request('GET', $url);
+         $this->assertForm($this->client->getResponse());
 
-//         $url = '/admin/node/form/' . $nodeTransverse->getId();
-//         $this->client->request('GET', $url);
-//         $this->assertForm($this->client->getResponse());
+         $url = '/admin/node/form/' . $nodeFixtureCommunity->getId();
+         $this->client->request('GET', $url);
+         $this->assertForm($this->client->getResponse());
 
-//         $url = '/admin/node/form/' . $nodeFixtureCommunity->getId();
-//         $this->client->request('GET', $url);
-//         $this->assertForm($this->client->getResponse());
-
-//         $url = '/admin/node/new/' . $nodeFixtureCommunity->getNodeId();
-//         $this->client->request('GET', $url);
-//         $this->assertForm($this->client->getResponse());
-
-//         $url = '/admin/block/form/' . $nodeFixtureCommunity->getId();
-//         $this->client->request('GET', $url);
-//         $this->assertForm($this->client->getResponse());
-    }
-
-    /**
-     * Test assert Node transverse always editable
-     */
-    public function testNodeTransverseEditable()
-    {
-        $this->markTestSkipped();
-        $nodeTransverse = $this->nodeRepository->findInLastVersion(NodeInterface::TRANSVERSE_NODE_ID, $this->language, $this->siteId);
-
-        $url = '/admin/node/form/' . $nodeTransverse->getId();
-        $crawler = $this->client->request('GET', $url);
-        $form = $crawler->selectButton('Save')->form();
-        $this->submitForm($form);
-
-        $this->assertForm($this->client->getResponse());
+         $url = '/admin/node/new/' . $nodeFixtureCommunity->getNodeId();
+         $this->client->request('GET', $url);
+         $this->assertForm($this->client->getResponse());
     }
 
     /**
@@ -92,10 +67,7 @@ class NodeControllerTest extends AbstractFormTest
      */
     public function testNewNodePageHome()
     {
-        $this->markTestSkipped();
-
         $crawler = $this->client->request('GET', '/admin/');
-        $nbLink = $crawler->filter('a')->count();
 
         $crawler = $this->client->request('GET', '/admin/node/new/fixture_page_community');
 
@@ -108,9 +80,6 @@ class NodeControllerTest extends AbstractFormTest
         $formNode['oo_node[routePattern]'] = '/page-test' .time();
 
         $this->submitForm($formNode);
-        $crawler = $this->client->request('GET', '/admin/');
-
-        $this->assertEquals($nbLink + 2, $crawler->filter('a')->count());
 
         $this->client->request('GET', '/api/node/' . $nodeName);
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode());

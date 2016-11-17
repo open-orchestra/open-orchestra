@@ -38,7 +38,7 @@ class NodeControllerAccessTest extends AbstractAuthenticatedTest
         $groupName = 'Demo group';
 
         $this->client->request('POST', '/api/node/' . $nodeId . '/new-version?language=fr');
-//        $this->assertSame(403, $this->client->getResponse()->getStatusCode());
+        $this->assertSame(403, $this->client->getResponse()->getStatusCode());
         $this->assertContains('open_orchestra_api.node.new_version_not_granted', $this->client->getResponse()->getContent());
     }
 

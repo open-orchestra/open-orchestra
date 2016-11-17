@@ -166,7 +166,6 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     {
         return array(
             array(NodeInterface::ROOT_NODE_ID, '2', 3),
-//            array(NodeInterface::TRANSVERSE_NODE_ID, '2', 3),
             array('fixture_page_what_is_orchestra', '2', 0),
         );
     }
@@ -193,7 +192,6 @@ class NodeRepositoryTest extends AbstractKernelTestCase
         return array(
             array(NodeInterface::ROOT_NODE_ID, '2', 5),
             array('fixture_page_community', '2', 0),
-//            array(NodeInterface::TRANSVERSE_NODE_ID, '2', 0),
             array('fixture_page_what_is_orchestra', '2', 0),
         );
     }
@@ -418,7 +416,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
             array('admin', '2', array(NodeEvents::NODE_CREATION), null, 10, array('updatedAt' => -1), 1),
             array('admin', '2', array(NodeEvents::NODE_CREATION), false, 10, null, 0),
             array('admin', '2', array(NodeEvents::NODE_CREATION), true, 10, null, 1),
-//            array('admin', '2', array(NodeEvents::NODE_UPDATE, NodeEvents::NODE_CREATION), true, 10, null, 2),
+            array('admin', '2', array(NodeEvents::NODE_UPDATE, NodeEvents::NODE_CREATION), true, 10, null, 2),
         );
     }
 
@@ -517,7 +515,6 @@ class NodeRepositoryTest extends AbstractKernelTestCase
             array(NodeInterface::ROOT_NODE_ID, 0, 'fixture_page_contact', false),
             array('fixture_page_legal_mentions', 0, 'fakeID', false),
             array(NodeInterface::ROOT_NODE_ID, 0, 'fakeID', false, '3'),
-//            array(NodeInterface::TRANSVERSE_NODE_ID, 1, '-', false,),
         );
     }
 
@@ -540,7 +537,6 @@ class NodeRepositoryTest extends AbstractKernelTestCase
         return array(
             array(NodeInterface::TYPE_DEFAULT, 15),
             array(NodeInterface::TYPE_ERROR, 6),
-//            array(NodeInterface::TYPE_TRANSVERSE, 0),
         );
     }
 
@@ -659,7 +655,6 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     {
         return array(
             array("root", "2", "en", 8),
-//            array("transverse", "2", "en", 1),
         );
     }
 

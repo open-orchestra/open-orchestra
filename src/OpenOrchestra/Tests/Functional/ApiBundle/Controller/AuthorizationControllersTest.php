@@ -53,9 +53,9 @@ class AuthorizationControllersTest extends AbstractWebTestCase
         $accessToken = $tokenReponse['access_token'];
         $refreshToken = $tokenReponse['refresh_token'];
 
-//        $this->client->request('GET', '/api/node/root?access_token=' . $accessToken);
-//        $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
-//        $this->assertSame('application/json', $this->client->getResponse()->headers->get('content-type'));
+        $this->client->request('GET', '/api/node/root?access_token=' . $accessToken);
+        $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
+        $this->assertSame('application/json', $this->client->getResponse()->headers->get('content-type'));
 
         $this->client->request('GET', '/oauth/access_token?grant_type=refresh_token&refresh_token=' . $refreshToken, array(), array(), array('PHP_AUTH_USER' => 'test_key', 'PHP_AUTH_PW' => 'test_secret'));
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
@@ -64,8 +64,8 @@ class AuthorizationControllersTest extends AbstractWebTestCase
         $newAccessToken = $newTokenReponse['access_token'];
         $this->assertNotSame($accessToken, $newAccessToken);
 
-//        $this->client->request('GET', '/api/node/root?access_token=' . $newAccessToken);
-//        $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
-//        $this->assertSame('application/json', $this->client->getResponse()->headers->get('content-type'));
+        $this->client->request('GET', '/api/node/root?access_token=' . $newAccessToken);
+        $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
+        $this->assertSame('application/json', $this->client->getResponse()->headers->get('content-type'));
     }
 }

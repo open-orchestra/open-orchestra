@@ -7,9 +7,9 @@ use OpenOrchestra\Media\Model\MediaInterface;
 use OpenOrchestra\MediaModelBundle\Document\Media;
 use OpenOrchestra\ModelBundle\Document\Block;
 use OpenOrchestra\ModelBundle\Document\Node;
-use OpenOrchestra\ModelInterface\Event\NodeEvent;
-use OpenOrchestra\ModelInterface\NodeEvents;
 use Symfony\Component\EventDispatcher\EventDispatcher;
+use OpenOrchestra\ModelInterface\Event\BlockEvent;
+use OpenOrchestra\ModelInterface\BlockEvents;
 
 /**
  * Class UpdateMediaReferenceSubscriberTest
@@ -43,9 +43,6 @@ class UpdateMediaReferenceSubscriberTest extends AbstractAuthenticatedTest
     {
         parent::setUp();
 
-        $nodeRepository = static::$kernel->getContainer()->get('open_orchestra_model.repository.node');
-        $this->node = $nodeRepository->findInLastVersion('root', 'en', '2');
-        static::$kernel->getContainer()->get('object_manager')->detach($this->node);
         $mediaRepository = static::$kernel->getContainer()->get('open_orchestra_media.repository.media');
         $this->medias = array(
             $mediaRepository->findOneByName("Image 03"),
@@ -66,20 +63,20 @@ class UpdateMediaReferenceSubscriberTest extends AbstractAuthenticatedTest
         $media = $this->medias[$mediaIndex];
         $this->checkMediaReference($media, array());
 
-        $block = $this->generateBlock($blockType, 'ET9reyt');
-//         $this->node->addBlock($block);
-//         $attributes = $block->getAttributes();
-//         $attributes['pictures'] = array(array('id' => $media->getId(), 'format' => ''));
-//         $attributes['id'] = $blockType["component"] . self::ATTRIBUTE_ID_SUFFIX;
-//         $method = $blockType["component"] . self::METHOD_SUFFIX;
-//         $attributes = $this->$method($attributes);
-//         $block->setAttributes($attributes);
+        $block = $this->generateBlock($blockType['component']);
+        $attributes = $block->getAttributes();
+        $attributes['pictures'] = array(array('id' => $media->getId(), 'format' => ''));
+        $attributes['id'] = $blockType["component"] . self::ATTRIBUTE_ID_SUFFIX;
+        $method = $blockType["component"] . self::METHOD_SUFFIX;
+        $attributes = $this->$method($attributes);
+        $block->setAttributes($attributes);
 
-//         $event = new NodeEvent($this->node);
-//         $this->eventDispatcher->dispatch(NodeEvents::NODE_UPDATE_BLOCK, $event);
+        $event = new BlockEvent($block);
 
-//         $expectedReference = array('node' => array($this->node->getId() => $this->node->getId()));
-//         $this->checkMediaReference($media, $expectedReference);
+        $this->eventDispatcher->dispatch(BlockEvents::POST_BLOCK_UPDATE, $event);
+
+        $expectedReference = array('block' => array($block->getId() => $block->getId()));
+        $this->checkMediaReference($media, $expectedReference);
     }
 
     /**
@@ -136,13 +133,13 @@ class UpdateMediaReferenceSubscriberTest extends AbstractAuthenticatedTest
      *
      * @return Block
      */
-    protected function generateBlock($blockType, $id)
+    protected function generateBlock($blockType)
     {
         $block = new Block();
-//         $area = $this->node->getRootArea()->getAreas()[0];
         $block->setComponent($blockType);
-//        $block->addArea(array($area->getAreaId()));
-//        $block->setId($id);
+
+        static::$kernel->getContainer()->get('object_manager')->persist($block);
+        static::$kernel->getContainer()->get('object_manager')->flush();
 
         return $block;
     }

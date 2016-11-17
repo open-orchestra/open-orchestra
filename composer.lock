@@ -2400,16 +2400,16 @@
         },
         {
             "name": "mouf/nodejs-installer",
-            "version": "v1.0.11",
+            "version": "v1.0.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thecodingmachine/nodejs-installer.git",
-                "reference": "27c68c195a20bf7d144eb865e5e4f3046995eec8"
+                "reference": "8e995c32384c329593159ec924276364ae5f5071"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thecodingmachine/nodejs-installer/zipball/27c68c195a20bf7d144eb865e5e4f3046995eec8",
-                "reference": "27c68c195a20bf7d144eb865e5e4f3046995eec8",
+                "url": "https://api.github.com/repos/thecodingmachine/nodejs-installer/zipball/8e995c32384c329593159ec924276364ae5f5071",
+                "reference": "8e995c32384c329593159ec924276364ae5f5071",
                 "shasum": ""
             },
             "require": {
@@ -2452,7 +2452,7 @@
                 "nodejs",
                 "npm"
             ],
-            "time": "2016-10-07 11:56:33"
+            "time": "2016-11-17 08:47:39"
         },
         {
             "name": "neutron/temporary-filesystem",
@@ -2680,12 +2680,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "8bc7d07652386c575c3e0e76189123034540fedf"
+                "reference": "f9655961923d2710845e3157f55e6b5d92e7e262"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/8bc7d07652386c575c3e0e76189123034540fedf",
-                "reference": "8bc7d07652386c575c3e0e76189123034540fedf",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/f9655961923d2710845e3157f55e6b5d92e7e262",
+                "reference": "f9655961923d2710845e3157f55e6b5d92e7e262",
                 "shasum": ""
             },
             "require": {
@@ -2783,7 +2783,7 @@
                 }
             ],
             "description": "This bundle provide the Back Office part of Open Orchestra",
-            "time": "2016-11-16 10:44:33"
+            "time": "2016-11-17 13:34:20"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -3138,12 +3138,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
-                "reference": "629e403c098e9e0839273a50844fed2144b8daa7"
+                "reference": "13983922f061adec64cd018e4510343b80db955e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/629e403c098e9e0839273a50844fed2144b8daa7",
-                "reference": "629e403c098e9e0839273a50844fed2144b8daa7",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/13983922f061adec64cd018e4510343b80db955e",
+                "reference": "13983922f061adec64cd018e4510343b80db955e",
                 "shasum": ""
             },
             "require": {
@@ -3178,7 +3178,7 @@
                 }
             ],
             "description": "A MongoDB implemantation of the Open Orchestra Model Interface",
-            "time": "2016-11-15 13:37:03"
+            "time": "2016-11-17 10:05:41"
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",

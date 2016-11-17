@@ -48,21 +48,20 @@ class BlockFormTypeSubscriberTest extends AbstractAuthenticatedTest
         $formType =  static::$kernel->getContainer()->get('open_orchestra_backoffice.generate_form_manager')->getFormType($block);
         $form = $this->formFactory->create($formType, $block, array('csrf_protection' => false));
 
-//         $form->submit(array(
-//             'id' => 'testId',
-//             'class' => 'testClass',
-//             'videoType' => 'youtube',
-//             'youtubeVideoId' => 'videoId',
-//             'youtubeAutoplay' => true,
-//         ));
+         $form->submit(array(
+             'style' => 'default',
+             'videoType' => 'youtube',
+             'youtubeVideoId' => 'videoId',
+             'youtubeAutoplay' => true,
+         ));
 
-//         $this->assertTrue($form->isSynchronized());
-//         /** @var BlockInterface $data */
-//         $data = $form->getConfig()->getData();
-//         $this->assertBlock($data);
-//         $this->assertSame('videoId', $data->getAttribute('youtubeVideoId'));
-//         $this->assertTrue($data->getAttribute('youtubeAutoplay'));
-//         $this->assertFalse($data->getAttribute('youtubeFs'));
+         $this->assertTrue($form->isSynchronized());
+         /** @var BlockInterface $data */
+         $data = $form->getConfig()->getData();
+         $this->assertBlock($data);
+         $this->assertSame('videoId', $data->getAttribute('youtubeVideoId'));
+         $this->assertTrue($data->getAttribute('youtubeAutoplay'));
+         $this->assertFalse($data->getAttribute('youtubeFs'));
     }
 
     /**
@@ -79,16 +78,16 @@ class BlockFormTypeSubscriberTest extends AbstractAuthenticatedTest
 
         $form = $this->formFactory->create($formType, $block, array('csrf_protection' => false));
 
-        $submittedValue = array_merge(array('id' => 'testId', 'class' => 'testClass'), $value);
-//         $form->submit($submittedValue);
+        $submittedValue = array_merge(array('style' => 'default'), $value);
+        $form->submit($submittedValue);
 
-//         $this->assertTrue($form->isSynchronized());
-//         /** @var BlockInterface $data */
-//         $data = $form->getConfig()->getData();
-//         $this->assertBlock($data);
-//         foreach ($value as $key => $sendData) {
-//             $this->assertSame($sendData, $data->getAttribute($key));
-//         }
+        $this->assertTrue($form->isSynchronized());
+        /** @var BlockInterface $data */
+        $data = $form->getConfig()->getData();
+        $this->assertBlock($data);
+        foreach ($value as $key => $sendData) {
+            $this->assertSame($sendData, $data->getAttribute($key));
+        }
     }
 
     /**
@@ -132,17 +131,17 @@ class BlockFormTypeSubscriberTest extends AbstractAuthenticatedTest
         $formType =  static::$kernel->getContainer()->get('open_orchestra_backoffice.generate_form_manager')->getFormType($block);
 
         $form = $this->formFactory->create($formType, $block, array('csrf_protection' => false));
-        $submittedValue = array_merge(array('id' => 'testId', 'class' => 'testClass'), $value);
+        $submittedValue = array_merge(array('style' => 'default'), $value);
         $value['contentSearch']['keywords'] = $this->replaceKeywordLabelById($value['contentSearch']['keywords']);
-//         $form->submit($submittedValue);
+        $form->submit($submittedValue);
 
-//         $this->assertTrue($form->isSynchronized());
-//         /** @var BlockInterface $data */
-//         $data = $form->getConfig()->getData();
-//         $this->assertBlock($data);
-//         foreach ($value as $key => $receivedData) {
-//             $this->assertSame($receivedData, $data->getAttribute($key));
-//         }
+        $this->assertTrue($form->isSynchronized());
+        /** @var BlockInterface $data */
+        $data = $form->getConfig()->getData();
+        $this->assertBlock($data);
+        foreach ($value as $key => $receivedData) {
+            $this->assertSame($receivedData, $data->getAttribute($key));
+        }
     }
 
     /**
@@ -170,8 +169,7 @@ class BlockFormTypeSubscriberTest extends AbstractAuthenticatedTest
     protected function assertBlock($data)
     {
         $this->assertInstanceOf('OpenOrchestra\ModelInterface\Model\BlockInterface', $data);
-        $this->assertSame('testId', $data->getId());
-        $this->assertSame('testClass', $data->getClass());
+        $this->assertSame('default', $data->getStyle());
     }
 
     /**
