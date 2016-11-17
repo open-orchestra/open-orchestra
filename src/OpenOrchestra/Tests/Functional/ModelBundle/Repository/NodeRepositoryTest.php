@@ -685,7 +685,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
      */
     public function testFindTreeNode()
     {
-        $tree = $this->repository->findTreeNode('2', 'de');
+        $tree = $this->repository->findTreeNode('2', 'fr');
 
         $this->assertCount(3, $tree);
 
@@ -694,7 +694,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
         $this->assertCount(5, $nodeRootTree['child']);
         $this->assertSame('root', $nodeRoot['nodeId']);
         $childrenRoot = $nodeRootTree['child'];
-        $orderNodeId = array('fixture_page_community', 'fixture_page_news', 'fixture_page_contact', 'fixture_page_legal_mentions', 'fixture_auto_unpublish');
+        $orderNodeId = array('fixture_page_community', 'fixture_page_contact', 'fixture_page_news', 'fixture_page_legal_mentions', 'fixture_auto_unpublish');
         foreach ($childrenRoot as $index => $child) {
             $this->assertCount(0, $child['child']);
             $this->assertSame($orderNodeId[$index], $child['node']['nodeId']);
