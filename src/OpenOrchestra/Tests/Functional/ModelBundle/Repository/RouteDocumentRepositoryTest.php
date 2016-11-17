@@ -156,6 +156,7 @@ class RouteDocumentRepositoryTest extends AbstractKernelTestCase
     {
         $this->assertCount($count, $this->repository->findBySiteId($siteId));
     }
+
     /**
      * @return array
      */
