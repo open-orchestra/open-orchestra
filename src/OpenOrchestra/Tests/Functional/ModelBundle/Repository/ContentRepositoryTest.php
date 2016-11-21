@@ -416,11 +416,11 @@ class ContentRepositoryTest extends AbstractKernelTestCase
     public function provideFindByHistoryAndSiteId()
     {
         return array(
-            array('admin', '2', array(ContentEvents::CONTENT_CREATION), null, 10, array('updatedAt' => -1), 2),
-            array('admin', '2', array(ContentEvents::CONTENT_CREATION), false, 10, null, 0),
-            array('admin', '2', array(ContentEvents::CONTENT_CREATION), true, 10, null, 2),
-            array('admin', '2', array(ContentEvents::CONTENT_UPDATE), true, 10, null, 1),
-            array('admin', '2', array(ContentEvents::CONTENT_CREATION, ContentEvents::CONTENT_UPDATE), true, 10, null, 3),
+            array('p-admin', '2', array(ContentEvents::CONTENT_CREATION), null, 10, array('updatedAt' => -1), 2),
+            array('p-admin', '2', array(ContentEvents::CONTENT_CREATION), false, 10, null, 0),
+            array('p-admin', '2', array(ContentEvents::CONTENT_CREATION), true, 10, null, 2),
+            array('p-admin', '2', array(ContentEvents::CONTENT_UPDATE), true, 10, null, 1),
+            array('p-admin', '2', array(ContentEvents::CONTENT_CREATION, ContentEvents::CONTENT_UPDATE), true, 10, null, 3),
         );
     }
 

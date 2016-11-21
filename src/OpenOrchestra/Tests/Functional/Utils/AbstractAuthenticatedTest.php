@@ -17,8 +17,8 @@ abstract class AbstractAuthenticatedTest extends AbstractWebTestCase
      */
     protected $client;
     protected $accessToken = array();
-    protected $username = 'admin';
-    protected $password = 'admin';
+    protected $username = 'p-admin';
+    protected $password = 'p-admin';
 
     /**
      * Set up the test

@@ -28,7 +28,7 @@ class FormUserSuperAdminControllersTest extends AbstractAuthenticatedTest
     public function testFormWithUserSuperAdmin()
     {
         $this->markTestSkipped();
-        $user = $this->userRepository->findOneByUsername('admin');
+        $user = $this->userRepository->findOneByUsername('p-admin');
 
         $this->client->request('GET', '/admin/user/form/'.$user->getId());
 

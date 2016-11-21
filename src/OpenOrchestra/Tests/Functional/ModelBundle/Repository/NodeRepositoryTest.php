@@ -414,10 +414,10 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function provideFindByHistoryAndSiteId()
     {
         return array(
-            array('admin', '2', array(NodeEvents::NODE_CREATION), null, 10, array('updatedAt' => -1), 1),
-            array('admin', '2', array(NodeEvents::NODE_CREATION), false, 10, null, 0),
-            array('admin', '2', array(NodeEvents::NODE_CREATION), true, 10, null, 1),
-            array('admin', '2', array(NodeEvents::NODE_UPDATE, NodeEvents::NODE_CREATION), true, 10, null, 2),
+            array('p-admin', '2', array(NodeEvents::NODE_CREATION), null, 10, array('updatedAt' => -1), 1),
+            array('p-admin', '2', array(NodeEvents::NODE_CREATION), false, 10, null, 0),
+            array('p-admin', '2', array(NodeEvents::NODE_CREATION), true, 10, null, 1),
+            array('p-admin', '2', array(NodeEvents::NODE_UPDATE, NodeEvents::NODE_CREATION), true, 10, null, 2),
         );
     }
 

@@ -37,7 +37,7 @@ class WorkflowRightRepositoryTest extends AbstractKernelTestCase
      */
     public function testFindOneByValidUserId()
     {
-        $user = $this->userRepository->findOneByUsername('admin');
+        $user = $this->userRepository->findOneByUsername('p-admin');
         $workflowRight = $this->repository->findOneByUserId($user->getId());
         $this->assertInstanceOf('OpenOrchestra\WorkflowFunction\Model\WorkflowRightInterface', $workflowRight);
     }

@@ -28,8 +28,8 @@ class FormLoginTest extends AbstractWebTestCase
      */
     public function testLoginWithValidUser()
     {
-        $userName = 'admin';
-        $password = 'admin';
+        $userName = 'p-admin';
+        $password = 'p-admin';
         $crawler = $this->client->request('GET', '/login');
 
         $form = $crawler->selectButton('Log in')->form();
