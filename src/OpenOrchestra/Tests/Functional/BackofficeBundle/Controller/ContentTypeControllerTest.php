@@ -17,6 +17,9 @@ class ContentTypeControllerTest extends AbstractFormTest
      */
     protected $contentTypeRepository;
 
+    protected $username = 'developer';
+    protected $password = 'developer';
+    
     /**
      * Set up the test
      */

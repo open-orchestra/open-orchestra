@@ -19,7 +19,8 @@ class ApiControllersTest extends AbstractAuthenticatedTest
      */
     public function testApi($url, $getParameter = '')
     {
-        $this->markTestSkipped();
+        $this->markTestSkipped('To reactivate when API roles will be implemented');
+
         $baseGetParameter = '?access_token=' . $this->getAccessToken();
         $this->client->request('GET', $url . $baseGetParameter . $getParameter);
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode());

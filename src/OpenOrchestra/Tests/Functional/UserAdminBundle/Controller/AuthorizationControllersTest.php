@@ -33,8 +33,8 @@ class AuthorizationControllersTest extends AbstractWebTestCase
         $headers = array(
             'PHP_AUTH_USER' => 'test_key',
             'PHP_AUTH_PW' => 'test_secret',
-            'HTTP_username' => 'admin',
-            'HTTP_password' => 'admin',
+            'HTTP_username' => 'p-admin',
+            'HTTP_password' => 'p-admin',
         );
         $this->client->request('GET', '/oauth/access_token?grant_type=password', array(), array(), $headers);
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode());

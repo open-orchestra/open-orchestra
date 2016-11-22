@@ -29,6 +29,8 @@ class StatusControllerTest extends AbstractAuthenticatedTest
      */
     public function testDeleteAction()
     {
+        $this->markTestSkipped('To reactivate when API roles will be implemented');
+
         $status = $this->statusRepository->findOneByInitial();
 
         $this->client->request('DELETE', '/api/status/' . $status->getId() . '/delete');

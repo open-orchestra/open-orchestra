@@ -22,6 +22,8 @@ class ApiControllersSecurityTest extends AbstractAuthenticatedTest
      */
     public function testApi($url, $method = 'GET')
     {
+        $this->markTestSkipped('To reactivate when API roles will be implemented');
+
         $this->client->request($method, $url . '?access_token=' . $this->getAccessToken());
         $this->assertEquals(403, $this->client->getResponse()->getStatusCode());
     }

@@ -166,7 +166,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function provideNodeSiteAndCount()
     {
         return array(
-            array(NodeInterface::ROOT_NODE_ID, '2', 3),
+            array(NodeInterface::ROOT_NODE_ID, '2', 4),
             array('fixture_page_what_is_orchestra', '2', 0),
         );
     }
@@ -414,10 +414,10 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function provideFindByHistoryAndSiteId()
     {
         return array(
-            array('p-admin', '2', array(NodeEvents::NODE_CREATION), null, 10, array('updatedAt' => -1), 1),
+            array('p-admin', '2', array(NodeEvents::NODE_CREATION), null, 10, array('updatedAt' => -1), 0),
             array('p-admin', '2', array(NodeEvents::NODE_CREATION), false, 10, null, 0),
-            array('p-admin', '2', array(NodeEvents::NODE_CREATION), true, 10, null, 1),
-            array('p-admin', '2', array(NodeEvents::NODE_UPDATE, NodeEvents::NODE_CREATION), true, 10, null, 2),
+            array('p-admin', '2', array(NodeEvents::NODE_CREATION), true, 10, null, 0),
+            array('p-admin', '2', array(NodeEvents::NODE_UPDATE, NodeEvents::NODE_CREATION), true, 10, null, 1),
         );
     }
 
@@ -536,7 +536,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function provideNodeTypeAndCount()
     {
         return array(
-            array(NodeInterface::TYPE_DEFAULT, 15),
+            array(NodeInterface::TYPE_DEFAULT, 16),
             array(NodeInterface::TYPE_ERROR, 6),
         );
     }
@@ -608,7 +608,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     {
         return array(
             array("1", 0),
-            array("2", 16),
+            array("2", 17),
         );
     }
 
