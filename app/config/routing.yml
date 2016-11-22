@@ -9,6 +9,8 @@ open_orchestra_user_admin:
     resource: "@OpenOrchestraUserAdminBundle/Controller/Admin"
     type: annotation
     prefix: /admin
+    options:
+        expose: true
 
 open_orchestra_media_admin:
     resource: "@OpenOrchestraMediaAdminBundle/Controller/Admin"
