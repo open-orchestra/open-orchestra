@@ -17,8 +17,8 @@ class NodeControllerAccessTest extends AbstractAuthenticatedTest
      */
     protected $groupRepository;
 
-    protected $username = 'user1';
-    protected $password = 'user1';
+    protected $username = 'demo';
+    protected $password = 'demo';
 
     /**
      * Set up the test

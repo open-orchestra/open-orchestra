@@ -57,10 +57,10 @@ class UserRepositoryTest extends AbstractKernelTestCase
         $descriptionEntity = $this->getDescriptionColumnEntity();
 
         return array(
-            array($descriptionEntity, null, null, 0 ,5 , 5),
-            array($descriptionEntity, $this->generateSearchProvider('admin'), null, 0 ,5 , 2),
-            array($descriptionEntity, $this->generateSearchProvider('fakeUsername'), null, 0 ,5 , 0),
-            array($descriptionEntity, $this->generateSearchProvider('', 'user'), null, 0 ,5 , 5),
+            array($descriptionEntity, null, null, 0, 5, 5),
+            array($descriptionEntity, $this->generateSearchProvider('admin'), null, 0, 5, 2),
+            array($descriptionEntity, $this->generateSearchProvider('fakeUsername'), null, 0, 5, 0),
+            array($descriptionEntity, $this->generateSearchProvider('', 'user'), null, 0, 5 , 1),
         );
     }
 
@@ -71,7 +71,7 @@ class UserRepositoryTest extends AbstractKernelTestCase
     {
         $configuration = FinderConfiguration::generateFromVariable($this->getDescriptionColumnEntity(), array());
         $users = $this->repository->count($configuration);
-        $this->assertEquals(9, $users);
+        $this->assertEquals(5, $users);
     }
 
     /**
@@ -96,9 +96,9 @@ class UserRepositoryTest extends AbstractKernelTestCase
         $descriptionEntity = $this->getDescriptionColumnEntity();
 
         return array(
-            array($descriptionEntity, null, 9),
+            array($descriptionEntity, null, 5),
             array($descriptionEntity, $this->generateSearchProvider('admin'), 2),
-            array($descriptionEntity, $this->generateSearchProvider('user'), 5),
+            array($descriptionEntity, $this->generateSearchProvider('user'), 1),
             array($descriptionEntity, $this->generateSearchProvider('', 'admin'), 2),
         );
     }
@@ -121,9 +121,9 @@ class UserRepositoryTest extends AbstractKernelTestCase
     public function provideUserAndGroup()
     {
         return array(
-            array('de', 'Empty group', 2),
+            array('de', 'Empty group', 1),
             array('admi', 'Empty group', 2),
-            array('user', 'Empty group', 5),
+            array('user', 'Empty group', 1),
             array('fakeUser', 'Demo group', 0)
         );
     }
