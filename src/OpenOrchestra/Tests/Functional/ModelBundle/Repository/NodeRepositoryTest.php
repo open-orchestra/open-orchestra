@@ -348,10 +348,10 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function provideForGetSubMenu()
     {
         return array(
-            array(NodeInterface::ROOT_NODE_ID, 1, 8, 1, '2', 'fr'),
-            array(NodeInterface::ROOT_NODE_ID, 2, 8, 1, '2', 'fr'),
-            array(NodeInterface::ROOT_NODE_ID, 0, 8, 1, '2', 'fr'),
-            array(NodeInterface::ROOT_NODE_ID, 0, 7, 1, '2', 'en'),
+            array(NodeInterface::ROOT_NODE_ID, 1, 6, 1, '2', 'fr'),
+            array(NodeInterface::ROOT_NODE_ID, 2, 6, 1, '2', 'fr'),
+            array(NodeInterface::ROOT_NODE_ID, 0, 6, 1, '2', 'fr'),
+            array(NodeInterface::ROOT_NODE_ID, 0, 5, 1, '2', 'en'),
             array('fixture_page_community', 1, 1, 1, '2', 'fr'),
             array('fixture_page_community', 1, 1, 1, '2', 'en'),
             array('page_unexistant', 1, 0, 1, '2', 'fr'),
@@ -463,8 +463,8 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function provideLanguage()
     {
         return array(
-            array('en', 6),
-            array('fr', 7),
+            array('en', 4),
+            array('fr', 5),
         );
     }
 
@@ -630,7 +630,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function provideFindByPathCurrentlyPublishedAndLanguage()
     {
         return array(
-            array("root", "2", "en", 8),
+            array("root", "2", "en", 6),
             array("transverse", "2", "en", 0),
         );
     }
@@ -654,7 +654,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function provideFindByIncludedPathSiteIdAndLanguage()
     {
         return array(
-            array("root", "2", "en", 8),
+            array("root", "2", "en", 6),
         );
     }
 
@@ -678,5 +678,36 @@ class NodeRepositoryTest extends AbstractKernelTestCase
             array("fakeTheme", 0),
 //            array("themePresentation", 29),
         );
+    }
+
+    /**
+     * test find tree node
+     */
+    public function testFindTreeNode()
+    {
+        $tree = $this->repository->findTreeNode('2', 'fr');
+
+        $this->assertCount(3, $tree);
+
+        $nodeRootTree = $tree[0];
+        $nodeRoot = $nodeRootTree['node'];
+        $this->assertCount(5, $nodeRootTree['child']);
+        $this->assertSame('root', $nodeRoot['nodeId']);
+        $childrenRoot = $nodeRootTree['child'];
+        $orderNodeId = array('fixture_page_community', 'fixture_page_contact', 'fixture_page_news', 'fixture_page_legal_mentions', 'fixture_auto_unpublish');
+        foreach ($childrenRoot as $index => $child) {
+            $this->assertCount(0, $child['child']);
+            $this->assertSame($orderNodeId[$index], $child['node']['nodeId']);
+        }
+
+        $node404Tree = $tree[1];
+        $node404 = $node404Tree['node'];
+        $this->assertCount(0, $node404Tree['child']);
+        $this->assertSame('errorPage404', $node404['nodeId']);
+
+        $node503Tree = $tree[2];
+        $node503 = $node503Tree['node'];
+        $this->assertCount(0, $node503Tree['child']);
+        $this->assertSame('errorPage503', $node503['nodeId']);
     }
 }
