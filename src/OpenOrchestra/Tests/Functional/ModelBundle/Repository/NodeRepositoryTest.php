@@ -772,11 +772,11 @@ class NodeRepositoryTest extends AbstractKernelTestCase
      * @param string                      $language
      * @param int                         $count
      *
-     * @dataProvider providePaginateConfiguration
+     * @dataProvider provideFindWithFilterPaginateConfiguration
      */
     public function testFindForPaginate($configuration, $siteId, $language, $count)
     {
-        $this->assertEquals($count, $this->repository->findForPaginate($configuration, $siteId, $language));
+        $this->assertCount($count, $this->repository->findForPaginate($configuration, $siteId, $language));
     }
 
     /**
