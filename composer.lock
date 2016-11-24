@@ -2681,12 +2681,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "23608f9b098f2c451af072593ee1b915617e5924"
+                "reference": "220ab911fc3190ea33d1b27e31ab4423f74dfd0a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/23608f9b098f2c451af072593ee1b915617e5924",
-                "reference": "23608f9b098f2c451af072593ee1b915617e5924",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/220ab911fc3190ea33d1b27e31ab4423f74dfd0a",
+                "reference": "220ab911fc3190ea33d1b27e31ab4423f74dfd0a",
                 "shasum": ""
             },
             "require": {
@@ -2785,7 +2785,7 @@
                 }
             ],
             "description": "This bundle provide the Back Office part of Open Orchestra",
-            "time": "2016-11-23 14:20:38"
+            "time": "2016-11-24 13:24:02"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2905,12 +2905,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-libs.git",
-                "reference": "62ce306652834644ce36a45a505e94fa319fe03e"
+                "reference": "bf6672870003c96e5107beade7a9364f0e7a66d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-libs/zipball/62ce306652834644ce36a45a505e94fa319fe03e",
-                "reference": "62ce306652834644ce36a45a505e94fa319fe03e",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-libs/zipball/bf6672870003c96e5107beade7a9364f0e7a66d0",
+                "reference": "bf6672870003c96e5107beade7a9364f0e7a66d0",
                 "shasum": ""
             },
             "require": {
@@ -2943,7 +2943,7 @@
                 }
             ],
             "description": "Some library for the Open Orchestra project",
-            "time": "2016-10-10 09:50:46"
+            "time": "2016-11-24 13:23:53"
         },
         {
             "name": "open-orchestra/open-orchestra-media-admin-bundle",
@@ -3140,12 +3140,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
-                "reference": "467dd2c828812191dd65ae73e3c702b1e64bf755"
+                "reference": "25ed7539de42129593109e980ab68a3ea6a2a2cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/467dd2c828812191dd65ae73e3c702b1e64bf755",
-                "reference": "467dd2c828812191dd65ae73e3c702b1e64bf755",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/25ed7539de42129593109e980ab68a3ea6a2a2cd",
+                "reference": "25ed7539de42129593109e980ab68a3ea6a2a2cd",
                 "shasum": ""
             },
             "require": {
@@ -3180,7 +3180,7 @@
                 }
             ],
             "description": "A MongoDB implemantation of the Open Orchestra Model Interface",
-            "time": "2016-11-23 12:55:21"
+            "time": "2016-11-24 13:24:47"
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
@@ -3188,12 +3188,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-interface.git",
-                "reference": "526b34ad600fe3031747211465f69c7616543bf8"
+                "reference": "cad9fd6a86980b3921e7a1fde6a489e2faa083df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/526b34ad600fe3031747211465f69c7616543bf8",
-                "reference": "526b34ad600fe3031747211465f69c7616543bf8",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/cad9fd6a86980b3921e7a1fde6a489e2faa083df",
+                "reference": "cad9fd6a86980b3921e7a1fde6a489e2faa083df",
                 "shasum": ""
             },
             "require": {
@@ -3225,7 +3225,7 @@
                 }
             ],
             "description": "Describe all entity and repository to implement for the whole OpenOrchestra project",
-            "time": "2016-11-23 12:55:16"
+            "time": "2016-11-24 13:23:56"
         },
         {
             "name": "open-orchestra/open-orchestra-mongo-libs",
@@ -3283,12 +3283,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-user-bundle.git",
-                "reference": "48f89365cfe2e2fb0662eb1702e697769ae761bb"
+                "reference": "bc094fd6d09af133cfc06a46bebdbc66757d23cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-user-bundle/zipball/48f89365cfe2e2fb0662eb1702e697769ae761bb",
-                "reference": "48f89365cfe2e2fb0662eb1702e697769ae761bb",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-user-bundle/zipball/bc094fd6d09af133cfc06a46bebdbc66757d23cc",
+                "reference": "bc094fd6d09af133cfc06a46bebdbc66757d23cc",
                 "shasum": ""
             },
             "require": {
@@ -3328,7 +3328,7 @@
                 }
             ],
             "description": "An override of FosUserBundle to provide authentication on Open Orchestra",
-            "time": "2016-11-15 13:51:26"
+            "time": "2016-11-24 10:29:54"
         },
         {
             "name": "open-orchestra/open-orchestra-workflow-function-bundle",
@@ -4116,16 +4116,16 @@
         },
         {
             "name": "swiftmailer/swiftmailer",
-            "version": "v5.4.3",
+            "version": "v5.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "4cc92842069c2bbc1f28daaaf1d2576ec4dfe153"
+                "reference": "545ce9136690cea74f98f86fbb9c92dd9ab1a756"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/4cc92842069c2bbc1f28daaaf1d2576ec4dfe153",
-                "reference": "4cc92842069c2bbc1f28daaaf1d2576ec4dfe153",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/545ce9136690cea74f98f86fbb9c92dd9ab1a756",
+                "reference": "545ce9136690cea74f98f86fbb9c92dd9ab1a756",
                 "shasum": ""
             },
             "require": {
@@ -4165,7 +4165,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2016-07-08 11:51:25"
+            "time": "2016-11-24 01:01:23"
         },
         {
             "name": "symfony/assetic-bundle",
@@ -6419,20 +6419,20 @@
         },
         {
             "name": "webmozart/assert",
-            "version": "1.1.0",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webmozart/assert.git",
-                "reference": "bb2d123231c095735130cc8f6d31385a44c7b308"
+                "reference": "2db61e59ff05fe5126d152bd0655c9ea113e550f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webmozart/assert/zipball/bb2d123231c095735130cc8f6d31385a44c7b308",
-                "reference": "bb2d123231c095735130cc8f6d31385a44c7b308",
+                "url": "https://api.github.com/repos/webmozart/assert/zipball/2db61e59ff05fe5126d152bd0655c9ea113e550f",
+                "reference": "2db61e59ff05fe5126d152bd0655c9ea113e550f",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.3.3|^7.0"
+                "php": "^5.3.3 || ^7.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "^4.6",
@@ -6441,7 +6441,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.2-dev"
+                    "dev-master": "1.3-dev"
                 }
             },
             "autoload": {
@@ -6465,7 +6465,7 @@
                 "check",
                 "validate"
             ],
-            "time": "2016-08-09 15:02:57"
+            "time": "2016-11-23 20:04:58"
         }
     ],
     "aliases": [],
