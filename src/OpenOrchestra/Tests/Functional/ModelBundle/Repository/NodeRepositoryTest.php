@@ -6,6 +6,7 @@ use OpenOrchestra\BaseBundle\Tests\AbstractTest\AbstractKernelTestCase;
 use OpenOrchestra\ModelInterface\Model\NodeInterface;
 use OpenOrchestra\ModelBundle\Repository\NodeRepository;
 use OpenOrchestra\ModelInterface\NodeEvents;
+use OpenOrchestra\Pagination\Configuration\PaginateFinderConfiguration;
 use Phake;
 
 /**
@@ -710,4 +711,93 @@ class NodeRepositoryTest extends AbstractKernelTestCase
         $this->assertCount(0, $node503Tree['child']);
         $this->assertSame('errorPage503', $node503['nodeId']);
     }
+
+    /**
+     * @param string $siteId
+     * @param string $language
+     * @param int    $count
+     *
+     * @dataProvider provideSiteIdAndLanguage
+     */
+    public function testCount($siteId, $language, $count)
+    {
+        $this->assertEquals($count, $this->repository->count($siteId, $language));
+    }
+
+    /**
+     * @return array
+     */
+    public function provideSiteIdAndLanguage()
+    {
+        return array(
+            array('2', 'fr', 8),
+            array('2', 'en', 8),
+            array('2', 'de', 6),
+            array('3', 'fr', 1),
+        );
+    }
+
+    /**
+     * @param PaginateFinderConfiguration $configuration
+     * @param string                      $siteId
+     * @param string                      $language
+     * @param int                         $count
+     *
+     * @dataProvider provideCountWithFilterPaginateConfiguration
+     */
+    public function testCountWithFilter($configuration, $siteId, $language, $count)
+    {
+        $this->assertEquals($count, $this->repository->countWithFilter($configuration, $siteId, $language));
+    }
+
+    /**
+     * @return array
+     */
+    public function provideCountWithFilterPaginateConfiguration()
+    {
+        $configurationAllPaginate = PaginateFinderConfiguration::generateFromVariable(array(), 0, 100, array());
+        $configurationOrder = PaginateFinderConfiguration::generateFromVariable(array('updated_at' => 'desc'), 0, 100, array('updated_at' => 'updatedAt'));
+        $configurationFilter = PaginateFinderConfiguration::generateFromVariable(array(), 0, 100, array(), array('name' => 'orchestra'));
+
+        return array(
+            'all' => array($configurationAllPaginate, '2', 'fr', 8),
+            'order' => array($configurationOrder, '2', 'fr', 8),
+            'filter' => array($configurationFilter, '2', 'fr', 1),
+        );
+    }
+
+    /**
+     * @param PaginateFinderConfiguration $configuration
+     * @param string                      $siteId
+     * @param string                      $language
+     * @param int                         $count
+     *
+     * @dataProvider providePaginateConfiguration
+     */
+    public function testFindForPaginate($configuration, $siteId, $language, $count)
+    {
+        $this->assertEquals($count, $this->repository->findForPaginate($configuration, $siteId, $language));
+    }
+
+    /**
+     * @return array
+     */
+    public function provideFindWithFilterPaginateConfiguration()
+    {
+        $configurationAllPaginate = PaginateFinderConfiguration::generateFromVariable(array(), 0, 100, array());
+        $configurationLimit = PaginateFinderConfiguration::generateFromVariable(array(), 0, 2, array());
+        $configurationSkip = PaginateFinderConfiguration::generateFromVariable(array(), 2, 100, array());
+        $configurationOrder = PaginateFinderConfiguration::generateFromVariable(array('updated_at' => 'desc'), 0, 100, array('updated_at' => 'updatedAt'));
+        $configurationFilter = PaginateFinderConfiguration::generateFromVariable(array(), 0, 100, array(), array('name' => 'orchestra'));
+
+        return array(
+            'all' => array($configurationAllPaginate, '2', 'fr', 8),
+            'limit' => array($configurationLimit, '2', 'fr', 2),
+            'skip' => array($configurationSkip, '2', 'fr', 6),
+            'order' => array($configurationOrder, '2', 'fr', 8),
+            'filter' => array($configurationFilter, '2', 'fr', 1),
+        );
+    }
+
+
 }
