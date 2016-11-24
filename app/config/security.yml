@@ -3,7 +3,7 @@ security:
         FOS\UserBundle\Model\UserInterface: sha512
 
     role_hierarchy:
-        ROLE_PLATFORM_ADMIN: ROLE_USER
+        ROLE_PLATFORM_ADMIN: [ROLE_USER, ROLE_KEYWORD]
         ROLE_DEVELOPER:      [ROLE_PLATFORM_ADMIN, ROLE_ALLOWED_TO_SWITCH]
 
     providers:
