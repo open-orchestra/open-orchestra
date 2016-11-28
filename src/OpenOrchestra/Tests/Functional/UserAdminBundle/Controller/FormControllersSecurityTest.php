@@ -33,7 +33,6 @@ class FormControllersSecurityTest extends AbstractAuthenticatedTest
         return array(
             array('/admin/user/new'),
             array('/admin/user/form/root'),
-            array('/admin/user/password/change/root'),
         );
     }
 }
