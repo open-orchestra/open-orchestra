@@ -15,24 +15,21 @@ class FormControllersSecurityTest extends AbstractAuthenticatedTest
     protected $password = 'userNoAccess';
 
     /**
-     * @param string $url
-     *
-     * @dataProvider provideApiUrl
+     * Test creation form
      */
-    public function testForm($url)
+    public function testCreateForm()
     {
-        $this->client->request('GET', $url);
+        $this->client->request('GET', '/admin/user/new');
         $this->assertEquals(403, $this->client->getResponse()->getStatusCode());
     }
 
     /**
-     * @return array
+     * Test edition form
      */
-    public function provideApiUrl()
+    public function testEditForm()
     {
-        return array(
-            array('/admin/user/new'),
-            array('/admin/user/form/root'),
-        );
+        $user = $this->client->getContainer()->get('open_orchestra_user.repository.user')->findOneByUsername('p-admin');
+        $this->client->request('GET', '/admin/user/form/' . $user->getId());
+        $this->assertEquals(403, $this->client->getResponse()->getStatusCode());
     }
 }

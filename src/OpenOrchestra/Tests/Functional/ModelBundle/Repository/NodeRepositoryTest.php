@@ -732,7 +732,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
         return array(
             array('2', 'fr', 8),
             array('2', 'en', 8),
-            array('2', 'de', 6),
+            array('2', 'de', 7),
             array('3', 'fr', 1),
         );
     }
