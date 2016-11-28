@@ -12,7 +12,7 @@ class RedirectionControllerTest extends AbstractAuthenticatedTest
     /**
      * Test cannot delete used status
      */
-    public function testDeleteAction()
+    public function testListAction()
     {
         $siteId = '2';
         $locale = 'fr';
@@ -23,6 +23,6 @@ class RedirectionControllerTest extends AbstractAuthenticatedTest
         $this->assertSame(200, $this->client->getResponse()->getStatusCode());
 
         $json = json_decode($this->client->getResponse()->getContent(), true);
-        $this->assertEmpty($json['redirections']);
+        $this->assertCount(1, $json['redirections']);
     }
 }
