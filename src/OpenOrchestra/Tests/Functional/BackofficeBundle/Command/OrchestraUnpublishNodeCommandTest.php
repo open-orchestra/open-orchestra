@@ -51,7 +51,7 @@ class OrchestraUnpublishNodeCommandTest extends AbstractWebTestCase
 
         foreach ($nodes as $node) {
             $this->assertRegExp(
-                '/-> ' . $node->getBOLabel(). ' \(v' . $node->getVersion() . ' ' . $node->getLanguage() . '\) unpublished/',
+                '/-> ' . $node->getName(). ' \(v' . $node->getVersion() . ' ' . $node->getLanguage() . '\) unpublished/',
                 $commandTester->getDisplay()
             );
         }

@@ -40,17 +40,17 @@ class EditNodeControllerTest extends AbstractFormTest
     {
         $nodeDocument = $this->nodeRepository->findInLastVersion($nodeId, $this->language, $this->siteId);
 
-        $url = '/admin/node/form/' . $nodeDocument->getId();
+        $url = '/admin/node/form/' . $this->siteId . '/' . $nodeDocument->getNodeId() . '/' . $this->language . '/' . $nodeDocument->getVersion();
 
         $crawler = $this->client->request('GET', $url);
         $formNode = $crawler->selectButton('Save')->form();
-        $formNode['oo_node[metaKeywords]'] = $newMeta;
+        $formNode['oo_node[metaDescription]'] = $newMeta;
 
         $crawler = $this->submitForm($formNode);
 
         $this->assertContains('alert alert-success', $this->client->getResponse()->getContent());
         $formNode = $crawler->selectButton('Save')->form();
-        $this->assertSame($expectedMeta, $formNode['oo_node[metaKeywords]']->getValue());
+        $this->assertSame($expectedMeta, $formNode['oo_node[metaDescription]']->getValue());
     }
 
     /**
