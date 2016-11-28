@@ -2681,12 +2681,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "02d52a812fcc7cfe98aa7265b3ebbd6a7b0ee9ab"
+                "reference": "37e3ef6bb88aa98e9e473fab6f7503271ac69694"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/02d52a812fcc7cfe98aa7265b3ebbd6a7b0ee9ab",
-                "reference": "02d52a812fcc7cfe98aa7265b3ebbd6a7b0ee9ab",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/37e3ef6bb88aa98e9e473fab6f7503271ac69694",
+                "reference": "37e3ef6bb88aa98e9e473fab6f7503271ac69694",
                 "shasum": ""
             },
             "require": {
@@ -2785,7 +2785,7 @@
                 }
             ],
             "description": "This bundle provide the Back Office part of Open Orchestra",
-            "time": "2016-11-28 13:41:41"
+            "time": "2016-11-28 15:27:38"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -3283,12 +3283,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-user-bundle.git",
-                "reference": "8fe28daabccbf98de7ea1bfa5c6460d99e9e8a1a"
+                "reference": "8b59a25eadd7c664f8844ba70dd0c9f6dee967e4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-user-bundle/zipball/8fe28daabccbf98de7ea1bfa5c6460d99e9e8a1a",
-                "reference": "8fe28daabccbf98de7ea1bfa5c6460d99e9e8a1a",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-user-bundle/zipball/8b59a25eadd7c664f8844ba70dd0c9f6dee967e4",
+                "reference": "8b59a25eadd7c664f8844ba70dd0c9f6dee967e4",
                 "shasum": ""
             },
             "require": {
@@ -3328,7 +3328,7 @@
                 }
             ],
             "description": "An override of FosUserBundle to provide authentication on Open Orchestra",
-            "time": "2016-11-24 14:33:31"
+            "time": "2016-11-28 14:13:36"
         },
         {
             "name": "open-orchestra/open-orchestra-workflow-function-bundle",
