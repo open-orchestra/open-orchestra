@@ -31,8 +31,8 @@ class FolderControllerTest extends AbstractFormTest
      */
     public function testMediaFolderFormUserWithCreateRole()
     {
-        $this->username = 'userFolderCreate';
-        $this->password = 'userFolderCreate';
+        $this->username = 'demo';
+        $this->password = 'demo';
         $this->logIn();
 
         $this->getCrawler();

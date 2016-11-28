@@ -3,7 +3,6 @@
 namespace OpenOrchestra\FunctionalTests\BackofficeBundle\Controller;
 
 use OpenOrchestra\FunctionalTests\Utils\AbstractFormTest;
-use OpenOrchestra\ModelInterface\Model\NodeInterface;
 use OpenOrchestra\ModelInterface\Repository\NodeRepositoryInterface;
 use OpenOrchestra\ModelInterface\Repository\SiteRepositoryInterface;
 

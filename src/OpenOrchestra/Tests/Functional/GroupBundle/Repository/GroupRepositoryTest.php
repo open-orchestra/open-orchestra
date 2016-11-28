@@ -63,11 +63,11 @@ class GroupRepositoryTest extends AbstractKernelTestCase
         $descriptionEntity = $this->getDescriptionColumnEntity();
 
         return array(
-            array($descriptionEntity, null, null, 0 ,5 , 5),
-            array($descriptionEntity, $this->generateSearchProvider('group'), null, 0 ,5 , 5),
-            array($descriptionEntity, $this->generateSearchProvider('', 'group'), null, 0 ,5 , 5),
-            array($descriptionEntity, $this->generateSearchProvider('', 'fakeGroup'), null, 0 ,5 , 0),
-            array($descriptionEntity, $this->generateSearchProvider('Demo'), null, 0 ,5 , 1),
+            1 => array($descriptionEntity, null, null, 0, 5, 3),
+            2 => array($descriptionEntity, $this->generateSearchProvider('group'), null, 0, 5, 2),
+            3 => array($descriptionEntity, $this->generateSearchProvider('', 'group'), null, 0, 5, 2),
+            4 => array($descriptionEntity, $this->generateSearchProvider('', 'fakeGroup'), null, 0, 5, 0),
+            5 => array($descriptionEntity, $this->generateSearchProvider('Demo'), null, 0, 5, 2),
         );
     }
 
@@ -79,7 +79,7 @@ class GroupRepositoryTest extends AbstractKernelTestCase
         $this->markTestSkipped('To unskip when group list is refacto');
         $configuration = PaginateFinderConfiguration::generateFromVariable($this->getDescriptionColumnEntity(), array());
         $groups = $this->repository->count($configuration);
-        $this->assertEquals(8, $groups);
+        $this->assertEquals(3, $groups);
     }
 
     /**
@@ -88,7 +88,7 @@ class GroupRepositoryTest extends AbstractKernelTestCase
     public function testFindAllWithSite()
     {
         $groups = $this->repository->findAllWithSite();
-        $this->assertCount(7, $groups);
+        $this->assertCount(3, $groups);
     }
 
     /**
@@ -114,7 +114,7 @@ class GroupRepositoryTest extends AbstractKernelTestCase
     {
         return array(
              'Empty site' => array('3', 1),
-             'Demo site' => array('2', 6)
+             'Demo site' => array('2', 2)
         );
     }
 
@@ -140,9 +140,9 @@ class GroupRepositoryTest extends AbstractKernelTestCase
         $descriptionEntity = $this->getDescriptionColumnEntity();
 
         return array(
-            array($descriptionEntity, null, 8),
-            array($descriptionEntity, $this->generateSearchProvider('group'), 7),
-            array($descriptionEntity, $this->generateSearchProvider('Demo'), 1),
+            array($descriptionEntity, null, 3),
+            array($descriptionEntity, $this->generateSearchProvider('group'), 2),
+            array($descriptionEntity, $this->generateSearchProvider('Demo'), 2),
             array($descriptionEntity, $this->generateSearchProvider('', 'fakeName'), 0),
         );
     }

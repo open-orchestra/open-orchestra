@@ -166,7 +166,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function provideNodeSiteAndCount()
     {
         return array(
-            array(NodeInterface::ROOT_NODE_ID, '2', 3),
+            array(NodeInterface::ROOT_NODE_ID, '2', 4),
             array('fixture_page_what_is_orchestra', '2', 0),
         );
     }
@@ -414,10 +414,10 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function provideFindByHistoryAndSiteId()
     {
         return array(
-            array('admin', '2', array(NodeEvents::NODE_CREATION), null, 10, array('updatedAt' => -1), 1),
-            array('admin', '2', array(NodeEvents::NODE_CREATION), false, 10, null, 0),
-            array('admin', '2', array(NodeEvents::NODE_CREATION), true, 10, null, 1),
-            array('admin', '2', array(NodeEvents::NODE_UPDATE, NodeEvents::NODE_CREATION), true, 10, null, 2),
+            array('p-admin', '2', array(NodeEvents::NODE_CREATION), null, 10, array('updatedAt' => -1), 0),
+            array('p-admin', '2', array(NodeEvents::NODE_CREATION), false, 10, null, 0),
+            array('p-admin', '2', array(NodeEvents::NODE_CREATION), true, 10, null, 0),
+            array('p-admin', '2', array(NodeEvents::NODE_UPDATE, NodeEvents::NODE_CREATION), true, 10, null, 1),
         );
     }
 
@@ -536,7 +536,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function provideNodeTypeAndCount()
     {
         return array(
-            array(NodeInterface::TYPE_DEFAULT, 15),
+            array(NodeInterface::TYPE_DEFAULT, 16),
             array(NodeInterface::TYPE_ERROR, 6),
         );
     }
@@ -608,7 +608,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     {
         return array(
             array("1", 0),
-            array("2", 16),
+            array("2", 17),
         );
     }
 
@@ -695,7 +695,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
         $this->assertCount(5, $nodeRootTree['child']);
         $this->assertSame('root', $nodeRoot['nodeId']);
         $childrenRoot = $nodeRootTree['child'];
-        $orderNodeId = array('fixture_page_community', 'fixture_page_contact', 'fixture_page_news', 'fixture_page_legal_mentions', 'fixture_auto_unpublish');
+        $orderNodeId = array('fixture_page_community', 'fixture_page_news', 'fixture_page_contact', 'fixture_page_legal_mentions', 'fixture_auto_unpublish');
         foreach ($childrenRoot as $index => $child) {
             $this->assertCount(0, $child['child']);
             $this->assertSame($orderNodeId[$index], $child['node']['nodeId']);
@@ -732,7 +732,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
         return array(
             array('2', 'fr', 8),
             array('2', 'en', 8),
-            array('2', 'de', 6),
+            array('2', 'de', 7),
             array('3', 'fr', 1),
         );
     }

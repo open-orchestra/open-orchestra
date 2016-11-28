@@ -17,8 +17,8 @@ class NodeControllerAccessTest extends AbstractAuthenticatedTest
      */
     protected $groupRepository;
 
-    protected $username = 'user1';
-    protected $password = 'user1';
+    protected $username = 'demo';
+    protected $password = 'demo';
 
     /**
      * Set up the test
@@ -34,6 +34,8 @@ class NodeControllerAccessTest extends AbstractAuthenticatedTest
      */
     public function testNewVersionNodeAccessDenied()
     {
+        $this->markTestSkipped('To reactivate when API roles will be implemented');
+
         $nodeId = 'fixture_page_community';
         $groupName = 'Demo group';
 

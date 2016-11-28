@@ -39,6 +39,8 @@ class ContentControllerTest extends AbstractAuthenticatedTest
      */
     public function testChangeContentStatus($name, $currentlyPublished)
     {
+        $this->markTestSkipped('To reactivate when API roles will be implemented');
+
         $content = $this->contentRepository->findOneByLanguageAndVersion('206_3_portes', 'fr', 2);
         $newStatus = $this->statusRepository->findOneByName($name);
         $newStatusId = $newStatus->getId();

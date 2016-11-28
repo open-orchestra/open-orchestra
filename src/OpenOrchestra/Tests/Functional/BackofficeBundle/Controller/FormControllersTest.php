@@ -11,6 +11,9 @@ use OpenOrchestra\FunctionalTests\Utils\AbstractFormTest;
  */
 class FormControllersTest extends AbstractFormTest
 {
+    protected $username = 'developer';
+    protected $password = 'developer';
+
     /**
      * @param string $url
      *
@@ -29,14 +32,14 @@ class FormControllersTest extends AbstractFormTest
     public function provideApiUrl()
     {
         return array(
-            array('/admin/site/form/2'),
-            array('/admin/status/new'),
-            array('/admin/theme/new'),
-            array('/admin/keyword/new'),
-            array('/admin/content-type/new'),
-            array('/admin/role/new'),
-            array('/admin/group/new'),
-            array('/admin/redirection/new'),
+            1 => array('/admin/site/form/2'),
+            2 => array('/admin/status/new'),
+            3 => array('/admin/theme/new'),
+            4 => array('/admin/keyword/new'),
+            5 => array('/admin/content-type/new'),
+            6 => array('/admin/role/new'),
+            7 => array('/admin/group/new'),
+            8 => array('/admin/redirection/new'),
         );
     }
 }

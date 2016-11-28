@@ -30,6 +30,8 @@ class AuthorizationControllersTest extends AbstractWebTestCase
      */
     public function testTokenCreationAndUsage()
     {
+        $this->markTestSkipped('To reactivate when API roles will be implemented');
+
         $this->client->request('GET', '/api/node/root');
         $this->assertEquals(401, $this->client->getResponse()->getStatusCode());
         $this->assertSame('application/json', $this->client->getResponse()->headers->get('content-type'));

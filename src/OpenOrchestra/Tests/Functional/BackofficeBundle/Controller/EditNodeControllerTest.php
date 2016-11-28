@@ -60,7 +60,7 @@ class EditNodeControllerTest extends AbstractFormTest
     {
         return array(
             array('foo', 'foo', NodeInterface::ROOT_NODE_ID),
-            array('', 'bar', 'fixture_page_news'),
+            array('bar', 'bar', 'fixture_page_news'),
         );
     }
 }

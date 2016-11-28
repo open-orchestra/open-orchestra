@@ -303,21 +303,21 @@ class ContentRepositoryTest extends AbstractKernelTestCase
         $descriptionEntity = $this->getDescriptionColumnEntity();
 
         return array(
-            array('car', $descriptionEntity, null, array("name" => "name", "dir" => "asc"), null, 0 ,5 , 3, '206 3 portes fr'),
-            array('car', $descriptionEntity, null, array("name" => "name", "dir" => "desc"), null, 0 ,5 , 3, 'R5 3 portes en'),
-            array('car', $descriptionEntity, null, array("name" => "attributes.car_name.string_value", "dir" => "asc"), null, 0 ,5 , 3, '206 3 portes fr'),
-            array('car', $descriptionEntity, null, array("name" => "attributes.car_name.string_value", "dir" => "desc"), null, 0 ,5 , 3, 'R5 3 portes en'),
-            array('car', $descriptionEntity, null, null, null, 0 ,1 , 1),
-            array('car', $descriptionEntity, $this->generateColumnsProvider(array('name' => '206')), null, null, 0 ,2 , 1),
-            array('car', $descriptionEntity, $this->generateColumnsProvider(array('version' => '2')), null, null, 0 ,2 , 2),
-            array('news', $descriptionEntity, null, null, null, 0 , 100, 4),
-            array('news', $descriptionEntity, null, null, null, 50 , 100, 0),
-            array('news', $descriptionEntity, $this->generateColumnsProvider(array('name' => 'news')), null, null, 0 , null, 0),
-            array('car', $descriptionEntity, null, null, '2', 0 ,5 , 3),
-            array('car', $descriptionEntity, $this->generateColumnsProvider(array('status_label' => 'publish')), null, null, null ,null , 3),
-            array('car', $descriptionEntity, $this->generateColumnsProvider(array('status_label' => 'Publi')), null, null, null ,null , 3),
-            array('car', $descriptionEntity, $this->generateColumnsProvider(array('status_label' => 'draft')), null, null, null ,null , 0),
-            array('car', $descriptionEntity, $this->generateColumnsProvider(array('status_label' => 'brouillon')), null, null, null ,null , 0),
+            1  => array('car', $descriptionEntity, null, array("name" => "name", "dir" => "asc"), null, 0 ,5 , 3, '206 3 portes en'),
+            2  => array('car', $descriptionEntity, null, array("name" => "name", "dir" => "desc"), null, 0 ,5 , 3, 'R5 3 portes en'),
+            3  => array('car', $descriptionEntity, null, array("name" => "attributes.car_name.string_value", "dir" => "asc"), null, 0 ,5 , 3, '206 3 portes en'),
+            4  => array('car', $descriptionEntity, null, array("name" => "attributes.car_name.string_value", "dir" => "desc"), null, 0 ,5 , 3, 'R5 3 portes en'),
+            5  => array('car', $descriptionEntity, null, null, null, 0 ,1 , 1),
+            6  => array('car', $descriptionEntity, $this->generateColumnsProvider(array('name' => '206')), null, null, 0 ,2 , 1),
+            7  => array('car', $descriptionEntity, $this->generateColumnsProvider(array('version' => '2')), null, null, 0 ,2 , 2),
+            8  => array('news', $descriptionEntity, null, null, null, 0 , 100, 4),
+            9  => array('news', $descriptionEntity, null, null, null, 50 , 100, 0),
+            10 => array('news', $descriptionEntity, $this->generateColumnsProvider(array('name' => 'news')), null, null, 0 , null, 0),
+            11 => array('car', $descriptionEntity, null, null, '2', 0 ,5 , 3),
+            12 => array('car', $descriptionEntity, $this->generateColumnsProvider(array('status_label' => 'publish')), null, null, null ,null , 3),
+            13 => array('car', $descriptionEntity, $this->generateColumnsProvider(array('status_label' => 'Publi')), null, null, null ,null , 3),
+            14 => array('car', $descriptionEntity, $this->generateColumnsProvider(array('status_label' => 'draft')), null, null, null ,null , 0),
+            15 => array('car', $descriptionEntity, $this->generateColumnsProvider(array('status_label' => 'brouillon')), null, null, null ,null , 0),
 
         );
     }
@@ -416,11 +416,11 @@ class ContentRepositoryTest extends AbstractKernelTestCase
     public function provideFindByHistoryAndSiteId()
     {
         return array(
-            array('admin', '2', array(ContentEvents::CONTENT_CREATION), null, 10, array('updatedAt' => -1), 2),
-            array('admin', '2', array(ContentEvents::CONTENT_CREATION), false, 10, null, 0),
-            array('admin', '2', array(ContentEvents::CONTENT_CREATION), true, 10, null, 2),
-            array('admin', '2', array(ContentEvents::CONTENT_UPDATE), true, 10, null, 1),
-            array('admin', '2', array(ContentEvents::CONTENT_CREATION, ContentEvents::CONTENT_UPDATE), true, 10, null, 3),
+            1 => array('p-admin', '2', array(ContentEvents::CONTENT_CREATION), null, 10, array('updatedAt' => -1), 0),
+            2 => array('p-admin', '2', array(ContentEvents::CONTENT_CREATION), false, 10, null, 0),
+            3 => array('p-admin', '2', array(ContentEvents::CONTENT_CREATION), true, 10, null, 0),
+            4 => array('p-admin', '2', array(ContentEvents::CONTENT_UPDATE), true, 10, null, 0),
+            5 => array('p-admin', '2', array(ContentEvents::CONTENT_CREATION, ContentEvents::CONTENT_UPDATE), true, 10, null, 0),
         );
     }
 
