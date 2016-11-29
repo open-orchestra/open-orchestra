@@ -51,7 +51,7 @@ class AppKernel extends Kernel
             new OpenOrchestra\MediaAdminBundle\OpenOrchestraMediaAdminBundle(),
             new OpenOrchestra\MediaAdminModelBundle\OpenOrchestraMediaAdminModelBundle(),
             new OpenOrchestra\MediaFileBundle\OpenOrchestraMediaFileBundle(),
-            new OpenOrchestra\WorkflowFunctionAdminBundle\OpenOrchestraWorkflowFunctionAdminBundle(),
+            new OpenOrchestra\WorkflowAdminBundle\OpenOrchestraWorkflowAdminBundle(),
 
             // Need parameters set by some of our bundles
             new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),
