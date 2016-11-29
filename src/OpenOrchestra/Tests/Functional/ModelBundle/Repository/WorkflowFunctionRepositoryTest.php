@@ -5,7 +5,7 @@ namespace OpenOrchestra\FunctionalTests\ModelBundle\Repository;
 use OpenOrchestra\BaseBundle\Tests\AbstractTest\AbstractKernelTestCase;
 use OpenOrchestra\Pagination\Configuration\FinderConfiguration;
 use OpenOrchestra\Pagination\Configuration\PaginateFinderConfiguration;
-use OpenOrchestra\Workflow\Repository\WorkflowFunctionRepositoryInterface;
+use OpenOrchestra\ModelInterface\Repository\WorkflowFunctionRepositoryInterface;
 
 /**
  * Class WorkflowFunctionRepositoryTest
