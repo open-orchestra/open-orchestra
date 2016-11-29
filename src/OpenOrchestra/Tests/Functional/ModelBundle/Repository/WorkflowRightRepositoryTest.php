@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenOrchestra\FunctionalTests\WorkflowFunctionModelBundle\Repository;
+namespace OpenOrchestra\FunctionalTests\ModelBundle\Repository;
 
 use OpenOrchestra\BaseBundle\Tests\AbstractTest\AbstractKernelTestCase;
 use OpenOrchestra\WorkflowFunction\Repository\WorkflowRightRepositoryInterface;
@@ -27,8 +27,8 @@ class WorkflowRightRepositoryTest extends AbstractKernelTestCase
     {
         parent::setUp();
         static::bootKernel();
-        $this->repository = static::$kernel->getContainer()->get('open_orchestra_workflow_function.repository.workflow_right');
-        $this->workflowFunctionRepository = static::$kernel->getContainer()->get('open_orchestra_workflow_function.repository.workflow_function');
+        $this->repository = static::$kernel->getContainer()->get('open_orchestra_model.repository.workflow_right');
+        $this->workflowFunctionRepository = static::$kernel->getContainer()->get('open_orchestra_model.repository.workflow_function');
         $this->userRepository = static::$kernel->getContainer()->get('open_orchestra_user.repository.user');
     }
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenOrchestra\FunctionalTests\WorkflowFunctionModelBundle\Repository;
+namespace OpenOrchestra\FunctionalTests\ModelBundle\Repository;
 
 use OpenOrchestra\BaseBundle\Tests\AbstractTest\AbstractKernelTestCase;
 use OpenOrchestra\Pagination\Configuration\FinderConfiguration;
@@ -27,7 +27,7 @@ class WorkflowFunctionRepositoryTest extends AbstractKernelTestCase
         parent::setUp();
 
         static::bootKernel();
-        $this->repository = static::$kernel->getContainer()->get('open_orchestra_workflow_function.repository.workflow_function');
+        $this->repository = static::$kernel->getContainer()->get('open_orchestra_model.repository.workflow_function');
     }
 
     /**
