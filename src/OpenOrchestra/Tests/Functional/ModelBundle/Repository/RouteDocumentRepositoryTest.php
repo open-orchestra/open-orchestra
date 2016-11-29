@@ -163,7 +163,7 @@ class RouteDocumentRepositoryTest extends AbstractKernelTestCase
     public function provideSiteIdCount()
     {
         return array(
-            array('2', 36),
+            array('2', 38),
             array('fake2', 0),
         );
     }

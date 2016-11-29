@@ -40,6 +40,7 @@ class FormControllersTest extends AbstractFormTest
             6 => array('/admin/role/new'),
             7 => array('/admin/group/new'),
             8 => array('/admin/redirection/new'),
+            9 => array('/node/form/2/root/fr'),
         );
     }
 }
