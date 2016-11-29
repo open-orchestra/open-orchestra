@@ -3,7 +3,7 @@
 namespace OpenOrchestra\FunctionalTests\ModelBundle\Repository;
 
 use OpenOrchestra\BaseBundle\Tests\AbstractTest\AbstractKernelTestCase;
-use OpenOrchestra\WorkflowFunction\Repository\WorkflowRightRepositoryInterface;
+use OpenOrchestra\Workflow\Repository\WorkflowRightRepositoryInterface;
 use Phake;
 
 /**
@@ -39,7 +39,7 @@ class WorkflowRightRepositoryTest extends AbstractKernelTestCase
     {
         $user = $this->userRepository->findOneByUsername('p-admin');
         $workflowRight = $this->repository->findOneByUserId($user->getId());
-        $this->assertInstanceOf('OpenOrchestra\WorkflowFunction\Model\WorkflowRightInterface', $workflowRight);
+        $this->assertInstanceOf('OpenOrchestra\Workflow\Model\WorkflowRightInterface', $workflowRight);
     }
 
     /**
@@ -54,7 +54,7 @@ class WorkflowRightRepositoryTest extends AbstractKernelTestCase
     /**
      * @param string $userId
      *
-     * @return \OpenOrchestra\WorkflowFunction\Model\WorkflowRightInterface
+     * @return \OpenOrchestra\Workflow\Model\WorkflowRightInterface
      */
     public function findOneByUserId($userId)
     {
@@ -79,7 +79,7 @@ class WorkflowRightRepositoryTest extends AbstractKernelTestCase
      */
     public function testHashElementWithFaKeWorkflowFunction()
     {
-        $fakeFunction = Phake::mock('OpenOrchestra\WorkflowFunction\Model\WorkflowFunctionInterface');
+        $fakeFunction = Phake::mock('OpenOrchestra\Workflow\Model\WorkflowFunctionInterface');
 
         $hasElement = $this->repository->hasElementWithWorkflowFunction($fakeFunction);
         $this->assertFalse($hasElement);
