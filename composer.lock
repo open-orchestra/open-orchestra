@@ -1343,34 +1343,38 @@
         },
         {
             "name": "friendsofsymfony/user-bundle",
-            "version": "v2.0.0-alpha3",
+            "version": "v2.0.0-beta1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSUserBundle.git",
-                "reference": "d5b28c367d393f9d9fbc48c4138b2a74d51c0c83"
+                "reference": "28151dcb25de663c05ce26917fd6a0b5cb2787cf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/d5b28c367d393f9d9fbc48c4138b2a74d51c0c83",
-                "reference": "d5b28c367d393f9d9fbc48c4138b2a74d51c0c83",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/28151dcb25de663c05ce26917fd6a0b5cb2787cf",
+                "reference": "28151dcb25de663c05ce26917fd6a0b5cb2787cf",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.9",
-                "symfony/form": "~2.3",
-                "symfony/framework-bundle": "~2.3",
-                "symfony/security-bundle": "~2.3",
-                "symfony/twig-bundle": "~2.3"
+                "paragonie/random_compat": "^1 || ^2",
+                "php": "^5.5.9 || ^7.0",
+                "symfony/form": "^2.7 || ^3.0",
+                "symfony/framework-bundle": "^2.7 || ^3.0",
+                "symfony/security-bundle": "^2.7 || ^3.0",
+                "symfony/twig-bundle": "^2.7 || ^3.0"
+            },
+            "conflict": {
+                "symfony/doctrine-bridge": "<2.7"
             },
             "require-dev": {
-                "doctrine/doctrine-bundle": "~1.3",
-                "swiftmailer/swiftmailer": "~4.3|~5",
-                "symfony/validator": "~2.3",
-                "symfony/yaml": "~2.3",
-                "willdurand/propel-typehintable-behavior": "~1.0"
-            },
-            "suggest": {
-                "willdurand/propel-typehintable-behavior": "Needed when using the propel implementation"
+                "doctrine/doctrine-bundle": "^1.3",
+                "friendsofphp/php-cs-fixer": "^1.11",
+                "phpunit/phpunit": "~4.8|~5.0",
+                "swiftmailer/swiftmailer": "^4.3 || ^5.0",
+                "symfony/console": "^2.7 || ^3.0",
+                "symfony/phpunit-bridge": "^2.7 || ^3.0",
+                "symfony/validator": "^2.7 || ^3.0",
+                "symfony/yaml": "^2.7 || ^3.0"
             },
             "type": "symfony-bundle",
             "extra": {
@@ -1381,7 +1385,10 @@
             "autoload": {
                 "psr-4": {
                     "FOS\\UserBundle\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -1406,7 +1413,7 @@
             "keywords": [
                 "User management"
             ],
-            "time": "2015-09-15 13:15:07"
+            "time": "2016-11-29 14:53:27"
         },
         {
             "name": "gedmo/doctrine-extensions",
@@ -2681,12 +2688,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "37e3ef6bb88aa98e9e473fab6f7503271ac69694"
+                "reference": "479c75b8004fcd056e9a9a841b98241291f1139f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/37e3ef6bb88aa98e9e473fab6f7503271ac69694",
-                "reference": "37e3ef6bb88aa98e9e473fab6f7503271ac69694",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/479c75b8004fcd056e9a9a841b98241291f1139f",
+                "reference": "479c75b8004fcd056e9a9a841b98241291f1139f",
                 "shasum": ""
             },
             "require": {
@@ -2756,7 +2763,7 @@
                     "bootstrap": "~3.3.4",
                     "jquery-form": "3.51",
                     "select2": "3.5.2",
-                    "font-awesome": "4.3.0",
+                    "font-awesome": "^4.6.3",
                     "backbone": "~1.2.3",
                     "jquery-minicolors": "~2.2.3",
                     "backbone.wreqr": "~1.3.5",
@@ -2785,7 +2792,7 @@
                 }
             ],
             "description": "This bundle provide the Back Office part of Open Orchestra",
-            "time": "2016-11-28 15:27:38"
+            "time": "2016-11-30 08:17:50"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -3048,12 +3055,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-bundle.git",
-                "reference": "59a9f8eb8c7b4a2a5a37067d0c7a3ee17d81fbd5"
+                "reference": "c59d2622da633409e1cb1a4316a40d54e4be1eb2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/59a9f8eb8c7b4a2a5a37067d0c7a3ee17d81fbd5",
-                "reference": "59a9f8eb8c7b4a2a5a37067d0c7a3ee17d81fbd5",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/c59d2622da633409e1cb1a4316a40d54e4be1eb2",
+                "reference": "c59d2622da633409e1cb1a4316a40d54e4be1eb2",
                 "shasum": ""
             },
             "require": {
@@ -3090,7 +3097,7 @@
                 }
             ],
             "description": "A media bundle for Open Orchestra",
-            "time": "2016-11-28 13:09:55"
+            "time": "2016-11-28 16:15:46"
         },
         {
             "name": "open-orchestra/open-orchestra-media-file-bundle",
@@ -3140,12 +3147,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
-                "reference": "25ed7539de42129593109e980ab68a3ea6a2a2cd"
+                "reference": "d040faf3ec4f3f5733cdc4c8eaa1e7aecab7dc07"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/25ed7539de42129593109e980ab68a3ea6a2a2cd",
-                "reference": "25ed7539de42129593109e980ab68a3ea6a2a2cd",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/d040faf3ec4f3f5733cdc4c8eaa1e7aecab7dc07",
+                "reference": "d040faf3ec4f3f5733cdc4c8eaa1e7aecab7dc07",
                 "shasum": ""
             },
             "require": {
@@ -3180,7 +3187,7 @@
                 }
             ],
             "description": "A MongoDB implemantation of the Open Orchestra Model Interface",
-            "time": "2016-11-24 13:24:47"
+            "time": "2016-11-30 08:12:31"
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
@@ -3188,12 +3195,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-interface.git",
-                "reference": "a7fa762529c8d5b68b8431c361d3ba7c17424167"
+                "reference": "f626031521daeb953dc025d47f0548534cd56e5a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/a7fa762529c8d5b68b8431c361d3ba7c17424167",
-                "reference": "a7fa762529c8d5b68b8431c361d3ba7c17424167",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/f626031521daeb953dc025d47f0548534cd56e5a",
+                "reference": "f626031521daeb953dc025d47f0548534cd56e5a",
                 "shasum": ""
             },
             "require": {
@@ -3225,7 +3232,7 @@
                 }
             ],
             "description": "Describe all entity and repository to implement for the whole OpenOrchestra project",
-            "time": "2016-11-28 13:09:13"
+            "time": "2016-11-30 08:09:38"
         },
         {
             "name": "open-orchestra/open-orchestra-mongo-libs",
@@ -5525,16 +5532,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "4.0.2",
+            "version": "4.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "6cba06ff75a1a63a71033e1a01b89056f3af1e8d"
+                "reference": "903fd6318d0a90b4770a009ff73e4a4e9c437929"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/6cba06ff75a1a63a71033e1a01b89056f3af1e8d",
-                "reference": "6cba06ff75a1a63a71033e1a01b89056f3af1e8d",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/903fd6318d0a90b4770a009ff73e4a4e9c437929",
+                "reference": "903fd6318d0a90b4770a009ff73e4a4e9c437929",
                 "shasum": ""
             },
             "require": {
@@ -5584,7 +5591,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2016-11-01 05:06:24"
+            "time": "2016-11-28 16:00:31"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -6235,21 +6242,21 @@
         },
         {
             "name": "sebastian/object-enumerator",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/object-enumerator.git",
-                "reference": "d4ca2fb70344987502567bc50081c03e6192fb26"
+                "reference": "12dc92be4c9b1286fd37c15d54f7c9d8524f29e0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/object-enumerator/zipball/d4ca2fb70344987502567bc50081c03e6192fb26",
-                "reference": "d4ca2fb70344987502567bc50081c03e6192fb26",
+                "url": "https://api.github.com/repos/sebastianbergmann/object-enumerator/zipball/12dc92be4c9b1286fd37c15d54f7c9d8524f29e0",
+                "reference": "12dc92be4c9b1286fd37c15d54f7c9d8524f29e0",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.6",
-                "sebastian/recursion-context": "~1.0"
+                "sebastian/recursion-context": "~1.0.4"
             },
             "require-dev": {
                 "phpunit/phpunit": "~5"
@@ -6277,20 +6284,20 @@
             ],
             "description": "Traverses array structures and object graphs to enumerate all referenced objects",
             "homepage": "https://github.com/sebastianbergmann/object-enumerator/",
-            "time": "2016-01-28 13:25:10"
+            "time": "2016-11-16 07:17:31"
         },
         {
             "name": "sebastian/recursion-context",
-            "version": "1.0.2",
+            "version": "1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/recursion-context.git",
-                "reference": "913401df809e99e4f47b27cdd781f4a258d58791"
+                "reference": "938df7a6478e72795e5f8266cff24d06e3136f2e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/recursion-context/zipball/913401df809e99e4f47b27cdd781f4a258d58791",
-                "reference": "913401df809e99e4f47b27cdd781f4a258d58791",
+                "url": "https://api.github.com/repos/sebastianbergmann/recursion-context/zipball/938df7a6478e72795e5f8266cff24d06e3136f2e",
+                "reference": "938df7a6478e72795e5f8266cff24d06e3136f2e",
                 "shasum": ""
             },
             "require": {
@@ -6330,7 +6337,7 @@
             ],
             "description": "Provides functionality to recursively process PHP variables",
             "homepage": "http://www.github.com/sebastianbergmann/recursion-context",
-            "time": "2015-11-11 19:50:13"
+            "time": "2016-11-15 06:55:36"
         },
         {
             "name": "sebastian/resource-operations",
