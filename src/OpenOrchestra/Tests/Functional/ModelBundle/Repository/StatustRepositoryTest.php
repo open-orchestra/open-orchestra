@@ -34,9 +34,27 @@ class StatusRepositoryTest extends AbstractKernelTestCase
     public function testFindNotOutOfWorkflow()
     {
         $statuses = $this->repository->findNotOutOfWorkflow();
-        $this->assertCount(3, $statuses);
+        $this->assertCount(4, $statuses);
         foreach ($statuses as $status) {
             $this->assertFalse($status->isOutOfWorkflow());
         }
+    }
+
+    /**
+     * test find other by translation state
+     */
+    public function testFindOtherByTranslationState()
+    {
+        $statuses = $this->repository->findOtherByTranslationState('toTranslate');
+        $this->assertCount(0, $statuses);
+    }
+
+    /**
+     * test find one by translation state
+     */
+    public function testFindOneByTranslationState()
+    {
+        $status = $this->repository->findOneByTranslationState();
+        $this->assertTrue($status->isTranslationState());
     }
 }

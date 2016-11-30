@@ -686,7 +686,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
      */
     public function testFindTreeNode()
     {
-        $tree = $this->repository->findTreeNode('2', 'fr');
+        $tree = $this->repository->findTreeNode('2', 'fr', '-');
 
         $this->assertCount(3, $tree);
 
