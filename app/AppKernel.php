@@ -40,8 +40,6 @@ class AppKernel extends Kernel
             new OpenOrchestra\MongoBundle\OpenOrchestraMongoBundle(),
             new OpenOrchestra\MediaBundle\OpenOrchestraMediaBundle(),
             new OpenOrchestra\MediaModelBundle\OpenOrchestraMediaModelBundle(),
-            new OpenOrchestra\WorkflowFunctionModelBundle\OpenOrchestraWorkflowFunctionModelBundle(),
-            new OpenOrchestra\WorkflowFunctionBundle\OpenOrchestraWorkflowFunctionBundle(),
 
             new OpenOrchestra\ApiBundle\OpenOrchestraApiBundle(),
             new OpenOrchestra\DisplayBundle\OpenOrchestraDisplayBundle(),
@@ -53,7 +51,7 @@ class AppKernel extends Kernel
             new OpenOrchestra\MediaAdminBundle\OpenOrchestraMediaAdminBundle(),
             new OpenOrchestra\MediaAdminModelBundle\OpenOrchestraMediaAdminModelBundle(),
             new OpenOrchestra\MediaFileBundle\OpenOrchestraMediaFileBundle(),
-            new OpenOrchestra\WorkflowFunctionAdminBundle\OpenOrchestraWorkflowFunctionAdminBundle(),
+            new OpenOrchestra\WorkflowAdminBundle\OpenOrchestraWorkflowAdminBundle(),
 
             // Need parameters set by some of our bundles
             new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),

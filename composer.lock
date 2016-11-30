@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1fabf6e76f5ba8f7e1cbdf95f06c1d1f",
-    "content-hash": "cbcf198d0b429c80b08ddad8b5fb1a36",
+    "hash": "c41ff452c9ee4564022a4b46c5598acc",
+    "content-hash": "6f9bc64b7134e97c8db6ebe0a39e14db",
     "packages": [
         {
             "name": "alchemy/binary-driver",
@@ -2688,12 +2688,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "479c75b8004fcd056e9a9a841b98241291f1139f"
+                "reference": "a626b9423f1290f3f41f32e82fca5cd82bdd3f18"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/479c75b8004fcd056e9a9a841b98241291f1139f",
-                "reference": "479c75b8004fcd056e9a9a841b98241291f1139f",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/a626b9423f1290f3f41f32e82fca5cd82bdd3f18",
+                "reference": "a626b9423f1290f3f41f32e82fca5cd82bdd3f18",
                 "shasum": ""
             },
             "require": {
@@ -2707,7 +2707,6 @@
                 "open-orchestra/open-orchestra-display-bundle": "self.version",
                 "open-orchestra/open-orchestra-model-interface": "self.version",
                 "open-orchestra/open-orchestra-user-bundle": "self.version",
-                "open-orchestra/open-orchestra-workflow-function-bundle": "self.version",
                 "php": "~5.6.0",
                 "sensio/generator-bundle": "~3.0.0",
                 "stfalcon/tinymce-bundle": "~1.1.0",
@@ -2778,7 +2777,9 @@
                     "OpenOrchestra\\Backoffice\\": "Backoffice/",
                     "OpenOrchestra\\GroupBundle\\": "GroupBundle/",
                     "OpenOrchestra\\ApiBundle\\": "ApiBundle/",
-                    "OpenOrchestra\\UserAdminBundle\\": "UserAdminBundle/"
+                    "OpenOrchestra\\UserAdminBundle\\": "UserAdminBundle/",
+                    "OpenOrchestra\\Workflow\\": "Workflow/",
+                    "OpenOrchestra\\WorkflowAdminBundle\\": "WorkflowAdminBundle/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -2792,7 +2793,7 @@
                 }
             ],
             "description": "This bundle provide the Back Office part of Open Orchestra",
-            "time": "2016-11-30 08:17:50"
+            "time": "2016-11-30 10:13:02"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2850,12 +2851,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-elastica-bundle.git",
-                "reference": "db84c5f3e08800af013f37042a2bac846f01007a"
+                "reference": "05a03ae79a629da5968474f91e67086dec6fb2fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-elastica-bundle/zipball/db84c5f3e08800af013f37042a2bac846f01007a",
-                "reference": "db84c5f3e08800af013f37042a2bac846f01007a",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-elastica-bundle/zipball/05a03ae79a629da5968474f91e67086dec6fb2fc",
+                "reference": "05a03ae79a629da5968474f91e67086dec6fb2fc",
                 "shasum": ""
             },
             "require": {
@@ -2874,7 +2875,6 @@
                 "open-orchestra/open-orchestra-cms-bundle": "self.version",
                 "open-orchestra/open-orchestra-libs": "self.version",
                 "open-orchestra/open-orchestra-user-bundle": "self.version",
-                "open-orchestra/open-orchestra-workflow-function-bundle": "self.version",
                 "phake/phake": "~2.3.0",
                 "phpunit/phpunit": "~5.4.0"
             },
@@ -2904,7 +2904,7 @@
                 }
             ],
             "description": "A bundle to index Open Orchestra elements with Elastica Search",
-            "time": "2016-11-14 13:50:59"
+            "time": "2016-11-30 10:26:34"
         },
         {
             "name": "open-orchestra/open-orchestra-libs",
@@ -2958,12 +2958,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-admin-bundle.git",
-                "reference": "776bd85747d6083a9ee4a8df82dd57a84d6bd6c2"
+                "reference": "30585729f227b80b13e52a747ad2a5950988f5ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/776bd85747d6083a9ee4a8df82dd57a84d6bd6c2",
-                "reference": "776bd85747d6083a9ee4a8df82dd57a84d6bd6c2",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/30585729f227b80b13e52a747ad2a5950988f5ec",
+                "reference": "30585729f227b80b13e52a747ad2a5950988f5ec",
                 "shasum": ""
             },
             "require": {
@@ -2990,7 +2990,6 @@
                 "open-orchestra/open-orchestra-model-interface": "self.version",
                 "open-orchestra/open-orchestra-mongo-libs": "self.version",
                 "open-orchestra/open-orchestra-user-bundle": "self.version",
-                "open-orchestra/open-orchestra-workflow-function-bundle": "self.version",
                 "phake/phake": "~2.3.0",
                 "phpunit/phpunit": "~5.4.0"
             },
@@ -3047,7 +3046,7 @@
                 }
             ],
             "description": "This bundle integrate the media administration in the Back Office of Open Orchestra",
-            "time": "2016-11-28 13:57:13"
+            "time": "2016-11-30 10:29:45"
         },
         {
             "name": "open-orchestra/open-orchestra-media-bundle",
@@ -3147,12 +3146,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
-                "reference": "d040faf3ec4f3f5733cdc4c8eaa1e7aecab7dc07"
+                "reference": "7ec9439f3fe38cee61e128b3856af95701213140"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/d040faf3ec4f3f5733cdc4c8eaa1e7aecab7dc07",
-                "reference": "d040faf3ec4f3f5733cdc4c8eaa1e7aecab7dc07",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/7ec9439f3fe38cee61e128b3856af95701213140",
+                "reference": "7ec9439f3fe38cee61e128b3856af95701213140",
                 "shasum": ""
             },
             "require": {
@@ -3187,7 +3186,7 @@
                 }
             ],
             "description": "A MongoDB implemantation of the Open Orchestra Model Interface",
-            "time": "2016-11-30 08:12:31"
+            "time": "2016-11-30 09:21:03"
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
@@ -3195,12 +3194,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-interface.git",
-                "reference": "f626031521daeb953dc025d47f0548534cd56e5a"
+                "reference": "1e0cd0c3dc23b0782b2032cc99aa34aa5b5ea740"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/f626031521daeb953dc025d47f0548534cd56e5a",
-                "reference": "f626031521daeb953dc025d47f0548534cd56e5a",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/1e0cd0c3dc23b0782b2032cc99aa34aa5b5ea740",
+                "reference": "1e0cd0c3dc23b0782b2032cc99aa34aa5b5ea740",
                 "shasum": ""
             },
             "require": {
@@ -3232,7 +3231,7 @@
                 }
             ],
             "description": "Describe all entity and repository to implement for the whole OpenOrchestra project",
-            "time": "2016-11-30 08:09:38"
+            "time": "2016-11-30 09:18:27"
         },
         {
             "name": "open-orchestra/open-orchestra-mongo-libs",
@@ -3336,64 +3335,6 @@
             ],
             "description": "An override of FosUserBundle to provide authentication on Open Orchestra",
             "time": "2016-11-28 14:13:36"
-        },
-        {
-            "name": "open-orchestra/open-orchestra-workflow-function-bundle",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/open-orchestra/open-orchestra-workflow-function-bundle.git",
-                "reference": "3f643ef06fdb98119216f627b63ac04edb0be26f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-workflow-function-bundle/zipball/3f643ef06fdb98119216f627b63ac04edb0be26f",
-                "reference": "3f643ef06fdb98119216f627b63ac04edb0be26f",
-                "shasum": ""
-            },
-            "require": {
-                "doctrine/data-fixtures": "~1.2.0",
-                "doctrine/mongodb-odm-bundle": "~3.2.0",
-                "friendsofsymfony/user-bundle": "@alpha",
-                "open-orchestra/open-orchestra-base-bundle": "self.version",
-                "open-orchestra/open-orchestra-cms-bundle": "self.version",
-                "php": "~5.6.0",
-                "solution/mongo-odm-aggregation-bundle": "~0.1.1",
-                "stof/doctrine-extensions-bundle": "~1.2.1"
-            },
-            "require-dev": {
-                "codeclimate/php-test-reporter": "~0.3.2",
-                "open-orchestra/open-orchestra-base-api-bundle": "self.version",
-                "open-orchestra/open-orchestra-bbcode-bundle": "self.version",
-                "open-orchestra/open-orchestra-display-bundle": "self.version",
-                "open-orchestra/open-orchestra-libs": "self.version",
-                "open-orchestra/open-orchestra-model-interface": "self.version",
-                "open-orchestra/open-orchestra-mongo-libs": "self.version",
-                "open-orchestra/open-orchestra-user-bundle": "self.version",
-                "phake/phake": "~2.3.0",
-                "phpunit/phpunit": "~5.4.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "OpenOrchestra\\WorkflowFunctionBundle\\": "WorkflowFunctionBundle/",
-                    "OpenOrchestra\\WorkflowFunctionModelBundle\\": "WorkflowFunctionModelBundle/",
-                    "OpenOrchestra\\WorkflowFunction\\": "WorkflowFunction/",
-                    "OpenOrchestra\\WorkflowFunctionAdminBundle\\": "WorkflowFunctionAdminBundle/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "OpenOrchestra community",
-                    "homepage": "https://github.com/open-orchestra/open-orchestra-function-bundle/graphs/contributors"
-                }
-            ],
-            "description": "A workflow function bundle for Open Orchestra",
-            "time": "2016-11-28 11:28:17"
         },
         {
             "name": "paragonie/random_compat",
@@ -6242,21 +6183,21 @@
         },
         {
             "name": "sebastian/object-enumerator",
-            "version": "1.0.1",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/object-enumerator.git",
-                "reference": "12dc92be4c9b1286fd37c15d54f7c9d8524f29e0"
+                "reference": "d4ca2fb70344987502567bc50081c03e6192fb26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/object-enumerator/zipball/12dc92be4c9b1286fd37c15d54f7c9d8524f29e0",
-                "reference": "12dc92be4c9b1286fd37c15d54f7c9d8524f29e0",
+                "url": "https://api.github.com/repos/sebastianbergmann/object-enumerator/zipball/d4ca2fb70344987502567bc50081c03e6192fb26",
+                "reference": "d4ca2fb70344987502567bc50081c03e6192fb26",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.6",
-                "sebastian/recursion-context": "~1.0.4"
+                "sebastian/recursion-context": "~1.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "~5"
@@ -6284,20 +6225,20 @@
             ],
             "description": "Traverses array structures and object graphs to enumerate all referenced objects",
             "homepage": "https://github.com/sebastianbergmann/object-enumerator/",
-            "time": "2016-11-16 07:17:31"
+            "time": "2016-01-28 13:25:10"
         },
         {
             "name": "sebastian/recursion-context",
-            "version": "1.0.4",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/recursion-context.git",
-                "reference": "938df7a6478e72795e5f8266cff24d06e3136f2e"
+                "reference": "913401df809e99e4f47b27cdd781f4a258d58791"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/recursion-context/zipball/938df7a6478e72795e5f8266cff24d06e3136f2e",
-                "reference": "938df7a6478e72795e5f8266cff24d06e3136f2e",
+                "url": "https://api.github.com/repos/sebastianbergmann/recursion-context/zipball/913401df809e99e4f47b27cdd781f4a258d58791",
+                "reference": "913401df809e99e4f47b27cdd781f4a258d58791",
                 "shasum": ""
             },
             "require": {
@@ -6337,7 +6278,7 @@
             ],
             "description": "Provides functionality to recursively process PHP variables",
             "homepage": "http://www.github.com/sebastianbergmann/recursion-context",
-            "time": "2016-11-15 06:55:36"
+            "time": "2015-11-11 19:50:13"
         },
         {
             "name": "sebastian/resource-operations",
@@ -6483,7 +6424,6 @@
         "open-orchestra/open-orchestra-elastica-bundle": 20,
         "open-orchestra/open-orchestra-media-admin-bundle": 20,
         "open-orchestra/open-orchestra-model-bundle": 20,
-        "open-orchestra/open-orchestra-workflow-function-bundle": 20,
         "friendsofsymfony/user-bundle": 15,
         "open-orchestra/open-orchestra-base-bundle": 20,
         "open-orchestra/open-orchestra-base-api-bundle": 20,

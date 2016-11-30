@@ -1,9 +1,9 @@
 <?php
 
-namespace OpenOrchestra\FunctionalTests\WorkflowFunctionModelBundle\Repository;
+namespace OpenOrchestra\FunctionalTests\ModelBundle\Repository;
 
 use OpenOrchestra\BaseBundle\Tests\AbstractTest\AbstractKernelTestCase;
-use OpenOrchestra\WorkflowFunction\Repository\WorkflowRightRepositoryInterface;
+use OpenOrchestra\ModelInterface\Repository\WorkflowRightRepositoryInterface;
 use Phake;
 
 /**
@@ -27,8 +27,8 @@ class WorkflowRightRepositoryTest extends AbstractKernelTestCase
     {
         parent::setUp();
         static::bootKernel();
-        $this->repository = static::$kernel->getContainer()->get('open_orchestra_workflow_function.repository.workflow_right');
-        $this->workflowFunctionRepository = static::$kernel->getContainer()->get('open_orchestra_workflow_function.repository.workflow_function');
+        $this->repository = static::$kernel->getContainer()->get('open_orchestra_model.repository.workflow_right');
+        $this->workflowFunctionRepository = static::$kernel->getContainer()->get('open_orchestra_model.repository.workflow_function');
         $this->userRepository = static::$kernel->getContainer()->get('open_orchestra_user.repository.user');
     }
 
@@ -39,7 +39,7 @@ class WorkflowRightRepositoryTest extends AbstractKernelTestCase
     {
         $user = $this->userRepository->findOneByUsername('p-admin');
         $workflowRight = $this->repository->findOneByUserId($user->getId());
-        $this->assertInstanceOf('OpenOrchestra\WorkflowFunction\Model\WorkflowRightInterface', $workflowRight);
+        $this->assertInstanceOf('OpenOrchestra\ModelInterface\Model\WorkflowRightInterface', $workflowRight);
     }
 
     /**
@@ -54,7 +54,7 @@ class WorkflowRightRepositoryTest extends AbstractKernelTestCase
     /**
      * @param string $userId
      *
-     * @return \OpenOrchestra\WorkflowFunction\Model\WorkflowRightInterface
+     * @return \OpenOrchestra\ModelInterface\Model\WorkflowRightInterface
      */
     public function findOneByUserId($userId)
     {
@@ -79,7 +79,7 @@ class WorkflowRightRepositoryTest extends AbstractKernelTestCase
      */
     public function testHashElementWithFaKeWorkflowFunction()
     {
-        $fakeFunction = Phake::mock('OpenOrchestra\WorkflowFunction\Model\WorkflowFunctionInterface');
+        $fakeFunction = Phake::mock('OpenOrchestra\ModelInterface\Model\WorkflowFunctionInterface');
 
         $hasElement = $this->repository->hasElementWithWorkflowFunction($fakeFunction);
         $this->assertFalse($hasElement);
