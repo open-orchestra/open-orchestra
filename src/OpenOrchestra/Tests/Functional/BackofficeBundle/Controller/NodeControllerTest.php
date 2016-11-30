@@ -45,7 +45,7 @@ class NodeControllerTest extends AbstractFormTest
         $nodeRoot = $this->nodeRepository->findInLastVersion(NodeInterface::ROOT_NODE_ID, $this->language, $this->siteId);
         $nodeFixtureCommunity = $this->nodeRepository->findInLastVersion('fixture_page_community', $this->language, $this->siteId);
 
-         $url = '/admin/node/form/' . $nodeRoot->getId();
+         $url = '/admin/node/form/' . $this->siteId . '/' . $nodeRoot->getNodeId(). '/' . $this->language . '/' . $nodeRoot->getVersion();
          $this->client->request('GET', $url);
          $this->assertForm($this->client->getResponse());
 
@@ -53,7 +53,7 @@ class NodeControllerTest extends AbstractFormTest
          $this->client->request('GET', $url);
          $this->assertForm($this->client->getResponse());
 
-         $url = '/admin/node/form/' . $nodeFixtureCommunity->getId();
+         $url = '/admin/node/form/' . $this->siteId . '/' . $nodeFixtureCommunity->getNodeId(). '/' . $this->language . '/' . $nodeFixtureCommunity->getVersion();
          $this->client->request('GET', $url);
          $this->assertForm($this->client->getResponse());
 
@@ -77,7 +77,6 @@ class NodeControllerTest extends AbstractFormTest
 
         $nodeName = 'fixturetest' . time();
         $formNode['oo_node[name]'] = $nodeName;
-        $formNode['oo_node[boLabel]'] = $nodeName;
         $formNode['oo_node[nodeTemplateSelection][nodeSource]'] = 'root';
         $formNode['oo_node[routePattern]'] = '/page-test' .time();
 
