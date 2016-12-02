@@ -799,7 +799,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
         );
     }
 
-    public function testUpdateOrderBrotherNode()
+    public function testUpdateOrderOfBrothers()
     {
         $dm = static::$kernel->getContainer()->get('object_manager');
         $nodeNews = $this->repository->findOneByNodeId('fixture_page_news');
@@ -809,7 +809,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
         $dm->detach($nodeCommunity);
         $dm->detach($nodeNews);
 
-        $this->repository->updateOrderBrotherNode($nodeNews->getSiteId(), $nodeNews->getNodeId(), $nodeNews->getOrder(), $nodeNews->getParentId());
+        $this->repository->updateOrderOfBrothers($nodeNews->getSiteId(), $nodeNews->getNodeId(), $nodeNews->getOrder(), $nodeNews->getParentId());
 
         $nodeNewsAfterUpdate = $this->repository->findOneByNodeId('fixture_page_news');
         $nodeCommunityAfterUpdate = $this->repository->findOneByNodeId('fixture_page_community');
