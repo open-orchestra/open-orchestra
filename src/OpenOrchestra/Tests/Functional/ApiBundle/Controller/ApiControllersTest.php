@@ -47,7 +47,7 @@ class ApiControllersTest extends AbstractAuthenticatedTest
             12 => array('/api/content-type'),
             13 => array('/api/site'),
             14 => array('/api/site/list/available'),
-//            15 => array('/api/theme'),
+            15 => array('/api/theme'),
             16 => array('/api/role'),
             17 => array('/api/group'),
             18 => array('/api/redirection'),
@@ -56,6 +56,8 @@ class ApiControllersTest extends AbstractAuthenticatedTest
             21 => array('/api/datatable/translation'),
             22 => array('/api/trashcan/list'),
             23 => array('/api/translation/tinymce'),
+            24  => array('/api/node/list/tree/2/fr'),
+            25  => array('/api/node/list/tree/2/fr/root'),
         );
     }
 }

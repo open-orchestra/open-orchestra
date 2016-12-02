@@ -686,7 +686,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
      */
     public function testFindTreeNode()
     {
-        $tree = $this->repository->findTreeNode('2', 'fr');
+        $tree = $this->repository->findTreeNode('2', 'fr', '-');
 
         $this->assertCount(3, $tree);
 
@@ -799,5 +799,26 @@ class NodeRepositoryTest extends AbstractKernelTestCase
         );
     }
 
+    public function testUpdateOrderOfBrothers()
+    {
+        $dm = static::$kernel->getContainer()->get('object_manager');
+        $nodeNews = $this->repository->findOneByNodeId('fixture_page_news');
+        $nodeCommunity = $this->repository->findOneByNodeId('fixture_page_community');
+        $nodeContact= $this->repository->findOneByNodeId('fixture_page_contact');
+        $dm->detach($nodeContact);
+        $dm->detach($nodeCommunity);
+        $dm->detach($nodeNews);
+
+        $this->repository->updateOrderOfBrothers($nodeNews->getSiteId(), $nodeNews->getNodeId(), $nodeNews->getOrder(), $nodeNews->getParentId());
+
+        $nodeNewsAfterUpdate = $this->repository->findOneByNodeId('fixture_page_news');
+        $nodeCommunityAfterUpdate = $this->repository->findOneByNodeId('fixture_page_community');
+        $nodeContactAfterUpdate = $this->repository->findOneByNodeId('fixture_page_contact');
+
+        $this->assertSame($nodeNews->getOrder(), $nodeNewsAfterUpdate->getOrder());
+        $this->assertSame($nodeCommunity->getOrder(), $nodeCommunityAfterUpdate->getOrder());
+        $this->assertSame($nodeContact->getOrder() + 1, $nodeContactAfterUpdate->getOrder());
+
+    }
 
 }
