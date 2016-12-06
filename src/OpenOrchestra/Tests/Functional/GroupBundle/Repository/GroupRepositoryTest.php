@@ -178,9 +178,9 @@ class GroupRepositoryTest extends AbstractKernelTestCase
      */
     protected function generateMongoIdForSite(array $siteIds)
     {
-        foreach($siteIds as $key => $siteId) {
+        foreach ($siteIds as $key => $siteId) {
             $site = $this->siteRepository->findOneBySiteId($siteId);
-            if(null !== $site) {
+            if (null !== $site) {
                 $siteIds[$key] = $site->getId();
             } else {
                 unset($siteIds[$key]);
