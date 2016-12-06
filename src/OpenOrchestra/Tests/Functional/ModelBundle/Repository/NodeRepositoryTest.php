@@ -799,6 +799,9 @@ class NodeRepositoryTest extends AbstractKernelTestCase
         );
     }
 
+    /**
+     * Test update order of brothers
+     */
     public function testUpdateOrderOfBrothers()
     {
         $dm = static::$kernel->getContainer()->get('object_manager');
