@@ -3,8 +3,6 @@ module.exports = function(grunt) {
     'javascript',
     'Main project task to generate javascripts',
     [
-      'coffee:discovering',
-      'coffee:compile',
       'commands:routing_dump',
       'commands:translation_dump',
       'babel:config',

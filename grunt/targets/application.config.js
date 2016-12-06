@@ -2,6 +2,7 @@ module.exports = {
     application : {
         bundles: [
             'openorchestrabackoffice',
+            'openorchestrauseradmin',
             'openorchestramediaadmin'
         ],
         dest: {
