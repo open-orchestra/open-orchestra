@@ -55,6 +55,7 @@ class ApiControllersTest extends AbstractAuthenticatedTest
             23 => array('/api/translation/tinymce'),
             24  => array('/api/node/list/tree/2/fr'),
             25  => array('/api/node/list/tree/2/fr/root'),
+            26  => array('/api/group/user/list'),
         );
     }
 }
