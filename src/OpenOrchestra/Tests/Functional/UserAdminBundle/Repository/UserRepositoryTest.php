@@ -3,7 +3,6 @@
 namespace OpenOrchestra\FunctionalTests\UserAdminBundle\Repository;
 
 use OpenOrchestra\BaseBundle\Tests\AbstractTest\AbstractKernelTestCase;
-use OpenOrchestra\Pagination\Configuration\FinderConfiguration;
 use OpenOrchestra\Pagination\Configuration\PaginateFinderConfiguration;
 use OpenOrchestra\UserBundle\Repository\UserRepository;
 
@@ -31,20 +30,13 @@ class UserRepositoryTest extends AbstractKernelTestCase
     }
 
     /**
-     * @param array  $descriptionEntity
-     * @param array  $search
-     * @param array  $order
-     * @param int    $skip
-     * @param int    $limit
-     * @param int    $count
+     * @param PaginateFinderConfiguration  $configuration
+     * @param int                          $count
      *
      * @dataProvider providePaginateAndSearch
      */
-    public function testFindForPaginate($descriptionEntity, $search, $order, $skip, $limit, $count)
+    public function testFindForPaginate(PaginateFinderConfiguration $configuration, $count)
     {
-        $this->markTestSkipped('To unskip when group list is refacto');
-        $configuration = PaginateFinderConfiguration::generateFromVariable($descriptionEntity, $search);
-        $configuration->setPaginateConfiguration($order, $skip, $limit);
         $users = $this->repository->findForPaginate($configuration);
         $this->assertCount($count, $users);
     }
@@ -54,13 +46,49 @@ class UserRepositoryTest extends AbstractKernelTestCase
      */
     public function providePaginateAndSearch()
     {
-        $descriptionEntity = $this->getDescriptionColumnEntity();
+        $configurationAll = PaginateFinderConfiguration::generateFromVariable(array(), 0, 100, array());
+        $configurationLimit = PaginateFinderConfiguration::generateFromVariable(array(), 0, 1, array());
+        $configurationSearch = PaginateFinderConfiguration::generateFromVariable(array(), 0, 100, array(), array('search' => 'demo'));
+        $configurationAllOrder = PaginateFinderConfiguration::generateFromVariable(array('username' => 'desc'), 0, 100, array());
 
         return array(
-            array($descriptionEntity, null, null, 0, 5, 5),
-            array($descriptionEntity, $this->generateSearchProvider('admin'), null, 0, 5, 2),
-            array($descriptionEntity, $this->generateSearchProvider('fakeUsername'), null, 0, 5, 0),
-            array($descriptionEntity, $this->generateSearchProvider('', 'user'), null, 0, 5 , 1),
+            'all' => array($configurationAll, 5),
+            'limit' => array($configurationLimit, 1),
+            'search' => array($configurationSearch, 2),
+            'order' => array($configurationAllOrder, 5),
+        );
+    }
+
+    /**
+     * @param PaginateFinderConfiguration  $configuration
+     * @param array                        $sitesId
+     * @param int                          $count
+     *
+     * @dataProvider providePaginateAndSearchWithSitesId
+     */
+    public function testPaginateAndSearchWithSitesId(PaginateFinderConfiguration $configuration, array $sitesId, $count)
+    {
+        $sitesId = $this->convertSiteIdInMongoId($sitesId);
+        $users = $this->repository->findForPaginateFilterBySiteIds($configuration, $sitesId);
+        $this->assertCount($count, $users);
+    }
+
+    /**
+     * @return array
+     */
+    public function providePaginateAndSearchWithSitesId()
+    {
+        $configurationAll = PaginateFinderConfiguration::generateFromVariable(array(), 0, 100, array());
+        $configurationLimit = PaginateFinderConfiguration::generateFromVariable(array(), 0, 1, array());
+        $configurationSearch = PaginateFinderConfiguration::generateFromVariable(array(), 0, 100, array(), array('search' => 'admin'));
+        $configurationAllOrder = PaginateFinderConfiguration::generateFromVariable(array('username' => 'desc'), 0, 100, array());
+
+        return array(
+            array($configurationAll, array(), 0),
+            array($configurationAll, array('2'), 2),
+            array($configurationLimit, array('2'), 1),
+            array($configurationAllOrder, array('2'), 2),
+            array($configurationSearch, array('2'), 2),
         );
     }
 
@@ -69,21 +97,28 @@ class UserRepositoryTest extends AbstractKernelTestCase
      */
     public function testCount()
     {
-        $configuration = FinderConfiguration::generateFromVariable($this->getDescriptionColumnEntity(), array());
-        $users = $this->repository->count($configuration);
+        $users = $this->repository->count();
         $this->assertEquals(5, $users);
     }
 
     /**
-     * @param array  $descriptionEntity
-     * @param array  $search
-     * @param int    $count
-     *
-     * @dataProvider provideColumnsAndSearchAndCount
+     * test count all filter with site id
      */
-    public function testCountWithFilter($descriptionEntity, $search, $count)
+    public function testCountFilterBySiteId()
     {
-        $configuration = FinderConfiguration::generateFromVariable($descriptionEntity, $search);
+        $sitesId = $this->convertSiteIdInMongoId(array('2'));
+        $users = $this->repository->countFilterBySiteIds($sitesId);
+        $this->assertEquals(2, $users);
+    }
+
+    /**
+     * @param PaginateFinderConfiguration $configuration
+     * @param int                         $count
+     *
+     * @dataProvider provideCountWithFilter
+     */
+    public function testCountWithFilter($configuration, $count)
+    {
         $users = $this->repository->countWithFilter($configuration);
         $this->assertEquals($count, $users);
     }
@@ -91,15 +126,51 @@ class UserRepositoryTest extends AbstractKernelTestCase
     /**
      * @return array
      */
-    public function provideColumnsAndSearchAndCount()
+    public function provideCountWithFilter()
     {
-        $descriptionEntity = $this->getDescriptionColumnEntity();
+        $configurationAll = PaginateFinderConfiguration::generateFromVariable(array(), 0, 100, array());
+        $configurationLimit = PaginateFinderConfiguration::generateFromVariable(array(), 0, 1, array());
+        $configurationSearch = PaginateFinderConfiguration::generateFromVariable(array(), 0, 100, array(), array('search' => 'demo'));
+        $configurationAllOrder = PaginateFinderConfiguration::generateFromVariable(array('username' => 'desc'), 0, 100, array());
 
         return array(
-            array($descriptionEntity, null, 5),
-            array($descriptionEntity, $this->generateSearchProvider('admin'), 2),
-            array($descriptionEntity, $this->generateSearchProvider('user'), 1),
-            array($descriptionEntity, $this->generateSearchProvider('', 'admin'), 2),
+            'all' => array($configurationAll, 5),
+            'limit' => array($configurationLimit, 5),
+            'search' => array($configurationSearch, 2),
+            'order' => array($configurationAllOrder, 5),
+        );
+    }
+
+    /**
+     * @param PaginateFinderConfiguration $configuration
+     * @param array                       $sitesId
+     * @param int                         $count
+     *
+     * @dataProvider provideCountWithFilterAndSitesId
+     */
+    public function testCountWithFilterAndSitesId($configuration, array $sitesId, $count)
+    {
+        $sitesId = $this->convertSiteIdInMongoId($sitesId);
+        $users = $this->repository->countWithFilterAndSiteIds($configuration, $sitesId);
+        $this->assertEquals($count, $users);
+    }
+
+    /**
+     * @return array
+     */
+    public function provideCountWithFilterAndSitesId()
+    {
+        $configurationAll = PaginateFinderConfiguration::generateFromVariable(array(), 0, 100, array());
+        $configurationLimit = PaginateFinderConfiguration::generateFromVariable(array(), 0, 1, array());
+        $configurationSearch = PaginateFinderConfiguration::generateFromVariable(array(), 0, 100, array(), array('search' => 'admin'));
+        $configurationAllOrder = PaginateFinderConfiguration::generateFromVariable(array('username' => 'desc'), 0, 100, array());
+
+        return array(
+            array($configurationAll, array(), 0),
+            array($configurationAll, array('2'), 2),
+            array($configurationLimit, array('2'), 2),
+            array($configurationAllOrder, array('2'), 2),
+            array($configurationSearch, array('2'), 2),
         );
     }
 
@@ -129,36 +200,18 @@ class UserRepositoryTest extends AbstractKernelTestCase
     }
 
     /**
-     * Generate columns of content with search value
-     *
-     * @param string $searchUsername
-     * @param string $globalSearch
+     * @param array $sitesId
      *
      * @return array
      */
-    protected function generateSearchProvider($searchUsername = '', $globalSearch = '')
+    protected function convertSiteIdInMongoId(array $sitesId)
     {
-        $search = array();
-        if (!empty($searchUsername)) {
-            $search['columns'] = array('username' => $searchUsername);
-        }
-        if (!empty($globalSearch)) {
-            $search['global'] = $globalSearch;
+        $sitesMongoId = array();
+
+        foreach ($sitesId as $siteId) {
+            $sitesMongoId[] = static::$kernel->getContainer()->get('open_orchestra_model.repository.site')->findOneBySiteId($siteId)->getId();
         }
 
-        return $search;
+        return $sitesMongoId;
     }
-
-    /**
-     * Generate relation between columns names and entities attributes
-     *
-     * @return array
-     */
-    protected function getDescriptionColumnEntity()
-    {
-        return array(
-            'username' => array('key' => 'username', 'field' => 'username', 'type' => 'string')
-        );
-    }
-
 }

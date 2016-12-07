@@ -48,4 +48,3 @@ before_script:
 script:
   - ./bin/phpunit -c app/ --testsuite=unit
   - ./bin/phpunit -c app/ --testsuite=functional
-  - ./test-js.sh
