@@ -495,16 +495,16 @@
         },
         {
             "name": "doctrine/common",
-            "version": "v2.7.0",
+            "version": "v2.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/common.git",
-                "reference": "223a2925acb40578fdc338deddbd461b091501ac"
+                "reference": "5954c297e9d93ff84554906c2fbbc2a133c43941"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/common/zipball/223a2925acb40578fdc338deddbd461b091501ac",
-                "reference": "223a2925acb40578fdc338deddbd461b091501ac",
+                "url": "https://api.github.com/repos/doctrine/common/zipball/5954c297e9d93ff84554906c2fbbc2a133c43941",
+                "reference": "5954c297e9d93ff84554906c2fbbc2a133c43941",
                 "shasum": ""
             },
             "require": {
@@ -564,7 +564,7 @@
                 "persistence",
                 "spl"
             ],
-            "time": "2016-11-30 16:40:55"
+            "time": "2016-12-03 08:15:01"
         },
         {
             "name": "doctrine/data-fixtures",
@@ -2688,12 +2688,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "ea524e5757615f1edc50db019829d06cece9123e"
+                "reference": "5e08498a119c6d6f9f41aec1eaeec0cef442b609"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/ea524e5757615f1edc50db019829d06cece9123e",
-                "reference": "ea524e5757615f1edc50db019829d06cece9123e",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/5e08498a119c6d6f9f41aec1eaeec0cef442b609",
+                "reference": "5e08498a119c6d6f9f41aec1eaeec0cef442b609",
                 "shasum": ""
             },
             "require": {
@@ -2793,7 +2793,7 @@
                 }
             ],
             "description": "This bundle provide the Back Office part of Open Orchestra",
-            "time": "2016-12-02 16:14:21"
+            "time": "2016-12-06 16:00:57"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -3289,12 +3289,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-user-bundle.git",
-                "reference": "8b59a25eadd7c664f8844ba70dd0c9f6dee967e4"
+                "reference": "2a3ee95576e018a4ba7c1f583343d8afded4f4bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-user-bundle/zipball/8b59a25eadd7c664f8844ba70dd0c9f6dee967e4",
-                "reference": "8b59a25eadd7c664f8844ba70dd0c9f6dee967e4",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-user-bundle/zipball/2a3ee95576e018a4ba7c1f583343d8afded4f4bf",
+                "reference": "2a3ee95576e018a4ba7c1f583343d8afded4f4bf",
                 "shasum": ""
             },
             "require": {
@@ -3334,7 +3334,7 @@
                 }
             ],
             "description": "An override of FosUserBundle to provide authentication on Open Orchestra",
-            "time": "2016-11-28 14:13:36"
+            "time": "2016-12-06 16:02:24"
         },
         {
             "name": "paragonie/random_compat",
@@ -3662,16 +3662,16 @@
         },
         {
             "name": "sensio/distribution-bundle",
-            "version": "v5.0.14",
+            "version": "v5.0.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioDistributionBundle.git",
-                "reference": "e64947de9ebc37732a62f5115164484a9bee7fa6"
+                "reference": "d294b0665cf09c799e9c1993d5c776a5bf55cb85"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioDistributionBundle/zipball/e64947de9ebc37732a62f5115164484a9bee7fa6",
-                "reference": "e64947de9ebc37732a62f5115164484a9bee7fa6",
+                "url": "https://api.github.com/repos/sensiolabs/SensioDistributionBundle/zipball/d294b0665cf09c799e9c1993d5c776a5bf55cb85",
+                "reference": "d294b0665cf09c799e9c1993d5c776a5bf55cb85",
                 "shasum": ""
             },
             "require": {
@@ -3710,7 +3710,7 @@
                 "configuration",
                 "distribution"
             ],
-            "time": "2016-10-30 23:18:01"
+            "time": "2016-12-06 07:29:27"
         },
         {
             "name": "sensio/framework-extra-bundle",
