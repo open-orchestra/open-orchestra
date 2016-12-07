@@ -69,7 +69,7 @@ class UserRepositoryTest extends AbstractKernelTestCase
     public function testPaginateAndSearchWithSitesId(PaginateFinderConfiguration $configuration, array $sitesId, $count)
     {
         $sitesId = $this->convertSiteIdInMongoId($sitesId);
-        $users = $this->repository->findForPaginateFilterBySitesId($configuration, $sitesId);
+        $users = $this->repository->findForPaginateFilterBySiteIds($configuration, $sitesId);
         $this->assertCount($count, $users);
     }
 
@@ -107,7 +107,7 @@ class UserRepositoryTest extends AbstractKernelTestCase
     public function testCountFilterBySiteId()
     {
         $sitesId = $this->convertSiteIdInMongoId(array('2'));
-        $users = $this->repository->countFilterBySitesId($sitesId);
+        $users = $this->repository->countFilterBySiteIds($sitesId);
         $this->assertEquals(2, $users);
     }
 
@@ -151,7 +151,7 @@ class UserRepositoryTest extends AbstractKernelTestCase
     public function testCountWithFilterAndSitesId($configuration, array $sitesId, $count)
     {
         $sitesId = $this->convertSiteIdInMongoId($sitesId);
-        $users = $this->repository->countWithFilterAndSitesId($configuration, $sitesId);
+        $users = $this->repository->countWithFilterAndSiteIds($configuration, $sitesId);
         $this->assertEquals($count, $users);
     }
 
