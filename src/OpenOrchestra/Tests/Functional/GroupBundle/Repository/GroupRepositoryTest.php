@@ -37,49 +37,50 @@ class GroupRepositoryTest extends AbstractKernelTestCase
     }
 
     /**
-     * @param array  $descriptionEntity
-     * @param array  $search
-     * @param array  $order
-     * @param int    $skip
-     * @param int    $limit
-     * @param int    $count
+     * @param PaginateFinderConfiguration $configuration
+     * @param array                       $siteIds
+     * @param int                         $count
      *
-     * @dataProvider providePaginateAndSearch
+     * @dataProvider provideConfigurationAndSites
      */
-    public function testFindForPaginate($descriptionEntity, $search, $order, $skip, $limit, $count)
+    public function testFindForPaginate(PaginateFinderConfiguration $configuration, array $siteIds, $count)
     {
-        $this->markTestSkipped('To unskip when group list is refacto');
-        $configuration = PaginateFinderConfiguration::generateFromVariable($descriptionEntity, $search);
-        $configuration->setPaginateConfiguration($order, $skip, $limit);
-        $groups = $this->repository->findForPaginate($configuration);
+        $siteIds = $this->generateMongoIdForSite($siteIds);
+        $groups = $this->repository->findForPaginate($configuration, $siteIds);
+
         $this->assertCount($count, $groups);
+    }
+
+    /**
+     * test count all user
+     *
+     * @param PaginateFinderConfiguration $configuration
+     * @param array                       $siteIds
+     * @param int                         $count
+     *
+     * @dataProvider provideConfigurationAndSites
+     */
+    public function testCount(PaginateFinderConfiguration $configuration, array $siteIds, $count)
+    {
+        $siteIds = $this->generateMongoIdForSite($siteIds);
+        $groups = $this->repository->count($siteIds);
+
+        $this->assertEquals($count, $groups);
     }
 
     /**
      * @return array
      */
-    public function providePaginateAndSearch()
+    public function provideConfigurationAndSites()
     {
-        $descriptionEntity = $this->getDescriptionColumnEntity();
-
+        $configuration = new PaginateFinderConfiguration();
+        $configuration->setPaginateConfiguration(null, 0, 100, array('label' => 'labels'));
         return array(
-            1 => array($descriptionEntity, null, null, 0, 5, 3),
-            2 => array($descriptionEntity, $this->generateSearchProvider('group'), null, 0, 5, 2),
-            3 => array($descriptionEntity, $this->generateSearchProvider('', 'group'), null, 0, 5, 2),
-            4 => array($descriptionEntity, $this->generateSearchProvider('', 'fakeGroup'), null, 0, 5, 0),
-            5 => array($descriptionEntity, $this->generateSearchProvider('Demo'), null, 0, 5, 2),
+            array($configuration, array(), 0),
+            array($configuration, array('2'), 2),
+            array($configuration, array('2', '3'), 3),
+            array($configuration, array('test'), 0),
         );
-    }
-
-    /**
-     * test count all user
-     */
-    public function testCount()
-    {
-        $this->markTestSkipped('To unskip when group list is refacto');
-        $configuration = PaginateFinderConfiguration::generateFromVariable($this->getDescriptionColumnEntity(), array());
-        $groups = $this->repository->count($configuration);
-        $this->assertEquals(3, $groups);
     }
 
     /**
@@ -119,17 +120,17 @@ class GroupRepositoryTest extends AbstractKernelTestCase
     }
 
     /**
-     * @param array  $descriptionEntity
-     * @param array  $search
-     * @param int    $count
+     * @param PaginateFinderConfiguration $configuration
+     * @param array                       $siteIds
+     * @param int                         $count
      *
      * @dataProvider provideColumnsAndSearchAndCount
      */
-    public function testCountWithFilter($descriptionEntity, $search, $count)
+    public function testCountWithFilter(PaginateFinderConfiguration $configuration, array $siteIds, $count)
     {
-        $this->markTestSkipped('To unskip when group list is refacto');
-        $configuration = FinderConfiguration::generateFromVariable($descriptionEntity, $search);
-        $groups = $this->repository->countWithFilter($configuration);
+        $siteIds = $this->generateMongoIdForSite($siteIds);
+        $groups = $this->repository->countWithFilter($configuration, $siteIds);
+
         $this->assertEquals($count, $groups);
     }
 
@@ -137,13 +138,17 @@ class GroupRepositoryTest extends AbstractKernelTestCase
      * @return array
      */
     public function provideColumnsAndSearchAndCount(){
-        $descriptionEntity = $this->getDescriptionColumnEntity();
+
+        $configuration = new PaginateFinderConfiguration();
+        $configuration->setPaginateConfiguration(null, 0, 100, array('label' => 'labels'));
+
+        $configuration->setSearch(array('language' => 'en', 'label' => 'site'));
 
         return array(
-            array($descriptionEntity, null, 3),
-            array($descriptionEntity, $this->generateSearchProvider('group'), 2),
-            array($descriptionEntity, $this->generateSearchProvider('Demo'), 2),
-            array($descriptionEntity, $this->generateSearchProvider('', 'fakeName'), 0),
+            array($configuration, array(), 0),
+            array($configuration, array('2'), 1),
+            array($configuration, array('2', '3'), 1),
+            array($configuration, array('test'), 0),
         );
     }
 
@@ -166,6 +171,23 @@ class GroupRepositoryTest extends AbstractKernelTestCase
         }
 
         return $search;
+    }
+
+    /**
+     * @param array $siteIds
+     */
+    protected function generateMongoIdForSite(array $siteIds)
+    {
+        foreach ($siteIds as $key => $siteId) {
+            $site = $this->siteRepository->findOneBySiteId($siteId);
+            if (null !== $site) {
+                $siteIds[$key] = $site->getId();
+            } else {
+                unset($siteIds[$key]);
+            }
+        }
+
+        return $siteIds;
     }
 
     /**
