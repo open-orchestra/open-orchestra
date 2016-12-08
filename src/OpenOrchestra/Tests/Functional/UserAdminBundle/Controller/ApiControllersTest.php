@@ -13,12 +13,13 @@ class ApiControllersTest extends AbstractAuthenticatedTest
 {
     /**
      * @param string $url
+     * @param string $method
      *
      * @dataProvider provideApiUrl
      */
-    public function testApi($url)
+    public function testApi($url, $method = 'GET')
     {
-        $this->client->request('GET', $url . '?access_token=' . $this->getAccessToken());
+        $this->client->request($method, $url . '?access_token=' . $this->getAccessToken());
 
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
         $this->assertSame('application/json', $this->client->getResponse()->headers->get('content-type'));
@@ -31,6 +32,7 @@ class ApiControllersTest extends AbstractAuthenticatedTest
     {
         return array(
             array('/api/user'),
+            array('/api/user/delete-multiple', 'DELETE'),
         );
     }
 }
