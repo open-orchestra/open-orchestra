@@ -22,8 +22,6 @@ class ApiControllersSecurityTest extends AbstractAuthenticatedTest
      */
     public function testApi($url, $method = 'GET')
     {
-        $this->markTestSkipped('To reactivate when API roles will be implemented');
-
         $this->client->request($method, $url . '?access_token=' . $this->getAccessToken());
         $this->assertEquals(403, $this->client->getResponse()->getStatusCode());
     }
@@ -36,10 +34,10 @@ class ApiControllersSecurityTest extends AbstractAuthenticatedTest
         return array(
             1  => array('/api/node/root'),
             2  => array('/api/node/root/show-or-create'),
-            3  => array('/api/node/list/tree/2/fr'),
+            //3  => array('/api/node/list/tree/2/fr/root'),
             4  => array('/api/node/root/delete', "DELETE"),
             5  => array('/api/node/root/children/update/order', 'PUT'),
-            6  => array('/api/api-client'),
+            /*6  => array('/api/api-client'),
             7  => array('/api/api-client/root/delete', "DELETE"),
             8  => array('/api/content-type'),
             9  => array('/api/content-type/fake-content-type-id'),
@@ -72,7 +70,7 @@ class ApiControllersSecurityTest extends AbstractAuthenticatedTest
             36 => array('/api/role/show/root'),
             37 => array('/api/role/type-node'),
             38 => array('/api/role/type/folder'),
-            39 => array('/api/role/root/delete', 'DELETE'),
+            39 => array('/api/role/root/delete', 'DELETE'),*/
         );
     }
 }
