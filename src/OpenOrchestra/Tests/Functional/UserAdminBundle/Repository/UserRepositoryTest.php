@@ -200,6 +200,26 @@ class UserRepositoryTest extends AbstractKernelTestCase
     }
 
     /**
+     * Test remove users
+     */
+    public function testRemoveUsers()
+    {
+        $dm = static::$kernel->getContainer()->get('object_manager');
+        $userDemo = $this->repository->findOneByUsername('demo');
+        $userSAdmin = $this->repository->findOneByUsername('s-admin');
+
+        $userIds = array($userDemo->geTId(), $userSAdmin->getId());
+
+        $this->repository->removeUsers($userIds);
+        $this->assertNull($this->repository->findOneByUsername('demo'));
+        $this->assertNull($this->repository->findOneByUsername('s-admin'));
+
+        $dm->persist(clone $userDemo);
+        $dm->persist(clone $userSAdmin);
+        $dm->flush();
+    }
+
+    /**
      * @param array $sitesId
      *
      * @return array
