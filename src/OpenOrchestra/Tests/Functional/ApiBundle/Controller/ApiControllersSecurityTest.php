@@ -34,9 +34,8 @@ class ApiControllersSecurityTest extends AbstractAuthenticatedTest
         return array(
             1  => array('/api/node/root'),
             2  => array('/api/node/root/show-or-create'),
-            //3  => array('/api/node/list/tree/2/fr/root'),
-            4  => array('/api/node/root/delete', "DELETE"),
-            5  => array('/api/node/root/children/update/order', 'PUT'),
+            3  => array('/api/node/root/delete', "DELETE"),
+            4  => array('/api/node/root/children/update/order', 'PUT'),
             /*6  => array('/api/api-client'),
             7  => array('/api/api-client/root/delete', "DELETE"),
             8  => array('/api/content-type'),
