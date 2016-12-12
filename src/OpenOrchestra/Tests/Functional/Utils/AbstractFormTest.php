@@ -19,9 +19,6 @@ abstract class AbstractFormTest extends AbstractAuthenticatedTest
      */
     protected function submitForm(Form $form)
     {
-        $action = $form->getFormNode()->getAttribute('data-action');
-        $form->getFormNode()->setAttribute('action', $action);
-
         return $this->client->submit($form);
     }
 
