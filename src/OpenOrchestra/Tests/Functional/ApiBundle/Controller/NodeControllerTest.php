@@ -54,7 +54,7 @@ class NodeControllerTest extends AbstractAuthenticatedTest
         $this->markTestSkipped('To reactivate when API roles will be implemented');
 
         $node = $this->nodeRepository->findOneCurrentlyPublished('fixture_page_contact','fr','2');
-        $node->getStatus()->setPublished(false);
+        $node->getStatus()->setPublishedState(false);
         static::$kernel->getContainer()->get('object_manager')->flush();
 
         $nbNode = count($this->nodeRepository->findLastVersionByType('2'));
@@ -80,7 +80,7 @@ class NodeControllerTest extends AbstractAuthenticatedTest
     protected function republishNodes($nodes)
     {
         foreach ($nodes as $node) {
-            $node->getStatus()->setPublished(true);
+            $node->getStatus()->setPublishedState(true);
         }
     }
 
