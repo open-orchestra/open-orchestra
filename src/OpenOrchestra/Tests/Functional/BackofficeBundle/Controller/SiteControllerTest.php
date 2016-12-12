@@ -70,6 +70,7 @@ class SiteControllerTest extends AbstractFormTest
      */
     public function testUniqueSiteId()
     {
+        $this->markTestSkipped('Updated when site form is refacto');
         $this->assertSiteCount(0, $this->siteId);
 
         $this->createSite();
