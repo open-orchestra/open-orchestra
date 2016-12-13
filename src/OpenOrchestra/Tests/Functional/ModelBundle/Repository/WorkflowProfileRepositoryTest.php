@@ -33,16 +33,16 @@ class WorkflowProfileRepositoryTest extends AbstractKernelTestCase
     /**
      * Test hasTransition
      *
-     * @param string  $toCriteria
-     * @param string  $fromCriteria
+     * @param string  $fromStatusName
+     * @param string  $toStatusName
      * @param boolean $expectedBool
      *
      * @dataProvider provideTransitions
      */
-    public function testHasTransition($fromCriteria, $toCriteria, $expectedBool)
+    public function testHasTransition($fromStatusName, $toStatusName, $expectedBool)
     {
-        $statusFrom = $this->statusRepository->findOneBy($fromCriteria);
-        $statusTo = $this->statusRepository->findOneBy($toCriteria);
+        $statusFrom = $this->statusRepository->findOneByName($fromStatusName);
+        $statusTo = $this->statusRepository->findOneByName($toStatusName);
 
         $this->assertSame($expectedBool, $this->repository->hasTransition($statusFrom, $statusTo));
     }
@@ -55,8 +55,8 @@ class WorkflowProfileRepositoryTest extends AbstractKernelTestCase
     public function provideTransitions()
     {
         return array(
-            array(array('initial' => true), array('translationState' => true)                   , false),
-            array(array('initial' => true), array('published' => true, 'blockedEdition' => true), true),
+            array('draft', 'toTranslate', false),
+            array('draft', 'published'  , true),
         );
     }
 }
