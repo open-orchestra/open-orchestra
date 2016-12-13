@@ -14,6 +14,7 @@
   "require": {
     "php": "~5.6.0",
     "incenteev/composer-parameter-handler": "~2.1.2",
+    "alav/composer-assets": "~1.0.0",
     "sensio/distribution-bundle": "~5.0.0",
     "open-orchestra/open-orchestra-base-api-mongo-model-bundle": "self.version",
     "open-orchestra/open-orchestra-cms-bundle": "self.version",
@@ -79,7 +80,7 @@
     "incenteev-parameters": {
       "file": "app/config/parameters.yml"
     },
-    "require-npm": {
+    "npm-assets": {
       "babel-preset-es2015": "~6.3.0",
       "grunt-babel": "~6.0.0",
       "grunt-browserify": "~5.0.0"
