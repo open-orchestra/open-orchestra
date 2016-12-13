@@ -4,9 +4,56 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "bf498480fdfa3cc3b6e8282c2bf49218",
-    "content-hash": "3c1d897e97a0c7d539c1b91ea601351c",
+    "hash": "fdcd2eed5b63ea0c253936ef5a4fcf10",
+    "content-hash": "9d42f1a78a0a750a9faa57ae72531c60",
     "packages": [
+        {
+            "name": "alav/composer-assets",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/alavieille/composer-assets.git",
+                "reference": "f88e690531002c70025b31cb50c8fa39e1f14dfa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/alavieille/composer-assets/zipball/f88e690531002c70025b31cb50c8fa39e1f14dfa",
+                "reference": "f88e690531002c70025b31cb50c8fa39e1f14dfa",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0",
+                "mouf/nodejs-installer": "~1.0.10"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "~0.3.2",
+                "composer/composer": "~1.0@dev",
+                "phake/phake": "@stable",
+                "phpunit/phpunit": "4.5.*"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Alav\\ComposerAssets\\ComposerAssetsPlugin"
+            },
+            "autoload": {
+                "psr-4": {
+                    "Alav\\ComposerAssets\\": "src/ComposerAssets"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Composer Plugin for installing Assets (bower,npm)",
+            "homepage": "https://github.com/alavieille/composer-assets.git",
+            "keywords": [
+                "assets",
+                "bower",
+                "composer",
+                "npm"
+            ],
+            "time": "2016-07-05 16:14:35"
+        },
         {
             "name": "alchemy/binary-driver",
             "version": "1.6.0",
@@ -2207,52 +2254,6 @@
             "time": "2016-01-16 00:12:11"
         },
         {
-            "name": "koala-framework/composer-extra-assets",
-            "version": "v2.0.8",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/koala-framework/composer-extra-assets.git",
-                "reference": "8421543ac20ee59f5171e7b36a8830b7070a57cb"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/koala-framework/composer-extra-assets/zipball/8421543ac20ee59f5171e7b36a8830b7070a57cb",
-                "reference": "8421543ac20ee59f5171e7b36a8830b7070a57cb",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "^1.0",
-                "mouf/nodejs-installer": ">=1.0.2 <2.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "4.5.*"
-            },
-            "type": "composer-plugin",
-            "extra": {
-                "class": "Kwf\\ComposerExtraAssets\\Plugin",
-                "mouf": {
-                    "nodejs": {
-                        "version": ">=0.10"
-                    }
-                },
-                "branch-alias": {
-                    "dev-master": "1.1-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Kwf\\ComposerExtraAssets\\": "Kwf/ComposerExtraAssets"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-2-Clause"
-            ],
-            "description": "Composer Plugin for installing Assets using native npm/bower",
-            "homepage": "https://github.com/koala-framework/composer-extra-assets",
-            "time": "2016-09-07 08:58:41"
-        },
-        {
             "name": "kriswallsmith/assetic",
             "version": "v1.3.2",
             "source": {
@@ -2689,20 +2690,20 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "8d1044c803a87d76eb2e964bb320d1b915a607fc"
+                "reference": "6141af1fef9afea19d4ffc4beb4a9a8f89692be6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/8d1044c803a87d76eb2e964bb320d1b915a607fc",
-                "reference": "8d1044c803a87d76eb2e964bb320d1b915a607fc",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/6141af1fef9afea19d4ffc4beb4a9a8f89692be6",
+                "reference": "6141af1fef9afea19d4ffc4beb4a9a8f89692be6",
                 "shasum": ""
             },
             "require": {
+                "alav/composer-assets": "~1.0.0",
                 "braincrafted/bootstrap-bundle": "~2.2.0",
                 "doctrine/data-fixtures": "~1.2.0",
                 "friendsofsymfony/jsrouting-bundle": "~1.6.0",
                 "friendsofsymfony/user-bundle": "@alpha",
-                "koala-framework/composer-extra-assets": "~2.0.4",
                 "open-orchestra/open-orchestra-base-api-bundle": "self.version",
                 "open-orchestra/open-orchestra-base-bundle": "self.version",
                 "open-orchestra/open-orchestra-display-bundle": "self.version",
@@ -2732,7 +2733,7 @@
                         "version": "~4.4.3"
                     }
                 },
-                "require-npm": {
+                "npm-assets": {
                     "bower": "~1.7",
                     "grunt": "~0.4",
                     "grunt-cli": "~1.2",
@@ -2754,8 +2755,7 @@
                     "grunt-babel": "~6.0.0",
                     "grunt-browserify": "~5.0.0"
                 },
-                "expose-npm-packages": true,
-                "require-bower": {
+                "bower-assets": {
                     "datatables.net-buttons-bs": "1.1.0",
                     "jquery": "~2.1.1",
                     "jquery-tokeninput": "1.7.0",
@@ -2794,7 +2794,7 @@
                 }
             ],
             "description": "This bundle provide the Back Office part of Open Orchestra",
-            "time": "2016-12-13 11:39:02"
+            "time": "2016-12-13 15:10:28"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2959,20 +2959,20 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-admin-bundle.git",
-                "reference": "deb7af59f348e06df1b7d3502193fa861812385a"
+                "reference": "1f3ee776d4584ae457cbedb902c1a7f00e6b5517"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/deb7af59f348e06df1b7d3502193fa861812385a",
-                "reference": "deb7af59f348e06df1b7d3502193fa861812385a",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/1f3ee776d4584ae457cbedb902c1a7f00e6b5517",
+                "reference": "1f3ee776d4584ae457cbedb902c1a7f00e6b5517",
                 "shasum": ""
             },
             "require": {
+                "alav/composer-assets": "~1.0.0",
                 "doctrine/data-fixtures": "~1.2.0",
                 "ext-imagick": "~3.4.1",
                 "flowjs/flow-php-server": "~1.0.0",
                 "friendsofsymfony/user-bundle": "@alpha",
-                "koala-framework/composer-extra-assets": "~2.0.4",
                 "open-orchestra/open-orchestra-cms-bundle": "self.version",
                 "open-orchestra/open-orchestra-media-bundle": "self.version",
                 "open-orchestra/open-orchestra-media-file-bundle": "self.version",
@@ -3001,7 +3001,7 @@
                         "version": "~4.4.3"
                     }
                 },
-                "require-npm": {
+                "npm-assets": {
                     "bower": "~1.7",
                     "grunt": "~0.4",
                     "grunt-cli": "~1.2",
@@ -3019,8 +3019,7 @@
                     "glob": "~7.0.3",
                     "merge": "~1.2.0"
                 },
-                "expose-npm-packages": true,
-                "require-bower": {
+                "bower-assets": {
                     "jquery": "~2.1.1",
                     "jquery-ui": "~1.11.2",
                     "backbone": "~1.2.3",
@@ -3047,7 +3046,7 @@
                 }
             ],
             "description": "This bundle integrate the media administration in the Back Office of Open Orchestra",
-            "time": "2016-12-13 09:11:36"
+            "time": "2016-12-13 15:23:38"
         },
         {
             "name": "open-orchestra/open-orchestra-media-bundle",
