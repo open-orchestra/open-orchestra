@@ -125,10 +125,10 @@ open_orchestra_elastica:
 mongo_db_migrations:
      collection_name: "migration_versions"
      database_name: "%open_orchestra_cms.mongodb.database%"
-     dir_name: "%kernel.root_dir%/../vendor/open-orchestra/open-orchestra-model-bundle/ModelBundle/Migrations/MongoDB"
+     dir_name: "%kernel.root_dir%/../vendor/open-orchestra/open-orchestra-migration-bundle/MigrationBundle/Migrations"
      script_dir_name: "%kernel.root_dir%/scripts"
      name: "Open Orchestra MongoDB Migrations"
-     namespace: OpenOrchestra\ModelBundle\Migrations\MongoDB
+     namespace: OpenOrchestra\MigrationBundle\Migrations
 
 bazinga_js_translation:
     active_domains:

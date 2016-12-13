@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c41ff452c9ee4564022a4b46c5598acc",
-    "content-hash": "6f9bc64b7134e97c8db6ebe0a39e14db",
+    "hash": "bf498480fdfa3cc3b6e8282c2bf49218",
+    "content-hash": "3c1d897e97a0c7d539c1b91ea601351c",
     "packages": [
         {
             "name": "alchemy/binary-driver",
@@ -2689,12 +2689,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "56bc165469494edea4271a96186f6a63ab5eb0cf"
+                "reference": "23b81bad9c0b21f45eeda26fa821601f18359d24"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/56bc165469494edea4271a96186f6a63ab5eb0cf",
-                "reference": "56bc165469494edea4271a96186f6a63ab5eb0cf",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/23b81bad9c0b21f45eeda26fa821601f18359d24",
+                "reference": "23b81bad9c0b21f45eeda26fa821601f18359d24",
                 "shasum": ""
             },
             "require": {
@@ -2793,7 +2793,7 @@
                 }
             ],
             "description": "This bundle provide the Back Office part of Open Orchestra",
-            "time": "2016-12-12 10:06:03"
+            "time": "2016-12-13 09:09:03"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2958,16 +2958,15 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-admin-bundle.git",
-                "reference": "571ef5d6796edd41f2b66c7e8d4df0e78f194053"
+                "reference": "deb7af59f348e06df1b7d3502193fa861812385a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/571ef5d6796edd41f2b66c7e8d4df0e78f194053",
-                "reference": "571ef5d6796edd41f2b66c7e8d4df0e78f194053",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/deb7af59f348e06df1b7d3502193fa861812385a",
+                "reference": "deb7af59f348e06df1b7d3502193fa861812385a",
                 "shasum": ""
             },
             "require": {
-                "antimattr/mongodb-migrations-bundle": "~1.0.1",
                 "doctrine/data-fixtures": "~1.2.0",
                 "ext-imagick": "~3.4.1",
                 "flowjs/flow-php-server": "~1.0.0",
@@ -2976,6 +2975,7 @@
                 "open-orchestra/open-orchestra-cms-bundle": "self.version",
                 "open-orchestra/open-orchestra-media-bundle": "self.version",
                 "open-orchestra/open-orchestra-media-file-bundle": "self.version",
+                "open-orchestra/open-orchestra-migration-bundle": "self.version",
                 "php": "~5.6.0",
                 "php-ffmpeg/php-ffmpeg": "~0.6.1",
                 "symfony/monolog-bundle": "~2.11.0"
@@ -3046,7 +3046,7 @@
                 }
             ],
             "description": "This bundle integrate the media administration in the Back Office of Open Orchestra",
-            "time": "2016-12-12 10:01:40"
+            "time": "2016-12-13 09:11:36"
         },
         {
             "name": "open-orchestra/open-orchestra-media-bundle",
@@ -3141,22 +3141,59 @@
             "time": "2016-07-05 08:45:55"
         },
         {
+            "name": "open-orchestra/open-orchestra-migration-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/open-orchestra/open-orchestra-migration-bundle.git",
+                "reference": "c03161532323298b534703ae716fd385d6d72801"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-migration-bundle/zipball/c03161532323298b534703ae716fd385d6d72801",
+                "reference": "c03161532323298b534703ae716fd385d6d72801",
+                "shasum": ""
+            },
+            "require": {
+                "antimattr/mongodb-migrations-bundle": "~1.0.1",
+                "php": "~5.6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "OpenOrchestra\\MigrationBundle\\": "MigrationBundle/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "OpenOrchestra community",
+                    "homepage": "https://github.com/open-orchestra/open-orchestra-migration-bundle/graphs/contributors"
+                }
+            ],
+            "description": "A bundle which contains the mongo migrations for Open Orchestra",
+            "time": "2016-12-12 13:14:48"
+        },
+        {
             "name": "open-orchestra/open-orchestra-model-bundle",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
-                "reference": "b5128785ac2b2cc9f7c2bbba3dda6049c3aa669e"
+                "reference": "5e89725d0a66cc10f1da66d3f8ee48fe5a7819ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/b5128785ac2b2cc9f7c2bbba3dda6049c3aa669e",
-                "reference": "b5128785ac2b2cc9f7c2bbba3dda6049c3aa669e",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/5e89725d0a66cc10f1da66d3f8ee48fe5a7819ec",
+                "reference": "5e89725d0a66cc10f1da66d3f8ee48fe5a7819ec",
                 "shasum": ""
             },
             "require": {
-                "antimattr/mongodb-migrations-bundle": "~1.0.1",
                 "doctrine/data-fixtures": "~1.2.0",
+                "open-orchestra/open-orchestra-migration-bundle": "self.version",
                 "open-orchestra/open-orchestra-model-interface": "self.version",
                 "open-orchestra/open-orchestra-mongo-libs": "self.version",
                 "php": "~5.6.0",
@@ -3186,7 +3223,7 @@
                 }
             ],
             "description": "A MongoDB implemantation of the Open Orchestra Model Interface",
-            "time": "2016-12-09 15:19:12"
+            "time": "2016-12-13 09:09:49"
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
@@ -6434,7 +6471,8 @@
         "open-orchestra/open-orchestra-media-file-bundle": 20,
         "open-orchestra/open-orchestra-model-interface": 20,
         "open-orchestra/open-orchestra-mongo-libs": 20,
-        "open-orchestra/open-orchestra-user-bundle": 20
+        "open-orchestra/open-orchestra-user-bundle": 20,
+        "open-orchestra/open-orchestra-migration-bundle": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
