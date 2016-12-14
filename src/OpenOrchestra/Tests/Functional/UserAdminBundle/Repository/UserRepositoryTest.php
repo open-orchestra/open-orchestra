@@ -260,7 +260,7 @@ class UserRepositoryTest extends AbstractKernelTestCase
     {
         $user = $this->repository->findOneByEmail($email);
         $this->assertInstanceOf(UserInterface::class, $user);
-        $this->assertEquals($user->getEmail(), $user);
+        $this->assertEquals($user->getEmail(), $email);
     }
 
     /**

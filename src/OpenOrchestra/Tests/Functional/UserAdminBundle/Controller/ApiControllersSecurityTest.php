@@ -22,8 +22,6 @@ class ApiControllersSecurityTest extends AbstractAuthenticatedTest
      */
     public function testApi($url, $method = 'GET')
     {
-        $this->markTestSkipped('To reactivate when API roles will be implemented');
-
         $this->client->request($method, $url . '?access_token=' . $this->getAccessToken());
 
         $this->assertEquals(403, $this->client->getResponse()->getStatusCode());
@@ -35,10 +33,8 @@ class ApiControllersSecurityTest extends AbstractAuthenticatedTest
     public function provideApiUrl()
     {
         return array(
-            array('/api/user/root'),
+            array('/api/user/fake_email'),
             array('/api/user'),
-            array('/api/user/root/delete', 'DELETE'),
-
         );
     }
 }
