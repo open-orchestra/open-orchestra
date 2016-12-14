@@ -223,14 +223,14 @@ class UserRepositoryTest extends AbstractKernelTestCase
     /**
      * Test remove users
      */
-    public function testCountsUsersByGroups()
+    public function testGetCountsUsersByGroups()
     {
         $groupDemo = $this->groupRepository->findOneByName('Demo group');
         $groupAdmin = $this->groupRepository->findOneByName('Site Admin demo');
 
         $groupIds = array($groupDemo->getId(), $groupAdmin->getId());
 
-        $count = $this->repository->countsUsersByGroups($groupIds);
+        $count = $this->repository->getCountsUsersByGroups($groupIds);
         $this->assertEquals(array($groupAdmin->getId() => 1, $groupDemo->getId() =>1), $count);
     }
 
