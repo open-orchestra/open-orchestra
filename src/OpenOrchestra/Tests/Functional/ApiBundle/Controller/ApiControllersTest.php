@@ -17,10 +17,10 @@ class ApiControllersTest extends AbstractAuthenticatedTest
      *
      * @dataProvider provideApiUrl
      */
-    public function testApi($url, $getParameter = '')
+    public function testApi($url, $getParameter = '', $method = 'GET')
     {
         $baseGetParameter = '?access_token=' . $this->getAccessToken();
-        $this->client->request('GET', $url . $baseGetParameter . $getParameter);
+        $this->client->request($method, $url . $baseGetParameter . $getParameter);
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
         $this->assertSame('application/json', $this->client->getResponse()->headers->get('content-type'));
     }
@@ -47,7 +47,7 @@ class ApiControllersTest extends AbstractAuthenticatedTest
             14 => array('/api/site/list/available'),
             // 15 => array('/api/theme'),
             //16 => array('/api/role'),
-            //17 => array('/api/group'),
+            17 => array('/api/group/delete-multiple', '', 'DELETE'),
             //18 => array('/api/redirection'),
             //19 => array('/api/status'),
             //20 => array('/api/status/list'),
@@ -56,6 +56,7 @@ class ApiControllersTest extends AbstractAuthenticatedTest
             24  => array('/api/node/list/tree/2/fr'),
             25  => array('/api/node/list/tree/2/fr/root'),
             26  => array('/api/group/user/list'),
+            27  => array('/api/group/list'),
         );
     }
 }
