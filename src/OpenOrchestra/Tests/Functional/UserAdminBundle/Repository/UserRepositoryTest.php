@@ -27,6 +27,7 @@ class UserRepositoryTest extends AbstractKernelTestCase
 
         static::bootKernel();
         $this->repository = static::$kernel->getContainer()->get('open_orchestra_user.repository.user');
+        $this->groupRepository = static::$kernel->getContainer()->get('open_orchestra_user.repository.group');
     }
 
     /**
@@ -217,6 +218,20 @@ class UserRepositoryTest extends AbstractKernelTestCase
         $dm->persist(clone $userDemo);
         $dm->persist(clone $userSAdmin);
         $dm->flush();
+    }
+
+    /**
+     * Test remove users
+     */
+    public function testGetCountsUsersByGroups()
+    {
+        $groupDemo = $this->groupRepository->findOneByName('Demo group');
+        $groupAdmin = $this->groupRepository->findOneByName('Site Admin demo');
+
+        $groupIds = array($groupDemo->getId(), $groupAdmin->getId());
+
+        $count = $this->repository->getCountsUsersByGroups($groupIds);
+        $this->assertEquals(array($groupAdmin->getId() => 1, $groupDemo->getId() =>1), $count);
     }
 
     /**

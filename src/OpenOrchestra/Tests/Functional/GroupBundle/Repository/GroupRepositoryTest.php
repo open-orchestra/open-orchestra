@@ -5,6 +5,7 @@ namespace OpenOrchestra\FunctionalTests\GroupBundle\Repository;
 use OpenOrchestra\BaseBundle\Tests\AbstractTest\AbstractKernelTestCase;
 use OpenOrchestra\Pagination\Configuration\PaginateFinderConfiguration;
 use OpenOrchestra\UserBundle\Repository\GroupRepository;
+use OpenOrchestra\GroupBundle\Document\Group;
 
 /**
  * Class GroupRepositoryTest
@@ -149,6 +150,27 @@ class GroupRepositoryTest extends AbstractKernelTestCase
             array($configuration, array('2', '3'), 1),
             array($configuration, array('test'), 0),
         );
+    }
+
+    /**
+     * Test remove users
+     */
+    public function testRemoveGroups()
+    {
+        $dm = static::$kernel->getContainer()->get('object_manager');
+
+        $groupTest = new Group();
+        $groupTest->setName('test');
+        $dm->persist($groupTest);
+        $dm->flush();
+        $dm->clear();
+
+        $groupTest = $this->repository->findOneByName('test');
+
+        $groupIds = array($groupTest->getId());
+
+        $this->repository->removeGroups($groupIds);
+        $this->assertNull($this->repository->findOneByName('test'));
     }
 
     /**

@@ -12,15 +12,36 @@ use OpenOrchestra\FunctionalTests\Utils\AbstractAuthenticatedTest;
 class ApiControllersTest extends AbstractAuthenticatedTest
 {
     /**
+     * test duplicate group Api
+     */
+    public function testDuplicateGroupApi()
+    {
+        $this->groupRepository = static::$kernel->getContainer()->get('open_orchestra_user.repository.group');
+        $group = $this->groupRepository->findOneByName('Demo group');
+        $group = static::$kernel->getContainer()->get('open_orchestra_api.transformer_manager')->get('group')->transform($group);
+        $group = static::$kernel->getContainer()->get('jms_serializer')->serialize(
+            $group,
+            'json'
+        );
+        $this->client->request("POST", '/api/group/duplicate', array(), array(), array(), $group);
+        $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
+        $this->assertSame('application/json', $this->client->getResponse()->headers->get('content-type'));
+
+        $group = $this->groupRepository->findOneByName(new \MongoRegex('/^Demo group_.*$/'));
+        static::$kernel->getContainer()->get('object_manager')->remove($group);
+        static::$kernel->getContainer()->get('object_manager')->flush();
+    }
+
+    /**
      * @param string $url
      * @param string $getParameter
      *
      * @dataProvider provideApiUrl
      */
-    public function testApi($url, $getParameter = '')
+    public function testApi($url, $getParameter = '', $method = 'GET')
     {
         $baseGetParameter = '?access_token=' . $this->getAccessToken();
-        $this->client->request('GET', $url . $baseGetParameter . $getParameter);
+        $this->client->request($method, $url . $baseGetParameter . $getParameter);
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
         $this->assertSame('application/json', $this->client->getResponse()->headers->get('content-type'));
     }
@@ -47,7 +68,7 @@ class ApiControllersTest extends AbstractAuthenticatedTest
             14 => array('/api/site/list/available'),
             // 15 => array('/api/theme'),
             //16 => array('/api/role'),
-            //17 => array('/api/group'),
+            17 => array('/api/group/delete-multiple', '', 'DELETE'),
             //18 => array('/api/redirection'),
             //19 => array('/api/status'),
             //20 => array('/api/status/list'),
@@ -56,6 +77,7 @@ class ApiControllersTest extends AbstractAuthenticatedTest
             24  => array('/api/node/list/tree/2/fr'),
             25  => array('/api/node/list/tree/2/fr/root'),
             26  => array('/api/group/user/list'),
+            27  => array('/api/group/list'),
         );
     }
 }
