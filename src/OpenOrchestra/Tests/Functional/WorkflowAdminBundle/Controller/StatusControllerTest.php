@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenOrchestra\FunctionalTests\ApiBundle\Controller;
+namespace OpenOrchestra\FunctionalTests\WorkflowAdminBundle\Controller;
 
 use OpenOrchestra\FunctionalTests\Utils\AbstractAuthenticatedTest;
 use OpenOrchestra\ModelInterface\Repository\StatusRepositoryInterface;
