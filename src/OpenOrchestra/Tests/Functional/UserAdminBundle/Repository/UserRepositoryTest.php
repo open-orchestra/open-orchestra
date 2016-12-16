@@ -4,6 +4,7 @@ namespace OpenOrchestra\FunctionalTests\UserAdminBundle\Repository;
 
 use OpenOrchestra\BaseBundle\Tests\AbstractTest\AbstractKernelTestCase;
 use OpenOrchestra\Pagination\Configuration\PaginateFinderConfiguration;
+use OpenOrchestra\UserBundle\Model\UserInterface;
 use OpenOrchestra\UserBundle\Repository\UserRepository;
 
 /**
@@ -248,5 +249,29 @@ class UserRepositoryTest extends AbstractKernelTestCase
         }
 
         return $sitesMongoId;
+    }
+
+    /**
+     * @param string $email
+     *
+     * @dataProvider provideEmail
+     */
+    public function testFindOneByEmail($email)
+    {
+        $user = $this->repository->findOneByEmail($email);
+        $this->assertInstanceOf(UserInterface::class, $user);
+        $this->assertEquals($user->getEmail(), $email);
+    }
+
+    /**
+     * @return array
+     */
+    public function provideEmail()
+    {
+        return array(
+            array('developer@fixtures.com'),
+            array('p-admin@fixtures.com'),
+            array('s-admin@fixtures.com'),
+        );
     }
 }

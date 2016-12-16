@@ -31,6 +31,7 @@ class ApiControllersTest extends AbstractAuthenticatedTest
     public function provideApiUrl()
     {
         return array(
+            array('/api/user/fake_email'),
             array('/api/user'),
             array('/api/user/delete-multiple', 'DELETE'),
         );
