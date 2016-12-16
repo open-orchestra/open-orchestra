@@ -2690,12 +2690,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "b8439eb36f431dfd3e4cc16c70bf6dac47e4d6b5"
+                "reference": "e97ce99cd8a7f8d69d965eadb1f3ecf00a015888"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/b8439eb36f431dfd3e4cc16c70bf6dac47e4d6b5",
-                "reference": "b8439eb36f431dfd3e4cc16c70bf6dac47e4d6b5",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/e97ce99cd8a7f8d69d965eadb1f3ecf00a015888",
+                "reference": "e97ce99cd8a7f8d69d965eadb1f3ecf00a015888",
                 "shasum": ""
             },
             "require": {
@@ -2794,7 +2794,7 @@
                 }
             ],
             "description": "This bundle provide the Back Office part of Open Orchestra",
-            "time": "2016-12-16 13:19:24"
+            "time": "2016-12-16 15:18:23"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -3054,12 +3054,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-bundle.git",
-                "reference": "21a02b6c513761ab347ac70b00e2d39afe825a9b"
+                "reference": "791c5530bae8a69d44654c62760b40a3c9ba132f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/21a02b6c513761ab347ac70b00e2d39afe825a9b",
-                "reference": "21a02b6c513761ab347ac70b00e2d39afe825a9b",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/791c5530bae8a69d44654c62760b40a3c9ba132f",
+                "reference": "791c5530bae8a69d44654c62760b40a3c9ba132f",
                 "shasum": ""
             },
             "require": {
@@ -3096,7 +3096,7 @@
                 }
             ],
             "description": "A media bundle for Open Orchestra",
-            "time": "2016-12-07 11:33:48"
+            "time": "2016-12-16 14:48:57"
         },
         {
             "name": "open-orchestra/open-orchestra-media-file-bundle",
@@ -3183,12 +3183,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
-                "reference": "7431c1137d76adf8b818e7b2017adb36480baef8"
+                "reference": "e26b42645e90b912a45c2241ccdde27e487b9fae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/7431c1137d76adf8b818e7b2017adb36480baef8",
-                "reference": "7431c1137d76adf8b818e7b2017adb36480baef8",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/e26b42645e90b912a45c2241ccdde27e487b9fae",
+                "reference": "e26b42645e90b912a45c2241ccdde27e487b9fae",
                 "shasum": ""
             },
             "require": {
@@ -3223,7 +3223,7 @@
                 }
             ],
             "description": "A MongoDB implemantation of the Open Orchestra Model Interface",
-            "time": "2016-12-13 11:27:44"
+            "time": "2016-12-16 14:57:32"
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
@@ -3231,12 +3231,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-interface.git",
-                "reference": "1e70373b8f78cda0f7e828c08e9d8c64a66a5064"
+                "reference": "8a5cce89630028bba9f21aa7c965be3f00e5a520"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/1e70373b8f78cda0f7e828c08e9d8c64a66a5064",
-                "reference": "1e70373b8f78cda0f7e828c08e9d8c64a66a5064",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/8a5cce89630028bba9f21aa7c965be3f00e5a520",
+                "reference": "8a5cce89630028bba9f21aa7c965be3f00e5a520",
                 "shasum": ""
             },
             "require": {
@@ -3268,7 +3268,7 @@
                 }
             ],
             "description": "Describe all entity and repository to implement for the whole OpenOrchestra project",
-            "time": "2016-12-13 11:25:04"
+            "time": "2016-12-16 14:47:18"
         },
         {
             "name": "open-orchestra/open-orchestra-mongo-libs",
@@ -3326,12 +3326,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-user-bundle.git",
-                "reference": "fa1d951195600cb4294a5ec5b22e31f1a379daa7"
+                "reference": "04cd751c7df8ea350b79e0c9092587149b92788d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-user-bundle/zipball/fa1d951195600cb4294a5ec5b22e31f1a379daa7",
-                "reference": "fa1d951195600cb4294a5ec5b22e31f1a379daa7",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-user-bundle/zipball/04cd751c7df8ea350b79e0c9092587149b92788d",
+                "reference": "04cd751c7df8ea350b79e0c9092587149b92788d",
                 "shasum": ""
             },
             "require": {
@@ -3371,7 +3371,7 @@
                 }
             ],
             "description": "An override of FosUserBundle to provide authentication on Open Orchestra",
-            "time": "2016-12-16 13:18:27"
+            "time": "2016-12-16 14:57:40"
         },
         {
             "name": "paragonie/random_compat",

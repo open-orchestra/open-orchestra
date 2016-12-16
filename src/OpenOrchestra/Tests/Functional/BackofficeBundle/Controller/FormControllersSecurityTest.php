@@ -50,8 +50,6 @@ class FormControllersSecurityTest extends AbstractAuthenticatedTest
 //             17 => array('/admin/theme/new'),
             18 => array('/admin/status/form/root'),
             19 => array('/admin/status/new'),
-            20 => array('/admin/role/new'),
-            21 => array('/admin/role/form/root'),
             22  => array('/admin/node/form/2/root/fr'),
         );
     }
