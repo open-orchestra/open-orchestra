@@ -1465,16 +1465,16 @@
         },
         {
             "name": "gedmo/doctrine-extensions",
-            "version": "v2.4.24",
+            "version": "v2.4.25",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Atlantic18/DoctrineExtensions.git",
-                "reference": "a7f7243a19f79a99ac83a3570444d8795f665eef"
+                "reference": "9ac9111dfa7e4b89f8961f29bb64a385c31d5ed8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/a7f7243a19f79a99ac83a3570444d8795f665eef",
-                "reference": "a7f7243a19f79a99ac83a3570444d8795f665eef",
+                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/9ac9111dfa7e4b89f8961f29bb64a385c31d5ed8",
+                "reference": "9ac9111dfa7e4b89f8961f29bb64a385c31d5ed8",
                 "shasum": ""
             },
             "require": {
@@ -1540,7 +1540,7 @@
                 "tree",
                 "uploadable"
             ],
-            "time": "2016-10-11 18:03:37"
+            "time": "2016-12-14 20:12:38"
         },
         {
             "name": "gregwar/captcha",
