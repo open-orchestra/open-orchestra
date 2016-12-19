@@ -2690,12 +2690,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "e97ce99cd8a7f8d69d965eadb1f3ecf00a015888"
+                "reference": "385f7db44a2f511f7abe36dc2a32c921b708c851"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/e97ce99cd8a7f8d69d965eadb1f3ecf00a015888",
-                "reference": "e97ce99cd8a7f8d69d965eadb1f3ecf00a015888",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/385f7db44a2f511f7abe36dc2a32c921b708c851",
+                "reference": "385f7db44a2f511f7abe36dc2a32c921b708c851",
                 "shasum": ""
             },
             "require": {
@@ -2794,7 +2794,7 @@
                 }
             ],
             "description": "This bundle provide the Back Office part of Open Orchestra",
-            "time": "2016-12-16 15:18:23"
+            "time": "2016-12-19 11:09:49"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2913,12 +2913,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-libs.git",
-                "reference": "4deb1c55a7859c5d1de10bb890bab0be8b993a2a"
+                "reference": "a1777a3ae4e6f9112ce1f7c915be03efcab95eab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-libs/zipball/4deb1c55a7859c5d1de10bb890bab0be8b993a2a",
-                "reference": "4deb1c55a7859c5d1de10bb890bab0be8b993a2a",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-libs/zipball/a1777a3ae4e6f9112ce1f7c915be03efcab95eab",
+                "reference": "a1777a3ae4e6f9112ce1f7c915be03efcab95eab",
                 "shasum": ""
             },
             "require": {
@@ -2951,7 +2951,7 @@
                 }
             ],
             "description": "Some library for the Open Orchestra project",
-            "time": "2016-12-07 11:29:10"
+            "time": "2016-12-19 11:05:48"
         },
         {
             "name": "open-orchestra/open-orchestra-media-admin-bundle",
@@ -3183,12 +3183,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
-                "reference": "e26b42645e90b912a45c2241ccdde27e487b9fae"
+                "reference": "e34e060027d7e95142d88201762a12b521908b30"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/e26b42645e90b912a45c2241ccdde27e487b9fae",
-                "reference": "e26b42645e90b912a45c2241ccdde27e487b9fae",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/e34e060027d7e95142d88201762a12b521908b30",
+                "reference": "e34e060027d7e95142d88201762a12b521908b30",
                 "shasum": ""
             },
             "require": {
@@ -3223,7 +3223,7 @@
                 }
             ],
             "description": "A MongoDB implemantation of the Open Orchestra Model Interface",
-            "time": "2016-12-16 14:57:32"
+            "time": "2016-12-19 11:05:35"
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
@@ -3231,12 +3231,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-interface.git",
-                "reference": "8a5cce89630028bba9f21aa7c965be3f00e5a520"
+                "reference": "3034a94664e1fc1541ca5dc18ebcbc5d14a1be8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/8a5cce89630028bba9f21aa7c965be3f00e5a520",
-                "reference": "8a5cce89630028bba9f21aa7c965be3f00e5a520",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/3034a94664e1fc1541ca5dc18ebcbc5d14a1be8a",
+                "reference": "3034a94664e1fc1541ca5dc18ebcbc5d14a1be8a",
                 "shasum": ""
             },
             "require": {
@@ -3268,7 +3268,7 @@
                 }
             ],
             "description": "Describe all entity and repository to implement for the whole OpenOrchestra project",
-            "time": "2016-12-16 14:47:18"
+            "time": "2016-12-19 11:01:25"
         },
         {
             "name": "open-orchestra/open-orchestra-mongo-libs",
@@ -5106,33 +5106,37 @@
         },
         {
             "name": "willdurand/js-translation-bundle",
-            "version": "2.6.1",
+            "version": "2.6.2",
             "target-dir": "Bazinga/Bundle/JsTranslationBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/willdurand/BazingaJsTranslationBundle.git",
-                "reference": "3d17193ada2938d6b00958bec7beb1f0362d4210"
+                "reference": "802c89fa91f70ba3d1db84996c2b4773cd19b679"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/willdurand/BazingaJsTranslationBundle/zipball/3d17193ada2938d6b00958bec7beb1f0362d4210",
-                "reference": "3d17193ada2938d6b00958bec7beb1f0362d4210",
+                "url": "https://api.github.com/repos/willdurand/BazingaJsTranslationBundle/zipball/802c89fa91f70ba3d1db84996c2b4773cd19b679",
+                "reference": "802c89fa91f70ba3d1db84996c2b4773cd19b679",
                 "shasum": ""
             },
             "require": {
-                "symfony/console": "~2.3|~3.0",
-                "symfony/finder": "~2.3|~3.0",
-                "symfony/framework-bundle": "~2.3|~3.0",
-                "symfony/intl": "~2.3|~3.0"
+                "symfony/console": "~2.7|~3.1",
+                "symfony/finder": "~2.7|~3.1",
+                "symfony/framework-bundle": "~2.7|~3.1",
+                "symfony/intl": "~2.7|~3.1",
+                "symfony/templating": "~2.7|~3.1",
+                "symfony/translation": "~2.7|~3.1"
             },
             "replace": {
                 "willdurand/expose-translation-bundle": "2.5.*"
             },
             "require-dev": {
-                "symfony/browser-kit": "~2.3|~3.0",
-                "symfony/phpunit-bridge": "~2.7|~3.0",
-                "symfony/twig-bundle": "~2.3|~3.0",
-                "symfony/yaml": "~2.3|~3.0"
+                "phpunit/phpunit": "^4.8|~5.7",
+                "symfony/asset": "~2.7|~3.1",
+                "symfony/browser-kit": "~2.7|~3.1",
+                "symfony/phpunit-bridge": "~2.7|~3.1",
+                "symfony/twig-bundle": "~2.7|~3.1",
+                "symfony/yaml": "~2.7|~3.1"
             },
             "type": "symfony-bundle",
             "extra": {
@@ -5161,7 +5165,7 @@
                 "symfony",
                 "translation"
             ],
-            "time": "2016-09-19 12:54:35"
+            "time": "2016-12-16 17:53:16"
         },
         {
             "name": "willdurand/jsonp-callback-validator",
