@@ -4,6 +4,7 @@ module.exports = {
             'openorchestrabackoffice',
             'openorchestrauseradmin',
             'openorchestragroup',
+            'openorchestraworkflowadmin',
             'openorchestramediaadmin'
         ],
         dest: {

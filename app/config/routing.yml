@@ -62,6 +62,20 @@ open_orchestra_log:
     options:
         expose: true
 
+open_orchestra_workflow_admin:
+    resource: "@OpenOrchestraWorkflowAdminBundle/Controller/Admin"
+    type: annotation
+    prefix: /admin
+    options:
+        expose: true
+
+open_orchestra_workflow_api:
+    resource: "@OpenOrchestraWorkflowAdminBundle/Controller/Api"
+    type: annotation
+    prefix: /api
+    options:
+        expose: true
+
 open_orchestra_media_file:
     resource: "@OpenOrchestraMediaFileBundle/Controller"
     type: annotation
