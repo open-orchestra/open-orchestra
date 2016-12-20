@@ -32,7 +32,7 @@ class ApiControllersSecurityTest extends AbstractAuthenticatedTest
     public function provideApiUrl()
     {
         return array(
-            1  => array('/api/node/root'),
+            1  => array('/api/node/show/root/2/fr'),
             2  => array('/api/node/root/show-or-create'),
             3  => array('/api/node/root/delete', "DELETE"),
             4  => array('/api/node/root/children/update/order', 'PUT'),
