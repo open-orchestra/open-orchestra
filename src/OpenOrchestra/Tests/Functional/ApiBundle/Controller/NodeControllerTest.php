@@ -143,26 +143,30 @@ class NodeControllerTest extends AbstractAuthenticatedTest
      */
     public function testChangeNodeStatus($name, $publishedVersion)
     {
-        $this->markTestSkipped('To reactivate when API roles will be implemented');
+        $this->markTestSkipped('To reactivate when change status embed is fixed');
 
         $node = $this->nodeRepository->findInLastVersion('root', 'fr', '2');
         $newStatus = $this->statusRepository->findOneByName($name);
-        $newStatusId = $newStatus->getId();
-
+        $requestContent = json_encode(array(
+            'id' => $node->getId(),
+            'status' => array(
+                'id' => $newStatus->getId()
+            )
+        ));
         $this->client->request(
-            'POST',
-            '/api/node/' . $node->getId() . '/update',
+            'PUT',
+            '/api/node/update-status',
             array(),
             array(),
             array(),
-            json_encode(array('status_id' => $newStatusId))
+            $requestContent
         );
 
         $this->assertSame(200, $this->client->getResponse()->getStatusCode());
-
         $newNode = $this->nodeRepository->findOneCurrentlyPublished('root', 'fr', '2');
         $this->assertEquals($publishedVersion, $newNode->getVersion());
     }
+
 
     /**
      * @return array
@@ -181,21 +185,23 @@ class NodeControllerTest extends AbstractAuthenticatedTest
      */
     public function testUpdateNotGranted()
     {
-        $this->markTestSkipped('To reactivate when API roles will be implemented');
-
         $this->username = 'userNoAccess';
         $this->password = 'userNoAccess';
         $this->logIn();
 
         $node = $this->nodeRepository->findInLastVersion('root', 'fr', '2');
+        $requestContent = json_encode(array(
+            'id' => $node->getId()
+        ));
         $this->client->request(
-            'POST',
-            '/api/node/' . $node->getId() . '/update',
+            'PUT',
+            '/api/node/update-status',
             array(),
             array(),
             array(),
-            json_encode(array('status_id' => 'fakeStatus'))
+            $requestContent
         );
+
         $this->assertSame(403, $this->client->getResponse()->getStatusCode());
     }
 }
