@@ -2,9 +2,10 @@
 
 namespace OpenOrchestra\FunctionalTests\GroupBundle\Repository;
 
+use OpenOrchestra\Backoffice\Repository\GroupRepositoryInterface;
 use OpenOrchestra\BaseBundle\Tests\AbstractTest\AbstractKernelTestCase;
+use OpenOrchestra\ModelBundle\Repository\SiteRepository;
 use OpenOrchestra\Pagination\Configuration\PaginateFinderConfiguration;
-use OpenOrchestra\UserBundle\Repository\GroupRepository;
 use OpenOrchestra\GroupBundle\Document\Group;
 
 /**
@@ -15,7 +16,7 @@ use OpenOrchestra\GroupBundle\Document\Group;
 class GroupRepositoryTest extends AbstractKernelTestCase
 {
     /**
-     * @var GroupRepository
+     * @var GroupRepositoryInterface
      */
     protected $repository;
 
@@ -173,6 +174,24 @@ class GroupRepositoryTest extends AbstractKernelTestCase
         $this->assertNull($this->repository->findOneByName('test'));
     }
 
+   /**
+     * Test remove users
+     */
+    public function testSoftDeleteGroupBySite()
+    {
+        $dm = static::$kernel->getContainer()->get('object_manager');
+        $site = $this->siteRepository->findOneBySiteId('3');
+        $this->repository->softDeleteGroupsBySite($site);
+
+        $groups = $this->repository->findAllWithSiteId($site->getId());
+
+        foreach ($groups as $group) {
+            $this->assertTrue($group->isDeleted());
+            $group->setDeleted(false);
+        }
+        $dm->flush();
+    }
+
     /**
      * Generate columns of content with search value
      *
@@ -196,6 +215,8 @@ class GroupRepositoryTest extends AbstractKernelTestCase
 
     /**
      * @param array $siteIds
+     *
+     * @return array
      */
     protected function generateMongoIdForSite(array $siteIds)
     {
