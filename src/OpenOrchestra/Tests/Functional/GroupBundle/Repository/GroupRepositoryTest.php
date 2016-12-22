@@ -180,7 +180,6 @@ class GroupRepositoryTest extends AbstractKernelTestCase
     public function testSoftDeleteGroupBySite()
     {
         $dm = static::$kernel->getContainer()->get('object_manager');
-        var_dump(get_class($this->repository));
         $site = $this->siteRepository->findOneBySiteId('3');
         $this->repository->softDeleteGroupsBySite($site);
 
