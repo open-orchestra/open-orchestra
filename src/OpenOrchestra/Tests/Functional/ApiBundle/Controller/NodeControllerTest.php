@@ -2,8 +2,10 @@
 
 namespace OpenOrchestra\FunctionalTests\ApiBundle\Controller;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use OpenOrchestra\FunctionalTests\Utils\AbstractAuthenticatedTest;
 use OpenOrchestra\ModelInterface\Model\NodeInterface;
+use OpenOrchestra\ModelInterface\Repository\BlockRepositoryInterface;
 use OpenOrchestra\ModelInterface\Repository\NodeRepositoryInterface;
 use OpenOrchestra\ModelInterface\Repository\StatusRepositoryInterface;
 
@@ -24,6 +26,9 @@ class NodeControllerTest extends AbstractAuthenticatedTest
      */
     protected $nodeRepository;
 
+    /** @var BlockRepositoryInterface */
+    protected $blockRepository;
+
     /**
      * Set up the test
      */
@@ -32,6 +37,7 @@ class NodeControllerTest extends AbstractAuthenticatedTest
         parent::setUp();
         $this->nodeRepository = static::$kernel->getContainer()->get('open_orchestra_model.repository.node');
         $this->statusRepository = static::$kernel->getContainer()->get('open_orchestra_model.repository.status');
+        $this->blockRepository = static::$kernel->getContainer()->get('open_orchestra_model.repository.block');
     }
 
     /**
@@ -167,7 +173,6 @@ class NodeControllerTest extends AbstractAuthenticatedTest
         $this->assertEquals($publishedVersion, $newNode->getVersion());
     }
 
-
     /**
      * @return array
      */
@@ -203,5 +208,149 @@ class NodeControllerTest extends AbstractAuthenticatedTest
         );
 
         $this->assertSame(403, $this->client->getResponse()->getStatusCode());
+    }
+
+    /**
+     * Test update block position
+     */
+    public function testUpdateBlockPosition()
+    {
+        $node = $this->nodeRepository->findInLastVersion('root', 'fr', '2');
+        $block = $node->getArea('main')->getBlocks()[0];
+        $blocksHeader = $node->getArea('header')->getBlocks();
+
+        $blocksHeaderJson = array();
+        foreach ($blocksHeader as $blockHeader) {
+            $blocksHeaderJson[] = array('id' => $blockHeader->getId());
+        }
+        $blocksHeaderJson[] = array('id' => $block->getId());
+        $requestContent = json_encode(array(
+            'areas' => array(
+                'header' => array(
+                    'blocks' => $blocksHeaderJson
+                ),
+                'main' => array(
+                    'blocks' => array()
+                )
+            )
+        ));
+
+        $this->client->request(
+            'PUT',
+            "/api/node/update-block-position/".$node->getSiteId()."/".$node->getNodeId()."/".$node->getVersion()."/".$node->getLanguage(),
+            array(),
+            array(),
+            array(),
+            $requestContent
+        );
+
+        $this->assertSame(200, $this->client->getResponse()->getStatusCode());
+        $dm = static::$kernel->getContainer()->get('object_manager');
+
+        $node = $this->nodeRepository->findInLastVersion('root', 'fr', '2');
+        $blocksMain = $node->getArea('main')->getBlocks();
+        $this->assertCount(0, $blocksMain);
+
+        $blocksHeaderNew = $node->getArea('header')->getBlocks();
+        $this->assertCount(4, $blocksHeaderNew);
+
+        $node->getArea('main')->addBlock($block);
+        $node->getArea('header')->setBlocks(new ArrayCollection($blocksHeader->toArray()));
+        $dm->flush();
+    }
+
+    /**
+     * Test update block position not granted
+     */
+    public function testUpdateBlockPositionNotGranted()
+    {
+        $this->username = 'userNoAccess';
+        $this->password = 'userNoAccess';
+        $this->logIn();
+
+        $node = $this->nodeRepository->findInLastVersion('root', 'fr', '2');
+
+        $this->client->request(
+            'PUT',
+            "/api/node/update-block-position/".$node->getSiteId()."/".$node->getNodeId()."/".$node->getVersion()."/".$node->getLanguage()
+        );
+
+        $this->assertSame(403, $this->client->getResponse()->getStatusCode());
+    }
+
+    /**
+     * Test delete block not granted
+     */
+    public function testDeleteBlockInAreaNotGranted()
+    {
+        $this->username = 'userNoAccess';
+        $this->password = 'userNoAccess';
+        $this->logIn();
+
+        $node = $this->nodeRepository->findInLastVersion('root', 'fr', '2');
+        $block = $node->getArea('main')->getBlocks()[0];
+
+        $this->client->request(
+            'DELETE',
+            "/api/node/delete-block/".$node->getNodeId()."/".$node->getSiteId()."/".$node->getLanguage()."/".$node->getVersion()."/main/".$block->getId()
+        );
+        $this->assertSame(403, $this->client->getResponse()->getStatusCode());
+    }
+
+    /**
+     * Test delete block
+     */
+    public function testDeleteBlockInArea()
+    {
+        $node = $this->nodeRepository->findInLastVersion('root', 'fr', '2');
+        $block = $node->getArea('main')->getBlocks()[0];
+
+        $this->client->request(
+            'DELETE',
+            "/api/node/delete-block/".$node->getNodeId()."/".$node->getSiteId()."/".$node->getLanguage()."/".$node->getVersion()."/main/".$block->getId()
+        );
+        $this->assertSame(200, $this->client->getResponse()->getStatusCode());
+        $this->assertNull($this->blockRepository->findById($block->getId()));
+
+        $dm = static::$kernel->getContainer()->get('object_manager');
+        $dm->detach($node);
+        $dm->detach($block);
+
+        $node = $this->nodeRepository->findInLastVersion('root', 'fr', '2');
+        $blocks = $node->getArea('main')->getBlocks();
+        $this->assertCount(0, $blocks);
+
+        $node->getArea('main')->addBlock($block);
+        $dm->persist($block);
+
+        $dm->flush();
+    }
+
+    /**
+     * Test delete transverse block
+     */
+    public function testDeleteTransverseBlockInArea()
+    {
+        $node = $this->nodeRepository->findInLastVersion('root', 'fr', '2');
+        $block = $node->getArea('footer')->getBlocks()[0];
+
+        $this->client->request(
+            'DELETE',
+            "/api/node/delete-block/".$node->getNodeId()."/".$node->getSiteId()."/".$node->getLanguage()."/".$node->getVersion()."/footer/".$block->getId()
+        );
+        $this->assertSame(200, $this->client->getResponse()->getStatusCode());
+        $this->assertEquals($block, $this->blockRepository->findById($block->getId()));
+
+        $dm = static::$kernel->getContainer()->get('object_manager');
+        $dm->detach($node);
+        $dm->detach($block);
+
+        $node = $this->nodeRepository->findInLastVersion('root', 'fr', '2');
+        $blocks = $node->getArea('footer')->getBlocks();
+        $this->assertCount(1, $blocks);
+
+        $node->getArea('footer')->addBlock($block);
+        $dm->persist($block);
+        $dm->flush();
     }
 }
