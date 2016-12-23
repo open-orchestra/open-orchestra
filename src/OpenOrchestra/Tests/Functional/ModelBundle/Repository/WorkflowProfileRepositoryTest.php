@@ -81,7 +81,7 @@ class WorkflowProfileRepositoryTest extends AbstractKernelTestCase
     {
         $configurationAll = PaginateFinderConfiguration::generateFromVariable(array(), 0, 100, array());
         $configurationLimit = PaginateFinderConfiguration::generateFromVariable(array(), 0, 1, array());
-        $configurationSearch = PaginateFinderConfiguration::generateFromVariable(array(), 0, 100, array(), array('label' => 'Contributor'));
+        $configurationSearch = PaginateFinderConfiguration::generateFromVariable(array(), 0, 100, array(), array('label' => 'Contributor', 'language' => 'en'));
         $configurationAllOrder = PaginateFinderConfiguration::generateFromVariable(array('label' => 'desc'), 0, 100, array());
 
         return array(
@@ -120,7 +120,7 @@ class WorkflowProfileRepositoryTest extends AbstractKernelTestCase
     {
         $configurationAll = PaginateFinderConfiguration::generateFromVariable(array(), 0, 100, array());
         $configurationLimit = PaginateFinderConfiguration::generateFromVariable(array(), 0, 1, array());
-        $configurationSearch = PaginateFinderConfiguration::generateFromVariable(array(), 0, 100, array(), array('label' => 'Contributor'));
+        $configurationSearch = PaginateFinderConfiguration::generateFromVariable(array(), 0, 100, array(), array('label' => 'Contributor', 'language' => 'en'));
         $configurationAllOrder = PaginateFinderConfiguration::generateFromVariable(array('label' => 'desc'), 0, 100, array());
 
         return array(
@@ -129,5 +129,25 @@ class WorkflowProfileRepositoryTest extends AbstractKernelTestCase
             'search' => array($configurationSearch, 1),
             'order' => array($configurationAllOrder, 2),
         );
+    }
+
+    /**
+     * Test remove workflow profile
+     */
+    public function testWorkflowProfile()
+    {
+        $dm = static::$kernel->getContainer()->get('object_manager');
+        $validator = $this->repository->findOneBy(array('labels.en' => 'Validator'));
+        $contributor = $this->repository->findOneBy(array('labels.en' => 'Contributor'));
+
+        $workflowProfileIds = array($validator->geTId(), $contributor->getId());
+
+        $this->repository->removeWorkflowProfiles($workflowProfileIds);
+        $this->assertNull($this->repository->findOneBy(array('labels.en' => 'Validator')));
+        $this->assertNull($this->repository->findOneBy(array('labels.en' => 'Contributor')));
+
+        $dm->persist(clone $validator);
+        $dm->persist(clone $contributor);
+        $dm->flush();
     }
 }
