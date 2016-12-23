@@ -31,128 +31,6 @@ class SiteRepositoryTest extends AbstractKernelTestCase
     }
 
     /**
-     * @param boolean $deleted
-     * @param array   $descriptionEntity
-     * @param array   $search
-     * @param int     $skip
-     * @param int     $limit
-     * @param integer $count
-     *
-     * @dataProvider provideDeletedAndPaginateAndSearch
-     */
-    public function testFindByDeletedForPaginate($deleted, $descriptionEntity, $search, $skip, $limit, $count)
-    {
-        $this->markTestSkipped('To unskip when group list is refacto');
-        $configuration = PaginateFinderConfiguration::generateFromVariable($descriptionEntity, $search);
-        $configuration->setPaginateConfiguration(null, $skip, $limit);
-        $sites = $this->repository->findByDeletedForPaginate($deleted, $configuration);
-        $this->assertCount($count, $sites);
-    }
-
-    /**
-     * @return array
-     */
-    public function provideDeletedAndPaginateAndSearch()
-    {
-        $descriptionEntity = $this->getDescriptionColumnEntity();
-
-        return array(
-            array(false, array(), null, 0 ,1 , 1),
-            array(true, array(), null, 0 ,2 , 1),
-            array(false, $descriptionEntity, $this->generateSearchProvider(array('site_id' => '2'), 'demo'), null, null, 1),
-            array(false, $descriptionEntity, $this->generateSearchProvider(array('site_id' => '1'), 'demo'), null, null, 0),
-            array(false, $descriptionEntity, $this->generateSearchProvider(array('site_id' => '1', 'name' => 'demo')), null, null, 0),
-            array(false, $descriptionEntity, $this->generateSearchProvider(null, 'fake search'), null, null, 0)
-        );
-    }
-
-    /**
-     * @param array   $descriptionEntity
-     * @param array   $search
-     * @param int     $skip
-     * @param int     $limit
-     * @param integer $count
-     *
-     * @dataProvider providePaginateSearch
-     */
-    public function testFindForPaginate($descriptionEntity, $search, $skip, $limit, $count)
-    {
-        $this->markTestSkipped('To unskip when group list is refacto');
-        $configuration = PaginateFinderConfiguration::generateFromVariable($descriptionEntity, $search);
-        $configuration->setPaginateConfiguration(null, $skip, $limit);
-        $sites = $this->repository->findForPaginate($configuration);
-        $this->assertCount($count, $sites);
-    }
-
-    /**
-     * @return array
-     */
-    public function providePaginateSearch()
-    {
-        $descriptionEntity = $this->getDescriptionColumnEntity();
-
-        return array(
-            array(array(), $this->generateSearchProvider(array('deleted' => false)), 0 ,1 , 1),
-            array(array(), $this->generateSearchProvider(array('deleted' => true)), 0 ,1 , 1),
-            array($descriptionEntity, $this->generateSearchProvider(array('deleted' => false, 'site_id' => '2'), 'demo'), null, null, 1),
-            array($descriptionEntity, $this->generateSearchProvider(array('deleted' => false, 'site_id' => '1'), 'demo'), null, null, 0),
-            array($descriptionEntity, $this->generateSearchProvider(array('deleted' => false, 'site_id' => '1', 'name' => 'demo')), null, null, 0),
-            array($descriptionEntity, $this->generateSearchProvider(null, 'fake search'), null, null, 0)
-        );
-    }
-
-    /**
-     * @param boolean $deleted
-     * @param integer $count
-     *
-     * @dataProvider provideBooleanDeletedCount
-     */
-    public function testCountByDeleted($deleted, $count)
-    {
-        $sites = $this->repository->countByDeleted($deleted);
-        $this->assertEquals($count, $sites);
-    }
-
-    /**
-     * @return array
-     */
-    public function provideBooleanDeletedCount()
-    {
-        return array(
-            array(true, 1),
-        );
-    }
-
-    /**
-     * @param boolean $deleted
-     * @param array   $descriptionEntity
-     * @param array   $search
-     * @param int     $count
-     *
-     * @dataProvider provideColumnsAndSearchAndCount
-     */
-    public function testCountWithSearchFilterByDeleted($deleted, $descriptionEntity, $search, $count)
-    {
-        $configuration = FinderConfiguration::generateFromVariable($descriptionEntity, $search);
-        $sites = $this->repository->countWithSearchFilterByDeleted($deleted, $configuration);
-        $this->assertEquals($count, $sites);
-    }
-
-    /**
-     * @return array
-     */
-    public function provideColumnsAndSearchAndCount()
-    {
-        $descriptionEntity = $this->getDescriptionColumnEntity();
-
-        return array(
-            array(false, $descriptionEntity, $this->generateSearchProvider(array('site_id' => '2'), 'demo'), 1),
-            array(false, $descriptionEntity, $this->generateSearchProvider(array('site_id' => '1'), 'demo'), 0),
-            array(true, $descriptionEntity, $this->generateSearchProvider(null, 'fake search'), 0)
-        );
-    }
-
-    /**
      * @param string        $domain
      * @param array<string> $expectedSiteIds
      *
@@ -165,11 +43,121 @@ class SiteRepositoryTest extends AbstractKernelTestCase
         $this->assertIdsMatches($expectedSiteIds, $sites);
     }
 
+
+    /**
+     * @param PaginateFinderConfiguration  $configuration
+     * @param array|null                   $siteIds
+     * @param int                          $count
+     *
+     * @dataProvider providePaginateAndSearch
+     */
+    public function testFindForPaginate(PaginateFinderConfiguration $configuration, $siteIds, $count)
+    {
+        $sites = $this->repository->findForPaginateFilterBySiteIds($configuration, $siteIds);
+        $this->assertCount($count, $sites);
+    }
+
+    /**
+     * @return array
+     */
+    public function providePaginateAndSearch()
+    {
+        $configurationAll = PaginateFinderConfiguration::generateFromVariable(array(), 0, 100, array());
+        $configurationLimit = PaginateFinderConfiguration::generateFromVariable(array(), 0, 1, array());
+        $configurationSearch = PaginateFinderConfiguration::generateFromVariable(array(), 0, 100, array(), array('name' => 'demo'));
+        $configurationAllOrder = PaginateFinderConfiguration::generateFromVariable(array('name' => 'desc'), 0, 100, array());
+
+        return array(
+            'all' => array($configurationAll, null, 1),
+            'all with site' => array($configurationAll, array('2'), 1),
+            'all with deleted site' => array($configurationAll, array('3'), 0),
+            'all without site' => array($configurationAll, array(), 0),
+            'limit' => array($configurationLimit, null, 1),
+            'search' => array($configurationSearch, null, 1),
+            'search without site' => array($configurationSearch, array(), 0),
+            'order' => array($configurationAllOrder, null, 1),
+        );
+    }
+
+    /**
+     * test count all site
+     */
+    public function testCount()
+    {
+        $sites = $this->repository->countFilterBySiteIds();
+        $this->assertEquals(1, $sites);
+    }
+
+    /**
+     * test count all site with site ids
+     */
+    public function testCountWithIds()
+    {
+        $sites = $this->repository->countFilterBySiteIds(array('2'));
+        $this->assertEquals(1, $sites);
+    }
+
+    /**
+     * @param PaginateFinderConfiguration $configuration
+     * @param array|null                  $siteIds
+     * @param int                         $count
+     *
+     * @dataProvider provideCountWithFilter
+     */
+    public function testCountWithFilter($configuration, $siteIds, $count)
+    {
+        $sites = $this->repository->countWithFilterAndSiteIds($configuration, $siteIds);
+        $this->assertEquals($count, $sites);
+    }
+
+    /**
+     * @return array
+     */
+    public function provideCountWithFilter()
+    {
+        $configurationAll = PaginateFinderConfiguration::generateFromVariable(array(), 0, 100, array());
+        $configurationLimit = PaginateFinderConfiguration::generateFromVariable(array(), 0, 1, array());
+        $configurationSearch = PaginateFinderConfiguration::generateFromVariable(array(), 0, 100, array(), array('name' => 'demo'));
+        $configurationAllOrder = PaginateFinderConfiguration::generateFromVariable(array('name' => 'desc'), 0, 100, array());
+
+        return array(
+            'all' => array($configurationAll, null, 1),
+            'all with site' => array($configurationAll, array('2'), 1),
+            'all with deleted site' => array($configurationAll, array('3'), 0),
+            'all without site' => array($configurationAll, array(), 0),
+            'limit' => array($configurationLimit, null, 1),
+            'search' => array($configurationSearch, null, 1),
+            'search without site' => array($configurationSearch, array(), 0),
+            'order' => array($configurationAllOrder, null, 1),
+        );
+    }
+
+    /**
+     * Test remove sites
+     */
+    public function testRemoveSites()
+    {
+        $dm = static::$kernel->getContainer()->get('object_manager');
+        $siteDemo = $this->repository->findOneBySiteId('2');
+        $siteIds = array($siteDemo->getSiteId());
+        $dm->detach($siteDemo);
+
+        $this->repository->removeSites($siteIds);
+        $siteDemo = $this->repository->findOneBySiteId('2');
+        $this->assertEquals($siteDemo->isDeleted(), true);
+
+        $siteDemo->setDeleted(false);
+        $dm->persist($siteDemo);
+        $dm->flush();
+    }
+
     /**
      * Check if the $sites ids matches $expectedIds
      *
      * @param array $expectedIds
      * @param array $sites
+     *
+     * @return boolean
      */
     protected function assertIdsMatches($expectedIds, $sites)
     {
@@ -197,56 +185,5 @@ class SiteRepositoryTest extends AbstractKernelTestCase
             array('front.pddv-openorchestra-master.eolas-services.com', array('2')),
             array('fakeDomain', array())
         );
-    }
-
-    /**
-     * Generate columns of site with search value
-     *
-     * @param array|null  $searchColumns
-     * @param string      $globalSearch
-     *
-     * @return array
-     */
-    protected function generateSearchProvider($searchColumns = null, $globalSearch = '')
-    {
-        $search = array();
-        if (null !== $searchColumns) {
-            $columns = array();
-            foreach ($searchColumns as $name => $value) {
-                $columns[$name] = $value;
-            }
-            $search['columns'] = $columns;
-        }
-
-        if (!empty($globalSearch)) {
-            $search['global'] = $globalSearch;
-        }
-
-        return $search;
-    }
-
-    /**
-     * Generate relation between columns names and entities attributes
-     *
-     * @return array
-     */
-    protected function getDescriptionColumnEntity()
-    {
-        return array(
-            'site_id' => array('key' => 'site_id', 'field' => 'siteId', 'type' => 'string'),
-            'name' => array('key' => 'name', 'field' => 'name', 'type' => 'string'),
-            'deleted' => array('key' => 'deleted', 'field' => 'deleted', 'type' => 'boolean'),
-        );
-    }
-
-    /**
-     * @param array $sites
-     * @param array $orderId
-     */
-    protected function assertSameOrder($sites, $orderId)
-    {
-        foreach ($sites as $index => $site) {
-            $this->assertEquals($site->getSiteId(), $orderId[$index]);
-        }
     }
 }
