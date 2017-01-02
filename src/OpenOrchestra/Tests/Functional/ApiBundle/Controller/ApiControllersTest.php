@@ -64,7 +64,7 @@ class ApiControllersTest extends AbstractAuthenticatedTest
             10 => array('/api/content/list/not-published-by-author'),
             //11 => array('/api/content', '&content_type=news'),
             //12 => array('/api/content-type'),
-            //13 => array('/api/site'),
+            13 => array('/api/site'),
             14 => array('/api/site/list/available'),
             // 15 => array('/api/theme'),
             17 => array('/api/group/delete-multiple', '', 'DELETE'),
