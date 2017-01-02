@@ -41,9 +41,9 @@ class ApiControllersSecurityTest extends AbstractAuthenticatedTest
             8  => array('/api/content-type'),
             9  => array('/api/content-type/fake-content-type-id'),
             10 => array('/api/content-type/fake-content-type-id/delete', "DELETE"),
-            11 => array('/api/site/root'),
+            11 => array('/api/site/root'),*/
             12 => array('/api/site'),
-            13 => array('/api/site/root/delete', "DELETE"),
+            /*13 => array('/api/site/root/delete', "DELETE"),
             14 => array('/api/keyword/check'),
             15 => array('/api/keyword/fake_id'),
             16 => array('/api/keyword/fake_id/delete', "DELETE"),
