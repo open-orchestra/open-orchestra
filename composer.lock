@@ -2510,12 +2510,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-base-api-bundle.git",
-                "reference": "86a590e14a094fdf5c18ed5f49c6888eea23ea47"
+                "reference": "a2de3b88c828f4f7318e04dc0930e4684c2419e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-api-bundle/zipball/86a590e14a094fdf5c18ed5f49c6888eea23ea47",
-                "reference": "86a590e14a094fdf5c18ed5f49c6888eea23ea47",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-api-bundle/zipball/a2de3b88c828f4f7318e04dc0930e4684c2419e7",
+                "reference": "a2de3b88c828f4f7318e04dc0930e4684c2419e7",
                 "shasum": ""
             },
             "require": {
@@ -2548,7 +2548,7 @@
                 }
             ],
             "description": "This bundle provide the base bricks for the OpenOrchestra Api",
-            "time": "2016-12-07 10:45:59"
+            "time": "2017-01-02 11:33:08"
         },
         {
             "name": "open-orchestra/open-orchestra-base-api-mongo-model-bundle",
