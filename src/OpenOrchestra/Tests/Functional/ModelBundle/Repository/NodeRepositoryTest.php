@@ -824,4 +824,25 @@ class NodeRepositoryTest extends AbstractKernelTestCase
 
     }
 
+    /**
+     * Test remove block in area
+     */
+    public function testRemoveBlockInArea()
+    {
+        $dm = static::$kernel->getContainer()->get('object_manager');
+        $node = $this->repository->findInLastVersion('root', 'fr', '2');
+        $block = $node->getArea('main')->getBlocks()[0];
+
+        $this->repository->removeBlockInArea($block->getId(), 'main', $node->getNodeId(), $node->getSiteId(), $node->getLanguage(), $node->getVersion());
+
+        $dm->detach($node);
+        $dm->detach($block);
+        $node = $this->repository->findInLastVersion('root', 'fr', '2');
+        $blocks = $node->getArea('main')->getBlocks();
+        $this->assertCount(0, $blocks);
+
+        $node->getArea('main')->addBlock($block);
+        $dm->persist($block);
+        $dm->flush();
+    }
 }
