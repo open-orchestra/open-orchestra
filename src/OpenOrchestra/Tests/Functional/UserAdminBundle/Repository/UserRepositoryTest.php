@@ -6,6 +6,7 @@ use OpenOrchestra\BaseBundle\Tests\AbstractTest\AbstractKernelTestCase;
 use OpenOrchestra\Pagination\Configuration\PaginateFinderConfiguration;
 use OpenOrchestra\UserBundle\Model\UserInterface;
 use OpenOrchestra\UserBundle\Repository\UserRepository;
+use OpenOrchestra\GroupBundle\Document\Group;
 
 /**
  * Class UserRepositoryTest
@@ -273,5 +274,46 @@ class UserRepositoryTest extends AbstractKernelTestCase
             array('p-admin@fixtures.com'),
             array('s-admin@fixtures.com'),
         );
+    }
+
+    /**
+     * test findUsersByGroups
+     */
+    public function testFindUsersByGroups()
+    {
+        $group = $this->groupRepository->findOneByName('Demo group');
+        $users = $this->repository->findUsersByGroups($group->getId());
+        $this->assertEquals(1, count($users));
+    }
+
+    /**
+     * test removeGroupFromNotListedUsers
+     */
+    public function testRemoveGroupFromNotListedUsers()
+    {
+        $dm = static::$kernel->getContainer()->get('object_manager');
+
+        $fakeGroup = new Group();
+        $fakeGroup->setName('fakeGroup');
+        $dm->persist($fakeGroup);
+        $users = $this->repository->findAll();
+        $nbrUsers = count($users);
+        foreach ($users as $user) {
+            $user->addGroup($fakeGroup);
+            $dm->persist($user);
+        }
+
+        $dm->flush();
+
+        $group = $this->groupRepository->findOneByName('fakeGroup');
+        $users = $this->repository->findUsersByGroups($group->getId());
+
+        $this->assertEquals($nbrUsers, count($users));
+
+        $this->repository->removeGroupFromNotListedUsers($group->getId(), array());
+        $users = $this->repository->findUsersByGroups($group->getId());
+
+        $this->assertEquals(0, count($users));
+
     }
 }
