@@ -132,25 +132,6 @@ class SiteRepositoryTest extends AbstractKernelTestCase
     }
 
     /**
-     * Test remove sites
-     */
-    public function testRemoveSites()
-    {
-        $dm = static::$kernel->getContainer()->get('object_manager');
-        $siteDemo = $this->repository->findOneBySiteId('2');
-        $siteIds = array($siteDemo->getSiteId());
-        $dm->detach($siteDemo);
-
-        $this->repository->removeSites($siteIds);
-        $siteDemo = $this->repository->findOneBySiteId('2');
-        $this->assertEquals($siteDemo->isDeleted(), true);
-
-        $siteDemo->setDeleted(false);
-        $dm->persist($siteDemo);
-        $dm->flush();
-    }
-
-    /**
      * Check if the $sites ids matches $expectedIds
      *
      * @param array $expectedIds
