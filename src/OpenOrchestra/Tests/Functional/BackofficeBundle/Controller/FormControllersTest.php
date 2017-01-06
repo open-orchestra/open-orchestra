@@ -37,6 +37,7 @@ class FormControllersTest extends AbstractFormTest
             3 => array('/admin/theme/new'),
             4 => array('/admin/keyword/new'),
             5 => array('/admin/content-type/new'),
+            5 => array('/admin/group/new'),
             8 => array('/admin/redirection/new'),
             9 => array('/admin/node/form/2/root/fr'),
         );
