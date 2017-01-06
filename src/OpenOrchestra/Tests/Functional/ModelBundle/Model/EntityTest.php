@@ -46,6 +46,7 @@ class EntityTest extends AbstractBaseTestCase
             array('Area'                     , 'ReadAreaInterface'),
             array('Block'                    , 'BlockInterface'),
             array('Block'                    , 'ReadBlockInterface'),
+            array('Block'                    , 'TimestampableInterface'),
             array('ContentAttribute'         , 'ContentAttributeInterface'),
             array('ContentAttribute'         , 'ReadContentAttributeInterface'),
             array('Content'                  , 'ContentInterface'),

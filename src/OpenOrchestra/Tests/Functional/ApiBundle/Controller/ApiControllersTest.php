@@ -59,6 +59,7 @@ class ApiControllersTest extends AbstractAuthenticatedTest
             5  => array('/api/node/list/not-published-by-author'),
             6  => array('/api/node/list/by-author'),
             7  => array('/api/node/list/2/fr'),
+            8  => array('/api/block/list/shared/fr'),
             //8  => array('/api/content'),
             9  => array('/api/content/list/by-author'),
             10 => array('/api/content/list/not-published-by-author'),
@@ -77,6 +78,7 @@ class ApiControllersTest extends AbstractAuthenticatedTest
             25  => array('/api/node/list/tree/2/fr/root'),
             26  => array('/api/group/user/list'),
             27  => array('/api/group/list'),
+            28  => array('/api/block/list/block-component'),
         );
     }
 }
