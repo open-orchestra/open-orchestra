@@ -4,6 +4,7 @@ namespace OpenOrchestra\FunctionalTests\ModelBundle\Repository;
 
 use OpenOrchestra\BaseBundle\Tests\AbstractTest\AbstractKernelTestCase;
 use OpenOrchestra\ModelInterface\Repository\ContentTypeRepositoryInterface;
+use OpenOrchestra\Pagination\Configuration\PaginateFinderConfiguration;
 
 /**
  * Class ContentTypeRepositoryTest
@@ -50,5 +51,94 @@ class ContentTypeRepositoryTest extends AbstractKernelTestCase
             array('car', 2),
             array('customer', 1),
         );
+    }
+
+    /**
+     * @param PaginateFinderConfiguration $configuration
+     * @param int                         $count
+     *
+     * @dataProvider provideCountWithFilterAndLimit
+     */
+    public function testFindAllNotDeletedInLastVersionForPaginate(PaginateFinderConfiguration $configuration, $count)
+    {
+        $contentTypes = $this->repository->findAllNotDeletedInLastVersionForPaginate($configuration);
+
+        $this->assertCount($count, $contentTypes);
+    }
+
+    /**
+     * @return array
+     */
+    public function provideCountWithFilterAndLimit()
+    {
+        $configurationAll = PaginateFinderConfiguration::generateFromVariable(array(), 0, 100, array());
+        $configurationLimit = PaginateFinderConfiguration::generateFromVariable(array(), 0, 1, array());
+        $configurationSearch = PaginateFinderConfiguration::generateFromVariable(array(), 0, 100, array(), array('name' => 'car', 'language' => 'en'));
+        $configurationAllOrder = PaginateFinderConfiguration::generateFromVariable(array('name' => 'desc'), 0, 100, array());
+
+        return array(
+            array($configurationAll, 3),
+            array($configurationLimit, 1),
+            array($configurationSearch, 1),
+            array($configurationAllOrder, 3),
+        );
+    }
+
+    /**
+     * test count all contentType
+     */
+    public function testCount()
+    {
+        $contentTypes = $this->repository->countByContentTypeInLastVersion();
+
+        $this->assertEquals(3, $contentTypes);
+    }
+
+    /**
+     * @param PaginateFinderConfiguration $configuration
+     * @param int                         $count
+     *
+     * @dataProvider provideCountWithFilter
+     */
+    public function testCountWithFilter($configuration, $count)
+    {
+        $sites = $this->repository->countNotDeletedInLastVersionWithSearchFilter($configuration);
+        $this->assertEquals($count, $sites);
+    }
+
+    /**
+     * @return array
+     */
+    public function provideCountWithFilter()
+    {
+        $configurationAll = PaginateFinderConfiguration::generateFromVariable(array(), 0, 100, array());
+        $configurationSearch = PaginateFinderConfiguration::generateFromVariable(array(), 0, 100, array(), array('name' => 'car', 'language' => 'en'));
+        $configurationAllOrder = PaginateFinderConfiguration::generateFromVariable(array('name' => 'desc'), 0, 100, array());
+
+        return array(
+            array($configurationAll, 3),
+            array($configurationSearch, 1),
+            array($configurationAllOrder, 3),
+        );
+    }
+
+    /**
+     * Test remove content types
+     */
+    public function testRemoveByContentTypeId()
+    {
+        $dm = static::$kernel->getContainer()->get('object_manager');
+        $contentTypeCar = $this->repository->findOneByContentTypeIdInLastVersion('car');
+        $contentTypeCustomer = $this->repository->findOneByContentTypeIdInLastVersion('customer');
+
+        $userIds = array($contentTypeCar->getContentTypeId(), $contentTypeCustomer->getContentTypeId());
+
+        $this->repository->removeByContentTypeId($userIds);
+        $this->assertNull($this->repository->findOneByContentTypeIdInLastVersion('car'));
+        $this->assertNull($this->repository->findOneByContentTypeIdInLastVersion('customer'));
+
+        $dm->persist(clone $contentTypeCar);
+        $dm->persist(clone $contentTypeCustomer);
+        $dm->flush();
     }
 }
