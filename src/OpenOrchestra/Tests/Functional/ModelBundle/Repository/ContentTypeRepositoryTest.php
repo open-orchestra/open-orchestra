@@ -132,13 +132,18 @@ class ContentTypeRepositoryTest extends AbstractKernelTestCase
         $contentTypeCustomer = $this->repository->findOneByContentTypeIdInLastVersion('customer');
 
         $userIds = array($contentTypeCar->getContentTypeId(), $contentTypeCustomer->getContentTypeId());
+        $dm->detach($contentTypeCar);
+        $dm->detach($contentTypeCustomer);
 
         $this->repository->removeByContentTypeId($userIds);
-        $this->assertNull($this->repository->findOneByContentTypeIdInLastVersion('car'));
-        $this->assertNull($this->repository->findOneByContentTypeIdInLastVersion('customer'));
+        $this->assertTrue($this->repository->findOneByContentTypeIdInLastVersion('car')->isDeleted());
+        $this->assertTrue($this->repository->findOneByContentTypeIdInLastVersion('customer')->isDeleted());
 
-        $dm->persist(clone $contentTypeCar);
-        $dm->persist(clone $contentTypeCustomer);
+        $contentTypeCar->setDeleted(false);
+        $contentTypeCustomer->setDeleted(false);
+        $dm->persist($contentTypeCar);
+        $dm->persist($contentTypeCustomer);
         $dm->flush();
     }
 }
+
