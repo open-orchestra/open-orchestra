@@ -113,4 +113,24 @@ class StatusRepositoryTest extends AbstractKernelTestCase
             'Filtering 2 items with "r"' => array($conf3, 1, 3),
         );
     }
-}
+
+    /**
+     * Test remove statuses
+     */
+    public function testRemoveStatuses()
+    {
+        $dm = static::$kernel->getContainer()->get('object_manager');
+        $statusPending = $this->repository->findOneByName('pending');
+        $statusPublished = $this->repository->findOneByName('published');
+
+        $statusIds = array($statusPending->getId(), $statusPublished->getId());
+
+        $this->repository->removeStatuses($statusIds);
+        $this->assertNull($this->repository->findOneByName('pending'));
+        $this->assertNull($this->repository->findOneByName('published'));
+
+        $dm->persist(clone $statusPending);
+        $dm->persist(clone $statusPublished);
+        $dm->flush();
+    }
+ }
