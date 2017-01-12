@@ -16,3 +16,8 @@ services:
             - '%open_orchestra_backoffice.block_default_configuration%'
          tags:
             - { name: 'open_orchestra_backoffice.generate_form.strategy'}
+
+     formation.type.gender:
+         class: 'FormationBundle\Form\GenderType'
+         tags:
+            - { name: 'form.type', alias: 'formation_gender_type'}

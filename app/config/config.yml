@@ -134,3 +134,12 @@ mongo_db_migrations:
 open_orchestra_backoffice:
     blocks:
         - 'hello'
+    field_types:
+        gender:
+            label: Gender
+            type: formation_gender_type
+            default_value:
+                type: formation_gender_type
+            options:
+                required:
+                    default_value: false
