@@ -16,6 +16,10 @@ services:
             - '%open_orchestra_backoffice.block_default_configuration%'
          tags:
             - { name: 'open_orchestra_backoffice.generate_form.strategy'}
+     formation.block_parameter.hello:
+         class: 'FormationBundle\BlockParameter\Stategies\HelloStrategy'
+         tags:
+            - { name: 'open_orchestra_backoffice.block_parameter.strategy'}
 
      formation.type.gender:
          class: 'FormationBundle\Form\GenderType'
