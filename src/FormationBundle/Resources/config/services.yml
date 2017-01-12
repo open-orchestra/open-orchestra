@@ -1,0 +1,18 @@
+services:
+#    formation.example:
+#        class: FormationBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
+     formation.display_block.hello:
+         class: 'FormationBundle\DisplayBlock\Strategies\HelloStrategy'
+         tags:
+            - { name: 'open_orchestra_backoffice.display_block.strategy'}
+     formation.display_icon.hello:
+         class: 'FormationBundle\DisplayIcon\Strategies\HelloStrategy'
+         tags:
+            - { name: 'open_orchestra_backoffice.display_icon.strategy'}
+     formation.form.hello:
+         class: 'FormationBundle\GenerateForm\Strategies\HelloStrategy'
+         arguments:
+            - '%open_orchestra_backoffice.block_default_configuration%'
+         tags:
+            - { name: 'open_orchestra_backoffice.generate_form.strategy'}
