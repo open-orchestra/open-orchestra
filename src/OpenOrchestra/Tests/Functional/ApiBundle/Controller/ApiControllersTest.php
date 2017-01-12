@@ -79,6 +79,7 @@ class ApiControllersTest extends AbstractAuthenticatedTest
             26  => array('/api/group/user/list'),
             27  => array('/api/group/list'),
             28  => array('/api/block/list/block-component'),
+            29  => array('/api/content-type/content/content-type-list'),
         );
     }
 }
