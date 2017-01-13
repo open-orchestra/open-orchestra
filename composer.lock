@@ -2690,12 +2690,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "3a5dc3f3584c97d5a94140f81639fbb276628d62"
+                "reference": "8bd3d8245acb61901503ad829afc120bfa3834c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/3a5dc3f3584c97d5a94140f81639fbb276628d62",
-                "reference": "3a5dc3f3584c97d5a94140f81639fbb276628d62",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/8bd3d8245acb61901503ad829afc120bfa3834c6",
+                "reference": "8bd3d8245acb61901503ad829afc120bfa3834c6",
                 "shasum": ""
             },
             "require": {
@@ -2794,7 +2794,7 @@
                 }
             ],
             "description": "This bundle provide the Back Office part of Open Orchestra",
-            "time": "2017-01-10 10:30:39"
+            "time": "2017-01-13 13:19:32"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -3183,12 +3183,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
-                "reference": "1ddcdee9ac31d51da5283700b7beaaf45027b21e"
+                "reference": "9d5df7f3c62ae67d7253346a4f1a4b7707c60254"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/1ddcdee9ac31d51da5283700b7beaaf45027b21e",
-                "reference": "1ddcdee9ac31d51da5283700b7beaaf45027b21e",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/9d5df7f3c62ae67d7253346a4f1a4b7707c60254",
+                "reference": "9d5df7f3c62ae67d7253346a4f1a4b7707c60254",
                 "shasum": ""
             },
             "require": {
@@ -3223,7 +3223,7 @@
                 }
             ],
             "description": "A MongoDB implemantation of the Open Orchestra Model Interface",
-            "time": "2017-01-10 10:07:04"
+            "time": "2017-01-13 13:19:21"
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
@@ -3231,12 +3231,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-interface.git",
-                "reference": "712bae36a225a2814f9dfc4452785e44f0d6a33b"
+                "reference": "32f7fc5a0db833da2e54a55e7b41e9449af7dcb7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/712bae36a225a2814f9dfc4452785e44f0d6a33b",
-                "reference": "712bae36a225a2814f9dfc4452785e44f0d6a33b",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/32f7fc5a0db833da2e54a55e7b41e9449af7dcb7",
+                "reference": "32f7fc5a0db833da2e54a55e7b41e9449af7dcb7",
                 "shasum": ""
             },
             "require": {
@@ -3268,7 +3268,7 @@
                 }
             ],
             "description": "Describe all entity and repository to implement for the whole OpenOrchestra project",
-            "time": "2017-01-10 10:07:15"
+            "time": "2017-01-13 13:15:54"
         },
         {
             "name": "open-orchestra/open-orchestra-mongo-libs",
@@ -3276,12 +3276,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-mongo-libs.git",
-                "reference": "531bf02114b80ab182f30dcab031782a712bc403"
+                "reference": "798fc6ed7eeee23fd116f3bdf7d03c26818875b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-mongo-libs/zipball/531bf02114b80ab182f30dcab031782a712bc403",
-                "reference": "531bf02114b80ab182f30dcab031782a712bc403",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-mongo-libs/zipball/798fc6ed7eeee23fd116f3bdf7d03c26818875b7",
+                "reference": "798fc6ed7eeee23fd116f3bdf7d03c26818875b7",
                 "shasum": ""
             },
             "require": {
@@ -3318,7 +3318,7 @@
                 }
             ],
             "description": "Some libraries to use MongoDB in Open Orchestra",
-            "time": "2016-12-07 11:30:42"
+            "time": "2017-01-13 13:20:29"
         },
         {
             "name": "open-orchestra/open-orchestra-user-bundle",
@@ -3699,16 +3699,16 @@
         },
         {
             "name": "sensio/distribution-bundle",
-            "version": "v5.0.17",
+            "version": "v5.0.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioDistributionBundle.git",
-                "reference": "4e98a1a6d3935d05414bd11e421a2047c93619f7"
+                "reference": "17846680901003d26d823c2e3ac9228702837916"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioDistributionBundle/zipball/4e98a1a6d3935d05414bd11e421a2047c93619f7",
-                "reference": "4e98a1a6d3935d05414bd11e421a2047c93619f7",
+                "url": "https://api.github.com/repos/sensiolabs/SensioDistributionBundle/zipball/17846680901003d26d823c2e3ac9228702837916",
+                "reference": "17846680901003d26d823c2e3ac9228702837916",
                 "shasum": ""
             },
             "require": {
@@ -3747,20 +3747,20 @@
                 "configuration",
                 "distribution"
             ],
-            "time": "2017-01-04 13:35:35"
+            "time": "2017-01-10 14:58:45"
         },
         {
             "name": "sensio/framework-extra-bundle",
-            "version": "v3.0.18",
+            "version": "v3.0.19",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioFrameworkExtraBundle.git",
-                "reference": "c38bc608e12e81089d5d9dfbf72775ed553c61af"
+                "reference": "d57c2f297d17ee82baf8cae0b16dae34a9378784"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/c38bc608e12e81089d5d9dfbf72775ed553c61af",
-                "reference": "c38bc608e12e81089d5d9dfbf72775ed553c61af",
+                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/d57c2f297d17ee82baf8cae0b16dae34a9378784",
+                "reference": "d57c2f297d17ee82baf8cae0b16dae34a9378784",
                 "shasum": ""
             },
             "require": {
@@ -3815,7 +3815,7 @@
                 "annotations",
                 "controllers"
             ],
-            "time": "2016-12-14 08:30:06"
+            "time": "2017-01-10 19:42:56"
         },
         {
             "name": "sensio/generator-bundle",
@@ -4860,16 +4860,16 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v2.8.15",
+            "version": "v2.8.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "3ec15b9379ebb0758e296d4193926a7b4121a964"
+                "reference": "9fef72a3ab561c4bfa703a70369db028dec387d2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/3ec15b9379ebb0758e296d4193926a7b4121a964",
-                "reference": "3ec15b9379ebb0758e296d4193926a7b4121a964",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/9fef72a3ab561c4bfa703a70369db028dec387d2",
+                "reference": "9fef72a3ab561c4bfa703a70369db028dec387d2",
                 "shasum": ""
             },
             "require": {
@@ -4991,7 +4991,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2016-12-13 12:16:34"
+            "time": "2017-01-12 20:27:46"
         },
         {
             "name": "twig/extensions",
@@ -5047,16 +5047,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.30.0",
+            "version": "v1.31.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "c6ff71094fde15d12398eaba029434b013dc5e59"
+                "reference": "ddc9e3e20ee9c0b6908f401ac8353635b750eca7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/c6ff71094fde15d12398eaba029434b013dc5e59",
-                "reference": "c6ff71094fde15d12398eaba029434b013dc5e59",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/ddc9e3e20ee9c0b6908f401ac8353635b750eca7",
+                "reference": "ddc9e3e20ee9c0b6908f401ac8353635b750eca7",
                 "shasum": ""
             },
             "require": {
@@ -5064,12 +5064,12 @@
             },
             "require-dev": {
                 "symfony/debug": "~2.7",
-                "symfony/phpunit-bridge": "~3.2@dev"
+                "symfony/phpunit-bridge": "~3.2"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.30-dev"
+                    "dev-master": "1.31-dev"
                 }
             },
             "autoload": {
@@ -5104,7 +5104,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2016-12-23 11:06:22"
+            "time": "2017-01-11 19:36:15"
         },
         {
             "name": "willdurand/js-translation-bundle",
