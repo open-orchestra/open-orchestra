@@ -48,6 +48,7 @@ class FormControllersTest extends AbstractFormTest
     {
         return array(
             0 => array('/admin/workflow-profile/new'),
+            1 => array('/admin/workflow-parameters/form'),
         );
     }
 
