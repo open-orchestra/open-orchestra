@@ -99,6 +99,8 @@ class ApiControllersTest extends AbstractAuthenticatedTest
             28  => array('/api/block/list/block-component'),
             29  => array('/api/content-type/content/content-type-list'),
             30 => array('/api/content/delete-multiple', '', 'DELETE'),
+            31 => array('/api/keyword/delete-multiple', "DELETE"),
+            32 => array('/api/keyword'),
         );
     }
 }

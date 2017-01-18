@@ -47,10 +47,10 @@ class ApiControllersSecurityTest extends AbstractAuthenticatedTest
             12 => array('/api/site'),
             /*13 => array('/api/site/root/delete', "DELETE"),
             14 => array('/api/keyword/check'),
-            15 => array('/api/keyword/fake_id'),
-            16 => array('/api/keyword/fake_id/delete', "DELETE"),
+            15 => array('/api/keyword/fake_id'),*/
+            16 => array('/api/keyword/delete-multiple', "DELETE"),
             17 => array('/api/keyword'),
-            18 => array('/api/trashcan/list'),
+            /*18 => array('/api/trashcan/list'),
             19 => array('/api/trashcan/fake_id/restore','PUT'),
             20 => array('/api/group/groupID/delete', "DELETE"),
             21 => array('/api/content'),
