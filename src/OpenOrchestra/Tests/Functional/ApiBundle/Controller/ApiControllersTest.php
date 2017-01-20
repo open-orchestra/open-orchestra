@@ -11,25 +11,43 @@ use OpenOrchestra\FunctionalTests\Utils\AbstractAuthenticatedTest;
  */
 class ApiControllersTest extends AbstractAuthenticatedTest
 {
+
     /**
-     * test duplicate group Api
+     * test duplicate Api
+     *
+     *
+     * @dataProvider provideDuplicateApiElements
      */
-    public function testDuplicateGroupApi()
+    public function testDuplicateApi($repositoryName, $method, $value, $type, $url)
     {
-        $this->groupRepository = static::$kernel->getContainer()->get('open_orchestra_user.repository.group');
-        $group = $this->groupRepository->findOneByName('Demo group');
-        $group = static::$kernel->getContainer()->get('open_orchestra_api.transformer_manager')->get('group')->transform($group);
-        $group = static::$kernel->getContainer()->get('jms_serializer')->serialize(
-            $group,
+        $repository = static::$kernel->getContainer()->get($repositoryName);
+        $source = $repository->$method($value);
+        $source = static::$kernel->getContainer()->get('open_orchestra_api.transformer_manager')->get($type)->transform($source);
+        $source = static::$kernel->getContainer()->get('jms_serializer')->serialize(
+            $source,
             'json'
-        );
-        $this->client->request("POST", '/api/group/duplicate', array(), array(), array(), $group);
+            );
+        $this->client->request("POST", $url, array(), array(), array(), $source);
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
         $this->assertSame('application/json', $this->client->getResponse()->headers->get('content-type'));
 
-        $group = $this->groupRepository->findOneByName(new \MongoRegex('/^Demo group_.*$/'));
-        static::$kernel->getContainer()->get('object_manager')->remove($group);
-        static::$kernel->getContainer()->get('object_manager')->flush();
+        $element = $repository->$method(new \MongoRegex('/^'.$value.'_.*$/'));
+        while (!is_null($element)) {
+            static::$kernel->getContainer()->get('object_manager')->remove($element);
+            static::$kernel->getContainer()->get('object_manager')->flush();
+            $element = $repository->$method(new \MongoRegex('/^'.$value.'_.*$/'));
+        }
+    }
+
+    /**
+     * @return array
+     */
+    public function provideDuplicateApiElements()
+    {
+        return array(
+            0  => array('open_orchestra_user.repository.group', 'findOneByName', 'Demo group', 'group', '/api/group/duplicate'),
+            1  => array('open_orchestra_model.repository.content', 'findOneByContentId', '206_3_portes', 'content', '/api/content/duplicate'),
+        );
     }
 
     /**
@@ -80,6 +98,7 @@ class ApiControllersTest extends AbstractAuthenticatedTest
             27  => array('/api/group/list'),
             28  => array('/api/block/list/block-component'),
             29  => array('/api/content-type/content/content-type-list'),
+            30 => array('/api/content/delete-multiple', '', 'DELETE'),
         );
     }
 }

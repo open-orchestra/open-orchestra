@@ -272,27 +272,52 @@ class ContentRepositoryTest extends AbstractKernelTestCase
     }
 
     /**
-     * @param string   $contentType
-     * @param array    $descriptionEntity
-     * @param array    $search
-     * @param string   $siteId
-     * @param int      $skip
-     * @param int      $limit
-     * @param integer  $count
+     * @param string     $contentType
+     * @param array|null $search
+     * @param array|null $order
+     * @param string     $siteId
+     * @param int        $skip
+     * @param int        $limit
+     * @param string     $language
+     * @param integer    $count
+     * @param integer    $totalCount
+     * @param string     $name
      *
      * @dataProvider provideContentTypeAndPaginateAndSearchAndsiteId
      */
-    public function testFindPaginatedLastVersionByContentTypeAndsite($contentType, $descriptionEntity, $search, $order, $siteId, $skip, $limit, $count, $name = null)
+    public function testFindForPaginateFilterByContentTypeSiteAndLanguage($contentType, $search, $order, $siteId, $skip, $limit, $language, $count, $totalCount, $name = null)
     {
-        $this->markTestSkipped('To unskip when group list is refacto');
-        $configuration = PaginateFinderConfiguration::generateFromVariable($descriptionEntity, $search);
-        $configuration->setPaginateConfiguration($order, $skip, $limit);
-        $contents = $this->repository->findPaginatedLastVersionByContentTypeAndsite($contentType, $configuration, $siteId);
+        $mapping = array(
+            'name' => 'name',
+            'status_label' => 'status.labels.'.$language,
+            'linked_to_site' => 'linkedToSite',
+            'created_at' => 'createdAt',
+            'created_by' => 'createdBy',
+            'updated_at' => 'updatedAt',
+            'updated_by' => 'updatedBy',
+            'fields.car_name.string_value' => 'attributes.car_name.stringValue',
+            'fields.description.string_value' => 'attributes.description.stringValue',
+            'fields.on_market.string_value' => 'attributes.on_market.stringValue',
+            'fields.tinimce_test.string_value' => 'attributes.tinimce_test.stringValue',
+        );
+
+        $searchTypes = array (
+            'attributes.car_name' => 'text',
+            'attributes.description' => 'text',
+            'attributes.on_market' => 'date',
+            'attributes.tinimce_test' => 'text',
+        );
+
+
+        $configuration = PaginateFinderConfiguration::generateFromVariable($order, $skip, $limit, $mapping, $search);
+        $contents = $this->repository->findForPaginateFilterByContentTypeSiteAndLanguage($configuration, $contentType, $siteId, $language, $searchTypes);
+        $repositoryCount = $this->repository->countWithFilterAndContentTypeSiteAndLanguage($configuration, $contentType, $siteId, $language, $searchTypes);
 
         if(!is_null($name)) {
             $this->assertEquals($name, $contents[0]->getName());
         }
         $this->assertCount($count, $contents);
+        $this->assertEquals($totalCount, $repositoryCount);
     }
 
     /**
@@ -300,38 +325,31 @@ class ContentRepositoryTest extends AbstractKernelTestCase
      */
     public function provideContentTypeAndPaginateAndSearchAndsiteId()
     {
-        $descriptionEntity = $this->getDescriptionColumnEntity();
-
         return array(
-            1  => array('car', $descriptionEntity, null, array("name" => "name", "dir" => "asc"), null, 0 ,5 , 3, '206 3 portes en'),
-            2  => array('car', $descriptionEntity, null, array("name" => "name", "dir" => "desc"), null, 0 ,5 , 3, 'R5 3 portes en'),
-            3  => array('car', $descriptionEntity, null, array("name" => "attributes.car_name.string_value", "dir" => "asc"), null, 0 ,5 , 3, '206 3 portes en'),
-            4  => array('car', $descriptionEntity, null, array("name" => "attributes.car_name.string_value", "dir" => "desc"), null, 0 ,5 , 3, 'R5 3 portes en'),
-            5  => array('car', $descriptionEntity, null, null, null, 0 ,1 , 1),
-            6  => array('car', $descriptionEntity, $this->generateColumnsProvider(array('name' => '206')), null, null, 0 ,2 , 1),
-            7  => array('car', $descriptionEntity, $this->generateColumnsProvider(array('version' => '2')), null, null, 0 ,2 , 2),
-            8  => array('news', $descriptionEntity, null, null, null, 0 , 100, 4),
-            9  => array('news', $descriptionEntity, null, null, null, 50 , 100, 0),
-            10 => array('news', $descriptionEntity, $this->generateColumnsProvider(array('name' => 'news')), null, null, 0 , null, 0),
-            11 => array('car', $descriptionEntity, null, null, '2', 0 ,5 , 3),
-            12 => array('car', $descriptionEntity, $this->generateColumnsProvider(array('status_label' => 'publish')), null, null, null ,null , 3),
-            13 => array('car', $descriptionEntity, $this->generateColumnsProvider(array('status_label' => 'Publi')), null, null, null ,null , 3),
-            14 => array('car', $descriptionEntity, $this->generateColumnsProvider(array('status_label' => 'draft')), null, null, null ,null , 0),
-            15 => array('car', $descriptionEntity, $this->generateColumnsProvider(array('status_label' => 'brouillon')), null, null, null ,null , 0),
-
+            1  => array('car', null, array("name" => "name", "dir" => "asc"), '2', 0 ,5 , 'en', 3, 3, '206 3 portes en'),
+            2  => array('car', null, array("name" => "name", "dir" => "desc"), '2', 0 ,5 , 'en', 3, 3, 'R5 3 portes en'),
+            3  => array('car', null, array("name" => "fields.car_name.string_value", "dir" => "asc"), '2', 0 ,5 , 'en', 3, 3, '206 3 portes en'),
+            4  => array('car', null, array("name" => "fields.car_name.string_value", "dir" => "desc"),'2', 0 ,5 , 'en', 3, 3, 'R5 3 portes en'),
+            5  => array('car', null, null, null, 0 ,1 , 'en', 1, 2),
+            6  => array('car', array('attributes.car_name' => '206'), null, '2', 0 , 2 , 'en', 1, 1),
+            7  => array('news', null, null, '2', 0 , 100, 'fr', 4, 4),
+            8  => array('news', null, null, '2', 50 , 100, 'en', 0, 0),
+            9 => array('news', array('name' => 'news'), null, '2', 0 , null, 'fr', 0, 0),
+            10 => array('car', null, null, '2', 0 ,5 , 'en', 3, 3),
         );
     }
 
     /**
      * @param string  $contentType
      * @param string  $siteId
+     * @param string  $language
      * @param integer $count
      *
      * @dataProvider provideCountByContentTypeAndSiteInLastVersion
      */
-    public function testCountByContentTypeAndSiteInLastVersion($contentType, $siteId, $count)
+    public function testCountFilterByContentTypeSiteAndLanguage($contentType, $siteId, $language, $count)
     {
-        $contents = $this->repository->countByContentTypeAndSiteInLastVersion($contentType, $siteId);
+        $contents = $this->repository->countFilterByContentTypeSiteAndLanguage($contentType, $siteId, $language);
         $this->assertEquals($count, $contents);
     }
 
@@ -341,53 +359,12 @@ class ContentRepositoryTest extends AbstractKernelTestCase
     public function provideCountByContentTypeAndSiteInLastVersion()
     {
         return array(
-            array('car', '1', 2),
-            array('car', '2', 3),
-            array('customer', '1', 1),
-            array('customer', '2', 1),
-            array('news', '1', 3),
-            array('news', '2', 4),
-        );
-    }
-
-    /**
-     * @param string  $contentType
-     * @param array   $descriptionEntity
-     * @param string  $search
-     * @param string  $siteId
-     * @param int     $count
-     *
-     * @dataProvider provideColumnsAndSearchAndCount
-     */
-    public function testCountByContentTypeInLastVersionWithSearchFilter(
-        $contentType,
-        $descriptionEntity,
-        $search,
-        $siteId,
-        $count
-    ) {
-        $this->markTestSkipped('To unskip when group list is refacto');
-        $configuration = FinderConfiguration::generateFromVariable($descriptionEntity, $search);
-        $contents = $this->repository->countByContentTypeInLastVersionWithFilter($contentType, $configuration, $siteId);
-        $this->assertEquals($count, $contents);
-    }
-    /**
-     * @return array
-     */
-    public function provideColumnsAndSearchAndCount()
-    {
-        $descriptionEntity = $this->getDescriptionColumnEntity();
-        return array(
-            array('car', $descriptionEntity, $this->generateColumnsProvider(array('name' => '206')), '1', 1),
-            array('car', $descriptionEntity, $this->generateColumnsProvider(array('name' => '206')), '2', 1),
-            array('car', $descriptionEntity, $this->generateColumnsProvider(array('name' => 'DS 3')), '1', 0),
-            array('car', $descriptionEntity, $this->generateColumnsProvider(array('name' => 'DS 3')), '2', 1),
-            array('car', $descriptionEntity, $this->generateColumnsProvider(null, 'portes'), '1', 2),
-            array('car', $descriptionEntity, $this->generateColumnsProvider(null, 'portes'), '2', 2),
-            array('news', $descriptionEntity, $this->generateColumnsProvider(null, 'news'), '1', 0),
-            array('news', $descriptionEntity, $this->generateColumnsProvider(null, 'news'), '2', 0),
-            array('news', $descriptionEntity, $this->generateColumnsProvider(null, 'lorem'), '1', 1),
-            array('news', $descriptionEntity, $this->generateColumnsProvider(null, 'lorem'), '2', 1),
+            array('car', '1', 'en', 2),
+            array('car', '2', 'en', 3),
+            array('customer', '1', 'en', 1),
+            array('customer', '2', 'en', 1),
+            array('news', '1', 'en', 0),
+            array('news', '2', 'fr', 4),
         );
     }
 
