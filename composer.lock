@@ -2690,12 +2690,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "7c83cd13cd53939d895c889b1b091ca43169502f"
+                "reference": "c34385fbaea48b610e709afc9fb9756c61b3375b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/7c83cd13cd53939d895c889b1b091ca43169502f",
-                "reference": "7c83cd13cd53939d895c889b1b091ca43169502f",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/c34385fbaea48b610e709afc9fb9756c61b3375b",
+                "reference": "c34385fbaea48b610e709afc9fb9756c61b3375b",
                 "shasum": ""
             },
             "require": {
@@ -2711,7 +2711,6 @@
                 "open-orchestra/open-orchestra-user-bundle": "self.version",
                 "php": "~5.6.0",
                 "sensio/generator-bundle": "~3.0.0",
-                "stfalcon/tinymce-bundle": "~1.1.0",
                 "symfony/assetic-bundle": "~2.8.0",
                 "symfony/monolog-bundle": "~2.11.0",
                 "willdurand/js-translation-bundle": "~2.6.1"
@@ -2767,7 +2766,8 @@
                     "backbone": "~1.2.3",
                     "jquery-minicolors": "~2.2.3",
                     "backbone.wreqr": "~1.3.5",
-                    "jquery.nicescroll": "^3.6.8"
+                    "jquery.nicescroll": "^3.6.8",
+                    "tinymce": "~4.5.2"
                 }
             },
             "autoload": {
@@ -2794,7 +2794,7 @@
                 }
             ],
             "description": "This bundle provide the Back Office part of Open Orchestra",
-            "time": "2017-01-25 14:33:26"
+            "time": "2017-01-25 14:46:54"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -3988,61 +3988,6 @@
             ],
             "description": "Build pipeline for Mongo Aggregation Query",
             "time": "2014-04-09 13:17:40"
-        },
-        {
-            "name": "stfalcon/tinymce-bundle",
-            "version": "v1.1.1",
-            "target-dir": "Stfalcon/Bundle/TinymceBundle",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/stfalcon/TinymceBundle.git",
-                "reference": "c34906241d7c091a00cf63d3d7ef2c32a11c9eb7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/stfalcon/TinymceBundle/zipball/c34906241d7c091a00cf63d3d7ef2c32a11c9eb7",
-                "reference": "c34906241d7c091a00cf63d3d7ef2c32a11c9eb7",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4.0",
-                "symfony/symfony": ">=2.1"
-            },
-            "type": "symfony-bundle",
-            "autoload": {
-                "psr-0": {
-                    "Stfalcon\\Bundle\\TinymceBundle": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Stepan Tanasiychuk",
-                    "email": "ceo@stfalcon.com",
-                    "homepage": "http://blog.stfalcon.com"
-                },
-                {
-                    "name": "Igor Negrutsa",
-                    "email": "progi2007@gmail.com",
-                    "homepage": "http://igor-negrutsa.info"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://github.com/stfalcon/TinymceBundle/contributors"
-                }
-            ],
-            "description": "This Bundle integrates TinyMCE WYSIWYG editor into a Symfony2 project.",
-            "keywords": [
-                "Symfony2",
-                "bundle",
-                "editor",
-                "tinymce",
-                "wysiwyg"
-            ],
-            "time": "2016-09-27 15:11:09"
         },
         {
             "name": "stof/doctrine-extensions-bundle",
