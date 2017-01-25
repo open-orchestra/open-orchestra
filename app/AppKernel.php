@@ -54,7 +54,6 @@ class AppKernel extends Kernel
             new OpenOrchestra\WorkflowAdminBundle\OpenOrchestraWorkflowAdminBundle(),
 
             // Need parameters set by some of our bundles
-            new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),
             new Knp\Bundle\GaufretteBundle\KnpGaufretteBundle(),
             new Solution\MongoAggregationBundle\SolutionMongoAggregationBundle(),
             new OpenOrchestra\ModelLogBundle\OpenOrchestraModelLogBundle(),
