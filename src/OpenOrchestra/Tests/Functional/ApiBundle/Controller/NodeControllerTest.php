@@ -353,4 +353,30 @@ class NodeControllerTest extends AbstractAuthenticatedTest
         $dm->persist($block);
         $dm->flush();
     }
+
+    /**
+     * Test add block in area action
+     */
+    public function testAddBlockInAreaAction()
+    {
+        $node = $this->nodeRepository->findInLastVersion('root', 'fr', '2');
+        $blocks = $this->blockRepository->findTransverseBlock('tiny_mce_wysiwyg', '2', 'fr');
+        $block = $blocks[0];
+        var_dump($block->getId());
+
+
+        $this->client->request(
+            'PUT',
+            "/api/node/add-block-in-area/".$node->getNodeId()."/".$node->getLanguage()."/".$node->getVersion()."/".$block->getId()."/footer/1"
+        );
+
+        $dm = static::$kernel->getContainer()->get('object_manager');
+        $dm->detach($node);
+        $dm->clear();
+        $node = $this->nodeRepository->findInLastVersion('root', 'fr', '2');
+        $footerAreaBlocks = $node->getArea('footer')->getBlocks();
+        $addedBlock =  $footerAreaBlocks[1];
+
+        $this->assertSame($block->getId(), $addedBlock->getId());
+    }
 }

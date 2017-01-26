@@ -677,7 +677,6 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     {
         return array(
             array("fakeTheme", 0),
-//            array("themePresentation", 29),
         );
     }
 
