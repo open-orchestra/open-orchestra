@@ -134,7 +134,7 @@ class WorkflowProfileRepositoryTest extends AbstractKernelTestCase
     /**
      * Test remove workflow profile
      */
-    public function testWorkflowProfile()
+    public function testRemoveWorkflowProfile()
     {
         $dm = static::$kernel->getContainer()->get('object_manager');
         $validator = $this->repository->findOneBy(array('labels.en' => 'Validator'));

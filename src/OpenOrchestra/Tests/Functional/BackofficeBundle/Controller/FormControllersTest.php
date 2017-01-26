@@ -41,6 +41,7 @@ class FormControllersTest extends AbstractFormTest
             8 => array('/admin/redirection/new'),
             9 => array('/admin/node/form/2/root/fr'),
             10 => array('/admin/block/new/shared/menu/fr'),
+            11 => array('/admin/keyword/new'),
         );
     }
 }
