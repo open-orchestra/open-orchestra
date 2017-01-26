@@ -84,7 +84,7 @@ class ApiControllersTest extends AbstractAuthenticatedTest
             14 => array('/api/site/list/available'),
             // 15 => array('/api/theme'),
             17 => array('/api/group/delete-multiple', '', 'DELETE'),
-            //18 => array('/api/redirection'),
+            18 => array('/api/redirection/delete-multiple', '', 'DELETE'),
             //19 => array('/api/status'),
             //20 => array('/api/status/list'),
             // 22 => array('/api/trashcan/list'),
