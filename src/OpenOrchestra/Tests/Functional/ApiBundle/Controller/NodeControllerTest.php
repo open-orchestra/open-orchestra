@@ -362,8 +362,6 @@ class NodeControllerTest extends AbstractAuthenticatedTest
         $node = $this->nodeRepository->findInLastVersion('root', 'fr', '2');
         $blocks = $this->blockRepository->findTransverseBlock('tiny_mce_wysiwyg', '2', 'fr');
         $block = $blocks[0];
-        var_dump($block->getId());
-
 
         $this->client->request(
             'PUT',
