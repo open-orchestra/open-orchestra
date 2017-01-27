@@ -2690,12 +2690,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "cd1dc1388d1d9f70aa8cf1faf1e9db268770bd75"
+                "reference": "b73077dbe57fc31d312d49f7f81e59d201c99d7e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/cd1dc1388d1d9f70aa8cf1faf1e9db268770bd75",
-                "reference": "cd1dc1388d1d9f70aa8cf1faf1e9db268770bd75",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/b73077dbe57fc31d312d49f7f81e59d201c99d7e",
+                "reference": "b73077dbe57fc31d312d49f7f81e59d201c99d7e",
                 "shasum": ""
             },
             "require": {
@@ -2794,7 +2794,7 @@
                 }
             ],
             "description": "This bundle provide the Back Office part of Open Orchestra",
-            "time": "2017-01-25 16:05:05"
+            "time": "2017-01-27 14:50:54"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -3183,12 +3183,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
-                "reference": "77c2714a424f998916b33320d29ab73dfcf87f1c"
+                "reference": "0c74a98857f89ea2c60963db04a211edbab80b56"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/77c2714a424f998916b33320d29ab73dfcf87f1c",
-                "reference": "77c2714a424f998916b33320d29ab73dfcf87f1c",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/0c74a98857f89ea2c60963db04a211edbab80b56",
+                "reference": "0c74a98857f89ea2c60963db04a211edbab80b56",
                 "shasum": ""
             },
             "require": {
@@ -3223,7 +3223,7 @@
                 }
             ],
             "description": "A MongoDB implemantation of the Open Orchestra Model Interface",
-            "time": "2017-01-25 16:04:13"
+            "time": "2017-01-27 14:59:31"
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
@@ -3231,12 +3231,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-interface.git",
-                "reference": "deb5e6386f9d2a58aae0b07754530044231e01b4"
+                "reference": "d2d39c3f7421874d97bb5b4187d4fb77dadc1342"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/deb5e6386f9d2a58aae0b07754530044231e01b4",
-                "reference": "deb5e6386f9d2a58aae0b07754530044231e01b4",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/d2d39c3f7421874d97bb5b4187d4fb77dadc1342",
+                "reference": "d2d39c3f7421874d97bb5b4187d4fb77dadc1342",
                 "shasum": ""
             },
             "require": {
@@ -3268,7 +3268,7 @@
                 }
             ],
             "description": "Describe all entity and repository to implement for the whole OpenOrchestra project",
-            "time": "2017-01-25 15:58:27"
+            "time": "2017-01-27 14:47:07"
         },
         {
             "name": "open-orchestra/open-orchestra-mongo-libs",
@@ -5158,16 +5158,16 @@
     "packages-dev": [
         {
             "name": "myclabs/deep-copy",
-            "version": "1.5.5",
+            "version": "1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/myclabs/DeepCopy.git",
-                "reference": "399c1f9781e222f6eb6cc238796f5200d1b7f108"
+                "reference": "5a5a9fc8025a08d8919be87d6884d5a92520cefe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/399c1f9781e222f6eb6cc238796f5200d1b7f108",
-                "reference": "399c1f9781e222f6eb6cc238796f5200d1b7f108",
+                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/5a5a9fc8025a08d8919be87d6884d5a92520cefe",
+                "reference": "5a5a9fc8025a08d8919be87d6884d5a92520cefe",
                 "shasum": ""
             },
             "require": {
@@ -5196,7 +5196,7 @@
                 "object",
                 "object graph"
             ],
-            "time": "2016-10-31 17:19:45"
+            "time": "2017-01-26 22:05:40"
         },
         {
             "name": "phake/phake",
