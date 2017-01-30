@@ -4,12 +4,15 @@ namespace OpenOrchestra\FuntionalTests\BackOfficeBundle\Command;
 
 use OpenOrchestra\BackofficeBundle\Command\OrchestraUnpublishContentCommand;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
+use OpenOrchestra\BaseBundle\Tests\AbstractTest\AbstractWebTestCase;
 
 /**
  * Class OrchestraUnpublishContentCommandTest
  */
-class OrchestraUnpublishContentCommandTest extends OrchestraUnpublishElementCommandTest
+class OrchestraUnpublishContentCommandTest extends AbstractWebTestCase
 {
+    use PublishElementCommandTrait;
+
     protected $application;
 
     /**
@@ -32,7 +35,7 @@ class OrchestraUnpublishContentCommandTest extends OrchestraUnpublishElementComm
      */
     public function testExecute($siteId)
     {
-        $this->executeUnpublish($siteId, 'orchestra:unpublish:content', 'open_orchestra_model.repository.content');
+        $this->execute($siteId, 'orchestra:unpublish:content', 'open_orchestra_model.repository.content', 'content', 'Unpublishing', 'unpublished');
     }
 
     /**

@@ -4,19 +4,16 @@ namespace OpenOrchestra\FuntionalTests\BackOfficeBundle\Command;
 
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 use OpenOrchestra\BackofficeBundle\Command\OrchestraPublishContentCommand;
-
-
-
-
-
-
-
+use OpenOrchestra\BaseBundle\Tests\AbstractTest\AbstractWebTestCase;
+use OpenOrchestra\FuntionalTests\BackOfficeBundle\Command\PublishElementCommandTrait;
 
 /**
  * Class OrchestraPublishContentCommandTest
  */
-class OrchestraPublishContentCommandTest extends OrchestraPublishElementCommandTest
+class OrchestraPublishContentCommandTest extends AbstractWebTestCase
 {
+    use PublishElementCommandTrait;
+
     protected $application;
 
     /**
@@ -39,7 +36,7 @@ class OrchestraPublishContentCommandTest extends OrchestraPublishElementCommandT
      */
     public function testExecute($siteId)
     {
-        $this->executePublish($siteId, 'orchestra:publish:content', 'open_orchestra_model.repository.content');
+        $this->execute($siteId, 'orchestra:publish:content', 'open_orchestra_model.repository.content', 'content', 'Publishing', 'published');
     }
 
     /**

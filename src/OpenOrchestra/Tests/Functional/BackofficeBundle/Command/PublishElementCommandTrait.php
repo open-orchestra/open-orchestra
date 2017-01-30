@@ -3,19 +3,18 @@
 namespace OpenOrchestra\FuntionalTests\BackOfficeBundle\Command;
 
 use Symfony\Component\Console\Tester\CommandTester;
-use OpenOrchestra\BaseBundle\Tests\AbstractTest\AbstractWebTestCase;
 
 /**
- * Class OrchestraPublishElementCommandTest
+ * Class PublishElementCommandTrait
  */
-abstract class OrchestraPublishElementCommandTest extends AbstractWebTestCase
+trait PublishElementCommandTrait
 {
     /**
      * @param string $siteId
      * @param string $commandName
      * @param string $repositoryName
      */
-    public function executePublish($siteId, $commandName, $repositoryName)
+    public function execute($siteId, $commandName, $repositoryName, $entityName, $text, $state)
     {
         $command = $this->application->find($commandName);
         $commandTester = new CommandTester($command);
@@ -28,13 +27,13 @@ abstract class OrchestraPublishElementCommandTest extends AbstractWebTestCase
 
         $commandTester->execute(array('command' => $command->getName()));
         $this->assertRegExp(
-            '/Publishing nodes for siteId ' . $siteId . '/',
+            '/'.$text.' '.$entityName.'s for siteId ' . $siteId . '/',
             $commandTester->getDisplay()
         );
 
         foreach ($elements as $element) {
             $this->assertRegExp(
-                '/-> ' . $element->getName() . ' \(v' . $element->getVersion() . ' ' . $element->getLanguage() . '\) published/',
+                '/-> ' . $element->getName() . ' \(v' . $element->getVersion() . ' ' . $element->getLanguage() . '\) '.$state.'/',
                 $commandTester->getDisplay()
             );
         }
