@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenOrchestra\FuntionalTests\BackOfficeBundle\Command;
+namespace OpenOrchestra\FuntionalTests\BackofficeBundle\Command;
 
 use Symfony\Component\Console\Tester\CommandTester;
 

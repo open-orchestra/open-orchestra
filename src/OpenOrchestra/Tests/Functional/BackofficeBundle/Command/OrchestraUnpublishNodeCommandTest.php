@@ -1,11 +1,11 @@
 <?php
 
-namespace OpenOrchestra\FuntionalTests\BackOfficeBundle\Command;
+namespace OpenOrchestra\FuntionalTests\BackofficeBundle\Command;
 
 use OpenOrchestra\BackofficeBundle\Command\OrchestraUnpublishNodeCommand;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 use OpenOrchestra\BaseBundle\Tests\AbstractTest\AbstractWebTestCase;
-use OpenOrchestra\FuntionalTests\BackOfficeBundle\Command\PublishElementCommandTrait;
+use OpenOrchestra\FuntionalTests\BackofficeBundle\Command\PublishElementCommandTrait;
 
 /**
  * Class OrchestraUnpublishNodeCommandTest
