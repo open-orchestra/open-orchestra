@@ -1,11 +1,11 @@
 <?php
 
-namespace OpenOrchestra\FuntionalTests\BackofficeBundle\Command;
+namespace OpenOrchestra\FunctionalTests\BackofficeBundle\Command;
 
 use OpenOrchestra\BackofficeBundle\Command\OrchestraUnpublishContentCommand;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 use OpenOrchestra\BaseBundle\Tests\AbstractTest\AbstractWebTestCase;
-use OpenOrchestra\FuntionalTests\BackofficeBundle\Command\PublishElementCommandTrait;
+use OpenOrchestra\FunctionalTests\BackofficeBundle\Command\PublishElementCommandTrait;
 
 /**
  * Class OrchestraUnpublishContentCommandTest
@@ -36,7 +36,7 @@ class OrchestraUnpublishContentCommandTest extends AbstractWebTestCase
      */
     public function testExecute($siteId)
     {
-        $this->execute($siteId, 'orchestra:unpublish:content', 'open_orchestra_model.repository.content', 'content', 'Unpublishing', 'unpublished');
+        $this->executeUnpublish($siteId, 'orchestra:unpublish:content', 'open_orchestra_model.repository.content', 'content');
     }
 
     /**
