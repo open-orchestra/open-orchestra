@@ -19,7 +19,7 @@ class ContentTypeControllerTest extends AbstractFormTest
 
     protected $username = 'developer';
     protected $password = 'developer';
-    
+
     /**
      * Set up the test
      */
@@ -51,7 +51,7 @@ class ContentTypeControllerTest extends AbstractFormTest
      */
     public function testEditContent()
     {
-        $url = '/admin/content/form/welcome?language=fr';
+        $url = '/admin/content/form/welcome/fr';
         $crawler = $this->client->request('GET', $url);
         $this->assertNotContains('has-error', $this->client->getResponse()->getContent());
         $contentForm = $crawler->selectButton('Save')->form();
@@ -63,7 +63,7 @@ class ContentTypeControllerTest extends AbstractFormTest
 
         $this->submitForm($form);
 
-        $url = '/admin/content/form/welcome?language=fr';
+        $url = '/admin/content/form/welcome/fr';
         $this->client->request('GET', $url);
         $this->assertNotContains('has-error', $this->client->getResponse()->getContent());
     }
@@ -73,7 +73,7 @@ class ContentTypeControllerTest extends AbstractFormTest
      */
     public function testNewContent()
     {
-        $url = '/admin/content/new/news';
+        $url = '/admin/content/new/news/en';
         $this->client->request('GET', $url);
         $this->assertNotContains('has-error', $this->client->getResponse()->getContent());
     }

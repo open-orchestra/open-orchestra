@@ -41,7 +41,7 @@ class OrchestraUnpublishNodeCommandTest extends AbstractWebTestCase
         $publishedStatus = static::$kernel->getContainer()->get('open_orchestra_model.repository.status')
             ->findOneByPublished();
         $nodes = static::$kernel->getContainer()->get('open_orchestra_model.repository.node')
-            ->findNodeToAutoUnpublish($site->getSiteId(), $publishedStatus);
+            ->findElementToAutoUnpublish($site->getSiteId(), $publishedStatus);
 
         $commandTester->execute(array('command' => $command->getName()));
         $this->assertRegExp(

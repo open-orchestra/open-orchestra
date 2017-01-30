@@ -41,7 +41,7 @@ class OrchestraPublishNodeCommandTest extends AbstractWebTestCase
         $fromStatus = static::$kernel->getContainer()->get('open_orchestra_model.repository.status')
             ->findByAutoPublishFrom();
         $nodes = static::$kernel->getContainer()->get('open_orchestra_model.repository.node')
-            ->findNodeToAutoPublish($site->getSiteId(), $fromStatus);
+            ->findElementToAutoPublish($site->getSiteId(), $fromStatus);
 
         $commandTester->execute(array('command' => $command->getName()));
         $this->assertRegExp(
