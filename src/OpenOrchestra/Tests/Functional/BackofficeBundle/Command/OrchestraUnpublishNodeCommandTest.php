@@ -4,13 +4,11 @@ namespace OpenOrchestra\FuntionalTests\BackOfficeBundle\Command;
 
 use OpenOrchestra\BackofficeBundle\Command\OrchestraUnpublishNodeCommand;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
-use Symfony\Component\Console\Tester\CommandTester;
-use OpenOrchestra\BaseBundle\Tests\AbstractTest\AbstractWebTestCase;
 
 /**
  * Class OrchestraUnpublishNodeCommandTest
  */
-class OrchestraUnpublishNodeCommandTest extends AbstractWebTestCase
+class OrchestraUnpublishNodeCommandTest extends OrchestraUnpublishElementCommandTest
 {
     protected $application;
 
@@ -34,29 +32,7 @@ class OrchestraUnpublishNodeCommandTest extends AbstractWebTestCase
      */
     public function testExecute($siteId)
     {
-        $command = $this->application->find('orchestra:unpublish:node');
-        $commandTester = new CommandTester($command);
-
-        $site = static::$kernel->getContainer()->get('open_orchestra_model.repository.site')->findOneBySiteId($siteId);
-        $publishedStatus = static::$kernel->getContainer()->get('open_orchestra_model.repository.status')
-            ->findOneByPublished();
-        $nodes = static::$kernel->getContainer()->get('open_orchestra_model.repository.node')
-            ->findElementToAutoUnpublish($site->getSiteId(), $publishedStatus);
-
-        $commandTester->execute(array('command' => $command->getName()));
-        $this->assertRegExp(
-            '/Unpublishing nodes for siteId ' . $siteId . '/',
-            $commandTester->getDisplay()
-        );
-
-        foreach ($nodes as $node) {
-            $this->assertRegExp(
-                '/-> ' . $node->getName(). ' \(v' . $node->getVersion() . ' ' . $node->getLanguage() . '\) unpublished/',
-                $commandTester->getDisplay()
-            );
-        }
-
-        $this->assertRegExp('/Done./', $commandTester->getDisplay());
+        $this->executeUnpublish($siteId, 'orchestra:unpublish:node', 'open_orchestra_model.repository.node');
     }
 
     /**

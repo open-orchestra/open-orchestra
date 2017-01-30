@@ -3,12 +3,19 @@
 namespace OpenOrchestra\FuntionalTests\BackOfficeBundle\Command;
 
 use Symfony\Bundle\FrameworkBundle\Console\Application;
-use OpenOrchestra\BackofficeBundle\Command\OrchestraPublishNodeCommand;
+use OpenOrchestra\BackofficeBundle\Command\OrchestraPublishContentCommand;
+
+
+
+
+
+
+
 
 /**
- * Class OrchestraPublishNodeCommandTest
+ * Class OrchestraPublishContentCommandTest
  */
-class OrchestraPublishNodeCommandTest extends OrchestraPublishElementCommandTest
+class OrchestraPublishContentCommandTest extends OrchestraPublishElementCommandTest
 {
     protected $application;
 
@@ -20,7 +27,7 @@ class OrchestraPublishNodeCommandTest extends OrchestraPublishElementCommandTest
         $client = self::createClient();
         $this->application = new Application($client->getKernel());
         $this->application->setAutoExit(false);
-        $this->application->add(new OrchestraPublishNodeCommand());
+        $this->application->add(new OrchestraPublishContentCommand());
     }
 
     /**
@@ -32,7 +39,7 @@ class OrchestraPublishNodeCommandTest extends OrchestraPublishElementCommandTest
      */
     public function testExecute($siteId)
     {
-        $this->executePublish($siteId, 'orchestra:publish:node', 'open_orchestra_model.repository.node');
+        $this->executePublish($siteId, 'orchestra:publish:content', 'open_orchestra_model.repository.content');
     }
 
     /**
