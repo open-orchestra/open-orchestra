@@ -5,6 +5,7 @@ namespace OpenOrchestra\FuntionalTests\BackOfficeBundle\Command;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 use OpenOrchestra\BackofficeBundle\Command\OrchestraPublishNodeCommand;
 use OpenOrchestra\BaseBundle\Tests\AbstractTest\AbstractWebTestCase;
+use OpenOrchestra\FuntionalTests\BackOfficeBundle\Command\PublishElementCommandTrait;
 
 /**
  * Class OrchestraPublishNodeCommandTest
