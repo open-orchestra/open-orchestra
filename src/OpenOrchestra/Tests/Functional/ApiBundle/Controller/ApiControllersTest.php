@@ -98,6 +98,7 @@ class ApiControllersTest extends AbstractAuthenticatedTest
             30 => array('/api/content/delete-multiple', '', 'DELETE'),
             31 => array('/api/keyword/delete-multiple', "DELETE"),
             32 => array('/api/keyword'),
+            33 => array('/api/node/list/with-block-in-area/root/2/header'),
         );
     }
 }

@@ -844,4 +844,31 @@ class NodeRepositoryTest extends AbstractKernelTestCase
         $dm->persist($block);
         $dm->flush();
     }
+
+    /**
+     * @param string $nodeId
+     * @param string $siteId
+     * @param string $areaId
+     * @param int    $count
+     *
+     * @dataProvider provideFindByNodeIdAndSiteIdWithBlocksInArea
+     */
+    public function testFindByNodeIdAndSiteIdWithBlocksInArea($nodeId, $siteId, $areaId, $count)
+    {
+        $nodes = $this->repository->findByNodeIdAndSiteIdWithBlocksInArea($nodeId, $siteId, $areaId);
+        $this->assertCount($count, $nodes);
+    }
+
+    /**
+     * @return array
+     */
+    public function provideFindByNodeIdAndSiteIdWithBlocksInArea()
+    {
+        return array(
+            array('root', '2', 'header', 3),
+            array('root', '2', 'footer', 3),
+            array('root', 'fake', 'footer', 0),
+            array('fake', '2', 'footer', 0),
+        );
+    }
 }
