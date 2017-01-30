@@ -70,10 +70,7 @@ class ApiControllersTest extends AbstractAuthenticatedTest
     public function provideApiUrl()
     {
         return array(
-            1  => array('/api/node/root/show-or-create'),
-            2  => array('/api/node/root/show-or-create', '&language=en'),
-            3  => array('/api/node/fixture_page_community/show-or-create'),
-            4  => array('/api/node/fixture_page_community/show-or-create', '&language=en'),
+            1  => array('/api/node/show/root/2/fr'),
             5  => array('/api/node/list/not-published-by-author'),
             6  => array('/api/node/list/by-author'),
             7  => array('/api/node/list/2/fr'),
