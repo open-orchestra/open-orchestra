@@ -3,7 +3,6 @@
 namespace OpenOrchestra\FunctionalTests\ModelBundle\Repository;
 
 use OpenOrchestra\BaseBundle\Tests\AbstractTest\AbstractKernelTestCase;
-use OpenOrchestra\Pagination\Configuration\FinderConfiguration;
 use OpenOrchestra\Pagination\Configuration\PaginateFinderConfiguration;
 use OpenOrchestra\ModelInterface\Repository\ContentRepositoryInterface;
 use OpenOrchestra\ModelInterface\Repository\RepositoryTrait\KeywordableTraitInterface;
@@ -101,11 +100,11 @@ class ContentRepositoryTest extends AbstractKernelTestCase
      * @param $version
      * @param string|null $language
      *
-     * @dataProvider providefindLastPublishedVersion
+     * @dataProvider provideFindPublishedVersion
      */
-    public function testFindLastPublishedVersion($contentId, $version, $language)
+    public function testFindPublishedVersion($contentId, $version, $language)
     {
-        $content = $this->repository->findLastPublishedVersion($contentId, $language);
+        $content = $this->repository->findPublishedVersion($contentId, $language);
         $this->assertSameContent($language, $version, null, $contentId, $content);
         $this->assertEquals($contentId, $content->getContentId());
     }
@@ -115,7 +114,7 @@ class ContentRepositoryTest extends AbstractKernelTestCase
      * @param $version
      * @param string|null $language
      *
-     * @dataProvider providefindLastPublishedVersion
+     * @dataProvider provideFindPublishedVersion
      */
     public function testFindOnePublished($contentId, $version, $language)
     {
@@ -127,7 +126,7 @@ class ContentRepositoryTest extends AbstractKernelTestCase
     /**
      * @return array
      */
-    public function providefindLastPublishedVersion()
+    public function provideFindPublishedVersion()
     {
         return array(
             array('notre_vision', 1, 'fr'),
@@ -583,11 +582,11 @@ class ContentRepositoryTest extends AbstractKernelTestCase
     }
 
     /**
-     * Test findAllCurrentlyPublishedByContentId
+     * Test findAllPublishedByContentId
      */
-    public function testFindAllCurrentlyPublishedByContentId()
+    public function findAllPublishedByContentId()
     {
-        $contents = $this->repository->findAllCurrentlyPublishedByContentId('bien_vivre_en_france');
+        $contents = $this->repository->findAllPublishedByContentId('bien_vivre_en_france');
 
         $this->assertEquals(1, count($contents));
     }

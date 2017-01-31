@@ -275,10 +275,11 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function testGetFooterTree($siteId, $nodeNumber, $version, $language = 'fr', $nodeId = null)
     {
         $nodes = $this->repository->getFooterTree($language, $siteId);
+
         $this->assertCount($nodeNumber, $nodes);
         if ($nodeId) {
-            $this->assertSameNode($language, $version, $siteId, $nodes[$nodeId], $nodeId);
-            $this->assertSame('published', $nodes[$nodeId]->getStatus()->getName());
+            $this->assertSameNode($language, $version, $siteId, $nodes[0], $nodeId);
+            $this->assertSame('published', $nodes[0]->getStatus()->getName());
         }
     }
 
@@ -307,8 +308,8 @@ class NodeRepositoryTest extends AbstractKernelTestCase
         $nodes = $this->repository->getMenuTree($language, $siteId);
 
         $this->assertCount($nodeNumber, $nodes);
-        $this->assertSameNode($language, $version, $siteId, $nodes[NodeInterface::ROOT_NODE_ID]);
-        $this->assertSame('published', $nodes[NodeInterface::ROOT_NODE_ID]->getStatus()->getName());
+        $this->assertSameNode($language, $version, $siteId, $nodes[0]);
+        $this->assertSame('published', $nodes[0]->getStatus()->getName());
     }
 
     /**
@@ -366,9 +367,9 @@ class NodeRepositoryTest extends AbstractKernelTestCase
      *
      * @dataProvider provideLanguageSiteIdAndCount
      */
-    public function testFindOnePublishedByLanguageAndSiteId($language, $siteId, $count)
+    public function testFindPublishedByLanguageAndSiteId($language, $siteId, $count)
     {
-        $nodes = $this->repository->findOnePublishedByLanguageAndSiteId($language, $siteId);
+        $nodes = $this->repository->findPublishedByLanguageAndSiteId($language, $siteId);
 
         $this->assertCount($count, $nodes);
         foreach ($nodes as $node) {
@@ -382,7 +383,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function provideLanguageSiteIdAndCount()
     {
         return array(
-            array('en', '2', 6),
+            array('en', '2', 5),
             array('fr', '2', 6),
         );
     }
@@ -520,28 +521,6 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     }
 
     /**
-     * @param string $type
-     * @param int    $count
-     *
-     * @dataProvider provideNodeTypeAndCount
-     */
-    public function testFindAllNodesOfTypeInLastPublishedVersionForSite($type, $count)
-    {
-        $this->assertCount($count, $this->repository->findAllNodesOfTypeInLastPublishedVersionForSite($type, '2'));
-    }
-
-    /**
-     * @return array
-     */
-    public function provideNodeTypeAndCount()
-    {
-        return array(
-            array(NodeInterface::TYPE_DEFAULT, 16),
-            array(NodeInterface::TYPE_ERROR, 6),
-        );
-    }
-
-    /**
      * Test has statused element
      */
     public function testHasStatusedElement()
@@ -592,7 +571,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     {
         return array(
             array("1", 0),
-            array("2", 17),
+            array("2", 16),
         );
     }
 
@@ -615,7 +594,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function provideFindPublishedByPathAndLanguage()
     {
         return array(
-            array("root", "2", "en", 6),
+            array("root", "2", "en", 5),
             array("transverse", "2", "en", 0),
         );
     }
