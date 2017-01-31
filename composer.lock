@@ -2689,12 +2689,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "166795e1776d56b14d017a960bcbaca634e3869f"
+                "reference": "37a0b6657bd1071e46b1fe30f3a82469feefaf59"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/166795e1776d56b14d017a960bcbaca634e3869f",
-                "reference": "166795e1776d56b14d017a960bcbaca634e3869f",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/37a0b6657bd1071e46b1fe30f3a82469feefaf59",
+                "reference": "37a0b6657bd1071e46b1fe30f3a82469feefaf59",
                 "shasum": ""
             },
             "require": {
@@ -2793,7 +2793,7 @@
                 }
             ],
             "description": "This bundle provide the Back Office part of Open Orchestra",
-            "time": "2017-01-30 17:22:08"
+            "time": "2017-01-31 09:08:30"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -3182,12 +3182,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
-                "reference": "82f7dea431fce8adb7547f0d7ab095ebe9517008"
+               "reference": "a6f1527703f5c97039d153585f7436fc8d99bd5d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/82f7dea431fce8adb7547f0d7ab095ebe9517008",
-                "reference": "82f7dea431fce8adb7547f0d7ab095ebe9517008",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/a6f1527703f5c97039d153585f7436fc8d99bd5d",
+                "reference": "a6f1527703f5c97039d153585f7436fc8d99bd5d",
                 "shasum": ""
             },
             "require": {
@@ -3222,7 +3222,7 @@
                 }
             ],
             "description": "A MongoDB implemantation of the Open Orchestra Model Interface",
-            "time": "2017-01-30 16:16:00"
+            "time": "2017-01-31 08:30:58"
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
@@ -3230,12 +3230,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-interface.git",
-                "reference": "29ec17a8f9399054f4bef58ca5adb0097f655b44"
+                "reference": "8430d76dc39f93710ea1d82fe56836470160f13a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/29ec17a8f9399054f4bef58ca5adb0097f655b44",
-                "reference": "29ec17a8f9399054f4bef58ca5adb0097f655b44",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/8430d76dc39f93710ea1d82fe56836470160f13a",
+                "reference": "8430d76dc39f93710ea1d82fe56836470160f13a",
                 "shasum": ""
             },
             "require": {
@@ -3267,7 +3267,7 @@
                 }
             ],
             "description": "Describe all entity and repository to implement for the whole OpenOrchestra project",
-            "time": "2017-01-30 15:54:12"
+            "time": "2017-01-31 08:16:08"
         },
         {
             "name": "open-orchestra/open-orchestra-mongo-libs",
@@ -3275,12 +3275,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-mongo-libs.git",
-                "reference": "21a205dca516d1af37a050cdf187673d5b03d507"
+                "reference": "f724def53b32e3683e569cc9974d437d7336b53b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-mongo-libs/zipball/21a205dca516d1af37a050cdf187673d5b03d507",
-                "reference": "21a205dca516d1af37a050cdf187673d5b03d507",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-mongo-libs/zipball/f724def53b32e3683e569cc9974d437d7336b53b",
+                "reference": "f724def53b32e3683e569cc9974d437d7336b53b",
                 "shasum": ""
             },
             "require": {
@@ -3317,7 +3317,7 @@
                 }
             ],
             "description": "Some libraries to use MongoDB in Open Orchestra",
-            "time": "2017-01-25 15:59:03"
+            "time": "2017-01-31 08:14:21"
         },
         {
             "name": "open-orchestra/open-orchestra-user-bundle",
@@ -3325,12 +3325,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-user-bundle.git",
-                "reference": "41d25ca4f39f993acb61a946cb3f4e64e4dd22a3"
+                "reference": "ace78927fc5ca29d234ac667ebc8ec0bf7cb430d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-user-bundle/zipball/41d25ca4f39f993acb61a946cb3f4e64e4dd22a3",
-                "reference": "41d25ca4f39f993acb61a946cb3f4e64e4dd22a3",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-user-bundle/zipball/ace78927fc5ca29d234ac667ebc8ec0bf7cb430d",
+                "reference": "ace78927fc5ca29d234ac667ebc8ec0bf7cb430d",
                 "shasum": ""
             },
             "require": {
@@ -3370,7 +3370,7 @@
                 }
             ],
             "description": "An override of FosUserBundle to provide authentication on Open Orchestra",
-            "time": "2017-01-20 08:22:03"
+            "time": "2017-01-31 08:17:21"
         },
         {
             "name": "paragonie/random_compat",
@@ -5952,7 +5952,7 @@
                 "compare",
                 "equality"
             ],
-            "time": "2017-01-29T09:50:25+00:00"
+            "time": "2017-01-29 09:50:25"
         },
         {
             "name": "sebastian/diff",

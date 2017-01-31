@@ -583,6 +583,38 @@ class ContentRepositoryTest extends AbstractKernelTestCase
     }
 
     /**
+     * Test findAllCurrentlyPublishedByContentId
+     */
+    public function testFindAllCurrentlyPublishedByContentId()
+    {
+        $contents = $this->repository->findAllCurrentlyPublishedByContentId('bien_vivre_en_france');
+
+        $this->assertEquals(1, count($contents));
+    }
+
+    /**
+     * Test findElementToAutoPublish
+     */
+    public function testFindElementToAutoPublish()
+    {
+        $fromStatus = $this->statusRepository->findByAutoPublishFrom();
+        $contents = $this->repository->findElementToAutoPublish('2', $fromStatus);
+
+        $this->assertEquals(0, count($contents));
+    }
+
+    /**
+     * Test findElementToAutoUnpublish
+     */
+    public function testFindElementToAutoUnpublish()
+    {
+        $publishedStatus = $this->statusRepository->findOneByPublished();
+        $contents = $this->repository->findElementToAutoUnpublish('2', $publishedStatus);
+
+        $this->assertEquals(0, count($contents));
+    }
+
+    /**
      * @param string $condition
      *
      * @return array
