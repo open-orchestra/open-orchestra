@@ -41,9 +41,9 @@ class NodeRepositoryTest extends AbstractKernelTestCase
      *
      * @dataProvider provideLanguageLastVersionAndSiteId
      */
-    public function testFindOneCurrentlyPublished($language, $version, $siteId)
+    public function testFindOnePublished($language, $version, $siteId)
     {
-        $node = $this->repository->findOneCurrentlyPublished(NodeInterface::ROOT_NODE_ID, $language, $siteId);
+        $node = $this->repository->findOnePublished(NodeInterface::ROOT_NODE_ID, $language, $siteId);
 
         $this->assertSameNode($language, $version, $siteId, $node);
     }
@@ -366,9 +366,9 @@ class NodeRepositoryTest extends AbstractKernelTestCase
      *
      * @dataProvider provideLanguageSiteIdAndCount
      */
-    public function testFindCurrentlyPublishedVersion($language, $siteId, $count)
+    public function testFindOnePublishedByLanguageAndSiteId($language, $siteId, $count)
     {
-        $nodes = $this->repository->findCurrentlyPublishedVersion($language, $siteId);
+        $nodes = $this->repository->findOnePublishedByLanguageAndSiteId($language, $siteId);
 
         $this->assertCount($count, $nodes);
         foreach ($nodes as $node) {
@@ -562,22 +562,6 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     }
 
     /**
-     * @param string $nodeId
-     * @param string $language
-     *
-     * @dataProvider provideNodeIdAndLanguageForPublishedFlag
-     */
-    public function testfindAllCurrentlyPublishedByElementId($nodeId, $language)
-    {
-        $node = Phake::mock(NodeInterface::CLASS);
-        Phake::when($node)->getNodeId()->thenReturn($nodeId);
-        Phake::when($node)->getLanguage()->thenReturn($language);
-        Phake::when($node)->getSiteId()->thenReturn('2');
-
-        $this->assertCount(1, $this->repository->findAllCurrentlyPublishedByElementId($node));
-    }
-
-    /**
      * @return array
      */
     public function provideNodeIdAndLanguageForPublishedFlag()
@@ -594,17 +578,17 @@ class NodeRepositoryTest extends AbstractKernelTestCase
      * @param string  $siteId
      * @param integer $expectedCount
      *
-     * @dataProvider provideFindLastVersionByTypeCurrentlyPublished
+     * @dataProvider provideFindPublishedByType
      */
-    public function testFindLastVersionByTypeCurrentlyPublished($siteId, $expectedCount)
+    public function testFindPublishedByType($siteId, $expectedCount)
     {
-        $this->assertCount($expectedCount, $this->repository->findLastVersionByTypeCurrentlyPublished($siteId));
+        $this->assertCount($expectedCount, $this->repository->findPublishedByType($siteId));
     }
 
     /**
      * @return array
      */
-    public function provideFindLastVersionByTypeCurrentlyPublished()
+    public function provideFindPublishedByType()
     {
         return array(
             array("1", 0),
@@ -618,17 +602,17 @@ class NodeRepositoryTest extends AbstractKernelTestCase
      * @param string  $language
      * @param integer $expectedCount
      *
-     * @dataProvider provideFindByPathCurrentlyPublishedAndLanguage
+     * @dataProvider provideFindPublishedByPathAndLanguage
      */
-    public function testFindByPathCurrentlyPublishedAndLanguage($path, $siteId, $language, $expectedCount)
+    public function testFindPublishedByPathAndLanguage($path, $siteId, $language, $expectedCount)
     {
-        $this->assertCount($expectedCount, $this->repository->findByPathCurrentlyPublishedAndLanguage($path, $siteId, $language));
+        $this->assertCount($expectedCount, $this->repository->findPublishedByPathAndLanguage($path, $siteId, $language));
     }
 
     /**
      * @return array
      */
-    public function provideFindByPathCurrentlyPublishedAndLanguage()
+    public function provideFindPublishedByPathAndLanguage()
     {
         return array(
             array("root", "2", "en", 6),

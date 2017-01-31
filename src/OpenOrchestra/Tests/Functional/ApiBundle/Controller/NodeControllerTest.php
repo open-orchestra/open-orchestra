@@ -59,7 +59,7 @@ class NodeControllerTest extends AbstractAuthenticatedTest
     {
         $this->markTestSkipped('To reactivate when API roles will be implemented');
 
-        $node = $this->nodeRepository->findOneCurrentlyPublished('fixture_page_contact','fr','2');
+        $node = $this->nodeRepository->findOnePublished('fixture_page_contact','fr','2');
         $node->getStatus()->setPublishedState(false);
         static::$kernel->getContainer()->get('object_manager')->flush();
 
@@ -169,7 +169,7 @@ class NodeControllerTest extends AbstractAuthenticatedTest
         );
 
         $this->assertSame(200, $this->client->getResponse()->getStatusCode());
-        $newNode = $this->nodeRepository->findOneCurrentlyPublished('root', 'fr', '2');
+        $newNode = $this->nodeRepository->findOnePublished('root', 'fr', '2');
         $this->assertEquals($publishedVersion, $newNode->getVersion());
     }
 
