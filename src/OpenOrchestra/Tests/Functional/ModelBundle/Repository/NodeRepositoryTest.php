@@ -122,9 +122,9 @@ class NodeRepositoryTest extends AbstractKernelTestCase
      *
      * @dataProvider provideLanguageAndVersionListAndSiteId
      */
-    public function testFindByNodeAndLanguageAndSite($countVersions, $language, $siteId)
+    public function testFindNotDeletedSortByUpdatedAt($countVersions, $language, $siteId)
     {
-        $nodes = $this->repository->findByNodeAndLanguageAndSite(NodeInterface::ROOT_NODE_ID, $language, $siteId);
+        $nodes = $this->repository->findNotDeletedSortByUpdatedAt(NodeInterface::ROOT_NODE_ID, $language, $siteId);
 
         $this->assertCount($countVersions, $nodes);
         foreach ($nodes as $node) {
