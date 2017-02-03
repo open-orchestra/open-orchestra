@@ -60,6 +60,8 @@ class ApiControllersSecurityTest extends AbstractAuthenticatedTest
             32 => array('/api/redirection/fake-id/delete', "DELETE"),
             33 => array('/api/status'),
             34 => array('/api/status/root/delete', 'DELETE'),*/
+            36 => array('/api/content/new-version/r5_3_portes/fr/2', 'POST'),
+            37 => array('/api/node/new-version/root/fr/1', 'POST'),
         );
     }
 }

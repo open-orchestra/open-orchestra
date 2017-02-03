@@ -53,6 +53,7 @@ class ApiControllersTest extends AbstractAuthenticatedTest
     /**
      * @param string $url
      * @param string $getParameter
+     * @param string $method
      *
      * @dataProvider provideApiUrl
      */
@@ -99,6 +100,13 @@ class ApiControllersTest extends AbstractAuthenticatedTest
             31 => array('/api/keyword/delete-multiple', "DELETE"),
             32 => array('/api/keyword'),
             33 => array('/api/node/list/with-block-in-area/root/2/header'),
+            34 => array('/api/content/list-version/r5_3_portes/fr'),
+            35 => array('/api/content/delete-multiple-version/r5_3_portes/fr', '', 'DELETE'),
+            36 => array('/api/content/new-version/r5_3_portes/fr/2', '', 'POST'),
+            37 => array('/api/node/new-version/root/fr/1', '', 'POST'),
+            38 => array('/api/node/list-version/root/fr'),
+            39 => array('/api/node/delete-multiple-version/root/fr', '', 'DELETE'),
         );
     }
 }
+
