@@ -179,7 +179,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function provideNodeSiteAndCount()
     {
         return array(
-            array(NodeInterface::ROOT_NODE_ID, '2', 4),
+            array(NodeInterface::ROOT_NODE_ID, '2', 5),
             array('fixture_page_what_is_orchestra', '2', 0),
         );
     }
