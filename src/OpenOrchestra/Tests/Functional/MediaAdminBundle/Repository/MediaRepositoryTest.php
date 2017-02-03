@@ -5,6 +5,7 @@ namespace OpenOrchestra\FunctionalTests\MediaBundle\Repository;
 use OpenOrchestra\BaseBundle\Tests\AbstractTest\AbstractKernelTestCase;
 use OpenOrchestra\Media\Repository\MediaRepositoryInterface;
 use OpenOrchestra\ModelInterface\Repository\RepositoryTrait\KeywordableTraitInterface;
+use OpenOrchestra\Pagination\Configuration\PaginateFinderConfiguration;
 
 /**
  * Class MediaRepositoryTest
@@ -80,5 +81,80 @@ class MediaRepositoryTest extends AbstractKernelTestCase
         }
 
         return $condition;
+    }
+
+    /**
+     * test findForPaginate
+     *
+     * @param PaginateFinderConfiguration $configuration
+     * @param int                         $expectedCount
+     * @param int                         $expectedFilteredCount
+     *
+     * @dataProvider providePaginateConfiguration
+     */
+    public function testFindForPaginate(PaginateFinderConfiguration $configuration, $expectedCount, $expectedFilteredCount)
+    {
+        $this->assertCount($expectedCount, $this->repository->findForPaginate($configuration));
+    }
+
+    /**
+     * test count
+     */
+    public function testCount()
+    {
+        $this->assertSame(6, $this->repository->count());
+    }
+
+    /**
+     * test countWithFilter
+     *
+     * @param PaginateFinderConfiguration $configuration
+     * @param int                         $expectedCount
+     * @param int                         $expectedFilteredCount
+     *
+     * @dataProvider providePaginateConfiguration
+     */
+    public function testCountWithFilter(PaginateFinderConfiguration $configuration, $expectedCount, $expectedFilteredCount)
+    {
+        $this->assertSame($expectedFilteredCount, $this->repository->countWithFilter($configuration));
+    }
+
+    /**
+     * Provide PaginateFinderConfiguration
+     *
+     * @return array
+     */
+    public function providePaginateConfiguration()
+    {
+        $mapping =  array();
+        $conf1 = PaginateFinderConfiguration::generateFromVariable(null , null, null, $mapping, null);
+        $conf2 = PaginateFinderConfiguration::generateFromVariable(null , null, null, $mapping, array('label' => 'dolor', 'language' => 'en'));
+        $conf3 = PaginateFinderConfiguration::generateFromVariable(null , null, null, $mapping, array('type' => 'pdf'));
+
+        return array(
+            'No criteria'       => array($conf1, 6, 6),
+            'Filtering "dolor"' => array($conf2, 4, 4),
+            'Filtering pdf'     => array($conf3, 1, 1),
+        );
+    }
+
+    /**
+     * Test remove medias
+     */
+    public function testRemoveMedias()
+    {
+        $dm = static::$kernel->getContainer()->get('object_manager');
+        $image01 = $this->repository->findOneByName('Image 01');
+        $image02 = $this->repository->findOneByName('Image 02');
+
+        $mediaIds = array($image01->getId(), $image02->getId());
+
+        $this->repository->removeMedias($mediaIds);
+        $this->assertNull($this->repository->findOneByName('Image 01'));
+        $this->assertNull($this->repository->findOneByName('Image 02'));
+
+        $dm->persist(clone $image01);
+        $dm->persist(clone $image02);
+        $dm->flush();
     }
 }
