@@ -33,11 +33,11 @@ class ContentControllerTest extends AbstractAuthenticatedTest
 
     /**
      * @param string $name
-     * @param bool   $currentlyPublished
+     * @param bool   $published
      *
      * @dataProvider provideStatusName
      */
-    public function testChangeContentStatus($name, $currentlyPublished)
+    public function testChangeContentStatus($name, $published)
     {
         $this->markTestSkipped('To reactivate when API roles will be implemented');
 
@@ -56,8 +56,8 @@ class ContentControllerTest extends AbstractAuthenticatedTest
 
         $this->assertSame(200, $this->client->getResponse()->getStatusCode());
 
-        $newcontent = $this->contentRepository->findOneByLanguageAndVersion('206_3_portes', 'fr', 2);
-        $this->assertEquals($currentlyPublished, $newcontent->isCurrentlyPublished());
+        $newContent = $this->contentRepository->findOneByLanguageAndVersion('206_3_portes', 'fr', 2);
+        $this->assertSame($published, $newContent->getStatus()->isPublishedState());
     }
 
     /**

@@ -82,7 +82,7 @@ class LogRepositoryTest extends AbstractKernelTestCase
      */
     public function testCount()
     {
-        $this->assertSame(32, $this->repository->count());
+        $this->assertSame(34, $this->repository->count());
     }
 
     /**

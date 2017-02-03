@@ -41,9 +41,9 @@ class NodeRepositoryTest extends AbstractKernelTestCase
      *
      * @dataProvider provideLanguageLastVersionAndSiteId
      */
-    public function testFindOneCurrentlyPublished($language, $version, $siteId)
+    public function testFindOnePublished($language, $version, $siteId)
     {
-        $node = $this->repository->findOneCurrentlyPublished(NodeInterface::ROOT_NODE_ID, $language, $siteId);
+        $node = $this->repository->findOnePublished(NodeInterface::ROOT_NODE_ID, $language, $siteId);
 
         $this->assertSameNode($language, $version, $siteId, $node);
     }
@@ -60,33 +60,18 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     }
 
     /**
-     * @param $language
-     * @param $version
-     * @param $siteId
-     *
-     * @dataProvider provideLanguageLastVersionAndSiteId
-     */
-    public function testFindOneByNodeIdAndLanguageAndVersionAndSiteIdWithPublishedDataSet($language, $version, $siteId)
-    {
-        $node = $this->repository->findVersion(NodeInterface::ROOT_NODE_ID, $language, $siteId, $version);
-
-        $this->assertSameNode($language, $version, $siteId, $node);
-    }
-
-    /**
      * @param string $language
      * @param int    $version
      * @param string $siteId
-     * @param int    $versionExpected
      *
      * @dataProvider provideLanguageLastVersionAndSiteIdNotPublished
      */
-    public function testFindOneByNodeIdAndLanguageAndVersionAndSiteIdWithNotPublishedDataSet($language, $version = null, $siteId, $versionExpected)
+    public function testFindVersionNotDeleted($language, $version, $siteId)
     {
-        $node = $this->repository->findVersion(NodeInterface::ROOT_NODE_ID, $language, $siteId, $version);
+        $node = $this->repository->findVersionNotDeleted(NodeInterface::ROOT_NODE_ID, $language, $siteId, $version);
 
-        $this->assertSameNode($language, $versionExpected, $siteId, $node);
-        $this->assertSame('draft', $node->getStatus()->getName());
+        $this->assertSame($node->getNodeId(), NodeInterface::ROOT_NODE_ID);
+        $this->assertSame($node->getVersion(), $version);
     }
 
     /**
@@ -95,8 +80,8 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function provideLanguageLastVersionAndSiteIdNotPublished()
     {
         return array(
-            array('fr', 2, '2', 2),
-            array('fr', null, '2', 2),
+            array('fr', 2, '2', 3),
+            array('fr', 1, '2', 3),
         );
     }
 
@@ -122,9 +107,9 @@ class NodeRepositoryTest extends AbstractKernelTestCase
      *
      * @dataProvider provideLanguageAndVersionListAndSiteId
      */
-    public function testFindByNodeAndLanguageAndSite($countVersions, $language, $siteId)
+    public function testFindNotDeletedSortByUpdatedAt($countVersions, $language, $siteId)
     {
-        $nodes = $this->repository->findByNodeAndLanguageAndSite(NodeInterface::ROOT_NODE_ID, $language, $siteId);
+        $nodes = $this->repository->findNotDeletedSortByUpdatedAt(NodeInterface::ROOT_NODE_ID, $language, $siteId);
 
         $this->assertCount($countVersions, $nodes);
         foreach ($nodes as $node) {
@@ -138,13 +123,27 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     }
 
     /**
+     * @param int    $countVersions
+     * @param string $language
+     * @param string $siteId
+     *
+     * @dataProvider provideLanguageAndVersionListAndSiteId
+     */
+    public function testCountNotDeletedVersions($countVersions, $language, $siteId)
+    {
+        $countNodes = $this->repository->countNotDeletedVersions(NodeInterface::ROOT_NODE_ID, $language, $siteId);
+
+        $this->assertSame($countVersions, $countNodes);
+    }
+
+    /**
      * @return array
      */
     public function provideLanguageAndVersionListAndSiteId()
     {
         return array(
             array(1, 'en', '2'),
-            array(2, 'fr', '2'),
+            array(3, 'fr', '2'),
         );
     }
 
@@ -166,7 +165,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function provideNodeSiteAndCount()
     {
         return array(
-            array(NodeInterface::ROOT_NODE_ID, '2', 4),
+            array(NodeInterface::ROOT_NODE_ID, '2', 5),
             array('fixture_page_what_is_orchestra', '2', 0),
         );
     }
@@ -242,7 +241,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function provideSiteIdAndLastVersion()
     {
         return array(
-            array('2', 2),
+            array('2', 3),
         );
     }
 
@@ -275,10 +274,11 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function testGetFooterTree($siteId, $nodeNumber, $version, $language = 'fr', $nodeId = null)
     {
         $nodes = $this->repository->getFooterTree($language, $siteId);
+
         $this->assertCount($nodeNumber, $nodes);
         if ($nodeId) {
-            $this->assertSameNode($language, $version, $siteId, $nodes[$nodeId], $nodeId);
-            $this->assertSame('published', $nodes[$nodeId]->getStatus()->getName());
+            $this->assertSameNode($language, $version, $siteId, $nodes[0], $nodeId);
+            $this->assertSame('published', $nodes[0]->getStatus()->getName());
         }
     }
 
@@ -307,8 +307,8 @@ class NodeRepositoryTest extends AbstractKernelTestCase
         $nodes = $this->repository->getMenuTree($language, $siteId);
 
         $this->assertCount($nodeNumber, $nodes);
-        $this->assertSameNode($language, $version, $siteId, $nodes[NodeInterface::ROOT_NODE_ID]);
-        $this->assertSame('published', $nodes[NodeInterface::ROOT_NODE_ID]->getStatus()->getName());
+        $this->assertSameNode($language, $version, $siteId, $nodes[0]);
+        $this->assertSame('published', $nodes[0]->getStatus()->getName());
     }
 
     /**
@@ -366,9 +366,9 @@ class NodeRepositoryTest extends AbstractKernelTestCase
      *
      * @dataProvider provideLanguageSiteIdAndCount
      */
-    public function testFindCurrentlyPublishedVersion($language, $siteId, $count)
+    public function testFindPublishedByLanguageAndSiteId($language, $siteId, $count)
     {
-        $nodes = $this->repository->findCurrentlyPublishedVersion($language, $siteId);
+        $nodes = $this->repository->findPublishedByLanguageAndSiteId($language, $siteId);
 
         $this->assertCount($count, $nodes);
         foreach ($nodes as $node) {
@@ -382,7 +382,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function provideLanguageSiteIdAndCount()
     {
         return array(
-            array('en', '2', 6),
+            array('en', '2', 5),
             array('fr', '2', 6),
         );
     }
@@ -520,28 +520,6 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     }
 
     /**
-     * @param string $type
-     * @param int    $count
-     *
-     * @dataProvider provideNodeTypeAndCount
-     */
-    public function testFindAllNodesOfTypeInLastPublishedVersionForSite($type, $count)
-    {
-        $this->assertCount($count, $this->repository->findAllNodesOfTypeInLastPublishedVersionForSite($type, '2'));
-    }
-
-    /**
-     * @return array
-     */
-    public function provideNodeTypeAndCount()
-    {
-        return array(
-            array(NodeInterface::TYPE_DEFAULT, 16),
-            array(NodeInterface::TYPE_ERROR, 6),
-        );
-    }
-
-    /**
      * Test has statused element
      */
     public function testHasStatusedElement()
@@ -562,22 +540,6 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     }
 
     /**
-     * @param string $nodeId
-     * @param string $language
-     *
-     * @dataProvider provideNodeIdAndLanguageForPublishedFlag
-     */
-    public function testfindAllCurrentlyPublishedByElementId($nodeId, $language)
-    {
-        $node = Phake::mock(NodeInterface::CLASS);
-        Phake::when($node)->getNodeId()->thenReturn($nodeId);
-        Phake::when($node)->getLanguage()->thenReturn($language);
-        Phake::when($node)->getSiteId()->thenReturn('2');
-
-        $this->assertCount(1, $this->repository->findAllCurrentlyPublishedByElementId($node));
-    }
-
-    /**
      * @return array
      */
     public function provideNodeIdAndLanguageForPublishedFlag()
@@ -594,21 +556,21 @@ class NodeRepositoryTest extends AbstractKernelTestCase
      * @param string  $siteId
      * @param integer $expectedCount
      *
-     * @dataProvider provideFindLastVersionByTypeCurrentlyPublished
+     * @dataProvider provideFindPublishedByType
      */
-    public function testFindLastVersionByTypeCurrentlyPublished($siteId, $expectedCount)
+    public function testFindPublishedByType($siteId, $expectedCount)
     {
-        $this->assertCount($expectedCount, $this->repository->findLastVersionByTypeCurrentlyPublished($siteId));
+        $this->assertCount($expectedCount, $this->repository->findPublishedByType($siteId));
     }
 
     /**
      * @return array
      */
-    public function provideFindLastVersionByTypeCurrentlyPublished()
+    public function provideFindPublishedByType()
     {
         return array(
             array("1", 0),
-            array("2", 17),
+            array("2", 16),
         );
     }
 
@@ -618,20 +580,20 @@ class NodeRepositoryTest extends AbstractKernelTestCase
      * @param string  $language
      * @param integer $expectedCount
      *
-     * @dataProvider provideFindByPathCurrentlyPublishedAndLanguage
+     * @dataProvider provideFindPublishedByPathAndLanguage
      */
-    public function testFindByPathCurrentlyPublishedAndLanguage($path, $siteId, $language, $expectedCount)
+    public function testFindPublishedByPathAndLanguage($path, $siteId, $language, $expectedCount)
     {
-        $this->assertCount($expectedCount, $this->repository->findByPathCurrentlyPublishedAndLanguage($path, $siteId, $language));
+        $this->assertCount($expectedCount, $this->repository->findPublishedByPathAndLanguage($path, $siteId, $language));
     }
 
     /**
      * @return array
      */
-    public function provideFindByPathCurrentlyPublishedAndLanguage()
+    public function provideFindPublishedByPathAndLanguage()
     {
         return array(
-            array("root", "2", "en", 6),
+            array("root", "2", "en", 5),
             array("transverse", "2", "en", 0),
         );
     }
@@ -870,5 +832,22 @@ class NodeRepositoryTest extends AbstractKernelTestCase
             array('root', 'fake', 'footer', 0),
             array('fake', '2', 'footer', 0),
         );
+    }
+
+    /**
+     * Test remove node version
+     */
+    public function testRemoveVersion()
+    {
+        $dm = static::$kernel->getContainer()->get('object_manager');
+        $node = $this->repository->findVersionNotDeleted('root', 'fr', '2', 1);
+        $storageIds = array($node->geTId());
+        $dm->detach($node);
+
+        $this->repository->removeNodeVersions($storageIds);
+        $this->assertNull($this->repository->findVersionNotDeleted('root', 'fr', '2', 1));
+
+        $dm->persist($node);
+        $dm->flush();
     }
 }

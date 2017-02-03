@@ -53,6 +53,7 @@ class ApiControllersTest extends AbstractAuthenticatedTest
     /**
      * @param string $url
      * @param string $getParameter
+     * @param string $method
      *
      * @dataProvider provideApiUrl
      */
@@ -75,30 +76,36 @@ class ApiControllersTest extends AbstractAuthenticatedTest
             6  => array('/api/node/list/by-author'),
             7  => array('/api/node/list/2/fr'),
             8  => array('/api/block/list/shared/fr'),
-            //8  => array('/api/content'),
             9  => array('/api/content/list/by-author'),
             10 => array('/api/content/list/not-published-by-author'),
-            //11 => array('/api/content', '&content_type=news'),
             12 => array('/api/content-type'),
             13 => array('/api/site'),
             14 => array('/api/site/list/available'),
-            // 15 => array('/api/theme'),
             17 => array('/api/group/delete-multiple', '', 'DELETE'),
             18 => array('/api/redirection/delete-multiple', '', 'DELETE'),
-            //19 => array('/api/status'),
-            //20 => array('/api/status/list'),
-            // 22 => array('/api/trashcan/list'),
+            19 => array('/api/status'),
+            20 => array('/api/status/list'),
             23 => array('/api/translation/tinymce'),
-            24  => array('/api/node/list/tree/2/fr'),
-            25  => array('/api/node/list/tree/2/fr/root'),
-            26  => array('/api/group/user/list'),
-            27  => array('/api/group/list'),
-            28  => array('/api/block/list/block-component'),
-            29  => array('/api/content-type/content/content-type-list'),
+            24 => array('/api/node/list/tree/2/fr'),
+            25 => array('/api/node/list/tree/2/fr/root'),
+            26 => array('/api/group/user/list'),
+            27 => array('/api/group/list'),
+            28 => array('/api/block/list/block-component'),
+            29 => array('/api/content-type/content/content-type-list'),
             30 => array('/api/content/delete-multiple', '', 'DELETE'),
             31 => array('/api/keyword/delete-multiple', "DELETE"),
             32 => array('/api/keyword'),
             33 => array('/api/node/list/with-block-in-area/root/2/header'),
+            34 => array('/api/content/list-version/r5_3_portes/fr'),
+            35 => array('/api/content/delete-multiple-version/r5_3_portes/fr', '', 'DELETE'),
+            36 => array('/api/content/new-version/r5_3_portes/fr/2', '', 'POST'),
+            37 => array('/api/node/new-version/root/fr/1', '', 'POST'),
+            38 => array('/api/node/list-version/root/fr'),
+            39 => array('/api/node/delete-multiple-version/root/fr', '', 'DELETE'),
+            40 => array('/api/content-type'),
+            41 => array('/api/content-type/news'),
+            42 => array('/api/content-type/content/content-type-list'),
         );
     }
 }
+

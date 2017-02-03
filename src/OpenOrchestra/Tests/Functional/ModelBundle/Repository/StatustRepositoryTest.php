@@ -35,7 +35,7 @@ class StatusRepositoryTest extends AbstractKernelTestCase
     public function testFindNotOutOfWorkflow()
     {
         $statuses = $this->repository->findNotOutOfWorkflow();
-        $this->assertCount(4, $statuses);
+        $this->assertCount(5, $statuses);
         foreach ($statuses as $status) {
             $this->assertFalse($status->isOutOfWorkflow());
         }
@@ -78,7 +78,7 @@ class StatusRepositoryTest extends AbstractKernelTestCase
      */
     public function testCount()
     {
-        $this->assertSame(5, $this->repository->count());
+        $this->assertSame(6, $this->repository->count());
     }
 
     /**
@@ -108,8 +108,8 @@ class StatusRepositoryTest extends AbstractKernelTestCase
         $conf3 = PaginateFinderConfiguration::generateFromVariable(null , 2   , 4   , $mapping, array('label' => 'r', 'language' => 'en'));
 
         return array(
-            'No criteria'                => array($conf1, 5, 5),
-            'Filtering "o"'              => array($conf2, 2, 2),
+            'No criteria'                => array($conf1, 6, 6),
+            'Filtering "o"'              => array($conf2, 3, 3),
             'Filtering 2 items with "r"' => array($conf3, 1, 3),
         );
     }

@@ -3,7 +3,6 @@
 namespace OpenOrchestra\FunctionalTests\ModelBundle\Repository;
 
 use OpenOrchestra\BaseBundle\Tests\AbstractTest\AbstractKernelTestCase;
-use OpenOrchestra\Pagination\Configuration\FinderConfiguration;
 use OpenOrchestra\Pagination\Configuration\PaginateFinderConfiguration;
 use OpenOrchestra\ModelInterface\Repository\ContentRepositoryInterface;
 use OpenOrchestra\ModelInterface\Repository\RepositoryTrait\KeywordableTraitInterface;
@@ -101,11 +100,11 @@ class ContentRepositoryTest extends AbstractKernelTestCase
      * @param $version
      * @param string|null $language
      *
-     * @dataProvider providefindLastPublishedVersion
+     * @dataProvider provideFindPublishedVersion
      */
-    public function testFindLastPublishedVersion($contentId, $version, $language)
+    public function testFindPublishedVersion($contentId, $version, $language)
     {
-        $content = $this->repository->findLastPublishedVersion($contentId, $language);
+        $content = $this->repository->findPublishedVersion($contentId, $language);
         $this->assertSameContent($language, $version, null, $contentId, $content);
         $this->assertEquals($contentId, $content->getContentId());
     }
@@ -115,11 +114,11 @@ class ContentRepositoryTest extends AbstractKernelTestCase
      * @param $version
      * @param string|null $language
      *
-     * @dataProvider providefindLastPublishedVersion
+     * @dataProvider provideFindPublishedVersion
      */
-    public function testFindOneCurrentlyPublished($contentId, $version, $language)
+    public function testFindOnePublished($contentId, $version, $language)
     {
-        $content = $this->repository->findOneCurrentlyPublished($contentId, $language, '2');
+        $content = $this->repository->findOnePublished($contentId, $language, '2');
         $this->assertSameContent($language, $version, null, $contentId, $content);
         $this->assertEquals($contentId, $content->getContentId());
     }
@@ -127,11 +126,48 @@ class ContentRepositoryTest extends AbstractKernelTestCase
     /**
      * @return array
      */
-    public function providefindLastPublishedVersion()
+    public function provideFindPublishedVersion()
     {
         return array(
             array('notre_vision', 1, 'fr'),
             array('bien_vivre_en_france', 1, 'fr'),
+        );
+    }
+
+    /**
+     * @param string $contentId
+     * @param string $language
+     * @param int    $count
+     *
+     * @dataProvider provideFindNotDeletedSortByUpdatedAt
+     */
+    public function testFindNotDeletedSortByUpdatedAt($contentId, $language, $count)
+    {
+        $contents = $this->repository->findNotDeletedSortByUpdatedAt($contentId, $language);
+        $this->assertCount($count, $contents);
+    }
+
+    /**
+     * @param string $contentId
+     * @param string $language
+     * @param int    $count
+     *
+     * @dataProvider provideFindNotDeletedSortByUpdatedAt
+     */
+    public function testCountNotDeletedByLanguage($contentId, $language, $count)
+    {
+        $countContents = $this->repository->countNotDeletedByLanguage($contentId, $language);
+        $this->assertSame($count, $countContents);
+    }
+
+    /**
+     * @return array
+     */
+    public function provideFindNotDeletedSortByUpdatedAt()
+    {
+        return array(
+            array('notre_vision', 'fr', 1),
+            array('bien_vivre_en_france', 'fr', 1),
         );
     }
 
@@ -438,6 +474,23 @@ class ContentRepositoryTest extends AbstractKernelTestCase
     }
 
     /**
+     * Test remove content version
+     */
+    public function testRemoveVersion()
+    {
+        $dm = static::$kernel->getContainer()->get('object_manager');
+        $content = $this->repository->findOneByLanguageAndVersion('bien_vivre_en_france', 'fr', 1);
+        $storageIds = array($content->geTId());
+        $dm->detach($content);
+
+        $this->repository->removeContentVersion($storageIds);
+        $this->assertNull($this->repository->findOneByLanguageAndVersion('bien_vivre_en_france', 'fr', 1));
+
+        $dm->persist($content);
+        $dm->flush();
+    }
+
+    /**
      * Generate columns of content with search value
      *
      * @param array|null $searchColumns
@@ -579,15 +632,15 @@ class ContentRepositoryTest extends AbstractKernelTestCase
         $statusRepository = static::$kernel->getContainer()->get('open_orchestra_model.repository.status');
         $status = $statusRepository->findOneByInitial();
 
-        $this->assertFalse($this->repository->hasStatusedElement($status));
+        $this->assertTrue($this->repository->hasStatusedElement($status));
     }
 
     /**
-     * Test findAllCurrentlyPublishedByContentId
+     * Test findAllPublishedByContentId
      */
-    public function testFindAllCurrentlyPublishedByContentId()
+    public function findAllPublishedByContentId()
     {
-        $contents = $this->repository->findAllCurrentlyPublishedByContentId('bien_vivre_en_france');
+        $contents = $this->repository->findAllPublishedByContentId('bien_vivre_en_france');
 
         $this->assertEquals(1, count($contents));
     }
