@@ -60,29 +60,15 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     }
 
     /**
-     * @param $language
-     * @param $version
-     * @param $siteId
-     *
-     * @dataProvider provideLanguageLastVersionAndSiteId
-     */
-    public function testFindOneByNodeIdAndLanguageAndVersionAndSiteIdWithPublishedDataSet($language, $version, $siteId)
-    {
-        $node = $this->repository->findVersion(NodeInterface::ROOT_NODE_ID, $language, $siteId, $version);
-
-        $this->assertSameNode($language, $version, $siteId, $node);
-    }
-
-    /**
      * @param string $language
      * @param int    $version
      * @param string $siteId
      *
      * @dataProvider provideLanguageLastVersionAndSiteIdNotPublished
      */
-    public function testFindVersion($language, $version, $siteId)
+    public function testFindVersionNotDeleted($language, $version, $siteId)
     {
-        $node = $this->repository->findVersion(NodeInterface::ROOT_NODE_ID, $language, $siteId, $version);
+        $node = $this->repository->findVersionNotDeleted(NodeInterface::ROOT_NODE_ID, $language, $siteId, $version);
 
         $this->assertSame($node->getNodeId(), NodeInterface::ROOT_NODE_ID);
         $this->assertSame($node->getVersion(), $version);
@@ -854,12 +840,12 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function testRemoveVersion()
     {
         $dm = static::$kernel->getContainer()->get('object_manager');
-        $node = $this->repository->findVersion('root', 'fr', '2', 1);
+        $node = $this->repository->findVersionNotDeleted('root', 'fr', '2', 1);
         $storageIds = array($node->geTId());
         $dm->detach($node);
 
         $this->repository->removeNodeVersions($storageIds);
-        $this->assertNull($this->repository->findVersion('root', 'fr', '2', 1));
+        $this->assertNull($this->repository->findVersionNotDeleted('root', 'fr', '2', 1));
 
         $dm->persist($node);
         $dm->flush();
