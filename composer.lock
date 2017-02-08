@@ -2691,12 +2691,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "7ab8ca8907d80080afa366502361126f648108fc"
+                "reference": "e1efa1e2867f5b828d694655f8e567bd7946f702"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/7ab8ca8907d80080afa366502361126f648108fc",
-                "reference": "7ab8ca8907d80080afa366502361126f648108fc",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/e1efa1e2867f5b828d694655f8e567bd7946f702",
+                "reference": "e1efa1e2867f5b828d694655f8e567bd7946f702",
                 "shasum": ""
             },
             "require": {
@@ -2795,7 +2795,7 @@
                 }
             ],
             "description": "This bundle provide the Back Office part of Open Orchestra",
-            "time": "2017-02-03 14:11:15"
+            "time": "2017-02-08 09:31:34"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2960,12 +2960,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-admin-bundle.git",
-                "reference": "f26bb1ded889f4d1401f242fb38100b10f331a8c"
+                "reference": "e6c72c8f864240a0a2a0dc99c2349f260309d9e4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/f26bb1ded889f4d1401f242fb38100b10f331a8c",
-                "reference": "f26bb1ded889f4d1401f242fb38100b10f331a8c",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/e6c72c8f864240a0a2a0dc99c2349f260309d9e4",
+                "reference": "e6c72c8f864240a0a2a0dc99c2349f260309d9e4",
                 "shasum": ""
             },
             "require": {
@@ -3047,7 +3047,7 @@
                 }
             ],
             "description": "This bundle integrate the media administration in the Back Office of Open Orchestra",
-            "time": "2017-02-03 14:08:34"
+            "time": "2017-02-08 17:31:03"
         },
         {
             "name": "open-orchestra/open-orchestra-media-bundle",
@@ -3184,12 +3184,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
-                "reference": "8bf6d74e256cae13a03be6161423a76a8f239012"
+                "reference": "fa7eb02fb1ad4c3f00c391d36f207df2a51802e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/8bf6d74e256cae13a03be6161423a76a8f239012",
-                "reference": "8bf6d74e256cae13a03be6161423a76a8f239012",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/fa7eb02fb1ad4c3f00c391d36f207df2a51802e8",
+                "reference": "fa7eb02fb1ad4c3f00c391d36f207df2a51802e8",
                 "shasum": ""
             },
             "require": {
@@ -3224,7 +3224,7 @@
                 }
             ],
             "description": "A MongoDB implemantation of the Open Orchestra Model Interface",
-            "time": "2017-02-03 13:38:53"
+            "time": "2017-02-03 14:36:15"
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
@@ -4806,16 +4806,16 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v2.8.16",
+            "version": "v2.8.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "9fef72a3ab561c4bfa703a70369db028dec387d2"
+                "reference": "c423a13a031c9388b7f9103f176b1872c00c7ffa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/9fef72a3ab561c4bfa703a70369db028dec387d2",
-                "reference": "9fef72a3ab561c4bfa703a70369db028dec387d2",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/c423a13a031c9388b7f9103f176b1872c00c7ffa",
+                "reference": "c423a13a031c9388b7f9103f176b1872c00c7ffa",
                 "shasum": ""
             },
             "require": {
@@ -4893,6 +4893,7 @@
                 "monolog/monolog": "~1.11",
                 "ocramius/proxy-manager": "~0.4|~1.0|~2.0",
                 "phpdocumentor/reflection": "^1.0.7",
+                "sensio/framework-extra-bundle": "^3.0.2",
                 "symfony/phpunit-bridge": "~3.2"
             },
             "type": "library",
@@ -4937,7 +4938,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2017-01-12T20:27:46+00:00"
+            "time": "2017-02-06T12:47:48+00:00"
         },
         {
             "name": "twig/extensions",
