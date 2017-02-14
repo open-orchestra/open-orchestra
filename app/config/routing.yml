@@ -16,6 +16,8 @@ open_orchestra_media_admin:
     resource: "@OpenOrchestraMediaAdminBundle/Controller/Admin"
     type: annotation
     prefix: /admin
+    options:
+        expose: true
 
 open_orchestra_api_oauth2:
     resource: "@OpenOrchestraBaseApiBundle/Resources/config/oauth2_routing.yml"
