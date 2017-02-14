@@ -76,9 +76,9 @@ class StatusRepositoryTest extends AbstractKernelTestCase
     /**
      * test count
      */
-    public function testCount()
+    public function testCountNotOutOfWorkflow()
     {
-        $this->assertSame(6, $this->repository->count());
+        $this->assertSame(5, $this->repository->CountNotOutOfWorkflow());
     }
 
     /**
@@ -108,9 +108,9 @@ class StatusRepositoryTest extends AbstractKernelTestCase
         $conf3 = PaginateFinderConfiguration::generateFromVariable(null , 2   , 4   , $mapping, array('label' => 'r', 'language' => 'en'));
 
         return array(
-            'No criteria'                => array($conf1, 6, 6),
-            'Filtering "o"'              => array($conf2, 3, 3),
-            'Filtering 2 items with "r"' => array($conf3, 1, 3),
+            'No criteria'                => array($conf1, 5, 5),
+            'Filtering "o"'              => array($conf2, 2, 2),
+            'Filtering 2 items with "r"' => array($conf3, 0, 2),
         );
     }
 
