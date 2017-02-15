@@ -924,4 +924,19 @@ class NodeRepositoryTest extends AbstractKernelTestCase
         );
     }
 
+    /**
+     * Test update use Reference
+     */
+    public function testUpdateUseReference()
+    {
+        $nodeId = 'root';
+        $siteId = '3';
+        $entityType = NodeInterface::ENTITY_TYPE;
+        $referenceNodeId = 'fakeReferenceId';
+        $this->repository->updateUseReference($referenceNodeId, $nodeId, $siteId, $entityType);
+        $nodes = $this->repository->findByNodeAndSite($nodeId, $siteId);
+        foreach ($nodes as $node) {
+            $this->assertTrue(array_key_exists($referenceNodeId, $node->getUseReferences($entityType)));
+        }
+    }
 }
