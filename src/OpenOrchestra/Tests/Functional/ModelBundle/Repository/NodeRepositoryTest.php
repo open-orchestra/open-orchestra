@@ -7,7 +7,6 @@ use OpenOrchestra\ModelInterface\Model\NodeInterface;
 use OpenOrchestra\ModelBundle\Repository\NodeRepository;
 use OpenOrchestra\ModelInterface\NodeEvents;
 use OpenOrchestra\Pagination\Configuration\PaginateFinderConfiguration;
-use Phake;
 
 /**
  * Class NodeRepositoryTest
@@ -850,4 +849,79 @@ class NodeRepositoryTest extends AbstractKernelTestCase
         $dm->persist($node);
         $dm->flush();
     }
+
+    /**
+     * @param string $language
+     * @param string $siteId
+     * @param int    $count
+     *
+     * @dataProvider provideLanguageAndSiteIdSpecialPage
+     */
+    public function testFindAllPublishedSpecialPage($language, $siteId, $count)
+    {
+        $nodes = $this->repository->findAllPublishedSpecialPage($language, $siteId);
+        $this->assertCount($count, $nodes);
+    }
+
+    /**
+     * @param string $language
+     * @param string $siteId
+     * @param int    $count
+     *
+     * @dataProvider provideLanguageAndSiteIdSpecialPage
+     */
+    public function testFindAllSpecialPage($language, $siteId, $count)
+    {
+        $nodes = $this->repository->findAllSpecialPage($language, $siteId);
+        $this->assertCount($count, $nodes);
+    }
+
+    /**
+     * @return array
+     */
+    public function provideLanguageAndSiteIdSpecialPage()
+    {
+        return array(
+            array('fr', '2', 1),
+            array('en', '2', 1),
+            array('de', '2', 1),
+            array('fr', '3', 0),
+            array('en', '3', 0),
+            array('de', '3', 0),
+        );
+    }
+
+    /**
+     * @param string $nodeId
+     * @param string $language
+     * @param string $siteId
+     * @param string $name
+     * @param int    $count
+     *
+     * @dataProvider provideCountOtherNodeWithSameSpecialPageName
+     */
+    public function testCountOtherNodeWithSameSpecialPageName($nodeId, $language, $siteId, $name, $count)
+    {
+        $nodesCount = $this->repository->countOtherNodeWithSameSpecialPageName($nodeId, $siteId, $language, $name);
+        $this->assertSame($count, $nodesCount);
+    }
+
+    /**
+     * @return array
+     */
+    public function provideCountOtherNodeWithSameSpecialPageName()
+    {
+        return array(
+            array('root', 'fr', '2', 'DEFAULT', 1),
+            array('root', 'en', '2', 'DEFAULT', 1),
+            array('root', 'de', '2', 'DEFAULT', 1),
+            array('root', 'fr', '2', 'FAKE', 0),
+            array('root', 'en', '2', 'FAKE', 0),
+            array('root', 'de', '2', 'FAKE', 0),
+            array('fixture_page_contact', 'fr', '2', 'DEFAULT', 0),
+            array('fixture_page_contact', 'en', '2', 'DEFAULT', 0),
+            array('fixture_page_contact', 'de', '2', 'DEFAULT', 0),
+        );
+    }
+
 }
