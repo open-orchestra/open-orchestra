@@ -1970,16 +1970,16 @@
         },
         {
             "name": "jms/serializer",
-            "version": "1.4.2",
+            "version": "1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/serializer.git",
-                "reference": "f39d8b4660d5cef43b0c3265ce642173d9b2c58b"
+                "reference": "9dc44f2924a90bf526a2e1c4bb1ce9d772a00a45"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/serializer/zipball/f39d8b4660d5cef43b0c3265ce642173d9b2c58b",
-                "reference": "f39d8b4660d5cef43b0c3265ce642173d9b2c58b",
+                "url": "https://api.github.com/repos/schmittjoh/serializer/zipball/9dc44f2924a90bf526a2e1c4bb1ce9d772a00a45",
+                "reference": "9dc44f2924a90bf526a2e1c4bb1ce9d772a00a45",
                 "shasum": ""
             },
             "require": {
@@ -2001,11 +2001,12 @@
                 "jackalope/jackalope-doctrine-dbal": "^1.1.5",
                 "phpunit/phpunit": "^4.8|^5.0",
                 "propel/propel1": "~1.7",
+                "symfony/expression-language": "^2.6|^3.0",
                 "symfony/filesystem": "^2.1",
-                "symfony/form": "~2.1",
-                "symfony/translation": "^2.1",
-                "symfony/validator": "^2.2",
-                "symfony/yaml": "^2.1",
+                "symfony/form": "~2.1|^3.0",
+                "symfony/translation": "^2.1|^3.0",
+                "symfony/validator": "^2.2|^3.0",
+                "symfony/yaml": "^2.1|^3.0",
                 "twig/twig": "~1.12|~2.0"
             },
             "suggest": {
@@ -2014,7 +2015,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.4-dev"
+                    "dev-master": "1.5-dev"
                 }
             },
             "autoload": {
@@ -2041,7 +2042,7 @@
                 "serialization",
                 "xml"
             ],
-            "time": "2016-11-13 10:20:11"
+            "time": "2017-02-14 14:35:22"
         },
         {
             "name": "jms/serializer-bundle",
@@ -2692,12 +2693,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "f539db5715b70e925c5b762b25db73478b3e4bb7"
+                "reference": "c86eb1eb2a26daf2b6cead03f4a8241000c8273d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/f539db5715b70e925c5b762b25db73478b3e4bb7",
-                "reference": "f539db5715b70e925c5b762b25db73478b3e4bb7",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/c86eb1eb2a26daf2b6cead03f4a8241000c8273d",
+                "reference": "c86eb1eb2a26daf2b6cead03f4a8241000c8273d",
                 "shasum": ""
             },
             "require": {
@@ -2796,7 +2797,7 @@
                 }
             ],
             "description": "This bundle provide the Back Office part of Open Orchestra",
-            "time": "2017-02-14 13:30:03"
+            "time": "2017-02-17 10:34:35"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2804,12 +2805,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-display-bundle.git",
-                "reference": "4d881836cf39d6f90567d079196a7653032c9b29"
+                "reference": "f10168380f1bc39eb0ac119e5113deb1bfef9e1d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-display-bundle/zipball/4d881836cf39d6f90567d079196a7653032c9b29",
-                "reference": "4d881836cf39d6f90567d079196a7653032c9b29",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-display-bundle/zipball/f10168380f1bc39eb0ac119e5113deb1bfef9e1d",
+                "reference": "f10168380f1bc39eb0ac119e5113deb1bfef9e1d",
                 "shasum": ""
             },
             "require": {
@@ -2846,7 +2847,7 @@
                 }
             ],
             "description": "The bundle to display all bricks",
-            "time": "2017-02-14 13:25:14"
+            "time": "2017-02-17 10:30:09"
         },
         {
             "name": "open-orchestra/open-orchestra-elastica-bundle",
@@ -3185,12 +3186,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
-                "reference": "190a4614be7867cac5be1a8c431f8a98d9b34aa9"
+                "reference": "25cfff6031ff1162149a2b82c4752b937e0f6c70"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/190a4614be7867cac5be1a8c431f8a98d9b34aa9",
-                "reference": "190a4614be7867cac5be1a8c431f8a98d9b34aa9",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/25cfff6031ff1162149a2b82c4752b937e0f6c70",
+                "reference": "25cfff6031ff1162149a2b82c4752b937e0f6c70",
                 "shasum": ""
             },
             "require": {
@@ -3225,7 +3226,7 @@
                 }
             ],
             "description": "A MongoDB implemantation of the Open Orchestra Model Interface",
-            "time": "2017-02-14 13:26:24"
+            "time": "2017-02-17 10:28:42"
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
@@ -3233,12 +3234,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-interface.git",
-                "reference": "1dadb276f811f7c9bf5b3c721f8ad071841c88c6"
+                "reference": "557c9486cc627c2e64be9778188e93be9041a4ef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/1dadb276f811f7c9bf5b3c721f8ad071841c88c6",
-                "reference": "1dadb276f811f7c9bf5b3c721f8ad071841c88c6",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/557c9486cc627c2e64be9778188e93be9041a4ef",
+                "reference": "557c9486cc627c2e64be9778188e93be9041a4ef",
                 "shasum": ""
             },
             "require": {
@@ -3270,7 +3271,7 @@
                 }
             ],
             "description": "Describe all entity and repository to implement for the whole OpenOrchestra project",
-            "time": "2017-02-14 13:24:57"
+            "time": "2017-02-17 10:28:37"
         },
         {
             "name": "open-orchestra/open-orchestra-mongo-libs",
@@ -3753,16 +3754,16 @@
         },
         {
             "name": "sensio/framework-extra-bundle",
-            "version": "v3.0.21",
+            "version": "v3.0.22",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioFrameworkExtraBundle.git",
-                "reference": "ed86f6fb1753e76b39ff8b87f527045ca6b97169"
+                "reference": "1c66c2e3b8f17f06178142386aff5a9f8057a104"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/ed86f6fb1753e76b39ff8b87f527045ca6b97169",
-                "reference": "ed86f6fb1753e76b39ff8b87f527045ca6b97169",
+                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/1c66c2e3b8f17f06178142386aff5a9f8057a104",
+                "reference": "1c66c2e3b8f17f06178142386aff5a9f8057a104",
                 "shasum": ""
             },
             "require": {
@@ -3771,6 +3772,8 @@
                 "symfony/framework-bundle": "~2.3|~3.0"
             },
             "require-dev": {
+                "doctrine/doctrine-bundle": "~1.5",
+                "doctrine/orm": "~2.4,>=2.4.5",
                 "symfony/asset": "~2.7|~3.0",
                 "symfony/browser-kit": "~2.3|~3.0",
                 "symfony/dom-crawler": "~2.3|~3.0",
@@ -3783,7 +3786,7 @@
                 "symfony/translation": "~2.3|~3.0",
                 "symfony/twig-bundle": "~2.3|~3.0",
                 "symfony/yaml": "~2.3|~3.0",
-                "twig/twig": "~1.11|~2.0",
+                "twig/twig": "~1.12|~2.0",
                 "zendframework/zend-diactoros": "^1.3"
             },
             "suggest": {
@@ -3817,7 +3820,7 @@
                 "annotations",
                 "controllers"
             ],
-            "time": "2017-02-02 15:31:23"
+            "time": "2017-02-15 06:52:30"
         },
         {
             "name": "sensio/generator-bundle",
