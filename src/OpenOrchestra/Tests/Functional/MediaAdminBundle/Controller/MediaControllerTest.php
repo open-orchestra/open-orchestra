@@ -26,26 +26,13 @@ class MediaControllerTest extends AbstractFormTest
 
     /**
      * @param string $form
-     *
-     * @dataProvider provideFormType
      */
-    public function testMediaForms($form)
+    public function testMediaForms()
     {
-        $url = '/admin/media/' . $this->media->getId() . '/' . $form;
+        $url = '/admin/media/' . $this->media->getId();
 
         $this->client->request('GET', $url);
 
         $this->assertForm($this->client->getResponse());
-    }
-
-    /**
-     * @return array
-     */
-    public function provideFormType()
-    {
-        return array(
-            array('crop'),
-            array('meta'),
-        );
     }
 }

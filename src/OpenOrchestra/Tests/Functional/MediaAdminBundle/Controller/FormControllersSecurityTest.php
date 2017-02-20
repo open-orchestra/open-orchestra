@@ -20,9 +20,7 @@ class FormControllersSecurityTest extends BaseFormControllersSecurityTest
             array('/admin/folder/form/folderId'),
             array('/admin/folder/new/parentId'),
             array('/admin/folder/list'),
-            array('/admin/media/mediaId/crop'),
-            array('/admin/media/override/mediaId/format'),
-            array('/admin/media/mediaId/meta'),
+            array('/admin/media/mediaId'),
         );
     }
 }
