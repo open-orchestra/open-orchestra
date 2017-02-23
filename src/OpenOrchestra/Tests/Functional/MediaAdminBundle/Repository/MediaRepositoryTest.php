@@ -106,6 +106,15 @@ class MediaRepositoryTest extends AbstractKernelTestCase
     }
 
     /**
+     * test count with Filtertered
+     */
+    public function testCountFiltered()
+    {
+        $this->assertSame(1, $this->repository->count('pdf'));
+        $this->assertSame(5, $this->repository->count('image'));
+    }
+
+    /**
      * test countWithFilter
      *
      * @param PaginateFinderConfiguration $configuration
