@@ -26,6 +26,7 @@ security:
                 csrf_provider: security.csrf.token_manager
             anonymous: true
             context: openorchestra
+            user_checker: open_orchestra_user_admin.user_checker
             logout:
                 path:   /logout
                 target: /admin
