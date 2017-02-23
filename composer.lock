@@ -2692,12 +2692,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "a162f42e8d96d77cb31c91ef76085d83b2083238"
+                "reference": "70016f5536d2144d2399a223fa6e7918617fc369"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/a162f42e8d96d77cb31c91ef76085d83b2083238",
-                "reference": "a162f42e8d96d77cb31c91ef76085d83b2083238",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/70016f5536d2144d2399a223fa6e7918617fc369",
+                "reference": "70016f5536d2144d2399a223fa6e7918617fc369",
                 "shasum": ""
             },
             "require": {
@@ -2796,7 +2796,7 @@
                 }
             ],
             "description": "This bundle provide the Back Office part of Open Orchestra",
-            "time": "2017-02-23 14:02:30"
+            "time": "2017-02-23 15:02:39"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -3055,12 +3055,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-bundle.git",
-                "reference": "887812ee15fa3b9b5bb6d28b73f3f2567952fbdd"
+                "reference": "003659bd177cc35092cfa598989b1a129990f13a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/887812ee15fa3b9b5bb6d28b73f3f2567952fbdd",
-                "reference": "887812ee15fa3b9b5bb6d28b73f3f2567952fbdd",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/003659bd177cc35092cfa598989b1a129990f13a",
+                "reference": "003659bd177cc35092cfa598989b1a129990f13a",
                 "shasum": ""
             },
             "require": {
@@ -3097,7 +3097,7 @@
                 }
             ],
             "description": "A media bundle for Open Orchestra",
-            "time": "2017-02-23 14:02:23"
+            "time": "2017-02-23 15:02:28"
         },
         {
             "name": "open-orchestra/open-orchestra-media-file-bundle",
