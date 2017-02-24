@@ -129,8 +129,8 @@ class ContentRepositoryTest extends AbstractKernelTestCase
     public function provideFindPublishedVersion()
     {
         return array(
-            array('notre_vision', 1, 'fr'),
-            array('bien_vivre_en_france', 1, 'fr'),
+            array('notre_vision', '1', 'fr'),
+            array('bien_vivre_en_france', '1', 'fr'),
         );
     }
 
@@ -302,8 +302,8 @@ class ContentRepositoryTest extends AbstractKernelTestCase
     public function provideFindOneByContentIdAndLanguageAndVersion()
     {
         return array(
-            array('notre_vision', 'fr', 1),
-            array('bien_vivre_en_france', 'fr', 1),
+            array('notre_vision', 'fr', '1'),
+            array('bien_vivre_en_france', 'fr', '1'),
         );
     }
 
@@ -479,12 +479,12 @@ class ContentRepositoryTest extends AbstractKernelTestCase
     public function testRemoveVersion()
     {
         $dm = static::$kernel->getContainer()->get('object_manager');
-        $content = $this->repository->findOneByLanguageAndVersion('bien_vivre_en_france', 'fr', 1);
+        $content = $this->repository->findOneByLanguageAndVersion('bien_vivre_en_france', 'fr', "1");
         $storageIds = array($content->geTId());
         $dm->detach($content);
 
         $this->repository->removeContentVersion($storageIds);
-        $this->assertNull($this->repository->findOneByLanguageAndVersion('bien_vivre_en_france', 'fr', 1));
+        $this->assertNull($this->repository->findOneByLanguageAndVersion('bien_vivre_en_france', 'fr', "1"));
 
         $dm->persist($content);
         $dm->flush();

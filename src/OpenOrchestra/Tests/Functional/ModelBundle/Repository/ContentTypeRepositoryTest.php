@@ -48,8 +48,8 @@ class ContentTypeRepositoryTest extends AbstractKernelTestCase
     public function provideContentTypeAndVersionNumber()
     {
         return array(
-            array('car', 2),
-            array('customer', 1),
+            array('car', '2'),
+            array('customer', '1'),
         );
     }
 
