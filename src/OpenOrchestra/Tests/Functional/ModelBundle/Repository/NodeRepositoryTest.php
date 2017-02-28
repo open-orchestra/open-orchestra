@@ -791,6 +791,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
         $dm = static::$kernel->getContainer()->get('object_manager');
         $node = $this->repository->findInLastVersion('root', 'fr', '2');
         $block = $node->getArea('main')->getBlocks()[0];
+        $this->assertCount(2, $node->getArea('main')->getBlocks());
 
         $this->repository->removeBlockInArea($block->getId(), 'main', $node->getNodeId(), $node->getSiteId(), $node->getLanguage(), $node->getVersion());
 
@@ -798,7 +799,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
         $dm->detach($block);
         $node = $this->repository->findInLastVersion('root', 'fr', '2');
         $blocks = $node->getArea('main')->getBlocks();
-        $this->assertCount(0, $blocks);
+        $this->assertCount(1, $blocks);
 
         $node->getArea('main')->addBlock($block);
         $dm->persist($block);
@@ -825,10 +826,8 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function provideFindByNodeIdAndSiteIdWithBlocksInArea()
     {
         return array(
-            array('root', '2', 'header', 3),
-            array('root', '2', 'footer', 3),
+            array('root', '2', 'main', 3),
             array('root', 'fake', 'footer', 0),
-            array('fake', '2', 'footer', 0),
         );
     }
 
