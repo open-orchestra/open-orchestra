@@ -216,6 +216,7 @@ class NodeControllerTest extends AbstractAuthenticatedTest
     public function testUpdateBlockPosition()
     {
         $node = $this->nodeRepository->findInLastVersion('root', 'fr', '2');
+
         $block = $node->getArea('main')->getBlocks()[0];
         $blocksHeader = $node->getArea('header')->getBlocks();
 

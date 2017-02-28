@@ -53,8 +53,8 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function provideLanguageLastVersionAndSiteId()
     {
         return array(
-            array('en', 1, '2'),
-            array('fr', 1, '2'),
+            array('en', '1', '2'),
+            array('fr', '1', '2'),
         );
     }
 
@@ -79,24 +79,35 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function provideLanguageLastVersionAndSiteIdNotPublished()
     {
         return array(
-            array('fr', 2, '2', 3),
-            array('fr', 1, '2', 3),
+            array('fr', '2', '2', 3),
+            array('fr', '1', '2', 3),
         );
     }
 
     /**
+     * @param string $nodeId
      * @param string $language
-     * @param int    $version
      * @param string $siteId
      * @param int    $versionExpected
      *
-     * @dataProvider provideLanguageLastVersionAndSiteIdNotPublished
+     * @dataProvider provideNodeLanguageLastVersionAndSiteId
      */
-    public function testFindInLastVersion($language, $version = null, $siteId, $versionExpected)
+    public function testFindInLastVersion($nodeId, $language, $siteId, $versionExpected)
     {
-        $node = $this->repository->findInLastVersion(NodeInterface::ROOT_NODE_ID, $language, $siteId);
+        $node = $this->repository->findInLastVersion($nodeId, $language, $siteId);
 
-        $this->assertSameNode($language, $versionExpected, $siteId, $node);
+        $this->assertSameNode($language, $versionExpected, $siteId, $node, $nodeId);
+    }
+
+    /**
+     * @return array
+     */
+    public function provideNodeLanguageLastVersionAndSiteId()
+    {
+        return array(
+            array('fixture_page_community', 'fr', '2', '1'),
+            array('fixture_page_news', 'fr', '2', '1'),
+        );
     }
 
     /**
@@ -222,26 +233,14 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     }
 
     /**
-     * @param string $siteId
-     * @param int    $version
-     *
-     * @dataProvider provideSiteIdAndLastVersion
+     * Tets find last version by type
      */
-    public function testFindLastVersionByType($siteId, $version)
+    public function testFindLastVersionByType()
     {
-        $nodes = $this->repository->findLastVersionByType($siteId);
+        $node = $this->repository->findInLastVersion('root', 'fr', '2');
+        $nodes = $this->repository->findLastVersionByType('2');
 
-        $this->assertSameNode('fr', $version, $siteId, $nodes[NodeInterface::ROOT_NODE_ID]);
-    }
-
-    /**
-     * @return array
-     */
-    public function provideSiteIdAndLastVersion()
-    {
-        return array(
-            array('2', 3),
-        );
+        $this->assertSameNode('fr', $node->getVersion(), '2', $nodes[NodeInterface::ROOT_NODE_ID]);
     }
 
     /**
@@ -287,9 +286,9 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function provideForGetFooter()
     {
         return array(
-            array('2', 1, 1, 'fr', 'fixture_page_legal_mentions'),
-            array('2', 1, 1, 'en'),
-            array('2', 1, 1),
+            array('2', 1, '1', 'fr', 'fixture_page_legal_mentions'),
+            array('2', 1, '1', 'en'),
+            array('2', 1, '1'),
         );
     }
 
@@ -316,8 +315,8 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function provideForGetMenu()
     {
         return array(
-            array('2', 4, 1, 'fr'),
-            array('2', 4, 1, 'en'),
+            array('2', 4, '1', 'fr'),
+            array('2', 4, '1', 'en'),
         );
     }
 
@@ -348,12 +347,12 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function provideForGetSubMenu()
     {
         return array(
-            array(NodeInterface::ROOT_NODE_ID, 1, 6, 1, '2', 'fr'),
-            array(NodeInterface::ROOT_NODE_ID, 2, 6, 1, '2', 'fr'),
-            array(NodeInterface::ROOT_NODE_ID, 0, 6, 1, '2', 'fr'),
-            array(NodeInterface::ROOT_NODE_ID, 0, 5, 1, '2', 'en'),
-            array('fixture_page_community', 1, 1, 1, '2', 'fr'),
-            array('fixture_page_community', 1, 1, 1, '2', 'en'),
+            array(NodeInterface::ROOT_NODE_ID, 1, 6, '1', '2', 'fr'),
+            array(NodeInterface::ROOT_NODE_ID, 2, 6, '1', '2', 'fr'),
+            array(NodeInterface::ROOT_NODE_ID, 0, 6, '1', '2', 'fr'),
+            array(NodeInterface::ROOT_NODE_ID, 0, 5, '1', '2', 'en'),
+            array('fixture_page_community', 1, 1, '1', '2', 'fr'),
+            array('fixture_page_community', 1, 1, '1', '2', 'en'),
             array('page_unexistant', 1, 0, 1, '2', 'fr'),
         );
     }
@@ -839,12 +838,12 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function testRemoveVersion()
     {
         $dm = static::$kernel->getContainer()->get('object_manager');
-        $node = $this->repository->findVersionNotDeleted('root', 'fr', '2', 1);
+        $node = $this->repository->findVersionNotDeleted('root', 'fr', '2', '1');
         $storageIds = array($node->geTId());
         $dm->detach($node);
 
         $this->repository->removeNodeVersions($storageIds);
-        $this->assertNull($this->repository->findVersionNotDeleted('root', 'fr', '2', 1));
+        $this->assertNull($this->repository->findVersionNotDeleted('root', 'fr', '2', '1'));
 
         $dm->persist($node);
         $dm->flush();
