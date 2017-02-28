@@ -68,7 +68,6 @@ class EntityTest extends AbstractBaseTestCase
             array('Node'                     , 'TimestampableInterface'),
             array('Content'                  , 'TimestampableInterface'),
             array('ContentType'              , 'TimestampableInterface'),
-            array('Theme'                    , 'ThemeInterface'),
             array('Keyword'                  , 'KeywordInterface'),
             array('Content'                  , 'KeywordableInterface'),
             array('Redirection'              , 'RedirectionInterface'),
