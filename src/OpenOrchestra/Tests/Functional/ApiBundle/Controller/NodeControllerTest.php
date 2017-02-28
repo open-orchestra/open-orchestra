@@ -216,22 +216,17 @@ class NodeControllerTest extends AbstractAuthenticatedTest
     public function testUpdateBlockPosition()
     {
         $node = $this->nodeRepository->findInLastVersion('root', 'fr', '2');
+        $block0 = $node->getArea('main')->getBlocks()[0];
+        $block1 = $node->getArea('main')->getBlocks()[1];
 
-        $block = $node->getArea('main')->getBlocks()[0];
-        $blocksHeader = $node->getArea('header')->getBlocks();
+        $blocksMainJson = array();
+        $blocksMainJson[] = array('id' => $block1->getId());
+        $blocksMainJson[] = array('id' => $block0->getId());
 
-        $blocksHeaderJson = array();
-        foreach ($blocksHeader as $blockHeader) {
-            $blocksHeaderJson[] = array('id' => $blockHeader->getId());
-        }
-        $blocksHeaderJson[] = array('id' => $block->getId());
         $requestContent = json_encode(array(
             'areas' => array(
-                'header' => array(
-                    'blocks' => $blocksHeaderJson
-                ),
                 'main' => array(
-                    'blocks' => array()
+                    'blocks' => $blocksMainJson
                 )
             )
         ));
@@ -250,13 +245,12 @@ class NodeControllerTest extends AbstractAuthenticatedTest
 
         $node = $this->nodeRepository->findInLastVersion('root', 'fr', '2');
         $blocksMain = $node->getArea('main')->getBlocks();
-        $this->assertCount(0, $blocksMain);
+        $this->assertCount(2, $blocksMain);
+        $this->assertSame($node->getArea('main')->getBlocks()[0], $block1);
+        $this->assertSame($node->getArea('main')->getBlocks()[1], $block0);
 
-        $blocksHeaderNew = $node->getArea('header')->getBlocks();
-        $this->assertCount(4, $blocksHeaderNew);
-
-        $node->getArea('main')->addBlock($block);
-        $node->getArea('header')->setBlocks(new ArrayCollection($blocksHeader->toArray()));
+        $node->getArea('main')->setBlocks(new ArrayCollection(array($block0, $block1)));
+        $dm->persist($node);
         $dm->flush();
     }
 
@@ -299,6 +293,30 @@ class NodeControllerTest extends AbstractAuthenticatedTest
     }
 
     /**
+     * Test add block in area action
+     */
+    public function testAddBlockInAreaAction()
+    {
+        $node = $this->nodeRepository->findInLastVersion('root', 'fr', '2');
+        $blocks = $this->blockRepository->findTransverseBlock('tiny_mce_wysiwyg', '2', 'fr');
+        $block = $blocks[0];
+
+        $this->client->request(
+            'PUT',
+            "/api/node/add-block-in-area/".$node->getNodeId()."/".$node->getLanguage()."/".$node->getVersion()."/".$block->getId()."/main/1"
+        );
+
+        $dm = static::$kernel->getContainer()->get('object_manager');
+        $dm->detach($node);
+        $dm->clear();
+        $node = $this->nodeRepository->findInLastVersion('root', 'fr', '2');
+        $mainAreaBlocks = $node->getArea('main')->getBlocks();
+        $addedBlock = $mainAreaBlocks[1];
+
+        $this->assertSame($block->getId(), $addedBlock->getId());
+    }
+
+    /**
      * Test delete block
      */
     public function testDeleteBlockInArea()
@@ -319,9 +337,9 @@ class NodeControllerTest extends AbstractAuthenticatedTest
 
         $node = $this->nodeRepository->findInLastVersion('root', 'fr', '2');
         $blocks = $node->getArea('main')->getBlocks();
-        $this->assertCount(0, $blocks);
-
+        $this->assertCount(1, $blocks);
         $node->getArea('main')->addBlock($block);
+        $dm->persist($node);
         $dm->persist($block);
 
         $dm->flush();
@@ -332,12 +350,13 @@ class NodeControllerTest extends AbstractAuthenticatedTest
      */
     public function testDeleteTransverseBlockInArea()
     {
+
         $node = $this->nodeRepository->findInLastVersion('root', 'fr', '2');
-        $block = $node->getArea('footer')->getBlocks()[0];
+        $block = $node->getArea('main')->getBlocks()[0];
 
         $this->client->request(
             'DELETE',
-            "/api/node/delete-block/".$node->getNodeId()."/".$node->getSiteId()."/".$node->getLanguage()."/".$node->getVersion()."/footer/".$block->getId()
+            "/api/node/delete-block/".$node->getNodeId()."/".$node->getSiteId()."/".$node->getLanguage()."/".$node->getVersion()."/main/".$block->getId()
         );
         $this->assertSame(200, $this->client->getResponse()->getStatusCode());
         $this->assertEquals($block, $this->blockRepository->findById($block->getId()));
@@ -347,35 +366,12 @@ class NodeControllerTest extends AbstractAuthenticatedTest
         $dm->detach($block);
 
         $node = $this->nodeRepository->findInLastVersion('root', 'fr', '2');
-        $blocks = $node->getArea('footer')->getBlocks();
+        $blocks = $node->getArea('main')->getBlocks();
         $this->assertCount(1, $blocks);
 
-        $node->getArea('footer')->addBlock($block);
+        $node->getArea('main')->addBlock($block);
         $dm->persist($block);
+        $dm->persist($node);
         $dm->flush();
-    }
-
-    /**
-     * Test add block in area action
-     */
-    public function testAddBlockInAreaAction()
-    {
-        $node = $this->nodeRepository->findInLastVersion('root', 'fr', '2');
-        $blocks = $this->blockRepository->findTransverseBlock('tiny_mce_wysiwyg', '2', 'fr');
-        $block = $blocks[0];
-
-        $this->client->request(
-            'PUT',
-            "/api/node/add-block-in-area/".$node->getNodeId()."/".$node->getLanguage()."/".$node->getVersion()."/".$block->getId()."/footer/1"
-        );
-
-        $dm = static::$kernel->getContainer()->get('object_manager');
-        $dm->detach($node);
-        $dm->clear();
-        $node = $this->nodeRepository->findInLastVersion('root', 'fr', '2');
-        $footerAreaBlocks = $node->getArea('footer')->getBlocks();
-        $addedBlock =  $footerAreaBlocks[1];
-
-        $this->assertSame($block->getId(), $addedBlock->getId());
     }
 }
