@@ -19,7 +19,6 @@ class FormControllersSecurityTest extends BaseFormControllersSecurityTest
         return array(
             array('/admin/folder/form/folderId'),
             array('/admin/folder/new/parentId'),
-            array('/admin/folder/list'),
             array('/admin/media/mediaId'),
         );
     }
