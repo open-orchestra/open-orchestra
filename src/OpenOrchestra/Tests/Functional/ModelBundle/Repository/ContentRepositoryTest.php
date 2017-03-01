@@ -668,7 +668,7 @@ class ContentRepositoryTest extends AbstractKernelTestCase
     }
 
     /**
-     * Test rfind last version
+     * Test find last version
      */
     public function testFindLastVersion()
     {
