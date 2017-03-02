@@ -34,7 +34,6 @@ class FormControllersTest extends AbstractFormTest
         return array(
             1 => array('/admin/site/form/2'),
             2 => array('/admin/status/new'),
-            3 => array('/admin/theme/new'),
             4 => array('/admin/keyword/new'),
             5 => array('/admin/content-type/new'),
             6 => array('/admin/group/new'),

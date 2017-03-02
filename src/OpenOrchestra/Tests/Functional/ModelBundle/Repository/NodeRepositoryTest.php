@@ -529,15 +529,6 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     }
 
     /**
-     * Test find by site and defaultTheme
-     */
-    public function testFindBySiteIdAndDefaultTheme()
-    {
-        $this->assertCount(0, $this->repository->findBySiteIdAndDefaultTheme('2', false));
-        $this->assertGreaterThanOrEqual(16, $this->repository->findBySiteIdAndDefaultTheme('2', true));
-    }
-
-    /**
      * @return array
      */
     public function provideNodeIdAndLanguageForPublishedFlag()
@@ -616,27 +607,6 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     {
         return array(
             array("root", "2", "en", 6),
-        );
-    }
-
-    /**
-     * @param string  $theme
-     * @param integer $expectedCount
-     *
-     * @dataProvider provideTheme
-     */
-    public function testFindByTheme($theme, $expectedCount)
-    {
-        $this->assertCount($expectedCount, $this->repository->FindByTheme($theme));
-    }
-
-    /**
-     * @return array
-     */
-    public function provideTheme()
-    {
-        return array(
-            array("fakeTheme", 0),
         );
     }
 
