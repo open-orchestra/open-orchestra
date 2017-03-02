@@ -668,6 +668,37 @@ class ContentRepositoryTest extends AbstractKernelTestCase
     }
 
     /**
+     * Test find last version
+     */
+    public function testFindLastVersion()
+    {
+        $documentManager = static::$kernel->getContainer()->get('object_manager');
+        $contentId = 'test-find-last-version';
+
+        $firstContent = new Content();
+        $firstContent->setCreatedAt(new \DateTime('2017-02-27T15:03:01.012345Z'));
+        $firstContent->setContentId($contentId);
+        $firstContent->setContentType('car');
+        $documentManager->persist($firstContent);
+
+        $lastContent = new Content();
+        $lastContent->setCreatedAt(new \DateTime('2017-02-28T15:03:01.012345Z'));
+        $lastContent->setContentId($contentId);
+        $lastContent->setContentType('car');
+        $documentManager->persist($lastContent);
+
+        $documentManager->flush();
+
+        $content = $this->repository->findLastVersion($contentId);
+        $this->assertEquals((new \DateTime('2017-02-28T15:03:01.012345Z'))->getTimestamp(), $content->getCreatedAt()->getTimestamp());
+
+        $documentManager->remove($firstContent);
+        $documentManager->remove($lastContent);
+
+        $documentManager->flush();
+    }
+
+    /**
      * @param string $condition
      *
      * @return array
