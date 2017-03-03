@@ -699,6 +699,52 @@ class ContentRepositoryTest extends AbstractKernelTestCase
     }
 
     /**
+     * Test soft delete content
+     */
+    public function testSoftDeleteAndRestoreContent()
+    {
+        $contentId = 'bien_vivre_en_france';
+
+        $this->repository->softDeleteContent($contentId);
+        $contents = $this->repository->findByContentId($contentId);
+        foreach ($contents as $content ) {
+            $this->assertTrue($content->isDeleted());
+        }
+        $this->repository->restoreDeletedContent($contentId);
+
+        $documentManager = static::$kernel->getContainer()->get('object_manager');
+        $documentManager->clear();
+        $documentManager->close();
+
+        $contents = $this->repository->findByContentId($contentId);
+        foreach ($contents as $content ) {
+            $this->assertFalse($content->isDeleted());
+        }
+    }
+
+    /**
+     * @param string $contentId
+     * @param bool   $has
+     *
+     * @dataProvider provideContentIdforHasContentNotOffline
+     */
+    public function testHasContentIdWithoutAutoUnpublishToState($contentId, $has)
+    {
+        $this->assertSame($has, $this->repository->hasContentIdWithoutAutoUnpublishToState($contentId));
+    }
+
+    /**
+     * @return array
+     */
+    public function provideContentIdforHasContentNotOffline()
+    {
+        return array(
+            array('bien_vivre_en_france', true),
+            array('notre_vision', true)
+        );
+    }
+
+    /**
      * @param string $condition
      *
      * @return array

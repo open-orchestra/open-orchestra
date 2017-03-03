@@ -907,4 +907,75 @@ class NodeRepositoryTest extends AbstractKernelTestCase
             $this->assertTrue(array_key_exists($referenceNodeId, $node->getUseReferences($entityType)));
         }
     }
+
+    /**
+     * Test soft delete node
+     */
+    public function testSoftDeleteAndRestoreNode()
+    {
+        $nodeId = 'root';
+        $siteId = '2';
+
+        $this->repository->softDeleteNode($nodeId, $siteId);
+        $nodes = $this->repository->findByNodeAndSite($nodeId, $siteId);
+        foreach ($nodes as $node) {
+            $this->assertTrue($node->isDeleted());
+        }
+        $this->repository->restoreDeletedNode($nodeId, $siteId);
+
+        $documentManager = static::$kernel->getContainer()->get('object_manager');
+        $documentManager->clear();
+        $documentManager->close();
+
+        $nodes = $this->repository->findByNodeAndSite($nodeId, $siteId);
+        foreach ($nodes as $node) {
+            $this->assertFalse($node->isDeleted());
+        }
+    }
+
+    /**
+     * @param string   $nodeId
+     * @param string   $siteId
+     * @param bool     $has
+     *
+     * @dataProvider provideNodeNotOffline
+     */
+    public function testHasNodeIdWithoutAutoUnpublishToState($nodeId, $siteId, $has)
+    {
+        $this->assertSame($has, $this->repository->hasNodeIdWithoutAutoUnpublishToState($nodeId, $siteId));
+    }
+
+    /**
+     * @return array
+     */
+    public function provideNodeNotOffline()
+    {
+        return array(
+            array('root', '2', true),
+            array('fixture_page_contact', '2', true)
+        );
+    }
+
+    /**
+     * @param string $parentId
+     * @param string $siteId
+     * @param int    $count
+     *
+     * @dataProvider provideCountByParentId
+     */
+    public function testCountByParentId($parentId, $siteId, $count)
+    {
+        $this->assertEquals($count, $this->repository->countByParentId($parentId, $siteId));
+    }
+
+    /**
+     * @return array
+     */
+    public function provideCountByParentId()
+    {
+        return array(
+            array('fixture_page_contact', '2', 0),
+            array('root', '2', 14)
+        );
+    }
 }
