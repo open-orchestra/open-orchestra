@@ -4,95 +4,74 @@ imports:
     - { resource: log.yml }
 
 framework:
-    esi:             { enabled: true }
-    translator:      { fallback: "%default_locale%" }
-    secret:          "%secret%"
-    router:
-        resource: "%kernel.root_dir%/config/routing.yml"
+    esi       : { enabled: true }
+    translator: { fallback: "%default_locale%" }
+    secret    : "%secret%"
+    router    :
+        resource           : "%kernel.root_dir%/config/routing.yml"
         strict_requirements: ~
-    form:            ~
+    form           : ~
     csrf_protection: ~
-    validation:      { enable_annotations: true }
+    validation     : { enable_annotations: true }
     templating:
         engines: ['twig']
     assets:
         version: 1.0.0
-        #assets_version: SomeVersionScheme
-    default_locale:  "%default_locale%"
-    trusted_hosts:   ~
+    default_locale :  "%default_locale%"
+    trusted_hosts  :   ~
     trusted_proxies: ~
     session:
-        # handler_id set to null will use default session handler from php.ini
-        handler_id:  ~
-        name: '%session_name%'
-    fragments:       { path: /_fragment }
+        handler_id: ~
+        name      : '%session_name%'
+    fragments           : { path: /_fragment }
     http_method_override: true
 
-# Twig Configuration
 twig:
-    debug:            "%kernel.debug%"
+    debug           : "%kernel.debug%"
     strict_variables: "%kernel.debug%"
 
 braincrafted_bootstrap:
     auto_configure:
-        assetic: false
-        knp_menu: false
+        assetic      : false
+        knp_menu     : false
         knp_paginator: false
-        twig: false
+        twig         : false
 
 services:
     twig.extension.text:
        class: Twig_Extensions_Extension_Text
-       tags:
+       tags :
            - { name: twig.extension }
-
-# Assetic Configuration
-assetic:
-    debug:          "%kernel.debug%"
-    use_controller: false
-    bundles:
-        - OpenOrchestraBackofficeBundle
-        - OpenOrchestraMediaAdminBundle
-        - OpenOrchestraDisplayBundle
-        - OpenOrchestraUserBundle
-    #java: /usr/bin/java
-    filters:
-        cssrewrite: ~
-        #closure:
-        #    jar: "%kernel.root_dir%/Resources/java/compiler.jar"
-        #yui_css:
-        #    jar: "%kernel.root_dir%/Resources/java/yuicompressor-2.4.7.jar"
 
 doctrine_mongodb:
     connections:
         default:
-            server: "%open_orchestra_cms.mongodb.server%"
+            server : "%open_orchestra_cms.mongodb.server%"
             options: {}
-    default_database: "%open_orchestra_cms.mongodb.database%"
+    default_database        : "%open_orchestra_cms.mongodb.database%"
     resolve_target_documents:
         FOS\UserBundle\Model\GroupInterface: OpenOrchestra\GroupBundle\Document\Group
     document_managers:
         default:
             auto_mapping: true
 
-# Swiftmailer Configuration
 swiftmailer:
     transport: "%mailer_transport%"
-    host:      "%mailer_host%"
-    username:  "%mailer_user%"
-    password:  "%mailer_password%"
+    host     : "%mailer_host%"
+    username : "%mailer_user%"
+    password : "%mailer_password%"
 
 fos_user:
-    db_driver: mongodb
+    db_driver    : mongodb
     firewall_name: main
-    user_class: OpenOrchestra\UserBundle\Document\User
-    group:
+    user_class   : OpenOrchestra\UserBundle\Document\User
+    group        :
         group_class: OpenOrchestra\GroupBundle\Document\Group
 
 stof_doctrine_extensions:
     mongodb:
         default:
-            blameable: true
+            blameable    : true
             timestampable: true
 
 open_orchestra_base:
@@ -103,16 +82,16 @@ knp_gaufrette:
         media_storage:
             local:
                 directory: '%media.directory%'
-                create: true
+                create   : true
     filesystems:
         media_storage:
             adapter: media_storage
-            alias: media_storage_filesystem
+            alias  : media_storage_filesystem
 
 fos_http_cache:
     proxy_client:
         varnish:
-            servers: '%fos_http_cache.proxy_client.varnish.servers%'
+            servers : '%fos_http_cache.proxy_client.varnish.servers%'
             base_url: '%fos_http_cache.proxy_client.varnish.base_url%'
         default: varnish
 
@@ -124,11 +103,11 @@ open_orchestra_elastica:
 
 mongo_db_migrations:
      collection_name: "migration_versions"
-     database_name: "%open_orchestra_cms.mongodb.database%"
-     dir_name: "%kernel.root_dir%/../vendor/open-orchestra/open-orchestra-migration-bundle/MigrationBundle/Migrations"
+     database_name  : "%open_orchestra_cms.mongodb.database%"
+     dir_name       : "%kernel.root_dir%/../vendor/open-orchestra/open-orchestra-migration-bundle/MigrationBundle/Migrations"
      script_dir_name: "%kernel.root_dir%/scripts"
-     name: "Open Orchestra MongoDB Migrations"
-     namespace: OpenOrchestra\MigrationBundle\Migrations
+     name           : "Open Orchestra MongoDB Migrations"
+     namespace      : OpenOrchestra\MigrationBundle\Migrations
 
 bazinga_js_translation:
     active_domains:
