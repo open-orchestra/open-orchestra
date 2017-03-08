@@ -38,8 +38,6 @@ class ApiControllersSecurityTest extends AbstractAuthenticatedTest
             5  => array('/api/block/list/shared/fr'),
             6  => array('/api/block/list/block-component'),
             8  => array('/api/content-type'),
-            9  => array('/api/content-type/fake-content-type-id'),
-            10 => array('/api/content-type/content/content-type-list'),
             12 => array('/api/site'),
             13 => array('/api/site/list/available'),
             17 => array('/api/keyword'),
@@ -55,7 +53,6 @@ class ApiControllersSecurityTest extends AbstractAuthenticatedTest
             30 => array('/api/redirection'),
             32 => array('/api/redirection/node/2/root/fr'),
             33 => array('/api/status'),
-            34 => array('/api/status/list'),
             35 => array('/api/content/new-version/r5_3_portes/fr/2', 'POST'),
             36 => array('/api/node/new-version/root/fr/1', 'POST'),
         );
