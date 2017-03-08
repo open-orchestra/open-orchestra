@@ -2256,83 +2256,6 @@
             "time": "2016-01-16T00:12:11+00:00"
         },
         {
-            "name": "kriswallsmith/assetic",
-            "version": "v1.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/kriswallsmith/assetic.git",
-                "reference": "e911c437dbdf006a8f62c2f59b15b2d69a5e0aa1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/e911c437dbdf006a8f62c2f59b15b2d69a5e0aa1",
-                "reference": "e911c437dbdf006a8f62c2f59b15b2d69a5e0aa1",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.1",
-                "symfony/process": "~2.1|~3.0"
-            },
-            "conflict": {
-                "twig/twig": "<1.27"
-            },
-            "require-dev": {
-                "leafo/lessphp": "^0.3.7",
-                "leafo/scssphp": "~0.1",
-                "meenie/javascript-packer": "^1.1",
-                "mrclay/minify": "<2.3",
-                "natxet/cssmin": "3.0.4",
-                "patchwork/jsqueeze": "~1.0|~2.0",
-                "phpunit/phpunit": "~4.8 || ^5.6",
-                "psr/log": "~1.0",
-                "ptachoire/cssembed": "~1.0",
-                "symfony/phpunit-bridge": "~2.7|~3.0",
-                "twig/twig": "~1.23|~2.0",
-                "yfix/packager": "dev-master"
-            },
-            "suggest": {
-                "leafo/lessphp": "Assetic provides the integration with the lessphp LESS compiler",
-                "leafo/scssphp": "Assetic provides the integration with the scssphp SCSS compiler",
-                "leafo/scssphp-compass": "Assetic provides the integration with the SCSS compass plugin",
-                "patchwork/jsqueeze": "Assetic provides the integration with the JSqueeze JavaScript compressor",
-                "ptachoire/cssembed": "Assetic provides the integration with phpcssembed to embed data uris",
-                "twig/twig": "Assetic provides the integration with the Twig templating engine"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.4-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Assetic": "src/"
-                },
-                "files": [
-                    "src/functions.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Kris Wallsmith",
-                    "email": "kris.wallsmith@gmail.com",
-                    "homepage": "http://kriswallsmith.net/"
-                }
-            ],
-            "description": "Asset Management for PHP",
-            "homepage": "https://github.com/kriswallsmith/assetic",
-            "keywords": [
-                "assets",
-                "compression",
-                "minification"
-            ],
-            "time": "2016-11-11T18:43:20+00:00"
-        },
-        {
             "name": "monolog/monolog",
             "version": "1.22.0",
             "source": {
@@ -2512,12 +2435,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-base-api-bundle.git",
-                "reference": "103fc53dd3b00c5415f7ab74850762f7ac3c5caa"
+                "reference": "adff866d9adf991a7efa8be7859dba801673c0fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-api-bundle/zipball/103fc53dd3b00c5415f7ab74850762f7ac3c5caa",
-                "reference": "103fc53dd3b00c5415f7ab74850762f7ac3c5caa",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-api-bundle/zipball/adff866d9adf991a7efa8be7859dba801673c0fb",
+                "reference": "adff866d9adf991a7efa8be7859dba801673c0fb",
                 "shasum": ""
             },
             "require": {
@@ -2550,7 +2473,7 @@
                 }
             ],
             "description": "This bundle provide the base bricks for the OpenOrchestra Api",
-            "time": "2017-03-02 13:14:23"
+            "time": "2017-03-08 11:20:18"
         },
         {
             "name": "open-orchestra/open-orchestra-base-api-mongo-model-bundle",
@@ -2603,18 +2526,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-base-bundle.git",
-                "reference": "4a0f4c77268c12e459f1bc6962af380baa04abd8"
+                "reference": "e8b1a37ea1a7b05cb489baebfabc5b69a841dfad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-bundle/zipball/4a0f4c77268c12e459f1bc6962af380baa04abd8",
-                "reference": "4a0f4c77268c12e459f1bc6962af380baa04abd8",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-bundle/zipball/e8b1a37ea1a7b05cb489baebfabc5b69a841dfad",
+                "reference": "e8b1a37ea1a7b05cb489baebfabc5b69a841dfad",
                 "shasum": ""
             },
             "require": {
                 "php": "~5.6.0",
                 "sensio/framework-extra-bundle": "~3.0.10",
-                "symfony/assetic-bundle": "~2.8.0",
                 "symfony/symfony": "~2.8.6",
                 "twig/extensions": "~1.3.0",
                 "twig/twig": "~1.29"
@@ -2641,7 +2563,7 @@
                 }
             ],
             "description": "The OpenOrchestra base bundle",
-            "time": "2016-12-22 17:00:16"
+            "time": "2017-03-08 11:29:33"
         },
         {
             "name": "open-orchestra/open-orchestra-bbcode-bundle",
@@ -2692,12 +2614,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "8792fc74bde40f266246523c4488ddd69244fded"
+                "reference": "058a99722e34625ebc2d11d708a8431f9b33f596"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/8792fc74bde40f266246523c4488ddd69244fded",
-                "reference": "8792fc74bde40f266246523c4488ddd69244fded",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/058a99722e34625ebc2d11d708a8431f9b33f596",
+                "reference": "058a99722e34625ebc2d11d708a8431f9b33f596",
                 "shasum": ""
             },
             "require": {
@@ -2713,7 +2635,6 @@
                 "open-orchestra/open-orchestra-user-bundle": "self.version",
                 "php": "~5.6.0",
                 "sensio/generator-bundle": "~3.0.0",
-                "symfony/assetic-bundle": "~2.8.0",
                 "symfony/monolog-bundle": "~2.11.0",
                 "willdurand/js-translation-bundle": "~2.6.1"
             },
@@ -2794,7 +2715,7 @@
                 }
             ],
             "description": "This bundle provide the Back Office part of Open Orchestra",
-            "time": "2017-03-02 13:52:29"
+            "time": "2017-03-08 11:35:58"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2802,12 +2723,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-display-bundle.git",
-                "reference": "9b018b12f7f52a763103e2875b1d68ead14a9936"
+                "reference": "ba278269afd4ce8db8c85bc5c0d8f1d959a30b86"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-display-bundle/zipball/9b018b12f7f52a763103e2875b1d68ead14a9936",
-                "reference": "9b018b12f7f52a763103e2875b1d68ead14a9936",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-display-bundle/zipball/ba278269afd4ce8db8c85bc5c0d8f1d959a30b86",
+                "reference": "ba278269afd4ce8db8c85bc5c0d8f1d959a30b86",
                 "shasum": ""
             },
             "require": {
@@ -2844,7 +2765,7 @@
                 }
             ],
             "description": "The bundle to display all bricks",
-            "time": "2017-02-20 09:01:09"
+            "time": "2017-03-08 11:20:28"
         },
         {
             "name": "open-orchestra/open-orchestra-elastica-bundle",
@@ -2852,12 +2773,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-elastica-bundle.git",
-                "reference": "4a19e2969a9cfe25f5e3e831233bde6244a62b07"
+                "reference": "2d65a34d0344338b9d5a06ee1828d9cd58b40019"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-elastica-bundle/zipball/4a19e2969a9cfe25f5e3e831233bde6244a62b07",
-                "reference": "4a19e2969a9cfe25f5e3e831233bde6244a62b07",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-elastica-bundle/zipball/2d65a34d0344338b9d5a06ee1828d9cd58b40019",
+                "reference": "2d65a34d0344338b9d5a06ee1828d9cd58b40019",
                 "shasum": ""
             },
             "require": {
@@ -2905,7 +2826,7 @@
                 }
             ],
             "description": "A bundle to index Open Orchestra elements with Elastica Search",
-            "time": "2017-02-14 13:25:19"
+            "time": "2017-03-08 11:25:04"
         },
         {
             "name": "open-orchestra/open-orchestra-libs",
@@ -2959,12 +2880,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-admin-bundle.git",
-                "reference": "a99edaf5c8360c30dfda3383db9852e7960ad3fa"
+                "reference": "f67699f3313b70953d5517fd2549f6cbb0d28f8d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/a99edaf5c8360c30dfda3383db9852e7960ad3fa",
-                "reference": "a99edaf5c8360c30dfda3383db9852e7960ad3fa",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/f67699f3313b70953d5517fd2549f6cbb0d28f8d",
+                "reference": "f67699f3313b70953d5517fd2549f6cbb0d28f8d",
                 "shasum": ""
             },
             "require": {
@@ -3043,7 +2964,7 @@
                 }
             ],
             "description": "This bundle integrate the media administration in the Back Office of Open Orchestra",
-            "time": "2017-03-02 13:22:23"
+            "time": "2017-03-08 10:45:30"
         },
         {
             "name": "open-orchestra/open-orchestra-media-bundle",
@@ -3051,12 +2972,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-bundle.git",
-                "reference": "979c74b9acd18d87440dfcf5e421aca0e850f0f5"
+                "reference": "9a8afb3801a656ffa117254a9d4582767baee945"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/979c74b9acd18d87440dfcf5e421aca0e850f0f5",
-                "reference": "979c74b9acd18d87440dfcf5e421aca0e850f0f5",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/9a8afb3801a656ffa117254a9d4582767baee945",
+                "reference": "9a8afb3801a656ffa117254a9d4582767baee945",
                 "shasum": ""
             },
             "require": {
@@ -3093,7 +3014,7 @@
                 }
             ],
             "description": "A media bundle for Open Orchestra",
-            "time": "2017-03-01 16:37:26"
+            "time": "2017-03-08 11:30:13"
         },
         {
             "name": "open-orchestra/open-orchestra-media-file-bundle",
@@ -3143,12 +3064,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-migration-bundle.git",
-                "reference": "fe82b83a827c3ccd2d6950f47f4a28f9a4b9559d"
+                "reference": "6ea8dd064fab20f8e6f5728675d01c670f7dea14"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-migration-bundle/zipball/fe82b83a827c3ccd2d6950f47f4a28f9a4b9559d",
-                "reference": "fe82b83a827c3ccd2d6950f47f4a28f9a4b9559d",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-migration-bundle/zipball/6ea8dd064fab20f8e6f5728675d01c670f7dea14",
+                "reference": "6ea8dd064fab20f8e6f5728675d01c670f7dea14",
                 "shasum": ""
             },
             "require": {
@@ -3172,7 +3093,7 @@
                 }
             ],
             "description": "A bundle which contains the mongo migrations for Open Orchestra",
-            "time": "2017-02-24 15:19:43"
+            "time": "2017-03-03 13:54:59"
         },
         {
             "name": "open-orchestra/open-orchestra-model-bundle",
@@ -3180,12 +3101,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
-                "reference": "23c3947e3d4ce193b308ef88f85b5dcde8ba0c78"
+                "reference": "494da744a6f299afe163bb579a7d86ccfa3710a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/23c3947e3d4ce193b308ef88f85b5dcde8ba0c78",
-                "reference": "23c3947e3d4ce193b308ef88f85b5dcde8ba0c78",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/494da744a6f299afe163bb579a7d86ccfa3710a0",
+                "reference": "494da744a6f299afe163bb579a7d86ccfa3710a0",
                 "shasum": ""
             },
             "require": {
@@ -3220,7 +3141,7 @@
                 }
             ],
             "description": "A MongoDB implemantation of the Open Orchestra Model Interface",
-            "time": "2017-03-02 13:51:51"
+            "time": "2017-03-06 11:46:33"
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
@@ -3228,12 +3149,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-interface.git",
-                "reference": "1e010b24f9519e9e0decf7d5d22e564eb30acfdd"
+                "reference": "d44170c306c2e3f7da281fc2c89c19ec904eff75"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/1e010b24f9519e9e0decf7d5d22e564eb30acfdd",
-                "reference": "1e010b24f9519e9e0decf7d5d22e564eb30acfdd",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-interface/zipball/d44170c306c2e3f7da281fc2c89c19ec904eff75",
+                "reference": "d44170c306c2e3f7da281fc2c89c19ec904eff75",
                 "shasum": ""
             },
             "require": {
@@ -3265,7 +3186,7 @@
                 }
             ],
             "description": "Describe all entity and repository to implement for the whole OpenOrchestra project",
-            "time": "2017-03-02 13:47:15"
+            "time": "2017-03-08 11:07:47"
         },
         {
             "name": "open-orchestra/open-orchestra-mongo-libs",
@@ -3323,12 +3244,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-user-bundle.git",
-                "reference": "7251ff8627840b9d7f4593e69ad01d5e708ba532"
+                "reference": "0ae515be23dcac59d4501005a5affa7d928b5eaa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-user-bundle/zipball/7251ff8627840b9d7f4593e69ad01d5e708ba532",
-                "reference": "7251ff8627840b9d7f4593e69ad01d5e708ba532",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-user-bundle/zipball/0ae515be23dcac59d4501005a5affa7d928b5eaa",
+                "reference": "0ae515be23dcac59d4501005a5affa7d928b5eaa",
                 "shasum": ""
             },
             "require": {
@@ -3368,20 +3289,20 @@
                 }
             ],
             "description": "An override of FosUserBundle to provide authentication on Open Orchestra",
-            "time": "2017-03-02 13:30:14"
+            "time": "2017-03-08 11:24:42"
         },
         {
             "name": "paragonie/random_compat",
-            "version": "v2.0.7",
+            "version": "v2.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "b5ea1ef3d8ff10c307ba8c5945c2f134e503278f"
+                "reference": "6968531206671f94377b01dc7888d5d1b858a01b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/b5ea1ef3d8ff10c307ba8c5945c2f134e503278f",
-                "reference": "b5ea1ef3d8ff10c307ba8c5945c2f134e503278f",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/6968531206671f94377b01dc7888d5d1b858a01b",
+                "reference": "6968531206671f94377b01dc7888d5d1b858a01b",
                 "shasum": ""
             },
             "require": {
@@ -3416,7 +3337,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2017-02-27T17:11:23+00:00"
+            "time": "2017-03-03T20:43:42+00:00"
         },
         {
             "name": "php-ffmpeg/php-ffmpeg",
@@ -3748,16 +3669,16 @@
         },
         {
             "name": "sensio/framework-extra-bundle",
-            "version": "v3.0.22",
+            "version": "v3.0.23",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioFrameworkExtraBundle.git",
-                "reference": "1c66c2e3b8f17f06178142386aff5a9f8057a104"
+                "reference": "d3601fd5709168ace7a1ca6eefa2619a1632b7f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/1c66c2e3b8f17f06178142386aff5a9f8057a104",
-                "reference": "1c66c2e3b8f17f06178142386aff5a9f8057a104",
+                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/d3601fd5709168ace7a1ca6eefa2619a1632b7f7",
+                "reference": "d3601fd5709168ace7a1ca6eefa2619a1632b7f7",
                 "shasum": ""
             },
             "require": {
@@ -3814,7 +3735,7 @@
                 "annotations",
                 "controllers"
             ],
-            "time": "2017-02-15T06:52:30+00:00"
+            "time": "2017-03-02T20:17:28+00:00"
         },
         {
             "name": "sensio/generator-bundle",
@@ -4102,76 +4023,6 @@
                 "mailer"
             ],
             "time": "2017-02-13T07:52:53+00:00"
-        },
-        {
-            "name": "symfony/assetic-bundle",
-            "version": "v2.8.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/assetic-bundle.git",
-                "reference": "0241b135ff64c6031048c6425cd833a8300da46b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/assetic-bundle/zipball/0241b135ff64c6031048c6425cd833a8300da46b",
-                "reference": "0241b135ff64c6031048c6425cd833a8300da46b",
-                "shasum": ""
-            },
-            "require": {
-                "kriswallsmith/assetic": "~1.4",
-                "php": ">=5.3.0",
-                "symfony/console": "~2.3|~3.0",
-                "symfony/dependency-injection": "~2.3|~3.0",
-                "symfony/framework-bundle": "~2.3|~3.0",
-                "symfony/yaml": "~2.3|~3.0"
-            },
-            "conflict": {
-                "kriswallsmith/spork": "<=0.2",
-                "twig/twig": "<1.27"
-            },
-            "require-dev": {
-                "kriswallsmith/spork": "~0.3",
-                "patchwork/jsqueeze": "~1.0",
-                "symfony/class-loader": "~2.3|~3.0",
-                "symfony/css-selector": "~2.3|~3.0",
-                "symfony/dom-crawler": "~2.3|~3.0",
-                "symfony/phpunit-bridge": "~2.7|~3.0",
-                "symfony/twig-bundle": "~2.3|~3.0"
-            },
-            "suggest": {
-                "kriswallsmith/spork": "to be able to dump assets in parallel",
-                "symfony/twig-bundle": "to use the Twig integration"
-            },
-            "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.8-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Bundle\\AsseticBundle\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Kris Wallsmith",
-                    "email": "kris.wallsmith@gmail.com",
-                    "homepage": "http://kriswallsmith.net/"
-                }
-            ],
-            "description": "Integrates Assetic into Symfony2",
-            "homepage": "https://github.com/symfony/AsseticBundle",
-            "keywords": [
-                "assets",
-                "compression",
-                "minification"
-            ],
-            "time": "2016-11-22T11:42:57+00:00"
         },
         {
             "name": "symfony/monolog-bundle",
@@ -4804,16 +4655,16 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v2.8.17",
+            "version": "v2.8.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "c423a13a031c9388b7f9103f176b1872c00c7ffa"
+                "reference": "8c28bf706b3bf4250d18535ee46a8a5d7a5825e1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/c423a13a031c9388b7f9103f176b1872c00c7ffa",
-                "reference": "c423a13a031c9388b7f9103f176b1872c00c7ffa",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/8c28bf706b3bf4250d18535ee46a8a5d7a5825e1",
+                "reference": "8c28bf706b3bf4250d18535ee46a8a5d7a5825e1",
                 "shasum": ""
             },
             "require": {
@@ -4832,7 +4683,8 @@
                 "twig/twig": "~1.28|~2.0"
             },
             "conflict": {
-                "phpdocumentor/reflection": "<1.0.7"
+                "phpdocumentor/reflection": "<1.0.7",
+                "phpunit/phpunit": "<4.8.35|<5.4.3,>=5.0"
             },
             "replace": {
                 "symfony/asset": "self.version",
@@ -4936,7 +4788,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2017-02-06T12:47:48+00:00"
+            "time": "2017-03-06T03:54:50+00:00"
         },
         {
             "name": "twig/extensions",
@@ -5405,27 +5257,27 @@
         },
         {
             "name": "phpspec/prophecy",
-            "version": "v1.6.2",
+            "version": "v1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "6c52c2722f8460122f96f86346600e1077ce22cb"
+                "reference": "93d39f1f7f9326d746203c7c056f300f7f126073"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/6c52c2722f8460122f96f86346600e1077ce22cb",
-                "reference": "6c52c2722f8460122f96f86346600e1077ce22cb",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/93d39f1f7f9326d746203c7c056f300f7f126073",
+                "reference": "93d39f1f7f9326d746203c7c056f300f7f126073",
                 "shasum": ""
             },
             "require": {
                 "doctrine/instantiator": "^1.0.2",
                 "php": "^5.3|^7.0",
                 "phpdocumentor/reflection-docblock": "^2.0|^3.0.2",
-                "sebastian/comparator": "^1.1",
-                "sebastian/recursion-context": "^1.0|^2.0"
+                "sebastian/comparator": "^1.1|^2.0",
+                "sebastian/recursion-context": "^1.0|^2.0|^3.0"
             },
             "require-dev": {
-                "phpspec/phpspec": "^2.0",
+                "phpspec/phpspec": "^2.5|^3.2",
                 "phpunit/phpunit": "^4.8 || ^5.6.5"
             },
             "type": "library",
@@ -5464,7 +5316,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2016-11-21T14:58:47+00:00"
+            "time": "2017-03-02T20:05:34+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -5854,23 +5706,23 @@
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/code-unit-reverse-lookup.git",
-                "reference": "c36f5e7cfce482fde5bf8d10d41a53591e0198fe"
+                "reference": "4419fcdb5eabb9caa61a27c7a1db532a6b55dd18"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/code-unit-reverse-lookup/zipball/c36f5e7cfce482fde5bf8d10d41a53591e0198fe",
-                "reference": "c36f5e7cfce482fde5bf8d10d41a53591e0198fe",
+                "url": "https://api.github.com/repos/sebastianbergmann/code-unit-reverse-lookup/zipball/4419fcdb5eabb9caa61a27c7a1db532a6b55dd18",
+                "reference": "4419fcdb5eabb9caa61a27c7a1db532a6b55dd18",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.6"
+                "php": "^5.6 || ^7.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~5"
+                "phpunit/phpunit": "^5.7 || ^6.0"
             },
             "type": "library",
             "extra": {
@@ -5895,7 +5747,7 @@
             ],
             "description": "Looks up which function or method a line of code belongs to",
             "homepage": "https://github.com/sebastianbergmann/code-unit-reverse-lookup/",
-            "time": "2016-02-13T06:45:14+00:00"
+            "time": "2017-03-04T06:30:41+00:00"
         },
         {
             "name": "sebastian/comparator",
@@ -6229,16 +6081,16 @@
         },
         {
             "name": "sebastian/recursion-context",
-            "version": "1.0.2",
+            "version": "1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/recursion-context.git",
-                "reference": "913401df809e99e4f47b27cdd781f4a258d58791"
+                "reference": "b19cc3298482a335a95f3016d2f8a6950f0fbcd7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/recursion-context/zipball/913401df809e99e4f47b27cdd781f4a258d58791",
-                "reference": "913401df809e99e4f47b27cdd781f4a258d58791",
+                "url": "https://api.github.com/repos/sebastianbergmann/recursion-context/zipball/b19cc3298482a335a95f3016d2f8a6950f0fbcd7",
+                "reference": "b19cc3298482a335a95f3016d2f8a6950f0fbcd7",
                 "shasum": ""
             },
             "require": {
@@ -6278,7 +6130,7 @@
             ],
             "description": "Provides functionality to recursively process PHP variables",
             "homepage": "http://www.github.com/sebastianbergmann/recursion-context",
-            "time": "2015-11-11T19:50:13+00:00"
+            "time": "2016-10-03T07:41:43+00:00"
         },
         {
             "name": "sebastian/resource-operations",

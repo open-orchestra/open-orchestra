@@ -9,8 +9,7 @@ module.exports = function(grunt) {
       'symlink',
       'css',
       'javascript',
-      'javascriptProd',
-      'commands:assetic_dump'
+      'javascriptProd'
     ]
   );
 };
