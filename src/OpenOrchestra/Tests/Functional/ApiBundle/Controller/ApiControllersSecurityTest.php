@@ -39,7 +39,6 @@ class ApiControllersSecurityTest extends AbstractAuthenticatedTest
             6  => array('/api/block/list/block-component'),
             8  => array('/api/content-type'),
             12 => array('/api/site'),
-            13 => array('/api/site/list/available'),
             17 => array('/api/keyword'),
             //18 => array('/api/trashcan/list'),
             //19 => array('/api/trashcan/fake_id/restore','PUT'),
