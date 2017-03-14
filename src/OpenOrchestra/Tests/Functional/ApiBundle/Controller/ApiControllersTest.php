@@ -105,7 +105,8 @@ class ApiControllersTest extends AbstractAuthenticatedTest
             41 => array('/api/content-type/news'),
             42 => array('/api/content-type/content/content-type-list'),
             43 => array('/api/trashcan/list'),
-            44 => array('/api/trashcan/delete-multiple', '', "DELETE")
+            44 => array('/api/trashcan/delete-multiple', '', "DELETE"),
+            45 => array('/api/content/lorem_ipsum'),
         );
     }
 }
