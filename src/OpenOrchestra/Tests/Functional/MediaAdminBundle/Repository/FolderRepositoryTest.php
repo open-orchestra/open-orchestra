@@ -29,31 +29,6 @@ class FolderRepositoryTest extends AbstractKernelTestCase
     }
 
     /**
-     * @param string $siteId
-     * @param int    $count
-     *
-     * @dataProvider provideSiteIdAndFolderCount
-     */
-    public function testFindAllRootFolderBySiteId($siteId, $count)
-    {
-        $result = $this->repository->findAllRootFolderBySiteId($siteId);
-
-        $this->assertLessThanOrEqual($count, count($result));
-    }
-
-    /**
-     * @return array
-     */
-    public function provideSiteIdAndFolderCount()
-    {
-        return array(
-            array('1', 2),
-            array('2', 2),
-            array('3', 2),
-        );
-    }
-
-    /**
      * test findFolderTree
      */
     public function testFindFolderTree()

@@ -178,31 +178,6 @@ class UserRepositoryTest extends AbstractKernelTestCase
     }
 
     /**
-     * @param $username
-     * @param $groupName
-     * @param $countUser
-     *
-     * @dataProvider provideUserAndGroup
-     */
-    public function testFindByIncludedUsernameWithoutGroup($username, $groupName, $countUser)
-    {
-        $group =  static::$kernel->getContainer()->get('open_orchestra_user.repository.group')->findOneByName($groupName);
-        $users = $this->repository->findByIncludedUsernameWithoutGroup($username, $group);
-
-        $this->assertCount($countUser, $users);
-    }
-
-    public function provideUserAndGroup()
-    {
-        return array(
-            array('de', 'Empty group', 1),
-            array('admi', 'Empty group', 2),
-            array('user', 'Empty group', 1),
-            array('fakeUser', 'Demo group', 0)
-        );
-    }
-
-    /**
      * Test remove users
      */
     public function testRemoveUsers()

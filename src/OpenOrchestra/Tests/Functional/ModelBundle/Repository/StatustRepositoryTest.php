@@ -42,15 +42,6 @@ class StatusRepositoryTest extends AbstractKernelTestCase
     }
 
     /**
-     * test find other by translation state
-     */
-    public function testFindOtherByTranslationState()
-    {
-        $statuses = $this->repository->findOtherByTranslationState('toTranslate');
-        $this->assertCount(0, $statuses);
-    }
-
-    /**
      * test find one by translation state
      */
     public function testFindOneByTranslationState()

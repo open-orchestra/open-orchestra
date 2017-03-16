@@ -298,7 +298,12 @@ class NodeControllerTest extends AbstractAuthenticatedTest
     public function testAddBlockInAreaAction()
     {
         $node = $this->nodeRepository->findInLastVersion('root', 'fr', '2');
-        $blocks = $this->blockRepository->findTransverseBlock('tiny_mce_wysiwyg', '2', 'fr');
+        $blocks = $this->blockRepository->findBy(
+            array('component' => 'tiny_mce_wysiwyg'),
+            array('siteId' => '2'),
+            array('language' => 'fr'),
+            array('transverse' => true)
+        );
         $block = $blocks[0];
 
         $this->client->request(

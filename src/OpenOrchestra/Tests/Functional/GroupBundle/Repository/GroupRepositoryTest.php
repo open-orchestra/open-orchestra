@@ -85,42 +85,6 @@ class GroupRepositoryTest extends AbstractKernelTestCase
     }
 
     /**
-     * test findAllWithSite
-     */
-    public function testFindAllWithSite()
-    {
-        $groups = $this->repository->findAllWithSite();
-        $this->assertCount(3, $groups);
-    }
-
-    /**
-     * test findAllWithSiteId
-     *
-     * @param string $siteId
-     * @param int    $expectedGroupCount
-     *
-     * @dataProvider provideSiteId
-     */
-    public function testFindAllWithSiteId($siteId, $expectedGroupCount)
-    {
-        $site = $this->siteRepository->findOneBySiteId($siteId);
-        $groups = $this->repository->findAllWithSiteId($site->getId());
-
-        $this->assertCount($expectedGroupCount, $groups);
-    }
-
-    /**
-     * Provite site mongoId
-     */
-    public function provideSiteId()
-    {
-        return array(
-             'Empty site' => array('3', 1),
-             'Demo site' => array('2', 2)
-        );
-    }
-
-    /**
      * @param PaginateFinderConfiguration $configuration
      * @param array                       $siteIds
      * @param int                         $count
@@ -183,7 +147,9 @@ class GroupRepositoryTest extends AbstractKernelTestCase
         $site = $this->siteRepository->findOneBySiteId('3');
         $this->repository->softDeleteGroupsBySite($site);
 
-        $groups = $this->repository->findAllWithSiteId($site->getId());
+        $groups = $this->repository->findBy(
+            array('site.$id' => new \MongoId($site->getId()))
+        );
 
         foreach ($groups as $group) {
             $this->assertTrue($group->isDeleted());
