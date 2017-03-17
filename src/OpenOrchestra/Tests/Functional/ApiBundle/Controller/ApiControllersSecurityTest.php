@@ -52,7 +52,7 @@ class ApiControllersSecurityTest extends AbstractAuthenticatedTest
             33 => array('/api/status'),
             35 => array('/api/content/new-version/r5_3_portes/fr/2', 'POST'),
             36 => array('/api/node/new-version/root/fr/1', 'POST'),
-            37 => array('/api/content/lorem_ipsum'),
+            37 => array('/api/content/show/lorem_ipsum/fr'),
         );
     }
 }
