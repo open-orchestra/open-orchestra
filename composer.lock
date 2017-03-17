@@ -2530,12 +2530,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-base-bundle.git",
-                "reference": "e8b1a37ea1a7b05cb489baebfabc5b69a841dfad"
+                "reference": "dc80d4e7b4a5be85f7f96f9b7d8673ad11496c72"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-bundle/zipball/e8b1a37ea1a7b05cb489baebfabc5b69a841dfad",
-                "reference": "e8b1a37ea1a7b05cb489baebfabc5b69a841dfad",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-bundle/zipball/dc80d4e7b4a5be85f7f96f9b7d8673ad11496c72",
+                "reference": "dc80d4e7b4a5be85f7f96f9b7d8673ad11496c72",
                 "shasum": ""
             },
             "require": {
@@ -2567,7 +2567,7 @@
                 }
             ],
             "description": "The OpenOrchestra base bundle",
-            "time": "2017-03-08 11:29:33"
+            "time": "2017-03-17 14:54:33"
         },
         {
             "name": "open-orchestra/open-orchestra-bbcode-bundle",
