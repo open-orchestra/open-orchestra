@@ -234,30 +234,6 @@ class ContentRepositoryTest extends AbstractKernelTestCase
      * @param string $contentId
      * @param string $language
      *
-     * @dataProvider provideFindOneByContentIdAndLanguage
-     */
-    public function testFindOneByLanguage($contentId, $language)
-    {
-        $content = $this->repository->findOneByLanguage($contentId, $language);
-
-        $this->assertSameContent($language, null, null, $contentId, $content);
-    }
-
-    /**
-     * @return array
-     */
-    public function provideFindOneByContentIdAndLanguage()
-    {
-        return array(
-            array('notre_vision', 'fr'),
-            array('bien_vivre_en_france', 'fr'),
-        );
-    }
-
-    /**
-     * @param string $contentId
-     * @param string $language
-     *
      * @dataProvider provideFindByContentIdAndLanguage
      */
     public function testFindByLanguage($contentId, $language)
