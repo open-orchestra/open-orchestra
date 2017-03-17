@@ -5,6 +5,7 @@ namespace OpenOrchestra\FunctionalTests\BackofficeBundle\EventSubscriber;
 use OpenOrchestra\FunctionalTests\Utils\AbstractAuthenticatedTest;
 use OpenOrchestra\ModelBundle\Document\Content;
 use OpenOrchestra\ModelBundle\Document\ContentAttribute;
+use OpenOrchestra\ModelBundle\Document\Status;
 use Symfony\Component\Form\FormFactoryInterface;
 
 /**
@@ -39,8 +40,10 @@ class ContentTypeSubscriberTest extends AbstractAuthenticatedTest
      */
     public function testFormFieldTransformation($attributeValue, $fieldValue, $countError)
     {
+        $status = new Status();
         $content = new Content();
         $content->setContentType("customer");
+        $content->setStatus($status);
 
         $attribute = new ContentAttribute();
         $attribute->setName("identifier");
@@ -71,10 +74,12 @@ class ContentTypeSubscriberTest extends AbstractAuthenticatedTest
      */
     public function testFormFieldTransformationException()
     {
+        $status = new Status();
         $content = new Content();
         $content->setContentType('news');
         $content->setSiteId('2');
         $content->setLanguage('fr');
+        $content->setStatus($status);
 
         $form = $this->formFactory->create('oo_content', $content, array('csrf_protection' => false));
         $form->submit(array(
