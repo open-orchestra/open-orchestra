@@ -10,7 +10,7 @@ module.exports = {
         ],
         dest: {
             template : 'web/built/', //web/build/template/template.js
-            navigation : 'web/built/', //web/build/navigation/navigation.js
+            menu : 'web/built/', //web/build/menu/menu.js
             javascript : 'web/built/openorchestra/'
         }
     }

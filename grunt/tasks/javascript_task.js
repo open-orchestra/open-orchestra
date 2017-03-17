@@ -11,7 +11,7 @@ module.exports = function(grunt) {
       'browserify',
       'template:compile',
       'jst',
-      'navigation:compile',
+      'menu:compile',
       'concat:lib_js',
       'concat:orchestra_js',
       'concat:media_js',
