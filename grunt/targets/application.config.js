@@ -6,7 +6,8 @@ module.exports = {
             'openorchestragroup',
             'openorchestralog',
             'openorchestraworkflowadmin',
-            'openorchestramediaadmin'
+            'openorchestramediaadmin',
+            'itkgreference'
         ],
         dest: {
             template : 'web/built/', //web/build/template/template.js

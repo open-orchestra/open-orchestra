@@ -96,3 +96,17 @@ open_orchestra_base:
 
 _bazinga_jstranslation:
     resource: "@BazingaJsTranslationBundle/Resources/config/routing/routing.yml"
+
+itkg_reference_api:
+    resource: "@ItkgReferenceApiBundle/Controller"
+    type: annotation
+    prefix: /api
+    options:
+        expose: true
+
+itkg_reference_admin:
+    resource: "@ItkgReferenceBundle/Controller"
+    type: annotation
+    prefix: /admin
+    options:
+        expose: true

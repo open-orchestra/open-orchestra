@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e2d1a7c85a11f759843ffd7ba5785fdf",
+    "content-hash": "8637c3e32bee1160d36c373df6972fda",
     "packages": [
         {
             "name": "alav/composer-assets",
@@ -1898,6 +1898,51 @@
             "time": "2014-11-20T16:49:30+00:00"
         },
         {
+            "name": "itkg/itkg-data-reference-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/itkg/itkg-data-reference-bundle.git",
+                "reference": "adf216fb13992a7afb7c7a70886ff411e9730dd9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/itkg/itkg-data-reference-bundle/zipball/adf216fb13992a7afb7c7a70886ff411e9730dd9",
+                "reference": "adf216fb13992a7afb7c7a70886ff411e9730dd9",
+                "shasum": ""
+            },
+            "require": {
+                "open-orchestra/open-orchestra-base-api-bundle": ">=1.1.0",
+                "open-orchestra/open-orchestra-cms-bundle": ">=1.1.0",
+                "open-orchestra/open-orchestra-libs": ">=1.1.0",
+                "open-orchestra/open-orchestra-model-bundle": ">=1.1.0",
+                "open-orchestra/open-orchestra-model-interface": ">=1.1.0",
+                "open-orchestra/open-orchestra-mongo-libs": ">=1.1.0"
+            },
+            "require-dev": {
+                "phake/phake": "~2.3.0",
+                "phpunit/phpunit": "~4.8.16"
+            },
+            "type": "project",
+            "autoload": {
+                "psr-4": {
+                    "Itkg\\ReferenceBundle\\": "ReferenceBundle/",
+                    "Itkg\\ReferenceApiBundle\\": "ReferenceApiBundle/",
+                    "Itkg\\ReferenceInterface\\": "ReferenceInterface/",
+                    "Itkg\\ReferenceModelBundle\\": "ReferenceModelBundle/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "reference bundle based on contentBundle of open orchestra",
+            "support": {
+                "source": "https://github.com/itkg/itkg-data-reference-bundle/tree/1.2.1",
+                "issues": "https://github.com/itkg/itkg-data-reference-bundle/issues"
+            },
+            "time": "2017-01-23 13:32:58"
+        },
+        {
             "name": "jbbcode/jbbcode",
             "version": "v1.3.0",
             "source": {
@@ -2535,12 +2580,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "ca5b8eaed97c7db8412218d2e95e3f60efe9a3c7"
+                "reference": "6e65331648a49ba8f229a5dd09157a2d0d11d508"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/ca5b8eaed97c7db8412218d2e95e3f60efe9a3c7",
-                "reference": "ca5b8eaed97c7db8412218d2e95e3f60efe9a3c7",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/6e65331648a49ba8f229a5dd09157a2d0d11d508",
+                "reference": "6e65331648a49ba8f229a5dd09157a2d0d11d508",
                 "shasum": ""
             },
             "require": {
@@ -2635,7 +2680,7 @@
                 }
             ],
             "description": "This bundle provide the Back Office part of Open Orchestra",
-            "time": "2017-04-06 13:02:31"
+            "time": "2017-03-22 15:28:27"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2939,12 +2984,21 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-migration-bundle.git",
-                "reference": "83627897747169b6038d2a711a1080e33a8f0922"
+            "description": "This bundle provide the file management part for the media feature of OpenOrchestra",
+            "time": "2017-02-20 17:10:55"
+        },
+        {
+            "name": "open-orchestra/open-orchestra-migration-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/open-orchestra/open-orchestra-migration-bundle.git",
+                "reference": "c952d1a28eab9cacc2fa6a7a9aa8c6ba791187a5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-migration-bundle/zipball/83627897747169b6038d2a711a1080e33a8f0922",
-                "reference": "83627897747169b6038d2a711a1080e33a8f0922",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-migration-bundle/zipball/c952d1a28eab9cacc2fa6a7a9aa8c6ba791187a5",
+                "reference": "c952d1a28eab9cacc2fa6a7a9aa8c6ba791187a5",
                 "shasum": ""
             },
             "require": {
@@ -2968,7 +3022,7 @@
                 }
             ],
             "description": "A bundle which contains the mongo migrations for Open Orchestra",
-            "time": "2017-04-06 13:02:37"
+            "time": "2017-03-22 13:31:29"
         },
         {
             "name": "open-orchestra/open-orchestra-model-bundle",
@@ -6152,6 +6206,8 @@
         "open-orchestra/open-orchestra-elastica-bundle": 20,
         "open-orchestra/open-orchestra-media-admin-bundle": 20,
         "open-orchestra/open-orchestra-model-bundle": 20,
+        "friendsofsymfony/user-bundle": 15,
+        "itkg/itkg-data-reference-bundle": 20,
         "open-orchestra/open-orchestra-base-bundle": 20,
         "open-orchestra/open-orchestra-base-api-bundle": 20,
         "open-orchestra/open-orchestra-bbcode-bundle": 20,

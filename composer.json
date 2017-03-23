@@ -19,8 +19,19 @@
     "open-orchestra/open-orchestra-cms-bundle": "self.version",
     "open-orchestra/open-orchestra-elastica-bundle": "self.version",
     "open-orchestra/open-orchestra-media-admin-bundle": "self.version",
-    "open-orchestra/open-orchestra-model-bundle": "self.version"
+    "open-orchestra/open-orchestra-model-bundle": "self.version",
+    "friendsofsymfony/user-bundle": "@alpha",
+    "friendsofsymfony/jsrouting-bundle": "~1.6.0",
+    "willdurand/js-translation-bundle": "~2.6.1"
+
+    ,"itkg/itkg-data-reference-bundle": "dev-master"
   },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/itkg/itkg-data-reference-bundle.git"
+        }
+    ],
 
   "require-dev": {
     "phpunit/phpunit": "~5.4.0",
