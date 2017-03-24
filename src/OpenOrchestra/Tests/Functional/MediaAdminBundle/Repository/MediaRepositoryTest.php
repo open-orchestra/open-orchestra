@@ -86,15 +86,16 @@ class MediaRepositoryTest extends AbstractKernelTestCase
     /**
      * test findForPaginate
      *
+     * @param string                      $siteId
      * @param PaginateFinderConfiguration $configuration
      * @param int                         $expectedCount
      * @param int                         $expectedFilteredCount
      *
      * @dataProvider providePaginateConfiguration
      */
-    public function testFindForPaginate(PaginateFinderConfiguration $configuration, $expectedCount, $expectedFilteredCount)
+    public function testFindForPaginate($siteId, PaginateFinderConfiguration $configuration, $expectedCount, $expectedFilteredCount)
     {
-        $this->assertCount($expectedCount, $this->repository->findForPaginate($configuration));
+        $this->assertCount($expectedCount, $this->repository->findForPaginate($configuration, $siteId));
     }
 
     /**
@@ -102,7 +103,7 @@ class MediaRepositoryTest extends AbstractKernelTestCase
      */
     public function testCount()
     {
-        $this->assertSame(6, $this->repository->count());
+        $this->assertSame(6, $this->repository->count('2'));
     }
 
     /**
@@ -110,22 +111,23 @@ class MediaRepositoryTest extends AbstractKernelTestCase
      */
     public function testCountFiltered()
     {
-        $this->assertSame(1, $this->repository->count('pdf'));
-        $this->assertSame(5, $this->repository->count('image'));
+        $this->assertSame(1, $this->repository->count('2', 'pdf'));
+        $this->assertSame(5, $this->repository->count('2', 'image'));
     }
 
     /**
      * test countWithFilter
      *
+     * @param string                      $siteId
      * @param PaginateFinderConfiguration $configuration
      * @param int                         $expectedCount
      * @param int                         $expectedFilteredCount
      *
      * @dataProvider providePaginateConfiguration
      */
-    public function testCountWithFilter(PaginateFinderConfiguration $configuration, $expectedCount, $expectedFilteredCount)
+    public function testCountWithFilter($siteId, PaginateFinderConfiguration $configuration, $expectedCount, $expectedFilteredCount)
     {
-        $this->assertSame($expectedFilteredCount, $this->repository->countWithFilter($configuration));
+        $this->assertSame($expectedFilteredCount, $this->repository->countWithFilter($configuration, $siteId));
     }
 
     /**
@@ -141,9 +143,9 @@ class MediaRepositoryTest extends AbstractKernelTestCase
         $conf3 = PaginateFinderConfiguration::generateFromVariable(null , null, null, $mapping, array('type' => 'pdf'));
 
         return array(
-            'No criteria'       => array($conf1, 6, 6),
-            'Filtering "dolor"' => array($conf2, 4, 4),
-            'Filtering pdf'     => array($conf3, 1, 1),
+            'No criteria'       => array('2', $conf1, 6, 6),
+            'Filtering "dolor"' => array('2', $conf2, 4, 4),
+            'Filtering pdf'     => array('2', $conf3, 1, 1),
         );
     }
 

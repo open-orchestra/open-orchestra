@@ -166,4 +166,13 @@ class SiteRepositoryTest extends AbstractKernelTestCase
             array('fakeDomain', array())
         );
     }
+
+    /**
+     * Test find by site ids
+     */
+    public function testFindBySiteIds()
+    {
+        $sites = $this->repository->findBySiteIds(array('3', '2'));
+        $this->assertCount(1, $sites);
+    }
 }
