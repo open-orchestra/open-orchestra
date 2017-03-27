@@ -743,4 +743,24 @@ class ContentRepositoryTest extends AbstractKernelTestCase
 
         return $condition;
     }
+
+
+    /**
+     * Test update embedded status
+     */
+    public function testUpdateEmbeddedStatus()
+    {
+        $statusRepository = static::$kernel->getContainer()->get('open_orchestra_model.repository.status');
+        $status = $statusRepository->findOneByName('published');
+        $fakeColor = 'fakeColor';
+        $saveColor = $status->getDisplayColor();
+        $status->setDisplayColor($fakeColor);
+        $this->repository->updateEmbeddedStatus($status);
+
+        $node = $this->repository->findOnePublished('root', 'fr', '2');
+        $this->assertEquals($fakeColor, $node->getStatus()->getDisplayColor());
+
+        $status->setDisplayColor($saveColor);
+        $this->repository->updateEmbeddedStatus($status);
+    }
 }
