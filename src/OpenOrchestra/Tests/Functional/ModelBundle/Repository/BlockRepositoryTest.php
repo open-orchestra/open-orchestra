@@ -54,4 +54,33 @@ class BlockRepositoryTest extends AbstractKernelTestCase
             array(1, 'menu', 'en', '2'),
         );
     }
+
+    /**
+     * @param string $code
+     * @param string $language
+     * @param int    $count
+     *
+     * @dataProvider provideBlockCode
+     */
+    public function findOneTransverseBlockByCodeAndLanguageTest($code, $language, $count)
+    {
+        $blocks = $this->repository->findOneTransverseBlockByCodeAndLanguage($code, $language);
+        $this->assertCount($count, $blocks);
+    }
+
+    /**
+     * @return array
+     */
+    public function provideBlockCode()
+    {
+        return array(
+            array('logo', 'en', 1),
+            array('logo', 'fr', 1),
+            array('footer', 'fr', 1),
+            array('footer', 'de', 1),
+            array('fake', 'de', 0),
+            array('fake', 'en', 0),
+            array('fake', 'fr', 0),
+        );
+    }
 }
