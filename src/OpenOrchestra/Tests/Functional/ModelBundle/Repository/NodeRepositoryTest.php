@@ -965,7 +965,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
         $status->setDisplayColor($fakeColor);
         $this->repository->updateEmbeddedStatus($status);
 
-        $node = $this->repository->findOnePublished('bien_vivre_en_france', 'fr', '2');
+        $node = $this->repository->findOnePublished('root', 'fr', '2');
         $this->assertEquals($fakeColor, $node->getStatus()->getDisplayColor());
 
         $status->setDisplayColor($saveColor);
