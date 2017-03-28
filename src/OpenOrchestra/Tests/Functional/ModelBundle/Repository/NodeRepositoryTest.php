@@ -708,18 +708,18 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function testUpdateOrderOfBrothers()
     {
         $dm = static::$kernel->getContainer()->get('object_manager');
-        $nodeNews = $this->repository->findOneByNodeId('fixture_page_news');
-        $nodeCommunity = $this->repository->findOneByNodeId('fixture_page_community');
-        $nodeContact= $this->repository->findOneByNodeId('fixture_page_contact');
+        $nodeNews = $this->repository->findOneByNodeAndSite('fixture_page_news', '2');
+        $nodeCommunity = $this->repository->findOneByNodeAndSite('fixture_page_community', '2');
+        $nodeContact= $this->repository->findOneByNodeAndSite('fixture_page_contact', '2');
         $dm->detach($nodeContact);
         $dm->detach($nodeCommunity);
         $dm->detach($nodeNews);
 
         $this->repository->updateOrderOfBrothers($nodeNews->getSiteId(), $nodeNews->getNodeId(), $nodeNews->getOrder(), $nodeNews->getParentId());
 
-        $nodeNewsAfterUpdate = $this->repository->findOneByNodeId('fixture_page_news');
-        $nodeCommunityAfterUpdate = $this->repository->findOneByNodeId('fixture_page_community');
-        $nodeContactAfterUpdate = $this->repository->findOneByNodeId('fixture_page_contact');
+        $nodeNewsAfterUpdate = $this->repository->findOneByNodeAndSite('fixture_page_news', '2');
+        $nodeCommunityAfterUpdate = $this->repository->findOneByNodeAndSite('fixture_page_community', '2');
+        $nodeContactAfterUpdate = $this->repository->findOneByNodeAndSite('fixture_page_contact', '2');
 
         $this->assertSame($nodeNews->getOrder(), $nodeNewsAfterUpdate->getOrder());
         $this->assertSame($nodeCommunity->getOrder(), $nodeCommunityAfterUpdate->getOrder());
