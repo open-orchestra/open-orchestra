@@ -324,7 +324,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
             array(NodeInterface::ROOT_NODE_ID, 1, 6, '1', '2', 'fr'),
             array(NodeInterface::ROOT_NODE_ID, 2, 6, '1', '2', 'fr'),
             array(NodeInterface::ROOT_NODE_ID, 0, 6, '1', '2', 'fr'),
-            array(NodeInterface::ROOT_NODE_ID, 0, 5, '1', '2', 'en'),
+            array(NodeInterface::ROOT_NODE_ID, 0, 6, '1', '2', 'en'),
             array('fixture_page_community', 1, 1, '1', '2', 'fr'),
             array('fixture_page_community', 1, 1, '1', '2', 'en'),
             array('page_unexistant', 1, 0, 1, '2', 'fr'),
@@ -354,7 +354,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function provideLanguageSiteIdAndCount()
     {
         return array(
-            array('en', '2', 5),
+            array('en', '2', 6),
             array('fr', '2', 6),
         );
     }
@@ -436,7 +436,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function provideLanguage()
     {
         return array(
-            array('en', 4),
+            array('en', 5),
             array('fr', 5),
         );
     }
@@ -533,7 +533,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     {
         return array(
             array("1", 0),
-            array("2", 16),
+            array("2", 17),
         );
     }
 
@@ -556,7 +556,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function provideFindPublishedByPathAndLanguage()
     {
         return array(
-            array("root", "2", "en", 5),
+            array("root", "2", "en", 6),
             array("transverse", "2", "en", 0),
         );
     }
@@ -951,5 +951,24 @@ class NodeRepositoryTest extends AbstractKernelTestCase
             array('fixture_page_contact', '2', 0),
             array('root', '2', 14)
         );
+    }
+
+    /**
+     * Test update embedded status
+     */
+    public function testUpdateEmbeddedStatus()
+    {
+        $statusRepository = static::$kernel->getContainer()->get('open_orchestra_model.repository.status');
+        $status = $statusRepository->findOneByName('published');
+        $fakeColor = 'fakeColor';
+        $saveColor = $status->getDisplayColor();
+        $status->setDisplayColor($fakeColor);
+        $this->repository->updateEmbeddedStatus($status);
+
+        $node = $this->repository->findOnePublished('root', 'fr', '2');
+        $this->assertEquals($fakeColor, $node->getStatus()->getDisplayColor());
+
+        $status->setDisplayColor($saveColor);
+        $this->repository->updateEmbeddedStatus($status);
     }
 }

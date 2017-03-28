@@ -2617,12 +2617,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "0ae283e8ffb5ea941e3e3751a0e2ff864facd74e"
+                "reference": "8133580b598ab0e11e5c8ce493f721cf4ca2955b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/0ae283e8ffb5ea941e3e3751a0e2ff864facd74e",
-                "reference": "0ae283e8ffb5ea941e3e3751a0e2ff864facd74e",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/8133580b598ab0e11e5c8ce493f721cf4ca2955b",
+                "reference": "8133580b598ab0e11e5c8ce493f721cf4ca2955b",
                 "shasum": ""
             },
             "require": {
@@ -2718,7 +2718,7 @@
                 }
             ],
             "description": "This bundle provide the Back Office part of Open Orchestra",
-            "time": "2017-03-28 07:45:17"
+            "time": "2017-03-28 08:36:18"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2883,12 +2883,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-admin-bundle.git",
-                "reference": "942d822d3f02848761582b3785407635629c9c7c"
+                "reference": "c5f4b7784bbd34f42f29b0dcb08bface59f39e6f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/942d822d3f02848761582b3785407635629c9c7c",
-                "reference": "942d822d3f02848761582b3785407635629c9c7c",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/c5f4b7784bbd34f42f29b0dcb08bface59f39e6f",
+                "reference": "c5f4b7784bbd34f42f29b0dcb08bface59f39e6f",
                 "shasum": ""
             },
             "require": {
@@ -2967,7 +2967,7 @@
                 }
             ],
             "description": "This bundle integrate the media administration in the Back Office of Open Orchestra",
-            "time": "2017-03-28 07:46:49"
+            "time": "2017-03-28 08:22:52"
         },
         {
             "name": "open-orchestra/open-orchestra-media-bundle",
@@ -3104,12 +3104,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
-                "reference": "ea69e11b3cd630f435107ad3fa2c9537b1b54e10"
+                "reference": "2cca4e4cf96975b0333e7fcdb484fc67e02efb5e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/ea69e11b3cd630f435107ad3fa2c9537b1b54e10",
-                "reference": "ea69e11b3cd630f435107ad3fa2c9537b1b54e10",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/2cca4e4cf96975b0333e7fcdb484fc67e02efb5e",
+                "reference": "2cca4e4cf96975b0333e7fcdb484fc67e02efb5e",
                 "shasum": ""
             },
             "require": {
@@ -3144,7 +3144,7 @@
                 }
             ],
             "description": "A MongoDB implemantation of the Open Orchestra Model Interface",
-            "time": "2017-03-28 07:47:51"
+            "time": "2017-03-28 08:26:43"
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
