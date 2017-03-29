@@ -105,7 +105,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function provideNodeLanguageLastVersionAndSiteId()
     {
         return array(
-            array('fixture_page_community', 'fr', '2', '1'),
+            array('fixture_auto_unpublish', 'fr', '2', '1'),
             array('fixture_page_news', 'fr', '2', '1'),
         );
     }
@@ -949,7 +949,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     {
         return array(
             array('fixture_page_contact', '2', 0),
-            array('root', '2', 14)
+            array('root', '2', 15)
         );
     }
 

@@ -55,15 +55,19 @@ class SiteControllerTest extends AbstractFormTest
 
         $crawler = $this->client->request('GET', '/admin/site/form/' . $this->siteId);
         $form = $crawler->selectButton('Save')->form();
-        foreach($form->all() as $key => $value){
-            if (preg_match('/^oo_site\[aliases\]\[.*\]\[language\]$/', $key)) {
-                $form[$key] = 'en';
-            }
-        }
-        $this->submitForm($form);
+
+        $values = $form->getPhpValues();
+
+        $values['oo_site']['aliases'][1]['domain'] = $this->siteId . 'name';
+        $values['oo_site']['aliases'][1]['language'] = 'en';
+        $values['oo_site']['aliases'][1]['main'] = false;
+
+        $this->client->request($form->getMethod(), $form->getUri(), $values, $form->getPhpFiles());
 
         $this->assertNodeCount(1, 'fr');
         $this->assertNodeCount(1, 'en');
+
+        $this->client->request('DELETE', '/api/site/' . $this->siteId . '/delete');
     }
 
     /**
@@ -71,7 +75,6 @@ class SiteControllerTest extends AbstractFormTest
      */
     public function testUniqueSiteId()
     {
-        $this->markTestSkipped('Updated when site form is refacto');
         $this->assertSiteCount(0, $this->siteId);
 
         $this->createSite();
@@ -81,6 +84,8 @@ class SiteControllerTest extends AbstractFormTest
         $this->createSite();
 
         $this->assertSiteCount(1, $this->siteId);
+
+        $this->client->request('DELETE', '/api/site/' . $this->siteId . '/delete');
     }
 
     /**
@@ -91,21 +96,18 @@ class SiteControllerTest extends AbstractFormTest
         $crawler =  $this->client->request('GET', '/admin/site/new');
 
         $form = $crawler->selectButton('Save')->form();
+
         $form['oo_site[siteId]'] = $this->siteId;
         $form['oo_site[name]'] = $this->siteId . 'domain';
-        foreach($form->all() as $key => $value){
-            if (preg_match('/^oo_site\[aliases\]\[.*\]\[domain\]$/', $key)) {
-                $form[$key] = $this->siteId . 'name';
-            }
-            if (preg_match('/^oo_site\[aliases\]\[.*\]\[language\]$/', $key)) {
-                $form[$key] = 'fr';
-            }
-            if (preg_match('/^oo_site\[aliases\]\[.*\]\[main\]$/', $key)) {
-                $form[$key] = true;
-            }
-        }
+        $form['oo_site[metaAuthor]'] = $this->siteId . ' Author';
 
-        $this->submitForm($form);
+        $values = $form->getPhpValues();
+
+        $values['oo_site']['aliases'][0]['domain'] = $this->siteId . 'name';
+        $values['oo_site']['aliases'][0]['language'] = 'fr';
+        $values['oo_site']['aliases'][0]['main'] = true;
+
+        $this->client->request($form->getMethod(), $form->getUri(), $values, $form->getPhpFiles());
     }
 
     /**
