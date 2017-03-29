@@ -252,14 +252,25 @@ class UserRepositoryTest extends AbstractKernelTestCase
     }
 
     /**
-     * test findUsersByGroups
+     * test findUsersByGroupsForPaginate
      */
-    public function testFindUsersByGroups()
+    public function testFindUsersByGroupsForPaginate()
     {
+        $configuration = PaginateFinderConfiguration::generateFromVariable(array(), 0, 100, array());
         $group = $this->groupRepository->findOneByName('Demo group');
-        $users = $this->repository->findUsersByGroups($group->getId());
+        $users = $this->repository->findUsersByGroupsForPaginate($configuration, $group->getId());
         $this->assertEquals(1, count($users));
     }
+
+    /**
+     * test countFilterByGroups
+     */
+    public function testCountFilterByGroups()
+    {
+        $group = $this->groupRepository->findOneByName('Demo group');
+        $this->assertEquals(1, $this->repository->countFilterByGroups($group->getId()));
+    }
+
 
     /**
      * test removeGroupFromNotListedUsers
@@ -271,24 +282,18 @@ class UserRepositoryTest extends AbstractKernelTestCase
         $fakeGroup = new Group();
         $fakeGroup->setName('fakeGroup');
         $dm->persist($fakeGroup);
-        $users = $this->repository->findAll();
-        $nbrUsers = count($users);
-        foreach ($users as $user) {
-            $user->addGroup($fakeGroup);
-            $dm->persist($user);
-        }
+        $user = $this->repository->findOneByUsername('demo');
+        $user->addGroup($fakeGroup);
+        $dm->persist($user);
 
         $dm->flush();
 
         $group = $this->groupRepository->findOneByName('fakeGroup');
-        $users = $this->repository->findUsersByGroups($group->getId());
 
-        $this->assertEquals($nbrUsers, count($users));
+        $this->assertEquals(1, $this->repository->countFilterByGroups($group->getId()));
 
-        $this->repository->removeGroupFromNotListedUsers($group->getId(), array());
-        $users = $this->repository->findUsersByGroups($group->getId());
+        $this->repository->removeGroup($user->getId(), $group->getId());
 
-        $this->assertEquals(0, count($users));
-
+        $this->assertEquals(0, $this->repository->countFilterByGroups($group->getId()));
     }
 }
