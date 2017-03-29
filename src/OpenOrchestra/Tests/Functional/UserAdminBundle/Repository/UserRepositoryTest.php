@@ -271,7 +271,6 @@ class UserRepositoryTest extends AbstractKernelTestCase
         $this->assertEquals(1, $this->repository->countFilterByGroups($group->getId()));
     }
 
-
     /**
      * test removeGroupFromNotListedUsers
      */
