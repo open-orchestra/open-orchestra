@@ -17,7 +17,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
   config.vm.synced_folder "./", "/var/www/openorchestra", type: "nfs"
   config.vm.synced_folder "../open-orchestra-front-demo", "/var/www/front-openorchestra", type: "nfs"
-  config.vm.synced_folder "../open-orchestra-media-demo", "/var/www/media-openorchestra", type: "nfs"
 
 # Ansible
   config.vm.provision "ansible" do |ansible|
