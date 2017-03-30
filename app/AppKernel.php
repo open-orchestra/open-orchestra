@@ -48,11 +48,9 @@ class AppKernel extends Kernel
             new OpenOrchestra\LogBundle\OpenOrchestraLogBundle(),
             new OpenOrchestra\UserAdminBundle\OpenOrchestraUserAdminBundle(),
             new OpenOrchestra\MediaAdminBundle\OpenOrchestraMediaAdminBundle(),
-            new OpenOrchestra\MediaFileBundle\OpenOrchestraMediaFileBundle(),
             new OpenOrchestra\WorkflowAdminBundle\OpenOrchestraWorkflowAdminBundle(),
 
             // Need parameters set by some of our bundles
-            new Knp\Bundle\GaufretteBundle\KnpGaufretteBundle(),
             new Solution\MongoAggregationBundle\SolutionMongoAggregationBundle(),
             new OpenOrchestra\ModelLogBundle\OpenOrchestraModelLogBundle(),
             new OpenOrchestra\ElasticaBundle\OpenOrchestraElasticaBundle(),

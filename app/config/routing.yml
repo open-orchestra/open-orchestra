@@ -78,13 +78,6 @@ open_orchestra_workflow_api:
     options:
         expose: true
 
-open_orchestra_media_file:
-    resource: "@OpenOrchestraMediaFileBundle/Controller"
-    type: annotation
-    prefix: /media
-    options:
-        expose: true
-
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
     options:
