@@ -3,6 +3,8 @@ parameters:
     mailer_host: 127.0.0.1
     mailer_user: null
     mailer_password: null
+    from_email_adresse: 'contact@open-orchestra.com'
+    from_email_sender_name: 'Open Orchestra'
     default_locale: en
     secret: SRiesraIEURNSTeiuRnsAIErnsEA
     open_orchestra_cms.mongodb.host: 127.0.0.1

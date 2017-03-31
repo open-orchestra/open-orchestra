@@ -4,6 +4,9 @@ parameters:
     mailer_user:       ~
     mailer_password:   ~
 
+    from_email_adresse: 'contact@open-orchestra.com'
+    from_email_sender_name: 'Open Orchestra'
+
     default_locale:            en
     secret:            SRiesraIEURNSTeiuRnsAIErnsEA
 

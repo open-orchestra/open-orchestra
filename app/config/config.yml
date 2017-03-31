@@ -65,6 +65,9 @@ fos_user:
     db_driver    : mongodb
     firewall_name: main
     user_class   : OpenOrchestra\UserBundle\Document\User
+    from_email   :
+      address: '%from_email_adresse%'
+      sender_name: '%from_email_sender_name%'
     group        :
         group_class: OpenOrchestra\GroupBundle\Document\Group
 
