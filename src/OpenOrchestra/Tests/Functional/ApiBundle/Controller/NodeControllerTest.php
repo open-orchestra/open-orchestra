@@ -57,17 +57,28 @@ class NodeControllerTest extends AbstractAuthenticatedTest
      */
     public function testDeleteAction()
     {
-        $this->markTestSkipped('To reactivate when API roles will be implemented');
+        $nodes = $this->nodeRepository->findByNodeId('fixture_page_contact');
+        $autoUnpublishTo = $this->statusRepository->findOnebyAutoUnpublishTo();
+        $currentStatuses = array();
 
-        $node = $this->nodeRepository->findOnePublished('fixture_page_contact','fr','2');
-        $node->getStatus()->setPublishedState(false);
+        foreach ($nodes as $node) {
+            $currentStatuses[$node->getId()] = $node->getStatus()->getName();
+            $node->setStatus($autoUnpublishTo);
+        }
         static::$kernel->getContainer()->get('object_manager')->flush();
 
         $nbNode = count($this->nodeRepository->findLastVersionByType('2'));
-        $this->client->request('DELETE', '/api/node/fixture_page_contact/delete');
+        $this->client->request('DELETE', '/api/node/delete/fixture_page_contact');
         $nodesDelete = $this->nodeRepository->findLastVersionByType('2');
 
         $this->assertCount($nbNode - 1, $nodesDelete);
+
+        foreach ($nodes as $node) {
+            $status = $this->statusRepository->findOneByName($currentStatuses[$node->getId()]);
+            $node->setStatus($status);
+        }
+        $this->undeleteNodes($nodes);
+        static::$kernel->getContainer()->get('object_manager')->flush();
     }
 
     /**
@@ -93,37 +104,12 @@ class NodeControllerTest extends AbstractAuthenticatedTest
     /**
      * Test node new version and references
      */
-    public function testNewVersioneNode()
+    public function testNewVersionNode()
     {
-        $this->markTestSkipped('To reactivate when API roles will be implemented');
+        $countVersion = count($this->nodeRepository->findByNodeId('fixture_page_community'));
+        $this->client->request('POST', '/api/node/new-version/fixture_page_community/fr/1');
 
-        $node = $this->nodeRepository
-            ->findInLastVersion('fixture_page_community', 'fr', '2');
-        $this->client->request('POST', '/api/node/fixture_page_community/new-version?language=fr');
-
-        $nodeLastVersion = $this->nodeRepository
-            ->findInLastVersion('fixture_page_community', 'fr', '2');
-
-        $this->assertSame($node->getVersion()+1, $nodeLastVersion->getVersion());
-    }
-
-    /**
-     * Test creation of new language for a node
-     */
-    public function testCreateNewLanguageNode()
-    {
-        $this->markTestSkipped('To reactivate when API roles will be implemented');
-
-        $this->client->request('GET', '/api/node/root/show-or-create', array('language' => 'de'));
-
-        $node = $this->nodeRepository
-            ->findInLastVersion('root', 'de', '2');
-
-        $this->assertInstanceOf('OpenOrchestra\ModelInterface\Model\NodeInterface', $node);
-        $this->assertSame(1, $node->getVersion());
-        $this->assertSame('de', $node->getLanguage());
-        static::$kernel->getContainer()->get('object_manager')->remove($node);
-        static::$kernel->getContainer()->get('object_manager')->flush();
+        $this->assertSame($countVersion + 1, count($this->nodeRepository->findByNodeId('fixture_page_community')));
     }
 
     /**
@@ -143,45 +129,36 @@ class NodeControllerTest extends AbstractAuthenticatedTest
 
     /**
      * @param string $name
-     * @param int    $publishedVersion
      *
-     * @dataProvider provideStatusNameAndPublishedVersion
+     * @dataProvider provideStatusName
      */
-    public function testChangeNodeStatus($name, $publishedVersion)
+    public function testChangeNodeStatus($name)
     {
-        $this->markTestSkipped('To reactivate when change status embed is fixed');
-
         $node = $this->nodeRepository->findInLastVersion('root', 'fr', '2');
         $newStatus = $this->statusRepository->findOneByName($name);
-        $requestContent = json_encode(array(
-            'id' => $node->getId(),
-            'status' => array(
-                'id' => $newStatus->getId()
-            )
-        ));
+        $node->setStatus($newStatus);
         $this->client->request(
             'PUT',
             '/api/node/update-status',
             array(),
             array(),
             array(),
-            $requestContent
+            static::$kernel->getContainer()->get('jms_serializer')->serialize($node, 'json')
         );
 
         $this->assertSame(200, $this->client->getResponse()->getStatusCode());
         $newNode = $this->nodeRepository->findOnePublished('root', 'fr', '2');
-        $this->assertEquals($publishedVersion, $newNode->getVersion());
+        $this->assertEquals($name, $newNode->getStatus()->getName());
     }
 
     /**
      * @return array
      */
-    public function provideStatusNameAndPublishedVersion()
+    public function provideStatusName()
     {
         return array(
-            array('pending', 1),
-            array('published', 2),
-            array('draft', 1),
+            array('published'),
+            array('draft'),
         );
     }
 

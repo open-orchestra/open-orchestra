@@ -33,31 +33,28 @@ class ContentControllerTest extends AbstractAuthenticatedTest
 
     /**
      * @param string $name
-     * @param bool   $published
      *
      * @dataProvider provideStatusName
      */
-    public function testChangeContentStatus($name, $published)
+    public function testChangeContentStatus($name)
     {
-        $this->markTestSkipped('To reactivate when API roles will be implemented');
-
-        $content = $this->contentRepository->findOneByLanguageAndVersion('206_3_portes', 'fr', 2);
+        $content = $this->contentRepository->findOneByLanguageAndVersion('206_3_portes', 'fr', '2');
         $newStatus = $this->statusRepository->findOneByName($name);
-        $newStatusId = $newStatus->getId();
 
+        $content->setStatus($newStatus);
         $this->client->request(
-            'POST',
-            '/api/content/' . $content->getId() . '/update',
+            'PUT',
+            '/api/content/update-status',
             array(),
             array(),
             array(),
-            json_encode(array('status_id' => $newStatusId))
+            static::$kernel->getContainer()->get('jms_serializer')->serialize($content, 'json')
         );
 
         $this->assertSame(200, $this->client->getResponse()->getStatusCode());
 
-        $newContent = $this->contentRepository->findOneByLanguageAndVersion('206_3_portes', 'fr', 2);
-        $this->assertSame($published, $newContent->getStatus()->isPublishedState());
+        $newContent = $this->contentRepository->findOneByLanguageAndVersion('206_3_portes', 'fr', '2');
+        $this->assertSame($name, $newContent->getStatus()->getName());
     }
 
     /**
@@ -66,9 +63,9 @@ class ContentControllerTest extends AbstractAuthenticatedTest
     public function provideStatusName()
     {
         return array(
-            array('draft', false),
-            array('pending', false),
-            array('published', true),
+            array('draft'),
+            array('pending'),
+            array('published'),
         );
     }
 }

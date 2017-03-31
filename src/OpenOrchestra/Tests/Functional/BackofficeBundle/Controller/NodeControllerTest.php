@@ -67,9 +67,9 @@ class NodeControllerTest extends AbstractFormTest
      */
     public function testNewNodePageHome()
     {
-        $this->markTestSkipped('To reactivate when API roles will be implemented');
+        $this->markTestSkipped();
 
-        $crawler = $this->client->request('GET', '/admin/node/new/fixture_page_community');
+        $crawler = $this->client->request('GET', '/admin/node/new/2/fr/fixture_page_news/1');
 
         $formNode = $crawler->selectButton('Save')->form();
 
@@ -80,7 +80,8 @@ class NodeControllerTest extends AbstractFormTest
 
         $this->submitForm($formNode);
 
-        $this->client->request('GET', '/api/node/' . $nodeName);
+        $node = static::$kernel->getContainer()->get('open_orchestra_model.repository.node')->findOneByName($nodeName);
+        $this->client->request('GET', '/api/node/show/' . $node->getNodeId() . '/' . $node->getSiteId() . '/' . $node->getLanguage() . '/' . $node->getVersion());
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
         $this->assertSame('application/json', $this->client->getResponse()->headers->get('content-type'));
         $node = json_decode($this->client->getResponse()->getContent());
@@ -92,13 +93,15 @@ class NodeControllerTest extends AbstractFormTest
         $statuses[1] = $statusRepository->findOneBy(array("name" => "published"));
         $statuses[2] = $statusRepository->findOneBy(array("name" => "pending"));
 
-        $this->assertEquals(1, count($this->redirectionRepository->findAll()));
+        $autoUnpublishTo = $statusRepository->findOnebyAutoUnpublishTo();
+
         $routeDocumentCount = count($this->routeDocumentRepository->findAll());
+        $redirectionCount = count($this->redirectionRepository->findAll());
 
-        $this->changeNodeStatusWithRouteRedirectionTest($nodeId, $statuses[2], 1, $routeDocumentCount);
-        $this->changeNodeStatusWithRouteRedirectionTest($nodeId, $statuses[1], 1, $routeDocumentCount + 2);
+        $this->changeNodeStatusWithRouteRedirectionTest($nodeId, $statuses[2], $redirectionCount, $routeDocumentCount);
+        $this->changeNodeStatusWithRouteRedirectionTest($nodeId, $statuses[1], $redirectionCount, $routeDocumentCount + 2);
 
-        $this->client->request('POST', '/api/node/' . $nodeName . '/new-version/1?language=' . $node->language, array());
+        $this->client->request('POST', '/api/node/new-version/' . $nodeName . '/fr/' . $node->version, array());
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
         $this->assertSame('application/json', $this->client->getResponse()->headers->get('content-type'));
 
@@ -107,12 +110,19 @@ class NodeControllerTest extends AbstractFormTest
         $this->documentManager->persist($newNode);
         $this->documentManager->flush($newNode);
 
-        $this->changeNodeStatusWithRouteRedirectionTest($newNode->getId(), $statuses[2], 1, $routeDocumentCount + 2);
-        $this->changeNodeStatusWithRouteRedirectionTest($newNode->getId(), $statuses[1], 3, $routeDocumentCount + 6);
-        $this->changeNodeStatusWithRouteRedirectionTest($newNode->getId(), $statuses[0], 1, $routeDocumentCount + 2);
-        $this->changeNodeStatusWithRouteRedirectionTest($nodeId, $statuses[0], 1, $routeDocumentCount);
+        $this->changeNodeStatusWithRouteRedirectionTest($newNode->getId(), $statuses[2], $redirectionCount, $routeDocumentCount + 2);
+        $this->changeNodeStatusWithRouteRedirectionTest($newNode->getId(), $statuses[1], $redirectionCount + 2, $routeDocumentCount + 6);
+        $this->changeNodeStatusWithRouteRedirectionTest($newNode->getId(), $statuses[0], $redirectionCount, $routeDocumentCount + 2);
+        $this->changeNodeStatusWithRouteRedirectionTest($nodeId, $statuses[0], $redirectionCount, $routeDocumentCount);
 
-        $this->client->request('DELETE', '/api/node/' . $nodeName . '/delete');
+        $nodes = $this->nodeRepository->findByNodeId($nodeName);
+        foreach ($nodes as $node) {
+            var_dump($node->getId());
+            $node->setStatus($autoUnpublishTo);
+        }
+        static::$kernel->getContainer()->get('object_manager')->flush();
+
+        $this->client->request('DELETE', '/api/node/delete/' . $nodeName);
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
 
         $this->assertEquals(1, count($this->redirectionRepository->findAll()));
@@ -129,8 +139,12 @@ class NodeControllerTest extends AbstractFormTest
      */
     protected function changeNodeStatusWithRouteRedirectionTest($nodeId, StatusInterface $status, $redirectionNumber, $routeNumber)
     {
-        $this->client->request('POST', '/api/node/' . $nodeId . '/update',
-            array(), array(), array(), '{"status_id": "'. $status->getId() .'"}');
+        $node = $this->nodeRepository->find($nodeId);
+        $node->setStatus($status);
+        $this->client->request('PUT', '/api/node/update-status',
+            array(), array(), array(), static::$kernel->getContainer()->get('jms_serializer')->serialize($node, 'json'));
+
+
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
         $this->assertSame('application/json', $this->client->getResponse()->headers->get('content-type'));
         $this->assertEquals($redirectionNumber, count($this->redirectionRepository->findAll()));

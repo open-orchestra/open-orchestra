@@ -29,13 +29,11 @@ class StatusControllerTest extends AbstractAuthenticatedTest
      */
     public function testDeleteAction()
     {
-        $this->markTestSkipped('To reactivate when API roles will be implemented');
-
         $status = $this->statusRepository->findOneByInitial();
 
         $this->client->request('DELETE', '/api/status/' . $status->getId() . '/delete');
 
         $this->assertSame(403, $this->client->getResponse()->getStatusCode());
-        $this->assertContains('open_orchestra_api.status.delete_not_granted', $this->client->getResponse()->getContent());
+        $this->assertContains('open_orchestra_workflow_admin.status.delete.impossible', $this->client->getResponse()->getContent());
     }
 }
