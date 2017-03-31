@@ -1390,16 +1390,16 @@
         },
         {
             "name": "friendsofsymfony/user-bundle",
-            "version": "2.0.0-beta2",
+            "version": "v2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSUserBundle.git",
-                "reference": "d01739f70df32e6ab441b23b88395ae26715c5f3"
+                "reference": "2e0243e9e8a3ca0dab753fc5f2e79b4b3093ac9a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/d01739f70df32e6ab441b23b88395ae26715c5f3",
-                "reference": "d01739f70df32e6ab441b23b88395ae26715c5f3",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/2e0243e9e8a3ca0dab753fc5f2e79b4b3093ac9a",
+                "reference": "2e0243e9e8a3ca0dab753fc5f2e79b4b3093ac9a",
                 "shasum": ""
             },
             "require": {
@@ -1409,7 +1409,8 @@
                 "symfony/framework-bundle": "^2.7 || ^3.0",
                 "symfony/security-bundle": "^2.7 || ^3.0",
                 "symfony/templating": "^2.7 || ^3.0",
-                "symfony/twig-bundle": "^2.7 || ^3.0"
+                "symfony/twig-bundle": "^2.7 || ^3.0",
+                "twig/twig": "^1.28 || ^2.0"
             },
             "conflict": {
                 "doctrine/doctrine-bundle": "<1.3",
@@ -1462,7 +1463,7 @@
             "keywords": [
                 "User management"
             ],
-            "time": "2017-01-30T16:02:42+00:00"
+            "time": "2017-03-29T13:21:34+00:00"
         },
         {
             "name": "gedmo/doctrine-extensions",
@@ -2883,12 +2884,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-admin-bundle.git",
-                "reference": "9f232910c3ccbf92b1c3d5748a392aaed50308bd"
+                "reference": "abdc50f5fc46ea951ba28503445709847b936427"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/9f232910c3ccbf92b1c3d5748a392aaed50308bd",
-                "reference": "9f232910c3ccbf92b1c3d5748a392aaed50308bd",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/abdc50f5fc46ea951ba28503445709847b936427",
+                "reference": "abdc50f5fc46ea951ba28503445709847b936427",
                 "shasum": ""
             },
             "require": {
@@ -2967,7 +2968,7 @@
                 }
             ],
             "description": "This bundle integrate the media administration in the Back Office of Open Orchestra",
-            "time": "2017-03-29 14:01:07"
+            "time": "2017-03-31 07:25:56"
         },
         {
             "name": "open-orchestra/open-orchestra-media-bundle",
@@ -3247,16 +3248,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-user-bundle.git",
-                "reference": "46df38ee1f6c612072ef304dcc4be687d73018ee"
+                "reference": "bd794a3fd5cfc8f4cb616514eb692736b3a90a5d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-user-bundle/zipball/46df38ee1f6c612072ef304dcc4be687d73018ee",
-                "reference": "46df38ee1f6c612072ef304dcc4be687d73018ee",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-user-bundle/zipball/bd794a3fd5cfc8f4cb616514eb692736b3a90a5d",
+                "reference": "bd794a3fd5cfc8f4cb616514eb692736b3a90a5d",
                 "shasum": ""
             },
             "require": {
-                "friendsofsymfony/user-bundle": "2.0.0.beta2",
+                "friendsofsymfony/user-bundle": "~2.0.0",
                 "open-orchestra/open-orchestra-libs": "self.version",
                 "php": "~5.6.0"
             },
@@ -3292,7 +3293,7 @@
                 }
             ],
             "description": "An override of FosUserBundle to provide authentication on Open Orchestra",
-            "time": "2017-03-30 13:56:43"
+            "time": "2017-03-31 12:54:27"
         },
         {
             "name": "paragonie/random_compat",
