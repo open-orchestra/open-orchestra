@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "alav/composer-assets",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/alavieille/composer-assets.git",
-                "reference": "f88e690531002c70025b31cb50c8fa39e1f14dfa"
+                "reference": "eac5e82d57eb2db2b748930cef6975fb2b0fe35b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/alavieille/composer-assets/zipball/f88e690531002c70025b31cb50c8fa39e1f14dfa",
-                "reference": "f88e690531002c70025b31cb50c8fa39e1f14dfa",
+                "url": "https://api.github.com/repos/alavieille/composer-assets/zipball/eac5e82d57eb2db2b748930cef6975fb2b0fe35b",
+                "reference": "eac5e82d57eb2db2b748930cef6975fb2b0fe35b",
                 "shasum": ""
             },
             "require": {
@@ -51,7 +51,7 @@
                 "composer",
                 "npm"
             ],
-            "time": "2016-07-05T16:14:35+00:00"
+            "time": "2017-04-03T16:04:00+00:00"
         },
         {
             "name": "alchemy/binary-driver",
@@ -334,6 +334,65 @@
                 "bootstrap"
             ],
             "time": "2016-01-23T17:44:32+00:00"
+        },
+        {
+            "name": "composer/ca-bundle",
+            "version": "1.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/ca-bundle.git",
+                "reference": "b17e6153cb7f33c7e44eb59578dc12eee5dc8e12"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/b17e6153cb7f33c7e44eb59578dc12eee5dc8e12",
+                "reference": "b17e6153cb7f33c7e44eb59578dc12eee5dc8e12",
+                "shasum": ""
+            },
+            "require": {
+                "ext-openssl": "*",
+                "ext-pcre": "*",
+                "php": "^5.3.2 || ^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.5",
+                "psr/log": "^1.0",
+                "symfony/process": "^2.5 || ^3.0"
+            },
+            "suggest": {
+                "symfony/process": "This is necessary to reliably check whether openssl_x509_parse is vulnerable on older php versions, but can be ignored on PHP 5.5.6+"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Composer\\CaBundle\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be",
+                    "homepage": "http://seld.be"
+                }
+            ],
+            "description": "Lets you find a path to the system CA bundle, and includes a fallback to the Mozilla CA bundle.",
+            "keywords": [
+                "cabundle",
+                "cacert",
+                "certificate",
+                "ssl",
+                "tls"
+            ],
+            "time": "2017-03-06T11:59:08+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -2618,12 +2677,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "7b619afefece4c4d37527cf57bbc17690d3634cd"
+                "reference": "4a1f9aa35fb48251986fc2c1b97c538aceecfc6d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/7b619afefece4c4d37527cf57bbc17690d3634cd",
-                "reference": "7b619afefece4c4d37527cf57bbc17690d3634cd",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/4a1f9aa35fb48251986fc2c1b97c538aceecfc6d",
+                "reference": "4a1f9aa35fb48251986fc2c1b97c538aceecfc6d",
                 "shasum": ""
             },
             "require": {
@@ -2719,7 +2778,7 @@
                 }
             ],
             "description": "This bundle provide the Back Office part of Open Orchestra",
-            "time": "2017-03-30 13:56:35"
+            "time": "2017-04-03 10:30:54"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2884,12 +2943,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-admin-bundle.git",
-                "reference": "abdc50f5fc46ea951ba28503445709847b936427"
+                "reference": "d956f153e56acfe250ccaf70dbbb40501cf7df52"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/abdc50f5fc46ea951ba28503445709847b936427",
-                "reference": "abdc50f5fc46ea951ba28503445709847b936427",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/d956f153e56acfe250ccaf70dbbb40501cf7df52",
+                "reference": "d956f153e56acfe250ccaf70dbbb40501cf7df52",
                 "shasum": ""
             },
             "require": {
@@ -2968,7 +3027,7 @@
                 }
             ],
             "description": "This bundle integrate the media administration in the Back Office of Open Orchestra",
-            "time": "2017-03-31 07:25:56"
+            "time": "2017-03-31 15:13:20"
         },
         {
             "name": "open-orchestra/open-orchestra-media-bundle",
@@ -3068,12 +3127,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-migration-bundle.git",
-                "reference": "e18efd266281ec64914b1361358447fda9e01891"
+                "reference": "7d79ccab197870db3225a63f86b2ea0c39b185bd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-migration-bundle/zipball/e18efd266281ec64914b1361358447fda9e01891",
-                "reference": "e18efd266281ec64914b1361358447fda9e01891",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-migration-bundle/zipball/7d79ccab197870db3225a63f86b2ea0c39b185bd",
+                "reference": "7d79ccab197870db3225a63f86b2ea0c39b185bd",
                 "shasum": ""
             },
             "require": {
@@ -3097,7 +3156,7 @@
                 }
             ],
             "description": "A bundle which contains the mongo migrations for Open Orchestra",
-            "time": "2017-03-28 15:02:02"
+            "time": "2017-04-03 10:31:38"
         },
         {
             "name": "open-orchestra/open-orchestra-model-bundle",
@@ -3795,19 +3854,20 @@
         },
         {
             "name": "sensiolabs/security-checker",
-            "version": "v4.0.3",
+            "version": "v4.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/security-checker.git",
-                "reference": "04bb87f5bd28a7d6ce7f4a4d1d6b94b3c1aa8dae"
+                "reference": "9e69eddf3bc49d1ee5c7908564da3141796d4bbc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/security-checker/zipball/04bb87f5bd28a7d6ce7f4a4d1d6b94b3c1aa8dae",
-                "reference": "04bb87f5bd28a7d6ce7f4a4d1d6b94b3c1aa8dae",
+                "url": "https://api.github.com/repos/sensiolabs/security-checker/zipball/9e69eddf3bc49d1ee5c7908564da3141796d4bbc",
+                "reference": "9e69eddf3bc49d1ee5c7908564da3141796d4bbc",
                 "shasum": ""
             },
             "require": {
+                "composer/ca-bundle": "^1.0",
                 "symfony/console": "~2.7|~3.0"
             },
             "bin": [
@@ -3835,7 +3895,7 @@
                 }
             ],
             "description": "A security checker for your composer.lock",
-            "time": "2017-03-29T08:08:00+00:00"
+            "time": "2017-03-31T14:50:32+00:00"
         },
         {
             "name": "solution/mongo-odm-aggregation-bundle",
@@ -5324,16 +5384,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "4.0.7",
+            "version": "4.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "09e2277d14ea467e5a984010f501343ef29ffc69"
+                "reference": "ef7b2f56815df854e66ceaee8ebe9393ae36a40d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/09e2277d14ea467e5a984010f501343ef29ffc69",
-                "reference": "09e2277d14ea467e5a984010f501343ef29ffc69",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/ef7b2f56815df854e66ceaee8ebe9393ae36a40d",
+                "reference": "ef7b2f56815df854e66ceaee8ebe9393ae36a40d",
                 "shasum": ""
             },
             "require": {
@@ -5383,7 +5443,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2017-03-01T09:12:17+00:00"
+            "time": "2017-04-02T07:44:40+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
