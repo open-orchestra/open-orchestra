@@ -12,7 +12,7 @@ parameters:
     open_orchestra_cms.mongodb.server: 'mongodb://%open_orchestra_cms.mongodb.host%:%open_orchestra_cms.mongodb.port%'
     open_orchestra_cms.mongodb.database: open_orchestra_%kernel.environment%
     encryption_key: NStUAIRNUAIs3154rsaierSTR
-    media.directory: /var/uploaded-files
+    media_storage_directory: /var/uploaded-files
     session_name: open_orchestra_session
     fos_http_cache.proxy_client.varnish.servers:
         - '127.0.0.1:6081'

@@ -30,7 +30,7 @@ apache_conf:
   media-orchestra.conf:
     port: 80
     serverName: media.openorchestra.2-0.dev
-    docRoot: /var/www/media-openorchestra/web
+    docRoot: /var/www/uploaded-files
     errorLog: media.openorchestraError.log
     accessLog: media.openorchestraAccess.log
 
