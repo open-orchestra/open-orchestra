@@ -46,5 +46,5 @@ before_script:
   - php app/console orchestra:elastica:populate -e=test
 
 script:
-  - ./bin/phpunit -c app/ --testsuite=unit
-  - ./bin/phpunit -c app/ --testsuite=functional
+  - ./bin/phpunit --testsuite=unit
+  - ./bin/phpunit --testsuite=functional

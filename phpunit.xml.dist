@@ -5,32 +5,30 @@
          xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/4.8/phpunit.xsd"
          backupGlobals="false"
          colors="true"
-         bootstrap="autoload.php"
+         bootstrap="app/autoload.php"
 >
 
     <testsuites>
         <testsuite name="unit">
-            <directory>../vendor/open-orchestra/*/*/Tests</directory>
+            <directory>vendor/open-orchestra/*/*/Tests</directory>
         </testsuite>
         <testsuite name="functional">
-            <directory>../tests/OpenOrchestra/Tests/Functional/*</directory>
+            <directory>tests/OpenOrchestra/Tests/Functional/*</directory>
         </testsuite>
     </testsuites>
 
-    <!--
     <php>
-        <server name="KERNEL_DIR" value="/path/to/your/app/" />
+        <ini name="error_reporting" value="-1" />
+        <server name="KERNEL_DIR" value="app/" />
     </php>
-    -->
 
     <filter>
         <whitelist>
-            <directory>../tests</directory>
+            <directory>src</directory>
             <exclude>
-                <directory>../tests/*/*Bundle/Resources</directory>
-                <directory>../tests/*/*Bundle/Tests</directory>
-                <directory>../tests/*/Bundle/*Bundle/Resources</directory>
-                <directory>../tests/*/Bundle/*Bundle/Tests</directory>
+                <directory>src/*Bundle/Resources</directory>
+                <directory>src/*/*Bundle/Resources</directory>
+                <directory>src/*/Bundle/*Bundle/Resources</directory>
             </exclude>
         </whitelist>
     </filter>
