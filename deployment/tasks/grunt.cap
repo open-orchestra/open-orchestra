@@ -1,9 +1,0 @@
-namespace :orchestra do
-    desc 'Grunt task runner'
-    task :grunt do
-        on roles(:app) do
-            execute "cd #{fetch(:deploy_to)}/current && ./node_modules/grunt-cli/bin/grunt"
-        end
-    end
-    after 'deploy:finished', 'orchestra:grunt'
-end
