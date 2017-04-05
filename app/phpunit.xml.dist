@@ -13,7 +13,7 @@
             <directory>../vendor/open-orchestra/*/*/Tests</directory>
         </testsuite>
         <testsuite name="functional">
-            <directory>../test/OpenOrchestra/Tests/Functional/*</directory>
+            <directory>../tests/OpenOrchestra/Tests/Functional/*</directory>
         </testsuite>
     </testsuites>
 
@@ -25,12 +25,12 @@
 
     <filter>
         <whitelist>
-            <directory>../test</directory>
+            <directory>../tests</directory>
             <exclude>
-                <directory>../test/*/*Bundle/Resources</directory>
-                <directory>../test/*/*Bundle/Tests</directory>
-                <directory>../test/*/Bundle/*Bundle/Resources</directory>
-                <directory>../test/*/Bundle/*Bundle/Tests</directory>
+                <directory>../tests/*/*Bundle/Resources</directory>
+                <directory>../tests/*/*Bundle/Tests</directory>
+                <directory>../tests/*/Bundle/*Bundle/Resources</directory>
+                <directory>../tests/*/Bundle/*Bundle/Tests</directory>
             </exclude>
         </whitelist>
     </filter>
