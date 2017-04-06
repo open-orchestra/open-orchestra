@@ -2,7 +2,7 @@
   "name": "open-orchestra/open-orchestra",
   "license": "Apache-2.0",
   "type": "project",
-  "version": "dev-master",
+  "version": "2.0.0-RC3",
   "description": "Example of an Open Orchestra Back Office implementation",
   "authors": [
     {
@@ -19,10 +19,7 @@
     "open-orchestra/open-orchestra-cms-bundle": "self.version",
     "open-orchestra/open-orchestra-elastica-bundle": "self.version",
     "open-orchestra/open-orchestra-media-admin-bundle": "self.version",
-    "open-orchestra/open-orchestra-model-bundle": "self.version",
-    "friendsofsymfony/user-bundle": "@alpha",
-    "friendsofsymfony/jsrouting-bundle": "~1.6.0",
-    "willdurand/js-translation-bundle": "~2.6.1"
+    "open-orchestra/open-orchestra-model-bundle": "self.version"
   },
 
   "require-dev": {
