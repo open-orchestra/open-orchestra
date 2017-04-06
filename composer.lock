@@ -2535,12 +2535,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "59d1c51868b689e713563371a6d5cb339e351b75"
+                "reference": "ca5b8eaed97c7db8412218d2e95e3f60efe9a3c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/59d1c51868b689e713563371a6d5cb339e351b75",
-                "reference": "59d1c51868b689e713563371a6d5cb339e351b75",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/ca5b8eaed97c7db8412218d2e95e3f60efe9a3c7",
+                "reference": "ca5b8eaed97c7db8412218d2e95e3f60efe9a3c7",
                 "shasum": ""
             },
             "require": {
@@ -2548,7 +2548,6 @@
                 "braincrafted/bootstrap-bundle": "~2.2.0",
                 "doctrine/data-fixtures": "~1.2.0",
                 "friendsofsymfony/jsrouting-bundle": "~1.6.0",
-                "friendsofsymfony/user-bundle": "@alpha",
                 "open-orchestra/open-orchestra-base-api-bundle": "self.version",
                 "open-orchestra/open-orchestra-base-bundle": "self.version",
                 "open-orchestra/open-orchestra-display-bundle": "self.version",
@@ -2636,7 +2635,7 @@
                 }
             ],
             "description": "This bundle provide the Back Office part of Open Orchestra",
-            "time": "2017-04-05 09:16:16"
+            "time": "2017-04-06 13:02:31"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2694,12 +2693,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-elastica-bundle.git",
-                "reference": "8c264649a42d0e2571f3cabf0fa330f7ad362966"
+                "reference": "26f564f38695858301a1f633165efe9345a69890"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-elastica-bundle/zipball/8c264649a42d0e2571f3cabf0fa330f7ad362966",
-                "reference": "8c264649a42d0e2571f3cabf0fa330f7ad362966",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-elastica-bundle/zipball/26f564f38695858301a1f633165efe9345a69890",
+                "reference": "26f564f38695858301a1f633165efe9345a69890",
                 "shasum": ""
             },
             "require": {
@@ -2712,7 +2711,6 @@
             },
             "require-dev": {
                 "codeclimate/php-test-reporter": "~0.3.2",
-                "friendsofsymfony/user-bundle": "@alpha",
                 "open-orchestra/open-orchestra-base-api-bundle": "self.version",
                 "open-orchestra/open-orchestra-bbcode-bundle": "self.version",
                 "open-orchestra/open-orchestra-cms-bundle": "self.version",
@@ -2747,7 +2745,7 @@
                 }
             ],
             "description": "A bundle to index Open Orchestra elements with Elastica Search",
-            "time": "2017-04-04 12:18:06"
+            "time": "2017-04-06 08:55:22"
         },
         {
             "name": "open-orchestra/open-orchestra-libs",
@@ -2801,12 +2799,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-admin-bundle.git",
-                "reference": "abb5029dbc5ca9a02edaf22100effcce9878c631"
+                "reference": "7659467fa61ccb440dd464339a51051685378207"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/abb5029dbc5ca9a02edaf22100effcce9878c631",
-                "reference": "abb5029dbc5ca9a02edaf22100effcce9878c631",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/7659467fa61ccb440dd464339a51051685378207",
+                "reference": "7659467fa61ccb440dd464339a51051685378207",
                 "shasum": ""
             },
             "require": {
@@ -2814,7 +2812,6 @@
                 "doctrine/data-fixtures": "~1.2.0",
                 "ext-imagick": "~3.4.1",
                 "flowjs/flow-php-server": "~1.0.0",
-                "friendsofsymfony/user-bundle": "@alpha",
                 "open-orchestra/open-orchestra-cms-bundle": "self.version",
                 "open-orchestra/open-orchestra-media-bundle": "self.version",
                 "open-orchestra/open-orchestra-migration-bundle": "self.version",
@@ -2884,7 +2881,7 @@
                 }
             ],
             "description": "This bundle integrate the media administration in the Back Office of Open Orchestra",
-            "time": "2017-04-04 12:16:05"
+            "time": "2017-04-06 09:04:38"
         },
         {
             "name": "open-orchestra/open-orchestra-media-bundle",
@@ -2942,12 +2939,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-migration-bundle.git",
-                "reference": "7d79ccab197870db3225a63f86b2ea0c39b185bd"
+                "reference": "83627897747169b6038d2a711a1080e33a8f0922"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-migration-bundle/zipball/7d79ccab197870db3225a63f86b2ea0c39b185bd",
-                "reference": "7d79ccab197870db3225a63f86b2ea0c39b185bd",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-migration-bundle/zipball/83627897747169b6038d2a711a1080e33a8f0922",
+                "reference": "83627897747169b6038d2a711a1080e33a8f0922",
                 "shasum": ""
             },
             "require": {
@@ -2971,7 +2968,7 @@
                 }
             ],
             "description": "A bundle which contains the mongo migrations for Open Orchestra",
-            "time": "2017-04-03 10:31:38"
+            "time": "2017-04-06 13:02:37"
         },
         {
             "name": "open-orchestra/open-orchestra-model-bundle",
