@@ -993,10 +993,10 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function provideSiteAndLanguage()
     {
         return array(
-            array('2', 'fr', 0),
-            array('2', 'en', 0),
+            array('2', 'fr', 8),
+            array('2', 'en', 8),
             array('2', 'es', 0),
-            array('3', 'fr', 0),
+            array('3', 'fr', 1),
        );
     }
 
