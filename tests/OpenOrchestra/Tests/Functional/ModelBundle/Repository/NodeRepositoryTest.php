@@ -971,4 +971,33 @@ class NodeRepositoryTest extends AbstractKernelTestCase
         $status->setDisplayColor($saveColor);
         $this->repository->updateEmbeddedStatus($status);
     }
+
+    /**
+     * Test findLastVersionByLanguage
+     * @param string $siteId
+     * @param string $language
+     * @param int    $count
+     *
+     * @dataProvider provideSiteAndLanguage
+     */
+    public function testFindLastVersionByLanguage($siteId, $language, $count)
+    {
+        $nodes = $this->repository->findLastVersionByLanguage($siteId, $language);
+
+        $this->assertEquals($count, count($nodes));
+    }
+
+    /**
+     * @return array
+     */
+    public function provideSiteAndLanguage()
+    {
+        return array(
+            array('2', 'fr', 0),
+            array('2', 'en', 0),
+            array('2', 'es', 0),
+            array('3', 'fr', 0),
+       );
+    }
+
 }
