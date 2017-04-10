@@ -2535,12 +2535,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "23557f705ab89db69d0a55766779ef021c3a88bb"
+                "reference": "3eeefad8551677de10364154f3eb75c9c12cdd31"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/23557f705ab89db69d0a55766779ef021c3a88bb",
-                "reference": "23557f705ab89db69d0a55766779ef021c3a88bb",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/3eeefad8551677de10364154f3eb75c9c12cdd31",
+                "reference": "3eeefad8551677de10364154f3eb75c9c12cdd31",
                 "shasum": ""
             },
             "require": {
@@ -2635,7 +2635,7 @@
                 }
             ],
             "description": "This bundle provide the Back Office part of Open Orchestra",
-            "time": "2017-04-07 14:39:00"
+            "time": "2017-04-10 15:14:31"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2976,12 +2976,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
-                "reference": "609f113f438b0ec59950835854a33b638cf9304c"
+                "reference": "d35ee842314f8edb8171bdad7aa318f2dbb23a80"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/609f113f438b0ec59950835854a33b638cf9304c",
-                "reference": "609f113f438b0ec59950835854a33b638cf9304c",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/d35ee842314f8edb8171bdad7aa318f2dbb23a80",
+                "reference": "d35ee842314f8edb8171bdad7aa318f2dbb23a80",
                 "shasum": ""
             },
             "require": {
@@ -3016,7 +3016,7 @@
                 }
             ],
             "description": "A MongoDB implemantation of the Open Orchestra Model Interface",
-            "time": "2017-04-07 14:28:23"
+            "time": "2017-04-10 15:12:07"
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
