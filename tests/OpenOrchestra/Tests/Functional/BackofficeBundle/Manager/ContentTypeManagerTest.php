@@ -45,7 +45,7 @@ class ContentTypeManagerTest extends AbstractKernelTestCase
         $newContentType = $this->manager->duplicate($contentType);
 
         $this->assertNull($newContentType->getId());
-        $this->assertEquals($contentType->getVersion() + 1, $newContentType->getVersion());
+        $this->assertEquals($contentType->getVersion(), $newContentType->getVersion());
         $this->assertCount(count($contentType->getNames()), $newContentType->getNames());
         $this->assertSame($contentType->getName('fr'), $newContentType->getName('fr'));
         $this->assertSame($contentType->getName('en'), $newContentType->getName('en'));
