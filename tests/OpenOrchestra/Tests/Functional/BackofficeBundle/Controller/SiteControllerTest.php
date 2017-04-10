@@ -43,8 +43,6 @@ class SiteControllerTest extends AbstractFormTest
      */
     public function testCreateSite()
     {
-        $this->markTestSkipped();
-
         $this->assertNodeCount(0, 'fr');
         $this->assertNodeCount(0, 'en');
 

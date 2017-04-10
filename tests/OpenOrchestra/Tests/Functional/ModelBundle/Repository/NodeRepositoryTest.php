@@ -580,7 +580,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function provideFindByIncludedPathSiteIdAndLanguage()
     {
         return array(
-            array("root", "2", "en", 6),
+            array("root", "2", "en", 7),
         );
     }
 
