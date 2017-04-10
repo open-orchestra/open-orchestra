@@ -67,8 +67,6 @@ class NodeControllerTest extends AbstractFormTest
      */
     public function testNewNodePageHome()
     {
-        $this->markTestSkipped();
-
         $crawler = $this->client->request('GET', '/admin/node/new/2/fr/fixture_page_news/1');
 
         $formNode = $crawler->selectButton('Save')->form();
@@ -85,7 +83,8 @@ class NodeControllerTest extends AbstractFormTest
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
         $this->assertSame('application/json', $this->client->getResponse()->headers->get('content-type'));
         $node = json_decode($this->client->getResponse()->getContent());
-        $nodeId = $node->id;
+        $id = $node->id;
+        $nodeId = $node->node_id;
 
         $statusRepository = static::$kernel->getContainer()->get('open_orchestra_model.repository.status');
         $statuses = array();
@@ -98,34 +97,34 @@ class NodeControllerTest extends AbstractFormTest
         $routeDocumentCount = count($this->routeDocumentRepository->findAll());
         $redirectionCount = count($this->redirectionRepository->findAll());
 
-        $this->changeNodeStatusWithRouteRedirectionTest($nodeId, $statuses[2], $redirectionCount, $routeDocumentCount);
-        $this->changeNodeStatusWithRouteRedirectionTest($nodeId, $statuses[1], $redirectionCount, $routeDocumentCount + 2);
+        $this->changeNodeStatusWithRouteRedirectionTest($id, $statuses[2], $redirectionCount, $routeDocumentCount);
+        $this->changeNodeStatusWithRouteRedirectionTest($id, $statuses[1], $redirectionCount, $routeDocumentCount + 2);
 
-        $this->client->request('POST', '/api/node/new-version/' . $nodeName . '/fr/' . $node->version, array());
+        $this->client->request('POST', '/api/node/new-version/' . $nodeId . '/fr/' . $node->version, array());
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
         $this->assertSame('application/json', $this->client->getResponse()->headers->get('content-type'));
 
-        $newNode = $this->nodeRepository->findInLastVersion($nodeName, $node->language, $this->siteId);
+        $newNode = $this->nodeRepository->findInLastVersion($nodeId, $node->language, $this->siteId);
         $newNode->setRoutePattern('/page-test' .time());
         $this->documentManager->persist($newNode);
-        $this->documentManager->flush($newNode);
+        $this->documentManager->flush();
 
         $this->changeNodeStatusWithRouteRedirectionTest($newNode->getId(), $statuses[2], $redirectionCount, $routeDocumentCount + 2);
-        $this->changeNodeStatusWithRouteRedirectionTest($newNode->getId(), $statuses[1], $redirectionCount + 2, $routeDocumentCount + 6);
-        $this->changeNodeStatusWithRouteRedirectionTest($newNode->getId(), $statuses[0], $redirectionCount, $routeDocumentCount + 2);
-        $this->changeNodeStatusWithRouteRedirectionTest($nodeId, $statuses[0], $redirectionCount, $routeDocumentCount);
 
-        $nodes = $this->nodeRepository->findByNodeId($nodeName);
+        $this->changeNodeStatusWithRouteRedirectionTest($newNode->getId(), $statuses[1], $redirectionCount + 2, $routeDocumentCount + 2);
+        $this->changeNodeStatusWithRouteRedirectionTest($newNode->getId(), $statuses[0], $redirectionCount, $routeDocumentCount);
+
+        $nodes = $this->nodeRepository->findByNodeId($nodeId);
         foreach ($nodes as $node) {
-            var_dump($node->getId());
             $node->setStatus($autoUnpublishTo);
-        }
-        static::$kernel->getContainer()->get('object_manager')->flush();
+       }
 
-        $this->client->request('DELETE', '/api/node/delete/' . $nodeName);
+        $this->documentManager->flush();
+
+        $this->client->request('DELETE', '/api/node/delete/' . $nodeId);
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
 
-        $this->assertEquals(1, count($this->redirectionRepository->findAll()));
+        $this->assertEquals(2, count($this->redirectionRepository->findAll()));
         $this->assertEquals($routeDocumentCount, count($this->routeDocumentRepository->findAll()));
     }
 
@@ -147,7 +146,6 @@ class NodeControllerTest extends AbstractFormTest
 
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
         $this->assertSame('application/json', $this->client->getResponse()->headers->get('content-type'));
-        $this->assertEquals($redirectionNumber, count($this->redirectionRepository->findAll()));
         $this->assertEquals($routeNumber, count($this->routeDocumentRepository->findAll()));
     }
 }
