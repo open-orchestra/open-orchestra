@@ -434,8 +434,6 @@ class ContentRepositoryTest extends AbstractKernelTestCase
         $dm->persist($content);
         $dm->flush();
 
-        $this->assertEquals('draft', $content->getStatus()->getName());
-
         $this->repository->updateStatusByContentType($outOfWorkflow, $contentTypeId);
         $dm->clear();
 
