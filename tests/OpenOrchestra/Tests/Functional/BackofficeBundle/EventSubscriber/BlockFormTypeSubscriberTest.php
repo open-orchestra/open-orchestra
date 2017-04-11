@@ -48,20 +48,20 @@ class BlockFormTypeSubscriberTest extends AbstractAuthenticatedTest
         $formType =  static::$kernel->getContainer()->get('open_orchestra_backoffice.generate_form_manager')->getFormType($block);
         $form = $this->formFactory->create($formType, $block, array('csrf_protection' => false));
 
-         $form->submit(array(
-             'style' => 'default',
-             'videoType' => 'youtube',
-             'youtubeVideoId' => 'videoId',
-             'youtubeAutoplay' => true,
-         ));
+        $form->submit(array(
+            'style' => 'default',
+            'videoType' => 'youtube',
+            'youtubeVideoId' => 'videoId',
+            'youtubeAutoplay' => true,
+        ));
 
-         $this->assertTrue($form->isSynchronized());
-         /** @var BlockInterface $data */
-         $data = $form->getConfig()->getData();
-         $this->assertBlock($data);
-         $this->assertSame('videoId', $data->getAttribute('youtubeVideoId'));
-         $this->assertTrue($data->getAttribute('youtubeAutoplay'));
-         $this->assertFalse($data->getAttribute('youtubeFs'));
+        $this->assertTrue($form->isSynchronized());
+        /** @var BlockInterface $data */
+        $data = $form->getConfig()->getData();
+        $this->assertBlock($data);
+        $this->assertSame('videoId', $data->getAttribute('youtubeVideoId'));
+        $this->assertTrue($data->getAttribute('youtubeAutoplay'));
+        $this->assertFalse($data->getAttribute('youtubeFs'));
     }
 
     /**

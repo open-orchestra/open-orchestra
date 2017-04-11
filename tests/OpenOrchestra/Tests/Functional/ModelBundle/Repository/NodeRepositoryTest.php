@@ -354,8 +354,8 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function provideLanguageSiteIdAndCount()
     {
         return array(
-            array('en', '2', 6),
-            array('fr', '2', 6),
+            array('en', '2', 7),
+            array('fr', '2', 7),
         );
     }
 
