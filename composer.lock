@@ -1608,16 +1608,16 @@
         },
         {
             "name": "gregwar/captcha",
-            "version": "v1.1.1",
+            "version": "v1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Gregwar/Captcha.git",
-                "reference": "1240ab993ca713680573b2d4166900da5f758623"
+                "reference": "2f704c8bc3f1bb5f58994af2729e77ac4e3172e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Gregwar/Captcha/zipball/1240ab993ca713680573b2d4166900da5f758623",
-                "reference": "1240ab993ca713680573b2d4166900da5f758623",
+                "url": "https://api.github.com/repos/Gregwar/Captcha/zipball/2f704c8bc3f1bb5f58994af2729e77ac4e3172e6",
+                "reference": "2f704c8bc3f1bb5f58994af2729e77ac4e3172e6",
                 "shasum": ""
             },
             "require": {
@@ -1652,7 +1652,7 @@
                 "captcha",
                 "spam"
             ],
-            "time": "2015-09-11T15:23:20+00:00"
+            "time": "2017-04-19T08:10:55+00:00"
         },
         {
             "name": "gregwar/captcha-bundle",
@@ -2889,12 +2889,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-bundle.git",
-                "reference": "7353be4169c9f32078d284374b143ab2432ba822"
+                "reference": "ca80431586fa5a4f253e5371d2fe9f143e969c4c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/7353be4169c9f32078d284374b143ab2432ba822",
-                "reference": "7353be4169c9f32078d284374b143ab2432ba822",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/ca80431586fa5a4f253e5371d2fe9f143e969c4c",
+                "reference": "ca80431586fa5a4f253e5371d2fe9f143e969c4c",
                 "shasum": ""
             },
             "require": {
@@ -2931,7 +2931,7 @@
                 }
             ],
             "description": "A media bundle for Open Orchestra",
-            "time": "2017-04-18 14:17:10"
+            "time": "2017-04-19 08:51:58"
         },
         {
             "name": "open-orchestra/open-orchestra-migration-bundle",
@@ -3119,12 +3119,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-user-bundle.git",
-                "reference": "bd794a3fd5cfc8f4cb616514eb692736b3a90a5d"
+                "reference": "133f4f1e4a22ad8c6af112c7cffcf805116baea5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-user-bundle/zipball/bd794a3fd5cfc8f4cb616514eb692736b3a90a5d",
-                "reference": "bd794a3fd5cfc8f4cb616514eb692736b3a90a5d",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-user-bundle/zipball/133f4f1e4a22ad8c6af112c7cffcf805116baea5",
+                "reference": "133f4f1e4a22ad8c6af112c7cffcf805116baea5",
                 "shasum": ""
             },
             "require": {
@@ -3164,7 +3164,7 @@
                 }
             ],
             "description": "An override of FosUserBundle to provide authentication on Open Orchestra",
-            "time": "2017-03-31 12:54:27"
+            "time": "2017-04-18 15:48:42"
         },
         {
             "name": "paragonie/random_compat",
@@ -4720,16 +4720,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.33.0",
+            "version": "v1.33.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "05cf49921b13f6f01d3cfdf9018cfa7a8086fd5a"
+                "reference": "a87f959f4b691da66aada267a2dfdb260d0bb58a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/05cf49921b13f6f01d3cfdf9018cfa7a8086fd5a",
-                "reference": "05cf49921b13f6f01d3cfdf9018cfa7a8086fd5a",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/a87f959f4b691da66aada267a2dfdb260d0bb58a",
+                "reference": "a87f959f4b691da66aada267a2dfdb260d0bb58a",
                 "shasum": ""
             },
             "require": {
@@ -4778,7 +4778,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2017-03-22T15:40:09+00:00"
+            "time": "2017-04-18T21:43:11+00:00"
         },
         {
             "name": "willdurand/js-translation-bundle",
