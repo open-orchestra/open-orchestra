@@ -168,4 +168,13 @@ class MediaRepositoryTest extends AbstractKernelTestCase
         $dm->persist(clone $image02);
         $dm->flush();
     }
+
+    /**
+     * test countByFolderId
+     */
+    public function testCountByFolderId()
+    {
+        $this->assertEquals(0, $this->repository->countByFolderId('main_folder'));
+        $this->assertEquals(0, $this->repository->countByFolderId('media_folder'));
+    }
 }
