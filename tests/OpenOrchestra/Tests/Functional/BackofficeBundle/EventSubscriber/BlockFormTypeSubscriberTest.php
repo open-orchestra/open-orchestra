@@ -103,8 +103,7 @@ class BlockFormTypeSubscriberTest extends AbstractAuthenticatedTest
                   'choiceType' => 'choice_and',
                   'keywords' => null,
                 ),
-                'characterNumber' => 150,
-                'contentTemplateEnabled' => true,
+                'characterNumber' => 150
             )),
             array(ConfigurableContentStrategy::NAME, array(
                 'contentSearch' => array(
@@ -112,8 +111,7 @@ class BlockFormTypeSubscriberTest extends AbstractAuthenticatedTest
                     'choiceType' => ReadContentRepositoryInterface::CHOICE_AND,
                     'keywords' => null,
                     'contentId' => null,
-                ),
-                'contentTemplateEnabled' => true,
+                )
             ))
         );
     }
@@ -152,7 +150,6 @@ class BlockFormTypeSubscriberTest extends AbstractAuthenticatedTest
         return array(
             array(ContentListStrategy::NAME, array(
                 'contentNodeId' => 'root',
-                'contentTemplateEnabled' => true,
                 'characterNumber' => 150,
                 'contentSearch' => array(
                     'contentType' => 'news',
