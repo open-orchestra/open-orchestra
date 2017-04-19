@@ -168,4 +168,17 @@ class MediaRepositoryTest extends AbstractKernelTestCase
         $dm->persist(clone $image02);
         $dm->flush();
     }
+
+    /**
+     * test countByFolderId
+     */
+    public function testCountByFolderId()
+    {
+        $folderRepository = static::$kernel->getContainer()->get('open_orchestra_media.repository.media_folder');
+        $folder = $folderRepository->findOneBy(array('folderId' => 'files'));
+        $this->assertEquals(0, $this->repository->countByFolderId($folder->getId()));
+
+        $folder = $folderRepository->findOneBy(array('folderId' => 'images'));
+        $this->assertEquals(4, $this->repository->countByFolderId($folder->getId()));
+    }
 }
