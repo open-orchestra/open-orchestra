@@ -2799,12 +2799,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-admin-bundle.git",
-                "reference": "44e7f1106023ffb2bdf422c5546ae6488d8d036d"
+                "reference": "708644e1f0b08741c3b872feaefbd64c75cea4fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/44e7f1106023ffb2bdf422c5546ae6488d8d036d",
-                "reference": "44e7f1106023ffb2bdf422c5546ae6488d8d036d",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/708644e1f0b08741c3b872feaefbd64c75cea4fd",
+                "reference": "708644e1f0b08741c3b872feaefbd64c75cea4fd",
                 "shasum": ""
             },
             "require": {
@@ -2881,7 +2881,7 @@
                 }
             ],
             "description": "This bundle integrate the media administration in the Back Office of Open Orchestra",
-            "time": "2017-04-18 14:17:41"
+            "time": "2017-04-19 09:00:12"
         },
         {
             "name": "open-orchestra/open-orchestra-media-bundle",
@@ -2939,12 +2939,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-migration-bundle.git",
-                "reference": "09707ed268e9ed0367e9acbe0c73abd141ad0013"
+                "reference": "cdc0ee712d35082d768975e06861184e9331f280"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-migration-bundle/zipball/09707ed268e9ed0367e9acbe0c73abd141ad0013",
-                "reference": "09707ed268e9ed0367e9acbe0c73abd141ad0013",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-migration-bundle/zipball/cdc0ee712d35082d768975e06861184e9331f280",
+                "reference": "cdc0ee712d35082d768975e06861184e9331f280",
                 "shasum": ""
             },
             "require": {
@@ -2968,7 +2968,7 @@
                 }
             ],
             "description": "A bundle which contains the mongo migrations for Open Orchestra",
-            "time": "2017-04-13 13:17:07"
+            "time": "2017-04-19 09:25:21"
         },
         {
             "name": "open-orchestra/open-orchestra-model-bundle",
