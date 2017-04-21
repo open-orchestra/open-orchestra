@@ -2447,12 +2447,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-base-bundle.git",
-                "reference": "1707fcc60f761eb156143fbe2f68296438ad2fad"
+                "reference": "30d49d2ef85b792b3340d7bc878bd65ed0928ac5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-bundle/zipball/1707fcc60f761eb156143fbe2f68296438ad2fad",
-                "reference": "1707fcc60f761eb156143fbe2f68296438ad2fad",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-base-bundle/zipball/30d49d2ef85b792b3340d7bc878bd65ed0928ac5",
+                "reference": "30d49d2ef85b792b3340d7bc878bd65ed0928ac5",
                 "shasum": ""
             },
             "require": {
@@ -2484,7 +2484,7 @@
                 }
             ],
             "description": "The OpenOrchestra base bundle",
-            "time": "2017-04-06 14:17:59"
+            "time": "2017-04-21 07:30:29"
         },
         {
             "name": "open-orchestra/open-orchestra-bbcode-bundle",
@@ -3848,16 +3848,16 @@
         },
         {
             "name": "swiftmailer/swiftmailer",
-            "version": "v5.4.6",
+            "version": "v5.4.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "81fdccfaf8bdc5d5d7a1ef6bb3a61bbb1a6c4a3e"
+                "reference": "56db4ed32a6d5c9824c3ecc1d2e538f663f47eb4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/81fdccfaf8bdc5d5d7a1ef6bb3a61bbb1a6c4a3e",
-                "reference": "81fdccfaf8bdc5d5d7a1ef6bb3a61bbb1a6c4a3e",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/56db4ed32a6d5c9824c3ecc1d2e538f663f47eb4",
+                "reference": "56db4ed32a6d5c9824c3ecc1d2e538f663f47eb4",
                 "shasum": ""
             },
             "require": {
@@ -3898,7 +3898,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2017-02-13T07:52:53+00:00"
+            "time": "2017-04-20T17:32:18+00:00"
         },
         {
             "name": "symfony/monolog-bundle",
@@ -4720,16 +4720,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.33.1",
+            "version": "v1.33.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "a87f959f4b691da66aada267a2dfdb260d0bb58a"
+                "reference": "dd6ca96227917e1e85b41c7c3cc6507b411e0927"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/a87f959f4b691da66aada267a2dfdb260d0bb58a",
-                "reference": "a87f959f4b691da66aada267a2dfdb260d0bb58a",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/dd6ca96227917e1e85b41c7c3cc6507b411e0927",
+                "reference": "dd6ca96227917e1e85b41c7c3cc6507b411e0927",
                 "shasum": ""
             },
             "require": {
@@ -4778,7 +4778,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2017-04-18T21:43:11+00:00"
+            "time": "2017-04-20T17:39:48+00:00"
         },
         {
             "name": "willdurand/js-translation-bundle",
