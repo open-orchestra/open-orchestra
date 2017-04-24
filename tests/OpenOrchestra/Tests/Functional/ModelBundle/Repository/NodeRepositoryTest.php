@@ -962,7 +962,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
      */
     public function testCountById($nodeId, $siteId, $count)
     {
-        $this->assertEquals($count, $this->repository->countByParentId($nodeId, $siteId));
+        $this->assertEquals($count, $this->repository->countById($nodeId, $siteId));
     }
 
     /**
@@ -971,8 +971,8 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function provideCountById()
     {
         return array(
-            array('fixture_page_contact', '2', 0),
-            array('root', '2', 15)
+            array('fixture_page_contact', '2', 3),
+            array('root', '2', 5)
         );
     }
 
