@@ -954,6 +954,29 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     }
 
     /**
+     * @param string $nodeId
+     * @param string $siteId
+     * @param int    $count
+     *
+     * @dataProvider provideCountById
+     */
+    public function testCountById($nodeId, $siteId, $count)
+    {
+        $this->assertEquals($count, $this->repository->countByParentId($nodeId, $siteId));
+    }
+
+    /**
+     * @return array
+     */
+    public function provideCountById()
+    {
+        return array(
+            array('fixture_page_contact', '2', 0),
+            array('root', '2', 15)
+        );
+    }
+
+    /**
      * Test update embedded status
      */
     public function testUpdateEmbeddedStatus()
