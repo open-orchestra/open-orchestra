@@ -62,9 +62,9 @@ class BlockRepositoryTest extends AbstractKernelTestCase
      *
      * @dataProvider provideBlockCode
      */
-    public function findOneTransverseBlockByCodeAndLanguageTest($code, $language, $count)
+    public function findOneTransverseBlockByCodeTest($code, $language, $count)
     {
-        $blocks = $this->repository->findOneTransverseBlockByCodeAndLanguage($code, $language);
+        $blocks = $this->repository->findOneTransverseBlockByCode($code, $language, "2");
         $this->assertCount($count, $blocks);
     }
 
