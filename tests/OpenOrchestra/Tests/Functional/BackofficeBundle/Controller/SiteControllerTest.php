@@ -33,7 +33,7 @@ class SiteControllerTest extends AbstractFormTest
     {
         parent::setUp();
 
-        $this->siteId = (string) microtime(true);
+        $this->siteId = uniqid();
         $this->nodeRepository = static::$kernel->getContainer()->get('open_orchestra_model.repository.node');
         $this->siteRepository = static::$kernel->getContainer()->get('open_orchestra_model.repository.site');
     }
