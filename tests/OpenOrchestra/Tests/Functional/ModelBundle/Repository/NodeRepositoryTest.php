@@ -590,7 +590,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function testFindAllRoutePattern()
     {
         $routePatterns = $this->repository->findAllRoutePattern( 'fr', '2');
-        $this->assertCount(6, $routePatterns);
+        $this->assertCount(12, $routePatterns);
 
         $routePattern = $routePatterns[0];
         $this->assertArrayHasKey('routePattern', $routePattern);
