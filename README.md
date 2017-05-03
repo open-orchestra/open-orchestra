@@ -17,7 +17,6 @@ Installation
 ------------
 
 * [Standard installation][standard_install]
-* [Installation using a vagrant box][vagrant_install]
 
 Purpose
 -------
@@ -27,4 +26,3 @@ This repository is a installation exemple of the Backoffice part of the project.
 [website]: http://www.open-orchestra.com
 [documentation]: https://github.com/open-orchestra/open-orchestra-docs
 [standard_install]: https://github.com/open-orchestra/open-orchestra-docs/blob/master/en/developer_guide/install.rst
-[vagrant_install]: https://github.com/open-orchestra/open-orchestra-docs/blob/master/en/developer_guide/install_with_vagrant.rst
