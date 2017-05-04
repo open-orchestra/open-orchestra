@@ -571,7 +571,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
      */
     public function testFindByIncludedPathSiteIdAndLanguage($path, $siteId, $language, $expectedCount)
     {
-        $this->assertCount($expectedCount, $this->repository->findByIncludedPathSiteIdAndLanguage($path, $siteId, $language));
+        $this->assertCount($expectedCount, $this->repository->findNodeIdByIncludedPathSiteIdAndLanguage($path, $siteId, $language));
     }
 
     /**
@@ -580,8 +580,22 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function provideFindByIncludedPathSiteIdAndLanguage()
     {
         return array(
-            array("root", "2", "en", 7),
+            array("root", "2", "en", 6),
         );
+    }
+
+    /**
+     * Test find all router pattern
+     */
+    public function testFindAllRoutePattern()
+    {
+        $routePatterns = $this->repository->findAllRoutePattern( 'fr', '2');
+        $this->assertCount(12, $routePatterns);
+
+        $routePattern = $routePatterns[0];
+        $this->assertArrayHasKey('routePattern', $routePattern);
+        $this->assertArrayHasKey('nodeId', $routePattern);
+        $this->assertArrayHasKey('parentId', $routePattern);
     }
 
     /**
