@@ -3,7 +3,9 @@
 namespace OpenOrchestra\FunctionalTests\MediaBundle\Repository;
 
 use OpenOrchestra\BaseBundle\Tests\AbstractTest\AbstractKernelTestCase;
+use OpenOrchestra\Media\DisplayMedia\Strategies\VideoStrategy;
 use OpenOrchestra\Media\Repository\MediaRepositoryInterface;
+use OpenOrchestra\MediaAdmin\FileAlternatives\Strategy\ImageStrategy;
 use OpenOrchestra\ModelInterface\Repository\RepositoryTrait\KeywordableTraitInterface;
 use OpenOrchestra\Pagination\Configuration\PaginateFinderConfiguration;
 
@@ -180,5 +182,16 @@ class MediaRepositoryTest extends AbstractKernelTestCase
 
         $folder = $folderRepository->findOneBy(array('folderId' => 'images'));
         $this->assertEquals(4, $this->repository->countByFolderId($folder->getId()));
+    }
+
+    /**
+     * Test is media type of
+     */
+    public function testIsMediaTypeOf()
+    {
+        $image = $this->repository->findOneByName('logo Open-Orchestra');
+
+        $this->assertEquals(true, $this->repository->isMediaTypeOf($image->getId(), ImageStrategy::MEDIA_TYPE));
+        $this->assertEquals(false, $this->repository->isMediaTypeOf($image->getId(), VideoStrategy::MEDIA_TYPE));
     }
 }
