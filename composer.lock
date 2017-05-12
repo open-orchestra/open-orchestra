@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "112a64a64fe6d5ef06f306efe4c6e8bb",
+    "content-hash": "2d4f79e57f9752a48eda1a86a6b61260",
     "packages": [
         {
             "name": "alav/composer-assets",
@@ -2531,12 +2531,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "bf3f00a3d83d74160ab8e66d53129de13feef6ca"
+                "reference": "005aa94975b2820fdc1c933bb11f5c0ee940c976"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/bf3f00a3d83d74160ab8e66d53129de13feef6ca",
-                "reference": "bf3f00a3d83d74160ab8e66d53129de13feef6ca",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/005aa94975b2820fdc1c933bb11f5c0ee940c976",
+                "reference": "005aa94975b2820fdc1c933bb11f5c0ee940c976",
                 "shasum": ""
             },
             "require": {
@@ -2631,7 +2631,7 @@
                 }
             ],
             "description": "This bundle provide the Back Office part of Open Orchestra",
-            "time": "2017-05-05 14:10:12"
+            "time": "2017-05-12 10:09:58"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2639,12 +2639,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-display-bundle.git",
-                "reference": "758f7cf9b5ab21c62e4ffcc2765bf005a0b0d26e"
+                "reference": "76dae01e10424b2a5baa5a3e4faf7d6ade5d1dbb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-display-bundle/zipball/758f7cf9b5ab21c62e4ffcc2765bf005a0b0d26e",
-                "reference": "758f7cf9b5ab21c62e4ffcc2765bf005a0b0d26e",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-display-bundle/zipball/76dae01e10424b2a5baa5a3e4faf7d6ade5d1dbb",
+                "reference": "76dae01e10424b2a5baa5a3e4faf7d6ade5d1dbb",
                 "shasum": ""
             },
             "require": {
@@ -2681,7 +2681,59 @@
                 }
             ],
             "description": "The bundle to display all bricks",
-            "time": "2017-05-05 14:09:26"
+            "time": "2017-05-12 10:09:25"
+        },
+        {
+            "name": "open-orchestra/open-orchestra-elastica-admin-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/open-orchestra/open-orchestra-elastica-admin-bundle.git",
+                "reference": "02d23baeaf05fab289a80cedd9a01f2c3855b5e1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-elastica-admin-bundle/zipball/02d23baeaf05fab289a80cedd9a01f2c3855b5e1",
+                "reference": "02d23baeaf05fab289a80cedd9a01f2c3855b5e1",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/data-fixtures": "~1.2.0",
+                "open-orchestra/open-orchestra-base-bundle": "self.version",
+                "open-orchestra/open-orchestra-cms-bundle": "self.version",
+                "open-orchestra/open-orchestra-elastica-bundle": "self.version",
+                "open-orchestra/open-orchestra-model-interface": "self.version",
+                "php": "~5.6.0",
+                "ruflin/elastica": "~3.2.3"
+            },
+            "require-dev": {
+                "open-orchestra/open-orchestra-base-api-bundle": "self.version",
+                "open-orchestra/open-orchestra-bbcode-bundle": "self.version",
+                "open-orchestra/open-orchestra-display-bundle": "self.version",
+                "open-orchestra/open-orchestra-libs": "self.version",
+                "open-orchestra/open-orchestra-user-bundle": "self.version",
+                "phake/phake": "~2.3.0",
+                "phpunit/phpunit": "~5.5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "OpenOrchestra\\ElasticaAdminBundle\\": "ElasticaAdminBundle/",
+                    "OpenOrchestra\\ElasticaAdmin\\": "ElasticaAdmin/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "OpenOrchestra community",
+                    "homepage": "https://github.com/open-orchestra/open-orchestra-elastica-admin-bundle/graphs/contributors"
+                }
+            ],
+            "description": "A bundle to admin index Open Orchestra elements with Elastica Search",
+            "time": "2017-05-12 12:26:38"
         },
         {
             "name": "open-orchestra/open-orchestra-elastica-bundle",
@@ -2689,12 +2741,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-elastica-bundle.git",
-                "reference": "accbfbcd7b75a26ae374ae1ce8a53b23013fac72"
+                "reference": "594dadb9b3334d6150c4afd66e0ff77553f8e500"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-elastica-bundle/zipball/accbfbcd7b75a26ae374ae1ce8a53b23013fac72",
-                "reference": "accbfbcd7b75a26ae374ae1ce8a53b23013fac72",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-elastica-bundle/zipball/594dadb9b3334d6150c4afd66e0ff77553f8e500",
+                "reference": "594dadb9b3334d6150c4afd66e0ff77553f8e500",
                 "shasum": ""
             },
             "require": {
@@ -2706,7 +2758,6 @@
                 "ruflin/elastica": "~3.2.3"
             },
             "require-dev": {
-                "codeclimate/php-test-reporter": "~0.3.2",
                 "open-orchestra/open-orchestra-base-api-bundle": "self.version",
                 "open-orchestra/open-orchestra-bbcode-bundle": "self.version",
                 "open-orchestra/open-orchestra-cms-bundle": "self.version",
@@ -2715,19 +2766,12 @@
                 "phake/phake": "~2.3.0",
                 "phpunit/phpunit": "~5.5.0"
             },
-            "suggest": {
-                "open-orchestra/open-orchestra-cms-bundle": "To be able to use the admin bundle",
-                "open-orchestra/open-orchestra-front-bundle": "To be able to use the front bundle"
-            },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "OpenOrchestra\\ElasticaAdminBundle\\": "ElasticaAdminBundle/",
-                    "OpenOrchestra\\ElasticaAdmin\\": "ElasticaAdmin/",
                     "OpenOrchestra\\ElasticaFrontBundle\\": "ElasticaFrontBundle/",
                     "OpenOrchestra\\ElasticaFront\\": "ElasticaFront/",
-                    "OpenOrchestra\\ElasticaBundle\\": "ElasticaBundle/",
-                    "OpenOrchestra\\Elastica\\": "Elastica/"
+                    "OpenOrchestra\\ElasticaBundle\\": "ElasticaBundle/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -2741,7 +2785,7 @@
                 }
             ],
             "description": "A bundle to index Open Orchestra elements with Elastica Search",
-            "time": "2017-05-04 13:06:14"
+            "time": "2017-05-12 12:38:45"
         },
         {
             "name": "open-orchestra/open-orchestra-libs",
@@ -2795,12 +2839,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-admin-bundle.git",
-                "reference": "57c05cb4fa7ff06a52ab5bfdebd74fa3299886c8"
+                "reference": "422da1bba775658f3e2c2346f9d8b6e1659b68b8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/57c05cb4fa7ff06a52ab5bfdebd74fa3299886c8",
-                "reference": "57c05cb4fa7ff06a52ab5bfdebd74fa3299886c8",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/422da1bba775658f3e2c2346f9d8b6e1659b68b8",
+                "reference": "422da1bba775658f3e2c2346f9d8b6e1659b68b8",
                 "shasum": ""
             },
             "require": {
@@ -2877,7 +2921,7 @@
                 }
             ],
             "description": "This bundle integrate the media administration in the Back Office of Open Orchestra",
-            "time": "2017-05-05 14:09:21"
+            "time": "2017-05-09 08:35:30"
         },
         {
             "name": "open-orchestra/open-orchestra-media-bundle",
@@ -2935,12 +2979,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-migration-bundle.git",
-                "reference": "2fc8ffd89c9614e759bfeffbd757e8b045f103a3"
+                "reference": "e3981155f9f9a481dd9cf6d127a2e8f3530bec5c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-migration-bundle/zipball/2fc8ffd89c9614e759bfeffbd757e8b045f103a3",
-                "reference": "2fc8ffd89c9614e759bfeffbd757e8b045f103a3",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-migration-bundle/zipball/e3981155f9f9a481dd9cf6d127a2e8f3530bec5c",
+                "reference": "e3981155f9f9a481dd9cf6d127a2e8f3530bec5c",
                 "shasum": ""
             },
             "require": {
@@ -2964,7 +3008,7 @@
                 }
             ],
             "description": "A bundle which contains the mongo migrations for Open Orchestra",
-            "time": "2017-05-04 13:22:10"
+            "time": "2017-05-12 09:57:47"
         },
         {
             "name": "open-orchestra/open-orchestra-model-bundle",
@@ -3488,16 +3532,16 @@
         },
         {
             "name": "sensio/distribution-bundle",
-            "version": "v5.0.19",
+            "version": "v5.0.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioDistributionBundle.git",
-                "reference": "654c4fa3d11448c8005400a244987896243a990a"
+                "reference": "4b019d4c0bd64438c42e4b6b0726085b409be8d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioDistributionBundle/zipball/654c4fa3d11448c8005400a244987896243a990a",
-                "reference": "654c4fa3d11448c8005400a244987896243a990a",
+                "url": "https://api.github.com/repos/sensiolabs/SensioDistributionBundle/zipball/4b019d4c0bd64438c42e4b6b0726085b409be8d9",
+                "reference": "4b019d4c0bd64438c42e4b6b0726085b409be8d9",
                 "shasum": ""
             },
             "require": {
@@ -3536,20 +3580,20 @@
                 "configuration",
                 "distribution"
             ],
-            "time": "2017-04-23T22:28:23+00:00"
+            "time": "2017-05-11T16:21:03+00:00"
         },
         {
             "name": "sensio/framework-extra-bundle",
-            "version": "v3.0.25",
+            "version": "v3.0.26",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioFrameworkExtraBundle.git",
-                "reference": "472b339cf0c82f3a033b29f85d9d9cada3cd1a9c"
+                "reference": "6d6cbe971554f0a2cc84965850481eb04a2a0059"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/472b339cf0c82f3a033b29f85d9d9cada3cd1a9c",
-                "reference": "472b339cf0c82f3a033b29f85d9d9cada3cd1a9c",
+                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/6d6cbe971554f0a2cc84965850481eb04a2a0059",
+                "reference": "6d6cbe971554f0a2cc84965850481eb04a2a0059",
                 "shasum": ""
             },
             "require": {
@@ -3606,7 +3650,7 @@
                 "annotations",
                 "controllers"
             ],
-            "time": "2017-03-21T23:34:44+00:00"
+            "time": "2017-05-11T17:01:57+00:00"
         },
         {
             "name": "sensio/generator-bundle",
@@ -3844,16 +3888,16 @@
         },
         {
             "name": "swiftmailer/swiftmailer",
-            "version": "v5.4.7",
+            "version": "v5.4.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "56db4ed32a6d5c9824c3ecc1d2e538f663f47eb4"
+                "reference": "9a06dc570a0367850280eefd3f1dc2da45aef517"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/56db4ed32a6d5c9824c3ecc1d2e538f663f47eb4",
-                "reference": "56db4ed32a6d5c9824c3ecc1d2e538f663f47eb4",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/9a06dc570a0367850280eefd3f1dc2da45aef517",
+                "reference": "9a06dc570a0367850280eefd3f1dc2da45aef517",
                 "shasum": ""
             },
             "require": {
@@ -3894,7 +3938,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2017-04-20T17:32:18+00:00"
+            "time": "2017-05-01T15:54:03+00:00"
         },
         {
             "name": "symfony/monolog-bundle",
@@ -6151,6 +6195,7 @@
         "open-orchestra/open-orchestra-base-api-mongo-model-bundle": 20,
         "open-orchestra/open-orchestra-cms-bundle": 20,
         "open-orchestra/open-orchestra-elastica-bundle": 20,
+        "open-orchestra/open-orchestra-elastica-admin-bundle": 20,
         "open-orchestra/open-orchestra-media-admin-bundle": 20,
         "open-orchestra/open-orchestra-model-bundle": 20,
         "open-orchestra/open-orchestra-base-bundle": 20,
