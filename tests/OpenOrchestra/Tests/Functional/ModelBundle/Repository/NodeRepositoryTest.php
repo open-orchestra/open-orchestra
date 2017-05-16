@@ -321,9 +321,9 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function provideForGetSubMenu()
     {
         return array(
-            array(NodeInterface::ROOT_NODE_ID, 1, 6, '1', '2', 'fr'),
-            array(NodeInterface::ROOT_NODE_ID, 2, 6, '1', '2', 'fr'),
-            array(NodeInterface::ROOT_NODE_ID, 0, 6, '1', '2', 'fr'),
+            array(NodeInterface::ROOT_NODE_ID, 1, 5, '1', '2', 'fr'),
+            array(NodeInterface::ROOT_NODE_ID, 2, 5, '1', '2', 'fr'),
+            array(NodeInterface::ROOT_NODE_ID, 0, 5, '1', '2', 'fr'),
             array(NodeInterface::ROOT_NODE_ID, 0, 6, '1', '2', 'en'),
             array('fixture_page_community', 1, 1, '1', '2', 'fr'),
             array('fixture_page_community', 1, 1, '1', '2', 'en'),
@@ -354,8 +354,8 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     public function provideLanguageSiteIdAndCount()
     {
         return array(
-            array('en', '2', 7),
-            array('fr', '2', 7),
+            array('en', '2', 6),
+            array('fr', '2', 5),
         );
     }
 
@@ -437,7 +437,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     {
         return array(
             array('en', 5),
-            array('fr', 5),
+            array('fr', 4),
         );
     }
 
@@ -533,7 +533,7 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     {
         return array(
             array("1", 0),
-            array("2", 17),
+            array("2", 16),
         );
     }
 
