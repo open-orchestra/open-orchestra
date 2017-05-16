@@ -46,7 +46,7 @@ class FolderControllerTest extends AbstractFormTest
     protected function getCrawler()
     {
         $mediaFolderRepository = static::$kernel->getContainer()->get('open_orchestra_media.repository.media_folder');
-        $mediaFolder = $mediaFolderRepository->findOneByName('Images');
+        $mediaFolder = $mediaFolderRepository->findOneByFolderId('images');
 
         $url = '/admin/folder/form/' . $mediaFolder->getId();
         $crawler = $this->client->request('GET', $url);
