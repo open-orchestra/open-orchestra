@@ -2531,12 +2531,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "ec0d25d34fe3831fe50411f551e9c2659e43cb4d"
+                "reference": "a43d4712ff6f1b055b1079902e09f3b50a2d53e4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/ec0d25d34fe3831fe50411f551e9c2659e43cb4d",
-                "reference": "ec0d25d34fe3831fe50411f551e9c2659e43cb4d",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/a43d4712ff6f1b055b1079902e09f3b50a2d53e4",
+                "reference": "a43d4712ff6f1b055b1079902e09f3b50a2d53e4",
                 "shasum": ""
             },
             "require": {
@@ -2631,7 +2631,7 @@
                 }
             ],
             "description": "This bundle provide the Back Office part of Open Orchestra",
-            "time": "2017-05-16 14:22:10"
+            "time": "2017-05-18 08:57:00"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2839,12 +2839,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-admin-bundle.git",
-                "reference": "2dcf07ebd770ffda2468207441b2c19177d1a4c7"
+                "reference": "f36fc72e342985ec7a6ac8e237ae2a5c914630d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/2dcf07ebd770ffda2468207441b2c19177d1a4c7",
-                "reference": "2dcf07ebd770ffda2468207441b2c19177d1a4c7",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/f36fc72e342985ec7a6ac8e237ae2a5c914630d4",
+                "reference": "f36fc72e342985ec7a6ac8e237ae2a5c914630d4",
                 "shasum": ""
             },
             "require": {
@@ -2921,7 +2921,7 @@
                 }
             ],
             "description": "This bundle integrate the media administration in the Back Office of Open Orchestra",
-            "time": "2017-05-16 14:33:40"
+            "time": "2017-05-18 09:02:59"
         },
         {
             "name": "open-orchestra/open-orchestra-media-bundle",
@@ -4822,17 +4822,16 @@
         },
         {
             "name": "willdurand/js-translation-bundle",
-            "version": "2.6.4",
-            "target-dir": "Bazinga/Bundle/JsTranslationBundle",
+            "version": "2.6.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/willdurand/BazingaJsTranslationBundle.git",
-                "reference": "e1f180539da3b6b29dfde51aa2fbc091052dfb9b"
+                "reference": "d9cb848fc66b502658994cf86e63ed3d940e1095"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/willdurand/BazingaJsTranslationBundle/zipball/e1f180539da3b6b29dfde51aa2fbc091052dfb9b",
-                "reference": "e1f180539da3b6b29dfde51aa2fbc091052dfb9b",
+                "url": "https://api.github.com/repos/willdurand/BazingaJsTranslationBundle/zipball/d9cb848fc66b502658994cf86e63ed3d940e1095",
+                "reference": "d9cb848fc66b502658994cf86e63ed3d940e1095",
                 "shasum": ""
             },
             "require": {
@@ -4861,8 +4860,8 @@
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Bazinga\\Bundle\\JsTranslationBundle": ""
+                "psr-4": {
+                    "Bazinga\\Bundle\\JsTranslationBundle\\": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -4881,7 +4880,7 @@
                 "symfony",
                 "translation"
             ],
-            "time": "2017-02-13T14:50:50+00:00"
+            "time": "2017-05-17T21:16:31+00:00"
         },
         {
             "name": "willdurand/jsonp-callback-validator",
