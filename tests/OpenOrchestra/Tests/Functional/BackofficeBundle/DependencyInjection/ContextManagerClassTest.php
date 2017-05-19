@@ -24,7 +24,7 @@ class ContextManagerClassTest extends AbstractKernelTestCase
         $kernel->boot();
         $this->assertInstanceOf(
             $classExpected,
-            $kernel->getContainer()->get('open_orchestra_backoffice.context_manager')
+            $kernel->getContainer()->get('open_orchestra_backoffice.context_backoffice_manager')
         );
     }
 
