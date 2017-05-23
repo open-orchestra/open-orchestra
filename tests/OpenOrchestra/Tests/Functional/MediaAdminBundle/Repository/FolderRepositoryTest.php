@@ -45,6 +45,18 @@ class FolderRepositoryTest extends AbstractKernelTestCase
     }
 
     /**
+     * test findBySite
+     */
+    public function testFindBySite()
+    {
+        $builder = $this->repository->findBySite('2');
+        $this->assertInstanceOf('Doctrine\MongoDB\Query\Builder', $builder);
+
+        $folders = $builder->getQuery()->execute();
+        $this->assertEquals(6, count($folders));
+    }
+
+    /**
      * @param mixed $tree
      * @param int   $childrenCount
      */
