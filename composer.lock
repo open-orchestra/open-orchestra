@@ -2531,12 +2531,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "e9f1e1ffe728ecf4a34c79884cdf9fc8ac0961d8"
+                "reference": "ffd9bc9b91191ecb322470d3f7b1399e05c055a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/e9f1e1ffe728ecf4a34c79884cdf9fc8ac0961d8",
-                "reference": "e9f1e1ffe728ecf4a34c79884cdf9fc8ac0961d8",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/ffd9bc9b91191ecb322470d3f7b1399e05c055a7",
+                "reference": "ffd9bc9b91191ecb322470d3f7b1399e05c055a7",
                 "shasum": ""
             },
             "require": {
@@ -2631,7 +2631,7 @@
                 }
             ],
             "description": "This bundle provide the Back Office part of Open Orchestra",
-            "time": "2017-05-19 10:19:58"
+            "time": "2017-05-24 09:28:24"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2689,12 +2689,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-elastica-admin-bundle.git",
-                "reference": "a289d9f9cb5fc1b2c09d2573216a75beff091f3c"
+                "reference": "1dcf313c1d273936069edacbae30af21522a01f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-elastica-admin-bundle/zipball/a289d9f9cb5fc1b2c09d2573216a75beff091f3c",
-                "reference": "a289d9f9cb5fc1b2c09d2573216a75beff091f3c",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-elastica-admin-bundle/zipball/1dcf313c1d273936069edacbae30af21522a01f2",
+                "reference": "1dcf313c1d273936069edacbae30af21522a01f2",
                 "shasum": ""
             },
             "require": {
@@ -2733,7 +2733,7 @@
                 }
             ],
             "description": "A bundle to admin index Open Orchestra elements with Elastica Search",
-            "time": "2017-05-12 15:22:32"
+            "time": "2017-05-23 08:56:22"
         },
         {
             "name": "open-orchestra/open-orchestra-elastica-bundle",
@@ -2839,12 +2839,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-admin-bundle.git",
-                "reference": "dedc1c0bc56502c8064024bdbd12710b31febf5a"
+                "reference": "3e15a4a1ee0935fddd9cf66b6d30ddd5a7ca0b9f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/dedc1c0bc56502c8064024bdbd12710b31febf5a",
-                "reference": "dedc1c0bc56502c8064024bdbd12710b31febf5a",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/3e15a4a1ee0935fddd9cf66b6d30ddd5a7ca0b9f",
+                "reference": "3e15a4a1ee0935fddd9cf66b6d30ddd5a7ca0b9f",
                 "shasum": ""
             },
             "require": {
@@ -2921,7 +2921,7 @@
                 }
             ],
             "description": "This bundle integrate the media administration in the Back Office of Open Orchestra",
-            "time": "2017-05-19 10:30:13"
+            "time": "2017-05-24 09:27:52"
         },
         {
             "name": "open-orchestra/open-orchestra-media-bundle",
@@ -2929,12 +2929,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-bundle.git",
-                "reference": "aaed5ff1557200f65cb031c33f9dab3292f6e960"
+                "reference": "efd016c90bfe6ec0dc89da7aab06bb406200d100"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/aaed5ff1557200f65cb031c33f9dab3292f6e960",
-                "reference": "aaed5ff1557200f65cb031c33f9dab3292f6e960",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-bundle/zipball/efd016c90bfe6ec0dc89da7aab06bb406200d100",
+                "reference": "efd016c90bfe6ec0dc89da7aab06bb406200d100",
                 "shasum": ""
             },
             "require": {
@@ -2971,7 +2971,7 @@
                 }
             ],
             "description": "A media bundle for Open Orchestra",
-            "time": "2017-05-19 10:21:08"
+            "time": "2017-05-24 09:27:14"
         },
         {
             "name": "open-orchestra/open-orchestra-migration-bundle",
@@ -2979,12 +2979,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-migration-bundle.git",
-                "reference": "e0b085b25b044736e090359c846361d577e232be"
+                "reference": "0cefbfb72524e6b611e949601763e6274b0a4342"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-migration-bundle/zipball/e0b085b25b044736e090359c846361d577e232be",
-                "reference": "e0b085b25b044736e090359c846361d577e232be",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-migration-bundle/zipball/0cefbfb72524e6b611e949601763e6274b0a4342",
+                "reference": "0cefbfb72524e6b611e949601763e6274b0a4342",
                 "shasum": ""
             },
             "require": {
@@ -3008,7 +3008,7 @@
                 }
             ],
             "description": "A bundle which contains the mongo migrations for Open Orchestra",
-            "time": "2017-05-16 09:18:30"
+            "time": "2017-05-23 08:55:11"
         },
         {
             "name": "open-orchestra/open-orchestra-model-bundle",
@@ -3016,12 +3016,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-model-bundle.git",
-                "reference": "333669332de8e5e3626e700091714c1d27d95e00"
+                "reference": "055ae85ff072f715f0905e8b96c1440f1b8adf47"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/333669332de8e5e3626e700091714c1d27d95e00",
-                "reference": "333669332de8e5e3626e700091714c1d27d95e00",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-model-bundle/zipball/055ae85ff072f715f0905e8b96c1440f1b8adf47",
+                "reference": "055ae85ff072f715f0905e8b96c1440f1b8adf47",
                 "shasum": ""
             },
             "require": {
@@ -3056,7 +3056,7 @@
                 }
             ],
             "description": "A MongoDB implemantation of the Open Orchestra Model Interface",
-            "time": "2017-05-16 14:21:58"
+            "time": "2017-05-23 08:56:00"
         },
         {
             "name": "open-orchestra/open-orchestra-model-interface",
@@ -4514,21 +4514,21 @@
         },
         {
             "name": "symfony/swiftmailer-bundle",
-            "version": "v2.3.11",
+            "version": "v2.3.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/swiftmailer-bundle.git",
-                "reference": "5e1a90f28213231ceee19c953bbebc5b5b95c690"
+                "reference": "0081f7fbf3ff7a1d684081fada6f36e8ba86e528"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/swiftmailer-bundle/zipball/5e1a90f28213231ceee19c953bbebc5b5b95c690",
-                "reference": "5e1a90f28213231ceee19c953bbebc5b5b95c690",
+                "url": "https://api.github.com/repos/symfony/swiftmailer-bundle/zipball/0081f7fbf3ff7a1d684081fada6f36e8ba86e528",
+                "reference": "0081f7fbf3ff7a1d684081fada6f36e8ba86e528",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2",
-                "swiftmailer/swiftmailer": ">=4.2.0,~5.0",
+                "swiftmailer/swiftmailer": "~4.2|~5.0",
                 "symfony/config": "~2.3|~3.0",
                 "symfony/dependency-injection": "~2.3|~3.0",
                 "symfony/http-kernel": "~2.3|~3.0",
@@ -4567,7 +4567,7 @@
             ],
             "description": "Symfony SwiftmailerBundle",
             "homepage": "http://symfony.com",
-            "time": "2016-01-15T16:41:20+00:00"
+            "time": "2017-05-22T05:03:21+00:00"
         },
         {
             "name": "symfony/symfony",
@@ -5735,16 +5735,16 @@
         },
         {
             "name": "sebastian/diff",
-            "version": "1.4.2",
+            "version": "1.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/diff.git",
-                "reference": "3c7d21999e815cdfac70c6c7d79d3a9cb1bc7bc2"
+                "reference": "7f066a26a962dbe58ddea9f72a4e82874a3975a4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/3c7d21999e815cdfac70c6c7d79d3a9cb1bc7bc2",
-                "reference": "3c7d21999e815cdfac70c6c7d79d3a9cb1bc7bc2",
+                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/7f066a26a962dbe58ddea9f72a4e82874a3975a4",
+                "reference": "7f066a26a962dbe58ddea9f72a4e82874a3975a4",
                 "shasum": ""
             },
             "require": {
@@ -5783,7 +5783,7 @@
             "keywords": [
                 "diff"
             ],
-            "time": "2017-05-18T13:44:30+00:00"
+            "time": "2017-05-22T07:24:03+00:00"
         },
         {
             "name": "sebastian/environment",
