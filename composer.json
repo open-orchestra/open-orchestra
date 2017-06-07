@@ -11,6 +11,11 @@
     }
   ],
 
+  "support": {
+    "issues": "https://github.com/open-orchestra/open-orchestra/issues",
+    "docs": "http://open-orchestra.readthedocs.io/fr/latest/"
+  },
+
   "require": {
     "php": "~5.6.0",
     "incenteev/composer-parameter-handler": "~2.1.2",
