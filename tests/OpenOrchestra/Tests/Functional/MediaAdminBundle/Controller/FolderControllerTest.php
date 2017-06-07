@@ -27,20 +27,6 @@ class FolderControllerTest extends AbstractFormTest
     }
 
     /**
-     * Test folder form with only create role
-     */
-    public function testMediaFolderFormUserWithCreateRole()
-    {
-        $this->username = 'demo';
-        $this->password = 'demo';
-        $this->logIn();
-
-        $this->getCrawler();
-        $this->assertContains("form-disabled", $this->client->getResponse()->getContent());
-    }
-
-
-    /**
      * @return Crawler $crawler
      */
     protected function getCrawler()
