@@ -14,40 +14,59 @@ class ApiControllersTest extends AbstractAuthenticatedTest
 
     /**
      * test duplicate Api
-     *
-     *
-     * @dataProvider provideDuplicateApiElements
      */
-    public function testDuplicateApi($repositoryName, $method, $value, $type, $url)
+    public function testDuplicateContentApi()
     {
-        $repository = static::$kernel->getContainer()->get($repositoryName);
-        $source = $repository->$method($value);
-        $source = static::$kernel->getContainer()->get('open_orchestra_api.transformer_manager')->get($type)->transform($source);
+        $repository = static::$kernel->getContainer()->get('open_orchestra_model.repository.content');
+        $source = $repository->findOneByContentId('206_3_portes');
+        $source = static::$kernel->getContainer()->get('open_orchestra_api.transformer_manager')->get('content')->transform($source);
         $source = static::$kernel->getContainer()->get('jms_serializer')->serialize(
             $source,
             'json'
-            );
-        $this->client->request("POST", $url, array(), array(), array(), $source);
+        );
+        $this->client->request("POST", '/api/content/duplicate', array(), array(), array(), $source);
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
         $this->assertSame('application/json', $this->client->getResponse()->headers->get('content-type'));
 
-        $element = $repository->$method(new \MongoRegex('/^'.$value.'_.*$/'));
+        $element = $repository->findOneByContentId(new \MongoRegex('/^206_3_portes_.*$/'));
         while (!is_null($element)) {
             static::$kernel->getContainer()->get('object_manager')->remove($element);
             static::$kernel->getContainer()->get('object_manager')->flush();
-            $element = $repository->$method(new \MongoRegex('/^'.$value.'_.*$/'));
+            $element = $repository->findOneByContentId(new \MongoRegex('/^206_3_portes_.*$/'));
         }
     }
 
     /**
-     * @return array
+     * test duplicate Api
      */
-    public function provideDuplicateApiElements()
+    public function testDuplicateGroupApi()
     {
-        return array(
-            0  => array('open_orchestra_user.repository.group', 'findOneByName', 'Demo group', 'group', '/api/group/duplicate'),
-            1  => array('open_orchestra_model.repository.content', 'findOneByContentId', '206_3_portes', 'content', '/api/content/duplicate'),
-        );
+        $repository = static::$kernel->getContainer()->get('open_orchestra_user.repository.group');
+        $source = $repository->findOneBy(array('labels.en' => 'Demo group'));
+        $source = static::$kernel->getContainer()->get('open_orchestra_api.transformer_manager')->get('group')->transform($source);
+        $source = static::$kernel->getContainer()->get('jms_serializer')->serialize(
+            $source,
+            'json'
+            );
+        $this->client->request("POST", '/api/group/duplicate', array(), array(), array(), $source);
+        $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
+        $this->assertSame('application/json', $this->client->getResponse()->headers->get('content-type'));
+
+        $source = json_decode($source, true);
+        $element = $repository->createQueryBuilder()
+            ->field('labels.en')->equals('Demo group')
+            ->field('_id')->notEqual(new \MongoId($source['id']))
+            ->getQuery()
+            ->getSingleResult();
+        while (!is_null($element)) {
+            static::$kernel->getContainer()->get('object_manager')->remove($element);
+            static::$kernel->getContainer()->get('object_manager')->flush();
+            $element = $repository->createQueryBuilder()
+                ->field('labels.en')->equals('Demo group')
+                ->field('_id')->notEqual(new \MongoId($source['id']))
+                ->getQuery()
+                ->getSingleResult();
+        }
     }
 
     /**

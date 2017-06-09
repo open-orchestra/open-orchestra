@@ -19,6 +19,8 @@ class UserRepositoryTest extends AbstractKernelTestCase
      * @var UserRepository
      */
     protected $repository;
+    protected $groupRepository;
+    protected $language = 'en';
 
     /**
      * Set up test
@@ -40,7 +42,7 @@ class UserRepositoryTest extends AbstractKernelTestCase
      */
     public function testFindForPaginate(PaginateFinderConfiguration $configuration, $count)
     {
-        $users = $this->repository->findForPaginate($configuration);
+        $users = $this->repository->findForPaginate($configuration, $this->language);
         $this->assertCount($count, $users);
     }
 
@@ -72,7 +74,7 @@ class UserRepositoryTest extends AbstractKernelTestCase
     public function testPaginateAndSearchWithSitesId(PaginateFinderConfiguration $configuration, array $sitesId, $count)
     {
         $sitesId = $this->convertSiteIdInMongoId($sitesId);
-        $users = $this->repository->findForPaginateFilterBySiteIds($configuration, $sitesId);
+        $users = $this->repository->findForPaginateFilterBySiteIds($configuration, $this->language, $sitesId);
         $this->assertCount($count, $users);
     }
 
@@ -122,7 +124,7 @@ class UserRepositoryTest extends AbstractKernelTestCase
      */
     public function testCountWithFilter($configuration, $count)
     {
-        $users = $this->repository->countWithFilter($configuration);
+        $users = $this->repository->countWithFilter($configuration, $this->language);
         $this->assertEquals($count, $users);
     }
 
@@ -154,7 +156,7 @@ class UserRepositoryTest extends AbstractKernelTestCase
     public function testCountWithFilterAndSitesId($configuration, array $sitesId, $count)
     {
         $sitesId = $this->convertSiteIdInMongoId($sitesId);
-        $users = $this->repository->countWithFilterAndSiteIds($configuration, $sitesId);
+        $users = $this->repository->countWithFilterAndSiteIds($configuration, $this->language, $sitesId);
         $this->assertEquals($count, $users);
     }
 
@@ -202,8 +204,8 @@ class UserRepositoryTest extends AbstractKernelTestCase
      */
     public function testGetCountsUsersByGroups()
     {
-        $groupDemo = $this->groupRepository->findOneByName('Demo group');
-        $groupAdmin = $this->groupRepository->findOneByName('Site Admin demo');
+        $groupDemo = $this->groupRepository->findOneBy(array('labels.en' => 'Demo group'));
+        $groupAdmin = $this->groupRepository->findOneBy(array('labels.en' => 'Site admin demo'));
 
         $groupIds = array($groupDemo->getId(), $groupAdmin->getId());
 
@@ -257,7 +259,7 @@ class UserRepositoryTest extends AbstractKernelTestCase
     public function testFindUsersByGroupsForPaginate()
     {
         $configuration = PaginateFinderConfiguration::generateFromVariable(array(), 0, 100, array());
-        $group = $this->groupRepository->findOneByName('Demo group');
+        $group = $this->groupRepository->findOneBy(array('labels.en' => 'Demo group'));
         $users = $this->repository->findUsersByGroupsForPaginate($configuration, $group->getId());
         $this->assertEquals(1, count($users));
     }
@@ -267,7 +269,7 @@ class UserRepositoryTest extends AbstractKernelTestCase
      */
     public function testCountFilterByGroups()
     {
-        $group = $this->groupRepository->findOneByName('Demo group');
+        $group = $this->groupRepository->findOneBy(array('labels.en' => 'Demo group'));
         $this->assertEquals(1, $this->repository->countFilterByGroups($group->getId()));
     }
 
@@ -279,7 +281,7 @@ class UserRepositoryTest extends AbstractKernelTestCase
         $dm = static::$kernel->getContainer()->get('object_manager');
 
         $fakeGroup = new Group();
-        $fakeGroup->setName('fakeGroup');
+        $fakeGroup->setLabels(array('en' => 'fakeGroup'));
         $dm->persist($fakeGroup);
         $user = $this->repository->findOneByUsername('demo');
         $user->addGroup($fakeGroup);
@@ -287,7 +289,7 @@ class UserRepositoryTest extends AbstractKernelTestCase
 
         $dm->flush();
 
-        $group = $this->groupRepository->findOneByName('fakeGroup');
+        $group = $this->groupRepository->findOneBy(array('labels.en' => 'fakeGroup'));
 
         $this->assertEquals(1, $this->repository->countFilterByGroups($group->getId()));
 
