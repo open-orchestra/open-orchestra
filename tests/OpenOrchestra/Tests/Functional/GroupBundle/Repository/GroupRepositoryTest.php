@@ -131,11 +131,12 @@ class GroupRepositoryTest extends AbstractKernelTestCase
         $dm->clear();
 
         $groupTest = $this->repository->findOneByName('test');
-
         $groupIds = array($groupTest->getId());
-
         $this->repository->removeGroups($groupIds);
-        $this->assertNull($this->repository->findOneByName('test'));
+        $dm->clear();
+        $group = $this->repository->findOneByName('test');
+        $this->assertEquals(true, $group->isDeleted());
+        $dm->remove($group);
     }
 
    /**
