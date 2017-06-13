@@ -42,6 +42,8 @@ class ApiControllersTest extends AbstractAuthenticatedTest
     public function testDuplicateGroupApi()
     {
         $repository = static::$kernel->getContainer()->get('open_orchestra_user.repository.group');
+        $dm = static::$kernel->getContainer()->get('object_manager');
+
         $source = $repository->findOneBy(array('labels.en' => 'Demo group'));
         $source = static::$kernel->getContainer()->get('open_orchestra_api.transformer_manager')->get('group')->transform($source);
         $source = static::$kernel->getContainer()->get('jms_serializer')->serialize(
@@ -53,20 +55,15 @@ class ApiControllersTest extends AbstractAuthenticatedTest
         $this->assertSame('application/json', $this->client->getResponse()->headers->get('content-type'));
 
         $source = json_decode($source, true);
-        $element = $repository->createQueryBuilder()
+        $groups = $repository->createQueryBuilder()
             ->field('labels.en')->equals('Demo group')
             ->field('_id')->notEqual(new \MongoId($source['id']))
             ->getQuery()
-            ->getSingleResult();
-        while (!is_null($element)) {
-            static::$kernel->getContainer()->get('object_manager')->remove($element);
-            static::$kernel->getContainer()->get('object_manager')->flush();
-            $element = $repository->createQueryBuilder()
-                ->field('labels.en')->equals('Demo group')
-                ->field('_id')->notEqual(new \MongoId($source['id']))
-                ->getQuery()
-                ->getSingleResult();
+            ->execute();
+        foreach ($groups as $group){
+            $dm->remove($group);
         }
+        $dm->flush();
     }
 
     /**
