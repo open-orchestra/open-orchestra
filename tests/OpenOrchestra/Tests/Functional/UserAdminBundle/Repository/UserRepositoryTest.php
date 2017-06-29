@@ -297,4 +297,34 @@ class UserRepositoryTest extends AbstractKernelTestCase
 
         $this->assertEquals(0, $this->repository->countFilterByGroups($group->getId()));
     }
+
+    /**
+     * test addGroup
+     */
+    public function testAddGroup()
+    {
+        $dm = static::$kernel->getContainer()->get('object_manager');
+
+        $fakeGroup = new Group();
+        $fakeGroup->setLabels(array('en' => 'fakeGroup'));
+        $dm->persist($fakeGroup);
+        $dm->flush();
+
+        $users = $this->repository->findAll();
+        $nbrUsers = count($users);
+
+        $this->repository->addGroup($users, $fakeGroup);
+        $dm->flush();
+        $this->assertEquals($nbrUsers, $this->repository->countFilterByGroups($fakeGroup->getId()));
+
+        foreach ($users as $user) {
+            $this->repository->removeGroup($user->getId(), $fakeGroup->getId());
+        }
+
+        $dm->flush();
+        $this->assertEquals(0, $this->repository->countFilterByGroups($fakeGroup->getId()));
+
+        $dm->remove($fakeGroup);
+    }
+
 }
