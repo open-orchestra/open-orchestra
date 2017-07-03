@@ -564,6 +564,29 @@ class NodeRepositoryTest extends AbstractKernelTestCase
     /**
      * @param string  $path
      * @param string  $siteId
+     * @param integer $expectedCount
+     *
+     * @dataProvider provideFindByPath
+     */
+    public function testFindByPath($path, $siteId, $expectedCount)
+    {
+        $this->assertCount($expectedCount, $this->repository->findNodeIdByIncludedPathSiteId($path, $siteId));
+    }
+
+    /**
+     * @return array
+     */
+    public function provideFindByPath()
+    {
+        return array(
+            array("root", "2", 23),
+            array("transverse", "2", 0),
+        );
+    }
+
+    /**
+     * @param string  $path
+     * @param string  $siteId
      * @param string  $language
      * @param integer $expectedCount
      *
