@@ -3168,12 +3168,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-user-bundle.git",
-                "reference": "234a7c205f5f457350f796ab0579095910197b51"
+                "reference": "7bd3a2af8608fb0a9a934a60b3f815b4013cbbb7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-user-bundle/zipball/234a7c205f5f457350f796ab0579095910197b51",
-                "reference": "234a7c205f5f457350f796ab0579095910197b51",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-user-bundle/zipball/7bd3a2af8608fb0a9a934a60b3f815b4013cbbb7",
+                "reference": "7bd3a2af8608fb0a9a934a60b3f815b4013cbbb7",
                 "shasum": ""
             },
             "require": {
@@ -3213,7 +3213,7 @@
                 }
             ],
             "description": "An override of FosUserBundle to provide authentication on Open Orchestra",
-            "time": "2017-06-14 07:51:13"
+            "time": "2017-07-03 08:59:03"
         },
         {
             "name": "paragonie/random_compat",
