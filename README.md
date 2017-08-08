@@ -15,7 +15,7 @@ Open Orchestra
 Installation
 ------------
 
-* [Standard installation][standard_install]
+[Standard installation][standard_install]
 
 Purpose
 -------
@@ -23,5 +23,5 @@ Purpose
 This repository is a installation exemple of the Backoffice part of the project.
 
 [website]: http://www.open-orchestra.com
-[documentation]: https://github.com/open-orchestra/open-orchestra-docs
-[standard_install]: https://github.com/open-orchestra/open-orchestra-docs/blob/master/en/developer_guide/install.rst
+[documentation]: http://open-orchestra.readthedocs.io
+[standard_install]: http://open-orchestra.readthedocs.io/fr/latest/dev_guide/install.html
