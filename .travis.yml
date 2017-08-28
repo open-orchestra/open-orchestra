@@ -34,6 +34,7 @@ matrix:
 
 before_install:
   - printf "\n" |pecl install imagick
+  - printf "\n" |pecl install mongo
   - phpenv config-add .travis.php.ini
 
 install:
