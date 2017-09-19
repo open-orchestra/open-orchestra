@@ -19,6 +19,7 @@ matrix:
         apt:
           packages:
             - libav-tools
+            - ghostscript
             - mongodb-org-server
           sources:
             - mongodb-upstart
@@ -28,6 +29,7 @@ matrix:
         apt:
           packages:
             - libav-tools
+            - ghostscript
             - mongodb-org-server
           sources:
             - mongodb-3.0-precise
