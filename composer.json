@@ -75,6 +75,7 @@
 
   "autoload-dev": {
     "psr-4": {
+      "OpenOrchestraBundle\\": "src/OpenOrchestraBundle/",
       "OpenOrchestra\\FunctionalTests\\": "tests/OpenOrchestra/Tests/Functional/"
     }
   },
