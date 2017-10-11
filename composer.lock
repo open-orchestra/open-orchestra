@@ -2699,12 +2699,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-elastica-admin-bundle.git",
-                "reference": "e52ff26548f38bb710df0601bbda8f9aec0c6f84"
+                "reference": "021533c05e65a8fb11c081328b868817a83d1acc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-elastica-admin-bundle/zipball/e52ff26548f38bb710df0601bbda8f9aec0c6f84",
-                "reference": "e52ff26548f38bb710df0601bbda8f9aec0c6f84",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-elastica-admin-bundle/zipball/021533c05e65a8fb11c081328b868817a83d1acc",
+                "reference": "021533c05e65a8fb11c081328b868817a83d1acc",
                 "shasum": ""
             },
             "require": {
@@ -2743,7 +2743,7 @@
                 }
             ],
             "description": "A bundle to admin index Open Orchestra elements with Elastica Search",
-            "time": "2017-06-07 08:42:27"
+            "time": "2017-10-11 09:43:17"
         },
         {
             "name": "open-orchestra/open-orchestra-elastica-bundle",
