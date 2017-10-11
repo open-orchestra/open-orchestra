@@ -16,6 +16,9 @@
             <directory>tests/OpenOrchestra/Tests/Functional/*</directory>
         </testsuite>
     </testsuites>
+    <listeners>
+        <listener class="OpenOrchestra\FunctionalTests\TestListener" file="./tests/OpenOrchestra/Tests/Functional/TestListener.php"></listener>
+    </listeners>
 
     <php>
         <ini name="error_reporting" value="-1" />

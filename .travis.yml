@@ -45,10 +45,6 @@ install:
 
 before_script:
   - until nc -z localhost 27017; do echo Waiting for MongoDB; sleep 1; done
-  - php app/console orchestra:mongodb:fixtures:load --type=functional -e=test
-  - php app/console orchestra:elastica:index:create -e=test
-  - php app/console orchestra:elastica:schema:create -e=test
-  - php app/console orchestra:elastica:populate -e=test
 
 script:
   - ./bin/phpunit --testsuite=unit
