@@ -5,8 +5,14 @@ use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\ConsoleOutput;
 
+/**
+ * Class TestListener
+ */
 class TestListener extends \PHPUnit_Framework_BaseTestListener
 {
+    /**
+     * @param PHPUnit_Framework_TestSuite $suite
+     */
     public function startTestSuite(\PHPUnit_Framework_TestSuite $suite)
     {
         if (strpos($suite->getName(),"functional") !== false ) {
