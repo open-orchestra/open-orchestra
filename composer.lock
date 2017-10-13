@@ -1533,16 +1533,16 @@
         },
         {
             "name": "gedmo/doctrine-extensions",
-            "version": "v2.4.30",
+            "version": "v2.4.31",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Atlantic18/DoctrineExtensions.git",
-                "reference": "5e2cc07beb0cd24345cbe02eb7afc3b23f9cd488"
+                "reference": "79cd1d49898a21ede9a5dfad41c021abd9a14339"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/5e2cc07beb0cd24345cbe02eb7afc3b23f9cd488",
-                "reference": "5e2cc07beb0cd24345cbe02eb7afc3b23f9cd488",
+                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/79cd1d49898a21ede9a5dfad41c021abd9a14339",
+                "reference": "79cd1d49898a21ede9a5dfad41c021abd9a14339",
                 "shasum": ""
             },
             "require": {
@@ -1607,7 +1607,7 @@
                 "tree",
                 "uploadable"
             ],
-            "time": "2017-07-02T09:46:37+00:00"
+            "time": "2017-10-12T06:26:21+00:00"
         },
         {
             "name": "gregwar/captcha",
@@ -2539,12 +2539,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-cms-bundle.git",
-                "reference": "eb52e508b1d245c485574ee9b8179ead305164d2"
+                "reference": "b56969cc2b0ccb6d0c11b2c3a8f3faf688a6d8fa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/eb52e508b1d245c485574ee9b8179ead305164d2",
-                "reference": "eb52e508b1d245c485574ee9b8179ead305164d2",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-cms-bundle/zipball/b56969cc2b0ccb6d0c11b2c3a8f3faf688a6d8fa",
+                "reference": "b56969cc2b0ccb6d0c11b2c3a8f3faf688a6d8fa",
                 "shasum": ""
             },
             "require": {
@@ -2641,7 +2641,7 @@
                 }
             ],
             "description": "This bundle provide the Back Office part of Open Orchestra",
-            "time": "2017-08-28 13:53:05"
+            "time": "2017-10-13 07:54:37"
         },
         {
             "name": "open-orchestra/open-orchestra-display-bundle",
@@ -2649,12 +2649,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-display-bundle.git",
-                "reference": "4fbcf87b1b5400804c50de438b86ef76fbcad954"
+                "reference": "0e59e8686dac2d8408b57b63b975b4e5a1aa9472"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-display-bundle/zipball/4fbcf87b1b5400804c50de438b86ef76fbcad954",
-                "reference": "4fbcf87b1b5400804c50de438b86ef76fbcad954",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-display-bundle/zipball/0e59e8686dac2d8408b57b63b975b4e5a1aa9472",
+                "reference": "0e59e8686dac2d8408b57b63b975b4e5a1aa9472",
                 "shasum": ""
             },
             "require": {
@@ -2691,7 +2691,7 @@
                 }
             ],
             "description": "The bundle to display all bricks",
-            "time": "2017-08-28 13:50:41"
+            "time": "2017-10-13 08:24:12"
         },
         {
             "name": "open-orchestra/open-orchestra-elastica-admin-bundle",
@@ -2849,12 +2849,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-orchestra/open-orchestra-media-admin-bundle.git",
-                "reference": "9cdcc8a4506f3c299fb95426aef265d01686e99c"
+                "reference": "743fa00a6491b84d67221e215a806d8b210bf773"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/9cdcc8a4506f3c299fb95426aef265d01686e99c",
-                "reference": "9cdcc8a4506f3c299fb95426aef265d01686e99c",
+                "url": "https://api.github.com/repos/open-orchestra/open-orchestra-media-admin-bundle/zipball/743fa00a6491b84d67221e215a806d8b210bf773",
+                "reference": "743fa00a6491b84d67221e215a806d8b210bf773",
                 "shasum": ""
             },
             "require": {
@@ -2931,7 +2931,7 @@
                 }
             ],
             "description": "This bundle integrate the media administration in the Back Office of Open Orchestra",
-            "time": "2017-08-28 13:49:05"
+            "time": "2017-10-11 13:48:51"
         },
         {
             "name": "open-orchestra/open-orchestra-media-bundle",
@@ -3598,21 +3598,21 @@
         },
         {
             "name": "sensio/framework-extra-bundle",
-            "version": "v3.0.27",
+            "version": "v3.0.28",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioFrameworkExtraBundle.git",
-                "reference": "2651d2c70c5fec10beaa670c61fd8ff1e8b3869a"
+                "reference": "65eadf9e3fd5c47eee7986b306a5aed8affe6496"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/2651d2c70c5fec10beaa670c61fd8ff1e8b3869a",
-                "reference": "2651d2c70c5fec10beaa670c61fd8ff1e8b3869a",
+                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/65eadf9e3fd5c47eee7986b306a5aed8affe6496",
+                "reference": "65eadf9e3fd5c47eee7986b306a5aed8affe6496",
                 "shasum": ""
             },
             "require": {
                 "doctrine/common": "~2.2",
-                "symfony/dependency-injection": "~2.3|~3.0|~4.0",
+                "symfony/dependency-injection": "~2.3|~3.0",
                 "symfony/framework-bundle": "~2.3|~3.0|~4.0"
             },
             "require-dev": {
@@ -3664,7 +3664,7 @@
                 "annotations",
                 "controllers"
             ],
-            "time": "2017-08-23T12:40:59+00:00"
+            "time": "2017-10-12T17:37:20+00:00"
         },
         {
             "name": "sensio/generator-bundle",
