@@ -13,7 +13,7 @@ services:
 
 matrix:
   include:
-    - env: MONGO=2.6.5.5
+    - env: MONGOPHP=2.6.5.6
       php: 5.6
       addons:
         apt:
@@ -33,11 +33,31 @@ matrix:
             - mongodb-org-server
           sources:
             - mongodb-3.0-precise
+    - env: MONGOPHP=2.6.7.0
+      php: 7.0
+      addons:
+        apt:
+          packages:
+            - libav-tools
+            - ghostscript
+            - mongodb-org-server
+          sources:
+            - mongodb-upstart
+    - env: MONGOPHP=3.0.7.0
+      php: 7.0
+      addons:
+        apt:
+          packages:
+            - libav-tools
+            - ghostscript
+            - mongodb-org-server
+          sources:
+            - mongodb-3.0-precise
 
 before_install:
   - printf "\n" |pecl install imagick
-  - printf "\n" |pecl install mongo
-  - phpenv config-add .travis.php.ini
+  - printf "\n" |pecl install mongodb
+  - cp .travis.php_$(phpenv version-name).ini ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
 
 install:
   - cp app/config/parameters.yml.travis app/config/parameters.yml

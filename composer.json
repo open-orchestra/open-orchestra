@@ -17,7 +17,7 @@
   },
 
   "require": {
-    "php": "~5.6.0",
+    "php": "~5.6.0 || ~7.0.0",
     "incenteev/composer-parameter-handler": "~2.1.2",
     "sensio/distribution-bundle": "~5.0.0",
     "open-orchestra/open-orchestra-base-api-mongo-model-bundle": "self.version",
